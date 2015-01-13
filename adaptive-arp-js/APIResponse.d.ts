@@ -41,7 +41,7 @@ declare module Adaptive {
     */
     class APIResponse {
         /**
-           String representing the response
+           String representing the JavaScript value or JSON object representation of the response.
         */
         response: string;
         /**
@@ -49,38 +49,54 @@ declare module Adaptive {
         */
         statusCode: number;
         /**
-           Constructor with parameters
-
-           @param response   String representing the response
-           @param statusCode Status code of the response
-           @since ARP1.0
+           Status message of the response
         */
-        constructor(response: string, statusCode: number);
+        statusMessage: string;
+        /**
+           Constructor with parameters.
+
+           @param response      String representing the JavaScript value or JSON object representation of the response.
+           @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+           @param statusMessage Status message of the response.
+        */
+        constructor(response: string, statusCode: number, statusMessage: string);
         /**
            Response getter
 
-           @return String representing the response
+           @return String representing the JavaScript value or JSON object representation of the response.
            @since ARP1.0
         */
         getResponse(): string;
         /**
            Response setter
 
-           @param response String representing the response
+           @param response String representing the JavaScript value or JSON object representation of the response.
         */
         setResponse(response: string): void;
         /**
            Status code getter
 
-           @return Status code of the response
+           @return Status code of the response (200 = OK, others are warning or error conditions).
         */
         getStatusCode(): number;
         /**
            Status code setter
 
-           @param statusCode Status code of the response
+           @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
         */
         setStatusCode(statusCode: number): void;
+        /**
+           Status message getter
+
+           @return Status message of the response.
+        */
+        getStatusMessage(): string;
+        /**
+           Status message setter.
+
+           @param statusMessage Status message of the response
+        */
+        setStatusMessage(statusMessage: string): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */

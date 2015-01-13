@@ -32,4 +32,5 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 //# sourceMappingURL=APIBridge.js.map

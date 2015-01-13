@@ -76,14 +76,14 @@ declare module Adaptive {
         /**
            Contructor with fields
 
-           @param cookieName     Name of the cookie
-           @param cookieValue    Value of the cookie
-           @param domain   Domain of the cookie
-           @param path     Path of the cookie
-           @param scheme   Scheme of the cookie
-           @param secure   Privacy of the cookie
-           @param expiry   Expiration date of the cookie
-           @param creation Creation date of the cookie
+           @param cookieName  Name of the cookie
+           @param cookieValue Value of the cookie
+           @param domain      Domain of the cookie
+           @param path        Path of the cookie
+           @param scheme      Scheme of the cookie
+           @param secure      Privacy of the cookie
+           @param expiry      Expiration date of the cookie
+           @param creation    Creation date of the cookie
            @since ARP1.0
         */
         constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number);

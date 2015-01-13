@@ -2,12 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51628ef6-48bb-4703-ac94-69eccab955e0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIBridge.d.ts" afterPath="$PROJECT_DIR$/APIBridge.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIBridge.js.map" afterPath="$PROJECT_DIR$/APIBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIBridge.js" afterPath="$PROJECT_DIR$/APIBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIBridge.ts" afterPath="$PROJECT_DIR$/APIBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIResponse.d.ts" afterPath="$PROJECT_DIR$/APIResponse.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIResponse.js.map" afterPath="$PROJECT_DIR$/APIResponse.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIResponse.js" afterPath="$PROJECT_DIR$/APIResponse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIResponse.ts" afterPath="$PROJECT_DIR$/APIResponse.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AccelerationBridge.js.map" afterPath="$PROJECT_DIR$/AccelerationBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AccelerationBridge.js" afterPath="$PROJECT_DIR$/AccelerationBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AccelerationBridge.ts" afterPath="$PROJECT_DIR$/AccelerationBridge.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.d.ts" afterPath="$PROJECT_DIR$/Adaptive.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.js.map" afterPath="$PROJECT_DIR$/Adaptive.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.js" afterPath="$PROJECT_DIR$/Adaptive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.ts" afterPath="$PROJECT_DIR$/Adaptive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/join.sh" afterPath="$PROJECT_DIR$/join.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrowserBridge.js.map" afterPath="$PROJECT_DIR$/BrowserBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrowserBridge.js" afterPath="$PROJECT_DIR$/BrowserBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrowserBridge.ts" afterPath="$PROJECT_DIR$/BrowserBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CapabilitiesBridge.js.map" afterPath="$PROJECT_DIR$/CapabilitiesBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CapabilitiesBridge.js" afterPath="$PROJECT_DIR$/CapabilitiesBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CapabilitiesBridge.ts" afterPath="$PROJECT_DIR$/CapabilitiesBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContactBridge.js.map" afterPath="$PROJECT_DIR$/ContactBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContactBridge.js" afterPath="$PROJECT_DIR$/ContactBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ContactBridge.ts" afterPath="$PROJECT_DIR$/ContactBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseBridge.js.map" afterPath="$PROJECT_DIR$/DatabaseBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseBridge.js" afterPath="$PROJECT_DIR$/DatabaseBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseBridge.ts" afterPath="$PROJECT_DIR$/DatabaseBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DeviceBridge.js.map" afterPath="$PROJECT_DIR$/DeviceBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DeviceBridge.js" afterPath="$PROJECT_DIR$/DeviceBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DeviceBridge.ts" afterPath="$PROJECT_DIR$/DeviceBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileBridge.d.ts" afterPath="$PROJECT_DIR$/FileBridge.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileBridge.js.map" afterPath="$PROJECT_DIR$/FileBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileBridge.js" afterPath="$PROJECT_DIR$/FileBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileBridge.ts" afterPath="$PROJECT_DIR$/FileBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileSystemBridge.js.map" afterPath="$PROJECT_DIR$/FileSystemBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileSystemBridge.js" afterPath="$PROJECT_DIR$/FileSystemBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileSystemBridge.ts" afterPath="$PROJECT_DIR$/FileSystemBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationBridge.js.map" afterPath="$PROJECT_DIR$/GeolocationBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationBridge.js" afterPath="$PROJECT_DIR$/GeolocationBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationBridge.ts" afterPath="$PROJECT_DIR$/GeolocationBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationListener.d.ts" afterPath="$PROJECT_DIR$/GeolocationListener.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationListener.js" afterPath="$PROJECT_DIR$/GeolocationListener.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GeolocationListener.ts" afterPath="$PROJECT_DIR$/GeolocationListener.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GlobalizationBridge.js.map" afterPath="$PROJECT_DIR$/GlobalizationBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GlobalizationBridge.js" afterPath="$PROJECT_DIR$/GlobalizationBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GlobalizationBridge.ts" afterPath="$PROJECT_DIR$/GlobalizationBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IFile.d.ts" afterPath="$PROJECT_DIR$/IFile.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IFile.ts" afterPath="$PROJECT_DIR$/IFile.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IGeolocationListener.d.ts" afterPath="$PROJECT_DIR$/IGeolocationListener.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IGeolocationListener.ts" afterPath="$PROJECT_DIR$/IGeolocationListener.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ILifecycleListener.d.ts" afterPath="$PROJECT_DIR$/ILifecycleListener.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ILifecycleListener.ts" afterPath="$PROJECT_DIR$/ILifecycleListener.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KeyPair.d.ts" afterPath="$PROJECT_DIR$/KeyPair.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KeyPair.js" afterPath="$PROJECT_DIR$/KeyPair.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KeyPair.ts" afterPath="$PROJECT_DIR$/KeyPair.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleBridge.js.map" afterPath="$PROJECT_DIR$/LifecycleBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleBridge.js" afterPath="$PROJECT_DIR$/LifecycleBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleBridge.ts" afterPath="$PROJECT_DIR$/LifecycleBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleListener.d.ts" afterPath="$PROJECT_DIR$/LifecycleListener.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleListener.js" afterPath="$PROJECT_DIR$/LifecycleListener.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LifecycleListener.ts" afterPath="$PROJECT_DIR$/LifecycleListener.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoggingBridge.js.map" afterPath="$PROJECT_DIR$/LoggingBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoggingBridge.js" afterPath="$PROJECT_DIR$/LoggingBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoggingBridge.ts" afterPath="$PROJECT_DIR$/LoggingBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailBridge.js.map" afterPath="$PROJECT_DIR$/MailBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailBridge.js" afterPath="$PROJECT_DIR$/MailBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailBridge.ts" afterPath="$PROJECT_DIR$/MailBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MessagingBridge.js.map" afterPath="$PROJECT_DIR$/MessagingBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MessagingBridge.js" afterPath="$PROJECT_DIR$/MessagingBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MessagingBridge.ts" afterPath="$PROJECT_DIR$/MessagingBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.js.map" afterPath="$PROJECT_DIR$/NetworkReachabilityBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.js" afterPath="$PROJECT_DIR$/NetworkReachabilityBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.ts" afterPath="$PROJECT_DIR$/NetworkReachabilityBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkStatusBridge.js.map" afterPath="$PROJECT_DIR$/NetworkStatusBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkStatusBridge.js" afterPath="$PROJECT_DIR$/NetworkStatusBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetworkStatusBridge.ts" afterPath="$PROJECT_DIR$/NetworkStatusBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OSBridge.js.map" afterPath="$PROJECT_DIR$/OSBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OSBridge.js" afterPath="$PROJECT_DIR$/OSBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OSBridge.ts" afterPath="$PROJECT_DIR$/OSBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RuntimeBridge.js.map" afterPath="$PROJECT_DIR$/RuntimeBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RuntimeBridge.js" afterPath="$PROJECT_DIR$/RuntimeBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RuntimeBridge.ts" afterPath="$PROJECT_DIR$/RuntimeBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SecurityBridge.js.map" afterPath="$PROJECT_DIR$/SecurityBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SecurityBridge.js" afterPath="$PROJECT_DIR$/SecurityBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SecurityBridge.ts" afterPath="$PROJECT_DIR$/SecurityBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceBridge.js.map" afterPath="$PROJECT_DIR$/ServiceBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceBridge.js" afterPath="$PROJECT_DIR$/ServiceBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceBridge.ts" afterPath="$PROJECT_DIR$/ServiceBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceCookie.d.ts" afterPath="$PROJECT_DIR$/ServiceCookie.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceCookie.js" afterPath="$PROJECT_DIR$/ServiceCookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceCookie.ts" afterPath="$PROJECT_DIR$/ServiceCookie.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TelephonyBridge.js.map" afterPath="$PROJECT_DIR$/TelephonyBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TelephonyBridge.js" afterPath="$PROJECT_DIR$/TelephonyBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TelephonyBridge.ts" afterPath="$PROJECT_DIR$/TelephonyBridge.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VideoBridge.js.map" afterPath="$PROJECT_DIR$/VideoBridge.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VideoBridge.js" afterPath="$PROJECT_DIR$/VideoBridge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VideoBridge.ts" afterPath="$PROJECT_DIR$/VideoBridge.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="adaptive-arp-js.iws" />
@@ -47,8 +138,9 @@
         <option value="$PROJECT_DIR$/Contact.ts" />
         <option value="$PROJECT_DIR$/OSBridge.ts" />
         <option value="$PROJECT_DIR$/Database.ts" />
-        <option value="$PROJECT_DIR$/Adaptive.ts" />
         <option value="$PROJECT_DIR$/APIRequest.js" />
+        <option value="$PROJECT_DIR$/Adaptive.ts" />
+        <option value="$PROJECT_DIR$/APIResponse.ts" />
       </list>
     </option>
   </component>
@@ -56,9 +148,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2519" />
-    <option name="y" value="-180" />
-    <option name="width" value="1457" />
+    <option name="x" value="-2546" />
+    <option name="y" value="23" />
+    <option name="width" value="1410" />
     <option name="height" value="1379" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -84,6 +176,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -104,7 +197,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -113,6 +205,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Bash.Adaptive.ts">
     <configuration default="false" name="Adaptive.ts" type="BashConfigurationType" factoryName="Bash" temporary="true">
@@ -128,21 +221,10 @@
       <ConfigurationWrapper RunnerId="BashRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
-    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
-      <setting name="configLocationType" value="CONFIG_FILE" />
-      <setting name="settingsFile" value="" />
-      <setting name="serverType" value="INTERNAL" />
-      <setting name="preferredDebugBrowser" value="Chrome" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -154,6 +236,17 @@
       <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -169,6 +262,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <list size="1">
@@ -211,27 +309,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2519" y="-180" width="1457" height="1379" extended-state="0" />
-    <editor active="false" />
+    <frame x="-2546" y="23" width="1410" height="1379" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2594372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2680851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -327,14 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/APIBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1256">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Email.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3397" max-vertical-offset="4230">
@@ -383,42 +473,751 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Adaptive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.481482" vertical-offset="143942" max-vertical-offset="244830">
-          <caret line="9624" column="26" selection-start-line="9624" selection-start-column="26" selection-end-line="9624" selection-end-column="26" />
-          <folding>
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421157154000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/APIRequest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35509554" vertical-offset="1054" max-vertical-offset="2310">
           <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Adaptive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="144915" max-vertical-offset="249135">
+          <caret line="9667" column="65" selection-start-line="9667" selection-start-column="65" selection-end-line="9667" selection-end-column="65" />
+          <folding>
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Sets the callback or listener id to the request. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Bridge Type Getter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Bridge Type Setter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Method name Getter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Parameters Getter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Parameters Setter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Convert JSON parsed object to typed equivalent. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Structure representing a JSON response to the HTML5 layer. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**String representing the response ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Status code of the response ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Constructor with parameters ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Response getter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Response setter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Status code getter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Status code setter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Convert JSON parsed object to typed equivalent. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Base application for UI purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Group of API. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Return the API group for the given interface. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Return the API version for the given interface. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Base application for Utility purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Group of API. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Return the API group for the given interface. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Return the API version for the given interface. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Analytics purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Globalization results ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the default locale of the application defined in the configuration file ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**List of supported locales for the application defined in the configuration file ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Gets the text/message corresponding to the given key and locale. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Gets the full application configured literals (key/message pairs) corresponding to the given locale. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Add the listener for the lifecycle of the app ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Whether the application is in background or not ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Un-registers an existing listener from receiving lifecycle events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Removes all existing listeners from receiving lifecycle events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Store operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Wallet operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Bluetooth purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Network information operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Network naming operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Network reachability operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Whether there is connectivity to a host, via domain name or ip address, or not. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Whether there is connectivity to an url of a service or not. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Network status ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Add the listener for network status changes of the app ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Un-registers an existing listener from receiving network status events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Removes all existing listeners from receiving network status events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Services operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get a reference to a registered service by name. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Request async a service for an Url ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Register a new service ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Unregister a service ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Unregister all services. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Check whether a service by the given service is already registered. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Check whether a service by the given name is registered. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Socket operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Telephony operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Invoke a phone call ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Cloud operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the DataStream operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Cloud operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Creates a database on default path for every platform. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Creates a databaseTable inside a database for every platform. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Deletes a database on default path for every platform. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Deletes a databaseTable inside a database for every platform. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Executes SQL statement into the given database. The replacements ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Executes SQL transaction (some statements chain) inside given database. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Checks if database exists by given database name. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Checks if databaseTable exists by given database name. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the File operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determine whether the current file/folder can be read from. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determine whether the current file/folder can be written to. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Creates a file with the specified name. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Check whether the file/path exists. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Loads the content of the file. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the file storage type of the file ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the file type ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the security type of the file ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Check whether this is a path of a file. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**List all the files contained within this file/path reference. If the reference is a file, it will not yield ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**List all the files matching the speficied regex filter within this file/path reference. If the reference ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Moves the current file to the given file destination, optionally overwriting and creating the path to the ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Sets the content of the file. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the File System operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Creates a new reference to a new or existing location in the filesystem. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the cache folder for the current application. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the cloud synchronizable folder for the current application. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the documents folder for the current application. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the application installation folder. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the protected storage folder for the current application. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the file system dependent file separator. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns a reference to the external storage folder provided by the OS. This may ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Internal Storage operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the XML operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Audio purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the camera operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Imaging operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Video operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Play url video stream ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Alarm purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Notification operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Local Notifications operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Vibration operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Calendar operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Contact operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get all the details of a contact according to its id ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get the contact photo ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get all contacts ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get marked fields of all contacts ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Get marked fields of all contacts according to a filter ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Search contacts according to a term and send it to the callback ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Search contacts according to a term with a filter and send it to the callback ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Set the contact photo ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Mail operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Send an Email ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Messaging operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Send text SMS ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the NFC operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the OCR operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the QR Code operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the OAuth operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the OpenID operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Security operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Deletes from the device internal storage the entry/entries containing the specified key names. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Retrieves from the device internal storage the entry/entries containing the specified key names. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns if the device has been modified in anyhow ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Stores in the device internal storage the specified item/s. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface defining methods about the acceleration sensor ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Register a new listener that will receive acceleration events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**De-registers an existing listener from receiving acceleration events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Removed all existing listeners from receiving acceleration events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for managinf the Ambient Light ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Barometer management purposes ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Geolocation operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Register a new listener that will receive geolocation events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**De-registers an existing listener from receiving geolocation events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Removed all existing listeners from receiving geolocation events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Facebook operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Google Plus operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Linkedin operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the RSS operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Twitter operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for testing the Capabilities operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific hardware button is supported for interaction. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Communication capability is supported by ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Data capability is supported by the device. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Media capability is supported by the ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Net capability is supported by the device. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Notification capability is supported by the ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Determines whether a specific Sensor capability is supported by the ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Device operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Register a new listener that will receive button events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the device information for the current device executing the runtime. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Gets the current Locale for the device. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**De-registers an existing listener from receiving button events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Removed all existing listeners from receiving button events. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Display operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the OS operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Returns the OSInfo for the current operating system. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Runtime operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Dismiss the current Application ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Whether the application dismiss the splash screen successfully or not ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the browser operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Method for opening a URL like a link in the native default browser ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Method for opening a browser embedded into the application ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Method for opening a browser embedded into the application in a modal window ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Map operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Compression operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Concurrent operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Cloud operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Interface for Managing the Logging operations ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Default constructor. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Logs the given message, with the given log level if specified, to the standard platform/environment. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/**Logs the given message, with the given log level if specified, to the standard platform/environment. ...*/" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1421169968000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AccelerationBridge.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="979" max-vertical-offset="2235">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APIBridge.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlobalizationBridge.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3135">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APIResponse.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.35828024" vertical-offset="450" max-vertical-offset="2265">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -70,7 +70,7 @@ module Adaptive {
           /**
              Creates a file with the specified name.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           create(descriptor:FileDescriptor, callback:IFileResultCallback);
@@ -78,7 +78,7 @@ module Adaptive {
              Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
              @param descriptor File descriptor of file or folder used for operation.
-             @param cascade Whether to delete sub-files and sub-folders.
+             @param cascade    Whether to delete sub-files and sub-folders.
              @return True if files (and sub-files and folders) whether deleted.
              @since ARP1.0
           */
@@ -93,7 +93,7 @@ deleted if the cascade parameter is set to true.
           /**
              Loads the content of the file.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           getContent(descriptor:FileDescriptor, callback:IFileDataLoadResultCallback);
@@ -129,8 +129,8 @@ deleted if the cascade parameter is set to true.
              List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
              @param descriptor File descriptor of file or folder used for operation.
-             @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-             @param callback Result of operation.
+             @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFilesForRegex(descriptor:FileDescriptor, regex:string, callback:IFileListResultCallback);
@@ -138,14 +138,14 @@ is a file, it will not yield any results.
              List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of operation.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFiles(descriptor:FileDescriptor, callback:IFileListResultCallback);
           /**
              Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
              @param descriptor File descriptor of file or folder used for operation.
-             @param recursive Whether to create all parent path elements.
+             @param recursive  Whether to create all parent path elements.
              @return True if the path was created, false otherwise (or it exists already).
              @since ARP1.0
           */
@@ -153,19 +153,19 @@ any results.
           /**
              Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
-             @param source File descriptor of file or folder used for operation as source.
+             @param source      File descriptor of file or folder used for operation as source.
              @param destination File descriptor of file or folder used for operation as destination.
-             @param createPath True to create the path if it does not already exist.
-             @param callback   Result of the operation.
-             @param overwrite  True to create the path if it does not already exist.
+             @param createPath  True to create the path if it does not already exist.
+             @param callback    Result of the operation.
+             @param overwrite   True to create the path if it does not already exist.
              @since ARP1.0
           */
           move(source:FileDescriptor, destination:FileDescriptor, createPath:boolean, overwrite:boolean, callback:IFileResultCallback);
           /**
              Sets the content of the file.
              @param descriptor File descriptor of file or folder used for operation.
-             @param content  Binary content to store in the file.
-             @param callback Result of the operation.
+             @param content    Binary content to store in the file.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           setContent(descriptor:FileDescriptor, content:Array<number>, callback:IFileDataStoreResultCallback);

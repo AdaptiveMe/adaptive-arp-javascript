@@ -114,9 +114,9 @@ module Adaptive {
           /**
              Invokes the given method specified in the API request object.
              @param request APIRequest object containing method name and parameters.
-             @return String with JSON response or a zero length string is the response is asynchronous.
+             @return Object with JSON response or a zero length string is the response is asynchronous.
           */
-          invoke(request:APIRequest) : string;
+          invoke(request:APIRequest) : APIResponse;
      }
      /**
         Master interface for all the Groups and Types of Interfaces os the Project
@@ -1551,7 +1551,7 @@ should be passed as a parameter
           /**
              Creates a file with the specified name.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           create(descriptor:FileDescriptor, callback:IFileResultCallback);
@@ -1559,7 +1559,7 @@ should be passed as a parameter
              Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
              @param descriptor File descriptor of file or folder used for operation.
-             @param cascade Whether to delete sub-files and sub-folders.
+             @param cascade    Whether to delete sub-files and sub-folders.
              @return True if files (and sub-files and folders) whether deleted.
              @since ARP1.0
           */
@@ -1574,7 +1574,7 @@ deleted if the cascade parameter is set to true.
           /**
              Loads the content of the file.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           getContent(descriptor:FileDescriptor, callback:IFileDataLoadResultCallback);
@@ -1610,8 +1610,8 @@ deleted if the cascade parameter is set to true.
              List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
              @param descriptor File descriptor of file or folder used for operation.
-             @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-             @param callback Result of operation.
+             @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFilesForRegex(descriptor:FileDescriptor, regex:string, callback:IFileListResultCallback);
@@ -1619,14 +1619,14 @@ is a file, it will not yield any results.
              List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of operation.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFiles(descriptor:FileDescriptor, callback:IFileListResultCallback);
           /**
              Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
              @param descriptor File descriptor of file or folder used for operation.
-             @param recursive Whether to create all parent path elements.
+             @param recursive  Whether to create all parent path elements.
              @return True if the path was created, false otherwise (or it exists already).
              @since ARP1.0
           */
@@ -1634,19 +1634,19 @@ any results.
           /**
              Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
-             @param source File descriptor of file or folder used for operation as source.
+             @param source      File descriptor of file or folder used for operation as source.
              @param destination File descriptor of file or folder used for operation as destination.
-             @param createPath True to create the path if it does not already exist.
-             @param callback   Result of the operation.
-             @param overwrite  True to create the path if it does not already exist.
+             @param createPath  True to create the path if it does not already exist.
+             @param callback    Result of the operation.
+             @param overwrite   True to create the path if it does not already exist.
              @since ARP1.0
           */
           move(source:FileDescriptor, destination:FileDescriptor, createPath:boolean, overwrite:boolean, callback:IFileResultCallback);
           /**
              Sets the content of the file.
              @param descriptor File descriptor of file or folder used for operation.
-             @param content  Binary content to store in the file.
-             @param callback Result of the operation.
+             @param content    Binary content to store in the file.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           setContent(descriptor:FileDescriptor, content:Array<number>, callback:IFileDataStoreResultCallback);
@@ -1818,7 +1818,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Data received with warning - ie. HighDoP
              @param geolocation Geolocation Bean
-             @param warning Type of warning encountered during reading.
+             @param warning     Type of warning encountered during reading.
              @since ARP1.0
           */
           onWarning(geolocation:Geolocation, warning:IGeolocationListenerWarning);
@@ -1846,7 +1846,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Data received with warning
              @param lifecycle Lifecycle element
-             @param warning Type of warning encountered during reading.
+             @param warning   Type of warning encountered during reading.
              @since ARP1.0
           */
           onWarning(lifecycle:Lifecycle, warning:ILifecycleListenerWarning);
@@ -2735,7 +2735,7 @@ listener.
      */
      export class APIResponse {
           /**
-             String representing the response
+             String representing the JavaScript value or JSON object representation of the response.
           */
           response : string;
           /**
@@ -2743,20 +2743,25 @@ listener.
           */
           statusCode : number;
           /**
-             Constructor with parameters
-
-             @param response   String representing the response
-             @param statusCode Status code of the response
-             @since ARP1.0
+             Status message of the response
           */
-          constructor(response: string, statusCode: number) {
+          statusMessage : string;
+          /**
+             Constructor with parameters.
+
+             @param response      String representing the JavaScript value or JSON object representation of the response.
+             @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+             @param statusMessage Status message of the response.
+          */
+          constructor(response: string, statusCode: number, statusMessage: string) {
                this.response = response;
                this.statusCode = statusCode;
+               this.statusMessage = statusMessage;
           }
           /**
              Response getter
 
-             @return String representing the response
+             @return String representing the JavaScript value or JSON object representation of the response.
              @since ARP1.0
           */
           getResponse() : string {
@@ -2766,7 +2771,7 @@ listener.
           /**
              Response setter
 
-             @param response String representing the response
+             @param response String representing the JavaScript value or JSON object representation of the response.
           */
           setResponse(response: string) {
                this.response = response;
@@ -2775,7 +2780,7 @@ listener.
           /**
              Status code getter
 
-             @return Status code of the response
+             @return Status code of the response (200 = OK, others are warning or error conditions).
           */
           getStatusCode() : number {
                return this.statusCode;
@@ -2784,21 +2789,40 @@ listener.
           /**
              Status code setter
 
-             @param statusCode Status code of the response
+             @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
           */
           setStatusCode(statusCode: number) {
                this.statusCode = statusCode;
           }
 
           /**
+             Status message getter
+
+             @return Status message of the response.
+          */
+          getStatusMessage() : string {
+               return this.statusMessage;
+          }
+
+          /**
+             Status message setter.
+
+             @param statusMessage Status message of the response
+          */
+          setStatusMessage(statusMessage: string) {
+               this.statusMessage = statusMessage;
+          }
+
+          /**
              Convert JSON parsed object to typed equivalent.
           */
           static toObject(object : any) : APIResponse {
-               var result : APIResponse = new APIResponse(null, null);
+               var result : APIResponse = new APIResponse(null, null, null);
 
                // Assign values to bean fields.
                result.response = object.response;
                result.statusCode = object.statusCode;
+               result.statusMessage = object.statusMessage;
 
                return result;
           }
@@ -5072,7 +5096,7 @@ doesn't exist, this will be -1. Used internally.
           /**
              Constructor using fields
 
-             @param keyName   Key of the element
+             @param keyName  Key of the element
              @param keyValue Value of the element
              @since ARP1.0
           */
@@ -5644,14 +5668,14 @@ Possible lifecycle States:
           /**
              Contructor with fields
 
-             @param cookieName     Name of the cookie
-             @param cookieValue    Value of the cookie
-             @param domain   Domain of the cookie
-             @param path     Path of the cookie
-             @param scheme   Scheme of the cookie
-             @param secure   Privacy of the cookie
-             @param expiry   Expiration date of the cookie
-             @param creation Creation date of the cookie
+             @param cookieName  Name of the cookie
+             @param cookieValue Value of the cookie
+             @param domain      Domain of the cookie
+             @param path        Path of the cookie
+             @param scheme      Scheme of the cookie
+             @param secure      Privacy of the cookie
+             @param expiry      Expiration date of the cookie
+             @param creation    Creation date of the cookie
              @since ARP1.0
           */
           constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
@@ -7355,7 +7379,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning - ie. HighDoP
 
              @param geolocation Geolocation Bean
-             @param warning Type of warning encountered during reading.
+             @param warning     Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
@@ -7465,7 +7489,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning
 
              @param lifecycle Lifecycle element
-             @param warning Type of warning encountered during reading.
+             @param warning   Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {
@@ -9536,6 +9560,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : Locale = null;
@@ -9566,6 +9592,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -9603,6 +9631,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : string = null;
@@ -9635,6 +9665,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : Array<KeyPair> = null;
@@ -9684,6 +9716,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -9708,6 +9742,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -9738,6 +9774,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -9761,6 +9799,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -9966,6 +10006,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -9995,6 +10037,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10038,6 +10082,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10062,6 +10108,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10085,6 +10133,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10130,6 +10180,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : Service = null;
@@ -10164,6 +10216,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10192,6 +10246,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10215,6 +10271,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10236,6 +10294,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -10260,6 +10320,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10292,6 +10354,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10356,6 +10420,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : ITelephonyStatus = null;
@@ -10436,6 +10502,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10467,6 +10535,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10496,6 +10566,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10527,6 +10599,8 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10561,6 +10635,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10595,6 +10671,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10624,6 +10702,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10658,6 +10738,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10706,6 +10788,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10738,6 +10822,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10759,7 +10845,7 @@ should be passed as a parameter
              Creates a file with the specified name.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           create(descriptor : FileDescriptor, callback : IFileResultCallback) : void {
@@ -10770,6 +10856,8 @@ should be passed as a parameter
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10789,7 +10877,7 @@ should be passed as a parameter
 deleted if the cascade parameter is set to true.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param cascade Whether to delete sub-files and sub-folders.
+             @param cascade    Whether to delete sub-files and sub-folders.
              @return True if files (and sub-files and folders) whether deleted.
              @since ARP1.0
           */
@@ -10802,6 +10890,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10834,6 +10924,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -10855,7 +10947,7 @@ deleted if the cascade parameter is set to true.
              Loads the content of the file.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           getContent(descriptor : FileDescriptor, callback : IFileDataLoadResultCallback) : void {
@@ -10866,6 +10958,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -10895,6 +10989,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemStorageType = null;
@@ -10927,6 +11023,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemType = null;
@@ -10959,6 +11057,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemSecurity = null;
@@ -10991,6 +11091,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -11013,7 +11115,7 @@ deleted if the cascade parameter is set to true.
 any results.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of operation.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFiles(descriptor : FileDescriptor, callback : IFileListResultCallback) : void {
@@ -11024,6 +11126,8 @@ any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11043,8 +11147,8 @@ any results.
 is a file, it will not yield any results.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-             @param callback Result of operation.
+             @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFilesForRegex(descriptor : FileDescriptor, regex : string, callback : IFileListResultCallback) : void {
@@ -11056,6 +11160,8 @@ is a file, it will not yield any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11074,7 +11180,7 @@ is a file, it will not yield any results.
              Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param recursive Whether to create all parent path elements.
+             @param recursive  Whether to create all parent path elements.
              @return True if the path was created, false otherwise (or it exists already).
              @since ARP1.0
           */
@@ -11087,6 +11193,8 @@ is a file, it will not yield any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -11108,11 +11216,11 @@ is a file, it will not yield any results.
              Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-             @param source File descriptor of file or folder used for operation as source.
+             @param source      File descriptor of file or folder used for operation as source.
              @param destination File descriptor of file or folder used for operation as destination.
-             @param createPath True to create the path if it does not already exist.
-             @param callback   Result of the operation.
-             @param overwrite  True to create the path if it does not already exist.
+             @param createPath  True to create the path if it does not already exist.
+             @param callback    Result of the operation.
+             @param overwrite   True to create the path if it does not already exist.
              @since ARP1.0
           */
           move(source : FileDescriptor, destination : FileDescriptor, createPath : boolean, overwrite : boolean, callback : IFileResultCallback) : void {
@@ -11126,6 +11234,8 @@ new destination file.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11144,8 +11254,8 @@ new destination file.
              Sets the content of the file.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param content  Binary content to store in the file.
-             @param callback Result of the operation.
+             @param content    Binary content to store in the file.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           setContent(descriptor : FileDescriptor, content : Array<number>, callback : IFileDataStoreResultCallback) : void {
@@ -11157,6 +11267,8 @@ new destination file.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11205,6 +11317,8 @@ This method does not create the actual file in the specified folder.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11237,6 +11351,8 @@ This path is volatile and may be cleaned by the OS periodically.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11268,6 +11384,8 @@ This path must always be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11299,6 +11417,8 @@ This path must always be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11330,6 +11450,8 @@ This path may or may not be directly readable or writable - it usually contains 
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11361,6 +11483,8 @@ This path must always be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11391,6 +11515,8 @@ This path must always be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : string = null;
@@ -11424,6 +11550,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -11551,6 +11679,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -11671,6 +11801,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11700,6 +11832,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11727,6 +11861,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11756,6 +11892,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11787,6 +11925,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11816,6 +11956,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11847,6 +11989,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11878,6 +12022,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -11926,6 +12072,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -11973,6 +12121,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -12116,6 +12266,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -12147,6 +12299,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -12174,6 +12328,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12208,6 +12364,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -12251,6 +12409,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12275,6 +12435,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12298,6 +12460,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12373,6 +12537,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12397,6 +12563,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12420,6 +12588,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12593,6 +12763,8 @@ This path may or may not be writable by the current application.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12626,6 +12798,8 @@ the device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12658,6 +12832,8 @@ the device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12691,6 +12867,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12723,6 +12901,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12756,6 +12936,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12789,6 +12971,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -12835,6 +13019,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12859,6 +13045,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : DeviceInfo = null;
@@ -12889,6 +13077,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : Locale = null;
@@ -12919,6 +13109,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -12942,6 +13134,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -13001,6 +13195,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : OSInfo = null;
@@ -13046,6 +13242,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -13068,6 +13266,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -13116,6 +13316,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -13152,6 +13354,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -13188,6 +13392,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -13333,6 +13539,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -13360,6 +13568,8 @@ device.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {

@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 
 module Adaptive {
 
@@ -47,9 +48,9 @@ module Adaptive {
           /**
              Invokes the given method specified in the API request object.
              @param request APIRequest object containing method name and parameters.
-             @return String with JSON response or a zero length string is the response is asynchronous.
+             @return Object with JSON response or a zero length string is the response is asynchronous.
           */
-          invoke(request:APIRequest) : string;
+          invoke(request:APIRequest) : APIResponse;
      }
 }
 

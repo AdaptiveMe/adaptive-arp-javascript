@@ -78,6 +78,8 @@ This method does not create the actual file in the specified folder.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -111,6 +113,8 @@ This path is volatile and may be cleaned by the OS periodically.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -143,6 +147,8 @@ This path must always be writable by the current application.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -175,6 +181,8 @@ This path must always be writable by the current application.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -207,6 +215,8 @@ This path may or may not be directly readable or writable - it usually contains 
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -239,6 +249,8 @@ This path must always be writable by the current application.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -270,6 +282,8 @@ This path must always be writable by the current application.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -304,6 +318,8 @@ This path may or may not be writable by the current application.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;

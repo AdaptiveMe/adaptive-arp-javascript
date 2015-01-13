@@ -52,7 +52,7 @@ var Adaptive;
         /**
            Constructor using fields
 
-           @param keyName   Key of the element
+           @param keyName  Key of the element
            @param keyValue Value of the element
            @since ARP1.0
         */

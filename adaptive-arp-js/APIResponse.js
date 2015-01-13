@@ -42,20 +42,21 @@ var Adaptive;
     */
     var APIResponse = (function () {
         /**
-           Constructor with parameters
+           Constructor with parameters.
 
-           @param response   String representing the response
-           @param statusCode Status code of the response
-           @since ARP1.0
+           @param response      String representing the JavaScript value or JSON object representation of the response.
+           @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+           @param statusMessage Status message of the response.
         */
-        function APIResponse(response, statusCode) {
+        function APIResponse(response, statusCode, statusMessage) {
             this.response = response;
             this.statusCode = statusCode;
+            this.statusMessage = statusMessage;
         }
         /**
            Response getter
 
-           @return String representing the response
+           @return String representing the JavaScript value or JSON object representation of the response.
            @since ARP1.0
         */
         APIResponse.prototype.getResponse = function () {
@@ -64,7 +65,7 @@ var Adaptive;
         /**
            Response setter
 
-           @param response String representing the response
+           @param response String representing the JavaScript value or JSON object representation of the response.
         */
         APIResponse.prototype.setResponse = function (response) {
             this.response = response;
@@ -72,7 +73,7 @@ var Adaptive;
         /**
            Status code getter
 
-           @return Status code of the response
+           @return Status code of the response (200 = OK, others are warning or error conditions).
         */
         APIResponse.prototype.getStatusCode = function () {
             return this.statusCode;
@@ -80,19 +81,36 @@ var Adaptive;
         /**
            Status code setter
 
-           @param statusCode Status code of the response
+           @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
         */
         APIResponse.prototype.setStatusCode = function (statusCode) {
             this.statusCode = statusCode;
         };
         /**
+           Status message getter
+
+           @return Status message of the response.
+        */
+        APIResponse.prototype.getStatusMessage = function () {
+            return this.statusMessage;
+        };
+        /**
+           Status message setter.
+
+           @param statusMessage Status message of the response
+        */
+        APIResponse.prototype.setStatusMessage = function (statusMessage) {
+            this.statusMessage = statusMessage;
+        };
+        /**
            Convert JSON parsed object to typed equivalent.
         */
         APIResponse.toObject = function (object) {
-            var result = new APIResponse(null, null);
+            var result = new APIResponse(null, null, null);
             // Assign values to bean fields.
             result.response = object.response;
             result.statusCode = object.statusCode;
+            result.statusMessage = object.statusMessage;
             return result;
         };
         return APIResponse;

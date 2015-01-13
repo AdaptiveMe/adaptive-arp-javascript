@@ -82,7 +82,7 @@ declare module Adaptive {
            Data received with warning - ie. HighDoP
 
            @param geolocation Geolocation Bean
-           @param warning Type of warning encountered during reading.
+           @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): void;

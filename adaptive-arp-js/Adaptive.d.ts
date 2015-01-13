@@ -75,9 +75,9 @@ declare module Adaptive {
         /**
            Invokes the given method specified in the API request object.
            @param request APIRequest object containing method name and parameters.
-           @return String with JSON response or a zero length string is the response is asynchronous.
+           @return Object with JSON response or a zero length string is the response is asynchronous.
         */
-        invoke(request: APIRequest): string;
+        invoke(request: APIRequest): APIResponse;
     }
     /**
        Master interface for all the Groups and Types of Interfaces os the Project
@@ -1438,7 +1438,7 @@ should be passed as a parameter
         /**
            Creates a file with the specified name.
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of the operation.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         create(descriptor: FileDescriptor, callback: IFileResultCallback): any;
@@ -1446,7 +1446,7 @@ should be passed as a parameter
            Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
            @param descriptor File descriptor of file or folder used for operation.
-           @param cascade Whether to delete sub-files and sub-folders.
+           @param cascade    Whether to delete sub-files and sub-folders.
            @return True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
@@ -1461,7 +1461,7 @@ deleted if the cascade parameter is set to true.
         /**
            Loads the content of the file.
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of the operation.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         getContent(descriptor: FileDescriptor, callback: IFileDataLoadResultCallback): any;
@@ -1497,8 +1497,8 @@ deleted if the cascade parameter is set to true.
            List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
            @param descriptor File descriptor of file or folder used for operation.
-           @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-           @param callback Result of operation.
+           @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+           @param callback   Result of operation.
            @since ARP1.0
         */
         listFilesForRegex(descriptor: FileDescriptor, regex: string, callback: IFileListResultCallback): any;
@@ -1506,14 +1506,14 @@ is a file, it will not yield any results.
            List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of operation.
+           @param callback   Result of operation.
            @since ARP1.0
         */
         listFiles(descriptor: FileDescriptor, callback: IFileListResultCallback): any;
         /**
            Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
            @param descriptor File descriptor of file or folder used for operation.
-           @param recursive Whether to create all parent path elements.
+           @param recursive  Whether to create all parent path elements.
            @return True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
@@ -1521,19 +1521,19 @@ any results.
         /**
            Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
-           @param source File descriptor of file or folder used for operation as source.
+           @param source      File descriptor of file or folder used for operation as source.
            @param destination File descriptor of file or folder used for operation as destination.
-           @param createPath True to create the path if it does not already exist.
-           @param callback   Result of the operation.
-           @param overwrite  True to create the path if it does not already exist.
+           @param createPath  True to create the path if it does not already exist.
+           @param callback    Result of the operation.
+           @param overwrite   True to create the path if it does not already exist.
            @since ARP1.0
         */
         move(source: FileDescriptor, destination: FileDescriptor, createPath: boolean, overwrite: boolean, callback: IFileResultCallback): any;
         /**
            Sets the content of the file.
            @param descriptor File descriptor of file or folder used for operation.
-           @param content  Binary content to store in the file.
-           @param callback Result of the operation.
+           @param content    Binary content to store in the file.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): any;
@@ -1705,7 +1705,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Data received with warning - ie. HighDoP
            @param geolocation Geolocation Bean
-           @param warning Type of warning encountered during reading.
+           @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): any;
@@ -1733,7 +1733,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Data received with warning
            @param lifecycle Lifecycle element
-           @param warning Type of warning encountered during reading.
+           @param warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): any;
@@ -2575,7 +2575,7 @@ listener.
     */
     class APIResponse {
         /**
-           String representing the response
+           String representing the JavaScript value or JSON object representation of the response.
         */
         response: string;
         /**
@@ -2583,38 +2583,54 @@ listener.
         */
         statusCode: number;
         /**
-           Constructor with parameters
-
-           @param response   String representing the response
-           @param statusCode Status code of the response
-           @since ARP1.0
+           Status message of the response
         */
-        constructor(response: string, statusCode: number);
+        statusMessage: string;
+        /**
+           Constructor with parameters.
+
+           @param response      String representing the JavaScript value or JSON object representation of the response.
+           @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+           @param statusMessage Status message of the response.
+        */
+        constructor(response: string, statusCode: number, statusMessage: string);
         /**
            Response getter
 
-           @return String representing the response
+           @return String representing the JavaScript value or JSON object representation of the response.
            @since ARP1.0
         */
         getResponse(): string;
         /**
            Response setter
 
-           @param response String representing the response
+           @param response String representing the JavaScript value or JSON object representation of the response.
         */
         setResponse(response: string): void;
         /**
            Status code getter
 
-           @return Status code of the response
+           @return Status code of the response (200 = OK, others are warning or error conditions).
         */
         getStatusCode(): number;
         /**
            Status code setter
 
-           @param statusCode Status code of the response
+           @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
         */
         setStatusCode(statusCode: number): void;
+        /**
+           Status message getter
+
+           @return Status message of the response.
+        */
+        getStatusMessage(): string;
+        /**
+           Status message setter.
+
+           @param statusMessage Status message of the response
+        */
+        setStatusMessage(statusMessage: string): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */
@@ -4199,7 +4215,7 @@ doesn't exist, this will be -1. Used internally.
         /**
            Constructor using fields
 
-           @param keyName   Key of the element
+           @param keyName  Key of the element
            @param keyValue Value of the element
            @since ARP1.0
         */
@@ -4611,14 +4627,14 @@ Possible lifecycle States:
         /**
            Contructor with fields
 
-           @param cookieName     Name of the cookie
-           @param cookieValue    Value of the cookie
-           @param domain   Domain of the cookie
-           @param path     Path of the cookie
-           @param scheme   Scheme of the cookie
-           @param secure   Privacy of the cookie
-           @param expiry   Expiration date of the cookie
-           @param creation Creation date of the cookie
+           @param cookieName  Name of the cookie
+           @param cookieValue Value of the cookie
+           @param domain      Domain of the cookie
+           @param path        Path of the cookie
+           @param scheme      Scheme of the cookie
+           @param secure      Privacy of the cookie
+           @param expiry      Expiration date of the cookie
+           @param creation    Creation date of the cookie
            @since ARP1.0
         */
         constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number);
@@ -5679,7 +5695,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. HighDoP
 
            @param geolocation Geolocation Bean
-           @param warning Type of warning encountered during reading.
+           @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
@@ -5724,7 +5740,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning
 
            @param lifecycle Lifecycle element
-           @param warning Type of warning encountered during reading.
+           @param warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;

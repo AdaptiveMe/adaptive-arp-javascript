@@ -44,7 +44,7 @@ module Adaptive {
      export class APIResponse {
 
           /**
-             String representing the response
+             String representing the JavaScript value or JSON object representation of the response.
           */
           response : string;
           /**
@@ -52,21 +52,26 @@ module Adaptive {
           */
           statusCode : number;
           /**
-             Constructor with parameters
-
-             @param response   String representing the response
-             @param statusCode Status code of the response
-             @since ARP1.0
+             Status message of the response
           */
-          constructor(response: string, statusCode: number) {
+          statusMessage : string;
+          /**
+             Constructor with parameters.
+
+             @param response      String representing the JavaScript value or JSON object representation of the response.
+             @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+             @param statusMessage Status message of the response.
+          */
+          constructor(response: string, statusCode: number, statusMessage: string) {
                this.response = response;
                this.statusCode = statusCode;
+               this.statusMessage = statusMessage;
           }
 
           /**
              Response getter
 
-             @return String representing the response
+             @return String representing the JavaScript value or JSON object representation of the response.
              @since ARP1.0
           */
           getResponse() : string {
@@ -76,7 +81,7 @@ module Adaptive {
           /**
              Response setter
 
-             @param response String representing the response
+             @param response String representing the JavaScript value or JSON object representation of the response.
           */
           setResponse(response: string) {
                this.response = response;
@@ -85,7 +90,7 @@ module Adaptive {
           /**
              Status code getter
 
-             @return Status code of the response
+             @return Status code of the response (200 = OK, others are warning or error conditions).
           */
           getStatusCode() : number {
                return this.statusCode;
@@ -94,21 +99,40 @@ module Adaptive {
           /**
              Status code setter
 
-             @param statusCode Status code of the response
+             @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
           */
           setStatusCode(statusCode: number) {
                this.statusCode = statusCode;
           }
 
           /**
+             Status message getter
+
+             @return Status message of the response.
+          */
+          getStatusMessage() : string {
+               return this.statusMessage;
+          }
+
+          /**
+             Status message setter.
+
+             @param statusMessage Status message of the response
+          */
+          setStatusMessage(statusMessage: string) {
+               this.statusMessage = statusMessage;
+          }
+
+          /**
              Convert JSON parsed object to typed equivalent.
           */
           static toObject(object : any) : APIResponse {
-               var result : APIResponse = new APIResponse(null, null);
+               var result : APIResponse = new APIResponse(null, null, null);
 
                // Assign values to bean fields.
                result.response = object.response;
                result.statusCode = object.statusCode;
+               result.statusMessage = object.statusMessage;
 
                return result;
           }

@@ -67,6 +67,8 @@ module Adaptive {
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
@@ -89,6 +91,8 @@ module Adaptive {
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;

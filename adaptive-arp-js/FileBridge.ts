@@ -82,6 +82,8 @@ module Adaptive {
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -114,6 +116,8 @@ module Adaptive {
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -135,7 +139,7 @@ module Adaptive {
              Creates a file with the specified name.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           create(descriptor : FileDescriptor, callback : IFileResultCallback) : void {
@@ -146,6 +150,8 @@ module Adaptive {
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -165,7 +171,7 @@ module Adaptive {
 deleted if the cascade parameter is set to true.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param cascade Whether to delete sub-files and sub-folders.
+             @param cascade    Whether to delete sub-files and sub-folders.
              @return True if files (and sub-files and folders) whether deleted.
              @since ARP1.0
           */
@@ -178,6 +184,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -210,6 +218,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -231,7 +241,7 @@ deleted if the cascade parameter is set to true.
              Loads the content of the file.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of the operation.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           getContent(descriptor : FileDescriptor, callback : IFileDataLoadResultCallback) : void {
@@ -242,6 +252,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -271,6 +283,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemStorageType = null;
@@ -303,6 +317,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemType = null;
@@ -335,6 +351,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : IFileSystemSecurity = null;
@@ -367,6 +385,8 @@ deleted if the cascade parameter is set to true.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -389,7 +409,7 @@ deleted if the cascade parameter is set to true.
 any results.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param callback Result of operation.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFiles(descriptor : FileDescriptor, callback : IFileListResultCallback) : void {
@@ -400,6 +420,8 @@ any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -419,8 +441,8 @@ any results.
 is a file, it will not yield any results.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-             @param callback Result of operation.
+             @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+             @param callback   Result of operation.
              @since ARP1.0
           */
           listFilesForRegex(descriptor : FileDescriptor, regex : string, callback : IFileListResultCallback) : void {
@@ -432,6 +454,8 @@ is a file, it will not yield any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -450,7 +474,7 @@ is a file, it will not yield any results.
              Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param recursive Whether to create all parent path elements.
+             @param recursive  Whether to create all parent path elements.
              @return True if the path was created, false otherwise (or it exists already).
              @since ARP1.0
           */
@@ -463,6 +487,8 @@ is a file, it will not yield any results.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(ar));
                // Prepare response.
                var response : boolean = false;
@@ -484,11 +510,11 @@ is a file, it will not yield any results.
              Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-             @param source File descriptor of file or folder used for operation as source.
+             @param source      File descriptor of file or folder used for operation as source.
              @param destination File descriptor of file or folder used for operation as destination.
-             @param createPath True to create the path if it does not already exist.
-             @param callback   Result of the operation.
-             @param overwrite  True to create the path if it does not already exist.
+             @param createPath  True to create the path if it does not already exist.
+             @param callback    Result of the operation.
+             @param overwrite   True to create the path if it does not already exist.
              @since ARP1.0
           */
           move(source : FileDescriptor, destination : FileDescriptor, createPath : boolean, overwrite : boolean, callback : IFileResultCallback) : void {
@@ -502,6 +528,8 @@ new destination file.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));
@@ -520,8 +548,8 @@ new destination file.
              Sets the content of the file.
 
              @param descriptor File descriptor of file or folder used for operation.
-             @param content  Binary content to store in the file.
-             @param callback Result of the operation.
+             @param content    Binary content to store in the file.
+             @param callback   Result of the operation.
              @since ARP1.0
           */
           setContent(descriptor : FileDescriptor, content : Array<number>, callback : IFileDataStoreResultCallback) : void {
@@ -533,6 +561,8 @@ new destination file.
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(ar));

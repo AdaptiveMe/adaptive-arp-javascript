@@ -86,6 +86,8 @@ var Adaptive;
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -119,6 +121,8 @@ var Adaptive;
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -141,7 +145,7 @@ var Adaptive;
            Creates a file with the specified name.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of the operation.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.create = function (descriptor, callback) {
@@ -152,6 +156,8 @@ var Adaptive;
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
@@ -170,7 +176,7 @@ var Adaptive;
 deleted if the cascade parameter is set to true.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param cascade Whether to delete sub-files and sub-folders.
+           @param cascade    Whether to delete sub-files and sub-folders.
            @return True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
@@ -183,6 +189,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -216,6 +224,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -238,7 +248,7 @@ deleted if the cascade parameter is set to true.
            Loads the content of the file.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of the operation.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.getContent = function (descriptor, callback) {
@@ -249,6 +259,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
@@ -277,6 +289,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -310,6 +324,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -343,6 +359,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = null;
@@ -376,6 +394,8 @@ deleted if the cascade parameter is set to true.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -399,7 +419,7 @@ deleted if the cascade parameter is set to true.
 any results.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param callback Result of operation.
+           @param callback   Result of operation.
            @since ARP1.0
         */
         FileBridge.prototype.listFiles = function (descriptor, callback) {
@@ -410,6 +430,8 @@ any results.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
@@ -428,8 +450,8 @@ any results.
 is a file, it will not yield any results.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param regex    Filter (eg. *.jpg, *.png, Fil*) name string.
-           @param callback Result of operation.
+           @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+           @param callback   Result of operation.
            @since ARP1.0
         */
         FileBridge.prototype.listFilesForRegex = function (descriptor, regex, callback) {
@@ -441,6 +463,8 @@ is a file, it will not yield any results.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
@@ -458,7 +482,7 @@ is a file, it will not yield any results.
            Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param recursive Whether to create all parent path elements.
+           @param recursive  Whether to create all parent path elements.
            @return True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
@@ -471,6 +495,8 @@ is a file, it will not yield any results.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             xhr.send(JSON.stringify(ar));
             // Prepare response.
             var response = false;
@@ -493,11 +519,11 @@ is a file, it will not yield any results.
            Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-           @param source File descriptor of file or folder used for operation as source.
+           @param source      File descriptor of file or folder used for operation as source.
            @param destination File descriptor of file or folder used for operation as destination.
-           @param createPath True to create the path if it does not already exist.
-           @param callback   Result of the operation.
-           @param overwrite  True to create the path if it does not already exist.
+           @param createPath  True to create the path if it does not already exist.
+           @param callback    Result of the operation.
+           @param overwrite   True to create the path if it does not already exist.
            @since ARP1.0
         */
         FileBridge.prototype.move = function (source, destination, createPath, overwrite, callback) {
@@ -511,6 +537,8 @@ new destination file.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
@@ -528,8 +556,8 @@ new destination file.
            Sets the content of the file.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @param content  Binary content to store in the file.
-           @param callback Result of the operation.
+           @param content    Binary content to store in the file.
+           @param callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.setContent = function (descriptor, content, callback) {
@@ -541,6 +569,8 @@ new destination file.
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(ar));
