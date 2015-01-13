@@ -224,6 +224,71 @@ listener.
     })();
     Adaptive.APIRequest = APIRequest;
     /**
+       Structure representing a JSON response to the HTML5 layer.
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
+    */
+    var APIResponse = (function () {
+        /**
+           Constructor with parameters
+
+           @param response   String representing the response
+           @param statusCode Status code of the response
+           @since ARP1.0
+        */
+        function APIResponse(response, statusCode) {
+            this.response = response;
+            this.statusCode = statusCode;
+        }
+        /**
+           Response getter
+
+           @return String representing the response
+           @since ARP1.0
+        */
+        APIResponse.prototype.getResponse = function () {
+            return this.response;
+        };
+        /**
+           Response setter
+
+           @param response String representing the response
+        */
+        APIResponse.prototype.setResponse = function (response) {
+            this.response = response;
+        };
+        /**
+           Status code getter
+
+           @return Status code of the response
+        */
+        APIResponse.prototype.getStatusCode = function () {
+            return this.statusCode;
+        };
+        /**
+           Status code setter
+
+           @param statusCode Status code of the response
+        */
+        APIResponse.prototype.setStatusCode = function (statusCode) {
+            this.statusCode = statusCode;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        APIResponse.toObject = function (object) {
+            var result = new APIResponse(null, null);
+            // Assign values to bean fields.
+            result.response = object.response;
+            result.statusCode = object.statusCode;
+            return result;
+        };
+        return APIResponse;
+    })();
+    Adaptive.APIResponse = APIResponse;
+    /**
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez

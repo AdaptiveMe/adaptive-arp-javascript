@@ -2727,6 +2727,83 @@ listener.
           }
      }
      /**
+        Structure representing a JSON response to the HTML5 layer.
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+        @version 1.0
+     */
+     export class APIResponse {
+          /**
+             String representing the response
+          */
+          response : string;
+          /**
+             Status code of the response
+          */
+          statusCode : number;
+          /**
+             Constructor with parameters
+
+             @param response   String representing the response
+             @param statusCode Status code of the response
+             @since ARP1.0
+          */
+          constructor(response: string, statusCode: number) {
+               this.response = response;
+               this.statusCode = statusCode;
+          }
+          /**
+             Response getter
+
+             @return String representing the response
+             @since ARP1.0
+          */
+          getResponse() : string {
+               return this.response;
+          }
+
+          /**
+             Response setter
+
+             @param response String representing the response
+          */
+          setResponse(response: string) {
+               this.response = response;
+          }
+
+          /**
+             Status code getter
+
+             @return Status code of the response
+          */
+          getStatusCode() : number {
+               return this.statusCode;
+          }
+
+          /**
+             Status code setter
+
+             @param statusCode Status code of the response
+          */
+          setStatusCode(statusCode: number) {
+               this.statusCode = statusCode;
+          }
+
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : APIResponse {
+               var result : APIResponse = new APIResponse(null, null);
+
+               // Assign values to bean fields.
+               result.response = object.response;
+               result.statusCode = object.statusCode;
+
+               return result;
+          }
+     }
+     /**
         Structure representing the data of a single acceleration reading.
 
         @author Carlos Lozano Diez

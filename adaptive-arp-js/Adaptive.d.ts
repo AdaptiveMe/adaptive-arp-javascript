@@ -2567,6 +2567,60 @@ listener.
         static toObject(object: any): APIRequest;
     }
     /**
+       Structure representing a JSON response to the HTML5 layer.
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
+    */
+    class APIResponse {
+        /**
+           String representing the response
+        */
+        response: string;
+        /**
+           Status code of the response
+        */
+        statusCode: number;
+        /**
+           Constructor with parameters
+
+           @param response   String representing the response
+           @param statusCode Status code of the response
+           @since ARP1.0
+        */
+        constructor(response: string, statusCode: number);
+        /**
+           Response getter
+
+           @return String representing the response
+           @since ARP1.0
+        */
+        getResponse(): string;
+        /**
+           Response setter
+
+           @param response String representing the response
+        */
+        setResponse(response: string): void;
+        /**
+           Status code getter
+
+           @return Status code of the response
+        */
+        getStatusCode(): number;
+        /**
+           Status code setter
+
+           @param statusCode Status code of the response
+        */
+        setStatusCode(statusCode: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): APIResponse;
+    }
+    /**
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez
