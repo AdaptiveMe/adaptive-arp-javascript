@@ -42,5 +42,9 @@ declare module Adaptive {
         static NeedsCalibration: IAccelerationListenerWarning;
         static Stale: IAccelerationListenerWarning;
         static Unknown: IAccelerationListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAccelerationListenerWarning;
     }
 }

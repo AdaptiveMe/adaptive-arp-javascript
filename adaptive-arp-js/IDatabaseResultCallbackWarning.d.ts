@@ -42,5 +42,9 @@ declare module Adaptive {
         static DatabaseExists: IDatabaseResultCallbackWarning;
         static IsOpen: IDatabaseResultCallbackWarning;
         static Unknown: IDatabaseResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseResultCallbackWarning;
     }
 }

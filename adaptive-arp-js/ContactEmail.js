@@ -118,6 +118,17 @@ var Adaptive;
         ContactEmail.prototype.setPrimary = function (primary) {
             this.primary = primary;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactEmail.toObject = function (object) {
+            var result = new ContactEmail(null, null, null);
+            // Assign values to bean fields.
+            result.type = Adaptive.ContactEmailType.toObject(object.type);
+            result.primary = object.primary;
+            result.email = object.email;
+            return result;
+        };
         return ContactEmail;
     })(Adaptive.APIBean);
     Adaptive.ContactEmail = ContactEmail;

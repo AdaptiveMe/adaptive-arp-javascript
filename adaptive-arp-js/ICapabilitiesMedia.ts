@@ -49,5 +49,27 @@ module Adaptive {
           static Video_Recording = new ICapabilitiesMedia("Video_Recording");
           static Unknown = new ICapabilitiesMedia("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesMedia {
+               switch(object.value) {
+                    case "Audio_Playback":
+                         return ICapabilitiesMedia.Audio_Playback;
+                    case "Audio_Recording":
+                         return ICapabilitiesMedia.Audio_Recording;
+                    case "Camera":
+                         return ICapabilitiesMedia.Camera;
+                    case "Video_Playback":
+                         return ICapabilitiesMedia.Video_Playback;
+                    case "Video_Recording":
+                         return ICapabilitiesMedia.Video_Recording;
+                    case "Unknown":
+                         return ICapabilitiesMedia.Unknown;
+                    default:
+                         return ICapabilitiesMedia.Unknown;
+               }
+          }
+
      }
 }

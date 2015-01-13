@@ -43,6 +43,21 @@ var Adaptive;
         IGeolocationListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IGeolocationListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "HighDoP":
+                    return IGeolocationListenerWarning.HighDoP;
+                case "StaleData":
+                    return IGeolocationListenerWarning.StaleData;
+                case "Unknown":
+                    return IGeolocationListenerWarning.Unknown;
+                default:
+                    return IGeolocationListenerWarning.Unknown;
+            }
+        };
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");
         IGeolocationListenerWarning.StaleData = new IGeolocationListenerWarning("StaleData");
         IGeolocationListenerWarning.Unknown = new IGeolocationListenerWarning("Unknown");

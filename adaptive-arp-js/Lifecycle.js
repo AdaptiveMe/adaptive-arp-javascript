@@ -78,6 +78,15 @@ var Adaptive;
         Lifecycle.prototype.setState = function (state) {
             this.state = state;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Lifecycle.toObject = function (object) {
+            var result = new Lifecycle(null);
+            // Assign values to bean fields.
+            result.state = Adaptive.LifecycleState.toObject(object.state);
+            return result;
+        };
         return Lifecycle;
     })(Adaptive.APIBean);
     Adaptive.Lifecycle = Lifecycle;

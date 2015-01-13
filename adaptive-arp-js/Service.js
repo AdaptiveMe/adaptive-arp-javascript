@@ -140,6 +140,18 @@ var Adaptive;
         Service.prototype.setServiceEndpoint = function (serviceEndpoint) {
             this.serviceEndpoint = serviceEndpoint;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Service.toObject = function (object) {
+            var result = new Service(null, null, null, null);
+            // Assign values to bean fields.
+            result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(object.serviceEndpoint);
+            result.name = object.name;
+            result.method = Adaptive.IServiceMethod.toObject(object.method);
+            result.type = Adaptive.IServiceType.toObject(object.type);
+            return result;
+        };
         return Service;
     })(Adaptive.APIBean);
     Adaptive.Service = Service;

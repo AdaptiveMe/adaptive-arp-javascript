@@ -47,5 +47,9 @@ declare module Adaptive {
         static WorkFax: ContactPhoneType;
         static Other: ContactPhoneType;
         static Unknown: ContactPhoneType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactPhoneType;
     }
 }

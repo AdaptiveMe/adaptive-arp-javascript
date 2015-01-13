@@ -43,6 +43,39 @@ var Adaptive;
         IServiceResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "Forbidden":
+                    return IServiceResultCallbackError.Forbidden;
+                case "NotFound":
+                    return IServiceResultCallbackError.NotFound;
+                case "MethodNotAllowed":
+                    return IServiceResultCallbackError.MethodNotAllowed;
+                case "NotAllowed":
+                    return IServiceResultCallbackError.NotAllowed;
+                case "NotAuthenticated":
+                    return IServiceResultCallbackError.NotAuthenticated;
+                case "TimeOut":
+                    return IServiceResultCallbackError.TimeOut;
+                case "NoResponse":
+                    return IServiceResultCallbackError.NoResponse;
+                case "ServerError":
+                    return IServiceResultCallbackError.ServerError;
+                case "Unreachable":
+                    return IServiceResultCallbackError.Unreachable;
+                case "MalformedUrl":
+                    return IServiceResultCallbackError.MalformedUrl;
+                case "NotRegisteredService":
+                    return IServiceResultCallbackError.NotRegisteredService;
+                case "Unknown":
+                    return IServiceResultCallbackError.Unknown;
+                default:
+                    return IServiceResultCallbackError.Unknown;
+            }
+        };
         IServiceResultCallbackError.Forbidden = new IServiceResultCallbackError("Forbidden");
         IServiceResultCallbackError.NotFound = new IServiceResultCallbackError("NotFound");
         IServiceResultCallbackError.MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");

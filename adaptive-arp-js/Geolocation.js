@@ -173,6 +173,20 @@ var Adaptive;
         Geolocation.prototype.setYDoP = function (yDoP) {
             this.yDoP = yDoP;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Geolocation.toObject = function (object) {
+            var result = new Geolocation(null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.latitude = object.latitude;
+            result.longitude = object.longitude;
+            result.altitude = object.altitude;
+            result.xDoP = object.xDoP;
+            result.yDoP = object.yDoP;
+            result.timestamp = object.timestamp;
+            return result;
+        };
         return Geolocation;
     })(Adaptive.APIBean);
     Adaptive.Geolocation = Geolocation;

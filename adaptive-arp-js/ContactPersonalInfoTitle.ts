@@ -48,5 +48,25 @@ module Adaptive {
           static Dr = new ContactPersonalInfoTitle("Dr");
           static Unknown = new ContactPersonalInfoTitle("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactPersonalInfoTitle {
+               switch(object.value) {
+                    case "Mr":
+                         return ContactPersonalInfoTitle.Mr;
+                    case "Mrs":
+                         return ContactPersonalInfoTitle.Mrs;
+                    case "Ms":
+                         return ContactPersonalInfoTitle.Ms;
+                    case "Dr":
+                         return ContactPersonalInfoTitle.Dr;
+                    case "Unknown":
+                         return ContactPersonalInfoTitle.Unknown;
+                    default:
+                         return ContactPersonalInfoTitle.Unknown;
+               }
+          }
+
      }
 }

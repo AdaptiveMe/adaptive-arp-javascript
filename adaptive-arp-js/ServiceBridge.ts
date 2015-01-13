@@ -81,7 +81,7 @@ module Adaptive {
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = Service.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
                     }
@@ -113,7 +113,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -139,7 +139,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.registerService' request.");
                }
@@ -162,7 +162,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterService' request.");
                }
@@ -183,7 +183,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterServices' request.");
                }

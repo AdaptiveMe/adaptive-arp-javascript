@@ -97,6 +97,16 @@ var Adaptive;
         ServiceHeader.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceHeader.toObject = function (object) {
+            var result = new ServiceHeader(null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.data = object.data;
+            return result;
+        };
         return ServiceHeader;
     })(Adaptive.APIBean);
     Adaptive.ServiceHeader = ServiceHeader;

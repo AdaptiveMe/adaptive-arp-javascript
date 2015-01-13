@@ -157,6 +157,22 @@ var Adaptive;
         EmailAttachmentData.prototype.setSize = function (size) {
             this.size = size;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        EmailAttachmentData.toObject = function (object) {
+            var result = new EmailAttachmentData(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.data = new Array();
+            for (var __value__ in object.data) {
+                result.data.push(__value__);
+            }
+            result.size = object.size;
+            result.fileName = object.fileName;
+            result.mimeType = object.mimeType;
+            result.referenceUrl = object.referenceUrl;
+            return result;
+        };
         return EmailAttachmentData;
     })(Adaptive.APIBean);
     Adaptive.EmailAttachmentData = EmailAttachmentData;

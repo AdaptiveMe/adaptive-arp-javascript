@@ -43,6 +43,27 @@ var Adaptive;
         IMessagingCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IMessagingCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "SIMNotPresent":
+                    return IMessagingCallbackError.SIMNotPresent;
+                case "EmailAccountNotFound":
+                    return IMessagingCallbackError.EmailAccountNotFound;
+                case "NotSent":
+                    return IMessagingCallbackError.NotSent;
+                case "WrongParams":
+                    return IMessagingCallbackError.WrongParams;
+                case "NotSupported":
+                    return IMessagingCallbackError.NotSupported;
+                case "Unknown":
+                    return IMessagingCallbackError.Unknown;
+                default:
+                    return IMessagingCallbackError.Unknown;
+            }
+        };
         IMessagingCallbackError.SIMNotPresent = new IMessagingCallbackError("SIMNotPresent");
         IMessagingCallbackError.EmailAccountNotFound = new IMessagingCallbackError("EmailAccountNotFound");
         IMessagingCallbackError.NotSent = new IMessagingCallbackError("NotSent");

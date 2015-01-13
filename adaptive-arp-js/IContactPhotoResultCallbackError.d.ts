@@ -43,5 +43,9 @@ declare module Adaptive {
         static Wrong_Params: IContactPhotoResultCallbackError;
         static No_Photo: IContactPhotoResultCallbackError;
         static Unknown: IContactPhotoResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactPhotoResultCallbackError;
     }
 }

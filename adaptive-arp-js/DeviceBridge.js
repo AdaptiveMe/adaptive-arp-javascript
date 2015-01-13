@@ -106,7 +106,7 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.DeviceInfo.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
@@ -137,7 +137,7 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.Locale.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");

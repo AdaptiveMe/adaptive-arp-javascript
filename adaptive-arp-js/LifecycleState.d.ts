@@ -48,5 +48,9 @@ declare module Adaptive {
         static Resuming: LifecycleState;
         static Stopping: LifecycleState;
         static Unknown: LifecycleState;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): LifecycleState;
     }
 }

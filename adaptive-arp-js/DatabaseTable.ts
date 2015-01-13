@@ -186,6 +186,27 @@ module Adaptive {
                this.rowCount = rowCount;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DatabaseTable {
+               var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.columnCount = object.columnCount;
+               result.rowCount = object.rowCount;
+               result.databaseColumns = new Array<DatabaseColumn>();
+               for(var __value__ in object.databaseColumns) {
+                    result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+               }
+               result.databaseRows = new Array<DatabaseRow>();
+               for(var __value__ in object.databaseRows) {
+                    result.databaseRows.push(DatabaseRow.toObject(__value__));
+               }
+
+               return result;
+          }
 
      }
 }

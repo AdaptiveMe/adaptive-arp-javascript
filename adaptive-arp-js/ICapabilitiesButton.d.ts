@@ -43,5 +43,9 @@ declare module Adaptive {
         static BackButton: ICapabilitiesButton;
         static OptionButton: ICapabilitiesButton;
         static Unknown: ICapabilitiesButton;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesButton;
     }
 }

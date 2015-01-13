@@ -43,6 +43,23 @@ var Adaptive;
         IFileDataStoreResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataStoreResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "InexistentFile":
+                    return IFileDataStoreResultCallbackError.InexistentFile;
+                case "InsufficientSpace":
+                    return IFileDataStoreResultCallbackError.InsufficientSpace;
+                case "Unauthorized":
+                    return IFileDataStoreResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileDataStoreResultCallbackError.Unknown;
+                default:
+                    return IFileDataStoreResultCallbackError.Unknown;
+            }
+        };
         IFileDataStoreResultCallbackError.InexistentFile = new IFileDataStoreResultCallbackError("InexistentFile");
         IFileDataStoreResultCallbackError.InsufficientSpace = new IFileDataStoreResultCallbackError("InsufficientSpace");
         IFileDataStoreResultCallbackError.Unauthorized = new IFileDataStoreResultCallbackError("Unauthorized");

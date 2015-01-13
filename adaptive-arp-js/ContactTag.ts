@@ -106,6 +106,18 @@ module Adaptive {
                this.tagValue = tagValue;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactTag {
+               var result : ContactTag = new ContactTag(null, null);
+
+               // Assign values to bean fields.
+               result.tagName = object.tagName;
+               result.tagValue = object.tagValue;
+
+               return result;
+          }
 
      }
 }

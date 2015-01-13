@@ -43,6 +43,21 @@ var Adaptive;
         INetworkStatusListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkStatusListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "IpAddressNotAssigned":
+                    return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                case "IpAddressChanged":
+                    return INetworkStatusListenerWarning.IpAddressChanged;
+                case "Unknown":
+                    return INetworkStatusListenerWarning.Unknown;
+                default:
+                    return INetworkStatusListenerWarning.Unknown;
+            }
+        };
         INetworkStatusListenerWarning.IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
         INetworkStatusListenerWarning.IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
         INetworkStatusListenerWarning.Unknown = new INetworkStatusListenerWarning("Unknown");

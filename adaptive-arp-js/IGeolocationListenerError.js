@@ -43,6 +43,25 @@ var Adaptive;
         IGeolocationListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IGeolocationListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Disabled":
+                    return IGeolocationListenerError.Disabled;
+                case "RestrictedAccess":
+                    return IGeolocationListenerError.RestrictedAccess;
+                case "DeniedAccess":
+                    return IGeolocationListenerError.DeniedAccess;
+                case "StatusNotDetermined":
+                    return IGeolocationListenerError.StatusNotDetermined;
+                case "Unknown":
+                    return IGeolocationListenerError.Unknown;
+                default:
+                    return IGeolocationListenerError.Unknown;
+            }
+        };
         IGeolocationListenerError.Disabled = new IGeolocationListenerError("Disabled");
         IGeolocationListenerError.RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
         IGeolocationListenerError.DeniedAccess = new IGeolocationListenerError("DeniedAccess");

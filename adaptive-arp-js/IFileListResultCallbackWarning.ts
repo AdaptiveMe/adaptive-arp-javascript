@@ -45,5 +45,19 @@ module Adaptive {
           static PartialResult = new IFileListResultCallbackWarning("PartialResult");
           static Unknown = new IFileListResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileListResultCallbackWarning {
+               switch(object.value) {
+                    case "PartialResult":
+                         return IFileListResultCallbackWarning.PartialResult;
+                    case "Unknown":
+                         return IFileListResultCallbackWarning.Unknown;
+                    default:
+                         return IFileListResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

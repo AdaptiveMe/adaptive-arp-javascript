@@ -117,6 +117,17 @@ var Adaptive;
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {
             this.jobTitle = jobTitle;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactProfessionalInfo.toObject = function (object) {
+            var result = new ContactProfessionalInfo(null, null, null);
+            // Assign values to bean fields.
+            result.company = object.company;
+            result.jobTitle = object.jobTitle;
+            result.jobDescription = object.jobDescription;
+            return result;
+        };
         return ContactProfessionalInfo;
     })(Adaptive.APIBean);
     Adaptive.ContactProfessionalInfo = ContactProfessionalInfo;

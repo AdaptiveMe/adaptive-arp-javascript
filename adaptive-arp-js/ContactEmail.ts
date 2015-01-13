@@ -133,6 +133,19 @@ module Adaptive {
                this.primary = primary;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactEmail {
+               var result : ContactEmail = new ContactEmail(null, null, null);
+
+               // Assign values to bean fields.
+               result.type = ContactEmailType.toObject(object.type);
+               result.primary = object.primary;
+               result.email = object.email;
+
+               return result;
+          }
 
      }
 }

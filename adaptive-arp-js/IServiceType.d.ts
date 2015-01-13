@@ -50,5 +50,9 @@ declare module Adaptive {
         static ServiceTypeXmlRpcJson: IServiceType;
         static ServiceTypeXmlRpcXml: IServiceType;
         static Unknown: IServiceType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceType;
     }
 }

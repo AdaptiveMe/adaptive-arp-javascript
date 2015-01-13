@@ -42,5 +42,9 @@ declare module Adaptive {
         static Unauthorized: IAccelerationListenerError;
         static Unavailable: IAccelerationListenerError;
         static Unknown: IAccelerationListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAccelerationListenerError;
     }
 }

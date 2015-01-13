@@ -97,6 +97,16 @@ var Adaptive;
         Locale.prototype.setLanguage = function (language) {
             this.language = language;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Locale.toObject = function (object) {
+            var result = new Locale(null, null);
+            // Assign values to bean fields.
+            result.country = object.country;
+            result.language = object.language;
+            return result;
+        };
         return Locale;
     })(Adaptive.APIBean);
     Adaptive.Locale = Locale;

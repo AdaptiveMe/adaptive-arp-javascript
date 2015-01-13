@@ -46,5 +46,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         constructor();
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): APIBean;
     }
 }

@@ -43,6 +43,21 @@ var Adaptive;
         IContactPhotoResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactPhotoResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "LimitExceeded":
+                    return IContactPhotoResultCallbackWarning.LimitExceeded;
+                case "No_Matches":
+                    return IContactPhotoResultCallbackWarning.No_Matches;
+                case "Unknown":
+                    return IContactPhotoResultCallbackWarning.Unknown;
+                default:
+                    return IContactPhotoResultCallbackWarning.Unknown;
+            }
+        };
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
         IContactPhotoResultCallbackWarning.Unknown = new IContactPhotoResultCallbackWarning("Unknown");

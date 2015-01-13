@@ -98,6 +98,22 @@ var Adaptive;
         ServiceSession.prototype.setCookies = function (cookies) {
             this.cookies = cookies;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceSession.toObject = function (object) {
+            var result = new ServiceSession(null, null);
+            // Assign values to bean fields.
+            result.cookies = new Array();
+            for (var __value__ in object.cookies) {
+                result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+            }
+            result.attributes = new Array();
+            for (var __value__ in object.attributes) {
+                result.attributes.push(__value__);
+            }
+            return result;
+        };
         return ServiceSession;
     })(Adaptive.APIBean);
     Adaptive.ServiceSession = ServiceSession;

@@ -44,5 +44,9 @@ declare module Adaptive {
         static RemoteNotification: ICapabilitiesNotification;
         static Vibration: ICapabilitiesNotification;
         static Unknown: ICapabilitiesNotification;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesNotification;
     }
 }

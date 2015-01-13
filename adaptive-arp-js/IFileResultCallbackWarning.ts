@@ -46,5 +46,21 @@ module Adaptive {
           static RootDirectory = new IFileResultCallbackWarning("RootDirectory");
           static Unknown = new IFileResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileResultCallbackWarning {
+               switch(object.value) {
+                    case "SourceNotDeleted":
+                         return IFileResultCallbackWarning.SourceNotDeleted;
+                    case "RootDirectory":
+                         return IFileResultCallbackWarning.RootDirectory;
+                    case "Unknown":
+                         return IFileResultCallbackWarning.Unknown;
+                    default:
+                         return IFileResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

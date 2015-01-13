@@ -43,6 +43,21 @@ var Adaptive;
         ILifecycleListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ILifecycleListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "MemoryLow":
+                    return ILifecycleListenerWarning.MemoryLow;
+                case "BatteryLow":
+                    return ILifecycleListenerWarning.BatteryLow;
+                case "Unknown":
+                    return ILifecycleListenerWarning.Unknown;
+                default:
+                    return ILifecycleListenerWarning.Unknown;
+            }
+        };
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");
         ILifecycleListenerWarning.BatteryLow = new ILifecycleListenerWarning("BatteryLow");
         ILifecycleListenerWarning.Unknown = new ILifecycleListenerWarning("Unknown");

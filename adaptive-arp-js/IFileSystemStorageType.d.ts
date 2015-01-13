@@ -46,5 +46,9 @@ declare module Adaptive {
         static Cache: IFileSystemStorageType;
         static External: IFileSystemStorageType;
         static Unknown: IFileSystemStorageType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemStorageType;
     }
 }

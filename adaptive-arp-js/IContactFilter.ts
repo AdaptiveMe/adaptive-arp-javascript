@@ -47,5 +47,23 @@ module Adaptive {
           static HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
           static Unknown = new IContactFilter("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactFilter {
+               switch(object.value) {
+                    case "HAS_PHONE":
+                         return IContactFilter.HAS_PHONE;
+                    case "HAS_EMAIL":
+                         return IContactFilter.HAS_EMAIL;
+                    case "HAS_ADDRESS":
+                         return IContactFilter.HAS_ADDRESS;
+                    case "Unknown":
+                         return IContactFilter.Unknown;
+                    default:
+                         return IContactFilter.Unknown;
+               }
+          }
+
      }
 }

@@ -55,5 +55,9 @@ declare module Adaptive {
         static Util: IAdaptiveRPGroup;
         static Kernel: IAdaptiveRPGroup;
         static Unknown: IAdaptiveRPGroup;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAdaptiveRPGroup;
     }
 }

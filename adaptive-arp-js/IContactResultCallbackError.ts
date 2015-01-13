@@ -46,5 +46,21 @@ module Adaptive {
           static Wrong_Params = new IContactResultCallbackError("Wrong_Params");
           static Unknown = new IContactResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactResultCallbackError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return IContactResultCallbackError.NoPermission;
+                    case "Wrong_Params":
+                         return IContactResultCallbackError.Wrong_Params;
+                    case "Unknown":
+                         return IContactResultCallbackError.Unknown;
+                    default:
+                         return IContactResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

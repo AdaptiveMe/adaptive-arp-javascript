@@ -45,5 +45,19 @@ module Adaptive {
           static Not_Implemented = new IButtonListenerWarning("Not_Implemented");
           static Unknown = new IButtonListenerWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IButtonListenerWarning {
+               switch(object.value) {
+                    case "Not_Implemented":
+                         return IButtonListenerWarning.Not_Implemented;
+                    case "Unknown":
+                         return IButtonListenerWarning.Unknown;
+                    default:
+                         return IButtonListenerWarning.Unknown;
+               }
+          }
+
      }
 }

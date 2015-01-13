@@ -85,7 +85,7 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.Service.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");

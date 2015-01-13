@@ -47,5 +47,9 @@ declare module Adaptive {
         static Magnetometer: ICapabilitiesSensor;
         static Proximity: ICapabilitiesSensor;
         static Unknown: ICapabilitiesSensor;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesSensor;
     }
 }

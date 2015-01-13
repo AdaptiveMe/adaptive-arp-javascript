@@ -820,7 +820,13 @@ module Adaptive {
      */
      export interface IGlobalization extends IBaseApplication {
           /**
-             List of supported locales for the application
+             Returns the default locale of the application defined in the configuration file
+             @return Default Locale of the application
+             @since ARP1.0
+          */
+          getDefaultLocale() : Locale;
+          /**
+             List of supported locales for the application defined in the configuration file
              @return List of locales
              @since ARP1.0
           */
@@ -2575,6 +2581,14 @@ device.
           */
           constructor() {
           }
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : APIBean {
+               var result : APIBean = new APIBean();
+
+               return result;
+          }
      }
      /**
         Structure representing a HTML5 request to the native API.
@@ -2694,6 +2708,23 @@ listener.
                this.parameters = parameters;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : APIRequest {
+               var result : APIRequest = new APIRequest(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.bridgeType = object.bridgeType;
+               result.methodName = object.methodName;
+               result.parameters = new Array<string>();
+               for(var __value__ in object.parameters) {
+                    result.parameters.push(__value__);
+               }
+               result.asyncId = object.asyncId;
+
+               return result;
+          }
      }
      /**
         Structure representing the data of a single acceleration reading.
@@ -2815,6 +2846,20 @@ listener.
                this.z = z;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Acceleration {
+               var result : Acceleration = new Acceleration(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.x = object.x;
+               result.y = object.y;
+               result.z = object.z;
+               result.timestamp = object.timestamp;
+
+               return result;
+          }
      }
      /**
         Structure representing the a physical or logical button on a device.
@@ -2858,6 +2903,17 @@ listener.
                this.type = type;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Button {
+               var result : Button = new Button(null);
+
+               // Assign values to bean fields.
+               result.type = ICapabilitiesButton.toObject(object.type);
+
+               return result;
+          }
      }
      /**
         Structure representing the address data elements of a contact.
@@ -2927,6 +2983,18 @@ listener.
                this.address = address;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactAddress {
+               var result : ContactAddress = new ContactAddress(null, null);
+
+               // Assign values to bean fields.
+               result.address = object.address;
+               result.type = ContactAddressType.toObject(object.type);
+
+               return result;
+          }
      }
      /**
         Structure representing the email data elements of a contact.
@@ -3022,6 +3090,19 @@ listener.
                this.primary = primary;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactEmail {
+               var result : ContactEmail = new ContactEmail(null, null, null);
+
+               // Assign values to bean fields.
+               result.type = ContactEmailType.toObject(object.type);
+               result.primary = object.primary;
+               result.email = object.email;
+
+               return result;
+          }
      }
      /**
         Structure representing the personal info data elements of a contact.
@@ -3143,6 +3224,20 @@ listener.
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactPersonalInfo {
+               var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.middleName = object.middleName;
+               result.lastName = object.lastName;
+               result.title = ContactPersonalInfoTitle.toObject(object.title);
+
+               return result;
+          }
      }
      /**
         Structure representing the phone data elements of a contact.
@@ -3212,6 +3307,18 @@ listener.
                this.phone = phone;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactPhone {
+               var result : ContactPhone = new ContactPhone(null, null);
+
+               // Assign values to bean fields.
+               result.phone = object.phone;
+               result.phoneType = ContactPhoneType.toObject(object.phoneType);
+
+               return result;
+          }
      }
      /**
         Structure representing the professional info data elements of a contact.
@@ -3307,6 +3414,19 @@ listener.
                this.jobTitle = jobTitle;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactProfessionalInfo {
+               var result : ContactProfessionalInfo = new ContactProfessionalInfo(null, null, null);
+
+               // Assign values to bean fields.
+               result.company = object.company;
+               result.jobTitle = object.jobTitle;
+               result.jobDescription = object.jobDescription;
+
+               return result;
+          }
      }
      /**
         Structure representing the social data elements of a contact.
@@ -3376,6 +3496,18 @@ listener.
                this.profileUrl = profileUrl;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactSocial {
+               var result : ContactSocial = new ContactSocial(null, null);
+
+               // Assign values to bean fields.
+               result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+               result.profileUrl = object.profileUrl;
+
+               return result;
+          }
      }
      /**
         Structure representing the assigned tags data elements of a contact.
@@ -3445,6 +3577,18 @@ listener.
                this.tagValue = tagValue;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactTag {
+               var result : ContactTag = new ContactTag(null, null);
+
+               // Assign values to bean fields.
+               result.tagName = object.tagName;
+               result.tagValue = object.tagValue;
+
+               return result;
+          }
      }
      /**
         Structure representing the internal unique identifier data elements of a contact.
@@ -3488,6 +3632,17 @@ listener.
                this.contactId = contactId;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactUid {
+               var result : ContactUid = new ContactUid(null);
+
+               // Assign values to bean fields.
+               result.contactId = object.contactId;
+
+               return result;
+          }
      }
      /**
         Structure representing the website data elements of a contact.
@@ -3531,6 +3686,17 @@ listener.
                this.url = url;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactWebsite {
+               var result : ContactWebsite = new ContactWebsite(null);
+
+               // Assign values to bean fields.
+               result.url = object.url;
+
+               return result;
+          }
      }
      /**
         Structure representing a database reference.
@@ -3600,6 +3766,18 @@ listener.
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Database {
+               var result : Database = new Database(null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.compress = object.compress;
+
+               return result;
+          }
      }
      /**
         Structure representing the column specification of a data column.
@@ -3643,6 +3821,17 @@ listener.
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DatabaseColumn {
+               var result : DatabaseColumn = new DatabaseColumn(null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+
+               return result;
+          }
      }
      /**
         Structure representing a row for a data table.
@@ -3686,6 +3875,20 @@ listener.
                this.values = values;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DatabaseRow {
+               var result : DatabaseRow = new DatabaseRow(null);
+
+               // Assign values to bean fields.
+               result.values = new Array<string>();
+               for(var __value__ in object.values) {
+                    result.values.push(__value__);
+               }
+
+               return result;
+          }
      }
      /**
         Represents a data table composed of databaseColumns and databaseRows.
@@ -3833,6 +4036,27 @@ listener.
                this.rowCount = rowCount;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DatabaseTable {
+               var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.columnCount = object.columnCount;
+               result.rowCount = object.rowCount;
+               result.databaseColumns = new Array<DatabaseColumn>();
+               for(var __value__ in object.databaseColumns) {
+                    result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+               }
+               result.databaseRows = new Array<DatabaseRow>();
+               for(var __value__ in object.databaseRows) {
+                    result.databaseRows.push(DatabaseRow.toObject(__value__));
+               }
+
+               return result;
+          }
      }
      /**
         Structure representing the basic device information.
@@ -3953,6 +4177,20 @@ be unique for a specific instance of an application on a specific device.
                this.vendor = vendor;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DeviceInfo {
+               var result : DeviceInfo = new DeviceInfo(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.model = object.model;
+               result.vendor = object.vendor;
+               result.uuid = object.uuid;
+
+               return result;
+          }
      }
      /**
         Structure representing the data elements of an email.
@@ -4152,6 +4390,35 @@ be unique for a specific instance of an application on a specific device.
                this.toRecipients = toRecipients;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Email {
+               var result : Email = new Email(null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.toRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.toRecipients) {
+                    result.toRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.ccRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.ccRecipients) {
+                    result.ccRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.bccRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.bccRecipients) {
+                    result.bccRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.emailAttachmentData = new Array<EmailAttachmentData>();
+               for(var __value__ in object.emailAttachmentData) {
+                    result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+               }
+               result.messageBody = object.messageBody;
+               result.messageBodyMimeType = object.messageBodyMimeType;
+               result.subject = object.subject;
+
+               return result;
+          }
      }
      /**
         Structure representing the data elements of an email addressee.
@@ -4195,6 +4462,17 @@ be unique for a specific instance of an application on a specific device.
                this.address = address;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : EmailAddress {
+               var result : EmailAddress = new EmailAddress(null);
+
+               // Assign values to bean fields.
+               result.address = object.address;
+
+               return result;
+          }
      }
      /**
         Structure representing the binary attachment data.
@@ -4342,6 +4620,24 @@ be unique for a specific instance of an application on a specific device.
                this.size = size;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : EmailAttachmentData {
+               var result : EmailAttachmentData = new EmailAttachmentData(null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.data = new Array<number>();
+               for(var __value__ in object.data) {
+                    result.data.push(__value__);
+               }
+               result.size = object.size;
+               result.fileName = object.fileName;
+               result.mimeType = object.mimeType;
+               result.referenceUrl = object.referenceUrl;
+
+               return result;
+          }
      }
      /**
         Implementation of FileDescriptor bean.
@@ -4478,6 +4774,22 @@ doesn't exist, this will be -1. Used internally.
                this.size = size;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : FileDescriptor {
+               var result : FileDescriptor = new FileDescriptor();
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.path = object.path;
+               result.pathAbsolute = object.pathAbsolute;
+               result.dateCreated = object.dateCreated;
+               result.dateModified = object.dateModified;
+               result.size = object.size;
+
+               return result;
+          }
      }
      /**
         Structure representing the data a single geolocation reading.
@@ -4647,6 +4959,22 @@ doesn't exist, this will be -1. Used internally.
                this.yDoP = yDoP;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Geolocation {
+               var result : Geolocation = new Geolocation(null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.latitude = object.latitude;
+               result.longitude = object.longitude;
+               result.altitude = object.altitude;
+               result.xDoP = object.xDoP;
+               result.yDoP = object.yDoP;
+               result.timestamp = object.timestamp;
+
+               return result;
+          }
      }
      /**
         Represents a basic bean to store keyName pair values
@@ -4716,6 +5044,18 @@ doesn't exist, this will be -1. Used internally.
                this.keyValue = keyValue;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : KeyPair {
+               var result : KeyPair = new KeyPair(null, null);
+
+               // Assign values to bean fields.
+               result.keyName = object.keyName;
+               result.keyValue = object.keyValue;
+
+               return result;
+          }
      }
      /**
         Represents a specific application life-cycle stage.
@@ -4770,6 +5110,17 @@ Possible lifecycle States:
                this.state = state;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Lifecycle {
+               var result : Lifecycle = new Lifecycle(null);
+
+               // Assign values to bean fields.
+               result.state = LifecycleState.toObject(object.state);
+
+               return result;
+          }
      }
      /**
         Represents a specific user or system locate.
@@ -4839,6 +5190,18 @@ Possible lifecycle States:
                this.language = language;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Locale {
+               var result : Locale = new Locale(null, null);
+
+               // Assign values to bean fields.
+               result.country = object.country;
+               result.language = object.language;
+
+               return result;
+          }
      }
      /**
         Represents the basic information about the operating system.
@@ -4931,6 +5294,19 @@ Possible lifecycle States:
                this.version = version;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : OSInfo {
+               var result : OSInfo = new OSInfo(null, null, null);
+
+               // Assign values to bean fields.
+               result.name = IOSType.toObject(object.name);
+               result.version = object.version;
+               result.vendor = object.vendor;
+
+               return result;
+          }
      }
      /**
         Represents a single secureKey-value pair.
@@ -5000,6 +5376,18 @@ Possible lifecycle States:
                this.secureKey = secureKey;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : SecureKeyPair {
+               var result : SecureKeyPair = new SecureKeyPair(null, null);
+
+               // Assign values to bean fields.
+               result.secureKey = object.secureKey;
+               result.secureData = object.secureData;
+
+               return result;
+          }
      }
      /**
         Represents an instance of a service.
@@ -5121,6 +5509,20 @@ Possible lifecycle States:
                this.serviceEndpoint = serviceEndpoint;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Service {
+               var result : Service = new Service(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+               result.name = object.name;
+               result.method = IServiceMethod.toObject(object.method);
+               result.type = IServiceType.toObject(object.type);
+
+               return result;
+          }
      }
      /**
         Structure representing the cookieValue of a http cookie.
@@ -5346,6 +5748,24 @@ Possible lifecycle States:
                this.secure = secure;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceCookie {
+               var result : ServiceCookie = new ServiceCookie(null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.cookieName = object.cookieName;
+               result.cookieValue = object.cookieValue;
+               result.domain = object.domain;
+               result.path = object.path;
+               result.scheme = object.scheme;
+               result.secure = object.secure;
+               result.expiry = object.expiry;
+               result.creation = object.creation;
+
+               return result;
+          }
      }
      /**
         Structure representing a remote or local service access end-point.
@@ -5493,6 +5913,21 @@ Possible lifecycle States:
                this.scheme = scheme;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceEndpoint {
+               var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.host = object.host;
+               result.path = object.path;
+               result.port = object.port;
+               result.proxy = object.proxy;
+               result.scheme = object.scheme;
+
+               return result;
+          }
      }
      /**
         Structure representing the data of a http request or response header.
@@ -5562,6 +5997,18 @@ Possible lifecycle States:
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceHeader {
+               var result : ServiceHeader = new ServiceHeader(null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.data = object.data;
+
+               return result;
+          }
      }
      /**
         Represents a local or remote service request.
@@ -5839,6 +6286,32 @@ Possible lifecycle States:
                this.serviceSession = serviceSession;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceRequest {
+               var result : ServiceRequest = new ServiceRequest(null, null, null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.content = object.content;
+               result.contentType = object.contentType;
+               result.contentEncoding = object.contentEncoding;
+               result.contentLength = object.contentLength;
+               result.contentBinary = new Array<number>();
+               for(var __value__ in object.contentBinary) {
+                    result.contentBinary.push(__value__);
+               }
+               result.contentBinaryLength = object.contentBinaryLength;
+               result.serviceHeaders = new Array<ServiceHeader>();
+               for(var __value__ in object.serviceHeaders) {
+                    result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+               }
+               result.method = object.method;
+               result.protocolVersion = IServiceProtocolVersion.toObject(object.protocolVersion);
+               result.serviceSession = ServiceSession.toObject(object.serviceSession);
+
+               return result;
+          }
      }
      /**
         Represents a local or remote service response.
@@ -6064,6 +6537,30 @@ Possible lifecycle States:
                this.serviceSession = serviceSession;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceResponse {
+               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.content = object.content;
+               result.contentType = object.contentType;
+               result.contentEncoding = object.contentEncoding;
+               result.contentLength = object.contentLength;
+               result.contentBinary = new Array<number>();
+               for(var __value__ in object.contentBinary) {
+                    result.contentBinary.push(__value__);
+               }
+               result.contentBinaryLength = object.contentBinaryLength;
+               result.serviceHeaders = new Array<ServiceHeader>();
+               for(var __value__ in object.serviceHeaders) {
+                    result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+               }
+               result.serviceSession = ServiceSession.toObject(object.serviceSession);
+
+               return result;
+          }
      }
      /**
         Represents a session object for HTTP request and responses
@@ -6133,6 +6630,24 @@ Possible lifecycle States:
                this.cookies = cookies;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceSession {
+               var result : ServiceSession = new ServiceSession(null, null);
+
+               // Assign values to bean fields.
+               result.cookies = new Array<ServiceCookie>();
+               for(var __value__ in object.cookies) {
+                    result.cookies.push(ServiceCookie.toObject(__value__));
+               }
+               result.attributes = new Array<string>();
+               for(var __value__ in object.attributes) {
+                    result.attributes.push(__value__);
+               }
+
+               return result;
+          }
      }
      /**
         Structure representing the data elements of a contact.
@@ -6359,6 +6874,45 @@ Possible lifecycle States:
                this.professionalInfo = professionalInfo;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Contact {
+               var result : Contact = new Contact(null, null, null, null, null, null, null, null, null);
+
+               // Assign values to parent bean fields.
+               result.contactId = object.contactId;
+
+               // Assign values to bean fields.
+               result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+               result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
+               result.contactAddresses = new Array<ContactAddress>();
+               for(var __value__ in object.contactAddresses) {
+                    result.contactAddresses.push(ContactAddress.toObject(__value__));
+               }
+               result.contactPhones = new Array<ContactPhone>();
+               for(var __value__ in object.contactPhones) {
+                    result.contactPhones.push(ContactPhone.toObject(__value__));
+               }
+               result.contactEmails = new Array<ContactEmail>();
+               for(var __value__ in object.contactEmails) {
+                    result.contactEmails.push(ContactEmail.toObject(__value__));
+               }
+               result.contactWebsites = new Array<ContactWebsite>();
+               for(var __value__ in object.contactWebsites) {
+                    result.contactWebsites.push(ContactWebsite.toObject(__value__));
+               }
+               result.contactSocials = new Array<ContactSocial>();
+               for(var __value__ in object.contactSocials) {
+                    result.contactSocials.push(ContactSocial.toObject(__value__));
+               }
+               result.contactTags = new Array<ContactTag>();
+               for(var __value__ in object.contactTags) {
+                    result.contactTags.push(ContactTag.toObject(__value__));
+               }
+
+               return result;
+          }
      }
      export class BaseListener implements IBaseListener {
 
@@ -8893,7 +9447,37 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
-             List of supported locales for the application
+             Returns the default locale of the application defined in the configuration file
+
+             @return Default Locale of the application
+             @since ARP1.0
+          */
+          getDefaultLocale() : Locale {
+               // Create and populate API request.
+               var arParams : string[] = [];
+               var ar : APIRequest = new APIRequest("IGlobalization","getDefaultLocale",arParams, -1 /* = synchronous call */);
+               // Create and send JSON request.
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", bridgePath, false);
+               xhr.send(JSON.stringify(ar));
+               // Prepare response.
+               var response : Locale = null;
+               // Check response.
+               if (xhr.status == 200) {
+                    // Process response.
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         response = Locale.toObject(JSON.parse(xhr.responseText));
+                    } else {
+                         console.error("ERROR: 'GlobalizationBridge.getDefaultLocale' incorrect response received.");
+                    }
+               } else {
+                    console.error("ERROR: "+xhr.status+" sending 'GlobalizationBridge.getDefaultLocale' request.");
+               }
+               return response;
+          }
+
+          /**
+             List of supported locales for the application defined in the configuration file
 
              @return List of locales
              @since ARP1.0
@@ -8912,7 +9496,10 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = new Array<Locale>();
+                         for(var __value__ in JSON.parse(xhr.responseText)) {
+                              response.push(Locale.toObject(__value__));
+                         }
                     } else {
                          console.error("ERROR: 'GlobalizationBridge.getLocaleSupportedDescriptors' incorrect response received.");
                     }
@@ -8978,7 +9565,10 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = new Array<KeyPair>();
+                         for(var __value__ in JSON.parse(xhr.responseText)) {
+                              response.push(KeyPair.toObject(__value__));
+                         }
                     } else {
                          console.error("ERROR: 'GlobalizationBridge.getResourceLiterals' incorrect response received.");
                     }
@@ -9022,7 +9612,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredLifecycleListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.addLifecycleListener' request.");
                }
@@ -9076,7 +9666,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredLifecycleListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListener' request.");
                }
@@ -9102,7 +9692,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                     for (var key in keys) {
                          registeredLifecycleListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListeners' request.");
                }
@@ -9304,7 +9894,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9333,7 +9923,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9376,7 +9966,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredNetworkStatusListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.addNetworkStatusListener' request.");
                }
@@ -9400,7 +9990,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredNetworkStatusListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListener' request.");
                }
@@ -9426,7 +10016,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                     for (var key in keys) {
                          registeredNetworkStatusListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListeners' request.");
                }
@@ -9470,7 +10060,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = Service.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
                     }
@@ -9502,7 +10092,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9528,7 +10118,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.registerService' request.");
                }
@@ -9551,7 +10141,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterService' request.");
                }
@@ -9572,7 +10162,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterServices' request.");
                }
@@ -9696,7 +10286,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = ITelephonyStatus.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'TelephonyBridge.call' incorrect response received.");
                     }
@@ -9774,7 +10364,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createDatabase' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9805,7 +10395,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createTable' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9834,7 +10424,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteDatabase' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9865,7 +10455,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteTable' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9899,7 +10489,7 @@ should be passed as a parameter
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlStatement' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -9933,7 +10523,7 @@ should be passed as a parameter
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlTransactions' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10108,7 +10698,7 @@ should be passed as a parameter
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10204,7 +10794,7 @@ deleted if the cascade parameter is set to true.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10235,7 +10825,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
                     }
@@ -10267,7 +10857,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemType.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
                     }
@@ -10299,7 +10889,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");
                     }
@@ -10362,7 +10952,7 @@ any results.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10394,7 +10984,7 @@ is a file, it will not yield any results.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10464,7 +11054,7 @@ new destination file.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10495,7 +11085,7 @@ new destination file.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -10545,7 +11135,7 @@ This method does not create the actual file in the specified folder.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
                     }
@@ -10577,7 +11167,7 @@ This path is volatile and may be cleaned by the OS periodically.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
                     }
@@ -10608,7 +11198,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
                     }
@@ -10639,7 +11229,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
                     }
@@ -10670,7 +11260,7 @@ This path may or may not be directly readable or writable - it usually contains 
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
                     }
@@ -10701,7 +11291,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
                     }
@@ -10764,7 +11354,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");
                     }
@@ -10887,7 +11477,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'VideoBridge.playStream' request.");
                }
@@ -11009,7 +11599,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11038,7 +11628,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11065,7 +11655,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11094,7 +11684,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11125,7 +11715,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11154,7 +11744,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11185,7 +11775,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11264,7 +11854,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'MailBridge.sendEmail' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11311,7 +11901,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11454,7 +12044,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11485,7 +12075,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.getSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11546,7 +12136,7 @@ This path may or may not be writable by the current application.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.setSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -11589,7 +12179,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredAccelerationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.addAccelerationListener' request.");
                }
@@ -11613,7 +12203,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredAccelerationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListener' request.");
                }
@@ -11639,7 +12229,7 @@ This path may or may not be writable by the current application.
                     for (var key in keys) {
                          registeredAccelerationListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListeners' request.");
                }
@@ -11711,7 +12301,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredGeolocationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.addGeolocationListener' request.");
                }
@@ -11735,7 +12325,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredGeolocationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.removeGeolocationListener' request.");
                }
@@ -11761,7 +12351,7 @@ This path may or may not be writable by the current application.
                     for (var key in keys) {
                          registeredGeolocationListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.removeGeolocationListeners' request.");
                }
@@ -12173,7 +12763,7 @@ device.
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredButtonListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.addButtonListener' request.");
                }
@@ -12199,7 +12789,7 @@ device.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = DeviceInfo.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
                     }
@@ -12229,7 +12819,7 @@ device.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = Locale.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");
                     }
@@ -12257,7 +12847,7 @@ device.
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredButtonListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListener' request.");
                }
@@ -12283,7 +12873,7 @@ device.
                     for (var key in keys) {
                          registeredButtonListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListeners' request.");
                }
@@ -12341,7 +12931,7 @@ device.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = OSInfo.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'OSBridge.getOSInfo' incorrect response received.");
                     }
@@ -12382,7 +12972,7 @@ device.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'RuntimeBridge.dismissApplication' request.");
                }
@@ -12669,7 +13259,7 @@ device.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_message' request.");
                }
@@ -12696,7 +13286,7 @@ device.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_category_message' request.");
                }
@@ -13673,6 +14263,24 @@ device.
           static Other = new ContactAddressType("Other");
           static Unknown = new ContactAddressType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactAddressType {
+               switch(object.value) {
+                    case "Home":
+                         return ContactAddressType.Home;
+                    case "Work":
+                         return ContactAddressType.Work;
+                    case "Other":
+                         return ContactAddressType.Other;
+                    case "Unknown":
+                         return ContactAddressType.Unknown;
+                    default:
+                         return ContactAddressType.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ContactEmailType
@@ -13686,6 +14294,24 @@ device.
           static Work = new ContactEmailType("Work");
           static Other = new ContactEmailType("Other");
           static Unknown = new ContactEmailType("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactEmailType {
+               switch(object.value) {
+                    case "Personal":
+                         return ContactEmailType.Personal;
+                    case "Work":
+                         return ContactEmailType.Work;
+                    case "Other":
+                         return ContactEmailType.Other;
+                    case "Unknown":
+                         return ContactEmailType.Unknown;
+                    default:
+                         return ContactEmailType.Unknown;
+               }
+          }
 
      }
      /**
@@ -13701,6 +14327,26 @@ device.
           static Ms = new ContactPersonalInfoTitle("Ms");
           static Dr = new ContactPersonalInfoTitle("Dr");
           static Unknown = new ContactPersonalInfoTitle("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactPersonalInfoTitle {
+               switch(object.value) {
+                    case "Mr":
+                         return ContactPersonalInfoTitle.Mr;
+                    case "Mrs":
+                         return ContactPersonalInfoTitle.Mrs;
+                    case "Ms":
+                         return ContactPersonalInfoTitle.Ms;
+                    case "Dr":
+                         return ContactPersonalInfoTitle.Dr;
+                    case "Unknown":
+                         return ContactPersonalInfoTitle.Unknown;
+                    default:
+                         return ContactPersonalInfoTitle.Unknown;
+               }
+          }
 
      }
      /**
@@ -13720,6 +14366,32 @@ device.
           static Other = new ContactPhoneType("Other");
           static Unknown = new ContactPhoneType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactPhoneType {
+               switch(object.value) {
+                    case "Mobile":
+                         return ContactPhoneType.Mobile;
+                    case "Work":
+                         return ContactPhoneType.Work;
+                    case "Home":
+                         return ContactPhoneType.Home;
+                    case "Main":
+                         return ContactPhoneType.Main;
+                    case "HomeFax":
+                         return ContactPhoneType.HomeFax;
+                    case "WorkFax":
+                         return ContactPhoneType.WorkFax;
+                    case "Other":
+                         return ContactPhoneType.Other;
+                    case "Unknown":
+                         return ContactPhoneType.Unknown;
+                    default:
+                         return ContactPhoneType.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ContactSocialNetwork
@@ -13736,6 +14408,28 @@ device.
           static Flickr = new ContactSocialNetwork("Flickr");
           static Unknown = new ContactSocialNetwork("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ContactSocialNetwork {
+               switch(object.value) {
+                    case "Twitter":
+                         return ContactSocialNetwork.Twitter;
+                    case "Facebook":
+                         return ContactSocialNetwork.Facebook;
+                    case "GooglePlus":
+                         return ContactSocialNetwork.GooglePlus;
+                    case "LinkedIn":
+                         return ContactSocialNetwork.LinkedIn;
+                    case "Flickr":
+                         return ContactSocialNetwork.Flickr;
+                    case "Unknown":
+                         return ContactSocialNetwork.Unknown;
+                    default:
+                         return ContactSocialNetwork.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IAccelerationListenerError
@@ -13749,6 +14443,22 @@ device.
           static Unavailable = new IAccelerationListenerError("Unavailable");
           static Unknown = new IAccelerationListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IAccelerationListenerError {
+               switch(object.value) {
+                    case "Unauthorized":
+                         return IAccelerationListenerError.Unauthorized;
+                    case "Unavailable":
+                         return IAccelerationListenerError.Unavailable;
+                    case "Unknown":
+                         return IAccelerationListenerError.Unknown;
+                    default:
+                         return IAccelerationListenerError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IAccelerationListenerWarning
@@ -13761,6 +14471,22 @@ device.
           static NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
           static Stale = new IAccelerationListenerWarning("Stale");
           static Unknown = new IAccelerationListenerWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IAccelerationListenerWarning {
+               switch(object.value) {
+                    case "NeedsCalibration":
+                         return IAccelerationListenerWarning.NeedsCalibration;
+                    case "Stale":
+                         return IAccelerationListenerWarning.Stale;
+                    case "Unknown":
+                         return IAccelerationListenerWarning.Unknown;
+                    default:
+                         return IAccelerationListenerWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -13788,6 +14514,48 @@ device.
           static Kernel = new IAdaptiveRPGroup("Kernel");
           static Unknown = new IAdaptiveRPGroup("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IAdaptiveRPGroup {
+               switch(object.value) {
+                    case "Application":
+                         return IAdaptiveRPGroup.Application;
+                    case "Commerce":
+                         return IAdaptiveRPGroup.Commerce;
+                    case "Communication":
+                         return IAdaptiveRPGroup.Communication;
+                    case "Data":
+                         return IAdaptiveRPGroup.Data;
+                    case "Media":
+                         return IAdaptiveRPGroup.Media;
+                    case "Notification":
+                         return IAdaptiveRPGroup.Notification;
+                    case "PIM":
+                         return IAdaptiveRPGroup.PIM;
+                    case "Reader":
+                         return IAdaptiveRPGroup.Reader;
+                    case "Security":
+                         return IAdaptiveRPGroup.Security;
+                    case "Sensor":
+                         return IAdaptiveRPGroup.Sensor;
+                    case "Social":
+                         return IAdaptiveRPGroup.Social;
+                    case "System":
+                         return IAdaptiveRPGroup.System;
+                    case "UI":
+                         return IAdaptiveRPGroup.UI;
+                    case "Util":
+                         return IAdaptiveRPGroup.Util;
+                    case "Kernel":
+                         return IAdaptiveRPGroup.Kernel;
+                    case "Unknown":
+                         return IAdaptiveRPGroup.Unknown;
+                    default:
+                         return IAdaptiveRPGroup.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IButtonListenerError
@@ -13800,6 +14568,20 @@ device.
           static Not_Present = new IButtonListenerError("Not_Present");
           static Unknown = new IButtonListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IButtonListenerError {
+               switch(object.value) {
+                    case "Not_Present":
+                         return IButtonListenerError.Not_Present;
+                    case "Unknown":
+                         return IButtonListenerError.Unknown;
+                    default:
+                         return IButtonListenerError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IButtonListenerWarning
@@ -13811,6 +14593,20 @@ device.
 
           static Not_Implemented = new IButtonListenerWarning("Not_Implemented");
           static Unknown = new IButtonListenerWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IButtonListenerWarning {
+               switch(object.value) {
+                    case "Not_Implemented":
+                         return IButtonListenerWarning.Not_Implemented;
+                    case "Unknown":
+                         return IButtonListenerWarning.Unknown;
+                    default:
+                         return IButtonListenerWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -13825,6 +14621,24 @@ device.
           static BackButton = new ICapabilitiesButton("BackButton");
           static OptionButton = new ICapabilitiesButton("OptionButton");
           static Unknown = new ICapabilitiesButton("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesButton {
+               switch(object.value) {
+                    case "HomeButton":
+                         return ICapabilitiesButton.HomeButton;
+                    case "BackButton":
+                         return ICapabilitiesButton.BackButton;
+                    case "OptionButton":
+                         return ICapabilitiesButton.OptionButton;
+                    case "Unknown":
+                         return ICapabilitiesButton.Unknown;
+                    default:
+                         return ICapabilitiesButton.Unknown;
+               }
+          }
 
      }
      /**
@@ -13842,6 +14656,28 @@ device.
           static Telephony = new ICapabilitiesCommunication("Telephony");
           static Unknown = new ICapabilitiesCommunication("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesCommunication {
+               switch(object.value) {
+                    case "Calendar":
+                         return ICapabilitiesCommunication.Calendar;
+                    case "Contact":
+                         return ICapabilitiesCommunication.Contact;
+                    case "Mail":
+                         return ICapabilitiesCommunication.Mail;
+                    case "Messaging":
+                         return ICapabilitiesCommunication.Messaging;
+                    case "Telephony":
+                         return ICapabilitiesCommunication.Telephony;
+                    case "Unknown":
+                         return ICapabilitiesCommunication.Unknown;
+                    default:
+                         return ICapabilitiesCommunication.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ICapabilitiesData
@@ -13855,6 +14691,24 @@ device.
           static File = new ICapabilitiesData("File");
           static Cloud = new ICapabilitiesData("Cloud");
           static Unknown = new ICapabilitiesData("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesData {
+               switch(object.value) {
+                    case "Database":
+                         return ICapabilitiesData.Database;
+                    case "File":
+                         return ICapabilitiesData.File;
+                    case "Cloud":
+                         return ICapabilitiesData.Cloud;
+                    case "Unknown":
+                         return ICapabilitiesData.Unknown;
+                    default:
+                         return ICapabilitiesData.Unknown;
+               }
+          }
 
      }
      /**
@@ -13871,6 +14725,28 @@ device.
           static Video_Playback = new ICapabilitiesMedia("Video_Playback");
           static Video_Recording = new ICapabilitiesMedia("Video_Recording");
           static Unknown = new ICapabilitiesMedia("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesMedia {
+               switch(object.value) {
+                    case "Audio_Playback":
+                         return ICapabilitiesMedia.Audio_Playback;
+                    case "Audio_Recording":
+                         return ICapabilitiesMedia.Audio_Recording;
+                    case "Camera":
+                         return ICapabilitiesMedia.Camera;
+                    case "Video_Playback":
+                         return ICapabilitiesMedia.Video_Playback;
+                    case "Video_Recording":
+                         return ICapabilitiesMedia.Video_Recording;
+                    case "Unknown":
+                         return ICapabilitiesMedia.Unknown;
+                    default:
+                         return ICapabilitiesMedia.Unknown;
+               }
+          }
 
      }
      /**
@@ -13890,6 +14766,32 @@ device.
           static Unavailable = new ICapabilitiesNet("Unavailable");
           static Unknown = new ICapabilitiesNet("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesNet {
+               switch(object.value) {
+                    case "GSM":
+                         return ICapabilitiesNet.GSM;
+                    case "GPRS":
+                         return ICapabilitiesNet.GPRS;
+                    case "HSDPA":
+                         return ICapabilitiesNet.HSDPA;
+                    case "LTE":
+                         return ICapabilitiesNet.LTE;
+                    case "WIFI":
+                         return ICapabilitiesNet.WIFI;
+                    case "Ethernet":
+                         return ICapabilitiesNet.Ethernet;
+                    case "Unavailable":
+                         return ICapabilitiesNet.Unavailable;
+                    case "Unknown":
+                         return ICapabilitiesNet.Unknown;
+                    default:
+                         return ICapabilitiesNet.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ICapabilitiesNotification
@@ -13904,6 +14806,26 @@ device.
           static RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
           static Vibration = new ICapabilitiesNotification("Vibration");
           static Unknown = new ICapabilitiesNotification("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesNotification {
+               switch(object.value) {
+                    case "Alarm":
+                         return ICapabilitiesNotification.Alarm;
+                    case "LocalNotification":
+                         return ICapabilitiesNotification.LocalNotification;
+                    case "RemoteNotification":
+                         return ICapabilitiesNotification.RemoteNotification;
+                    case "Vibration":
+                         return ICapabilitiesNotification.Vibration;
+                    case "Unknown":
+                         return ICapabilitiesNotification.Unknown;
+                    default:
+                         return ICapabilitiesNotification.Unknown;
+               }
+          }
 
      }
      /**
@@ -13922,6 +14844,32 @@ device.
           static Magnetometer = new ICapabilitiesSensor("Magnetometer");
           static Proximity = new ICapabilitiesSensor("Proximity");
           static Unknown = new ICapabilitiesSensor("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesSensor {
+               switch(object.value) {
+                    case "Accelerometer":
+                         return ICapabilitiesSensor.Accelerometer;
+                    case "AmbientLight":
+                         return ICapabilitiesSensor.AmbientLight;
+                    case "Barometer":
+                         return ICapabilitiesSensor.Barometer;
+                    case "Geolocation":
+                         return ICapabilitiesSensor.Geolocation;
+                    case "Gyroscope":
+                         return ICapabilitiesSensor.Gyroscope;
+                    case "Magnetometer":
+                         return ICapabilitiesSensor.Magnetometer;
+                    case "Proximity":
+                         return ICapabilitiesSensor.Proximity;
+                    case "Unknown":
+                         return ICapabilitiesSensor.Unknown;
+                    default:
+                         return ICapabilitiesSensor.Unknown;
+               }
+          }
 
      }
      /**
@@ -13942,6 +14890,34 @@ device.
           static TAGS = new IContactFieldGroup("TAGS");
           static Unknown = new IContactFieldGroup("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactFieldGroup {
+               switch(object.value) {
+                    case "PERSONAL_INFO":
+                         return IContactFieldGroup.PERSONAL_INFO;
+                    case "PROFESSIONAL_INFO":
+                         return IContactFieldGroup.PROFESSIONAL_INFO;
+                    case "ADDRESSES":
+                         return IContactFieldGroup.ADDRESSES;
+                    case "PHONES":
+                         return IContactFieldGroup.PHONES;
+                    case "EMAILS":
+                         return IContactFieldGroup.EMAILS;
+                    case "WEBSITES":
+                         return IContactFieldGroup.WEBSITES;
+                    case "SOCIALS":
+                         return IContactFieldGroup.SOCIALS;
+                    case "TAGS":
+                         return IContactFieldGroup.TAGS;
+                    case "Unknown":
+                         return IContactFieldGroup.Unknown;
+                    default:
+                         return IContactFieldGroup.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IContactFilter
@@ -13955,6 +14931,24 @@ device.
           static HAS_EMAIL = new IContactFilter("HAS_EMAIL");
           static HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
           static Unknown = new IContactFilter("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactFilter {
+               switch(object.value) {
+                    case "HAS_PHONE":
+                         return IContactFilter.HAS_PHONE;
+                    case "HAS_EMAIL":
+                         return IContactFilter.HAS_EMAIL;
+                    case "HAS_ADDRESS":
+                         return IContactFilter.HAS_ADDRESS;
+                    case "Unknown":
+                         return IContactFilter.Unknown;
+                    default:
+                         return IContactFilter.Unknown;
+               }
+          }
 
      }
      /**
@@ -13970,6 +14964,24 @@ device.
           static No_Photo = new IContactPhotoResultCallbackError("No_Photo");
           static Unknown = new IContactPhotoResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactPhotoResultCallbackError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return IContactPhotoResultCallbackError.NoPermission;
+                    case "Wrong_Params":
+                         return IContactPhotoResultCallbackError.Wrong_Params;
+                    case "No_Photo":
+                         return IContactPhotoResultCallbackError.No_Photo;
+                    case "Unknown":
+                         return IContactPhotoResultCallbackError.Unknown;
+                    default:
+                         return IContactPhotoResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IContactPhotoResultCallbackWarning
@@ -13982,6 +14994,22 @@ device.
           static LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
           static No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
           static Unknown = new IContactPhotoResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactPhotoResultCallbackWarning {
+               switch(object.value) {
+                    case "LimitExceeded":
+                         return IContactPhotoResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                         return IContactPhotoResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                         return IContactPhotoResultCallbackWarning.Unknown;
+                    default:
+                         return IContactPhotoResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -13996,6 +15024,22 @@ device.
           static Wrong_Params = new IContactResultCallbackError("Wrong_Params");
           static Unknown = new IContactResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactResultCallbackError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return IContactResultCallbackError.NoPermission;
+                    case "Wrong_Params":
+                         return IContactResultCallbackError.Wrong_Params;
+                    case "Unknown":
+                         return IContactResultCallbackError.Unknown;
+                    default:
+                         return IContactResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IContactResultCallbackWarning
@@ -14008,6 +15052,22 @@ device.
           static LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
           static No_Matches = new IContactResultCallbackWarning("No_Matches");
           static Unknown = new IContactResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactResultCallbackWarning {
+               switch(object.value) {
+                    case "LimitExceeded":
+                         return IContactResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                         return IContactResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                         return IContactResultCallbackWarning.Unknown;
+                    default:
+                         return IContactResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14023,6 +15083,24 @@ device.
           static NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
           static Unknown = new IDatabaseResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseResultCallbackError {
+               switch(object.value) {
+                    case "NoSpace":
+                         return IDatabaseResultCallbackError.NoSpace;
+                    case "SqlException":
+                         return IDatabaseResultCallbackError.SqlException;
+                    case "NotDeleted":
+                         return IDatabaseResultCallbackError.NotDeleted;
+                    case "Unknown":
+                         return IDatabaseResultCallbackError.Unknown;
+                    default:
+                         return IDatabaseResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IDatabaseResultCallbackWarning
@@ -14035,6 +15113,22 @@ device.
           static DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
           static IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
           static Unknown = new IDatabaseResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseResultCallbackWarning {
+               switch(object.value) {
+                    case "DatabaseExists":
+                         return IDatabaseResultCallbackWarning.DatabaseExists;
+                    case "IsOpen":
+                         return IDatabaseResultCallbackWarning.IsOpen;
+                    case "Unknown":
+                         return IDatabaseResultCallbackWarning.Unknown;
+                    default:
+                         return IDatabaseResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14052,6 +15146,28 @@ device.
           static NoTableFound = new IDatabaseTableResultCallbackError("NoTableFound");
           static Unknown = new IDatabaseTableResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseTableResultCallbackError {
+               switch(object.value) {
+                    case "NoSpace":
+                         return IDatabaseTableResultCallbackError.NoSpace;
+                    case "ReadOnlyTable":
+                         return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                    case "SqlException":
+                         return IDatabaseTableResultCallbackError.SqlException;
+                    case "DatabaseNotFound":
+                         return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                    case "NoTableFound":
+                         return IDatabaseTableResultCallbackError.NoTableFound;
+                    case "Unknown":
+                         return IDatabaseTableResultCallbackError.Unknown;
+                    default:
+                         return IDatabaseTableResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IDatabaseTableResultCallbackWarning
@@ -14065,6 +15181,24 @@ device.
           static TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
           static NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
           static Unknown = new IDatabaseTableResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseTableResultCallbackWarning {
+               switch(object.value) {
+                    case "TableExists":
+                         return IDatabaseTableResultCallbackWarning.TableExists;
+                    case "TableLocked":
+                         return IDatabaseTableResultCallbackWarning.TableLocked;
+                    case "NoResults":
+                         return IDatabaseTableResultCallbackWarning.NoResults;
+                    case "Unknown":
+                         return IDatabaseTableResultCallbackWarning.Unknown;
+                    default:
+                         return IDatabaseTableResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14080,6 +15214,24 @@ device.
           static Unauthorized = new IFileDataLoadResultCallbackError("Unauthorized");
           static Unknown = new IFileDataLoadResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataLoadResultCallbackError {
+               switch(object.value) {
+                    case "InexistentFile":
+                         return IFileDataLoadResultCallbackError.InexistentFile;
+                    case "InsufficientSpace":
+                         return IFileDataLoadResultCallbackError.InsufficientSpace;
+                    case "Unauthorized":
+                         return IFileDataLoadResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileDataLoadResultCallbackError.Unknown;
+                    default:
+                         return IFileDataLoadResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IFileDataLoadResultCallbackWarning
@@ -14091,6 +15243,20 @@ device.
 
           static ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
           static Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataLoadResultCallbackWarning {
+               switch(object.value) {
+                    case "ExceedMaximumSize":
+                         return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                    case "Unknown":
+                         return IFileDataLoadResultCallbackWarning.Unknown;
+                    default:
+                         return IFileDataLoadResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14106,6 +15272,24 @@ device.
           static Unauthorized = new IFileDataStoreResultCallbackError("Unauthorized");
           static Unknown = new IFileDataStoreResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataStoreResultCallbackError {
+               switch(object.value) {
+                    case "InexistentFile":
+                         return IFileDataStoreResultCallbackError.InexistentFile;
+                    case "InsufficientSpace":
+                         return IFileDataStoreResultCallbackError.InsufficientSpace;
+                    case "Unauthorized":
+                         return IFileDataStoreResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileDataStoreResultCallbackError.Unknown;
+                    default:
+                         return IFileDataStoreResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IFileDataStoreResultCallbackWarning
@@ -14117,6 +15301,20 @@ device.
 
           static ExceedMaximumSize = new IFileDataStoreResultCallbackWarning("ExceedMaximumSize");
           static Unknown = new IFileDataStoreResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataStoreResultCallbackWarning {
+               switch(object.value) {
+                    case "ExceedMaximumSize":
+                         return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
+                    case "Unknown":
+                         return IFileDataStoreResultCallbackWarning.Unknown;
+                    default:
+                         return IFileDataStoreResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14131,6 +15329,22 @@ device.
           static Unauthorized = new IFileListResultCallbackError("Unauthorized");
           static Unknown = new IFileListResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileListResultCallbackError {
+               switch(object.value) {
+                    case "InexistentFile":
+                         return IFileListResultCallbackError.InexistentFile;
+                    case "Unauthorized":
+                         return IFileListResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileListResultCallbackError.Unknown;
+                    default:
+                         return IFileListResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IFileListResultCallbackWarning
@@ -14142,6 +15356,20 @@ device.
 
           static PartialResult = new IFileListResultCallbackWarning("PartialResult");
           static Unknown = new IFileListResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileListResultCallbackWarning {
+               switch(object.value) {
+                    case "PartialResult":
+                         return IFileListResultCallbackWarning.PartialResult;
+                    case "Unknown":
+                         return IFileListResultCallbackWarning.Unknown;
+                    default:
+                         return IFileListResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14159,6 +15387,28 @@ device.
           static Unauthorized = new IFileResultCallbackError("Unauthorized");
           static Unknown = new IFileResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileResultCallbackError {
+               switch(object.value) {
+                    case "FileExists":
+                         return IFileResultCallbackError.FileExists;
+                    case "SourceInexistent":
+                         return IFileResultCallbackError.SourceInexistent;
+                    case "DestionationExists":
+                         return IFileResultCallbackError.DestionationExists;
+                    case "InsufficientSpace":
+                         return IFileResultCallbackError.InsufficientSpace;
+                    case "Unauthorized":
+                         return IFileResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileResultCallbackError.Unknown;
+                    default:
+                         return IFileResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IFileResultCallbackWarning
@@ -14171,6 +15421,22 @@ device.
           static SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
           static RootDirectory = new IFileResultCallbackWarning("RootDirectory");
           static Unknown = new IFileResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileResultCallbackWarning {
+               switch(object.value) {
+                    case "SourceNotDeleted":
+                         return IFileResultCallbackWarning.SourceNotDeleted;
+                    case "RootDirectory":
+                         return IFileResultCallbackWarning.RootDirectory;
+                    case "Unknown":
+                         return IFileResultCallbackWarning.Unknown;
+                    default:
+                         return IFileResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14185,6 +15451,24 @@ device.
           static Protected = new IFileSystemSecurity("Protected");
           static Encrypted = new IFileSystemSecurity("Encrypted");
           static Unknown = new IFileSystemSecurity("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileSystemSecurity {
+               switch(object.value) {
+                    case "Default":
+                         return IFileSystemSecurity.Default;
+                    case "Protected":
+                         return IFileSystemSecurity.Protected;
+                    case "Encrypted":
+                         return IFileSystemSecurity.Encrypted;
+                    case "Unknown":
+                         return IFileSystemSecurity.Unknown;
+                    default:
+                         return IFileSystemSecurity.Unknown;
+               }
+          }
 
      }
      /**
@@ -14203,6 +15487,30 @@ device.
           static External = new IFileSystemStorageType("External");
           static Unknown = new IFileSystemStorageType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileSystemStorageType {
+               switch(object.value) {
+                    case "Application":
+                         return IFileSystemStorageType.Application;
+                    case "Document":
+                         return IFileSystemStorageType.Document;
+                    case "Cloud":
+                         return IFileSystemStorageType.Cloud;
+                    case "Protected":
+                         return IFileSystemStorageType.Protected;
+                    case "Cache":
+                         return IFileSystemStorageType.Cache;
+                    case "External":
+                         return IFileSystemStorageType.External;
+                    case "Unknown":
+                         return IFileSystemStorageType.Unknown;
+                    default:
+                         return IFileSystemStorageType.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IFileSystemType
@@ -14215,6 +15523,22 @@ device.
           static Directory = new IFileSystemType("Directory");
           static File = new IFileSystemType("File");
           static Unknown = new IFileSystemType("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileSystemType {
+               switch(object.value) {
+                    case "Directory":
+                         return IFileSystemType.Directory;
+                    case "File":
+                         return IFileSystemType.File;
+                    case "Unknown":
+                         return IFileSystemType.Unknown;
+                    default:
+                         return IFileSystemType.Unknown;
+               }
+          }
 
      }
      /**
@@ -14231,6 +15555,26 @@ device.
           static StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
           static Unknown = new IGeolocationListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IGeolocationListenerError {
+               switch(object.value) {
+                    case "Disabled":
+                         return IGeolocationListenerError.Disabled;
+                    case "RestrictedAccess":
+                         return IGeolocationListenerError.RestrictedAccess;
+                    case "DeniedAccess":
+                         return IGeolocationListenerError.DeniedAccess;
+                    case "StatusNotDetermined":
+                         return IGeolocationListenerError.StatusNotDetermined;
+                    case "Unknown":
+                         return IGeolocationListenerError.Unknown;
+                    default:
+                         return IGeolocationListenerError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IGeolocationListenerWarning
@@ -14243,6 +15587,22 @@ device.
           static HighDoP = new IGeolocationListenerWarning("HighDoP");
           static StaleData = new IGeolocationListenerWarning("StaleData");
           static Unknown = new IGeolocationListenerWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IGeolocationListenerWarning {
+               switch(object.value) {
+                    case "HighDoP":
+                         return IGeolocationListenerWarning.HighDoP;
+                    case "StaleData":
+                         return IGeolocationListenerWarning.StaleData;
+                    case "Unknown":
+                         return IGeolocationListenerWarning.Unknown;
+                    default:
+                         return IGeolocationListenerWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14258,6 +15618,24 @@ device.
           static Killed = new ILifecycleListenerError("Killed");
           static Unknown = new ILifecycleListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ILifecycleListenerError {
+               switch(object.value) {
+                    case "Runtime":
+                         return ILifecycleListenerError.Runtime;
+                    case "Implementation":
+                         return ILifecycleListenerError.Implementation;
+                    case "Killed":
+                         return ILifecycleListenerError.Killed;
+                    case "Unknown":
+                         return ILifecycleListenerError.Unknown;
+                    default:
+                         return ILifecycleListenerError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ILifecycleListenerWarning
@@ -14270,6 +15648,22 @@ device.
           static MemoryLow = new ILifecycleListenerWarning("MemoryLow");
           static BatteryLow = new ILifecycleListenerWarning("BatteryLow");
           static Unknown = new ILifecycleListenerWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ILifecycleListenerWarning {
+               switch(object.value) {
+                    case "MemoryLow":
+                         return ILifecycleListenerWarning.MemoryLow;
+                    case "BatteryLow":
+                         return ILifecycleListenerWarning.BatteryLow;
+                    case "Unknown":
+                         return ILifecycleListenerWarning.Unknown;
+                    default:
+                         return ILifecycleListenerWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14285,6 +15679,26 @@ device.
           static ERROR = new ILoggingLogLevel("ERROR");
           static INFO = new ILoggingLogLevel("INFO");
           static Unknown = new ILoggingLogLevel("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ILoggingLogLevel {
+               switch(object.value) {
+                    case "DEBUG":
+                         return ILoggingLogLevel.DEBUG;
+                    case "WARN":
+                         return ILoggingLogLevel.WARN;
+                    case "ERROR":
+                         return ILoggingLogLevel.ERROR;
+                    case "INFO":
+                         return ILoggingLogLevel.INFO;
+                    case "Unknown":
+                         return ILoggingLogLevel.Unknown;
+                    default:
+                         return ILoggingLogLevel.Unknown;
+               }
+          }
 
      }
      /**
@@ -14302,6 +15716,28 @@ device.
           static NotSupported = new IMessagingCallbackError("NotSupported");
           static Unknown = new IMessagingCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IMessagingCallbackError {
+               switch(object.value) {
+                    case "SIMNotPresent":
+                         return IMessagingCallbackError.SIMNotPresent;
+                    case "EmailAccountNotFound":
+                         return IMessagingCallbackError.EmailAccountNotFound;
+                    case "NotSent":
+                         return IMessagingCallbackError.NotSent;
+                    case "WrongParams":
+                         return IMessagingCallbackError.WrongParams;
+                    case "NotSupported":
+                         return IMessagingCallbackError.NotSupported;
+                    case "Unknown":
+                         return IMessagingCallbackError.Unknown;
+                    default:
+                         return IMessagingCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IMessagingCallbackWarning
@@ -14314,6 +15750,22 @@ device.
           static UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
           static UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
           static Unknown = new IMessagingCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IMessagingCallbackWarning {
+               switch(object.value) {
+                    case "UnableToSentAll":
+                         return IMessagingCallbackWarning.UnableToSentAll;
+                    case "UnableToFetchAttachment":
+                         return IMessagingCallbackWarning.UnableToFetchAttachment;
+                    case "Unknown":
+                         return IMessagingCallbackWarning.Unknown;
+                    default:
+                         return IMessagingCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14337,6 +15789,40 @@ device.
           static DomainUnresolvable = new INetworkReachabilityCallbackError("DomainUnresolvable");
           static Unknown = new INetworkReachabilityCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkReachabilityCallbackError {
+               switch(object.value) {
+                    case "Forbidden":
+                         return INetworkReachabilityCallbackError.Forbidden;
+                    case "NotFound":
+                         return INetworkReachabilityCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                         return INetworkReachabilityCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                         return INetworkReachabilityCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                         return INetworkReachabilityCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                         return INetworkReachabilityCallbackError.TimeOut;
+                    case "NoResponse":
+                         return INetworkReachabilityCallbackError.NoResponse;
+                    case "Unreachable":
+                         return INetworkReachabilityCallbackError.Unreachable;
+                    case "Wrong_Params":
+                         return INetworkReachabilityCallbackError.Wrong_Params;
+                    case "MalformedUrl":
+                         return INetworkReachabilityCallbackError.MalformedUrl;
+                    case "DomainUnresolvable":
+                         return INetworkReachabilityCallbackError.DomainUnresolvable;
+                    case "Unknown":
+                         return INetworkReachabilityCallbackError.Unknown;
+                    default:
+                         return INetworkReachabilityCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration INetworkReachabilityCallbackWarning
@@ -14353,6 +15839,28 @@ device.
           static NotRegisteredService = new INetworkReachabilityCallbackWarning("NotRegisteredService");
           static Unknown = new INetworkReachabilityCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkReachabilityCallbackWarning {
+               switch(object.value) {
+                    case "IncorrectScheme":
+                         return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                    case "NotSecure":
+                         return INetworkReachabilityCallbackWarning.NotSecure;
+                    case "NotTrusted":
+                         return INetworkReachabilityCallbackWarning.NotTrusted;
+                    case "Redirected":
+                         return INetworkReachabilityCallbackWarning.Redirected;
+                    case "NotRegisteredService":
+                         return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                    case "Unknown":
+                         return INetworkReachabilityCallbackWarning.Unknown;
+                    default:
+                         return INetworkReachabilityCallbackWarning.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration INetworkStatusListenerError
@@ -14366,6 +15874,22 @@ device.
           static Unreachable = new INetworkStatusListenerError("Unreachable");
           static Unknown = new INetworkStatusListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkStatusListenerError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return INetworkStatusListenerError.NoPermission;
+                    case "Unreachable":
+                         return INetworkStatusListenerError.Unreachable;
+                    case "Unknown":
+                         return INetworkStatusListenerError.Unknown;
+                    default:
+                         return INetworkStatusListenerError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration INetworkStatusListenerWarning
@@ -14378,6 +15902,22 @@ device.
           static IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
           static IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
           static Unknown = new INetworkStatusListenerWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkStatusListenerWarning {
+               switch(object.value) {
+                    case "IpAddressNotAssigned":
+                         return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                    case "IpAddressChanged":
+                         return INetworkStatusListenerWarning.IpAddressChanged;
+                    case "Unknown":
+                         return INetworkStatusListenerWarning.Unknown;
+                    default:
+                         return INetworkStatusListenerWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14401,6 +15941,40 @@ device.
           static Unspecified = new IOSType("Unspecified");
           static Unknown = new IOSType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IOSType {
+               switch(object.value) {
+                    case "iOS":
+                         return IOSType.iOS;
+                    case "OSX":
+                         return IOSType.OSX;
+                    case "Windows":
+                         return IOSType.Windows;
+                    case "WindowsPhone":
+                         return IOSType.WindowsPhone;
+                    case "Android":
+                         return IOSType.Android;
+                    case "Linux":
+                         return IOSType.Linux;
+                    case "Blackberry":
+                         return IOSType.Blackberry;
+                    case "Tizen":
+                         return IOSType.Tizen;
+                    case "FirefoxOS":
+                         return IOSType.FirefoxOS;
+                    case "Chromium":
+                         return IOSType.Chromium;
+                    case "Unspecified":
+                         return IOSType.Unspecified;
+                    case "Unknown":
+                         return IOSType.Unknown;
+                    default:
+                         return IOSType.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ISecurityResultCallbackError
@@ -14414,6 +15988,22 @@ device.
           static NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
           static Unknown = new ISecurityResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ISecurityResultCallbackError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return ISecurityResultCallbackError.NoPermission;
+                    case "NoMatchesFound":
+                         return ISecurityResultCallbackError.NoMatchesFound;
+                    case "Unknown":
+                         return ISecurityResultCallbackError.Unknown;
+                    default:
+                         return ISecurityResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ISecurityResultCallbackWarning
@@ -14425,6 +16015,20 @@ device.
 
           static EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
           static Unknown = new ISecurityResultCallbackWarning("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ISecurityResultCallbackWarning {
+               switch(object.value) {
+                    case "EntryOverride":
+                         return ISecurityResultCallbackWarning.EntryOverride;
+                    case "Unknown":
+                         return ISecurityResultCallbackWarning.Unknown;
+                    default:
+                         return ISecurityResultCallbackWarning.Unknown;
+               }
+          }
 
      }
      /**
@@ -14439,6 +16043,22 @@ device.
           static HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
           static Unknown = new IServiceProtocolVersion("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceProtocolVersion {
+               switch(object.value) {
+                    case "HttpProtocolVersion10":
+                         return IServiceProtocolVersion.HttpProtocolVersion10;
+                    case "HttpProtocolVersion11":
+                         return IServiceProtocolVersion.HttpProtocolVersion11;
+                    case "Unknown":
+                         return IServiceProtocolVersion.Unknown;
+                    default:
+                         return IServiceProtocolVersion.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IServiceMethod
@@ -14451,6 +16071,22 @@ device.
           static Post = new IServiceMethod("Post");
           static Get = new IServiceMethod("Get");
           static Unknown = new IServiceMethod("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceMethod {
+               switch(object.value) {
+                    case "Post":
+                         return IServiceMethod.Post;
+                    case "Get":
+                         return IServiceMethod.Get;
+                    case "Unknown":
+                         return IServiceMethod.Unknown;
+                    default:
+                         return IServiceMethod.Unknown;
+               }
+          }
 
      }
      /**
@@ -14472,6 +16108,38 @@ device.
           static ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
           static ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
           static Unknown = new IServiceType("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceType {
+               switch(object.value) {
+                    case "ServiceTypeAmfSerialization":
+                         return IServiceType.ServiceTypeAmfSerialization;
+                    case "ServiceTypeGwtRpc":
+                         return IServiceType.ServiceTypeGwtRpc;
+                    case "ServiceTypeOctetBinary":
+                         return IServiceType.ServiceTypeOctetBinary;
+                    case "ServiceTypeRemotingSerialization":
+                         return IServiceType.ServiceTypeRemotingSerialization;
+                    case "ServiceTypeRestJson":
+                         return IServiceType.ServiceTypeRestJson;
+                    case "ServiceTypeRestXml":
+                         return IServiceType.ServiceTypeRestXml;
+                    case "ServiceTypeSoapJson":
+                         return IServiceType.ServiceTypeSoapJson;
+                    case "ServiceTypeSoapXml":
+                         return IServiceType.ServiceTypeSoapXml;
+                    case "ServiceTypeXmlRpcJson":
+                         return IServiceType.ServiceTypeXmlRpcJson;
+                    case "ServiceTypeXmlRpcXml":
+                         return IServiceType.ServiceTypeXmlRpcXml;
+                    case "Unknown":
+                         return IServiceType.Unknown;
+                    default:
+                         return IServiceType.Unknown;
+               }
+          }
 
      }
      /**
@@ -14495,6 +16163,40 @@ device.
           static NotRegisteredService = new IServiceResultCallbackError("NotRegisteredService");
           static Unknown = new IServiceResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceResultCallbackError {
+               switch(object.value) {
+                    case "Forbidden":
+                         return IServiceResultCallbackError.Forbidden;
+                    case "NotFound":
+                         return IServiceResultCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                         return IServiceResultCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                         return IServiceResultCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                         return IServiceResultCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                         return IServiceResultCallbackError.TimeOut;
+                    case "NoResponse":
+                         return IServiceResultCallbackError.NoResponse;
+                    case "ServerError":
+                         return IServiceResultCallbackError.ServerError;
+                    case "Unreachable":
+                         return IServiceResultCallbackError.Unreachable;
+                    case "MalformedUrl":
+                         return IServiceResultCallbackError.MalformedUrl;
+                    case "NotRegisteredService":
+                         return IServiceResultCallbackError.NotRegisteredService;
+                    case "Unknown":
+                         return IServiceResultCallbackError.Unknown;
+                    default:
+                         return IServiceResultCallbackError.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration IServiceResultCallbackWarning
@@ -14510,6 +16212,26 @@ device.
           static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
           static Unknown = new IServiceResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceResultCallbackWarning {
+               switch(object.value) {
+                    case "NotSecure":
+                         return IServiceResultCallbackWarning.NotSecure;
+                    case "NotTrusted":
+                         return IServiceResultCallbackWarning.NotTrusted;
+                    case "Redirected":
+                         return IServiceResultCallbackWarning.Redirected;
+                    case "Wrong_Params":
+                         return IServiceResultCallbackWarning.Wrong_Params;
+                    case "Unknown":
+                         return IServiceResultCallbackWarning.Unknown;
+                    default:
+                         return IServiceResultCallbackWarning.Unknown;
+               }
+          }
+
      }
      /**
         Enumeration ITelephonyStatus
@@ -14522,6 +16244,22 @@ device.
           static Dialing = new ITelephonyStatus("Dialing");
           static Failed = new ITelephonyStatus("Failed");
           static Unknown = new ITelephonyStatus("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ITelephonyStatus {
+               switch(object.value) {
+                    case "Dialing":
+                         return ITelephonyStatus.Dialing;
+                    case "Failed":
+                         return ITelephonyStatus.Failed;
+                    case "Unknown":
+                         return ITelephonyStatus.Unknown;
+                    default:
+                         return ITelephonyStatus.Unknown;
+               }
+          }
 
      }
      /**
@@ -14541,6 +16279,34 @@ device.
           static Resuming = new LifecycleState("Resuming");
           static Stopping = new LifecycleState("Stopping");
           static Unknown = new LifecycleState("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : LifecycleState {
+               switch(object.value) {
+                    case "Starting":
+                         return LifecycleState.Starting;
+                    case "Started":
+                         return LifecycleState.Started;
+                    case "Running":
+                         return LifecycleState.Running;
+                    case "Pausing":
+                         return LifecycleState.Pausing;
+                    case "PausedIdle":
+                         return LifecycleState.PausedIdle;
+                    case "PausedRun":
+                         return LifecycleState.PausedRun;
+                    case "Resuming":
+                         return LifecycleState.Resuming;
+                    case "Stopping":
+                         return LifecycleState.Stopping;
+                    case "Unknown":
+                         return LifecycleState.Unknown;
+                    default:
+                         return LifecycleState.Unknown;
+               }
+          }
 
      }
 

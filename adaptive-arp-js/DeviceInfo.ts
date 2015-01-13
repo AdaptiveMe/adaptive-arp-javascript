@@ -157,6 +157,20 @@ be unique for a specific instance of an application on a specific device.
                this.vendor = vendor;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : DeviceInfo {
+               var result : DeviceInfo = new DeviceInfo(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.model = object.model;
+               result.vendor = object.vendor;
+               result.uuid = object.uuid;
+
+               return result;
+          }
 
      }
 }

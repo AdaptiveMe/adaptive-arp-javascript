@@ -238,6 +238,35 @@ module Adaptive {
                this.toRecipients = toRecipients;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Email {
+               var result : Email = new Email(null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.toRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.toRecipients) {
+                    result.toRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.ccRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.ccRecipients) {
+                    result.ccRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.bccRecipients = new Array<EmailAddress>();
+               for(var __value__ in object.bccRecipients) {
+                    result.bccRecipients.push(EmailAddress.toObject(__value__));
+               }
+               result.emailAttachmentData = new Array<EmailAttachmentData>();
+               for(var __value__ in object.emailAttachmentData) {
+                    result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+               }
+               result.messageBody = object.messageBody;
+               result.messageBodyMimeType = object.messageBodyMimeType;
+               result.subject = object.subject;
+
+               return result;
+          }
 
      }
 }

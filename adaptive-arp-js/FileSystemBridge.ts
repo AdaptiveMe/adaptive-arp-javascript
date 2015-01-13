@@ -81,7 +81,7 @@ This method does not create the actual file in the specified folder.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
                     }
@@ -113,7 +113,7 @@ This path is volatile and may be cleaned by the OS periodically.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
                     }
@@ -144,7 +144,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
                     }
@@ -175,7 +175,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
                     }
@@ -206,7 +206,7 @@ This path may or may not be directly readable or writable - it usually contains 
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
                     }
@@ -237,7 +237,7 @@ This path must always be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
                     }
@@ -300,7 +300,7 @@ This path may or may not be writable by the current application.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");
                     }

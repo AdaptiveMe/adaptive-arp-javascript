@@ -142,5 +142,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setSize(size: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): EmailAttachmentData;
     }
 }

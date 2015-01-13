@@ -106,6 +106,18 @@ module Adaptive {
                this.keyValue = keyValue;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : KeyPair {
+               var result : KeyPair = new KeyPair(null, null);
+
+               // Assign values to bean fields.
+               result.keyName = object.keyName;
+               result.keyValue = object.keyValue;
+
+               return result;
+          }
 
      }
 }

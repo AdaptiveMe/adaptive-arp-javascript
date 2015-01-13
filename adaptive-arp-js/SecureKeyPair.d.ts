@@ -85,5 +85,9 @@ declare module Adaptive {
            @since ARP 1.0
         */
         setSecureKey(secureKey: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): SecureKeyPair;
     }
 }

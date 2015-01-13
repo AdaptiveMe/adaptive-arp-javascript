@@ -45,5 +45,9 @@ declare module Adaptive {
         static Messaging: ICapabilitiesCommunication;
         static Telephony: ICapabilitiesCommunication;
         static Unknown: ICapabilitiesCommunication;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesCommunication;
     }
 }

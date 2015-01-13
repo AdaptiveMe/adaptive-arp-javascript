@@ -85,5 +85,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setKeyValue(keyValue: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): KeyPair;
     }
 }

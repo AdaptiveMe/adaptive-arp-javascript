@@ -47,5 +47,23 @@ module Adaptive {
           static OptionButton = new ICapabilitiesButton("OptionButton");
           static Unknown = new ICapabilitiesButton("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesButton {
+               switch(object.value) {
+                    case "HomeButton":
+                         return ICapabilitiesButton.HomeButton;
+                    case "BackButton":
+                         return ICapabilitiesButton.BackButton;
+                    case "OptionButton":
+                         return ICapabilitiesButton.OptionButton;
+                    case "Unknown":
+                         return ICapabilitiesButton.Unknown;
+                    default:
+                         return ICapabilitiesButton.Unknown;
+               }
+          }
+
      }
 }

@@ -42,5 +42,9 @@ declare module Adaptive {
         static NoPermission: INetworkStatusListenerError;
         static Unreachable: INetworkStatusListenerError;
         static Unknown: INetworkStatusListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerError;
     }
 }

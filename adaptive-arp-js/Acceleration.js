@@ -137,6 +137,18 @@ var Adaptive;
         Acceleration.prototype.setZ = function (z) {
             this.z = z;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Acceleration.toObject = function (object) {
+            var result = new Acceleration(null, null, null, null);
+            // Assign values to bean fields.
+            result.x = object.x;
+            result.y = object.y;
+            result.z = object.z;
+            result.timestamp = object.timestamp;
+            return result;
+        };
         return Acceleration;
     })(Adaptive.APIBean);
     Adaptive.Acceleration = Acceleration;

@@ -42,5 +42,9 @@ declare module Adaptive {
         static Dialing: ITelephonyStatus;
         static Failed: ITelephonyStatus;
         static Unknown: ITelephonyStatus;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ITelephonyStatus;
     }
 }

@@ -46,5 +46,21 @@ module Adaptive {
           static NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
           static Unknown = new ISecurityResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ISecurityResultCallbackError {
+               switch(object.value) {
+                    case "NoPermission":
+                         return ISecurityResultCallbackError.NoPermission;
+                    case "NoMatchesFound":
+                         return ISecurityResultCallbackError.NoMatchesFound;
+                    case "Unknown":
+                         return ISecurityResultCallbackError.Unknown;
+                    default:
+                         return ISecurityResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

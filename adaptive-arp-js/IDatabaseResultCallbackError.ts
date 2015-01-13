@@ -47,5 +47,23 @@ module Adaptive {
           static NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
           static Unknown = new IDatabaseResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseResultCallbackError {
+               switch(object.value) {
+                    case "NoSpace":
+                         return IDatabaseResultCallbackError.NoSpace;
+                    case "SqlException":
+                         return IDatabaseResultCallbackError.SqlException;
+                    case "NotDeleted":
+                         return IDatabaseResultCallbackError.NotDeleted;
+                    case "Unknown":
+                         return IDatabaseResultCallbackError.Unknown;
+                    default:
+                         return IDatabaseResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

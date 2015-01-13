@@ -184,6 +184,21 @@ module Adaptive {
                this.scheme = scheme;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceEndpoint {
+               var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.host = object.host;
+               result.path = object.path;
+               result.port = object.port;
+               result.proxy = object.proxy;
+               result.scheme = object.scheme;
+
+               return result;
+          }
 
      }
 }

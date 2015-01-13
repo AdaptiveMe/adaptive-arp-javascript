@@ -41,5 +41,9 @@ declare module Adaptive {
         toString(): string;
         static EntryOverride: ISecurityResultCallbackWarning;
         static Unknown: ISecurityResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ISecurityResultCallbackWarning;
     }
 }

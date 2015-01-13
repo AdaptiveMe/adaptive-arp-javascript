@@ -43,6 +43,21 @@ var Adaptive;
         IMessagingCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IMessagingCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "UnableToSentAll":
+                    return IMessagingCallbackWarning.UnableToSentAll;
+                case "UnableToFetchAttachment":
+                    return IMessagingCallbackWarning.UnableToFetchAttachment;
+                case "Unknown":
+                    return IMessagingCallbackWarning.Unknown;
+                default:
+                    return IMessagingCallbackWarning.Unknown;
+            }
+        };
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
         IMessagingCallbackWarning.UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
         IMessagingCallbackWarning.Unknown = new IMessagingCallbackWarning("Unknown");

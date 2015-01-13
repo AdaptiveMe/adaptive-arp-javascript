@@ -106,6 +106,18 @@ module Adaptive {
                this.secureKey = secureKey;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : SecureKeyPair {
+               var result : SecureKeyPair = new SecureKeyPair(null, null);
+
+               // Assign values to bean fields.
+               result.secureKey = object.secureKey;
+               result.secureData = object.secureData;
+
+               return result;
+          }
 
      }
 }

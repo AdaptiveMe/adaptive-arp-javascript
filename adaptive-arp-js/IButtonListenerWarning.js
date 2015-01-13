@@ -43,6 +43,19 @@ var Adaptive;
         IButtonListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IButtonListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "Not_Implemented":
+                    return IButtonListenerWarning.Not_Implemented;
+                case "Unknown":
+                    return IButtonListenerWarning.Unknown;
+                default:
+                    return IButtonListenerWarning.Unknown;
+            }
+        };
         IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
         IButtonListenerWarning.Unknown = new IButtonListenerWarning("Unknown");
         return IButtonListenerWarning;

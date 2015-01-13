@@ -47,5 +47,23 @@ module Adaptive {
           static NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
           static Unknown = new IDatabaseTableResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseTableResultCallbackWarning {
+               switch(object.value) {
+                    case "TableExists":
+                         return IDatabaseTableResultCallbackWarning.TableExists;
+                    case "TableLocked":
+                         return IDatabaseTableResultCallbackWarning.TableLocked;
+                    case "NoResults":
+                         return IDatabaseTableResultCallbackWarning.NoResults;
+                    case "Unknown":
+                         return IDatabaseTableResultCallbackWarning.Unknown;
+                    default:
+                         return IDatabaseTableResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

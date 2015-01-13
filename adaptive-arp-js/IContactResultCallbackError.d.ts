@@ -42,5 +42,9 @@ declare module Adaptive {
         static NoPermission: IContactResultCallbackError;
         static Wrong_Params: IContactResultCallbackError;
         static Unknown: IContactResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactResultCallbackError;
     }
 }

@@ -42,5 +42,9 @@ declare module Adaptive {
         static SourceNotDeleted: IFileResultCallbackWarning;
         static RootDirectory: IFileResultCallbackWarning;
         static Unknown: IFileResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileResultCallbackWarning;
     }
 }

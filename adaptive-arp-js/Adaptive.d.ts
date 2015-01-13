@@ -707,7 +707,13 @@ declare module Adaptive {
     */
     interface IGlobalization extends IBaseApplication {
         /**
-           List of supported locales for the application
+           Returns the default locale of the application defined in the configuration file
+           @return Default Locale of the application
+           @since ARP1.0
+        */
+        getDefaultLocale(): Locale;
+        /**
+           List of supported locales for the application defined in the configuration file
            @return List of locales
            @since ARP1.0
         */
@@ -2461,6 +2467,10 @@ device.
            @since ARP1.0
         */
         constructor();
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): APIBean;
     }
     /**
        Structure representing a HTML5 request to the native API.
@@ -2551,6 +2561,10 @@ listener.
            @since ARP1.0
         */
         setParameters(parameters: string[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): APIRequest;
     }
     /**
        Structure representing the data of a single acceleration reading.
@@ -2642,6 +2656,10 @@ listener.
            @since ARP1.0
         */
         setZ(z: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Acceleration;
     }
     /**
        Structure representing the a physical or logical button on a device.
@@ -2676,6 +2694,10 @@ listener.
            @since ARP1.0
         */
         setType(type: ICapabilitiesButton): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Button;
     }
     /**
        Structure representing the address data elements of a contact.
@@ -2729,6 +2751,10 @@ listener.
            @since ARP1.0
         */
         setAddress(address: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactAddress;
     }
     /**
        Structure representing the email data elements of a contact.
@@ -2801,6 +2827,10 @@ listener.
            @since ARP1.0
         */
         setPrimary(primary: boolean): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactEmail;
     }
     /**
        Structure representing the personal info data elements of a contact.
@@ -2892,6 +2922,10 @@ listener.
            @since ARP1.0
         */
         setName(name: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactPersonalInfo;
     }
     /**
        Structure representing the phone data elements of a contact.
@@ -2945,6 +2979,10 @@ listener.
            @since ARP1.0
         */
         setPhone(phone: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactPhone;
     }
     /**
        Structure representing the professional info data elements of a contact.
@@ -3017,6 +3055,10 @@ listener.
            @since ARP1.0
         */
         setJobTitle(jobTitle: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactProfessionalInfo;
     }
     /**
        Structure representing the social data elements of a contact.
@@ -3070,6 +3112,10 @@ listener.
            @since ARP1.0
         */
         setProfileUrl(profileUrl: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactSocial;
     }
     /**
        Structure representing the assigned tags data elements of a contact.
@@ -3123,6 +3169,10 @@ listener.
            @since ARP1.0
         */
         setTagValue(tagValue: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactTag;
     }
     /**
        Structure representing the internal unique identifier data elements of a contact.
@@ -3157,6 +3207,10 @@ listener.
            @since ARP1.0
         */
         setContactId(contactId: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactUid;
     }
     /**
        Structure representing the website data elements of a contact.
@@ -3191,6 +3245,10 @@ listener.
            @since ARP1.0
         */
         setUrl(url: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactWebsite;
     }
     /**
        Structure representing a database reference.
@@ -3244,6 +3302,10 @@ listener.
            @since ARP1.0
         */
         setName(name: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Database;
     }
     /**
        Structure representing the column specification of a data column.
@@ -3278,6 +3340,10 @@ listener.
            @since ARP1.0
         */
         setName(name: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DatabaseColumn;
     }
     /**
        Structure representing a row for a data table.
@@ -3312,6 +3378,10 @@ listener.
            @since ARP1.0
         */
         setValues(values: string[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DatabaseRow;
     }
     /**
        Represents a data table composed of databaseColumns and databaseRows.
@@ -3422,6 +3492,10 @@ listener.
            @since ARP1.0
         */
         setRowCount(rowCount: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DatabaseTable;
     }
     /**
        Structure representing the basic device information.
@@ -3512,6 +3586,10 @@ be unique for a specific instance of an application on a specific device.
            @param vendor Vendor of the device hardware.
         */
         setVendor(vendor: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DeviceInfo;
     }
     /**
        Structure representing the data elements of an email.
@@ -3660,6 +3738,10 @@ be unique for a specific instance of an application on a specific device.
            @since ARP1.0
         */
         setToRecipients(toRecipients: EmailAddress[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Email;
     }
     /**
        Structure representing the data elements of an email addressee.
@@ -3694,6 +3776,10 @@ be unique for a specific instance of an application on a specific device.
            @since ARP1.0
         */
         setAddress(address: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): EmailAddress;
     }
     /**
        Structure representing the binary attachment data.
@@ -3804,6 +3890,10 @@ be unique for a specific instance of an application on a specific device.
            @since ARP1.0
         */
         setSize(size: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): EmailAttachmentData;
     }
     /**
        Implementation of FileDescriptor bean.
@@ -3902,6 +3992,10 @@ doesn't exist, this will be -1. Used internally.
            @param size The size in bytes of the file.
         */
         setSize(size: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): FileDescriptor;
     }
     /**
        Structure representing the data a single geolocation reading.
@@ -4027,6 +4121,10 @@ doesn't exist, this will be -1. Used internally.
            @param yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         setYDoP(yDoP: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Geolocation;
     }
     /**
        Represents a basic bean to store keyName pair values
@@ -4080,6 +4178,10 @@ doesn't exist, this will be -1. Used internally.
            @since ARP1.0
         */
         setKeyValue(keyValue: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): KeyPair;
     }
     /**
        Represents a specific application life-cycle stage.
@@ -4125,6 +4227,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setState(state: LifecycleState): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Lifecycle;
     }
     /**
        Represents a specific user or system locate.
@@ -4178,6 +4284,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setLanguage(language: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Locale;
     }
     /**
        Represents the basic information about the operating system.
@@ -4247,6 +4357,10 @@ Possible lifecycle States:
            @param version The version/identifier of the operating system.
         */
         setVersion(version: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): OSInfo;
     }
     /**
        Represents a single secureKey-value pair.
@@ -4300,6 +4414,10 @@ Possible lifecycle States:
            @since ARP 1.0
         */
         setSecureKey(secureKey: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): SecureKeyPair;
     }
     /**
        Represents an instance of a service.
@@ -4391,6 +4509,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setServiceEndpoint(serviceEndpoint: ServiceEndpoint): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Service;
     }
     /**
        Structure representing the cookieValue of a http cookie.
@@ -4558,6 +4680,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setSecure(secure: boolean): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceCookie;
     }
     /**
        Structure representing a remote or local service access end-point.
@@ -4668,6 +4794,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setScheme(scheme: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceEndpoint;
     }
     /**
        Structure representing the data of a http request or response header.
@@ -4721,6 +4851,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setName(name: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceHeader;
     }
     /**
        Represents a local or remote service request.
@@ -4926,6 +5060,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setServiceSession(serviceSession: ServiceSession): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceRequest;
     }
     /**
        Represents a local or remote service response.
@@ -5093,6 +5231,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setServiceSession(serviceSession: ServiceSession): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceResponse;
     }
     /**
        Represents a session object for HTTP request and responses
@@ -5146,6 +5288,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setCookies(cookies: ServiceCookie[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceSession;
     }
     /**
        Structure representing the data elements of a contact.
@@ -5314,6 +5460,10 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setProfessionalInfo(professionalInfo: ContactProfessionalInfo): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Contact;
     }
     class BaseListener implements IBaseListener {
         /**
@@ -6996,6 +7146,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Work: ContactAddressType;
         static Other: ContactAddressType;
         static Unknown: ContactAddressType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactAddressType;
     }
     /**
        Enumeration ContactEmailType
@@ -7008,6 +7162,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Work: ContactEmailType;
         static Other: ContactEmailType;
         static Unknown: ContactEmailType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactEmailType;
     }
     /**
        Enumeration ContactPersonalInfoTitle
@@ -7021,6 +7179,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Ms: ContactPersonalInfoTitle;
         static Dr: ContactPersonalInfoTitle;
         static Unknown: ContactPersonalInfoTitle;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactPersonalInfoTitle;
     }
     /**
        Enumeration ContactPhoneType
@@ -7037,6 +7199,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static WorkFax: ContactPhoneType;
         static Other: ContactPhoneType;
         static Unknown: ContactPhoneType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactPhoneType;
     }
     /**
        Enumeration ContactSocialNetwork
@@ -7051,6 +7217,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static LinkedIn: ContactSocialNetwork;
         static Flickr: ContactSocialNetwork;
         static Unknown: ContactSocialNetwork;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactSocialNetwork;
     }
     /**
        Enumeration IAccelerationListenerError
@@ -7062,6 +7232,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Unauthorized: IAccelerationListenerError;
         static Unavailable: IAccelerationListenerError;
         static Unknown: IAccelerationListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAccelerationListenerError;
     }
     /**
        Enumeration IAccelerationListenerWarning
@@ -7073,6 +7247,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static NeedsCalibration: IAccelerationListenerWarning;
         static Stale: IAccelerationListenerWarning;
         static Unknown: IAccelerationListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAccelerationListenerWarning;
     }
     /**
        Enumeration IAdaptiveRPGroup
@@ -7097,6 +7275,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Util: IAdaptiveRPGroup;
         static Kernel: IAdaptiveRPGroup;
         static Unknown: IAdaptiveRPGroup;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IAdaptiveRPGroup;
     }
     /**
        Enumeration IButtonListenerError
@@ -7107,6 +7289,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static Not_Present: IButtonListenerError;
         static Unknown: IButtonListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IButtonListenerError;
     }
     /**
        Enumeration IButtonListenerWarning
@@ -7117,6 +7303,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static Not_Implemented: IButtonListenerWarning;
         static Unknown: IButtonListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IButtonListenerWarning;
     }
     /**
        Enumeration ICapabilitiesButton
@@ -7129,6 +7319,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static BackButton: ICapabilitiesButton;
         static OptionButton: ICapabilitiesButton;
         static Unknown: ICapabilitiesButton;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesButton;
     }
     /**
        Enumeration ICapabilitiesCommunication
@@ -7143,6 +7337,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Messaging: ICapabilitiesCommunication;
         static Telephony: ICapabilitiesCommunication;
         static Unknown: ICapabilitiesCommunication;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesCommunication;
     }
     /**
        Enumeration ICapabilitiesData
@@ -7155,6 +7353,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static File: ICapabilitiesData;
         static Cloud: ICapabilitiesData;
         static Unknown: ICapabilitiesData;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesData;
     }
     /**
        Enumeration ICapabilitiesMedia
@@ -7169,6 +7371,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Video_Playback: ICapabilitiesMedia;
         static Video_Recording: ICapabilitiesMedia;
         static Unknown: ICapabilitiesMedia;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesMedia;
     }
     /**
        Enumeration ICapabilitiesNet
@@ -7185,6 +7391,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Ethernet: ICapabilitiesNet;
         static Unavailable: ICapabilitiesNet;
         static Unknown: ICapabilitiesNet;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesNet;
     }
     /**
        Enumeration ICapabilitiesNotification
@@ -7198,6 +7408,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static RemoteNotification: ICapabilitiesNotification;
         static Vibration: ICapabilitiesNotification;
         static Unknown: ICapabilitiesNotification;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesNotification;
     }
     /**
        Enumeration ICapabilitiesSensor
@@ -7214,6 +7428,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Magnetometer: ICapabilitiesSensor;
         static Proximity: ICapabilitiesSensor;
         static Unknown: ICapabilitiesSensor;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesSensor;
     }
     /**
        Enumeration IContactFieldGroup
@@ -7231,6 +7449,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static SOCIALS: IContactFieldGroup;
         static TAGS: IContactFieldGroup;
         static Unknown: IContactFieldGroup;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactFieldGroup;
     }
     /**
        Enumeration IContactFilter
@@ -7243,6 +7465,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static HAS_EMAIL: IContactFilter;
         static HAS_ADDRESS: IContactFilter;
         static Unknown: IContactFilter;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactFilter;
     }
     /**
        Enumeration IContactPhotoResultCallbackError
@@ -7255,6 +7481,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Wrong_Params: IContactPhotoResultCallbackError;
         static No_Photo: IContactPhotoResultCallbackError;
         static Unknown: IContactPhotoResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactPhotoResultCallbackError;
     }
     /**
        Enumeration IContactPhotoResultCallbackWarning
@@ -7266,6 +7496,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static LimitExceeded: IContactPhotoResultCallbackWarning;
         static No_Matches: IContactPhotoResultCallbackWarning;
         static Unknown: IContactPhotoResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactPhotoResultCallbackWarning;
     }
     /**
        Enumeration IContactResultCallbackError
@@ -7277,6 +7511,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static NoPermission: IContactResultCallbackError;
         static Wrong_Params: IContactResultCallbackError;
         static Unknown: IContactResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactResultCallbackError;
     }
     /**
        Enumeration IContactResultCallbackWarning
@@ -7288,6 +7526,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static LimitExceeded: IContactResultCallbackWarning;
         static No_Matches: IContactResultCallbackWarning;
         static Unknown: IContactResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactResultCallbackWarning;
     }
     /**
        Enumeration IDatabaseResultCallbackError
@@ -7300,6 +7542,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static SqlException: IDatabaseResultCallbackError;
         static NotDeleted: IDatabaseResultCallbackError;
         static Unknown: IDatabaseResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseResultCallbackError;
     }
     /**
        Enumeration IDatabaseResultCallbackWarning
@@ -7311,6 +7557,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static DatabaseExists: IDatabaseResultCallbackWarning;
         static IsOpen: IDatabaseResultCallbackWarning;
         static Unknown: IDatabaseResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseResultCallbackWarning;
     }
     /**
        Enumeration IDatabaseTableResultCallbackError
@@ -7325,6 +7575,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static DatabaseNotFound: IDatabaseTableResultCallbackError;
         static NoTableFound: IDatabaseTableResultCallbackError;
         static Unknown: IDatabaseTableResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseTableResultCallbackError;
     }
     /**
        Enumeration IDatabaseTableResultCallbackWarning
@@ -7337,6 +7591,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static TableLocked: IDatabaseTableResultCallbackWarning;
         static NoResults: IDatabaseTableResultCallbackWarning;
         static Unknown: IDatabaseTableResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseTableResultCallbackWarning;
     }
     /**
        Enumeration IFileDataLoadResultCallbackError
@@ -7349,6 +7607,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static InsufficientSpace: IFileDataLoadResultCallbackError;
         static Unauthorized: IFileDataLoadResultCallbackError;
         static Unknown: IFileDataLoadResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataLoadResultCallbackError;
     }
     /**
        Enumeration IFileDataLoadResultCallbackWarning
@@ -7359,6 +7621,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static ExceedMaximumSize: IFileDataLoadResultCallbackWarning;
         static Unknown: IFileDataLoadResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataLoadResultCallbackWarning;
     }
     /**
        Enumeration IFileDataStoreResultCallbackError
@@ -7371,6 +7637,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static InsufficientSpace: IFileDataStoreResultCallbackError;
         static Unauthorized: IFileDataStoreResultCallbackError;
         static Unknown: IFileDataStoreResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataStoreResultCallbackError;
     }
     /**
        Enumeration IFileDataStoreResultCallbackWarning
@@ -7381,6 +7651,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static ExceedMaximumSize: IFileDataStoreResultCallbackWarning;
         static Unknown: IFileDataStoreResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataStoreResultCallbackWarning;
     }
     /**
        Enumeration IFileListResultCallbackError
@@ -7392,6 +7666,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static InexistentFile: IFileListResultCallbackError;
         static Unauthorized: IFileListResultCallbackError;
         static Unknown: IFileListResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileListResultCallbackError;
     }
     /**
        Enumeration IFileListResultCallbackWarning
@@ -7402,6 +7680,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static PartialResult: IFileListResultCallbackWarning;
         static Unknown: IFileListResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileListResultCallbackWarning;
     }
     /**
        Enumeration IFileResultCallbackError
@@ -7416,6 +7698,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static InsufficientSpace: IFileResultCallbackError;
         static Unauthorized: IFileResultCallbackError;
         static Unknown: IFileResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileResultCallbackError;
     }
     /**
        Enumeration IFileResultCallbackWarning
@@ -7427,6 +7713,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static SourceNotDeleted: IFileResultCallbackWarning;
         static RootDirectory: IFileResultCallbackWarning;
         static Unknown: IFileResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileResultCallbackWarning;
     }
     /**
        Enumeration IFileSystemSecurity
@@ -7439,6 +7729,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Protected: IFileSystemSecurity;
         static Encrypted: IFileSystemSecurity;
         static Unknown: IFileSystemSecurity;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemSecurity;
     }
     /**
        Enumeration IFileSystemStorageType
@@ -7454,6 +7748,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Cache: IFileSystemStorageType;
         static External: IFileSystemStorageType;
         static Unknown: IFileSystemStorageType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemStorageType;
     }
     /**
        Enumeration IFileSystemType
@@ -7465,6 +7763,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Directory: IFileSystemType;
         static File: IFileSystemType;
         static Unknown: IFileSystemType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemType;
     }
     /**
        Enumeration IGeolocationListenerError
@@ -7478,6 +7780,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static DeniedAccess: IGeolocationListenerError;
         static StatusNotDetermined: IGeolocationListenerError;
         static Unknown: IGeolocationListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IGeolocationListenerError;
     }
     /**
        Enumeration IGeolocationListenerWarning
@@ -7489,6 +7795,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static HighDoP: IGeolocationListenerWarning;
         static StaleData: IGeolocationListenerWarning;
         static Unknown: IGeolocationListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IGeolocationListenerWarning;
     }
     /**
        Enumeration ILifecycleListenerError
@@ -7501,6 +7811,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Implementation: ILifecycleListenerError;
         static Killed: ILifecycleListenerError;
         static Unknown: ILifecycleListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILifecycleListenerError;
     }
     /**
        Enumeration ILifecycleListenerWarning
@@ -7512,6 +7826,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static MemoryLow: ILifecycleListenerWarning;
         static BatteryLow: ILifecycleListenerWarning;
         static Unknown: ILifecycleListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILifecycleListenerWarning;
     }
     /**
        Enumeration ILoggingLogLevel
@@ -7525,6 +7843,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static ERROR: ILoggingLogLevel;
         static INFO: ILoggingLogLevel;
         static Unknown: ILoggingLogLevel;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILoggingLogLevel;
     }
     /**
        Enumeration IMessagingCallbackError
@@ -7539,6 +7861,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static WrongParams: IMessagingCallbackError;
         static NotSupported: IMessagingCallbackError;
         static Unknown: IMessagingCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IMessagingCallbackError;
     }
     /**
        Enumeration IMessagingCallbackWarning
@@ -7550,6 +7876,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static UnableToSentAll: IMessagingCallbackWarning;
         static UnableToFetchAttachment: IMessagingCallbackWarning;
         static Unknown: IMessagingCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IMessagingCallbackWarning;
     }
     /**
        Enumeration INetworkReachabilityCallbackError
@@ -7570,6 +7900,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static MalformedUrl: INetworkReachabilityCallbackError;
         static DomainUnresolvable: INetworkReachabilityCallbackError;
         static Unknown: INetworkReachabilityCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkReachabilityCallbackError;
     }
     /**
        Enumeration INetworkReachabilityCallbackWarning
@@ -7584,6 +7918,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Redirected: INetworkReachabilityCallbackWarning;
         static NotRegisteredService: INetworkReachabilityCallbackWarning;
         static Unknown: INetworkReachabilityCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkReachabilityCallbackWarning;
     }
     /**
        Enumeration INetworkStatusListenerError
@@ -7595,6 +7933,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static NoPermission: INetworkStatusListenerError;
         static Unreachable: INetworkStatusListenerError;
         static Unknown: INetworkStatusListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerError;
     }
     /**
        Enumeration INetworkStatusListenerWarning
@@ -7606,6 +7948,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static IpAddressNotAssigned: INetworkStatusListenerWarning;
         static IpAddressChanged: INetworkStatusListenerWarning;
         static Unknown: INetworkStatusListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerWarning;
     }
     /**
        Enumeration IOSType
@@ -7626,6 +7972,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Chromium: IOSType;
         static Unspecified: IOSType;
         static Unknown: IOSType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IOSType;
     }
     /**
        Enumeration ISecurityResultCallbackError
@@ -7637,6 +7987,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static NoPermission: ISecurityResultCallbackError;
         static NoMatchesFound: ISecurityResultCallbackError;
         static Unknown: ISecurityResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ISecurityResultCallbackError;
     }
     /**
        Enumeration ISecurityResultCallbackWarning
@@ -7647,6 +8001,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         toString(): string;
         static EntryOverride: ISecurityResultCallbackWarning;
         static Unknown: ISecurityResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ISecurityResultCallbackWarning;
     }
     /**
        Enumeration IServiceProtocolVersion
@@ -7658,6 +8016,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static HttpProtocolVersion10: IServiceProtocolVersion;
         static HttpProtocolVersion11: IServiceProtocolVersion;
         static Unknown: IServiceProtocolVersion;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceProtocolVersion;
     }
     /**
        Enumeration IServiceMethod
@@ -7669,6 +8031,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Post: IServiceMethod;
         static Get: IServiceMethod;
         static Unknown: IServiceMethod;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceMethod;
     }
     /**
        Enumeration IServiceType
@@ -7688,6 +8054,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static ServiceTypeXmlRpcJson: IServiceType;
         static ServiceTypeXmlRpcXml: IServiceType;
         static Unknown: IServiceType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceType;
     }
     /**
        Enumeration IServiceResultCallbackError
@@ -7708,6 +8078,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static MalformedUrl: IServiceResultCallbackError;
         static NotRegisteredService: IServiceResultCallbackError;
         static Unknown: IServiceResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceResultCallbackError;
     }
     /**
        Enumeration IServiceResultCallbackWarning
@@ -7721,6 +8095,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Redirected: IServiceResultCallbackWarning;
         static Wrong_Params: IServiceResultCallbackWarning;
         static Unknown: IServiceResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceResultCallbackWarning;
     }
     /**
        Enumeration ITelephonyStatus
@@ -7732,6 +8110,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Dialing: ITelephonyStatus;
         static Failed: ITelephonyStatus;
         static Unknown: ITelephonyStatus;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ITelephonyStatus;
     }
     /**
        Enumeration LifecycleState
@@ -7749,5 +8131,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         static Resuming: LifecycleState;
         static Stopping: LifecycleState;
         static Unknown: LifecycleState;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): LifecycleState;
     }
 }

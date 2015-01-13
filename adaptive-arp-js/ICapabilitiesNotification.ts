@@ -48,5 +48,25 @@ module Adaptive {
           static Vibration = new ICapabilitiesNotification("Vibration");
           static Unknown = new ICapabilitiesNotification("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesNotification {
+               switch(object.value) {
+                    case "Alarm":
+                         return ICapabilitiesNotification.Alarm;
+                    case "LocalNotification":
+                         return ICapabilitiesNotification.LocalNotification;
+                    case "RemoteNotification":
+                         return ICapabilitiesNotification.RemoteNotification;
+                    case "Vibration":
+                         return ICapabilitiesNotification.Vibration;
+                    case "Unknown":
+                         return ICapabilitiesNotification.Unknown;
+                    default:
+                         return ICapabilitiesNotification.Unknown;
+               }
+          }
+
      }
 }

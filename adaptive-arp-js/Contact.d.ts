@@ -208,5 +208,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setProfessionalInfo(professionalInfo: ContactProfessionalInfo): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Contact;
     }
 }

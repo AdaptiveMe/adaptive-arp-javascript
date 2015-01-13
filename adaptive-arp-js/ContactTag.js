@@ -97,6 +97,16 @@ var Adaptive;
         ContactTag.prototype.setTagValue = function (tagValue) {
             this.tagValue = tagValue;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactTag.toObject = function (object) {
+            var result = new ContactTag(null, null);
+            // Assign values to bean fields.
+            result.tagName = object.tagName;
+            result.tagValue = object.tagValue;
+            return result;
+        };
         return ContactTag;
     })(Adaptive.APIBean);
     Adaptive.ContactTag = ContactTag;

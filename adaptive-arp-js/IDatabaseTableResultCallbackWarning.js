@@ -43,6 +43,23 @@ var Adaptive;
         IDatabaseTableResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseTableResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "TableExists":
+                    return IDatabaseTableResultCallbackWarning.TableExists;
+                case "TableLocked":
+                    return IDatabaseTableResultCallbackWarning.TableLocked;
+                case "NoResults":
+                    return IDatabaseTableResultCallbackWarning.NoResults;
+                case "Unknown":
+                    return IDatabaseTableResultCallbackWarning.Unknown;
+                default:
+                    return IDatabaseTableResultCallbackWarning.Unknown;
+            }
+        };
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");
         IDatabaseTableResultCallbackWarning.TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
         IDatabaseTableResultCallbackWarning.NoResults = new IDatabaseTableResultCallbackWarning("NoResults");

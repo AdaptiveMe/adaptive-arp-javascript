@@ -43,6 +43,21 @@ var Adaptive;
         INetworkStatusListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkStatusListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return INetworkStatusListenerError.NoPermission;
+                case "Unreachable":
+                    return INetworkStatusListenerError.Unreachable;
+                case "Unknown":
+                    return INetworkStatusListenerError.Unknown;
+                default:
+                    return INetworkStatusListenerError.Unknown;
+            }
+        };
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");
         INetworkStatusListenerError.Unreachable = new INetworkStatusListenerError("Unreachable");
         INetworkStatusListenerError.Unknown = new INetworkStatusListenerError("Unknown");

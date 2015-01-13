@@ -55,5 +55,39 @@ module Adaptive {
           static DomainUnresolvable = new INetworkReachabilityCallbackError("DomainUnresolvable");
           static Unknown = new INetworkReachabilityCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkReachabilityCallbackError {
+               switch(object.value) {
+                    case "Forbidden":
+                         return INetworkReachabilityCallbackError.Forbidden;
+                    case "NotFound":
+                         return INetworkReachabilityCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                         return INetworkReachabilityCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                         return INetworkReachabilityCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                         return INetworkReachabilityCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                         return INetworkReachabilityCallbackError.TimeOut;
+                    case "NoResponse":
+                         return INetworkReachabilityCallbackError.NoResponse;
+                    case "Unreachable":
+                         return INetworkReachabilityCallbackError.Unreachable;
+                    case "Wrong_Params":
+                         return INetworkReachabilityCallbackError.Wrong_Params;
+                    case "MalformedUrl":
+                         return INetworkReachabilityCallbackError.MalformedUrl;
+                    case "DomainUnresolvable":
+                         return INetworkReachabilityCallbackError.DomainUnresolvable;
+                    case "Unknown":
+                         return INetworkReachabilityCallbackError.Unknown;
+                    default:
+                         return INetworkReachabilityCallbackError.Unknown;
+               }
+          }
+
      }
 }

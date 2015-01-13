@@ -54,5 +54,37 @@ module Adaptive {
           static ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
           static Unknown = new IServiceType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceType {
+               switch(object.value) {
+                    case "ServiceTypeAmfSerialization":
+                         return IServiceType.ServiceTypeAmfSerialization;
+                    case "ServiceTypeGwtRpc":
+                         return IServiceType.ServiceTypeGwtRpc;
+                    case "ServiceTypeOctetBinary":
+                         return IServiceType.ServiceTypeOctetBinary;
+                    case "ServiceTypeRemotingSerialization":
+                         return IServiceType.ServiceTypeRemotingSerialization;
+                    case "ServiceTypeRestJson":
+                         return IServiceType.ServiceTypeRestJson;
+                    case "ServiceTypeRestXml":
+                         return IServiceType.ServiceTypeRestXml;
+                    case "ServiceTypeSoapJson":
+                         return IServiceType.ServiceTypeSoapJson;
+                    case "ServiceTypeSoapXml":
+                         return IServiceType.ServiceTypeSoapXml;
+                    case "ServiceTypeXmlRpcJson":
+                         return IServiceType.ServiceTypeXmlRpcJson;
+                    case "ServiceTypeXmlRpcXml":
+                         return IServiceType.ServiceTypeXmlRpcXml;
+                    case "Unknown":
+                         return IServiceType.Unknown;
+                    default:
+                         return IServiceType.Unknown;
+               }
+          }
+
      }
 }

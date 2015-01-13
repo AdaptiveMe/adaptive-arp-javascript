@@ -46,5 +46,21 @@ module Adaptive {
           static Unauthorized = new IFileListResultCallbackError("Unauthorized");
           static Unknown = new IFileListResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileListResultCallbackError {
+               switch(object.value) {
+                    case "InexistentFile":
+                         return IFileListResultCallbackError.InexistentFile;
+                    case "Unauthorized":
+                         return IFileListResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileListResultCallbackError.Unknown;
+                    default:
+                         return IFileListResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

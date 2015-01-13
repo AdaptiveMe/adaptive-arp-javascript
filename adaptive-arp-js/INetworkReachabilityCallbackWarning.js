@@ -43,6 +43,27 @@ var Adaptive;
         INetworkReachabilityCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkReachabilityCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "IncorrectScheme":
+                    return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                case "NotSecure":
+                    return INetworkReachabilityCallbackWarning.NotSecure;
+                case "NotTrusted":
+                    return INetworkReachabilityCallbackWarning.NotTrusted;
+                case "Redirected":
+                    return INetworkReachabilityCallbackWarning.Redirected;
+                case "NotRegisteredService":
+                    return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                case "Unknown":
+                    return INetworkReachabilityCallbackWarning.Unknown;
+                default:
+                    return INetworkReachabilityCallbackWarning.Unknown;
+            }
+        };
         INetworkReachabilityCallbackWarning.IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
         INetworkReachabilityCallbackWarning.NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
         INetworkReachabilityCallbackWarning.NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");

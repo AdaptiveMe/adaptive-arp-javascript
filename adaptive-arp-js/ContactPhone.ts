@@ -107,6 +107,18 @@ module Adaptive {
                this.phone = phone;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactPhone {
+               var result : ContactPhone = new ContactPhone(null, null);
+
+               // Assign values to bean fields.
+               result.phone = object.phone;
+               result.phoneType = ContactPhoneType.toObject(object.phoneType);
+
+               return result;
+          }
 
      }
 }

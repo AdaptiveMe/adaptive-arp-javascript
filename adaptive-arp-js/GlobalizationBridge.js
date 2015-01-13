@@ -62,7 +62,38 @@ var Adaptive;
             _super.call(this);
         }
         /**
-           List of supported locales for the application
+           Returns the default locale of the application defined in the configuration file
+
+           @return Default Locale of the application
+           @since ARP1.0
+        */
+        GlobalizationBridge.prototype.getDefaultLocale = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var ar = new Adaptive.APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.send(JSON.stringify(ar));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    response = Adaptive.Locale.toObject(JSON.parse(xhr.responseText));
+                }
+                else {
+                    console.error("ERROR: 'GlobalizationBridge.getDefaultLocale' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getDefaultLocale' request.");
+            }
+            return response;
+        };
+        /**
+           List of supported locales for the application defined in the configuration file
 
            @return List of locales
            @since ARP1.0
@@ -81,7 +112,10 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = new Array();
+                    for (var __value__ in JSON.parse(xhr.responseText)) {
+                        response.push(Adaptive.Locale.toObject(__value__));
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getLocaleSupportedDescriptors' incorrect response received.");
@@ -149,7 +183,10 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = new Array();
+                    for (var __value__ in JSON.parse(xhr.responseText)) {
+                        response.push(Adaptive.KeyPair.toObject(__value__));
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getResourceLiterals' incorrect response received.");

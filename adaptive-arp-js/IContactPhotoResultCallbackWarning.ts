@@ -46,5 +46,21 @@ module Adaptive {
           static No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
           static Unknown = new IContactPhotoResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactPhotoResultCallbackWarning {
+               switch(object.value) {
+                    case "LimitExceeded":
+                         return IContactPhotoResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                         return IContactPhotoResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                         return IContactPhotoResultCallbackWarning.Unknown;
+                    default:
+                         return IContactPhotoResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

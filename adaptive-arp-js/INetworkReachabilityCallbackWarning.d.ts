@@ -45,5 +45,9 @@ declare module Adaptive {
         static Redirected: INetworkReachabilityCallbackWarning;
         static NotRegisteredService: INetworkReachabilityCallbackWarning;
         static Unknown: INetworkReachabilityCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkReachabilityCallbackWarning;
     }
 }

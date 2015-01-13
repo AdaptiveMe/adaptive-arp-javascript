@@ -46,5 +46,21 @@ module Adaptive {
           static IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
           static Unknown = new IDatabaseResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseResultCallbackWarning {
+               switch(object.value) {
+                    case "DatabaseExists":
+                         return IDatabaseResultCallbackWarning.DatabaseExists;
+                    case "IsOpen":
+                         return IDatabaseResultCallbackWarning.IsOpen;
+                    case "Unknown":
+                         return IDatabaseResultCallbackWarning.Unknown;
+                    default:
+                         return IDatabaseResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

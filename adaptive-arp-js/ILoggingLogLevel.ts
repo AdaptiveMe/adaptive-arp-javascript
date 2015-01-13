@@ -48,5 +48,25 @@ module Adaptive {
           static INFO = new ILoggingLogLevel("INFO");
           static Unknown = new ILoggingLogLevel("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ILoggingLogLevel {
+               switch(object.value) {
+                    case "DEBUG":
+                         return ILoggingLogLevel.DEBUG;
+                    case "WARN":
+                         return ILoggingLogLevel.WARN;
+                    case "ERROR":
+                         return ILoggingLogLevel.ERROR;
+                    case "INFO":
+                         return ILoggingLogLevel.INFO;
+                    case "Unknown":
+                         return ILoggingLogLevel.Unknown;
+                    default:
+                         return ILoggingLogLevel.Unknown;
+               }
+          }
+
      }
 }

@@ -42,5 +42,9 @@ declare module Adaptive {
         static MemoryLow: ILifecycleListenerWarning;
         static BatteryLow: ILifecycleListenerWarning;
         static Unknown: ILifecycleListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILifecycleListenerWarning;
     }
 }

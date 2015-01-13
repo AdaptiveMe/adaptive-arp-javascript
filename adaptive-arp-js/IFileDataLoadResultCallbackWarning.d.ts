@@ -41,5 +41,9 @@ declare module Adaptive {
         toString(): string;
         static ExceedMaximumSize: IFileDataLoadResultCallbackWarning;
         static Unknown: IFileDataLoadResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataLoadResultCallbackWarning;
     }
 }

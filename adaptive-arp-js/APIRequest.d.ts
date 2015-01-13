@@ -121,5 +121,9 @@ listener.
            @since ARP1.0
         */
         setParameters(parameters: string[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): APIRequest;
     }
 }

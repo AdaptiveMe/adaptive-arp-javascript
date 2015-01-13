@@ -49,5 +49,27 @@ module Adaptive {
           static NoTableFound = new IDatabaseTableResultCallbackError("NoTableFound");
           static Unknown = new IDatabaseTableResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IDatabaseTableResultCallbackError {
+               switch(object.value) {
+                    case "NoSpace":
+                         return IDatabaseTableResultCallbackError.NoSpace;
+                    case "ReadOnlyTable":
+                         return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                    case "SqlException":
+                         return IDatabaseTableResultCallbackError.SqlException;
+                    case "DatabaseNotFound":
+                         return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                    case "NoTableFound":
+                         return IDatabaseTableResultCallbackError.NoTableFound;
+                    case "Unknown":
+                         return IDatabaseTableResultCallbackError.Unknown;
+                    default:
+                         return IDatabaseTableResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

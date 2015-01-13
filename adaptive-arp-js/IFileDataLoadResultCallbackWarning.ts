@@ -45,5 +45,19 @@ module Adaptive {
           static ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
           static Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataLoadResultCallbackWarning {
+               switch(object.value) {
+                    case "ExceedMaximumSize":
+                         return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                    case "Unknown":
+                         return IFileDataLoadResultCallbackWarning.Unknown;
+                    default:
+                         return IFileDataLoadResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

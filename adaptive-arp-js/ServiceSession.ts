@@ -107,6 +107,24 @@ module Adaptive {
                this.cookies = cookies;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceSession {
+               var result : ServiceSession = new ServiceSession(null, null);
+
+               // Assign values to bean fields.
+               result.cookies = new Array<ServiceCookie>();
+               for(var __value__ in object.cookies) {
+                    result.cookies.push(ServiceCookie.toObject(__value__));
+               }
+               result.attributes = new Array<string>();
+               for(var __value__ in object.attributes) {
+                    result.attributes.push(__value__);
+               }
+
+               return result;
+          }
 
      }
 }

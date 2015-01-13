@@ -42,5 +42,9 @@ declare module Adaptive {
         static HighDoP: IGeolocationListenerWarning;
         static StaleData: IGeolocationListenerWarning;
         static Unknown: IGeolocationListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IGeolocationListenerWarning;
     }
 }

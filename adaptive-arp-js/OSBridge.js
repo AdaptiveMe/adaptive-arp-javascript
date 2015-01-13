@@ -80,7 +80,7 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.OSInfo.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'OSBridge.getOSInfo' incorrect response received.");

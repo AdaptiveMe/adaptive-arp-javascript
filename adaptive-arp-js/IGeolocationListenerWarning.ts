@@ -46,5 +46,21 @@ module Adaptive {
           static StaleData = new IGeolocationListenerWarning("StaleData");
           static Unknown = new IGeolocationListenerWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IGeolocationListenerWarning {
+               switch(object.value) {
+                    case "HighDoP":
+                         return IGeolocationListenerWarning.HighDoP;
+                    case "StaleData":
+                         return IGeolocationListenerWarning.StaleData;
+                    case "Unknown":
+                         return IGeolocationListenerWarning.Unknown;
+                    default:
+                         return IGeolocationListenerWarning.Unknown;
+               }
+          }
+
      }
 }

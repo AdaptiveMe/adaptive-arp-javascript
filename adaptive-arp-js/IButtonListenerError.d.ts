@@ -41,5 +41,9 @@ declare module Adaptive {
         toString(): string;
         static Not_Present: IButtonListenerError;
         static Unknown: IButtonListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IButtonListenerError;
     }
 }

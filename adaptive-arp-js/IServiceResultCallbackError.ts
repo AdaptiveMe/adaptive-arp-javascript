@@ -55,5 +55,39 @@ module Adaptive {
           static NotRegisteredService = new IServiceResultCallbackError("NotRegisteredService");
           static Unknown = new IServiceResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceResultCallbackError {
+               switch(object.value) {
+                    case "Forbidden":
+                         return IServiceResultCallbackError.Forbidden;
+                    case "NotFound":
+                         return IServiceResultCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                         return IServiceResultCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                         return IServiceResultCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                         return IServiceResultCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                         return IServiceResultCallbackError.TimeOut;
+                    case "NoResponse":
+                         return IServiceResultCallbackError.NoResponse;
+                    case "ServerError":
+                         return IServiceResultCallbackError.ServerError;
+                    case "Unreachable":
+                         return IServiceResultCallbackError.Unreachable;
+                    case "MalformedUrl":
+                         return IServiceResultCallbackError.MalformedUrl;
+                    case "NotRegisteredService":
+                         return IServiceResultCallbackError.NotRegisteredService;
+                    case "Unknown":
+                         return IServiceResultCallbackError.Unknown;
+                    default:
+                         return IServiceResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

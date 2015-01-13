@@ -43,6 +43,21 @@ var Adaptive;
         ITelephonyStatus.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ITelephonyStatus.toObject = function (object) {
+            switch (object.value) {
+                case "Dialing":
+                    return ITelephonyStatus.Dialing;
+                case "Failed":
+                    return ITelephonyStatus.Failed;
+                case "Unknown":
+                    return ITelephonyStatus.Unknown;
+                default:
+                    return ITelephonyStatus.Unknown;
+            }
+        };
         ITelephonyStatus.Dialing = new ITelephonyStatus("Dialing");
         ITelephonyStatus.Failed = new ITelephonyStatus("Failed");
         ITelephonyStatus.Unknown = new ITelephonyStatus("Unknown");

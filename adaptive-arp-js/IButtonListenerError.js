@@ -43,6 +43,19 @@ var Adaptive;
         IButtonListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IButtonListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Not_Present":
+                    return IButtonListenerError.Not_Present;
+                case "Unknown":
+                    return IButtonListenerError.Unknown;
+                default:
+                    return IButtonListenerError.Unknown;
+            }
+        };
         IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
         IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
         return IButtonListenerError;

@@ -42,5 +42,9 @@ declare module Adaptive {
         static IpAddressNotAssigned: INetworkStatusListenerWarning;
         static IpAddressChanged: INetworkStatusListenerWarning;
         static Unknown: INetworkStatusListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerWarning;
     }
 }

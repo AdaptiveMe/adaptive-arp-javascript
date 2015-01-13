@@ -75,7 +75,7 @@ module Adaptive {
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
                     registeredAccelerationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.addAccelerationListener' request.");
                }
@@ -99,7 +99,7 @@ module Adaptive {
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
                     registeredAccelerationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListener' request.");
                }
@@ -125,7 +125,7 @@ module Adaptive {
                     for (var key in keys) {
                          registeredAccelerationListener.remove(key);
                     }
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListeners' request.");
                }

@@ -77,6 +77,15 @@ var Adaptive;
         DatabaseColumn.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseColumn.toObject = function (object) {
+            var result = new DatabaseColumn(null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            return result;
+        };
         return DatabaseColumn;
     })(Adaptive.APIBean);
     Adaptive.DatabaseColumn = DatabaseColumn;

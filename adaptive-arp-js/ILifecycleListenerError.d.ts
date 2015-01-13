@@ -43,5 +43,9 @@ declare module Adaptive {
         static Implementation: ILifecycleListenerError;
         static Killed: ILifecycleListenerError;
         static Unknown: ILifecycleListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILifecycleListenerError;
     }
 }

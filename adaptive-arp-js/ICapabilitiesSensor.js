@@ -43,6 +43,31 @@ var Adaptive;
         ICapabilitiesSensor.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesSensor.toObject = function (object) {
+            switch (object.value) {
+                case "Accelerometer":
+                    return ICapabilitiesSensor.Accelerometer;
+                case "AmbientLight":
+                    return ICapabilitiesSensor.AmbientLight;
+                case "Barometer":
+                    return ICapabilitiesSensor.Barometer;
+                case "Geolocation":
+                    return ICapabilitiesSensor.Geolocation;
+                case "Gyroscope":
+                    return ICapabilitiesSensor.Gyroscope;
+                case "Magnetometer":
+                    return ICapabilitiesSensor.Magnetometer;
+                case "Proximity":
+                    return ICapabilitiesSensor.Proximity;
+                case "Unknown":
+                    return ICapabilitiesSensor.Unknown;
+                default:
+                    return ICapabilitiesSensor.Unknown;
+            }
+        };
         ICapabilitiesSensor.Accelerometer = new ICapabilitiesSensor("Accelerometer");
         ICapabilitiesSensor.AmbientLight = new ICapabilitiesSensor("AmbientLight");
         ICapabilitiesSensor.Barometer = new ICapabilitiesSensor("Barometer");

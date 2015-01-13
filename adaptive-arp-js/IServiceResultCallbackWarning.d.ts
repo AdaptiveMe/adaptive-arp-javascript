@@ -44,5 +44,9 @@ declare module Adaptive {
         static Redirected: IServiceResultCallbackWarning;
         static Wrong_Params: IServiceResultCallbackWarning;
         static Unknown: IServiceResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceResultCallbackWarning;
     }
 }

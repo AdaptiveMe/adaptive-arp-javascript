@@ -47,5 +47,23 @@ module Adaptive {
           static Unauthorized = new IFileDataStoreResultCallbackError("Unauthorized");
           static Unknown = new IFileDataStoreResultCallbackError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileDataStoreResultCallbackError {
+               switch(object.value) {
+                    case "InexistentFile":
+                         return IFileDataStoreResultCallbackError.InexistentFile;
+                    case "InsufficientSpace":
+                         return IFileDataStoreResultCallbackError.InsufficientSpace;
+                    case "Unauthorized":
+                         return IFileDataStoreResultCallbackError.Unauthorized;
+                    case "Unknown":
+                         return IFileDataStoreResultCallbackError.Unknown;
+                    default:
+                         return IFileDataStoreResultCallbackError.Unknown;
+               }
+          }
+
      }
 }

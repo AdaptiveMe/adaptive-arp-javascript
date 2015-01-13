@@ -107,6 +107,18 @@ module Adaptive {
                this.profileUrl = profileUrl;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactSocial {
+               var result : ContactSocial = new ContactSocial(null, null);
+
+               // Assign values to bean fields.
+               result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+               result.profileUrl = object.profileUrl;
+
+               return result;
+          }
 
      }
 }

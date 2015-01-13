@@ -42,5 +42,9 @@ declare module Adaptive {
         static NoPermission: ISecurityResultCallbackError;
         static NoMatchesFound: ISecurityResultCallbackError;
         static Unknown: ISecurityResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ISecurityResultCallbackError;
     }
 }

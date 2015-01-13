@@ -158,6 +158,20 @@ module Adaptive {
                this.z = z;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Acceleration {
+               var result : Acceleration = new Acceleration(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.x = object.x;
+               result.y = object.y;
+               result.z = object.z;
+               result.timestamp = object.timestamp;
+
+               return result;
+          }
 
      }
 }

@@ -44,5 +44,9 @@ declare module Adaptive {
         static DeniedAccess: IGeolocationListenerError;
         static StatusNotDetermined: IGeolocationListenerError;
         static Unknown: IGeolocationListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IGeolocationListenerError;
     }
 }

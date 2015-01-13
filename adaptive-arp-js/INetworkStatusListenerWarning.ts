@@ -46,5 +46,21 @@ module Adaptive {
           static IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
           static Unknown = new INetworkStatusListenerWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : INetworkStatusListenerWarning {
+               switch(object.value) {
+                    case "IpAddressNotAssigned":
+                         return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                    case "IpAddressChanged":
+                         return INetworkStatusListenerWarning.IpAddressChanged;
+                    case "Unknown":
+                         return INetworkStatusListenerWarning.Unknown;
+                    default:
+                         return INetworkStatusListenerWarning.Unknown;
+               }
+          }
+
      }
 }

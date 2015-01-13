@@ -77,6 +77,15 @@ var Adaptive;
         ContactUid.prototype.setContactId = function (contactId) {
             this.contactId = contactId;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactUid.toObject = function (object) {
+            var result = new ContactUid(null);
+            // Assign values to bean fields.
+            result.contactId = object.contactId;
+            return result;
+        };
         return ContactUid;
     })(Adaptive.APIBean);
     Adaptive.ContactUid = ContactUid;

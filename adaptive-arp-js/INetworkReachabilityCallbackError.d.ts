@@ -51,5 +51,9 @@ declare module Adaptive {
         static MalformedUrl: INetworkReachabilityCallbackError;
         static DomainUnresolvable: INetworkReachabilityCallbackError;
         static Unknown: INetworkReachabilityCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkReachabilityCallbackError;
     }
 }

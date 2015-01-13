@@ -43,6 +43,27 @@ var Adaptive;
         ICapabilitiesMedia.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesMedia.toObject = function (object) {
+            switch (object.value) {
+                case "Audio_Playback":
+                    return ICapabilitiesMedia.Audio_Playback;
+                case "Audio_Recording":
+                    return ICapabilitiesMedia.Audio_Recording;
+                case "Camera":
+                    return ICapabilitiesMedia.Camera;
+                case "Video_Playback":
+                    return ICapabilitiesMedia.Video_Playback;
+                case "Video_Recording":
+                    return ICapabilitiesMedia.Video_Recording;
+                case "Unknown":
+                    return ICapabilitiesMedia.Unknown;
+                default:
+                    return ICapabilitiesMedia.Unknown;
+            }
+        };
         ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
         ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");

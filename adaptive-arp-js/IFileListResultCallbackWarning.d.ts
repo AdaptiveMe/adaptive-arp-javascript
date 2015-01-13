@@ -41,5 +41,9 @@ declare module Adaptive {
         toString(): string;
         static PartialResult: IFileListResultCallbackWarning;
         static Unknown: IFileListResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileListResultCallbackWarning;
     }
 }

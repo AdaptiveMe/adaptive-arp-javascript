@@ -264,6 +264,30 @@ module Adaptive {
                this.serviceSession = serviceSession;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceResponse {
+               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.content = object.content;
+               result.contentType = object.contentType;
+               result.contentEncoding = object.contentEncoding;
+               result.contentLength = object.contentLength;
+               result.contentBinary = new Array<number>();
+               for(var __value__ in object.contentBinary) {
+                    result.contentBinary.push(__value__);
+               }
+               result.contentBinaryLength = object.contentBinaryLength;
+               result.serviceHeaders = new Array<ServiceHeader>();
+               for(var __value__ in object.serviceHeaders) {
+                    result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+               }
+               result.serviceSession = ServiceSession.toObject(object.serviceSession);
+
+               return result;
+          }
 
      }
 }

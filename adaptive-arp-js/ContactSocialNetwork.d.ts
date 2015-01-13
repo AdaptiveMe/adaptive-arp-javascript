@@ -45,5 +45,9 @@ declare module Adaptive {
         static LinkedIn: ContactSocialNetwork;
         static Flickr: ContactSocialNetwork;
         static Unknown: ContactSocialNetwork;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactSocialNetwork;
     }
 }

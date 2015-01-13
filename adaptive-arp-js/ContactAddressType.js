@@ -43,6 +43,23 @@ var Adaptive;
         ContactAddressType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactAddressType.toObject = function (object) {
+            switch (object.value) {
+                case "Home":
+                    return ContactAddressType.Home;
+                case "Work":
+                    return ContactAddressType.Work;
+                case "Other":
+                    return ContactAddressType.Other;
+                case "Unknown":
+                    return ContactAddressType.Unknown;
+                default:
+                    return ContactAddressType.Unknown;
+            }
+        };
         ContactAddressType.Home = new ContactAddressType("Home");
         ContactAddressType.Work = new ContactAddressType("Work");
         ContactAddressType.Other = new ContactAddressType("Other");

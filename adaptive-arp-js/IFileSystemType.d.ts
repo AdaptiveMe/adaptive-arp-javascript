@@ -42,5 +42,9 @@ declare module Adaptive {
         static Directory: IFileSystemType;
         static File: IFileSystemType;
         static Unknown: IFileSystemType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemType;
     }
 }

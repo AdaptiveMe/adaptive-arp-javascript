@@ -81,6 +81,17 @@ module Adaptive {
                this.type = type;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Button {
+               var result : Button = new Button(null);
+
+               // Assign values to bean fields.
+               result.type = ICapabilitiesButton.toObject(object.type);
+
+               return result;
+          }
 
      }
 }

@@ -98,6 +98,16 @@ var Adaptive;
         ContactPhone.prototype.setPhone = function (phone) {
             this.phone = phone;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactPhone.toObject = function (object) {
+            var result = new ContactPhone(null, null);
+            // Assign values to bean fields.
+            result.phone = object.phone;
+            result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
+            return result;
+        };
         return ContactPhone;
     })(Adaptive.APIBean);
     Adaptive.ContactPhone = ContactPhone;

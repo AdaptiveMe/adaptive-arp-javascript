@@ -262,6 +262,24 @@ module Adaptive {
                this.secure = secure;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceCookie {
+               var result : ServiceCookie = new ServiceCookie(null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.cookieName = object.cookieName;
+               result.cookieValue = object.cookieValue;
+               result.domain = object.domain;
+               result.path = object.path;
+               result.scheme = object.scheme;
+               result.secure = object.secure;
+               result.expiry = object.expiry;
+               result.creation = object.creation;
+
+               return result;
+          }
 
      }
 }

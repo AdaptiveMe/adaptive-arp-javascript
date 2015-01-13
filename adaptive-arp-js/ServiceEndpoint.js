@@ -157,6 +157,19 @@ var Adaptive;
         ServiceEndpoint.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceEndpoint.toObject = function (object) {
+            var result = new ServiceEndpoint(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.host = object.host;
+            result.path = object.path;
+            result.port = object.port;
+            result.proxy = object.proxy;
+            result.scheme = object.scheme;
+            return result;
+        };
         return ServiceEndpoint;
     })(Adaptive.APIBean);
     Adaptive.ServiceEndpoint = ServiceEndpoint;

@@ -284,7 +284,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
@@ -317,7 +317,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.IFileSystemType.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
@@ -350,7 +350,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");

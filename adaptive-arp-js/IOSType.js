@@ -43,6 +43,39 @@ var Adaptive;
         IOSType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IOSType.toObject = function (object) {
+            switch (object.value) {
+                case "iOS":
+                    return IOSType.iOS;
+                case "OSX":
+                    return IOSType.OSX;
+                case "Windows":
+                    return IOSType.Windows;
+                case "WindowsPhone":
+                    return IOSType.WindowsPhone;
+                case "Android":
+                    return IOSType.Android;
+                case "Linux":
+                    return IOSType.Linux;
+                case "Blackberry":
+                    return IOSType.Blackberry;
+                case "Tizen":
+                    return IOSType.Tizen;
+                case "FirefoxOS":
+                    return IOSType.FirefoxOS;
+                case "Chromium":
+                    return IOSType.Chromium;
+                case "Unspecified":
+                    return IOSType.Unspecified;
+                case "Unknown":
+                    return IOSType.Unknown;
+                default:
+                    return IOSType.Unknown;
+            }
+        };
         IOSType.iOS = new IOSType("iOS");
         IOSType.OSX = new IOSType("OSX");
         IOSType.Windows = new IOSType("Windows");

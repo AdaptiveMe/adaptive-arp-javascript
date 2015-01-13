@@ -43,6 +43,31 @@ var Adaptive;
         ContactPhoneType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactPhoneType.toObject = function (object) {
+            switch (object.value) {
+                case "Mobile":
+                    return ContactPhoneType.Mobile;
+                case "Work":
+                    return ContactPhoneType.Work;
+                case "Home":
+                    return ContactPhoneType.Home;
+                case "Main":
+                    return ContactPhoneType.Main;
+                case "HomeFax":
+                    return ContactPhoneType.HomeFax;
+                case "WorkFax":
+                    return ContactPhoneType.WorkFax;
+                case "Other":
+                    return ContactPhoneType.Other;
+                case "Unknown":
+                    return ContactPhoneType.Unknown;
+                default:
+                    return ContactPhoneType.Unknown;
+            }
+        };
         ContactPhoneType.Mobile = new ContactPhoneType("Mobile");
         ContactPhoneType.Work = new ContactPhoneType("Work");
         ContactPhoneType.Home = new ContactPhoneType("Home");

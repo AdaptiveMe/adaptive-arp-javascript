@@ -78,6 +78,15 @@ var Adaptive;
         Button.prototype.setType = function (type) {
             this.type = type;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Button.toObject = function (object) {
+            var result = new Button(null);
+            // Assign values to bean fields.
+            result.type = Adaptive.ICapabilitiesButton.toObject(object.type);
+            return result;
+        };
         return Button;
     })(Adaptive.APIBean);
     Adaptive.Button = Button;

@@ -43,6 +43,21 @@ var Adaptive;
         IServiceProtocolVersion.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceProtocolVersion.toObject = function (object) {
+            switch (object.value) {
+                case "HttpProtocolVersion10":
+                    return IServiceProtocolVersion.HttpProtocolVersion10;
+                case "HttpProtocolVersion11":
+                    return IServiceProtocolVersion.HttpProtocolVersion11;
+                case "Unknown":
+                    return IServiceProtocolVersion.Unknown;
+                default:
+                    return IServiceProtocolVersion.Unknown;
+            }
+        };
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
         IServiceProtocolVersion.HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
         IServiceProtocolVersion.Unknown = new IServiceProtocolVersion("Unknown");

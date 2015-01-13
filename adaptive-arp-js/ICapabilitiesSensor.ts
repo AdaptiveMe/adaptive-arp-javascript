@@ -51,5 +51,31 @@ module Adaptive {
           static Proximity = new ICapabilitiesSensor("Proximity");
           static Unknown = new ICapabilitiesSensor("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesSensor {
+               switch(object.value) {
+                    case "Accelerometer":
+                         return ICapabilitiesSensor.Accelerometer;
+                    case "AmbientLight":
+                         return ICapabilitiesSensor.AmbientLight;
+                    case "Barometer":
+                         return ICapabilitiesSensor.Barometer;
+                    case "Geolocation":
+                         return ICapabilitiesSensor.Geolocation;
+                    case "Gyroscope":
+                         return ICapabilitiesSensor.Gyroscope;
+                    case "Magnetometer":
+                         return ICapabilitiesSensor.Magnetometer;
+                    case "Proximity":
+                         return ICapabilitiesSensor.Proximity;
+                    case "Unknown":
+                         return ICapabilitiesSensor.Unknown;
+                    default:
+                         return ICapabilitiesSensor.Unknown;
+               }
+          }
+
      }
 }

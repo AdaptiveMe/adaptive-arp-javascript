@@ -43,6 +43,33 @@ var Adaptive;
         LifecycleState.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        LifecycleState.toObject = function (object) {
+            switch (object.value) {
+                case "Starting":
+                    return LifecycleState.Starting;
+                case "Started":
+                    return LifecycleState.Started;
+                case "Running":
+                    return LifecycleState.Running;
+                case "Pausing":
+                    return LifecycleState.Pausing;
+                case "PausedIdle":
+                    return LifecycleState.PausedIdle;
+                case "PausedRun":
+                    return LifecycleState.PausedRun;
+                case "Resuming":
+                    return LifecycleState.Resuming;
+                case "Stopping":
+                    return LifecycleState.Stopping;
+                case "Unknown":
+                    return LifecycleState.Unknown;
+                default:
+                    return LifecycleState.Unknown;
+            }
+        };
         LifecycleState.Starting = new LifecycleState("Starting");
         LifecycleState.Started = new LifecycleState("Started");
         LifecycleState.Running = new LifecycleState("Running");

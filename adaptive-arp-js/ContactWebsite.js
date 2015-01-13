@@ -77,6 +77,15 @@ var Adaptive;
         ContactWebsite.prototype.setUrl = function (url) {
             this.url = url;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactWebsite.toObject = function (object) {
+            var result = new ContactWebsite(null);
+            // Assign values to bean fields.
+            result.url = object.url;
+            return result;
+        };
         return ContactWebsite;
     })(Adaptive.APIBean);
     Adaptive.ContactWebsite = ContactWebsite;

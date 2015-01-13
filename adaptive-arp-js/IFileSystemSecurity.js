@@ -43,6 +43,23 @@ var Adaptive;
         IFileSystemSecurity.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemSecurity.toObject = function (object) {
+            switch (object.value) {
+                case "Default":
+                    return IFileSystemSecurity.Default;
+                case "Protected":
+                    return IFileSystemSecurity.Protected;
+                case "Encrypted":
+                    return IFileSystemSecurity.Encrypted;
+                case "Unknown":
+                    return IFileSystemSecurity.Unknown;
+                default:
+                    return IFileSystemSecurity.Unknown;
+            }
+        };
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");
         IFileSystemSecurity.Protected = new IFileSystemSecurity("Protected");
         IFileSystemSecurity.Encrypted = new IFileSystemSecurity("Encrypted");

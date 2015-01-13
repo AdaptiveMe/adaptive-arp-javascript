@@ -80,6 +80,17 @@ module Adaptive {
                this.url = url;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactWebsite {
+               var result : ContactWebsite = new ContactWebsite(null);
+
+               // Assign values to bean fields.
+               result.url = object.url;
+
+               return result;
+          }
 
      }
 }

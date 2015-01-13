@@ -47,5 +47,23 @@ module Adaptive {
           static Killed = new ILifecycleListenerError("Killed");
           static Unknown = new ILifecycleListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ILifecycleListenerError {
+               switch(object.value) {
+                    case "Runtime":
+                         return ILifecycleListenerError.Runtime;
+                    case "Implementation":
+                         return ILifecycleListenerError.Implementation;
+                    case "Killed":
+                         return ILifecycleListenerError.Killed;
+                    case "Unknown":
+                         return ILifecycleListenerError.Unknown;
+                    default:
+                         return ILifecycleListenerError.Unknown;
+               }
+          }
+
      }
 }

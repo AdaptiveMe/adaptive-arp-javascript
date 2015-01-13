@@ -66,5 +66,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setContactId(contactId: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactUid;
     }
 }

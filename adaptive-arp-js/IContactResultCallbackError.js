@@ -43,6 +43,21 @@ var Adaptive;
         IContactResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return IContactResultCallbackError.NoPermission;
+                case "Wrong_Params":
+                    return IContactResultCallbackError.Wrong_Params;
+                case "Unknown":
+                    return IContactResultCallbackError.Unknown;
+                default:
+                    return IContactResultCallbackError.Unknown;
+            }
+        };
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
         IContactResultCallbackError.Unknown = new IContactResultCallbackError("Unknown");

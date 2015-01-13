@@ -43,6 +43,47 @@ var Adaptive;
         IAdaptiveRPGroup.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAdaptiveRPGroup.toObject = function (object) {
+            switch (object.value) {
+                case "Application":
+                    return IAdaptiveRPGroup.Application;
+                case "Commerce":
+                    return IAdaptiveRPGroup.Commerce;
+                case "Communication":
+                    return IAdaptiveRPGroup.Communication;
+                case "Data":
+                    return IAdaptiveRPGroup.Data;
+                case "Media":
+                    return IAdaptiveRPGroup.Media;
+                case "Notification":
+                    return IAdaptiveRPGroup.Notification;
+                case "PIM":
+                    return IAdaptiveRPGroup.PIM;
+                case "Reader":
+                    return IAdaptiveRPGroup.Reader;
+                case "Security":
+                    return IAdaptiveRPGroup.Security;
+                case "Sensor":
+                    return IAdaptiveRPGroup.Sensor;
+                case "Social":
+                    return IAdaptiveRPGroup.Social;
+                case "System":
+                    return IAdaptiveRPGroup.System;
+                case "UI":
+                    return IAdaptiveRPGroup.UI;
+                case "Util":
+                    return IAdaptiveRPGroup.Util;
+                case "Kernel":
+                    return IAdaptiveRPGroup.Kernel;
+                case "Unknown":
+                    return IAdaptiveRPGroup.Unknown;
+                default:
+                    return IAdaptiveRPGroup.Unknown;
+            }
+        };
         IAdaptiveRPGroup.Application = new IAdaptiveRPGroup("Application");
         IAdaptiveRPGroup.Commerce = new IAdaptiveRPGroup("Commerce");
         IAdaptiveRPGroup.Communication = new IAdaptiveRPGroup("Communication");

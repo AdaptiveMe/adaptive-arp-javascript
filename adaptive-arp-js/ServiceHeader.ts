@@ -106,6 +106,18 @@ module Adaptive {
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ServiceHeader {
+               var result : ServiceHeader = new ServiceHeader(null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.data = object.data;
+
+               return result;
+          }
 
      }
 }

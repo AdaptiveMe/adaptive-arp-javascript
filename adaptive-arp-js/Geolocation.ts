@@ -206,6 +206,22 @@ module Adaptive {
                this.yDoP = yDoP;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Geolocation {
+               var result : Geolocation = new Geolocation(null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               result.latitude = object.latitude;
+               result.longitude = object.longitude;
+               result.altitude = object.altitude;
+               result.xDoP = object.xDoP;
+               result.yDoP = object.yDoP;
+               result.timestamp = object.timestamp;
+
+               return result;
+          }
 
      }
 }

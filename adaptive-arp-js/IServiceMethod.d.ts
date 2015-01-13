@@ -42,5 +42,9 @@ declare module Adaptive {
         static Post: IServiceMethod;
         static Get: IServiceMethod;
         static Unknown: IServiceMethod;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceMethod;
     }
 }

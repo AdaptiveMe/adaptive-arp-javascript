@@ -102,5 +102,9 @@ declare module Adaptive {
            @param version The version/identifier of the operating system.
         */
         setVersion(version: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): OSInfo;
     }
 }

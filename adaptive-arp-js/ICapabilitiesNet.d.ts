@@ -47,5 +47,9 @@ declare module Adaptive {
         static Ethernet: ICapabilitiesNet;
         static Unavailable: ICapabilitiesNet;
         static Unknown: ICapabilitiesNet;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesNet;
     }
 }

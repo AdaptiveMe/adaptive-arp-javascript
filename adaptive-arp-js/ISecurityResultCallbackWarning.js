@@ -43,6 +43,19 @@ var Adaptive;
         ISecurityResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ISecurityResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "EntryOverride":
+                    return ISecurityResultCallbackWarning.EntryOverride;
+                case "Unknown":
+                    return ISecurityResultCallbackWarning.Unknown;
+                default:
+                    return ISecurityResultCallbackWarning.Unknown;
+            }
+        };
         ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
         ISecurityResultCallbackWarning.Unknown = new ISecurityResultCallbackWarning("Unknown");
         return ISecurityResultCallbackWarning;

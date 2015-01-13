@@ -43,6 +43,29 @@ var Adaptive;
         IFileSystemStorageType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemStorageType.toObject = function (object) {
+            switch (object.value) {
+                case "Application":
+                    return IFileSystemStorageType.Application;
+                case "Document":
+                    return IFileSystemStorageType.Document;
+                case "Cloud":
+                    return IFileSystemStorageType.Cloud;
+                case "Protected":
+                    return IFileSystemStorageType.Protected;
+                case "Cache":
+                    return IFileSystemStorageType.Cache;
+                case "External":
+                    return IFileSystemStorageType.External;
+                case "Unknown":
+                    return IFileSystemStorageType.Unknown;
+                default:
+                    return IFileSystemStorageType.Unknown;
+            }
+        };
         IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
         IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
         IFileSystemStorageType.Cloud = new IFileSystemStorageType("Cloud");

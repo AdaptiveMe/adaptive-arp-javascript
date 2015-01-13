@@ -52,5 +52,33 @@ module Adaptive {
           static TAGS = new IContactFieldGroup("TAGS");
           static Unknown = new IContactFieldGroup("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactFieldGroup {
+               switch(object.value) {
+                    case "PERSONAL_INFO":
+                         return IContactFieldGroup.PERSONAL_INFO;
+                    case "PROFESSIONAL_INFO":
+                         return IContactFieldGroup.PROFESSIONAL_INFO;
+                    case "ADDRESSES":
+                         return IContactFieldGroup.ADDRESSES;
+                    case "PHONES":
+                         return IContactFieldGroup.PHONES;
+                    case "EMAILS":
+                         return IContactFieldGroup.EMAILS;
+                    case "WEBSITES":
+                         return IContactFieldGroup.WEBSITES;
+                    case "SOCIALS":
+                         return IContactFieldGroup.SOCIALS;
+                    case "TAGS":
+                         return IContactFieldGroup.TAGS;
+                    case "Unknown":
+                         return IContactFieldGroup.Unknown;
+                    default:
+                         return IContactFieldGroup.Unknown;
+               }
+          }
+
      }
 }

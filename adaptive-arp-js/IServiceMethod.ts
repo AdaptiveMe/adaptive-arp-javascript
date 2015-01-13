@@ -46,5 +46,21 @@ module Adaptive {
           static Get = new IServiceMethod("Get");
           static Unknown = new IServiceMethod("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceMethod {
+               switch(object.value) {
+                    case "Post":
+                         return IServiceMethod.Post;
+                    case "Get":
+                         return IServiceMethod.Get;
+                    case "Unknown":
+                         return IServiceMethod.Unknown;
+                    default:
+                         return IServiceMethod.Unknown;
+               }
+          }
+
      }
 }

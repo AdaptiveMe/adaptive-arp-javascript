@@ -47,5 +47,23 @@ module Adaptive {
           static Encrypted = new IFileSystemSecurity("Encrypted");
           static Unknown = new IFileSystemSecurity("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileSystemSecurity {
+               switch(object.value) {
+                    case "Default":
+                         return IFileSystemSecurity.Default;
+                    case "Protected":
+                         return IFileSystemSecurity.Protected;
+                    case "Encrypted":
+                         return IFileSystemSecurity.Encrypted;
+                    case "Unknown":
+                         return IFileSystemSecurity.Unknown;
+                    default:
+                         return IFileSystemSecurity.Unknown;
+               }
+          }
+
      }
 }

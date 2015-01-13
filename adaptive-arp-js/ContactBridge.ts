@@ -82,7 +82,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -111,7 +111,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -138,7 +138,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -167,7 +167,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -198,7 +198,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -227,7 +227,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -258,7 +258,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.

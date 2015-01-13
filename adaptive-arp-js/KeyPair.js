@@ -97,6 +97,16 @@ var Adaptive;
         KeyPair.prototype.setKeyValue = function (keyValue) {
             this.keyValue = keyValue;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        KeyPair.toObject = function (object) {
+            var result = new KeyPair(null, null);
+            // Assign values to bean fields.
+            result.keyName = object.keyName;
+            result.keyValue = object.keyValue;
+            return result;
+        };
         return KeyPair;
     })(Adaptive.APIBean);
     Adaptive.KeyPair = KeyPair;

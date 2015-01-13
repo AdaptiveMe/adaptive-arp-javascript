@@ -43,6 +43,23 @@ var Adaptive;
         IDatabaseResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoSpace":
+                    return IDatabaseResultCallbackError.NoSpace;
+                case "SqlException":
+                    return IDatabaseResultCallbackError.SqlException;
+                case "NotDeleted":
+                    return IDatabaseResultCallbackError.NotDeleted;
+                case "Unknown":
+                    return IDatabaseResultCallbackError.Unknown;
+                default:
+                    return IDatabaseResultCallbackError.Unknown;
+            }
+        };
         IDatabaseResultCallbackError.NoSpace = new IDatabaseResultCallbackError("NoSpace");
         IDatabaseResultCallbackError.SqlException = new IDatabaseResultCallbackError("SqlException");
         IDatabaseResultCallbackError.NotDeleted = new IDatabaseResultCallbackError("NotDeleted");

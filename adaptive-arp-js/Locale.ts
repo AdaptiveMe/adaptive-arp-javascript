@@ -106,6 +106,18 @@ module Adaptive {
                this.language = language;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Locale {
+               var result : Locale = new Locale(null, null);
+
+               // Assign values to bean fields.
+               result.country = object.country;
+               result.language = object.language;
+
+               return result;
+          }
 
      }
 }

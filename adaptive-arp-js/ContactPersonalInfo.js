@@ -138,6 +138,18 @@ var Adaptive;
         ContactPersonalInfo.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactPersonalInfo.toObject = function (object) {
+            var result = new ContactPersonalInfo(null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.middleName = object.middleName;
+            result.lastName = object.lastName;
+            result.title = Adaptive.ContactPersonalInfoTitle.toObject(object.title);
+            return result;
+        };
         return ContactPersonalInfo;
     })(Adaptive.APIBean);
     Adaptive.ContactPersonalInfo = ContactPersonalInfo;

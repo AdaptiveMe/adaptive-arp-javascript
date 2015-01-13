@@ -43,6 +43,19 @@ var Adaptive;
         IFileDataStoreResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataStoreResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "ExceedMaximumSize":
+                    return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
+                case "Unknown":
+                    return IFileDataStoreResultCallbackWarning.Unknown;
+                default:
+                    return IFileDataStoreResultCallbackWarning.Unknown;
+            }
+        };
         IFileDataStoreResultCallbackWarning.ExceedMaximumSize = new IFileDataStoreResultCallbackWarning("ExceedMaximumSize");
         IFileDataStoreResultCallbackWarning.Unknown = new IFileDataStoreResultCallbackWarning("Unknown");
         return IFileDataStoreResultCallbackWarning;

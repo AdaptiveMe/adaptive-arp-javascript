@@ -132,6 +132,19 @@ module Adaptive {
                this.jobTitle = jobTitle;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactProfessionalInfo {
+               var result : ContactProfessionalInfo = new ContactProfessionalInfo(null, null, null);
+
+               // Assign values to bean fields.
+               result.company = object.company;
+               result.jobTitle = object.jobTitle;
+               result.jobDescription = object.jobDescription;
+
+               return result;
+          }
 
      }
 }

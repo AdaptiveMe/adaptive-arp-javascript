@@ -80,6 +80,17 @@ module Adaptive {
                this.contactId = contactId;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactUid {
+               var result : ContactUid = new ContactUid(null);
+
+               // Assign values to bean fields.
+               result.contactId = object.contactId;
+
+               return result;
+          }
 
      }
 }

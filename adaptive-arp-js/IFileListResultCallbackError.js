@@ -43,6 +43,21 @@ var Adaptive;
         IFileListResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileListResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "InexistentFile":
+                    return IFileListResultCallbackError.InexistentFile;
+                case "Unauthorized":
+                    return IFileListResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileListResultCallbackError.Unknown;
+                default:
+                    return IFileListResultCallbackError.Unknown;
+            }
+        };
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");
         IFileListResultCallbackError.Unauthorized = new IFileListResultCallbackError("Unauthorized");
         IFileListResultCallbackError.Unknown = new IFileListResultCallbackError("Unknown");

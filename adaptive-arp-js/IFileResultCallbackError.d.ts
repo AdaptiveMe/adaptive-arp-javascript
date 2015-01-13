@@ -45,5 +45,9 @@ declare module Adaptive {
         static InsufficientSpace: IFileResultCallbackError;
         static Unauthorized: IFileResultCallbackError;
         static Unknown: IFileResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileResultCallbackError;
     }
 }

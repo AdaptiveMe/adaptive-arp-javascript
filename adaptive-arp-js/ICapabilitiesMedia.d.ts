@@ -45,5 +45,9 @@ declare module Adaptive {
         static Video_Playback: ICapabilitiesMedia;
         static Video_Recording: ICapabilitiesMedia;
         static Unknown: ICapabilitiesMedia;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesMedia;
     }
 }

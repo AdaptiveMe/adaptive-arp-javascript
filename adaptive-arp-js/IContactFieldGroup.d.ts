@@ -48,5 +48,9 @@ declare module Adaptive {
         static SOCIALS: IContactFieldGroup;
         static TAGS: IContactFieldGroup;
         static Unknown: IContactFieldGroup;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactFieldGroup;
     }
 }

@@ -173,6 +173,22 @@ doesn't exist, this will be -1. Used internally.
                this.size = size;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : FileDescriptor {
+               var result : FileDescriptor = new FileDescriptor();
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.path = object.path;
+               result.pathAbsolute = object.pathAbsolute;
+               result.dateCreated = object.dateCreated;
+               result.dateModified = object.dateModified;
+               result.size = object.size;
+
+               return result;
+          }
 
      }
 }

@@ -46,5 +46,21 @@ module Adaptive {
           static No_Matches = new IContactResultCallbackWarning("No_Matches");
           static Unknown = new IContactResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IContactResultCallbackWarning {
+               switch(object.value) {
+                    case "LimitExceeded":
+                         return IContactResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                         return IContactResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                         return IContactResultCallbackWarning.Unknown;
+                    default:
+                         return IContactResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

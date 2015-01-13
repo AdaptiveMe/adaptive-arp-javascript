@@ -43,6 +43,21 @@ var Adaptive;
         IAccelerationListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAccelerationListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Unauthorized":
+                    return IAccelerationListenerError.Unauthorized;
+                case "Unavailable":
+                    return IAccelerationListenerError.Unavailable;
+                case "Unknown":
+                    return IAccelerationListenerError.Unknown;
+                default:
+                    return IAccelerationListenerError.Unknown;
+            }
+        };
         IAccelerationListenerError.Unauthorized = new IAccelerationListenerError("Unauthorized");
         IAccelerationListenerError.Unavailable = new IAccelerationListenerError("Unavailable");
         IAccelerationListenerError.Unknown = new IAccelerationListenerError("Unknown");

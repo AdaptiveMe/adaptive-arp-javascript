@@ -86,5 +86,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setCookies(cookies: ServiceCookie[]): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceSession;
     }
 }

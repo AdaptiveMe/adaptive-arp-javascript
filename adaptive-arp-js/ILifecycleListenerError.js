@@ -43,6 +43,23 @@ var Adaptive;
         ILifecycleListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ILifecycleListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Runtime":
+                    return ILifecycleListenerError.Runtime;
+                case "Implementation":
+                    return ILifecycleListenerError.Implementation;
+                case "Killed":
+                    return ILifecycleListenerError.Killed;
+                case "Unknown":
+                    return ILifecycleListenerError.Unknown;
+                default:
+                    return ILifecycleListenerError.Unknown;
+            }
+        };
         ILifecycleListenerError.Runtime = new ILifecycleListenerError("Runtime");
         ILifecycleListenerError.Implementation = new ILifecycleListenerError("Implementation");
         ILifecycleListenerError.Killed = new ILifecycleListenerError("Killed");

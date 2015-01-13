@@ -219,6 +219,28 @@ var Adaptive;
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceResponse.toObject = function (object) {
+            var result = new ServiceResponse(null, null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.content = object.content;
+            result.contentType = object.contentType;
+            result.contentEncoding = object.contentEncoding;
+            result.contentLength = object.contentLength;
+            result.contentBinary = new Array();
+            for (var __value__ in object.contentBinary) {
+                result.contentBinary.push(__value__);
+            }
+            result.contentBinaryLength = object.contentBinaryLength;
+            result.serviceHeaders = new Array();
+            for (var __value__ in object.serviceHeaders) {
+                result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(__value__));
+            }
+            result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
+            return result;
+        };
         return ServiceResponse;
     })(Adaptive.APIBean);
     Adaptive.ServiceResponse = ServiceResponse;

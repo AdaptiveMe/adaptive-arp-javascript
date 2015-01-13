@@ -122,5 +122,9 @@ be unique for a specific instance of an application on a specific device.
            @param vendor Vendor of the device hardware.
         */
         setVendor(vendor: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DeviceInfo;
     }
 }

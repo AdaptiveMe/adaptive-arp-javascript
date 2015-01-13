@@ -43,6 +43,27 @@ var Adaptive;
         ContactSocialNetwork.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactSocialNetwork.toObject = function (object) {
+            switch (object.value) {
+                case "Twitter":
+                    return ContactSocialNetwork.Twitter;
+                case "Facebook":
+                    return ContactSocialNetwork.Facebook;
+                case "GooglePlus":
+                    return ContactSocialNetwork.GooglePlus;
+                case "LinkedIn":
+                    return ContactSocialNetwork.LinkedIn;
+                case "Flickr":
+                    return ContactSocialNetwork.Flickr;
+                case "Unknown":
+                    return ContactSocialNetwork.Unknown;
+                default:
+                    return ContactSocialNetwork.Unknown;
+            }
+        };
         ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
         ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
         ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");

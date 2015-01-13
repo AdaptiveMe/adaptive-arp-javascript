@@ -98,6 +98,16 @@ var Adaptive;
         ContactAddress.prototype.setAddress = function (address) {
             this.address = address;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactAddress.toObject = function (object) {
+            var result = new ContactAddress(null, null);
+            // Assign values to bean fields.
+            result.address = object.address;
+            result.type = Adaptive.ContactAddressType.toObject(object.type);
+            return result;
+        };
         return ContactAddress;
     })(Adaptive.APIBean);
     Adaptive.ContactAddress = ContactAddress;

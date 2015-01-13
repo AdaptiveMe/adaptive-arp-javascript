@@ -43,5 +43,9 @@ declare module Adaptive {
         static HAS_EMAIL: IContactFilter;
         static HAS_ADDRESS: IContactFilter;
         static Unknown: IContactFilter;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactFilter;
     }
 }

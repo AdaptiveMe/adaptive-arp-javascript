@@ -77,6 +77,18 @@ var Adaptive;
         DatabaseRow.prototype.setValues = function (values) {
             this.values = values;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseRow.toObject = function (object) {
+            var result = new DatabaseRow(null);
+            // Assign values to bean fields.
+            result.values = new Array();
+            for (var __value__ in object.values) {
+                result.values.push(__value__);
+            }
+            return result;
+        };
         return DatabaseRow;
     })(Adaptive.APIBean);
     Adaptive.DatabaseRow = DatabaseRow;

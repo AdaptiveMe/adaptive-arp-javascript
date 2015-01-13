@@ -44,5 +44,9 @@ declare module Adaptive {
         static ERROR: ILoggingLogLevel;
         static INFO: ILoggingLogLevel;
         static Unknown: ILoggingLogLevel;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ILoggingLogLevel;
     }
 }

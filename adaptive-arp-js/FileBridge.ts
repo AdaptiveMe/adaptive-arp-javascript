@@ -151,7 +151,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -247,7 +247,7 @@ deleted if the cascade parameter is set to true.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -278,7 +278,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
                     }
@@ -310,7 +310,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemType.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
                     }
@@ -342,7 +342,7 @@ deleted if the cascade parameter is set to true.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         response = IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
                     } else {
                          console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");
                     }
@@ -405,7 +405,7 @@ any results.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -437,7 +437,7 @@ is a file, it will not yield any results.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -507,7 +507,7 @@ new destination file.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                     // Unknown error - remove from dictionary and notify callback.
@@ -538,7 +538,7 @@ new destination file.
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                     // Unknown error - remove from dictionary and notify callback.

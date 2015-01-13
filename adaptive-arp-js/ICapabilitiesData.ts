@@ -47,5 +47,23 @@ module Adaptive {
           static Cloud = new ICapabilitiesData("Cloud");
           static Unknown = new ICapabilitiesData("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : ICapabilitiesData {
+               switch(object.value) {
+                    case "Database":
+                         return ICapabilitiesData.Database;
+                    case "File":
+                         return ICapabilitiesData.File;
+                    case "Cloud":
+                         return ICapabilitiesData.Cloud;
+                    case "Unknown":
+                         return ICapabilitiesData.Unknown;
+                    default:
+                         return ICapabilitiesData.Unknown;
+               }
+          }
+
      }
 }

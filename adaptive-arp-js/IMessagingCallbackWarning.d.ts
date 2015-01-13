@@ -42,5 +42,9 @@ declare module Adaptive {
         static UnableToSentAll: IMessagingCallbackWarning;
         static UnableToFetchAttachment: IMessagingCallbackWarning;
         static Unknown: IMessagingCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IMessagingCallbackWarning;
     }
 }

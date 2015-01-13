@@ -67,5 +67,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setType(type: ICapabilitiesButton): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Button;
     }
 }

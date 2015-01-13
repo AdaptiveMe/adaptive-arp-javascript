@@ -48,5 +48,25 @@ module Adaptive {
           static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
           static Unknown = new IServiceResultCallbackWarning("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceResultCallbackWarning {
+               switch(object.value) {
+                    case "NotSecure":
+                         return IServiceResultCallbackWarning.NotSecure;
+                    case "NotTrusted":
+                         return IServiceResultCallbackWarning.NotTrusted;
+                    case "Redirected":
+                         return IServiceResultCallbackWarning.Redirected;
+                    case "Wrong_Params":
+                         return IServiceResultCallbackWarning.Wrong_Params;
+                    case "Unknown":
+                         return IServiceResultCallbackWarning.Unknown;
+                    default:
+                         return IServiceResultCallbackWarning.Unknown;
+               }
+          }
+
      }
 }

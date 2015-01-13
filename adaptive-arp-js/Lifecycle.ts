@@ -92,6 +92,17 @@ Possible lifecycle States:
                this.state = state;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Lifecycle {
+               var result : Lifecycle = new Lifecycle(null);
+
+               // Assign values to bean fields.
+               result.state = LifecycleState.toObject(object.state);
+
+               return result;
+          }
 
      }
 }

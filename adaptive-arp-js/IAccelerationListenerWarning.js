@@ -43,6 +43,21 @@ var Adaptive;
         IAccelerationListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAccelerationListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "NeedsCalibration":
+                    return IAccelerationListenerWarning.NeedsCalibration;
+                case "Stale":
+                    return IAccelerationListenerWarning.Stale;
+                case "Unknown":
+                    return IAccelerationListenerWarning.Unknown;
+                default:
+                    return IAccelerationListenerWarning.Unknown;
+            }
+        };
         IAccelerationListenerWarning.NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
         IAccelerationListenerWarning.Stale = new IAccelerationListenerWarning("Stale");
         IAccelerationListenerWarning.Unknown = new IAccelerationListenerWarning("Unknown");

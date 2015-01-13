@@ -144,5 +144,9 @@ declare module Adaptive {
            @since ARP1.0
         */
         setRowCount(rowCount: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): DatabaseTable;
     }
 }

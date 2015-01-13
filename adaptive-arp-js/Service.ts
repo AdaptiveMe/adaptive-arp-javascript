@@ -161,6 +161,20 @@ module Adaptive {
                this.serviceEndpoint = serviceEndpoint;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Service {
+               var result : Service = new Service(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+               result.name = object.name;
+               result.method = IServiceMethod.toObject(object.method);
+               result.type = IServiceType.toObject(object.type);
+
+               return result;
+          }
 
      }
 }

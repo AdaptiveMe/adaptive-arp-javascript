@@ -51,5 +51,9 @@ declare module Adaptive {
         static Chromium: IOSType;
         static Unspecified: IOSType;
         static Unknown: IOSType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IOSType;
     }
 }

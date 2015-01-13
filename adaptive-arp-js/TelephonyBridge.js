@@ -82,7 +82,7 @@ var Adaptive;
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Adaptive.ITelephonyStatus.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'TelephonyBridge.call' incorrect response received.");

@@ -43,6 +43,23 @@ var Adaptive;
         ICapabilitiesData.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesData.toObject = function (object) {
+            switch (object.value) {
+                case "Database":
+                    return ICapabilitiesData.Database;
+                case "File":
+                    return ICapabilitiesData.File;
+                case "Cloud":
+                    return ICapabilitiesData.Cloud;
+                case "Unknown":
+                    return ICapabilitiesData.Unknown;
+                default:
+                    return ICapabilitiesData.Unknown;
+            }
+        };
         ICapabilitiesData.Database = new ICapabilitiesData("Database");
         ICapabilitiesData.File = new ICapabilitiesData("File");
         ICapabilitiesData.Cloud = new ICapabilitiesData("Cloud");

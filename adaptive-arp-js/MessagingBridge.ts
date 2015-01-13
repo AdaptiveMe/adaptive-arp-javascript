@@ -79,7 +79,7 @@ module Adaptive {
                xhr.send(JSON.stringify(ar));
                // Check response.
                if (xhr.status == 200) {
-                    // Result void - All OK, nothing else todo.
+                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                     // Unknown error - remove from dictionary and notify callback.

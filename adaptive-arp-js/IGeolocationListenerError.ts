@@ -48,5 +48,25 @@ module Adaptive {
           static StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
           static Unknown = new IGeolocationListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IGeolocationListenerError {
+               switch(object.value) {
+                    case "Disabled":
+                         return IGeolocationListenerError.Disabled;
+                    case "RestrictedAccess":
+                         return IGeolocationListenerError.RestrictedAccess;
+                    case "DeniedAccess":
+                         return IGeolocationListenerError.DeniedAccess;
+                    case "StatusNotDetermined":
+                         return IGeolocationListenerError.StatusNotDetermined;
+                    case "Unknown":
+                         return IGeolocationListenerError.Unknown;
+                    default:
+                         return IGeolocationListenerError.Unknown;
+               }
+          }
+
      }
 }

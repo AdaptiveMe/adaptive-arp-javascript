@@ -42,5 +42,9 @@ declare module Adaptive {
         static HttpProtocolVersion10: IServiceProtocolVersion;
         static HttpProtocolVersion11: IServiceProtocolVersion;
         static Unknown: IServiceProtocolVersion;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceProtocolVersion;
     }
 }

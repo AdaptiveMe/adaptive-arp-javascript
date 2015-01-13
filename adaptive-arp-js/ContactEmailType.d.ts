@@ -43,5 +43,9 @@ declare module Adaptive {
         static Work: ContactEmailType;
         static Other: ContactEmailType;
         static Unknown: ContactEmailType;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ContactEmailType;
     }
 }

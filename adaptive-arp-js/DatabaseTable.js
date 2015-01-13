@@ -159,6 +159,25 @@ var Adaptive;
         DatabaseTable.prototype.setRowCount = function (rowCount) {
             this.rowCount = rowCount;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseTable.toObject = function (object) {
+            var result = new DatabaseTable(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.columnCount = object.columnCount;
+            result.rowCount = object.rowCount;
+            result.databaseColumns = new Array();
+            for (var __value__ in object.databaseColumns) {
+                result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+            }
+            result.databaseRows = new Array();
+            for (var __value__ in object.databaseRows) {
+                result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+            }
+            return result;
+        };
         return DatabaseTable;
     })(Adaptive.APIBean);
     Adaptive.DatabaseTable = DatabaseTable;

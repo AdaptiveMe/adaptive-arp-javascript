@@ -43,6 +43,19 @@ var Adaptive;
         IFileListResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileListResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "PartialResult":
+                    return IFileListResultCallbackWarning.PartialResult;
+                case "Unknown":
+                    return IFileListResultCallbackWarning.Unknown;
+                default:
+                    return IFileListResultCallbackWarning.Unknown;
+            }
+        };
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
         IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
         return IFileListResultCallbackWarning;

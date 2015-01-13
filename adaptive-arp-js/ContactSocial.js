@@ -98,6 +98,16 @@ var Adaptive;
         ContactSocial.prototype.setProfileUrl = function (profileUrl) {
             this.profileUrl = profileUrl;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactSocial.toObject = function (object) {
+            var result = new ContactSocial(null, null);
+            // Assign values to bean fields.
+            result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(object.socialNetwork);
+            result.profileUrl = object.profileUrl;
+            return result;
+        };
         return ContactSocial;
     })(Adaptive.APIBean);
     Adaptive.ContactSocial = ContactSocial;

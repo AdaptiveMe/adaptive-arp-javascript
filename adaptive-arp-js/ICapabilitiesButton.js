@@ -43,6 +43,23 @@ var Adaptive;
         ICapabilitiesButton.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesButton.toObject = function (object) {
+            switch (object.value) {
+                case "HomeButton":
+                    return ICapabilitiesButton.HomeButton;
+                case "BackButton":
+                    return ICapabilitiesButton.BackButton;
+                case "OptionButton":
+                    return ICapabilitiesButton.OptionButton;
+                case "Unknown":
+                    return ICapabilitiesButton.Unknown;
+                default:
+                    return ICapabilitiesButton.Unknown;
+            }
+        };
         ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
         ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
         ICapabilitiesButton.OptionButton = new ICapabilitiesButton("OptionButton");

@@ -97,6 +97,16 @@ var Adaptive;
         Database.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Database.toObject = function (object) {
+            var result = new Database(null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.compress = object.compress;
+            return result;
+        };
         return Database;
     })(Adaptive.APIBean);
     Adaptive.Database = Database;

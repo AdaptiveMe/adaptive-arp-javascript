@@ -46,5 +46,21 @@ module Adaptive {
           static HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
           static Unknown = new IServiceProtocolVersion("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IServiceProtocolVersion {
+               switch(object.value) {
+                    case "HttpProtocolVersion10":
+                         return IServiceProtocolVersion.HttpProtocolVersion10;
+                    case "HttpProtocolVersion11":
+                         return IServiceProtocolVersion.HttpProtocolVersion11;
+                    case "Unknown":
+                         return IServiceProtocolVersion.Unknown;
+                    default:
+                         return IServiceProtocolVersion.Unknown;
+               }
+          }
+
      }
 }

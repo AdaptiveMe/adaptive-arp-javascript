@@ -43,6 +43,21 @@ var Adaptive;
         ISecurityResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ISecurityResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return ISecurityResultCallbackError.NoPermission;
+                case "NoMatchesFound":
+                    return ISecurityResultCallbackError.NoMatchesFound;
+                case "Unknown":
+                    return ISecurityResultCallbackError.Unknown;
+                default:
+                    return ISecurityResultCallbackError.Unknown;
+            }
+        };
         ISecurityResultCallbackError.NoPermission = new ISecurityResultCallbackError("NoPermission");
         ISecurityResultCallbackError.NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
         ISecurityResultCallbackError.Unknown = new ISecurityResultCallbackError("Unknown");

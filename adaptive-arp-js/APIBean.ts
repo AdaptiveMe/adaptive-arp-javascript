@@ -51,6 +51,14 @@ module Adaptive {
           constructor() {
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : APIBean {
+               var result : APIBean = new APIBean();
+
+               return result;
+          }
 
      }
 }

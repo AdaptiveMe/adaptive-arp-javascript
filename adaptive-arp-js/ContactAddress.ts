@@ -107,6 +107,18 @@ module Adaptive {
                this.address = address;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactAddress {
+               var result : ContactAddress = new ContactAddress(null, null);
+
+               // Assign values to bean fields.
+               result.address = object.address;
+               result.type = ContactAddressType.toObject(object.type);
+
+               return result;
+          }
 
      }
 }

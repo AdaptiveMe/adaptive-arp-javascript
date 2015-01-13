@@ -43,6 +43,25 @@ var Adaptive;
         ICapabilitiesNotification.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesNotification.toObject = function (object) {
+            switch (object.value) {
+                case "Alarm":
+                    return ICapabilitiesNotification.Alarm;
+                case "LocalNotification":
+                    return ICapabilitiesNotification.LocalNotification;
+                case "RemoteNotification":
+                    return ICapabilitiesNotification.RemoteNotification;
+                case "Vibration":
+                    return ICapabilitiesNotification.Vibration;
+                case "Unknown":
+                    return ICapabilitiesNotification.Unknown;
+                default:
+                    return ICapabilitiesNotification.Unknown;
+            }
+        };
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");
         ICapabilitiesNotification.LocalNotification = new ICapabilitiesNotification("LocalNotification");
         ICapabilitiesNotification.RemoteNotification = new ICapabilitiesNotification("RemoteNotification");

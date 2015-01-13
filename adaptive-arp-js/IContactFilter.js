@@ -43,6 +43,23 @@ var Adaptive;
         IContactFilter.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactFilter.toObject = function (object) {
+            switch (object.value) {
+                case "HAS_PHONE":
+                    return IContactFilter.HAS_PHONE;
+                case "HAS_EMAIL":
+                    return IContactFilter.HAS_EMAIL;
+                case "HAS_ADDRESS":
+                    return IContactFilter.HAS_ADDRESS;
+                case "Unknown":
+                    return IContactFilter.Unknown;
+                default:
+                    return IContactFilter.Unknown;
+            }
+        };
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
         IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
         IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");

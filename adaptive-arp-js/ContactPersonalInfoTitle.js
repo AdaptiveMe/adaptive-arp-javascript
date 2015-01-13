@@ -43,6 +43,25 @@ var Adaptive;
         ContactPersonalInfoTitle.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactPersonalInfoTitle.toObject = function (object) {
+            switch (object.value) {
+                case "Mr":
+                    return ContactPersonalInfoTitle.Mr;
+                case "Mrs":
+                    return ContactPersonalInfoTitle.Mrs;
+                case "Ms":
+                    return ContactPersonalInfoTitle.Ms;
+                case "Dr":
+                    return ContactPersonalInfoTitle.Dr;
+                case "Unknown":
+                    return ContactPersonalInfoTitle.Unknown;
+                default:
+                    return ContactPersonalInfoTitle.Unknown;
+            }
+        };
         ContactPersonalInfoTitle.Mr = new ContactPersonalInfoTitle("Mr");
         ContactPersonalInfoTitle.Mrs = new ContactPersonalInfoTitle("Mrs");
         ContactPersonalInfoTitle.Ms = new ContactPersonalInfoTitle("Ms");

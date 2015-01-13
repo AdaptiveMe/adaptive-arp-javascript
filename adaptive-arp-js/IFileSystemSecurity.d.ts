@@ -43,5 +43,9 @@ declare module Adaptive {
         static Protected: IFileSystemSecurity;
         static Encrypted: IFileSystemSecurity;
         static Unknown: IFileSystemSecurity;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileSystemSecurity;
     }
 }

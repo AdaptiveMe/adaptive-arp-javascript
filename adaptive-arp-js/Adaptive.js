@@ -101,6 +101,13 @@ var Adaptive;
         */
         function APIBean() {
         }
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        APIBean.toObject = function (object) {
+            var result = new APIBean();
+            return result;
+        };
         return APIBean;
     })();
     Adaptive.APIBean = APIBean;
@@ -197,6 +204,21 @@ listener.
         */
         APIRequest.prototype.setParameters = function (parameters) {
             this.parameters = parameters;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        APIRequest.toObject = function (object) {
+            var result = new APIRequest(null, null, null, null);
+            // Assign values to bean fields.
+            result.bridgeType = object.bridgeType;
+            result.methodName = object.methodName;
+            result.parameters = new Array();
+            for (var __value__ in object.parameters) {
+                result.parameters.push(__value__);
+            }
+            result.asyncId = object.asyncId;
+            return result;
         };
         return APIRequest;
     })();
@@ -298,6 +320,18 @@ listener.
         Acceleration.prototype.setZ = function (z) {
             this.z = z;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Acceleration.toObject = function (object) {
+            var result = new Acceleration(null, null, null, null);
+            // Assign values to bean fields.
+            result.x = object.x;
+            result.y = object.y;
+            result.z = object.z;
+            result.timestamp = object.timestamp;
+            return result;
+        };
         return Acceleration;
     })(APIBean);
     Adaptive.Acceleration = Acceleration;
@@ -337,6 +371,15 @@ listener.
         */
         Button.prototype.setType = function (type) {
             this.type = type;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Button.toObject = function (object) {
+            var result = new Button(null);
+            // Assign values to bean fields.
+            result.type = ICapabilitiesButton.toObject(object.type);
+            return result;
         };
         return Button;
     })(APIBean);
@@ -397,6 +440,16 @@ listener.
         */
         ContactAddress.prototype.setAddress = function (address) {
             this.address = address;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactAddress.toObject = function (object) {
+            var result = new ContactAddress(null, null);
+            // Assign values to bean fields.
+            result.address = object.address;
+            result.type = ContactAddressType.toObject(object.type);
+            return result;
         };
         return ContactAddress;
     })(APIBean);
@@ -477,6 +530,17 @@ listener.
         */
         ContactEmail.prototype.setPrimary = function (primary) {
             this.primary = primary;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactEmail.toObject = function (object) {
+            var result = new ContactEmail(null, null, null);
+            // Assign values to bean fields.
+            result.type = ContactEmailType.toObject(object.type);
+            result.primary = object.primary;
+            result.email = object.email;
+            return result;
         };
         return ContactEmail;
     })(APIBean);
@@ -578,6 +642,18 @@ listener.
         ContactPersonalInfo.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactPersonalInfo.toObject = function (object) {
+            var result = new ContactPersonalInfo(null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.middleName = object.middleName;
+            result.lastName = object.lastName;
+            result.title = ContactPersonalInfoTitle.toObject(object.title);
+            return result;
+        };
         return ContactPersonalInfo;
     })(APIBean);
     Adaptive.ContactPersonalInfo = ContactPersonalInfo;
@@ -637,6 +713,16 @@ listener.
         */
         ContactPhone.prototype.setPhone = function (phone) {
             this.phone = phone;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactPhone.toObject = function (object) {
+            var result = new ContactPhone(null, null);
+            // Assign values to bean fields.
+            result.phone = object.phone;
+            result.phoneType = ContactPhoneType.toObject(object.phoneType);
+            return result;
         };
         return ContactPhone;
     })(APIBean);
@@ -718,6 +804,17 @@ listener.
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {
             this.jobTitle = jobTitle;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactProfessionalInfo.toObject = function (object) {
+            var result = new ContactProfessionalInfo(null, null, null);
+            // Assign values to bean fields.
+            result.company = object.company;
+            result.jobTitle = object.jobTitle;
+            result.jobDescription = object.jobDescription;
+            return result;
+        };
         return ContactProfessionalInfo;
     })(APIBean);
     Adaptive.ContactProfessionalInfo = ContactProfessionalInfo;
@@ -777,6 +874,16 @@ listener.
         */
         ContactSocial.prototype.setProfileUrl = function (profileUrl) {
             this.profileUrl = profileUrl;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactSocial.toObject = function (object) {
+            var result = new ContactSocial(null, null);
+            // Assign values to bean fields.
+            result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+            result.profileUrl = object.profileUrl;
+            return result;
         };
         return ContactSocial;
     })(APIBean);
@@ -838,6 +945,16 @@ listener.
         ContactTag.prototype.setTagValue = function (tagValue) {
             this.tagValue = tagValue;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactTag.toObject = function (object) {
+            var result = new ContactTag(null, null);
+            // Assign values to bean fields.
+            result.tagName = object.tagName;
+            result.tagValue = object.tagValue;
+            return result;
+        };
         return ContactTag;
     })(APIBean);
     Adaptive.ContactTag = ContactTag;
@@ -878,6 +995,15 @@ listener.
         ContactUid.prototype.setContactId = function (contactId) {
             this.contactId = contactId;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactUid.toObject = function (object) {
+            var result = new ContactUid(null);
+            // Assign values to bean fields.
+            result.contactId = object.contactId;
+            return result;
+        };
         return ContactUid;
     })(APIBean);
     Adaptive.ContactUid = ContactUid;
@@ -917,6 +1043,15 @@ listener.
         */
         ContactWebsite.prototype.setUrl = function (url) {
             this.url = url;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ContactWebsite.toObject = function (object) {
+            var result = new ContactWebsite(null);
+            // Assign values to bean fields.
+            result.url = object.url;
+            return result;
         };
         return ContactWebsite;
     })(APIBean);
@@ -978,6 +1113,16 @@ listener.
         Database.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Database.toObject = function (object) {
+            var result = new Database(null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.compress = object.compress;
+            return result;
+        };
         return Database;
     })(APIBean);
     Adaptive.Database = Database;
@@ -1018,6 +1163,15 @@ listener.
         DatabaseColumn.prototype.setName = function (name) {
             this.name = name;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseColumn.toObject = function (object) {
+            var result = new DatabaseColumn(null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            return result;
+        };
         return DatabaseColumn;
     })(APIBean);
     Adaptive.DatabaseColumn = DatabaseColumn;
@@ -1057,6 +1211,18 @@ listener.
         */
         DatabaseRow.prototype.setValues = function (values) {
             this.values = values;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseRow.toObject = function (object) {
+            var result = new DatabaseRow(null);
+            // Assign values to bean fields.
+            result.values = new Array();
+            for (var __value__ in object.values) {
+                result.values.push(__value__);
+            }
+            return result;
         };
         return DatabaseRow;
     })(APIBean);
@@ -1178,6 +1344,25 @@ listener.
         DatabaseTable.prototype.setRowCount = function (rowCount) {
             this.rowCount = rowCount;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DatabaseTable.toObject = function (object) {
+            var result = new DatabaseTable(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.columnCount = object.columnCount;
+            result.rowCount = object.rowCount;
+            result.databaseColumns = new Array();
+            for (var __value__ in object.databaseColumns) {
+                result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+            }
+            result.databaseRows = new Array();
+            for (var __value__ in object.databaseRows) {
+                result.databaseRows.push(DatabaseRow.toObject(__value__));
+            }
+            return result;
+        };
         return DatabaseTable;
     })(APIBean);
     Adaptive.DatabaseTable = DatabaseTable;
@@ -1275,6 +1460,18 @@ be unique for a specific instance of an application on a specific device.
         */
         DeviceInfo.prototype.setVendor = function (vendor) {
             this.vendor = vendor;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DeviceInfo.toObject = function (object) {
+            var result = new DeviceInfo(null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.model = object.model;
+            result.vendor = object.vendor;
+            result.uuid = object.uuid;
+            return result;
         };
         return DeviceInfo;
     })(APIBean);
@@ -1436,6 +1633,33 @@ be unique for a specific instance of an application on a specific device.
         Email.prototype.setToRecipients = function (toRecipients) {
             this.toRecipients = toRecipients;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Email.toObject = function (object) {
+            var result = new Email(null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.toRecipients = new Array();
+            for (var __value__ in object.toRecipients) {
+                result.toRecipients.push(EmailAddress.toObject(__value__));
+            }
+            result.ccRecipients = new Array();
+            for (var __value__ in object.ccRecipients) {
+                result.ccRecipients.push(EmailAddress.toObject(__value__));
+            }
+            result.bccRecipients = new Array();
+            for (var __value__ in object.bccRecipients) {
+                result.bccRecipients.push(EmailAddress.toObject(__value__));
+            }
+            result.emailAttachmentData = new Array();
+            for (var __value__ in object.emailAttachmentData) {
+                result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+            }
+            result.messageBody = object.messageBody;
+            result.messageBodyMimeType = object.messageBodyMimeType;
+            result.subject = object.subject;
+            return result;
+        };
         return Email;
     })(APIBean);
     Adaptive.Email = Email;
@@ -1475,6 +1699,15 @@ be unique for a specific instance of an application on a specific device.
         */
         EmailAddress.prototype.setAddress = function (address) {
             this.address = address;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        EmailAddress.toObject = function (object) {
+            var result = new EmailAddress(null);
+            // Assign values to bean fields.
+            result.address = object.address;
+            return result;
         };
         return EmailAddress;
     })(APIBean);
@@ -1596,6 +1829,22 @@ be unique for a specific instance of an application on a specific device.
         EmailAttachmentData.prototype.setSize = function (size) {
             this.size = size;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        EmailAttachmentData.toObject = function (object) {
+            var result = new EmailAttachmentData(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.data = new Array();
+            for (var __value__ in object.data) {
+                result.data.push(__value__);
+            }
+            result.size = object.size;
+            result.fileName = object.fileName;
+            result.mimeType = object.mimeType;
+            result.referenceUrl = object.referenceUrl;
+            return result;
+        };
         return EmailAttachmentData;
     })(APIBean);
     Adaptive.EmailAttachmentData = EmailAttachmentData;
@@ -1716,6 +1965,20 @@ doesn't exist, this will be -1. Used internally.
         */
         FileDescriptor.prototype.setSize = function (size) {
             this.size = size;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        FileDescriptor.toObject = function (object) {
+            var result = new FileDescriptor();
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.path = object.path;
+            result.pathAbsolute = object.pathAbsolute;
+            result.dateCreated = object.dateCreated;
+            result.dateModified = object.dateModified;
+            result.size = object.size;
+            return result;
         };
         return FileDescriptor;
     })(APIBean);
@@ -1853,6 +2116,20 @@ doesn't exist, this will be -1. Used internally.
         Geolocation.prototype.setYDoP = function (yDoP) {
             this.yDoP = yDoP;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Geolocation.toObject = function (object) {
+            var result = new Geolocation(null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.latitude = object.latitude;
+            result.longitude = object.longitude;
+            result.altitude = object.altitude;
+            result.xDoP = object.xDoP;
+            result.yDoP = object.yDoP;
+            result.timestamp = object.timestamp;
+            return result;
+        };
         return Geolocation;
     })(APIBean);
     Adaptive.Geolocation = Geolocation;
@@ -1913,6 +2190,16 @@ doesn't exist, this will be -1. Used internally.
         KeyPair.prototype.setKeyValue = function (keyValue) {
             this.keyValue = keyValue;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        KeyPair.toObject = function (object) {
+            var result = new KeyPair(null, null);
+            // Assign values to bean fields.
+            result.keyName = object.keyName;
+            result.keyValue = object.keyValue;
+            return result;
+        };
         return KeyPair;
     })(APIBean);
     Adaptive.KeyPair = KeyPair;
@@ -1952,6 +2239,15 @@ doesn't exist, this will be -1. Used internally.
         */
         Lifecycle.prototype.setState = function (state) {
             this.state = state;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Lifecycle.toObject = function (object) {
+            var result = new Lifecycle(null);
+            // Assign values to bean fields.
+            result.state = LifecycleState.toObject(object.state);
+            return result;
         };
         return Lifecycle;
     })(APIBean);
@@ -2012,6 +2308,16 @@ doesn't exist, this will be -1. Used internally.
         */
         Locale.prototype.setLanguage = function (language) {
             this.language = language;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Locale.toObject = function (object) {
+            var result = new Locale(null, null);
+            // Assign values to bean fields.
+            result.country = object.country;
+            result.language = object.language;
+            return result;
         };
         return Locale;
     })(APIBean);
@@ -2090,6 +2396,17 @@ doesn't exist, this will be -1. Used internally.
         OSInfo.prototype.setVersion = function (version) {
             this.version = version;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        OSInfo.toObject = function (object) {
+            var result = new OSInfo(null, null, null);
+            // Assign values to bean fields.
+            result.name = IOSType.toObject(object.name);
+            result.version = object.version;
+            result.vendor = object.vendor;
+            return result;
+        };
         return OSInfo;
     })(APIBean);
     Adaptive.OSInfo = OSInfo;
@@ -2149,6 +2466,16 @@ doesn't exist, this will be -1. Used internally.
         */
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {
             this.secureKey = secureKey;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        SecureKeyPair.toObject = function (object) {
+            var result = new SecureKeyPair(null, null);
+            // Assign values to bean fields.
+            result.secureKey = object.secureKey;
+            result.secureData = object.secureData;
+            return result;
         };
         return SecureKeyPair;
     })(APIBean);
@@ -2249,6 +2576,18 @@ doesn't exist, this will be -1. Used internally.
         */
         Service.prototype.setServiceEndpoint = function (serviceEndpoint) {
             this.serviceEndpoint = serviceEndpoint;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Service.toObject = function (object) {
+            var result = new Service(null, null, null, null);
+            // Assign values to bean fields.
+            result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+            result.name = object.name;
+            result.method = IServiceMethod.toObject(object.method);
+            result.type = IServiceType.toObject(object.type);
+            return result;
         };
         return Service;
     })(APIBean);
@@ -2430,6 +2769,22 @@ doesn't exist, this will be -1. Used internally.
         ServiceCookie.prototype.setSecure = function (secure) {
             this.secure = secure;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceCookie.toObject = function (object) {
+            var result = new ServiceCookie(null, null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.cookieName = object.cookieName;
+            result.cookieValue = object.cookieValue;
+            result.domain = object.domain;
+            result.path = object.path;
+            result.scheme = object.scheme;
+            result.secure = object.secure;
+            result.expiry = object.expiry;
+            result.creation = object.creation;
+            return result;
+        };
         return ServiceCookie;
     })(APIBean);
     Adaptive.ServiceCookie = ServiceCookie;
@@ -2550,6 +2905,19 @@ doesn't exist, this will be -1. Used internally.
         ServiceEndpoint.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceEndpoint.toObject = function (object) {
+            var result = new ServiceEndpoint(null, null, null, null, null);
+            // Assign values to bean fields.
+            result.host = object.host;
+            result.path = object.path;
+            result.port = object.port;
+            result.proxy = object.proxy;
+            result.scheme = object.scheme;
+            return result;
+        };
         return ServiceEndpoint;
     })(APIBean);
     Adaptive.ServiceEndpoint = ServiceEndpoint;
@@ -2609,6 +2977,16 @@ doesn't exist, this will be -1. Used internally.
         */
         ServiceHeader.prototype.setName = function (name) {
             this.name = name;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceHeader.toObject = function (object) {
+            var result = new ServiceHeader(null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.data = object.data;
+            return result;
         };
         return ServiceHeader;
     })(APIBean);
@@ -2830,6 +3208,30 @@ doesn't exist, this will be -1. Used internally.
         ServiceRequest.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceRequest.toObject = function (object) {
+            var result = new ServiceRequest(null, null, null, null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.content = object.content;
+            result.contentType = object.contentType;
+            result.contentEncoding = object.contentEncoding;
+            result.contentLength = object.contentLength;
+            result.contentBinary = new Array();
+            for (var __value__ in object.contentBinary) {
+                result.contentBinary.push(__value__);
+            }
+            result.contentBinaryLength = object.contentBinaryLength;
+            result.serviceHeaders = new Array();
+            for (var __value__ in object.serviceHeaders) {
+                result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+            }
+            result.method = object.method;
+            result.protocolVersion = IServiceProtocolVersion.toObject(object.protocolVersion);
+            result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            return result;
+        };
         return ServiceRequest;
     })(APIBean);
     Adaptive.ServiceRequest = ServiceRequest;
@@ -3010,6 +3412,28 @@ doesn't exist, this will be -1. Used internally.
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceResponse.toObject = function (object) {
+            var result = new ServiceResponse(null, null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.content = object.content;
+            result.contentType = object.contentType;
+            result.contentEncoding = object.contentEncoding;
+            result.contentLength = object.contentLength;
+            result.contentBinary = new Array();
+            for (var __value__ in object.contentBinary) {
+                result.contentBinary.push(__value__);
+            }
+            result.contentBinaryLength = object.contentBinaryLength;
+            result.serviceHeaders = new Array();
+            for (var __value__ in object.serviceHeaders) {
+                result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+            }
+            result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            return result;
+        };
         return ServiceResponse;
     })(APIBean);
     Adaptive.ServiceResponse = ServiceResponse;
@@ -3069,6 +3493,22 @@ doesn't exist, this will be -1. Used internally.
         */
         ServiceSession.prototype.setCookies = function (cookies) {
             this.cookies = cookies;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServiceSession.toObject = function (object) {
+            var result = new ServiceSession(null, null);
+            // Assign values to bean fields.
+            result.cookies = new Array();
+            for (var __value__ in object.cookies) {
+                result.cookies.push(ServiceCookie.toObject(__value__));
+            }
+            result.attributes = new Array();
+            for (var __value__ in object.attributes) {
+                result.attributes.push(__value__);
+            }
+            return result;
         };
         return ServiceSession;
     })(APIBean);
@@ -3250,6 +3690,42 @@ doesn't exist, this will be -1. Used internally.
         */
         Contact.prototype.setProfessionalInfo = function (professionalInfo) {
             this.professionalInfo = professionalInfo;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Contact.toObject = function (object) {
+            var result = new Contact(null, null, null, null, null, null, null, null, null);
+            // Assign values to parent bean fields.
+            result.contactId = object.contactId;
+            // Assign values to bean fields.
+            result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+            result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
+            result.contactAddresses = new Array();
+            for (var __value__ in object.contactAddresses) {
+                result.contactAddresses.push(ContactAddress.toObject(__value__));
+            }
+            result.contactPhones = new Array();
+            for (var __value__ in object.contactPhones) {
+                result.contactPhones.push(ContactPhone.toObject(__value__));
+            }
+            result.contactEmails = new Array();
+            for (var __value__ in object.contactEmails) {
+                result.contactEmails.push(ContactEmail.toObject(__value__));
+            }
+            result.contactWebsites = new Array();
+            for (var __value__ in object.contactWebsites) {
+                result.contactWebsites.push(ContactWebsite.toObject(__value__));
+            }
+            result.contactSocials = new Array();
+            for (var __value__ in object.contactSocials) {
+                result.contactSocials.push(ContactSocial.toObject(__value__));
+            }
+            result.contactTags = new Array();
+            for (var __value__ in object.contactTags) {
+                result.contactTags.push(ContactTag.toObject(__value__));
+            }
+            return result;
         };
         return Contact;
     })(ContactUid);
@@ -5699,7 +6175,38 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
-           List of supported locales for the application
+           Returns the default locale of the application defined in the configuration file
+
+           @return Default Locale of the application
+           @since ARP1.0
+        */
+        GlobalizationBridge.prototype.getDefaultLocale = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var ar = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.send(JSON.stringify(ar));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    response = Locale.toObject(JSON.parse(xhr.responseText));
+                }
+                else {
+                    console.error("ERROR: 'GlobalizationBridge.getDefaultLocale' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getDefaultLocale' request.");
+            }
+            return response;
+        };
+        /**
+           List of supported locales for the application defined in the configuration file
 
            @return List of locales
            @since ARP1.0
@@ -5718,7 +6225,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = new Array();
+                    for (var __value__ in JSON.parse(xhr.responseText)) {
+                        response.push(Locale.toObject(__value__));
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getLocaleSupportedDescriptors' incorrect response received.");
@@ -5786,7 +6296,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = new Array();
+                    for (var __value__ in JSON.parse(xhr.responseText)) {
+                        response.push(KeyPair.toObject(__value__));
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getResourceLiterals' incorrect response received.");
@@ -6272,7 +6785,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Service.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
@@ -6497,7 +7010,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = ITelephonyStatus.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'TelephonyBridge.call' incorrect response received.");
@@ -7035,7 +7548,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
@@ -7068,7 +7581,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = IFileSystemType.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
@@ -7101,7 +7614,7 @@ deleted if the cascade parameter is set to true.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");
@@ -7346,7 +7859,7 @@ This method does not create the actual file in the specified folder.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
@@ -7379,7 +7892,7 @@ This path is volatile and may be cleaned by the OS periodically.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
@@ -7411,7 +7924,7 @@ This path must always be writable by the current application.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
@@ -7443,7 +7956,7 @@ This path must always be writable by the current application.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
@@ -7475,7 +7988,7 @@ This path may or may not be directly readable or writable - it usually contains 
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
@@ -7507,7 +8020,7 @@ This path must always be writable by the current application.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
@@ -7572,7 +8085,7 @@ This path may or may not be writable by the current application.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");
@@ -8997,7 +9510,7 @@ device.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = DeviceInfo.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
@@ -9028,7 +9541,7 @@ device.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = Locale.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");
@@ -9139,7 +9652,7 @@ device.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    response = OSInfo.toObject(JSON.parse(xhr.responseText));
                 }
                 else {
                     console.error("ERROR: 'OSBridge.getOSInfo' incorrect response received.");
@@ -10401,6 +10914,23 @@ device.
         ContactAddressType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactAddressType.toObject = function (object) {
+            switch (object.value) {
+                case "Home":
+                    return ContactAddressType.Home;
+                case "Work":
+                    return ContactAddressType.Work;
+                case "Other":
+                    return ContactAddressType.Other;
+                case "Unknown":
+                    return ContactAddressType.Unknown;
+                default:
+                    return ContactAddressType.Unknown;
+            }
+        };
         ContactAddressType.Home = new ContactAddressType("Home");
         ContactAddressType.Work = new ContactAddressType("Work");
         ContactAddressType.Other = new ContactAddressType("Other");
@@ -10417,6 +10947,23 @@ device.
         }
         ContactEmailType.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactEmailType.toObject = function (object) {
+            switch (object.value) {
+                case "Personal":
+                    return ContactEmailType.Personal;
+                case "Work":
+                    return ContactEmailType.Work;
+                case "Other":
+                    return ContactEmailType.Other;
+                case "Unknown":
+                    return ContactEmailType.Unknown;
+                default:
+                    return ContactEmailType.Unknown;
+            }
         };
         ContactEmailType.Personal = new ContactEmailType("Personal");
         ContactEmailType.Work = new ContactEmailType("Work");
@@ -10435,6 +10982,25 @@ device.
         ContactPersonalInfoTitle.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactPersonalInfoTitle.toObject = function (object) {
+            switch (object.value) {
+                case "Mr":
+                    return ContactPersonalInfoTitle.Mr;
+                case "Mrs":
+                    return ContactPersonalInfoTitle.Mrs;
+                case "Ms":
+                    return ContactPersonalInfoTitle.Ms;
+                case "Dr":
+                    return ContactPersonalInfoTitle.Dr;
+                case "Unknown":
+                    return ContactPersonalInfoTitle.Unknown;
+                default:
+                    return ContactPersonalInfoTitle.Unknown;
+            }
+        };
         ContactPersonalInfoTitle.Mr = new ContactPersonalInfoTitle("Mr");
         ContactPersonalInfoTitle.Mrs = new ContactPersonalInfoTitle("Mrs");
         ContactPersonalInfoTitle.Ms = new ContactPersonalInfoTitle("Ms");
@@ -10452,6 +11018,31 @@ device.
         }
         ContactPhoneType.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactPhoneType.toObject = function (object) {
+            switch (object.value) {
+                case "Mobile":
+                    return ContactPhoneType.Mobile;
+                case "Work":
+                    return ContactPhoneType.Work;
+                case "Home":
+                    return ContactPhoneType.Home;
+                case "Main":
+                    return ContactPhoneType.Main;
+                case "HomeFax":
+                    return ContactPhoneType.HomeFax;
+                case "WorkFax":
+                    return ContactPhoneType.WorkFax;
+                case "Other":
+                    return ContactPhoneType.Other;
+                case "Unknown":
+                    return ContactPhoneType.Unknown;
+                default:
+                    return ContactPhoneType.Unknown;
+            }
         };
         ContactPhoneType.Mobile = new ContactPhoneType("Mobile");
         ContactPhoneType.Work = new ContactPhoneType("Work");
@@ -10474,6 +11065,27 @@ device.
         ContactSocialNetwork.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ContactSocialNetwork.toObject = function (object) {
+            switch (object.value) {
+                case "Twitter":
+                    return ContactSocialNetwork.Twitter;
+                case "Facebook":
+                    return ContactSocialNetwork.Facebook;
+                case "GooglePlus":
+                    return ContactSocialNetwork.GooglePlus;
+                case "LinkedIn":
+                    return ContactSocialNetwork.LinkedIn;
+                case "Flickr":
+                    return ContactSocialNetwork.Flickr;
+                case "Unknown":
+                    return ContactSocialNetwork.Unknown;
+                default:
+                    return ContactSocialNetwork.Unknown;
+            }
+        };
         ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
         ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
         ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");
@@ -10493,6 +11105,21 @@ device.
         IAccelerationListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAccelerationListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Unauthorized":
+                    return IAccelerationListenerError.Unauthorized;
+                case "Unavailable":
+                    return IAccelerationListenerError.Unavailable;
+                case "Unknown":
+                    return IAccelerationListenerError.Unknown;
+                default:
+                    return IAccelerationListenerError.Unknown;
+            }
+        };
         IAccelerationListenerError.Unauthorized = new IAccelerationListenerError("Unauthorized");
         IAccelerationListenerError.Unavailable = new IAccelerationListenerError("Unavailable");
         IAccelerationListenerError.Unknown = new IAccelerationListenerError("Unknown");
@@ -10509,6 +11136,21 @@ device.
         IAccelerationListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAccelerationListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "NeedsCalibration":
+                    return IAccelerationListenerWarning.NeedsCalibration;
+                case "Stale":
+                    return IAccelerationListenerWarning.Stale;
+                case "Unknown":
+                    return IAccelerationListenerWarning.Unknown;
+                default:
+                    return IAccelerationListenerWarning.Unknown;
+            }
+        };
         IAccelerationListenerWarning.NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
         IAccelerationListenerWarning.Stale = new IAccelerationListenerWarning("Stale");
         IAccelerationListenerWarning.Unknown = new IAccelerationListenerWarning("Unknown");
@@ -10524,6 +11166,47 @@ device.
         }
         IAdaptiveRPGroup.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IAdaptiveRPGroup.toObject = function (object) {
+            switch (object.value) {
+                case "Application":
+                    return IAdaptiveRPGroup.Application;
+                case "Commerce":
+                    return IAdaptiveRPGroup.Commerce;
+                case "Communication":
+                    return IAdaptiveRPGroup.Communication;
+                case "Data":
+                    return IAdaptiveRPGroup.Data;
+                case "Media":
+                    return IAdaptiveRPGroup.Media;
+                case "Notification":
+                    return IAdaptiveRPGroup.Notification;
+                case "PIM":
+                    return IAdaptiveRPGroup.PIM;
+                case "Reader":
+                    return IAdaptiveRPGroup.Reader;
+                case "Security":
+                    return IAdaptiveRPGroup.Security;
+                case "Sensor":
+                    return IAdaptiveRPGroup.Sensor;
+                case "Social":
+                    return IAdaptiveRPGroup.Social;
+                case "System":
+                    return IAdaptiveRPGroup.System;
+                case "UI":
+                    return IAdaptiveRPGroup.UI;
+                case "Util":
+                    return IAdaptiveRPGroup.Util;
+                case "Kernel":
+                    return IAdaptiveRPGroup.Kernel;
+                case "Unknown":
+                    return IAdaptiveRPGroup.Unknown;
+                default:
+                    return IAdaptiveRPGroup.Unknown;
+            }
         };
         IAdaptiveRPGroup.Application = new IAdaptiveRPGroup("Application");
         IAdaptiveRPGroup.Commerce = new IAdaptiveRPGroup("Commerce");
@@ -10554,6 +11237,19 @@ device.
         IButtonListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IButtonListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Not_Present":
+                    return IButtonListenerError.Not_Present;
+                case "Unknown":
+                    return IButtonListenerError.Unknown;
+                default:
+                    return IButtonListenerError.Unknown;
+            }
+        };
         IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
         IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
         return IButtonListenerError;
@@ -10569,6 +11265,19 @@ device.
         IButtonListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IButtonListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "Not_Implemented":
+                    return IButtonListenerWarning.Not_Implemented;
+                case "Unknown":
+                    return IButtonListenerWarning.Unknown;
+                default:
+                    return IButtonListenerWarning.Unknown;
+            }
+        };
         IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
         IButtonListenerWarning.Unknown = new IButtonListenerWarning("Unknown");
         return IButtonListenerWarning;
@@ -10583,6 +11292,23 @@ device.
         }
         ICapabilitiesButton.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesButton.toObject = function (object) {
+            switch (object.value) {
+                case "HomeButton":
+                    return ICapabilitiesButton.HomeButton;
+                case "BackButton":
+                    return ICapabilitiesButton.BackButton;
+                case "OptionButton":
+                    return ICapabilitiesButton.OptionButton;
+                case "Unknown":
+                    return ICapabilitiesButton.Unknown;
+                default:
+                    return ICapabilitiesButton.Unknown;
+            }
         };
         ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
         ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
@@ -10600,6 +11326,27 @@ device.
         }
         ICapabilitiesCommunication.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesCommunication.toObject = function (object) {
+            switch (object.value) {
+                case "Calendar":
+                    return ICapabilitiesCommunication.Calendar;
+                case "Contact":
+                    return ICapabilitiesCommunication.Contact;
+                case "Mail":
+                    return ICapabilitiesCommunication.Mail;
+                case "Messaging":
+                    return ICapabilitiesCommunication.Messaging;
+                case "Telephony":
+                    return ICapabilitiesCommunication.Telephony;
+                case "Unknown":
+                    return ICapabilitiesCommunication.Unknown;
+                default:
+                    return ICapabilitiesCommunication.Unknown;
+            }
         };
         ICapabilitiesCommunication.Calendar = new ICapabilitiesCommunication("Calendar");
         ICapabilitiesCommunication.Contact = new ICapabilitiesCommunication("Contact");
@@ -10620,6 +11367,23 @@ device.
         ICapabilitiesData.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesData.toObject = function (object) {
+            switch (object.value) {
+                case "Database":
+                    return ICapabilitiesData.Database;
+                case "File":
+                    return ICapabilitiesData.File;
+                case "Cloud":
+                    return ICapabilitiesData.Cloud;
+                case "Unknown":
+                    return ICapabilitiesData.Unknown;
+                default:
+                    return ICapabilitiesData.Unknown;
+            }
+        };
         ICapabilitiesData.Database = new ICapabilitiesData("Database");
         ICapabilitiesData.File = new ICapabilitiesData("File");
         ICapabilitiesData.Cloud = new ICapabilitiesData("Cloud");
@@ -10636,6 +11400,27 @@ device.
         }
         ICapabilitiesMedia.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesMedia.toObject = function (object) {
+            switch (object.value) {
+                case "Audio_Playback":
+                    return ICapabilitiesMedia.Audio_Playback;
+                case "Audio_Recording":
+                    return ICapabilitiesMedia.Audio_Recording;
+                case "Camera":
+                    return ICapabilitiesMedia.Camera;
+                case "Video_Playback":
+                    return ICapabilitiesMedia.Video_Playback;
+                case "Video_Recording":
+                    return ICapabilitiesMedia.Video_Recording;
+                case "Unknown":
+                    return ICapabilitiesMedia.Unknown;
+                default:
+                    return ICapabilitiesMedia.Unknown;
+            }
         };
         ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
         ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
@@ -10655,6 +11440,31 @@ device.
         }
         ICapabilitiesNet.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesNet.toObject = function (object) {
+            switch (object.value) {
+                case "GSM":
+                    return ICapabilitiesNet.GSM;
+                case "GPRS":
+                    return ICapabilitiesNet.GPRS;
+                case "HSDPA":
+                    return ICapabilitiesNet.HSDPA;
+                case "LTE":
+                    return ICapabilitiesNet.LTE;
+                case "WIFI":
+                    return ICapabilitiesNet.WIFI;
+                case "Ethernet":
+                    return ICapabilitiesNet.Ethernet;
+                case "Unavailable":
+                    return ICapabilitiesNet.Unavailable;
+                case "Unknown":
+                    return ICapabilitiesNet.Unknown;
+                default:
+                    return ICapabilitiesNet.Unknown;
+            }
         };
         ICapabilitiesNet.GSM = new ICapabilitiesNet("GSM");
         ICapabilitiesNet.GPRS = new ICapabilitiesNet("GPRS");
@@ -10677,6 +11487,25 @@ device.
         ICapabilitiesNotification.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesNotification.toObject = function (object) {
+            switch (object.value) {
+                case "Alarm":
+                    return ICapabilitiesNotification.Alarm;
+                case "LocalNotification":
+                    return ICapabilitiesNotification.LocalNotification;
+                case "RemoteNotification":
+                    return ICapabilitiesNotification.RemoteNotification;
+                case "Vibration":
+                    return ICapabilitiesNotification.Vibration;
+                case "Unknown":
+                    return ICapabilitiesNotification.Unknown;
+                default:
+                    return ICapabilitiesNotification.Unknown;
+            }
+        };
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");
         ICapabilitiesNotification.LocalNotification = new ICapabilitiesNotification("LocalNotification");
         ICapabilitiesNotification.RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
@@ -10694,6 +11523,31 @@ device.
         }
         ICapabilitiesSensor.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ICapabilitiesSensor.toObject = function (object) {
+            switch (object.value) {
+                case "Accelerometer":
+                    return ICapabilitiesSensor.Accelerometer;
+                case "AmbientLight":
+                    return ICapabilitiesSensor.AmbientLight;
+                case "Barometer":
+                    return ICapabilitiesSensor.Barometer;
+                case "Geolocation":
+                    return ICapabilitiesSensor.Geolocation;
+                case "Gyroscope":
+                    return ICapabilitiesSensor.Gyroscope;
+                case "Magnetometer":
+                    return ICapabilitiesSensor.Magnetometer;
+                case "Proximity":
+                    return ICapabilitiesSensor.Proximity;
+                case "Unknown":
+                    return ICapabilitiesSensor.Unknown;
+                default:
+                    return ICapabilitiesSensor.Unknown;
+            }
         };
         ICapabilitiesSensor.Accelerometer = new ICapabilitiesSensor("Accelerometer");
         ICapabilitiesSensor.AmbientLight = new ICapabilitiesSensor("AmbientLight");
@@ -10715,6 +11569,33 @@ device.
         }
         IContactFieldGroup.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactFieldGroup.toObject = function (object) {
+            switch (object.value) {
+                case "PERSONAL_INFO":
+                    return IContactFieldGroup.PERSONAL_INFO;
+                case "PROFESSIONAL_INFO":
+                    return IContactFieldGroup.PROFESSIONAL_INFO;
+                case "ADDRESSES":
+                    return IContactFieldGroup.ADDRESSES;
+                case "PHONES":
+                    return IContactFieldGroup.PHONES;
+                case "EMAILS":
+                    return IContactFieldGroup.EMAILS;
+                case "WEBSITES":
+                    return IContactFieldGroup.WEBSITES;
+                case "SOCIALS":
+                    return IContactFieldGroup.SOCIALS;
+                case "TAGS":
+                    return IContactFieldGroup.TAGS;
+                case "Unknown":
+                    return IContactFieldGroup.Unknown;
+                default:
+                    return IContactFieldGroup.Unknown;
+            }
         };
         IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
         IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
@@ -10738,6 +11619,23 @@ device.
         IContactFilter.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactFilter.toObject = function (object) {
+            switch (object.value) {
+                case "HAS_PHONE":
+                    return IContactFilter.HAS_PHONE;
+                case "HAS_EMAIL":
+                    return IContactFilter.HAS_EMAIL;
+                case "HAS_ADDRESS":
+                    return IContactFilter.HAS_ADDRESS;
+                case "Unknown":
+                    return IContactFilter.Unknown;
+                default:
+                    return IContactFilter.Unknown;
+            }
+        };
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
         IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
         IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
@@ -10754,6 +11652,23 @@ device.
         }
         IContactPhotoResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactPhotoResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return IContactPhotoResultCallbackError.NoPermission;
+                case "Wrong_Params":
+                    return IContactPhotoResultCallbackError.Wrong_Params;
+                case "No_Photo":
+                    return IContactPhotoResultCallbackError.No_Photo;
+                case "Unknown":
+                    return IContactPhotoResultCallbackError.Unknown;
+                default:
+                    return IContactPhotoResultCallbackError.Unknown;
+            }
         };
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
@@ -10772,6 +11687,21 @@ device.
         IContactPhotoResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactPhotoResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "LimitExceeded":
+                    return IContactPhotoResultCallbackWarning.LimitExceeded;
+                case "No_Matches":
+                    return IContactPhotoResultCallbackWarning.No_Matches;
+                case "Unknown":
+                    return IContactPhotoResultCallbackWarning.Unknown;
+                default:
+                    return IContactPhotoResultCallbackWarning.Unknown;
+            }
+        };
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
         IContactPhotoResultCallbackWarning.Unknown = new IContactPhotoResultCallbackWarning("Unknown");
@@ -10787,6 +11717,21 @@ device.
         }
         IContactResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return IContactResultCallbackError.NoPermission;
+                case "Wrong_Params":
+                    return IContactResultCallbackError.Wrong_Params;
+                case "Unknown":
+                    return IContactResultCallbackError.Unknown;
+                default:
+                    return IContactResultCallbackError.Unknown;
+            }
         };
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
@@ -10804,6 +11749,21 @@ device.
         IContactResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IContactResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "LimitExceeded":
+                    return IContactResultCallbackWarning.LimitExceeded;
+                case "No_Matches":
+                    return IContactResultCallbackWarning.No_Matches;
+                case "Unknown":
+                    return IContactResultCallbackWarning.Unknown;
+                default:
+                    return IContactResultCallbackWarning.Unknown;
+            }
+        };
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
         IContactResultCallbackWarning.Unknown = new IContactResultCallbackWarning("Unknown");
@@ -10819,6 +11779,23 @@ device.
         }
         IDatabaseResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoSpace":
+                    return IDatabaseResultCallbackError.NoSpace;
+                case "SqlException":
+                    return IDatabaseResultCallbackError.SqlException;
+                case "NotDeleted":
+                    return IDatabaseResultCallbackError.NotDeleted;
+                case "Unknown":
+                    return IDatabaseResultCallbackError.Unknown;
+                default:
+                    return IDatabaseResultCallbackError.Unknown;
+            }
         };
         IDatabaseResultCallbackError.NoSpace = new IDatabaseResultCallbackError("NoSpace");
         IDatabaseResultCallbackError.SqlException = new IDatabaseResultCallbackError("SqlException");
@@ -10837,6 +11814,21 @@ device.
         IDatabaseResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "DatabaseExists":
+                    return IDatabaseResultCallbackWarning.DatabaseExists;
+                case "IsOpen":
+                    return IDatabaseResultCallbackWarning.IsOpen;
+                case "Unknown":
+                    return IDatabaseResultCallbackWarning.Unknown;
+                default:
+                    return IDatabaseResultCallbackWarning.Unknown;
+            }
+        };
         IDatabaseResultCallbackWarning.DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
         IDatabaseResultCallbackWarning.IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
         IDatabaseResultCallbackWarning.Unknown = new IDatabaseResultCallbackWarning("Unknown");
@@ -10852,6 +11844,27 @@ device.
         }
         IDatabaseTableResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseTableResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoSpace":
+                    return IDatabaseTableResultCallbackError.NoSpace;
+                case "ReadOnlyTable":
+                    return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                case "SqlException":
+                    return IDatabaseTableResultCallbackError.SqlException;
+                case "DatabaseNotFound":
+                    return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                case "NoTableFound":
+                    return IDatabaseTableResultCallbackError.NoTableFound;
+                case "Unknown":
+                    return IDatabaseTableResultCallbackError.Unknown;
+                default:
+                    return IDatabaseTableResultCallbackError.Unknown;
+            }
         };
         IDatabaseTableResultCallbackError.NoSpace = new IDatabaseTableResultCallbackError("NoSpace");
         IDatabaseTableResultCallbackError.ReadOnlyTable = new IDatabaseTableResultCallbackError("ReadOnlyTable");
@@ -10872,6 +11885,23 @@ device.
         IDatabaseTableResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IDatabaseTableResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "TableExists":
+                    return IDatabaseTableResultCallbackWarning.TableExists;
+                case "TableLocked":
+                    return IDatabaseTableResultCallbackWarning.TableLocked;
+                case "NoResults":
+                    return IDatabaseTableResultCallbackWarning.NoResults;
+                case "Unknown":
+                    return IDatabaseTableResultCallbackWarning.Unknown;
+                default:
+                    return IDatabaseTableResultCallbackWarning.Unknown;
+            }
+        };
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");
         IDatabaseTableResultCallbackWarning.TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
         IDatabaseTableResultCallbackWarning.NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
@@ -10888,6 +11918,23 @@ device.
         }
         IFileDataLoadResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataLoadResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "InexistentFile":
+                    return IFileDataLoadResultCallbackError.InexistentFile;
+                case "InsufficientSpace":
+                    return IFileDataLoadResultCallbackError.InsufficientSpace;
+                case "Unauthorized":
+                    return IFileDataLoadResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileDataLoadResultCallbackError.Unknown;
+                default:
+                    return IFileDataLoadResultCallbackError.Unknown;
+            }
         };
         IFileDataLoadResultCallbackError.InexistentFile = new IFileDataLoadResultCallbackError("InexistentFile");
         IFileDataLoadResultCallbackError.InsufficientSpace = new IFileDataLoadResultCallbackError("InsufficientSpace");
@@ -10906,6 +11953,19 @@ device.
         IFileDataLoadResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataLoadResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "ExceedMaximumSize":
+                    return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                case "Unknown":
+                    return IFileDataLoadResultCallbackWarning.Unknown;
+                default:
+                    return IFileDataLoadResultCallbackWarning.Unknown;
+            }
+        };
         IFileDataLoadResultCallbackWarning.ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
         IFileDataLoadResultCallbackWarning.Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
         return IFileDataLoadResultCallbackWarning;
@@ -10920,6 +11980,23 @@ device.
         }
         IFileDataStoreResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataStoreResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "InexistentFile":
+                    return IFileDataStoreResultCallbackError.InexistentFile;
+                case "InsufficientSpace":
+                    return IFileDataStoreResultCallbackError.InsufficientSpace;
+                case "Unauthorized":
+                    return IFileDataStoreResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileDataStoreResultCallbackError.Unknown;
+                default:
+                    return IFileDataStoreResultCallbackError.Unknown;
+            }
         };
         IFileDataStoreResultCallbackError.InexistentFile = new IFileDataStoreResultCallbackError("InexistentFile");
         IFileDataStoreResultCallbackError.InsufficientSpace = new IFileDataStoreResultCallbackError("InsufficientSpace");
@@ -10938,6 +12015,19 @@ device.
         IFileDataStoreResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileDataStoreResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "ExceedMaximumSize":
+                    return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
+                case "Unknown":
+                    return IFileDataStoreResultCallbackWarning.Unknown;
+                default:
+                    return IFileDataStoreResultCallbackWarning.Unknown;
+            }
+        };
         IFileDataStoreResultCallbackWarning.ExceedMaximumSize = new IFileDataStoreResultCallbackWarning("ExceedMaximumSize");
         IFileDataStoreResultCallbackWarning.Unknown = new IFileDataStoreResultCallbackWarning("Unknown");
         return IFileDataStoreResultCallbackWarning;
@@ -10952,6 +12042,21 @@ device.
         }
         IFileListResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileListResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "InexistentFile":
+                    return IFileListResultCallbackError.InexistentFile;
+                case "Unauthorized":
+                    return IFileListResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileListResultCallbackError.Unknown;
+                default:
+                    return IFileListResultCallbackError.Unknown;
+            }
         };
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");
         IFileListResultCallbackError.Unauthorized = new IFileListResultCallbackError("Unauthorized");
@@ -10969,6 +12074,19 @@ device.
         IFileListResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileListResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "PartialResult":
+                    return IFileListResultCallbackWarning.PartialResult;
+                case "Unknown":
+                    return IFileListResultCallbackWarning.Unknown;
+                default:
+                    return IFileListResultCallbackWarning.Unknown;
+            }
+        };
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
         IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
         return IFileListResultCallbackWarning;
@@ -10983,6 +12101,27 @@ device.
         }
         IFileResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "FileExists":
+                    return IFileResultCallbackError.FileExists;
+                case "SourceInexistent":
+                    return IFileResultCallbackError.SourceInexistent;
+                case "DestionationExists":
+                    return IFileResultCallbackError.DestionationExists;
+                case "InsufficientSpace":
+                    return IFileResultCallbackError.InsufficientSpace;
+                case "Unauthorized":
+                    return IFileResultCallbackError.Unauthorized;
+                case "Unknown":
+                    return IFileResultCallbackError.Unknown;
+                default:
+                    return IFileResultCallbackError.Unknown;
+            }
         };
         IFileResultCallbackError.FileExists = new IFileResultCallbackError("FileExists");
         IFileResultCallbackError.SourceInexistent = new IFileResultCallbackError("SourceInexistent");
@@ -11003,6 +12142,21 @@ device.
         IFileResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "SourceNotDeleted":
+                    return IFileResultCallbackWarning.SourceNotDeleted;
+                case "RootDirectory":
+                    return IFileResultCallbackWarning.RootDirectory;
+                case "Unknown":
+                    return IFileResultCallbackWarning.Unknown;
+                default:
+                    return IFileResultCallbackWarning.Unknown;
+            }
+        };
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
         IFileResultCallbackWarning.RootDirectory = new IFileResultCallbackWarning("RootDirectory");
         IFileResultCallbackWarning.Unknown = new IFileResultCallbackWarning("Unknown");
@@ -11018,6 +12172,23 @@ device.
         }
         IFileSystemSecurity.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemSecurity.toObject = function (object) {
+            switch (object.value) {
+                case "Default":
+                    return IFileSystemSecurity.Default;
+                case "Protected":
+                    return IFileSystemSecurity.Protected;
+                case "Encrypted":
+                    return IFileSystemSecurity.Encrypted;
+                case "Unknown":
+                    return IFileSystemSecurity.Unknown;
+                default:
+                    return IFileSystemSecurity.Unknown;
+            }
         };
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");
         IFileSystemSecurity.Protected = new IFileSystemSecurity("Protected");
@@ -11035,6 +12206,29 @@ device.
         }
         IFileSystemStorageType.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemStorageType.toObject = function (object) {
+            switch (object.value) {
+                case "Application":
+                    return IFileSystemStorageType.Application;
+                case "Document":
+                    return IFileSystemStorageType.Document;
+                case "Cloud":
+                    return IFileSystemStorageType.Cloud;
+                case "Protected":
+                    return IFileSystemStorageType.Protected;
+                case "Cache":
+                    return IFileSystemStorageType.Cache;
+                case "External":
+                    return IFileSystemStorageType.External;
+                case "Unknown":
+                    return IFileSystemStorageType.Unknown;
+                default:
+                    return IFileSystemStorageType.Unknown;
+            }
         };
         IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
         IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
@@ -11056,6 +12250,21 @@ device.
         IFileSystemType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemType.toObject = function (object) {
+            switch (object.value) {
+                case "Directory":
+                    return IFileSystemType.Directory;
+                case "File":
+                    return IFileSystemType.File;
+                case "Unknown":
+                    return IFileSystemType.Unknown;
+                default:
+                    return IFileSystemType.Unknown;
+            }
+        };
         IFileSystemType.Directory = new IFileSystemType("Directory");
         IFileSystemType.File = new IFileSystemType("File");
         IFileSystemType.Unknown = new IFileSystemType("Unknown");
@@ -11071,6 +12280,25 @@ device.
         }
         IGeolocationListenerError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IGeolocationListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Disabled":
+                    return IGeolocationListenerError.Disabled;
+                case "RestrictedAccess":
+                    return IGeolocationListenerError.RestrictedAccess;
+                case "DeniedAccess":
+                    return IGeolocationListenerError.DeniedAccess;
+                case "StatusNotDetermined":
+                    return IGeolocationListenerError.StatusNotDetermined;
+                case "Unknown":
+                    return IGeolocationListenerError.Unknown;
+                default:
+                    return IGeolocationListenerError.Unknown;
+            }
         };
         IGeolocationListenerError.Disabled = new IGeolocationListenerError("Disabled");
         IGeolocationListenerError.RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
@@ -11090,6 +12318,21 @@ device.
         IGeolocationListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IGeolocationListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "HighDoP":
+                    return IGeolocationListenerWarning.HighDoP;
+                case "StaleData":
+                    return IGeolocationListenerWarning.StaleData;
+                case "Unknown":
+                    return IGeolocationListenerWarning.Unknown;
+                default:
+                    return IGeolocationListenerWarning.Unknown;
+            }
+        };
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");
         IGeolocationListenerWarning.StaleData = new IGeolocationListenerWarning("StaleData");
         IGeolocationListenerWarning.Unknown = new IGeolocationListenerWarning("Unknown");
@@ -11105,6 +12348,23 @@ device.
         }
         ILifecycleListenerError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ILifecycleListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "Runtime":
+                    return ILifecycleListenerError.Runtime;
+                case "Implementation":
+                    return ILifecycleListenerError.Implementation;
+                case "Killed":
+                    return ILifecycleListenerError.Killed;
+                case "Unknown":
+                    return ILifecycleListenerError.Unknown;
+                default:
+                    return ILifecycleListenerError.Unknown;
+            }
         };
         ILifecycleListenerError.Runtime = new ILifecycleListenerError("Runtime");
         ILifecycleListenerError.Implementation = new ILifecycleListenerError("Implementation");
@@ -11123,6 +12383,21 @@ device.
         ILifecycleListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ILifecycleListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "MemoryLow":
+                    return ILifecycleListenerWarning.MemoryLow;
+                case "BatteryLow":
+                    return ILifecycleListenerWarning.BatteryLow;
+                case "Unknown":
+                    return ILifecycleListenerWarning.Unknown;
+                default:
+                    return ILifecycleListenerWarning.Unknown;
+            }
+        };
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");
         ILifecycleListenerWarning.BatteryLow = new ILifecycleListenerWarning("BatteryLow");
         ILifecycleListenerWarning.Unknown = new ILifecycleListenerWarning("Unknown");
@@ -11138,6 +12413,25 @@ device.
         }
         ILoggingLogLevel.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ILoggingLogLevel.toObject = function (object) {
+            switch (object.value) {
+                case "DEBUG":
+                    return ILoggingLogLevel.DEBUG;
+                case "WARN":
+                    return ILoggingLogLevel.WARN;
+                case "ERROR":
+                    return ILoggingLogLevel.ERROR;
+                case "INFO":
+                    return ILoggingLogLevel.INFO;
+                case "Unknown":
+                    return ILoggingLogLevel.Unknown;
+                default:
+                    return ILoggingLogLevel.Unknown;
+            }
         };
         ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
         ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
@@ -11156,6 +12450,27 @@ device.
         }
         IMessagingCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IMessagingCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "SIMNotPresent":
+                    return IMessagingCallbackError.SIMNotPresent;
+                case "EmailAccountNotFound":
+                    return IMessagingCallbackError.EmailAccountNotFound;
+                case "NotSent":
+                    return IMessagingCallbackError.NotSent;
+                case "WrongParams":
+                    return IMessagingCallbackError.WrongParams;
+                case "NotSupported":
+                    return IMessagingCallbackError.NotSupported;
+                case "Unknown":
+                    return IMessagingCallbackError.Unknown;
+                default:
+                    return IMessagingCallbackError.Unknown;
+            }
         };
         IMessagingCallbackError.SIMNotPresent = new IMessagingCallbackError("SIMNotPresent");
         IMessagingCallbackError.EmailAccountNotFound = new IMessagingCallbackError("EmailAccountNotFound");
@@ -11176,6 +12491,21 @@ device.
         IMessagingCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IMessagingCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "UnableToSentAll":
+                    return IMessagingCallbackWarning.UnableToSentAll;
+                case "UnableToFetchAttachment":
+                    return IMessagingCallbackWarning.UnableToFetchAttachment;
+                case "Unknown":
+                    return IMessagingCallbackWarning.Unknown;
+                default:
+                    return IMessagingCallbackWarning.Unknown;
+            }
+        };
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
         IMessagingCallbackWarning.UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
         IMessagingCallbackWarning.Unknown = new IMessagingCallbackWarning("Unknown");
@@ -11191,6 +12521,39 @@ device.
         }
         INetworkReachabilityCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkReachabilityCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "Forbidden":
+                    return INetworkReachabilityCallbackError.Forbidden;
+                case "NotFound":
+                    return INetworkReachabilityCallbackError.NotFound;
+                case "MethodNotAllowed":
+                    return INetworkReachabilityCallbackError.MethodNotAllowed;
+                case "NotAllowed":
+                    return INetworkReachabilityCallbackError.NotAllowed;
+                case "NotAuthenticated":
+                    return INetworkReachabilityCallbackError.NotAuthenticated;
+                case "TimeOut":
+                    return INetworkReachabilityCallbackError.TimeOut;
+                case "NoResponse":
+                    return INetworkReachabilityCallbackError.NoResponse;
+                case "Unreachable":
+                    return INetworkReachabilityCallbackError.Unreachable;
+                case "Wrong_Params":
+                    return INetworkReachabilityCallbackError.Wrong_Params;
+                case "MalformedUrl":
+                    return INetworkReachabilityCallbackError.MalformedUrl;
+                case "DomainUnresolvable":
+                    return INetworkReachabilityCallbackError.DomainUnresolvable;
+                case "Unknown":
+                    return INetworkReachabilityCallbackError.Unknown;
+                default:
+                    return INetworkReachabilityCallbackError.Unknown;
+            }
         };
         INetworkReachabilityCallbackError.Forbidden = new INetworkReachabilityCallbackError("Forbidden");
         INetworkReachabilityCallbackError.NotFound = new INetworkReachabilityCallbackError("NotFound");
@@ -11217,6 +12580,27 @@ device.
         INetworkReachabilityCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkReachabilityCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "IncorrectScheme":
+                    return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                case "NotSecure":
+                    return INetworkReachabilityCallbackWarning.NotSecure;
+                case "NotTrusted":
+                    return INetworkReachabilityCallbackWarning.NotTrusted;
+                case "Redirected":
+                    return INetworkReachabilityCallbackWarning.Redirected;
+                case "NotRegisteredService":
+                    return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                case "Unknown":
+                    return INetworkReachabilityCallbackWarning.Unknown;
+                default:
+                    return INetworkReachabilityCallbackWarning.Unknown;
+            }
+        };
         INetworkReachabilityCallbackWarning.IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
         INetworkReachabilityCallbackWarning.NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
         INetworkReachabilityCallbackWarning.NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");
@@ -11236,6 +12620,21 @@ device.
         INetworkStatusListenerError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkStatusListenerError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return INetworkStatusListenerError.NoPermission;
+                case "Unreachable":
+                    return INetworkStatusListenerError.Unreachable;
+                case "Unknown":
+                    return INetworkStatusListenerError.Unknown;
+                default:
+                    return INetworkStatusListenerError.Unknown;
+            }
+        };
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");
         INetworkStatusListenerError.Unreachable = new INetworkStatusListenerError("Unreachable");
         INetworkStatusListenerError.Unknown = new INetworkStatusListenerError("Unknown");
@@ -11252,6 +12651,21 @@ device.
         INetworkStatusListenerWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        INetworkStatusListenerWarning.toObject = function (object) {
+            switch (object.value) {
+                case "IpAddressNotAssigned":
+                    return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                case "IpAddressChanged":
+                    return INetworkStatusListenerWarning.IpAddressChanged;
+                case "Unknown":
+                    return INetworkStatusListenerWarning.Unknown;
+                default:
+                    return INetworkStatusListenerWarning.Unknown;
+            }
+        };
         INetworkStatusListenerWarning.IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
         INetworkStatusListenerWarning.IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
         INetworkStatusListenerWarning.Unknown = new INetworkStatusListenerWarning("Unknown");
@@ -11267,6 +12681,39 @@ device.
         }
         IOSType.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IOSType.toObject = function (object) {
+            switch (object.value) {
+                case "iOS":
+                    return IOSType.iOS;
+                case "OSX":
+                    return IOSType.OSX;
+                case "Windows":
+                    return IOSType.Windows;
+                case "WindowsPhone":
+                    return IOSType.WindowsPhone;
+                case "Android":
+                    return IOSType.Android;
+                case "Linux":
+                    return IOSType.Linux;
+                case "Blackberry":
+                    return IOSType.Blackberry;
+                case "Tizen":
+                    return IOSType.Tizen;
+                case "FirefoxOS":
+                    return IOSType.FirefoxOS;
+                case "Chromium":
+                    return IOSType.Chromium;
+                case "Unspecified":
+                    return IOSType.Unspecified;
+                case "Unknown":
+                    return IOSType.Unknown;
+                default:
+                    return IOSType.Unknown;
+            }
         };
         IOSType.iOS = new IOSType("iOS");
         IOSType.OSX = new IOSType("OSX");
@@ -11293,6 +12740,21 @@ device.
         ISecurityResultCallbackError.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ISecurityResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "NoPermission":
+                    return ISecurityResultCallbackError.NoPermission;
+                case "NoMatchesFound":
+                    return ISecurityResultCallbackError.NoMatchesFound;
+                case "Unknown":
+                    return ISecurityResultCallbackError.Unknown;
+                default:
+                    return ISecurityResultCallbackError.Unknown;
+            }
+        };
         ISecurityResultCallbackError.NoPermission = new ISecurityResultCallbackError("NoPermission");
         ISecurityResultCallbackError.NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
         ISecurityResultCallbackError.Unknown = new ISecurityResultCallbackError("Unknown");
@@ -11309,6 +12771,19 @@ device.
         ISecurityResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ISecurityResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "EntryOverride":
+                    return ISecurityResultCallbackWarning.EntryOverride;
+                case "Unknown":
+                    return ISecurityResultCallbackWarning.Unknown;
+                default:
+                    return ISecurityResultCallbackWarning.Unknown;
+            }
+        };
         ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
         ISecurityResultCallbackWarning.Unknown = new ISecurityResultCallbackWarning("Unknown");
         return ISecurityResultCallbackWarning;
@@ -11323,6 +12798,21 @@ device.
         }
         IServiceProtocolVersion.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceProtocolVersion.toObject = function (object) {
+            switch (object.value) {
+                case "HttpProtocolVersion10":
+                    return IServiceProtocolVersion.HttpProtocolVersion10;
+                case "HttpProtocolVersion11":
+                    return IServiceProtocolVersion.HttpProtocolVersion11;
+                case "Unknown":
+                    return IServiceProtocolVersion.Unknown;
+                default:
+                    return IServiceProtocolVersion.Unknown;
+            }
         };
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
         IServiceProtocolVersion.HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
@@ -11340,6 +12830,21 @@ device.
         IServiceMethod.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceMethod.toObject = function (object) {
+            switch (object.value) {
+                case "Post":
+                    return IServiceMethod.Post;
+                case "Get":
+                    return IServiceMethod.Get;
+                case "Unknown":
+                    return IServiceMethod.Unknown;
+                default:
+                    return IServiceMethod.Unknown;
+            }
+        };
         IServiceMethod.Post = new IServiceMethod("Post");
         IServiceMethod.Get = new IServiceMethod("Get");
         IServiceMethod.Unknown = new IServiceMethod("Unknown");
@@ -11355,6 +12860,37 @@ device.
         }
         IServiceType.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceType.toObject = function (object) {
+            switch (object.value) {
+                case "ServiceTypeAmfSerialization":
+                    return IServiceType.ServiceTypeAmfSerialization;
+                case "ServiceTypeGwtRpc":
+                    return IServiceType.ServiceTypeGwtRpc;
+                case "ServiceTypeOctetBinary":
+                    return IServiceType.ServiceTypeOctetBinary;
+                case "ServiceTypeRemotingSerialization":
+                    return IServiceType.ServiceTypeRemotingSerialization;
+                case "ServiceTypeRestJson":
+                    return IServiceType.ServiceTypeRestJson;
+                case "ServiceTypeRestXml":
+                    return IServiceType.ServiceTypeRestXml;
+                case "ServiceTypeSoapJson":
+                    return IServiceType.ServiceTypeSoapJson;
+                case "ServiceTypeSoapXml":
+                    return IServiceType.ServiceTypeSoapXml;
+                case "ServiceTypeXmlRpcJson":
+                    return IServiceType.ServiceTypeXmlRpcJson;
+                case "ServiceTypeXmlRpcXml":
+                    return IServiceType.ServiceTypeXmlRpcXml;
+                case "Unknown":
+                    return IServiceType.Unknown;
+                default:
+                    return IServiceType.Unknown;
+            }
         };
         IServiceType.ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
         IServiceType.ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
@@ -11379,6 +12915,39 @@ device.
         }
         IServiceResultCallbackError.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceResultCallbackError.toObject = function (object) {
+            switch (object.value) {
+                case "Forbidden":
+                    return IServiceResultCallbackError.Forbidden;
+                case "NotFound":
+                    return IServiceResultCallbackError.NotFound;
+                case "MethodNotAllowed":
+                    return IServiceResultCallbackError.MethodNotAllowed;
+                case "NotAllowed":
+                    return IServiceResultCallbackError.NotAllowed;
+                case "NotAuthenticated":
+                    return IServiceResultCallbackError.NotAuthenticated;
+                case "TimeOut":
+                    return IServiceResultCallbackError.TimeOut;
+                case "NoResponse":
+                    return IServiceResultCallbackError.NoResponse;
+                case "ServerError":
+                    return IServiceResultCallbackError.ServerError;
+                case "Unreachable":
+                    return IServiceResultCallbackError.Unreachable;
+                case "MalformedUrl":
+                    return IServiceResultCallbackError.MalformedUrl;
+                case "NotRegisteredService":
+                    return IServiceResultCallbackError.NotRegisteredService;
+                case "Unknown":
+                    return IServiceResultCallbackError.Unknown;
+                default:
+                    return IServiceResultCallbackError.Unknown;
+            }
         };
         IServiceResultCallbackError.Forbidden = new IServiceResultCallbackError("Forbidden");
         IServiceResultCallbackError.NotFound = new IServiceResultCallbackError("NotFound");
@@ -11405,6 +12974,25 @@ device.
         IServiceResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IServiceResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "NotSecure":
+                    return IServiceResultCallbackWarning.NotSecure;
+                case "NotTrusted":
+                    return IServiceResultCallbackWarning.NotTrusted;
+                case "Redirected":
+                    return IServiceResultCallbackWarning.Redirected;
+                case "Wrong_Params":
+                    return IServiceResultCallbackWarning.Wrong_Params;
+                case "Unknown":
+                    return IServiceResultCallbackWarning.Unknown;
+                default:
+                    return IServiceResultCallbackWarning.Unknown;
+            }
+        };
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");
         IServiceResultCallbackWarning.NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
@@ -11423,6 +13011,21 @@ device.
         ITelephonyStatus.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        ITelephonyStatus.toObject = function (object) {
+            switch (object.value) {
+                case "Dialing":
+                    return ITelephonyStatus.Dialing;
+                case "Failed":
+                    return ITelephonyStatus.Failed;
+                case "Unknown":
+                    return ITelephonyStatus.Unknown;
+                default:
+                    return ITelephonyStatus.Unknown;
+            }
+        };
         ITelephonyStatus.Dialing = new ITelephonyStatus("Dialing");
         ITelephonyStatus.Failed = new ITelephonyStatus("Failed");
         ITelephonyStatus.Unknown = new ITelephonyStatus("Unknown");
@@ -11438,6 +13041,33 @@ device.
         }
         LifecycleState.prototype.toString = function () {
             return this.value;
+        };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        LifecycleState.toObject = function (object) {
+            switch (object.value) {
+                case "Starting":
+                    return LifecycleState.Starting;
+                case "Started":
+                    return LifecycleState.Started;
+                case "Running":
+                    return LifecycleState.Running;
+                case "Pausing":
+                    return LifecycleState.Pausing;
+                case "PausedIdle":
+                    return LifecycleState.PausedIdle;
+                case "PausedRun":
+                    return LifecycleState.PausedRun;
+                case "Resuming":
+                    return LifecycleState.Resuming;
+                case "Stopping":
+                    return LifecycleState.Stopping;
+                case "Unknown":
+                    return LifecycleState.Unknown;
+                default:
+                    return LifecycleState.Unknown;
+            }
         };
         LifecycleState.Starting = new LifecycleState("Starting");
         LifecycleState.Started = new LifecycleState("Started");

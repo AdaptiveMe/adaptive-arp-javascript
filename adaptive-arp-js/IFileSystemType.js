@@ -43,6 +43,21 @@ var Adaptive;
         IFileSystemType.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileSystemType.toObject = function (object) {
+            switch (object.value) {
+                case "Directory":
+                    return IFileSystemType.Directory;
+                case "File":
+                    return IFileSystemType.File;
+                case "Unknown":
+                    return IFileSystemType.Unknown;
+                default:
+                    return IFileSystemType.Unknown;
+            }
+        };
         IFileSystemType.Directory = new IFileSystemType("Directory");
         IFileSystemType.File = new IFileSystemType("File");
         IFileSystemType.Unknown = new IFileSystemType("Unknown");

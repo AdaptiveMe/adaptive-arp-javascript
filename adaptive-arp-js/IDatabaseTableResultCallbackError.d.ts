@@ -45,5 +45,9 @@ declare module Adaptive {
         static DatabaseNotFound: IDatabaseTableResultCallbackError;
         static NoTableFound: IDatabaseTableResultCallbackError;
         static Unknown: IDatabaseTableResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseTableResultCallbackError;
     }
 }

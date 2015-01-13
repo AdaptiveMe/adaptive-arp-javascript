@@ -199,6 +199,33 @@ var Adaptive;
         Email.prototype.setToRecipients = function (toRecipients) {
             this.toRecipients = toRecipients;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        Email.toObject = function (object) {
+            var result = new Email(null, null, null, null, null, null, null);
+            // Assign values to bean fields.
+            result.toRecipients = new Array();
+            for (var __value__ in object.toRecipients) {
+                result.toRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+            }
+            result.ccRecipients = new Array();
+            for (var __value__ in object.ccRecipients) {
+                result.ccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+            }
+            result.bccRecipients = new Array();
+            for (var __value__ in object.bccRecipients) {
+                result.bccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+            }
+            result.emailAttachmentData = new Array();
+            for (var __value__ in object.emailAttachmentData) {
+                result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(__value__));
+            }
+            result.messageBody = object.messageBody;
+            result.messageBodyMimeType = object.messageBodyMimeType;
+            result.subject = object.subject;
+            return result;
+        };
         return Email;
     })(Adaptive.APIBean);
     Adaptive.Email = Email;

@@ -78,5 +78,9 @@ Possible lifecycle States:
            @since ARP1.0
         */
         setState(state: LifecycleState): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Lifecycle;
     }
 }

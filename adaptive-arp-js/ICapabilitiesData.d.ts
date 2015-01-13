@@ -43,5 +43,9 @@ declare module Adaptive {
         static File: ICapabilitiesData;
         static Cloud: ICapabilitiesData;
         static Unknown: ICapabilitiesData;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): ICapabilitiesData;
     }
 }

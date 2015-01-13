@@ -45,5 +45,9 @@ declare module Adaptive {
         static WrongParams: IMessagingCallbackError;
         static NotSupported: IMessagingCallbackError;
         static Unknown: IMessagingCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IMessagingCallbackError;
     }
 }

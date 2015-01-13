@@ -127,6 +127,21 @@ listener.
         APIRequest.prototype.setParameters = function (parameters) {
             this.parameters = parameters;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        APIRequest.toObject = function (object) {
+            var result = new APIRequest(null, null, null, null);
+            // Assign values to bean fields.
+            result.bridgeType = object.bridgeType;
+            result.methodName = object.methodName;
+            result.parameters = new Array();
+            for (var __value__ in object.parameters) {
+                result.parameters.push(__value__);
+            }
+            result.asyncId = object.asyncId;
+            return result;
+        };
         return APIRequest;
     })();
     Adaptive.APIRequest = APIRequest;

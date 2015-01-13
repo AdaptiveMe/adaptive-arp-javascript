@@ -48,6 +48,13 @@ var Adaptive;
         */
         function APIBean() {
         }
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        APIBean.toObject = function (object) {
+            var result = new APIBean();
+            return result;
+        };
         return APIBean;
     })();
     Adaptive.APIBean = APIBean;

@@ -135,6 +135,18 @@ be unique for a specific instance of an application on a specific device.
         DeviceInfo.prototype.setVendor = function (vendor) {
             this.vendor = vendor;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        DeviceInfo.toObject = function (object) {
+            var result = new DeviceInfo(null, null, null, null);
+            // Assign values to bean fields.
+            result.name = object.name;
+            result.model = object.model;
+            result.vendor = object.vendor;
+            result.uuid = object.uuid;
+            return result;
+        };
         return DeviceInfo;
     })(Adaptive.APIBean);
     Adaptive.DeviceInfo = DeviceInfo;

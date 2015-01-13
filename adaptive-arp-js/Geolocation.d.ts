@@ -157,5 +157,9 @@ declare module Adaptive {
            @param yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         setYDoP(yDoP: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): Geolocation;
     }
 }

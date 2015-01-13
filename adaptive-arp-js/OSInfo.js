@@ -115,6 +115,17 @@ var Adaptive;
         OSInfo.prototype.setVersion = function (version) {
             this.version = version;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        OSInfo.toObject = function (object) {
+            var result = new OSInfo(null, null, null);
+            // Assign values to bean fields.
+            result.name = Adaptive.IOSType.toObject(object.name);
+            result.version = object.version;
+            result.vendor = object.vendor;
+            return result;
+        };
         return OSInfo;
     })(Adaptive.APIBean);
     Adaptive.OSInfo = OSInfo;

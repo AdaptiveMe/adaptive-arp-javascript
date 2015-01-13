@@ -159,6 +159,20 @@ module Adaptive {
                this.name = name;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactPersonalInfo {
+               var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.name = object.name;
+               result.middleName = object.middleName;
+               result.lastName = object.lastName;
+               result.title = ContactPersonalInfoTitle.toObject(object.title);
+
+               return result;
+          }
 
      }
 }

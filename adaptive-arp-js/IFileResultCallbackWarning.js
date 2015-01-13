@@ -43,6 +43,21 @@ var Adaptive;
         IFileResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        IFileResultCallbackWarning.toObject = function (object) {
+            switch (object.value) {
+                case "SourceNotDeleted":
+                    return IFileResultCallbackWarning.SourceNotDeleted;
+                case "RootDirectory":
+                    return IFileResultCallbackWarning.RootDirectory;
+                case "Unknown":
+                    return IFileResultCallbackWarning.Unknown;
+                default:
+                    return IFileResultCallbackWarning.Unknown;
+            }
+        };
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
         IFileResultCallbackWarning.RootDirectory = new IFileResultCallbackWarning("RootDirectory");
         IFileResultCallbackWarning.Unknown = new IFileResultCallbackWarning("Unknown");

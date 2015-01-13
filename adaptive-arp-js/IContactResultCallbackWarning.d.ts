@@ -42,5 +42,9 @@ declare module Adaptive {
         static LimitExceeded: IContactResultCallbackWarning;
         static No_Matches: IContactResultCallbackWarning;
         static Unknown: IContactResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IContactResultCallbackWarning;
     }
 }

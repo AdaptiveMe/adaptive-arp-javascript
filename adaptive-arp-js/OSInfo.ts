@@ -130,6 +130,19 @@ module Adaptive {
                this.version = version;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : OSInfo {
+               var result : OSInfo = new OSInfo(null, null, null);
+
+               // Assign values to bean fields.
+               result.name = IOSType.toObject(object.name);
+               result.version = object.version;
+               result.vendor = object.vendor;
+
+               return result;
+          }
 
      }
 }

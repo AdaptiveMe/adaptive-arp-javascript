@@ -46,5 +46,21 @@ module Adaptive {
           static File = new IFileSystemType("File");
           static Unknown = new IFileSystemType("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IFileSystemType {
+               switch(object.value) {
+                    case "Directory":
+                         return IFileSystemType.Directory;
+                    case "File":
+                         return IFileSystemType.File;
+                    case "Unknown":
+                         return IFileSystemType.Unknown;
+                    default:
+                         return IFileSystemType.Unknown;
+               }
+          }
+
      }
 }

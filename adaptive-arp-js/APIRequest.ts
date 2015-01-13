@@ -154,6 +154,23 @@ listener.
                this.parameters = parameters;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : APIRequest {
+               var result : APIRequest = new APIRequest(null, null, null, null);
+
+               // Assign values to bean fields.
+               result.bridgeType = object.bridgeType;
+               result.methodName = object.methodName;
+               result.parameters = new Array<string>();
+               for(var __value__ in object.parameters) {
+                    result.parameters.push(__value__);
+               }
+               result.asyncId = object.asyncId;
+
+               return result;
+          }
 
      }
 }

@@ -46,5 +46,21 @@ module Adaptive {
           static Unavailable = new IAccelerationListenerError("Unavailable");
           static Unknown = new IAccelerationListenerError("Unknown");
 
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IAccelerationListenerError {
+               switch(object.value) {
+                    case "Unauthorized":
+                         return IAccelerationListenerError.Unauthorized;
+                    case "Unavailable":
+                         return IAccelerationListenerError.Unavailable;
+                    case "Unknown":
+                         return IAccelerationListenerError.Unknown;
+                    default:
+                         return IAccelerationListenerError.Unknown;
+               }
+          }
+
      }
 }

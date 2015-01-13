@@ -130,5 +130,9 @@ doesn't exist, this will be -1. Used internally.
            @param size The size in bytes of the file.
         */
         setSize(size: number): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): FileDescriptor;
     }
 }

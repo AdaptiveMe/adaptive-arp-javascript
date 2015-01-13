@@ -97,6 +97,16 @@ var Adaptive;
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {
             this.secureKey = secureKey;
         };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        SecureKeyPair.toObject = function (object) {
+            var result = new SecureKeyPair(null, null);
+            // Assign values to bean fields.
+            result.secureKey = object.secureKey;
+            result.secureData = object.secureData;
+            return result;
+        };
         return SecureKeyPair;
     })(Adaptive.APIBean);
     Adaptive.SecureKeyPair = SecureKeyPair;

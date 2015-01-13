@@ -41,5 +41,9 @@ declare module Adaptive {
         toString(): string;
         static Not_Implemented: IButtonListenerWarning;
         static Unknown: IButtonListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IButtonListenerWarning;
     }
 }

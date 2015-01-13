@@ -43,5 +43,9 @@ declare module Adaptive {
         static TableLocked: IDatabaseTableResultCallbackWarning;
         static NoResults: IDatabaseTableResultCallbackWarning;
         static Unknown: IDatabaseTableResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IDatabaseTableResultCallbackWarning;
     }
 }

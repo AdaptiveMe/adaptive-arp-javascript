@@ -271,6 +271,45 @@ module Adaptive {
                this.professionalInfo = professionalInfo;
           }
 
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : Contact {
+               var result : Contact = new Contact(null, null, null, null, null, null, null, null, null);
+
+               // Assign values to parent bean fields.
+               result.contactId = object.contactId;
+
+               // Assign values to bean fields.
+               result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+               result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
+               result.contactAddresses = new Array<ContactAddress>();
+               for(var __value__ in object.contactAddresses) {
+                    result.contactAddresses.push(ContactAddress.toObject(__value__));
+               }
+               result.contactPhones = new Array<ContactPhone>();
+               for(var __value__ in object.contactPhones) {
+                    result.contactPhones.push(ContactPhone.toObject(__value__));
+               }
+               result.contactEmails = new Array<ContactEmail>();
+               for(var __value__ in object.contactEmails) {
+                    result.contactEmails.push(ContactEmail.toObject(__value__));
+               }
+               result.contactWebsites = new Array<ContactWebsite>();
+               for(var __value__ in object.contactWebsites) {
+                    result.contactWebsites.push(ContactWebsite.toObject(__value__));
+               }
+               result.contactSocials = new Array<ContactSocial>();
+               for(var __value__ in object.contactSocials) {
+                    result.contactSocials.push(ContactSocial.toObject(__value__));
+               }
+               result.contactTags = new Array<ContactTag>();
+               for(var __value__ in object.contactTags) {
+                    result.contactTags.push(ContactTag.toObject(__value__));
+               }
+
+               return result;
+          }
 
      }
 }

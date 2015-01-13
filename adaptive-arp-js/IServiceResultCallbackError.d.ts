@@ -51,5 +51,9 @@ declare module Adaptive {
         static MalformedUrl: IServiceResultCallbackError;
         static NotRegisteredService: IServiceResultCallbackError;
         static Unknown: IServiceResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceResultCallbackError;
     }
 }
