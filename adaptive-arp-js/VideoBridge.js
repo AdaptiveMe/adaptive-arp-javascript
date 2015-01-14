@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseMediaBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
@@ -69,13 +70,14 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var ar = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }

@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseMediaBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>

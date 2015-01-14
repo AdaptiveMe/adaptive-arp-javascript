@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseSensorBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="GeolocationListener.ts"/>
@@ -70,13 +71,14 @@ var Adaptive;
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
+            var apiRequest = new Adaptive.APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -95,13 +97,14 @@ var Adaptive;
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
+            var apiRequest = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -119,13 +122,14 @@ var Adaptive;
         GeolocationBridge.prototype.removeGeolocationListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.

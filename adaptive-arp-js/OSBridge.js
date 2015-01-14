@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseSystemBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
@@ -69,20 +70,27 @@ var Adaptive;
         OSBridge.prototype.getOSInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IOS", "getOSInfo", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IOS", "getOSInfo", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.OSInfo.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.OSInfo.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'OSBridge.getOSInfo' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'OSBridge.getOSInfo' incorrect response received.");

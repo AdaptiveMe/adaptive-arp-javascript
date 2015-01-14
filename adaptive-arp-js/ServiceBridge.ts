@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseCommunicationBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
@@ -70,20 +71,26 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceName));
-               var ar : APIRequest = new APIRequest("IService","getService",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","getService",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Service = null;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = Service.toObject(JSON.parse(xhr.responseText));
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         response = Service.toObject(JSON.parse(apiResponse.getResponse()));
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getService' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
                     }
@@ -106,7 +113,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
                arParams.push(JSON.stringify(service));
-               var ar : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -114,7 +122,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -136,13 +144,14 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(service));
-               var ar : APIRequest = new APIRequest("IService","registerService",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","registerService",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -161,13 +170,14 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(service));
-               var ar : APIRequest = new APIRequest("IService","unregisterService",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","unregisterService",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -184,13 +194,14 @@ module Adaptive {
           unregisterServices() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var ar : APIRequest = new APIRequest("IService","unregisterServices",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","unregisterServices",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -210,20 +221,26 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(service));
-               var ar : APIRequest = new APIRequest("IService","isRegistered_service",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","isRegistered_service",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              response = !!apiResponse.getResponse();
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isRegistered_service' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'ServiceBridge.isRegistered_service' incorrect response received.");
                     }
@@ -244,20 +261,26 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceName));
-               var ar : APIRequest = new APIRequest("IService","isRegistered_serviceName",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IService","isRegistered_serviceName",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              response = !!apiResponse.getResponse();
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isRegistered_serviceName' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'ServiceBridge.isRegistered_serviceName' incorrect response received.");
                     }

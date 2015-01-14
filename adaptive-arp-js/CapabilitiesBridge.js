@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseSystemBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
@@ -77,20 +78,27 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasButtonSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasButtonSupport' incorrect response received.");
@@ -113,20 +121,27 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasCommunicationSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasCommunicationSupport' incorrect response received.");
@@ -148,20 +163,27 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasDataSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasDataSupport' incorrect response received.");
@@ -184,20 +206,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasMediaSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasMediaSupport' incorrect response received.");
@@ -219,20 +248,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNetSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasNetSupport' incorrect response received.");
@@ -255,20 +291,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNotificationSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasNotificationSupport' incorrect response received.");
@@ -291,20 +334,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new Adaptive.APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasSensorSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasSensorSupport' incorrect response received.");

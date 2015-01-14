@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="AccelerationListener.ts"/>
 ///<reference path="BaseSensorBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
@@ -66,13 +67,14 @@ module Adaptive {
           addAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var ar : APIRequest = new APIRequest("IAcceleration","addAccelerationListener",arParams, listener.getId());
+               var apiRequest : APIRequest = new APIRequest("IAcceleration","addAccelerationListener",arParams, listener.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Add listener reference to local dictionary.
@@ -92,13 +94,14 @@ module Adaptive {
           removeAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var ar : APIRequest = new APIRequest("IAcceleration","removeAccelerationListener",arParams, listener.getId());
+               var apiRequest : APIRequest = new APIRequest("IAcceleration","removeAccelerationListener",arParams, listener.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Remove listener reference from local dictionary.
@@ -117,13 +120,14 @@ module Adaptive {
           removeAccelerationListeners() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var ar : APIRequest = new APIRequest("IAcceleration","removeAccelerationListeners",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IAcceleration","removeAccelerationListeners",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Remove all listeners references from local dictionary.

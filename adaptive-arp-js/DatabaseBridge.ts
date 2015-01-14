@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseDataBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="Database.ts"/>
@@ -72,7 +73,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
-               var ar : APIRequest = new APIRequest("IDatabase","createDatabase",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","createDatabase",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -80,7 +82,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -105,7 +107,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
-               var ar : APIRequest = new APIRequest("IDatabase","createTable",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","createTable",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -113,7 +116,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -136,7 +139,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
-               var ar : APIRequest = new APIRequest("IDatabase","deleteDatabase",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","deleteDatabase",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -144,7 +148,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -169,7 +173,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
-               var ar : APIRequest = new APIRequest("IDatabase","deleteTable",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","deleteTable",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -177,7 +182,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -205,7 +210,8 @@ should be passed as a parameter
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(statement));
                arParams.push(JSON.stringify(replacements));
-               var ar : APIRequest = new APIRequest("IDatabase","executeSqlStatement",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlStatement",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -213,7 +219,7 @@ should be passed as a parameter
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -241,7 +247,8 @@ should be passed as a parameter
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(statements));
                arParams.push(JSON.stringify(rollbackFlag));
-               var ar : APIRequest = new APIRequest("IDatabase","executeSqlTransactions",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlTransactions",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -249,7 +256,7 @@ should be passed as a parameter
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -272,20 +279,26 @@ should be passed as a parameter
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
-               var ar : APIRequest = new APIRequest("IDatabase","existsDatabase",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IDatabase","existsDatabase",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              response = !!apiResponse.getResponse();
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.existsDatabase' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'DatabaseBridge.existsDatabase' incorrect response received.");
                     }
@@ -308,20 +321,26 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
-               var ar : APIRequest = new APIRequest("IDatabase","existsTable",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IDatabase","existsTable",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              response = !!apiResponse.getResponse();
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.existsTable' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'DatabaseBridge.existsTable' incorrect response received.");
                     }

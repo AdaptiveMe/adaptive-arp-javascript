@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BasePIMBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="ContactPhotoResultCallback.ts"/>
@@ -73,7 +74,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
-               var ar : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -81,7 +83,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -104,7 +106,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
-               var ar : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -112,7 +115,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -133,7 +136,8 @@ module Adaptive {
           getContacts(callback : IContactResultCallback) : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var ar : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -141,7 +145,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -164,7 +168,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
-               var ar : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -172,7 +177,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -197,7 +202,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
-               var ar : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -205,7 +211,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -228,7 +234,8 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
-               var ar : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -236,7 +243,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -261,7 +268,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
-               var ar : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -269,7 +277,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.
@@ -294,20 +302,26 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                arParams.push(JSON.stringify(pngImage));
-               var ar : APIRequest = new APIRequest("IContact","setContactPhoto",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("IContact","setContactPhoto",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
                // Check response.
                if (xhr.status == 200) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
-                         response = JSON.parse(xhr.responseText);
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              response = !!apiResponse.getResponse();
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.setContactPhoto' ["+apiResponse.getStatusMessage()+"].");
+                         }
                     } else {
                          console.error("ERROR: 'ContactBridge.setContactPhoto' incorrect response received.");
                     }

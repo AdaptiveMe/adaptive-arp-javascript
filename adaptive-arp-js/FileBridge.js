@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseDataBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="FileDataLoadResultCallback.ts"/>
@@ -82,20 +83,27 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "canRead", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "canRead", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canRead' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.canRead' incorrect response received.");
@@ -117,20 +125,27 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canWrite' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.canWrite' incorrect response received.");
@@ -152,7 +167,8 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "create", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "create", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -160,7 +176,7 @@ var Adaptive;
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -185,20 +201,27 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
-            var ar = new Adaptive.APIRequest("IFile", "delete", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "delete", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.delete' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.delete' incorrect response received.");
@@ -220,20 +243,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "exists", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "exists", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.exists' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.exists' incorrect response received.");
@@ -255,7 +285,8 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "getContent", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "getContent", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -263,7 +294,7 @@ deleted if the cascade parameter is set to true.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -285,20 +316,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.IFileSystemStorageType.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getFileStorageType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
@@ -320,20 +358,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.IFileSystemType.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.IFileSystemType.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getFileType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
@@ -355,20 +400,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.IFileSystemSecurity.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getSecurityType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");
@@ -390,20 +442,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.isDirectory' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.isDirectory' incorrect response received.");
@@ -426,7 +485,8 @@ any results.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new Adaptive.APIRequest("IFile", "listFiles", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "listFiles", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -434,7 +494,7 @@ any results.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -459,7 +519,8 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
-            var ar = new Adaptive.APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -467,7 +528,7 @@ is a file, it will not yield any results.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -491,20 +552,27 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
-            var ar = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.mkDir' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.mkDir' incorrect response received.");
@@ -533,7 +601,8 @@ new destination file.
             arParams.push(JSON.stringify(destination));
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
-            var ar = new Adaptive.APIRequest("IFile", "move", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "move", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -541,7 +610,7 @@ new destination file.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -565,7 +634,8 @@ new destination file.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
-            var ar = new Adaptive.APIRequest("IFile", "setContent", arParams, callback.getId());
+            var apiRequest = new Adaptive.APIRequest("IFile", "setContent", arParams, callback.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -573,7 +643,7 @@ new destination file.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }

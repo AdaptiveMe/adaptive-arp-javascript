@@ -1,4 +1,5 @@
 /// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
 /// <reference path="BaseUIBridge.d.ts" />
 /// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />

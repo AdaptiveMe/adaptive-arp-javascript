@@ -33,6 +33,7 @@ Release:
 */
 
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BasePIMBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
@@ -70,7 +71,8 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
-               var ar : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
+               var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -78,7 +80,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(ar));
+               xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200) {
                     // Result void - All OK, nothing else to do.

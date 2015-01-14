@@ -1,4 +1,5 @@
 /// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
 /// <reference path="AccelerationListener.d.ts" />
 /// <reference path="BaseSensorBridge.d.ts" />
 /// <reference path="CommonUtil.d.ts" />

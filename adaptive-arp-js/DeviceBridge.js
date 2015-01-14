@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseSystemBridge.ts"/>
 ///<reference path="ButtonListener.ts"/>
 ///<reference path="CommonUtil.ts"/>
@@ -72,13 +73,14 @@ var Adaptive;
         DeviceBridge.prototype.addButtonListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
+            var apiRequest = new Adaptive.APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -97,20 +99,27 @@ var Adaptive;
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.DeviceInfo.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getDeviceInfo' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
@@ -130,20 +139,27 @@ var Adaptive;
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.Locale.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.Locale.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getLocaleCurrent' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");
@@ -163,13 +179,14 @@ var Adaptive;
         DeviceBridge.prototype.removeButtonListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
+            var apiRequest = new Adaptive.APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -187,13 +204,14 @@ var Adaptive;
         DeviceBridge.prototype.removeButtonListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IDevice", "removeButtonListeners", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "removeButtonListeners", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.

@@ -1,4 +1,5 @@
 /// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
 /// <reference path="BaseSystemBridge.d.ts" />
 /// <reference path="ButtonListener.d.ts" />
 /// <reference path="CommonUtil.d.ts" />

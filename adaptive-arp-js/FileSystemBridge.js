@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
 ///<reference path="BaseDataBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="FileDescriptor.ts"/>
@@ -74,20 +75,27 @@ This method does not create the actual file in the specified folder.
             var arParams = [];
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
-            var ar = new Adaptive.APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.createFileDescriptor' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
@@ -109,20 +117,27 @@ This path is volatile and may be cleaned by the OS periodically.
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationCacheFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
@@ -143,20 +158,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationCloudFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
@@ -177,20 +199,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationDocumentsFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
@@ -211,20 +240,27 @@ This path may or may not be directly readable or writable - it usually contains 
         FileSystemBridge.prototype.getApplicationFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
@@ -245,20 +281,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationProtectedFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
@@ -278,20 +321,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getSeparator = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getSeparator", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getSeparator", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getSeparator' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getSeparator' incorrect response received.");
@@ -314,20 +364,27 @@ This path may or may not be writable by the current application.
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new Adaptive.APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Adaptive.FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getSystemExternalFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");

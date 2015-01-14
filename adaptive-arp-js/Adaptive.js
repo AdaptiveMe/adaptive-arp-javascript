@@ -6266,20 +6266,27 @@ listener and subsequently, the listener will be deactivated and removed from the
         GlobalizationBridge.prototype.getDefaultLocale = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Locale.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getDefaultLocale' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getDefaultLocale' incorrect response received.");
@@ -6299,22 +6306,29 @@ listener and subsequently, the listener will be deactivated and removed from the
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = new Array();
-                    for (var __value__ in JSON.parse(xhr.responseText)) {
-                        response.push(Locale.toObject(__value__));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = new Array();
+                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
+                            response.push(Locale.toObject(__value__));
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' [" + apiResponse.getStatusMessage() + "].");
                     }
                 }
                 else {
@@ -6339,20 +6353,27 @@ listener and subsequently, the listener will be deactivated and removed from the
             var arParams = [];
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
-            var ar = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getResourceLiteral' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'GlobalizationBridge.getResourceLiteral' incorrect response received.");
@@ -6374,22 +6395,29 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(locale));
-            var ar = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = new Array();
-                    for (var __value__ in JSON.parse(xhr.responseText)) {
-                        response.push(KeyPair.toObject(__value__));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = new Array();
+                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
+                            response.push(KeyPair.toObject(__value__));
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getResourceLiterals' [" + apiResponse.getStatusMessage() + "].");
                     }
                 }
                 else {
@@ -6426,13 +6454,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         LifecycleBridge.prototype.addLifecycleListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("ILifecycle", "addLifecycleListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("ILifecycle", "addLifecycleListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -6451,20 +6480,27 @@ listener and subsequently, the listener will be deactivated and removed from the
         LifecycleBridge.prototype.isBackground = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("ILifecycle", "isBackground", arParams, -1);
+            var apiRequest = new APIRequest("ILifecycle", "isBackground", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.isBackground' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'LifecycleBridge.isBackground' incorrect response received.");
@@ -6484,13 +6520,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         LifecycleBridge.prototype.removeLifecycleListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("ILifecycle", "removeLifecycleListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -6508,13 +6545,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         LifecycleBridge.prototype.removeLifecycleListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("ILifecycle", "removeLifecycleListeners", arParams, -1);
+            var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.
@@ -6714,7 +6752,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(host));
-            var ar = new APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
+            var apiRequest = new APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -6722,7 +6761,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -6744,7 +6783,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var ar = new APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
+            var apiRequest = new APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -6752,7 +6792,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -6788,13 +6828,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         NetworkStatusBridge.prototype.addNetworkStatusListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("INetworkStatus", "addNetworkStatusListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("INetworkStatus", "addNetworkStatusListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -6813,13 +6854,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         NetworkStatusBridge.prototype.removeNetworkStatusListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("INetworkStatus", "removeNetworkStatusListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -6837,13 +6879,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         NetworkStatusBridge.prototype.removeNetworkStatusListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("INetworkStatus", "removeNetworkStatusListeners", arParams, -1);
+            var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.
@@ -6883,20 +6926,27 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceName));
-            var ar = new APIRequest("IService", "getService", arParams, -1);
+            var apiRequest = new APIRequest("IService", "getService", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Service.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Service.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getService' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
@@ -6920,7 +6970,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             var arParams = [];
             arParams.push(JSON.stringify(serviceRequest));
             arParams.push(JSON.stringify(service));
-            var ar = new APIRequest("IService", "invokeService", arParams, callback.getId());
+            var apiRequest = new APIRequest("IService", "invokeService", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -6928,7 +6979,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -6949,13 +7000,14 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(service));
-            var ar = new APIRequest("IService", "registerService", arParams, -1);
+            var apiRequest = new APIRequest("IService", "registerService", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -6973,13 +7025,14 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(service));
-            var ar = new APIRequest("IService", "unregisterService", arParams, -1);
+            var apiRequest = new APIRequest("IService", "unregisterService", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -6995,13 +7048,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         ServiceBridge.prototype.unregisterServices = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IService", "unregisterServices", arParams, -1);
+            var apiRequest = new APIRequest("IService", "unregisterServices", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7020,20 +7074,27 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(service));
-            var ar = new APIRequest("IService", "isRegistered_service", arParams, -1);
+            var apiRequest = new APIRequest("IService", "isRegistered_service", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isRegistered_service' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'ServiceBridge.isRegistered_service' incorrect response received.");
@@ -7055,20 +7116,27 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceName));
-            var ar = new APIRequest("IService", "isRegistered_serviceName", arParams, -1);
+            var apiRequest = new APIRequest("IService", "isRegistered_serviceName", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isRegistered_serviceName' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'ServiceBridge.isRegistered_serviceName' incorrect response received.");
@@ -7122,20 +7190,27 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(number));
-            var ar = new APIRequest("ITelephony", "call", arParams, -1);
+            var apiRequest = new APIRequest("ITelephony", "call", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = ITelephonyStatus.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = ITelephonyStatus.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'TelephonyBridge.call' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'TelephonyBridge.call' incorrect response received.");
@@ -7205,7 +7280,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(database));
-            var ar = new APIRequest("IDatabase", "createDatabase", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "createDatabase", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7213,7 +7289,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7237,7 +7313,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             var arParams = [];
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
-            var ar = new APIRequest("IDatabase", "createTable", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "createTable", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7245,7 +7322,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7267,7 +7344,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(database));
-            var ar = new APIRequest("IDatabase", "deleteDatabase", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "deleteDatabase", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7275,7 +7353,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7299,7 +7377,8 @@ listener and subsequently, the listener will be deactivated and removed from the
             var arParams = [];
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
-            var ar = new APIRequest("IDatabase", "deleteTable", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "deleteTable", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7307,7 +7386,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7334,7 +7413,8 @@ should be passed as a parameter
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(statement));
             arParams.push(JSON.stringify(replacements));
-            var ar = new APIRequest("IDatabase", "executeSqlStatement", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "executeSqlStatement", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7342,7 +7422,7 @@ should be passed as a parameter
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7369,7 +7449,8 @@ should be passed as a parameter
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(statements));
             arParams.push(JSON.stringify(rollbackFlag));
-            var ar = new APIRequest("IDatabase", "executeSqlTransactions", arParams, callback.getId());
+            var apiRequest = new APIRequest("IDatabase", "executeSqlTransactions", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7377,7 +7458,7 @@ should be passed as a parameter
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7399,20 +7480,27 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(database));
-            var ar = new APIRequest("IDatabase", "existsDatabase", arParams, -1);
+            var apiRequest = new APIRequest("IDatabase", "existsDatabase", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.existsDatabase' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DatabaseBridge.existsDatabase' incorrect response received.");
@@ -7436,20 +7524,27 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
-            var ar = new APIRequest("IDatabase", "existsTable", arParams, -1);
+            var apiRequest = new APIRequest("IDatabase", "existsTable", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.existsTable' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DatabaseBridge.existsTable' incorrect response received.");
@@ -7487,20 +7582,27 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "canRead", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "canRead", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canRead' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.canRead' incorrect response received.");
@@ -7522,20 +7624,27 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "canWrite", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "canWrite", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canWrite' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.canWrite' incorrect response received.");
@@ -7557,7 +7666,8 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "create", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "create", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7565,7 +7675,7 @@ should be passed as a parameter
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7590,20 +7700,27 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
-            var ar = new APIRequest("IFile", "delete", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "delete", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.delete' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.delete' incorrect response received.");
@@ -7625,20 +7742,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "exists", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "exists", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.exists' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.exists' incorrect response received.");
@@ -7660,7 +7784,8 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "getContent", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "getContent", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7668,7 +7793,7 @@ deleted if the cascade parameter is set to true.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7690,20 +7815,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = IFileSystemStorageType.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = IFileSystemStorageType.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getFileStorageType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileStorageType' incorrect response received.");
@@ -7725,20 +7857,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "getFileType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getFileType", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = IFileSystemType.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = IFileSystemType.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getFileType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getFileType' incorrect response received.");
@@ -7760,20 +7899,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = IFileSystemSecurity.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = IFileSystemSecurity.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getSecurityType' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.getSecurityType' incorrect response received.");
@@ -7795,20 +7941,27 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.isDirectory' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.isDirectory' incorrect response received.");
@@ -7831,7 +7984,8 @@ any results.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var ar = new APIRequest("IFile", "listFiles", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "listFiles", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7839,7 +7993,7 @@ any results.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7864,7 +8018,8 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
-            var ar = new APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7872,7 +8027,7 @@ is a file, it will not yield any results.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7896,20 +8051,27 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
-            var ar = new APIRequest("IFile", "mkDir", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "mkDir", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.mkDir' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileBridge.mkDir' incorrect response received.");
@@ -7938,7 +8100,8 @@ new destination file.
             arParams.push(JSON.stringify(destination));
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
-            var ar = new APIRequest("IFile", "move", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "move", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7946,7 +8109,7 @@ new destination file.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -7970,7 +8133,8 @@ new destination file.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
-            var ar = new APIRequest("IFile", "setContent", arParams, callback.getId());
+            var apiRequest = new APIRequest("IFile", "setContent", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -7978,7 +8142,7 @@ new destination file.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8019,20 +8183,27 @@ This method does not create the actual file in the specified folder.
             var arParams = [];
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
-            var ar = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.createFileDescriptor' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
@@ -8054,20 +8225,27 @@ This path is volatile and may be cleaned by the OS periodically.
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationCacheFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
@@ -8088,20 +8266,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationCloudFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
@@ -8122,20 +8307,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationDocumentsFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
@@ -8156,20 +8348,27 @@ This path may or may not be directly readable or writable - it usually contains 
         FileSystemBridge.prototype.getApplicationFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
@@ -8190,20 +8389,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getApplicationProtectedFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
@@ -8223,20 +8429,27 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getSeparator = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getSeparator", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getSeparator", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getSeparator' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getSeparator' incorrect response received.");
@@ -8259,20 +8472,27 @@ This path may or may not be writable by the current application.
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = FileDescriptor.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileSystemBridge.getSystemExternalFolder' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");
@@ -8389,13 +8609,14 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var ar = new APIRequest("IVideo", "playStream", arParams, -1);
+            var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8510,7 +8731,8 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
-            var ar = new APIRequest("IContact", "getContact", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "getContact", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8518,7 +8740,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8540,7 +8762,8 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
-            var ar = new APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8548,7 +8771,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8568,7 +8791,8 @@ This path may or may not be writable by the current application.
         ContactBridge.prototype.getContacts = function (callback) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IContact", "getContacts", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "getContacts", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8576,7 +8800,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8598,7 +8822,8 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(fields));
-            var ar = new APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8606,7 +8831,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8630,7 +8855,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(fields));
             arParams.push(JSON.stringify(filter));
-            var ar = new APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8638,7 +8864,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8660,7 +8886,8 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(term));
-            var ar = new APIRequest("IContact", "searchContacts", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "searchContacts", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8668,7 +8895,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8692,7 +8919,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(term));
             arParams.push(JSON.stringify(filter));
-            var ar = new APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
+            var apiRequest = new APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8700,7 +8928,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8724,20 +8952,27 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
-            var ar = new APIRequest("IContact", "setContactPhoto", arParams, -1);
+            var apiRequest = new APIRequest("IContact", "setContactPhoto", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ContactBridge.setContactPhoto' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'ContactBridge.setContactPhoto' incorrect response received.");
@@ -8775,7 +9010,8 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(data));
-            var ar = new APIRequest("IMail", "sendEmail", arParams, callback.getId());
+            var apiRequest = new APIRequest("IMail", "sendEmail", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8783,7 +9019,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8823,7 +9059,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(number));
             arParams.push(JSON.stringify(text));
-            var ar = new APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
+            var apiRequest = new APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8831,7 +9068,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8967,7 +9204,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
-            var ar = new APIRequest("ISecurity", "deleteSecureKeyValuePairs", arParams, callback.getId());
+            var apiRequest = new APIRequest("ISecurity", "deleteSecureKeyValuePairs", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -8975,7 +9213,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -8999,7 +9237,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
-            var ar = new APIRequest("ISecurity", "getSecureKeyValuePairs", arParams, callback.getId());
+            var apiRequest = new APIRequest("ISecurity", "getSecureKeyValuePairs", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -9007,7 +9246,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -9027,20 +9266,27 @@ This path may or may not be writable by the current application.
         SecurityBridge.prototype.isDeviceModified = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("ISecurity", "isDeviceModified", arParams, -1);
+            var apiRequest = new APIRequest("ISecurity", "isDeviceModified", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.isDeviceModified' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'SecurityBridge.isDeviceModified' incorrect response received.");
@@ -9064,7 +9310,8 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(keyValues));
             arParams.push(JSON.stringify(publicAccessName));
-            var ar = new APIRequest("ISecurity", "setSecureKeyValuePairs", arParams, callback.getId());
+            var apiRequest = new APIRequest("ISecurity", "setSecureKeyValuePairs", arParams, callback.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -9072,7 +9319,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -9108,13 +9355,14 @@ This path may or may not be writable by the current application.
         AccelerationBridge.prototype.addAccelerationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IAcceleration", "addAccelerationListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IAcceleration", "addAccelerationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -9133,13 +9381,14 @@ This path may or may not be writable by the current application.
         AccelerationBridge.prototype.removeAccelerationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IAcceleration", "removeAccelerationListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -9157,13 +9406,14 @@ This path may or may not be writable by the current application.
         AccelerationBridge.prototype.removeAccelerationListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IAcceleration", "removeAccelerationListeners", arParams, -1);
+            var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.
@@ -9233,13 +9483,14 @@ This path may or may not be writable by the current application.
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -9258,13 +9509,14 @@ This path may or may not be writable by the current application.
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -9282,13 +9534,14 @@ This path may or may not be writable by the current application.
         GeolocationBridge.prototype.removeGeolocationListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
+            var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.
@@ -9456,20 +9709,27 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasButtonSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasButtonSupport' incorrect response received.");
@@ -9492,20 +9752,27 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasCommunicationSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasCommunicationSupport' incorrect response received.");
@@ -9527,20 +9794,27 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasDataSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasDataSupport' incorrect response received.");
@@ -9563,20 +9837,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasMediaSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasMediaSupport' incorrect response received.");
@@ -9598,20 +9879,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNetSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasNetSupport' incorrect response received.");
@@ -9634,20 +9922,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNotificationSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasNotificationSupport' incorrect response received.");
@@ -9670,20 +9965,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var ar = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasSensorSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'CapabilitiesBridge.hasSensorSupport' incorrect response received.");
@@ -9719,13 +10021,14 @@ device.
         DeviceBridge.prototype.addButtonListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Add listener reference to local dictionary.
@@ -9744,20 +10047,27 @@ device.
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = DeviceInfo.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getDeviceInfo' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
@@ -9777,20 +10087,27 @@ device.
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = Locale.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getLocaleCurrent' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");
@@ -9810,13 +10127,14 @@ device.
         DeviceBridge.prototype.removeButtonListener = function (listener) {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
+            var apiRequest = new APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove listener reference from local dictionary.
@@ -9834,13 +10152,14 @@ device.
         DeviceBridge.prototype.removeButtonListeners = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IDevice", "removeButtonListeners", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "removeButtonListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
                 // Remove all listeners references from local dictionary.
@@ -9894,20 +10213,27 @@ device.
         OSBridge.prototype.getOSInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IOS", "getOSInfo", arParams, -1);
+            var apiRequest = new APIRequest("IOS", "getOSInfo", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = OSInfo.toObject(JSON.parse(xhr.responseText));
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = OSInfo.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'OSBridge.getOSInfo' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'OSBridge.getOSInfo' incorrect response received.");
@@ -9942,13 +10268,14 @@ device.
         RuntimeBridge.prototype.dismissApplication = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
+            var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -9965,20 +10292,27 @@ device.
         RuntimeBridge.prototype.dismissSplashScreen = function () {
             // Create and populate API request.
             var arParams = [];
-            var ar = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
+            var apiRequest = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'RuntimeBridge.dismissSplashScreen' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'RuntimeBridge.dismissSplashScreen' incorrect response received.");
@@ -10016,20 +10350,27 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var ar = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openExtenalBrowser' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'BrowserBridge.openExtenalBrowser' incorrect response received.");
@@ -10055,20 +10396,27 @@ device.
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var ar = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowser' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'BrowserBridge.openInternalBrowser' incorrect response received.");
@@ -10094,20 +10442,27 @@ device.
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var ar = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
             // Check response.
             if (xhr.status == 200) {
                 // Process response.
                 if (xhr.responseText != null && xhr.responseText != '') {
-                    response = JSON.parse(xhr.responseText);
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowserModal' [" + apiResponse.getStatusMessage() + "].");
+                    }
                 }
                 else {
                     console.error("ERROR: 'BrowserBridge.openInternalBrowserModal' incorrect response received.");
@@ -10242,13 +10597,14 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
-            var ar = new APIRequest("ILogging", "log_level_message", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "log_level_message", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
@@ -10270,13 +10626,14 @@ device.
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
-            var ar = new APIRequest("ILogging", "log_level_category_message", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "log_level_category_message", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
-            xhr.send(JSON.stringify(ar));
+            xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
             }
