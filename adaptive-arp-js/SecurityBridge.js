@@ -88,12 +88,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.deleteSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                    console.error("ERROR: 'SecurityBridge.deleteSecureKeyValuePairs' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
             }
         };
         /**
@@ -121,12 +138,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.getSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                    console.error("ERROR: 'SecurityBridge.getSecureKeyValuePairs' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.getSecureKeyValuePairs' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.getSecureKeyValuePairs' request.");
             }
         };
         /**
@@ -194,12 +228,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.setSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                    console.error("ERROR: 'SecurityBridge.setSecureKeyValuePairs' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.setSecureKeyValuePairs' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.setSecureKeyValuePairs' request.");
             }
         };
         return SecurityBridge;

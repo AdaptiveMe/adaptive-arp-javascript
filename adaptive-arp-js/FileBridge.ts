@@ -90,7 +90,7 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -130,7 +130,7 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -170,13 +170,27 @@ module Adaptive {
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.create' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.create' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileResultCallback.remove(""+callback.getId());
                     callback.onError(IFileResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                }
           }
 
@@ -205,7 +219,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -245,7 +259,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -285,13 +299,27 @@ deleted if the cascade parameter is set to true.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileDataLoadResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.getContent' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileDataLoadResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.getContent' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileDataLoadResultCallback.remove(""+callback.getId());
                     callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                }
           }
 
@@ -317,7 +345,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemStorageType = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -357,7 +385,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemType = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -397,7 +425,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemSecurity = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -437,7 +465,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -478,13 +506,27 @@ any results.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileListResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileListResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFiles' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileListResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileListResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.listFiles' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileListResultCallback.remove(""+callback.getId());
                     callback.onError(IFileListResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                }
           }
 
@@ -513,13 +555,27 @@ is a file, it will not yield any results.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileListResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileListResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFilesForRegex' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileListResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileListResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.listFilesForRegex' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileListResultCallback.remove(""+callback.getId());
                     callback.onError(IFileListResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                }
           }
 
@@ -547,7 +603,7 @@ is a file, it will not yield any results.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -594,13 +650,27 @@ new destination file.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.move' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.move' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileResultCallback.remove(""+callback.getId());
                     callback.onError(IFileResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                }
           }
 
@@ -628,13 +698,27 @@ new destination file.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileDataStoreResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.setContent' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileDataStoreResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.setContent' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileDataStoreResultCallback.remove(""+callback.getId());
                     callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                }
           }
      }

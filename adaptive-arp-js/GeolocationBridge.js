@@ -78,13 +78,30 @@ var Adaptive;
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            // Add listener reference to local dictionary.
+            Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Add listener reference to local dictionary.
-                Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove listener reference from local dictionary due to invalid response.
+                        Adaptive.registeredGeolocationListener.remove("" + listener.getId());
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.addGeolocationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    Adaptive.registeredGeolocationListener.remove("" + listener.getId());
+                    console.error("ERROR: 'GeolocationBridge.addGeolocationListener' incorrect response received.");
+                }
             }
             else {
+                // Remove listener reference from local dictionary due to invalid response.
+                Adaptive.registeredGeolocationListener.remove("" + listener.getId());
                 console.error("ERROR: " + xhr.status + " sending 'GeolocationBridge.addGeolocationListener' request.");
             }
         };
@@ -107,8 +124,19 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Remove listener reference from local dictionary.
-                Adaptive.registeredGeolocationListener.remove("" + listener.getId());
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove listener reference from local dictionary.
+                        Adaptive.registeredGeolocationListener.remove("" + listener.getId());
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.removeGeolocationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'GeolocationBridge.removeGeolocationListener' incorrect response received.");
+                }
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'GeolocationBridge.removeGeolocationListener' request.");
@@ -132,10 +160,21 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Remove all listeners references from local dictionary.
-                var keys = Adaptive.registeredGeolocationListener.keys();
-                for (var key in keys) {
-                    Adaptive.registeredGeolocationListener.remove(key);
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove all listeners references from local dictionary.
+                        var keys = Adaptive.registeredGeolocationListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredGeolocationListener.remove(key);
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.removeGeolocationListeners' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'GeolocationBridge.removeGeolocationListeners' incorrect response received.");
                 }
             }
             else {

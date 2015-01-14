@@ -77,7 +77,7 @@ module Adaptive {
                // Prepare response.
                var response : OSInfo = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));

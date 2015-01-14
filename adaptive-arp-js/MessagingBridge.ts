@@ -82,13 +82,27 @@ module Adaptive {
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredMessagingCallback.remove(""+callback.getId());
+                              callback.onError(IMessagingCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MessagingBridge.sendSMS' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredMessagingCallback.remove(""+callback.getId());
+                         callback.onError(IMessagingCallbackError.Unknown)
+                         console.error("ERROR: 'MessagingBridge.sendSMS' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredMessagingCallback.remove(""+callback.getId());
                     callback.onError(IMessagingCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                }
           }
      }

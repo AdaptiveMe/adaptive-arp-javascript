@@ -131,12 +131,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredServiceResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IServiceResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.invokeService' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredServiceResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IServiceResultCallbackError.Unknown);
+                    console.error("ERROR: 'ServiceBridge.invokeService' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.invokeService' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredServiceResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IServiceResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.invokeService' request.");
             }
         };
         /**

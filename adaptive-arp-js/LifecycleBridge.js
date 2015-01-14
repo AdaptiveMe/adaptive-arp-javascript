@@ -78,13 +78,30 @@ var Adaptive;
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            // Add listener reference to local dictionary.
+            Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Add listener reference to local dictionary.
-                Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove listener reference from local dictionary due to invalid response.
+                        Adaptive.registeredLifecycleListener.remove("" + listener.getId());
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.addLifecycleListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    Adaptive.registeredLifecycleListener.remove("" + listener.getId());
+                    console.error("ERROR: 'LifecycleBridge.addLifecycleListener' incorrect response received.");
+                }
             }
             else {
+                // Remove listener reference from local dictionary due to invalid response.
+                Adaptive.registeredLifecycleListener.remove("" + listener.getId());
                 console.error("ERROR: " + xhr.status + " sending 'LifecycleBridge.addLifecycleListener' request.");
             }
         };
@@ -147,8 +164,19 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Remove listener reference from local dictionary.
-                Adaptive.registeredLifecycleListener.remove("" + listener.getId());
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove listener reference from local dictionary.
+                        Adaptive.registeredLifecycleListener.remove("" + listener.getId());
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.removeLifecycleListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'LifecycleBridge.removeLifecycleListener' incorrect response received.");
+                }
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LifecycleBridge.removeLifecycleListener' request.");
@@ -172,10 +200,21 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
-                // Remove all listeners references from local dictionary.
-                var keys = Adaptive.registeredLifecycleListener.keys();
-                for (var key in keys) {
-                    Adaptive.registeredLifecycleListener.remove(key);
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove all listeners references from local dictionary.
+                        var keys = Adaptive.registeredLifecycleListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredLifecycleListener.remove(key);
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.removeLifecycleListeners' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'LifecycleBridge.removeLifecycleListeners' incorrect response received.");
                 }
             }
             else {

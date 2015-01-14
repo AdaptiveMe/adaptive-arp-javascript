@@ -74,13 +74,27 @@ module Adaptive {
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredAccelerationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredAccelerationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredAccelerationListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.addAccelerationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredAccelerationListener.remove(""+listener.getId());
+                         console.error("ERROR: 'AccelerationBridge.addAccelerationListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredAccelerationListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.addAccelerationListener' request.");
                }
           }
@@ -103,10 +117,18 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredAccelerationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredAccelerationListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'AccelerationBridge.removeAccelerationListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListener' request.");
                }
@@ -129,13 +151,21 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredAccelerationListener.keys();
-                    for (var key in keys) {
-                         registeredAccelerationListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredAccelerationListener.keys();
+                              for (var key in keys) {
+                                   registeredAccelerationListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'AccelerationBridge.removeAccelerationListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListeners' request.");
                }

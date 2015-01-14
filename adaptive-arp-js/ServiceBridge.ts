@@ -82,7 +82,7 @@ module Adaptive {
                // Prepare response.
                var response : Service = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -124,13 +124,27 @@ module Adaptive {
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredServiceResultCallback.remove(""+callback.getId());
+                              callback.onError(IServiceResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.invokeService' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredServiceResultCallback.remove(""+callback.getId());
+                         callback.onError(IServiceResultCallbackError.Unknown)
+                         console.error("ERROR: 'ServiceBridge.invokeService' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredServiceResultCallback.remove(""+callback.getId());
                     callback.onError(IServiceResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                }
           }
 
@@ -153,8 +167,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.registerService' request.");
                }
@@ -179,8 +192,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterService' request.");
                }
@@ -203,8 +215,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterServices' request.");
                }
@@ -232,7 +243,7 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -272,7 +283,7 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));

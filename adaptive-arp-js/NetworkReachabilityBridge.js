@@ -85,12 +85,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkReachabilityBridge.isNetworkReachable' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                    console.error("ERROR: 'NetworkReachabilityBridge.isNetworkReachable' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
             }
         };
         /**
@@ -116,12 +133,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkReachabilityBridge.isNetworkServiceReachable' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                    console.error("ERROR: 'NetworkReachabilityBridge.isNetworkServiceReachable' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
             }
         };
         return NetworkReachabilityBridge;

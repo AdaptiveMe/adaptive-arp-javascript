@@ -89,12 +89,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.createDatabase' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.createDatabase' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.createDatabase' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.createDatabase' request.");
             }
         };
         /**
@@ -122,12 +139,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.createTable' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.createTable' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.createTable' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.createTable' request.");
             }
         };
         /**
@@ -153,12 +187,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.deleteDatabase' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.deleteDatabase' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.deleteDatabase' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.deleteDatabase' request.");
             }
         };
         /**
@@ -186,12 +237,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.deleteTable' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.deleteTable' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.deleteTable' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.deleteTable' request.");
             }
         };
         /**
@@ -222,12 +290,29 @@ should be passed as a parameter
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.executeSqlStatement' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.executeSqlStatement' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.executeSqlStatement' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.executeSqlStatement' request.");
             }
         };
         /**
@@ -258,12 +343,29 @@ should be passed as a parameter
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.executeSqlTransactions' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                    console.error("ERROR: 'DatabaseBridge.executeSqlTransactions' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.executeSqlTransactions' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredDatabaseTableResultCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IDatabaseTableResultCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'DatabaseBridge.executeSqlTransactions' request.");
             }
         };
         /**

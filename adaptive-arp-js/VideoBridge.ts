@@ -75,8 +75,7 @@ module Adaptive {
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'VideoBridge.playStream' request.");
                }

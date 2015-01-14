@@ -87,12 +87,29 @@ var Adaptive;
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove callback reference from local dictionary due to invalid response.
+                        Adaptive.registeredMessagingCallback.remove("" + callback.getId());
+                        callback.onError(Adaptive.IMessagingCallbackError.Unknown);
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'MessagingBridge.sendSMS' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    Adaptive.registeredMessagingCallback.remove("" + callback.getId());
+                    callback.onError(Adaptive.IMessagingCallbackError.Unknown);
+                    console.error("ERROR: 'MessagingBridge.sendSMS' incorrect response received.");
+                }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'MessagingBridge.sendSMS' request.");
                 // Unknown error - remove from dictionary and notify callback.
                 Adaptive.registeredMessagingCallback.remove("" + callback.getId());
                 callback.onError(Adaptive.IMessagingCallbackError.Unknown);
+                console.error("ERROR: " + xhr.status + " sending 'MessagingBridge.sendSMS' request.");
             }
         };
         return MessagingBridge;

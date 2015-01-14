@@ -9567,7 +9567,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : Locale = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -9605,7 +9605,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : Array<Locale> = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -9650,7 +9650,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : string = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -9690,7 +9690,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : Array<KeyPair> = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -9743,13 +9743,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredLifecycleListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredLifecycleListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredLifecycleListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.addLifecycleListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredLifecycleListener.remove(""+listener.getId());
+                         console.error("ERROR: 'LifecycleBridge.addLifecycleListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredLifecycleListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.addLifecycleListener' request.");
                }
           }
@@ -9774,7 +9788,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -9810,10 +9824,18 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredLifecycleListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredLifecycleListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'LifecycleBridge.removeLifecycleListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListener' request.");
                }
@@ -9836,13 +9858,21 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredLifecycleListener.keys();
-                    for (var key in keys) {
-                         registeredLifecycleListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredLifecycleListener.keys();
+                              for (var key in keys) {
+                                   registeredLifecycleListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'LifecycleBridge.removeLifecycleListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListeners' request.");
                }
@@ -10046,13 +10076,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredNetworkReachabilityCallback.remove(""+callback.getId());
+                              callback.onError(INetworkReachabilityCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkReachabilityBridge.isNetworkReachable' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredNetworkReachabilityCallback.remove(""+callback.getId());
+                         callback.onError(INetworkReachabilityCallbackError.Unknown)
+                         console.error("ERROR: 'NetworkReachabilityBridge.isNetworkReachable' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredNetworkReachabilityCallback.remove(""+callback.getId());
                     callback.onError(INetworkReachabilityCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
                }
           }
 
@@ -10078,13 +10122,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredNetworkReachabilityCallback.remove(""+callback.getId());
+                              callback.onError(INetworkReachabilityCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkReachabilityBridge.isNetworkServiceReachable' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredNetworkReachabilityCallback.remove(""+callback.getId());
+                         callback.onError(INetworkReachabilityCallbackError.Unknown)
+                         console.error("ERROR: 'NetworkReachabilityBridge.isNetworkServiceReachable' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredNetworkReachabilityCallback.remove(""+callback.getId());
                     callback.onError(INetworkReachabilityCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
                }
           }
      }
@@ -10120,13 +10178,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredNetworkStatusListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredNetworkStatusListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredNetworkStatusListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.addNetworkStatusListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredNetworkStatusListener.remove(""+listener.getId());
+                         console.error("ERROR: 'NetworkStatusBridge.addNetworkStatusListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredNetworkStatusListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.addNetworkStatusListener' request.");
                }
           }
@@ -10149,10 +10221,18 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredNetworkStatusListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredNetworkStatusListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.removeNetworkStatusListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListener' request.");
                }
@@ -10175,13 +10255,21 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredNetworkStatusListener.keys();
-                    for (var key in keys) {
-                         registeredNetworkStatusListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredNetworkStatusListener.keys();
+                              for (var key in keys) {
+                                   registeredNetworkStatusListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListeners' request.");
                }
@@ -10225,7 +10313,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : Service = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10267,13 +10355,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredServiceResultCallback.remove(""+callback.getId());
+                              callback.onError(IServiceResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.invokeService' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredServiceResultCallback.remove(""+callback.getId());
+                         callback.onError(IServiceResultCallbackError.Unknown)
+                         console.error("ERROR: 'ServiceBridge.invokeService' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredServiceResultCallback.remove(""+callback.getId());
                     callback.onError(IServiceResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
                }
           }
 
@@ -10296,8 +10398,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.registerService' request.");
                }
@@ -10322,8 +10423,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterService' request.");
                }
@@ -10346,8 +10446,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterServices' request.");
                }
@@ -10375,7 +10474,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10415,7 +10514,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10487,7 +10586,7 @@ listener and subsequently, the listener will be deactivated and removed from the
                // Prepare response.
                var response : ITelephonyStatus = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10575,13 +10674,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.createDatabase' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.createDatabase' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createDatabase' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createDatabase' request.");
                }
           }
 
@@ -10609,13 +10722,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.createTable' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.createTable' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createTable' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseTableResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createTable' request.");
                }
           }
 
@@ -10641,13 +10768,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.deleteDatabase' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.deleteDatabase' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteDatabase' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteDatabase' request.");
                }
           }
 
@@ -10675,13 +10816,27 @@ listener and subsequently, the listener will be deactivated and removed from the
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.deleteTable' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.deleteTable' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteTable' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseTableResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteTable' request.");
                }
           }
 
@@ -10712,13 +10867,27 @@ should be passed as a parameter
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.executeSqlStatement' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.executeSqlStatement' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlStatement' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseTableResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlStatement' request.");
                }
           }
 
@@ -10749,13 +10918,27 @@ should be passed as a parameter
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.executeSqlTransactions' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
+                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                         console.error("ERROR: 'DatabaseBridge.executeSqlTransactions' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlTransactions' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredDatabaseTableResultCallback.remove(""+callback.getId());
                     callback.onError(IDatabaseTableResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlTransactions' request.");
                }
           }
 
@@ -10781,7 +10964,7 @@ should be passed as a parameter
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10823,7 +11006,7 @@ should be passed as a parameter
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10879,7 +11062,7 @@ should be passed as a parameter
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10919,7 +11102,7 @@ should be passed as a parameter
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -10959,13 +11142,27 @@ should be passed as a parameter
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.create' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.create' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileResultCallback.remove(""+callback.getId());
                     callback.onError(IFileResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
                }
           }
 
@@ -10994,7 +11191,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11034,7 +11231,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11074,13 +11271,27 @@ deleted if the cascade parameter is set to true.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileDataLoadResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.getContent' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileDataLoadResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.getContent' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileDataLoadResultCallback.remove(""+callback.getId());
                     callback.onError(IFileDataLoadResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
                }
           }
 
@@ -11106,7 +11317,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemStorageType = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11146,7 +11357,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemType = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11186,7 +11397,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : IFileSystemSecurity = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11226,7 +11437,7 @@ deleted if the cascade parameter is set to true.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11267,13 +11478,27 @@ any results.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileListResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileListResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFiles' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileListResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileListResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.listFiles' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileListResultCallback.remove(""+callback.getId());
                     callback.onError(IFileListResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
                }
           }
 
@@ -11302,13 +11527,27 @@ is a file, it will not yield any results.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileListResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileListResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFilesForRegex' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileListResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileListResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.listFilesForRegex' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileListResultCallback.remove(""+callback.getId());
                     callback.onError(IFileListResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
                }
           }
 
@@ -11336,7 +11575,7 @@ is a file, it will not yield any results.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11383,13 +11622,27 @@ new destination file.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.move' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.move' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileResultCallback.remove(""+callback.getId());
                     callback.onError(IFileResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
                }
           }
 
@@ -11417,13 +11670,27 @@ new destination file.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredFileDataStoreResultCallback.remove(""+callback.getId());
+                              callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.setContent' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredFileDataStoreResultCallback.remove(""+callback.getId());
+                         callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                         console.error("ERROR: 'FileBridge.setContent' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredFileDataStoreResultCallback.remove(""+callback.getId());
                     callback.onError(IFileDataStoreResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
                }
           }
      }
@@ -11468,7 +11735,7 @@ This method does not create the actual file in the specified folder.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11508,7 +11775,7 @@ This path is volatile and may be cleaned by the OS periodically.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11547,7 +11814,7 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11586,7 +11853,7 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11625,7 +11892,7 @@ This path may or may not be directly readable or writable - it usually contains 
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11664,7 +11931,7 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11702,7 +11969,7 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : string = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11743,7 +12010,7 @@ This path may or may not be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -11876,8 +12143,7 @@ This path may or may not be writable by the current application.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'VideoBridge.playStream' request.");
                }
@@ -12001,13 +12267,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContact' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.getContact' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
                }
           }
 
@@ -12033,13 +12313,27 @@ This path may or may not be writable by the current application.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactPhotoResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactPhotoResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactPhoto' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactPhotoResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactPhotoResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.getContactPhoto' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactPhotoResultCallback.remove(""+callback.getId());
                     callback.onError(IContactPhotoResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
                }
           }
 
@@ -12063,13 +12357,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContacts' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.getContacts' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
                }
           }
 
@@ -12095,13 +12403,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsForFields' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.getContactsForFields' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
                }
           }
 
@@ -12129,13 +12451,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.getContactsWithFilter' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
                }
           }
 
@@ -12161,13 +12497,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContacts' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.searchContacts' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
                }
           }
 
@@ -12195,13 +12545,27 @@ This path may or may not be writable by the current application.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredContactResultCallback.remove(""+callback.getId());
+                              callback.onError(IContactResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredContactResultCallback.remove(""+callback.getId());
+                         callback.onError(IContactResultCallbackError.Unknown)
+                         console.error("ERROR: 'ContactBridge.searchContactsWithFilter' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredContactResultCallback.remove(""+callback.getId());
                     callback.onError(IContactResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
                }
           }
 
@@ -12229,7 +12593,7 @@ This path may or may not be writable by the current application.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -12285,13 +12649,27 @@ This path may or may not be writable by the current application.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredMessagingCallback.remove(""+callback.getId());
+                              callback.onError(IMessagingCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MailBridge.sendEmail' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredMessagingCallback.remove(""+callback.getId());
+                         callback.onError(IMessagingCallbackError.Unknown)
+                         console.error("ERROR: 'MailBridge.sendEmail' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'MailBridge.sendEmail' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredMessagingCallback.remove(""+callback.getId());
                     callback.onError(IMessagingCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'MailBridge.sendEmail' request.");
                }
           }
      }
@@ -12335,13 +12713,27 @@ This path may or may not be writable by the current application.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredMessagingCallback.remove(""+callback.getId());
+                              callback.onError(IMessagingCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MessagingBridge.sendSMS' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredMessagingCallback.remove(""+callback.getId());
+                         callback.onError(IMessagingCallbackError.Unknown)
+                         console.error("ERROR: 'MessagingBridge.sendSMS' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredMessagingCallback.remove(""+callback.getId());
                     callback.onError(IMessagingCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
                }
           }
      }
@@ -12481,13 +12873,27 @@ This path may or may not be writable by the current application.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredSecurityResultCallback.remove(""+callback.getId());
+                              callback.onError(ISecurityResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.deleteSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredSecurityResultCallback.remove(""+callback.getId());
+                         callback.onError(ISecurityResultCallbackError.Unknown)
+                         console.error("ERROR: 'SecurityBridge.deleteSecureKeyValuePairs' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredSecurityResultCallback.remove(""+callback.getId());
                     callback.onError(ISecurityResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
                }
           }
 
@@ -12515,13 +12921,27 @@ This path may or may not be writable by the current application.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredSecurityResultCallback.remove(""+callback.getId());
+                              callback.onError(ISecurityResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.getSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredSecurityResultCallback.remove(""+callback.getId());
+                         callback.onError(ISecurityResultCallbackError.Unknown)
+                         console.error("ERROR: 'SecurityBridge.getSecureKeyValuePairs' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.getSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredSecurityResultCallback.remove(""+callback.getId());
                     callback.onError(ISecurityResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.getSecureKeyValuePairs' request.");
                }
           }
 
@@ -12545,7 +12965,7 @@ This path may or may not be writable by the current application.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -12587,13 +13007,27 @@ This path may or may not be writable by the current application.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove callback reference from local dictionary due to invalid response.
+                              registeredSecurityResultCallback.remove(""+callback.getId());
+                              callback.onError(ISecurityResultCallbackError.Unknown)
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.setSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove callback reference from local dictionary due to invalid response.
+                         registeredSecurityResultCallback.remove(""+callback.getId());
+                         callback.onError(ISecurityResultCallbackError.Unknown)
+                         console.error("ERROR: 'SecurityBridge.setSecureKeyValuePairs' incorrect response received.");
+                    }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.setSecureKeyValuePairs' request.");
                     // Unknown error - remove from dictionary and notify callback.
                     registeredSecurityResultCallback.remove(""+callback.getId());
                     callback.onError(ISecurityResultCallbackError.Unknown)
+                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.setSecureKeyValuePairs' request.");
                }
           }
      }
@@ -12629,13 +13063,27 @@ This path may or may not be writable by the current application.
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredAccelerationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredAccelerationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredAccelerationListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.addAccelerationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredAccelerationListener.remove(""+listener.getId());
+                         console.error("ERROR: 'AccelerationBridge.addAccelerationListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredAccelerationListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.addAccelerationListener' request.");
                }
           }
@@ -12658,10 +13106,18 @@ This path may or may not be writable by the current application.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredAccelerationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredAccelerationListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'AccelerationBridge.removeAccelerationListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListener' request.");
                }
@@ -12684,13 +13140,21 @@ This path may or may not be writable by the current application.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredAccelerationListener.keys();
-                    for (var key in keys) {
-                         registeredAccelerationListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredAccelerationListener.keys();
+                              for (var key in keys) {
+                                   registeredAccelerationListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'AccelerationBridge.removeAccelerationListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'AccelerationBridge.removeAccelerationListeners' request.");
                }
@@ -12760,13 +13224,27 @@ This path may or may not be writable by the current application.
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredGeolocationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredGeolocationListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredGeolocationListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.addGeolocationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredGeolocationListener.remove(""+listener.getId());
+                         console.error("ERROR: 'GeolocationBridge.addGeolocationListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredGeolocationListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.addGeolocationListener' request.");
                }
           }
@@ -12789,10 +13267,18 @@ This path may or may not be writable by the current application.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredGeolocationListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredGeolocationListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.removeGeolocationListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'GeolocationBridge.removeGeolocationListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.removeGeolocationListener' request.");
                }
@@ -12815,13 +13301,21 @@ This path may or may not be writable by the current application.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredGeolocationListener.keys();
-                    for (var key in keys) {
-                         registeredGeolocationListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredGeolocationListener.keys();
+                              for (var key in keys) {
+                                   registeredGeolocationListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.removeGeolocationListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'GeolocationBridge.removeGeolocationListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'GeolocationBridge.removeGeolocationListeners' request.");
                }
@@ -12993,7 +13487,7 @@ This path may or may not be writable by the current application.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13034,7 +13528,7 @@ the device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13074,7 +13568,7 @@ the device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13115,7 +13609,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13155,7 +13649,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13196,7 +13690,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13237,7 +13731,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13287,13 +13781,27 @@ device.
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               // Add listener reference to local dictionary.
+               registeredButtonListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Add listener reference to local dictionary.
-                    registeredButtonListener.add(""+listener.getId(), listener);
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         } else {
+                              // Remove listener reference from local dictionary due to invalid response.
+                              registeredButtonListener.remove(""+listener.getId());
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.addButtonListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         // Remove listener reference from local dictionary due to invalid response.
+                         registeredButtonListener.remove(""+listener.getId());
+                         console.error("ERROR: 'DeviceBridge.addButtonListener' incorrect response received.");
+                    }
                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    registeredButtonListener.remove(""+listener.getId());
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.addButtonListener' request.");
                }
           }
@@ -13318,7 +13826,7 @@ device.
                // Prepare response.
                var response : DeviceInfo = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13356,7 +13864,7 @@ device.
                // Prepare response.
                var response : Locale = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13392,10 +13900,18 @@ device.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove listener reference from local dictionary.
-                    registeredButtonListener.remove(""+listener.getId());
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove listener reference from local dictionary.
+                              registeredButtonListener.remove(""+listener.getId());
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeButtonListener' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'DeviceBridge.removeButtonListener' incorrect response received.");
+                    }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListener' request.");
                }
@@ -13418,13 +13934,21 @@ device.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Remove all listeners references from local dictionary.
-                    var keys = registeredButtonListener.keys();
-                    for (var key in keys) {
-                         registeredButtonListener.remove(key);
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                              // Remove all listeners references from local dictionary.
+                              var keys = registeredButtonListener.keys();
+                              for (var key in keys) {
+                                   registeredButtonListener.remove(key);
+                              }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeButtonListeners' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'DeviceBridge.removeButtonListeners' incorrect response received.");
                     }
-                    // Result void - All OK, nothing else to do.
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListeners' request.");
                }
@@ -13482,7 +14006,7 @@ device.
                // Prepare response.
                var response : OSInfo = null;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13533,8 +14057,7 @@ device.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'RuntimeBridge.dismissApplication' request.");
                }
@@ -13560,7 +14083,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13616,7 +14139,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13660,7 +14183,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13704,7 +14227,7 @@ device.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200) {
+               if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
@@ -13855,8 +14378,7 @@ device.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_message' request.");
                }
@@ -13885,8 +14407,7 @@ device.
                xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200) {
-                    // Result void - All OK, nothing else to do.
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_category_message' request.");
                }
