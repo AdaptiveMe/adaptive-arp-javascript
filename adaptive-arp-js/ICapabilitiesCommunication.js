@@ -47,21 +47,26 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ICapabilitiesCommunication.toObject = function (object) {
-            switch (object.value) {
-                case "Calendar":
-                    return ICapabilitiesCommunication.Calendar;
-                case "Contact":
-                    return ICapabilitiesCommunication.Contact;
-                case "Mail":
-                    return ICapabilitiesCommunication.Mail;
-                case "Messaging":
-                    return ICapabilitiesCommunication.Messaging;
-                case "Telephony":
-                    return ICapabilitiesCommunication.Telephony;
-                case "Unknown":
-                    return ICapabilitiesCommunication.Unknown;
-                default:
-                    return ICapabilitiesCommunication.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Calendar":
+                        return ICapabilitiesCommunication.Calendar;
+                    case "Contact":
+                        return ICapabilitiesCommunication.Contact;
+                    case "Mail":
+                        return ICapabilitiesCommunication.Mail;
+                    case "Messaging":
+                        return ICapabilitiesCommunication.Messaging;
+                    case "Telephony":
+                        return ICapabilitiesCommunication.Telephony;
+                    case "Unknown":
+                        return ICapabilitiesCommunication.Unknown;
+                    default:
+                        return ICapabilitiesCommunication.Unknown;
+                }
+            }
+            else {
+                return ICapabilitiesCommunication.Unknown;
             }
         };
         ICapabilitiesCommunication.Calendar = new ICapabilitiesCommunication("Calendar");

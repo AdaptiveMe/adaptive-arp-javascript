@@ -47,21 +47,26 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IDatabaseTableResultCallbackError.toObject = function (object) {
-            switch (object.value) {
-                case "NoSpace":
-                    return IDatabaseTableResultCallbackError.NoSpace;
-                case "ReadOnlyTable":
-                    return IDatabaseTableResultCallbackError.ReadOnlyTable;
-                case "SqlException":
-                    return IDatabaseTableResultCallbackError.SqlException;
-                case "DatabaseNotFound":
-                    return IDatabaseTableResultCallbackError.DatabaseNotFound;
-                case "NoTableFound":
-                    return IDatabaseTableResultCallbackError.NoTableFound;
-                case "Unknown":
-                    return IDatabaseTableResultCallbackError.Unknown;
-                default:
-                    return IDatabaseTableResultCallbackError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoSpace":
+                        return IDatabaseTableResultCallbackError.NoSpace;
+                    case "ReadOnlyTable":
+                        return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                    case "SqlException":
+                        return IDatabaseTableResultCallbackError.SqlException;
+                    case "DatabaseNotFound":
+                        return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                    case "NoTableFound":
+                        return IDatabaseTableResultCallbackError.NoTableFound;
+                    case "Unknown":
+                        return IDatabaseTableResultCallbackError.Unknown;
+                    default:
+                        return IDatabaseTableResultCallbackError.Unknown;
+                }
+            }
+            else {
+                return IDatabaseTableResultCallbackError.Unknown;
             }
         };
         IDatabaseTableResultCallbackError.NoSpace = new IDatabaseTableResultCallbackError("NoSpace");

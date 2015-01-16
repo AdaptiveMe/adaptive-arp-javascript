@@ -165,16 +165,23 @@ var Adaptive;
         DatabaseTable.toObject = function (object) {
             var result = new DatabaseTable(null, null, null, null, null);
             // Assign values to bean fields.
-            result.name = object.name;
-            result.columnCount = object.columnCount;
-            result.rowCount = object.rowCount;
-            result.databaseColumns = new Array();
-            for (var __value__ in object.databaseColumns) {
-                result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+            if (object != null && object.name != null)
+                result.name = object.name;
+            if (object != null && object.columnCount != null)
+                result.columnCount = object.columnCount;
+            if (object != null && object.rowCount != null)
+                result.rowCount = object.rowCount;
+            if (object != null && object.databaseColumns != null) {
+                result.databaseColumns = new Array();
+                for (var __value__ in object.databaseColumns) {
+                    result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+                }
             }
-            result.databaseRows = new Array();
-            for (var __value__ in object.databaseRows) {
-                result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+            if (object != null && object.databaseRows != null) {
+                result.databaseRows = new Array();
+                for (var __value__ in object.databaseRows) {
+                    result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+                }
             }
             return result;
         };

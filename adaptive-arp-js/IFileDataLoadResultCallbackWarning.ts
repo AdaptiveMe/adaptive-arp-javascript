@@ -49,13 +49,17 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
-               switch(object.value) {
-                    case "ExceedMaximumSize":
-                         return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
-                    case "Unknown":
-                         return IFileDataLoadResultCallbackWarning.Unknown;
-                    default:
-                         return IFileDataLoadResultCallbackWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "ExceedMaximumSize":
+                              return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                         case "Unknown":
+                              return IFileDataLoadResultCallbackWarning.Unknown;
+                         default:
+                              return IFileDataLoadResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IFileDataLoadResultCallbackWarning.Unknown;
                }
           }
 

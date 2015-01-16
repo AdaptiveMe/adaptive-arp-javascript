@@ -87,7 +87,7 @@ module Adaptive {
                var result : EmailAddress = new EmailAddress(null);
 
                // Assign values to bean fields.
-               result.address = object.address;
+               if (object!=null && object.address!=null) result.address = object.address;
 
                return result;
           }

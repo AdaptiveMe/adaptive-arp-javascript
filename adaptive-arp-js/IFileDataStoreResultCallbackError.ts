@@ -51,17 +51,21 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IFileDataStoreResultCallbackError {
-               switch(object.value) {
-                    case "InexistentFile":
-                         return IFileDataStoreResultCallbackError.InexistentFile;
-                    case "InsufficientSpace":
-                         return IFileDataStoreResultCallbackError.InsufficientSpace;
-                    case "Unauthorized":
-                         return IFileDataStoreResultCallbackError.Unauthorized;
-                    case "Unknown":
-                         return IFileDataStoreResultCallbackError.Unknown;
-                    default:
-                         return IFileDataStoreResultCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "InexistentFile":
+                              return IFileDataStoreResultCallbackError.InexistentFile;
+                         case "InsufficientSpace":
+                              return IFileDataStoreResultCallbackError.InsufficientSpace;
+                         case "Unauthorized":
+                              return IFileDataStoreResultCallbackError.Unauthorized;
+                         case "Unknown":
+                              return IFileDataStoreResultCallbackError.Unknown;
+                         default:
+                              return IFileDataStoreResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IFileDataStoreResultCallbackError.Unknown;
                }
           }
 

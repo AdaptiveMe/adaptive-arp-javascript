@@ -223,14 +223,22 @@ var Adaptive;
         ServiceCookie.toObject = function (object) {
             var result = new ServiceCookie(null, null, null, null, null, null, null, null);
             // Assign values to bean fields.
-            result.cookieName = object.cookieName;
-            result.cookieValue = object.cookieValue;
-            result.domain = object.domain;
-            result.path = object.path;
-            result.scheme = object.scheme;
-            result.secure = object.secure;
-            result.expiry = object.expiry;
-            result.creation = object.creation;
+            if (object != null && object.cookieName != null)
+                result.cookieName = object.cookieName;
+            if (object != null && object.cookieValue != null)
+                result.cookieValue = object.cookieValue;
+            if (object != null && object.domain != null)
+                result.domain = object.domain;
+            if (object != null && object.path != null)
+                result.path = object.path;
+            if (object != null && object.scheme != null)
+                result.scheme = object.scheme;
+            if (object != null && object.secure != null)
+                result.secure = object.secure;
+            if (object != null && object.expiry != null)
+                result.expiry = object.expiry;
+            if (object != null && object.creation != null)
+                result.creation = object.creation;
             return result;
         };
         return ServiceCookie;

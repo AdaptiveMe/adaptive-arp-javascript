@@ -138,8 +138,8 @@ module Adaptive {
 
                // Assign values to bean fields.
                result.name = IOSType.toObject(object.name);
-               result.version = object.version;
-               result.vendor = object.vendor;
+               if (object!=null && object.version!=null) result.version = object.version;
+               if (object!=null && object.vendor!=null) result.vendor = object.vendor;
 
                return result;
           }

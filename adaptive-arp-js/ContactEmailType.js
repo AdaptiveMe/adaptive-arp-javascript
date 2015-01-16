@@ -47,17 +47,22 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ContactEmailType.toObject = function (object) {
-            switch (object.value) {
-                case "Personal":
-                    return ContactEmailType.Personal;
-                case "Work":
-                    return ContactEmailType.Work;
-                case "Other":
-                    return ContactEmailType.Other;
-                case "Unknown":
-                    return ContactEmailType.Unknown;
-                default:
-                    return ContactEmailType.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Personal":
+                        return ContactEmailType.Personal;
+                    case "Work":
+                        return ContactEmailType.Work;
+                    case "Other":
+                        return ContactEmailType.Other;
+                    case "Unknown":
+                        return ContactEmailType.Unknown;
+                    default:
+                        return ContactEmailType.Unknown;
+                }
+            }
+            else {
+                return ContactEmailType.Unknown;
             }
         };
         ContactEmailType.Personal = new ContactEmailType("Personal");

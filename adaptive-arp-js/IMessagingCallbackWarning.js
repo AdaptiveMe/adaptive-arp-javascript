@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IMessagingCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "UnableToSentAll":
-                    return IMessagingCallbackWarning.UnableToSentAll;
-                case "UnableToFetchAttachment":
-                    return IMessagingCallbackWarning.UnableToFetchAttachment;
-                case "Unknown":
-                    return IMessagingCallbackWarning.Unknown;
-                default:
-                    return IMessagingCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "UnableToSentAll":
+                        return IMessagingCallbackWarning.UnableToSentAll;
+                    case "UnableToFetchAttachment":
+                        return IMessagingCallbackWarning.UnableToFetchAttachment;
+                    case "Unknown":
+                        return IMessagingCallbackWarning.Unknown;
+                    default:
+                        return IMessagingCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IMessagingCallbackWarning.Unknown;
             }
         };
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");

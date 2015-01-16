@@ -83,7 +83,8 @@ var Adaptive;
         ContactWebsite.toObject = function (object) {
             var result = new ContactWebsite(null);
             // Assign values to bean fields.
-            result.url = object.url;
+            if (object != null && object.url != null)
+                result.url = object.url;
             return result;
         };
         return ContactWebsite;

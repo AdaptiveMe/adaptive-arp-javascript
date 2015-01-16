@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ISecurityResultCallbackError {
-               switch(object.value) {
-                    case "NoPermission":
-                         return ISecurityResultCallbackError.NoPermission;
-                    case "NoMatchesFound":
-                         return ISecurityResultCallbackError.NoMatchesFound;
-                    case "Unknown":
-                         return ISecurityResultCallbackError.Unknown;
-                    default:
-                         return ISecurityResultCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NoPermission":
+                              return ISecurityResultCallbackError.NoPermission;
+                         case "NoMatchesFound":
+                              return ISecurityResultCallbackError.NoMatchesFound;
+                         case "Unknown":
+                              return ISecurityResultCallbackError.Unknown;
+                         default:
+                              return ISecurityResultCallbackError.Unknown;
+                    }
+               } else {
+                    return ISecurityResultCallbackError.Unknown;
                }
           }
 

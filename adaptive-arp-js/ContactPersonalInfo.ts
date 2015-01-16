@@ -166,9 +166,9 @@ module Adaptive {
                var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
 
                // Assign values to bean fields.
-               result.name = object.name;
-               result.middleName = object.middleName;
-               result.lastName = object.lastName;
+               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.middleName!=null) result.middleName = object.middleName;
+               if (object!=null && object.lastName!=null) result.lastName = object.lastName;
                result.title = ContactPersonalInfoTitle.toObject(object.title);
 
                return result;

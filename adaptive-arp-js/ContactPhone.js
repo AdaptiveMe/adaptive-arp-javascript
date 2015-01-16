@@ -104,7 +104,8 @@ var Adaptive;
         ContactPhone.toObject = function (object) {
             var result = new ContactPhone(null, null);
             // Assign values to bean fields.
-            result.phone = object.phone;
+            if (object != null && object.phone != null)
+                result.phone = object.phone;
             result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
             return result;
         };

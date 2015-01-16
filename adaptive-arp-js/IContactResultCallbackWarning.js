@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IContactResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "LimitExceeded":
-                    return IContactResultCallbackWarning.LimitExceeded;
-                case "No_Matches":
-                    return IContactResultCallbackWarning.No_Matches;
-                case "Unknown":
-                    return IContactResultCallbackWarning.Unknown;
-                default:
-                    return IContactResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "LimitExceeded":
+                        return IContactResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                        return IContactResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                        return IContactResultCallbackWarning.Unknown;
+                    default:
+                        return IContactResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IContactResultCallbackWarning.Unknown;
             }
         };
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");

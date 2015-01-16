@@ -47,33 +47,38 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
-            switch (object.value) {
-                case "Forbidden":
-                    return INetworkReachabilityCallbackError.Forbidden;
-                case "NotFound":
-                    return INetworkReachabilityCallbackError.NotFound;
-                case "MethodNotAllowed":
-                    return INetworkReachabilityCallbackError.MethodNotAllowed;
-                case "NotAllowed":
-                    return INetworkReachabilityCallbackError.NotAllowed;
-                case "NotAuthenticated":
-                    return INetworkReachabilityCallbackError.NotAuthenticated;
-                case "TimeOut":
-                    return INetworkReachabilityCallbackError.TimeOut;
-                case "NoResponse":
-                    return INetworkReachabilityCallbackError.NoResponse;
-                case "Unreachable":
-                    return INetworkReachabilityCallbackError.Unreachable;
-                case "Wrong_Params":
-                    return INetworkReachabilityCallbackError.Wrong_Params;
-                case "MalformedUrl":
-                    return INetworkReachabilityCallbackError.MalformedUrl;
-                case "DomainUnresolvable":
-                    return INetworkReachabilityCallbackError.DomainUnresolvable;
-                case "Unknown":
-                    return INetworkReachabilityCallbackError.Unknown;
-                default:
-                    return INetworkReachabilityCallbackError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Forbidden":
+                        return INetworkReachabilityCallbackError.Forbidden;
+                    case "NotFound":
+                        return INetworkReachabilityCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                        return INetworkReachabilityCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                        return INetworkReachabilityCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                        return INetworkReachabilityCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                        return INetworkReachabilityCallbackError.TimeOut;
+                    case "NoResponse":
+                        return INetworkReachabilityCallbackError.NoResponse;
+                    case "Unreachable":
+                        return INetworkReachabilityCallbackError.Unreachable;
+                    case "Wrong_Params":
+                        return INetworkReachabilityCallbackError.Wrong_Params;
+                    case "MalformedUrl":
+                        return INetworkReachabilityCallbackError.MalformedUrl;
+                    case "DomainUnresolvable":
+                        return INetworkReachabilityCallbackError.DomainUnresolvable;
+                    case "Unknown":
+                        return INetworkReachabilityCallbackError.Unknown;
+                    default:
+                        return INetworkReachabilityCallbackError.Unknown;
+                }
+            }
+            else {
+                return INetworkReachabilityCallbackError.Unknown;
             }
         };
         INetworkReachabilityCallbackError.Forbidden = new INetworkReachabilityCallbackError("Forbidden");

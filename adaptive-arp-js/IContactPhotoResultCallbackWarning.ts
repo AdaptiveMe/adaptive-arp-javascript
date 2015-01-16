@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IContactPhotoResultCallbackWarning {
-               switch(object.value) {
-                    case "LimitExceeded":
-                         return IContactPhotoResultCallbackWarning.LimitExceeded;
-                    case "No_Matches":
-                         return IContactPhotoResultCallbackWarning.No_Matches;
-                    case "Unknown":
-                         return IContactPhotoResultCallbackWarning.Unknown;
-                    default:
-                         return IContactPhotoResultCallbackWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "LimitExceeded":
+                              return IContactPhotoResultCallbackWarning.LimitExceeded;
+                         case "No_Matches":
+                              return IContactPhotoResultCallbackWarning.No_Matches;
+                         case "Unknown":
+                              return IContactPhotoResultCallbackWarning.Unknown;
+                         default:
+                              return IContactPhotoResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IContactPhotoResultCallbackWarning.Unknown;
                }
           }
 

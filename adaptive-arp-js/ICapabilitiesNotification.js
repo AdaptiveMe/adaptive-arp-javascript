@@ -47,19 +47,24 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ICapabilitiesNotification.toObject = function (object) {
-            switch (object.value) {
-                case "Alarm":
-                    return ICapabilitiesNotification.Alarm;
-                case "LocalNotification":
-                    return ICapabilitiesNotification.LocalNotification;
-                case "RemoteNotification":
-                    return ICapabilitiesNotification.RemoteNotification;
-                case "Vibration":
-                    return ICapabilitiesNotification.Vibration;
-                case "Unknown":
-                    return ICapabilitiesNotification.Unknown;
-                default:
-                    return ICapabilitiesNotification.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Alarm":
+                        return ICapabilitiesNotification.Alarm;
+                    case "LocalNotification":
+                        return ICapabilitiesNotification.LocalNotification;
+                    case "RemoteNotification":
+                        return ICapabilitiesNotification.RemoteNotification;
+                    case "Vibration":
+                        return ICapabilitiesNotification.Vibration;
+                    case "Unknown":
+                        return ICapabilitiesNotification.Unknown;
+                    default:
+                        return ICapabilitiesNotification.Unknown;
+                }
+            }
+            else {
+                return ICapabilitiesNotification.Unknown;
             }
         };
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");

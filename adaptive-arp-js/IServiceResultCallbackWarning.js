@@ -47,19 +47,24 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IServiceResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "NotSecure":
-                    return IServiceResultCallbackWarning.NotSecure;
-                case "NotTrusted":
-                    return IServiceResultCallbackWarning.NotTrusted;
-                case "Redirected":
-                    return IServiceResultCallbackWarning.Redirected;
-                case "Wrong_Params":
-                    return IServiceResultCallbackWarning.Wrong_Params;
-                case "Unknown":
-                    return IServiceResultCallbackWarning.Unknown;
-                default:
-                    return IServiceResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NotSecure":
+                        return IServiceResultCallbackWarning.NotSecure;
+                    case "NotTrusted":
+                        return IServiceResultCallbackWarning.NotTrusted;
+                    case "Redirected":
+                        return IServiceResultCallbackWarning.Redirected;
+                    case "Wrong_Params":
+                        return IServiceResultCallbackWarning.Wrong_Params;
+                    case "Unknown":
+                        return IServiceResultCallbackWarning.Unknown;
+                    default:
+                        return IServiceResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IServiceResultCallbackWarning.Unknown;
             }
         };
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");

@@ -59,33 +59,37 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IOSType {
-               switch(object.value) {
-                    case "iOS":
-                         return IOSType.iOS;
-                    case "OSX":
-                         return IOSType.OSX;
-                    case "Windows":
-                         return IOSType.Windows;
-                    case "WindowsPhone":
-                         return IOSType.WindowsPhone;
-                    case "Android":
-                         return IOSType.Android;
-                    case "Linux":
-                         return IOSType.Linux;
-                    case "Blackberry":
-                         return IOSType.Blackberry;
-                    case "Tizen":
-                         return IOSType.Tizen;
-                    case "FirefoxOS":
-                         return IOSType.FirefoxOS;
-                    case "Chromium":
-                         return IOSType.Chromium;
-                    case "Unspecified":
-                         return IOSType.Unspecified;
-                    case "Unknown":
-                         return IOSType.Unknown;
-                    default:
-                         return IOSType.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "iOS":
+                              return IOSType.iOS;
+                         case "OSX":
+                              return IOSType.OSX;
+                         case "Windows":
+                              return IOSType.Windows;
+                         case "WindowsPhone":
+                              return IOSType.WindowsPhone;
+                         case "Android":
+                              return IOSType.Android;
+                         case "Linux":
+                              return IOSType.Linux;
+                         case "Blackberry":
+                              return IOSType.Blackberry;
+                         case "Tizen":
+                              return IOSType.Tizen;
+                         case "FirefoxOS":
+                              return IOSType.FirefoxOS;
+                         case "Chromium":
+                              return IOSType.Chromium;
+                         case "Unspecified":
+                              return IOSType.Unspecified;
+                         case "Unknown":
+                              return IOSType.Unknown;
+                         default:
+                              return IOSType.Unknown;
+                    }
+               } else {
+                    return IOSType.Unknown;
                }
           }
 

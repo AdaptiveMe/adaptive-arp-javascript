@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileSystemType.toObject = function (object) {
-            switch (object.value) {
-                case "Directory":
-                    return IFileSystemType.Directory;
-                case "File":
-                    return IFileSystemType.File;
-                case "Unknown":
-                    return IFileSystemType.Unknown;
-                default:
-                    return IFileSystemType.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Directory":
+                        return IFileSystemType.Directory;
+                    case "File":
+                        return IFileSystemType.File;
+                    case "Unknown":
+                        return IFileSystemType.Unknown;
+                    default:
+                        return IFileSystemType.Unknown;
+                }
+            }
+            else {
+                return IFileSystemType.Unknown;
             }
         };
         IFileSystemType.Directory = new IFileSystemType("Directory");

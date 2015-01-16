@@ -83,7 +83,8 @@ var Adaptive;
         DatabaseColumn.toObject = function (object) {
             var result = new DatabaseColumn(null);
             // Assign values to bean fields.
-            result.name = object.name;
+            if (object != null && object.name != null)
+                result.name = object.name;
             return result;
         };
         return DatabaseColumn;

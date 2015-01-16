@@ -141,8 +141,8 @@ module Adaptive {
 
                // Assign values to bean fields.
                result.type = ContactEmailType.toObject(object.type);
-               result.primary = object.primary;
-               result.email = object.email;
+               if (object!=null && object.primary!=null) result.primary = object.primary;
+               if (object!=null && object.email!=null) result.email = object.email;
 
                return result;
           }

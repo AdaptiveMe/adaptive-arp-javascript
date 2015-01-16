@@ -47,13 +47,18 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileDataStoreResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "ExceedMaximumSize":
-                    return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                case "Unknown":
-                    return IFileDataStoreResultCallbackWarning.Unknown;
-                default:
-                    return IFileDataStoreResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "ExceedMaximumSize":
+                        return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
+                    case "Unknown":
+                        return IFileDataStoreResultCallbackWarning.Unknown;
+                    default:
+                        return IFileDataStoreResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IFileDataStoreResultCallbackWarning.Unknown;
             }
         };
         IFileDataStoreResultCallbackWarning.ExceedMaximumSize = new IFileDataStoreResultCallbackWarning("ExceedMaximumSize");

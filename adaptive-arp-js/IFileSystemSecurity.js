@@ -47,17 +47,22 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileSystemSecurity.toObject = function (object) {
-            switch (object.value) {
-                case "Default":
-                    return IFileSystemSecurity.Default;
-                case "Protected":
-                    return IFileSystemSecurity.Protected;
-                case "Encrypted":
-                    return IFileSystemSecurity.Encrypted;
-                case "Unknown":
-                    return IFileSystemSecurity.Unknown;
-                default:
-                    return IFileSystemSecurity.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Default":
+                        return IFileSystemSecurity.Default;
+                    case "Protected":
+                        return IFileSystemSecurity.Protected;
+                    case "Encrypted":
+                        return IFileSystemSecurity.Encrypted;
+                    case "Unknown":
+                        return IFileSystemSecurity.Unknown;
+                    default:
+                        return IFileSystemSecurity.Unknown;
+                }
+            }
+            else {
+                return IFileSystemSecurity.Unknown;
             }
         };
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");

@@ -114,7 +114,7 @@ module Adaptive {
                var result : ContactPhone = new ContactPhone(null, null);
 
                // Assign values to bean fields.
-               result.phone = object.phone;
+               if (object!=null && object.phone!=null) result.phone = object.phone;
                result.phoneType = ContactPhoneType.toObject(object.phoneType);
 
                return result;

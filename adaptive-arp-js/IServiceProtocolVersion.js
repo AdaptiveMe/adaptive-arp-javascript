@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IServiceProtocolVersion.toObject = function (object) {
-            switch (object.value) {
-                case "HttpProtocolVersion10":
-                    return IServiceProtocolVersion.HttpProtocolVersion10;
-                case "HttpProtocolVersion11":
-                    return IServiceProtocolVersion.HttpProtocolVersion11;
-                case "Unknown":
-                    return IServiceProtocolVersion.Unknown;
-                default:
-                    return IServiceProtocolVersion.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "HttpProtocolVersion10":
+                        return IServiceProtocolVersion.HttpProtocolVersion10;
+                    case "HttpProtocolVersion11":
+                        return IServiceProtocolVersion.HttpProtocolVersion11;
+                    case "Unknown":
+                        return IServiceProtocolVersion.Unknown;
+                    default:
+                        return IServiceProtocolVersion.Unknown;
+                }
+            }
+            else {
+                return IServiceProtocolVersion.Unknown;
             }
         };
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");

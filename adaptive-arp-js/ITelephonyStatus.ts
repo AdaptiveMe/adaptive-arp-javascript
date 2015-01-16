@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ITelephonyStatus {
-               switch(object.value) {
-                    case "Dialing":
-                         return ITelephonyStatus.Dialing;
-                    case "Failed":
-                         return ITelephonyStatus.Failed;
-                    case "Unknown":
-                         return ITelephonyStatus.Unknown;
-                    default:
-                         return ITelephonyStatus.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Dialing":
+                              return ITelephonyStatus.Dialing;
+                         case "Failed":
+                              return ITelephonyStatus.Failed;
+                         case "Unknown":
+                              return ITelephonyStatus.Unknown;
+                         default:
+                              return ITelephonyStatus.Unknown;
+                    }
+               } else {
+                    return ITelephonyStatus.Unknown;
                }
           }
 

@@ -169,7 +169,7 @@ module Adaptive {
 
                // Assign values to bean fields.
                result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
-               result.name = object.name;
+               if (object!=null && object.name!=null) result.name = object.name;
                result.method = IServiceMethod.toObject(object.method);
                result.type = IServiceType.toObject(object.type);
 

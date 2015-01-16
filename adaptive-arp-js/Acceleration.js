@@ -143,10 +143,14 @@ var Adaptive;
         Acceleration.toObject = function (object) {
             var result = new Acceleration(null, null, null, null);
             // Assign values to bean fields.
-            result.x = object.x;
-            result.y = object.y;
-            result.z = object.z;
-            result.timestamp = object.timestamp;
+            if (object != null && object.x != null)
+                result.x = object.x;
+            if (object != null && object.y != null)
+                result.y = object.y;
+            if (object != null && object.z != null)
+                result.z = object.z;
+            if (object != null && object.timestamp != null)
+                result.timestamp = object.timestamp;
             return result;
         };
         return Acceleration;

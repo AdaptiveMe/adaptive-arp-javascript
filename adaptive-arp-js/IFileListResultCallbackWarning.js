@@ -47,13 +47,18 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileListResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "PartialResult":
-                    return IFileListResultCallbackWarning.PartialResult;
-                case "Unknown":
-                    return IFileListResultCallbackWarning.Unknown;
-                default:
-                    return IFileListResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "PartialResult":
+                        return IFileListResultCallbackWarning.PartialResult;
+                    case "Unknown":
+                        return IFileListResultCallbackWarning.Unknown;
+                    default:
+                        return IFileListResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IFileListResultCallbackWarning.Unknown;
             }
         };
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");

@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "SourceNotDeleted":
-                    return IFileResultCallbackWarning.SourceNotDeleted;
-                case "RootDirectory":
-                    return IFileResultCallbackWarning.RootDirectory;
-                case "Unknown":
-                    return IFileResultCallbackWarning.Unknown;
-                default:
-                    return IFileResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "SourceNotDeleted":
+                        return IFileResultCallbackWarning.SourceNotDeleted;
+                    case "RootDirectory":
+                        return IFileResultCallbackWarning.RootDirectory;
+                    case "Unknown":
+                        return IFileResultCallbackWarning.Unknown;
+                    default:
+                        return IFileResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IFileResultCallbackWarning.Unknown;
             }
         };
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");

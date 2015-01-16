@@ -125,8 +125,10 @@ var Adaptive;
             var result = new ContactEmail(null, null, null);
             // Assign values to bean fields.
             result.type = Adaptive.ContactEmailType.toObject(object.type);
-            result.primary = object.primary;
-            result.email = object.email;
+            if (object != null && object.primary != null)
+                result.primary = object.primary;
+            if (object != null && object.email != null)
+                result.email = object.email;
             return result;
         };
         return ContactEmail;

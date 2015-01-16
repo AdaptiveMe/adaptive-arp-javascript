@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IAccelerationListenerWarning {
-               switch(object.value) {
-                    case "NeedsCalibration":
-                         return IAccelerationListenerWarning.NeedsCalibration;
-                    case "Stale":
-                         return IAccelerationListenerWarning.Stale;
-                    case "Unknown":
-                         return IAccelerationListenerWarning.Unknown;
-                    default:
-                         return IAccelerationListenerWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NeedsCalibration":
+                              return IAccelerationListenerWarning.NeedsCalibration;
+                         case "Stale":
+                              return IAccelerationListenerWarning.Stale;
+                         case "Unknown":
+                              return IAccelerationListenerWarning.Unknown;
+                         default:
+                              return IAccelerationListenerWarning.Unknown;
+                    }
+               } else {
+                    return IAccelerationListenerWarning.Unknown;
                }
           }
 

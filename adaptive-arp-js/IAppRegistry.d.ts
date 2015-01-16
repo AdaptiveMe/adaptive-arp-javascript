@@ -532,6 +532,8 @@ declare module Adaptive {
         getXMLBridge(): IXML;
         /**
            Return the API version for the given interface.
+
+           @return {String} The version of the API.
         */
         getAPIVersion(): string;
     }

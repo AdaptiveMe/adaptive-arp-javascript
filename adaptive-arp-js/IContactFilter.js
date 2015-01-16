@@ -47,17 +47,22 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IContactFilter.toObject = function (object) {
-            switch (object.value) {
-                case "HAS_PHONE":
-                    return IContactFilter.HAS_PHONE;
-                case "HAS_EMAIL":
-                    return IContactFilter.HAS_EMAIL;
-                case "HAS_ADDRESS":
-                    return IContactFilter.HAS_ADDRESS;
-                case "Unknown":
-                    return IContactFilter.Unknown;
-                default:
-                    return IContactFilter.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "HAS_PHONE":
+                        return IContactFilter.HAS_PHONE;
+                    case "HAS_EMAIL":
+                        return IContactFilter.HAS_EMAIL;
+                    case "HAS_ADDRESS":
+                        return IContactFilter.HAS_ADDRESS;
+                    case "Unknown":
+                        return IContactFilter.Unknown;
+                    default:
+                        return IContactFilter.Unknown;
+                }
+            }
+            else {
+                return IContactFilter.Unknown;
             }
         };
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");

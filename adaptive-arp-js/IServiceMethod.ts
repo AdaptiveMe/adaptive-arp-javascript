@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IServiceMethod {
-               switch(object.value) {
-                    case "Post":
-                         return IServiceMethod.Post;
-                    case "Get":
-                         return IServiceMethod.Get;
-                    case "Unknown":
-                         return IServiceMethod.Unknown;
-                    default:
-                         return IServiceMethod.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Post":
+                              return IServiceMethod.Post;
+                         case "Get":
+                              return IServiceMethod.Get;
+                         case "Unknown":
+                              return IServiceMethod.Unknown;
+                         default:
+                              return IServiceMethod.Unknown;
+                    }
+               } else {
+                    return IServiceMethod.Unknown;
                }
           }
 

@@ -49,13 +49,17 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IButtonListenerWarning {
-               switch(object.value) {
-                    case "Not_Implemented":
-                         return IButtonListenerWarning.Not_Implemented;
-                    case "Unknown":
-                         return IButtonListenerWarning.Unknown;
-                    default:
-                         return IButtonListenerWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Not_Implemented":
+                              return IButtonListenerWarning.Not_Implemented;
+                         case "Unknown":
+                              return IButtonListenerWarning.Unknown;
+                         default:
+                              return IButtonListenerWarning.Unknown;
+                    }
+               } else {
+                    return IButtonListenerWarning.Unknown;
                }
           }
 

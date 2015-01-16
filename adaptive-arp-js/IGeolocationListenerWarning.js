@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IGeolocationListenerWarning.toObject = function (object) {
-            switch (object.value) {
-                case "HighDoP":
-                    return IGeolocationListenerWarning.HighDoP;
-                case "StaleData":
-                    return IGeolocationListenerWarning.StaleData;
-                case "Unknown":
-                    return IGeolocationListenerWarning.Unknown;
-                default:
-                    return IGeolocationListenerWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "HighDoP":
+                        return IGeolocationListenerWarning.HighDoP;
+                    case "StaleData":
+                        return IGeolocationListenerWarning.StaleData;
+                    case "Unknown":
+                        return IGeolocationListenerWarning.Unknown;
+                    default:
+                        return IGeolocationListenerWarning.Unknown;
+                }
+            }
+            else {
+                return IGeolocationListenerWarning.Unknown;
             }
         };
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");

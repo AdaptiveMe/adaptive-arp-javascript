@@ -114,7 +114,7 @@ module Adaptive {
                var result : ContactAddress = new ContactAddress(null, null);
 
                // Assign values to bean fields.
-               result.address = object.address;
+               if (object!=null && object.address!=null) result.address = object.address;
                result.type = ContactAddressType.toObject(object.type);
 
                return result;

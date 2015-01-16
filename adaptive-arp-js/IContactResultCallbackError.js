@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IContactResultCallbackError.toObject = function (object) {
-            switch (object.value) {
-                case "NoPermission":
-                    return IContactResultCallbackError.NoPermission;
-                case "Wrong_Params":
-                    return IContactResultCallbackError.Wrong_Params;
-                case "Unknown":
-                    return IContactResultCallbackError.Unknown;
-                default:
-                    return IContactResultCallbackError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return IContactResultCallbackError.NoPermission;
+                    case "Wrong_Params":
+                        return IContactResultCallbackError.Wrong_Params;
+                    case "Unknown":
+                        return IContactResultCallbackError.Unknown;
+                    default:
+                        return IContactResultCallbackError.Unknown;
+                }
+            }
+            else {
+                return IContactResultCallbackError.Unknown;
             }
         };
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");

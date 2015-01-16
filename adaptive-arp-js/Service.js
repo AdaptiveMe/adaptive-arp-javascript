@@ -147,7 +147,8 @@ var Adaptive;
             var result = new Service(null, null, null, null);
             // Assign values to bean fields.
             result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(object.serviceEndpoint);
-            result.name = object.name;
+            if (object != null && object.name != null)
+                result.name = object.name;
             result.method = Adaptive.IServiceMethod.toObject(object.method);
             result.type = Adaptive.IServiceType.toObject(object.type);
             return result;

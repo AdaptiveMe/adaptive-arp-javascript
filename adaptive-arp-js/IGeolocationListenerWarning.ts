@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IGeolocationListenerWarning {
-               switch(object.value) {
-                    case "HighDoP":
-                         return IGeolocationListenerWarning.HighDoP;
-                    case "StaleData":
-                         return IGeolocationListenerWarning.StaleData;
-                    case "Unknown":
-                         return IGeolocationListenerWarning.Unknown;
-                    default:
-                         return IGeolocationListenerWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "HighDoP":
+                              return IGeolocationListenerWarning.HighDoP;
+                         case "StaleData":
+                              return IGeolocationListenerWarning.StaleData;
+                         case "Unknown":
+                              return IGeolocationListenerWarning.Unknown;
+                         default:
+                              return IGeolocationListenerWarning.Unknown;
+                    }
+               } else {
+                    return IGeolocationListenerWarning.Unknown;
                }
           }
 

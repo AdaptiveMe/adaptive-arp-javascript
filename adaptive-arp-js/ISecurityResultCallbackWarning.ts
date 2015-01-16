@@ -49,13 +49,17 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
-               switch(object.value) {
-                    case "EntryOverride":
-                         return ISecurityResultCallbackWarning.EntryOverride;
-                    case "Unknown":
-                         return ISecurityResultCallbackWarning.Unknown;
-                    default:
-                         return ISecurityResultCallbackWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "EntryOverride":
+                              return ISecurityResultCallbackWarning.EntryOverride;
+                         case "Unknown":
+                              return ISecurityResultCallbackWarning.Unknown;
+                         default:
+                              return ISecurityResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return ISecurityResultCallbackWarning.Unknown;
                }
           }
 

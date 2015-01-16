@@ -51,17 +51,21 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ContactAddressType {
-               switch(object.value) {
-                    case "Home":
-                         return ContactAddressType.Home;
-                    case "Work":
-                         return ContactAddressType.Work;
-                    case "Other":
-                         return ContactAddressType.Other;
-                    case "Unknown":
-                         return ContactAddressType.Unknown;
-                    default:
-                         return ContactAddressType.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Home":
+                              return ContactAddressType.Home;
+                         case "Work":
+                              return ContactAddressType.Work;
+                         case "Other":
+                              return ContactAddressType.Other;
+                         case "Unknown":
+                              return ContactAddressType.Unknown;
+                         default:
+                              return ContactAddressType.Unknown;
+                    }
+               } else {
+                    return ContactAddressType.Unknown;
                }
           }
 

@@ -963,6 +963,8 @@ var Adaptive;
         };
         /**
            Return the API version for the given interface.
+
+           @return {String} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
             return "v2.0.3";

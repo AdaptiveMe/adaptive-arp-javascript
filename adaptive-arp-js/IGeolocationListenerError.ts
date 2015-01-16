@@ -52,19 +52,23 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IGeolocationListenerError {
-               switch(object.value) {
-                    case "Disabled":
-                         return IGeolocationListenerError.Disabled;
-                    case "RestrictedAccess":
-                         return IGeolocationListenerError.RestrictedAccess;
-                    case "DeniedAccess":
-                         return IGeolocationListenerError.DeniedAccess;
-                    case "StatusNotDetermined":
-                         return IGeolocationListenerError.StatusNotDetermined;
-                    case "Unknown":
-                         return IGeolocationListenerError.Unknown;
-                    default:
-                         return IGeolocationListenerError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Disabled":
+                              return IGeolocationListenerError.Disabled;
+                         case "RestrictedAccess":
+                              return IGeolocationListenerError.RestrictedAccess;
+                         case "DeniedAccess":
+                              return IGeolocationListenerError.DeniedAccess;
+                         case "StatusNotDetermined":
+                              return IGeolocationListenerError.StatusNotDetermined;
+                         case "Unknown":
+                              return IGeolocationListenerError.Unknown;
+                         default:
+                              return IGeolocationListenerError.Unknown;
+                    }
+               } else {
+                    return IGeolocationListenerError.Unknown;
                }
           }
 

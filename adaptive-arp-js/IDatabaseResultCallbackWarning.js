@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "DatabaseExists":
-                    return IDatabaseResultCallbackWarning.DatabaseExists;
-                case "IsOpen":
-                    return IDatabaseResultCallbackWarning.IsOpen;
-                case "Unknown":
-                    return IDatabaseResultCallbackWarning.Unknown;
-                default:
-                    return IDatabaseResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "DatabaseExists":
+                        return IDatabaseResultCallbackWarning.DatabaseExists;
+                    case "IsOpen":
+                        return IDatabaseResultCallbackWarning.IsOpen;
+                    case "Unknown":
+                        return IDatabaseResultCallbackWarning.Unknown;
+                    default:
+                        return IDatabaseResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IDatabaseResultCallbackWarning.Unknown;
             }
         };
         IDatabaseResultCallbackWarning.DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");

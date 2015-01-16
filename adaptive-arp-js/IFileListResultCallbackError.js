@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IFileListResultCallbackError.toObject = function (object) {
-            switch (object.value) {
-                case "InexistentFile":
-                    return IFileListResultCallbackError.InexistentFile;
-                case "Unauthorized":
-                    return IFileListResultCallbackError.Unauthorized;
-                case "Unknown":
-                    return IFileListResultCallbackError.Unknown;
-                default:
-                    return IFileListResultCallbackError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "InexistentFile":
+                        return IFileListResultCallbackError.InexistentFile;
+                    case "Unauthorized":
+                        return IFileListResultCallbackError.Unauthorized;
+                    case "Unknown":
+                        return IFileListResultCallbackError.Unknown;
+                    default:
+                        return IFileListResultCallbackError.Unknown;
+                }
+            }
+            else {
+                return IFileListResultCallbackError.Unknown;
             }
         };
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");

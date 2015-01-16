@@ -47,27 +47,32 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IContactFieldGroup.toObject = function (object) {
-            switch (object.value) {
-                case "PERSONAL_INFO":
-                    return IContactFieldGroup.PERSONAL_INFO;
-                case "PROFESSIONAL_INFO":
-                    return IContactFieldGroup.PROFESSIONAL_INFO;
-                case "ADDRESSES":
-                    return IContactFieldGroup.ADDRESSES;
-                case "PHONES":
-                    return IContactFieldGroup.PHONES;
-                case "EMAILS":
-                    return IContactFieldGroup.EMAILS;
-                case "WEBSITES":
-                    return IContactFieldGroup.WEBSITES;
-                case "SOCIALS":
-                    return IContactFieldGroup.SOCIALS;
-                case "TAGS":
-                    return IContactFieldGroup.TAGS;
-                case "Unknown":
-                    return IContactFieldGroup.Unknown;
-                default:
-                    return IContactFieldGroup.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "PERSONAL_INFO":
+                        return IContactFieldGroup.PERSONAL_INFO;
+                    case "PROFESSIONAL_INFO":
+                        return IContactFieldGroup.PROFESSIONAL_INFO;
+                    case "ADDRESSES":
+                        return IContactFieldGroup.ADDRESSES;
+                    case "PHONES":
+                        return IContactFieldGroup.PHONES;
+                    case "EMAILS":
+                        return IContactFieldGroup.EMAILS;
+                    case "WEBSITES":
+                        return IContactFieldGroup.WEBSITES;
+                    case "SOCIALS":
+                        return IContactFieldGroup.SOCIALS;
+                    case "TAGS":
+                        return IContactFieldGroup.TAGS;
+                    case "Unknown":
+                        return IContactFieldGroup.Unknown;
+                    default:
+                        return IContactFieldGroup.Unknown;
+                }
+            }
+            else {
+                return IContactFieldGroup.Unknown;
             }
         };
         IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");

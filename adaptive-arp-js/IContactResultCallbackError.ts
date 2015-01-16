@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IContactResultCallbackError {
-               switch(object.value) {
-                    case "NoPermission":
-                         return IContactResultCallbackError.NoPermission;
-                    case "Wrong_Params":
-                         return IContactResultCallbackError.Wrong_Params;
-                    case "Unknown":
-                         return IContactResultCallbackError.Unknown;
-                    default:
-                         return IContactResultCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NoPermission":
+                              return IContactResultCallbackError.NoPermission;
+                         case "Wrong_Params":
+                              return IContactResultCallbackError.Wrong_Params;
+                         case "Unknown":
+                              return IContactResultCallbackError.Unknown;
+                         default:
+                              return IContactResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IContactResultCallbackError.Unknown;
                }
           }
 

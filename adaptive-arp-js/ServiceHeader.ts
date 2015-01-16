@@ -113,8 +113,8 @@ module Adaptive {
                var result : ServiceHeader = new ServiceHeader(null, null);
 
                // Assign values to bean fields.
-               result.name = object.name;
-               result.data = object.data;
+               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.data!=null) result.data = object.data;
 
                return result;
           }

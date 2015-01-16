@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ILifecycleListenerWarning {
-               switch(object.value) {
-                    case "MemoryLow":
-                         return ILifecycleListenerWarning.MemoryLow;
-                    case "BatteryLow":
-                         return ILifecycleListenerWarning.BatteryLow;
-                    case "Unknown":
-                         return ILifecycleListenerWarning.Unknown;
-                    default:
-                         return ILifecycleListenerWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "MemoryLow":
+                              return ILifecycleListenerWarning.MemoryLow;
+                         case "BatteryLow":
+                              return ILifecycleListenerWarning.BatteryLow;
+                         case "Unknown":
+                              return ILifecycleListenerWarning.Unknown;
+                         default:
+                              return ILifecycleListenerWarning.Unknown;
+                    }
+               } else {
+                    return ILifecycleListenerWarning.Unknown;
                }
           }
 

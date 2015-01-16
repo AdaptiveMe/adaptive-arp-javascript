@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IFileResultCallbackWarning {
-               switch(object.value) {
-                    case "SourceNotDeleted":
-                         return IFileResultCallbackWarning.SourceNotDeleted;
-                    case "RootDirectory":
-                         return IFileResultCallbackWarning.RootDirectory;
-                    case "Unknown":
-                         return IFileResultCallbackWarning.Unknown;
-                    default:
-                         return IFileResultCallbackWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "SourceNotDeleted":
+                              return IFileResultCallbackWarning.SourceNotDeleted;
+                         case "RootDirectory":
+                              return IFileResultCallbackWarning.RootDirectory;
+                         case "Unknown":
+                              return IFileResultCallbackWarning.Unknown;
+                         default:
+                              return IFileResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IFileResultCallbackWarning.Unknown;
                }
           }
 

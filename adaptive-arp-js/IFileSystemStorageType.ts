@@ -54,23 +54,27 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IFileSystemStorageType {
-               switch(object.value) {
-                    case "Application":
-                         return IFileSystemStorageType.Application;
-                    case "Document":
-                         return IFileSystemStorageType.Document;
-                    case "Cloud":
-                         return IFileSystemStorageType.Cloud;
-                    case "Protected":
-                         return IFileSystemStorageType.Protected;
-                    case "Cache":
-                         return IFileSystemStorageType.Cache;
-                    case "External":
-                         return IFileSystemStorageType.External;
-                    case "Unknown":
-                         return IFileSystemStorageType.Unknown;
-                    default:
-                         return IFileSystemStorageType.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Application":
+                              return IFileSystemStorageType.Application;
+                         case "Document":
+                              return IFileSystemStorageType.Document;
+                         case "Cloud":
+                              return IFileSystemStorageType.Cloud;
+                         case "Protected":
+                              return IFileSystemStorageType.Protected;
+                         case "Cache":
+                              return IFileSystemStorageType.Cache;
+                         case "External":
+                              return IFileSystemStorageType.External;
+                         case "Unknown":
+                              return IFileSystemStorageType.Unknown;
+                         default:
+                              return IFileSystemStorageType.Unknown;
+                    }
+               } else {
+                    return IFileSystemStorageType.Unknown;
                }
           }
 

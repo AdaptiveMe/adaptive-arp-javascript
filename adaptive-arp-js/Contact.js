@@ -232,33 +232,46 @@ var Adaptive;
         Contact.toObject = function (object) {
             var result = new Contact(null, null, null, null, null, null, null, null, null);
             // Assign values to parent bean fields.
-            result.contactId = object.contactId;
+            if (object != null && object.contactId != null)
+                result.contactId = object.contactId;
             // Assign values to bean fields.
             result.personalInfo = Adaptive.ContactPersonalInfo.toObject(object.personalInfo);
             result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(object.professionalInfo);
-            result.contactAddresses = new Array();
-            for (var __value__ in object.contactAddresses) {
-                result.contactAddresses.push(Adaptive.ContactAddress.toObject(__value__));
+            if (object != null && object.contactAddresses != null) {
+                result.contactAddresses = new Array();
+                for (var __value__ in object.contactAddresses) {
+                    result.contactAddresses.push(Adaptive.ContactAddress.toObject(__value__));
+                }
             }
-            result.contactPhones = new Array();
-            for (var __value__ in object.contactPhones) {
-                result.contactPhones.push(Adaptive.ContactPhone.toObject(__value__));
+            if (object != null && object.contactPhones != null) {
+                result.contactPhones = new Array();
+                for (var __value__ in object.contactPhones) {
+                    result.contactPhones.push(Adaptive.ContactPhone.toObject(__value__));
+                }
             }
-            result.contactEmails = new Array();
-            for (var __value__ in object.contactEmails) {
-                result.contactEmails.push(Adaptive.ContactEmail.toObject(__value__));
+            if (object != null && object.contactEmails != null) {
+                result.contactEmails = new Array();
+                for (var __value__ in object.contactEmails) {
+                    result.contactEmails.push(Adaptive.ContactEmail.toObject(__value__));
+                }
             }
-            result.contactWebsites = new Array();
-            for (var __value__ in object.contactWebsites) {
-                result.contactWebsites.push(Adaptive.ContactWebsite.toObject(__value__));
+            if (object != null && object.contactWebsites != null) {
+                result.contactWebsites = new Array();
+                for (var __value__ in object.contactWebsites) {
+                    result.contactWebsites.push(Adaptive.ContactWebsite.toObject(__value__));
+                }
             }
-            result.contactSocials = new Array();
-            for (var __value__ in object.contactSocials) {
-                result.contactSocials.push(Adaptive.ContactSocial.toObject(__value__));
+            if (object != null && object.contactSocials != null) {
+                result.contactSocials = new Array();
+                for (var __value__ in object.contactSocials) {
+                    result.contactSocials.push(Adaptive.ContactSocial.toObject(__value__));
+                }
             }
-            result.contactTags = new Array();
-            for (var __value__ in object.contactTags) {
-                result.contactTags.push(Adaptive.ContactTag.toObject(__value__));
+            if (object != null && object.contactTags != null) {
+                result.contactTags = new Array();
+                for (var __value__ in object.contactTags) {
+                    result.contactTags.push(Adaptive.ContactTag.toObject(__value__));
+                }
             }
             return result;
         };

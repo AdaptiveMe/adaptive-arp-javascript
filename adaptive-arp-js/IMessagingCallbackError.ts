@@ -53,21 +53,25 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IMessagingCallbackError {
-               switch(object.value) {
-                    case "SIMNotPresent":
-                         return IMessagingCallbackError.SIMNotPresent;
-                    case "EmailAccountNotFound":
-                         return IMessagingCallbackError.EmailAccountNotFound;
-                    case "NotSent":
-                         return IMessagingCallbackError.NotSent;
-                    case "WrongParams":
-                         return IMessagingCallbackError.WrongParams;
-                    case "NotSupported":
-                         return IMessagingCallbackError.NotSupported;
-                    case "Unknown":
-                         return IMessagingCallbackError.Unknown;
-                    default:
-                         return IMessagingCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "SIMNotPresent":
+                              return IMessagingCallbackError.SIMNotPresent;
+                         case "EmailAccountNotFound":
+                              return IMessagingCallbackError.EmailAccountNotFound;
+                         case "NotSent":
+                              return IMessagingCallbackError.NotSent;
+                         case "WrongParams":
+                              return IMessagingCallbackError.WrongParams;
+                         case "NotSupported":
+                              return IMessagingCallbackError.NotSupported;
+                         case "Unknown":
+                              return IMessagingCallbackError.Unknown;
+                         default:
+                              return IMessagingCallbackError.Unknown;
+                    }
+               } else {
+                    return IMessagingCallbackError.Unknown;
                }
           }
 

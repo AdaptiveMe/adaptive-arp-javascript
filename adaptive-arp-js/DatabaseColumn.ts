@@ -87,7 +87,7 @@ module Adaptive {
                var result : DatabaseColumn = new DatabaseColumn(null);
 
                // Assign values to bean fields.
-               result.name = object.name;
+               if (object!=null && object.name!=null) result.name = object.name;
 
                return result;
           }

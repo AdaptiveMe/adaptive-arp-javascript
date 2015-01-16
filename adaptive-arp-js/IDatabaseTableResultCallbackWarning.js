@@ -47,17 +47,22 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "TableExists":
-                    return IDatabaseTableResultCallbackWarning.TableExists;
-                case "TableLocked":
-                    return IDatabaseTableResultCallbackWarning.TableLocked;
-                case "NoResults":
-                    return IDatabaseTableResultCallbackWarning.NoResults;
-                case "Unknown":
-                    return IDatabaseTableResultCallbackWarning.Unknown;
-                default:
-                    return IDatabaseTableResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "TableExists":
+                        return IDatabaseTableResultCallbackWarning.TableExists;
+                    case "TableLocked":
+                        return IDatabaseTableResultCallbackWarning.TableLocked;
+                    case "NoResults":
+                        return IDatabaseTableResultCallbackWarning.NoResults;
+                    case "Unknown":
+                        return IDatabaseTableResultCallbackWarning.Unknown;
+                    default:
+                        return IDatabaseTableResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return IDatabaseTableResultCallbackWarning.Unknown;
             }
         };
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");

@@ -47,25 +47,30 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ICapabilitiesNet.toObject = function (object) {
-            switch (object.value) {
-                case "GSM":
-                    return ICapabilitiesNet.GSM;
-                case "GPRS":
-                    return ICapabilitiesNet.GPRS;
-                case "HSDPA":
-                    return ICapabilitiesNet.HSDPA;
-                case "LTE":
-                    return ICapabilitiesNet.LTE;
-                case "WIFI":
-                    return ICapabilitiesNet.WIFI;
-                case "Ethernet":
-                    return ICapabilitiesNet.Ethernet;
-                case "Unavailable":
-                    return ICapabilitiesNet.Unavailable;
-                case "Unknown":
-                    return ICapabilitiesNet.Unknown;
-                default:
-                    return ICapabilitiesNet.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "GSM":
+                        return ICapabilitiesNet.GSM;
+                    case "GPRS":
+                        return ICapabilitiesNet.GPRS;
+                    case "HSDPA":
+                        return ICapabilitiesNet.HSDPA;
+                    case "LTE":
+                        return ICapabilitiesNet.LTE;
+                    case "WIFI":
+                        return ICapabilitiesNet.WIFI;
+                    case "Ethernet":
+                        return ICapabilitiesNet.Ethernet;
+                    case "Unavailable":
+                        return ICapabilitiesNet.Unavailable;
+                    case "Unknown":
+                        return ICapabilitiesNet.Unknown;
+                    default:
+                        return ICapabilitiesNet.Unknown;
+                }
+            }
+            else {
+                return ICapabilitiesNet.Unknown;
             }
         };
         ICapabilitiesNet.GSM = new ICapabilitiesNet("GSM");

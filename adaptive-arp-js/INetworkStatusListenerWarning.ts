@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : INetworkStatusListenerWarning {
-               switch(object.value) {
-                    case "IpAddressNotAssigned":
-                         return INetworkStatusListenerWarning.IpAddressNotAssigned;
-                    case "IpAddressChanged":
-                         return INetworkStatusListenerWarning.IpAddressChanged;
-                    case "Unknown":
-                         return INetworkStatusListenerWarning.Unknown;
-                    default:
-                         return INetworkStatusListenerWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "IpAddressNotAssigned":
+                              return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                         case "IpAddressChanged":
+                              return INetworkStatusListenerWarning.IpAddressChanged;
+                         case "Unknown":
+                              return INetworkStatusListenerWarning.Unknown;
+                         default:
+                              return INetworkStatusListenerWarning.Unknown;
+                    }
+               } else {
+                    return INetworkStatusListenerWarning.Unknown;
                }
           }
 

@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ILifecycleListenerWarning.toObject = function (object) {
-            switch (object.value) {
-                case "MemoryLow":
-                    return ILifecycleListenerWarning.MemoryLow;
-                case "BatteryLow":
-                    return ILifecycleListenerWarning.BatteryLow;
-                case "Unknown":
-                    return ILifecycleListenerWarning.Unknown;
-                default:
-                    return ILifecycleListenerWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "MemoryLow":
+                        return ILifecycleListenerWarning.MemoryLow;
+                    case "BatteryLow":
+                        return ILifecycleListenerWarning.BatteryLow;
+                    case "Unknown":
+                        return ILifecycleListenerWarning.Unknown;
+                    default:
+                        return ILifecycleListenerWarning.Unknown;
+                }
+            }
+            else {
+                return ILifecycleListenerWarning.Unknown;
             }
         };
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");

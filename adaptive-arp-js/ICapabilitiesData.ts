@@ -51,17 +51,21 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ICapabilitiesData {
-               switch(object.value) {
-                    case "Database":
-                         return ICapabilitiesData.Database;
-                    case "File":
-                         return ICapabilitiesData.File;
-                    case "Cloud":
-                         return ICapabilitiesData.Cloud;
-                    case "Unknown":
-                         return ICapabilitiesData.Unknown;
-                    default:
-                         return ICapabilitiesData.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Database":
+                              return ICapabilitiesData.Database;
+                         case "File":
+                              return ICapabilitiesData.File;
+                         case "Cloud":
+                              return ICapabilitiesData.Cloud;
+                         case "Unknown":
+                              return ICapabilitiesData.Unknown;
+                         default:
+                              return ICapabilitiesData.Unknown;
+                    }
+               } else {
+                    return ICapabilitiesData.Unknown;
                }
           }
 

@@ -47,13 +47,18 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ISecurityResultCallbackWarning.toObject = function (object) {
-            switch (object.value) {
-                case "EntryOverride":
-                    return ISecurityResultCallbackWarning.EntryOverride;
-                case "Unknown":
-                    return ISecurityResultCallbackWarning.Unknown;
-                default:
-                    return ISecurityResultCallbackWarning.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "EntryOverride":
+                        return ISecurityResultCallbackWarning.EntryOverride;
+                    case "Unknown":
+                        return ISecurityResultCallbackWarning.Unknown;
+                    default:
+                        return ISecurityResultCallbackWarning.Unknown;
+                }
+            }
+            else {
+                return ISecurityResultCallbackWarning.Unknown;
             }
         };
         ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");

@@ -103,8 +103,10 @@ var Adaptive;
         SecureKeyPair.toObject = function (object) {
             var result = new SecureKeyPair(null, null);
             // Assign values to bean fields.
-            result.secureKey = object.secureKey;
-            result.secureData = object.secureData;
+            if (object != null && object.secureKey != null)
+                result.secureKey = object.secureKey;
+            if (object != null && object.secureData != null)
+                result.secureData = object.secureData;
             return result;
         };
         return SecureKeyPair;

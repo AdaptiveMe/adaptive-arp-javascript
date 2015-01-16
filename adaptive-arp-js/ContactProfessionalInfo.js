@@ -123,9 +123,12 @@ var Adaptive;
         ContactProfessionalInfo.toObject = function (object) {
             var result = new ContactProfessionalInfo(null, null, null);
             // Assign values to bean fields.
-            result.company = object.company;
-            result.jobTitle = object.jobTitle;
-            result.jobDescription = object.jobDescription;
+            if (object != null && object.company != null)
+                result.company = object.company;
+            if (object != null && object.jobTitle != null)
+                result.jobTitle = object.jobTitle;
+            if (object != null && object.jobDescription != null)
+                result.jobDescription = object.jobDescription;
             return result;
         };
         return ContactProfessionalInfo;

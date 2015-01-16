@@ -104,13 +104,18 @@ var Adaptive;
         ServiceSession.toObject = function (object) {
             var result = new ServiceSession(null, null);
             // Assign values to bean fields.
-            result.cookies = new Array();
-            for (var __value__ in object.cookies) {
-                result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+            if (object != null && object.cookies != null) {
+                result.cookies = new Array();
+                for (var __value__ in object.cookies) {
+                    result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+                }
             }
-            result.attributes = new Array();
-            for (var __value__ in object.attributes) {
-                result.attributes.push(__value__);
+            if (object != null && object.attributes != null) {
+                result.attributes = new Array();
+                for (var __value__ in object.attributes) {
+                    if (object != null && object.attributes != null)
+                        result.attributes.push(__value__);
+                }
             }
             return result;
         };

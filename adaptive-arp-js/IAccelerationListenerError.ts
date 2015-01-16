@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IAccelerationListenerError {
-               switch(object.value) {
-                    case "Unauthorized":
-                         return IAccelerationListenerError.Unauthorized;
-                    case "Unavailable":
-                         return IAccelerationListenerError.Unavailable;
-                    case "Unknown":
-                         return IAccelerationListenerError.Unknown;
-                    default:
-                         return IAccelerationListenerError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Unauthorized":
+                              return IAccelerationListenerError.Unauthorized;
+                         case "Unavailable":
+                              return IAccelerationListenerError.Unavailable;
+                         case "Unknown":
+                              return IAccelerationListenerError.Unknown;
+                         default:
+                              return IAccelerationListenerError.Unknown;
+                    }
+               } else {
+                    return IAccelerationListenerError.Unknown;
                }
           }
 

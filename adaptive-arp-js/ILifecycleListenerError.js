@@ -47,17 +47,22 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ILifecycleListenerError.toObject = function (object) {
-            switch (object.value) {
-                case "Runtime":
-                    return ILifecycleListenerError.Runtime;
-                case "Implementation":
-                    return ILifecycleListenerError.Implementation;
-                case "Killed":
-                    return ILifecycleListenerError.Killed;
-                case "Unknown":
-                    return ILifecycleListenerError.Unknown;
-                default:
-                    return ILifecycleListenerError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Runtime":
+                        return ILifecycleListenerError.Runtime;
+                    case "Implementation":
+                        return ILifecycleListenerError.Implementation;
+                    case "Killed":
+                        return ILifecycleListenerError.Killed;
+                    case "Unknown":
+                        return ILifecycleListenerError.Unknown;
+                    default:
+                        return ILifecycleListenerError.Unknown;
+                }
+            }
+            else {
+                return ILifecycleListenerError.Unknown;
             }
         };
         ILifecycleListenerError.Runtime = new ILifecycleListenerError("Runtime");

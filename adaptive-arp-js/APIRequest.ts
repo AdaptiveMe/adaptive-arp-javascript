@@ -161,13 +161,15 @@ listener.
                var result : APIRequest = new APIRequest(null, null, null, null);
 
                // Assign values to bean fields.
-               result.bridgeType = object.bridgeType;
-               result.methodName = object.methodName;
-               result.parameters = new Array<string>();
-               for(var __value__ in object.parameters) {
-                    result.parameters.push(__value__);
+               if (object!=null && object.bridgeType!=null) result.bridgeType = object.bridgeType;
+               if (object!=null && object.methodName!=null) result.methodName = object.methodName;
+               if (object != null && object.parameters != null) {
+                    result.parameters = new Array<string>();
+                    for(var __value__ in object.parameters) {
+                         if (object!=null && object.parameters!=null) result.parameters.push(__value__);
+                    }
                }
-               result.asyncId = object.asyncId;
+               if (object!=null && object.asyncId!=null) result.asyncId = object.asyncId;
 
                return result;
           }

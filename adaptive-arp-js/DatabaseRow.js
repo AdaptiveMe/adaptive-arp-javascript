@@ -83,9 +83,12 @@ var Adaptive;
         DatabaseRow.toObject = function (object) {
             var result = new DatabaseRow(null);
             // Assign values to bean fields.
-            result.values = new Array();
-            for (var __value__ in object.values) {
-                result.values.push(__value__);
+            if (object != null && object.values != null) {
+                result.values = new Array();
+                for (var __value__ in object.values) {
+                    if (object != null && object.values != null)
+                        result.values.push(__value__);
+                }
             }
             return result;
         };

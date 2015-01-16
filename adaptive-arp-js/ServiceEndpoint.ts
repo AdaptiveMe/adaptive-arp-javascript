@@ -191,11 +191,11 @@ module Adaptive {
                var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
 
                // Assign values to bean fields.
-               result.host = object.host;
-               result.path = object.path;
-               result.port = object.port;
-               result.proxy = object.proxy;
-               result.scheme = object.scheme;
+               if (object!=null && object.host!=null) result.host = object.host;
+               if (object!=null && object.path!=null) result.path = object.path;
+               if (object!=null && object.port!=null) result.port = object.port;
+               if (object!=null && object.proxy!=null) result.proxy = object.proxy;
+               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
 
                return result;
           }

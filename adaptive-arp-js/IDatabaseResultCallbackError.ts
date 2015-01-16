@@ -51,17 +51,21 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
-               switch(object.value) {
-                    case "NoSpace":
-                         return IDatabaseResultCallbackError.NoSpace;
-                    case "SqlException":
-                         return IDatabaseResultCallbackError.SqlException;
-                    case "NotDeleted":
-                         return IDatabaseResultCallbackError.NotDeleted;
-                    case "Unknown":
-                         return IDatabaseResultCallbackError.Unknown;
-                    default:
-                         return IDatabaseResultCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NoSpace":
+                              return IDatabaseResultCallbackError.NoSpace;
+                         case "SqlException":
+                              return IDatabaseResultCallbackError.SqlException;
+                         case "NotDeleted":
+                              return IDatabaseResultCallbackError.NotDeleted;
+                         case "Unknown":
+                              return IDatabaseResultCallbackError.Unknown;
+                         default:
+                              return IDatabaseResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IDatabaseResultCallbackError.Unknown;
                }
           }
 

@@ -51,17 +51,21 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : ICapabilitiesButton {
-               switch(object.value) {
-                    case "HomeButton":
-                         return ICapabilitiesButton.HomeButton;
-                    case "BackButton":
-                         return ICapabilitiesButton.BackButton;
-                    case "OptionButton":
-                         return ICapabilitiesButton.OptionButton;
-                    case "Unknown":
-                         return ICapabilitiesButton.Unknown;
-                    default:
-                         return ICapabilitiesButton.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "HomeButton":
+                              return ICapabilitiesButton.HomeButton;
+                         case "BackButton":
+                              return ICapabilitiesButton.BackButton;
+                         case "OptionButton":
+                              return ICapabilitiesButton.OptionButton;
+                         case "Unknown":
+                              return ICapabilitiesButton.Unknown;
+                         default:
+                              return ICapabilitiesButton.Unknown;
+                    }
+               } else {
+                    return ICapabilitiesButton.Unknown;
                }
           }
 

@@ -50,15 +50,19 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IDatabaseResultCallbackWarning {
-               switch(object.value) {
-                    case "DatabaseExists":
-                         return IDatabaseResultCallbackWarning.DatabaseExists;
-                    case "IsOpen":
-                         return IDatabaseResultCallbackWarning.IsOpen;
-                    case "Unknown":
-                         return IDatabaseResultCallbackWarning.Unknown;
-                    default:
-                         return IDatabaseResultCallbackWarning.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "DatabaseExists":
+                              return IDatabaseResultCallbackWarning.DatabaseExists;
+                         case "IsOpen":
+                              return IDatabaseResultCallbackWarning.IsOpen;
+                         case "Unknown":
+                              return IDatabaseResultCallbackWarning.Unknown;
+                         default:
+                              return IDatabaseResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IDatabaseResultCallbackWarning.Unknown;
                }
           }
 

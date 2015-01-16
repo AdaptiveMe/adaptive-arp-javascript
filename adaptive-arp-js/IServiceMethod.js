@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         IServiceMethod.toObject = function (object) {
-            switch (object.value) {
-                case "Post":
-                    return IServiceMethod.Post;
-                case "Get":
-                    return IServiceMethod.Get;
-                case "Unknown":
-                    return IServiceMethod.Unknown;
-                default:
-                    return IServiceMethod.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Post":
+                        return IServiceMethod.Post;
+                    case "Get":
+                        return IServiceMethod.Get;
+                    case "Unknown":
+                        return IServiceMethod.Unknown;
+                    default:
+                        return IServiceMethod.Unknown;
+                }
+            }
+            else {
+                return IServiceMethod.Unknown;
             }
         };
         IServiceMethod.Post = new IServiceMethod("Post");

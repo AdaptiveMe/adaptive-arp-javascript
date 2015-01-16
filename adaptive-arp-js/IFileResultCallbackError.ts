@@ -53,21 +53,25 @@ module Adaptive {
              Convert JSON parsed object to enumeration.
           */
           static toObject(object : any) : IFileResultCallbackError {
-               switch(object.value) {
-                    case "FileExists":
-                         return IFileResultCallbackError.FileExists;
-                    case "SourceInexistent":
-                         return IFileResultCallbackError.SourceInexistent;
-                    case "DestionationExists":
-                         return IFileResultCallbackError.DestionationExists;
-                    case "InsufficientSpace":
-                         return IFileResultCallbackError.InsufficientSpace;
-                    case "Unauthorized":
-                         return IFileResultCallbackError.Unauthorized;
-                    case "Unknown":
-                         return IFileResultCallbackError.Unknown;
-                    default:
-                         return IFileResultCallbackError.Unknown;
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "FileExists":
+                              return IFileResultCallbackError.FileExists;
+                         case "SourceInexistent":
+                              return IFileResultCallbackError.SourceInexistent;
+                         case "DestionationExists":
+                              return IFileResultCallbackError.DestionationExists;
+                         case "InsufficientSpace":
+                              return IFileResultCallbackError.InsufficientSpace;
+                         case "Unauthorized":
+                              return IFileResultCallbackError.Unauthorized;
+                         case "Unknown":
+                              return IFileResultCallbackError.Unknown;
+                         default:
+                              return IFileResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IFileResultCallbackError.Unknown;
                }
           }
 

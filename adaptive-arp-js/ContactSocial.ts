@@ -115,7 +115,7 @@ module Adaptive {
 
                // Assign values to bean fields.
                result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
-               result.profileUrl = object.profileUrl;
+               if (object!=null && object.profileUrl!=null) result.profileUrl = object.profileUrl;
 
                return result;
           }

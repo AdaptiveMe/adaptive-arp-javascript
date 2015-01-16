@@ -1113,6 +1113,8 @@ module Adaptive {
 
           /**
              Return the API version for the given interface.
+
+             @return {String} The version of the API.
           */
           public getAPIVersion() : string {
                return "v2.0.3"

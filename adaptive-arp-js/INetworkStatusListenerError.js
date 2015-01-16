@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         INetworkStatusListenerError.toObject = function (object) {
-            switch (object.value) {
-                case "NoPermission":
-                    return INetworkStatusListenerError.NoPermission;
-                case "Unreachable":
-                    return INetworkStatusListenerError.Unreachable;
-                case "Unknown":
-                    return INetworkStatusListenerError.Unknown;
-                default:
-                    return INetworkStatusListenerError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return INetworkStatusListenerError.NoPermission;
+                    case "Unreachable":
+                        return INetworkStatusListenerError.Unreachable;
+                    case "Unknown":
+                        return INetworkStatusListenerError.Unknown;
+                    default:
+                        return INetworkStatusListenerError.Unknown;
+                }
+            }
+            else {
+                return INetworkStatusListenerError.Unknown;
             }
         };
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");

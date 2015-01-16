@@ -47,19 +47,24 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ILoggingLogLevel.toObject = function (object) {
-            switch (object.value) {
-                case "DEBUG":
-                    return ILoggingLogLevel.DEBUG;
-                case "WARN":
-                    return ILoggingLogLevel.WARN;
-                case "ERROR":
-                    return ILoggingLogLevel.ERROR;
-                case "INFO":
-                    return ILoggingLogLevel.INFO;
-                case "Unknown":
-                    return ILoggingLogLevel.Unknown;
-                default:
-                    return ILoggingLogLevel.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "DEBUG":
+                        return ILoggingLogLevel.DEBUG;
+                    case "WARN":
+                        return ILoggingLogLevel.WARN;
+                    case "ERROR":
+                        return ILoggingLogLevel.ERROR;
+                    case "INFO":
+                        return ILoggingLogLevel.INFO;
+                    case "Unknown":
+                        return ILoggingLogLevel.Unknown;
+                    default:
+                        return ILoggingLogLevel.Unknown;
+                }
+            }
+            else {
+                return ILoggingLogLevel.Unknown;
             }
         };
         ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");

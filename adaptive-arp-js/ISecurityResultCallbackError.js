@@ -47,15 +47,20 @@ var Adaptive;
            Convert JSON parsed object to enumeration.
         */
         ISecurityResultCallbackError.toObject = function (object) {
-            switch (object.value) {
-                case "NoPermission":
-                    return ISecurityResultCallbackError.NoPermission;
-                case "NoMatchesFound":
-                    return ISecurityResultCallbackError.NoMatchesFound;
-                case "Unknown":
-                    return ISecurityResultCallbackError.Unknown;
-                default:
-                    return ISecurityResultCallbackError.Unknown;
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return ISecurityResultCallbackError.NoPermission;
+                    case "NoMatchesFound":
+                        return ISecurityResultCallbackError.NoMatchesFound;
+                    case "Unknown":
+                        return ISecurityResultCallbackError.Unknown;
+                    default:
+                        return ISecurityResultCallbackError.Unknown;
+                }
+            }
+            else {
+                return ISecurityResultCallbackError.Unknown;
             }
         };
         ISecurityResultCallbackError.NoPermission = new ISecurityResultCallbackError("NoPermission");
