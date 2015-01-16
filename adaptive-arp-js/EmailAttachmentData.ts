@@ -194,7 +194,7 @@ module Adaptive {
                if (object != null && object.data != null) {
                     result.data = new Array<number>();
                     for(var __value__ in object.data) {
-                         if (object!=null && object.data!=null) result.data.push(__value__);
+                         if (__value__ != null) result.data.push(__value__);
                     }
                }
                if (object!=null && object.size!=null) result.size = object.size;

@@ -166,7 +166,7 @@ var Adaptive;
             if (object != null && object.data != null) {
                 result.data = new Array();
                 for (var __value__ in object.data) {
-                    if (object != null && object.data != null)
+                    if (__value__ != null)
                         result.data.push(__value__);
                 }
             }

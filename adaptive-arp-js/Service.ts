@@ -168,10 +168,22 @@ module Adaptive {
                var result : Service = new Service(null, null, null, null);
 
                // Assign values to bean fields.
-               result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+               if (object!=null && object.serviceEndpoint!=null) {
+                    result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+               } else {
+                    result.serviceEndpoint = ServiceEndpoint.toObject(null);
+               }
                if (object!=null && object.name!=null) result.name = object.name;
-               result.method = IServiceMethod.toObject(object.method);
-               result.type = IServiceType.toObject(object.type);
+               if (object!=null && object.method!=null) {
+                    result.method = IServiceMethod.toObject(object.method);
+               } else {
+                    result.method = IServiceMethod.toObject(null);
+               }
+               if (object!=null && object.type!=null) {
+                    result.type = IServiceType.toObject(object.type);
+               } else {
+                    result.type = IServiceType.toObject(null);
+               }
 
                return result;
           }

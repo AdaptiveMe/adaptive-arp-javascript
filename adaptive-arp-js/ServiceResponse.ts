@@ -278,17 +278,25 @@ module Adaptive {
                if (object != null && object.contentBinary != null) {
                     result.contentBinary = new Array<number>();
                     for(var __value__ in object.contentBinary) {
-                         if (object!=null && object.contentBinary!=null) result.contentBinary.push(__value__);
+                         if (__value__ != null) result.contentBinary.push(__value__);
                     }
                }
                if (object!=null && object.contentBinaryLength!=null) result.contentBinaryLength = object.contentBinaryLength;
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var __value__ in object.serviceHeaders) {
-                         result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                         if (__value__ != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                         } else {
+                              result.serviceHeaders.push(ServiceHeader.toObject(null));
+                         }
                     }
                }
-               result.serviceSession = ServiceSession.toObject(object.serviceSession);
+               if (object!=null && object.serviceSession!=null) {
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
+               } else {
+                    result.serviceSession = ServiceSession.toObject(null);
+               }
 
                return result;
           }

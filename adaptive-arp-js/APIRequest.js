@@ -140,7 +140,7 @@ listener.
             if (object != null && object.parameters != null) {
                 result.parameters = new Array();
                 for (var __value__ in object.parameters) {
-                    if (object != null && object.parameters != null)
+                    if (__value__ != null)
                         result.parameters.push(__value__);
                 }
             }

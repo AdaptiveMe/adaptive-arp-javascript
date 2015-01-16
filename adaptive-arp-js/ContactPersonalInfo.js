@@ -150,7 +150,12 @@ var Adaptive;
                 result.middleName = object.middleName;
             if (object != null && object.lastName != null)
                 result.lastName = object.lastName;
-            result.title = Adaptive.ContactPersonalInfoTitle.toObject(object.title);
+            if (object != null && object.title != null) {
+                result.title = Adaptive.ContactPersonalInfoTitle.toObject(object.title);
+            }
+            else {
+                result.title = Adaptive.ContactPersonalInfoTitle.toObject(null);
+            }
             return result;
         };
         return ContactPersonalInfo;

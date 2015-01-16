@@ -248,25 +248,41 @@ module Adaptive {
                if (object != null && object.toRecipients != null) {
                     result.toRecipients = new Array<EmailAddress>();
                     for(var __value__ in object.toRecipients) {
-                         result.toRecipients.push(EmailAddress.toObject(__value__));
+                         if (__value__ != null) {
+                              result.toRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.toRecipients.push(EmailAddress.toObject(null));
+                         }
                     }
                }
                if (object != null && object.ccRecipients != null) {
                     result.ccRecipients = new Array<EmailAddress>();
                     for(var __value__ in object.ccRecipients) {
-                         result.ccRecipients.push(EmailAddress.toObject(__value__));
+                         if (__value__ != null) {
+                              result.ccRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.ccRecipients.push(EmailAddress.toObject(null));
+                         }
                     }
                }
                if (object != null && object.bccRecipients != null) {
                     result.bccRecipients = new Array<EmailAddress>();
                     for(var __value__ in object.bccRecipients) {
-                         result.bccRecipients.push(EmailAddress.toObject(__value__));
+                         if (__value__ != null) {
+                              result.bccRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.bccRecipients.push(EmailAddress.toObject(null));
+                         }
                     }
                }
                if (object != null && object.emailAttachmentData != null) {
                     result.emailAttachmentData = new Array<EmailAttachmentData>();
                     for(var __value__ in object.emailAttachmentData) {
-                         result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                         if (__value__ != null) {
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                         } else {
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
+                         }
                     }
                }
                if (object!=null && object.messageBody!=null) result.messageBody = object.messageBody;

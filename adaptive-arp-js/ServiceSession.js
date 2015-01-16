@@ -107,13 +107,18 @@ var Adaptive;
             if (object != null && object.cookies != null) {
                 result.cookies = new Array();
                 for (var __value__ in object.cookies) {
-                    result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+                    if (__value__ != null) {
+                        result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+                    }
+                    else {
+                        result.cookies.push(Adaptive.ServiceCookie.toObject(null));
+                    }
                 }
             }
             if (object != null && object.attributes != null) {
                 result.attributes = new Array();
                 for (var __value__ in object.attributes) {
-                    if (object != null && object.attributes != null)
+                    if (__value__ != null)
                         result.attributes.push(__value__);
                 }
             }

@@ -174,13 +174,23 @@ var Adaptive;
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
                 for (var __value__ in object.databaseColumns) {
-                    result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+                    if (__value__ != null) {
+                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+                    }
+                    else {
+                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(null));
+                    }
                 }
             }
             if (object != null && object.databaseRows != null) {
                 result.databaseRows = new Array();
                 for (var __value__ in object.databaseRows) {
-                    result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+                    if (__value__ != null) {
+                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+                    }
+                    else {
+                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(null));
+                    }
                 }
             }
             return result;

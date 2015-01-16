@@ -199,13 +199,21 @@ module Adaptive {
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
                     for(var __value__ in object.databaseColumns) {
-                         result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                         if (__value__ != null) {
+                              result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                         } else {
+                              result.databaseColumns.push(DatabaseColumn.toObject(null));
+                         }
                     }
                }
                if (object != null && object.databaseRows != null) {
                     result.databaseRows = new Array<DatabaseRow>();
                     for(var __value__ in object.databaseRows) {
-                         result.databaseRows.push(DatabaseRow.toObject(__value__));
+                         if (__value__ != null) {
+                              result.databaseRows.push(DatabaseRow.toObject(__value__));
+                         } else {
+                              result.databaseRows.push(DatabaseRow.toObject(null));
+                         }
                     }
                }
 

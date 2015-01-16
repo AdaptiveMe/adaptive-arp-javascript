@@ -208,25 +208,45 @@ var Adaptive;
             if (object != null && object.toRecipients != null) {
                 result.toRecipients = new Array();
                 for (var __value__ in object.toRecipients) {
-                    result.toRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.toRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.toRecipients.push(Adaptive.EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.ccRecipients != null) {
                 result.ccRecipients = new Array();
                 for (var __value__ in object.ccRecipients) {
-                    result.ccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.ccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.ccRecipients.push(Adaptive.EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.bccRecipients != null) {
                 result.bccRecipients = new Array();
                 for (var __value__ in object.bccRecipients) {
-                    result.bccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.bccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.bccRecipients.push(Adaptive.EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.emailAttachmentData != null) {
                 result.emailAttachmentData = new Array();
                 for (var __value__ in object.emailAttachmentData) {
-                    result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(__value__));
+                    if (__value__ != null) {
+                        result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(__value__));
+                    }
+                    else {
+                        result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(null));
+                    }
                 }
             }
             if (object != null && object.messageBody != null)

@@ -277,7 +277,7 @@ var Adaptive;
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
                 for (var __value__ in object.contentBinary) {
-                    if (object != null && object.contentBinary != null)
+                    if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
             }
@@ -286,13 +286,28 @@ var Adaptive;
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var __value__ in object.serviceHeaders) {
-                    result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(__value__));
+                    if (__value__ != null) {
+                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(__value__));
+                    }
+                    else {
+                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(null));
+                    }
                 }
             }
             if (object != null && object.method != null)
                 result.method = object.method;
-            result.protocolVersion = Adaptive.IServiceProtocolVersion.toObject(object.protocolVersion);
-            result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
+            if (object != null && object.protocolVersion != null) {
+                result.protocolVersion = Adaptive.IServiceProtocolVersion.toObject(object.protocolVersion);
+            }
+            else {
+                result.protocolVersion = Adaptive.IServiceProtocolVersion.toObject(null);
+            }
+            if (object != null && object.serviceSession != null) {
+                result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
+            }
+            else {
+                result.serviceSession = Adaptive.ServiceSession.toObject(null);
+            }
             return result;
         };
         return ServiceRequest;

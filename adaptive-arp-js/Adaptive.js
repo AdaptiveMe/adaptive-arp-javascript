@@ -218,7 +218,7 @@ listener.
             if (object != null && object.parameters != null) {
                 result.parameters = new Array();
                 for (var __value__ in object.parameters) {
-                    if (object != null && object.parameters != null)
+                    if (__value__ != null)
                         result.parameters.push(__value__);
                 }
             }
@@ -474,7 +474,12 @@ listener.
         Button.toObject = function (object) {
             var result = new Button(null);
             // Assign values to bean fields.
-            result.type = ICapabilitiesButton.toObject(object.type);
+            if (object != null && object.type != null) {
+                result.type = ICapabilitiesButton.toObject(object.type);
+            }
+            else {
+                result.type = ICapabilitiesButton.toObject(null);
+            }
             return result;
         };
         return Button;
@@ -545,7 +550,12 @@ listener.
             // Assign values to bean fields.
             if (object != null && object.address != null)
                 result.address = object.address;
-            result.type = ContactAddressType.toObject(object.type);
+            if (object != null && object.type != null) {
+                result.type = ContactAddressType.toObject(object.type);
+            }
+            else {
+                result.type = ContactAddressType.toObject(null);
+            }
             return result;
         };
         return ContactAddress;
@@ -634,7 +644,12 @@ listener.
         ContactEmail.toObject = function (object) {
             var result = new ContactEmail(null, null, null);
             // Assign values to bean fields.
-            result.type = ContactEmailType.toObject(object.type);
+            if (object != null && object.type != null) {
+                result.type = ContactEmailType.toObject(object.type);
+            }
+            else {
+                result.type = ContactEmailType.toObject(null);
+            }
             if (object != null && object.primary != null)
                 result.primary = object.primary;
             if (object != null && object.email != null)
@@ -753,7 +768,12 @@ listener.
                 result.middleName = object.middleName;
             if (object != null && object.lastName != null)
                 result.lastName = object.lastName;
-            result.title = ContactPersonalInfoTitle.toObject(object.title);
+            if (object != null && object.title != null) {
+                result.title = ContactPersonalInfoTitle.toObject(object.title);
+            }
+            else {
+                result.title = ContactPersonalInfoTitle.toObject(null);
+            }
             return result;
         };
         return ContactPersonalInfo;
@@ -824,7 +844,12 @@ listener.
             // Assign values to bean fields.
             if (object != null && object.phone != null)
                 result.phone = object.phone;
-            result.phoneType = ContactPhoneType.toObject(object.phoneType);
+            if (object != null && object.phoneType != null) {
+                result.phoneType = ContactPhoneType.toObject(object.phoneType);
+            }
+            else {
+                result.phoneType = ContactPhoneType.toObject(null);
+            }
             return result;
         };
         return ContactPhone;
@@ -987,7 +1012,12 @@ listener.
         ContactSocial.toObject = function (object) {
             var result = new ContactSocial(null, null);
             // Assign values to bean fields.
-            result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+            if (object != null && object.socialNetwork != null) {
+                result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+            }
+            else {
+                result.socialNetwork = ContactSocialNetwork.toObject(null);
+            }
             if (object != null && object.profileUrl != null)
                 result.profileUrl = object.profileUrl;
             return result;
@@ -1335,7 +1365,7 @@ listener.
             if (object != null && object.values != null) {
                 result.values = new Array();
                 for (var __value__ in object.values) {
-                    if (object != null && object.values != null)
+                    if (__value__ != null)
                         result.values.push(__value__);
                 }
             }
@@ -1476,13 +1506,23 @@ listener.
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
                 for (var __value__ in object.databaseColumns) {
-                    result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                    if (__value__ != null) {
+                        result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                    }
+                    else {
+                        result.databaseColumns.push(DatabaseColumn.toObject(null));
+                    }
                 }
             }
             if (object != null && object.databaseRows != null) {
                 result.databaseRows = new Array();
                 for (var __value__ in object.databaseRows) {
-                    result.databaseRows.push(DatabaseRow.toObject(__value__));
+                    if (__value__ != null) {
+                        result.databaseRows.push(DatabaseRow.toObject(__value__));
+                    }
+                    else {
+                        result.databaseRows.push(DatabaseRow.toObject(null));
+                    }
                 }
             }
             return result;
@@ -1770,25 +1810,45 @@ be unique for a specific instance of an application on a specific device.
             if (object != null && object.toRecipients != null) {
                 result.toRecipients = new Array();
                 for (var __value__ in object.toRecipients) {
-                    result.toRecipients.push(EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.toRecipients.push(EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.toRecipients.push(EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.ccRecipients != null) {
                 result.ccRecipients = new Array();
                 for (var __value__ in object.ccRecipients) {
-                    result.ccRecipients.push(EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.ccRecipients.push(EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.ccRecipients.push(EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.bccRecipients != null) {
                 result.bccRecipients = new Array();
                 for (var __value__ in object.bccRecipients) {
-                    result.bccRecipients.push(EmailAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.bccRecipients.push(EmailAddress.toObject(__value__));
+                    }
+                    else {
+                        result.bccRecipients.push(EmailAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.emailAttachmentData != null) {
                 result.emailAttachmentData = new Array();
                 for (var __value__ in object.emailAttachmentData) {
-                    result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                    if (__value__ != null) {
+                        result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                    }
+                    else {
+                        result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
+                    }
                 }
             }
             if (object != null && object.messageBody != null)
@@ -1978,7 +2038,7 @@ be unique for a specific instance of an application on a specific device.
             if (object != null && object.data != null) {
                 result.data = new Array();
                 for (var __value__ in object.data) {
-                    if (object != null && object.data != null)
+                    if (__value__ != null)
                         result.data.push(__value__);
                 }
             }
@@ -2407,7 +2467,12 @@ doesn't exist, this will be -1. Used internally.
         Lifecycle.toObject = function (object) {
             var result = new Lifecycle(null);
             // Assign values to bean fields.
-            result.state = LifecycleState.toObject(object.state);
+            if (object != null && object.state != null) {
+                result.state = LifecycleState.toObject(object.state);
+            }
+            else {
+                result.state = LifecycleState.toObject(null);
+            }
             return result;
         };
         return Lifecycle;
@@ -2565,7 +2630,12 @@ doesn't exist, this will be -1. Used internally.
         OSInfo.toObject = function (object) {
             var result = new OSInfo(null, null, null);
             // Assign values to bean fields.
-            result.name = IOSType.toObject(object.name);
+            if (object != null && object.name != null) {
+                result.name = IOSType.toObject(object.name);
+            }
+            else {
+                result.name = IOSType.toObject(null);
+            }
             if (object != null && object.version != null)
                 result.version = object.version;
             if (object != null && object.vendor != null)
@@ -2750,11 +2820,26 @@ doesn't exist, this will be -1. Used internally.
         Service.toObject = function (object) {
             var result = new Service(null, null, null, null);
             // Assign values to bean fields.
-            result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+            if (object != null && object.serviceEndpoint != null) {
+                result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
+            }
+            else {
+                result.serviceEndpoint = ServiceEndpoint.toObject(null);
+            }
             if (object != null && object.name != null)
                 result.name = object.name;
-            result.method = IServiceMethod.toObject(object.method);
-            result.type = IServiceType.toObject(object.type);
+            if (object != null && object.method != null) {
+                result.method = IServiceMethod.toObject(object.method);
+            }
+            else {
+                result.method = IServiceMethod.toObject(null);
+            }
+            if (object != null && object.type != null) {
+                result.type = IServiceType.toObject(object.type);
+            }
+            else {
+                result.type = IServiceType.toObject(null);
+            }
             return result;
         };
         return Service;
@@ -3408,7 +3493,7 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
                 for (var __value__ in object.contentBinary) {
-                    if (object != null && object.contentBinary != null)
+                    if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
             }
@@ -3417,13 +3502,28 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var __value__ in object.serviceHeaders) {
-                    result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    if (__value__ != null) {
+                        result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    }
+                    else {
+                        result.serviceHeaders.push(ServiceHeader.toObject(null));
+                    }
                 }
             }
             if (object != null && object.method != null)
                 result.method = object.method;
-            result.protocolVersion = IServiceProtocolVersion.toObject(object.protocolVersion);
-            result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            if (object != null && object.protocolVersion != null) {
+                result.protocolVersion = IServiceProtocolVersion.toObject(object.protocolVersion);
+            }
+            else {
+                result.protocolVersion = IServiceProtocolVersion.toObject(null);
+            }
+            if (object != null && object.serviceSession != null) {
+                result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            }
+            else {
+                result.serviceSession = ServiceSession.toObject(null);
+            }
             return result;
         };
         return ServiceRequest;
@@ -3623,7 +3723,7 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
                 for (var __value__ in object.contentBinary) {
-                    if (object != null && object.contentBinary != null)
+                    if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
             }
@@ -3632,10 +3732,20 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var __value__ in object.serviceHeaders) {
-                    result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    if (__value__ != null) {
+                        result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    }
+                    else {
+                        result.serviceHeaders.push(ServiceHeader.toObject(null));
+                    }
                 }
             }
-            result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            if (object != null && object.serviceSession != null) {
+                result.serviceSession = ServiceSession.toObject(object.serviceSession);
+            }
+            else {
+                result.serviceSession = ServiceSession.toObject(null);
+            }
             return result;
         };
         return ServiceResponse;
@@ -3707,13 +3817,18 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.cookies != null) {
                 result.cookies = new Array();
                 for (var __value__ in object.cookies) {
-                    result.cookies.push(ServiceCookie.toObject(__value__));
+                    if (__value__ != null) {
+                        result.cookies.push(ServiceCookie.toObject(__value__));
+                    }
+                    else {
+                        result.cookies.push(ServiceCookie.toObject(null));
+                    }
                 }
             }
             if (object != null && object.attributes != null) {
                 result.attributes = new Array();
                 for (var __value__ in object.attributes) {
-                    if (object != null && object.attributes != null)
+                    if (__value__ != null)
                         result.attributes.push(__value__);
                 }
             }
@@ -3909,42 +4024,82 @@ doesn't exist, this will be -1. Used internally.
             if (object != null && object.contactId != null)
                 result.contactId = object.contactId;
             // Assign values to bean fields.
-            result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
-            result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
+            if (object != null && object.personalInfo != null) {
+                result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+            }
+            else {
+                result.personalInfo = ContactPersonalInfo.toObject(null);
+            }
+            if (object != null && object.professionalInfo != null) {
+                result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
+            }
+            else {
+                result.professionalInfo = ContactProfessionalInfo.toObject(null);
+            }
             if (object != null && object.contactAddresses != null) {
                 result.contactAddresses = new Array();
                 for (var __value__ in object.contactAddresses) {
-                    result.contactAddresses.push(ContactAddress.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactAddresses.push(ContactAddress.toObject(__value__));
+                    }
+                    else {
+                        result.contactAddresses.push(ContactAddress.toObject(null));
+                    }
                 }
             }
             if (object != null && object.contactPhones != null) {
                 result.contactPhones = new Array();
                 for (var __value__ in object.contactPhones) {
-                    result.contactPhones.push(ContactPhone.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactPhones.push(ContactPhone.toObject(__value__));
+                    }
+                    else {
+                        result.contactPhones.push(ContactPhone.toObject(null));
+                    }
                 }
             }
             if (object != null && object.contactEmails != null) {
                 result.contactEmails = new Array();
                 for (var __value__ in object.contactEmails) {
-                    result.contactEmails.push(ContactEmail.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactEmails.push(ContactEmail.toObject(__value__));
+                    }
+                    else {
+                        result.contactEmails.push(ContactEmail.toObject(null));
+                    }
                 }
             }
             if (object != null && object.contactWebsites != null) {
                 result.contactWebsites = new Array();
                 for (var __value__ in object.contactWebsites) {
-                    result.contactWebsites.push(ContactWebsite.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactWebsites.push(ContactWebsite.toObject(__value__));
+                    }
+                    else {
+                        result.contactWebsites.push(ContactWebsite.toObject(null));
+                    }
                 }
             }
             if (object != null && object.contactSocials != null) {
                 result.contactSocials = new Array();
                 for (var __value__ in object.contactSocials) {
-                    result.contactSocials.push(ContactSocial.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactSocials.push(ContactSocial.toObject(__value__));
+                    }
+                    else {
+                        result.contactSocials.push(ContactSocial.toObject(null));
+                    }
                 }
             }
             if (object != null && object.contactTags != null) {
                 result.contactTags = new Array();
                 for (var __value__ in object.contactTags) {
-                    result.contactTags.push(ContactTag.toObject(__value__));
+                    if (__value__ != null) {
+                        result.contactTags.push(ContactTag.toObject(__value__));
+                    }
+                    else {
+                        result.contactTags.push(ContactTag.toObject(null));
+                    }
                 }
             }
             return result;

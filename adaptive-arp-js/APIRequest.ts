@@ -166,7 +166,7 @@ listener.
                if (object != null && object.parameters != null) {
                     result.parameters = new Array<string>();
                     for(var __value__ in object.parameters) {
-                         if (object!=null && object.parameters!=null) result.parameters.push(__value__);
+                         if (__value__ != null) result.parameters.push(__value__);
                     }
                }
                if (object!=null && object.asyncId!=null) result.asyncId = object.asyncId;

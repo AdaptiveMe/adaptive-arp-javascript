@@ -88,7 +88,11 @@ module Adaptive {
                var result : Button = new Button(null);
 
                // Assign values to bean fields.
-               result.type = ICapabilitiesButton.toObject(object.type);
+               if (object!=null && object.type!=null) {
+                    result.type = ICapabilitiesButton.toObject(object.type);
+               } else {
+                    result.type = ICapabilitiesButton.toObject(null);
+               }
 
                return result;
           }

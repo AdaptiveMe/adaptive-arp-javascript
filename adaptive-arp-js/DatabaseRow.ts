@@ -90,7 +90,7 @@ module Adaptive {
                if (object != null && object.values != null) {
                     result.values = new Array<string>();
                     for(var __value__ in object.values) {
-                         if (object!=null && object.values!=null) result.values.push(__value__);
+                         if (__value__ != null) result.values.push(__value__);
                     }
                }
 

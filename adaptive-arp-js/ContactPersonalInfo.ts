@@ -169,7 +169,11 @@ module Adaptive {
                if (object!=null && object.name!=null) result.name = object.name;
                if (object!=null && object.middleName!=null) result.middleName = object.middleName;
                if (object!=null && object.lastName!=null) result.lastName = object.lastName;
-               result.title = ContactPersonalInfoTitle.toObject(object.title);
+               if (object!=null && object.title!=null) {
+                    result.title = ContactPersonalInfoTitle.toObject(object.title);
+               } else {
+                    result.title = ContactPersonalInfoTitle.toObject(null);
+               }
 
                return result;
           }

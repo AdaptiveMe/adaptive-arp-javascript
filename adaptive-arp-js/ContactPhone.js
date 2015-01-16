@@ -106,7 +106,12 @@ var Adaptive;
             // Assign values to bean fields.
             if (object != null && object.phone != null)
                 result.phone = object.phone;
-            result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
+            if (object != null && object.phoneType != null) {
+                result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
+            }
+            else {
+                result.phoneType = Adaptive.ContactPhoneType.toObject(null);
+            }
             return result;
         };
         return ContactPhone;

@@ -137,7 +137,11 @@ module Adaptive {
                var result : OSInfo = new OSInfo(null, null, null);
 
                // Assign values to bean fields.
-               result.name = IOSType.toObject(object.name);
+               if (object!=null && object.name!=null) {
+                    result.name = IOSType.toObject(object.name);
+               } else {
+                    result.name = IOSType.toObject(null);
+               }
                if (object!=null && object.version!=null) result.version = object.version;
                if (object!=null && object.vendor!=null) result.vendor = object.vendor;
 

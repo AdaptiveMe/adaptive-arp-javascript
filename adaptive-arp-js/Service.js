@@ -146,11 +146,26 @@ var Adaptive;
         Service.toObject = function (object) {
             var result = new Service(null, null, null, null);
             // Assign values to bean fields.
-            result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(object.serviceEndpoint);
+            if (object != null && object.serviceEndpoint != null) {
+                result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(object.serviceEndpoint);
+            }
+            else {
+                result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(null);
+            }
             if (object != null && object.name != null)
                 result.name = object.name;
-            result.method = Adaptive.IServiceMethod.toObject(object.method);
-            result.type = Adaptive.IServiceType.toObject(object.type);
+            if (object != null && object.method != null) {
+                result.method = Adaptive.IServiceMethod.toObject(object.method);
+            }
+            else {
+                result.method = Adaptive.IServiceMethod.toObject(null);
+            }
+            if (object != null && object.type != null) {
+                result.type = Adaptive.IServiceType.toObject(object.type);
+            }
+            else {
+                result.type = Adaptive.IServiceType.toObject(null);
+            }
             return result;
         };
         return Service;

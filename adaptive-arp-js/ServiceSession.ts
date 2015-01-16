@@ -117,13 +117,17 @@ module Adaptive {
                if (object != null && object.cookies != null) {
                     result.cookies = new Array<ServiceCookie>();
                     for(var __value__ in object.cookies) {
-                         result.cookies.push(ServiceCookie.toObject(__value__));
+                         if (__value__ != null) {
+                              result.cookies.push(ServiceCookie.toObject(__value__));
+                         } else {
+                              result.cookies.push(ServiceCookie.toObject(null));
+                         }
                     }
                }
                if (object != null && object.attributes != null) {
                     result.attributes = new Array<string>();
                     for(var __value__ in object.attributes) {
-                         if (object!=null && object.attributes!=null) result.attributes.push(__value__);
+                         if (__value__ != null) result.attributes.push(__value__);
                     }
                }
 
