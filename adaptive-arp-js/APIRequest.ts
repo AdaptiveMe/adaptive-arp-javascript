@@ -165,7 +165,8 @@ listener.
                if (object!=null && object.methodName!=null) result.methodName = object.methodName;
                if (object != null && object.parameters != null) {
                     result.parameters = new Array<string>();
-                    for(var __value__ in object.parameters) {
+                    for(var i = 0; i < object.parameters.length; i++) {
+                         var __value__ = object.parameters[i];
                          if (__value__ != null) result.parameters.push(__value__);
                     }
                }

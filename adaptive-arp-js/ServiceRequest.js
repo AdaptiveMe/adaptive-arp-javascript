@@ -276,7 +276,8 @@ var Adaptive;
                 result.contentLength = object.contentLength;
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
-                for (var __value__ in object.contentBinary) {
+                for (var i = 0; i < object.contentBinary.length; i++) {
+                    var __value__ = object.contentBinary[i];
                     if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
@@ -285,7 +286,8 @@ var Adaptive;
                 result.contentBinaryLength = object.contentBinaryLength;
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
-                for (var __value__ in object.serviceHeaders) {
+                for (var i = 0; i < object.serviceHeaders.length; i++) {
+                    var __value__ = object.serviceHeaders[i];
                     if (__value__ != null) {
                         result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(__value__));
                     }

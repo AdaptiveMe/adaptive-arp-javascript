@@ -198,7 +198,8 @@ module Adaptive {
                if (object!=null && object.rowCount!=null) result.rowCount = object.rowCount;
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
-                    for(var __value__ in object.databaseColumns) {
+                    for(var i = 0; i < object.databaseColumns.length; i++) {
+                         var __value__ = object.databaseColumns[i];
                          if (__value__ != null) {
                               result.databaseColumns.push(DatabaseColumn.toObject(__value__));
                          } else {
@@ -208,7 +209,8 @@ module Adaptive {
                }
                if (object != null && object.databaseRows != null) {
                     result.databaseRows = new Array<DatabaseRow>();
-                    for(var __value__ in object.databaseRows) {
+                    for(var i = 0; i < object.databaseRows.length; i++) {
+                         var __value__ = object.databaseRows[i];
                          if (__value__ != null) {
                               result.databaseRows.push(DatabaseRow.toObject(__value__));
                          } else {

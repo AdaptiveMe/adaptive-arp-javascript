@@ -173,7 +173,8 @@ var Adaptive;
                 result.rowCount = object.rowCount;
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
-                for (var __value__ in object.databaseColumns) {
+                for (var i = 0; i < object.databaseColumns.length; i++) {
+                    var __value__ = object.databaseColumns[i];
                     if (__value__ != null) {
                         result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
                     }
@@ -184,7 +185,8 @@ var Adaptive;
             }
             if (object != null && object.databaseRows != null) {
                 result.databaseRows = new Array();
-                for (var __value__ in object.databaseRows) {
+                for (var i = 0; i < object.databaseRows.length; i++) {
+                    var __value__ = object.databaseRows[i];
                     if (__value__ != null) {
                         result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
                     }

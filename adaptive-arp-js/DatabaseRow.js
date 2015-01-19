@@ -85,7 +85,8 @@ var Adaptive;
             // Assign values to bean fields.
             if (object != null && object.values != null) {
                 result.values = new Array();
-                for (var __value__ in object.values) {
+                for (var i = 0; i < object.values.length; i++) {
+                    var __value__ = object.values[i];
                     if (__value__ != null)
                         result.values.push(__value__);
                 }

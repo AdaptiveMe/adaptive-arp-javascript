@@ -207,7 +207,8 @@ var Adaptive;
             // Assign values to bean fields.
             if (object != null && object.toRecipients != null) {
                 result.toRecipients = new Array();
-                for (var __value__ in object.toRecipients) {
+                for (var i = 0; i < object.toRecipients.length; i++) {
+                    var __value__ = object.toRecipients[i];
                     if (__value__ != null) {
                         result.toRecipients.push(Adaptive.EmailAddress.toObject(__value__));
                     }
@@ -218,7 +219,8 @@ var Adaptive;
             }
             if (object != null && object.ccRecipients != null) {
                 result.ccRecipients = new Array();
-                for (var __value__ in object.ccRecipients) {
+                for (var i = 0; i < object.ccRecipients.length; i++) {
+                    var __value__ = object.ccRecipients[i];
                     if (__value__ != null) {
                         result.ccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
                     }
@@ -229,7 +231,8 @@ var Adaptive;
             }
             if (object != null && object.bccRecipients != null) {
                 result.bccRecipients = new Array();
-                for (var __value__ in object.bccRecipients) {
+                for (var i = 0; i < object.bccRecipients.length; i++) {
+                    var __value__ = object.bccRecipients[i];
                     if (__value__ != null) {
                         result.bccRecipients.push(Adaptive.EmailAddress.toObject(__value__));
                     }
@@ -240,7 +243,8 @@ var Adaptive;
             }
             if (object != null && object.emailAttachmentData != null) {
                 result.emailAttachmentData = new Array();
-                for (var __value__ in object.emailAttachmentData) {
+                for (var i = 0; i < object.emailAttachmentData.length; i++) {
+                    var __value__ = object.emailAttachmentData[i];
                     if (__value__ != null) {
                         result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(__value__));
                     }

@@ -217,7 +217,8 @@ listener.
                 result.methodName = object.methodName;
             if (object != null && object.parameters != null) {
                 result.parameters = new Array();
-                for (var __value__ in object.parameters) {
+                for (var i = 0; i < object.parameters.length; i++) {
+                    var __value__ = object.parameters[i];
                     if (__value__ != null)
                         result.parameters.push(__value__);
                 }
@@ -1364,7 +1365,8 @@ listener.
             // Assign values to bean fields.
             if (object != null && object.values != null) {
                 result.values = new Array();
-                for (var __value__ in object.values) {
+                for (var i = 0; i < object.values.length; i++) {
+                    var __value__ = object.values[i];
                     if (__value__ != null)
                         result.values.push(__value__);
                 }
@@ -1505,7 +1507,8 @@ listener.
                 result.rowCount = object.rowCount;
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
-                for (var __value__ in object.databaseColumns) {
+                for (var i = 0; i < object.databaseColumns.length; i++) {
+                    var __value__ = object.databaseColumns[i];
                     if (__value__ != null) {
                         result.databaseColumns.push(DatabaseColumn.toObject(__value__));
                     }
@@ -1516,7 +1519,8 @@ listener.
             }
             if (object != null && object.databaseRows != null) {
                 result.databaseRows = new Array();
-                for (var __value__ in object.databaseRows) {
+                for (var i = 0; i < object.databaseRows.length; i++) {
+                    var __value__ = object.databaseRows[i];
                     if (__value__ != null) {
                         result.databaseRows.push(DatabaseRow.toObject(__value__));
                     }
@@ -1809,7 +1813,8 @@ be unique for a specific instance of an application on a specific device.
             // Assign values to bean fields.
             if (object != null && object.toRecipients != null) {
                 result.toRecipients = new Array();
-                for (var __value__ in object.toRecipients) {
+                for (var i = 0; i < object.toRecipients.length; i++) {
+                    var __value__ = object.toRecipients[i];
                     if (__value__ != null) {
                         result.toRecipients.push(EmailAddress.toObject(__value__));
                     }
@@ -1820,7 +1825,8 @@ be unique for a specific instance of an application on a specific device.
             }
             if (object != null && object.ccRecipients != null) {
                 result.ccRecipients = new Array();
-                for (var __value__ in object.ccRecipients) {
+                for (var i = 0; i < object.ccRecipients.length; i++) {
+                    var __value__ = object.ccRecipients[i];
                     if (__value__ != null) {
                         result.ccRecipients.push(EmailAddress.toObject(__value__));
                     }
@@ -1831,7 +1837,8 @@ be unique for a specific instance of an application on a specific device.
             }
             if (object != null && object.bccRecipients != null) {
                 result.bccRecipients = new Array();
-                for (var __value__ in object.bccRecipients) {
+                for (var i = 0; i < object.bccRecipients.length; i++) {
+                    var __value__ = object.bccRecipients[i];
                     if (__value__ != null) {
                         result.bccRecipients.push(EmailAddress.toObject(__value__));
                     }
@@ -1842,7 +1849,8 @@ be unique for a specific instance of an application on a specific device.
             }
             if (object != null && object.emailAttachmentData != null) {
                 result.emailAttachmentData = new Array();
-                for (var __value__ in object.emailAttachmentData) {
+                for (var i = 0; i < object.emailAttachmentData.length; i++) {
+                    var __value__ = object.emailAttachmentData[i];
                     if (__value__ != null) {
                         result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
                     }
@@ -2037,7 +2045,8 @@ be unique for a specific instance of an application on a specific device.
             // Assign values to bean fields.
             if (object != null && object.data != null) {
                 result.data = new Array();
-                for (var __value__ in object.data) {
+                for (var i = 0; i < object.data.length; i++) {
+                    var __value__ = object.data[i];
                     if (__value__ != null)
                         result.data.push(__value__);
                 }
@@ -3492,7 +3501,8 @@ doesn't exist, this will be -1. Used internally.
                 result.contentLength = object.contentLength;
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
-                for (var __value__ in object.contentBinary) {
+                for (var i = 0; i < object.contentBinary.length; i++) {
+                    var __value__ = object.contentBinary[i];
                     if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
@@ -3501,7 +3511,8 @@ doesn't exist, this will be -1. Used internally.
                 result.contentBinaryLength = object.contentBinaryLength;
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
-                for (var __value__ in object.serviceHeaders) {
+                for (var i = 0; i < object.serviceHeaders.length; i++) {
+                    var __value__ = object.serviceHeaders[i];
                     if (__value__ != null) {
                         result.serviceHeaders.push(ServiceHeader.toObject(__value__));
                     }
@@ -3722,7 +3733,8 @@ doesn't exist, this will be -1. Used internally.
                 result.contentLength = object.contentLength;
             if (object != null && object.contentBinary != null) {
                 result.contentBinary = new Array();
-                for (var __value__ in object.contentBinary) {
+                for (var i = 0; i < object.contentBinary.length; i++) {
+                    var __value__ = object.contentBinary[i];
                     if (__value__ != null)
                         result.contentBinary.push(__value__);
                 }
@@ -3731,7 +3743,8 @@ doesn't exist, this will be -1. Used internally.
                 result.contentBinaryLength = object.contentBinaryLength;
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
-                for (var __value__ in object.serviceHeaders) {
+                for (var i = 0; i < object.serviceHeaders.length; i++) {
+                    var __value__ = object.serviceHeaders[i];
                     if (__value__ != null) {
                         result.serviceHeaders.push(ServiceHeader.toObject(__value__));
                     }
@@ -3816,7 +3829,8 @@ doesn't exist, this will be -1. Used internally.
             // Assign values to bean fields.
             if (object != null && object.cookies != null) {
                 result.cookies = new Array();
-                for (var __value__ in object.cookies) {
+                for (var i = 0; i < object.cookies.length; i++) {
+                    var __value__ = object.cookies[i];
                     if (__value__ != null) {
                         result.cookies.push(ServiceCookie.toObject(__value__));
                     }
@@ -3827,7 +3841,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.attributes != null) {
                 result.attributes = new Array();
-                for (var __value__ in object.attributes) {
+                for (var i = 0; i < object.attributes.length; i++) {
+                    var __value__ = object.attributes[i];
                     if (__value__ != null)
                         result.attributes.push(__value__);
                 }
@@ -4038,7 +4053,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactAddresses != null) {
                 result.contactAddresses = new Array();
-                for (var __value__ in object.contactAddresses) {
+                for (var i = 0; i < object.contactAddresses.length; i++) {
+                    var __value__ = object.contactAddresses[i];
                     if (__value__ != null) {
                         result.contactAddresses.push(ContactAddress.toObject(__value__));
                     }
@@ -4049,7 +4065,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactPhones != null) {
                 result.contactPhones = new Array();
-                for (var __value__ in object.contactPhones) {
+                for (var i = 0; i < object.contactPhones.length; i++) {
+                    var __value__ = object.contactPhones[i];
                     if (__value__ != null) {
                         result.contactPhones.push(ContactPhone.toObject(__value__));
                     }
@@ -4060,7 +4077,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactEmails != null) {
                 result.contactEmails = new Array();
-                for (var __value__ in object.contactEmails) {
+                for (var i = 0; i < object.contactEmails.length; i++) {
+                    var __value__ = object.contactEmails[i];
                     if (__value__ != null) {
                         result.contactEmails.push(ContactEmail.toObject(__value__));
                     }
@@ -4071,7 +4089,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactWebsites != null) {
                 result.contactWebsites = new Array();
-                for (var __value__ in object.contactWebsites) {
+                for (var i = 0; i < object.contactWebsites.length; i++) {
+                    var __value__ = object.contactWebsites[i];
                     if (__value__ != null) {
                         result.contactWebsites.push(ContactWebsite.toObject(__value__));
                     }
@@ -4082,7 +4101,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactSocials != null) {
                 result.contactSocials = new Array();
-                for (var __value__ in object.contactSocials) {
+                for (var i = 0; i < object.contactSocials.length; i++) {
+                    var __value__ = object.contactSocials[i];
                     if (__value__ != null) {
                         result.contactSocials.push(ContactSocial.toObject(__value__));
                     }
@@ -4093,7 +4113,8 @@ doesn't exist, this will be -1. Used internally.
             }
             if (object != null && object.contactTags != null) {
                 result.contactTags = new Array();
-                for (var __value__ in object.contactTags) {
+                for (var i = 0; i < object.contactTags.length; i++) {
+                    var __value__ = object.contactTags[i];
                     if (__value__ != null) {
                         result.contactTags.push(ContactTag.toObject(__value__));
                     }
