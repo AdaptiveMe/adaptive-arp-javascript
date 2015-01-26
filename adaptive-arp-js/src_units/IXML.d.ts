@@ -1,3 +1,5 @@
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseData.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,6 +33,14 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseData.ts"/>
-//# sourceMappingURL=IInternalStorage.js.map
+declare module Adaptive {
+    /**
+       Interface for Managing the XML operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
+    */
+    interface IXML extends IBaseData {
+    }
+}

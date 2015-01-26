@@ -33,42 +33,26 @@ Release:
 */
 
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseApplication.ts"/>
-///<reference path="ILifecycleListener.ts"/>
+///<reference path="IBaseCommunication.ts"/>
+///<reference path="ITelephonyStatus.ts"/>
 
 module Adaptive {
 
      /**
-        Interface for Managing the Lifecycle listeners
+        Interface for Managing the Telephony operations
 
-        @author Carlos Lozano Diez
+        @author Francisco Javier Martin Bueno
         @since ARP1.0
         @version 1.0
      */
-     export interface ILifecycle extends IBaseApplication {
+     export interface ITelephony extends IBaseCommunication {
           /**
-             Add the listener for the lifecycle of the app
-             @param listener Lifecycle listener
+             Invoke a phone call
+             @param number to call
+             @return Status of the call
              @since ARP1.0
           */
-          addLifecycleListener(listener:ILifecycleListener);
-          /**
-             Whether the application is in background or not
-             @return true if the application is in background;false otherwise
-             @since ARP1.0
-          */
-          isBackground() : boolean;
-          /**
-             Un-registers an existing listener from receiving lifecycle events.
-             @param listener Lifecycle listener
-             @since ARP1.0
-          */
-          removeLifecycleListener(listener:ILifecycleListener);
-          /**
-             Removes all existing listeners from receiving lifecycle events.
-             @since ARP1.0
-          */
-          removeLifecycleListeners();
+          call(number:string) : ITelephonyStatus;
      }
 }
 

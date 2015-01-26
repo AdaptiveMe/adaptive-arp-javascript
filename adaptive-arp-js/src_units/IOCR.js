@@ -32,5 +32,5 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSocial.ts"/>
-//# sourceMappingURL=IGooglePlus.js.map
+///<reference path="IBaseReader.ts"/>
+//# sourceMappingURL=IOCR.js.map

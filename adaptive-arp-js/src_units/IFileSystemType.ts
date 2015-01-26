@@ -32,40 +32,39 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSensor.ts"/>
-///<reference path="IGeolocationListener.ts"/>
-
 module Adaptive {
 
      /**
-        Interface for Managing the Geolocation operations
-
-        @author Francisco Javier Martin Bueno
-        @since ARP1.0
-        @version 1.0
+        Enumeration IFileSystemType
      */
-     export interface IGeolocation extends IBaseSensor {
+     export class IFileSystemType {
+
+          constructor(public value:string){}
+          toString(){return this.value;}
+
+          static Directory = new IFileSystemType("Directory");
+          static File = new IFileSystemType("File");
+          static Unknown = new IFileSystemType("Unknown");
+
           /**
-             Register a new listener that will receive geolocation events.
-             @param listener to be registered.
-             @since ARP1.0
+             Convert JSON parsed object to enumeration.
           */
-          addGeolocationListener(listener:IGeolocationListener);
-          /**
-             De-registers an existing listener from receiving geolocation events.
-             @param listener to be registered.
-             @since ARP1.0
-          */
-          removeGeolocationListener(listener:IGeolocationListener);
-          /**
-             Removed all existing listeners from receiving geolocation events.
-             @since ARP1.0
-          */
-          removeGeolocationListeners();
+          static toObject(object : any) : IFileSystemType {
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Directory":
+                              return IFileSystemType.Directory;
+                         case "File":
+                              return IFileSystemType.File;
+                         case "Unknown":
+                              return IFileSystemType.Unknown;
+                         default:
+                              return IFileSystemType.Unknown;
+                    }
+               } else {
+                    return IFileSystemType.Unknown;
+               }
+          }
+
      }
 }
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/

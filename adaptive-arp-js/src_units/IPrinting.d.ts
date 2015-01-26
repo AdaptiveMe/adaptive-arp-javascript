@@ -1,8 +1,5 @@
-/// <reference path="Geolocation.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseListener.d.ts" />
-/// <reference path="IGeolocationListenerError.d.ts" />
-/// <reference path="IGeolocationListenerWarning.d.ts" />
+/// <reference path="IBaseApplication.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -38,31 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Geolocation results
+       Interface for Managing the Printing operations
 
-       @author Francisco Javier Martin Bueno
+       @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IGeolocationListener extends IBaseListener {
-        /**
-           No data received - error condition, not authorized or hardware not available.
-           @param error Type of error encountered during reading.
-           @since ARP1.0
-        */
-        onError(error: IGeolocationListenerError): any;
-        /**
-           Correct data received.
-           @param geolocation Geolocation Bean
-           @since ARP1.0
-        */
-        onResult(geolocation: Geolocation): any;
-        /**
-           Data received with warning - ie. HighDoP
-           @param geolocation Geolocation Bean
-           @param warning     Type of warning encountered during reading.
-           @since ARP1.0
-        */
-        onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): any;
+    interface IPrinting extends IBaseApplication {
     }
 }

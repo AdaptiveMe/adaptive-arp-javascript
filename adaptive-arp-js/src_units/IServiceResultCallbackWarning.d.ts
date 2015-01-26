@@ -33,18 +33,20 @@ Release:
 */
 declare module Adaptive {
     /**
-       Enumeration ILifecycleListenerWarning
+       Enumeration IServiceResultCallbackWarning
     */
-    class ILifecycleListenerWarning {
+    class IServiceResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
-        static MemoryLow: ILifecycleListenerWarning;
-        static BatteryLow: ILifecycleListenerWarning;
-        static Unknown: ILifecycleListenerWarning;
+        static NotSecure: IServiceResultCallbackWarning;
+        static NotTrusted: IServiceResultCallbackWarning;
+        static Redirected: IServiceResultCallbackWarning;
+        static Wrong_Params: IServiceResultCallbackWarning;
+        static Unknown: IServiceResultCallbackWarning;
         /**
            Convert JSON parsed object to enumeration.
         */
-        static toObject(object: any): ILifecycleListenerWarning;
+        static toObject(object: any): IServiceResultCallbackWarning;
     }
 }

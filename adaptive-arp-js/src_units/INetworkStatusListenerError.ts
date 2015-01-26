@@ -35,43 +35,34 @@ Release:
 module Adaptive {
 
      /**
-        Enumeration INetworkReachabilityCallbackWarning
+        Enumeration INetworkStatusListenerError
      */
-     export class INetworkReachabilityCallbackWarning {
+     export class INetworkStatusListenerError {
 
           constructor(public value:string){}
           toString(){return this.value;}
 
-          static IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
-          static NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
-          static NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");
-          static Redirected = new INetworkReachabilityCallbackWarning("Redirected");
-          static NotRegisteredService = new INetworkReachabilityCallbackWarning("NotRegisteredService");
-          static Unknown = new INetworkReachabilityCallbackWarning("Unknown");
+          static NoPermission = new INetworkStatusListenerError("NoPermission");
+          static Unreachable = new INetworkStatusListenerError("Unreachable");
+          static Unknown = new INetworkStatusListenerError("Unknown");
 
           /**
              Convert JSON parsed object to enumeration.
           */
-          static toObject(object : any) : INetworkReachabilityCallbackWarning {
+          static toObject(object : any) : INetworkStatusListenerError {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "IncorrectScheme":
-                              return INetworkReachabilityCallbackWarning.IncorrectScheme;
-                         case "NotSecure":
-                              return INetworkReachabilityCallbackWarning.NotSecure;
-                         case "NotTrusted":
-                              return INetworkReachabilityCallbackWarning.NotTrusted;
-                         case "Redirected":
-                              return INetworkReachabilityCallbackWarning.Redirected;
-                         case "NotRegisteredService":
-                              return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                         case "NoPermission":
+                              return INetworkStatusListenerError.NoPermission;
+                         case "Unreachable":
+                              return INetworkStatusListenerError.Unreachable;
                          case "Unknown":
-                              return INetworkReachabilityCallbackWarning.Unknown;
+                              return INetworkStatusListenerError.Unknown;
                          default:
-                              return INetworkReachabilityCallbackWarning.Unknown;
+                              return INetworkStatusListenerError.Unknown;
                     }
                } else {
-                    return INetworkReachabilityCallbackWarning.Unknown;
+                    return INetworkStatusListenerError.Unknown;
                }
           }
 

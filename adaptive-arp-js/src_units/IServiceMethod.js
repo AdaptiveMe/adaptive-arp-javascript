@@ -31,23 +31,43 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
+var Adaptive;
+(function (Adaptive) {
     /**
-       Enumeration INetworkReachabilityCallbackWarning
+       Enumeration IServiceMethod
     */
-    class INetworkReachabilityCallbackWarning {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static IncorrectScheme: INetworkReachabilityCallbackWarning;
-        static NotSecure: INetworkReachabilityCallbackWarning;
-        static NotTrusted: INetworkReachabilityCallbackWarning;
-        static Redirected: INetworkReachabilityCallbackWarning;
-        static NotRegisteredService: INetworkReachabilityCallbackWarning;
-        static Unknown: INetworkReachabilityCallbackWarning;
+    var IServiceMethod = (function () {
+        function IServiceMethod(value) {
+            this.value = value;
+        }
+        IServiceMethod.prototype.toString = function () {
+            return this.value;
+        };
         /**
            Convert JSON parsed object to enumeration.
         */
-        static toObject(object: any): INetworkReachabilityCallbackWarning;
-    }
-}
+        IServiceMethod.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Post":
+                        return IServiceMethod.Post;
+                    case "Get":
+                        return IServiceMethod.Get;
+                    case "Unknown":
+                        return IServiceMethod.Unknown;
+                    default:
+                        return IServiceMethod.Unknown;
+                }
+            }
+            else {
+                return IServiceMethod.Unknown;
+            }
+        };
+        IServiceMethod.Post = new IServiceMethod("Post");
+        IServiceMethod.Get = new IServiceMethod("Get");
+        IServiceMethod.Unknown = new IServiceMethod("Unknown");
+        return IServiceMethod;
+    })();
+    Adaptive.IServiceMethod = IServiceMethod;
+})(Adaptive || (Adaptive = {}));
+//# sourceMappingURL=IServiceMethod.js.map

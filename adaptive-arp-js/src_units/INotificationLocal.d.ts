@@ -1,5 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseMedia.d.ts" />
+/// <reference path="IBaseNotification.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Imaging operations
+       Interface for Managing the Local Notifications operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IImaging extends IBaseMedia {
+    interface INotificationLocal extends IBaseNotification {
     }
 }

@@ -1,7 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseCallback.d.ts" />
-/// <reference path="IMessagingCallbackError.d.ts" />
-/// <reference path="IMessagingCallbackWarning.d.ts" />
+/// <reference path="IBaseCommunication.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -37,31 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Messaging responses
+       Interface for Managing the Socket operations
 
-       @author Francisco Javier Martin Bueno
+       @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IMessagingCallback extends IBaseCallback {
-        /**
-           This method is called on Error
-           @param error returned by the platform
-           @since ARP1.0
-        */
-        onError(error: IMessagingCallbackError): any;
-        /**
-           This method is called on Result
-           @param success true if sent;false otherwise
-           @since ARP1.0
-        */
-        onResult(success: boolean): any;
-        /**
-           This method is called on Warning
-           @param success true if sent;false otherwise
-           @param warning returned by the platform
-           @since ARP1.0
-        */
-        onWarning(success: boolean, warning: IMessagingCallbackWarning): any;
+    interface ISocket extends IBaseCommunication {
     }
 }

@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSocial.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +33,18 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Google Plus operations
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
+       Enumeration IServiceProtocolVersion
     */
-    interface IGooglePlus extends IBaseSocial {
+    class IServiceProtocolVersion {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static HttpProtocolVersion10: IServiceProtocolVersion;
+        static HttpProtocolVersion11: IServiceProtocolVersion;
+        static Unknown: IServiceProtocolVersion;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IServiceProtocolVersion;
     }
 }

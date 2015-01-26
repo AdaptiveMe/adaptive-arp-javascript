@@ -1,5 +1,12 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseApplicationBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseData.d.ts" />
+/// <reference path="IBaseApplication.d.ts" />
+/// <reference path="ILifecycle.d.ts" />
+/// <reference path="ILifecycleListener.d.ts" />
+/// <reference path="LifecycleListener.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +42,42 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Internal Storage operations
+       Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
        @since ARP1.0
-       @version 1.0
     */
-    interface IInternalStorage extends IBaseData {
+    class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
+        /**
+           Default constructor.
+        */
+        constructor();
+        /**
+           Add the listener for the lifecycle of the app
+
+           @param listener Lifecycle listener
+           @since ARP1.0
+        */
+        addLifecycleListener(listener: ILifecycleListener): void;
+        /**
+           Whether the application is in background or not
+
+           @return true if the application is in background;false otherwise
+           @since ARP1.0
+        */
+        isBackground(): boolean;
+        /**
+           Un-registers an existing listener from receiving lifecycle events.
+
+           @param listener Lifecycle listener
+           @since ARP1.0
+        */
+        removeLifecycleListener(listener: ILifecycleListener): void;
+        /**
+           Removes all existing listeners from receiving lifecycle events.
+
+           @since ARP1.0
+        */
+        removeLifecycleListeners(): void;
     }
 }
