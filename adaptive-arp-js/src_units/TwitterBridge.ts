@@ -31,6 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseSocialBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseApplication.ts"/>
-//# sourceMappingURL=IUpdate.js.map
+///<reference path="IBaseSocial.ts"/>
+///<reference path="ITwitter.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the Twitter operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class TwitterBridge extends BaseSocialBridge implements ITwitter {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
+}
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

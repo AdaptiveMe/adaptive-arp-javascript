@@ -31,6 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseApplicationBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseMedia.ts"/>
-//# sourceMappingURL=IVideo.js.map
+///<reference path="IBaseApplication.ts"/>
+///<reference path="ISettings.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the Settings operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class SettingsBridge extends BaseApplicationBridge implements ISettings {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
+}
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

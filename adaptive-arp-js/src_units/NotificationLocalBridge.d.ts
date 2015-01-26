@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseNotificationBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseNotification.d.ts" />
+/// <reference path="INotificationLocal.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,23 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+declare module Adaptive {
+    /**
+       Interface for Managing the Local Notifications operations
 
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseUtil.ts"/>
-
-module Adaptive {
-
-     /**
-        Interface for Managing the Timer operations
-
-        @author Carlos Lozano Diez
-        @since ARP1.0
-        @version 1.0
-     */
-     export interface ITimer extends IBaseUtil {
-     }
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NotificationLocalBridge extends BaseNotificationBridge implements INotificationLocal {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
 }
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/

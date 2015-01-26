@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSocial.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,14 +31,9 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Managing the Twitter operations
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface ITwitter extends IBaseSocial {
-    }
-}
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseListener.ts"/>
+///<reference path="ICapabilitiesNet.ts"/>
+///<reference path="INetworkStatusListenerError.ts"/>
+///<reference path="INetworkStatusListenerWarning.ts"/>
+//# sourceMappingURL=INetworkStatusListener.js.map

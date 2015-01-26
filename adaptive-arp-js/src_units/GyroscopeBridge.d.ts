@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseSensorBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseSensor.d.ts" />
+/// <reference path="IGyroscope.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,40 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+declare module Adaptive {
+    /**
+       Interface for Managing the Giroscope operations
 
-module Adaptive {
-
-     /**
-        Enumeration ITelephonyStatus
-     */
-     export class ITelephonyStatus {
-
-          constructor(public value:string){}
-          toString(){return this.value;}
-
-          static Dialing = new ITelephonyStatus("Dialing");
-          static Failed = new ITelephonyStatus("Failed");
-          static Unknown = new ITelephonyStatus("Unknown");
-
-          /**
-             Convert JSON parsed object to enumeration.
-          */
-          static toObject(object : any) : ITelephonyStatus {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Dialing":
-                              return ITelephonyStatus.Dialing;
-                         case "Failed":
-                              return ITelephonyStatus.Failed;
-                         case "Unknown":
-                              return ITelephonyStatus.Unknown;
-                         default:
-                              return ITelephonyStatus.Unknown;
-                    }
-               } else {
-                    return ITelephonyStatus.Unknown;
-               }
-          }
-
-     }
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
 }

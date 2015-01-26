@@ -1,5 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseSocialBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseMedia.d.ts" />
+/// <reference path="IBaseSocial.d.ts" />
+/// <reference path="ITwitter.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,18 +40,15 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Video operations
+       Interface for Managing the Twitter operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
-       @version 1.0
     */
-    interface IVideo extends IBaseMedia {
+    class TwitterBridge extends BaseSocialBridge implements ITwitter {
         /**
-           Play url video stream
-           @param url of the video
-           @since ARP1.0
+           Default constructor.
         */
-        playStream(url: string): any;
+        constructor();
     }
 }

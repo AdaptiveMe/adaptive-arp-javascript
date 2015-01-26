@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseCommerce.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,14 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Managing the Wallet operations
 
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface IWallet extends IBaseCommerce {
-    }
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseReaderBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseReader.ts"/>
+///<reference path="IOCR.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the OCR operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class OCRBridge extends BaseReaderBridge implements IOCR {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
 }
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

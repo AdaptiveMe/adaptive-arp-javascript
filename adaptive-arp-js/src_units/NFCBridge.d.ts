@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseReaderBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseReader.d.ts" />
+/// <reference path="INFC.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,23 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+declare module Adaptive {
+    /**
+       Interface for Managing the NFC operations
 
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseUI.ts"/>
-
-module Adaptive {
-
-     /**
-        Interface for Managing the UI operations
-
-        @author Carlos Lozano Diez
-        @since ARP1.0
-        @version 1.0
-     */
-     export interface IUI extends IBaseUI {
-     }
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NFCBridge extends BaseReaderBridge implements INFC {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
 }
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/

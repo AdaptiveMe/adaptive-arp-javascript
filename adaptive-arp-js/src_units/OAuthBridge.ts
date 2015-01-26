@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseData.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,14 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Managing the XML operations
 
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface IXML extends IBaseData {
-    }
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseSecurityBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseSecurity.ts"/>
+///<reference path="IOAuth.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the OAuth operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
 }
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseReaderBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseReader.d.ts" />
+/// <reference path="IOCR.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,23 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+declare module Adaptive {
+    /**
+       Interface for Managing the OCR operations
 
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseApplication.ts"/>
-
-module Adaptive {
-
-     /**
-        Interface for Managing the Update operations
-
-        @author Carlos Lozano Diez
-        @since ARP1.0
-        @version 1.0
-     */
-     export interface IUpdate extends IBaseApplication {
-     }
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OCRBridge extends BaseReaderBridge implements IOCR {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
 }
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/

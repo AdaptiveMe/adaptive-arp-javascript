@@ -31,6 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseNotificationBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseData.ts"/>
-//# sourceMappingURL=IXML.js.map
+///<reference path="IBaseNotification.ts"/>
+///<reference path="IVibration.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the Vibration operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class VibrationBridge extends BaseNotificationBridge implements IVibration {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
+}
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

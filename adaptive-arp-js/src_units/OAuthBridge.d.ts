@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseSecurityBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseSecurity.d.ts" />
+/// <reference path="IOAuth.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,6 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSocial.ts"/>
-//# sourceMappingURL=ITwitter.js.map
+declare module Adaptive {
+    /**
+       Interface for Managing the OAuth operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OAuthBridge extends BaseSecurityBridge implements IOAuth {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
+}

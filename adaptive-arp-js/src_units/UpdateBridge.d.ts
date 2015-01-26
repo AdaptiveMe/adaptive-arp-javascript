@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseApplicationBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseApplication.d.ts" />
+/// <reference path="IUpdate.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,6 +38,17 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseNotification.ts"/>
-//# sourceMappingURL=IVibration.js.map
+declare module Adaptive {
+    /**
+       Interface for Managing the Update operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class UpdateBridge extends BaseApplicationBridge implements IUpdate {
+        /**
+           Default constructor.
+        */
+        constructor();
+    }
+}

@@ -1,5 +1,4 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseUtil.d.ts" />
+/// <reference path="APIBean.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +34,60 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Timer operations
+       Structure representing the data of a http request or response header.
 
-       @author Carlos Lozano Diez
+       @author Aryslan
        @since ARP1.0
        @version 1.0
     */
-    interface ITimer extends IBaseUtil {
+    class ServiceHeader extends APIBean {
+        /**
+           Value of the header
+        */
+        data: string;
+        /**
+           Name ot the header
+        */
+        name: string;
+        /**
+           Constructor with fields
+
+           @param name Name of the header
+           @param data Value of the header
+           @since ARP1.0
+        */
+        constructor(name: string, data: string);
+        /**
+           Returns the header value
+
+           @return ServiceHeader value
+           @since ARP1.0
+        */
+        getData(): string;
+        /**
+           Set the header value
+
+           @param data ServiceHeader value
+           @since ARP1.0
+        */
+        setData(data: string): void;
+        /**
+           Returns the header name
+
+           @return ServiceHeader name
+           @since ARP1.0
+        */
+        getName(): string;
+        /**
+           Set the header name
+
+           @param name Name of the header
+           @since ARP1.0
+        */
+        setName(name: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServiceHeader;
     }
 }

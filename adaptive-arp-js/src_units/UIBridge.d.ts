@@ -1,5 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseUIBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
 /// <reference path="IBaseUI.d.ts" />
+/// <reference path="IUI.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -39,8 +44,11 @@ declare module Adaptive {
 
        @author Carlos Lozano Diez
        @since ARP1.0
-       @version 1.0
     */
-    interface IUI extends IBaseUI {
+    class UIBridge extends BaseUIBridge implements IUI {
+        /**
+           Default constructor.
+        */
+        constructor();
     }
 }

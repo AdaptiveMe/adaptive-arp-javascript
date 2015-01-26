@@ -1,3 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseMediaBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseMedia.d.ts" />
+/// <reference path="IVideo.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,24 +40,22 @@ Release:
 */
 declare module Adaptive {
     /**
-       Enumeration LifecycleState
+       Interface for Managing the Video operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
     */
-    class LifecycleState {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static Starting: LifecycleState;
-        static Started: LifecycleState;
-        static Running: LifecycleState;
-        static Pausing: LifecycleState;
-        static PausedIdle: LifecycleState;
-        static PausedRun: LifecycleState;
-        static Resuming: LifecycleState;
-        static Stopping: LifecycleState;
-        static Unknown: LifecycleState;
+    class VideoBridge extends BaseMediaBridge implements IVideo {
         /**
-           Convert JSON parsed object to enumeration.
+           Default constructor.
         */
-        static toObject(object: any): LifecycleState;
+        constructor();
+        /**
+           Play url video stream
+
+           @param url of the video
+           @since ARP1.0
+        */
+        playStream(url: string): void;
     }
 }

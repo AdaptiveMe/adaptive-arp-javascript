@@ -32,28 +32,31 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseDataBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseMedia.ts"/>
-
+///<reference path="IBaseData.ts"/>
+///<reference path="IXML.ts"/>
 module Adaptive {
 
      /**
-        Interface for Managing the Video operations
+        Interface for Managing the XML operations
 
         @author Carlos Lozano Diez
         @since ARP1.0
-        @version 1.0
      */
-     export interface IVideo extends IBaseMedia {
+     export class XMLBridge extends BaseDataBridge implements IXML {
+
           /**
-             Play url video stream
-             @param url of the video
-             @since ARP1.0
+             Default constructor.
           */
-          playStream(url:string);
+          constructor() {
+               super();
+          }
      }
 }
-
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */

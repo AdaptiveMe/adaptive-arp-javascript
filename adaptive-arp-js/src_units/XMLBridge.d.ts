@@ -1,5 +1,10 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="BaseDataBridge.d.ts" />
+/// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseApplication.d.ts" />
+/// <reference path="IBaseData.d.ts" />
+/// <reference path="IXML.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +40,15 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Update operations
+       Interface for Managing the XML operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
-       @version 1.0
     */
-    interface IUpdate extends IBaseApplication {
+    class XMLBridge extends BaseDataBridge implements IXML {
+        /**
+           Default constructor.
+        */
+        constructor();
     }
 }
