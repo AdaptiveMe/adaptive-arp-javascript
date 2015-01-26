@@ -1,4 +1,6 @@
-/// <reference path="APIBean.d.ts" />
+/// <reference path="IAccelerationListener.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseSensor.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -34,41 +36,29 @@ Release:
 */
 declare module Adaptive {
     /**
-       Structure representing the data elements of an email addressee.
+       Interface defining methods about the acceleration sensor
 
-       @author Francisco Javier Martin Bueno
+       @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    class EmailAddress extends APIBean {
+    interface IAcceleration extends IBaseSensor {
         /**
-           The Email address
-        */
-        address: string;
-        /**
-           Constructor used by implementation
-
-           @param address of the Email
+           Register a new listener that will receive acceleration events.
+           @param listener to be registered.
            @since ARP1.0
         */
-        constructor(address: string);
+        addAccelerationListener(listener: IAccelerationListener): any;
         /**
-           Returns the email address
-
-           @return address of the Email
+           De-registers an existing listener from receiving acceleration events.
+           @param listener to be registered.
            @since ARP1.0
         */
-        getAddress(): string;
+        removeAccelerationListener(listener: IAccelerationListener): any;
         /**
-           Set the Email address
-
-           @param address of the Email
+           Removed all existing listeners from receiving acceleration events.
            @since ARP1.0
         */
-        setAddress(address: string): void;
-        /**
-           Convert JSON parsed object to typed equivalent.
-        */
-        static toObject(object: any): EmailAddress;
+        removeAccelerationListeners(): any;
     }
 }

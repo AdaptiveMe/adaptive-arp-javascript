@@ -1,4 +1,4 @@
-/// <reference path="APIBean.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -34,41 +34,24 @@ Release:
 */
 declare module Adaptive {
     /**
-       Structure representing a row for a data table.
+       Master interface for all the Groups and Types of Interfaces os the Project
 
-       @author Ferran Vila Conesa
+       @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    class DatabaseRow extends APIBean {
+    interface IAdaptiveRP {
         /**
-           The values of the row.
-        */
-        values: string[];
-        /**
-           Constructor for implementation using.
-
-           @param values The values of the row
+           Method that returns the API group of the implementation
+           @return API Group name.
            @since ARP1.0
         */
-        constructor(values: string[]);
+        getAPIGroup(): IAdaptiveRPGroup;
         /**
-           Returns the values of the row.
-
-           @return The values of the row.
+           Method that returns the API version of the implementation.
+           @return API Version string.
            @since ARP1.0
         */
-        getValues(): string[];
-        /**
-           Sets the values of the row.
-
-           @param values The values of the row.
-           @since ARP1.0
-        */
-        setValues(values: string[]): void;
-        /**
-           Convert JSON parsed object to typed equivalent.
-        */
-        static toObject(object: any): DatabaseRow;
+        getAPIVersion(): string;
     }
 }

@@ -37,57 +37,84 @@ Release:
 module Adaptive {
 
      /**
-        Structure representing the data elements of an email addressee.
+        Structure representing a database reference.
 
-        @author Francisco Javier Martin Bueno
+        @author Ferran Vila Conesa
         @since ARP1.0
         @version 1.0
      */
-     export class EmailAddress extends APIBean {
+     export class Database extends APIBean {
 
           /**
-             The Email address
+             Indicates if database was created or needs to be created as Compressed.
           */
-          address : string;
+          compress : boolean;
           /**
-             Constructor used by implementation
+             Database Name (name of the .db local file).
+          */
+          name : string;
+          /**
+             Constructor using fields.
 
-             @param address of the Email
+             @param name     Name of the DatabaseTable.
+             @param compress Compression enabled.
              @since ARP1.0
           */
-          constructor(address: string) {
+          constructor(name: string, compress: boolean) {
                super();
-               this.address = address;
+               this.name = name;
+               this.compress = compress;
           }
 
           /**
-             Returns the email address
+             Returns if the table is compressed
 
-             @return address of the Email
+             @return Compression enabled
              @since ARP1.0
           */
-          getAddress() : string {
-               return this.address;
+          getCompress() : boolean {
+               return this.compress;
           }
 
           /**
-             Set the Email address
+             Sets if the table is compressed or not.
 
-             @param address of the Email
+             @param compress Compression enabled
              @since ARP1.0
           */
-          setAddress(address: string) {
-               this.address = address;
+          setCompress(compress: boolean) {
+               this.compress = compress;
+          }
+
+          /**
+             Returns the name.
+
+             @return The name of the table.
+             @since ARP1.0
+          */
+          getName() : string {
+               return this.name;
+          }
+
+          /**
+             Sets the name of the table.
+
+             @param name The name of the table.
+             @since ARP1.0
+          */
+          setName(name: string) {
+               this.name = name;
           }
 
           /**
              Convert JSON parsed object to typed equivalent.
           */
-          static toObject(object : any) : EmailAddress {
-               var result : EmailAddress = new EmailAddress(null);
+          static toObject(object : any) : Database {
+               var result : Database = new Database(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.address!=null) result.address = object.address;
+               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.compress!=null) result.compress = object.compress;
 
                return result;
           }
