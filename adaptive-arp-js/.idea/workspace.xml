@@ -2,36 +2,1240 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51628ef6-48bb-4703-ac94-69eccab955e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIRequest.js.map" afterPath="$PROJECT_DIR$/APIRequest.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIRequest.js" afterPath="$PROJECT_DIR$/APIRequest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIRequest.ts" afterPath="$PROJECT_DIR$/APIRequest.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.js.map" afterPath="$PROJECT_DIR$/Adaptive.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.js" afterPath="$PROJECT_DIR$/Adaptive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Adaptive.ts" afterPath="$PROJECT_DIR$/Adaptive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contact.js.map" afterPath="$PROJECT_DIR$/Contact.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contact.js" afterPath="$PROJECT_DIR$/Contact.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contact.ts" afterPath="$PROJECT_DIR$/Contact.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseRow.js.map" afterPath="$PROJECT_DIR$/DatabaseRow.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseRow.js" afterPath="$PROJECT_DIR$/DatabaseRow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseRow.ts" afterPath="$PROJECT_DIR$/DatabaseRow.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseTable.js.map" afterPath="$PROJECT_DIR$/DatabaseTable.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseTable.js" afterPath="$PROJECT_DIR$/DatabaseTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DatabaseTable.ts" afterPath="$PROJECT_DIR$/DatabaseTable.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Email.js.map" afterPath="$PROJECT_DIR$/Email.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Email.js" afterPath="$PROJECT_DIR$/Email.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Email.ts" afterPath="$PROJECT_DIR$/Email.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EmailAttachmentData.js.map" afterPath="$PROJECT_DIR$/EmailAttachmentData.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EmailAttachmentData.js" afterPath="$PROJECT_DIR$/EmailAttachmentData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EmailAttachmentData.ts" afterPath="$PROJECT_DIR$/EmailAttachmentData.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceRequest.js.map" afterPath="$PROJECT_DIR$/ServiceRequest.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceRequest.js" afterPath="$PROJECT_DIR$/ServiceRequest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceRequest.ts" afterPath="$PROJECT_DIR$/ServiceRequest.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceResponse.js.map" afterPath="$PROJECT_DIR$/ServiceResponse.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceResponse.js" afterPath="$PROJECT_DIR$/ServiceResponse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceResponse.ts" afterPath="$PROJECT_DIR$/ServiceResponse.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceSession.js.map" afterPath="$PROJECT_DIR$/ServiceSession.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceSession.js" afterPath="$PROJECT_DIR$/ServiceSession.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceSession.ts" afterPath="$PROJECT_DIR$/ServiceSession.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBean.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBean.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBean.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIRequest.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIRequest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIRequest.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIRequest.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIResponse.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIResponse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIResponse.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/APIResponse.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Acceleration.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Acceleration.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Acceleration.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Acceleration.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AccelerationListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Adaptive.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Adaptive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Adaptive.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Adaptive.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AdsBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AdsBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AdsBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AdsBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AlarmBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AlarmBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AlarmBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AlarmBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AmbientLightBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AmbientLightBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AmbientLightBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AmbientLightBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AnalyticsBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AnalyticsBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AnalyticsBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AnalyticsBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AppRegistryBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AppRegistryBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AppRegistryBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AppRegistryBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarcodeBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarcodeBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarcodeBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarcodeBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarometerBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarometerBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarometerBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BarometerBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseApplicationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseApplicationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseApplicationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseApplicationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommerceBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommerceBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommerceBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommerceBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommunicationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommunicationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommunicationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseCommunicationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseDataBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseDataBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseDataBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseDataBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseMediaBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseMediaBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseMediaBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseMediaBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseNotificationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseNotificationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseNotificationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseNotificationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BasePIMBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BasePIMBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BasePIMBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BasePIMBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseReaderBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseReaderBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseReaderBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseReaderBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSecurityBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSecurityBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSecurityBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSecurityBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSensorBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSensorBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSensorBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSensorBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSocialBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSocialBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSocialBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSocialBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSystemBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSystemBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSystemBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseSystemBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUIBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUIBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUIBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUIBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUtilBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUtilBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUtilBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BaseUtilBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BluetoothBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BluetoothBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BluetoothBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BluetoothBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BrowserBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BrowserBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BrowserBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BrowserBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Button.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Button.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Button.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ButtonListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ButtonListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ButtonListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ButtonListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CalendarBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CalendarBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CalendarBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CalendarBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CameraBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CameraBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CameraBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CameraBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CapabilitiesBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CapabilitiesBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CapabilitiesBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CapabilitiesBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CommonUtil.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CommonUtil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CommonUtil.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CommonUtil.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CompressionBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CompressionBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CompressionBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CompressionBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConcurrentBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConcurrentBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConcurrentBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ConcurrentBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contact.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contact.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contact.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contact.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddress.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddress.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddress.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddressType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddressType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddressType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactAddressType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmail.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmail.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmail.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmailType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmailType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmailType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactEmailType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfoTitle.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfoTitle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfoTitle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPersonalInfoTitle.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhone.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhone.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhone.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhone.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhoneType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhoneType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhoneType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhoneType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhotoResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhotoResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhotoResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactPhotoResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactProfessionalInfo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactProfessionalInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactProfessionalInfo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactProfessionalInfo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocial.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocial.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocial.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocial.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocialNetwork.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocialNetwork.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocialNetwork.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactSocialNetwork.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactTag.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactTag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactTag.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactTag.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactUid.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactUid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactUid.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactUid.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactWebsite.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactWebsite.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactWebsite.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ContactWebsite.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CryptoBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CryptoBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CryptoBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CryptoBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataStreamBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataStreamBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataStreamBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataStreamBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Database.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseColumn.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseColumn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseColumn.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseColumn.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseRow.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseRow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseRow.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseRow.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTable.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTable.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTable.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTableResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTableResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTableResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DatabaseTableResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DesktopBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DesktopBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DesktopBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DesktopBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceInfo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceInfo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DeviceInfo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DisplayBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DisplayBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DisplayBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DisplayBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Email.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Email.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Email.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Email.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAddress.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAddress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAddress.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAddress.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAttachmentData.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAttachmentData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAttachmentData.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EmailAttachmentData.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FacebookBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FacebookBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FacebookBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FacebookBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataLoadResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataLoadResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataLoadResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataLoadResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataStoreResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataStoreResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataStoreResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDataStoreResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDescriptor.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDescriptor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDescriptor.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileDescriptor.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileListResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileListResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileListResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileListResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileSystemBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileSystemBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileSystemBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FileSystemBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Geolocation.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Geolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Geolocation.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Geolocation.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GeolocationListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlobalizationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlobalizationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlobalizationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlobalizationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GooglePlusBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GooglePlusBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GooglePlusBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GooglePlusBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GyroscopeBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GyroscopeBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GyroscopeBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GyroscopeBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAcceleration.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAcceleration.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAcceleration.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAcceleration.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAccelerationListenerWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRP.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRP.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRP.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRP.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRPGroup.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRPGroup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRPGroup.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAdaptiveRPGroup.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAds.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAds.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAds.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAlarm.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAlarm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAlarm.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAlarm.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAmbientLight.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAmbientLight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAmbientLight.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAmbientLight.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAnalytics.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAnalytics.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAnalytics.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAnalytics.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAppRegistry.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAppRegistry.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAppRegistry.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAppRegistry.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAudio.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAudio.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAudio.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IAudio.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarcode.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarcode.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarcode.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarometer.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarometer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarometer.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBarometer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseApplication.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseApplication.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseApplication.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseApplication.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommerce.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommerce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommerce.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommerce.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommunication.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommunication.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommunication.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseCommunication.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseData.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseData.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseData.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseMedia.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseMedia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseMedia.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseMedia.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseNotification.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseNotification.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseNotification.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseNotification.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBasePIM.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBasePIM.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBasePIM.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBasePIM.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseReader.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseReader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseReader.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseReader.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSecurity.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSecurity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSecurity.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSecurity.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSensor.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSensor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSensor.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSensor.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSocial.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSocial.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSocial.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSocial.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSystem.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSystem.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSystem.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseSystem.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUI.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUI.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUI.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUtil.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUtil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUtil.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBaseUtil.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBluetooth.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBluetooth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBluetooth.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBluetooth.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBrowser.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBrowser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBrowser.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IBrowser.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IButtonListenerWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICalendar.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICalendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICalendar.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICalendar.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICamera.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICamera.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICamera.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICamera.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilities.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilities.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilities.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesButton.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesButton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesButton.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesButton.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesCommunication.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesCommunication.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesCommunication.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesCommunication.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesData.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesData.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesData.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesData.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesMedia.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesMedia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesMedia.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesMedia.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNet.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNet.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNet.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNotification.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNotification.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNotification.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesNotification.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesSensor.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesSensor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesSensor.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICapabilitiesSensor.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICloud.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICloud.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICloud.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICloud.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICompression.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICompression.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICompression.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICompression.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IConcurrent.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IConcurrent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IConcurrent.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IConcurrent.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContact.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContact.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContact.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContact.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFieldGroup.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFieldGroup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFieldGroup.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFieldGroup.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFilter.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFilter.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactFilter.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactPhotoResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IContactResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICrypto.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICrypto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICrypto.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ICrypto.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDataStream.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDataStream.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDataStream.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDataStream.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabase.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabase.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabase.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDatabaseTableResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDesktop.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDesktop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDesktop.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDesktop.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDevice.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDevice.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDevice.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDevice.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDisplay.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDisplay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDisplay.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IDisplay.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFacebook.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFacebook.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFacebook.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFacebook.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFile.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFile.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFile.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataLoadResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileDataStoreResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileListResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystem.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystem.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystem.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystem.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemSecurity.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemSecurity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemSecurity.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemSecurity.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemStorageType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemStorageType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemStorageType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemStorageType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IFileSystemType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocation.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocation.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocation.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGeolocationListenerWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGlobalization.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGlobalization.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGlobalization.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGlobalization.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGooglePlus.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGooglePlus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGooglePlus.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGooglePlus.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGyroscope.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGyroscope.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGyroscope.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IGyroscope.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IImaging.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IImaging.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IImaging.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IImaging.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IInternalStorage.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IInternalStorage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IInternalStorage.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IInternalStorage.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycle.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycle.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILifecycleListenerWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILinkedIn.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILinkedIn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILinkedIn.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILinkedIn.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILogging.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILogging.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILogging.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILogging.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILoggingLogLevel.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILoggingLogLevel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILoggingLogLevel.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ILoggingLogLevel.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMagnetometer.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMagnetometer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMagnetometer.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMagnetometer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMail.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMail.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMail.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IManagement.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IManagement.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IManagement.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IManagement.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMap.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMap.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMap.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessaging.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessaging.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessaging.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessaging.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IMessagingCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INFC.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INFC.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INFC.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INFC.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkInfo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkInfo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkInfo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkNaming.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkNaming.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkNaming.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkNaming.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachability.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachability.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachability.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachability.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkReachabilityCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatus.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatus.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatus.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INetworkStatusListenerWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotification.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotification.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotification.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotification.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotificationLocal.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotificationLocal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotificationLocal.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/INotificationLocal.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOAuth.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOAuth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOAuth.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOAuth.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOCR.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOCR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOCR.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOCR.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOS.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOS.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOS.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOSType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOSType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOSType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOSType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOpenId.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOpenId.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOpenId.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IOpenId.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IPrinting.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IPrinting.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IPrinting.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IPrinting.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IProximity.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IProximity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IProximity.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IProximity.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IQRCode.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IQRCode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IQRCode.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IQRCode.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRSS.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRSS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRSS.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRSS.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRuntime.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRuntime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRuntime.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IRuntime.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurity.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurity.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurity.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISecurityResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IService.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IService.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IService.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceMethod.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceMethod.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceMethod.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceMethod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceProtocolVersion.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceProtocolVersion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceProtocolVersion.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceProtocolVersion.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackError.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackError.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackError.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackWarning.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackWarning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackWarning.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceResultCallbackWarning.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceType.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceType.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceType.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IServiceType.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISettings.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISettings.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISettings.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISettings.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISocket.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISocket.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISocket.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ISocket.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IStore.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IStore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IStore.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IStore.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephony.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephony.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephony.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephony.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephonyStatus.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephonyStatus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephonyStatus.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITelephonyStatus.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITimer.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITimer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITimer.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITimer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITwitter.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITwitter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITwitter.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITwitter.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUI.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUI.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUI.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUpdate.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUpdate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUpdate.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IUpdate.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVibration.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVibration.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVibration.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVibration.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVideo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVideo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVideo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IVideo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IWallet.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IWallet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IWallet.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IWallet.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IXML.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IXML.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IXML.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IXML.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ImagingBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ImagingBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ImagingBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ImagingBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InternalStorageBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InternalStorageBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InternalStorageBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InternalStorageBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KeyPair.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KeyPair.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KeyPair.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KeyPair.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lifecycle.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lifecycle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lifecycle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Lifecycle.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleState.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleState.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleState.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LifecycleState.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LinkedInBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LinkedInBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LinkedInBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LinkedInBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Locale.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Locale.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Locale.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Locale.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LoggingBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LoggingBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LoggingBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LoggingBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MagnetometerBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MagnetometerBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MagnetometerBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MagnetometerBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MailBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MailBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MailBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MailBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ManagementBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ManagementBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ManagementBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ManagementBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MapBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MapBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MapBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MapBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MessagingCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NFCBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NFCBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NFCBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NFCBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkInfoBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkInfoBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkInfoBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkInfoBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkNamingBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkNamingBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkNamingBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkNamingBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkReachabilityCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusListener.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusListener.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusListener.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NetworkStatusListener.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationLocalBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationLocalBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationLocalBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NotificationLocalBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OAuthBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OAuthBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OAuthBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OAuthBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OCRBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSInfo.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSInfo.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OSInfo.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OpenIdBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OpenIdBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OpenIdBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OpenIdBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PrintingBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PrintingBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PrintingBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PrintingBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProximityBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProximityBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProximityBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ProximityBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/QRCodeBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/QRCodeBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/QRCodeBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/QRCodeBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSSBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSSBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSSBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSSBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RuntimeBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RuntimeBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RuntimeBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RuntimeBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecureKeyPair.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecureKeyPair.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecureKeyPair.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecureKeyPair.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SecurityResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Service.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Service.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceCookie.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceCookie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceCookie.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceCookie.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceEndpoint.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceEndpoint.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceEndpoint.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceEndpoint.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceHeader.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceHeader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceHeader.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceHeader.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceRequest.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceRequest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceRequest.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceRequest.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResponse.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResponse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResponse.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResponse.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResultCallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResultCallback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResultCallback.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceResultCallback.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceSession.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceSession.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceSession.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ServiceSession.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SettingsBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SettingsBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SettingsBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SettingsBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SocketBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SocketBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SocketBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SocketBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StoreBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StoreBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StoreBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StoreBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TelephonyBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TelephonyBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TelephonyBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TelephonyBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimerBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimerBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimerBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimerBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwitterBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwitterBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwitterBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwitterBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UIBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UIBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UIBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UIBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UpdateBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UpdateBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UpdateBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UpdateBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VibrationBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VibrationBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VibrationBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VibrationBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VideoBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VideoBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VideoBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/VideoBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WalletBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WalletBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WalletBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WalletBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/XMLBridge.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/XMLBridge.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/XMLBridge.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/XMLBridge.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/join.sh" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="adaptive-arp-js.iws" />
@@ -55,137 +1259,7 @@
     <favorites_list name="adaptive-arp-js" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Adaptive.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Adaptive.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="267701" max-vertical-offset="268530">
-              <caret line="17865" column="60" selection-start-line="17865" selection-start-column="60" selection-end-line="17865" selection-end-column="60" />
-              <folding>
-                <marker date="1421416500000" expanded="true" signature="1306:707953" placeholder="..." />
-                <marker date="1421416500000" expanded="true" signature="90928:91103" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="127175:127342" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="132311:132704" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="132924:133302" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="144050:144430" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="144651:145031" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="145255:145638" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="145887:146302" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="152902:153065" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="202569:202750" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="203104:203492" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="212099:212280" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="212634:213022" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="215705:216072" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="216281:216456" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="224857:225253" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="225477:225860" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="226084:226467" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="226699:227092" placeholder="{...}" />
-                <marker date="1421416500000" expanded="true" signature="227320:227708" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Acceleration.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Acceleration.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1538" max-vertical-offset="2805">
-              <caret line="167" column="71" selection-start-line="167" selection-start-column="71" selection-end-line="167" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Database.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="728" max-vertical-offset="1995">
-              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseRow.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DatabaseRow.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4080505" vertical-offset="413" max-vertical-offset="1680">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Contact.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Contact.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3968" max-vertical-offset="5625">
-              <caret line="289" column="63" selection-start-line="289" selection-start-column="63" selection-end-line="289" selection-end-column="63" />
-              <folding>
-                <marker date="1421416499000" expanded="true" signature="1678:13526" placeholder="..." />
-                <marker date="1421416499000" expanded="true" signature="10016:10412" placeholder="{...}" />
-                <marker date="1421416499000" expanded="true" signature="10636:11019" placeholder="{...}" />
-                <marker date="1421416499000" expanded="true" signature="11243:11626" placeholder="{...}" />
-                <marker date="1421416499000" expanded="true" signature="11858:12251" placeholder="{...}" />
-                <marker date="1421416499000" expanded="true" signature="12479:12867" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactPersonalInfo.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ContactPersonalInfo.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1613" max-vertical-offset="2880">
-              <caret line="168" column="80" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OSInfo.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OSInfo.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="2430">
-              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactPersonalInfoTitle.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ContactPersonalInfoTitle.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1230">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccelerationListener.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AccelerationListener.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="863" max-vertical-offset="2520">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileBridge.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FileBridge.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8910" max-vertical-offset="11010">
-              <caret line="610" column="68" selection-start-line="610" selection-start-column="43" selection-end-line="610" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -260,34 +1334,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="adaptive-arp-js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adaptive-arp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adaptive-arp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TelephonyBridge.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adaptive-arp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adaptive-arp-js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Adaptive.ts" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -380,6 +1426,7 @@
       <node-options />
       <gulpfile />
       <tasks />
+      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
@@ -430,14 +1477,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2556" y="-180" width="1440" height="1390" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18402778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18402778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32895753" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -473,45 +1520,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Database.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="728" max-vertical-offset="1995">
-          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseRow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Contact.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3968" max-vertical-offset="5625">
-          <caret line="289" column="63" selection-start-line="289" selection-start-column="63" selection-end-line="289" selection-end-column="63" />
-          <folding>
-            <marker date="1421416499000" expanded="true" signature="1678:13526" placeholder="..." />
-            <marker date="1421416499000" expanded="true" signature="10016:10412" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="10636:11019" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="11243:11626" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="11858:12251" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="12479:12867" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContactPersonalInfo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1613" max-vertical-offset="2880">
-          <caret line="168" column="80" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OSInfo.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="2430">
@@ -520,412 +1528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContactPersonalInfoTitle.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1230">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccelerationListener.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="863" max-vertical-offset="2520">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8910" max-vertical-offset="11010">
-          <caret line="610" column="68" selection-start-line="610" selection-start-column="43" selection-end-line="610" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="689" max-vertical-offset="1725">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1635">
-          <caret line="80" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlobalizationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3510">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccelerationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1454" max-vertical-offset="2745">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4784" max-vertical-offset="6690">
-          <caret line="349" column="79" selection-start-line="349" selection-start-column="79" selection-end-line="349" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Adaptive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="146880" max-vertical-offset="262185">
-          <caret line="9827" column="90" selection-start-line="9827" selection-start-column="90" selection-end-line="9827" selection-end-column="90" />
-          <folding>
-            <marker date="1421416500000" expanded="true" signature="1306:707953" placeholder="..." />
-            <marker date="1421416500000" expanded="true" signature="90928:91103" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="127175:127342" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132311:132704" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132924:133302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144050:144430" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144651:145031" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145255:145638" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145887:146302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="152902:153065" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="202569:202750" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="203104:203492" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212099:212280" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212634:213022" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="215705:216072" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="216281:216456" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="224857:225253" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="225477:225860" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226084:226467" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226699:227092" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="227320:227708" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="689" max-vertical-offset="1725">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1635">
-          <caret line="80" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlobalizationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3510">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccelerationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1454" max-vertical-offset="2745">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4784" max-vertical-offset="6690">
-          <caret line="349" column="79" selection-start-line="349" selection-start-column="79" selection-end-line="349" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Adaptive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="261645">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1421416500000" expanded="true" signature="1306:707953" placeholder="..." />
-            <marker date="1421416500000" expanded="true" signature="90928:91103" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="127175:127342" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132311:132704" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132924:133302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144050:144430" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144651:145031" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145255:145638" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145887:146302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="152902:153065" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="202569:202750" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="203104:203492" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212099:212280" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212634:213022" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="215705:216072" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="216281:216456" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="224857:225253" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="225477:225860" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226084:226467" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226699:227092" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="227320:227708" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IServiceResultCallbackError.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1485">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISecurityResultCallbackWarning.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1256">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISecurityResultCallbackError.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1256">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IAdaptiveRPGroup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APIBean.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1256">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APIRequest.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1519" max-vertical-offset="2790">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IOSType.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1485">
-          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="55" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Email.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3397" max-vertical-offset="4230">
-          <caret line="252" column="16" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContactBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4695">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OSBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="1470">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APIRequest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35509554" vertical-offset="1054" max-vertical-offset="2310">
-          <caret line="100" column="35" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APIBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APIResponse.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.35828024" vertical-offset="450" max-vertical-offset="2265">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UpdateBridge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="689" max-vertical-offset="1725">
-          <caret line="83" column="32" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TelephonyBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="1635">
-          <caret line="80" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlobalizationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3510">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccelerationBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1454" max-vertical-offset="2745">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4784" max-vertical-offset="6690">
-          <caret line="349" column="79" selection-start-line="349" selection-start-column="79" selection-end-line="349" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppRegistryBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="16980">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IButtonListenerError.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Database.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="728" max-vertical-offset="1995">
-          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccelerationListener.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2520">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileBridge.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8910" max-vertical-offset="11010">
-          <caret line="610" column="68" selection-start-line="610" selection-start-column="43" selection-end-line="610" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Adaptive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="267701" max-vertical-offset="268530">
-          <caret line="17865" column="60" selection-start-line="17865" selection-start-column="60" selection-end-line="17865" selection-end-column="60" />
-          <folding>
-            <marker date="1421416500000" expanded="true" signature="1306:707953" placeholder="..." />
-            <marker date="1421416500000" expanded="true" signature="90928:91103" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="127175:127342" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132311:132704" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="132924:133302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144050:144430" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="144651:145031" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145255:145638" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="145887:146302" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="152902:153065" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="202569:202750" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="203104:203492" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212099:212280" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="212634:213022" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="215705:216072" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="216281:216456" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="224857:225253" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="225477:225860" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226084:226467" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="226699:227092" placeholder="{...}" />
-            <marker date="1421416500000" expanded="true" signature="227320:227708" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OSInfo.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="2430">
+        <state vertical-scroll-proportion="0.6329913" vertical-offset="1163" max-vertical-offset="2430">
           <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContactPersonalInfoTitle.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Acceleration.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1538" max-vertical-offset="2805">
-          <caret line="167" column="71" selection-start-line="167" selection-start-column="71" selection-end-line="167" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContactPersonalInfo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1613" max-vertical-offset="2880">
-          <caret line="168" column="80" selection-start-line="168" selection-start-column="15" selection-end-line="168" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Contact.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3968" max-vertical-offset="5625">
-          <caret line="289" column="63" selection-start-line="289" selection-start-column="63" selection-end-line="289" selection-end-column="63" />
-          <folding>
-            <marker date="1421416499000" expanded="true" signature="1678:13526" placeholder="..." />
-            <marker date="1421416499000" expanded="true" signature="10016:10412" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="10636:11019" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="11243:11626" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="11858:12251" placeholder="{...}" />
-            <marker date="1421416499000" expanded="true" signature="12479:12867" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseRow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4080505" vertical-offset="413" max-vertical-offset="1680">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
           <folding />
         </state>
       </provider>
