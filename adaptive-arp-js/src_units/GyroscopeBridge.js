@@ -39,29 +39,29 @@ var __extends = this.__extends || function (d, b) {
 };
 ///<reference path="APIRequest.ts"/>
 ///<reference path="APIResponse.ts"/>
-///<reference path="BaseSocialBridge.ts"/>
+///<reference path="BaseSensorBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSocial.ts"/>
-///<reference path="ITwitter.ts"/>
+///<reference path="IBaseSensor.ts"/>
+///<reference path="IGyroscope.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
-       Interface for Managing the Twitter operations
+       Interface for Managing the Giroscope operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
     */
-    var TwitterBridge = (function (_super) {
-        __extends(TwitterBridge, _super);
+    var GyroscopeBridge = (function (_super) {
+        __extends(GyroscopeBridge, _super);
         /**
            Default constructor.
         */
-        function TwitterBridge() {
+        function GyroscopeBridge() {
             _super.call(this);
         }
-        return TwitterBridge;
-    })(Adaptive.BaseSocialBridge);
-    Adaptive.TwitterBridge = TwitterBridge;
+        return GyroscopeBridge;
+    })(Adaptive.BaseSensorBridge);
+    Adaptive.GyroscopeBridge = GyroscopeBridge;
 })(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=TwitterBridge.js.map
+//# sourceMappingURL=GyroscopeBridge.js.map

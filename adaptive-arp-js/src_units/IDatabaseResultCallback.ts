@@ -32,31 +32,44 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIRequest.ts"/>
-///<reference path="APIResponse.ts"/>
-///<reference path="BaseNotificationBridge.ts"/>
-///<reference path="CommonUtil.ts"/>
+///<reference path="Database.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseNotification.ts"/>
-///<reference path="IVibration.ts"/>
+///<reference path="IBaseCallback.ts"/>
+///<reference path="IDatabaseResultCallbackError.ts"/>
+///<reference path="IDatabaseResultCallbackWarning.ts"/>
+
 module Adaptive {
 
      /**
-        Interface for Managing the Vibration operations
+        Interface for Managing the Cloud operations
 
-        @author Carlos Lozano Diez
+        @author Ferran Vila Conesa
         @since ARP1.0
+        @version 1.0
      */
-     export class VibrationBridge extends BaseNotificationBridge implements IVibration {
-
+     export interface IDatabaseResultCallback extends IBaseCallback {
           /**
-             Default constructor.
+             Result callback for error responses
+             @param error Returned error
+             @since ARP1.0
           */
-          constructor() {
-               super();
-          }
+          onError(error:IDatabaseResultCallbackError);
+          /**
+             Result callback for correct responses
+             @param database Returns the database
+             @since ARP1.0
+          */
+          onResult(database:Database);
+          /**
+             Result callback for warning responses
+             @param database Returns the database
+             @param warning  Returned Warning
+             @since ARP1.0
+          */
+          onWarning(database:Database, warning:IDatabaseResultCallbackWarning);
      }
 }
+
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */
