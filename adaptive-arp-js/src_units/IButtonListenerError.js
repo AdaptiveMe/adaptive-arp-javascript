@@ -34,49 +34,37 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
-       Enumeration ContactSocialNetwork
+       Enumeration IButtonListenerError
     */
-    var ContactSocialNetwork = (function () {
-        function ContactSocialNetwork(value) {
+    var IButtonListenerError = (function () {
+        function IButtonListenerError(value) {
             this.value = value;
         }
-        ContactSocialNetwork.prototype.toString = function () {
+        IButtonListenerError.prototype.toString = function () {
             return this.value;
         };
         /**
            Convert JSON parsed object to enumeration.
         */
-        ContactSocialNetwork.toObject = function (object) {
+        IButtonListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Twitter":
-                        return ContactSocialNetwork.Twitter;
-                    case "Facebook":
-                        return ContactSocialNetwork.Facebook;
-                    case "GooglePlus":
-                        return ContactSocialNetwork.GooglePlus;
-                    case "LinkedIn":
-                        return ContactSocialNetwork.LinkedIn;
-                    case "Flickr":
-                        return ContactSocialNetwork.Flickr;
+                    case "Not_Present":
+                        return IButtonListenerError.Not_Present;
                     case "Unknown":
-                        return ContactSocialNetwork.Unknown;
+                        return IButtonListenerError.Unknown;
                     default:
-                        return ContactSocialNetwork.Unknown;
+                        return IButtonListenerError.Unknown;
                 }
             }
             else {
-                return ContactSocialNetwork.Unknown;
+                return IButtonListenerError.Unknown;
             }
         };
-        ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
-        ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
-        ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");
-        ContactSocialNetwork.LinkedIn = new ContactSocialNetwork("LinkedIn");
-        ContactSocialNetwork.Flickr = new ContactSocialNetwork("Flickr");
-        ContactSocialNetwork.Unknown = new ContactSocialNetwork("Unknown");
-        return ContactSocialNetwork;
+        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
+        return IButtonListenerError;
     })();
-    Adaptive.ContactSocialNetwork = ContactSocialNetwork;
+    Adaptive.IButtonListenerError = IButtonListenerError;
 })(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=ContactSocialNetwork.js.map
+//# sourceMappingURL=IButtonListenerError.js.map

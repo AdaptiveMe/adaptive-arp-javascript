@@ -1,5 +1,4 @@
 /// <reference path="APIBean.d.ts" />
-/// <reference path="ContactSocialNetwork.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,60 +34,41 @@ Release:
 */
 declare module Adaptive {
     /**
-       Structure representing the social data elements of a contact.
+       Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno
        @since ARP1.0
        @version 1.0
     */
-    class ContactSocial extends APIBean {
+    class ContactWebsite extends APIBean {
         /**
-           The social network
+           The url of the website
         */
-        socialNetwork: ContactSocialNetwork;
-        /**
-           The profileUrl
-        */
-        profileUrl: string;
+        url: string;
         /**
            Constructor used by the implementation
 
-           @param socialNetwork of the profile
-           @param profileUrl    of the user
+           @param url Url of the website
            @since ARP1.0
         */
-        constructor(socialNetwork: ContactSocialNetwork, profileUrl: string);
+        constructor(url: string);
         /**
-           Returns the social network
+           Returns the url of the website
 
-           @return socialNetwork
+           @return website url
            @since ARP1.0
         */
-        getSocialNetwork(): ContactSocialNetwork;
+        getUrl(): string;
         /**
-           Set the social network
+           Set the url of the website
 
-           @param socialNetwork of the profile
+           @param url Url of the website
            @since ARP1.0
         */
-        setSocialNetwork(socialNetwork: ContactSocialNetwork): void;
-        /**
-           Returns the profile url of the user
-
-           @return profileUrl
-           @since ARP1.0
-        */
-        getProfileUrl(): string;
-        /**
-           Set the profile url of the iser
-
-           @param profileUrl of the user
-           @since ARP1.0
-        */
-        setProfileUrl(profileUrl: string): void;
+        setUrl(url: string): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */
-        static toObject(object: any): ContactSocial;
+        static toObject(object: any): ContactWebsite;
     }
 }

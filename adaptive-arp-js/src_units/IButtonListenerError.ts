@@ -31,23 +31,37 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Enumeration ContactSocialNetwork
-    */
-    class ContactSocialNetwork {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static Twitter: ContactSocialNetwork;
-        static Facebook: ContactSocialNetwork;
-        static GooglePlus: ContactSocialNetwork;
-        static LinkedIn: ContactSocialNetwork;
-        static Flickr: ContactSocialNetwork;
-        static Unknown: ContactSocialNetwork;
-        /**
-           Convert JSON parsed object to enumeration.
-        */
-        static toObject(object: any): ContactSocialNetwork;
-    }
+
+module Adaptive {
+
+     /**
+        Enumeration IButtonListenerError
+     */
+     export class IButtonListenerError {
+
+          constructor(public value:string){}
+          toString(){return this.value;}
+
+          static Not_Present = new IButtonListenerError("Not_Present");
+          static Unknown = new IButtonListenerError("Unknown");
+
+          /**
+             Convert JSON parsed object to enumeration.
+          */
+          static toObject(object : any) : IButtonListenerError {
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Not_Present":
+                              return IButtonListenerError.Not_Present;
+                         case "Unknown":
+                              return IButtonListenerError.Unknown;
+                         default:
+                              return IButtonListenerError.Unknown;
+                    }
+               } else {
+                    return IButtonListenerError.Unknown;
+               }
+          }
+
+     }
 }

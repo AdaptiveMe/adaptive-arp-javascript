@@ -1,7 +1,6 @@
-/// <reference path="BaseCallback.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
 /// <reference path="Contact.d.ts" />
-/// <reference path="IContactResultCallback.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseCallback.d.ts" />
 /// <reference path="IContactResultCallbackError.d.ts" />
 /// <reference path="IContactResultCallbackWarning.d.ts" />
 /**
@@ -40,51 +39,30 @@ Release:
 declare module Adaptive {
     /**
        Interface for Managing the Contact operations
-       Auto-generated implementation of IContactResultCallback specification.
-    */
-    /**
-       ContactResultCallback control dictionary.
-    */
-    var registeredContactResultCallback: Dictionary<IContactResultCallback>;
-    /**
-       ContactResultCallback global callback handlers.
-    */
-    function handleContactResultCallbackError(id: number, error: IContactResultCallbackError): void;
-    function handleContactResultCallbackResult(id: number, contacts: Contact[]): void;
-    function handleContactResultCallbackWarning(id: number, contacts: Contact[], warning: IContactResultCallbackWarning): void;
-    class ContactResultCallback extends BaseCallback implements IContactResultCallback {
-        onErrorFunction: (error: IContactResultCallbackError) => void;
-        onResultFunction: (contacts: Contact[]) => void;
-        onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void;
-        /**
-           Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IContactResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<Contact>
-           @param onWarningFunction Function receiving parameters of type: Array<Contact>, IContactResultCallbackWarning
-        */
-        constructor(onErrorFunction: (error: IContactResultCallbackError) => void, onResultFunction: (contacts: Contact[]) => void, onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void);
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+       @version 1.0
+    */
+    interface IContactResultCallback extends IBaseCallback {
         /**
            This method is called on Error
-
            @param error returned by the platform
            @since ARP1.0
         */
-        onError(error: IContactResultCallbackError): void;
+        onError(error: IContactResultCallbackError): any;
         /**
            This method is called on Result
-
            @param contacts returned by the platform
            @since ARP1.0
         */
-        onResult(contacts: Contact[]): void;
+        onResult(contacts: Contact[]): any;
         /**
            This method is called on Warning
-
            @param contacts returned by the platform
            @param warning  returned by the platform
            @since ARP1.0
         */
-        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): void;
+        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): any;
     }
 }
