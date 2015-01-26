@@ -1,5 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseMedia.d.ts" />
+/// <reference path="IBaseCommerce.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Audio purposes
+       Interface for Managing the Store operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IAudio extends IBaseMedia {
+    interface IStore extends IBaseCommerce {
     }
 }

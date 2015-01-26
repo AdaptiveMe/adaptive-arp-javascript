@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseApplication.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,14 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Analytics purposes
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface IAnalytics extends IBaseApplication {
-    }
-}
+///<reference path="IAdaptiveRP.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+//# sourceMappingURL=IBaseMedia.js.map

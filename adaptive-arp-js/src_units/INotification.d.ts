@@ -1,5 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseCommerce.d.ts" />
+/// <reference path="IBaseNotification.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Advertising purposes
+       Interface for Managing the Notification operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IAds extends IBaseCommerce {
+    interface INotification extends IBaseNotification {
     }
 }

@@ -1,6 +1,3 @@
-/// <reference path="IAccelerationListener.d.ts" />
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSensor.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -34,31 +31,29 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface defining methods about the acceleration sensor
 
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface IAcceleration extends IBaseSensor {
-        /**
-           Register a new listener that will receive acceleration events.
-           @param listener to be registered.
-           @since ARP1.0
-        */
-        addAccelerationListener(listener: IAccelerationListener): any;
-        /**
-           De-registers an existing listener from receiving acceleration events.
-           @param listener to be registered.
-           @since ARP1.0
-        */
-        removeAccelerationListener(listener: IAccelerationListener): any;
-        /**
-           Removed all existing listeners from receiving acceleration events.
-           @since ARP1.0
-        */
-        removeAccelerationListeners(): any;
-    }
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseMedia.ts"/>
+
+module Adaptive {
+
+     /**
+        Interface for Managing the Video operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+        @version 1.0
+     */
+     export interface IVideo extends IBaseMedia {
+          /**
+             Play url video stream
+             @param url of the video
+             @since ARP1.0
+          */
+          playStream(url:string);
+     }
 }
+
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

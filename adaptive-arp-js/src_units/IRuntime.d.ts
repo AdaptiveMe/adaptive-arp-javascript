@@ -1,5 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseNotification.d.ts" />
+/// <reference path="IBaseSystem.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,23 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Alarm purposes
+       Interface for Managing the Runtime operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IAlarm extends IBaseNotification {
+    interface IRuntime extends IBaseSystem {
+        /**
+           Dismiss the current Application
+           @since ARP1.0
+        */
+        dismissApplication(): any;
+        /**
+           Whether the application dismiss the splash screen successfully or not
+           @return true if the application has dismissed the splash screen;false otherwise
+           @since ARP1.0
+        */
+        dismissSplashScreen(): boolean;
     }
 }

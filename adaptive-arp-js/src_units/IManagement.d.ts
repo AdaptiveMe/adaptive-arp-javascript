@@ -1,4 +1,5 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseApplication.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -34,24 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Master interface for all the Groups and Types of Interfaces os the Project
+       Interface for Managing the Management operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IAdaptiveRP {
-        /**
-           Method that returns the API group of the implementation
-           @return API Group name.
-           @since ARP1.0
-        */
-        getAPIGroup(): IAdaptiveRPGroup;
-        /**
-           Method that returns the API version of the implementation.
-           @return API Version string.
-           @since ARP1.0
-        */
-        getAPIVersion(): string;
+    interface IManagement extends IBaseApplication {
     }
 }

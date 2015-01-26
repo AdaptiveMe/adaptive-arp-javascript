@@ -31,23 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-
 ///<reference path="IAdaptiveRP.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-
-module Adaptive {
-
-     /**
-        Base application for Commerce purposes
-
-        @author Carlos Lozano Diez
-        @since ARP1.0
-        @version 1.0
-     */
-     export interface IBaseCommerce extends IAdaptiveRP {
-     }
-}
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/
+//# sourceMappingURL=IBaseCommunication.js.map
