@@ -31,6 +31,20 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseData.ts"/>
-//# sourceMappingURL=IDataStream.js.map
+declare module Adaptive {
+    /**
+       Enumeration INetworkStatusListenerWarning
+    */
+    class INetworkStatusListenerWarning {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static IpAddressNotAssigned: INetworkStatusListenerWarning;
+        static IpAddressChanged: INetworkStatusListenerWarning;
+        static Unknown: INetworkStatusListenerWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerWarning;
+    }
+}

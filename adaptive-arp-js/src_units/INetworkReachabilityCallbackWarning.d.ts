@@ -33,17 +33,21 @@ Release:
 */
 declare module Adaptive {
     /**
-       Enumeration IFileDataLoadResultCallbackWarning
+       Enumeration INetworkReachabilityCallbackWarning
     */
-    class IFileDataLoadResultCallbackWarning {
+    class INetworkReachabilityCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
-        static ExceedMaximumSize: IFileDataLoadResultCallbackWarning;
-        static Unknown: IFileDataLoadResultCallbackWarning;
+        static IncorrectScheme: INetworkReachabilityCallbackWarning;
+        static NotSecure: INetworkReachabilityCallbackWarning;
+        static NotTrusted: INetworkReachabilityCallbackWarning;
+        static Redirected: INetworkReachabilityCallbackWarning;
+        static NotRegisteredService: INetworkReachabilityCallbackWarning;
+        static Unknown: INetworkReachabilityCallbackWarning;
         /**
            Convert JSON parsed object to enumeration.
         */
-        static toObject(object: any): IFileDataLoadResultCallbackWarning;
+        static toObject(object: any): INetworkReachabilityCallbackWarning;
     }
 }

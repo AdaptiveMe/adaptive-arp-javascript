@@ -35,46 +35,34 @@ Release:
 module Adaptive {
 
      /**
-        Enumeration IFileSystemStorageType
+        Enumeration IServiceMethod
      */
-     export class IFileSystemStorageType {
+     export class IServiceMethod {
 
           constructor(public value:string){}
           toString(){return this.value;}
 
-          static Application = new IFileSystemStorageType("Application");
-          static Document = new IFileSystemStorageType("Document");
-          static Cloud = new IFileSystemStorageType("Cloud");
-          static Protected = new IFileSystemStorageType("Protected");
-          static Cache = new IFileSystemStorageType("Cache");
-          static External = new IFileSystemStorageType("External");
-          static Unknown = new IFileSystemStorageType("Unknown");
+          static Post = new IServiceMethod("Post");
+          static Get = new IServiceMethod("Get");
+          static Unknown = new IServiceMethod("Unknown");
 
           /**
              Convert JSON parsed object to enumeration.
           */
-          static toObject(object : any) : IFileSystemStorageType {
+          static toObject(object : any) : IServiceMethod {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Application":
-                              return IFileSystemStorageType.Application;
-                         case "Document":
-                              return IFileSystemStorageType.Document;
-                         case "Cloud":
-                              return IFileSystemStorageType.Cloud;
-                         case "Protected":
-                              return IFileSystemStorageType.Protected;
-                         case "Cache":
-                              return IFileSystemStorageType.Cache;
-                         case "External":
-                              return IFileSystemStorageType.External;
+                         case "Post":
+                              return IServiceMethod.Post;
+                         case "Get":
+                              return IServiceMethod.Get;
                          case "Unknown":
-                              return IFileSystemStorageType.Unknown;
+                              return IServiceMethod.Unknown;
                          default:
-                              return IFileSystemStorageType.Unknown;
+                              return IServiceMethod.Unknown;
                     }
                } else {
-                    return IFileSystemStorageType.Unknown;
+                    return IServiceMethod.Unknown;
                }
           }
 

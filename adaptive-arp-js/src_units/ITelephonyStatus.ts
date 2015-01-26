@@ -35,34 +35,34 @@ Release:
 module Adaptive {
 
      /**
-        Enumeration IFileSystemType
+        Enumeration ITelephonyStatus
      */
-     export class IFileSystemType {
+     export class ITelephonyStatus {
 
           constructor(public value:string){}
           toString(){return this.value;}
 
-          static Directory = new IFileSystemType("Directory");
-          static File = new IFileSystemType("File");
-          static Unknown = new IFileSystemType("Unknown");
+          static Dialing = new ITelephonyStatus("Dialing");
+          static Failed = new ITelephonyStatus("Failed");
+          static Unknown = new ITelephonyStatus("Unknown");
 
           /**
              Convert JSON parsed object to enumeration.
           */
-          static toObject(object : any) : IFileSystemType {
+          static toObject(object : any) : ITelephonyStatus {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Directory":
-                              return IFileSystemType.Directory;
-                         case "File":
-                              return IFileSystemType.File;
+                         case "Dialing":
+                              return ITelephonyStatus.Dialing;
+                         case "Failed":
+                              return ITelephonyStatus.Failed;
                          case "Unknown":
-                              return IFileSystemType.Unknown;
+                              return ITelephonyStatus.Unknown;
                          default:
-                              return IFileSystemType.Unknown;
+                              return ITelephonyStatus.Unknown;
                     }
                } else {
-                    return IFileSystemType.Unknown;
+                    return ITelephonyStatus.Unknown;
                }
           }
 

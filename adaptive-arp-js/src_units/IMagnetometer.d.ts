@@ -1,3 +1,5 @@
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseSensor.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,21 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Enumeration IFileResultCallbackError
+       Interface for Managing the Magnetometer operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
     */
-    class IFileResultCallbackError {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static FileExists: IFileResultCallbackError;
-        static SourceInexistent: IFileResultCallbackError;
-        static DestionationExists: IFileResultCallbackError;
-        static InsufficientSpace: IFileResultCallbackError;
-        static Unauthorized: IFileResultCallbackError;
-        static Unknown: IFileResultCallbackError;
-        /**
-           Convert JSON parsed object to enumeration.
-        */
-        static toObject(object: any): IFileResultCallbackError;
+    interface IMagnetometer extends IBaseSensor {
     }
 }

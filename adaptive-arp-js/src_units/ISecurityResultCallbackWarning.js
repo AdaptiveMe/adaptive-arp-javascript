@@ -34,52 +34,37 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
-       Enumeration IFileSystemStorageType
+       Enumeration ISecurityResultCallbackWarning
     */
-    var IFileSystemStorageType = (function () {
-        function IFileSystemStorageType(value) {
+    var ISecurityResultCallbackWarning = (function () {
+        function ISecurityResultCallbackWarning(value) {
             this.value = value;
         }
-        IFileSystemStorageType.prototype.toString = function () {
+        ISecurityResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
         /**
            Convert JSON parsed object to enumeration.
         */
-        IFileSystemStorageType.toObject = function (object) {
+        ISecurityResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Application":
-                        return IFileSystemStorageType.Application;
-                    case "Document":
-                        return IFileSystemStorageType.Document;
-                    case "Cloud":
-                        return IFileSystemStorageType.Cloud;
-                    case "Protected":
-                        return IFileSystemStorageType.Protected;
-                    case "Cache":
-                        return IFileSystemStorageType.Cache;
-                    case "External":
-                        return IFileSystemStorageType.External;
+                    case "EntryOverride":
+                        return ISecurityResultCallbackWarning.EntryOverride;
                     case "Unknown":
-                        return IFileSystemStorageType.Unknown;
+                        return ISecurityResultCallbackWarning.Unknown;
                     default:
-                        return IFileSystemStorageType.Unknown;
+                        return ISecurityResultCallbackWarning.Unknown;
                 }
             }
             else {
-                return IFileSystemStorageType.Unknown;
+                return ISecurityResultCallbackWarning.Unknown;
             }
         };
-        IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
-        IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
-        IFileSystemStorageType.Cloud = new IFileSystemStorageType("Cloud");
-        IFileSystemStorageType.Protected = new IFileSystemStorageType("Protected");
-        IFileSystemStorageType.Cache = new IFileSystemStorageType("Cache");
-        IFileSystemStorageType.External = new IFileSystemStorageType("External");
-        IFileSystemStorageType.Unknown = new IFileSystemStorageType("Unknown");
-        return IFileSystemStorageType;
+        ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
+        ISecurityResultCallbackWarning.Unknown = new ISecurityResultCallbackWarning("Unknown");
+        return ISecurityResultCallbackWarning;
     })();
-    Adaptive.IFileSystemStorageType = IFileSystemStorageType;
+    Adaptive.ISecurityResultCallbackWarning = ISecurityResultCallbackWarning;
 })(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=IFileSystemStorageType.js.map
+//# sourceMappingURL=ISecurityResultCallbackWarning.js.map

@@ -31,37 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-
-module Adaptive {
-
-     /**
-        Enumeration IFileListResultCallbackWarning
-     */
-     export class IFileListResultCallbackWarning {
-
-          constructor(public value:string){}
-          toString(){return this.value;}
-
-          static PartialResult = new IFileListResultCallbackWarning("PartialResult");
-          static Unknown = new IFileListResultCallbackWarning("Unknown");
-
-          /**
-             Convert JSON parsed object to enumeration.
-          */
-          static toObject(object : any) : IFileListResultCallbackWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "PartialResult":
-                              return IFileListResultCallbackWarning.PartialResult;
-                         case "Unknown":
-                              return IFileListResultCallbackWarning.Unknown;
-                         default:
-                              return IFileListResultCallbackWarning.Unknown;
-                    }
-               } else {
-                    return IFileListResultCallbackWarning.Unknown;
-               }
-          }
-
-     }
-}
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseData.ts"/>
+//# sourceMappingURL=IInternalStorage.js.map

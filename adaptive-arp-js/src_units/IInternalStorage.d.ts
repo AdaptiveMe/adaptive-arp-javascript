@@ -1,3 +1,5 @@
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseData.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,21 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Enumeration IDatabaseTableResultCallbackError
+       Interface for Managing the Internal Storage operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
     */
-    class IDatabaseTableResultCallbackError {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static NoSpace: IDatabaseTableResultCallbackError;
-        static ReadOnlyTable: IDatabaseTableResultCallbackError;
-        static SqlException: IDatabaseTableResultCallbackError;
-        static DatabaseNotFound: IDatabaseTableResultCallbackError;
-        static NoTableFound: IDatabaseTableResultCallbackError;
-        static Unknown: IDatabaseTableResultCallbackError;
-        /**
-           Convert JSON parsed object to enumeration.
-        */
-        static toObject(object: any): IDatabaseTableResultCallbackError;
+    interface IInternalStorage extends IBaseData {
     }
 }

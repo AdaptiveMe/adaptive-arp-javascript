@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseData.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,14 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Managing the DataStream operations
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
-    */
-    interface IDataStream extends IBaseData {
-    }
-}
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseSocial.ts"/>
+//# sourceMappingURL=IGooglePlus.js.map

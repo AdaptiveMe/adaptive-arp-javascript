@@ -31,43 +31,19 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-var Adaptive;
-(function (Adaptive) {
+declare module Adaptive {
     /**
-       Enumeration IFileSystemType
+       Enumeration ISecurityResultCallbackWarning
     */
-    var IFileSystemType = (function () {
-        function IFileSystemType(value) {
-            this.value = value;
-        }
-        IFileSystemType.prototype.toString = function () {
-            return this.value;
-        };
+    class ISecurityResultCallbackWarning {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static EntryOverride: ISecurityResultCallbackWarning;
+        static Unknown: ISecurityResultCallbackWarning;
         /**
            Convert JSON parsed object to enumeration.
         */
-        IFileSystemType.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Directory":
-                        return IFileSystemType.Directory;
-                    case "File":
-                        return IFileSystemType.File;
-                    case "Unknown":
-                        return IFileSystemType.Unknown;
-                    default:
-                        return IFileSystemType.Unknown;
-                }
-            }
-            else {
-                return IFileSystemType.Unknown;
-            }
-        };
-        IFileSystemType.Directory = new IFileSystemType("Directory");
-        IFileSystemType.File = new IFileSystemType("File");
-        IFileSystemType.Unknown = new IFileSystemType("Unknown");
-        return IFileSystemType;
-    })();
-    Adaptive.IFileSystemType = IFileSystemType;
-})(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=IFileSystemType.js.map
+        static toObject(object: any): ISecurityResultCallbackWarning;
+    }
+}

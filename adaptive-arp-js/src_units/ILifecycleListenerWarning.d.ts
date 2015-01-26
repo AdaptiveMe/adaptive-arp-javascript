@@ -1,6 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSensor.d.ts" />
-/// <reference path="IGeolocationListener.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -36,29 +33,18 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Geolocation operations
-
-       @author Francisco Javier Martin Bueno
-       @since ARP1.0
-       @version 1.0
+       Enumeration ILifecycleListenerWarning
     */
-    interface IGeolocation extends IBaseSensor {
+    class ILifecycleListenerWarning {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static MemoryLow: ILifecycleListenerWarning;
+        static BatteryLow: ILifecycleListenerWarning;
+        static Unknown: ILifecycleListenerWarning;
         /**
-           Register a new listener that will receive geolocation events.
-           @param listener to be registered.
-           @since ARP1.0
+           Convert JSON parsed object to enumeration.
         */
-        addGeolocationListener(listener: IGeolocationListener): any;
-        /**
-           De-registers an existing listener from receiving geolocation events.
-           @param listener to be registered.
-           @since ARP1.0
-        */
-        removeGeolocationListener(listener: IGeolocationListener): any;
-        /**
-           Removed all existing listeners from receiving geolocation events.
-           @since ARP1.0
-        */
-        removeGeolocationListeners(): any;
+        static toObject(object: any): ILifecycleListenerWarning;
     }
 }

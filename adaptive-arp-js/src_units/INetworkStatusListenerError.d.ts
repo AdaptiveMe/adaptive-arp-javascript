@@ -31,6 +31,20 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSocial.ts"/>
-//# sourceMappingURL=IFacebook.js.map
+declare module Adaptive {
+    /**
+       Enumeration INetworkStatusListenerError
+    */
+    class INetworkStatusListenerError {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static NoPermission: INetworkStatusListenerError;
+        static Unreachable: INetworkStatusListenerError;
+        static Unknown: INetworkStatusListenerError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): INetworkStatusListenerError;
+    }
+}

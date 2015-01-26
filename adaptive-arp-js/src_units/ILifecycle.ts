@@ -32,51 +32,43 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="DeviceInfo.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSystem.ts"/>
-///<reference path="IButtonListener.ts"/>
-///<reference path="Locale.ts"/>
+///<reference path="IBaseApplication.ts"/>
+///<reference path="ILifecycleListener.ts"/>
 
 module Adaptive {
 
      /**
-        Interface for Managing the Device operations
+        Interface for Managing the Lifecycle listeners
 
-        @author Francisco Javier Martin Bueno
+        @author Carlos Lozano Diez
         @since ARP1.0
         @version 1.0
      */
-     export interface IDevice extends IBaseSystem {
+     export interface ILifecycle extends IBaseApplication {
           /**
-             Register a new listener that will receive button events.
-             @param listener to be registered.
+             Add the listener for the lifecycle of the app
+             @param listener Lifecycle listener
              @since ARP1.0
           */
-          addButtonListener(listener:IButtonListener);
+          addLifecycleListener(listener:ILifecycleListener);
           /**
-             Returns the device information for the current device executing the runtime.
-             @return DeviceInfo for the current device.
+             Whether the application is in background or not
+             @return true if the application is in background;false otherwise
              @since ARP1.0
           */
-          getDeviceInfo() : DeviceInfo;
+          isBackground() : boolean;
           /**
-             Gets the current Locale for the device.
-             @return The current Locale information.
+             Un-registers an existing listener from receiving lifecycle events.
+             @param listener Lifecycle listener
              @since ARP1.0
           */
-          getLocaleCurrent() : Locale;
+          removeLifecycleListener(listener:ILifecycleListener);
           /**
-             De-registers an existing listener from receiving button events.
-             @param listener to be removed.
+             Removes all existing listeners from receiving lifecycle events.
              @since ARP1.0
           */
-          removeButtonListener(listener:IButtonListener);
-          /**
-             Removed all existing listeners from receiving button events.
-             @since ARP1.0
-          */
-          removeButtonListeners();
+          removeLifecycleListeners();
      }
 }
 
