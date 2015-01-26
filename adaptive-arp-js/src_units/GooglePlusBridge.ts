@@ -1,10 +1,3 @@
-/// <reference path="APIRequest.d.ts" />
-/// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseApplicationBridge.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseApplication.d.ts" />
-/// <reference path="ISettings.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -38,17 +31,32 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Interface for Managing the Settings operations
 
-       @author Carlos Lozano Diez
-       @since ARP1.0
-    */
-    class SettingsBridge extends BaseApplicationBridge implements ISettings {
-        /**
-           Default constructor.
-        */
-        constructor();
-    }
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseSocialBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseSocial.ts"/>
+///<reference path="IGooglePlus.ts"/>
+module Adaptive {
+
+     /**
+        Interface for Managing the Google Plus operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+     */
+     export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
+
+          /**
+             Default constructor.
+          */
+          constructor() {
+               super();
+          }
+     }
 }
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/

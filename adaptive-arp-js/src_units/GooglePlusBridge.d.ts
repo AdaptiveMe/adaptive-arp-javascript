@@ -1,10 +1,10 @@
 /// <reference path="APIRequest.d.ts" />
 /// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseReaderBridge.d.ts" />
+/// <reference path="BaseSocialBridge.d.ts" />
 /// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseReader.d.ts" />
-/// <reference path="INFC.d.ts" />
+/// <reference path="IBaseSocial.d.ts" />
+/// <reference path="IGooglePlus.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -40,12 +40,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the NFC operations
+       Interface for Managing the Google Plus operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
     */
-    class NFCBridge extends BaseReaderBridge implements INFC {
+    class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
         /**
            Default constructor.
         */

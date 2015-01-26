@@ -34,20 +34,20 @@ Release:
 
 ///<reference path="APIRequest.ts"/>
 ///<reference path="APIResponse.ts"/>
-///<reference path="BaseReaderBridge.ts"/>
+///<reference path="BaseCommerceBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseReader.ts"/>
-///<reference path="IOCR.ts"/>
+///<reference path="IBaseCommerce.ts"/>
+///<reference path="IWallet.ts"/>
 module Adaptive {
 
      /**
-        Interface for Managing the OCR operations
+        Interface for Managing the Wallet operations
 
         @author Carlos Lozano Diez
         @since ARP1.0
      */
-     export class OCRBridge extends BaseReaderBridge implements IOCR {
+     export class WalletBridge extends BaseCommerceBridge implements IWallet {
 
           /**
              Default constructor.

@@ -32,31 +32,69 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIRequest.ts"/>
-///<reference path="APIResponse.ts"/>
-///<reference path="BaseSecurityBridge.ts"/>
-///<reference path="CommonUtil.ts"/>
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSecurity.ts"/>
-///<reference path="IOAuth.ts"/>
+///<reference path="APIBean.ts"/>
+
 module Adaptive {
 
      /**
-        Interface for Managing the OAuth operations
+        Structure representing the internal unique identifier data elements of a contact.
 
-        @author Carlos Lozano Diez
+        @author Francisco Javier Martin Bueno
         @since ARP1.0
+        @version 1.0
      */
-     export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
+     export class ContactUid extends APIBean {
 
           /**
-             Default constructor.
+             The id of the Contact
           */
-          constructor() {
+          contactId : string;
+          /**
+             Constructor used by implementation to set the Contact id.
+
+             @param contactId Internal unique contact id.
+             @since ARP1.0
+          */
+          constructor(contactId: string) {
                super();
+               this.contactId = contactId;
           }
+
+          /**
+             Returns the contact id
+
+             @return Contactid Internal unique contact id.
+             @since ARP1.0
+          */
+          getContactId() : string {
+               return this.contactId;
+          }
+
+          /**
+             Set the id of the Contact
+
+             @param contactId Internal unique contact id.
+             @since ARP1.0
+          */
+          setContactId(contactId: string) {
+               this.contactId = contactId;
+          }
+
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : ContactUid {
+               var result : ContactUid = new ContactUid(null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+
+               return result;
+          }
+
      }
 }
+
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */

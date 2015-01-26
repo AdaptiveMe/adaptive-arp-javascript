@@ -32,31 +32,69 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIRequest.ts"/>
-///<reference path="APIResponse.ts"/>
-///<reference path="BaseCommunicationBridge.ts"/>
-///<reference path="CommonUtil.ts"/>
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseCommunication.ts"/>
-///<reference path="ISocket.ts"/>
+///<reference path="APIBean.ts"/>
+
 module Adaptive {
 
      /**
-        Interface for Managing the Socket operations
+        Structure representing the data elements of an email addressee.
 
-        @author Carlos Lozano Diez
+        @author Francisco Javier Martin Bueno
         @since ARP1.0
+        @version 1.0
      */
-     export class SocketBridge extends BaseCommunicationBridge implements ISocket {
+     export class EmailAddress extends APIBean {
 
           /**
-             Default constructor.
+             The Email address
           */
-          constructor() {
+          address : string;
+          /**
+             Constructor used by implementation
+
+             @param address of the Email
+             @since ARP1.0
+          */
+          constructor(address: string) {
                super();
+               this.address = address;
           }
+
+          /**
+             Returns the email address
+
+             @return address of the Email
+             @since ARP1.0
+          */
+          getAddress() : string {
+               return this.address;
+          }
+
+          /**
+             Set the Email address
+
+             @param address of the Email
+             @since ARP1.0
+          */
+          setAddress(address: string) {
+               this.address = address;
+          }
+
+          /**
+             Convert JSON parsed object to typed equivalent.
+          */
+          static toObject(object : any) : EmailAddress {
+               var result : EmailAddress = new EmailAddress(null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.address!=null) result.address = object.address;
+
+               return result;
+          }
+
      }
 }
+
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */

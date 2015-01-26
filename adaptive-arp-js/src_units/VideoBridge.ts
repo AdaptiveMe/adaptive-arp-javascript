@@ -34,26 +34,51 @@ Release:
 
 ///<reference path="APIRequest.ts"/>
 ///<reference path="APIResponse.ts"/>
-///<reference path="BaseApplicationBridge.ts"/>
+///<reference path="BaseMediaBridge.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseApplication.ts"/>
-///<reference path="ISettings.ts"/>
+///<reference path="IBaseMedia.ts"/>
+///<reference path="IVideo.ts"/>
 module Adaptive {
 
      /**
-        Interface for Managing the Settings operations
+        Interface for Managing the Video operations
 
         @author Carlos Lozano Diez
         @since ARP1.0
      */
-     export class SettingsBridge extends BaseApplicationBridge implements ISettings {
+     export class VideoBridge extends BaseMediaBridge implements IVideo {
 
           /**
              Default constructor.
           */
           constructor() {
                super();
+          }
+
+          /**
+             Play url video stream
+
+             @param url of the video
+             @since ARP1.0
+          */
+          playStream(url : string) : void {
+               // Create and populate API request.
+               var arParams : string[] = [];
+               arParams.push(JSON.stringify(url));
+               var apiRequest : APIRequest = new APIRequest("IVideo","playStream",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
+               // Create and send JSON request.
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.send(JSON.stringify(apiRequest));
+               // Check response.
+               if (xhr.status == 200 ) {
+               } else {
+                    console.error("ERROR: "+xhr.status+" sending 'VideoBridge.playStream' request.");
+               }
           }
      }
 }

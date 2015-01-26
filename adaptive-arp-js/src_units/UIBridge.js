@@ -1,10 +1,3 @@
-/// <reference path="APIRequest.d.ts" />
-/// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseCommunicationBridge.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseCommunication.d.ts" />
-/// <reference path="ISocket.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -38,17 +31,37 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseUIBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseUI.ts"/>
+///<reference path="IUI.ts"/>
+var Adaptive;
+(function (Adaptive) {
     /**
-       Interface for Managing the Socket operations
+       Interface for Managing the UI operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
     */
-    class SocketBridge extends BaseCommunicationBridge implements ISocket {
+    var UIBridge = (function (_super) {
+        __extends(UIBridge, _super);
         /**
            Default constructor.
         */
-        constructor();
-    }
-}
+        function UIBridge() {
+            _super.call(this);
+        }
+        return UIBridge;
+    })(Adaptive.BaseUIBridge);
+    Adaptive.UIBridge = UIBridge;
+})(Adaptive || (Adaptive = {}));
+//# sourceMappingURL=UIBridge.js.map

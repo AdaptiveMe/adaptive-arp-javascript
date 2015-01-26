@@ -1,11 +1,3 @@
-/// <reference path="APIRequest.d.ts" />
-/// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseCommunicationBridge.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseCommunication.d.ts" />
-/// <reference path="ITelephony.d.ts" />
-/// <reference path="ITelephonyStatus.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -39,25 +31,37 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="BaseNotificationBridge.ts"/>
+///<reference path="CommonUtil.ts"/>
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseNotification.ts"/>
+///<reference path="IVibration.ts"/>
+var Adaptive;
+(function (Adaptive) {
     /**
-       Interface for Managing the Telephony operations
+       Interface for Managing the Vibration operations
 
-       @author Francisco Javier Martin Bueno
+       @author Carlos Lozano Diez
        @since ARP1.0
     */
-    class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
+    var VibrationBridge = (function (_super) {
+        __extends(VibrationBridge, _super);
         /**
            Default constructor.
         */
-        constructor();
-        /**
-           Invoke a phone call
-
-           @param number to call
-           @return Status of the call
-           @since ARP1.0
-        */
-        call(number: string): ITelephonyStatus;
-    }
-}
+        function VibrationBridge() {
+            _super.call(this);
+        }
+        return VibrationBridge;
+    })(Adaptive.BaseNotificationBridge);
+    Adaptive.VibrationBridge = VibrationBridge;
+})(Adaptive || (Adaptive = {}));
+//# sourceMappingURL=VibrationBridge.js.map
