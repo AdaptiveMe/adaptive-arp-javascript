@@ -31,45 +31,19 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-
-///<reference path="Database.ts"/>
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseCallback.ts"/>
-///<reference path="IDatabaseResultCallbackError.ts"/>
-///<reference path="IDatabaseResultCallbackWarning.ts"/>
-
-module Adaptive {
-
-     /**
-        Interface for Managing the Cloud operations
-
-        @author Ferran Vila Conesa
-        @since ARP1.0
-        @version 1.0
-     */
-     export interface IDatabaseResultCallback extends IBaseCallback {
-          /**
-             Result callback for error responses
-             @param error Returned error
-             @since ARP1.0
-          */
-          onError(error:IDatabaseResultCallbackError);
-          /**
-             Result callback for correct responses
-             @param database Returns the database
-             @since ARP1.0
-          */
-          onResult(database:Database);
-          /**
-             Result callback for warning responses
-             @param database Returns the database
-             @param warning  Returned Warning
-             @since ARP1.0
-          */
-          onWarning(database:Database, warning:IDatabaseResultCallbackWarning);
-     }
+declare module Adaptive {
+    /**
+       Enumeration IFileDataStoreResultCallbackWarning
+    */
+    class IFileDataStoreResultCallbackWarning {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static ExceedMaximumSize: IFileDataStoreResultCallbackWarning;
+        static Unknown: IFileDataStoreResultCallbackWarning;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileDataStoreResultCallbackWarning;
+    }
 }
-
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/

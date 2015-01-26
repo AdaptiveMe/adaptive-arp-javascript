@@ -32,5 +32,5 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseUtil.ts"/>
-//# sourceMappingURL=IConcurrent.js.map
+///<reference path="IBaseData.ts"/>
+//# sourceMappingURL=IDataStream.js.map

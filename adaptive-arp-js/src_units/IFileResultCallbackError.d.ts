@@ -1,5 +1,3 @@
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseUtil.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +33,21 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Cloud operations
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
-       @version 1.0
+       Enumeration IFileResultCallbackError
     */
-    interface ICrypto extends IBaseUtil {
+    class IFileResultCallbackError {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static FileExists: IFileResultCallbackError;
+        static SourceInexistent: IFileResultCallbackError;
+        static DestionationExists: IFileResultCallbackError;
+        static InsufficientSpace: IFileResultCallbackError;
+        static Unauthorized: IFileResultCallbackError;
+        static Unknown: IFileResultCallbackError;
+        /**
+           Convert JSON parsed object to enumeration.
+        */
+        static toObject(object: any): IFileResultCallbackError;
     }
 }

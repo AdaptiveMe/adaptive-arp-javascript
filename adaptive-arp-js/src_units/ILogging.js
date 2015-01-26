@@ -33,4 +33,5 @@ Release:
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseUtil.ts"/>
-//# sourceMappingURL=ICompression.js.map
+///<reference path="ILoggingLogLevel.ts"/>
+//# sourceMappingURL=ILogging.js.map

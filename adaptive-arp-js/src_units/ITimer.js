@@ -31,20 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Enumeration IContactResultCallbackError
-    */
-    class IContactResultCallbackError {
-        value: string;
-        constructor(value: string);
-        toString(): string;
-        static NoPermission: IContactResultCallbackError;
-        static Wrong_Params: IContactResultCallbackError;
-        static Unknown: IContactResultCallbackError;
-        /**
-           Convert JSON parsed object to enumeration.
-        */
-        static toObject(object: any): IContactResultCallbackError;
-    }
-}
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseUtil.ts"/>
+//# sourceMappingURL=ITimer.js.map
