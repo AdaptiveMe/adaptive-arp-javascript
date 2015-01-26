@@ -1,4 +1,3 @@
-/// <reference path="APIBean.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -32,62 +31,64 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIBean.ts"/>
+var Adaptive;
+(function (Adaptive) {
     /**
-       Structure representing the data of a http request or response header.
+       Structure representing the column specification of a data column.
 
-       @author Aryslan
+       @author Ferran Vila Conesa
        @since ARP1.0
        @version 1.0
     */
-    class ServiceHeader extends APIBean {
-        /**
-           Value of the header
-        */
-        data: string;
-        /**
-           Name ot the header
-        */
-        name: string;
+    var DatabaseColumn = (function (_super) {
+        __extends(DatabaseColumn, _super);
         /**
            Constructor with fields
 
-           @param name Name of the header
-           @param data Value of the header
+           @param name Name of the column
            @since ARP1.0
         */
-        constructor(name: string, data: string);
+        function DatabaseColumn(name) {
+            _super.call(this);
+            this.name = name;
+        }
         /**
-           Returns the header value
+           Returns the name of the column.
 
-           @return ServiceHeader value
+           @return The name of the column.
            @since ARP1.0
         */
-        getData(): string;
+        DatabaseColumn.prototype.getName = function () {
+            return this.name;
+        };
         /**
-           Set the header value
+           Sets the name of the column.
 
-           @param data ServiceHeader value
+           @param name The name of the column.
            @since ARP1.0
         */
-        setData(data: string): void;
-        /**
-           Returns the header name
-
-           @return ServiceHeader name
-           @since ARP1.0
-        */
-        getName(): string;
-        /**
-           Set the header name
-
-           @param name Name of the header
-           @since ARP1.0
-        */
-        setName(name: string): void;
+        DatabaseColumn.prototype.setName = function (name) {
+            this.name = name;
+        };
         /**
            Convert JSON parsed object to typed equivalent.
         */
-        static toObject(object: any): ServiceHeader;
-    }
-}
+        DatabaseColumn.toObject = function (object) {
+            var result = new DatabaseColumn(null);
+            // Assign values to bean fields.
+            if (object != null && object.name != null)
+                result.name = object.name;
+            return result;
+        };
+        return DatabaseColumn;
+    })(Adaptive.APIBean);
+    Adaptive.DatabaseColumn = DatabaseColumn;
+})(Adaptive || (Adaptive = {}));
+//# sourceMappingURL=DatabaseColumn.js.map

@@ -1,10 +1,5 @@
-/// <reference path="APIRequest.d.ts" />
-/// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseSystemBridge.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
-/// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSystem.d.ts" />
-/// <reference path="IRuntime.d.ts" />
+/// <reference path="APIBean.d.ts" />
+/// <reference path="ContactSocialNetwork.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -40,28 +35,60 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Runtime operations
+       Structure representing the social data elements of a contact.
 
-       @author Carlos Lozano Diez
+       @author Francisco Javier Martin Bueno
        @since ARP1.0
+       @version 1.0
     */
-    class RuntimeBridge extends BaseSystemBridge implements IRuntime {
+    class ContactSocial extends APIBean {
         /**
-           Default constructor.
+           The social network
         */
-        constructor();
+        socialNetwork: ContactSocialNetwork;
         /**
-           Dismiss the current Application
+           The profileUrl
+        */
+        profileUrl: string;
+        /**
+           Constructor used by the implementation
 
+           @param socialNetwork of the profile
+           @param profileUrl    of the user
            @since ARP1.0
         */
-        dismissApplication(): void;
+        constructor(socialNetwork: ContactSocialNetwork, profileUrl: string);
         /**
-           Whether the application dismiss the splash screen successfully or not
+           Returns the social network
 
-           @return true if the application has dismissed the splash screen;false otherwise
+           @return socialNetwork
            @since ARP1.0
         */
-        dismissSplashScreen(): boolean;
+        getSocialNetwork(): ContactSocialNetwork;
+        /**
+           Set the social network
+
+           @param socialNetwork of the profile
+           @since ARP1.0
+        */
+        setSocialNetwork(socialNetwork: ContactSocialNetwork): void;
+        /**
+           Returns the profile url of the user
+
+           @return profileUrl
+           @since ARP1.0
+        */
+        getProfileUrl(): string;
+        /**
+           Set the profile url of the iser
+
+           @param profileUrl of the user
+           @since ARP1.0
+        */
+        setProfileUrl(profileUrl: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ContactSocial;
     }
 }
