@@ -1,10 +1,5 @@
-/// <reference path="APIRequest.d.ts" />
-/// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseSensorBridge.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseSensor.d.ts" />
-/// <reference path="IGyroscope.d.ts" />
+/// <reference path="IBaseMedia.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -40,15 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Giroscope operations
+       Interface for Audio purposes
 
        @author Carlos Lozano Diez
        @since ARP1.0
+       @version 1.0
     */
-    class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
-        /**
-           Default constructor.
-        */
-        constructor();
+    interface IAudio extends IBaseMedia {
     }
 }

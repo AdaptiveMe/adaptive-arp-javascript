@@ -1,7 +1,6 @@
-/// <reference path="BaseListener.d.ts" />
-/// <reference path="CommonUtil.d.ts" />
 /// <reference path="Geolocation.d.ts" />
-/// <reference path="IGeolocationListener.d.ts" />
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseListener.d.ts" />
 /// <reference path="IGeolocationListenerError.d.ts" />
 /// <reference path="IGeolocationListenerWarning.d.ts" />
 /**
@@ -40,51 +39,30 @@ Release:
 declare module Adaptive {
     /**
        Interface for Managing the Geolocation results
-       Auto-generated implementation of IGeolocationListener specification.
-    */
-    /**
-       GeolocationListener control dictionary.
-    */
-    var registeredGeolocationListener: Dictionary<IGeolocationListener>;
-    /**
-       GeolocationListener global listener handlers.
-    */
-    function handleGeolocationListenerError(id: number, error: IGeolocationListenerError): void;
-    function handleGeolocationListenerResult(id: number, geolocation: Geolocation): void;
-    function handleGeolocationListenerWarning(id: number, geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
-    class GeolocationListener extends BaseListener implements IGeolocationListener {
-        onErrorFunction: (error: IGeolocationListenerError) => void;
-        onResultFunction: (geolocation: Geolocation) => void;
-        onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void;
-        /**
-           Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Geolocation
-           @param onWarningFunction Function receiving parameters of type: Geolocation, IGeolocationListenerWarning
-        */
-        constructor(onErrorFunction: (error: IGeolocationListenerError) => void, onResultFunction: (geolocation: Geolocation) => void, onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void);
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+       @version 1.0
+    */
+    interface IGeolocationListener extends IBaseListener {
         /**
            No data received - error condition, not authorized or hardware not available.
-
            @param error Type of error encountered during reading.
            @since ARP1.0
         */
-        onError(error: IGeolocationListenerError): void;
+        onError(error: IGeolocationListenerError): any;
         /**
            Correct data received.
-
            @param geolocation Geolocation Bean
            @since ARP1.0
         */
-        onResult(geolocation: Geolocation): void;
+        onResult(geolocation: Geolocation): any;
         /**
            Data received with warning - ie. HighDoP
-
            @param geolocation Geolocation Bean
            @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
-        onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
+        onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): any;
     }
 }

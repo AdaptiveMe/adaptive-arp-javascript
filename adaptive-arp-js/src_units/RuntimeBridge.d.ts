@@ -1,12 +1,10 @@
 /// <reference path="APIRequest.d.ts" />
 /// <reference path="APIResponse.d.ts" />
-/// <reference path="BaseApplicationBridge.d.ts" />
+/// <reference path="BaseSystemBridge.d.ts" />
 /// <reference path="CommonUtil.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseApplication.d.ts" />
-/// <reference path="IGlobalization.d.ts" />
-/// <reference path="KeyPair.d.ts" />
-/// <reference path="Locale.d.ts" />
+/// <reference path="IBaseSystem.d.ts" />
+/// <reference path="IRuntime.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -42,46 +40,28 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Globalization results
+       Interface for Managing the Runtime operations
 
-       @author Francisco Javier Martin Bueno
+       @author Carlos Lozano Diez
        @since ARP1.0
     */
-    class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
+    class RuntimeBridge extends BaseSystemBridge implements IRuntime {
         /**
            Default constructor.
         */
         constructor();
         /**
-           Returns the default locale of the application defined in the configuration file
+           Dismiss the current Application
 
-           @return Default Locale of the application
            @since ARP1.0
         */
-        getDefaultLocale(): Locale;
+        dismissApplication(): void;
         /**
-           List of supported locales for the application defined in the configuration file
+           Whether the application dismiss the splash screen successfully or not
 
-           @return List of locales
+           @return true if the application has dismissed the splash screen;false otherwise
            @since ARP1.0
         */
-        getLocaleSupportedDescriptors(): Locale[];
-        /**
-           Gets the text/message corresponding to the given key and locale.
-
-           @param key    to match text
-           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized text.
-           @since ARP1.0
-        */
-        getResourceLiteral(key: string, locale: Locale): string;
-        /**
-           Gets the full application configured literals (key/message pairs) corresponding to the given locale.
-
-           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized texts in the form of an object.
-           @since ARP1.0
-        */
-        getResourceLiterals(locale: Locale): KeyPair[];
+        dismissSplashScreen(): boolean;
     }
 }

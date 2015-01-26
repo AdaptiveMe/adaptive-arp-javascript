@@ -1,3 +1,5 @@
+/// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseSocial.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,32 +33,14 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+declare module Adaptive {
+    /**
+       Interface for Managing the Google Plus operations
 
-///<reference path="APIRequest.ts"/>
-///<reference path="APIResponse.ts"/>
-///<reference path="BaseSocialBridge.ts"/>
-///<reference path="CommonUtil.ts"/>
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSocial.ts"/>
-///<reference path="IGooglePlus.ts"/>
-module Adaptive {
-
-     /**
-        Interface for Managing the Google Plus operations
-
-        @author Carlos Lozano Diez
-        @since ARP1.0
-     */
-     export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
-
-          /**
-             Default constructor.
-          */
-          constructor() {
-               super();
-          }
-     }
+       @author Carlos Lozano Diez
+       @since ARP1.0
+       @version 1.0
+    */
+    interface IGooglePlus extends IBaseSocial {
+    }
 }
-/**
-------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
-*/
