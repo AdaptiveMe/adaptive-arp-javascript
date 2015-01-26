@@ -1,5 +1,5 @@
+/// <reference path="IAdaptiveRP.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
-/// <reference path="IBaseMedia.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Interface for Managing the camera operations
+       Base application for Communication purposes
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface ICamera extends IBaseMedia {
+    interface IBaseCommunication extends IAdaptiveRP {
     }
 }

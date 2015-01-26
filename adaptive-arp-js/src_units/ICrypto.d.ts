@@ -1,5 +1,5 @@
-/// <reference path="IAdaptiveRP.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
+/// <reference path="IBaseUtil.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -35,12 +35,12 @@ Release:
 */
 declare module Adaptive {
     /**
-       Base application for PIM purposes
+       Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
     */
-    interface IBasePIM extends IAdaptiveRP {
+    interface ICrypto extends IBaseUtil {
     }
 }

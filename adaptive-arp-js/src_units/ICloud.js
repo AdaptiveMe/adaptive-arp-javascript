@@ -31,6 +31,6 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="IAdaptiveRP.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
-//# sourceMappingURL=IBaseMedia.js.map
+///<reference path="IBaseData.ts"/>
+//# sourceMappingURL=ICloud.js.map

@@ -31,40 +31,20 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-var Adaptive;
-(function (Adaptive) {
+declare module Adaptive {
     /**
-       Enumeration IButtonListenerError
+       Enumeration IContactResultCallbackError
     */
-    var IButtonListenerError = (function () {
-        function IButtonListenerError(value) {
-            this.value = value;
-        }
-        IButtonListenerError.prototype.toString = function () {
-            return this.value;
-        };
+    class IContactResultCallbackError {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        static NoPermission: IContactResultCallbackError;
+        static Wrong_Params: IContactResultCallbackError;
+        static Unknown: IContactResultCallbackError;
         /**
            Convert JSON parsed object to enumeration.
         */
-        IButtonListenerError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Not_Present":
-                        return IButtonListenerError.Not_Present;
-                    case "Unknown":
-                        return IButtonListenerError.Unknown;
-                    default:
-                        return IButtonListenerError.Unknown;
-                }
-            }
-            else {
-                return IButtonListenerError.Unknown;
-            }
-        };
-        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
-        IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
-        return IButtonListenerError;
-    })();
-    Adaptive.IButtonListenerError = IButtonListenerError;
-})(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=IButtonListenerError.js.map
+        static toObject(object: any): IContactResultCallbackError;
+    }
+}

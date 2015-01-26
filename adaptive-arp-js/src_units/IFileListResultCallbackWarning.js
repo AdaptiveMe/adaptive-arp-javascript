@@ -34,43 +34,37 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
-       Enumeration ICapabilitiesButton
+       Enumeration IFileListResultCallbackWarning
     */
-    var ICapabilitiesButton = (function () {
-        function ICapabilitiesButton(value) {
+    var IFileListResultCallbackWarning = (function () {
+        function IFileListResultCallbackWarning(value) {
             this.value = value;
         }
-        ICapabilitiesButton.prototype.toString = function () {
+        IFileListResultCallbackWarning.prototype.toString = function () {
             return this.value;
         };
         /**
            Convert JSON parsed object to enumeration.
         */
-        ICapabilitiesButton.toObject = function (object) {
+        IFileListResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "HomeButton":
-                        return ICapabilitiesButton.HomeButton;
-                    case "BackButton":
-                        return ICapabilitiesButton.BackButton;
-                    case "OptionButton":
-                        return ICapabilitiesButton.OptionButton;
+                    case "PartialResult":
+                        return IFileListResultCallbackWarning.PartialResult;
                     case "Unknown":
-                        return ICapabilitiesButton.Unknown;
+                        return IFileListResultCallbackWarning.Unknown;
                     default:
-                        return ICapabilitiesButton.Unknown;
+                        return IFileListResultCallbackWarning.Unknown;
                 }
             }
             else {
-                return ICapabilitiesButton.Unknown;
+                return IFileListResultCallbackWarning.Unknown;
             }
         };
-        ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
-        ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
-        ICapabilitiesButton.OptionButton = new ICapabilitiesButton("OptionButton");
-        ICapabilitiesButton.Unknown = new ICapabilitiesButton("Unknown");
-        return ICapabilitiesButton;
+        IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
+        IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
+        return IFileListResultCallbackWarning;
     })();
-    Adaptive.ICapabilitiesButton = ICapabilitiesButton;
+    Adaptive.IFileListResultCallbackWarning = IFileListResultCallbackWarning;
 })(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=ICapabilitiesButton.js.map
+//# sourceMappingURL=IFileListResultCallbackWarning.js.map

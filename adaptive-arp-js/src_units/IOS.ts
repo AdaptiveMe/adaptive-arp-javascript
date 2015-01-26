@@ -32,42 +32,29 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="IAdaptiveRPGroup.ts"/>
+///<reference path="IBaseSystem.ts"/>
+///<reference path="OSInfo.ts"/>
+
 module Adaptive {
 
      /**
-        Enumeration ICapabilitiesButton
+        Interface for Managing the OS operations
+
+        @author Carlos Lozano Diez
+        @since ARP1.0
+        @version 1.0
      */
-     export class ICapabilitiesButton {
-
-          constructor(public value:string){}
-          toString(){return this.value;}
-
-          static HomeButton = new ICapabilitiesButton("HomeButton");
-          static BackButton = new ICapabilitiesButton("BackButton");
-          static OptionButton = new ICapabilitiesButton("OptionButton");
-          static Unknown = new ICapabilitiesButton("Unknown");
-
+     export interface IOS extends IBaseSystem {
           /**
-             Convert JSON parsed object to enumeration.
+             Returns the OSInfo for the current operating system.
+             @return OSInfo with name, version and vendor of the OS.
+             @since ARP1.0
           */
-          static toObject(object : any) : ICapabilitiesButton {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HomeButton":
-                              return ICapabilitiesButton.HomeButton;
-                         case "BackButton":
-                              return ICapabilitiesButton.BackButton;
-                         case "OptionButton":
-                              return ICapabilitiesButton.OptionButton;
-                         case "Unknown":
-                              return ICapabilitiesButton.Unknown;
-                         default:
-                              return ICapabilitiesButton.Unknown;
-                    }
-               } else {
-                    return ICapabilitiesButton.Unknown;
-               }
-          }
-
+          getOSInfo() : OSInfo;
      }
 }
+
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
