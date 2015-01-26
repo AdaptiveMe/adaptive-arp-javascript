@@ -1,3 +1,4 @@
+/// <reference path="APIBean.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,64 +32,43 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-///<reference path="APIBean.ts"/>
-var Adaptive;
-(function (Adaptive) {
+declare module Adaptive {
     /**
-       Structure representing the column specification of a data column.
+       Structure representing the data elements of an email addressee.
 
-       @author Ferran Vila Conesa
+       @author Francisco Javier Martin Bueno
        @since ARP1.0
        @version 1.0
     */
-    var DatabaseColumn = (function (_super) {
-        __extends(DatabaseColumn, _super);
+    class EmailAddress extends APIBean {
         /**
-           Constructor with fields
+           The Email address
+        */
+        address: string;
+        /**
+           Constructor used by implementation
 
-           @param name Name of the column
+           @param address of the Email
            @since ARP1.0
         */
-        function DatabaseColumn(name) {
-            _super.call(this);
-            this.name = name;
-        }
+        constructor(address: string);
         /**
-           Returns the name of the column.
+           Returns the email address
 
-           @return The name of the column.
+           @return address of the Email
            @since ARP1.0
         */
-        DatabaseColumn.prototype.getName = function () {
-            return this.name;
-        };
+        getAddress(): string;
         /**
-           Sets the name of the column.
+           Set the Email address
 
-           @param name The name of the column.
+           @param address of the Email
            @since ARP1.0
         */
-        DatabaseColumn.prototype.setName = function (name) {
-            this.name = name;
-        };
+        setAddress(address: string): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */
-        DatabaseColumn.toObject = function (object) {
-            var result = new DatabaseColumn(null);
-            // Assign values to bean fields.
-            if (object != null && object.name != null)
-                result.name = object.name;
-            return result;
-        };
-        return DatabaseColumn;
-    })(Adaptive.APIBean);
-    Adaptive.DatabaseColumn = DatabaseColumn;
-})(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=DatabaseColumn.js.map
+        static toObject(object: any): EmailAddress;
+    }
+}

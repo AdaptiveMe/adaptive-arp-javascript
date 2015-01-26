@@ -1,4 +1,3 @@
-/// <reference path="APIBean.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -32,43 +31,34 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-declare module Adaptive {
-    /**
-       Structure representing the website data elements of a contact.
 
-       @author Francisco Javier Martin Bueno
-       @since ARP1.0
-       @version 1.0
-    */
-    class ContactWebsite extends APIBean {
-        /**
-           The url of the website
-        */
-        url: string;
-        /**
-           Constructor used by the implementation
+///<reference path="IAdaptiveRPGroup.ts"/>
 
-           @param url Url of the website
-           @since ARP1.0
-        */
-        constructor(url: string);
-        /**
-           Returns the url of the website
+module Adaptive {
 
-           @return website url
-           @since ARP1.0
-        */
-        getUrl(): string;
-        /**
-           Set the url of the website
+     /**
+        Master interface for all the Groups and Types of Interfaces os the Project
 
-           @param url Url of the website
-           @since ARP1.0
-        */
-        setUrl(url: string): void;
-        /**
-           Convert JSON parsed object to typed equivalent.
-        */
-        static toObject(object: any): ContactWebsite;
-    }
+        @author Carlos Lozano Diez
+        @since ARP1.0
+        @version 1.0
+     */
+     export interface IAdaptiveRP {
+          /**
+             Method that returns the API group of the implementation
+             @return API Group name.
+             @since ARP1.0
+          */
+          getAPIGroup() : IAdaptiveRPGroup;
+          /**
+             Method that returns the API version of the implementation.
+             @return API Version string.
+             @since ARP1.0
+          */
+          getAPIVersion() : string;
+     }
 }
+
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
