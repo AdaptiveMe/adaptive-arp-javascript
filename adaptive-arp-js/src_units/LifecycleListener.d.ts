@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of ILifecycleListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredLifecycleListener
+       @member Adaptive
+       @private
        LifecycleListener control dictionary.
     */
     var registeredLifecycleListener: Dictionary<ILifecycleListener>;
     /**
-       LifecycleListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ILifecycleListenerError} error
     */
     function handleLifecycleListenerError(id: number, error: ILifecycleListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+    */
     function handleLifecycleListenerResult(id: number, lifecycle: Lifecycle): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+       @param {Adaptive.ILifecycleListenerWarning} warning
+    */
     function handleLifecycleListenerWarning(id: number, lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;
+    /**
+       @class Adaptive.LifecycleListener
+       @extends Adaptive.BaseListener
+    */
     class LifecycleListener extends BaseListener implements ILifecycleListener {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: ILifecycleListenerError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (lifecycle: Lifecycle) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (lifecycle: Lifecycle, warning: ILifecycleListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         constructor(onErrorFunction: (error: ILifecycleListenerError) => void, onResultFunction: (lifecycle: Lifecycle) => void, onWarningFunction: (lifecycle: Lifecycle, warning: ILifecycleListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: ILifecycleListenerError): void;
         /**
+           @method
            Called when lifecycle changes somehow.
-
-           @param lifecycle Lifecycle element
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @since ARP1.0
         */
         onResult(lifecycle: Lifecycle): void;
         /**
+           @method
            Data received with warning
-
-           @param lifecycle Lifecycle element
-           @param warning   Type of warning encountered during reading.
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
+           @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBrowser
-       @extends Adaptive.IBaseUI
     */
     interface IBrowser extends IBaseUI {
         /**

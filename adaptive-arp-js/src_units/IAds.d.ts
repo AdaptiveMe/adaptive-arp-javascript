@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAds
-       @extends Adaptive.IBaseCommerce
     */
     interface IAds extends IBaseCommerce {
     }

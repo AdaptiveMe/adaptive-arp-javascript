@@ -221,7 +221,11 @@ declare module Adaptive {
         */
         setServiceSession(serviceSession: ServiceSession): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
+           @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         static toObject(object: any): ServiceResponse;
     }

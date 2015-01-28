@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBluetooth
-       @extends Adaptive.IBaseCommunication
     */
     interface IBluetooth extends IBaseCommunication {
     }

@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BasePIMBridge
-       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez

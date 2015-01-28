@@ -42,46 +42,85 @@ declare module Adaptive {
        Auto-generated implementation of IMessagingCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredMessagingCallback
+       @member Adaptive
+       @private
        MessagingCallback control dictionary.
     */
     var registeredMessagingCallback: Dictionary<IMessagingCallback>;
     /**
-       MessagingCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IMessagingCallbackError} error
     */
     function handleMessagingCallbackError(id: number, error: IMessagingCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+    */
     function handleMessagingCallbackResult(id: number, success: boolean): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+       @param {Adaptive.IMessagingCallbackWarning} warning
+    */
     function handleMessagingCallbackWarning(id: number, success: boolean, warning: IMessagingCallbackWarning): void;
+    /**
+       @class Adaptive.MessagingCallback
+       @extends Adaptive.BaseCallback
+    */
     class MessagingCallback extends BaseCallback implements IMessagingCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IMessagingCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (success: boolean) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (success: boolean, warning: IMessagingCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
-           @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: boolean
+           @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
         */
         constructor(onErrorFunction: (error: IMessagingCallbackError) => void, onResultFunction: (success: boolean) => void, onWarningFunction: (success: boolean, warning: IMessagingCallbackWarning) => void);
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IMessagingCallbackError} error error returned by the platform
            @since ARP1.0
         */
         onError(error: IMessagingCallbackError): void;
         /**
+           @method
            This method is called on Result
-
-           @param success true if sent;false otherwise
+           @param {boolean} success success true if sent;false otherwise
            @since ARP1.0
         */
         onResult(success: boolean): void;
         /**
+           @method
            This method is called on Warning
-
-           @param success true if sent;false otherwise
-           @param warning returned by the platform
+           @param {boolean} success success true if sent;false otherwise
+           @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
            @since ARP1.0
         */
         onWarning(success: boolean, warning: IMessagingCallbackWarning): void;

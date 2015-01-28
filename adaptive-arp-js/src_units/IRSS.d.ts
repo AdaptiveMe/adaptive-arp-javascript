@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IRSS
-       @extends Adaptive.IBaseSocial
     */
     interface IRSS extends IBaseSocial {
     }

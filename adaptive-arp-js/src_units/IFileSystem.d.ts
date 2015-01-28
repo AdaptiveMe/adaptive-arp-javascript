@@ -44,7 +44,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IFileSystem
-       @extends Adaptive.IBaseData
     */
     interface IFileSystem extends IBaseData {
         /**

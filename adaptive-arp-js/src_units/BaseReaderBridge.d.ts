@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BaseReaderBridge
-       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez

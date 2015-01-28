@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBaseMedia
-       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseMedia extends IAdaptiveRP {
     }

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IWallet
-       @extends Adaptive.IBaseCommerce
     */
     interface IWallet extends IBaseCommerce {
     }

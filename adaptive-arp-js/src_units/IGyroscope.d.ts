@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IGyroscope
-       @extends Adaptive.IBaseSensor
     */
     interface IGyroscope extends IBaseSensor {
     }

@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IFileDataStoreResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileDataStoreResultCallback
+       @member Adaptive
+       @private
        FileDataStoreResultCallback control dictionary.
     */
     var registeredFileDataStoreResultCallback: Dictionary<IFileDataStoreResultCallback>;
     /**
-       FileDataStoreResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileDataStoreResultCallbackError} error
     */
     function handleFileDataStoreResultCallbackError(id: number, error: IFileDataStoreResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+    */
     function handleFileDataStoreResultCallbackResult(id: number, file: FileDescriptor): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+       @param {Adaptive.IFileDataStoreResultCallbackWarning} warning
+    */
     function handleFileDataStoreResultCallbackWarning(id: number, file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning): void;
+    /**
+       @class Adaptive.FileDataStoreResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class FileDataStoreResultCallback extends BaseCallback implements IFileDataStoreResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IFileDataStoreResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (file: FileDescriptor) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IFileDataStoreResultCallbackError) => void, onResultFunction: (file: FileDescriptor) => void, onWarningFunction: (file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning) => void);
         /**
+           @method
            Error processing data retrieval/storage operation.
-
-           @param error Error condition encountered.
+           @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
            @since ARP1.0
         */
         onError(error: IFileDataStoreResultCallbackError): void;
         /**
+           @method
            Result of data storage operation.
-
-           @param file File reference to stored data.
+           @param {Adaptive.FileDescriptor} file file File reference to stored data.
            @since ARP1.0
         */
         onResult(file: FileDescriptor): void;
         /**
+           @method
            Result with warning of data retrieval/storage operation.
-
-           @param file    File being loaded/stored.
-           @param warning Warning condition encountered.
+           @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
+           @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         onWarning(file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning): void;

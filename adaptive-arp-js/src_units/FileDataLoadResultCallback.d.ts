@@ -42,46 +42,85 @@ declare module Adaptive {
        Auto-generated implementation of IFileDataLoadResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileDataLoadResultCallback
+       @member Adaptive
+       @private
        FileDataLoadResultCallback control dictionary.
     */
     var registeredFileDataLoadResultCallback: Dictionary<IFileDataLoadResultCallback>;
     /**
-       FileDataLoadResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileDataLoadResultCallbackError} error
     */
     function handleFileDataLoadResultCallbackError(id: number, error: IFileDataLoadResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+    */
     function handleFileDataLoadResultCallbackResult(id: number, data: number[]): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+       @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
+    */
     function handleFileDataLoadResultCallbackWarning(id: number, data: number[], warning: IFileDataLoadResultCallbackWarning): void;
+    /**
+       @class Adaptive.FileDataLoadResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class FileDataLoadResultCallback extends BaseCallback implements IFileDataLoadResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IFileDataLoadResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (data: number[]) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: number[]) => void, onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void);
         /**
+           @method
            Error processing data retrieval/storage operation.
-
-           @param error Error condition encountered.
+           @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
            @since ARP1.0
         */
         onError(error: IFileDataLoadResultCallbackError): void;
         /**
+           @method
            Result of data retrieval operation.
-
-           @param data Data loaded.
+           @param {number[]} data data Data loaded.
            @since ARP1.0
         */
         onResult(data: number[]): void;
         /**
+           @method
            Result with warning of data retrieval/storage operation.
-
-           @param data    File being loaded.
-           @param warning Warning condition encountered.
+           @param {number[]} data data    File being loaded.
+           @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): void;

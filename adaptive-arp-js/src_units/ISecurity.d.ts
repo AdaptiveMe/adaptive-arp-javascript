@@ -45,7 +45,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ISecurity
-       @extends Adaptive.IBaseSecurity
     */
     interface ISecurity extends IBaseSecurity {
         /**

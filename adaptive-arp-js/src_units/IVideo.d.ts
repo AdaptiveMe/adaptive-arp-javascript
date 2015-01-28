@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IVideo
-       @extends Adaptive.IBaseMedia
     */
     interface IVideo extends IBaseMedia {
         /**

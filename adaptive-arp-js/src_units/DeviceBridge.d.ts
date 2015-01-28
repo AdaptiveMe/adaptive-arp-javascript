@@ -58,13 +58,15 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Register a new listener that will receive button events.
 
-           @param listener to be registered.
+           @param {Adaptive.ButtonListener} listener listener to be registered.
            @since ARP1.0
         */
         addButtonListener(listener: IButtonListener): void;
         /**
+           @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
@@ -72,6 +74,7 @@ declare module Adaptive {
         */
         getDeviceInfo(): DeviceInfo;
         /**
+           @method
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
@@ -79,13 +82,15 @@ declare module Adaptive {
         */
         getLocaleCurrent(): Locale;
         /**
+           @method
            De-registers an existing listener from receiving button events.
 
-           @param listener to be removed.
+           @param {Adaptive.ButtonListener} listener listener to be removed.
            @since ARP1.0
         */
         removeButtonListener(listener: IButtonListener): void;
         /**
+           @method
            Removed all existing listeners from receiving button events.
 
            @since ARP1.0

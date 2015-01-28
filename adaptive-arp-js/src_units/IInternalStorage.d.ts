@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IInternalStorage
-       @extends Adaptive.IBaseData
     */
     interface IInternalStorage extends IBaseData {
     }

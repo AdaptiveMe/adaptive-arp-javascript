@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBaseReader
-       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseReader extends IAdaptiveRP {
     }

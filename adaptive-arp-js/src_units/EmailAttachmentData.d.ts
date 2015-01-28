@@ -156,7 +156,11 @@ declare module Adaptive {
         */
         setSize(size: number): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData.
+           @return {Adaptive.EmailAttachmentData} Wrapped object instance.
         */
         static toObject(object: any): EmailAttachmentData;
     }

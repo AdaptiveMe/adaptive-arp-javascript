@@ -50,7 +50,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ICapabilities
-       @extends Adaptive.IBaseSystem
     */
     interface ICapabilities extends IBaseSystem {
         /**

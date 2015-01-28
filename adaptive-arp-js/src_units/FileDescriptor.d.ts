@@ -146,7 +146,11 @@ doesn't exist, this will be -1. Used internally.
         */
         setSize(size: number): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor.
+           @return {Adaptive.FileDescriptor} Wrapped object instance.
         */
         static toObject(object: any): FileDescriptor;
     }

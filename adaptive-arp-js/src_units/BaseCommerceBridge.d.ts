@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BaseCommerceBridge
-       @extends Adaptive.IBaseCommerce
        Base application for Commerce purposes
 
        @author Carlos Lozano Diez

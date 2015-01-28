@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBasePIM
-       @extends Adaptive.IAdaptiveRP
     */
     interface IBasePIM extends IAdaptiveRP {
     }

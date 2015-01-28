@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IService
-       @extends Adaptive.IBaseCommunication
     */
     interface IService extends IBaseCommunication {
         /**

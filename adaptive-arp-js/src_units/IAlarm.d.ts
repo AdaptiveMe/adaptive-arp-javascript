@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAlarm
-       @extends Adaptive.IBaseNotification
     */
     interface IAlarm extends IBaseNotification {
     }

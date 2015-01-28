@@ -44,7 +44,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAcceleration
-       @extends Adaptive.IBaseSensor
     */
     interface IAcceleration extends IBaseSensor {
         /**

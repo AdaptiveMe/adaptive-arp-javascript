@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IXML
-       @extends Adaptive.IBaseData
     */
     interface IXML extends IBaseData {
     }

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.INFC
-       @extends Adaptive.IBaseReader
     */
     interface INFC extends IBaseReader {
     }

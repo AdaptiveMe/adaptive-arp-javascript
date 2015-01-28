@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IFileDataStoreResultCallback
-       @extends Adaptive.IBaseCallback
     */
     interface IFileDataStoreResultCallback extends IBaseCallback {
         /**

@@ -66,133 +66,148 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Determine whether the current file/folder can be read from.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
         canRead(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Determine whether the current file/folder can be written to.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
         canWrite(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Creates a file with the specified name.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         create(descriptor: FileDescriptor, callback: IFileResultCallback): void;
         /**
+           @method
            Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param cascade    Whether to delete sub-files and sub-folders.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {boolean} cascade cascade    Whether to delete sub-files and sub-folders.
            @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
         delete(descriptor: FileDescriptor, cascade: boolean): boolean;
         /**
+           @method
            Check whether the file/path exists.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
         exists(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Loads the content of the file.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDataLoadResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         getContent(descriptor: FileDescriptor, callback: IFileDataLoadResultCallback): void;
         /**
+           @method
            Returns the file storage type of the file
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
         /**
+           @method
            Returns the file type
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
         /**
+           @method
            Returns the security type of the file
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
         /**
+           @method
            Check whether this is a path of a file.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
         isDirectory(descriptor: FileDescriptor): boolean;
         /**
+           @method
            List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
            @since ARP1.0
         */
         listFiles(descriptor: FileDescriptor, callback: IFileListResultCallback): void;
         /**
+           @method
            List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
-           @param callback   Result of operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {string} regex regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+           @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
            @since ARP1.0
         */
         listFilesForRegex(descriptor: FileDescriptor, regex: string, callback: IFileListResultCallback): void;
         /**
+           @method
            Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param recursive  Whether to create all parent path elements.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {boolean} recursive recursive  Whether to create all parent path elements.
            @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
         mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;
         /**
+           @method
            Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-           @param source      File descriptor of file or folder used for operation as source.
-           @param destination File descriptor of file or folder used for operation as destination.
-           @param createPath  True to create the path if it does not already exist.
-           @param callback    Result of the operation.
-           @param overwrite   True to create the path if it does not already exist.
+           @param {Adaptive.FileDescriptor} source source      File descriptor of file or folder used for operation as source.
+           @param {Adaptive.FileDescriptor} destination destination File descriptor of file or folder used for operation as destination.
+           @param {boolean} createPath createPath  True to create the path if it does not already exist.
+           @param {boolean} overwrite overwrite   True to create the path if it does not already exist.
+           @param {Adaptive.FileResultCallback} callback callback    Result of the operation.
            @since ARP1.0
         */
         move(source: FileDescriptor, destination: FileDescriptor, createPath: boolean, overwrite: boolean, callback: IFileResultCallback): void;
         /**
+           @method
            Sets the content of the file.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param content    Binary content to store in the file.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {number[]} content content    Binary content to store in the file.
+           @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): void;

@@ -44,7 +44,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IMessaging
-       @extends Adaptive.IBasePIM
     */
     interface IMessaging extends IBasePIM {
         /**

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IFacebook
-       @extends Adaptive.IBaseSocial
     */
     interface IFacebook extends IBaseSocial {
     }

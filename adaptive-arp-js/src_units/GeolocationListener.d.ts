@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IGeolocationListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredGeolocationListener
+       @member Adaptive
+       @private
        GeolocationListener control dictionary.
     */
     var registeredGeolocationListener: Dictionary<IGeolocationListener>;
     /**
-       GeolocationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IGeolocationListenerError} error
     */
     function handleGeolocationListenerError(id: number, error: IGeolocationListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+    */
     function handleGeolocationListenerResult(id: number, geolocation: Geolocation): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+       @param {Adaptive.IGeolocationListenerWarning} warning
+    */
     function handleGeolocationListenerWarning(id: number, geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
+    /**
+       @class Adaptive.GeolocationListener
+       @extends Adaptive.BaseListener
+    */
     class GeolocationListener extends BaseListener implements IGeolocationListener {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IGeolocationListenerError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (geolocation: Geolocation) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         constructor(onErrorFunction: (error: IGeolocationListenerError) => void, onResultFunction: (geolocation: Geolocation) => void, onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: IGeolocationListenerError): void;
         /**
+           @method
            Correct data received.
-
-           @param geolocation Geolocation Bean
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
            @since ARP1.0
         */
         onResult(geolocation: Geolocation): void;
         /**
+           @method
            Data received with warning - ie. HighDoP
-
-           @param geolocation Geolocation Bean
-           @param warning     Type of warning encountered during reading.
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
+           @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): void;

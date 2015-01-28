@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBarcode
-       @extends Adaptive.IBaseReader
     */
     interface IBarcode extends IBaseReader {
     }

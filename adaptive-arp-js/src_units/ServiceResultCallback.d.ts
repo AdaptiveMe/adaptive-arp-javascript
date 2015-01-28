@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IServiceResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredServiceResultCallback
+       @member Adaptive
+       @private
        ServiceResultCallback control dictionary.
     */
     var registeredServiceResultCallback: Dictionary<IServiceResultCallback>;
     /**
-       ServiceResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IServiceResultCallbackError} error
     */
     function handleServiceResultCallbackError(id: number, error: IServiceResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+    */
     function handleServiceResultCallbackResult(id: number, response: ServiceResponse): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+       @param {Adaptive.IServiceResultCallbackWarning} warning
+    */
     function handleServiceResultCallbackWarning(id: number, response: ServiceResponse, warning: IServiceResultCallbackWarning): void;
+    /**
+       @class Adaptive.ServiceResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class ServiceResultCallback extends BaseCallback implements IServiceResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IServiceResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (response: ServiceResponse) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (response: ServiceResponse, warning: IServiceResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IServiceResultCallbackError) => void, onResultFunction: (response: ServiceResponse) => void, onWarningFunction: (response: ServiceResponse, warning: IServiceResultCallbackWarning) => void);
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         onError(error: IServiceResultCallbackError): void;
         /**
+           @method
            This method is called on Result
-
-           @param response data
+           @param {Adaptive.ServiceResponse} response response data
            @since ARP1.0
         */
         onResult(response: ServiceResponse): void;
         /**
+           @method
            This method is called on Warning
-
-           @param response data
-           @param warning  returned by the platform
+           @param {Adaptive.ServiceResponse} response response data
+           @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
            @since ARP1.0
         */
         onWarning(response: ServiceResponse, warning: IServiceResultCallbackWarning): void;

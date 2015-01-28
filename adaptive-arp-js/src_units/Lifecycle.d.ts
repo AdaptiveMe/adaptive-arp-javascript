@@ -84,7 +84,11 @@ Possible lifecycle States:
         */
         setState(state: LifecycleState): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
+           @return {Adaptive.Lifecycle} Wrapped object instance.
         */
         static toObject(object: any): Lifecycle;
     }

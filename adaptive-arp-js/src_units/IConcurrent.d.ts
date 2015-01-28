@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IConcurrent
-       @extends Adaptive.IBaseUtil
     */
     interface IConcurrent extends IBaseUtil {
     }

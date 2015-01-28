@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IDisplay
-       @extends Adaptive.IBaseSystem
     */
     interface IDisplay extends IBaseSystem {
     }

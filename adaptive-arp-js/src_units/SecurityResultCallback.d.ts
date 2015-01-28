@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of ISecurityResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredSecurityResultCallback
+       @member Adaptive
+       @private
        SecurityResultCallback control dictionary.
     */
     var registeredSecurityResultCallback: Dictionary<ISecurityResultCallback>;
     /**
-       SecurityResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ISecurityResultCallbackError} error
     */
     function handleSecurityResultCallbackError(id: number, error: ISecurityResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+    */
     function handleSecurityResultCallbackResult(id: number, keyValues: SecureKeyPair[]): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+       @param {Adaptive.ISecurityResultCallbackWarning} warning
+    */
     function handleSecurityResultCallbackWarning(id: number, keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;
+    /**
+       @class Adaptive.SecurityResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class SecurityResultCallback extends BaseCallback implements ISecurityResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: ISecurityResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (keyValues: SecureKeyPair[]) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
         constructor(onErrorFunction: (error: ISecurityResultCallbackError) => void, onResultFunction: (keyValues: SecureKeyPair[]) => void, onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized .
-
-           @param error Error values
+           @param {Adaptive.ISecurityResultCallbackError} error error Error values
            @since ARP1.0
         */
         onError(error: ISecurityResultCallbackError): void;
         /**
+           @method
            Correct data received.
-
-           @param keyValues key and values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @since ARP1.0
         */
         onResult(keyValues: SecureKeyPair[]): void;
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
-
-           @param keyValues key and values
-           @param warning   Warning values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
+           @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
            @since ARP1.0
         */
         onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;

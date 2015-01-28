@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IUpdate
-       @extends Adaptive.IBaseApplication
     */
     interface IUpdate extends IBaseApplication {
     }

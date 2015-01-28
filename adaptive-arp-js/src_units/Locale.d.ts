@@ -93,7 +93,11 @@ declare module Adaptive {
         */
         setLanguage(language: string): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale.
+           @return {Adaptive.Locale} Wrapped object instance.
         */
         static toObject(object: any): Locale;
     }

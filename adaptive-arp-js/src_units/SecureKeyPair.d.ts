@@ -93,7 +93,11 @@ declare module Adaptive {
         */
         setSecureKey(secureKey: string): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair.
+           @return {Adaptive.SecureKeyPair} Wrapped object instance.
         */
         static toObject(object: any): SecureKeyPair;
     }

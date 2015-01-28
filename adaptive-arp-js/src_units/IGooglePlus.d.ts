@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IGooglePlus
-       @extends Adaptive.IBaseSocial
     */
     interface IGooglePlus extends IBaseSocial {
     }

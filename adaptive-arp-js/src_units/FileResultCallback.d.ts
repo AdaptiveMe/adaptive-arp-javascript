@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IFileResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileResultCallback
+       @member Adaptive
+       @private
        FileResultCallback control dictionary.
     */
     var registeredFileResultCallback: Dictionary<IFileResultCallback>;
     /**
-       FileResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileResultCallbackError} error
     */
     function handleFileResultCallbackError(id: number, error: IFileResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} storageFile
+    */
     function handleFileResultCallbackResult(id: number, storageFile: FileDescriptor): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+       @param {Adaptive.IFileResultCallbackWarning} warning
+    */
     function handleFileResultCallbackWarning(id: number, file: FileDescriptor, warning: IFileResultCallbackWarning): void;
+    /**
+       @class Adaptive.FileResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class FileResultCallback extends BaseCallback implements IFileResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IFileResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (storageFile: FileDescriptor) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (file: FileDescriptor, warning: IFileResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IFileResultCallbackError) => void, onResultFunction: (storageFile: FileDescriptor) => void, onWarningFunction: (file: FileDescriptor, warning: IFileResultCallbackWarning) => void);
         /**
+           @method
            On error result of a file operation.
-
-           @param error Error processing the request.
+           @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
            @since ARP1.0
         */
         onError(error: IFileResultCallbackError): void;
         /**
+           @method
            On correct result of a file operation.
-
-           @param storageFile Reference to the resulting file.
+           @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
            @since ARP1.0
         */
         onResult(storageFile: FileDescriptor): void;
         /**
+           @method
            On partial result of a file operation, containing a warning.
-
-           @param file    Reference to the offending file.
-           @param warning Warning processing the request.
+           @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
+           @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
            @since ARP1.0
         */
         onWarning(file: FileDescriptor, warning: IFileResultCallbackWarning): void;

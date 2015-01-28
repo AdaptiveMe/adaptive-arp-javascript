@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ICloud
-       @extends Adaptive.IBaseData
     */
     interface ICloud extends IBaseData {
     }

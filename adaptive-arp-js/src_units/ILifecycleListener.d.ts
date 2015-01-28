@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ILifecycleListener
-       @extends Adaptive.IBaseListener
     */
     interface ILifecycleListener extends IBaseListener {
         /**

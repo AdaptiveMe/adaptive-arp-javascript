@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAnalytics
-       @extends Adaptive.IBaseApplication
     */
     interface IAnalytics extends IBaseApplication {
     }

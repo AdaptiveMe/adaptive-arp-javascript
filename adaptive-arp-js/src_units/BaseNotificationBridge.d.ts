@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BaseNotificationBridge
-       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez

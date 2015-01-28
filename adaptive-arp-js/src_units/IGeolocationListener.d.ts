@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IGeolocationListener
-       @extends Adaptive.IBaseListener
     */
     interface IGeolocationListener extends IBaseListener {
         /**

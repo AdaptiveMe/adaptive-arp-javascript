@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.INetworkInfo
-       @extends Adaptive.IBaseCommunication
     */
     interface INetworkInfo extends IBaseCommunication {
     }

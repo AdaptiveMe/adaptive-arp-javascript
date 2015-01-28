@@ -219,7 +219,11 @@ declare module Adaptive {
         */
         setSecure(secure: boolean): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceCookie.
+           @return {Adaptive.ServiceCookie} Wrapped object instance.
         */
         static toObject(object: any): ServiceCookie;
     }

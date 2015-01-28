@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IDataStream
-       @extends Adaptive.IBaseData
     */
     interface IDataStream extends IBaseData {
     }

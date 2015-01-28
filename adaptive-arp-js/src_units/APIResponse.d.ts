@@ -106,7 +106,11 @@ declare module Adaptive {
         */
         setStatusMessage(statusMessage: string): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIResponse.
+           @return {Adaptive.APIResponse} Wrapped object instance.
         */
         static toObject(object: any): APIResponse;
     }

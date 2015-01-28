@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IDevice
-       @extends Adaptive.IBaseSystem
     */
     interface IDevice extends IBaseSystem {
         /**

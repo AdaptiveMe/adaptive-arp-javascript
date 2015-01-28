@@ -132,7 +132,11 @@ listener.
         */
         setParameters(parameters: string[]): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIRequest.
+           @return {Adaptive.APIRequest} Wrapped object instance.
         */
         static toObject(object: any): APIRequest;
     }

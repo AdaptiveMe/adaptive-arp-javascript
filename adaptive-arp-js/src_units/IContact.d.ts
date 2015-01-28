@@ -48,7 +48,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IContact
-       @extends Adaptive.IBasePIM
     */
     interface IContact extends IBasePIM {
         /**

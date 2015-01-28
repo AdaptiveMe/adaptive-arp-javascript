@@ -55,9 +55,10 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Invoke a phone call
 
-           @param number to call
+           @param {string} number number to call
            @return {Adaptive.ITelephonyStatus} Status of the call
            @since ARP1.0
         */

@@ -57,10 +57,11 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Send an Email
 
-           @param data     Payload of the email
-           @param callback Result callback of the operation
+           @param {Adaptive.Email} data data     Payload of the email
+           @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
            @since ARP1.0
         */
         sendEmail(data: Email, callback: IMessagingCallback): void;

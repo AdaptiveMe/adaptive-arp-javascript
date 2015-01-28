@@ -228,7 +228,11 @@ declare module Adaptive {
         */
         setProfessionalInfo(professionalInfo: ContactProfessionalInfo): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Contact.
+           @return {Adaptive.Contact} Wrapped object instance.
         */
         static toObject(object: any): Contact;
     }

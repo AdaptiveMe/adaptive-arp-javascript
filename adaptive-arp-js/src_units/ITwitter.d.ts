@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ITwitter
-       @extends Adaptive.IBaseSocial
     */
     interface ITwitter extends IBaseSocial {
     }

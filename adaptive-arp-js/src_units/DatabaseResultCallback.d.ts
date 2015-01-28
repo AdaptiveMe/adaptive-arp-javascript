@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IDatabaseResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredDatabaseResultCallback
+       @member Adaptive
+       @private
        DatabaseResultCallback control dictionary.
     */
     var registeredDatabaseResultCallback: Dictionary<IDatabaseResultCallback>;
     /**
-       DatabaseResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDatabaseResultCallbackError} error
     */
     function handleDatabaseResultCallbackError(id: number, error: IDatabaseResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+    */
     function handleDatabaseResultCallbackResult(id: number, database: Database): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+       @param {Adaptive.IDatabaseResultCallbackWarning} warning
+    */
     function handleDatabaseResultCallbackWarning(id: number, database: Database, warning: IDatabaseResultCallbackWarning): void;
+    /**
+       @class Adaptive.DatabaseResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class DatabaseResultCallback extends BaseCallback implements IDatabaseResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IDatabaseResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (database: Database) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (database: Database, warning: IDatabaseResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Database
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Database
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IDatabaseResultCallbackError) => void, onResultFunction: (database: Database) => void, onWarningFunction: (database: Database, warning: IDatabaseResultCallbackWarning) => void);
         /**
+           @method
            Result callback for error responses
-
-           @param error Returned error
+           @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
            @since ARP1.0
         */
         onError(error: IDatabaseResultCallbackError): void;
         /**
+           @method
            Result callback for correct responses
-
-           @param database Returns the database
+           @param {Adaptive.Database} database database Returns the database
            @since ARP1.0
         */
         onResult(database: Database): void;
         /**
+           @method
            Result callback for warning responses
-
-           @param database Returns the database
-           @param warning  Returned Warning
+           @param {Adaptive.Database} database database Returns the database
+           @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
            @since ARP1.0
         */
         onWarning(database: Database, warning: IDatabaseResultCallbackWarning): void;

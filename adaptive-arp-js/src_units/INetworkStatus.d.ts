@@ -44,7 +44,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.INetworkStatus
-       @extends Adaptive.IBaseCommunication
     */
     interface INetworkStatus extends IBaseCommunication {
         /**

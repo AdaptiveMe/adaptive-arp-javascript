@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.INotification
-       @extends Adaptive.IBaseNotification
     */
     interface INotification extends IBaseNotification {
     }

@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BaseApplicationBridge
-       @extends Adaptive.IBaseApplication
        Base application for Application purposes
 
        @author Carlos Lozano Diez

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IMap
-       @extends Adaptive.IBaseUI
     */
     interface IMap extends IBaseUI {
     }

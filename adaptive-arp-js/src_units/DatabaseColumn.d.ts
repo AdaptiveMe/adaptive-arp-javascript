@@ -72,7 +72,11 @@ declare module Adaptive {
         */
         setName(name: string): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn.
+           @return {Adaptive.DatabaseColumn} Wrapped object instance.
         */
         static toObject(object: any): DatabaseColumn;
     }

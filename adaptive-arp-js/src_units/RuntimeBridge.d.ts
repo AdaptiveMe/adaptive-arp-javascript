@@ -54,12 +54,14 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Dismiss the current Application
 
            @since ARP1.0
         */
         dismissApplication(): void;
         /**
+           @method
            Whether the application dismiss the splash screen successfully or not
 
            @return {boolean} true if the application has dismissed the splash screen;false otherwise

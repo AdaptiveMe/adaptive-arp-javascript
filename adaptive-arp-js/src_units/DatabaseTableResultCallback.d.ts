@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IDatabaseTableResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredDatabaseTableResultCallback
+       @member Adaptive
+       @private
        DatabaseTableResultCallback control dictionary.
     */
     var registeredDatabaseTableResultCallback: Dictionary<IDatabaseTableResultCallback>;
     /**
-       DatabaseTableResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDatabaseTableResultCallbackError} error
     */
     function handleDatabaseTableResultCallbackError(id: number, error: IDatabaseTableResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.DatabaseTable} databaseTable
+    */
     function handleDatabaseTableResultCallbackResult(id: number, databaseTable: DatabaseTable): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.DatabaseTable} databaseTable
+       @param {Adaptive.IDatabaseTableResultCallbackWarning} warning
+    */
     function handleDatabaseTableResultCallbackWarning(id: number, databaseTable: DatabaseTable, warning: IDatabaseTableResultCallbackWarning): void;
+    /**
+       @class Adaptive.DatabaseTableResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class DatabaseTableResultCallback extends BaseCallback implements IDatabaseTableResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IDatabaseTableResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (databaseTable: DatabaseTable) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (databaseTable: DatabaseTable, warning: IDatabaseTableResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
-           @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IDatabaseTableResultCallbackError) => void, onResultFunction: (databaseTable: DatabaseTable) => void, onWarningFunction: (databaseTable: DatabaseTable, warning: IDatabaseTableResultCallbackWarning) => void);
         /**
+           @method
            Result callback for error responses
-
-           @param error Returned error
+           @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
            @since ARP1.0
         */
         onError(error: IDatabaseTableResultCallbackError): void;
         /**
+           @method
            Result callback for correct responses
-
-           @param databaseTable Returns the databaseTable
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
            @since ARP1.0
         */
         onResult(databaseTable: DatabaseTable): void;
         /**
+           @method
            Result callback for warning responses
-
-           @param databaseTable Returns the databaseTable
-           @param warning       Returned Warning
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
+           @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
            @since ARP1.0
         */
         onWarning(databaseTable: DatabaseTable, warning: IDatabaseTableResultCallbackWarning): void;

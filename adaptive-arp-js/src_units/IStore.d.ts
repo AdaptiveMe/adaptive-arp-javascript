@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IStore
-       @extends Adaptive.IBaseCommerce
     */
     interface IStore extends IBaseCommerce {
     }

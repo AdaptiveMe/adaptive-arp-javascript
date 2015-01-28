@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IOCR
-       @extends Adaptive.IBaseReader
     */
     interface IOCR extends IBaseReader {
     }

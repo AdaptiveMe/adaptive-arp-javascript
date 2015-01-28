@@ -158,7 +158,11 @@ declare module Adaptive {
         */
         setRowCount(rowCount: number): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable.
+           @return {Adaptive.DatabaseTable} Wrapped object instance.
         */
         static toObject(object: any): DatabaseTable;
     }

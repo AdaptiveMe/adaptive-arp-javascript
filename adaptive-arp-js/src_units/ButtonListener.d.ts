@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of IButtonListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredButtonListener
+       @member Adaptive
+       @private
        ButtonListener control dictionary.
     */
     var registeredButtonListener: Dictionary<IButtonListener>;
     /**
-       ButtonListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IButtonListenerError} error
     */
     function handleButtonListenerError(id: number, error: IButtonListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+    */
     function handleButtonListenerResult(id: number, button: Button): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+       @param {Adaptive.IButtonListenerWarning} warning
+    */
     function handleButtonListenerWarning(id: number, button: Button, warning: IButtonListenerWarning): void;
+    /**
+       @class Adaptive.ButtonListener
+       @extends Adaptive.BaseListener
+    */
     class ButtonListener extends BaseListener implements IButtonListener {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IButtonListenerError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (button: Button) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (button: Button, warning: IButtonListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Button
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         constructor(onErrorFunction: (error: IButtonListenerError) => void, onResultFunction: (button: Button) => void, onWarningFunction: (button: Button, warning: IButtonListenerWarning) => void);
         /**
+           @method
            No data received
-
-           @param error occurred
+           @param {Adaptive.IButtonListenerError} error error occurred
            @since ARP1.0
         */
         onError(error: IButtonListenerError): void;
         /**
+           @method
            Called on button pressed
-
-           @param button pressed
+           @param {Adaptive.Button} button button pressed
            @since ARP1.0
         */
         onResult(button: Button): void;
         /**
+           @method
            Data received with warning
-
-           @param button  pressed
-           @param warning happened
+           @param {Adaptive.Button} button button  pressed
+           @param {Adaptive.IButtonListenerWarning} warning warning happened
            @since ARP1.0
         */
         onWarning(button: Button, warning: IButtonListenerWarning): void;

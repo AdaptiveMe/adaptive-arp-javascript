@@ -61,61 +61,68 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Determines whether a specific hardware button is supported for interaction.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
            @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         hasButtonSupport(type: ICapabilitiesButton): boolean;
         /**
+           @method
            Determines whether a specific Communication capability is supported by
 the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
         /**
+           @method
            Determines whether a specific Data capability is supported by the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasDataSupport(type: ICapabilitiesData): boolean;
         /**
+           @method
            Determines whether a specific Media capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasMediaSupport(type: ICapabilitiesMedia): boolean;
         /**
+           @method
            Determines whether a specific Net capability is supported by the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNetSupport(type: ICapabilitiesNet): boolean;
         /**
+           @method
            Determines whether a specific Notification capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNotificationSupport(type: ICapabilitiesNotification): boolean;
         /**
+           @method
            Determines whether a specific Sensor capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */

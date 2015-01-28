@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IRuntime
-       @extends Adaptive.IBaseSystem
     */
     interface IRuntime extends IBaseSystem {
         /**

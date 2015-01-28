@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ITimer
-       @extends Adaptive.IBaseUtil
     */
     interface ITimer extends IBaseUtil {
     }

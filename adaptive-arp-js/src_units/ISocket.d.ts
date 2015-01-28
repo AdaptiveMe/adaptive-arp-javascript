@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ISocket
-       @extends Adaptive.IBaseCommunication
     */
     interface ISocket extends IBaseCommunication {
     }

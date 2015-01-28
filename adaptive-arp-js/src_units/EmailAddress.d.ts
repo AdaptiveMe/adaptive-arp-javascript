@@ -72,7 +72,11 @@ declare module Adaptive {
         */
         setAddress(address: string): void;
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress.
+           @return {Adaptive.EmailAddress} Wrapped object instance.
         */
         static toObject(object: any): EmailAddress;
     }

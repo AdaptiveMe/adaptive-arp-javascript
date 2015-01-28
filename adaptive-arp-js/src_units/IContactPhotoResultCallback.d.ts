@@ -45,7 +45,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IContactPhotoResultCallback
-       @extends Adaptive.IBaseCallback
     */
     interface IContactPhotoResultCallback extends IBaseCallback {
         /**

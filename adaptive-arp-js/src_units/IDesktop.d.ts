@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IDesktop
-       @extends Adaptive.IBaseUI
     */
     interface IDesktop extends IBaseUI {
     }

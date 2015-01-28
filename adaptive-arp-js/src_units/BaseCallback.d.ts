@@ -38,34 +38,45 @@ declare module Adaptive {
        Base application for Callback purposes
        Auto-generated implementation of IBaseCallback specification.
     */
+    /**
+       @class Adaptive.BaseCallback
+    */
     class BaseCallback implements IBaseCallback {
         /**
+           @property {number}
            Unique id of callback.
         */
         id: number;
         /**
+           @property {Adaptive.IAdaptiveRPGroup}
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @method constructor
            Constructor with callback id.
 
-           @param id  The id of the callback.
+           @param {number} id  The id of the callback.
         */
         constructor(id: number);
         /**
-           Get the listener id.
-           @return {number} long with the identifier of the callback.
+           @method
+           @return {number}
+           Get the callback id.
         */
         getId(): number;
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         getAPIVersion(): string;
     }

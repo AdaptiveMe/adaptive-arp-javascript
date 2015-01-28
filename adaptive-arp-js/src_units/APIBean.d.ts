@@ -49,7 +49,11 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean.
+           @return {Adaptive.APIBean} Wrapped object instance.
         */
         static toObject(object: any): APIBean;
     }

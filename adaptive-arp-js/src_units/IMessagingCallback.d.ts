@@ -45,7 +45,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IMessagingCallback
-       @extends Adaptive.IBaseCallback
     */
     interface IMessagingCallback extends IBaseCallback {
         /**

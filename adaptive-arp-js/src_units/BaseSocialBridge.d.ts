@@ -40,7 +40,6 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.BaseSocialBridge
-       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez

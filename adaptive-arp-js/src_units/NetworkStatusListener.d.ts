@@ -43,46 +43,85 @@ declare module Adaptive {
        Auto-generated implementation of INetworkStatusListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredNetworkStatusListener
+       @member Adaptive
+       @private
        NetworkStatusListener control dictionary.
     */
     var registeredNetworkStatusListener: Dictionary<INetworkStatusListener>;
     /**
-       NetworkStatusListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkStatusListenerError} error
     */
     function handleNetworkStatusListenerError(id: number, error: INetworkStatusListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+    */
     function handleNetworkStatusListenerResult(id: number, network: ICapabilitiesNet): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.INetworkStatusListenerWarning} warning
+    */
     function handleNetworkStatusListenerWarning(id: number, network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+    /**
+       @class Adaptive.NetworkStatusListener
+       @extends Adaptive.BaseListener
+    */
     class NetworkStatusListener extends BaseListener implements INetworkStatusListener {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: INetworkStatusListenerError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (network: ICapabilitiesNet) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (network: ICapabilitiesNet) => void, onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: INetworkStatusListenerError): void;
         /**
+           @method
            Called when network connection changes somehow.
-
-           @param network Change to this network.
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
            @since ARP1.0
         */
         onResult(network: ICapabilitiesNet): void;
         /**
+           @method
            Status received with warning
-
-           @param network Change to this network.
-           @param warning Type of warning encountered during reading.
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;

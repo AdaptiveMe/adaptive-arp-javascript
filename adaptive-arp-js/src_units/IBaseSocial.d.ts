@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBaseSocial
-       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseSocial extends IAdaptiveRP {
     }

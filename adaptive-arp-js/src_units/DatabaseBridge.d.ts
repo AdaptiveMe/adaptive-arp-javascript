@@ -60,74 +60,82 @@ declare module Adaptive {
         */
         constructor();
         /**
+           @method
            Creates a database on default path for every platform.
 
-           @param callback Asynchronous callback
-           @param database Database object to create
+           @param {Adaptive.Database} database database Database object to create
+           @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
            @since ARP1.0
         */
         createDatabase(database: Database, callback: IDatabaseResultCallback): void;
         /**
+           @method
            Creates a databaseTable inside a database for every platform.
 
-           @param database      Database for databaseTable creating.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @param callback      DatabaseTable callback with the response
+           @param {Adaptive.Database} database database      Database for databaseTable creating.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
            @since ARP1.0
         */
         createTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
         /**
+           @method
            Deletes a database on default path for every platform.
 
-           @param database Database object to delete
-           @param callback Asynchronous callback
+           @param {Adaptive.Database} database database Database object to delete
+           @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
            @since ARP1.0
         */
         deleteDatabase(database: Database, callback: IDatabaseResultCallback): void;
         /**
+           @method
            Deletes a databaseTable inside a database for every platform.
 
-           @param database      Database for databaseTable removal.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @param callback      DatabaseTable callback with the response
+           @param {Adaptive.Database} database database      Database for databaseTable removal.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
            @since ARP1.0
         */
         deleteTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
         /**
+           @method
            Executes SQL statement into the given database. The replacements
 should be passed as a parameter
 
-           @param database     The database object reference.
-           @param statement    SQL statement.
-           @param replacements List of SQL statement replacements.
-           @param callback     DatabaseTable callback with the response.
+           @param {Adaptive.Database} database database     The database object reference.
+           @param {string} statement statement    SQL statement.
+           @param {string[]} replacements replacements List of SQL statement replacements.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since ARP1.0
         */
         executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): void;
         /**
+           @method
            Executes SQL transaction (some statements chain) inside given database.
 
-           @param database     The database object reference.
-           @param statements   The statements to be executed during transaction.
-           @param rollbackFlag Indicates if rollback should be performed when any
+           @param {Adaptive.Database} database database     The database object reference.
+           @param {string[]} statements statements   The statements to be executed during transaction.
+           @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                   statement execution fails.
-           @param callback     DatabaseTable callback with the response.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since ARP1.0
         */
         executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): void;
         /**
+           @method
            Checks if database exists by given database name.
 
-           @param database Database Object to check if exists
+           @param {Adaptive.Database} database database Database Object to check if exists
            @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsDatabase(database: Database): boolean;
         /**
+           @method
            Checks if databaseTable exists by given database name.
 
-           @param database      Database for databaseTable consulting.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.Database} database database      Database for databaseTable consulting.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */

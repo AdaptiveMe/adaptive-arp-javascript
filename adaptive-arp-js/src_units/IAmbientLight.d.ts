@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAmbientLight
-       @extends Adaptive.IBaseSensor
     */
     interface IAmbientLight extends IBaseSensor {
     }

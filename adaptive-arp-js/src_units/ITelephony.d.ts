@@ -44,7 +44,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.ITelephony
-       @extends Adaptive.IBaseCommunication
     */
     interface ITelephony extends IBaseCommunication {
         /**

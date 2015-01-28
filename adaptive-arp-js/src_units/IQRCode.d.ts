@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IQRCode
-       @extends Adaptive.IBaseReader
     */
     interface IQRCode extends IBaseReader {
     }

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IVibration
-       @extends Adaptive.IBaseNotification
     */
     interface IVibration extends IBaseNotification {
     }

@@ -42,46 +42,85 @@ declare module Adaptive {
        Auto-generated implementation of IContactPhotoResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredContactPhotoResultCallback
+       @member Adaptive
+       @private
        ContactPhotoResultCallback control dictionary.
     */
     var registeredContactPhotoResultCallback: Dictionary<IContactPhotoResultCallback>;
     /**
-       ContactPhotoResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IContactPhotoResultCallbackError} error
     */
     function handleContactPhotoResultCallbackError(id: number, error: IContactPhotoResultCallbackError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+    */
     function handleContactPhotoResultCallbackResult(id: number, contactPhoto: number[]): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+       @param {Adaptive.IContactPhotoResultCallbackWarning} warning
+    */
     function handleContactPhotoResultCallbackWarning(id: number, contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): void;
+    /**
+       @class Adaptive.ContactPhotoResultCallback
+       @extends Adaptive.BaseCallback
+    */
     class ContactPhotoResultCallback extends BaseCallback implements IContactPhotoResultCallback {
+        /**
+           @private
+           @property
+        */
         onErrorFunction: (error: IContactPhotoResultCallbackError) => void;
+        /**
+           @private
+           @property
+        */
         onResultFunction: (contactPhoto: number[]) => void;
+        /**
+           @private
+           @property
+        */
         onWarningFunction: (contactPhoto: number[], warning: IContactPhotoResultCallbackWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IContactPhotoResultCallbackError) => void, onResultFunction: (contactPhoto: number[]) => void, onWarningFunction: (contactPhoto: number[], warning: IContactPhotoResultCallbackWarning) => void);
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         onError(error: IContactPhotoResultCallbackError): void;
         /**
+           @method
            This method is called on Result
-
-           @param contactPhoto returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
            @since ARP1.0
         */
         onResult(contactPhoto: number[]): void;
         /**
+           @method
            This method is called on Warning
-
-           @param contactPhoto returned by the platform
-           @param warning      returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
            @since ARP1.0
         */
         onWarning(contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): void;

@@ -43,7 +43,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IPrinting
-       @extends Adaptive.IBaseApplication
     */
     interface IPrinting extends IBaseApplication {
     }

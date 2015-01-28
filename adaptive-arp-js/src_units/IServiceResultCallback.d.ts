@@ -46,7 +46,6 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IServiceResultCallback
-       @extends Adaptive.IBaseCallback
     */
     interface IServiceResultCallback extends IBaseCallback {
         /**
