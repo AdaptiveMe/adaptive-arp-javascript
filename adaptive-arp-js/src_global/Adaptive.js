@@ -113,7 +113,11 @@ var Adaptive;
         function APIBean() {
         }
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean.
+           @return {Adaptive.APIBean} Wrapped object instance.
         */
         APIBean.toObject = function (object) {
             var result = new APIBean();
@@ -227,7 +231,11 @@ listener.
             this.parameters = parameters;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIRequest.
+           @return {Adaptive.APIRequest} Wrapped object instance.
         */
         APIRequest.toObject = function (object) {
             var result = new APIRequest(null, null, null, null);
@@ -329,7 +337,11 @@ listener.
             this.statusMessage = statusMessage;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIResponse.
+           @return {Adaptive.APIResponse} Wrapped object instance.
         */
         APIResponse.toObject = function (object) {
             var result = new APIResponse(null, null, null);
@@ -402,7 +414,11 @@ listener.
             this.path = path;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServicePath.
+           @return {Adaptive.ServicePath} Wrapped object instance.
         */
         ServicePath.toObject = function (object) {
             var result = new ServicePath(null, null);
@@ -535,7 +551,11 @@ listener.
             this.z = z;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Acceleration.
+           @return {Adaptive.Acceleration} Wrapped object instance.
         */
         Acceleration.toObject = function (object) {
             var result = new Acceleration(null, null, null, null);
@@ -596,7 +616,11 @@ listener.
             this.type = type;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button.
+           @return {Adaptive.Button} Wrapped object instance.
         */
         Button.toObject = function (object) {
             var result = new Button(null);
@@ -677,7 +701,11 @@ listener.
             this.address = address;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactAddress.
+           @return {Adaptive.ContactAddress} Wrapped object instance.
         */
         ContactAddress.toObject = function (object) {
             var result = new ContactAddress(null, null);
@@ -782,7 +810,11 @@ listener.
             this.primary = primary;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactEmail.
+           @return {Adaptive.ContactEmail} Wrapped object instance.
         */
         ContactEmail.toObject = function (object) {
             var result = new ContactEmail(null, null, null);
@@ -911,7 +943,11 @@ listener.
             this.name = name;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo.
+           @return {Adaptive.ContactPersonalInfo} Wrapped object instance.
         */
         ContactPersonalInfo.toObject = function (object) {
             var result = new ContactPersonalInfo(null, null, null, null);
@@ -998,7 +1034,11 @@ listener.
             this.phone = phone;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPhone.
+           @return {Adaptive.ContactPhone} Wrapped object instance.
         */
         ContactPhone.toObject = function (object) {
             var result = new ContactPhone(null, null);
@@ -1103,7 +1143,11 @@ listener.
             this.jobTitle = jobTitle;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo.
+           @return {Adaptive.ContactProfessionalInfo} Wrapped object instance.
         */
         ContactProfessionalInfo.toObject = function (object) {
             var result = new ContactProfessionalInfo(null, null, null);
@@ -1184,7 +1228,11 @@ listener.
             this.profileUrl = profileUrl;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactSocial.
+           @return {Adaptive.ContactSocial} Wrapped object instance.
         */
         ContactSocial.toObject = function (object) {
             var result = new ContactSocial(null, null);
@@ -1267,7 +1315,11 @@ listener.
             this.tagValue = tagValue;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactTag.
+           @return {Adaptive.ContactTag} Wrapped object instance.
         */
         ContactTag.toObject = function (object) {
             var result = new ContactTag(null, null);
@@ -1324,7 +1376,11 @@ listener.
             this.contactId = contactId;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactUid.
+           @return {Adaptive.ContactUid} Wrapped object instance.
         */
         ContactUid.toObject = function (object) {
             var result = new ContactUid(null);
@@ -1379,7 +1435,11 @@ listener.
             this.url = url;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite.
+           @return {Adaptive.ContactWebsite} Wrapped object instance.
         */
         ContactWebsite.toObject = function (object) {
             var result = new ContactWebsite(null);
@@ -1456,7 +1516,11 @@ listener.
             this.name = name;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Database.
+           @return {Adaptive.Database} Wrapped object instance.
         */
         Database.toObject = function (object) {
             var result = new Database(null, null);
@@ -1513,7 +1577,11 @@ listener.
             this.name = name;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn.
+           @return {Adaptive.DatabaseColumn} Wrapped object instance.
         */
         DatabaseColumn.toObject = function (object) {
             var result = new DatabaseColumn(null);
@@ -1568,7 +1636,11 @@ listener.
             this.values = values;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow.
+           @return {Adaptive.DatabaseRow} Wrapped object instance.
         */
         DatabaseRow.toObject = function (object) {
             var result = new DatabaseRow(null);
@@ -1717,7 +1789,11 @@ listener.
             this.rowCount = rowCount;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable.
+           @return {Adaptive.DatabaseTable} Wrapped object instance.
         */
         DatabaseTable.toObject = function (object) {
             var result = new DatabaseTable(null, null, null, null, null);
@@ -1864,7 +1940,11 @@ be unique for a specific instance of an application on a specific device.
             this.vendor = vendor;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo.
+           @return {Adaptive.DeviceInfo} Wrapped object instance.
         */
         DeviceInfo.toObject = function (object) {
             var result = new DeviceInfo(null, null, null, null);
@@ -2057,7 +2137,11 @@ be unique for a specific instance of an application on a specific device.
             this.toRecipients = toRecipients;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Email.
+           @return {Adaptive.Email} Wrapped object instance.
         */
         Email.toObject = function (object) {
             var result = new Email(null, null, null, null, null, null, null);
@@ -2164,7 +2248,11 @@ be unique for a specific instance of an application on a specific device.
             this.address = address;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress.
+           @return {Adaptive.EmailAddress} Wrapped object instance.
         */
         EmailAddress.toObject = function (object) {
             var result = new EmailAddress(null);
@@ -2307,7 +2395,11 @@ be unique for a specific instance of an application on a specific device.
             this.size = size;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData.
+           @return {Adaptive.EmailAttachmentData} Wrapped object instance.
         */
         EmailAttachmentData.toObject = function (object) {
             var result = new EmailAttachmentData(null, null, null, null, null);
@@ -2467,7 +2559,11 @@ doesn't exist, this will be -1. Used internally.
             this.size = size;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor.
+           @return {Adaptive.FileDescriptor} Wrapped object instance.
         */
         FileDescriptor.toObject = function (object) {
             var result = new FileDescriptor();
@@ -2638,7 +2734,11 @@ doesn't exist, this will be -1. Used internally.
             this.yDoP = yDoP;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Geolocation.
+           @return {Adaptive.Geolocation} Wrapped object instance.
         */
         Geolocation.toObject = function (object) {
             var result = new Geolocation(null, null, null, null, null, null);
@@ -2725,7 +2825,11 @@ doesn't exist, this will be -1. Used internally.
             this.keyValue = keyValue;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyPair.
+           @return {Adaptive.KeyPair} Wrapped object instance.
         */
         KeyPair.toObject = function (object) {
             var result = new KeyPair(null, null);
@@ -2782,7 +2886,11 @@ doesn't exist, this will be -1. Used internally.
             this.state = state;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
+           @return {Adaptive.Lifecycle} Wrapped object instance.
         */
         Lifecycle.toObject = function (object) {
             var result = new Lifecycle(null);
@@ -2863,7 +2971,11 @@ doesn't exist, this will be -1. Used internally.
             this.language = language;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale.
+           @return {Adaptive.Locale} Wrapped object instance.
         */
         Locale.toObject = function (object) {
             var result = new Locale(null, null);
@@ -2961,7 +3073,11 @@ doesn't exist, this will be -1. Used internally.
             this.version = version;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.OSInfo.
+           @return {Adaptive.OSInfo} Wrapped object instance.
         */
         OSInfo.toObject = function (object) {
             var result = new OSInfo(null, null, null);
@@ -3046,7 +3162,11 @@ doesn't exist, this will be -1. Used internally.
             this.secureKey = secureKey;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair.
+           @return {Adaptive.SecureKeyPair} Wrapped object instance.
         */
         SecureKeyPair.toObject = function (object) {
             var result = new SecureKeyPair(null, null);
@@ -3147,7 +3267,11 @@ doesn't exist, this will be -1. Used internally.
             this.serviceEndpoints = serviceEndpoints;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Service.
+           @return {Adaptive.Service} Wrapped object instance.
         */
         Service.toObject = function (object) {
             var result = new Service(null, null, null);
@@ -3374,7 +3498,11 @@ doesn't exist, this will be -1. Used internally.
             this.secure = secure;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceCookie.
+           @return {Adaptive.ServiceCookie} Wrapped object instance.
         */
         ServiceCookie.toObject = function (object) {
             var result = new ServiceCookie(null, null, null, null, null, null, null, null);
@@ -3531,7 +3659,11 @@ doesn't exist, this will be -1. Used internally.
             this.scheme = scheme;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
+           @return {Adaptive.ServiceEndpoint} Wrapped object instance.
         */
         ServiceEndpoint.toObject = function (object) {
             var result = new ServiceEndpoint(null, null, null, null, null);
@@ -3626,7 +3758,11 @@ doesn't exist, this will be -1. Used internally.
             this.name = name;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader.
+           @return {Adaptive.ServiceHeader} Wrapped object instance.
         */
         ServiceHeader.toObject = function (object) {
             var result = new ServiceHeader(null, null);
@@ -3881,7 +4017,11 @@ doesn't exist, this will be -1. Used internally.
             this.serviceSession = serviceSession;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest.
+           @return {Adaptive.ServiceRequest} Wrapped object instance.
         */
         ServiceRequest.toObject = function (object) {
             var result = new ServiceRequest(null, null, null, null, null, null, null, null, null, null);
@@ -4132,7 +4272,11 @@ doesn't exist, this will be -1. Used internally.
             this.serviceSession = serviceSession;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
+           @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         ServiceResponse.toObject = function (object) {
             var result = new ServiceResponse(null, null, null, null, null, null, null, null);
@@ -4243,7 +4387,11 @@ doesn't exist, this will be -1. Used internally.
             this.cookies = cookies;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSession.
+           @return {Adaptive.ServiceSession} Wrapped object instance.
         */
         ServiceSession.toObject = function (object) {
             var result = new ServiceSession(null, null);
@@ -4471,7 +4619,11 @@ doesn't exist, this will be -1. Used internally.
             this.professionalInfo = professionalInfo;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Contact.
+           @return {Adaptive.Contact} Wrapped object instance.
         */
         Contact.toObject = function (object) {
             var result = new Contact(null, null, null, null, null, null, null, null, null);
@@ -4570,7 +4722,6 @@ doesn't exist, this will be -1. Used internally.
     Adaptive.Contact = Contact;
     /**
        @class Adaptive.BaseListener
-       @extends Adaptive.IBaseListener
     */
     var BaseListener = (function () {
         /**
@@ -4682,9 +4833,9 @@ doesn't exist, this will be -1. Used internally.
            @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         function AccelerationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4711,8 +4862,7 @@ doesn't exist, this will be -1. Used internally.
            @method
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
-           @param {Adaptive.IAccelerationListenerError} error Error fired
-
+           @param {Adaptive.IAccelerationListenerError} error error Error fired
            @since ARP1.0
         */
         AccelerationListener.prototype.onError = function (error) {
@@ -4726,8 +4876,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Correct data received.
-           @param {Adaptive.Acceleration} acceleration Acceleration received
-
+           @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
            @since ARP1.0
         */
         AccelerationListener.prototype.onResult = function (acceleration) {
@@ -4741,9 +4890,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Data received with warning - ie. Needs calibration.
-           @param {Adaptive.Acceleration} acceleration Acceleration received
-           @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
-
+           @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
+           @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
            @since ARP1.0
         */
         AccelerationListener.prototype.onWarning = function (acceleration, warning) {
@@ -4827,9 +4975,9 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
-           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         function ButtonListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4855,8 +5003,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            No data received
-           @param {Adaptive.IButtonListenerError} error occurred
-
+           @param {Adaptive.IButtonListenerError} error error occurred
            @since ARP1.0
         */
         ButtonListener.prototype.onError = function (error) {
@@ -4870,8 +5017,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Called on button pressed
-           @param {Adaptive.Button} button pressed
-
+           @param {Adaptive.Button} button button pressed
            @since ARP1.0
         */
         ButtonListener.prototype.onResult = function (button) {
@@ -4885,9 +5031,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Data received with warning
-           @param {Adaptive.Button} button  pressed
-           @param {Adaptive.IButtonListenerWarning} warning happened
-
+           @param {Adaptive.Button} button button  pressed
+           @param {Adaptive.IButtonListenerWarning} warning warning happened
            @since ARP1.0
         */
         ButtonListener.prototype.onWarning = function (button, warning) {
@@ -4971,9 +5116,9 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         function GeolocationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4999,8 +5144,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            No data received - error condition, not authorized or hardware not available.
-           @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
-
+           @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onError = function (error) {
@@ -5014,8 +5158,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Correct data received.
-           @param {Adaptive.Geolocation} geolocation Geolocation Bean
-
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
            @since ARP1.0
         */
         GeolocationListener.prototype.onResult = function (geolocation) {
@@ -5029,9 +5172,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Data received with warning - ie. HighDoP
-           @param {Adaptive.Geolocation} geolocation Geolocation Bean
-           @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
-
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
+           @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onWarning = function (geolocation, warning) {
@@ -5115,9 +5257,9 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         function LifecycleListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5143,8 +5285,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            No data received - error condition, not authorized or hardware not available.
-           @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
-
+           @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onError = function (error) {
@@ -5158,8 +5299,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Called when lifecycle changes somehow.
-           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @since ARP1.0
         */
         LifecycleListener.prototype.onResult = function (lifecycle) {
@@ -5173,9 +5313,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Data received with warning
-           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-           @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
-
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
+           @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onWarning = function (lifecycle, warning) {
@@ -5259,9 +5398,9 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         function NetworkStatusListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5287,8 +5426,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            No data received - error condition, not authorized or hardware not available.
-           @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
-
+           @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onError = function (error) {
@@ -5302,8 +5440,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Called when network connection changes somehow.
-           @param {Adaptive.ICapabilitiesNet} network Change to this network.
-
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onResult = function (network) {
@@ -5317,9 +5454,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            @method
            Status received with warning
-           @param {Adaptive.ICapabilitiesNet} network Change to this network.
-           @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
-
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onWarning = function (network, warning) {
@@ -5333,33 +5469,42 @@ listener and subsequently, the listener will be deactivated and removed from the
         return NetworkStatusListener;
     })(BaseListener);
     Adaptive.NetworkStatusListener = NetworkStatusListener;
+    /**
+       @class Adaptive.BaseCallback
+    */
     var BaseCallback = (function () {
         /**
+           @method constructor
            Constructor with callback id.
 
-           @param id  The id of the callback.
+           @param {number} id  The id of the callback.
         */
         function BaseCallback(id) {
             this.id = id;
             this.apiGroup = IAdaptiveRPGroup.Application;
         }
         /**
-           Get the listener id.
-           @return {number} long with the identifier of the callback.
+           @method
+           @return {number}
+           Get the callback id.
         */
         BaseCallback.prototype.getId = function () {
             return this.id;
         };
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         BaseCallback.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
             return "v2.0.4";
@@ -5368,11 +5513,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseCallback = BaseCallback;
     /**
+       @property {Adaptive.Dictionary} registeredContactPhotoResultCallback
+       @member Adaptive
+       @private
        ContactPhotoResultCallback control dictionary.
     */
     Adaptive.registeredContactPhotoResultCallback = new Dictionary([]);
+    // ContactPhotoResultCallback global listener handlers.
     /**
-       ContactPhotoResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IContactPhotoResultCallbackError} error
     */
     function handleContactPhotoResultCallbackError(id, error) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
@@ -5385,6 +5538,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactPhotoResultCallbackError = handleContactPhotoResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+    */
     function handleContactPhotoResultCallbackResult(id, contactPhoto) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5396,6 +5556,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactPhotoResultCallbackResult = handleContactPhotoResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+       @param {Adaptive.IContactPhotoResultCallbackWarning} warning
+    */
     function handleContactPhotoResultCallbackWarning(id, contactPhoto, warning) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5407,14 +5575,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactPhotoResultCallbackWarning = handleContactPhotoResultCallbackWarning;
+    /**
+       @class Adaptive.ContactPhotoResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ContactPhotoResultCallback = (function (_super) {
         __extends(ContactPhotoResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
         function ContactPhotoResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5438,9 +5611,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onError = function (error) {
@@ -5452,9 +5625,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param contactPhoto returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onResult = function (contactPhoto) {
@@ -5466,10 +5639,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param contactPhoto returned by the platform
-           @param warning      returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onWarning = function (contactPhoto, warning) {
@@ -5484,11 +5657,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.ContactPhotoResultCallback = ContactPhotoResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredContactResultCallback
+       @member Adaptive
+       @private
        ContactResultCallback control dictionary.
     */
     Adaptive.registeredContactResultCallback = new Dictionary([]);
+    // ContactResultCallback global listener handlers.
     /**
-       ContactResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IContactResultCallbackError} error
     */
     function handleContactResultCallbackError(id, error) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
@@ -5501,6 +5682,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactResultCallbackError = handleContactResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Contact[]} contacts
+    */
     function handleContactResultCallbackResult(id, contacts) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5512,6 +5700,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactResultCallbackResult = handleContactResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Contact[]} contacts
+       @param {Adaptive.IContactResultCallbackWarning} warning
+    */
     function handleContactResultCallbackWarning(id, contacts, warning) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5523,14 +5719,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleContactResultCallbackWarning = handleContactResultCallbackWarning;
+    /**
+       @class Adaptive.ContactResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ContactResultCallback = (function (_super) {
         __extends(ContactResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
         */
         function ContactResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5554,9 +5755,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IContactResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onError = function (error) {
@@ -5568,9 +5769,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param contacts returned by the platform
+           @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onResult = function (contacts) {
@@ -5582,10 +5783,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param contacts returned by the platform
-           @param warning  returned by the platform
+           @param {Adaptive.Contact[]} contacts contacts returned by the platform
+           @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onWarning = function (contacts, warning) {
@@ -5600,11 +5801,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.ContactResultCallback = ContactResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredDatabaseResultCallback
+       @member Adaptive
+       @private
        DatabaseResultCallback control dictionary.
     */
     Adaptive.registeredDatabaseResultCallback = new Dictionary([]);
+    // DatabaseResultCallback global listener handlers.
     /**
-       DatabaseResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDatabaseResultCallbackError} error
     */
     function handleDatabaseResultCallbackError(id, error) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
@@ -5617,6 +5826,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseResultCallbackError = handleDatabaseResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+    */
     function handleDatabaseResultCallbackResult(id, database) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5628,6 +5844,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseResultCallbackResult = handleDatabaseResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+       @param {Adaptive.IDatabaseResultCallbackWarning} warning
+    */
     function handleDatabaseResultCallbackWarning(id, database, warning) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5639,14 +5863,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseResultCallbackWarning = handleDatabaseResultCallbackWarning;
+    /**
+       @class Adaptive.DatabaseResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var DatabaseResultCallback = (function (_super) {
         __extends(DatabaseResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Database
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Database
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
         */
         function DatabaseResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5670,9 +5899,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            Result callback for error responses
-
-           @param error Returned error
+           @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onError = function (error) {
@@ -5684,9 +5913,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result callback for correct responses
-
-           @param database Returns the database
+           @param {Adaptive.Database} database database Returns the database
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onResult = function (database) {
@@ -5698,10 +5927,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result callback for warning responses
-
-           @param database Returns the database
-           @param warning  Returned Warning
+           @param {Adaptive.Database} database database Returns the database
+           @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onWarning = function (database, warning) {
@@ -5716,11 +5945,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.DatabaseResultCallback = DatabaseResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredDatabaseTableResultCallback
+       @member Adaptive
+       @private
        DatabaseTableResultCallback control dictionary.
     */
     Adaptive.registeredDatabaseTableResultCallback = new Dictionary([]);
+    // DatabaseTableResultCallback global listener handlers.
     /**
-       DatabaseTableResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDatabaseTableResultCallbackError} error
     */
     function handleDatabaseTableResultCallbackError(id, error) {
         var callback = Adaptive.registeredDatabaseTableResultCallback["" + id];
@@ -5733,6 +5970,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseTableResultCallbackError = handleDatabaseTableResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.DatabaseTable} databaseTable
+    */
     function handleDatabaseTableResultCallbackResult(id, databaseTable) {
         var callback = Adaptive.registeredDatabaseTableResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5744,6 +5988,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseTableResultCallbackResult = handleDatabaseTableResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.DatabaseTable} databaseTable
+       @param {Adaptive.IDatabaseTableResultCallbackWarning} warning
+    */
     function handleDatabaseTableResultCallbackWarning(id, databaseTable, warning) {
         var callback = Adaptive.registeredDatabaseTableResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5755,14 +6007,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleDatabaseTableResultCallbackWarning = handleDatabaseTableResultCallbackWarning;
+    /**
+       @class Adaptive.DatabaseTableResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var DatabaseTableResultCallback = (function (_super) {
         __extends(DatabaseTableResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
-           @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
         */
         function DatabaseTableResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5786,9 +6043,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            Result callback for error responses
-
-           @param error Returned error
+           @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
            @since ARP1.0
         */
         DatabaseTableResultCallback.prototype.onError = function (error) {
@@ -5800,9 +6057,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result callback for correct responses
-
-           @param databaseTable Returns the databaseTable
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
            @since ARP1.0
         */
         DatabaseTableResultCallback.prototype.onResult = function (databaseTable) {
@@ -5814,10 +6071,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result callback for warning responses
-
-           @param databaseTable Returns the databaseTable
-           @param warning       Returned Warning
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
+           @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
            @since ARP1.0
         */
         DatabaseTableResultCallback.prototype.onWarning = function (databaseTable, warning) {
@@ -5832,11 +6089,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.DatabaseTableResultCallback = DatabaseTableResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredFileDataLoadResultCallback
+       @member Adaptive
+       @private
        FileDataLoadResultCallback control dictionary.
     */
     Adaptive.registeredFileDataLoadResultCallback = new Dictionary([]);
+    // FileDataLoadResultCallback global listener handlers.
     /**
-       FileDataLoadResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileDataLoadResultCallbackError} error
     */
     function handleFileDataLoadResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
@@ -5849,6 +6114,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataLoadResultCallbackError = handleFileDataLoadResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+    */
     function handleFileDataLoadResultCallbackResult(id, data) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5860,6 +6132,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataLoadResultCallbackResult = handleFileDataLoadResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+       @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
+    */
     function handleFileDataLoadResultCallbackWarning(id, data, warning) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5871,14 +6151,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataLoadResultCallbackWarning = handleFileDataLoadResultCallbackWarning;
+    /**
+       @class Adaptive.FileDataLoadResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileDataLoadResultCallback = (function (_super) {
         __extends(FileDataLoadResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         function FileDataLoadResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5902,9 +6187,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            Error processing data retrieval/storage operation.
-
-           @param error Error condition encountered.
+           @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onError = function (error) {
@@ -5916,9 +6201,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result of data retrieval operation.
-
-           @param data Data loaded.
+           @param {number[]} data data Data loaded.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onResult = function (data) {
@@ -5930,10 +6215,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result with warning of data retrieval/storage operation.
-
-           @param data    File being loaded.
-           @param warning Warning condition encountered.
+           @param {number[]} data data    File being loaded.
+           @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onWarning = function (data, warning) {
@@ -5948,11 +6233,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.FileDataLoadResultCallback = FileDataLoadResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredFileDataStoreResultCallback
+       @member Adaptive
+       @private
        FileDataStoreResultCallback control dictionary.
     */
     Adaptive.registeredFileDataStoreResultCallback = new Dictionary([]);
+    // FileDataStoreResultCallback global listener handlers.
     /**
-       FileDataStoreResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileDataStoreResultCallbackError} error
     */
     function handleFileDataStoreResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileDataStoreResultCallback["" + id];
@@ -5965,6 +6258,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataStoreResultCallbackError = handleFileDataStoreResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+    */
     function handleFileDataStoreResultCallbackResult(id, file) {
         var callback = Adaptive.registeredFileDataStoreResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5976,6 +6276,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataStoreResultCallbackResult = handleFileDataStoreResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+       @param {Adaptive.IFileDataStoreResultCallbackWarning} warning
+    */
     function handleFileDataStoreResultCallbackWarning(id, file, warning) {
         var callback = Adaptive.registeredFileDataStoreResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -5987,14 +6295,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileDataStoreResultCallbackWarning = handleFileDataStoreResultCallbackWarning;
+    /**
+       @class Adaptive.FileDataStoreResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileDataStoreResultCallback = (function (_super) {
         __extends(FileDataStoreResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
         */
         function FileDataStoreResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6018,9 +6331,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            Error processing data retrieval/storage operation.
-
-           @param error Error condition encountered.
+           @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
            @since ARP1.0
         */
         FileDataStoreResultCallback.prototype.onError = function (error) {
@@ -6032,9 +6345,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result of data storage operation.
-
-           @param file File reference to stored data.
+           @param {Adaptive.FileDescriptor} file file File reference to stored data.
            @since ARP1.0
         */
         FileDataStoreResultCallback.prototype.onResult = function (file) {
@@ -6046,10 +6359,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Result with warning of data retrieval/storage operation.
-
-           @param file    File being loaded/stored.
-           @param warning Warning condition encountered.
+           @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
+           @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         FileDataStoreResultCallback.prototype.onWarning = function (file, warning) {
@@ -6064,11 +6377,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.FileDataStoreResultCallback = FileDataStoreResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredFileListResultCallback
+       @member Adaptive
+       @private
        FileListResultCallback control dictionary.
     */
     Adaptive.registeredFileListResultCallback = new Dictionary([]);
+    // FileListResultCallback global listener handlers.
     /**
-       FileListResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileListResultCallbackError} error
     */
     function handleFileListResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
@@ -6081,6 +6402,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileListResultCallbackError = handleFileListResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor[]} files
+    */
     function handleFileListResultCallbackResult(id, files) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6092,6 +6420,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileListResultCallbackResult = handleFileListResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor[]} files
+       @param {Adaptive.IFileListResultCallbackWarning} warning
+    */
     function handleFileListResultCallbackWarning(id, files, warning) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6103,14 +6439,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileListResultCallbackWarning = handleFileListResultCallbackWarning;
+    /**
+       @class Adaptive.FileListResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileListResultCallback = (function (_super) {
         __extends(FileListResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
         */
         function FileListResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6134,9 +6475,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            On error result of a file operation.
-
-           @param error Error processing the request.
+           @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onError = function (error) {
@@ -6148,9 +6489,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            On correct result of a file operation.
-
-           @param files Array of resulting files/folders.
+           @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onResult = function (files) {
@@ -6162,10 +6503,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            On partial result of a file operation, containing a warning.
-
-           @param files   Array of resulting files/folders.
-           @param warning Warning condition encountered.
+           @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
+           @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onWarning = function (files, warning) {
@@ -6180,11 +6521,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.FileListResultCallback = FileListResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredFileResultCallback
+       @member Adaptive
+       @private
        FileResultCallback control dictionary.
     */
     Adaptive.registeredFileResultCallback = new Dictionary([]);
+    // FileResultCallback global listener handlers.
     /**
-       FileResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileResultCallbackError} error
     */
     function handleFileResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
@@ -6197,6 +6546,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileResultCallbackError = handleFileResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} storageFile
+    */
     function handleFileResultCallbackResult(id, storageFile) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6208,6 +6564,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileResultCallbackResult = handleFileResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+       @param {Adaptive.IFileResultCallbackWarning} warning
+    */
     function handleFileResultCallbackWarning(id, file, warning) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6219,14 +6583,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleFileResultCallbackWarning = handleFileResultCallbackWarning;
+    /**
+       @class Adaptive.FileResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileResultCallback = (function (_super) {
         __extends(FileResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
         */
         function FileResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6250,9 +6619,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            On error result of a file operation.
-
-           @param error Error processing the request.
+           @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
            @since ARP1.0
         */
         FileResultCallback.prototype.onError = function (error) {
@@ -6264,9 +6633,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            On correct result of a file operation.
-
-           @param storageFile Reference to the resulting file.
+           @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
            @since ARP1.0
         */
         FileResultCallback.prototype.onResult = function (storageFile) {
@@ -6278,10 +6647,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            On partial result of a file operation, containing a warning.
-
-           @param file    Reference to the offending file.
-           @param warning Warning processing the request.
+           @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
+           @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
            @since ARP1.0
         */
         FileResultCallback.prototype.onWarning = function (file, warning) {
@@ -6296,11 +6665,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.FileResultCallback = FileResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredMessagingCallback
+       @member Adaptive
+       @private
        MessagingCallback control dictionary.
     */
     Adaptive.registeredMessagingCallback = new Dictionary([]);
+    // MessagingCallback global listener handlers.
     /**
-       MessagingCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IMessagingCallbackError} error
     */
     function handleMessagingCallbackError(id, error) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
@@ -6313,6 +6690,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleMessagingCallbackError = handleMessagingCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+    */
     function handleMessagingCallbackResult(id, success) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6324,6 +6708,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleMessagingCallbackResult = handleMessagingCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+       @param {Adaptive.IMessagingCallbackWarning} warning
+    */
     function handleMessagingCallbackWarning(id, success, warning) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6335,14 +6727,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleMessagingCallbackWarning = handleMessagingCallbackWarning;
+    /**
+       @class Adaptive.MessagingCallback
+       @extends Adaptive.BaseCallback
+    */
     var MessagingCallback = (function (_super) {
         __extends(MessagingCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
-           @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: boolean
+           @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
         */
         function MessagingCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6366,9 +6763,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IMessagingCallbackError} error error returned by the platform
            @since ARP1.0
         */
         MessagingCallback.prototype.onError = function (error) {
@@ -6380,9 +6777,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param success true if sent;false otherwise
+           @param {boolean} success success true if sent;false otherwise
            @since ARP1.0
         */
         MessagingCallback.prototype.onResult = function (success) {
@@ -6394,10 +6791,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param success true if sent;false otherwise
-           @param warning returned by the platform
+           @param {boolean} success success true if sent;false otherwise
+           @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
            @since ARP1.0
         */
         MessagingCallback.prototype.onWarning = function (success, warning) {
@@ -6412,11 +6809,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.MessagingCallback = MessagingCallback;
     /**
+       @property {Adaptive.Dictionary} registeredNetworkReachabilityCallback
+       @member Adaptive
+       @private
        NetworkReachabilityCallback control dictionary.
     */
     Adaptive.registeredNetworkReachabilityCallback = new Dictionary([]);
+    // NetworkReachabilityCallback global listener handlers.
     /**
-       NetworkReachabilityCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkReachabilityCallbackError} error
     */
     function handleNetworkReachabilityCallbackError(id, error) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
@@ -6429,6 +6834,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkReachabilityCallbackError = handleNetworkReachabilityCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} reachable
+    */
     function handleNetworkReachabilityCallbackResult(id, reachable) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6440,6 +6852,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkReachabilityCallbackResult = handleNetworkReachabilityCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} reachable
+       @param {Adaptive.INetworkReachabilityCallbackWarning} warning
+    */
     function handleNetworkReachabilityCallbackWarning(id, reachable, warning) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6451,14 +6871,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkReachabilityCallbackWarning = handleNetworkReachabilityCallbackWarning;
+    /**
+       @class Adaptive.NetworkReachabilityCallback
+       @extends Adaptive.BaseCallback
+    */
     var NetworkReachabilityCallback = (function (_super) {
         __extends(NetworkReachabilityCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
-           @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: boolean
+           @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
         */
         function NetworkReachabilityCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6482,9 +6907,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received - error condition, not authorized .
-
-           @param error Error value
+           @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onError = function (error) {
@@ -6496,9 +6921,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Correct data received.
-
-           @param reachable Indicates if the host is reachable
+           @param {boolean} reachable reachable Indicates if the host is reachable
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onResult = function (reachable) {
@@ -6510,10 +6935,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
-
-           @param reachable Indicates if the host is reachable
-           @param warning   Warning value
+           @param {boolean} reachable reachable Indicates if the host is reachable
+           @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onWarning = function (reachable, warning) {
@@ -6528,11 +6953,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.NetworkReachabilityCallback = NetworkReachabilityCallback;
     /**
+       @property {Adaptive.Dictionary} registeredSecurityResultCallback
+       @member Adaptive
+       @private
        SecurityResultCallback control dictionary.
     */
     Adaptive.registeredSecurityResultCallback = new Dictionary([]);
+    // SecurityResultCallback global listener handlers.
     /**
-       SecurityResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ISecurityResultCallbackError} error
     */
     function handleSecurityResultCallbackError(id, error) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
@@ -6545,6 +6978,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleSecurityResultCallbackError = handleSecurityResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+    */
     function handleSecurityResultCallbackResult(id, keyValues) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6556,6 +6996,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleSecurityResultCallbackResult = handleSecurityResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+       @param {Adaptive.ISecurityResultCallbackWarning} warning
+    */
     function handleSecurityResultCallbackWarning(id, keyValues, warning) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6567,14 +7015,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleSecurityResultCallbackWarning = handleSecurityResultCallbackWarning;
+    /**
+       @class Adaptive.SecurityResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var SecurityResultCallback = (function (_super) {
         __extends(SecurityResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
         function SecurityResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6598,9 +7051,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received - error condition, not authorized .
-
-           @param error Error values
+           @param {Adaptive.ISecurityResultCallbackError} error error Error values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onError = function (error) {
@@ -6612,9 +7065,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Correct data received.
-
-           @param keyValues key and values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onResult = function (keyValues) {
@@ -6626,10 +7079,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
-
-           @param keyValues key and values
-           @param warning   Warning values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
+           @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onWarning = function (keyValues, warning) {
@@ -6644,11 +7097,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.SecurityResultCallback = SecurityResultCallback;
     /**
+       @property {Adaptive.Dictionary} registeredServiceResultCallback
+       @member Adaptive
+       @private
        ServiceResultCallback control dictionary.
     */
     Adaptive.registeredServiceResultCallback = new Dictionary([]);
+    // ServiceResultCallback global listener handlers.
     /**
-       ServiceResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IServiceResultCallbackError} error
     */
     function handleServiceResultCallbackError(id, error) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
@@ -6661,6 +7122,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleServiceResultCallbackError = handleServiceResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+    */
     function handleServiceResultCallbackResult(id, response) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6672,6 +7140,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleServiceResultCallbackResult = handleServiceResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+       @param {Adaptive.IServiceResultCallbackWarning} warning
+    */
     function handleServiceResultCallbackWarning(id, response, warning) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -6683,14 +7159,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleServiceResultCallbackWarning = handleServiceResultCallbackWarning;
+    /**
+       @class Adaptive.ServiceResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ServiceResultCallback = (function (_super) {
         __extends(ServiceResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
         */
         function ServiceResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6714,9 +7195,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onError = function (error) {
@@ -6728,9 +7209,9 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param response data
+           @param {Adaptive.ServiceResponse} response response data
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onResult = function (response) {
@@ -6742,10 +7223,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param response data
-           @param warning  returned by the platform
+           @param {Adaptive.ServiceResponse} response response data
+           @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onWarning = function (response, warning) {
@@ -6761,7 +7242,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.ServiceResultCallback = ServiceResultCallback;
     /**
        @class Adaptive.BaseApplicationBridge
-       @extends Adaptive.IBaseApplication
        Base application for Application purposes
 
        @author Carlos Lozano Diez
@@ -6797,7 +7277,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseApplicationBridge = BaseApplicationBridge;
     /**
        @class Adaptive.BaseCommerceBridge
-       @extends Adaptive.IBaseCommerce
        Base application for Commerce purposes
 
        @author Carlos Lozano Diez
@@ -6833,7 +7312,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseCommerceBridge = BaseCommerceBridge;
     /**
        @class Adaptive.BaseCommunicationBridge
-       @extends Adaptive.IBaseCommunication
        Base application for Communication purposes
 
        @author Carlos Lozano Diez
@@ -6869,7 +7347,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseCommunicationBridge = BaseCommunicationBridge;
     /**
        @class Adaptive.BaseDataBridge
-       @extends Adaptive.IBaseData
        Base application for Data purposes
 
        @author Carlos Lozano Diez
@@ -6905,7 +7382,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseDataBridge = BaseDataBridge;
     /**
        @class Adaptive.BaseMediaBridge
-       @extends Adaptive.IBaseMedia
        Base application for Media purposes
 
        @author Carlos Lozano Diez
@@ -6941,7 +7417,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseMediaBridge = BaseMediaBridge;
     /**
        @class Adaptive.BaseNotificationBridge
-       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
@@ -6977,7 +7452,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseNotificationBridge = BaseNotificationBridge;
     /**
        @class Adaptive.BasePIMBridge
-       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
@@ -7013,7 +7487,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BasePIMBridge = BasePIMBridge;
     /**
        @class Adaptive.BaseReaderBridge
-       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
@@ -7049,7 +7522,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseReaderBridge = BaseReaderBridge;
     /**
        @class Adaptive.BaseSecurityBridge
-       @extends Adaptive.IBaseSecurity
        Base application for Security purposes
 
        @author Carlos Lozano Diez
@@ -7085,7 +7557,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseSecurityBridge = BaseSecurityBridge;
     /**
        @class Adaptive.BaseSensorBridge
-       @extends Adaptive.IBaseSensor
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
@@ -7121,7 +7592,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseSensorBridge = BaseSensorBridge;
     /**
        @class Adaptive.BaseSocialBridge
-       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez
@@ -7157,7 +7627,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseSocialBridge = BaseSocialBridge;
     /**
        @class Adaptive.BaseSystemBridge
-       @extends Adaptive.IBaseSystem
        Base application for System purposes
 
        @author Carlos Lozano Diez
@@ -7193,7 +7662,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseSystemBridge = BaseSystemBridge;
     /**
        @class Adaptive.BaseUIBridge
-       @extends Adaptive.IBaseUI
        Base application for UI purposes
 
        @author Carlos Lozano Diez
@@ -7229,7 +7697,6 @@ listener and subsequently, the listener will be deactivated and removed from the
     Adaptive.BaseUIBridge = BaseUIBridge;
     /**
        @class Adaptive.BaseUtilBridge
-       @extends Adaptive.IBaseUtil
        Base application for Utility purposes
 
        @author Carlos Lozano Diez
@@ -7301,6 +7768,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Returns the default locale of the application defined in the configuration file
 
            @return {Adaptive.Locale} Default Locale of the application
@@ -7341,6 +7809,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             return response;
         };
         /**
+           @method
            List of supported locales for the application defined in the configuration file
 
            @return {Adaptive.Locale[]} List of locales
@@ -7384,10 +7853,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             return response;
         };
         /**
+           @method
            Gets the text/message corresponding to the given key and locale.
 
-           @param key    to match text
-           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+           @param {string} key key    to match text
+           @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {string} Localized text.
            @since ARP1.0
         */
@@ -7428,9 +7898,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             return response;
         };
         /**
+           @method
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
-           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+           @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since ARP1.0
         */
@@ -7493,9 +7964,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Add the listener for the lifecycle of the app
 
-           @param listener Lifecycle listener
+           @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
            @since ARP1.0
         */
         LifecycleBridge.prototype.addLifecycleListener = function (listener) {
@@ -7536,6 +8008,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Whether the application is in background or not
 
            @return {boolean} true if the application is in background;false otherwise
@@ -7576,9 +8049,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             return response;
         };
         /**
+           @method
            Un-registers an existing listener from receiving lifecycle events.
 
-           @param listener Lifecycle listener
+           @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
            @since ARP1.0
         */
         LifecycleBridge.prototype.removeLifecycleListener = function (listener) {
@@ -7613,6 +8087,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Removes all existing listeners from receiving lifecycle events.
 
            @since ARP1.0
@@ -7872,10 +8347,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Whether there is connectivity to a host, via domain name or ip address, or not.
 
-           @param host     domain name or ip address of host.
-           @param callback Callback called at the end.
+           @param {string} host host     domain name or ip address of host.
+           @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
            @since ARP1.0
         */
         NetworkReachabilityBridge.prototype.isNetworkReachable = function (host, callback) {
@@ -7920,10 +8396,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Whether there is connectivity to an url of a service or not.
 
-           @param url      to look for
-           @param callback Callback called at the end
+           @param {string} url url      to look for
+           @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
            @since ARP1.0
         */
         NetworkReachabilityBridge.prototype.isNetworkServiceReachable = function (url, callback) {
@@ -7988,9 +8465,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Add the listener for network status changes of the app
 
-           @param listener Listener with the result
+           @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
            @since ARP1.0
         */
         NetworkStatusBridge.prototype.addNetworkStatusListener = function (listener) {
@@ -8031,9 +8509,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Un-registers an existing listener from receiving network status events.
 
-           @param listener Listener with the result
+           @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
            @since ARP1.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListener = function (listener) {
@@ -8068,6 +8547,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Removes all existing listeners from receiving network status events.
 
            @since ARP1.0
@@ -8127,9 +8607,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Get a reference to a registered service by name.
 
-           @param serviceName Name of service.
+           @param {string} serviceName serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
@@ -8169,11 +8650,12 @@ listener and subsequently, the listener will be deactivated and removed from the
             return response;
         };
         /**
+           @method
            Request async a service for an Url
 
-           @param serviceRequest Service Request to invoke
-           @param service        Service to call
-           @param callback       Callback to execute with the result
+           @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
+           @param {Adaptive.Service} service serviceRequest Service Request to invoke
+           @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
            @since ARP1.0
         */
         ServiceBridge.prototype.invokeService = function (serviceRequest, service, callback) {
@@ -8219,9 +8701,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Register a new service
 
-           @param service to register
+           @param {Adaptive.Service} service service to register
            @since ARP1.0
         */
         ServiceBridge.prototype.registerService = function (service) {
@@ -8244,9 +8727,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Unregister a service
 
-           @param service to unregister
+           @param {Adaptive.Service} service service to unregister
            @since ARP1.0
         */
         ServiceBridge.prototype.unregisterService = function (service) {
@@ -8269,6 +8753,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Unregister all services.
 
            @since ARP1.0
@@ -8416,9 +8901,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Invoke a phone call
 
-           @param number to call
+           @param {string} number number to call
            @return {Adaptive.ITelephonyStatus} Status of the call
            @since ARP1.0
         */
@@ -8518,10 +9004,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             _super.call(this);
         }
         /**
+           @method
            Creates a database on default path for every platform.
 
-           @param callback Asynchronous callback
-           @param database Database object to create
+           @param {Adaptive.Database} database database Database object to create
+           @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
            @since ARP1.0
         */
         DatabaseBridge.prototype.createDatabase = function (database, callback) {
@@ -8566,11 +9053,12 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Creates a databaseTable inside a database for every platform.
 
-           @param database      Database for databaseTable creating.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @param callback      DatabaseTable callback with the response
+           @param {Adaptive.Database} database database      Database for databaseTable creating.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
            @since ARP1.0
         */
         DatabaseBridge.prototype.createTable = function (database, databaseTable, callback) {
@@ -8616,10 +9104,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Deletes a database on default path for every platform.
 
-           @param database Database object to delete
-           @param callback Asynchronous callback
+           @param {Adaptive.Database} database database Database object to delete
+           @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
            @since ARP1.0
         */
         DatabaseBridge.prototype.deleteDatabase = function (database, callback) {
@@ -8664,11 +9153,12 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Deletes a databaseTable inside a database for every platform.
 
-           @param database      Database for databaseTable removal.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @param callback      DatabaseTable callback with the response
+           @param {Adaptive.Database} database database      Database for databaseTable removal.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
            @since ARP1.0
         */
         DatabaseBridge.prototype.deleteTable = function (database, databaseTable, callback) {
@@ -8714,13 +9204,14 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Executes SQL statement into the given database. The replacements
 should be passed as a parameter
 
-           @param database     The database object reference.
-           @param statement    SQL statement.
-           @param replacements List of SQL statement replacements.
-           @param callback     DatabaseTable callback with the response.
+           @param {Adaptive.Database} database database     The database object reference.
+           @param {string} statement statement    SQL statement.
+           @param {string[]} replacements replacements List of SQL statement replacements.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since ARP1.0
         */
         DatabaseBridge.prototype.executeSqlStatement = function (database, statement, replacements, callback) {
@@ -8767,13 +9258,14 @@ should be passed as a parameter
             }
         };
         /**
+           @method
            Executes SQL transaction (some statements chain) inside given database.
 
-           @param database     The database object reference.
-           @param statements   The statements to be executed during transaction.
-           @param rollbackFlag Indicates if rollback should be performed when any
+           @param {Adaptive.Database} database database     The database object reference.
+           @param {string[]} statements statements   The statements to be executed during transaction.
+           @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                   statement execution fails.
-           @param callback     DatabaseTable callback with the response.
+           @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since ARP1.0
         */
         DatabaseBridge.prototype.executeSqlTransactions = function (database, statements, rollbackFlag, callback) {
@@ -8820,9 +9312,10 @@ should be passed as a parameter
             }
         };
         /**
+           @method
            Checks if database exists by given database name.
 
-           @param database Database Object to check if exists
+           @param {Adaptive.Database} database database Database Object to check if exists
            @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
@@ -8862,10 +9355,11 @@ should be passed as a parameter
             return response;
         };
         /**
+           @method
            Checks if databaseTable exists by given database name.
 
-           @param database      Database for databaseTable consulting.
-           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param {Adaptive.Database} database database      Database for databaseTable consulting.
+           @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
@@ -8926,9 +9420,10 @@ should be passed as a parameter
             _super.call(this);
         }
         /**
+           @method
            Determine whether the current file/folder can be read from.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
@@ -8968,9 +9463,10 @@ should be passed as a parameter
             return response;
         };
         /**
+           @method
            Determine whether the current file/folder can be written to.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
@@ -9010,10 +9506,11 @@ should be passed as a parameter
             return response;
         };
         /**
+           @method
            Creates a file with the specified name.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.create = function (descriptor, callback) {
@@ -9058,11 +9555,12 @@ should be passed as a parameter
             }
         };
         /**
+           @method
            Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param cascade    Whether to delete sub-files and sub-folders.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {boolean} cascade cascade    Whether to delete sub-files and sub-folders.
            @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
@@ -9103,9 +9601,10 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            Check whether the file/path exists.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
@@ -9145,10 +9644,11 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            Loads the content of the file.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDataLoadResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.getContent = function (descriptor, callback) {
@@ -9193,9 +9693,10 @@ deleted if the cascade parameter is set to true.
             }
         };
         /**
+           @method
            Returns the file storage type of the file
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
@@ -9235,9 +9736,10 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            Returns the file type
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
@@ -9277,9 +9779,10 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            Returns the security type of the file
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
@@ -9319,9 +9822,10 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            Check whether this is a path of a file.
 
-           @param descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
@@ -9361,11 +9865,12 @@ deleted if the cascade parameter is set to true.
             return response;
         };
         /**
+           @method
            List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param callback   Result of operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
            @since ARP1.0
         */
         FileBridge.prototype.listFiles = function (descriptor, callback) {
@@ -9410,12 +9915,13 @@ any results.
             }
         };
         /**
+           @method
            List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
-           @param callback   Result of operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {string} regex regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+           @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
            @since ARP1.0
         */
         FileBridge.prototype.listFilesForRegex = function (descriptor, regex, callback) {
@@ -9461,10 +9967,11 @@ is a file, it will not yield any results.
             }
         };
         /**
+           @method
            Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param recursive  Whether to create all parent path elements.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {boolean} recursive recursive  Whether to create all parent path elements.
            @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
@@ -9505,14 +10012,15 @@ is a file, it will not yield any results.
             return response;
         };
         /**
+           @method
            Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-           @param source      File descriptor of file or folder used for operation as source.
-           @param destination File descriptor of file or folder used for operation as destination.
-           @param createPath  True to create the path if it does not already exist.
-           @param callback    Result of the operation.
-           @param overwrite   True to create the path if it does not already exist.
+           @param {Adaptive.FileDescriptor} source source      File descriptor of file or folder used for operation as source.
+           @param {Adaptive.FileDescriptor} destination destination File descriptor of file or folder used for operation as destination.
+           @param {boolean} createPath createPath  True to create the path if it does not already exist.
+           @param {boolean} overwrite overwrite   True to create the path if it does not already exist.
+           @param {Adaptive.FileResultCallback} callback callback    Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.move = function (source, destination, createPath, overwrite, callback) {
@@ -9560,11 +10068,12 @@ new destination file.
             }
         };
         /**
+           @method
            Sets the content of the file.
 
-           @param descriptor File descriptor of file or folder used for operation.
-           @param content    Binary content to store in the file.
-           @param callback   Result of the operation.
+           @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+           @param {number[]} content content    Binary content to store in the file.
+           @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
            @since ARP1.0
         */
         FileBridge.prototype.setContent = function (descriptor, content, callback) {
@@ -9630,11 +10139,12 @@ new destination file.
             _super.call(this);
         }
         /**
+           @method
            Creates a new reference to a new or existing location in the filesystem.
 This method does not create the actual file in the specified folder.
 
-           @param parent Parent directory.
-           @param name   Name of new file or directory.
+           @param {Adaptive.FileDescriptor} parent parent Parent directory.
+           @param {string} name name   Name of new file or directory.
            @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
@@ -9675,6 +10185,7 @@ This method does not create the actual file in the specified folder.
             return response;
         };
         /**
+           @method
            Returns a reference to the cache folder for the current application.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
@@ -9717,6 +10228,7 @@ This path is volatile and may be cleaned by the OS periodically.
             return response;
         };
         /**
+           @method
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
@@ -9758,6 +10270,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
@@ -9799,6 +10312,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
@@ -9840,6 +10354,7 @@ This path may or may not be directly readable or writable - it usually contains 
             return response;
         };
         /**
+           @method
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
@@ -9881,6 +10396,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns the file system dependent file separator.
 
            @return {string} char with the directory/file separator.
@@ -9921,6 +10437,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the external storage folder provided by the OS. This may
 be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
@@ -10084,9 +10601,10 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Play url video stream
 
-           @param url of the video
+           @param {string} url url of the video
            @since ARP1.0
         */
         VideoBridge.prototype.playStream = function (url) {
@@ -10229,10 +10747,11 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Get all the details of a contact according to its id
 
-           @param contact  id to search for
-           @param callback called for return
+           @param {Adaptive.ContactUid} contact contact  id to search for
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContact = function (contact, callback) {
@@ -10277,10 +10796,11 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Get the contact photo
 
-           @param contact  id to search for
-           @param callback called for return
+           @param {Adaptive.ContactUid} contact contact  id to search for
+           @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContactPhoto = function (contact, callback) {
@@ -10325,9 +10845,10 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Get all contacts
 
-           @param callback called for return
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContacts = function (callback) {
@@ -10371,10 +10892,11 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Get marked fields of all contacts
 
-           @param callback called for return
-           @param fields   to get for each Contact
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @since ARP1.0
         */
         ContactBridge.prototype.getContactsForFields = function (callback, fields) {
@@ -10419,11 +10941,12 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Get marked fields of all contacts according to a filter
 
-           @param callback called for return
-           @param fields   to get for each Contact
-           @param filter   to search for
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
+           @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since ARP1.0
         */
         ContactBridge.prototype.getContactsWithFilter = function (callback, fields, filter) {
@@ -10469,10 +10992,11 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Search contacts according to a term and send it to the callback
 
-           @param term     string to search
-           @param callback called for return
+           @param {string} term term     string to search
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.searchContacts = function (term, callback) {
@@ -10517,11 +11041,12 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Search contacts according to a term with a filter and send it to the callback
 
-           @param term     string to search
-           @param callback called for return
-           @param filter   to search for
+           @param {string} term term     string to search
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since ARP1.0
         */
         ContactBridge.prototype.searchContactsWithFilter = function (term, callback, filter) {
@@ -10567,10 +11092,11 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Set the contact photo
 
-           @param contact  id to assign the photo
-           @param pngImage photo as byte array
+           @param {Adaptive.ContactUid} contact contact  id to assign the photo
+           @param {number[]} pngImage pngImage photo as byte array
            @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */
@@ -10631,10 +11157,11 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Send an Email
 
-           @param data     Payload of the email
-           @param callback Result callback of the operation
+           @param {Adaptive.Email} data data     Payload of the email
+           @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
            @since ARP1.0
         */
         MailBridge.prototype.sendEmail = function (data, callback) {
@@ -10699,11 +11226,12 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Send text SMS
 
-           @param number   to send
-           @param text     to send
-           @param callback with the result
+           @param {string} number number   to send
+           @param {string} text text     to send
+           @param {Adaptive.MessagingCallback} callback callback with the result
            @since ARP1.0
         */
         MessagingBridge.prototype.sendSMS = function (number, text, callback) {
@@ -10889,11 +11417,12 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Deletes from the device internal storage the entry/entries containing the specified key names.
 
-           @param keys             Array with the key names to delete.
-           @param publicAccessName The name of the shared internal storage object (if needed).
-           @param callback         callback to be executed upon function result.
+           @param {string[]} keys keys             Array with the key names to delete.
+           @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+           @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since ARP 1.0
         */
         SecurityBridge.prototype.deleteSecureKeyValuePairs = function (keys, publicAccessName, callback) {
@@ -10939,11 +11468,12 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Retrieves from the device internal storage the entry/entries containing the specified key names.
 
-           @param keys             Array with the key names to retrieve.
-           @param publicAccessName The name of the shared internal storage object (if needed).
-           @param callback         callback to be executed upon function result.
+           @param {string[]} keys keys             Array with the key names to retrieve.
+           @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+           @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since ARP 1.0
         */
         SecurityBridge.prototype.getSecureKeyValuePairs = function (keys, publicAccessName, callback) {
@@ -10989,6 +11519,7 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Returns if the device has been modified in anyhow
 
            @return {boolean} true if the device has been modified; false otherwise
@@ -11029,11 +11560,12 @@ This path may or may not be writable by the current application.
             return response;
         };
         /**
+           @method
            Stores in the device internal storage the specified item/s.
 
-           @param keyValues        Array containing the items to store on the device internal memory.
-           @param publicAccessName The name of the shared internal storage object (if needed).
-           @param callback         callback to be executed upon function result.
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
+           @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+           @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since ARP 1.0
         */
         SecurityBridge.prototype.setSecureKeyValuePairs = function (keyValues, publicAccessName, callback) {
@@ -11099,9 +11631,10 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Register a new listener that will receive acceleration events.
 
-           @param listener to be registered.
+           @param {Adaptive.AccelerationListener} listener listener to be registered.
            @since ARP1.0
         */
         AccelerationBridge.prototype.addAccelerationListener = function (listener) {
@@ -11142,9 +11675,10 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            De-registers an existing listener from receiving acceleration events.
 
-           @param listener to be registered.
+           @param {Adaptive.AccelerationListener} listener listener to be registered.
            @since ARP1.0
         */
         AccelerationBridge.prototype.removeAccelerationListener = function (listener) {
@@ -11179,6 +11713,7 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Removed all existing listeners from receiving acceleration events.
 
            @since ARP1.0
@@ -11278,9 +11813,10 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Register a new listener that will receive geolocation events.
 
-           @param listener to be registered.
+           @param {Adaptive.GeolocationListener} listener listener to be registered.
            @since ARP1.0
         */
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
@@ -11321,9 +11857,10 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            De-registers an existing listener from receiving geolocation events.
 
-           @param listener to be registered.
+           @param {Adaptive.GeolocationListener} listener listener to be registered.
            @since ARP1.0
         */
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
@@ -11358,6 +11895,7 @@ This path may or may not be writable by the current application.
             }
         };
         /**
+           @method
            Removed all existing listeners from receiving geolocation events.
 
            @since ARP1.0
@@ -11577,9 +12115,10 @@ This path may or may not be writable by the current application.
             _super.call(this);
         }
         /**
+           @method
            Determines whether a specific hardware button is supported for interaction.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
            @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
@@ -11619,10 +12158,11 @@ This path may or may not be writable by the current application.
             return response;
         };
         /**
+           @method
            Determines whether a specific Communication capability is supported by
 the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11662,9 +12202,10 @@ the device.
             return response;
         };
         /**
+           @method
            Determines whether a specific Data capability is supported by the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11704,10 +12245,11 @@ the device.
             return response;
         };
         /**
+           @method
            Determines whether a specific Media capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11747,9 +12289,10 @@ device.
             return response;
         };
         /**
+           @method
            Determines whether a specific Net capability is supported by the device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11789,10 +12332,11 @@ device.
             return response;
         };
         /**
+           @method
            Determines whether a specific Notification capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11832,10 +12376,11 @@ device.
             return response;
         };
         /**
+           @method
            Determines whether a specific Sensor capability is supported by the
 device.
 
-           @param type Type of feature to check.
+           @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
@@ -11895,9 +12440,10 @@ device.
             _super.call(this);
         }
         /**
+           @method
            Register a new listener that will receive button events.
 
-           @param listener to be registered.
+           @param {Adaptive.ButtonListener} listener listener to be registered.
            @since ARP1.0
         */
         DeviceBridge.prototype.addButtonListener = function (listener) {
@@ -11938,6 +12484,7 @@ device.
             }
         };
         /**
+           @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
@@ -11978,6 +12525,7 @@ device.
             return response;
         };
         /**
+           @method
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
@@ -12018,9 +12566,10 @@ device.
             return response;
         };
         /**
+           @method
            De-registers an existing listener from receiving button events.
 
-           @param listener to be removed.
+           @param {Adaptive.ButtonListener} listener listener to be removed.
            @since ARP1.0
         */
         DeviceBridge.prototype.removeButtonListener = function (listener) {
@@ -12055,6 +12604,7 @@ device.
             }
         };
         /**
+           @method
            Removed all existing listeners from receiving button events.
 
            @since ARP1.0
@@ -12134,6 +12684,7 @@ device.
             _super.call(this);
         }
         /**
+           @method
            Returns the OSInfo for the current operating system.
 
            @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
@@ -12194,6 +12745,7 @@ device.
             _super.call(this);
         }
         /**
+           @method
            Dismiss the current Application
 
            @since ARP1.0
@@ -12217,6 +12769,7 @@ device.
             }
         };
         /**
+           @method
            Whether the application dismiss the splash screen successfully or not
 
            @return {boolean} true if the application has dismissed the splash screen;false otherwise
@@ -12277,9 +12830,10 @@ device.
             _super.call(this);
         }
         /**
+           @method
            Method for opening a URL like a link in the native default browser
 
-           @param url Url to open
+           @param {string} url url Url to open
            @return {boolean} The result of the operation
            @since ARP1.0
         */
@@ -12319,11 +12873,12 @@ device.
             return response;
         };
         /**
+           @method
            Method for opening a browser embedded into the application
 
-           @param url            Url to open
-           @param title          Title of the Navigation bar
-           @param backButtonText Title of the Back button bar
+           @param {string} url url            Url to open
+           @param {string} title title          Title of the Navigation bar
+           @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
            @since ARP1.0
         */
@@ -12365,11 +12920,12 @@ device.
             return response;
         };
         /**
+           @method
            Method for opening a browser embedded into the application in a modal window
 
-           @param url            Url to open
-           @param title          Title of the Navigation bar
-           @param backButtonText Title of the Back button bar
+           @param {string} url url            Url to open
+           @param {string} title title          Title of the Navigation bar
+           @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
            @since ARP1.0
         */
@@ -12631,7 +13187,6 @@ device.
     Adaptive.TimerBridge = TimerBridge;
     /**
        @class Adaptive.AppRegistryBridge
-       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez

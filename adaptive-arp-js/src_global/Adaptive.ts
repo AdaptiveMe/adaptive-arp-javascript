@@ -753,7 +753,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseApplication
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseApplication extends IAdaptiveRP {
      }
@@ -766,7 +765,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseCallback
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseCallback extends IAdaptiveRP {
 
@@ -788,7 +786,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseCommerce
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseCommerce extends IAdaptiveRP {
      }
@@ -801,7 +798,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseCommunication
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseCommunication extends IAdaptiveRP {
      }
@@ -814,7 +810,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseData
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseData extends IAdaptiveRP {
      }
@@ -827,7 +822,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseListener
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseListener extends IAdaptiveRP {
 
@@ -849,7 +843,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseMedia
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseMedia extends IAdaptiveRP {
      }
@@ -862,7 +855,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseNotification
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseNotification extends IAdaptiveRP {
      }
@@ -875,7 +867,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBasePIM
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBasePIM extends IAdaptiveRP {
      }
@@ -888,7 +879,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseReader
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseReader extends IAdaptiveRP {
      }
@@ -901,7 +891,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSecurity
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSecurity extends IAdaptiveRP {
      }
@@ -914,7 +903,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSensor
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSensor extends IAdaptiveRP {
      }
@@ -927,7 +915,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSocial
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSocial extends IAdaptiveRP {
      }
@@ -940,7 +927,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSystem
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSystem extends IAdaptiveRP {
      }
@@ -953,7 +939,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseUI
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseUI extends IAdaptiveRP {
      }
@@ -966,7 +951,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseUtil
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseUtil extends IAdaptiveRP {
      }
@@ -979,7 +963,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAnalytics
-        @extends Adaptive.IBaseApplication
      */
      export interface IAnalytics extends IBaseApplication {
      }
@@ -992,7 +975,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IGlobalization
-        @extends Adaptive.IBaseApplication
      */
      export interface IGlobalization extends IBaseApplication {
           /**
@@ -1036,7 +1018,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ILifecycle
-        @extends Adaptive.IBaseApplication
      */
      export interface ILifecycle extends IBaseApplication {
           /**
@@ -1076,7 +1057,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IManagement
-        @extends Adaptive.IBaseApplication
      */
      export interface IManagement extends IBaseApplication {
      }
@@ -1089,7 +1069,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IPrinting
-        @extends Adaptive.IBaseApplication
      */
      export interface IPrinting extends IBaseApplication {
      }
@@ -1102,7 +1081,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ISettings
-        @extends Adaptive.IBaseApplication
      */
      export interface ISettings extends IBaseApplication {
      }
@@ -1115,7 +1093,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IUpdate
-        @extends Adaptive.IBaseApplication
      */
      export interface IUpdate extends IBaseApplication {
      }
@@ -1128,7 +1105,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IContactPhotoResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IContactPhotoResultCallback extends IBaseCallback {
           /**
@@ -1163,7 +1139,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IContactResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IContactResultCallback extends IBaseCallback {
           /**
@@ -1198,7 +1173,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDatabaseResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IDatabaseResultCallback extends IBaseCallback {
           /**
@@ -1233,7 +1207,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDatabaseTableResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IDatabaseTableResultCallback extends IBaseCallback {
           /**
@@ -1268,7 +1241,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFileDataLoadResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IFileDataLoadResultCallback extends IBaseCallback {
           /**
@@ -1303,7 +1275,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFileDataStoreResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IFileDataStoreResultCallback extends IBaseCallback {
           /**
@@ -1338,7 +1309,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFileListResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IFileListResultCallback extends IBaseCallback {
           /**
@@ -1373,7 +1343,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFileResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IFileResultCallback extends IBaseCallback {
           /**
@@ -1408,7 +1377,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IMessagingCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IMessagingCallback extends IBaseCallback {
           /**
@@ -1443,7 +1411,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkReachabilityCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface INetworkReachabilityCallback extends IBaseCallback {
           /**
@@ -1478,7 +1445,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ISecurityResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface ISecurityResultCallback extends IBaseCallback {
           /**
@@ -1513,7 +1479,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IServiceResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IServiceResultCallback extends IBaseCallback {
           /**
@@ -1548,7 +1513,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAds
-        @extends Adaptive.IBaseCommerce
      */
      export interface IAds extends IBaseCommerce {
      }
@@ -1561,7 +1525,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IStore
-        @extends Adaptive.IBaseCommerce
      */
      export interface IStore extends IBaseCommerce {
      }
@@ -1574,7 +1537,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IWallet
-        @extends Adaptive.IBaseCommerce
      */
      export interface IWallet extends IBaseCommerce {
      }
@@ -1587,7 +1549,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBluetooth
-        @extends Adaptive.IBaseCommunication
      */
      export interface IBluetooth extends IBaseCommunication {
      }
@@ -1600,7 +1561,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkInfo
-        @extends Adaptive.IBaseCommunication
      */
      export interface INetworkInfo extends IBaseCommunication {
      }
@@ -1613,7 +1573,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkNaming
-        @extends Adaptive.IBaseCommunication
      */
      export interface INetworkNaming extends IBaseCommunication {
      }
@@ -1626,7 +1585,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkReachability
-        @extends Adaptive.IBaseCommunication
      */
      export interface INetworkReachability extends IBaseCommunication {
           /**
@@ -1655,7 +1613,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkStatus
-        @extends Adaptive.IBaseCommunication
      */
      export interface INetworkStatus extends IBaseCommunication {
           /**
@@ -1688,7 +1645,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IService
-        @extends Adaptive.IBaseCommunication
      */
      export interface IService extends IBaseCommunication {
           /**
@@ -1752,7 +1708,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ISocket
-        @extends Adaptive.IBaseCommunication
      */
      export interface ISocket extends IBaseCommunication {
      }
@@ -1765,7 +1720,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ITelephony
-        @extends Adaptive.IBaseCommunication
      */
      export interface ITelephony extends IBaseCommunication {
           /**
@@ -1786,7 +1740,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICloud
-        @extends Adaptive.IBaseData
      */
      export interface ICloud extends IBaseData {
      }
@@ -1799,7 +1752,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDataStream
-        @extends Adaptive.IBaseData
      */
      export interface IDataStream extends IBaseData {
      }
@@ -1812,7 +1764,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDatabase
-        @extends Adaptive.IBaseData
      */
      export interface IDatabase extends IBaseData {
           /**
@@ -1898,7 +1849,6 @@ should be passed as a parameter
      */
      /**
         @class Adaptive.IFile
-        @extends Adaptive.IBaseData
      */
      export interface IFile extends IBaseData {
           /**
@@ -2042,7 +1992,6 @@ new destination file.
      */
      /**
         @class Adaptive.IFileSystem
-        @extends Adaptive.IBaseData
      */
      export interface IFileSystem extends IBaseData {
           /**
@@ -2123,7 +2072,6 @@ This path may or may not be writable by the current application.
      */
      /**
         @class Adaptive.IInternalStorage
-        @extends Adaptive.IBaseData
      */
      export interface IInternalStorage extends IBaseData {
      }
@@ -2136,7 +2084,6 @@ This path may or may not be writable by the current application.
      */
      /**
         @class Adaptive.IXML
-        @extends Adaptive.IBaseData
      */
      export interface IXML extends IBaseData {
      }
@@ -2149,7 +2096,6 @@ This path may or may not be writable by the current application.
      */
      /**
         @class Adaptive.IAccelerationListener
-        @extends Adaptive.IBaseListener
      */
      export interface IAccelerationListener extends IBaseListener {
           /**
@@ -2185,7 +2131,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IButtonListener
-        @extends Adaptive.IBaseListener
      */
      export interface IButtonListener extends IBaseListener {
           /**
@@ -2220,7 +2165,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IGeolocationListener
-        @extends Adaptive.IBaseListener
      */
      export interface IGeolocationListener extends IBaseListener {
           /**
@@ -2255,7 +2199,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ILifecycleListener
-        @extends Adaptive.IBaseListener
      */
      export interface ILifecycleListener extends IBaseListener {
           /**
@@ -2290,7 +2233,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.INetworkStatusListener
-        @extends Adaptive.IBaseListener
      */
      export interface INetworkStatusListener extends IBaseListener {
           /**
@@ -2325,7 +2267,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IAudio
-        @extends Adaptive.IBaseMedia
      */
      export interface IAudio extends IBaseMedia {
      }
@@ -2338,7 +2279,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ICamera
-        @extends Adaptive.IBaseMedia
      */
      export interface ICamera extends IBaseMedia {
      }
@@ -2351,7 +2291,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IImaging
-        @extends Adaptive.IBaseMedia
      */
      export interface IImaging extends IBaseMedia {
      }
@@ -2364,7 +2303,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IVideo
-        @extends Adaptive.IBaseMedia
      */
      export interface IVideo extends IBaseMedia {
           /**
@@ -2384,7 +2322,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IAlarm
-        @extends Adaptive.IBaseNotification
      */
      export interface IAlarm extends IBaseNotification {
      }
@@ -2397,7 +2334,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.INotification
-        @extends Adaptive.IBaseNotification
      */
      export interface INotification extends IBaseNotification {
      }
@@ -2410,7 +2346,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.INotificationLocal
-        @extends Adaptive.IBaseNotification
      */
      export interface INotificationLocal extends IBaseNotification {
      }
@@ -2423,7 +2358,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IVibration
-        @extends Adaptive.IBaseNotification
      */
      export interface IVibration extends IBaseNotification {
      }
@@ -2436,7 +2370,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ICalendar
-        @extends Adaptive.IBasePIM
      */
      export interface ICalendar extends IBasePIM {
      }
@@ -2449,7 +2382,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IContact
-        @extends Adaptive.IBasePIM
      */
      export interface IContact extends IBasePIM {
           /**
@@ -2528,7 +2460,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IMail
-        @extends Adaptive.IBasePIM
      */
      export interface IMail extends IBasePIM {
           /**
@@ -2549,7 +2480,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IMessaging
-        @extends Adaptive.IBasePIM
      */
      export interface IMessaging extends IBasePIM {
           /**
@@ -2571,7 +2501,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IBarcode
-        @extends Adaptive.IBaseReader
      */
      export interface IBarcode extends IBaseReader {
      }
@@ -2584,7 +2513,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.INFC
-        @extends Adaptive.IBaseReader
      */
      export interface INFC extends IBaseReader {
      }
@@ -2597,7 +2525,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IOCR
-        @extends Adaptive.IBaseReader
      */
      export interface IOCR extends IBaseReader {
      }
@@ -2610,7 +2537,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IQRCode
-        @extends Adaptive.IBaseReader
      */
      export interface IQRCode extends IBaseReader {
      }
@@ -2623,7 +2549,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IOAuth
-        @extends Adaptive.IBaseSecurity
      */
      export interface IOAuth extends IBaseSecurity {
      }
@@ -2636,7 +2561,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IOpenId
-        @extends Adaptive.IBaseSecurity
      */
      export interface IOpenId extends IBaseSecurity {
      }
@@ -2649,7 +2573,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ISecurity
-        @extends Adaptive.IBaseSecurity
      */
      export interface ISecurity extends IBaseSecurity {
           /**
@@ -2696,7 +2619,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IAcceleration
-        @extends Adaptive.IBaseSensor
      */
      export interface IAcceleration extends IBaseSensor {
           /**
@@ -2729,7 +2651,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IAmbientLight
-        @extends Adaptive.IBaseSensor
      */
      export interface IAmbientLight extends IBaseSensor {
      }
@@ -2742,7 +2663,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IBarometer
-        @extends Adaptive.IBaseSensor
      */
      export interface IBarometer extends IBaseSensor {
      }
@@ -2755,7 +2675,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IGeolocation
-        @extends Adaptive.IBaseSensor
      */
      export interface IGeolocation extends IBaseSensor {
           /**
@@ -2788,7 +2707,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IGyroscope
-        @extends Adaptive.IBaseSensor
      */
      export interface IGyroscope extends IBaseSensor {
      }
@@ -2801,7 +2719,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IMagnetometer
-        @extends Adaptive.IBaseSensor
      */
      export interface IMagnetometer extends IBaseSensor {
      }
@@ -2814,7 +2731,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IProximity
-        @extends Adaptive.IBaseSensor
      */
      export interface IProximity extends IBaseSensor {
      }
@@ -2827,7 +2743,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IFacebook
-        @extends Adaptive.IBaseSocial
      */
      export interface IFacebook extends IBaseSocial {
      }
@@ -2840,7 +2755,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IGooglePlus
-        @extends Adaptive.IBaseSocial
      */
      export interface IGooglePlus extends IBaseSocial {
      }
@@ -2853,7 +2767,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ILinkedIn
-        @extends Adaptive.IBaseSocial
      */
      export interface ILinkedIn extends IBaseSocial {
      }
@@ -2866,7 +2779,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.IRSS
-        @extends Adaptive.IBaseSocial
      */
      export interface IRSS extends IBaseSocial {
      }
@@ -2879,7 +2791,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ITwitter
-        @extends Adaptive.IBaseSocial
      */
      export interface ITwitter extends IBaseSocial {
      }
@@ -2892,7 +2803,6 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      /**
         @class Adaptive.ICapabilities
-        @extends Adaptive.IBaseSystem
      */
      export interface ICapabilities extends IBaseSystem {
           /**
@@ -2965,7 +2875,6 @@ device.
      */
      /**
         @class Adaptive.IDevice
-        @extends Adaptive.IBaseSystem
      */
      export interface IDevice extends IBaseSystem {
           /**
@@ -3012,7 +2921,6 @@ device.
      */
      /**
         @class Adaptive.IDisplay
-        @extends Adaptive.IBaseSystem
      */
      export interface IDisplay extends IBaseSystem {
      }
@@ -3025,7 +2933,6 @@ device.
      */
      /**
         @class Adaptive.IOS
-        @extends Adaptive.IBaseSystem
      */
      export interface IOS extends IBaseSystem {
           /**
@@ -3045,7 +2952,6 @@ device.
      */
      /**
         @class Adaptive.IRuntime
-        @extends Adaptive.IBaseSystem
      */
      export interface IRuntime extends IBaseSystem {
           /**
@@ -3071,7 +2977,6 @@ device.
      */
      /**
         @class Adaptive.IBrowser
-        @extends Adaptive.IBaseUI
      */
      export interface IBrowser extends IBaseUI {
           /**
@@ -3112,7 +3017,6 @@ device.
      */
      /**
         @class Adaptive.IDesktop
-        @extends Adaptive.IBaseUI
      */
      export interface IDesktop extends IBaseUI {
      }
@@ -3125,7 +3029,6 @@ device.
      */
      /**
         @class Adaptive.IMap
-        @extends Adaptive.IBaseUI
      */
      export interface IMap extends IBaseUI {
      }
@@ -3138,7 +3041,6 @@ device.
      */
      /**
         @class Adaptive.IUI
-        @extends Adaptive.IBaseUI
      */
      export interface IUI extends IBaseUI {
      }
@@ -3151,7 +3053,6 @@ device.
      */
      /**
         @class Adaptive.ICompression
-        @extends Adaptive.IBaseUtil
      */
      export interface ICompression extends IBaseUtil {
      }
@@ -3164,7 +3065,6 @@ device.
      */
      /**
         @class Adaptive.IConcurrent
-        @extends Adaptive.IBaseUtil
      */
      export interface IConcurrent extends IBaseUtil {
      }
@@ -3177,7 +3077,6 @@ device.
      */
      /**
         @class Adaptive.ICrypto
-        @extends Adaptive.IBaseUtil
      */
      export interface ICrypto extends IBaseUtil {
      }
@@ -3190,7 +3089,6 @@ device.
      */
      /**
         @class Adaptive.ILogging
-        @extends Adaptive.IBaseUtil
      */
      export interface ILogging extends IBaseUtil {
           /**
@@ -3218,7 +3116,6 @@ device.
      */
      /**
         @class Adaptive.ITimer
-        @extends Adaptive.IBaseUtil
      */
      export interface ITimer extends IBaseUtil {
      }
@@ -3240,7 +3137,11 @@ device.
           constructor() {
           }
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIBean.
+             @return {Adaptive.APIBean} Wrapped object instance.
           */
           static toObject(object : any) : APIBean {
                var result : APIBean = new APIBean();
@@ -3377,7 +3278,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIRequest.
+             @return {Adaptive.APIRequest} Wrapped object instance.
           */
           static toObject(object : any) : APIRequest {
                var result : APIRequest = new APIRequest(null, null, null, null);
@@ -3493,7 +3398,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIResponse.
+             @return {Adaptive.APIResponse} Wrapped object instance.
           */
           static toObject(object : any) : APIResponse {
                var result : APIResponse = new APIResponse(null, null, null);
@@ -3575,7 +3484,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServicePath.
+             @return {Adaptive.ServicePath} Wrapped object instance.
           */
           static toObject(object : any) : ServicePath {
                var result : ServicePath = new ServicePath(null, null);
@@ -3729,7 +3642,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Acceleration.
+             @return {Adaptive.Acceleration} Wrapped object instance.
           */
           static toObject(object : any) : Acceleration {
                var result : Acceleration = new Acceleration(null, null, null, null);
@@ -3791,7 +3708,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Button.
+             @return {Adaptive.Button} Wrapped object instance.
           */
           static toObject(object : any) : Button {
                var result : Button = new Button(null);
@@ -3882,7 +3803,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactAddress.
+             @return {Adaptive.ContactAddress} Wrapped object instance.
           */
           static toObject(object : any) : ContactAddress {
                var result : ContactAddress = new ContactAddress(null, null);
@@ -4002,7 +3927,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactEmail.
+             @return {Adaptive.ContactEmail} Wrapped object instance.
           */
           static toObject(object : any) : ContactEmail {
                var result : ContactEmail = new ContactEmail(null, null, null);
@@ -4151,7 +4080,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo.
+             @return {Adaptive.ContactPersonalInfo} Wrapped object instance.
           */
           static toObject(object : any) : ContactPersonalInfo {
                var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
@@ -4245,7 +4178,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPhone.
+             @return {Adaptive.ContactPhone} Wrapped object instance.
           */
           static toObject(object : any) : ContactPhone {
                var result : ContactPhone = new ContactPhone(null, null);
@@ -4365,7 +4302,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo.
+             @return {Adaptive.ContactProfessionalInfo} Wrapped object instance.
           */
           static toObject(object : any) : ContactProfessionalInfo {
                var result : ContactProfessionalInfo = new ContactProfessionalInfo(null, null, null);
@@ -4454,7 +4395,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactSocial.
+             @return {Adaptive.ContactSocial} Wrapped object instance.
           */
           static toObject(object : any) : ContactSocial {
                var result : ContactSocial = new ContactSocial(null, null);
@@ -4546,7 +4491,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactTag.
+             @return {Adaptive.ContactTag} Wrapped object instance.
           */
           static toObject(object : any) : ContactTag {
                var result : ContactTag = new ContactTag(null, null);
@@ -4606,7 +4555,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactUid.
+             @return {Adaptive.ContactUid} Wrapped object instance.
           */
           static toObject(object : any) : ContactUid {
                var result : ContactUid = new ContactUid(null);
@@ -4665,7 +4618,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite.
+             @return {Adaptive.ContactWebsite} Wrapped object instance.
           */
           static toObject(object : any) : ContactWebsite {
                var result : ContactWebsite = new ContactWebsite(null);
@@ -4752,7 +4709,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Database.
+             @return {Adaptive.Database} Wrapped object instance.
           */
           static toObject(object : any) : Database {
                var result : Database = new Database(null, null);
@@ -4812,7 +4773,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn.
+             @return {Adaptive.DatabaseColumn} Wrapped object instance.
           */
           static toObject(object : any) : DatabaseColumn {
                var result : DatabaseColumn = new DatabaseColumn(null);
@@ -4871,7 +4836,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow.
+             @return {Adaptive.DatabaseRow} Wrapped object instance.
           */
           static toObject(object : any) : DatabaseRow {
                var result : DatabaseRow = new DatabaseRow(null);
@@ -5048,7 +5017,11 @@ listener.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable.
+             @return {Adaptive.DatabaseTable} Wrapped object instance.
           */
           static toObject(object : any) : DatabaseTable {
                var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
@@ -5214,7 +5187,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo.
+             @return {Adaptive.DeviceInfo} Wrapped object instance.
           */
           static toObject(object : any) : DeviceInfo {
                var result : DeviceInfo = new DeviceInfo(null, null, null, null);
@@ -5444,7 +5421,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Email.
+             @return {Adaptive.Email} Wrapped object instance.
           */
           static toObject(object : any) : Email {
                var result : Email = new Email(null, null, null, null, null, null, null);
@@ -5549,7 +5530,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.EmailAddress.
+             @return {Adaptive.EmailAddress} Wrapped object instance.
           */
           static toObject(object : any) : EmailAddress {
                var result : EmailAddress = new EmailAddress(null);
@@ -5720,7 +5705,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData.
+             @return {Adaptive.EmailAttachmentData} Wrapped object instance.
           */
           static toObject(object : any) : EmailAttachmentData {
                var result : EmailAttachmentData = new EmailAttachmentData(null, null, null, null, null);
@@ -5892,7 +5881,11 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor.
+             @return {Adaptive.FileDescriptor} Wrapped object instance.
           */
           static toObject(object : any) : FileDescriptor {
                var result : FileDescriptor = new FileDescriptor();
@@ -6092,7 +6085,11 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Geolocation.
+             @return {Adaptive.Geolocation} Wrapped object instance.
           */
           static toObject(object : any) : Geolocation {
                var result : Geolocation = new Geolocation(null, null, null, null, null, null);
@@ -6184,7 +6181,11 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.KeyPair.
+             @return {Adaptive.KeyPair} Wrapped object instance.
           */
           static toObject(object : any) : KeyPair {
                var result : KeyPair = new KeyPair(null, null);
@@ -6255,7 +6256,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
+             @return {Adaptive.Lifecycle} Wrapped object instance.
           */
           static toObject(object : any) : Lifecycle {
                var result : Lifecycle = new Lifecycle(null);
@@ -6346,7 +6351,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Locale.
+             @return {Adaptive.Locale} Wrapped object instance.
           */
           static toObject(object : any) : Locale {
                var result : Locale = new Locale(null, null);
@@ -6459,7 +6468,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.OSInfo.
+             @return {Adaptive.OSInfo} Wrapped object instance.
           */
           static toObject(object : any) : OSInfo {
                var result : OSInfo = new OSInfo(null, null, null);
@@ -6552,7 +6565,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair.
+             @return {Adaptive.SecureKeyPair} Wrapped object instance.
           */
           static toObject(object : any) : SecureKeyPair {
                var result : SecureKeyPair = new SecureKeyPair(null, null);
@@ -6668,7 +6685,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service.
+             @return {Adaptive.Service} Wrapped object instance.
           */
           static toObject(object : any) : Service {
                var result : Service = new Service(null, null, null);
@@ -6939,7 +6960,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceCookie.
+             @return {Adaptive.ServiceCookie} Wrapped object instance.
           */
           static toObject(object : any) : ServiceCookie {
                var result : ServiceCookie = new ServiceCookie(null, null, null, null, null, null, null, null);
@@ -7117,7 +7142,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
+             @return {Adaptive.ServiceEndpoint} Wrapped object instance.
           */
           static toObject(object : any) : ServiceEndpoint {
                var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
@@ -7218,7 +7247,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader.
+             @return {Adaptive.ServiceHeader} Wrapped object instance.
           */
           static toObject(object : any) : ServiceHeader {
                var result : ServiceHeader = new ServiceHeader(null, null);
@@ -7530,7 +7563,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest.
+             @return {Adaptive.ServiceRequest} Wrapped object instance.
           */
           static toObject(object : any) : ServiceRequest {
                var result : ServiceRequest = new ServiceRequest(null, null, null, null, null, null, null, null, null, null);
@@ -7818,7 +7855,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
+             @return {Adaptive.ServiceResponse} Wrapped object instance.
           */
           static toObject(object : any) : ServiceResponse {
                var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null, null);
@@ -7932,7 +7973,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSession.
+             @return {Adaptive.ServiceSession} Wrapped object instance.
           */
           static toObject(object : any) : ServiceSession {
                var result : ServiceSession = new ServiceSession(null, null);
@@ -8205,7 +8250,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Contact.
+             @return {Adaptive.Contact} Wrapped object instance.
           */
           static toObject(object : any) : Contact {
                var result : Contact = new Contact(null, null, null, null, null, null, null, null, null);
@@ -8296,7 +8345,6 @@ Possible lifecycle States:
      }
      /**
         @class Adaptive.BaseListener
-        @extends Adaptive.IBaseListener
      */
      export class BaseListener implements IBaseListener {
 
@@ -8417,17 +8465,29 @@ Possible lifecycle States:
      */
      export class AccelerationListener extends BaseListener implements IAccelerationListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IAccelerationListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (acceleration : Acceleration) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
           */
           constructor(onErrorFunction : (error : IAccelerationListenerError) => void, onResultFunction : (acceleration : Acceleration) => void, onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8452,8 +8512,7 @@ Possible lifecycle States:
              @method
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
-             @param {Adaptive.IAccelerationListenerError} error Error fired
-
+             @param {Adaptive.IAccelerationListenerError} error error Error fired
              @since ARP1.0
           */
           public onError(error : IAccelerationListenerError) : void {
@@ -8467,8 +8526,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Correct data received.
-             @param {Adaptive.Acceleration} acceleration Acceleration received
-
+             @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
              @since ARP1.0
           */
           public onResult(acceleration : Acceleration) : void {
@@ -8482,9 +8540,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Data received with warning - ie. Needs calibration.
-             @param {Adaptive.Acceleration} acceleration Acceleration received
-             @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
-
+             @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
+             @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
              @since ARP1.0
           */
           public onWarning(acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {
@@ -8560,17 +8617,29 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      export class ButtonListener extends BaseListener implements IButtonListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IButtonListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (button : Button) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);
@@ -8594,8 +8663,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              No data received
-             @param {Adaptive.IButtonListenerError} error occurred
-
+             @param {Adaptive.IButtonListenerError} error error occurred
              @since ARP1.0
           */
           public onError(error : IButtonListenerError) : void {
@@ -8609,8 +8677,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Called on button pressed
-             @param {Adaptive.Button} button pressed
-
+             @param {Adaptive.Button} button button pressed
              @since ARP1.0
           */
           public onResult(button : Button) : void {
@@ -8624,9 +8691,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Data received with warning
-             @param {Adaptive.Button} button  pressed
-             @param {Adaptive.IButtonListenerWarning} warning happened
-
+             @param {Adaptive.Button} button button  pressed
+             @param {Adaptive.IButtonListenerWarning} warning warning happened
              @since ARP1.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {
@@ -8702,17 +8768,29 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      export class GeolocationListener extends BaseListener implements IGeolocationListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IGeolocationListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (geolocation : Geolocation) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
           */
           constructor(onErrorFunction : (error : IGeolocationListenerError) => void, onResultFunction : (geolocation : Geolocation) => void, onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8736,8 +8814,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : IGeolocationListenerError) : void {
@@ -8751,8 +8828,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Correct data received.
-             @param {Adaptive.Geolocation} geolocation Geolocation Bean
-
+             @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
              @since ARP1.0
           */
           public onResult(geolocation : Geolocation) : void {
@@ -8766,9 +8842,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Data received with warning - ie. HighDoP
-             @param {Adaptive.Geolocation} geolocation Geolocation Bean
-             @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
-
+             @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
+             @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
@@ -8844,17 +8919,29 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      export class LifecycleListener extends BaseListener implements ILifecycleListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : ILifecycleListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (lifecycle : Lifecycle) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
           */
           constructor(onErrorFunction : (error : ILifecycleListenerError) => void, onResultFunction : (lifecycle : Lifecycle) => void, onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void) {
                super(++registeredCounter);
@@ -8878,8 +8965,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : ILifecycleListenerError) : void {
@@ -8893,8 +8979,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Called when lifecycle changes somehow.
-             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-
+             @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
              @since ARP1.0
           */
           public onResult(lifecycle : Lifecycle) : void {
@@ -8908,9 +8993,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Data received with warning
-             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-             @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
-
+             @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
+             @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {
@@ -8986,17 +9070,29 @@ listener and subsequently, the listener will be deactivated and removed from the
      */
      export class NetworkStatusListener extends BaseListener implements INetworkStatusListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : INetworkStatusListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (network : ICapabilitiesNet) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
           */
           constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
@@ -9020,8 +9116,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : INetworkStatusListenerError) : void {
@@ -9035,8 +9130,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Called when network connection changes somehow.
-             @param {Adaptive.ICapabilitiesNet} network Change to this network.
-
+             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
              @since ARP1.0
           */
           public onResult(network : ICapabilitiesNet) : void {
@@ -9050,9 +9144,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Status received with warning
-             @param {Adaptive.ICapabilitiesNet} network Change to this network.
-             @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
-
+             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
@@ -9065,22 +9158,28 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      }
 
+     /**
+        @class Adaptive.BaseCallback
+     */
      export class BaseCallback implements IBaseCallback {
 
           /**
+             @property {number}
              Unique id of callback.
           */
           id : number;
 
           /**
+             @property {Adaptive.IAdaptiveRPGroup}
              Group of API.
           */
           apiGroup : IAdaptiveRPGroup;
 
           /**
+             @method constructor
              Constructor with callback id.
 
-             @param id  The id of the callback.
+             @param {number} id  The id of the callback.
           */
           constructor(id : number) {
                this.id = id;
@@ -9088,14 +9187,17 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
-             Get the listener id.
-             @return {number} long with the identifier of the callback.
+             @method
+             @return {number}
+             Get the callback id.
           */
           getId() : number {
                return this.id;
           }
 
           /**
+             @method
+             @return {Adaptive.IAdaptiveRPGroup}
              Return the API group for the given interface.
           */
           getAPIGroup() : IAdaptiveRPGroup {
@@ -9103,9 +9205,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Return the API version for the given interface.
 
-             @return {string} The version of the API.
+             @return {string}
+             The version of the API.
           */
           getAPIVersion() : string {
                return "v2.0.4"
@@ -9115,12 +9219,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredContactPhotoResultCallback
+        @member Adaptive
+        @private
         ContactPhotoResultCallback control dictionary.
      */
      export var registeredContactPhotoResultCallback = new Dictionary<IContactPhotoResultCallback>([]);
 
+
+        // ContactPhotoResultCallback global listener handlers.
+
      /**
-        ContactPhotoResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IContactPhotoResultCallbackError} error
      */
      export function handleContactPhotoResultCallbackError(id : number, error : IContactPhotoResultCallbackError) : void {
           var callback : IContactPhotoResultCallback = registeredContactPhotoResultCallback[""+id];
@@ -9131,6 +9245,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {number[]} contactPhoto
+     */
      export function handleContactPhotoResultCallbackResult(id : number, contactPhoto : Array<number>) : void {
           var callback : IContactPhotoResultCallback = registeredContactPhotoResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9140,6 +9261,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(contactPhoto);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {number[]} contactPhoto
+        @param {Adaptive.IContactPhotoResultCallbackWarning} warning
+     */
      export function handleContactPhotoResultCallbackWarning(id : number, contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) : void {
           var callback : IContactPhotoResultCallback = registeredContactPhotoResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9150,18 +9279,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.ContactPhotoResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class ContactPhotoResultCallback extends BaseCallback implements IContactPhotoResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IContactPhotoResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (contactPhoto : Array<number>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
-             @param onResultFunction Function receiving parameters of type: number[]
-             @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: number[]
+             @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactPhotoResultCallbackError) => void, onResultFunction : (contactPhoto : Array<number>) => void, onWarningFunction : (contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9183,9 +9330,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Error
-
-             @param error returned by the platform
+             @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
              @since ARP1.0
           */
           public onError(error : IContactPhotoResultCallbackError) : void {
@@ -9197,9 +9344,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Result
-
-             @param contactPhoto returned by the platform
+             @param {number[]} contactPhoto contactPhoto returned by the platform
              @since ARP1.0
           */
           public onResult(contactPhoto : Array<number>) : void {
@@ -9211,10 +9358,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Warning
-
-             @param contactPhoto returned by the platform
-             @param warning      returned by the platform
+             @param {number[]} contactPhoto contactPhoto returned by the platform
+             @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
              @since ARP1.0
           */
           public onWarning(contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) : void {
@@ -9229,12 +9376,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredContactResultCallback
+        @member Adaptive
+        @private
         ContactResultCallback control dictionary.
      */
      export var registeredContactResultCallback = new Dictionary<IContactResultCallback>([]);
 
+
+        // ContactResultCallback global listener handlers.
+
      /**
-        ContactResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IContactResultCallbackError} error
      */
      export function handleContactResultCallbackError(id : number, error : IContactResultCallbackError) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
@@ -9245,6 +9402,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Contact[]} contacts
+     */
      export function handleContactResultCallbackResult(id : number, contacts : Array<Contact>) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9254,6 +9418,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(contacts);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Contact[]} contacts
+        @param {Adaptive.IContactResultCallbackWarning} warning
+     */
      export function handleContactResultCallbackWarning(id : number, contacts : Array<Contact>, warning : IContactResultCallbackWarning) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9264,18 +9436,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.ContactResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class ContactResultCallback extends BaseCallback implements IContactResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IContactResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (contacts : Array<Contact>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (contacts : Array<Contact>, warning : IContactResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactResultCallbackError) => void, onResultFunction : (contacts : Array<Contact>) => void, onWarningFunction : (contacts : Array<Contact>, warning : IContactResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9297,9 +9487,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Error
-
-             @param error returned by the platform
+             @param {Adaptive.IContactResultCallbackError} error error returned by the platform
              @since ARP1.0
           */
           public onError(error : IContactResultCallbackError) : void {
@@ -9311,9 +9501,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Result
-
-             @param contacts returned by the platform
+             @param {Adaptive.Contact[]} contacts contacts returned by the platform
              @since ARP1.0
           */
           public onResult(contacts : Array<Contact>) : void {
@@ -9325,10 +9515,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Warning
-
-             @param contacts returned by the platform
-             @param warning  returned by the platform
+             @param {Adaptive.Contact[]} contacts contacts returned by the platform
+             @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
              @since ARP1.0
           */
           public onWarning(contacts : Array<Contact>, warning : IContactResultCallbackWarning) : void {
@@ -9343,12 +9533,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredDatabaseResultCallback
+        @member Adaptive
+        @private
         DatabaseResultCallback control dictionary.
      */
      export var registeredDatabaseResultCallback = new Dictionary<IDatabaseResultCallback>([]);
 
+
+        // DatabaseResultCallback global listener handlers.
+
      /**
-        DatabaseResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IDatabaseResultCallbackError} error
      */
      export function handleDatabaseResultCallbackError(id : number, error : IDatabaseResultCallbackError) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
@@ -9359,6 +9559,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Database} database
+     */
      export function handleDatabaseResultCallbackResult(id : number, database : Database) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9368,6 +9575,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(database);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Database} database
+        @param {Adaptive.IDatabaseResultCallbackWarning} warning
+     */
      export function handleDatabaseResultCallbackWarning(id : number, database : Database, warning : IDatabaseResultCallbackWarning) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9378,18 +9593,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.DatabaseResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class DatabaseResultCallback extends BaseCallback implements IDatabaseResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IDatabaseResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (database : Database) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (database : Database, warning : IDatabaseResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Database
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Database
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseResultCallbackError) => void, onResultFunction : (database : Database) => void, onWarningFunction : (database : Database, warning : IDatabaseResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9411,9 +9644,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for error responses
-
-             @param error Returned error
+             @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
              @since ARP1.0
           */
           public onError(error : IDatabaseResultCallbackError) : void {
@@ -9425,9 +9658,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for correct responses
-
-             @param database Returns the database
+             @param {Adaptive.Database} database database Returns the database
              @since ARP1.0
           */
           public onResult(database : Database) : void {
@@ -9439,10 +9672,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for warning responses
-
-             @param database Returns the database
-             @param warning  Returned Warning
+             @param {Adaptive.Database} database database Returns the database
+             @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
              @since ARP1.0
           */
           public onWarning(database : Database, warning : IDatabaseResultCallbackWarning) : void {
@@ -9457,12 +9690,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredDatabaseTableResultCallback
+        @member Adaptive
+        @private
         DatabaseTableResultCallback control dictionary.
      */
      export var registeredDatabaseTableResultCallback = new Dictionary<IDatabaseTableResultCallback>([]);
 
+
+        // DatabaseTableResultCallback global listener handlers.
+
      /**
-        DatabaseTableResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IDatabaseTableResultCallbackError} error
      */
      export function handleDatabaseTableResultCallbackError(id : number, error : IDatabaseTableResultCallbackError) : void {
           var callback : IDatabaseTableResultCallback = registeredDatabaseTableResultCallback[""+id];
@@ -9473,6 +9716,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.DatabaseTable} databaseTable
+     */
      export function handleDatabaseTableResultCallbackResult(id : number, databaseTable : DatabaseTable) : void {
           var callback : IDatabaseTableResultCallback = registeredDatabaseTableResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9482,6 +9732,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(databaseTable);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.DatabaseTable} databaseTable
+        @param {Adaptive.IDatabaseTableResultCallbackWarning} warning
+     */
      export function handleDatabaseTableResultCallbackWarning(id : number, databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) : void {
           var callback : IDatabaseTableResultCallback = registeredDatabaseTableResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9492,18 +9750,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.DatabaseTableResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class DatabaseTableResultCallback extends BaseCallback implements IDatabaseTableResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IDatabaseTableResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (databaseTable : DatabaseTable) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
-             @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseTableResultCallbackError) => void, onResultFunction : (databaseTable : DatabaseTable) => void, onWarningFunction : (databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9525,9 +9801,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for error responses
-
-             @param error Returned error
+             @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
              @since ARP1.0
           */
           public onError(error : IDatabaseTableResultCallbackError) : void {
@@ -9539,9 +9815,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for correct responses
-
-             @param databaseTable Returns the databaseTable
+             @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
              @since ARP1.0
           */
           public onResult(databaseTable : DatabaseTable) : void {
@@ -9553,10 +9829,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result callback for warning responses
-
-             @param databaseTable Returns the databaseTable
-             @param warning       Returned Warning
+             @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
+             @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
              @since ARP1.0
           */
           public onWarning(databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) : void {
@@ -9571,12 +9847,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredFileDataLoadResultCallback
+        @member Adaptive
+        @private
         FileDataLoadResultCallback control dictionary.
      */
      export var registeredFileDataLoadResultCallback = new Dictionary<IFileDataLoadResultCallback>([]);
 
+
+        // FileDataLoadResultCallback global listener handlers.
+
      /**
-        FileDataLoadResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IFileDataLoadResultCallbackError} error
      */
      export function handleFileDataLoadResultCallbackError(id : number, error : IFileDataLoadResultCallbackError) : void {
           var callback : IFileDataLoadResultCallback = registeredFileDataLoadResultCallback[""+id];
@@ -9587,6 +9873,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {number[]} data
+     */
      export function handleFileDataLoadResultCallbackResult(id : number, data : Array<number>) : void {
           var callback : IFileDataLoadResultCallback = registeredFileDataLoadResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9596,6 +9889,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(data);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {number[]} data
+        @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
+     */
      export function handleFileDataLoadResultCallbackWarning(id : number, data : Array<number>, warning : IFileDataLoadResultCallbackWarning) : void {
           var callback : IFileDataLoadResultCallback = registeredFileDataLoadResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9606,18 +9907,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.FileDataLoadResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class FileDataLoadResultCallback extends BaseCallback implements IFileDataLoadResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IFileDataLoadResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (data : Array<number>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (data : Array<number>, warning : IFileDataLoadResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
-             @param onResultFunction Function receiving parameters of type: number[]
-             @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: number[]
+             @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileDataLoadResultCallbackError) => void, onResultFunction : (data : Array<number>) => void, onWarningFunction : (data : Array<number>, warning : IFileDataLoadResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9639,9 +9958,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Error processing data retrieval/storage operation.
-
-             @param error Error condition encountered.
+             @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
              @since ARP1.0
           */
           public onError(error : IFileDataLoadResultCallbackError) : void {
@@ -9653,9 +9972,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result of data retrieval operation.
-
-             @param data Data loaded.
+             @param {number[]} data data Data loaded.
              @since ARP1.0
           */
           public onResult(data : Array<number>) : void {
@@ -9667,10 +9986,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result with warning of data retrieval/storage operation.
-
-             @param data    File being loaded.
-             @param warning Warning condition encountered.
+             @param {number[]} data data    File being loaded.
+             @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
              @since ARP1.0
           */
           public onWarning(data : Array<number>, warning : IFileDataLoadResultCallbackWarning) : void {
@@ -9685,12 +10004,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredFileDataStoreResultCallback
+        @member Adaptive
+        @private
         FileDataStoreResultCallback control dictionary.
      */
      export var registeredFileDataStoreResultCallback = new Dictionary<IFileDataStoreResultCallback>([]);
 
+
+        // FileDataStoreResultCallback global listener handlers.
+
      /**
-        FileDataStoreResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IFileDataStoreResultCallbackError} error
      */
      export function handleFileDataStoreResultCallbackError(id : number, error : IFileDataStoreResultCallbackError) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
@@ -9701,6 +10030,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} file
+     */
      export function handleFileDataStoreResultCallbackResult(id : number, file : FileDescriptor) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9710,6 +10046,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(file);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} file
+        @param {Adaptive.IFileDataStoreResultCallbackWarning} warning
+     */
      export function handleFileDataStoreResultCallbackWarning(id : number, file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9720,18 +10064,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.FileDataStoreResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class FileDataStoreResultCallback extends BaseCallback implements IFileDataStoreResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IFileDataStoreResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (file : FileDescriptor) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileDataStoreResultCallbackError) => void, onResultFunction : (file : FileDescriptor) => void, onWarningFunction : (file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9753,9 +10115,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Error processing data retrieval/storage operation.
-
-             @param error Error condition encountered.
+             @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
              @since ARP1.0
           */
           public onError(error : IFileDataStoreResultCallbackError) : void {
@@ -9767,9 +10129,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result of data storage operation.
-
-             @param file File reference to stored data.
+             @param {Adaptive.FileDescriptor} file file File reference to stored data.
              @since ARP1.0
           */
           public onResult(file : FileDescriptor) : void {
@@ -9781,10 +10143,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Result with warning of data retrieval/storage operation.
-
-             @param file    File being loaded/stored.
-             @param warning Warning condition encountered.
+             @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
+             @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
              @since ARP1.0
           */
           public onWarning(file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) : void {
@@ -9799,12 +10161,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredFileListResultCallback
+        @member Adaptive
+        @private
         FileListResultCallback control dictionary.
      */
      export var registeredFileListResultCallback = new Dictionary<IFileListResultCallback>([]);
 
+
+        // FileListResultCallback global listener handlers.
+
      /**
-        FileListResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IFileListResultCallbackError} error
      */
      export function handleFileListResultCallbackError(id : number, error : IFileListResultCallbackError) : void {
           var callback : IFileListResultCallback = registeredFileListResultCallback[""+id];
@@ -9815,6 +10187,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor[]} files
+     */
      export function handleFileListResultCallbackResult(id : number, files : Array<FileDescriptor>) : void {
           var callback : IFileListResultCallback = registeredFileListResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9824,6 +10203,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(files);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor[]} files
+        @param {Adaptive.IFileListResultCallbackWarning} warning
+     */
      export function handleFileListResultCallbackWarning(id : number, files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) : void {
           var callback : IFileListResultCallback = registeredFileListResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9834,18 +10221,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.FileListResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class FileListResultCallback extends BaseCallback implements IFileListResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IFileListResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (files : Array<FileDescriptor>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
-             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileListResultCallbackError) => void, onResultFunction : (files : Array<FileDescriptor>) => void, onWarningFunction : (files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9867,9 +10272,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On error result of a file operation.
-
-             @param error Error processing the request.
+             @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
              @since ARP1.0
           */
           public onError(error : IFileListResultCallbackError) : void {
@@ -9881,9 +10286,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On correct result of a file operation.
-
-             @param files Array of resulting files/folders.
+             @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
              @since ARP1.0
           */
           public onResult(files : Array<FileDescriptor>) : void {
@@ -9895,10 +10300,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On partial result of a file operation, containing a warning.
-
-             @param files   Array of resulting files/folders.
-             @param warning Warning condition encountered.
+             @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
+             @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
              @since ARP1.0
           */
           public onWarning(files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) : void {
@@ -9913,12 +10318,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredFileResultCallback
+        @member Adaptive
+        @private
         FileResultCallback control dictionary.
      */
      export var registeredFileResultCallback = new Dictionary<IFileResultCallback>([]);
 
+
+        // FileResultCallback global listener handlers.
+
      /**
-        FileResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IFileResultCallbackError} error
      */
      export function handleFileResultCallbackError(id : number, error : IFileResultCallbackError) : void {
           var callback : IFileResultCallback = registeredFileResultCallback[""+id];
@@ -9929,6 +10344,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} storageFile
+     */
      export function handleFileResultCallbackResult(id : number, storageFile : FileDescriptor) : void {
           var callback : IFileResultCallback = registeredFileResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9938,6 +10360,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(storageFile);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} file
+        @param {Adaptive.IFileResultCallbackWarning} warning
+     */
      export function handleFileResultCallbackWarning(id : number, file : FileDescriptor, warning : IFileResultCallbackWarning) : void {
           var callback : IFileResultCallback = registeredFileResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -9948,18 +10378,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.FileResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class FileResultCallback extends BaseCallback implements IFileResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IFileResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (storageFile : FileDescriptor) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (file : FileDescriptor, warning : IFileResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileResultCallbackError) => void, onResultFunction : (storageFile : FileDescriptor) => void, onWarningFunction : (file : FileDescriptor, warning : IFileResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9981,9 +10429,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On error result of a file operation.
-
-             @param error Error processing the request.
+             @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
              @since ARP1.0
           */
           public onError(error : IFileResultCallbackError) : void {
@@ -9995,9 +10443,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On correct result of a file operation.
-
-             @param storageFile Reference to the resulting file.
+             @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
              @since ARP1.0
           */
           public onResult(storageFile : FileDescriptor) : void {
@@ -10009,10 +10457,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              On partial result of a file operation, containing a warning.
-
-             @param file    Reference to the offending file.
-             @param warning Warning processing the request.
+             @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
+             @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
              @since ARP1.0
           */
           public onWarning(file : FileDescriptor, warning : IFileResultCallbackWarning) : void {
@@ -10027,12 +10475,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredMessagingCallback
+        @member Adaptive
+        @private
         MessagingCallback control dictionary.
      */
      export var registeredMessagingCallback = new Dictionary<IMessagingCallback>([]);
 
+
+        // MessagingCallback global listener handlers.
+
      /**
-        MessagingCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IMessagingCallbackError} error
      */
      export function handleMessagingCallbackError(id : number, error : IMessagingCallbackError) : void {
           var callback : IMessagingCallback = registeredMessagingCallback[""+id];
@@ -10043,6 +10501,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} success
+     */
      export function handleMessagingCallbackResult(id : number, success : boolean) : void {
           var callback : IMessagingCallback = registeredMessagingCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10052,6 +10517,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(success);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} success
+        @param {Adaptive.IMessagingCallbackWarning} warning
+     */
      export function handleMessagingCallbackWarning(id : number, success : boolean, warning : IMessagingCallbackWarning) : void {
           var callback : IMessagingCallback = registeredMessagingCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10062,18 +10535,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.MessagingCallback
+        @extends Adaptive.BaseCallback
+     */
      export class MessagingCallback extends BaseCallback implements IMessagingCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IMessagingCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (success : boolean) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (success : boolean, warning : IMessagingCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
-             @param onResultFunction Function receiving parameters of type: boolean
-             @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: boolean
+             @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
           */
           constructor(onErrorFunction : (error : IMessagingCallbackError) => void, onResultFunction : (success : boolean) => void, onWarningFunction : (success : boolean, warning : IMessagingCallbackWarning) => void) {
                super(++registeredCounter);
@@ -10095,9 +10586,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Error
-
-             @param error returned by the platform
+             @param {Adaptive.IMessagingCallbackError} error error returned by the platform
              @since ARP1.0
           */
           public onError(error : IMessagingCallbackError) : void {
@@ -10109,9 +10600,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Result
-
-             @param success true if sent;false otherwise
+             @param {boolean} success success true if sent;false otherwise
              @since ARP1.0
           */
           public onResult(success : boolean) : void {
@@ -10123,10 +10614,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Warning
-
-             @param success true if sent;false otherwise
-             @param warning returned by the platform
+             @param {boolean} success success true if sent;false otherwise
+             @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
              @since ARP1.0
           */
           public onWarning(success : boolean, warning : IMessagingCallbackWarning) : void {
@@ -10141,12 +10632,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredNetworkReachabilityCallback
+        @member Adaptive
+        @private
         NetworkReachabilityCallback control dictionary.
      */
      export var registeredNetworkReachabilityCallback = new Dictionary<INetworkReachabilityCallback>([]);
 
+
+        // NetworkReachabilityCallback global listener handlers.
+
      /**
-        NetworkReachabilityCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.INetworkReachabilityCallbackError} error
      */
      export function handleNetworkReachabilityCallbackError(id : number, error : INetworkReachabilityCallbackError) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
@@ -10157,6 +10658,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} reachable
+     */
      export function handleNetworkReachabilityCallbackResult(id : number, reachable : boolean) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10166,6 +10674,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(reachable);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} reachable
+        @param {Adaptive.INetworkReachabilityCallbackWarning} warning
+     */
      export function handleNetworkReachabilityCallbackWarning(id : number, reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10176,18 +10692,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.NetworkReachabilityCallback
+        @extends Adaptive.BaseCallback
+     */
      export class NetworkReachabilityCallback extends BaseCallback implements INetworkReachabilityCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : INetworkReachabilityCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (reachable : boolean) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (reachable : boolean, warning : INetworkReachabilityCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
-             @param onResultFunction Function receiving parameters of type: boolean
-             @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: boolean
+             @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
           */
           constructor(onErrorFunction : (error : INetworkReachabilityCallbackError) => void, onResultFunction : (reachable : boolean) => void, onWarningFunction : (reachable : boolean, warning : INetworkReachabilityCallbackWarning) => void) {
                super(++registeredCounter);
@@ -10209,9 +10743,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received - error condition, not authorized .
-
-             @param error Error value
+             @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
              @since ARP1.0
           */
           public onError(error : INetworkReachabilityCallbackError) : void {
@@ -10223,9 +10757,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Correct data received.
-
-             @param reachable Indicates if the host is reachable
+             @param {boolean} reachable reachable Indicates if the host is reachable
              @since ARP1.0
           */
           public onResult(reachable : boolean) : void {
@@ -10237,10 +10771,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning - ie Found entries with existing key and values have been overriden
-
-             @param reachable Indicates if the host is reachable
-             @param warning   Warning value
+             @param {boolean} reachable reachable Indicates if the host is reachable
+             @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
              @since ARP1.0
           */
           public onWarning(reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {
@@ -10255,12 +10789,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredSecurityResultCallback
+        @member Adaptive
+        @private
         SecurityResultCallback control dictionary.
      */
      export var registeredSecurityResultCallback = new Dictionary<ISecurityResultCallback>([]);
 
+
+        // SecurityResultCallback global listener handlers.
+
      /**
-        SecurityResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ISecurityResultCallbackError} error
      */
      export function handleSecurityResultCallbackError(id : number, error : ISecurityResultCallbackError) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
@@ -10271,6 +10815,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.SecureKeyPair[]} keyValues
+     */
      export function handleSecurityResultCallbackResult(id : number, keyValues : Array<SecureKeyPair>) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10280,6 +10831,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(keyValues);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.SecureKeyPair[]} keyValues
+        @param {Adaptive.ISecurityResultCallbackWarning} warning
+     */
      export function handleSecurityResultCallbackWarning(id : number, keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10290,18 +10849,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.SecurityResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class SecurityResultCallback extends BaseCallback implements ISecurityResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : ISecurityResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (keyValues : Array<SecureKeyPair>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
-             @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
           */
           constructor(onErrorFunction : (error : ISecurityResultCallbackError) => void, onResultFunction : (keyValues : Array<SecureKeyPair>) => void, onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -10323,9 +10900,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received - error condition, not authorized .
-
-             @param error Error values
+             @param {Adaptive.ISecurityResultCallbackError} error error Error values
              @since ARP1.0
           */
           public onError(error : ISecurityResultCallbackError) : void {
@@ -10337,9 +10914,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Correct data received.
-
-             @param keyValues key and values
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
              @since ARP1.0
           */
           public onResult(keyValues : Array<SecureKeyPair>) : void {
@@ -10351,10 +10928,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning - ie Found entries with existing key and values have been overriden
-
-             @param keyValues key and values
-             @param warning   Warning values
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
+             @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
              @since ARP1.0
           */
           public onWarning(keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) : void {
@@ -10369,12 +10946,22 @@ listener and subsequently, the listener will be deactivated and removed from the
 
 
      /**
+        @property {Adaptive.Dictionary} registeredServiceResultCallback
+        @member Adaptive
+        @private
         ServiceResultCallback control dictionary.
      */
      export var registeredServiceResultCallback = new Dictionary<IServiceResultCallback>([]);
 
+
+        // ServiceResultCallback global listener handlers.
+
      /**
-        ServiceResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IServiceResultCallbackError} error
      */
      export function handleServiceResultCallbackError(id : number, error : IServiceResultCallbackError) : void {
           var callback : IServiceResultCallback = registeredServiceResultCallback[""+id];
@@ -10385,6 +10972,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ServiceResponse} response
+     */
      export function handleServiceResultCallbackResult(id : number, response : ServiceResponse) : void {
           var callback : IServiceResultCallback = registeredServiceResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10394,6 +10988,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                callback.onResult(response);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ServiceResponse} response
+        @param {Adaptive.IServiceResultCallbackWarning} warning
+     */
      export function handleServiceResultCallbackWarning(id : number, response : ServiceResponse, warning : IServiceResultCallbackWarning) : void {
           var callback : IServiceResultCallback = registeredServiceResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -10404,18 +11006,36 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+
+     /**
+        @class Adaptive.ServiceResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class ServiceResultCallback extends BaseCallback implements IServiceResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IServiceResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (response : ServiceResponse) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (response : ServiceResponse, warning : IServiceResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
-             @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IServiceResultCallbackError) => void, onResultFunction : (response : ServiceResponse) => void, onWarningFunction : (response : ServiceResponse, warning : IServiceResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -10437,9 +11057,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Error
-
-             @param error returned by the platform
+             @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
              @since ARP1.0
           */
           public onError(error : IServiceResultCallbackError) : void {
@@ -10451,9 +11071,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Result
-
-             @param response data
+             @param {Adaptive.ServiceResponse} response response data
              @since ARP1.0
           */
           public onResult(response : ServiceResponse) : void {
@@ -10465,10 +11085,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              This method is called on Warning
-
-             @param response data
-             @param warning  returned by the platform
+             @param {Adaptive.ServiceResponse} response response data
+             @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
              @since ARP1.0
           */
           public onWarning(response : ServiceResponse, warning : IServiceResultCallbackWarning) : void {
@@ -10483,7 +11103,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseApplicationBridge
-        @extends Adaptive.IBaseApplication
         Base application for Application purposes
 
         @author Carlos Lozano Diez
@@ -10527,7 +11146,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseCommerceBridge
-        @extends Adaptive.IBaseCommerce
         Base application for Commerce purposes
 
         @author Carlos Lozano Diez
@@ -10571,7 +11189,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseCommunicationBridge
-        @extends Adaptive.IBaseCommunication
         Base application for Communication purposes
 
         @author Carlos Lozano Diez
@@ -10615,7 +11232,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseDataBridge
-        @extends Adaptive.IBaseData
         Base application for Data purposes
 
         @author Carlos Lozano Diez
@@ -10659,7 +11275,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseMediaBridge
-        @extends Adaptive.IBaseMedia
         Base application for Media purposes
 
         @author Carlos Lozano Diez
@@ -10703,7 +11318,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseNotificationBridge
-        @extends Adaptive.IBaseNotification
         Base application for Notification purposes
 
         @author Carlos Lozano Diez
@@ -10747,7 +11361,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BasePIMBridge
-        @extends Adaptive.IBasePIM
         Base application for PIM purposes
 
         @author Carlos Lozano Diez
@@ -10791,7 +11404,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseReaderBridge
-        @extends Adaptive.IBaseReader
         Base application for Reader purposes
 
         @author Carlos Lozano Diez
@@ -10835,7 +11447,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseSecurityBridge
-        @extends Adaptive.IBaseSecurity
         Base application for Security purposes
 
         @author Carlos Lozano Diez
@@ -10879,7 +11490,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseSensorBridge
-        @extends Adaptive.IBaseSensor
         Base application for Sensor purposes
 
         @author Carlos Lozano Diez
@@ -10923,7 +11533,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseSocialBridge
-        @extends Adaptive.IBaseSocial
         Base application for Social purposes
 
         @author Carlos Lozano Diez
@@ -10967,7 +11576,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseSystemBridge
-        @extends Adaptive.IBaseSystem
         Base application for System purposes
 
         @author Carlos Lozano Diez
@@ -11011,7 +11619,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseUIBridge
-        @extends Adaptive.IBaseUI
         Base application for UI purposes
 
         @author Carlos Lozano Diez
@@ -11055,7 +11662,6 @@ listener and subsequently, the listener will be deactivated and removed from the
 
      /**
         @class Adaptive.BaseUtilBridge
-        @extends Adaptive.IBaseUtil
         Base application for Utility purposes
 
         @author Carlos Lozano Diez
@@ -11135,6 +11741,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Returns the default locale of the application defined in the configuration file
 
              @return {Adaptive.Locale} Default Locale of the application
@@ -11173,6 +11780,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              List of supported locales for the application defined in the configuration file
 
              @return {Adaptive.Locale[]} List of locales
@@ -11214,10 +11822,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Gets the text/message corresponding to the given key and locale.
 
-             @param key    to match text
-             @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+             @param {string} key key    to match text
+             @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
              @since ARP1.0
           */
@@ -11256,9 +11865,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
-             @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+             @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
              @since ARP1.0
           */
@@ -11318,9 +11928,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Add the listener for the lifecycle of the app
 
-             @param listener Lifecycle listener
+             @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
              @since ARP1.0
           */
           addLifecycleListener(listener : ILifecycleListener) : void {
@@ -11359,6 +11970,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Whether the application is in background or not
 
              @return {boolean} true if the application is in background;false otherwise
@@ -11397,9 +12009,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Un-registers an existing listener from receiving lifecycle events.
 
-             @param listener Lifecycle listener
+             @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
              @since ARP1.0
           */
           removeLifecycleListener(listener : ILifecycleListener) : void {
@@ -11432,6 +12045,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Removes all existing listeners from receiving lifecycle events.
 
              @since ARP1.0
@@ -11678,10 +12292,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Whether there is connectivity to a host, via domain name or ip address, or not.
 
-             @param host     domain name or ip address of host.
-             @param callback Callback called at the end.
+             @param {string} host host     domain name or ip address of host.
+             @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
              @since ARP1.0
           */
           isNetworkReachable(host : string, callback : INetworkReachabilityCallback) : void {
@@ -11724,10 +12339,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Whether there is connectivity to an url of a service or not.
 
-             @param url      to look for
-             @param callback Callback called at the end
+             @param {string} url url      to look for
+             @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
              @since ARP1.0
           */
           isNetworkServiceReachable(url : string, callback : INetworkReachabilityCallback) : void {
@@ -11789,9 +12405,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Add the listener for network status changes of the app
 
-             @param listener Listener with the result
+             @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
              @since ARP1.0
           */
           addNetworkStatusListener(listener : INetworkStatusListener) : void {
@@ -11830,9 +12447,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Un-registers an existing listener from receiving network status events.
 
-             @param listener Listener with the result
+             @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
              @since ARP1.0
           */
           removeNetworkStatusListener(listener : INetworkStatusListener) : void {
@@ -11865,6 +12483,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Removes all existing listeners from receiving network status events.
 
              @since ARP1.0
@@ -11921,9 +12540,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Get a reference to a registered service by name.
 
-             @param serviceName Name of service.
+             @param {string} serviceName serviceName Name of service.
              @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
              @since ARP1.0
           */
@@ -11961,11 +12581,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Request async a service for an Url
 
-             @param serviceRequest Service Request to invoke
-             @param service        Service to call
-             @param callback       Callback to execute with the result
+             @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
+             @param {Adaptive.Service} service serviceRequest Service Request to invoke
+             @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
              @since ARP1.0
           */
           invokeService(serviceRequest : ServiceRequest, service : Service, callback : IServiceResultCallback) : void {
@@ -12009,9 +12630,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Register a new service
 
-             @param service to register
+             @param {Adaptive.Service} service service to register
              @since ARP1.0
           */
           registerService(service : Service) : void {
@@ -12034,9 +12656,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Unregister a service
 
-             @param service to unregister
+             @param {Adaptive.Service} service service to unregister
              @since ARP1.0
           */
           unregisterService(service : Service) : void {
@@ -12059,6 +12682,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Unregister all services.
 
              @since ARP1.0
@@ -12200,9 +12824,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Invoke a phone call
 
-             @param number to call
+             @param {string} number number to call
              @return {Adaptive.ITelephonyStatus} Status of the call
              @since ARP1.0
           */
@@ -12297,10 +12922,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Creates a database on default path for every platform.
 
-             @param callback Asynchronous callback
-             @param database Database object to create
+             @param {Adaptive.Database} database database Database object to create
+             @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
              @since ARP1.0
           */
           createDatabase(database : Database, callback : IDatabaseResultCallback) : void {
@@ -12343,11 +12969,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Creates a databaseTable inside a database for every platform.
 
-             @param database      Database for databaseTable creating.
-             @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-             @param callback      DatabaseTable callback with the response
+             @param {Adaptive.Database} database database      Database for databaseTable creating.
+             @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+             @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
              @since ARP1.0
           */
           createTable(database : Database, databaseTable : DatabaseTable, callback : IDatabaseTableResultCallback) : void {
@@ -12391,10 +13018,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Deletes a database on default path for every platform.
 
-             @param database Database object to delete
-             @param callback Asynchronous callback
+             @param {Adaptive.Database} database database Database object to delete
+             @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
              @since ARP1.0
           */
           deleteDatabase(database : Database, callback : IDatabaseResultCallback) : void {
@@ -12437,11 +13065,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Deletes a databaseTable inside a database for every platform.
 
-             @param database      Database for databaseTable removal.
-             @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-             @param callback      DatabaseTable callback with the response
+             @param {Adaptive.Database} database database      Database for databaseTable removal.
+             @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
+             @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
              @since ARP1.0
           */
           deleteTable(database : Database, databaseTable : DatabaseTable, callback : IDatabaseTableResultCallback) : void {
@@ -12485,13 +13114,14 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Executes SQL statement into the given database. The replacements
 should be passed as a parameter
 
-             @param database     The database object reference.
-             @param statement    SQL statement.
-             @param replacements List of SQL statement replacements.
-             @param callback     DatabaseTable callback with the response.
+             @param {Adaptive.Database} database database     The database object reference.
+             @param {string} statement statement    SQL statement.
+             @param {string[]} replacements replacements List of SQL statement replacements.
+             @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
              @since ARP1.0
           */
           executeSqlStatement(database : Database, statement : string, replacements : Array<string>, callback : IDatabaseTableResultCallback) : void {
@@ -12536,13 +13166,14 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Executes SQL transaction (some statements chain) inside given database.
 
-             @param database     The database object reference.
-             @param statements   The statements to be executed during transaction.
-             @param rollbackFlag Indicates if rollback should be performed when any
+             @param {Adaptive.Database} database database     The database object reference.
+             @param {string[]} statements statements   The statements to be executed during transaction.
+             @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                     statement execution fails.
-             @param callback     DatabaseTable callback with the response.
+             @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
              @since ARP1.0
           */
           executeSqlTransactions(database : Database, statements : Array<string>, rollbackFlag : boolean, callback : IDatabaseTableResultCallback) : void {
@@ -12587,9 +13218,10 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Checks if database exists by given database name.
 
-             @param database Database Object to check if exists
+             @param {Adaptive.Database} database database Database Object to check if exists
              @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
@@ -12627,10 +13259,11 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Checks if databaseTable exists by given database name.
 
-             @param database      Database for databaseTable consulting.
-             @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+             @param {Adaptive.Database} database database      Database for databaseTable consulting.
+             @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
              @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
@@ -12688,9 +13321,10 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Determine whether the current file/folder can be read from.
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is readable, false otherwise.
              @since ARP1.0
           */
@@ -12728,9 +13362,10 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Determine whether the current file/folder can be written to.
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is writable, false otherwise.
              @since ARP1.0
           */
@@ -12768,10 +13403,11 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Creates a file with the specified name.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param callback   Result of the operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileResultCallback} callback callback   Result of the operation.
              @since ARP1.0
           */
           create(descriptor : FileDescriptor, callback : IFileResultCallback) : void {
@@ -12814,11 +13450,12 @@ should be passed as a parameter
           }
 
           /**
+             @method
              Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param cascade    Whether to delete sub-files and sub-folders.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {boolean} cascade cascade    Whether to delete sub-files and sub-folders.
              @return {boolean} True if files (and sub-files and folders) whether deleted.
              @since ARP1.0
           */
@@ -12857,9 +13494,10 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Check whether the file/path exists.
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the file exists in the filesystem, false otherwise.
              @since ARP1.0
           */
@@ -12897,10 +13535,11 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Loads the content of the file.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param callback   Result of the operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDataLoadResultCallback} callback callback   Result of the operation.
              @since ARP1.0
           */
           getContent(descriptor : FileDescriptor, callback : IFileDataLoadResultCallback) : void {
@@ -12943,9 +13582,10 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Returns the file storage type of the file
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemStorageType} Storage Type file
              @since ARP1.0
           */
@@ -12983,9 +13623,10 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Returns the file type
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemType} Returns the file type of the file
              @since ARP1.0
           */
@@ -13023,9 +13664,10 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Returns the security type of the file
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemSecurity} Security Level of the file
              @since ARP1.0
           */
@@ -13063,9 +13705,10 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              Check whether this is a path of a file.
 
-             @param descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
              @since ARP1.0
           */
@@ -13103,11 +13746,12 @@ deleted if the cascade parameter is set to true.
           }
 
           /**
+             @method
              List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param callback   Result of operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
              @since ARP1.0
           */
           listFiles(descriptor : FileDescriptor, callback : IFileListResultCallback) : void {
@@ -13150,12 +13794,13 @@ any results.
           }
 
           /**
+             @method
              List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
-             @param callback   Result of operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {string} regex regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+             @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
              @since ARP1.0
           */
           listFilesForRegex(descriptor : FileDescriptor, regex : string, callback : IFileListResultCallback) : void {
@@ -13199,10 +13844,11 @@ is a file, it will not yield any results.
           }
 
           /**
+             @method
              Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param recursive  Whether to create all parent path elements.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {boolean} recursive recursive  Whether to create all parent path elements.
              @return {boolean} True if the path was created, false otherwise (or it exists already).
              @since ARP1.0
           */
@@ -13241,14 +13887,15 @@ is a file, it will not yield any results.
           }
 
           /**
+             @method
              Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
 
-             @param source      File descriptor of file or folder used for operation as source.
-             @param destination File descriptor of file or folder used for operation as destination.
-             @param createPath  True to create the path if it does not already exist.
-             @param callback    Result of the operation.
-             @param overwrite   True to create the path if it does not already exist.
+             @param {Adaptive.FileDescriptor} source source      File descriptor of file or folder used for operation as source.
+             @param {Adaptive.FileDescriptor} destination destination File descriptor of file or folder used for operation as destination.
+             @param {boolean} createPath createPath  True to create the path if it does not already exist.
+             @param {boolean} overwrite overwrite   True to create the path if it does not already exist.
+             @param {Adaptive.FileResultCallback} callback callback    Result of the operation.
              @since ARP1.0
           */
           move(source : FileDescriptor, destination : FileDescriptor, createPath : boolean, overwrite : boolean, callback : IFileResultCallback) : void {
@@ -13294,11 +13941,12 @@ new destination file.
           }
 
           /**
+             @method
              Sets the content of the file.
 
-             @param descriptor File descriptor of file or folder used for operation.
-             @param content    Binary content to store in the file.
-             @param callback   Result of the operation.
+             @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
+             @param {number[]} content content    Binary content to store in the file.
+             @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
              @since ARP1.0
           */
           setContent(descriptor : FileDescriptor, content : Array<number>, callback : IFileDataStoreResultCallback) : void {
@@ -13361,11 +14009,12 @@ new destination file.
           }
 
           /**
+             @method
              Creates a new reference to a new or existing location in the filesystem.
 This method does not create the actual file in the specified folder.
 
-             @param parent Parent directory.
-             @param name   Name of new file or directory.
+             @param {Adaptive.FileDescriptor} parent parent Parent directory.
+             @param {string} name name   Name of new file or directory.
              @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
              @since ARP1.0
           */
@@ -13404,6 +14053,7 @@ This method does not create the actual file in the specified folder.
           }
 
           /**
+             @method
              Returns a reference to the cache folder for the current application.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
@@ -13444,6 +14094,7 @@ This path is volatile and may be cleaned by the OS periodically.
           }
 
           /**
+             @method
              Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
@@ -13483,6 +14134,7 @@ This path must always be writable by the current application.
           }
 
           /**
+             @method
              Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
@@ -13522,6 +14174,7 @@ This path must always be writable by the current application.
           }
 
           /**
+             @method
              Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
@@ -13561,6 +14214,7 @@ This path may or may not be directly readable or writable - it usually contains 
           }
 
           /**
+             @method
              Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
@@ -13600,6 +14254,7 @@ This path must always be writable by the current application.
           }
 
           /**
+             @method
              Returns the file system dependent file separator.
 
              @return {string} char with the directory/file separator.
@@ -13638,6 +14293,7 @@ This path must always be writable by the current application.
           }
 
           /**
+             @method
              Returns a reference to the external storage folder provided by the OS. This may
 be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
@@ -13793,9 +14449,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Play url video stream
 
-             @param url of the video
+             @param {string} url url of the video
              @since ARP1.0
           */
           playStream(url : string) : void {
@@ -13932,10 +14589,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Get all the details of a contact according to its id
 
-             @param contact  id to search for
-             @param callback called for return
+             @param {Adaptive.ContactUid} contact contact  id to search for
+             @param {Adaptive.ContactResultCallback} callback callback called for return
              @since ARP1.0
           */
           getContact(contact : ContactUid, callback : IContactResultCallback) : void {
@@ -13978,10 +14636,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Get the contact photo
 
-             @param contact  id to search for
-             @param callback called for return
+             @param {Adaptive.ContactUid} contact contact  id to search for
+             @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
              @since ARP1.0
           */
           getContactPhoto(contact : ContactUid, callback : IContactPhotoResultCallback) : void {
@@ -14024,9 +14683,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Get all contacts
 
-             @param callback called for return
+             @param {Adaptive.ContactResultCallback} callback callback called for return
              @since ARP1.0
           */
           getContacts(callback : IContactResultCallback) : void {
@@ -14068,10 +14728,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Get marked fields of all contacts
 
-             @param callback called for return
-             @param fields   to get for each Contact
+             @param {Adaptive.ContactResultCallback} callback callback called for return
+             @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
              @since ARP1.0
           */
           getContactsForFields(callback : IContactResultCallback, fields : Array<IContactFieldGroup>) : void {
@@ -14114,11 +14775,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Get marked fields of all contacts according to a filter
 
-             @param callback called for return
-             @param fields   to get for each Contact
-             @param filter   to search for
+             @param {Adaptive.ContactResultCallback} callback callback called for return
+             @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
+             @param {Adaptive.IContactFilter[]} filter filter   to search for
              @since ARP1.0
           */
           getContactsWithFilter(callback : IContactResultCallback, fields : Array<IContactFieldGroup>, filter : Array<IContactFilter>) : void {
@@ -14162,10 +14824,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Search contacts according to a term and send it to the callback
 
-             @param term     string to search
-             @param callback called for return
+             @param {string} term term     string to search
+             @param {Adaptive.ContactResultCallback} callback callback called for return
              @since ARP1.0
           */
           searchContacts(term : string, callback : IContactResultCallback) : void {
@@ -14208,11 +14871,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Search contacts according to a term with a filter and send it to the callback
 
-             @param term     string to search
-             @param callback called for return
-             @param filter   to search for
+             @param {string} term term     string to search
+             @param {Adaptive.ContactResultCallback} callback callback called for return
+             @param {Adaptive.IContactFilter[]} filter filter   to search for
              @since ARP1.0
           */
           searchContactsWithFilter(term : string, callback : IContactResultCallback, filter : Array<IContactFilter>) : void {
@@ -14256,10 +14920,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Set the contact photo
 
-             @param contact  id to assign the photo
-             @param pngImage photo as byte array
+             @param {Adaptive.ContactUid} contact contact  id to assign the photo
+             @param {number[]} pngImage pngImage photo as byte array
              @return {boolean} true if set is successful;false otherwise
              @since ARP1.0
           */
@@ -14317,10 +14982,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Send an Email
 
-             @param data     Payload of the email
-             @param callback Result callback of the operation
+             @param {Adaptive.Email} data data     Payload of the email
+             @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
              @since ARP1.0
           */
           sendEmail(data : Email, callback : IMessagingCallback) : void {
@@ -14382,11 +15048,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Send text SMS
 
-             @param number   to send
-             @param text     to send
-             @param callback with the result
+             @param {string} number number   to send
+             @param {string} text text     to send
+             @param {Adaptive.MessagingCallback} callback callback with the result
              @since ARP1.0
           */
           sendSMS(number : string, text : string, callback : IMessagingCallback) : void {
@@ -14563,11 +15230,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Deletes from the device internal storage the entry/entries containing the specified key names.
 
-             @param keys             Array with the key names to delete.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {string[]} keys keys             Array with the key names to delete.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           deleteSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
@@ -14611,11 +15279,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Retrieves from the device internal storage the entry/entries containing the specified key names.
 
-             @param keys             Array with the key names to retrieve.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {string[]} keys keys             Array with the key names to retrieve.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           getSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
@@ -14659,6 +15328,7 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Returns if the device has been modified in anyhow
 
              @return {boolean} true if the device has been modified; false otherwise
@@ -14697,11 +15367,12 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Stores in the device internal storage the specified item/s.
 
-             @param keyValues        Array containing the items to store on the device internal memory.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           setSecureKeyValuePairs(keyValues : Array<SecureKeyPair>, publicAccessName : string, callback : ISecurityResultCallback) : void {
@@ -14764,9 +15435,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Register a new listener that will receive acceleration events.
 
-             @param listener to be registered.
+             @param {Adaptive.AccelerationListener} listener listener to be registered.
              @since ARP1.0
           */
           addAccelerationListener(listener : IAccelerationListener) : void {
@@ -14805,9 +15477,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              De-registers an existing listener from receiving acceleration events.
 
-             @param listener to be registered.
+             @param {Adaptive.AccelerationListener} listener listener to be registered.
              @since ARP1.0
           */
           removeAccelerationListener(listener : IAccelerationListener) : void {
@@ -14840,6 +15513,7 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Removed all existing listeners from receiving acceleration events.
 
              @since ARP1.0
@@ -14934,9 +15608,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Register a new listener that will receive geolocation events.
 
-             @param listener to be registered.
+             @param {Adaptive.GeolocationListener} listener listener to be registered.
              @since ARP1.0
           */
           addGeolocationListener(listener : IGeolocationListener) : void {
@@ -14975,9 +15650,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              De-registers an existing listener from receiving geolocation events.
 
-             @param listener to be registered.
+             @param {Adaptive.GeolocationListener} listener listener to be registered.
              @since ARP1.0
           */
           removeGeolocationListener(listener : IGeolocationListener) : void {
@@ -15010,6 +15686,7 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Removed all existing listeners from receiving geolocation events.
 
              @since ARP1.0
@@ -15218,9 +15895,10 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Determines whether a specific hardware button is supported for interaction.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
              @return {boolean} true is supported, false otherwise.
              @since ARP1.0
           */
@@ -15258,10 +15936,11 @@ This path may or may not be writable by the current application.
           }
 
           /**
+             @method
              Determines whether a specific Communication capability is supported by
 the device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15299,9 +15978,10 @@ the device.
           }
 
           /**
+             @method
              Determines whether a specific Data capability is supported by the device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15339,10 +16019,11 @@ the device.
           }
 
           /**
+             @method
              Determines whether a specific Media capability is supported by the
 device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15380,9 +16061,10 @@ device.
           }
 
           /**
+             @method
              Determines whether a specific Net capability is supported by the device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15420,10 +16102,11 @@ device.
           }
 
           /**
+             @method
              Determines whether a specific Notification capability is supported by the
 device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15461,10 +16144,11 @@ device.
           }
 
           /**
+             @method
              Determines whether a specific Sensor capability is supported by the
 device.
 
-             @param type Type of feature to check.
+             @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
              @since ARP1.0
           */
@@ -15521,9 +16205,10 @@ device.
           }
 
           /**
+             @method
              Register a new listener that will receive button events.
 
-             @param listener to be registered.
+             @param {Adaptive.ButtonListener} listener listener to be registered.
              @since ARP1.0
           */
           addButtonListener(listener : IButtonListener) : void {
@@ -15562,6 +16247,7 @@ device.
           }
 
           /**
+             @method
              Returns the device information for the current device executing the runtime.
 
              @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
@@ -15600,6 +16286,7 @@ device.
           }
 
           /**
+             @method
              Gets the current Locale for the device.
 
              @return {Adaptive.Locale} The current Locale information.
@@ -15638,9 +16325,10 @@ device.
           }
 
           /**
+             @method
              De-registers an existing listener from receiving button events.
 
-             @param listener to be removed.
+             @param {Adaptive.ButtonListener} listener listener to be removed.
              @since ARP1.0
           */
           removeButtonListener(listener : IButtonListener) : void {
@@ -15673,6 +16361,7 @@ device.
           }
 
           /**
+             @method
              Removed all existing listeners from receiving button events.
 
              @since ARP1.0
@@ -15748,6 +16437,7 @@ device.
           }
 
           /**
+             @method
              Returns the OSInfo for the current operating system.
 
              @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
@@ -15805,6 +16495,7 @@ device.
           }
 
           /**
+             @method
              Dismiss the current Application
 
              @since ARP1.0
@@ -15828,6 +16519,7 @@ device.
           }
 
           /**
+             @method
              Whether the application dismiss the splash screen successfully or not
 
              @return {boolean} true if the application has dismissed the splash screen;false otherwise
@@ -15885,9 +16577,10 @@ device.
           }
 
           /**
+             @method
              Method for opening a URL like a link in the native default browser
 
-             @param url Url to open
+             @param {string} url url Url to open
              @return {boolean} The result of the operation
              @since ARP1.0
           */
@@ -15925,11 +16618,12 @@ device.
           }
 
           /**
+             @method
              Method for opening a browser embedded into the application
 
-             @param url            Url to open
-             @param title          Title of the Navigation bar
-             @param backButtonText Title of the Back button bar
+             @param {string} url url            Url to open
+             @param {string} title title          Title of the Navigation bar
+             @param {string} backButtonText backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
              @since ARP1.0
           */
@@ -15969,11 +16663,12 @@ device.
           }
 
           /**
+             @method
              Method for opening a browser embedded into the application in a modal window
 
-             @param url            Url to open
-             @param title          Title of the Navigation bar
-             @param backButtonText Title of the Back button bar
+             @param {string} url url            Url to open
+             @param {string} title title          Title of the Navigation bar
+             @param {string} backButtonText backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
              @since ARP1.0
           */
@@ -16223,7 +16918,6 @@ device.
 
      /**
         @class Adaptive.AppRegistryBridge
-        @extends Adaptive.IAppRegistry
         Interface to retrieve auto-registered service implementation references.
 
         @author Carlos Lozano Diez
