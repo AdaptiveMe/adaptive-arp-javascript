@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactResultCallbackError
+       @enum {Adaptive.IContactResultCallbackError} Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     var IContactResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactResultCallbackError}
+           @return {Adaptive.IContactResultCallbackError}
         */
         IContactResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactResultCallbackError.NoPermission=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
         */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         /**
-           @enum [Adaptive.IContactResultCallbackError.Wrong_Params=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
         IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
         /**
-           @enum [Adaptive.IContactResultCallbackError.Unknown=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
         IContactResultCallbackError.Unknown = new IContactResultCallbackError("Unknown");
         return IContactResultCallbackError;

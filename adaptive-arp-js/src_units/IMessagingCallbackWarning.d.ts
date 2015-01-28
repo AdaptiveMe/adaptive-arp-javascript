@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IMessagingCallbackWarning
+       @enum {Adaptive.IMessagingCallbackWarning} Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     class IMessagingCallbackWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.UnableToSentAll=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']
         */
         static UnableToSentAll: IMessagingCallbackWarning;
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.UnableToFetchAttachment=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToFetchAttachment='UnableToFetchAttachment']
         */
         static UnableToFetchAttachment: IMessagingCallbackWarning;
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.Unknown=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IMessagingCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IMessagingCallbackWarning}
+           @return {Adaptive.IMessagingCallbackWarning}
         */
         static toObject(object: any): IMessagingCallbackWarning;
     }

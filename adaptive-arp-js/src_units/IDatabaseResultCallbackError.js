@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IDatabaseResultCallbackError
+       @enum {Adaptive.IDatabaseResultCallbackError} Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     var IDatabaseResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseResultCallbackError}
+           @return {Adaptive.IDatabaseResultCallbackError}
         */
         IDatabaseResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.NoSpace=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']
         */
         IDatabaseResultCallbackError.NoSpace = new IDatabaseResultCallbackError("NoSpace");
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.SqlException=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [SqlException='SqlException']
         */
         IDatabaseResultCallbackError.SqlException = new IDatabaseResultCallbackError("SqlException");
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.NotDeleted=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [NotDeleted='NotDeleted']
         */
         IDatabaseResultCallbackError.NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.Unknown=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [Unknown='Unknown']
         */
         IDatabaseResultCallbackError.Unknown = new IDatabaseResultCallbackError("Unknown");
         return IDatabaseResultCallbackError;

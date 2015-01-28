@@ -36,13 +36,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
        @class Adaptive.GlobalizationBridge
        @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Globalization results
@@ -59,14 +58,14 @@ declare module Adaptive {
         /**
            Returns the default locale of the application defined in the configuration file
 
-           @return Default Locale of the application
+           @return {Locale} Default Locale of the application
            @since ARP1.0
         */
         getDefaultLocale(): Locale;
         /**
            List of supported locales for the application defined in the configuration file
 
-           @return List of locales
+           @return {[Adaptive.Locale]} List of locales
            @since ARP1.0
         */
         getLocaleSupportedDescriptors(): Locale[];
@@ -75,7 +74,7 @@ declare module Adaptive {
 
            @param key    to match text
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized text.
+           @return {string} Localized text.
            @since ARP1.0
         */
         getResourceLiteral(key: string, locale: Locale): string;
@@ -83,7 +82,7 @@ declare module Adaptive {
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized texts in the form of an object.
+           @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
            @since ARP1.0
         */
         getResourceLiterals(locale: Locale): KeyPair[];

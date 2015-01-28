@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,7 +51,7 @@ var Adaptive;
         }
         /**
            Get the listener id.
-           @return long with the identifier of the listener.
+           @return {number} long with the identifier of the listener.
         */
         BaseListener.prototype.getId = function () {
             return this.id;
@@ -65,10 +65,10 @@ var Adaptive;
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseListener;
     })();

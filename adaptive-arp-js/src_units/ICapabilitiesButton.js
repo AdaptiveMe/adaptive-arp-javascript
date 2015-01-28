@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesButton
+       @enum {Adaptive.ICapabilitiesButton} Adaptive.ICapabilitiesButton
        Enumeration ICapabilitiesButton
     */
     var ICapabilitiesButton = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesButton}
+           @return {Adaptive.ICapabilitiesButton}
         */
         ICapabilitiesButton.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesButton.HomeButton=Adaptive.ICapabilitiesButton.*]
-           @static
+           @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']
         */
         ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
         /**
-           @enum [Adaptive.ICapabilitiesButton.BackButton=Adaptive.ICapabilitiesButton.*]
-           @static
+           @property {Adaptive.ICapabilitiesButton} [BackButton='BackButton']
         */
         ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
         /**
-           @enum [Adaptive.ICapabilitiesButton.OptionButton=Adaptive.ICapabilitiesButton.*]
-           @static
+           @property {Adaptive.ICapabilitiesButton} [OptionButton='OptionButton']
         */
         ICapabilitiesButton.OptionButton = new ICapabilitiesButton("OptionButton");
         /**
-           @enum [Adaptive.ICapabilitiesButton.Unknown=Adaptive.ICapabilitiesButton.*]
-           @static
+           @property {Adaptive.ICapabilitiesButton} [Unknown='Unknown']
         */
         ICapabilitiesButton.Unknown = new ICapabilitiesButton("Unknown");
         return ICapabilitiesButton;

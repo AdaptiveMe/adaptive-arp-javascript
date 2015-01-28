@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactFilter
+       @enum {Adaptive.IContactFilter} Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     var IContactFilter = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactFilter}
+           @return {Adaptive.IContactFilter}
         */
         IContactFilter.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactFilter.HAS_PHONE=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
         */
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
         /**
-           @enum [Adaptive.IContactFilter.HAS_EMAIL=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
         */
         IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @enum [Adaptive.IContactFilter.HAS_ADDRESS=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
         */
         IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
-           @enum [Adaptive.IContactFilter.Unknown=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
         IContactFilter.Unknown = new IContactFilter("Unknown");
         return IContactFilter;

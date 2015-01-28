@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -325,6 +325,82 @@ listener.
         return APIResponse;
     })();
     Adaptive.APIResponse = APIResponse;
+    /**
+       @class Adaptive.ServicePath
+       Structure representing a service path for one endpoint
+
+       @author fnva
+       @since ARP1.0
+       @version 1.0
+    */
+    var ServicePath = (function () {
+        /**
+           Constructor with parameters
+
+           @param path    The path for the endpoint
+           @param methods The methods for calling a path
+        */
+        function ServicePath(path, methods) {
+            this.path = path;
+            this.methods = methods;
+        }
+        /**
+           Endpoint's path methods setter
+
+           @return Endpoint's path methods
+        */
+        ServicePath.prototype.getMethods = function () {
+            return this.methods;
+        };
+        /**
+           Endpoint's path methods setter
+
+           @param methods Endpoint's path methods
+        */
+        ServicePath.prototype.setMethods = function (methods) {
+            this.methods = methods;
+        };
+        /**
+           Endpoint's Path Getter
+
+           @return Endpoint's Path
+        */
+        ServicePath.prototype.getPath = function () {
+            return this.path;
+        };
+        /**
+           Endpoint's path setter
+
+           @param path Endpoint's path
+        */
+        ServicePath.prototype.setPath = function (path) {
+            this.path = path;
+        };
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        ServicePath.toObject = function (object) {
+            var result = new ServicePath(null, null);
+            // Assign values to bean fields.
+            if (object != null && object.path != null)
+                result.path = object.path;
+            if (object != null && object.methods != null) {
+                result.methods = new Array();
+                for (var i = 0; i < object.methods.length; i++) {
+                    var __value__ = object.methods[i];
+                    if (__value__ != null) {
+                        result.methods.push(IServiceMethod.toObject(__value__));
+                    }
+                    else {
+                        result.methods.push(IServiceMethod.toObject(null));
+                    }
+                }
+            }
+            return result;
+        };
+        return ServicePath;
+    })();
+    Adaptive.ServicePath = ServicePath;
     /**
        @class Adaptive.Acceleration
        @extends Adaptive.APIBean
@@ -2801,37 +2877,17 @@ doesn't exist, this will be -1. Used internally.
         /**
            Constructor used by the implementation
 
-           @param serviceEndpoint Endpoint of the service
-           @param name            Name of the service
-           @param method          Method of the service
-           @param type            Type of the service
+           @param serviceEndpoints Endpoints of the service
+           @param name             Name of the service
+           @param type             Type of the service
            @since ARP1.0
         */
-        function Service(serviceEndpoint, name, method, type) {
+        function Service(serviceEndpoints, name, type) {
             _super.call(this);
-            this.serviceEndpoint = serviceEndpoint;
+            this.serviceEndpoints = serviceEndpoints;
             this.name = name;
-            this.method = method;
             this.type = type;
         }
-        /**
-           Returns the method
-
-           @return method
-           @since ARP1.0
-        */
-        Service.prototype.getMethod = function () {
-            return this.method;
-        };
-        /**
-           Set the method
-
-           @param method Method of the service
-           @since ARP1.0
-        */
-        Service.prototype.setMethod = function (method) {
-            this.method = method;
-        };
         /**
            Returns the type
 
@@ -2869,43 +2925,43 @@ doesn't exist, this will be -1. Used internally.
             this.name = name;
         };
         /**
-           Returns the serviceEndpoint
+           Returns the serviceEndpoints
 
-           @return serviceEndpoint
+           @return serviceEndpoints
            @since ARP1.0
         */
-        Service.prototype.getServiceEndpoint = function () {
-            return this.serviceEndpoint;
+        Service.prototype.getServiceEndpoints = function () {
+            return this.serviceEndpoints;
         };
         /**
-           Set the serviceEndpoint
+           Set the serviceEndpoints
 
-           @param serviceEndpoint Endpoint of the service
+           @param serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
-        Service.prototype.setServiceEndpoint = function (serviceEndpoint) {
-            this.serviceEndpoint = serviceEndpoint;
+        Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
+            this.serviceEndpoints = serviceEndpoints;
         };
         /**
            Convert JSON parsed object to typed equivalent.
         */
         Service.toObject = function (object) {
-            var result = new Service(null, null, null, null);
+            var result = new Service(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.serviceEndpoint != null) {
-                result.serviceEndpoint = ServiceEndpoint.toObject(object.serviceEndpoint);
-            }
-            else {
-                result.serviceEndpoint = ServiceEndpoint.toObject(null);
+            if (object != null && object.serviceEndpoints != null) {
+                result.serviceEndpoints = new Array();
+                for (var i = 0; i < object.serviceEndpoints.length; i++) {
+                    var __value__ = object.serviceEndpoints[i];
+                    if (__value__ != null) {
+                        result.serviceEndpoints.push(ServiceEndpoint.toObject(__value__));
+                    }
+                    else {
+                        result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
+                    }
+                }
             }
             if (object != null && object.name != null)
                 result.name = object.name;
-            if (object != null && object.method != null) {
-                result.method = IServiceMethod.toObject(object.method);
-            }
-            else {
-                result.method = IServiceMethod.toObject(null);
-            }
             if (object != null && object.type != null) {
                 result.type = IServiceType.toObject(object.type);
             }
@@ -3138,16 +3194,16 @@ doesn't exist, this will be -1. Used internally.
            Constructor with parameters
 
            @param host   Remote service host
-           @param path   Remote service Path
+           @param paths  Remote service Paths
            @param port   Remote service Port
            @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param scheme Remote service scheme
            @since ARP1.0
         */
-        function ServiceEndpoint(host, path, port, proxy, scheme) {
+        function ServiceEndpoint(host, paths, port, proxy, scheme) {
             _super.call(this);
             this.host = host;
-            this.path = path;
+            this.paths = paths;
             this.port = port;
             this.proxy = proxy;
             this.scheme = scheme;
@@ -3171,22 +3227,22 @@ doesn't exist, this will be -1. Used internally.
             this.host = host;
         };
         /**
-           Returns the Remote service Path
+           Returns the Remote service Paths
 
-           @return Remote service Path
+           @return Remote service Paths
            @since ARP1.0
         */
-        ServiceEndpoint.prototype.getPath = function () {
-            return this.path;
+        ServiceEndpoint.prototype.getPaths = function () {
+            return this.paths;
         };
         /**
-           Set the Remote service Path
+           Set the Remote service Paths
 
-           @param path Remote service Path
+           @param paths Remote service Paths
            @since ARP1.0
         */
-        ServiceEndpoint.prototype.setPath = function (path) {
-            this.path = path;
+        ServiceEndpoint.prototype.setPaths = function (paths) {
+            this.paths = paths;
         };
         /**
            Returns the Remote service Port
@@ -3250,8 +3306,18 @@ doesn't exist, this will be -1. Used internally.
             // Assign values to bean fields.
             if (object != null && object.host != null)
                 result.host = object.host;
-            if (object != null && object.path != null)
-                result.path = object.path;
+            if (object != null && object.paths != null) {
+                result.paths = new Array();
+                for (var i = 0; i < object.paths.length; i++) {
+                    var __value__ = object.paths[i];
+                    if (__value__ != null) {
+                        result.paths.push(ServicePath.toObject(__value__));
+                    }
+                    else {
+                        result.paths.push(ServicePath.toObject(null));
+                    }
+                }
+            }
             if (object != null && object.port != null)
                 result.port = object.port;
             if (object != null && object.proxy != null)
@@ -4231,10 +4297,10 @@ doesn't exist, this will be -1. Used internally.
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseListener;
     })();
@@ -4831,10 +4897,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseCallback;
     })();
@@ -6259,10 +6325,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseApplicationBridge;
     })();
@@ -6295,10 +6361,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseCommerceBridge;
     })();
@@ -6331,10 +6397,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseCommunicationBridge;
     })();
@@ -6367,10 +6433,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseDataBridge;
     })();
@@ -6403,10 +6469,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseMediaBridge;
     })();
@@ -6439,10 +6505,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseNotificationBridge;
     })();
@@ -6475,10 +6541,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BasePIMBridge;
     })();
@@ -6511,10 +6577,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseReaderBridge;
     })();
@@ -6547,10 +6613,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseSecurityBridge;
     })();
@@ -6583,10 +6649,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseSensorBridge;
     })();
@@ -6619,10 +6685,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseSocialBridge;
     })();
@@ -6655,10 +6721,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseSystemBridge;
     })();
@@ -6691,10 +6757,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseUIBridge;
     })();
@@ -6727,10 +6793,10 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseUtilBridge;
     })();
@@ -6775,7 +6841,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Returns the default locale of the application defined in the configuration file
 
-           @return Default Locale of the application
+           @return {Locale} Default Locale of the application
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getDefaultLocale = function () {
@@ -6787,7 +6853,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -6815,7 +6881,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            List of supported locales for the application defined in the configuration file
 
-           @return List of locales
+           @return {[Adaptive.Locale]} List of locales
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
@@ -6827,7 +6893,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -6860,7 +6926,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param key    to match text
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized text.
+           @return {string} Localized text.
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getResourceLiteral = function (key, locale) {
@@ -6874,7 +6940,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -6903,7 +6969,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized texts in the form of an object.
+           @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getResourceLiterals = function (locale) {
@@ -6916,7 +6982,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -6979,7 +7045,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add listener reference to local dictionary.
             Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -7010,7 +7076,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Whether the application is in background or not
 
-           @return true if the application is in background;false otherwise
+           @return {boolean} true if the application is in background;false otherwise
            @since ARP1.0
         */
         LifecycleBridge.prototype.isBackground = function () {
@@ -7022,7 +7088,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -7062,7 +7128,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7098,7 +7164,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7360,7 +7426,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -7408,7 +7474,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -7474,7 +7540,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add listener reference to local dictionary.
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -7517,7 +7583,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7553,7 +7619,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7602,7 +7668,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Get a reference to a registered service by name.
 
            @param serviceName Name of service.
-           @return A service, if registered, or null of the service does not exist.
+           @return {Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         ServiceBridge.prototype.getService = function (serviceName) {
@@ -7615,7 +7681,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -7659,7 +7725,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -7706,7 +7772,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7731,7 +7797,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7754,7 +7820,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -7780,7 +7846,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -7822,7 +7888,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -7891,7 +7957,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Invoke a phone call
 
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         TelephonyBridge.prototype.call = function (number) {
@@ -7904,7 +7970,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8006,7 +8072,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8056,7 +8122,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8104,7 +8170,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8154,7 +8220,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8207,7 +8273,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8260,7 +8326,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8295,7 +8361,7 @@ should be passed as a parameter
            Checks if database exists by given database name.
 
            @param database Database Object to check if exists
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         DatabaseBridge.prototype.existsDatabase = function (database) {
@@ -8308,7 +8374,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8338,7 +8404,7 @@ should be passed as a parameter
 
            @param database      Database for databaseTable consulting.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         DatabaseBridge.prototype.existsTable = function (database, databaseTable) {
@@ -8352,7 +8418,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8401,7 +8467,7 @@ should be passed as a parameter
            Determine whether the current file/folder can be read from.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is readable, false otherwise.
+           @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
         FileBridge.prototype.canRead = function (descriptor) {
@@ -8414,7 +8480,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8443,7 +8509,7 @@ should be passed as a parameter
            Determine whether the current file/folder can be written to.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is writable, false otherwise.
+           @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
         FileBridge.prototype.canWrite = function (descriptor) {
@@ -8456,7 +8522,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8498,7 +8564,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8535,7 +8601,7 @@ deleted if the cascade parameter is set to true.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param cascade    Whether to delete sub-files and sub-folders.
-           @return True if files (and sub-files and folders) whether deleted.
+           @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
         FileBridge.prototype.delete = function (descriptor, cascade) {
@@ -8549,7 +8615,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8578,7 +8644,7 @@ deleted if the cascade parameter is set to true.
            Check whether the file/path exists.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the file exists in the filesystem, false otherwise.
+           @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
         FileBridge.prototype.exists = function (descriptor) {
@@ -8591,7 +8657,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8633,7 +8699,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8668,7 +8734,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Storage Type file
+           @return {IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         FileBridge.prototype.getFileStorageType = function (descriptor) {
@@ -8681,7 +8747,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8710,7 +8776,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Returns the file type of the file
+           @return {IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         FileBridge.prototype.getFileType = function (descriptor) {
@@ -8723,7 +8789,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8752,7 +8818,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Security Level of the file
+           @return {IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         FileBridge.prototype.getSecurityType = function (descriptor) {
@@ -8765,7 +8831,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8794,7 +8860,7 @@ deleted if the cascade parameter is set to true.
            Check whether this is a path of a file.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return true if this is a path to a folder/directory, false if this is a path to a file.
+           @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
         FileBridge.prototype.isDirectory = function (descriptor) {
@@ -8807,7 +8873,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8850,7 +8916,7 @@ any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8901,7 +8967,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8937,7 +9003,7 @@ is a file, it will not yield any results.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param recursive  Whether to create all parent path elements.
-           @return True if the path was created, false otherwise (or it exists already).
+           @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
         FileBridge.prototype.mkDir = function (descriptor, recursive) {
@@ -8951,7 +9017,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9000,7 +9066,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9050,7 +9116,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9107,7 +9173,7 @@ This method does not create the actual file in the specified folder.
 
            @param parent Parent directory.
            @param name   Name of new file or directory.
-           @return A reference to a new or existing location in the filesystem.
+           @return {FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
         FileSystemBridge.prototype.createFileDescriptor = function (parent, name) {
@@ -9121,7 +9187,7 @@ This method does not create the actual file in the specified folder.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9151,7 +9217,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
-           @return Path to the application's cache folder.
+           @return {FileDescriptor} Path to the application's cache folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
@@ -9163,7 +9229,7 @@ This path is volatile and may be cleaned by the OS periodically.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9192,7 +9258,7 @@ This path is volatile and may be cleaned by the OS periodically.
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's cloud storage folder.
+           @return {FileDescriptor} Path to the application's cloud storage folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
@@ -9204,7 +9270,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9233,7 +9299,7 @@ This path must always be writable by the current application.
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
@@ -9245,7 +9311,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9274,7 +9340,7 @@ This path must always be writable by the current application.
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
-           @return Path to the application folder.
+           @return {FileDescriptor} Path to the application folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationFolder = function () {
@@ -9286,7 +9352,7 @@ This path may or may not be directly readable or writable - it usually contains 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9315,7 +9381,7 @@ This path may or may not be directly readable or writable - it usually contains 
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's protected storage folder.
+           @return {FileDescriptor} Path to the application's protected storage folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
@@ -9327,7 +9393,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9355,7 +9421,7 @@ This path must always be writable by the current application.
         /**
            Returns the file system dependent file separator.
 
-           @return char with the directory/file separator.
+           @return {string} char with the directory/file separator.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getSeparator = function () {
@@ -9367,7 +9433,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9398,7 +9464,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
 
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
@@ -9410,7 +9476,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9571,7 +9637,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -9717,7 +9783,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9765,7 +9831,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9811,7 +9877,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9859,7 +9925,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9909,7 +9975,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9957,7 +10023,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10007,7 +10073,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10043,7 +10109,7 @@ This path may or may not be writable by the current application.
 
            @param contact  id to assign the photo
            @param pngImage photo as byte array
-           @return true if set is successful;false otherwise
+           @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */
         ContactBridge.prototype.setContactPhoto = function (contact, pngImage) {
@@ -10057,7 +10123,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -10119,7 +10185,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10189,7 +10255,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10379,7 +10445,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10429,7 +10495,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10463,7 +10529,7 @@ This path may or may not be writable by the current application.
         /**
            Returns if the device has been modified in anyhow
 
-           @return true if the device has been modified; false otherwise
+           @return {boolean} true if the device has been modified; false otherwise
            @since ARP1.0
         */
         SecurityBridge.prototype.isDeviceModified = function () {
@@ -10475,7 +10541,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -10519,7 +10585,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10585,7 +10651,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add listener reference to local dictionary.
             Adaptive.registeredAccelerationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -10628,7 +10694,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10664,7 +10730,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10764,7 +10830,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add listener reference to local dictionary.
             Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -10807,7 +10873,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10843,7 +10909,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11052,7 +11118,7 @@ This path may or may not be writable by the current application.
            Determines whether a specific hardware button is supported for interaction.
 
            @param type Type of feature to check.
-           @return true is supported, false otherwise.
+           @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasButtonSupport = function (type) {
@@ -11065,7 +11131,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11095,7 +11161,7 @@ This path may or may not be writable by the current application.
 the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasCommunicationSupport = function (type) {
@@ -11108,7 +11174,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11137,7 +11203,7 @@ the device.
            Determines whether a specific Data capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasDataSupport = function (type) {
@@ -11150,7 +11216,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11180,7 +11246,7 @@ the device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasMediaSupport = function (type) {
@@ -11193,7 +11259,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11222,7 +11288,7 @@ device.
            Determines whether a specific Net capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasNetSupport = function (type) {
@@ -11235,7 +11301,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11265,7 +11331,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasNotificationSupport = function (type) {
@@ -11278,7 +11344,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11308,7 +11374,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasSensorSupport = function (type) {
@@ -11321,7 +11387,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11381,7 +11447,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -11412,7 +11478,7 @@ device.
         /**
            Returns the device information for the current device executing the runtime.
 
-           @return DeviceInfo for the current device.
+           @return {DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         DeviceBridge.prototype.getDeviceInfo = function () {
@@ -11424,7 +11490,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11452,7 +11518,7 @@ device.
         /**
            Gets the current Locale for the device.
 
-           @return The current Locale information.
+           @return {Locale} The current Locale information.
            @since ARP1.0
         */
         DeviceBridge.prototype.getLocaleCurrent = function () {
@@ -11464,7 +11530,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11504,7 +11570,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11540,7 +11606,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11608,7 +11674,7 @@ device.
         /**
            Returns the OSInfo for the current operating system.
 
-           @return OSInfo with name, version and vendor of the OS.
+           @return {OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         OSBridge.prototype.getOSInfo = function () {
@@ -11620,7 +11686,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11679,7 +11745,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11691,7 +11757,7 @@ device.
         /**
            Whether the application dismiss the splash screen successfully or not
 
-           @return true if the application has dismissed the splash screen;false otherwise
+           @return {boolean} true if the application has dismissed the splash screen;false otherwise
            @since ARP1.0
         */
         RuntimeBridge.prototype.dismissSplashScreen = function () {
@@ -11703,7 +11769,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11752,7 +11818,7 @@ device.
            Method for opening a URL like a link in the native default browser
 
            @param url Url to open
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         BrowserBridge.prototype.openExtenalBrowser = function (url) {
@@ -11765,7 +11831,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11796,7 +11862,7 @@ device.
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         BrowserBridge.prototype.openInternalBrowser = function (url, title, backButtonText) {
@@ -11811,7 +11877,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11842,7 +11908,7 @@ device.
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         BrowserBridge.prototype.openInternalBrowserModal = function (url, title, backButtonText) {
@@ -11857,7 +11923,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12040,7 +12106,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -12069,7 +12135,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -12113,10 +12179,10 @@ device.
         function AppRegistryBridge() {
         }
         /**
-           Singleton instance of AppRegistry.
            @static
            @singleton
            @method
+           Singleton instance of AppRegistry.
            @return {Adaptive.AppRegistryBridge}
         */
         AppRegistryBridge.getInstance = function () {
@@ -12969,14 +13035,15 @@ device.
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         /**
-           Singleton instance of AppRegistry.
            @private
+           @static
+           Singleton instance of AppRegistry.
         */
         AppRegistryBridge.instance = null;
         /**

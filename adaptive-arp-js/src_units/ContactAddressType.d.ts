@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ContactAddressType
+       @enum {Adaptive.ContactAddressType} Adaptive.ContactAddressType
        Enumeration ContactAddressType
     */
     class ContactAddressType {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ContactAddressType.Home=Adaptive.ContactAddressType.*]
-           @static
+           @property {Adaptive.ContactAddressType} [Home='Home']
         */
         static Home: ContactAddressType;
         /**
-           @enum [Adaptive.ContactAddressType.Work=Adaptive.ContactAddressType.*]
-           @static
+           @property {Adaptive.ContactAddressType} [Work='Work']
         */
         static Work: ContactAddressType;
         /**
-           @enum [Adaptive.ContactAddressType.Other=Adaptive.ContactAddressType.*]
-           @static
+           @property {Adaptive.ContactAddressType} [Other='Other']
         */
         static Other: ContactAddressType;
         /**
-           @enum [Adaptive.ContactAddressType.Unknown=Adaptive.ContactAddressType.*]
-           @static
+           @property {Adaptive.ContactAddressType} [Unknown='Unknown']
         */
         static Unknown: ContactAddressType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactAddressType}
+           @return {Adaptive.ContactAddressType}
         */
         static toObject(object: any): ContactAddressType;
     }

@@ -36,13 +36,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
        @class Adaptive.LifecycleBridge
        @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Lifecycle listeners
@@ -66,7 +65,7 @@ declare module Adaptive {
         /**
            Whether the application is in background or not
 
-           @return true if the application is in background;false otherwise
+           @return {boolean} true if the application is in background;false otherwise
            @since ARP1.0
         */
         isBackground(): boolean;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -82,7 +82,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -130,7 +130,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -176,7 +176,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -224,7 +224,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -275,7 +275,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -326,7 +326,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -359,7 +359,7 @@ should be passed as a parameter
              Checks if database exists by given database name.
 
              @param database Database Object to check if exists
-             @return True if exists, false otherwise
+             @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
           existsDatabase(database : Database) : boolean {
@@ -372,7 +372,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -400,7 +400,7 @@ should be passed as a parameter
 
              @param database      Database for databaseTable consulting.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-             @return True if exists, false otherwise
+             @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
           existsTable(database : Database, databaseTable : DatabaseTable) : boolean {
@@ -414,7 +414,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;

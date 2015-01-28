@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.LifecycleState
+       @enum {Adaptive.LifecycleState} Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     var LifecycleState = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {LifecycleState}
+           @return {Adaptive.LifecycleState}
         */
         LifecycleState.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -80,48 +80,39 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.LifecycleState.Starting=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Starting='Starting']
         */
         LifecycleState.Starting = new LifecycleState("Starting");
         /**
-           @enum [Adaptive.LifecycleState.Started=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Started='Started']
         */
         LifecycleState.Started = new LifecycleState("Started");
         /**
-           @enum [Adaptive.LifecycleState.Running=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Running='Running']
         */
         LifecycleState.Running = new LifecycleState("Running");
         /**
-           @enum [Adaptive.LifecycleState.Pausing=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Pausing='Pausing']
         */
         LifecycleState.Pausing = new LifecycleState("Pausing");
         /**
-           @enum [Adaptive.LifecycleState.PausedIdle=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [PausedIdle='PausedIdle']
         */
         LifecycleState.PausedIdle = new LifecycleState("PausedIdle");
         /**
-           @enum [Adaptive.LifecycleState.PausedRun=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [PausedRun='PausedRun']
         */
         LifecycleState.PausedRun = new LifecycleState("PausedRun");
         /**
-           @enum [Adaptive.LifecycleState.Resuming=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Resuming='Resuming']
         */
         LifecycleState.Resuming = new LifecycleState("Resuming");
         /**
-           @enum [Adaptive.LifecycleState.Stopping=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Stopping='Stopping']
         */
         LifecycleState.Stopping = new LifecycleState("Stopping");
         /**
-           @enum [Adaptive.LifecycleState.Unknown=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Unknown='Unknown']
         */
         LifecycleState.Unknown = new LifecycleState("Unknown");
         return LifecycleState;

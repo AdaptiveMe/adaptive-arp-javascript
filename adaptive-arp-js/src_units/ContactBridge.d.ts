@@ -41,13 +41,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class ContactBridge extends BasePIMBridge implements IContact {
        @class Adaptive.ContactBridge
        @extends Adaptive.BasePIMBridge
        Interface for Managing the Contact operations
@@ -123,7 +122,7 @@ declare module Adaptive {
 
            @param contact  id to assign the photo
            @param pngImage photo as byte array
-           @return true if set is successful;false otherwise
+           @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */
         setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;

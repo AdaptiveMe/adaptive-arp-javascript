@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IGeolocationListenerError
+       @enum {Adaptive.IGeolocationListenerError} Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     class IGeolocationListenerError {
@@ -41,35 +41,30 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IGeolocationListenerError.Disabled=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']
         */
         static Disabled: IGeolocationListenerError;
         /**
-           @enum [Adaptive.IGeolocationListenerError.RestrictedAccess=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [RestrictedAccess='RestrictedAccess']
         */
         static RestrictedAccess: IGeolocationListenerError;
         /**
-           @enum [Adaptive.IGeolocationListenerError.DeniedAccess=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [DeniedAccess='DeniedAccess']
         */
         static DeniedAccess: IGeolocationListenerError;
         /**
-           @enum [Adaptive.IGeolocationListenerError.StatusNotDetermined=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [StatusNotDetermined='StatusNotDetermined']
         */
         static StatusNotDetermined: IGeolocationListenerError;
         /**
-           @enum [Adaptive.IGeolocationListenerError.Unknown=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [Unknown='Unknown']
         */
         static Unknown: IGeolocationListenerError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IGeolocationListenerError}
+           @return {Adaptive.IGeolocationListenerError}
         */
         static toObject(object: any): IGeolocationListenerError;
     }

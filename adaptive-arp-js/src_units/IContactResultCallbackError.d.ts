@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactResultCallbackError
+       @enum {Adaptive.IContactResultCallbackError} Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     class IContactResultCallbackError {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactResultCallbackError.NoPermission=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
         */
         static NoPermission: IContactResultCallbackError;
         /**
-           @enum [Adaptive.IContactResultCallbackError.Wrong_Params=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
         static Wrong_Params: IContactResultCallbackError;
         /**
-           @enum [Adaptive.IContactResultCallbackError.Unknown=Adaptive.IContactResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IContactResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactResultCallbackError}
+           @return {Adaptive.IContactResultCallbackError}
         */
         static toObject(object: any): IContactResultCallbackError;
     }

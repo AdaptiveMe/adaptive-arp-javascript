@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
        @class Adaptive.NetworkInfoBridge
        @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network information operations

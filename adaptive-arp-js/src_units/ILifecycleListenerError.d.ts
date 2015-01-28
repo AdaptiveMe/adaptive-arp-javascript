@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ILifecycleListenerError
+       @enum {Adaptive.ILifecycleListenerError} Adaptive.ILifecycleListenerError
        Enumeration ILifecycleListenerError
     */
     class ILifecycleListenerError {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ILifecycleListenerError.Runtime=Adaptive.ILifecycleListenerError.*]
-           @static
+           @property {Adaptive.ILifecycleListenerError} [Runtime='Runtime']
         */
         static Runtime: ILifecycleListenerError;
         /**
-           @enum [Adaptive.ILifecycleListenerError.Implementation=Adaptive.ILifecycleListenerError.*]
-           @static
+           @property {Adaptive.ILifecycleListenerError} [Implementation='Implementation']
         */
         static Implementation: ILifecycleListenerError;
         /**
-           @enum [Adaptive.ILifecycleListenerError.Killed=Adaptive.ILifecycleListenerError.*]
-           @static
+           @property {Adaptive.ILifecycleListenerError} [Killed='Killed']
         */
         static Killed: ILifecycleListenerError;
         /**
-           @enum [Adaptive.ILifecycleListenerError.Unknown=Adaptive.ILifecycleListenerError.*]
-           @static
+           @property {Adaptive.ILifecycleListenerError} [Unknown='Unknown']
         */
         static Unknown: ILifecycleListenerError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ILifecycleListenerError}
+           @return {Adaptive.ILifecycleListenerError}
         */
         static toObject(object: any): ILifecycleListenerError;
     }

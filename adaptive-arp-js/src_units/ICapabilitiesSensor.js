@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesSensor
+       @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     var ICapabilitiesSensor = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesSensor}
+           @return {Adaptive.ICapabilitiesSensor}
         */
         ICapabilitiesSensor.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -78,43 +78,35 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Accelerometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Accelerometer='Accelerometer']
         */
         ICapabilitiesSensor.Accelerometer = new ICapabilitiesSensor("Accelerometer");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.AmbientLight=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [AmbientLight='AmbientLight']
         */
         ICapabilitiesSensor.AmbientLight = new ICapabilitiesSensor("AmbientLight");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Barometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Barometer='Barometer']
         */
         ICapabilitiesSensor.Barometer = new ICapabilitiesSensor("Barometer");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Geolocation=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Geolocation='Geolocation']
         */
         ICapabilitiesSensor.Geolocation = new ICapabilitiesSensor("Geolocation");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Gyroscope=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Gyroscope='Gyroscope']
         */
         ICapabilitiesSensor.Gyroscope = new ICapabilitiesSensor("Gyroscope");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Magnetometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Magnetometer='Magnetometer']
         */
         ICapabilitiesSensor.Magnetometer = new ICapabilitiesSensor("Magnetometer");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Proximity=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Proximity='Proximity']
         */
         ICapabilitiesSensor.Proximity = new ICapabilitiesSensor("Proximity");
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Unknown=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Unknown='Unknown']
         */
         ICapabilitiesSensor.Unknown = new ICapabilitiesSensor("Unknown");
         return ICapabilitiesSensor;

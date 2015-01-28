@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileSystemSecurity
+       @enum {Adaptive.IFileSystemSecurity} Adaptive.IFileSystemSecurity
        Enumeration IFileSystemSecurity
     */
     class IFileSystemSecurity {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileSystemSecurity.Default=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Default='Default']
         */
         static Default: IFileSystemSecurity;
         /**
-           @enum [Adaptive.IFileSystemSecurity.Protected=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Protected='Protected']
         */
         static Protected: IFileSystemSecurity;
         /**
-           @enum [Adaptive.IFileSystemSecurity.Encrypted=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Encrypted='Encrypted']
         */
         static Encrypted: IFileSystemSecurity;
         /**
-           @enum [Adaptive.IFileSystemSecurity.Unknown=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Unknown='Unknown']
         */
         static Unknown: IFileSystemSecurity;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemSecurity}
+           @return {Adaptive.IFileSystemSecurity}
         */
         static toObject(object: any): IFileSystemSecurity;
     }

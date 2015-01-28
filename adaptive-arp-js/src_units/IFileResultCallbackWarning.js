@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileResultCallbackWarning
+       @enum {Adaptive.IFileResultCallbackWarning} Adaptive.IFileResultCallbackWarning
        Enumeration IFileResultCallbackWarning
     */
     var IFileResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileResultCallbackWarning}
+           @return {Adaptive.IFileResultCallbackWarning}
         */
         IFileResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.SourceNotDeleted=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']
         */
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.RootDirectory=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [RootDirectory='RootDirectory']
         */
         IFileResultCallbackWarning.RootDirectory = new IFileResultCallbackWarning("RootDirectory");
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.Unknown=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [Unknown='Unknown']
         */
         IFileResultCallbackWarning.Unknown = new IFileResultCallbackWarning("Unknown");
         return IFileResultCallbackWarning;

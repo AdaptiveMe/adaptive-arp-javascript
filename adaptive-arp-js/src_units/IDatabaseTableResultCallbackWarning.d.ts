@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IDatabaseTableResultCallbackWarning
+       @enum {Adaptive.IDatabaseTableResultCallbackWarning} Adaptive.IDatabaseTableResultCallbackWarning
        Enumeration IDatabaseTableResultCallbackWarning
     */
     class IDatabaseTableResultCallbackWarning {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableExists=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']
         */
         static TableExists: IDatabaseTableResultCallbackWarning;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableLocked=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableLocked='TableLocked']
         */
         static TableLocked: IDatabaseTableResultCallbackWarning;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.NoResults=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [NoResults='NoResults']
         */
         static NoResults: IDatabaseTableResultCallbackWarning;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.Unknown=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IDatabaseTableResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseTableResultCallbackWarning}
+           @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         static toObject(object: any): IDatabaseTableResultCallbackWarning;
     }

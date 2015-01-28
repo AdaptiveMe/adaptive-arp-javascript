@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileDataLoadResultCallbackWarning
+       @enum {Adaptive.IFileDataLoadResultCallbackWarning} Adaptive.IFileDataLoadResultCallbackWarning
        Enumeration IFileDataLoadResultCallbackWarning
     */
     var IFileDataLoadResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileDataLoadResultCallbackWarning}
+           @return {Adaptive.IFileDataLoadResultCallbackWarning}
         */
         IFileDataLoadResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -66,13 +66,11 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackWarning.ExceedMaximumSize=Adaptive.IFileDataLoadResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
         */
         IFileDataLoadResultCallbackWarning.ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackWarning.Unknown=Adaptive.IFileDataLoadResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [Unknown='Unknown']
         */
         IFileDataLoadResultCallbackWarning.Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
         return IFileDataLoadResultCallbackWarning;

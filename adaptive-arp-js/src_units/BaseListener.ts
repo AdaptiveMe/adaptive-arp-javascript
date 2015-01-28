@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -81,10 +81,10 @@ module Adaptive {
           /**
              Return the API version for the given interface.
 
-             @return {String} The version of the API.
+             @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.3"
+               return "v2.0.4"
           }
 
      }

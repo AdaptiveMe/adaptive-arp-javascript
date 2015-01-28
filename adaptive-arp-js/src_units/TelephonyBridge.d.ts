@@ -35,13 +35,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
        @class Adaptive.TelephonyBridge
        @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Telephony operations
@@ -59,7 +58,7 @@ declare module Adaptive {
            Invoke a phone call
 
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         call(number: string): ITelephonyStatus;

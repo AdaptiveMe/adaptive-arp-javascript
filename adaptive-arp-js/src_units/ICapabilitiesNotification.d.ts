@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ICapabilitiesNotification
+       @enum {Adaptive.ICapabilitiesNotification} Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     class ICapabilitiesNotification {
@@ -41,35 +41,30 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Alarm=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']
         */
         static Alarm: ICapabilitiesNotification;
         /**
-           @enum [Adaptive.ICapabilitiesNotification.LocalNotification=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [LocalNotification='LocalNotification']
         */
         static LocalNotification: ICapabilitiesNotification;
         /**
-           @enum [Adaptive.ICapabilitiesNotification.RemoteNotification=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [RemoteNotification='RemoteNotification']
         */
         static RemoteNotification: ICapabilitiesNotification;
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Vibration=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Vibration='Vibration']
         */
         static Vibration: ICapabilitiesNotification;
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Unknown=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Unknown='Unknown']
         */
         static Unknown: ICapabilitiesNotification;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesNotification}
+           @return {Adaptive.ICapabilitiesNotification}
         */
         static toObject(object: any): ICapabilitiesNotification;
     }

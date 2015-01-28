@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IDatabaseResultCallbackWarning
+       @enum {Adaptive.IDatabaseResultCallbackWarning} Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     class IDatabaseResultCallbackWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.DatabaseExists=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']
         */
         static DatabaseExists: IDatabaseResultCallbackWarning;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.IsOpen=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [IsOpen='IsOpen']
         */
         static IsOpen: IDatabaseResultCallbackWarning;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.Unknown=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IDatabaseResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseResultCallbackWarning}
+           @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         static toObject(object: any): IDatabaseResultCallbackWarning;
     }

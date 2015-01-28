@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ContactPhoneType
+       @enum {Adaptive.ContactPhoneType} Adaptive.ContactPhoneType
        Enumeration ContactPhoneType
     */
     var ContactPhoneType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactPhoneType}
+           @return {Adaptive.ContactPhoneType}
         */
         ContactPhoneType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -78,43 +78,35 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ContactPhoneType.Mobile=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Mobile='Mobile']
         */
         ContactPhoneType.Mobile = new ContactPhoneType("Mobile");
         /**
-           @enum [Adaptive.ContactPhoneType.Work=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Work='Work']
         */
         ContactPhoneType.Work = new ContactPhoneType("Work");
         /**
-           @enum [Adaptive.ContactPhoneType.Home=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Home='Home']
         */
         ContactPhoneType.Home = new ContactPhoneType("Home");
         /**
-           @enum [Adaptive.ContactPhoneType.Main=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Main='Main']
         */
         ContactPhoneType.Main = new ContactPhoneType("Main");
         /**
-           @enum [Adaptive.ContactPhoneType.HomeFax=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [HomeFax='HomeFax']
         */
         ContactPhoneType.HomeFax = new ContactPhoneType("HomeFax");
         /**
-           @enum [Adaptive.ContactPhoneType.WorkFax=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [WorkFax='WorkFax']
         */
         ContactPhoneType.WorkFax = new ContactPhoneType("WorkFax");
         /**
-           @enum [Adaptive.ContactPhoneType.Other=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Other='Other']
         */
         ContactPhoneType.Other = new ContactPhoneType("Other");
         /**
-           @enum [Adaptive.ContactPhoneType.Unknown=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Unknown='Unknown']
         */
         ContactPhoneType.Unknown = new ContactPhoneType("Unknown");
         return ContactPhoneType;

@@ -46,13 +46,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class FileBridge extends BaseDataBridge implements IFile {
        @class Adaptive.FileBridge
        @extends Adaptive.BaseDataBridge
        Interface for Managing the File operations
@@ -70,7 +69,7 @@ declare module Adaptive {
            Determine whether the current file/folder can be read from.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is readable, false otherwise.
+           @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
         canRead(descriptor: FileDescriptor): boolean;
@@ -78,7 +77,7 @@ declare module Adaptive {
            Determine whether the current file/folder can be written to.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is writable, false otherwise.
+           @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
         canWrite(descriptor: FileDescriptor): boolean;
@@ -96,7 +95,7 @@ deleted if the cascade parameter is set to true.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param cascade    Whether to delete sub-files and sub-folders.
-           @return True if files (and sub-files and folders) whether deleted.
+           @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
         delete(descriptor: FileDescriptor, cascade: boolean): boolean;
@@ -104,7 +103,7 @@ deleted if the cascade parameter is set to true.
            Check whether the file/path exists.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the file exists in the filesystem, false otherwise.
+           @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
         exists(descriptor: FileDescriptor): boolean;
@@ -120,7 +119,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Storage Type file
+           @return {IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
@@ -128,7 +127,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Returns the file type of the file
+           @return {IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
@@ -136,7 +135,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Security Level of the file
+           @return {IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
@@ -144,7 +143,7 @@ deleted if the cascade parameter is set to true.
            Check whether this is a path of a file.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return true if this is a path to a folder/directory, false if this is a path to a file.
+           @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
         isDirectory(descriptor: FileDescriptor): boolean;
@@ -172,7 +171,7 @@ is a file, it will not yield any results.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param recursive  Whether to create all parent path elements.
-           @return True if the path was created, false otherwise (or it exists already).
+           @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
         mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;

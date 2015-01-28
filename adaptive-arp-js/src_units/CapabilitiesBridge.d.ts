@@ -41,13 +41,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
        @class Adaptive.CapabilitiesBridge
        @extends Adaptive.BaseSystemBridge
        Interface for testing the Capabilities operations
@@ -65,7 +64,7 @@ declare module Adaptive {
            Determines whether a specific hardware button is supported for interaction.
 
            @param type Type of feature to check.
-           @return true is supported, false otherwise.
+           @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         hasButtonSupport(type: ICapabilitiesButton): boolean;
@@ -74,7 +73,7 @@ declare module Adaptive {
 the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
@@ -82,7 +81,7 @@ the device.
            Determines whether a specific Data capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasDataSupport(type: ICapabilitiesData): boolean;
@@ -91,7 +90,7 @@ the device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasMediaSupport(type: ICapabilitiesMedia): boolean;
@@ -99,7 +98,7 @@ device.
            Determines whether a specific Net capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNetSupport(type: ICapabilitiesNet): boolean;
@@ -108,7 +107,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNotificationSupport(type: ICapabilitiesNotification): boolean;
@@ -117,7 +116,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasSensorSupport(type: ICapabilitiesSensor): boolean;

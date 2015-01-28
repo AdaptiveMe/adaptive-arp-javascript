@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -138,7 +138,7 @@ declare module Adaptive {
         /**
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         getXDoP(): number;
         /**
@@ -150,7 +150,7 @@ declare module Adaptive {
         /**
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         getYDoP(): number;
         /**

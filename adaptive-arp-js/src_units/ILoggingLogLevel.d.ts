@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ILoggingLogLevel
+       @enum {Adaptive.ILoggingLogLevel} Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     class ILoggingLogLevel {
@@ -41,35 +41,30 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ILoggingLogLevel.DEBUG=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
         */
         static DEBUG: ILoggingLogLevel;
         /**
-           @enum [Adaptive.ILoggingLogLevel.WARN=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
         */
         static WARN: ILoggingLogLevel;
         /**
-           @enum [Adaptive.ILoggingLogLevel.ERROR=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
         */
         static ERROR: ILoggingLogLevel;
         /**
-           @enum [Adaptive.ILoggingLogLevel.INFO=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
         */
         static INFO: ILoggingLogLevel;
         /**
-           @enum [Adaptive.ILoggingLogLevel.Unknown=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
         */
         static Unknown: ILoggingLogLevel;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ILoggingLogLevel}
+           @return {Adaptive.ILoggingLogLevel}
         */
         static toObject(object: any): ILoggingLogLevel;
     }

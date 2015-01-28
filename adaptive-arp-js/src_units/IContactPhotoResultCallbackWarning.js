@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactPhotoResultCallbackWarning
+       @enum {Adaptive.IContactPhotoResultCallbackWarning} Adaptive.IContactPhotoResultCallbackWarning
        Enumeration IContactPhotoResultCallbackWarning
     */
     var IContactPhotoResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactPhotoResultCallbackWarning}
+           @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         IContactPhotoResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.LimitExceeded=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.No_Matches=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
         */
         IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.Unknown=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
         IContactPhotoResultCallbackWarning.Unknown = new IContactPhotoResultCallbackWarning("Unknown");
         return IContactPhotoResultCallbackWarning;

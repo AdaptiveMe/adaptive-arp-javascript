@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,6 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class ManagementBridge extends BaseApplicationBridge implements IManagement {
        @class Adaptive.ManagementBridge
        @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Management operations

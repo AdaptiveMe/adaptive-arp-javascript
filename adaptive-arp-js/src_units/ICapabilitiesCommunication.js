@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesCommunication
+       @enum {Adaptive.ICapabilitiesCommunication} Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     var ICapabilitiesCommunication = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesCommunication}
+           @return {Adaptive.ICapabilitiesCommunication}
         */
         ICapabilitiesCommunication.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Calendar=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']
         */
         ICapabilitiesCommunication.Calendar = new ICapabilitiesCommunication("Calendar");
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Contact=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Contact='Contact']
         */
         ICapabilitiesCommunication.Contact = new ICapabilitiesCommunication("Contact");
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Mail=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Mail='Mail']
         */
         ICapabilitiesCommunication.Mail = new ICapabilitiesCommunication("Mail");
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Messaging=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Messaging='Messaging']
         */
         ICapabilitiesCommunication.Messaging = new ICapabilitiesCommunication("Messaging");
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Telephony=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Telephony='Telephony']
         */
         ICapabilitiesCommunication.Telephony = new ICapabilitiesCommunication("Telephony");
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Unknown=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Unknown='Unknown']
         */
         ICapabilitiesCommunication.Unknown = new ICapabilitiesCommunication("Unknown");
         return ICapabilitiesCommunication;

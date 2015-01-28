@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
        @class Adaptive.LinkedInBridge
        @extends Adaptive.BaseSocialBridge
        Interface for Managing the Linkedin operations

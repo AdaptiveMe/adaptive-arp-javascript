@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,8 +43,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IAds
-       @extends {IBaseCommerce}
-       @abstract
+       @extends Adaptive.IBaseCommerce
     */
     interface IAds extends IBaseCommerce {
     }

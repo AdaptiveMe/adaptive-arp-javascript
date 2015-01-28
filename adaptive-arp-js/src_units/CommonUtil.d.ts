@@ -27,24 +27,24 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @property
+       @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     var registeredCounter: number;
     /**
-       @property
+       @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     var bridgePath: string;
     /**
-       @class
-       Utility class for Dictionary type support.
+       @class Adaptive.IDictionary
+       Utility interface for Dictionary type support.
     */
     interface IDictionary<V> {
         add(key: string, value: V): void;
@@ -53,6 +53,10 @@ declare module Adaptive {
         keys(): string[];
         values(): V[];
     }
+    /**
+       @class Adaptive.Dictionary
+       Utility class for Dictionary type support.
+    */
     class Dictionary<V> implements IDictionary<V> {
         _keys: string[];
         _values: V[];

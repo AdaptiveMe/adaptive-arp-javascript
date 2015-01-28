@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ICapabilitiesCommunication
+       @enum {Adaptive.ICapabilitiesCommunication} Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     class ICapabilitiesCommunication {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Calendar=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']
         */
         static Calendar: ICapabilitiesCommunication;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Contact=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Contact='Contact']
         */
         static Contact: ICapabilitiesCommunication;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Mail=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Mail='Mail']
         */
         static Mail: ICapabilitiesCommunication;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Messaging=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Messaging='Messaging']
         */
         static Messaging: ICapabilitiesCommunication;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Telephony=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Telephony='Telephony']
         */
         static Telephony: ICapabilitiesCommunication;
         /**
-           @enum [Adaptive.ICapabilitiesCommunication.Unknown=Adaptive.ICapabilitiesCommunication.*]
-           @static
+           @property {Adaptive.ICapabilitiesCommunication} [Unknown='Unknown']
         */
         static Unknown: ICapabilitiesCommunication;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesCommunication}
+           @return {Adaptive.ICapabilitiesCommunication}
         */
         static toObject(object: any): ICapabilitiesCommunication;
     }

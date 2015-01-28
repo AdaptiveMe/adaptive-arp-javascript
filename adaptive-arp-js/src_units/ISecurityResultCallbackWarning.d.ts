@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ISecurityResultCallbackWarning
+       @enum {Adaptive.ISecurityResultCallbackWarning} Adaptive.ISecurityResultCallbackWarning
        Enumeration ISecurityResultCallbackWarning
     */
     class ISecurityResultCallbackWarning {
@@ -41,20 +41,18 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ISecurityResultCallbackWarning.EntryOverride=Adaptive.ISecurityResultCallbackWarning.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
         */
         static EntryOverride: ISecurityResultCallbackWarning;
         /**
-           @enum [Adaptive.ISecurityResultCallbackWarning.Unknown=Adaptive.ISecurityResultCallbackWarning.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: ISecurityResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ISecurityResultCallbackWarning}
+           @return {Adaptive.ISecurityResultCallbackWarning}
         */
         static toObject(object: any): ISecurityResultCallbackWarning;
     }

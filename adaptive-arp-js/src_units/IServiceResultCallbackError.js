@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IServiceResultCallbackError
+       @enum {Adaptive.IServiceResultCallbackError} Adaptive.IServiceResultCallbackError
        Enumeration IServiceResultCallbackError
     */
     var IServiceResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceResultCallbackError}
+           @return {Adaptive.IServiceResultCallbackError}
         */
         IServiceResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -86,63 +86,51 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IServiceResultCallbackError.Forbidden=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
         */
         IServiceResultCallbackError.Forbidden = new IServiceResultCallbackError("Forbidden");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.NotFound=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
         */
         IServiceResultCallbackError.NotFound = new IServiceResultCallbackError("NotFound");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.MethodNotAllowed=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
         */
         IServiceResultCallbackError.MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.NotAllowed=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
         */
         IServiceResultCallbackError.NotAllowed = new IServiceResultCallbackError("NotAllowed");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.NotAuthenticated=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
         */
         IServiceResultCallbackError.NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.TimeOut=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
         */
         IServiceResultCallbackError.TimeOut = new IServiceResultCallbackError("TimeOut");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.NoResponse=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
         */
         IServiceResultCallbackError.NoResponse = new IServiceResultCallbackError("NoResponse");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.ServerError=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
         */
         IServiceResultCallbackError.ServerError = new IServiceResultCallbackError("ServerError");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.Unreachable=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
         */
         IServiceResultCallbackError.Unreachable = new IServiceResultCallbackError("Unreachable");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.MalformedUrl=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [MalformedUrl='MalformedUrl']
         */
         IServiceResultCallbackError.MalformedUrl = new IServiceResultCallbackError("MalformedUrl");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.NotRegisteredService=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [NotRegisteredService='NotRegisteredService']
         */
         IServiceResultCallbackError.NotRegisteredService = new IServiceResultCallbackError("NotRegisteredService");
         /**
-           @enum [Adaptive.IServiceResultCallbackError.Unknown=Adaptive.IServiceResultCallbackError.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackError} [Unknown='Unknown']
         */
         IServiceResultCallbackError.Unknown = new IServiceResultCallbackError("Unknown");
         return IServiceResultCallbackError;

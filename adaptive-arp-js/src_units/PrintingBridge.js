@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,6 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class PrintingBridge extends BaseApplicationBridge implements IPrinting {
        @class Adaptive.PrintingBridge
        @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Printing operations

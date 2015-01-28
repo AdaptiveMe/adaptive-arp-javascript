@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ITelephonyStatus
+       @enum {Adaptive.ITelephonyStatus} Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     var ITelephonyStatus = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ITelephonyStatus}
+           @return {Adaptive.ITelephonyStatus}
         */
         ITelephonyStatus.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ITelephonyStatus.Dialing=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']
         */
         ITelephonyStatus.Dialing = new ITelephonyStatus("Dialing");
         /**
-           @enum [Adaptive.ITelephonyStatus.Failed=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Failed='Failed']
         */
         ITelephonyStatus.Failed = new ITelephonyStatus("Failed");
         /**
-           @enum [Adaptive.ITelephonyStatus.Unknown=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Unknown='Unknown']
         */
         ITelephonyStatus.Unknown = new ITelephonyStatus("Unknown");
         return ITelephonyStatus;

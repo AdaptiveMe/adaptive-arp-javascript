@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IGeolocationListenerWarning
+       @enum {Adaptive.IGeolocationListenerWarning} Adaptive.IGeolocationListenerWarning
        Enumeration IGeolocationListenerWarning
     */
     var IGeolocationListenerWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IGeolocationListenerWarning}
+           @return {Adaptive.IGeolocationListenerWarning}
         */
         IGeolocationListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IGeolocationListenerWarning.HighDoP=Adaptive.IGeolocationListenerWarning.*]
-           @static
+           @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']
         */
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");
         /**
-           @enum [Adaptive.IGeolocationListenerWarning.StaleData=Adaptive.IGeolocationListenerWarning.*]
-           @static
+           @property {Adaptive.IGeolocationListenerWarning} [StaleData='StaleData']
         */
         IGeolocationListenerWarning.StaleData = new IGeolocationListenerWarning("StaleData");
         /**
-           @enum [Adaptive.IGeolocationListenerWarning.Unknown=Adaptive.IGeolocationListenerWarning.*]
-           @static
+           @property {Adaptive.IGeolocationListenerWarning} [Unknown='Unknown']
         */
         IGeolocationListenerWarning.Unknown = new IGeolocationListenerWarning("Unknown");
         return IGeolocationListenerWarning;

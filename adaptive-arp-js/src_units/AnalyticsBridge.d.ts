@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
        @class Adaptive.AnalyticsBridge
        @extends Adaptive.BaseApplicationBridge
        Interface for Analytics purposes

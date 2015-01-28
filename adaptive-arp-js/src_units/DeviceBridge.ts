@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -78,7 +78,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                // Add listener reference to local dictionary.
                registeredButtonListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -107,7 +107,7 @@ module Adaptive {
           /**
              Returns the device information for the current device executing the runtime.
 
-             @return DeviceInfo for the current device.
+             @return {DeviceInfo} DeviceInfo for the current device.
              @since ARP1.0
           */
           getDeviceInfo() : DeviceInfo {
@@ -119,7 +119,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : DeviceInfo = null;
@@ -145,7 +145,7 @@ module Adaptive {
           /**
              Gets the current Locale for the device.
 
-             @return The current Locale information.
+             @return {Locale} The current Locale information.
              @since ARP1.0
           */
           getLocaleCurrent() : Locale {
@@ -157,7 +157,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -195,7 +195,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -229,7 +229,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {

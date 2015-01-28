@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.INetworkStatusListenerWarning
+       @enum {Adaptive.INetworkStatusListenerWarning} Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     class INetworkStatusListenerWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressNotAssigned=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']
         */
         static IpAddressNotAssigned: INetworkStatusListenerWarning;
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressChanged=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressChanged='IpAddressChanged']
         */
         static IpAddressChanged: INetworkStatusListenerWarning;
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.Unknown=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [Unknown='Unknown']
         */
         static Unknown: INetworkStatusListenerWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkStatusListenerWarning}
+           @return {Adaptive.INetworkStatusListenerWarning}
         */
         static toObject(object: any): INetworkStatusListenerWarning;
     }

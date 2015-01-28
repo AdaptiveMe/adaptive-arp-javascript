@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.LifecycleState
+       @enum {Adaptive.LifecycleState} Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     class LifecycleState {
@@ -41,55 +41,46 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.LifecycleState.Starting=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Starting='Starting']
         */
         static Starting: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Started=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Started='Started']
         */
         static Started: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Running=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Running='Running']
         */
         static Running: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Pausing=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Pausing='Pausing']
         */
         static Pausing: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.PausedIdle=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [PausedIdle='PausedIdle']
         */
         static PausedIdle: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.PausedRun=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [PausedRun='PausedRun']
         */
         static PausedRun: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Resuming=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Resuming='Resuming']
         */
         static Resuming: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Stopping=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Stopping='Stopping']
         */
         static Stopping: LifecycleState;
         /**
-           @enum [Adaptive.LifecycleState.Unknown=Adaptive.LifecycleState.*]
-           @static
+           @property {Adaptive.LifecycleState} [Unknown='Unknown']
         */
         static Unknown: LifecycleState;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {LifecycleState}
+           @return {Adaptive.LifecycleState}
         */
         static toObject(object: any): LifecycleState;
     }

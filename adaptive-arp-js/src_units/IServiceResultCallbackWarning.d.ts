@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IServiceResultCallbackWarning
+       @enum {Adaptive.IServiceResultCallbackWarning} Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     class IServiceResultCallbackWarning {
@@ -41,35 +41,30 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.NotSecure=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
         */
         static NotSecure: IServiceResultCallbackWarning;
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.NotTrusted=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
         */
         static NotTrusted: IServiceResultCallbackWarning;
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Redirected=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
         */
         static Redirected: IServiceResultCallbackWarning;
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Wrong_Params=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
         static Wrong_Params: IServiceResultCallbackWarning;
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Unknown=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IServiceResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceResultCallbackWarning}
+           @return {Adaptive.IServiceResultCallbackWarning}
         */
         static toObject(object: any): IServiceResultCallbackWarning;
     }

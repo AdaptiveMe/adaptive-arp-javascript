@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class CloudBridge extends BaseDataBridge implements ICloud {
        @class Adaptive.CloudBridge
        @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations

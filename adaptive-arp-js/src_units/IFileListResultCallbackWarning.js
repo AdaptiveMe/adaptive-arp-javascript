@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileListResultCallbackWarning
+       @enum {Adaptive.IFileListResultCallbackWarning} Adaptive.IFileListResultCallbackWarning
        Enumeration IFileListResultCallbackWarning
     */
     var IFileListResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileListResultCallbackWarning}
+           @return {Adaptive.IFileListResultCallbackWarning}
         */
         IFileListResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -66,13 +66,11 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileListResultCallbackWarning.PartialResult=Adaptive.IFileListResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']
         */
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
         /**
-           @enum [Adaptive.IFileListResultCallbackWarning.Unknown=Adaptive.IFileListResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackWarning} [Unknown='Unknown']
         */
         IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
         return IFileListResultCallbackWarning;

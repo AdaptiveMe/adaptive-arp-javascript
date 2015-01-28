@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,7 +64,7 @@ module Adaptive {
              Invoke a phone call
 
              @param number to call
-             @return Status of the call
+             @return {ITelephonyStatus} Status of the call
              @since ARP1.0
           */
           call(number : string) : ITelephonyStatus {
@@ -77,7 +77,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ITelephonyStatus = null;

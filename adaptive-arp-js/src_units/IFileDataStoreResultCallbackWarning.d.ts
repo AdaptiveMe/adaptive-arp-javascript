@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileDataStoreResultCallbackWarning
+       @enum {Adaptive.IFileDataStoreResultCallbackWarning} Adaptive.IFileDataStoreResultCallbackWarning
        Enumeration IFileDataStoreResultCallbackWarning
     */
     class IFileDataStoreResultCallbackWarning {
@@ -41,20 +41,18 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackWarning.ExceedMaximumSize=Adaptive.IFileDataStoreResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
         */
         static ExceedMaximumSize: IFileDataStoreResultCallbackWarning;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackWarning.Unknown=Adaptive.IFileDataStoreResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IFileDataStoreResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileDataStoreResultCallbackWarning}
+           @return {Adaptive.IFileDataStoreResultCallbackWarning}
         */
         static toObject(object: any): IFileDataStoreResultCallbackWarning;
     }

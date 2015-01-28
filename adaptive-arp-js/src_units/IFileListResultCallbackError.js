@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileListResultCallbackError
+       @enum {Adaptive.IFileListResultCallbackError} Adaptive.IFileListResultCallbackError
        Enumeration IFileListResultCallbackError
     */
     var IFileListResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileListResultCallbackError}
+           @return {Adaptive.IFileListResultCallbackError}
         */
         IFileListResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileListResultCallbackError.InexistentFile=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']
         */
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");
         /**
-           @enum [Adaptive.IFileListResultCallbackError.Unauthorized=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [Unauthorized='Unauthorized']
         */
         IFileListResultCallbackError.Unauthorized = new IFileListResultCallbackError("Unauthorized");
         /**
-           @enum [Adaptive.IFileListResultCallbackError.Unknown=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [Unknown='Unknown']
         */
         IFileListResultCallbackError.Unknown = new IFileListResultCallbackError("Unknown");
         return IFileListResultCallbackError;

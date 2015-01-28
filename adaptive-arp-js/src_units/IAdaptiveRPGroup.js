@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IAdaptiveRPGroup
+       @enum {Adaptive.IAdaptiveRPGroup} Adaptive.IAdaptiveRPGroup
        Enumeration IAdaptiveRPGroup
     */
     var IAdaptiveRPGroup = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IAdaptiveRPGroup}
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         IAdaptiveRPGroup.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -94,83 +94,67 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Application=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Application='Application']
         */
         IAdaptiveRPGroup.Application = new IAdaptiveRPGroup("Application");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Commerce=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Commerce='Commerce']
         */
         IAdaptiveRPGroup.Commerce = new IAdaptiveRPGroup("Commerce");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Communication=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Communication='Communication']
         */
         IAdaptiveRPGroup.Communication = new IAdaptiveRPGroup("Communication");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Data=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Data='Data']
         */
         IAdaptiveRPGroup.Data = new IAdaptiveRPGroup("Data");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Media=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Media='Media']
         */
         IAdaptiveRPGroup.Media = new IAdaptiveRPGroup("Media");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Notification=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Notification='Notification']
         */
         IAdaptiveRPGroup.Notification = new IAdaptiveRPGroup("Notification");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.PIM=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [PIM='PIM']
         */
         IAdaptiveRPGroup.PIM = new IAdaptiveRPGroup("PIM");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Reader=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Reader='Reader']
         */
         IAdaptiveRPGroup.Reader = new IAdaptiveRPGroup("Reader");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Security=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Security='Security']
         */
         IAdaptiveRPGroup.Security = new IAdaptiveRPGroup("Security");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Sensor=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Sensor='Sensor']
         */
         IAdaptiveRPGroup.Sensor = new IAdaptiveRPGroup("Sensor");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Social=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Social='Social']
         */
         IAdaptiveRPGroup.Social = new IAdaptiveRPGroup("Social");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.System=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [System='System']
         */
         IAdaptiveRPGroup.System = new IAdaptiveRPGroup("System");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.UI=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [UI='UI']
         */
         IAdaptiveRPGroup.UI = new IAdaptiveRPGroup("UI");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Util=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Util='Util']
         */
         IAdaptiveRPGroup.Util = new IAdaptiveRPGroup("Util");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Kernel=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Kernel='Kernel']
         */
         IAdaptiveRPGroup.Kernel = new IAdaptiveRPGroup("Kernel");
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Unknown=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Unknown='Unknown']
         */
         IAdaptiveRPGroup.Unknown = new IAdaptiveRPGroup("Unknown");
         return IAdaptiveRPGroup;

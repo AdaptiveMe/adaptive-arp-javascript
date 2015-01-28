@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileSystemType
+       @enum {Adaptive.IFileSystemType} Adaptive.IFileSystemType
        Enumeration IFileSystemType
     */
     class IFileSystemType {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileSystemType.Directory=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [Directory='Directory']
         */
         static Directory: IFileSystemType;
         /**
-           @enum [Adaptive.IFileSystemType.File=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [File='File']
         */
         static File: IFileSystemType;
         /**
-           @enum [Adaptive.IFileSystemType.Unknown=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [Unknown='Unknown']
         */
         static Unknown: IFileSystemType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemType}
+           @return {Adaptive.IFileSystemType}
         */
         static toObject(object: any): IFileSystemType;
     }

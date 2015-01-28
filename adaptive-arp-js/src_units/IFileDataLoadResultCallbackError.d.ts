@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileDataLoadResultCallbackError
+       @enum {Adaptive.IFileDataLoadResultCallbackError} Adaptive.IFileDataLoadResultCallbackError
        Enumeration IFileDataLoadResultCallbackError
     */
     class IFileDataLoadResultCallbackError {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackError.InexistentFile=Adaptive.IFileDataLoadResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InexistentFile='InexistentFile']
         */
         static InexistentFile: IFileDataLoadResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackError.InsufficientSpace=Adaptive.IFileDataLoadResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InsufficientSpace='InsufficientSpace']
         */
         static InsufficientSpace: IFileDataLoadResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackError.Unauthorized=Adaptive.IFileDataLoadResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unauthorized='Unauthorized']
         */
         static Unauthorized: IFileDataLoadResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataLoadResultCallbackError.Unknown=Adaptive.IFileDataLoadResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IFileDataLoadResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileDataLoadResultCallbackError}
+           @return {Adaptive.IFileDataLoadResultCallbackError}
         */
         static toObject(object: any): IFileDataLoadResultCallbackError;
     }

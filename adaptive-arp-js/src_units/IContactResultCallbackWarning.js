@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactResultCallbackWarning
+       @enum {Adaptive.IContactResultCallbackWarning} Adaptive.IContactResultCallbackWarning
        Enumeration IContactResultCallbackWarning
     */
     var IContactResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactResultCallbackWarning}
+           @return {Adaptive.IContactResultCallbackWarning}
         */
         IContactResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.LimitExceeded=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.No_Matches=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
         IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.Unknown=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
         IContactResultCallbackWarning.Unknown = new IContactResultCallbackWarning("Unknown");
         return IContactResultCallbackWarning;

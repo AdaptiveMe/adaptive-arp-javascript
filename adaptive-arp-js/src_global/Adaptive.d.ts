@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -627,7 +627,7 @@ declare module Adaptive {
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -3292,6 +3292,59 @@ listener.
         static toObject(object: any): APIResponse;
     }
     /**
+       @class Adaptive.ServicePath
+       Structure representing a service path for one endpoint
+
+       @author fnva
+       @since ARP1.0
+       @version 1.0
+    */
+    class ServicePath {
+        /**
+           The methods for calling a path
+        */
+        methods: IServiceMethod[];
+        /**
+           The path for the endpoint
+        */
+        path: string;
+        /**
+           Constructor with parameters
+
+           @param path    The path for the endpoint
+           @param methods The methods for calling a path
+        */
+        constructor(path: string, methods: IServiceMethod[]);
+        /**
+           Endpoint's path methods setter
+
+           @return Endpoint's path methods
+        */
+        getMethods(): IServiceMethod[];
+        /**
+           Endpoint's path methods setter
+
+           @param methods Endpoint's path methods
+        */
+        setMethods(methods: IServiceMethod[]): void;
+        /**
+           Endpoint's Path Getter
+
+           @return Endpoint's Path
+        */
+        getPath(): string;
+        /**
+           Endpoint's path setter
+
+           @param path Endpoint's path
+        */
+        setPath(path: string): void;
+        /**
+           Convert JSON parsed object to typed equivalent.
+        */
+        static toObject(object: any): ServicePath;
+    }
+    /**
        @class Adaptive.Acceleration
        @extends Adaptive.APIBean
        Structure representing the data of a single acceleration reading.
@@ -5207,10 +5260,6 @@ Possible lifecycle States:
     */
     class Service extends APIBean {
         /**
-           The method used
-        */
-        method: IServiceMethod;
-        /**
            The type of the service
         */
         type: IServiceType;
@@ -5221,31 +5270,16 @@ Possible lifecycle States:
         /**
            Endpoint of the service
         */
-        serviceEndpoint: ServiceEndpoint;
+        serviceEndpoints: ServiceEndpoint[];
         /**
            Constructor used by the implementation
 
-           @param serviceEndpoint Endpoint of the service
-           @param name            Name of the service
-           @param method          Method of the service
-           @param type            Type of the service
+           @param serviceEndpoints Endpoints of the service
+           @param name             Name of the service
+           @param type             Type of the service
            @since ARP1.0
         */
-        constructor(serviceEndpoint: ServiceEndpoint, name: string, method: IServiceMethod, type: IServiceType);
-        /**
-           Returns the method
-
-           @return method
-           @since ARP1.0
-        */
-        getMethod(): IServiceMethod;
-        /**
-           Set the method
-
-           @param method Method of the service
-           @since ARP1.0
-        */
-        setMethod(method: IServiceMethod): void;
+        constructor(serviceEndpoints: ServiceEndpoint[], name: string, type: IServiceType);
         /**
            Returns the type
 
@@ -5275,19 +5309,19 @@ Possible lifecycle States:
         */
         setName(name: string): void;
         /**
-           Returns the serviceEndpoint
+           Returns the serviceEndpoints
 
-           @return serviceEndpoint
+           @return serviceEndpoints
            @since ARP1.0
         */
-        getServiceEndpoint(): ServiceEndpoint;
+        getServiceEndpoints(): ServiceEndpoint[];
         /**
-           Set the serviceEndpoint
+           Set the serviceEndpoints
 
-           @param serviceEndpoint Endpoint of the service
+           @param serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
-        setServiceEndpoint(serviceEndpoint: ServiceEndpoint): void;
+        setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */
@@ -5481,9 +5515,9 @@ Possible lifecycle States:
         */
         host: string;
         /**
-           The remote service path (to be added to the host and port url).
+           The remote service paths (to be added to the host and port url).
         */
-        path: string;
+        paths: ServicePath[];
         /**
            The remote service accessible port.
         */
@@ -5500,13 +5534,13 @@ Possible lifecycle States:
            Constructor with parameters
 
            @param host   Remote service host
-           @param path   Remote service Path
+           @param paths  Remote service Paths
            @param port   Remote service Port
            @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param scheme Remote service scheme
            @since ARP1.0
         */
-        constructor(host: string, path: string, port: number, proxy: string, scheme: string);
+        constructor(host: string, paths: ServicePath[], port: number, proxy: string, scheme: string);
         /**
            Returns the Remote service host
 
@@ -5522,19 +5556,19 @@ Possible lifecycle States:
         */
         setHost(host: string): void;
         /**
-           Returns the Remote service Path
+           Returns the Remote service Paths
 
-           @return Remote service Path
+           @return Remote service Paths
            @since ARP1.0
         */
-        getPath(): string;
+        getPaths(): ServicePath[];
         /**
-           Set the Remote service Path
+           Set the Remote service Paths
 
-           @param path Remote service Path
+           @param paths Remote service Paths
            @since ARP1.0
         */
-        setPath(path: string): void;
+        setPaths(paths: ServicePath[]): void;
         /**
            Returns the Remote service Port
 
@@ -6285,7 +6319,7 @@ Possible lifecycle States:
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -6542,7 +6576,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7115,7 +7149,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7148,7 +7182,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7181,7 +7215,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7214,7 +7248,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7247,7 +7281,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7280,7 +7314,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7313,7 +7347,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7346,7 +7380,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7379,7 +7413,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7412,7 +7446,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7445,7 +7479,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7478,7 +7512,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7511,7 +7545,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7544,7 +7578,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }
@@ -7580,14 +7614,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Returns the default locale of the application defined in the configuration file
 
-           @return Default Locale of the application
+           @return {Locale} Default Locale of the application
            @since ARP1.0
         */
         getDefaultLocale(): Locale;
         /**
            List of supported locales for the application defined in the configuration file
 
-           @return List of locales
+           @return {[Adaptive.Locale]} List of locales
            @since ARP1.0
         */
         getLocaleSupportedDescriptors(): Locale[];
@@ -7596,7 +7630,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param key    to match text
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized text.
+           @return {string} Localized text.
            @since ARP1.0
         */
         getResourceLiteral(key: string, locale: Locale): string;
@@ -7604,7 +7638,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized texts in the form of an object.
+           @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
            @since ARP1.0
         */
         getResourceLiterals(locale: Locale): KeyPair[];
@@ -7633,7 +7667,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Whether the application is in background or not
 
-           @return true if the application is in background;false otherwise
+           @return {boolean} true if the application is in background;false otherwise
            @since ARP1.0
         */
         isBackground(): boolean;
@@ -7885,7 +7919,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Get a reference to a registered service by name.
 
            @param serviceName Name of service.
-           @return A service, if registered, or null of the service does not exist.
+           @return {Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         getService(serviceName: string): Service;
@@ -7968,7 +8002,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Invoke a phone call
 
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         call(number: string): ITelephonyStatus;
@@ -8077,7 +8111,7 @@ should be passed as a parameter
            Checks if database exists by given database name.
 
            @param database Database Object to check if exists
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsDatabase(database: Database): boolean;
@@ -8086,7 +8120,7 @@ should be passed as a parameter
 
            @param database      Database for databaseTable consulting.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsTable(database: Database, databaseTable: DatabaseTable): boolean;
@@ -8109,7 +8143,7 @@ should be passed as a parameter
            Determine whether the current file/folder can be read from.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is readable, false otherwise.
+           @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
         canRead(descriptor: FileDescriptor): boolean;
@@ -8117,7 +8151,7 @@ should be passed as a parameter
            Determine whether the current file/folder can be written to.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is writable, false otherwise.
+           @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
         canWrite(descriptor: FileDescriptor): boolean;
@@ -8135,7 +8169,7 @@ deleted if the cascade parameter is set to true.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param cascade    Whether to delete sub-files and sub-folders.
-           @return True if files (and sub-files and folders) whether deleted.
+           @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
         delete(descriptor: FileDescriptor, cascade: boolean): boolean;
@@ -8143,7 +8177,7 @@ deleted if the cascade parameter is set to true.
            Check whether the file/path exists.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the file exists in the filesystem, false otherwise.
+           @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
         exists(descriptor: FileDescriptor): boolean;
@@ -8159,7 +8193,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Storage Type file
+           @return {IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
@@ -8167,7 +8201,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Returns the file type of the file
+           @return {IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
@@ -8175,7 +8209,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return Security Level of the file
+           @return {IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
@@ -8183,7 +8217,7 @@ deleted if the cascade parameter is set to true.
            Check whether this is a path of a file.
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return true if this is a path to a folder/directory, false if this is a path to a file.
+           @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
         isDirectory(descriptor: FileDescriptor): boolean;
@@ -8211,7 +8245,7 @@ is a file, it will not yield any results.
 
            @param descriptor File descriptor of file or folder used for operation.
            @param recursive  Whether to create all parent path elements.
-           @return True if the path was created, false otherwise (or it exists already).
+           @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
         mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;
@@ -8257,7 +8291,7 @@ This method does not create the actual file in the specified folder.
 
            @param parent Parent directory.
            @param name   Name of new file or directory.
-           @return A reference to a new or existing location in the filesystem.
+           @return {FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
         createFileDescriptor(parent: FileDescriptor, name: string): FileDescriptor;
@@ -8266,7 +8300,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
-           @return Path to the application's cache folder.
+           @return {FileDescriptor} Path to the application's cache folder.
            @since ARP1.0
         */
         getApplicationCacheFolder(): FileDescriptor;
@@ -8274,7 +8308,7 @@ This path is volatile and may be cleaned by the OS periodically.
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's cloud storage folder.
+           @return {FileDescriptor} Path to the application's cloud storage folder.
            @since ARP1.0
         */
         getApplicationCloudFolder(): FileDescriptor;
@@ -8282,7 +8316,7 @@ This path must always be writable by the current application.
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         getApplicationDocumentsFolder(): FileDescriptor;
@@ -8290,7 +8324,7 @@ This path must always be writable by the current application.
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
-           @return Path to the application folder.
+           @return {FileDescriptor} Path to the application folder.
            @since ARP1.0
         */
         getApplicationFolder(): FileDescriptor;
@@ -8298,14 +8332,14 @@ This path may or may not be directly readable or writable - it usually contains 
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
-           @return Path to the application's protected storage folder.
+           @return {FileDescriptor} Path to the application's protected storage folder.
            @since ARP1.0
         */
         getApplicationProtectedFolder(): FileDescriptor;
         /**
            Returns the file system dependent file separator.
 
-           @return char with the directory/file separator.
+           @return {string} char with the directory/file separator.
            @since ARP1.0
         */
         getSeparator(): string;
@@ -8315,7 +8349,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
 
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         getSystemExternalFolder(): FileDescriptor;
@@ -8568,7 +8602,7 @@ This path may or may not be writable by the current application.
 
            @param contact  id to assign the photo
            @param pngImage photo as byte array
-           @return true if set is successful;false otherwise
+           @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */
         setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
@@ -8745,7 +8779,7 @@ This path may or may not be writable by the current application.
         /**
            Returns if the device has been modified in anyhow
 
-           @return true if the device has been modified; false otherwise
+           @return {boolean} true if the device has been modified; false otherwise
            @since ARP1.0
         */
         isDeviceModified(): boolean;
@@ -8997,7 +9031,7 @@ This path may or may not be writable by the current application.
            Determines whether a specific hardware button is supported for interaction.
 
            @param type Type of feature to check.
-           @return true is supported, false otherwise.
+           @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         hasButtonSupport(type: ICapabilitiesButton): boolean;
@@ -9006,7 +9040,7 @@ This path may or may not be writable by the current application.
 the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
@@ -9014,7 +9048,7 @@ the device.
            Determines whether a specific Data capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasDataSupport(type: ICapabilitiesData): boolean;
@@ -9023,7 +9057,7 @@ the device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasMediaSupport(type: ICapabilitiesMedia): boolean;
@@ -9031,7 +9065,7 @@ device.
            Determines whether a specific Net capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNetSupport(type: ICapabilitiesNet): boolean;
@@ -9040,7 +9074,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNotificationSupport(type: ICapabilitiesNotification): boolean;
@@ -9049,7 +9083,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasSensorSupport(type: ICapabilitiesSensor): boolean;
@@ -9078,14 +9112,14 @@ device.
         /**
            Returns the device information for the current device executing the runtime.
 
-           @return DeviceInfo for the current device.
+           @return {DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
            Gets the current Locale for the device.
 
-           @return The current Locale information.
+           @return {Locale} The current Locale information.
            @since ARP1.0
         */
         getLocaleCurrent(): Locale;
@@ -9135,7 +9169,7 @@ device.
         /**
            Returns the OSInfo for the current operating system.
 
-           @return OSInfo with name, version and vendor of the OS.
+           @return {OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         getOSInfo(): OSInfo;
@@ -9163,7 +9197,7 @@ device.
         /**
            Whether the application dismiss the splash screen successfully or not
 
-           @return true if the application has dismissed the splash screen;false otherwise
+           @return {boolean} true if the application has dismissed the splash screen;false otherwise
            @since ARP1.0
         */
         dismissSplashScreen(): boolean;
@@ -9186,7 +9220,7 @@ device.
            Method for opening a URL like a link in the native default browser
 
            @param url Url to open
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openExtenalBrowser(url: string): boolean;
@@ -9196,7 +9230,7 @@ device.
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowser(url: string, title: string, backButtonText: string): boolean;
@@ -9206,7 +9240,7 @@ device.
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowserModal(url: string, title: string, backButtonText: string): boolean;
@@ -9358,15 +9392,16 @@ device.
     */
     class AppRegistryBridge implements IAppRegistry {
         /**
-           Singleton instance of AppRegistry.
            @private
+           @static
+           Singleton instance of AppRegistry.
         */
         private static instance;
         /**
-           Singleton instance of AppRegistry.
            @static
            @singleton
            @method
+           Singleton instance of AppRegistry.
            @return {Adaptive.AppRegistryBridge}
         */
         static getInstance(): IAppRegistry;
@@ -10217,7 +10252,7 @@ device.
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }

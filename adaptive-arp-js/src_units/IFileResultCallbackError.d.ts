@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileResultCallbackError
+       @enum {Adaptive.IFileResultCallbackError} Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     class IFileResultCallbackError {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileResultCallbackError.FileExists=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [FileExists='FileExists']
         */
         static FileExists: IFileResultCallbackError;
         /**
-           @enum [Adaptive.IFileResultCallbackError.SourceInexistent=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [SourceInexistent='SourceInexistent']
         */
         static SourceInexistent: IFileResultCallbackError;
         /**
-           @enum [Adaptive.IFileResultCallbackError.DestionationExists=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [DestionationExists='DestionationExists']
         */
         static DestionationExists: IFileResultCallbackError;
         /**
-           @enum [Adaptive.IFileResultCallbackError.InsufficientSpace=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [InsufficientSpace='InsufficientSpace']
         */
         static InsufficientSpace: IFileResultCallbackError;
         /**
-           @enum [Adaptive.IFileResultCallbackError.Unauthorized=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [Unauthorized='Unauthorized']
         */
         static Unauthorized: IFileResultCallbackError;
         /**
-           @enum [Adaptive.IFileResultCallbackError.Unknown=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IFileResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileResultCallbackError}
+           @return {Adaptive.IFileResultCallbackError}
         */
         static toObject(object: any): IFileResultCallbackError;
     }

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IServiceType
+       @enum {Adaptive.IServiceType} Adaptive.IServiceType
        Enumeration IServiceType
     */
     class IServiceType {
@@ -41,65 +41,54 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeAmfSerialization=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
         */
         static ServiceTypeAmfSerialization: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeGwtRpc=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
         */
         static ServiceTypeGwtRpc: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeOctetBinary=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
         */
         static ServiceTypeOctetBinary: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRemotingSerialization=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
         */
         static ServiceTypeRemotingSerialization: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRestJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
         */
         static ServiceTypeRestJson: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRestXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
         */
         static ServiceTypeRestXml: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeSoapJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
         */
         static ServiceTypeSoapJson: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeSoapXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
         */
         static ServiceTypeSoapXml: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
         */
         static ServiceTypeXmlRpcJson: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
         */
         static ServiceTypeXmlRpcXml: IServiceType;
         /**
-           @enum [Adaptive.IServiceType.Unknown=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [Unknown='Unknown']
         */
         static Unknown: IServiceType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceType}
+           @return {Adaptive.IServiceType}
         */
         static toObject(object: any): IServiceType;
     }

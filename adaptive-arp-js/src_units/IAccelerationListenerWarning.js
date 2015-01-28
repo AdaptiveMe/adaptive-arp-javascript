@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IAccelerationListenerWarning
+       @enum {Adaptive.IAccelerationListenerWarning} Adaptive.IAccelerationListenerWarning
        Enumeration IAccelerationListenerWarning
     */
     var IAccelerationListenerWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IAccelerationListenerWarning}
+           @return {Adaptive.IAccelerationListenerWarning}
         */
         IAccelerationListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IAccelerationListenerWarning.NeedsCalibration=Adaptive.IAccelerationListenerWarning.*]
-           @static
+           @property {Adaptive.IAccelerationListenerWarning} [NeedsCalibration='NeedsCalibration']
         */
         IAccelerationListenerWarning.NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
         /**
-           @enum [Adaptive.IAccelerationListenerWarning.Stale=Adaptive.IAccelerationListenerWarning.*]
-           @static
+           @property {Adaptive.IAccelerationListenerWarning} [Stale='Stale']
         */
         IAccelerationListenerWarning.Stale = new IAccelerationListenerWarning("Stale");
         /**
-           @enum [Adaptive.IAccelerationListenerWarning.Unknown=Adaptive.IAccelerationListenerWarning.*]
-           @static
+           @property {Adaptive.IAccelerationListenerWarning} [Unknown='Unknown']
         */
         IAccelerationListenerWarning.Unknown = new IAccelerationListenerWarning("Unknown");
         return IAccelerationListenerWarning;

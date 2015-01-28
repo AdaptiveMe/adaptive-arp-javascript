@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ISecurityResultCallbackError
+       @enum {Adaptive.ISecurityResultCallbackError} Adaptive.ISecurityResultCallbackError
        Enumeration ISecurityResultCallbackError
     */
     class ISecurityResultCallbackError {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ISecurityResultCallbackError.NoPermission=Adaptive.ISecurityResultCallbackError.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackError} [NoPermission='NoPermission']
         */
         static NoPermission: ISecurityResultCallbackError;
         /**
-           @enum [Adaptive.ISecurityResultCallbackError.NoMatchesFound=Adaptive.ISecurityResultCallbackError.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackError} [NoMatchesFound='NoMatchesFound']
         */
         static NoMatchesFound: ISecurityResultCallbackError;
         /**
-           @enum [Adaptive.ISecurityResultCallbackError.Unknown=Adaptive.ISecurityResultCallbackError.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: ISecurityResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ISecurityResultCallbackError}
+           @return {Adaptive.ISecurityResultCallbackError}
         */
         static toObject(object: any): ISecurityResultCallbackError;
     }

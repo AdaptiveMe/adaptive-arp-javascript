@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class NotificationBridge extends BaseNotificationBridge implements INotification {
        @class Adaptive.NotificationBridge
        @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Notification operations

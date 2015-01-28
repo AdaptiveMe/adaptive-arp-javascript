@@ -33,13 +33,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class BaseCommerceBridge implements IBaseCommerce {
        @class Adaptive.BaseCommerceBridge
        @extends Adaptive.IBaseCommerce
        Base application for Commerce purposes
@@ -49,7 +48,7 @@ declare module Adaptive {
     */
     class BaseCommerceBridge implements IBaseCommerce {
         /**
-           @property
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
@@ -61,14 +60,14 @@ declare module Adaptive {
         /**
            @method
            Return the API group for the given interface.
-           @return {IAdaptiveRPGroup}
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }

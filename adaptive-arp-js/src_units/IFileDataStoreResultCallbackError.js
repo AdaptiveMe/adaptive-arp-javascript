@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileDataStoreResultCallbackError
+       @enum {Adaptive.IFileDataStoreResultCallbackError} Adaptive.IFileDataStoreResultCallbackError
        Enumeration IFileDataStoreResultCallbackError
     */
     var IFileDataStoreResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileDataStoreResultCallbackError}
+           @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         IFileDataStoreResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.InexistentFile=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']
         */
         IFileDataStoreResultCallbackError.InexistentFile = new IFileDataStoreResultCallbackError("InexistentFile");
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.InsufficientSpace=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InsufficientSpace='InsufficientSpace']
         */
         IFileDataStoreResultCallbackError.InsufficientSpace = new IFileDataStoreResultCallbackError("InsufficientSpace");
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.Unauthorized=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unauthorized='Unauthorized']
         */
         IFileDataStoreResultCallbackError.Unauthorized = new IFileDataStoreResultCallbackError("Unauthorized");
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.Unknown=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unknown='Unknown']
         */
         IFileDataStoreResultCallbackError.Unknown = new IFileDataStoreResultCallbackError("Unknown");
         return IFileDataStoreResultCallbackError;

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,8 +43,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IBluetooth
-       @extends {IBaseCommunication}
-       @abstract
+       @extends Adaptive.IBaseCommunication
     */
     interface IBluetooth extends IBaseCommunication {
     }

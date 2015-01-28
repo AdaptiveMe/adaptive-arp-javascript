@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class CalendarBridge extends BasePIMBridge implements ICalendar {
        @class Adaptive.CalendarBridge
        @extends Adaptive.BasePIMBridge
        Interface for Managing the Calendar operations

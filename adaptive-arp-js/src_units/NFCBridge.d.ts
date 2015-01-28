@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class NFCBridge extends BaseReaderBridge implements INFC {
        @class Adaptive.NFCBridge
        @extends Adaptive.BaseReaderBridge
        Interface for Managing the NFC operations

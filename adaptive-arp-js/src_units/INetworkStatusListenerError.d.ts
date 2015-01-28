@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.INetworkStatusListenerError
+       @enum {Adaptive.INetworkStatusListenerError} Adaptive.INetworkStatusListenerError
        Enumeration INetworkStatusListenerError
     */
     class INetworkStatusListenerError {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.INetworkStatusListenerError.NoPermission=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']
         */
         static NoPermission: INetworkStatusListenerError;
         /**
-           @enum [Adaptive.INetworkStatusListenerError.Unreachable=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [Unreachable='Unreachable']
         */
         static Unreachable: INetworkStatusListenerError;
         /**
-           @enum [Adaptive.INetworkStatusListenerError.Unknown=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [Unknown='Unknown']
         */
         static Unknown: INetworkStatusListenerError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkStatusListenerError}
+           @return {Adaptive.INetworkStatusListenerError}
         */
         static toObject(object: any): INetworkStatusListenerError;
     }

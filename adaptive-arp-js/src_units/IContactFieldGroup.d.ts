@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactFieldGroup
+       @enum {Adaptive.IContactFieldGroup} Adaptive.IContactFieldGroup
        Enumeration IContactFieldGroup
     */
     class IContactFieldGroup {
@@ -41,55 +41,46 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactFieldGroup.PERSONAL_INFO=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
         */
         static PERSONAL_INFO: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.PROFESSIONAL_INFO=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
         */
         static PROFESSIONAL_INFO: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.ADDRESSES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */
         static ADDRESSES: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.PHONES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
         */
         static PHONES: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.EMAILS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
         */
         static EMAILS: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.WEBSITES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
         */
         static WEBSITES: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.SOCIALS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
         */
         static SOCIALS: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.TAGS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
         */
         static TAGS: IContactFieldGroup;
         /**
-           @enum [Adaptive.IContactFieldGroup.Unknown=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
         */
         static Unknown: IContactFieldGroup;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactFieldGroup}
+           @return {Adaptive.IContactFieldGroup}
         */
         static toObject(object: any): IContactFieldGroup;
     }

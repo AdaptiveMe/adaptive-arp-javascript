@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IGeolocationListenerError
+       @enum {Adaptive.IGeolocationListenerError} Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     var IGeolocationListenerError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IGeolocationListenerError}
+           @return {Adaptive.IGeolocationListenerError}
         */
         IGeolocationListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -72,28 +72,23 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IGeolocationListenerError.Disabled=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']
         */
         IGeolocationListenerError.Disabled = new IGeolocationListenerError("Disabled");
         /**
-           @enum [Adaptive.IGeolocationListenerError.RestrictedAccess=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [RestrictedAccess='RestrictedAccess']
         */
         IGeolocationListenerError.RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
         /**
-           @enum [Adaptive.IGeolocationListenerError.DeniedAccess=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [DeniedAccess='DeniedAccess']
         */
         IGeolocationListenerError.DeniedAccess = new IGeolocationListenerError("DeniedAccess");
         /**
-           @enum [Adaptive.IGeolocationListenerError.StatusNotDetermined=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [StatusNotDetermined='StatusNotDetermined']
         */
         IGeolocationListenerError.StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
         /**
-           @enum [Adaptive.IGeolocationListenerError.Unknown=Adaptive.IGeolocationListenerError.*]
-           @static
+           @property {Adaptive.IGeolocationListenerError} [Unknown='Unknown']
         */
         IGeolocationListenerError.Unknown = new IGeolocationListenerError("Unknown");
         return IGeolocationListenerError;

@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ContactSocialNetwork
+       @enum {Adaptive.ContactSocialNetwork} Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     var ContactSocialNetwork = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactSocialNetwork}
+           @return {Adaptive.ContactSocialNetwork}
         */
         ContactSocialNetwork.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ContactSocialNetwork.Twitter=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']
         */
         ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
         /**
-           @enum [Adaptive.ContactSocialNetwork.Facebook=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Facebook='Facebook']
         */
         ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
         /**
-           @enum [Adaptive.ContactSocialNetwork.GooglePlus=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [GooglePlus='GooglePlus']
         */
         ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");
         /**
-           @enum [Adaptive.ContactSocialNetwork.LinkedIn=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [LinkedIn='LinkedIn']
         */
         ContactSocialNetwork.LinkedIn = new ContactSocialNetwork("LinkedIn");
         /**
-           @enum [Adaptive.ContactSocialNetwork.Flickr=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Flickr='Flickr']
         */
         ContactSocialNetwork.Flickr = new ContactSocialNetwork("Flickr");
         /**
-           @enum [Adaptive.ContactSocialNetwork.Unknown=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Unknown='Unknown']
         */
         ContactSocialNetwork.Unknown = new ContactSocialNetwork("Unknown");
         return ContactSocialNetwork;

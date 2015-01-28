@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,8 +46,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IDatabaseResultCallback
-       @extends {IBaseCallback}
-       @abstract
+       @extends Adaptive.IBaseCallback
     */
     interface IDatabaseResultCallback extends IBaseCallback {
         /**

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ContactSocialNetwork
+       @enum {Adaptive.ContactSocialNetwork} Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     class ContactSocialNetwork {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ContactSocialNetwork.Twitter=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']
         */
         static Twitter: ContactSocialNetwork;
         /**
-           @enum [Adaptive.ContactSocialNetwork.Facebook=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Facebook='Facebook']
         */
         static Facebook: ContactSocialNetwork;
         /**
-           @enum [Adaptive.ContactSocialNetwork.GooglePlus=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [GooglePlus='GooglePlus']
         */
         static GooglePlus: ContactSocialNetwork;
         /**
-           @enum [Adaptive.ContactSocialNetwork.LinkedIn=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [LinkedIn='LinkedIn']
         */
         static LinkedIn: ContactSocialNetwork;
         /**
-           @enum [Adaptive.ContactSocialNetwork.Flickr=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Flickr='Flickr']
         */
         static Flickr: ContactSocialNetwork;
         /**
-           @enum [Adaptive.ContactSocialNetwork.Unknown=Adaptive.ContactSocialNetwork.*]
-           @static
+           @property {Adaptive.ContactSocialNetwork} [Unknown='Unknown']
         */
         static Unknown: ContactSocialNetwork;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactSocialNetwork}
+           @return {Adaptive.ContactSocialNetwork}
         */
         static toObject(object: any): ContactSocialNetwork;
     }

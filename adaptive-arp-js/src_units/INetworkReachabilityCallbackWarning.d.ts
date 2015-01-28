@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.INetworkReachabilityCallbackWarning
+       @enum {Adaptive.INetworkReachabilityCallbackWarning} Adaptive.INetworkReachabilityCallbackWarning
        Enumeration INetworkReachabilityCallbackWarning
     */
     class INetworkReachabilityCallbackWarning {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.IncorrectScheme=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']
         */
         static IncorrectScheme: INetworkReachabilityCallbackWarning;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotSecure=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotSecure='NotSecure']
         */
         static NotSecure: INetworkReachabilityCallbackWarning;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotTrusted=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotTrusted='NotTrusted']
         */
         static NotTrusted: INetworkReachabilityCallbackWarning;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.Redirected=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Redirected='Redirected']
         */
         static Redirected: INetworkReachabilityCallbackWarning;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotRegisteredService=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotRegisteredService='NotRegisteredService']
         */
         static NotRegisteredService: INetworkReachabilityCallbackWarning;
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.Unknown=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: INetworkReachabilityCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkReachabilityCallbackWarning}
+           @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         static toObject(object: any): INetworkReachabilityCallbackWarning;
     }

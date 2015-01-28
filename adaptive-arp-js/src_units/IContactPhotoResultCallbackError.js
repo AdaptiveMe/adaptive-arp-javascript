@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactPhotoResultCallbackError
+       @enum {Adaptive.IContactPhotoResultCallbackError} Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     var IContactPhotoResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactPhotoResultCallbackError}
+           @return {Adaptive.IContactPhotoResultCallbackError}
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.NoPermission=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.Wrong_Params=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
         IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.No_Photo=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
         IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.Unknown=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
         IContactPhotoResultCallbackError.Unknown = new IContactPhotoResultCallbackError("Unknown");
         return IContactPhotoResultCallbackError;

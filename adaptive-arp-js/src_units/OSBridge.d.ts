@@ -35,13 +35,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class OSBridge extends BaseSystemBridge implements IOS {
        @class Adaptive.OSBridge
        @extends Adaptive.BaseSystemBridge
        Interface for Managing the OS operations
@@ -58,7 +57,7 @@ declare module Adaptive {
         /**
            Returns the OSInfo for the current operating system.
 
-           @return OSInfo with name, version and vendor of the OS.
+           @return {OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         getOSInfo(): OSInfo;

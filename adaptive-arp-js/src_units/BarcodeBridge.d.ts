@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class BarcodeBridge extends BaseReaderBridge implements IBarcode {
        @class Adaptive.BarcodeBridge
        @extends Adaptive.BaseReaderBridge
        Interface for Barcode Reading purposes

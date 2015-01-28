@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ContactPersonalInfoTitle
+       @enum {Adaptive.ContactPersonalInfoTitle} Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     class ContactPersonalInfoTitle {
@@ -41,35 +41,30 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Mr=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']
         */
         static Mr: ContactPersonalInfoTitle;
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Mrs=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Mrs='Mrs']
         */
         static Mrs: ContactPersonalInfoTitle;
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Ms=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Ms='Ms']
         */
         static Ms: ContactPersonalInfoTitle;
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Dr=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Dr='Dr']
         */
         static Dr: ContactPersonalInfoTitle;
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Unknown=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Unknown='Unknown']
         */
         static Unknown: ContactPersonalInfoTitle;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactPersonalInfoTitle}
+           @return {Adaptive.ContactPersonalInfoTitle}
         */
         static toObject(object: any): ContactPersonalInfoTitle;
     }

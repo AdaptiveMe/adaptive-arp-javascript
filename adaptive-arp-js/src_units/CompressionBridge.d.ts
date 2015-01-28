@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class CompressionBridge extends BaseUtilBridge implements ICompression {
        @class Adaptive.CompressionBridge
        @extends Adaptive.BaseUtilBridge
        Interface for Managing the Compression operations

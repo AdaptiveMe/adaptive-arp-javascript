@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ILifecycleListenerWarning
+       @enum {Adaptive.ILifecycleListenerWarning} Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     var ILifecycleListenerWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ILifecycleListenerWarning}
+           @return {Adaptive.ILifecycleListenerWarning}
         */
         ILifecycleListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.MemoryLow=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']
         */
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.BatteryLow=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [BatteryLow='BatteryLow']
         */
         ILifecycleListenerWarning.BatteryLow = new ILifecycleListenerWarning("BatteryLow");
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.Unknown=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [Unknown='Unknown']
         */
         ILifecycleListenerWarning.Unknown = new ILifecycleListenerWarning("Unknown");
         return ILifecycleListenerWarning;

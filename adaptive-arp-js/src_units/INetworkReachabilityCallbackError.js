@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.INetworkReachabilityCallbackError
+       @enum {Adaptive.INetworkReachabilityCallbackError} Adaptive.INetworkReachabilityCallbackError
        Enumeration INetworkReachabilityCallbackError
     */
     var INetworkReachabilityCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkReachabilityCallbackError}
+           @return {Adaptive.INetworkReachabilityCallbackError}
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -86,63 +86,51 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.Forbidden=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [Forbidden='Forbidden']
         */
         INetworkReachabilityCallbackError.Forbidden = new INetworkReachabilityCallbackError("Forbidden");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.NotFound=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotFound='NotFound']
         */
         INetworkReachabilityCallbackError.NotFound = new INetworkReachabilityCallbackError("NotFound");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.MethodNotAllowed=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [MethodNotAllowed='MethodNotAllowed']
         */
         INetworkReachabilityCallbackError.MethodNotAllowed = new INetworkReachabilityCallbackError("MethodNotAllowed");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.NotAllowed=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAllowed='NotAllowed']
         */
         INetworkReachabilityCallbackError.NotAllowed = new INetworkReachabilityCallbackError("NotAllowed");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.NotAuthenticated=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAuthenticated='NotAuthenticated']
         */
         INetworkReachabilityCallbackError.NotAuthenticated = new INetworkReachabilityCallbackError("NotAuthenticated");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.TimeOut=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [TimeOut='TimeOut']
         */
         INetworkReachabilityCallbackError.TimeOut = new INetworkReachabilityCallbackError("TimeOut");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.NoResponse=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [NoResponse='NoResponse']
         */
         INetworkReachabilityCallbackError.NoResponse = new INetworkReachabilityCallbackError("NoResponse");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.Unreachable=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unreachable='Unreachable']
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.Wrong_Params=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
         */
         INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.MalformedUrl=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */
         INetworkReachabilityCallbackError.MalformedUrl = new INetworkReachabilityCallbackError("MalformedUrl");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.DomainUnresolvable=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [DomainUnresolvable='DomainUnresolvable']
         */
         INetworkReachabilityCallbackError.DomainUnresolvable = new INetworkReachabilityCallbackError("DomainUnresolvable");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackError.Unknown=Adaptive.INetworkReachabilityCallbackError.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unknown='Unknown']
         */
         INetworkReachabilityCallbackError.Unknown = new INetworkReachabilityCallbackError("Unknown");
         return INetworkReachabilityCallbackError;

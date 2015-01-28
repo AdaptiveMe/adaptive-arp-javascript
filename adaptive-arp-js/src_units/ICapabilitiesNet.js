@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesNet
+       @enum {Adaptive.ICapabilitiesNet} Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     var ICapabilitiesNet = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesNet}
+           @return {Adaptive.ICapabilitiesNet}
         */
         ICapabilitiesNet.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -78,43 +78,35 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesNet.GSM=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [GSM='GSM']
         */
         ICapabilitiesNet.GSM = new ICapabilitiesNet("GSM");
         /**
-           @enum [Adaptive.ICapabilitiesNet.GPRS=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [GPRS='GPRS']
         */
         ICapabilitiesNet.GPRS = new ICapabilitiesNet("GPRS");
         /**
-           @enum [Adaptive.ICapabilitiesNet.HSDPA=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [HSDPA='HSDPA']
         */
         ICapabilitiesNet.HSDPA = new ICapabilitiesNet("HSDPA");
         /**
-           @enum [Adaptive.ICapabilitiesNet.LTE=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [LTE='LTE']
         */
         ICapabilitiesNet.LTE = new ICapabilitiesNet("LTE");
         /**
-           @enum [Adaptive.ICapabilitiesNet.WIFI=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [WIFI='WIFI']
         */
         ICapabilitiesNet.WIFI = new ICapabilitiesNet("WIFI");
         /**
-           @enum [Adaptive.ICapabilitiesNet.Ethernet=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Ethernet='Ethernet']
         */
         ICapabilitiesNet.Ethernet = new ICapabilitiesNet("Ethernet");
         /**
-           @enum [Adaptive.ICapabilitiesNet.Unavailable=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Unavailable='Unavailable']
         */
         ICapabilitiesNet.Unavailable = new ICapabilitiesNet("Unavailable");
         /**
-           @enum [Adaptive.ICapabilitiesNet.Unknown=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Unknown='Unknown']
         */
         ICapabilitiesNet.Unknown = new ICapabilitiesNet("Unknown");
         return ICapabilitiesNet;

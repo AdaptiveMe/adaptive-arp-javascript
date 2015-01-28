@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class UIBridge extends BaseUIBridge implements IUI {
        @class Adaptive.UIBridge
        @extends Adaptive.BaseUIBridge
        Interface for Managing the UI operations

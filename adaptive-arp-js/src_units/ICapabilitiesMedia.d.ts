@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ICapabilitiesMedia
+       @enum {Adaptive.ICapabilitiesMedia} Adaptive.ICapabilitiesMedia
        Enumeration ICapabilitiesMedia
     */
     class ICapabilitiesMedia {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Audio_Playback=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
         */
         static Audio_Playback: ICapabilitiesMedia;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Audio_Recording=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
         */
         static Audio_Recording: ICapabilitiesMedia;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Camera=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         static Camera: ICapabilitiesMedia;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Video_Playback=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
         */
         static Video_Playback: ICapabilitiesMedia;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Video_Recording=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
         */
         static Video_Recording: ICapabilitiesMedia;
         /**
-           @enum [Adaptive.ICapabilitiesMedia.Unknown=Adaptive.ICapabilitiesMedia.*]
-           @static
+           @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */
         static Unknown: ICapabilitiesMedia;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesMedia}
+           @return {Adaptive.ICapabilitiesMedia}
         */
         static toObject(object: any): ICapabilitiesMedia;
     }

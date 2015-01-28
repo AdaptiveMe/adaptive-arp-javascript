@@ -31,7 +31,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,8 +45,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IGlobalization
-       @extends {IBaseApplication}
-       @abstract
+       @extends Adaptive.IBaseApplication
     */
     interface IGlobalization extends IBaseApplication {
         /**

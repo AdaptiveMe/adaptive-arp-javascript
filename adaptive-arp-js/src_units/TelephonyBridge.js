@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,6 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
        @class Adaptive.TelephonyBridge
        @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Telephony operations
@@ -69,7 +68,7 @@ var Adaptive;
            Invoke a phone call
 
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         TelephonyBridge.prototype.call = function (number) {
@@ -82,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;

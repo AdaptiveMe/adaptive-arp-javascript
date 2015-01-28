@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
        @class Adaptive.ConcurrentBridge
        @extends Adaptive.BaseUtilBridge
        Interface for Managing the Concurrent operations

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ICapabilitiesNet
+       @enum {Adaptive.ICapabilitiesNet} Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     class ICapabilitiesNet {
@@ -41,50 +41,42 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ICapabilitiesNet.GSM=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [GSM='GSM']
         */
         static GSM: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.GPRS=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [GPRS='GPRS']
         */
         static GPRS: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.HSDPA=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [HSDPA='HSDPA']
         */
         static HSDPA: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.LTE=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [LTE='LTE']
         */
         static LTE: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.WIFI=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [WIFI='WIFI']
         */
         static WIFI: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.Ethernet=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Ethernet='Ethernet']
         */
         static Ethernet: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.Unavailable=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Unavailable='Unavailable']
         */
         static Unavailable: ICapabilitiesNet;
         /**
-           @enum [Adaptive.ICapabilitiesNet.Unknown=Adaptive.ICapabilitiesNet.*]
-           @static
+           @property {Adaptive.ICapabilitiesNet} [Unknown='Unknown']
         */
         static Unknown: ICapabilitiesNet;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesNet}
+           @return {Adaptive.ICapabilitiesNet}
         */
         static toObject(object: any): ICapabilitiesNet;
     }

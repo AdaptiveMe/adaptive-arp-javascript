@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
        @class Adaptive.RuntimeBridge
        @extends Adaptive.BaseSystemBridge
        Interface for Managing the Runtime operations
@@ -63,7 +62,7 @@ declare module Adaptive {
         /**
            Whether the application dismiss the splash screen successfully or not
 
-           @return true if the application has dismissed the splash screen;false otherwise
+           @return {boolean} true if the application has dismissed the splash screen;false otherwise
            @since ARP1.0
         */
         dismissSplashScreen(): boolean;

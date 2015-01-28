@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IMessagingCallbackError
+       @enum {Adaptive.IMessagingCallbackError} Adaptive.IMessagingCallbackError
        Enumeration IMessagingCallbackError
     */
     var IMessagingCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IMessagingCallbackError}
+           @return {Adaptive.IMessagingCallbackError}
         */
         IMessagingCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IMessagingCallbackError.SIMNotPresent=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [SIMNotPresent='SIMNotPresent']
         */
         IMessagingCallbackError.SIMNotPresent = new IMessagingCallbackError("SIMNotPresent");
         /**
-           @enum [Adaptive.IMessagingCallbackError.EmailAccountNotFound=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [EmailAccountNotFound='EmailAccountNotFound']
         */
         IMessagingCallbackError.EmailAccountNotFound = new IMessagingCallbackError("EmailAccountNotFound");
         /**
-           @enum [Adaptive.IMessagingCallbackError.NotSent=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [NotSent='NotSent']
         */
         IMessagingCallbackError.NotSent = new IMessagingCallbackError("NotSent");
         /**
-           @enum [Adaptive.IMessagingCallbackError.WrongParams=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [WrongParams='WrongParams']
         */
         IMessagingCallbackError.WrongParams = new IMessagingCallbackError("WrongParams");
         /**
-           @enum [Adaptive.IMessagingCallbackError.NotSupported=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [NotSupported='NotSupported']
         */
         IMessagingCallbackError.NotSupported = new IMessagingCallbackError("NotSupported");
         /**
-           @enum [Adaptive.IMessagingCallbackError.Unknown=Adaptive.IMessagingCallbackError.*]
-           @static
+           @property {Adaptive.IMessagingCallbackError} [Unknown='Unknown']
         */
         IMessagingCallbackError.Unknown = new IMessagingCallbackError("Unknown");
         return IMessagingCallbackError;

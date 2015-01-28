@@ -1,5 +1,4 @@
 /// <reference path="APIBean.d.ts" />
-/// <reference path="IServiceMethod.d.ts" />
 /// <reference path="IServiceType.d.ts" />
 /// <reference path="ServiceEndpoint.d.ts" />
 /**
@@ -31,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,10 +46,6 @@ declare module Adaptive {
     */
     class Service extends APIBean {
         /**
-           The method used
-        */
-        method: IServiceMethod;
-        /**
            The type of the service
         */
         type: IServiceType;
@@ -61,31 +56,16 @@ declare module Adaptive {
         /**
            Endpoint of the service
         */
-        serviceEndpoint: ServiceEndpoint;
+        serviceEndpoints: ServiceEndpoint[];
         /**
            Constructor used by the implementation
 
-           @param serviceEndpoint Endpoint of the service
-           @param name            Name of the service
-           @param method          Method of the service
-           @param type            Type of the service
+           @param serviceEndpoints Endpoints of the service
+           @param name             Name of the service
+           @param type             Type of the service
            @since ARP1.0
         */
-        constructor(serviceEndpoint: ServiceEndpoint, name: string, method: IServiceMethod, type: IServiceType);
-        /**
-           Returns the method
-
-           @return method
-           @since ARP1.0
-        */
-        getMethod(): IServiceMethod;
-        /**
-           Set the method
-
-           @param method Method of the service
-           @since ARP1.0
-        */
-        setMethod(method: IServiceMethod): void;
+        constructor(serviceEndpoints: ServiceEndpoint[], name: string, type: IServiceType);
         /**
            Returns the type
 
@@ -115,19 +95,19 @@ declare module Adaptive {
         */
         setName(name: string): void;
         /**
-           Returns the serviceEndpoint
+           Returns the serviceEndpoints
 
-           @return serviceEndpoint
+           @return serviceEndpoints
            @since ARP1.0
         */
-        getServiceEndpoint(): ServiceEndpoint;
+        getServiceEndpoints(): ServiceEndpoint[];
         /**
-           Set the serviceEndpoint
+           Set the serviceEndpoints
 
-           @param serviceEndpoint Endpoint of the service
+           @param serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
-        setServiceEndpoint(serviceEndpoint: ServiceEndpoint): void;
+        setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;
         /**
            Convert JSON parsed object to typed equivalent.
         */

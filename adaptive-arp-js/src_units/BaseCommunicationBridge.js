@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,6 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class BaseCommunicationBridge implements IBaseCommunication {
        @class Adaptive.BaseCommunicationBridge
        @extends Adaptive.IBaseCommunication
        Base application for Communication purposes
@@ -59,7 +58,7 @@ var Adaptive;
         /**
            @method
            Return the API group for the given interface.
-           @return {IAdaptiveRPGroup}
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseCommunicationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
@@ -68,10 +67,10 @@ var Adaptive;
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.3";
+            return "v2.0.4";
         };
         return BaseCommunicationBridge;
     })();

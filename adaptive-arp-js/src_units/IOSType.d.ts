@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IOSType
+       @enum {Adaptive.IOSType} Adaptive.IOSType
        Enumeration IOSType
     */
     class IOSType {
@@ -41,70 +41,58 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IOSType.iOS=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [iOS='iOS']
         */
         static iOS: IOSType;
         /**
-           @enum [Adaptive.IOSType.OSX=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [OSX='OSX']
         */
         static OSX: IOSType;
         /**
-           @enum [Adaptive.IOSType.Windows=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Windows='Windows']
         */
         static Windows: IOSType;
         /**
-           @enum [Adaptive.IOSType.WindowsPhone=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [WindowsPhone='WindowsPhone']
         */
         static WindowsPhone: IOSType;
         /**
-           @enum [Adaptive.IOSType.Android=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Android='Android']
         */
         static Android: IOSType;
         /**
-           @enum [Adaptive.IOSType.Linux=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Linux='Linux']
         */
         static Linux: IOSType;
         /**
-           @enum [Adaptive.IOSType.Blackberry=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Blackberry='Blackberry']
         */
         static Blackberry: IOSType;
         /**
-           @enum [Adaptive.IOSType.Tizen=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Tizen='Tizen']
         */
         static Tizen: IOSType;
         /**
-           @enum [Adaptive.IOSType.FirefoxOS=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [FirefoxOS='FirefoxOS']
         */
         static FirefoxOS: IOSType;
         /**
-           @enum [Adaptive.IOSType.Chromium=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Chromium='Chromium']
         */
         static Chromium: IOSType;
         /**
-           @enum [Adaptive.IOSType.Unspecified=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Unspecified='Unspecified']
         */
         static Unspecified: IOSType;
         /**
-           @enum [Adaptive.IOSType.Unknown=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Unknown='Unknown']
         */
         static Unknown: IOSType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IOSType}
+           @return {Adaptive.IOSType}
         */
         static toObject(object: any): IOSType;
     }

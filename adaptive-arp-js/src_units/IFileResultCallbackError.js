@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileResultCallbackError
+       @enum {Adaptive.IFileResultCallbackError} Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     var IFileResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileResultCallbackError}
+           @return {Adaptive.IFileResultCallbackError}
         */
         IFileResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileResultCallbackError.FileExists=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [FileExists='FileExists']
         */
         IFileResultCallbackError.FileExists = new IFileResultCallbackError("FileExists");
         /**
-           @enum [Adaptive.IFileResultCallbackError.SourceInexistent=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [SourceInexistent='SourceInexistent']
         */
         IFileResultCallbackError.SourceInexistent = new IFileResultCallbackError("SourceInexistent");
         /**
-           @enum [Adaptive.IFileResultCallbackError.DestionationExists=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [DestionationExists='DestionationExists']
         */
         IFileResultCallbackError.DestionationExists = new IFileResultCallbackError("DestionationExists");
         /**
-           @enum [Adaptive.IFileResultCallbackError.InsufficientSpace=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [InsufficientSpace='InsufficientSpace']
         */
         IFileResultCallbackError.InsufficientSpace = new IFileResultCallbackError("InsufficientSpace");
         /**
-           @enum [Adaptive.IFileResultCallbackError.Unauthorized=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [Unauthorized='Unauthorized']
         */
         IFileResultCallbackError.Unauthorized = new IFileResultCallbackError("Unauthorized");
         /**
-           @enum [Adaptive.IFileResultCallbackError.Unknown=Adaptive.IFileResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileResultCallbackError} [Unknown='Unknown']
         */
         IFileResultCallbackError.Unknown = new IFileResultCallbackError("Unknown");
         return IFileResultCallbackError;

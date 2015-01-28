@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,6 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class DesktopBridge extends BaseUIBridge implements IDesktop {
        @class Adaptive.DesktopBridge
        @extends Adaptive.BaseUIBridge
        Interface for Managing the Desktop operations

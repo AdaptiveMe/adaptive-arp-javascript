@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IButtonListenerError
+       @enum {Adaptive.IButtonListenerError} Adaptive.IButtonListenerError
        Enumeration IButtonListenerError
     */
     var IButtonListenerError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IButtonListenerError}
+           @return {Adaptive.IButtonListenerError}
         */
         IButtonListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -66,13 +66,11 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IButtonListenerError.Not_Present=Adaptive.IButtonListenerError.*]
-           @static
+           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
         */
         IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
         /**
-           @enum [Adaptive.IButtonListenerError.Unknown=Adaptive.IButtonListenerError.*]
-           @static
+           @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */
         IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
         return IButtonListenerError;

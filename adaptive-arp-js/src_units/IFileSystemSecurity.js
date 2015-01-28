@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileSystemSecurity
+       @enum {Adaptive.IFileSystemSecurity} Adaptive.IFileSystemSecurity
        Enumeration IFileSystemSecurity
     */
     var IFileSystemSecurity = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemSecurity}
+           @return {Adaptive.IFileSystemSecurity}
         */
         IFileSystemSecurity.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileSystemSecurity.Default=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Default='Default']
         */
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");
         /**
-           @enum [Adaptive.IFileSystemSecurity.Protected=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Protected='Protected']
         */
         IFileSystemSecurity.Protected = new IFileSystemSecurity("Protected");
         /**
-           @enum [Adaptive.IFileSystemSecurity.Encrypted=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Encrypted='Encrypted']
         */
         IFileSystemSecurity.Encrypted = new IFileSystemSecurity("Encrypted");
         /**
-           @enum [Adaptive.IFileSystemSecurity.Unknown=Adaptive.IFileSystemSecurity.*]
-           @static
+           @property {Adaptive.IFileSystemSecurity} [Unknown='Unknown']
         */
         IFileSystemSecurity.Unknown = new IFileSystemSecurity("Unknown");
         return IFileSystemSecurity;

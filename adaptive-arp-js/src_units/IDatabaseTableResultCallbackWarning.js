@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IDatabaseTableResultCallbackWarning
+       @enum {Adaptive.IDatabaseTableResultCallbackWarning} Adaptive.IDatabaseTableResultCallbackWarning
        Enumeration IDatabaseTableResultCallbackWarning
     */
     var IDatabaseTableResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseTableResultCallbackWarning}
+           @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableExists=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']
         */
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableLocked=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableLocked='TableLocked']
         */
         IDatabaseTableResultCallbackWarning.TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.NoResults=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [NoResults='NoResults']
         */
         IDatabaseTableResultCallbackWarning.NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackWarning.Unknown=Adaptive.IDatabaseTableResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [Unknown='Unknown']
         */
         IDatabaseTableResultCallbackWarning.Unknown = new IDatabaseTableResultCallbackWarning("Unknown");
         return IDatabaseTableResultCallbackWarning;

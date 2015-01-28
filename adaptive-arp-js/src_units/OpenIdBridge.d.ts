@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
        @class Adaptive.OpenIdBridge
        @extends Adaptive.BaseSecurityBridge
        Interface for Managing the OpenID operations

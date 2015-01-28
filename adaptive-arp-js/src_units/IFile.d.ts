@@ -37,7 +37,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,8 +51,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IFile
-       @extends {IBaseData}
-       @abstract
+       @extends Adaptive.IBaseData
     */
     interface IFile extends IBaseData {
         /**

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IAdaptiveRPGroup
+       @enum {Adaptive.IAdaptiveRPGroup} Adaptive.IAdaptiveRPGroup
        Enumeration IAdaptiveRPGroup
     */
     class IAdaptiveRPGroup {
@@ -41,90 +41,74 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Application=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Application='Application']
         */
         static Application: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Commerce=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Commerce='Commerce']
         */
         static Commerce: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Communication=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Communication='Communication']
         */
         static Communication: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Data=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Data='Data']
         */
         static Data: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Media=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Media='Media']
         */
         static Media: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Notification=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Notification='Notification']
         */
         static Notification: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.PIM=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [PIM='PIM']
         */
         static PIM: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Reader=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Reader='Reader']
         */
         static Reader: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Security=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Security='Security']
         */
         static Security: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Sensor=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Sensor='Sensor']
         */
         static Sensor: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Social=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Social='Social']
         */
         static Social: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.System=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [System='System']
         */
         static System: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.UI=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [UI='UI']
         */
         static UI: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Util=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Util='Util']
         */
         static Util: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Kernel=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Kernel='Kernel']
         */
         static Kernel: IAdaptiveRPGroup;
         /**
-           @enum [Adaptive.IAdaptiveRPGroup.Unknown=Adaptive.IAdaptiveRPGroup.*]
-           @static
+           @property {Adaptive.IAdaptiveRPGroup} [Unknown='Unknown']
         */
         static Unknown: IAdaptiveRPGroup;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IAdaptiveRPGroup}
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         static toObject(object: any): IAdaptiveRPGroup;
     }

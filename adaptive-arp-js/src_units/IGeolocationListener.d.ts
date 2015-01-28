@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,8 +46,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IGeolocationListener
-       @extends {IBaseListener}
-       @abstract
+       @extends Adaptive.IBaseListener
     */
     interface IGeolocationListener extends IBaseListener {
         /**

@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.INetworkReachabilityCallbackWarning
+       @enum {Adaptive.INetworkReachabilityCallbackWarning} Adaptive.INetworkReachabilityCallbackWarning
        Enumeration INetworkReachabilityCallbackWarning
     */
     var INetworkReachabilityCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkReachabilityCallbackWarning}
+           @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         INetworkReachabilityCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.IncorrectScheme=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']
         */
         INetworkReachabilityCallbackWarning.IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotSecure=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotSecure='NotSecure']
         */
         INetworkReachabilityCallbackWarning.NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotTrusted=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotTrusted='NotTrusted']
         */
         INetworkReachabilityCallbackWarning.NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.Redirected=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Redirected='Redirected']
         */
         INetworkReachabilityCallbackWarning.Redirected = new INetworkReachabilityCallbackWarning("Redirected");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotRegisteredService=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotRegisteredService='NotRegisteredService']
         */
         INetworkReachabilityCallbackWarning.NotRegisteredService = new INetworkReachabilityCallbackWarning("NotRegisteredService");
         /**
-           @enum [Adaptive.INetworkReachabilityCallbackWarning.Unknown=Adaptive.INetworkReachabilityCallbackWarning.*]
-           @static
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Unknown='Unknown']
         */
         INetworkReachabilityCallbackWarning.Unknown = new INetworkReachabilityCallbackWarning("Unknown");
         return INetworkReachabilityCallbackWarning;

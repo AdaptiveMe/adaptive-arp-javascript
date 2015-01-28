@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,7 +55,7 @@ declare module Adaptive {
         constructor(id: number);
         /**
            Get the listener id.
-           @return long with the identifier of the listener.
+           @return {number} long with the identifier of the listener.
         */
         getId(): number;
         /**
@@ -65,7 +65,7 @@ declare module Adaptive {
         /**
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }

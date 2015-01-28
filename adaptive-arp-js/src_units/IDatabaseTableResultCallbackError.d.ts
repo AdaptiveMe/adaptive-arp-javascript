@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IDatabaseTableResultCallbackError
+       @enum {Adaptive.IDatabaseTableResultCallbackError} Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     class IDatabaseTableResultCallbackError {
@@ -41,40 +41,34 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.NoSpace=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoSpace='NoSpace']
         */
         static NoSpace: IDatabaseTableResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.ReadOnlyTable=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [ReadOnlyTable='ReadOnlyTable']
         */
         static ReadOnlyTable: IDatabaseTableResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.SqlException=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [SqlException='SqlException']
         */
         static SqlException: IDatabaseTableResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.DatabaseNotFound=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [DatabaseNotFound='DatabaseNotFound']
         */
         static DatabaseNotFound: IDatabaseTableResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.NoTableFound=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoTableFound='NoTableFound']
         */
         static NoTableFound: IDatabaseTableResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.Unknown=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IDatabaseTableResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseTableResultCallbackError}
+           @return {Adaptive.IDatabaseTableResultCallbackError}
         */
         static toObject(object: any): IDatabaseTableResultCallbackError;
     }

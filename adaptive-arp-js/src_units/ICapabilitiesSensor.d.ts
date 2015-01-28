@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ICapabilitiesSensor
+       @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     class ICapabilitiesSensor {
@@ -41,50 +41,42 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Accelerometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Accelerometer='Accelerometer']
         */
         static Accelerometer: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.AmbientLight=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [AmbientLight='AmbientLight']
         */
         static AmbientLight: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Barometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Barometer='Barometer']
         */
         static Barometer: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Geolocation=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Geolocation='Geolocation']
         */
         static Geolocation: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Gyroscope=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Gyroscope='Gyroscope']
         */
         static Gyroscope: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Magnetometer=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Magnetometer='Magnetometer']
         */
         static Magnetometer: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Proximity=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Proximity='Proximity']
         */
         static Proximity: ICapabilitiesSensor;
         /**
-           @enum [Adaptive.ICapabilitiesSensor.Unknown=Adaptive.ICapabilitiesSensor.*]
-           @static
+           @property {Adaptive.ICapabilitiesSensor} [Unknown='Unknown']
         */
         static Unknown: ICapabilitiesSensor;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesSensor}
+           @return {Adaptive.ICapabilitiesSensor}
         */
         static toObject(object: any): ICapabilitiesSensor;
     }

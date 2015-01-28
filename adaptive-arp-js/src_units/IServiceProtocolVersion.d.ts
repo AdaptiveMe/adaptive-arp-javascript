@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IServiceProtocolVersion
+       @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     class IServiceProtocolVersion {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion10=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
         */
         static HttpProtocolVersion10: IServiceProtocolVersion;
         /**
-           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion11=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
         */
         static HttpProtocolVersion11: IServiceProtocolVersion;
         /**
-           @enum [Adaptive.IServiceProtocolVersion.Unknown=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
         */
         static Unknown: IServiceProtocolVersion;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceProtocolVersion}
+           @return {Adaptive.IServiceProtocolVersion}
         */
         static toObject(object: any): IServiceProtocolVersion;
     }

@@ -40,13 +40,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class DatabaseBridge extends BaseDataBridge implements IDatabase {
        @class Adaptive.DatabaseBridge
        @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations
@@ -120,7 +119,7 @@ should be passed as a parameter
            Checks if database exists by given database name.
 
            @param database Database Object to check if exists
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsDatabase(database: Database): boolean;
@@ -129,7 +128,7 @@ should be passed as a parameter
 
            @param database      Database for databaseTable consulting.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsTable(database: Database, databaseTable: DatabaseTable): boolean;

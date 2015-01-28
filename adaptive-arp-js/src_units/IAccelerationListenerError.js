@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IAccelerationListenerError
+       @enum {Adaptive.IAccelerationListenerError} Adaptive.IAccelerationListenerError
        Enumeration IAccelerationListenerError
     */
     var IAccelerationListenerError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IAccelerationListenerError}
+           @return {Adaptive.IAccelerationListenerError}
         */
         IAccelerationListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IAccelerationListenerError.Unauthorized=Adaptive.IAccelerationListenerError.*]
-           @static
+           @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']
         */
         IAccelerationListenerError.Unauthorized = new IAccelerationListenerError("Unauthorized");
         /**
-           @enum [Adaptive.IAccelerationListenerError.Unavailable=Adaptive.IAccelerationListenerError.*]
-           @static
+           @property {Adaptive.IAccelerationListenerError} [Unavailable='Unavailable']
         */
         IAccelerationListenerError.Unavailable = new IAccelerationListenerError("Unavailable");
         /**
-           @enum [Adaptive.IAccelerationListenerError.Unknown=Adaptive.IAccelerationListenerError.*]
-           @static
+           @property {Adaptive.IAccelerationListenerError} [Unknown='Unknown']
         */
         IAccelerationListenerError.Unknown = new IAccelerationListenerError("Unknown");
         return IAccelerationListenerError;

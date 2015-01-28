@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactPhotoResultCallbackError
+       @enum {Adaptive.IContactPhotoResultCallbackError} Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     class IContactPhotoResultCallbackError {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.NoPermission=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
         */
         static NoPermission: IContactPhotoResultCallbackError;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.Wrong_Params=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
         static Wrong_Params: IContactPhotoResultCallbackError;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.No_Photo=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
         static No_Photo: IContactPhotoResultCallbackError;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackError.Unknown=Adaptive.IContactPhotoResultCallbackError.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IContactPhotoResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactPhotoResultCallbackError}
+           @return {Adaptive.IContactPhotoResultCallbackError}
         */
         static toObject(object: any): IContactPhotoResultCallbackError;
     }

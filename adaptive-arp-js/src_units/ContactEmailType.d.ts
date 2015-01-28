@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ContactEmailType
+       @enum {Adaptive.ContactEmailType} Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     class ContactEmailType {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ContactEmailType.Personal=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Personal='Personal']
         */
         static Personal: ContactEmailType;
         /**
-           @enum [Adaptive.ContactEmailType.Work=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Work='Work']
         */
         static Work: ContactEmailType;
         /**
-           @enum [Adaptive.ContactEmailType.Other=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Other='Other']
         */
         static Other: ContactEmailType;
         /**
-           @enum [Adaptive.ContactEmailType.Unknown=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Unknown='Unknown']
         */
         static Unknown: ContactEmailType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactEmailType}
+           @return {Adaptive.ContactEmailType}
         */
         static toObject(object: any): ContactEmailType;
     }

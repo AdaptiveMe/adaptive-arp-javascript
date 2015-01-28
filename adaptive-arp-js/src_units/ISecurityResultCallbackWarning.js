@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ISecurityResultCallbackWarning
+       @enum {Adaptive.ISecurityResultCallbackWarning} Adaptive.ISecurityResultCallbackWarning
        Enumeration ISecurityResultCallbackWarning
     */
     var ISecurityResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ISecurityResultCallbackWarning}
+           @return {Adaptive.ISecurityResultCallbackWarning}
         */
         ISecurityResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -66,13 +66,11 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ISecurityResultCallbackWarning.EntryOverride=Adaptive.ISecurityResultCallbackWarning.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
         */
         ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
         /**
-           @enum [Adaptive.ISecurityResultCallbackWarning.Unknown=Adaptive.ISecurityResultCallbackWarning.*]
-           @static
+           @property {Adaptive.ISecurityResultCallbackWarning} [Unknown='Unknown']
         */
         ISecurityResultCallbackWarning.Unknown = new ISecurityResultCallbackWarning("Unknown");
         return ISecurityResultCallbackWarning;

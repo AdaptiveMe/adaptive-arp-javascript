@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class RSSBridge extends BaseSocialBridge implements IRSS {
        @class Adaptive.RSSBridge
        @extends Adaptive.BaseSocialBridge
        Interface for Managing the RSS operations

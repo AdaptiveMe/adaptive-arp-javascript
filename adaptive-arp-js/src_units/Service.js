@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIBean.ts"/>
-///<reference path="IServiceMethod.ts"/>
 ///<reference path="IServiceType.ts"/>
 ///<reference path="ServiceEndpoint.ts"/>
 var Adaptive;
@@ -57,37 +56,17 @@ var Adaptive;
         /**
            Constructor used by the implementation
 
-           @param serviceEndpoint Endpoint of the service
-           @param name            Name of the service
-           @param method          Method of the service
-           @param type            Type of the service
+           @param serviceEndpoints Endpoints of the service
+           @param name             Name of the service
+           @param type             Type of the service
            @since ARP1.0
         */
-        function Service(serviceEndpoint, name, method, type) {
+        function Service(serviceEndpoints, name, type) {
             _super.call(this);
-            this.serviceEndpoint = serviceEndpoint;
+            this.serviceEndpoints = serviceEndpoints;
             this.name = name;
-            this.method = method;
             this.type = type;
         }
-        /**
-           Returns the method
-
-           @return method
-           @since ARP1.0
-        */
-        Service.prototype.getMethod = function () {
-            return this.method;
-        };
-        /**
-           Set the method
-
-           @param method Method of the service
-           @since ARP1.0
-        */
-        Service.prototype.setMethod = function (method) {
-            this.method = method;
-        };
         /**
            Returns the type
 
@@ -125,43 +104,43 @@ var Adaptive;
             this.name = name;
         };
         /**
-           Returns the serviceEndpoint
+           Returns the serviceEndpoints
 
-           @return serviceEndpoint
+           @return serviceEndpoints
            @since ARP1.0
         */
-        Service.prototype.getServiceEndpoint = function () {
-            return this.serviceEndpoint;
+        Service.prototype.getServiceEndpoints = function () {
+            return this.serviceEndpoints;
         };
         /**
-           Set the serviceEndpoint
+           Set the serviceEndpoints
 
-           @param serviceEndpoint Endpoint of the service
+           @param serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
-        Service.prototype.setServiceEndpoint = function (serviceEndpoint) {
-            this.serviceEndpoint = serviceEndpoint;
+        Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
+            this.serviceEndpoints = serviceEndpoints;
         };
         /**
            Convert JSON parsed object to typed equivalent.
         */
         Service.toObject = function (object) {
-            var result = new Service(null, null, null, null);
+            var result = new Service(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.serviceEndpoint != null) {
-                result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(object.serviceEndpoint);
-            }
-            else {
-                result.serviceEndpoint = Adaptive.ServiceEndpoint.toObject(null);
+            if (object != null && object.serviceEndpoints != null) {
+                result.serviceEndpoints = new Array();
+                for (var i = 0; i < object.serviceEndpoints.length; i++) {
+                    var __value__ = object.serviceEndpoints[i];
+                    if (__value__ != null) {
+                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(__value__));
+                    }
+                    else {
+                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(null));
+                    }
+                }
             }
             if (object != null && object.name != null)
                 result.name = object.name;
-            if (object != null && object.method != null) {
-                result.method = Adaptive.IServiceMethod.toObject(object.method);
-            }
-            else {
-                result.method = Adaptive.IServiceMethod.toObject(null);
-            }
             if (object != null && object.type != null) {
                 result.type = Adaptive.IServiceType.toObject(object.type);
             }

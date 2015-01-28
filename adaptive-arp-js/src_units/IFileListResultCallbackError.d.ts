@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileListResultCallbackError
+       @enum {Adaptive.IFileListResultCallbackError} Adaptive.IFileListResultCallbackError
        Enumeration IFileListResultCallbackError
     */
     class IFileListResultCallbackError {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileListResultCallbackError.InexistentFile=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']
         */
         static InexistentFile: IFileListResultCallbackError;
         /**
-           @enum [Adaptive.IFileListResultCallbackError.Unauthorized=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [Unauthorized='Unauthorized']
         */
         static Unauthorized: IFileListResultCallbackError;
         /**
-           @enum [Adaptive.IFileListResultCallbackError.Unknown=Adaptive.IFileListResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileListResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IFileListResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileListResultCallbackError}
+           @return {Adaptive.IFileListResultCallbackError}
         */
         static toObject(object: any): IFileListResultCallbackError;
     }

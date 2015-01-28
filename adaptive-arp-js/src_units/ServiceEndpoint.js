@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIBean.ts"/>
+///<reference path="ServicePath.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
@@ -55,16 +56,16 @@ var Adaptive;
            Constructor with parameters
 
            @param host   Remote service host
-           @param path   Remote service Path
+           @param paths  Remote service Paths
            @param port   Remote service Port
            @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param scheme Remote service scheme
            @since ARP1.0
         */
-        function ServiceEndpoint(host, path, port, proxy, scheme) {
+        function ServiceEndpoint(host, paths, port, proxy, scheme) {
             _super.call(this);
             this.host = host;
-            this.path = path;
+            this.paths = paths;
             this.port = port;
             this.proxy = proxy;
             this.scheme = scheme;
@@ -88,22 +89,22 @@ var Adaptive;
             this.host = host;
         };
         /**
-           Returns the Remote service Path
+           Returns the Remote service Paths
 
-           @return Remote service Path
+           @return Remote service Paths
            @since ARP1.0
         */
-        ServiceEndpoint.prototype.getPath = function () {
-            return this.path;
+        ServiceEndpoint.prototype.getPaths = function () {
+            return this.paths;
         };
         /**
-           Set the Remote service Path
+           Set the Remote service Paths
 
-           @param path Remote service Path
+           @param paths Remote service Paths
            @since ARP1.0
         */
-        ServiceEndpoint.prototype.setPath = function (path) {
-            this.path = path;
+        ServiceEndpoint.prototype.setPaths = function (paths) {
+            this.paths = paths;
         };
         /**
            Returns the Remote service Port
@@ -167,8 +168,18 @@ var Adaptive;
             // Assign values to bean fields.
             if (object != null && object.host != null)
                 result.host = object.host;
-            if (object != null && object.path != null)
-                result.path = object.path;
+            if (object != null && object.paths != null) {
+                result.paths = new Array();
+                for (var i = 0; i < object.paths.length; i++) {
+                    var __value__ = object.paths[i];
+                    if (__value__ != null) {
+                        result.paths.push(Adaptive.ServicePath.toObject(__value__));
+                    }
+                    else {
+                        result.paths.push(Adaptive.ServicePath.toObject(null));
+                    }
+                }
+            }
             if (object != null && object.port != null)
                 result.port = object.port;
             if (object != null && object.proxy != null)

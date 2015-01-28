@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IServiceMethod
+       @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     class IServiceMethod {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IServiceMethod.Post=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Post='Post']
         */
         static Post: IServiceMethod;
         /**
-           @enum [Adaptive.IServiceMethod.Get=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Get='Get']
         */
         static Get: IServiceMethod;
         /**
-           @enum [Adaptive.IServiceMethod.Unknown=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */
         static Unknown: IServiceMethod;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceMethod}
+           @return {Adaptive.IServiceMethod}
         */
         static toObject(object: any): IServiceMethod;
     }

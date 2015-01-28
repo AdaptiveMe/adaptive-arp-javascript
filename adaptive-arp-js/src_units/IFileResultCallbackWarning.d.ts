@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileResultCallbackWarning
+       @enum {Adaptive.IFileResultCallbackWarning} Adaptive.IFileResultCallbackWarning
        Enumeration IFileResultCallbackWarning
     */
     class IFileResultCallbackWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.SourceNotDeleted=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']
         */
         static SourceNotDeleted: IFileResultCallbackWarning;
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.RootDirectory=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [RootDirectory='RootDirectory']
         */
         static RootDirectory: IFileResultCallbackWarning;
         /**
-           @enum [Adaptive.IFileResultCallbackWarning.Unknown=Adaptive.IFileResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IFileResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IFileResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileResultCallbackWarning}
+           @return {Adaptive.IFileResultCallbackWarning}
         */
         static toObject(object: any): IFileResultCallbackWarning;
     }

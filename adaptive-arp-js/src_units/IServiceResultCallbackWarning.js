@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IServiceResultCallbackWarning
+       @enum {Adaptive.IServiceResultCallbackWarning} Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     var IServiceResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceResultCallbackWarning}
+           @return {Adaptive.IServiceResultCallbackWarning}
         */
         IServiceResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -72,28 +72,23 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.NotSecure=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
         */
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.NotTrusted=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
         */
         IServiceResultCallbackWarning.NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Redirected=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
         */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Wrong_Params=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
         IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
         /**
-           @enum [Adaptive.IServiceResultCallbackWarning.Unknown=Adaptive.IServiceResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */
         IServiceResultCallbackWarning.Unknown = new IServiceResultCallbackWarning("Unknown");
         return IServiceResultCallbackWarning;

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ITelephonyStatus
+       @enum {Adaptive.ITelephonyStatus} Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     class ITelephonyStatus {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ITelephonyStatus.Dialing=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']
         */
         static Dialing: ITelephonyStatus;
         /**
-           @enum [Adaptive.ITelephonyStatus.Failed=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Failed='Failed']
         */
         static Failed: ITelephonyStatus;
         /**
-           @enum [Adaptive.ITelephonyStatus.Unknown=Adaptive.ITelephonyStatus.*]
-           @static
+           @property {Adaptive.ITelephonyStatus} [Unknown='Unknown']
         */
         static Unknown: ITelephonyStatus;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ITelephonyStatus}
+           @return {Adaptive.ITelephonyStatus}
         */
         static toObject(object: any): ITelephonyStatus;
     }

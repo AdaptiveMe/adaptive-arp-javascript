@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class BrowserBridge extends BaseUIBridge implements IBrowser {
        @class Adaptive.BrowserBridge
        @extends Adaptive.BaseUIBridge
        Interface for Managing the browser operations
@@ -58,7 +57,7 @@ declare module Adaptive {
            Method for opening a URL like a link in the native default browser
 
            @param url Url to open
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openExtenalBrowser(url: string): boolean;
@@ -68,7 +67,7 @@ declare module Adaptive {
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowser(url: string, title: string, backButtonText: string): boolean;
@@ -78,7 +77,7 @@ declare module Adaptive {
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowserModal(url: string, title: string, backButtonText: string): boolean;

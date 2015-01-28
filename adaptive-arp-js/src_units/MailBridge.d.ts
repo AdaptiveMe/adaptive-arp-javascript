@@ -37,13 +37,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class MailBridge extends BasePIMBridge implements IMail {
        @class Adaptive.MailBridge
        @extends Adaptive.BasePIMBridge
        Interface for Managing the Mail operations

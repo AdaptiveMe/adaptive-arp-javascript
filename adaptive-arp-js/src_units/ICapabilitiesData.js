@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesData
+       @enum {Adaptive.ICapabilitiesData} Adaptive.ICapabilitiesData
        Enumeration ICapabilitiesData
     */
     var ICapabilitiesData = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesData}
+           @return {Adaptive.ICapabilitiesData}
         */
         ICapabilitiesData.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesData.Database=Adaptive.ICapabilitiesData.*]
-           @static
+           @property {Adaptive.ICapabilitiesData} [Database='Database']
         */
         ICapabilitiesData.Database = new ICapabilitiesData("Database");
         /**
-           @enum [Adaptive.ICapabilitiesData.File=Adaptive.ICapabilitiesData.*]
-           @static
+           @property {Adaptive.ICapabilitiesData} [File='File']
         */
         ICapabilitiesData.File = new ICapabilitiesData("File");
         /**
-           @enum [Adaptive.ICapabilitiesData.Cloud=Adaptive.ICapabilitiesData.*]
-           @static
+           @property {Adaptive.ICapabilitiesData} [Cloud='Cloud']
         */
         ICapabilitiesData.Cloud = new ICapabilitiesData("Cloud");
         /**
-           @enum [Adaptive.ICapabilitiesData.Unknown=Adaptive.ICapabilitiesData.*]
-           @static
+           @property {Adaptive.ICapabilitiesData} [Unknown='Unknown']
         */
         ICapabilitiesData.Unknown = new ICapabilitiesData("Unknown");
         return ICapabilitiesData;

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactFilter
+       @enum {Adaptive.IContactFilter} Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     class IContactFilter {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactFilter.HAS_PHONE=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
         */
         static HAS_PHONE: IContactFilter;
         /**
-           @enum [Adaptive.IContactFilter.HAS_EMAIL=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
         */
         static HAS_EMAIL: IContactFilter;
         /**
-           @enum [Adaptive.IContactFilter.HAS_ADDRESS=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
         */
         static HAS_ADDRESS: IContactFilter;
         /**
-           @enum [Adaptive.IContactFilter.Unknown=Adaptive.IContactFilter.*]
-           @static
+           @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
         static Unknown: IContactFilter;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactFilter}
+           @return {Adaptive.IContactFilter}
         */
         static toObject(object: any): IContactFilter;
     }

@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,8 +44,7 @@ declare module Adaptive {
     */
     /**
        @class Adaptive.IOS
-       @extends {IBaseSystem}
-       @abstract
+       @extends Adaptive.IBaseSystem
     */
     interface IOS extends IBaseSystem {
         /**

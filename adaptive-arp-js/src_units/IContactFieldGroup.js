@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IContactFieldGroup
+       @enum {Adaptive.IContactFieldGroup} Adaptive.IContactFieldGroup
        Enumeration IContactFieldGroup
     */
     var IContactFieldGroup = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactFieldGroup}
+           @return {Adaptive.IContactFieldGroup}
         */
         IContactFieldGroup.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -80,48 +80,39 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IContactFieldGroup.PERSONAL_INFO=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
         */
         IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @enum [Adaptive.IContactFieldGroup.PROFESSIONAL_INFO=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
         */
         IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
-           @enum [Adaptive.IContactFieldGroup.ADDRESSES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */
         IContactFieldGroup.ADDRESSES = new IContactFieldGroup("ADDRESSES");
         /**
-           @enum [Adaptive.IContactFieldGroup.PHONES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
         */
         IContactFieldGroup.PHONES = new IContactFieldGroup("PHONES");
         /**
-           @enum [Adaptive.IContactFieldGroup.EMAILS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
         */
         IContactFieldGroup.EMAILS = new IContactFieldGroup("EMAILS");
         /**
-           @enum [Adaptive.IContactFieldGroup.WEBSITES=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
         */
         IContactFieldGroup.WEBSITES = new IContactFieldGroup("WEBSITES");
         /**
-           @enum [Adaptive.IContactFieldGroup.SOCIALS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
         */
         IContactFieldGroup.SOCIALS = new IContactFieldGroup("SOCIALS");
         /**
-           @enum [Adaptive.IContactFieldGroup.TAGS=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
         */
         IContactFieldGroup.TAGS = new IContactFieldGroup("TAGS");
         /**
-           @enum [Adaptive.IContactFieldGroup.Unknown=Adaptive.IContactFieldGroup.*]
-           @static
+           @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
         */
         IContactFieldGroup.Unknown = new IContactFieldGroup("Unknown");
         return IContactFieldGroup;

@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactResultCallbackWarning
+       @enum {Adaptive.IContactResultCallbackWarning} Adaptive.IContactResultCallbackWarning
        Enumeration IContactResultCallbackWarning
     */
     class IContactResultCallbackWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.LimitExceeded=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         static LimitExceeded: IContactResultCallbackWarning;
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.No_Matches=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
         static No_Matches: IContactResultCallbackWarning;
         /**
-           @enum [Adaptive.IContactResultCallbackWarning.Unknown=Adaptive.IContactResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IContactResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactResultCallbackWarning}
+           @return {Adaptive.IContactResultCallbackWarning}
         */
         static toObject(object: any): IContactResultCallbackWarning;
     }

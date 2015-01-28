@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ILoggingLogLevel
+       @enum {Adaptive.ILoggingLogLevel} Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     var ILoggingLogLevel = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ILoggingLogLevel}
+           @return {Adaptive.ILoggingLogLevel}
         */
         ILoggingLogLevel.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -72,28 +72,23 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ILoggingLogLevel.DEBUG=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
         */
         ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
         /**
-           @enum [Adaptive.ILoggingLogLevel.WARN=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
         */
         ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
         /**
-           @enum [Adaptive.ILoggingLogLevel.ERROR=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
         */
         ILoggingLogLevel.ERROR = new ILoggingLogLevel("ERROR");
         /**
-           @enum [Adaptive.ILoggingLogLevel.INFO=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
         */
         ILoggingLogLevel.INFO = new ILoggingLogLevel("INFO");
         /**
-           @enum [Adaptive.ILoggingLogLevel.Unknown=Adaptive.ILoggingLogLevel.*]
-           @static
+           @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
         */
         ILoggingLogLevel.Unknown = new ILoggingLogLevel("Unknown");
         return ILoggingLogLevel;

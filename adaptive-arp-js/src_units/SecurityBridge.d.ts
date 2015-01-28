@@ -37,13 +37,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
        @class Adaptive.SecurityBridge
        @extends Adaptive.BaseSecurityBridge
        Interface for Managing the Security operations
@@ -78,7 +77,7 @@ declare module Adaptive {
         /**
            Returns if the device has been modified in anyhow
 
-           @return true if the device has been modified; false otherwise
+           @return {boolean} true if the device has been modified; false otherwise
            @since ARP1.0
         */
         isDeviceModified(): boolean;

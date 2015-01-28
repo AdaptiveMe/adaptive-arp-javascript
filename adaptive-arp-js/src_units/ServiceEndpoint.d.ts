@@ -1,4 +1,5 @@
 /// <reference path="APIBean.d.ts" />
+/// <reference path="ServicePath.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -28,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,9 +49,9 @@ declare module Adaptive {
         */
         host: string;
         /**
-           The remote service path (to be added to the host and port url).
+           The remote service paths (to be added to the host and port url).
         */
-        path: string;
+        paths: ServicePath[];
         /**
            The remote service accessible port.
         */
@@ -67,13 +68,13 @@ declare module Adaptive {
            Constructor with parameters
 
            @param host   Remote service host
-           @param path   Remote service Path
+           @param paths  Remote service Paths
            @param port   Remote service Port
            @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param scheme Remote service scheme
            @since ARP1.0
         */
-        constructor(host: string, path: string, port: number, proxy: string, scheme: string);
+        constructor(host: string, paths: ServicePath[], port: number, proxy: string, scheme: string);
         /**
            Returns the Remote service host
 
@@ -89,19 +90,19 @@ declare module Adaptive {
         */
         setHost(host: string): void;
         /**
-           Returns the Remote service Path
+           Returns the Remote service Paths
 
-           @return Remote service Path
+           @return Remote service Paths
            @since ARP1.0
         */
-        getPath(): string;
+        getPaths(): ServicePath[];
         /**
-           Set the Remote service Path
+           Set the Remote service Paths
 
-           @param path Remote service Path
+           @param paths Remote service Paths
            @since ARP1.0
         */
-        setPath(path: string): void;
+        setPaths(paths: ServicePath[]): void;
         /**
            Returns the Remote service Port
 

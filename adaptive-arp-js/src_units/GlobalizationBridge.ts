@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,7 +64,7 @@ module Adaptive {
           /**
              Returns the default locale of the application defined in the configuration file
 
-             @return Default Locale of the application
+             @return {Locale} Default Locale of the application
              @since ARP1.0
           */
           getDefaultLocale() : Locale {
@@ -76,7 +76,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -102,7 +102,7 @@ module Adaptive {
           /**
              List of supported locales for the application defined in the configuration file
 
-             @return List of locales
+             @return {[Adaptive.Locale]} List of locales
              @since ARP1.0
           */
           getLocaleSupportedDescriptors() : Array<Locale> {
@@ -114,7 +114,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -145,7 +145,7 @@ module Adaptive {
 
              @param key    to match text
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-             @return Localized text.
+             @return {string} Localized text.
              @since ARP1.0
           */
           getResourceLiteral(key : string, locale : Locale) : string {
@@ -159,7 +159,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -186,7 +186,7 @@ module Adaptive {
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-             @return Localized texts in the form of an object.
+             @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
              @since ARP1.0
           */
           getResourceLiterals(locale : Locale) : Array<KeyPair> {
@@ -199,7 +199,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<KeyPair> = null;

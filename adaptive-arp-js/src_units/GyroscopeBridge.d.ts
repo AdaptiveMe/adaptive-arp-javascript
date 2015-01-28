@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
        @class Adaptive.GyroscopeBridge
        @extends Adaptive.BaseSensorBridge
        Interface for Managing the Giroscope operations

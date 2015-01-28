@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class StoreBridge extends BaseCommerceBridge implements IStore {
        @class Adaptive.StoreBridge
        @extends Adaptive.BaseCommerceBridge
        Interface for Managing the Store operations

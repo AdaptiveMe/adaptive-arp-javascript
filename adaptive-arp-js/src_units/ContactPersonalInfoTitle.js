@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ContactPersonalInfoTitle
+       @enum {Adaptive.ContactPersonalInfoTitle} Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     var ContactPersonalInfoTitle = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactPersonalInfoTitle}
+           @return {Adaptive.ContactPersonalInfoTitle}
         */
         ContactPersonalInfoTitle.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -72,28 +72,23 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Mr=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']
         */
         ContactPersonalInfoTitle.Mr = new ContactPersonalInfoTitle("Mr");
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Mrs=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Mrs='Mrs']
         */
         ContactPersonalInfoTitle.Mrs = new ContactPersonalInfoTitle("Mrs");
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Ms=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Ms='Ms']
         */
         ContactPersonalInfoTitle.Ms = new ContactPersonalInfoTitle("Ms");
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Dr=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Dr='Dr']
         */
         ContactPersonalInfoTitle.Dr = new ContactPersonalInfoTitle("Dr");
         /**
-           @enum [Adaptive.ContactPersonalInfoTitle.Unknown=Adaptive.ContactPersonalInfoTitle.*]
-           @static
+           @property {Adaptive.ContactPersonalInfoTitle} [Unknown='Unknown']
         */
         ContactPersonalInfoTitle.Unknown = new ContactPersonalInfoTitle("Unknown");
         return ContactPersonalInfoTitle;

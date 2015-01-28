@@ -27,22 +27,26 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @property
+       @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     Adaptive.registeredCounter = 0;
     /**
-       @property
+       @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
+    /**
+       @class Adaptive.Dictionary
+       Utility class for Dictionary type support.
+    */
     var Dictionary = (function () {
         function Dictionary(init) {
             this._keys = new Array();

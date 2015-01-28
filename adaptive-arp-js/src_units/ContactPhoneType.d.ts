@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ContactPhoneType
+       @enum {Adaptive.ContactPhoneType} Adaptive.ContactPhoneType
        Enumeration ContactPhoneType
     */
     class ContactPhoneType {
@@ -41,50 +41,42 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ContactPhoneType.Mobile=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Mobile='Mobile']
         */
         static Mobile: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.Work=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Work='Work']
         */
         static Work: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.Home=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Home='Home']
         */
         static Home: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.Main=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Main='Main']
         */
         static Main: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.HomeFax=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [HomeFax='HomeFax']
         */
         static HomeFax: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.WorkFax=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [WorkFax='WorkFax']
         */
         static WorkFax: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.Other=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Other='Other']
         */
         static Other: ContactPhoneType;
         /**
-           @enum [Adaptive.ContactPhoneType.Unknown=Adaptive.ContactPhoneType.*]
-           @static
+           @property {Adaptive.ContactPhoneType} [Unknown='Unknown']
         */
         static Unknown: ContactPhoneType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactPhoneType}
+           @return {Adaptive.ContactPhoneType}
         */
         static toObject(object: any): ContactPhoneType;
     }

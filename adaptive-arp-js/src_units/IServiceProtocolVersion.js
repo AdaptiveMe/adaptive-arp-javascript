@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IServiceProtocolVersion
+       @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     var IServiceProtocolVersion = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceProtocolVersion}
+           @return {Adaptive.IServiceProtocolVersion}
         */
         IServiceProtocolVersion.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion10=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
         */
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
         /**
-           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion11=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
         */
         IServiceProtocolVersion.HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
         /**
-           @enum [Adaptive.IServiceProtocolVersion.Unknown=Adaptive.IServiceProtocolVersion.*]
-           @static
+           @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
         */
         IServiceProtocolVersion.Unknown = new IServiceProtocolVersion("Unknown");
         return IServiceProtocolVersion;

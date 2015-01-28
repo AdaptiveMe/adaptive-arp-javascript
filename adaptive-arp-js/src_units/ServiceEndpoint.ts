@@ -27,12 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
 ///<reference path="APIBean.ts"/>
+///<reference path="ServicePath.ts"/>
 
 module Adaptive {
 
@@ -52,9 +53,9 @@ module Adaptive {
           */
           host : string;
           /**
-             The remote service path (to be added to the host and port url).
+             The remote service paths (to be added to the host and port url).
           */
-          path : string;
+          paths : Array<ServicePath>;
           /**
              The remote service accessible port.
           */
@@ -71,16 +72,16 @@ module Adaptive {
              Constructor with parameters
 
              @param host   Remote service host
-             @param path   Remote service Path
+             @param paths  Remote service Paths
              @param port   Remote service Port
              @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
              @param scheme Remote service scheme
              @since ARP1.0
           */
-          constructor(host: string, path: string, port: number, proxy: string, scheme: string) {
+          constructor(host: string, paths: Array<ServicePath>, port: number, proxy: string, scheme: string) {
                super();
                this.host = host;
-               this.path = path;
+               this.paths = paths;
                this.port = port;
                this.proxy = proxy;
                this.scheme = scheme;
@@ -107,23 +108,23 @@ module Adaptive {
           }
 
           /**
-             Returns the Remote service Path
+             Returns the Remote service Paths
 
-             @return Remote service Path
+             @return Remote service Paths
              @since ARP1.0
           */
-          getPath() : string {
-               return this.path;
+          getPaths() : Array<ServicePath> {
+               return this.paths;
           }
 
           /**
-             Set the Remote service Path
+             Set the Remote service Paths
 
-             @param path Remote service Path
+             @param paths Remote service Paths
              @since ARP1.0
           */
-          setPath(path: string) {
-               this.path = path;
+          setPaths(paths: Array<ServicePath>) {
+               this.paths = paths;
           }
 
           /**
@@ -194,7 +195,17 @@ module Adaptive {
 
                // Assign values to bean fields.
                if (object!=null && object.host!=null) result.host = object.host;
-               if (object!=null && object.path!=null) result.path = object.path;
+               if (object != null && object.paths != null) {
+                    result.paths = new Array<ServicePath>();
+                    for(var i = 0; i < object.paths.length; i++) {
+                         var __value__ = object.paths[i];
+                         if (__value__ != null) {
+                              result.paths.push(ServicePath.toObject(__value__));
+                         } else {
+                              result.paths.push(ServicePath.toObject(null));
+                         }
+                    }
+               }
                if (object!=null && object.port!=null) result.port = object.port;
                if (object!=null && object.proxy!=null) result.proxy = object.proxy;
                if (object!=null && object.scheme!=null) result.scheme = object.scheme;

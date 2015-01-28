@@ -170,13 +170,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class AppRegistryBridge implements IAppRegistry {
        @class Adaptive.AppRegistryBridge
        @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
@@ -186,16 +185,17 @@ declare module Adaptive {
     */
     class AppRegistryBridge implements IAppRegistry {
         /**
-           Singleton instance of AppRegistry.
            @private
+           @static
+           Singleton instance of AppRegistry.
         */
         private static instance;
         /**
-           Singleton instance of AppRegistry.
            @static
            @singleton
            @method
-           @return {AppRegistryBridge}
+           Singleton instance of AppRegistry.
+           @return {Adaptive.AppRegistryBridge}
         */
         static getInstance(): IAppRegistry;
         /**
@@ -203,849 +203,849 @@ declare module Adaptive {
         */
         /**
            @static
-           @property
+           @property {Adaptive.IAcceleration} instanceAcceleration
         */
         private static instanceAcceleration;
         /**
            @static
-           @property
+           @property {Adaptive.IAds} instanceAds
         */
         private static instanceAds;
         /**
            @static
-           @property
+           @property {Adaptive.IAlarm} instanceAlarm
         */
         private static instanceAlarm;
         /**
            @static
-           @property
+           @property {Adaptive.IAmbientLight} instanceAmbientLight
         */
         private static instanceAmbientLight;
         /**
            @static
-           @property
+           @property {Adaptive.IAnalytics} instanceAnalytics
         */
         private static instanceAnalytics;
         /**
            @static
-           @property
+           @property {Adaptive.IAudio} instanceAudio
         */
         private static instanceAudio;
         /**
            @static
-           @property
+           @property {Adaptive.IBarcode} instanceBarcode
         */
         private static instanceBarcode;
         /**
            @static
-           @property
+           @property {Adaptive.IBarometer} instanceBarometer
         */
         private static instanceBarometer;
         /**
            @static
-           @property
+           @property {Adaptive.IBluetooth} instanceBluetooth
         */
         private static instanceBluetooth;
         /**
            @static
-           @property
+           @property {Adaptive.IBrowser} instanceBrowser
         */
         private static instanceBrowser;
         /**
            @static
-           @property
+           @property {Adaptive.ICalendar} instanceCalendar
         */
         private static instanceCalendar;
         /**
            @static
-           @property
+           @property {Adaptive.ICamera} instanceCamera
         */
         private static instanceCamera;
         /**
            @static
-           @property
+           @property {Adaptive.ICapabilities} instanceCapabilities
         */
         private static instanceCapabilities;
         /**
            @static
-           @property
+           @property {Adaptive.ICloud} instanceCloud
         */
         private static instanceCloud;
         /**
            @static
-           @property
+           @property {Adaptive.ICompression} instanceCompression
         */
         private static instanceCompression;
         /**
            @static
-           @property
+           @property {Adaptive.IConcurrent} instanceConcurrent
         */
         private static instanceConcurrent;
         /**
            @static
-           @property
+           @property {Adaptive.IContact} instanceContact
         */
         private static instanceContact;
         /**
            @static
-           @property
+           @property {Adaptive.ICrypto} instanceCrypto
         */
         private static instanceCrypto;
         /**
            @static
-           @property
+           @property {Adaptive.IDataStream} instanceDataStream
         */
         private static instanceDataStream;
         /**
            @static
-           @property
+           @property {Adaptive.IDatabase} instanceDatabase
         */
         private static instanceDatabase;
         /**
            @static
-           @property
+           @property {Adaptive.IDesktop} instanceDesktop
         */
         private static instanceDesktop;
         /**
            @static
-           @property
+           @property {Adaptive.IDevice} instanceDevice
         */
         private static instanceDevice;
         /**
            @static
-           @property
+           @property {Adaptive.IDisplay} instanceDisplay
         */
         private static instanceDisplay;
         /**
            @static
-           @property
+           @property {Adaptive.IFacebook} instanceFacebook
         */
         private static instanceFacebook;
         /**
            @static
-           @property
+           @property {Adaptive.IFile} instanceFile
         */
         private static instanceFile;
         /**
            @static
-           @property
+           @property {Adaptive.IFileSystem} instanceFileSystem
         */
         private static instanceFileSystem;
         /**
            @static
-           @property
+           @property {Adaptive.IGeolocation} instanceGeolocation
         */
         private static instanceGeolocation;
         /**
            @static
-           @property
+           @property {Adaptive.IGlobalization} instanceGlobalization
         */
         private static instanceGlobalization;
         /**
            @static
-           @property
+           @property {Adaptive.IGooglePlus} instanceGooglePlus
         */
         private static instanceGooglePlus;
         /**
            @static
-           @property
+           @property {Adaptive.IGyroscope} instanceGyroscope
         */
         private static instanceGyroscope;
         /**
            @static
-           @property
+           @property {Adaptive.IImaging} instanceImaging
         */
         private static instanceImaging;
         /**
            @static
-           @property
+           @property {Adaptive.IInternalStorage} instanceInternalStorage
         */
         private static instanceInternalStorage;
         /**
            @static
-           @property
+           @property {Adaptive.ILifecycle} instanceLifecycle
         */
         private static instanceLifecycle;
         /**
            @static
-           @property
+           @property {Adaptive.ILinkedIn} instanceLinkedIn
         */
         private static instanceLinkedIn;
         /**
            @static
-           @property
+           @property {Adaptive.ILogging} instanceLogging
         */
         private static instanceLogging;
         /**
            @static
-           @property
+           @property {Adaptive.IMagnetometer} instanceMagnetometer
         */
         private static instanceMagnetometer;
         /**
            @static
-           @property
+           @property {Adaptive.IMail} instanceMail
         */
         private static instanceMail;
         /**
            @static
-           @property
+           @property {Adaptive.IManagement} instanceManagement
         */
         private static instanceManagement;
         /**
            @static
-           @property
+           @property {Adaptive.IMap} instanceMap
         */
         private static instanceMap;
         /**
            @static
-           @property
+           @property {Adaptive.IMessaging} instanceMessaging
         */
         private static instanceMessaging;
         /**
            @static
-           @property
+           @property {Adaptive.INFC} instanceNFC
         */
         private static instanceNFC;
         /**
            @static
-           @property
+           @property {Adaptive.INetworkInfo} instanceNetworkInfo
         */
         private static instanceNetworkInfo;
         /**
            @static
-           @property
+           @property {Adaptive.INetworkNaming} instanceNetworkNaming
         */
         private static instanceNetworkNaming;
         /**
            @static
-           @property
+           @property {Adaptive.INetworkReachability} instanceNetworkReachability
         */
         private static instanceNetworkReachability;
         /**
            @static
-           @property
+           @property {Adaptive.INetworkStatus} instanceNetworkStatus
         */
         private static instanceNetworkStatus;
         /**
            @static
-           @property
+           @property {Adaptive.INotification} instanceNotification
         */
         private static instanceNotification;
         /**
            @static
-           @property
+           @property {Adaptive.INotificationLocal} instanceNotificationLocal
         */
         private static instanceNotificationLocal;
         /**
            @static
-           @property
+           @property {Adaptive.IOAuth} instanceOAuth
         */
         private static instanceOAuth;
         /**
            @static
-           @property
+           @property {Adaptive.IOCR} instanceOCR
         */
         private static instanceOCR;
         /**
            @static
-           @property
+           @property {Adaptive.IOS} instanceOS
         */
         private static instanceOS;
         /**
            @static
-           @property
+           @property {Adaptive.IOpenId} instanceOpenId
         */
         private static instanceOpenId;
         /**
            @static
-           @property
+           @property {Adaptive.IPrinting} instancePrinting
         */
         private static instancePrinting;
         /**
            @static
-           @property
+           @property {Adaptive.IProximity} instanceProximity
         */
         private static instanceProximity;
         /**
            @static
-           @property
+           @property {Adaptive.IQRCode} instanceQRCode
         */
         private static instanceQRCode;
         /**
            @static
-           @property
+           @property {Adaptive.IRSS} instanceRSS
         */
         private static instanceRSS;
         /**
            @static
-           @property
+           @property {Adaptive.IRuntime} instanceRuntime
         */
         private static instanceRuntime;
         /**
            @static
-           @property
+           @property {Adaptive.ISecurity} instanceSecurity
         */
         private static instanceSecurity;
         /**
            @static
-           @property
+           @property {Adaptive.IService} instanceService
         */
         private static instanceService;
         /**
            @static
-           @property
+           @property {Adaptive.ISettings} instanceSettings
         */
         private static instanceSettings;
         /**
            @static
-           @property
+           @property {Adaptive.ISocket} instanceSocket
         */
         private static instanceSocket;
         /**
            @static
-           @property
+           @property {Adaptive.IStore} instanceStore
         */
         private static instanceStore;
         /**
            @static
-           @property
+           @property {Adaptive.ITelephony} instanceTelephony
         */
         private static instanceTelephony;
         /**
            @static
-           @property
+           @property {Adaptive.ITimer} instanceTimer
         */
         private static instanceTimer;
         /**
            @static
-           @property
+           @property {Adaptive.ITwitter} instanceTwitter
         */
         private static instanceTwitter;
         /**
            @static
-           @property
+           @property {Adaptive.IUI} instanceUI
         */
         private static instanceUI;
         /**
            @static
-           @property
+           @property {Adaptive.IUpdate} instanceUpdate
         */
         private static instanceUpdate;
         /**
            @static
-           @property
+           @property {Adaptive.IVibration} instanceVibration
         */
         private static instanceVibration;
         /**
            @static
-           @property
+           @property {Adaptive.IVideo} instanceVideo
         */
         private static instanceVideo;
         /**
            @static
-           @property
+           @property {Adaptive.IWallet} instanceWallet
         */
         private static instanceWallet;
         /**
            @static
-           @property
+           @property {Adaptive.IXML} instanceXML
         */
         private static instanceXML;
         /**
            @method
            Obtain a reference to the IAcceleration bridge.
 
-           @return {AccelerationBridge} bridge instance.
+           @return {Adaptive.AccelerationBridge} bridge instance.
         */
         getAccelerationBridge(): IAcceleration;
         /**
            @method
            Obtain a reference to the IAds bridge.
 
-           @return {AdsBridge} bridge instance.
+           @return {Adaptive.AdsBridge} bridge instance.
         */
         getAdsBridge(): IAds;
         /**
            @method
            Obtain a reference to the IAlarm bridge.
 
-           @return {AlarmBridge} bridge instance.
+           @return {Adaptive.AlarmBridge} bridge instance.
         */
         getAlarmBridge(): IAlarm;
         /**
            @method
            Obtain a reference to the IAmbientLight bridge.
 
-           @return {AmbientLightBridge} bridge instance.
+           @return {Adaptive.AmbientLightBridge} bridge instance.
         */
         getAmbientLightBridge(): IAmbientLight;
         /**
            @method
            Obtain a reference to the IAnalytics bridge.
 
-           @return {AnalyticsBridge} bridge instance.
+           @return {Adaptive.AnalyticsBridge} bridge instance.
         */
         getAnalyticsBridge(): IAnalytics;
         /**
            @method
            Obtain a reference to the IAudio bridge.
 
-           @return {AudioBridge} bridge instance.
+           @return {Adaptive.AudioBridge} bridge instance.
         */
         getAudioBridge(): IAudio;
         /**
            @method
            Obtain a reference to the IBarcode bridge.
 
-           @return {BarcodeBridge} bridge instance.
+           @return {Adaptive.BarcodeBridge} bridge instance.
         */
         getBarcodeBridge(): IBarcode;
         /**
            @method
            Obtain a reference to the IBarometer bridge.
 
-           @return {BarometerBridge} bridge instance.
+           @return {Adaptive.BarometerBridge} bridge instance.
         */
         getBarometerBridge(): IBarometer;
         /**
            @method
            Obtain a reference to the IBluetooth bridge.
 
-           @return {BluetoothBridge} bridge instance.
+           @return {Adaptive.BluetoothBridge} bridge instance.
         */
         getBluetoothBridge(): IBluetooth;
         /**
            @method
            Obtain a reference to the IBrowser bridge.
 
-           @return {BrowserBridge} bridge instance.
+           @return {Adaptive.BrowserBridge} bridge instance.
         */
         getBrowserBridge(): IBrowser;
         /**
            @method
            Obtain a reference to the ICalendar bridge.
 
-           @return {CalendarBridge} bridge instance.
+           @return {Adaptive.CalendarBridge} bridge instance.
         */
         getCalendarBridge(): ICalendar;
         /**
            @method
            Obtain a reference to the ICamera bridge.
 
-           @return {CameraBridge} bridge instance.
+           @return {Adaptive.CameraBridge} bridge instance.
         */
         getCameraBridge(): ICamera;
         /**
            @method
            Obtain a reference to the ICapabilities bridge.
 
-           @return {CapabilitiesBridge} bridge instance.
+           @return {Adaptive.CapabilitiesBridge} bridge instance.
         */
         getCapabilitiesBridge(): ICapabilities;
         /**
            @method
            Obtain a reference to the ICloud bridge.
 
-           @return {CloudBridge} bridge instance.
+           @return {Adaptive.CloudBridge} bridge instance.
         */
         getCloudBridge(): ICloud;
         /**
            @method
            Obtain a reference to the ICompression bridge.
 
-           @return {CompressionBridge} bridge instance.
+           @return {Adaptive.CompressionBridge} bridge instance.
         */
         getCompressionBridge(): ICompression;
         /**
            @method
            Obtain a reference to the IConcurrent bridge.
 
-           @return {ConcurrentBridge} bridge instance.
+           @return {Adaptive.ConcurrentBridge} bridge instance.
         */
         getConcurrentBridge(): IConcurrent;
         /**
            @method
            Obtain a reference to the IContact bridge.
 
-           @return {ContactBridge} bridge instance.
+           @return {Adaptive.ContactBridge} bridge instance.
         */
         getContactBridge(): IContact;
         /**
            @method
            Obtain a reference to the ICrypto bridge.
 
-           @return {CryptoBridge} bridge instance.
+           @return {Adaptive.CryptoBridge} bridge instance.
         */
         getCryptoBridge(): ICrypto;
         /**
            @method
            Obtain a reference to the IDataStream bridge.
 
-           @return {DataStreamBridge} bridge instance.
+           @return {Adaptive.DataStreamBridge} bridge instance.
         */
         getDataStreamBridge(): IDataStream;
         /**
            @method
            Obtain a reference to the IDatabase bridge.
 
-           @return {DatabaseBridge} bridge instance.
+           @return {Adaptive.DatabaseBridge} bridge instance.
         */
         getDatabaseBridge(): IDatabase;
         /**
            @method
            Obtain a reference to the IDesktop bridge.
 
-           @return {DesktopBridge} bridge instance.
+           @return {Adaptive.DesktopBridge} bridge instance.
         */
         getDesktopBridge(): IDesktop;
         /**
            @method
            Obtain a reference to the IDevice bridge.
 
-           @return {DeviceBridge} bridge instance.
+           @return {Adaptive.DeviceBridge} bridge instance.
         */
         getDeviceBridge(): IDevice;
         /**
            @method
            Obtain a reference to the IDisplay bridge.
 
-           @return {DisplayBridge} bridge instance.
+           @return {Adaptive.DisplayBridge} bridge instance.
         */
         getDisplayBridge(): IDisplay;
         /**
            @method
            Obtain a reference to the IFacebook bridge.
 
-           @return {FacebookBridge} bridge instance.
+           @return {Adaptive.FacebookBridge} bridge instance.
         */
         getFacebookBridge(): IFacebook;
         /**
            @method
            Obtain a reference to the IFile bridge.
 
-           @return {FileBridge} bridge instance.
+           @return {Adaptive.FileBridge} bridge instance.
         */
         getFileBridge(): IFile;
         /**
            @method
            Obtain a reference to the IFileSystem bridge.
 
-           @return {FileSystemBridge} bridge instance.
+           @return {Adaptive.FileSystemBridge} bridge instance.
         */
         getFileSystemBridge(): IFileSystem;
         /**
            @method
            Obtain a reference to the IGeolocation bridge.
 
-           @return {GeolocationBridge} bridge instance.
+           @return {Adaptive.GeolocationBridge} bridge instance.
         */
         getGeolocationBridge(): IGeolocation;
         /**
            @method
            Obtain a reference to the IGlobalization bridge.
 
-           @return {GlobalizationBridge} bridge instance.
+           @return {Adaptive.GlobalizationBridge} bridge instance.
         */
         getGlobalizationBridge(): IGlobalization;
         /**
            @method
            Obtain a reference to the IGooglePlus bridge.
 
-           @return {GooglePlusBridge} bridge instance.
+           @return {Adaptive.GooglePlusBridge} bridge instance.
         */
         getGooglePlusBridge(): IGooglePlus;
         /**
            @method
            Obtain a reference to the IGyroscope bridge.
 
-           @return {GyroscopeBridge} bridge instance.
+           @return {Adaptive.GyroscopeBridge} bridge instance.
         */
         getGyroscopeBridge(): IGyroscope;
         /**
            @method
            Obtain a reference to the IImaging bridge.
 
-           @return {ImagingBridge} bridge instance.
+           @return {Adaptive.ImagingBridge} bridge instance.
         */
         getImagingBridge(): IImaging;
         /**
            @method
            Obtain a reference to the IInternalStorage bridge.
 
-           @return {InternalStorageBridge} bridge instance.
+           @return {Adaptive.InternalStorageBridge} bridge instance.
         */
         getInternalStorageBridge(): IInternalStorage;
         /**
            @method
            Obtain a reference to the ILifecycle bridge.
 
-           @return {LifecycleBridge} bridge instance.
+           @return {Adaptive.LifecycleBridge} bridge instance.
         */
         getLifecycleBridge(): ILifecycle;
         /**
            @method
            Obtain a reference to the ILinkedIn bridge.
 
-           @return {LinkedInBridge} bridge instance.
+           @return {Adaptive.LinkedInBridge} bridge instance.
         */
         getLinkedInBridge(): ILinkedIn;
         /**
            @method
            Obtain a reference to the ILogging bridge.
 
-           @return {LoggingBridge} bridge instance.
+           @return {Adaptive.LoggingBridge} bridge instance.
         */
         getLoggingBridge(): ILogging;
         /**
            @method
            Obtain a reference to the IMagnetometer bridge.
 
-           @return {MagnetometerBridge} bridge instance.
+           @return {Adaptive.MagnetometerBridge} bridge instance.
         */
         getMagnetometerBridge(): IMagnetometer;
         /**
            @method
            Obtain a reference to the IMail bridge.
 
-           @return {MailBridge} bridge instance.
+           @return {Adaptive.MailBridge} bridge instance.
         */
         getMailBridge(): IMail;
         /**
            @method
            Obtain a reference to the IManagement bridge.
 
-           @return {ManagementBridge} bridge instance.
+           @return {Adaptive.ManagementBridge} bridge instance.
         */
         getManagementBridge(): IManagement;
         /**
            @method
            Obtain a reference to the IMap bridge.
 
-           @return {MapBridge} bridge instance.
+           @return {Adaptive.MapBridge} bridge instance.
         */
         getMapBridge(): IMap;
         /**
            @method
            Obtain a reference to the IMessaging bridge.
 
-           @return {MessagingBridge} bridge instance.
+           @return {Adaptive.MessagingBridge} bridge instance.
         */
         getMessagingBridge(): IMessaging;
         /**
            @method
            Obtain a reference to the INFC bridge.
 
-           @return {NFCBridge} bridge instance.
+           @return {Adaptive.NFCBridge} bridge instance.
         */
         getNFCBridge(): INFC;
         /**
            @method
            Obtain a reference to the INetworkInfo bridge.
 
-           @return {NetworkInfoBridge} bridge instance.
+           @return {Adaptive.NetworkInfoBridge} bridge instance.
         */
         getNetworkInfoBridge(): INetworkInfo;
         /**
            @method
            Obtain a reference to the INetworkNaming bridge.
 
-           @return {NetworkNamingBridge} bridge instance.
+           @return {Adaptive.NetworkNamingBridge} bridge instance.
         */
         getNetworkNamingBridge(): INetworkNaming;
         /**
            @method
            Obtain a reference to the INetworkReachability bridge.
 
-           @return {NetworkReachabilityBridge} bridge instance.
+           @return {Adaptive.NetworkReachabilityBridge} bridge instance.
         */
         getNetworkReachabilityBridge(): INetworkReachability;
         /**
            @method
            Obtain a reference to the INetworkStatus bridge.
 
-           @return {NetworkStatusBridge} bridge instance.
+           @return {Adaptive.NetworkStatusBridge} bridge instance.
         */
         getNetworkStatusBridge(): INetworkStatus;
         /**
            @method
            Obtain a reference to the INotification bridge.
 
-           @return {NotificationBridge} bridge instance.
+           @return {Adaptive.NotificationBridge} bridge instance.
         */
         getNotificationBridge(): INotification;
         /**
            @method
            Obtain a reference to the INotificationLocal bridge.
 
-           @return {NotificationLocalBridge} bridge instance.
+           @return {Adaptive.NotificationLocalBridge} bridge instance.
         */
         getNotificationLocalBridge(): INotificationLocal;
         /**
            @method
            Obtain a reference to the IOAuth bridge.
 
-           @return {OAuthBridge} bridge instance.
+           @return {Adaptive.OAuthBridge} bridge instance.
         */
         getOAuthBridge(): IOAuth;
         /**
            @method
            Obtain a reference to the IOCR bridge.
 
-           @return {OCRBridge} bridge instance.
+           @return {Adaptive.OCRBridge} bridge instance.
         */
         getOCRBridge(): IOCR;
         /**
            @method
            Obtain a reference to the IOS bridge.
 
-           @return {OSBridge} bridge instance.
+           @return {Adaptive.OSBridge} bridge instance.
         */
         getOSBridge(): IOS;
         /**
            @method
            Obtain a reference to the IOpenId bridge.
 
-           @return {OpenIdBridge} bridge instance.
+           @return {Adaptive.OpenIdBridge} bridge instance.
         */
         getOpenIdBridge(): IOpenId;
         /**
            @method
            Obtain a reference to the IPrinting bridge.
 
-           @return {PrintingBridge} bridge instance.
+           @return {Adaptive.PrintingBridge} bridge instance.
         */
         getPrintingBridge(): IPrinting;
         /**
            @method
            Obtain a reference to the IProximity bridge.
 
-           @return {ProximityBridge} bridge instance.
+           @return {Adaptive.ProximityBridge} bridge instance.
         */
         getProximityBridge(): IProximity;
         /**
            @method
            Obtain a reference to the IQRCode bridge.
 
-           @return {QRCodeBridge} bridge instance.
+           @return {Adaptive.QRCodeBridge} bridge instance.
         */
         getQRCodeBridge(): IQRCode;
         /**
            @method
            Obtain a reference to the IRSS bridge.
 
-           @return {RSSBridge} bridge instance.
+           @return {Adaptive.RSSBridge} bridge instance.
         */
         getRSSBridge(): IRSS;
         /**
            @method
            Obtain a reference to the IRuntime bridge.
 
-           @return {RuntimeBridge} bridge instance.
+           @return {Adaptive.RuntimeBridge} bridge instance.
         */
         getRuntimeBridge(): IRuntime;
         /**
            @method
            Obtain a reference to the ISecurity bridge.
 
-           @return {SecurityBridge} bridge instance.
+           @return {Adaptive.SecurityBridge} bridge instance.
         */
         getSecurityBridge(): ISecurity;
         /**
            @method
            Obtain a reference to the IService bridge.
 
-           @return {ServiceBridge} bridge instance.
+           @return {Adaptive.ServiceBridge} bridge instance.
         */
         getServiceBridge(): IService;
         /**
            @method
            Obtain a reference to the ISettings bridge.
 
-           @return {SettingsBridge} bridge instance.
+           @return {Adaptive.SettingsBridge} bridge instance.
         */
         getSettingsBridge(): ISettings;
         /**
            @method
            Obtain a reference to the ISocket bridge.
 
-           @return {SocketBridge} bridge instance.
+           @return {Adaptive.SocketBridge} bridge instance.
         */
         getSocketBridge(): ISocket;
         /**
            @method
            Obtain a reference to the IStore bridge.
 
-           @return {StoreBridge} bridge instance.
+           @return {Adaptive.StoreBridge} bridge instance.
         */
         getStoreBridge(): IStore;
         /**
            @method
            Obtain a reference to the ITelephony bridge.
 
-           @return {TelephonyBridge} bridge instance.
+           @return {Adaptive.TelephonyBridge} bridge instance.
         */
         getTelephonyBridge(): ITelephony;
         /**
            @method
            Obtain a reference to the ITimer bridge.
 
-           @return {TimerBridge} bridge instance.
+           @return {Adaptive.TimerBridge} bridge instance.
         */
         getTimerBridge(): ITimer;
         /**
            @method
            Obtain a reference to the ITwitter bridge.
 
-           @return {TwitterBridge} bridge instance.
+           @return {Adaptive.TwitterBridge} bridge instance.
         */
         getTwitterBridge(): ITwitter;
         /**
            @method
            Obtain a reference to the IUI bridge.
 
-           @return {UIBridge} bridge instance.
+           @return {Adaptive.UIBridge} bridge instance.
         */
         getUIBridge(): IUI;
         /**
            @method
            Obtain a reference to the IUpdate bridge.
 
-           @return {UpdateBridge} bridge instance.
+           @return {Adaptive.UpdateBridge} bridge instance.
         */
         getUpdateBridge(): IUpdate;
         /**
            @method
            Obtain a reference to the IVibration bridge.
 
-           @return {VibrationBridge} bridge instance.
+           @return {Adaptive.VibrationBridge} bridge instance.
         */
         getVibrationBridge(): IVibration;
         /**
            @method
            Obtain a reference to the IVideo bridge.
 
-           @return {VideoBridge} bridge instance.
+           @return {Adaptive.VideoBridge} bridge instance.
         */
         getVideoBridge(): IVideo;
         /**
            @method
            Obtain a reference to the IWallet bridge.
 
-           @return {WalletBridge} bridge instance.
+           @return {Adaptive.WalletBridge} bridge instance.
         */
         getWalletBridge(): IWallet;
         /**
            @method
            Obtain a reference to the IXML bridge.
 
-           @return {XMLBridge} bridge instance.
+           @return {Adaptive.XMLBridge} bridge instance.
         */
         getXMLBridge(): IXML;
         /**
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,6 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
-    export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
        @class Adaptive.CapabilitiesBridge
        @extends Adaptive.BaseSystemBridge
        Interface for testing the Capabilities operations
@@ -75,7 +74,7 @@ var Adaptive;
            Determines whether a specific hardware button is supported for interaction.
 
            @param type Type of feature to check.
-           @return true is supported, false otherwise.
+           @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasButtonSupport = function (type) {
@@ -88,7 +87,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -118,7 +117,7 @@ var Adaptive;
 the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasCommunicationSupport = function (type) {
@@ -131,7 +130,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -160,7 +159,7 @@ the device.
            Determines whether a specific Data capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasDataSupport = function (type) {
@@ -173,7 +172,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -203,7 +202,7 @@ the device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasMediaSupport = function (type) {
@@ -216,7 +215,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -245,7 +244,7 @@ device.
            Determines whether a specific Net capability is supported by the device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasNetSupport = function (type) {
@@ -258,7 +257,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -288,7 +287,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasNotificationSupport = function (type) {
@@ -301,7 +300,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -331,7 +330,7 @@ device.
 device.
 
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         CapabilitiesBridge.prototype.hasSensorSupport = function (type) {
@@ -344,7 +343,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.3");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

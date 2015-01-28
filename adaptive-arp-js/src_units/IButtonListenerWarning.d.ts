@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IButtonListenerWarning
+       @enum {Adaptive.IButtonListenerWarning} Adaptive.IButtonListenerWarning
        Enumeration IButtonListenerWarning
     */
     class IButtonListenerWarning {
@@ -41,20 +41,18 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IButtonListenerWarning.Not_Implemented=Adaptive.IButtonListenerWarning.*]
-           @static
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
         static Not_Implemented: IButtonListenerWarning;
         /**
-           @enum [Adaptive.IButtonListenerWarning.Unknown=Adaptive.IButtonListenerWarning.*]
-           @static
+           @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */
         static Unknown: IButtonListenerWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IButtonListenerWarning}
+           @return {Adaptive.IButtonListenerWarning}
         */
         static toObject(object: any): IButtonListenerWarning;
     }

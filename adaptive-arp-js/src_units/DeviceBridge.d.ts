@@ -38,13 +38,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class DeviceBridge extends BaseSystemBridge implements IDevice {
        @class Adaptive.DeviceBridge
        @extends Adaptive.BaseSystemBridge
        Interface for Managing the Device operations
@@ -68,14 +67,14 @@ declare module Adaptive {
         /**
            Returns the device information for the current device executing the runtime.
 
-           @return DeviceInfo for the current device.
+           @return {DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
            Gets the current Locale for the device.
 
-           @return The current Locale information.
+           @return {Locale} The current Locale information.
            @since ARP1.0
         */
         getLocaleCurrent(): Locale;

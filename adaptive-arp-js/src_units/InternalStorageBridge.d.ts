@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
        @class Adaptive.InternalStorageBridge
        @extends Adaptive.BaseDataBridge
        Interface for Managing the Internal Storage operations

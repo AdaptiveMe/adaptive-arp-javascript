@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileDataStoreResultCallbackError
+       @enum {Adaptive.IFileDataStoreResultCallbackError} Adaptive.IFileDataStoreResultCallbackError
        Enumeration IFileDataStoreResultCallbackError
     */
     class IFileDataStoreResultCallbackError {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.InexistentFile=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']
         */
         static InexistentFile: IFileDataStoreResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.InsufficientSpace=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InsufficientSpace='InsufficientSpace']
         */
         static InsufficientSpace: IFileDataStoreResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.Unauthorized=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unauthorized='Unauthorized']
         */
         static Unauthorized: IFileDataStoreResultCallbackError;
         /**
-           @enum [Adaptive.IFileDataStoreResultCallbackError.Unknown=Adaptive.IFileDataStoreResultCallbackError.*]
-           @static
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IFileDataStoreResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileDataStoreResultCallbackError}
+           @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         static toObject(object: any): IFileDataStoreResultCallbackError;
     }

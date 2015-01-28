@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IServiceMethod
+       @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     var IServiceMethod = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceMethod}
+           @return {Adaptive.IServiceMethod}
         */
         IServiceMethod.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IServiceMethod.Post=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Post='Post']
         */
         IServiceMethod.Post = new IServiceMethod("Post");
         /**
-           @enum [Adaptive.IServiceMethod.Get=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Get='Get']
         */
         IServiceMethod.Get = new IServiceMethod("Get");
         /**
-           @enum [Adaptive.IServiceMethod.Unknown=Adaptive.IServiceMethod.*]
-           @static
+           @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */
         IServiceMethod.Unknown = new IServiceMethod("Unknown");
         return IServiceMethod;

@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IDatabaseTableResultCallbackError
+       @enum {Adaptive.IDatabaseTableResultCallbackError} Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     var IDatabaseTableResultCallbackError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseTableResultCallbackError}
+           @return {Adaptive.IDatabaseTableResultCallbackError}
         */
         IDatabaseTableResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -74,33 +74,27 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.NoSpace=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoSpace='NoSpace']
         */
         IDatabaseTableResultCallbackError.NoSpace = new IDatabaseTableResultCallbackError("NoSpace");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.ReadOnlyTable=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [ReadOnlyTable='ReadOnlyTable']
         */
         IDatabaseTableResultCallbackError.ReadOnlyTable = new IDatabaseTableResultCallbackError("ReadOnlyTable");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.SqlException=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [SqlException='SqlException']
         */
         IDatabaseTableResultCallbackError.SqlException = new IDatabaseTableResultCallbackError("SqlException");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.DatabaseNotFound=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [DatabaseNotFound='DatabaseNotFound']
         */
         IDatabaseTableResultCallbackError.DatabaseNotFound = new IDatabaseTableResultCallbackError("DatabaseNotFound");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.NoTableFound=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoTableFound='NoTableFound']
         */
         IDatabaseTableResultCallbackError.NoTableFound = new IDatabaseTableResultCallbackError("NoTableFound");
         /**
-           @enum [Adaptive.IDatabaseTableResultCallbackError.Unknown=Adaptive.IDatabaseTableResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseTableResultCallbackError} [Unknown='Unknown']
         */
         IDatabaseTableResultCallbackError.Unknown = new IDatabaseTableResultCallbackError("Unknown");
         return IDatabaseTableResultCallbackError;

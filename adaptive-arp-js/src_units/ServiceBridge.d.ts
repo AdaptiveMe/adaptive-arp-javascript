@@ -38,13 +38,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class ServiceBridge extends BaseCommunicationBridge implements IService {
        @class Adaptive.ServiceBridge
        @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Services operations
@@ -62,7 +61,7 @@ declare module Adaptive {
            Get a reference to a registered service by name.
 
            @param serviceName Name of service.
-           @return A service, if registered, or null of the service does not exist.
+           @return {Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         getService(serviceName: string): Service;

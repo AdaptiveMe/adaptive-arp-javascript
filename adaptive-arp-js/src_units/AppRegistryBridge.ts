@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -188,16 +188,17 @@ module Adaptive {
      export class AppRegistryBridge implements IAppRegistry {
 
           /**
-             Singleton instance of AppRegistry.
              @private
+             @static
+             Singleton instance of AppRegistry.
           */
           private static instance : IAppRegistry = null;
 
           /**
-             Singleton instance of AppRegistry.
              @static
              @singleton
              @method
+             Singleton instance of AppRegistry.
              @return {Adaptive.AppRegistryBridge}
           */
           public static getInstance() : IAppRegistry {
@@ -1475,10 +1476,10 @@ module Adaptive {
              @method
              Return the API version for the given interface.
 
-             @return {String} The version of the API.
+             @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.0.3"
+               return "v2.0.4"
           }
      }
 }

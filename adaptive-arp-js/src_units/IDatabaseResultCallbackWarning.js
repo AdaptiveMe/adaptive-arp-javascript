@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IDatabaseResultCallbackWarning
+       @enum {Adaptive.IDatabaseResultCallbackWarning} Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     var IDatabaseResultCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseResultCallbackWarning}
+           @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.DatabaseExists=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']
         */
         IDatabaseResultCallbackWarning.DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.IsOpen=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [IsOpen='IsOpen']
         */
         IDatabaseResultCallbackWarning.IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
         /**
-           @enum [Adaptive.IDatabaseResultCallbackWarning.Unknown=Adaptive.IDatabaseResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackWarning} [Unknown='Unknown']
         */
         IDatabaseResultCallbackWarning.Unknown = new IDatabaseResultCallbackWarning("Unknown");
         return IDatabaseResultCallbackWarning;

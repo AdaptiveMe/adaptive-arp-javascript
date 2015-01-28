@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.INetworkStatusListenerError
+       @enum {Adaptive.INetworkStatusListenerError} Adaptive.INetworkStatusListenerError
        Enumeration INetworkStatusListenerError
     */
     var INetworkStatusListenerError = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkStatusListenerError}
+           @return {Adaptive.INetworkStatusListenerError}
         */
         INetworkStatusListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.INetworkStatusListenerError.NoPermission=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']
         */
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");
         /**
-           @enum [Adaptive.INetworkStatusListenerError.Unreachable=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [Unreachable='Unreachable']
         */
         INetworkStatusListenerError.Unreachable = new INetworkStatusListenerError("Unreachable");
         /**
-           @enum [Adaptive.INetworkStatusListenerError.Unknown=Adaptive.INetworkStatusListenerError.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerError} [Unknown='Unknown']
         */
         INetworkStatusListenerError.Unknown = new INetworkStatusListenerError("Unknown");
         return INetworkStatusListenerError;

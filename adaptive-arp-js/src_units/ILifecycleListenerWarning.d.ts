@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.ILifecycleListenerWarning
+       @enum {Adaptive.ILifecycleListenerWarning} Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     class ILifecycleListenerWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.MemoryLow=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']
         */
         static MemoryLow: ILifecycleListenerWarning;
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.BatteryLow=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [BatteryLow='BatteryLow']
         */
         static BatteryLow: ILifecycleListenerWarning;
         /**
-           @enum [Adaptive.ILifecycleListenerWarning.Unknown=Adaptive.ILifecycleListenerWarning.*]
-           @static
+           @property {Adaptive.ILifecycleListenerWarning} [Unknown='Unknown']
         */
         static Unknown: ILifecycleListenerWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ILifecycleListenerWarning}
+           @return {Adaptive.ILifecycleListenerWarning}
         */
         static toObject(object: any): ILifecycleListenerWarning;
     }

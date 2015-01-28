@@ -33,13 +33,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class BaseSocialBridge implements IBaseSocial {
        @class Adaptive.BaseSocialBridge
        @extends Adaptive.IBaseSocial
        Base application for Social purposes
@@ -49,7 +48,7 @@ declare module Adaptive {
     */
     class BaseSocialBridge implements IBaseSocial {
         /**
-           @property
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
@@ -61,14 +60,14 @@ declare module Adaptive {
         /**
            @method
            Return the API group for the given interface.
-           @return {IAdaptiveRPGroup}
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
            @method
            Return the API version for the given interface.
 
-           @return {String} The version of the API.
+           @return {string} The version of the API.
         */
         getAPIVersion(): string;
     }

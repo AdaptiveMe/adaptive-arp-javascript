@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.INetworkStatusListenerWarning
+       @enum {Adaptive.INetworkStatusListenerWarning} Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     var INetworkStatusListenerWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {INetworkStatusListenerWarning}
+           @return {Adaptive.INetworkStatusListenerWarning}
         */
         INetworkStatusListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressNotAssigned=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']
         */
         INetworkStatusListenerWarning.IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressChanged=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressChanged='IpAddressChanged']
         */
         INetworkStatusListenerWarning.IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
         /**
-           @enum [Adaptive.INetworkStatusListenerWarning.Unknown=Adaptive.INetworkStatusListenerWarning.*]
-           @static
+           @property {Adaptive.INetworkStatusListenerWarning} [Unknown='Unknown']
         */
         INetworkStatusListenerWarning.Unknown = new INetworkStatusListenerWarning("Unknown");
         return INetworkStatusListenerWarning;

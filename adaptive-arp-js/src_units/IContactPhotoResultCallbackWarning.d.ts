@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IContactPhotoResultCallbackWarning
+       @enum {Adaptive.IContactPhotoResultCallbackWarning} Adaptive.IContactPhotoResultCallbackWarning
        Enumeration IContactPhotoResultCallbackWarning
     */
     class IContactPhotoResultCallbackWarning {
@@ -41,25 +41,22 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.LimitExceeded=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         static LimitExceeded: IContactPhotoResultCallbackWarning;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.No_Matches=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
         */
         static No_Matches: IContactPhotoResultCallbackWarning;
         /**
-           @enum [Adaptive.IContactPhotoResultCallbackWarning.Unknown=Adaptive.IContactPhotoResultCallbackWarning.*]
-           @static
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IContactPhotoResultCallbackWarning;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IContactPhotoResultCallbackWarning}
+           @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         static toObject(object: any): IContactPhotoResultCallbackWarning;
     }

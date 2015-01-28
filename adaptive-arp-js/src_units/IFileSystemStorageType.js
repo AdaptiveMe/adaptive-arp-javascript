@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileSystemStorageType
+       @enum {Adaptive.IFileSystemStorageType} Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     var IFileSystemStorageType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemStorageType}
+           @return {Adaptive.IFileSystemStorageType}
         */
         IFileSystemStorageType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -76,38 +76,31 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileSystemStorageType.Application=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Application='Application']
         */
         IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
         /**
-           @enum [Adaptive.IFileSystemStorageType.Document=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Document='Document']
         */
         IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
         /**
-           @enum [Adaptive.IFileSystemStorageType.Cloud=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Cloud='Cloud']
         */
         IFileSystemStorageType.Cloud = new IFileSystemStorageType("Cloud");
         /**
-           @enum [Adaptive.IFileSystemStorageType.Protected=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Protected='Protected']
         */
         IFileSystemStorageType.Protected = new IFileSystemStorageType("Protected");
         /**
-           @enum [Adaptive.IFileSystemStorageType.Cache=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Cache='Cache']
         */
         IFileSystemStorageType.Cache = new IFileSystemStorageType("Cache");
         /**
-           @enum [Adaptive.IFileSystemStorageType.External=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [External='External']
         */
         IFileSystemStorageType.External = new IFileSystemStorageType("External");
         /**
-           @enum [Adaptive.IFileSystemStorageType.Unknown=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Unknown='Unknown']
         */
         IFileSystemStorageType.Unknown = new IFileSystemStorageType("Unknown");
         return IFileSystemStorageType;

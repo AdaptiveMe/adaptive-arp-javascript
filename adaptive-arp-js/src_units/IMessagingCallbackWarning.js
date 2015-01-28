@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IMessagingCallbackWarning
+       @enum {Adaptive.IMessagingCallbackWarning} Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     var IMessagingCallbackWarning = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IMessagingCallbackWarning}
+           @return {Adaptive.IMessagingCallbackWarning}
         */
         IMessagingCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.UnableToSentAll=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']
         */
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.UnableToFetchAttachment=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToFetchAttachment='UnableToFetchAttachment']
         */
         IMessagingCallbackWarning.UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
         /**
-           @enum [Adaptive.IMessagingCallbackWarning.Unknown=Adaptive.IMessagingCallbackWarning.*]
-           @static
+           @property {Adaptive.IMessagingCallbackWarning} [Unknown='Unknown']
         */
         IMessagingCallbackWarning.Unknown = new IMessagingCallbackWarning("Unknown");
         return IMessagingCallbackWarning;

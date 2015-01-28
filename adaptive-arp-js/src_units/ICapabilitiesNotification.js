@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ICapabilitiesNotification
+       @enum {Adaptive.ICapabilitiesNotification} Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     var ICapabilitiesNotification = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ICapabilitiesNotification}
+           @return {Adaptive.ICapabilitiesNotification}
         */
         ICapabilitiesNotification.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -72,28 +72,23 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Alarm=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']
         */
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");
         /**
-           @enum [Adaptive.ICapabilitiesNotification.LocalNotification=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [LocalNotification='LocalNotification']
         */
         ICapabilitiesNotification.LocalNotification = new ICapabilitiesNotification("LocalNotification");
         /**
-           @enum [Adaptive.ICapabilitiesNotification.RemoteNotification=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [RemoteNotification='RemoteNotification']
         */
         ICapabilitiesNotification.RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Vibration=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Vibration='Vibration']
         */
         ICapabilitiesNotification.Vibration = new ICapabilitiesNotification("Vibration");
         /**
-           @enum [Adaptive.ICapabilitiesNotification.Unknown=Adaptive.ICapabilitiesNotification.*]
-           @static
+           @property {Adaptive.ICapabilitiesNotification} [Unknown='Unknown']
         */
         ICapabilitiesNotification.Unknown = new ICapabilitiesNotification("Unknown");
         return ICapabilitiesNotification;

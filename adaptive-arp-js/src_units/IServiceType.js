@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IServiceType
+       @enum {Adaptive.IServiceType} Adaptive.IServiceType
        Enumeration IServiceType
     */
     var IServiceType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IServiceType}
+           @return {Adaptive.IServiceType}
         */
         IServiceType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -84,58 +84,47 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeAmfSerialization=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
         */
         IServiceType.ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeGwtRpc=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
         */
         IServiceType.ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeOctetBinary=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
         */
         IServiceType.ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRemotingSerialization=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
         */
         IServiceType.ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRestJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
         */
         IServiceType.ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeRestXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
         */
         IServiceType.ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeSoapJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
         */
         IServiceType.ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeSoapXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
         */
         IServiceType.ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcJson=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
         */
         IServiceType.ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
         /**
-           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcXml=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
         */
         IServiceType.ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
         /**
-           @enum [Adaptive.IServiceType.Unknown=Adaptive.IServiceType.*]
-           @static
+           @property {Adaptive.IServiceType} [Unknown='Unknown']
         */
         IServiceType.Unknown = new IServiceType("Unknown");
         return IServiceType;

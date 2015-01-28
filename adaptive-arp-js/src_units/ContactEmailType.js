@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.ContactEmailType
+       @enum {Adaptive.ContactEmailType} Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     var ContactEmailType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {ContactEmailType}
+           @return {Adaptive.ContactEmailType}
         */
         ContactEmailType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -70,23 +70,19 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.ContactEmailType.Personal=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Personal='Personal']
         */
         ContactEmailType.Personal = new ContactEmailType("Personal");
         /**
-           @enum [Adaptive.ContactEmailType.Work=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Work='Work']
         */
         ContactEmailType.Work = new ContactEmailType("Work");
         /**
-           @enum [Adaptive.ContactEmailType.Other=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Other='Other']
         */
         ContactEmailType.Other = new ContactEmailType("Other");
         /**
-           @enum [Adaptive.ContactEmailType.Unknown=Adaptive.ContactEmailType.*]
-           @static
+           @property {Adaptive.ContactEmailType} [Unknown='Unknown']
         */
         ContactEmailType.Unknown = new ContactEmailType("Unknown");
         return ContactEmailType;

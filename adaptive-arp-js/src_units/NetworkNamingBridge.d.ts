@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
        @class Adaptive.NetworkNamingBridge
        @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network naming operations

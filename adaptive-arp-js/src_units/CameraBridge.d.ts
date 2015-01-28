@@ -34,13 +34,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-    export class CameraBridge extends BaseMediaBridge implements ICamera {
        @class Adaptive.CameraBridge
        @extends Adaptive.BaseMediaBridge
        Interface for Managing the camera operations

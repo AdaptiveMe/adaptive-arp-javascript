@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IFileSystemType
+       @enum {Adaptive.IFileSystemType} Adaptive.IFileSystemType
        Enumeration IFileSystemType
     */
     var IFileSystemType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemType}
+           @return {Adaptive.IFileSystemType}
         */
         IFileSystemType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -68,18 +68,15 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IFileSystemType.Directory=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [Directory='Directory']
         */
         IFileSystemType.Directory = new IFileSystemType("Directory");
         /**
-           @enum [Adaptive.IFileSystemType.File=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [File='File']
         */
         IFileSystemType.File = new IFileSystemType("File");
         /**
-           @enum [Adaptive.IFileSystemType.Unknown=Adaptive.IFileSystemType.*]
-           @static
+           @property {Adaptive.IFileSystemType} [Unknown='Unknown']
         */
         IFileSystemType.Unknown = new IFileSystemType("Unknown");
         return IFileSystemType;

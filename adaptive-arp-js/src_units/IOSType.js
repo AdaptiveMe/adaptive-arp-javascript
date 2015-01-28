@@ -27,14 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 var Adaptive;
 (function (Adaptive) {
     /**
-       @class Adaptive.IOSType
+       @enum {Adaptive.IOSType} Adaptive.IOSType
        Enumeration IOSType
     */
     var IOSType = (function () {
@@ -48,7 +48,7 @@ var Adaptive;
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IOSType}
+           @return {Adaptive.IOSType}
         */
         IOSType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -86,63 +86,51 @@ var Adaptive;
             }
         };
         /**
-           @enum [Adaptive.IOSType.iOS=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [iOS='iOS']
         */
         IOSType.iOS = new IOSType("iOS");
         /**
-           @enum [Adaptive.IOSType.OSX=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [OSX='OSX']
         */
         IOSType.OSX = new IOSType("OSX");
         /**
-           @enum [Adaptive.IOSType.Windows=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Windows='Windows']
         */
         IOSType.Windows = new IOSType("Windows");
         /**
-           @enum [Adaptive.IOSType.WindowsPhone=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [WindowsPhone='WindowsPhone']
         */
         IOSType.WindowsPhone = new IOSType("WindowsPhone");
         /**
-           @enum [Adaptive.IOSType.Android=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Android='Android']
         */
         IOSType.Android = new IOSType("Android");
         /**
-           @enum [Adaptive.IOSType.Linux=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Linux='Linux']
         */
         IOSType.Linux = new IOSType("Linux");
         /**
-           @enum [Adaptive.IOSType.Blackberry=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Blackberry='Blackberry']
         */
         IOSType.Blackberry = new IOSType("Blackberry");
         /**
-           @enum [Adaptive.IOSType.Tizen=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Tizen='Tizen']
         */
         IOSType.Tizen = new IOSType("Tizen");
         /**
-           @enum [Adaptive.IOSType.FirefoxOS=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [FirefoxOS='FirefoxOS']
         */
         IOSType.FirefoxOS = new IOSType("FirefoxOS");
         /**
-           @enum [Adaptive.IOSType.Chromium=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Chromium='Chromium']
         */
         IOSType.Chromium = new IOSType("Chromium");
         /**
-           @enum [Adaptive.IOSType.Unspecified=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Unspecified='Unspecified']
         */
         IOSType.Unspecified = new IOSType("Unspecified");
         /**
-           @enum [Adaptive.IOSType.Unknown=Adaptive.IOSType.*]
-           @static
+           @property {Adaptive.IOSType} [Unknown='Unknown']
         */
         IOSType.Unknown = new IOSType("Unknown");
         return IOSType;

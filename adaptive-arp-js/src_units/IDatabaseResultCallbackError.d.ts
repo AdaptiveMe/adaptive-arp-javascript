@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IDatabaseResultCallbackError
+       @enum {Adaptive.IDatabaseResultCallbackError} Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     class IDatabaseResultCallbackError {
@@ -41,30 +41,26 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.NoSpace=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']
         */
         static NoSpace: IDatabaseResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.SqlException=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [SqlException='SqlException']
         */
         static SqlException: IDatabaseResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.NotDeleted=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [NotDeleted='NotDeleted']
         */
         static NotDeleted: IDatabaseResultCallbackError;
         /**
-           @enum [Adaptive.IDatabaseResultCallbackError.Unknown=Adaptive.IDatabaseResultCallbackError.*]
-           @static
+           @property {Adaptive.IDatabaseResultCallbackError} [Unknown='Unknown']
         */
         static Unknown: IDatabaseResultCallbackError;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IDatabaseResultCallbackError}
+           @return {Adaptive.IDatabaseResultCallbackError}
         */
         static toObject(object: any): IDatabaseResultCallbackError;
     }

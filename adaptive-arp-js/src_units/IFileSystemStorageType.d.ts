@@ -27,13 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.0.3
+    * @version v2.0.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       @class Adaptive.IFileSystemStorageType
+       @enum {Adaptive.IFileSystemStorageType} Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     class IFileSystemStorageType {
@@ -41,45 +41,38 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Application=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Application='Application']
         */
         static Application: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Document=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Document='Document']
         */
         static Document: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Cloud=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Cloud='Cloud']
         */
         static Cloud: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Protected=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Protected='Protected']
         */
         static Protected: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Cache=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Cache='Cache']
         */
         static Cache: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.External=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [External='External']
         */
         static External: IFileSystemStorageType;
         /**
-           @enum [Adaptive.IFileSystemStorageType.Unknown=Adaptive.IFileSystemStorageType.*]
-           @static
+           @property {Adaptive.IFileSystemStorageType} [Unknown='Unknown']
         */
         static Unknown: IFileSystemStorageType;
         /**
            @method
            @static
            Convert JSON parsed object to enumeration.
-           @return {IFileSystemStorageType}
+           @return {Adaptive.IFileSystemStorageType}
         */
         static toObject(object: any): IFileSystemStorageType;
     }
