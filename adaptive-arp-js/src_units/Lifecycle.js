@@ -42,6 +42,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Lifecycle
+       @extends Adaptive.APIBean
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno

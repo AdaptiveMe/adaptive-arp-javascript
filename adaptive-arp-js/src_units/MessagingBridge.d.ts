@@ -42,6 +42,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class MessagingBridge extends BasePIMBridge implements IMessaging {
+       @class Adaptive.MessagingBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
@@ -49,6 +52,7 @@ declare module Adaptive {
     */
     class MessagingBridge extends BasePIMBridge implements IMessaging {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

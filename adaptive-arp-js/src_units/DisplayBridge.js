@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class DisplayBridge extends BaseSystemBridge implements IDisplay {
+       @class Adaptive.DisplayBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Display operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var DisplayBridge = (function (_super) {
         __extends(DisplayBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DisplayBridge() {

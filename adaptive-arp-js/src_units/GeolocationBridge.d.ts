@@ -42,6 +42,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
+       @class Adaptive.GeolocationBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
@@ -49,6 +52,7 @@ declare module Adaptive {
     */
     class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

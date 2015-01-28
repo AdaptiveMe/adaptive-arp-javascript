@@ -43,6 +43,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.OSBridge
+        @extends Adaptive.BaseSystemBridge
         Interface for Managing the OS operations
 
         @author Carlos Lozano Diez
@@ -51,6 +53,7 @@ module Adaptive {
      export class OSBridge extends BaseSystemBridge implements IOS {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

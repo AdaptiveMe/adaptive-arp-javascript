@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.Geolocation
+       @extends Adaptive.APIBean
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno

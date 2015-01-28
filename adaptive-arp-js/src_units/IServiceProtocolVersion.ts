@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
         Enumeration IServiceProtocolVersion
      */
      export class IServiceProtocolVersion {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
+          */
           static HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
+          /**
+             @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
+          */
           static HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
+          /**
+             @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
+          */
           static Unknown = new IServiceProtocolVersion("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IServiceProtocolVersion}
           */
           static toObject(object : any) : IServiceProtocolVersion {
                if (object != null && object.value != null) {

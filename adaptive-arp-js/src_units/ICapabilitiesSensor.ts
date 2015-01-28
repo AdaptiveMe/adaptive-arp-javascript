@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
         Enumeration ICapabilitiesSensor
      */
      export class ICapabilitiesSensor {
@@ -42,17 +43,44 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Accelerometer='Accelerometer']
+          */
           static Accelerometer = new ICapabilitiesSensor("Accelerometer");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [AmbientLight='AmbientLight']
+          */
           static AmbientLight = new ICapabilitiesSensor("AmbientLight");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Barometer='Barometer']
+          */
           static Barometer = new ICapabilitiesSensor("Barometer");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Geolocation='Geolocation']
+          */
           static Geolocation = new ICapabilitiesSensor("Geolocation");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Gyroscope='Gyroscope']
+          */
           static Gyroscope = new ICapabilitiesSensor("Gyroscope");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Magnetometer='Magnetometer']
+          */
           static Magnetometer = new ICapabilitiesSensor("Magnetometer");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Proximity='Proximity']
+          */
           static Proximity = new ICapabilitiesSensor("Proximity");
+          /**
+             @property {Adaptive.ICapabilitiesSensor} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesSensor("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesSensor}
           */
           static toObject(object : any) : ICapabilitiesSensor {
                if (object != null && object.value != null) {

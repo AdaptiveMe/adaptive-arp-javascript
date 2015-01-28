@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
+       @class Adaptive.LifecycleBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
@@ -57,6 +60,7 @@ var Adaptive;
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LifecycleBridge() {

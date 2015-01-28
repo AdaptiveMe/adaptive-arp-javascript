@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
+       @class Adaptive.NetworkInfoBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network information operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkInfoBridge() {

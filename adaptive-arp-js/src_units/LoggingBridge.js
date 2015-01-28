@@ -48,6 +48,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class LoggingBridge extends BaseUtilBridge implements ILogging {
+       @class Adaptive.LoggingBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Logging operations
 
        @author Ferran Vila Conesa
@@ -56,6 +59,7 @@ var Adaptive;
     var LoggingBridge = (function (_super) {
         __extends(LoggingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LoggingBridge() {

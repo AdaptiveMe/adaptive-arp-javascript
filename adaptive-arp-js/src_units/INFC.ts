@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.INFC
+        @extends Adaptive.IBaseReader
+     */
      export interface INFC extends IBaseReader {
      }
 }

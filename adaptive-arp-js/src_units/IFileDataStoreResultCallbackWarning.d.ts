@@ -33,16 +33,28 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IFileDataStoreResultCallbackWarning
        Enumeration IFileDataStoreResultCallbackWarning
     */
     class IFileDataStoreResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackWarning.ExceedMaximumSize=Adaptive.IFileDataStoreResultCallbackWarning.*]
+           @static
+        */
         static ExceedMaximumSize: IFileDataStoreResultCallbackWarning;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackWarning.Unknown=Adaptive.IFileDataStoreResultCallbackWarning.*]
+           @static
+        */
         static Unknown: IFileDataStoreResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileDataStoreResultCallbackWarning}
         */
         static toObject(object: any): IFileDataStoreResultCallbackWarning;
     }

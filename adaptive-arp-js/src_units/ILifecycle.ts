@@ -45,26 +45,34 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ILifecycle
+        @extends Adaptive.IBaseApplication
+     */
      export interface ILifecycle extends IBaseApplication {
           /**
+             @method
              Add the listener for the lifecycle of the app
              @param listener Lifecycle listener
              @since ARP1.0
           */
           addLifecycleListener(listener:ILifecycleListener);
           /**
+             @method
              Whether the application is in background or not
-             @return true if the application is in background;false otherwise
+             @return {boolean} true if the application is in background;false otherwise
              @since ARP1.0
           */
           isBackground() : boolean;
           /**
+             @method
              Un-registers an existing listener from receiving lifecycle events.
              @param listener Lifecycle listener
              @since ARP1.0
           */
           removeLifecycleListener(listener:ILifecycleListener);
           /**
+             @method
              Removes all existing listeners from receiving lifecycle events.
              @since ARP1.0
           */

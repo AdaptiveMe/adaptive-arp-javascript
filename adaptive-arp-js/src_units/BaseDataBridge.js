@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseDataBridge implements IBaseData {
+       @class Adaptive.BaseDataBridge
+       @extends Adaptive.IBaseData
        Base application for Data purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseDataBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseDataBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Data;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseDataBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BarometerBridge extends BaseSensorBridge implements IBarometer {
+       @class Adaptive.BarometerBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Barometer management purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BarometerBridge() {

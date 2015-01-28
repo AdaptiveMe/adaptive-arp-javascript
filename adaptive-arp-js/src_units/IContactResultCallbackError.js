@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     var IContactResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactResultCallbackError}
         */
         IContactResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IContactResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IContactResultCallbackError.NoPermission=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
+        /**
+           @enum [Adaptive.IContactResultCallbackError.Wrong_Params=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+        /**
+           @enum [Adaptive.IContactResultCallbackError.Unknown=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         IContactResultCallbackError.Unknown = new IContactResultCallbackError("Unknown");
         return IContactResultCallbackError;
     })();

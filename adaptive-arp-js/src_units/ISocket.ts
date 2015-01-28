@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ISocket
+        @extends Adaptive.IBaseCommunication
+     */
      export interface ISocket extends IBaseCommunication {
      }
 }

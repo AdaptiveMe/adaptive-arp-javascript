@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseNotificationBridge implements IBaseNotification {
+       @class Adaptive.BaseNotificationBridge
+       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseNotificationBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseNotificationBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Notification;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseNotificationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

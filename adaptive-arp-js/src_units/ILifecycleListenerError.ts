@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ILifecycleListenerError} Adaptive.ILifecycleListenerError
         Enumeration ILifecycleListenerError
      */
      export class ILifecycleListenerError {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ILifecycleListenerError} [Runtime='Runtime']
+          */
           static Runtime = new ILifecycleListenerError("Runtime");
+          /**
+             @property {Adaptive.ILifecycleListenerError} [Implementation='Implementation']
+          */
           static Implementation = new ILifecycleListenerError("Implementation");
+          /**
+             @property {Adaptive.ILifecycleListenerError} [Killed='Killed']
+          */
           static Killed = new ILifecycleListenerError("Killed");
+          /**
+             @property {Adaptive.ILifecycleListenerError} [Unknown='Unknown']
+          */
           static Unknown = new ILifecycleListenerError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ILifecycleListenerError}
           */
           static toObject(object : any) : ILifecycleListenerError {
                if (object != null && object.value != null) {

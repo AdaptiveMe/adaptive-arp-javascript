@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
+       @class Adaptive.AmbientLightBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for managinf the Ambient Light
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

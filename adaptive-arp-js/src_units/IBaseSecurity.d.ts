@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseSecurity
+       @extends {IAdaptiveRP}
+       @abstract
+    */
     interface IBaseSecurity extends IAdaptiveRP {
     }
 }

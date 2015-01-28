@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileDataLoadResultCallbackError} Adaptive.IFileDataLoadResultCallbackError
         Enumeration IFileDataLoadResultCallbackError
      */
      export class IFileDataLoadResultCallbackError {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackError} [InexistentFile='InexistentFile']
+          */
           static InexistentFile = new IFileDataLoadResultCallbackError("InexistentFile");
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackError} [InsufficientSpace='InsufficientSpace']
+          */
           static InsufficientSpace = new IFileDataLoadResultCallbackError("InsufficientSpace");
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackError} [Unauthorized='Unauthorized']
+          */
           static Unauthorized = new IFileDataLoadResultCallbackError("Unauthorized");
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new IFileDataLoadResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileDataLoadResultCallbackError}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackError {
                if (object != null && object.value != null) {

@@ -40,16 +40,22 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAdaptiveRP
+       @abstract
+    */
     interface IAdaptiveRP {
         /**
+           @method
            Method that returns the API group of the implementation
-           @return API Group name.
+           @return {IAdaptiveRPGroup} API Group name.
            @since ARP1.0
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Method that returns the API version of the implementation.
-           @return API Version string.
+           @return {string} API Version string.
            @since ARP1.0
         */
         getAPIVersion(): string;

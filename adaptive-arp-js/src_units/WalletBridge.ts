@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.WalletBridge
+        @extends Adaptive.BaseCommerceBridge
         Interface for Managing the Wallet operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class WalletBridge extends BaseCommerceBridge implements IWallet {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

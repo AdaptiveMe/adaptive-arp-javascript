@@ -178,6 +178,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.AppRegistryBridge
+        @extends Adaptive.IAppRegistry
         Interface to retrieve auto-registered service implementation references.
 
         @author Carlos Lozano Diez
@@ -187,9 +189,17 @@ module Adaptive {
 
           /**
              Singleton instance of AppRegistry.
+             @private
           */
           private static instance : IAppRegistry = null;
 
+          /**
+             Singleton instance of AppRegistry.
+             @static
+             @singleton
+             @method
+             @return {Adaptive.AppRegistryBridge}
+          */
           public static getInstance() : IAppRegistry {
                if (AppRegistryBridge.instance === null) {
                     AppRegistryBridge.instance = new AppRegistryBridge();
@@ -200,81 +210,362 @@ module Adaptive {
           /**
              Singleton instances of Bridges.
           */
+          /**
+             @static
+             @property {Adaptive.IAcceleration} instanceAcceleration
+          */
           private static instanceAcceleration : IAcceleration = null;
+          /**
+             @static
+             @property {Adaptive.IAds} instanceAds
+          */
           private static instanceAds : IAds = null;
+          /**
+             @static
+             @property {Adaptive.IAlarm} instanceAlarm
+          */
           private static instanceAlarm : IAlarm = null;
+          /**
+             @static
+             @property {Adaptive.IAmbientLight} instanceAmbientLight
+          */
           private static instanceAmbientLight : IAmbientLight = null;
+          /**
+             @static
+             @property {Adaptive.IAnalytics} instanceAnalytics
+          */
           private static instanceAnalytics : IAnalytics = null;
+          /**
+             @static
+             @property {Adaptive.IAudio} instanceAudio
+          */
           private static instanceAudio : IAudio = null;
+          /**
+             @static
+             @property {Adaptive.IBarcode} instanceBarcode
+          */
           private static instanceBarcode : IBarcode = null;
+          /**
+             @static
+             @property {Adaptive.IBarometer} instanceBarometer
+          */
           private static instanceBarometer : IBarometer = null;
+          /**
+             @static
+             @property {Adaptive.IBluetooth} instanceBluetooth
+          */
           private static instanceBluetooth : IBluetooth = null;
+          /**
+             @static
+             @property {Adaptive.IBrowser} instanceBrowser
+          */
           private static instanceBrowser : IBrowser = null;
+          /**
+             @static
+             @property {Adaptive.ICalendar} instanceCalendar
+          */
           private static instanceCalendar : ICalendar = null;
+          /**
+             @static
+             @property {Adaptive.ICamera} instanceCamera
+          */
           private static instanceCamera : ICamera = null;
+          /**
+             @static
+             @property {Adaptive.ICapabilities} instanceCapabilities
+          */
           private static instanceCapabilities : ICapabilities = null;
+          /**
+             @static
+             @property {Adaptive.ICloud} instanceCloud
+          */
           private static instanceCloud : ICloud = null;
+          /**
+             @static
+             @property {Adaptive.ICompression} instanceCompression
+          */
           private static instanceCompression : ICompression = null;
+          /**
+             @static
+             @property {Adaptive.IConcurrent} instanceConcurrent
+          */
           private static instanceConcurrent : IConcurrent = null;
+          /**
+             @static
+             @property {Adaptive.IContact} instanceContact
+          */
           private static instanceContact : IContact = null;
+          /**
+             @static
+             @property {Adaptive.ICrypto} instanceCrypto
+          */
           private static instanceCrypto : ICrypto = null;
+          /**
+             @static
+             @property {Adaptive.IDataStream} instanceDataStream
+          */
           private static instanceDataStream : IDataStream = null;
+          /**
+             @static
+             @property {Adaptive.IDatabase} instanceDatabase
+          */
           private static instanceDatabase : IDatabase = null;
+          /**
+             @static
+             @property {Adaptive.IDesktop} instanceDesktop
+          */
           private static instanceDesktop : IDesktop = null;
+          /**
+             @static
+             @property {Adaptive.IDevice} instanceDevice
+          */
           private static instanceDevice : IDevice = null;
+          /**
+             @static
+             @property {Adaptive.IDisplay} instanceDisplay
+          */
           private static instanceDisplay : IDisplay = null;
+          /**
+             @static
+             @property {Adaptive.IFacebook} instanceFacebook
+          */
           private static instanceFacebook : IFacebook = null;
+          /**
+             @static
+             @property {Adaptive.IFile} instanceFile
+          */
           private static instanceFile : IFile = null;
+          /**
+             @static
+             @property {Adaptive.IFileSystem} instanceFileSystem
+          */
           private static instanceFileSystem : IFileSystem = null;
+          /**
+             @static
+             @property {Adaptive.IGeolocation} instanceGeolocation
+          */
           private static instanceGeolocation : IGeolocation = null;
+          /**
+             @static
+             @property {Adaptive.IGlobalization} instanceGlobalization
+          */
           private static instanceGlobalization : IGlobalization = null;
+          /**
+             @static
+             @property {Adaptive.IGooglePlus} instanceGooglePlus
+          */
           private static instanceGooglePlus : IGooglePlus = null;
+          /**
+             @static
+             @property {Adaptive.IGyroscope} instanceGyroscope
+          */
           private static instanceGyroscope : IGyroscope = null;
+          /**
+             @static
+             @property {Adaptive.IImaging} instanceImaging
+          */
           private static instanceImaging : IImaging = null;
+          /**
+             @static
+             @property {Adaptive.IInternalStorage} instanceInternalStorage
+          */
           private static instanceInternalStorage : IInternalStorage = null;
+          /**
+             @static
+             @property {Adaptive.ILifecycle} instanceLifecycle
+          */
           private static instanceLifecycle : ILifecycle = null;
+          /**
+             @static
+             @property {Adaptive.ILinkedIn} instanceLinkedIn
+          */
           private static instanceLinkedIn : ILinkedIn = null;
+          /**
+             @static
+             @property {Adaptive.ILogging} instanceLogging
+          */
           private static instanceLogging : ILogging = null;
+          /**
+             @static
+             @property {Adaptive.IMagnetometer} instanceMagnetometer
+          */
           private static instanceMagnetometer : IMagnetometer = null;
+          /**
+             @static
+             @property {Adaptive.IMail} instanceMail
+          */
           private static instanceMail : IMail = null;
+          /**
+             @static
+             @property {Adaptive.IManagement} instanceManagement
+          */
           private static instanceManagement : IManagement = null;
+          /**
+             @static
+             @property {Adaptive.IMap} instanceMap
+          */
           private static instanceMap : IMap = null;
+          /**
+             @static
+             @property {Adaptive.IMessaging} instanceMessaging
+          */
           private static instanceMessaging : IMessaging = null;
+          /**
+             @static
+             @property {Adaptive.INFC} instanceNFC
+          */
           private static instanceNFC : INFC = null;
+          /**
+             @static
+             @property {Adaptive.INetworkInfo} instanceNetworkInfo
+          */
           private static instanceNetworkInfo : INetworkInfo = null;
+          /**
+             @static
+             @property {Adaptive.INetworkNaming} instanceNetworkNaming
+          */
           private static instanceNetworkNaming : INetworkNaming = null;
+          /**
+             @static
+             @property {Adaptive.INetworkReachability} instanceNetworkReachability
+          */
           private static instanceNetworkReachability : INetworkReachability = null;
+          /**
+             @static
+             @property {Adaptive.INetworkStatus} instanceNetworkStatus
+          */
           private static instanceNetworkStatus : INetworkStatus = null;
+          /**
+             @static
+             @property {Adaptive.INotification} instanceNotification
+          */
           private static instanceNotification : INotification = null;
+          /**
+             @static
+             @property {Adaptive.INotificationLocal} instanceNotificationLocal
+          */
           private static instanceNotificationLocal : INotificationLocal = null;
+          /**
+             @static
+             @property {Adaptive.IOAuth} instanceOAuth
+          */
           private static instanceOAuth : IOAuth = null;
+          /**
+             @static
+             @property {Adaptive.IOCR} instanceOCR
+          */
           private static instanceOCR : IOCR = null;
+          /**
+             @static
+             @property {Adaptive.IOS} instanceOS
+          */
           private static instanceOS : IOS = null;
+          /**
+             @static
+             @property {Adaptive.IOpenId} instanceOpenId
+          */
           private static instanceOpenId : IOpenId = null;
+          /**
+             @static
+             @property {Adaptive.IPrinting} instancePrinting
+          */
           private static instancePrinting : IPrinting = null;
+          /**
+             @static
+             @property {Adaptive.IProximity} instanceProximity
+          */
           private static instanceProximity : IProximity = null;
+          /**
+             @static
+             @property {Adaptive.IQRCode} instanceQRCode
+          */
           private static instanceQRCode : IQRCode = null;
+          /**
+             @static
+             @property {Adaptive.IRSS} instanceRSS
+          */
           private static instanceRSS : IRSS = null;
+          /**
+             @static
+             @property {Adaptive.IRuntime} instanceRuntime
+          */
           private static instanceRuntime : IRuntime = null;
+          /**
+             @static
+             @property {Adaptive.ISecurity} instanceSecurity
+          */
           private static instanceSecurity : ISecurity = null;
+          /**
+             @static
+             @property {Adaptive.IService} instanceService
+          */
           private static instanceService : IService = null;
+          /**
+             @static
+             @property {Adaptive.ISettings} instanceSettings
+          */
           private static instanceSettings : ISettings = null;
+          /**
+             @static
+             @property {Adaptive.ISocket} instanceSocket
+          */
           private static instanceSocket : ISocket = null;
+          /**
+             @static
+             @property {Adaptive.IStore} instanceStore
+          */
           private static instanceStore : IStore = null;
+          /**
+             @static
+             @property {Adaptive.ITelephony} instanceTelephony
+          */
           private static instanceTelephony : ITelephony = null;
+          /**
+             @static
+             @property {Adaptive.ITimer} instanceTimer
+          */
           private static instanceTimer : ITimer = null;
+          /**
+             @static
+             @property {Adaptive.ITwitter} instanceTwitter
+          */
           private static instanceTwitter : ITwitter = null;
+          /**
+             @static
+             @property {Adaptive.IUI} instanceUI
+          */
           private static instanceUI : IUI = null;
+          /**
+             @static
+             @property {Adaptive.IUpdate} instanceUpdate
+          */
           private static instanceUpdate : IUpdate = null;
+          /**
+             @static
+             @property {Adaptive.IVibration} instanceVibration
+          */
           private static instanceVibration : IVibration = null;
+          /**
+             @static
+             @property {Adaptive.IVideo} instanceVideo
+          */
           private static instanceVideo : IVideo = null;
+          /**
+             @static
+             @property {Adaptive.IWallet} instanceWallet
+          */
           private static instanceWallet : IWallet = null;
+          /**
+             @static
+             @property {Adaptive.IXML} instanceXML
+          */
           private static instanceXML : IXML = null;
 
           /**
+             @method
              Obtain a reference to the IAcceleration bridge.
 
-             @return IAcceleration bridge instance.
+             @return {Adaptive.AccelerationBridge} bridge instance.
           */
           public getAccelerationBridge() : IAcceleration {
                if (AppRegistryBridge.instanceAcceleration === null) {
@@ -284,9 +575,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IAds bridge.
 
-             @return IAds bridge instance.
+             @return {Adaptive.AdsBridge} bridge instance.
           */
           public getAdsBridge() : IAds {
                if (AppRegistryBridge.instanceAds === null) {
@@ -296,9 +588,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IAlarm bridge.
 
-             @return IAlarm bridge instance.
+             @return {Adaptive.AlarmBridge} bridge instance.
           */
           public getAlarmBridge() : IAlarm {
                if (AppRegistryBridge.instanceAlarm === null) {
@@ -308,9 +601,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IAmbientLight bridge.
 
-             @return IAmbientLight bridge instance.
+             @return {Adaptive.AmbientLightBridge} bridge instance.
           */
           public getAmbientLightBridge() : IAmbientLight {
                if (AppRegistryBridge.instanceAmbientLight === null) {
@@ -320,9 +614,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IAnalytics bridge.
 
-             @return IAnalytics bridge instance.
+             @return {Adaptive.AnalyticsBridge} bridge instance.
           */
           public getAnalyticsBridge() : IAnalytics {
                if (AppRegistryBridge.instanceAnalytics === null) {
@@ -332,9 +627,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IAudio bridge.
 
-             @return IAudio bridge instance.
+             @return {Adaptive.AudioBridge} bridge instance.
           */
           public getAudioBridge() : IAudio {
                if (AppRegistryBridge.instanceAudio === null) {
@@ -344,9 +640,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IBarcode bridge.
 
-             @return IBarcode bridge instance.
+             @return {Adaptive.BarcodeBridge} bridge instance.
           */
           public getBarcodeBridge() : IBarcode {
                if (AppRegistryBridge.instanceBarcode === null) {
@@ -356,9 +653,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IBarometer bridge.
 
-             @return IBarometer bridge instance.
+             @return {Adaptive.BarometerBridge} bridge instance.
           */
           public getBarometerBridge() : IBarometer {
                if (AppRegistryBridge.instanceBarometer === null) {
@@ -368,9 +666,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IBluetooth bridge.
 
-             @return IBluetooth bridge instance.
+             @return {Adaptive.BluetoothBridge} bridge instance.
           */
           public getBluetoothBridge() : IBluetooth {
                if (AppRegistryBridge.instanceBluetooth === null) {
@@ -380,9 +679,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IBrowser bridge.
 
-             @return IBrowser bridge instance.
+             @return {Adaptive.BrowserBridge} bridge instance.
           */
           public getBrowserBridge() : IBrowser {
                if (AppRegistryBridge.instanceBrowser === null) {
@@ -392,9 +692,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICalendar bridge.
 
-             @return ICalendar bridge instance.
+             @return {Adaptive.CalendarBridge} bridge instance.
           */
           public getCalendarBridge() : ICalendar {
                if (AppRegistryBridge.instanceCalendar === null) {
@@ -404,9 +705,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICamera bridge.
 
-             @return ICamera bridge instance.
+             @return {Adaptive.CameraBridge} bridge instance.
           */
           public getCameraBridge() : ICamera {
                if (AppRegistryBridge.instanceCamera === null) {
@@ -416,9 +718,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICapabilities bridge.
 
-             @return ICapabilities bridge instance.
+             @return {Adaptive.CapabilitiesBridge} bridge instance.
           */
           public getCapabilitiesBridge() : ICapabilities {
                if (AppRegistryBridge.instanceCapabilities === null) {
@@ -428,9 +731,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICloud bridge.
 
-             @return ICloud bridge instance.
+             @return {Adaptive.CloudBridge} bridge instance.
           */
           public getCloudBridge() : ICloud {
                if (AppRegistryBridge.instanceCloud === null) {
@@ -440,9 +744,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICompression bridge.
 
-             @return ICompression bridge instance.
+             @return {Adaptive.CompressionBridge} bridge instance.
           */
           public getCompressionBridge() : ICompression {
                if (AppRegistryBridge.instanceCompression === null) {
@@ -452,9 +757,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IConcurrent bridge.
 
-             @return IConcurrent bridge instance.
+             @return {Adaptive.ConcurrentBridge} bridge instance.
           */
           public getConcurrentBridge() : IConcurrent {
                if (AppRegistryBridge.instanceConcurrent === null) {
@@ -464,9 +770,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IContact bridge.
 
-             @return IContact bridge instance.
+             @return {Adaptive.ContactBridge} bridge instance.
           */
           public getContactBridge() : IContact {
                if (AppRegistryBridge.instanceContact === null) {
@@ -476,9 +783,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ICrypto bridge.
 
-             @return ICrypto bridge instance.
+             @return {Adaptive.CryptoBridge} bridge instance.
           */
           public getCryptoBridge() : ICrypto {
                if (AppRegistryBridge.instanceCrypto === null) {
@@ -488,9 +796,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IDataStream bridge.
 
-             @return IDataStream bridge instance.
+             @return {Adaptive.DataStreamBridge} bridge instance.
           */
           public getDataStreamBridge() : IDataStream {
                if (AppRegistryBridge.instanceDataStream === null) {
@@ -500,9 +809,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IDatabase bridge.
 
-             @return IDatabase bridge instance.
+             @return {Adaptive.DatabaseBridge} bridge instance.
           */
           public getDatabaseBridge() : IDatabase {
                if (AppRegistryBridge.instanceDatabase === null) {
@@ -512,9 +822,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IDesktop bridge.
 
-             @return IDesktop bridge instance.
+             @return {Adaptive.DesktopBridge} bridge instance.
           */
           public getDesktopBridge() : IDesktop {
                if (AppRegistryBridge.instanceDesktop === null) {
@@ -524,9 +835,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IDevice bridge.
 
-             @return IDevice bridge instance.
+             @return {Adaptive.DeviceBridge} bridge instance.
           */
           public getDeviceBridge() : IDevice {
                if (AppRegistryBridge.instanceDevice === null) {
@@ -536,9 +848,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IDisplay bridge.
 
-             @return IDisplay bridge instance.
+             @return {Adaptive.DisplayBridge} bridge instance.
           */
           public getDisplayBridge() : IDisplay {
                if (AppRegistryBridge.instanceDisplay === null) {
@@ -548,9 +861,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IFacebook bridge.
 
-             @return IFacebook bridge instance.
+             @return {Adaptive.FacebookBridge} bridge instance.
           */
           public getFacebookBridge() : IFacebook {
                if (AppRegistryBridge.instanceFacebook === null) {
@@ -560,9 +874,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IFile bridge.
 
-             @return IFile bridge instance.
+             @return {Adaptive.FileBridge} bridge instance.
           */
           public getFileBridge() : IFile {
                if (AppRegistryBridge.instanceFile === null) {
@@ -572,9 +887,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IFileSystem bridge.
 
-             @return IFileSystem bridge instance.
+             @return {Adaptive.FileSystemBridge} bridge instance.
           */
           public getFileSystemBridge() : IFileSystem {
                if (AppRegistryBridge.instanceFileSystem === null) {
@@ -584,9 +900,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IGeolocation bridge.
 
-             @return IGeolocation bridge instance.
+             @return {Adaptive.GeolocationBridge} bridge instance.
           */
           public getGeolocationBridge() : IGeolocation {
                if (AppRegistryBridge.instanceGeolocation === null) {
@@ -596,9 +913,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IGlobalization bridge.
 
-             @return IGlobalization bridge instance.
+             @return {Adaptive.GlobalizationBridge} bridge instance.
           */
           public getGlobalizationBridge() : IGlobalization {
                if (AppRegistryBridge.instanceGlobalization === null) {
@@ -608,9 +926,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IGooglePlus bridge.
 
-             @return IGooglePlus bridge instance.
+             @return {Adaptive.GooglePlusBridge} bridge instance.
           */
           public getGooglePlusBridge() : IGooglePlus {
                if (AppRegistryBridge.instanceGooglePlus === null) {
@@ -620,9 +939,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IGyroscope bridge.
 
-             @return IGyroscope bridge instance.
+             @return {Adaptive.GyroscopeBridge} bridge instance.
           */
           public getGyroscopeBridge() : IGyroscope {
                if (AppRegistryBridge.instanceGyroscope === null) {
@@ -632,9 +952,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IImaging bridge.
 
-             @return IImaging bridge instance.
+             @return {Adaptive.ImagingBridge} bridge instance.
           */
           public getImagingBridge() : IImaging {
                if (AppRegistryBridge.instanceImaging === null) {
@@ -644,9 +965,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IInternalStorage bridge.
 
-             @return IInternalStorage bridge instance.
+             @return {Adaptive.InternalStorageBridge} bridge instance.
           */
           public getInternalStorageBridge() : IInternalStorage {
                if (AppRegistryBridge.instanceInternalStorage === null) {
@@ -656,9 +978,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ILifecycle bridge.
 
-             @return ILifecycle bridge instance.
+             @return {Adaptive.LifecycleBridge} bridge instance.
           */
           public getLifecycleBridge() : ILifecycle {
                if (AppRegistryBridge.instanceLifecycle === null) {
@@ -668,9 +991,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ILinkedIn bridge.
 
-             @return ILinkedIn bridge instance.
+             @return {Adaptive.LinkedInBridge} bridge instance.
           */
           public getLinkedInBridge() : ILinkedIn {
                if (AppRegistryBridge.instanceLinkedIn === null) {
@@ -680,9 +1004,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ILogging bridge.
 
-             @return ILogging bridge instance.
+             @return {Adaptive.LoggingBridge} bridge instance.
           */
           public getLoggingBridge() : ILogging {
                if (AppRegistryBridge.instanceLogging === null) {
@@ -692,9 +1017,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IMagnetometer bridge.
 
-             @return IMagnetometer bridge instance.
+             @return {Adaptive.MagnetometerBridge} bridge instance.
           */
           public getMagnetometerBridge() : IMagnetometer {
                if (AppRegistryBridge.instanceMagnetometer === null) {
@@ -704,9 +1030,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IMail bridge.
 
-             @return IMail bridge instance.
+             @return {Adaptive.MailBridge} bridge instance.
           */
           public getMailBridge() : IMail {
                if (AppRegistryBridge.instanceMail === null) {
@@ -716,9 +1043,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IManagement bridge.
 
-             @return IManagement bridge instance.
+             @return {Adaptive.ManagementBridge} bridge instance.
           */
           public getManagementBridge() : IManagement {
                if (AppRegistryBridge.instanceManagement === null) {
@@ -728,9 +1056,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IMap bridge.
 
-             @return IMap bridge instance.
+             @return {Adaptive.MapBridge} bridge instance.
           */
           public getMapBridge() : IMap {
                if (AppRegistryBridge.instanceMap === null) {
@@ -740,9 +1069,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IMessaging bridge.
 
-             @return IMessaging bridge instance.
+             @return {Adaptive.MessagingBridge} bridge instance.
           */
           public getMessagingBridge() : IMessaging {
                if (AppRegistryBridge.instanceMessaging === null) {
@@ -752,9 +1082,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INFC bridge.
 
-             @return INFC bridge instance.
+             @return {Adaptive.NFCBridge} bridge instance.
           */
           public getNFCBridge() : INFC {
                if (AppRegistryBridge.instanceNFC === null) {
@@ -764,9 +1095,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INetworkInfo bridge.
 
-             @return INetworkInfo bridge instance.
+             @return {Adaptive.NetworkInfoBridge} bridge instance.
           */
           public getNetworkInfoBridge() : INetworkInfo {
                if (AppRegistryBridge.instanceNetworkInfo === null) {
@@ -776,9 +1108,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INetworkNaming bridge.
 
-             @return INetworkNaming bridge instance.
+             @return {Adaptive.NetworkNamingBridge} bridge instance.
           */
           public getNetworkNamingBridge() : INetworkNaming {
                if (AppRegistryBridge.instanceNetworkNaming === null) {
@@ -788,9 +1121,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INetworkReachability bridge.
 
-             @return INetworkReachability bridge instance.
+             @return {Adaptive.NetworkReachabilityBridge} bridge instance.
           */
           public getNetworkReachabilityBridge() : INetworkReachability {
                if (AppRegistryBridge.instanceNetworkReachability === null) {
@@ -800,9 +1134,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INetworkStatus bridge.
 
-             @return INetworkStatus bridge instance.
+             @return {Adaptive.NetworkStatusBridge} bridge instance.
           */
           public getNetworkStatusBridge() : INetworkStatus {
                if (AppRegistryBridge.instanceNetworkStatus === null) {
@@ -812,9 +1147,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INotification bridge.
 
-             @return INotification bridge instance.
+             @return {Adaptive.NotificationBridge} bridge instance.
           */
           public getNotificationBridge() : INotification {
                if (AppRegistryBridge.instanceNotification === null) {
@@ -824,9 +1160,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the INotificationLocal bridge.
 
-             @return INotificationLocal bridge instance.
+             @return {Adaptive.NotificationLocalBridge} bridge instance.
           */
           public getNotificationLocalBridge() : INotificationLocal {
                if (AppRegistryBridge.instanceNotificationLocal === null) {
@@ -836,9 +1173,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IOAuth bridge.
 
-             @return IOAuth bridge instance.
+             @return {Adaptive.OAuthBridge} bridge instance.
           */
           public getOAuthBridge() : IOAuth {
                if (AppRegistryBridge.instanceOAuth === null) {
@@ -848,9 +1186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IOCR bridge.
 
-             @return IOCR bridge instance.
+             @return {Adaptive.OCRBridge} bridge instance.
           */
           public getOCRBridge() : IOCR {
                if (AppRegistryBridge.instanceOCR === null) {
@@ -860,9 +1199,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IOS bridge.
 
-             @return IOS bridge instance.
+             @return {Adaptive.OSBridge} bridge instance.
           */
           public getOSBridge() : IOS {
                if (AppRegistryBridge.instanceOS === null) {
@@ -872,9 +1212,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IOpenId bridge.
 
-             @return IOpenId bridge instance.
+             @return {Adaptive.OpenIdBridge} bridge instance.
           */
           public getOpenIdBridge() : IOpenId {
                if (AppRegistryBridge.instanceOpenId === null) {
@@ -884,9 +1225,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IPrinting bridge.
 
-             @return IPrinting bridge instance.
+             @return {Adaptive.PrintingBridge} bridge instance.
           */
           public getPrintingBridge() : IPrinting {
                if (AppRegistryBridge.instancePrinting === null) {
@@ -896,9 +1238,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IProximity bridge.
 
-             @return IProximity bridge instance.
+             @return {Adaptive.ProximityBridge} bridge instance.
           */
           public getProximityBridge() : IProximity {
                if (AppRegistryBridge.instanceProximity === null) {
@@ -908,9 +1251,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IQRCode bridge.
 
-             @return IQRCode bridge instance.
+             @return {Adaptive.QRCodeBridge} bridge instance.
           */
           public getQRCodeBridge() : IQRCode {
                if (AppRegistryBridge.instanceQRCode === null) {
@@ -920,9 +1264,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IRSS bridge.
 
-             @return IRSS bridge instance.
+             @return {Adaptive.RSSBridge} bridge instance.
           */
           public getRSSBridge() : IRSS {
                if (AppRegistryBridge.instanceRSS === null) {
@@ -932,9 +1277,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IRuntime bridge.
 
-             @return IRuntime bridge instance.
+             @return {Adaptive.RuntimeBridge} bridge instance.
           */
           public getRuntimeBridge() : IRuntime {
                if (AppRegistryBridge.instanceRuntime === null) {
@@ -944,9 +1290,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ISecurity bridge.
 
-             @return ISecurity bridge instance.
+             @return {Adaptive.SecurityBridge} bridge instance.
           */
           public getSecurityBridge() : ISecurity {
                if (AppRegistryBridge.instanceSecurity === null) {
@@ -956,9 +1303,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IService bridge.
 
-             @return IService bridge instance.
+             @return {Adaptive.ServiceBridge} bridge instance.
           */
           public getServiceBridge() : IService {
                if (AppRegistryBridge.instanceService === null) {
@@ -968,9 +1316,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ISettings bridge.
 
-             @return ISettings bridge instance.
+             @return {Adaptive.SettingsBridge} bridge instance.
           */
           public getSettingsBridge() : ISettings {
                if (AppRegistryBridge.instanceSettings === null) {
@@ -980,9 +1329,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ISocket bridge.
 
-             @return ISocket bridge instance.
+             @return {Adaptive.SocketBridge} bridge instance.
           */
           public getSocketBridge() : ISocket {
                if (AppRegistryBridge.instanceSocket === null) {
@@ -992,9 +1342,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IStore bridge.
 
-             @return IStore bridge instance.
+             @return {Adaptive.StoreBridge} bridge instance.
           */
           public getStoreBridge() : IStore {
                if (AppRegistryBridge.instanceStore === null) {
@@ -1004,9 +1355,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ITelephony bridge.
 
-             @return ITelephony bridge instance.
+             @return {Adaptive.TelephonyBridge} bridge instance.
           */
           public getTelephonyBridge() : ITelephony {
                if (AppRegistryBridge.instanceTelephony === null) {
@@ -1016,9 +1368,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ITimer bridge.
 
-             @return ITimer bridge instance.
+             @return {Adaptive.TimerBridge} bridge instance.
           */
           public getTimerBridge() : ITimer {
                if (AppRegistryBridge.instanceTimer === null) {
@@ -1028,9 +1381,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the ITwitter bridge.
 
-             @return ITwitter bridge instance.
+             @return {Adaptive.TwitterBridge} bridge instance.
           */
           public getTwitterBridge() : ITwitter {
                if (AppRegistryBridge.instanceTwitter === null) {
@@ -1040,9 +1394,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IUI bridge.
 
-             @return IUI bridge instance.
+             @return {Adaptive.UIBridge} bridge instance.
           */
           public getUIBridge() : IUI {
                if (AppRegistryBridge.instanceUI === null) {
@@ -1052,9 +1407,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IUpdate bridge.
 
-             @return IUpdate bridge instance.
+             @return {Adaptive.UpdateBridge} bridge instance.
           */
           public getUpdateBridge() : IUpdate {
                if (AppRegistryBridge.instanceUpdate === null) {
@@ -1064,9 +1420,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IVibration bridge.
 
-             @return IVibration bridge instance.
+             @return {Adaptive.VibrationBridge} bridge instance.
           */
           public getVibrationBridge() : IVibration {
                if (AppRegistryBridge.instanceVibration === null) {
@@ -1076,9 +1433,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IVideo bridge.
 
-             @return IVideo bridge instance.
+             @return {Adaptive.VideoBridge} bridge instance.
           */
           public getVideoBridge() : IVideo {
                if (AppRegistryBridge.instanceVideo === null) {
@@ -1088,9 +1446,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IWallet bridge.
 
-             @return IWallet bridge instance.
+             @return {Adaptive.WalletBridge} bridge instance.
           */
           public getWalletBridge() : IWallet {
                if (AppRegistryBridge.instanceWallet === null) {
@@ -1100,9 +1459,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Obtain a reference to the IXML bridge.
 
-             @return IXML bridge instance.
+             @return {Adaptive.XMLBridge} bridge instance.
           */
           public getXMLBridge() : IXML {
                if (AppRegistryBridge.instanceXML === null) {
@@ -1112,6 +1472,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Return the API version for the given interface.
 
              @return {String} The version of the API.

@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.DeviceInfo
+        @extends Adaptive.APIBean
         Structure representing the basic device information.
 
         @author Francisco Javier Martin Bueno

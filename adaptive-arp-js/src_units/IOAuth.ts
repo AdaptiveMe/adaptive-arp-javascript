@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IOAuth
+        @extends Adaptive.IBaseSecurity
+     */
      export interface IOAuth extends IBaseSecurity {
      }
 }

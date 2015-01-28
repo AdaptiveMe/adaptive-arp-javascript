@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IUpdate
+        @extends Adaptive.IBaseApplication
+     */
      export interface IUpdate extends IBaseApplication {
      }
 }

@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class PrintingBridge extends BaseApplicationBridge implements IPrinting {
+       @class Adaptive.PrintingBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Printing operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class PrintingBridge extends BaseApplicationBridge implements IPrinting {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -33,19 +33,43 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     class IServiceResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.NotSecure=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         static NotSecure: IServiceResultCallbackWarning;
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.NotTrusted=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         static NotTrusted: IServiceResultCallbackWarning;
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Redirected=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         static Redirected: IServiceResultCallbackWarning;
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Wrong_Params=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         static Wrong_Params: IServiceResultCallbackWarning;
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Unknown=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         static Unknown: IServiceResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceResultCallbackWarning}
         */
         static toObject(object: any): IServiceResultCallbackWarning;
     }

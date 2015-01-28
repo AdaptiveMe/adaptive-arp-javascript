@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactTag
+       @extends Adaptive.APIBean
        Structure representing the assigned tags data elements of a contact.
 
        @author Francisco Javier Martin Bueno

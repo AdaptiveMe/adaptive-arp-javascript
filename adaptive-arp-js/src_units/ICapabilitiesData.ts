@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesData} Adaptive.ICapabilitiesData
         Enumeration ICapabilitiesData
      */
      export class ICapabilitiesData {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesData} [Database='Database']
+          */
           static Database = new ICapabilitiesData("Database");
+          /**
+             @property {Adaptive.ICapabilitiesData} [File='File']
+          */
           static File = new ICapabilitiesData("File");
+          /**
+             @property {Adaptive.ICapabilitiesData} [Cloud='Cloud']
+          */
           static Cloud = new ICapabilitiesData("Cloud");
+          /**
+             @property {Adaptive.ICapabilitiesData} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesData("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesData}
           */
           static toObject(object : any) : ICapabilitiesData {
                if (object != null && object.value != null) {

@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.MapBridge
+        @extends Adaptive.BaseUIBridge
         Interface for Managing the Map operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class MapBridge extends BaseUIBridge implements IMap {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

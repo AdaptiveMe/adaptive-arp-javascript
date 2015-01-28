@@ -39,6 +39,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BaseSocialBridge implements IBaseSocial {
+       @class Adaptive.BaseSocialBridge
+       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez
@@ -46,18 +49,23 @@ declare module Adaptive {
     */
     class BaseSocialBridge implements IBaseSocial {
         /**
+           @property
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

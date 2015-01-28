@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.EmailAttachmentData
+       @extends Adaptive.APIBean
        Structure representing the binary attachment data.
 
        @author Francisco Javier Martin Bueno

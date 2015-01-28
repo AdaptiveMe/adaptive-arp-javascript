@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IDatabaseResultCallbackWarning} Adaptive.IDatabaseResultCallbackWarning
         Enumeration IDatabaseResultCallbackWarning
      */
      export class IDatabaseResultCallbackWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']
+          */
           static DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
+          /**
+             @property {Adaptive.IDatabaseResultCallbackWarning} [IsOpen='IsOpen']
+          */
           static IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
+          /**
+             @property {Adaptive.IDatabaseResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IDatabaseResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IDatabaseResultCallbackWarning}
           */
           static toObject(object : any) : IDatabaseResultCallbackWarning {
                if (object != null && object.value != null) {

@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactWebsite
+       @extends Adaptive.APIBean
        Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno

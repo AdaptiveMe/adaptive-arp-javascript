@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     var ILoggingLogLevel = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILoggingLogLevel}
         */
         ILoggingLogLevel.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -67,10 +71,30 @@ var Adaptive;
                 return ILoggingLogLevel.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ILoggingLogLevel.DEBUG=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
+        /**
+           @enum [Adaptive.ILoggingLogLevel.WARN=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
+        /**
+           @enum [Adaptive.ILoggingLogLevel.ERROR=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         ILoggingLogLevel.ERROR = new ILoggingLogLevel("ERROR");
+        /**
+           @enum [Adaptive.ILoggingLogLevel.INFO=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         ILoggingLogLevel.INFO = new ILoggingLogLevel("INFO");
+        /**
+           @enum [Adaptive.ILoggingLogLevel.Unknown=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         ILoggingLogLevel.Unknown = new ILoggingLogLevel("Unknown");
         return ILoggingLogLevel;
     })();

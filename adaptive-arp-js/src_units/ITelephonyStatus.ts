@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ITelephonyStatus} Adaptive.ITelephonyStatus
         Enumeration ITelephonyStatus
      */
      export class ITelephonyStatus {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']
+          */
           static Dialing = new ITelephonyStatus("Dialing");
+          /**
+             @property {Adaptive.ITelephonyStatus} [Failed='Failed']
+          */
           static Failed = new ITelephonyStatus("Failed");
+          /**
+             @property {Adaptive.ITelephonyStatus} [Unknown='Unknown']
+          */
           static Unknown = new ITelephonyStatus("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ITelephonyStatus}
           */
           static toObject(object : any) : ITelephonyStatus {
                if (object != null && object.value != null) {

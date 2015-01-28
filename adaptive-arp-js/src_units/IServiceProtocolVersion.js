@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     var IServiceProtocolVersion = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceProtocolVersion}
         */
         IServiceProtocolVersion.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IServiceProtocolVersion.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion10=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion11=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         IServiceProtocolVersion.HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.Unknown=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         IServiceProtocolVersion.Unknown = new IServiceProtocolVersion("Unknown");
         return IServiceProtocolVersion;
     })();

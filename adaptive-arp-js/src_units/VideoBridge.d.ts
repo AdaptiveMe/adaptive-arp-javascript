@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class VideoBridge extends BaseMediaBridge implements IVideo {
+       @class Adaptive.VideoBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the Video operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class VideoBridge extends BaseMediaBridge implements IVideo {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

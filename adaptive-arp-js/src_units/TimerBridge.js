@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class TimerBridge extends BaseUtilBridge implements ITimer {
+       @class Adaptive.TimerBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Timer operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var TimerBridge = (function (_super) {
         __extends(TimerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TimerBridge() {

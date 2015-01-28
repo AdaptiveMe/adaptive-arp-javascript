@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     var IFileSystemStorageType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileSystemStorageType}
         */
         IFileSystemStorageType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -71,12 +75,40 @@ var Adaptive;
                 return IFileSystemStorageType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Application=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Document=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Cloud=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Cloud = new IFileSystemStorageType("Cloud");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Protected=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Protected = new IFileSystemStorageType("Protected");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Cache=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Cache = new IFileSystemStorageType("Cache");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.External=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.External = new IFileSystemStorageType("External");
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Unknown=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         IFileSystemStorageType.Unknown = new IFileSystemStorageType("Unknown");
         return IFileSystemStorageType;
     })();

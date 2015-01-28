@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IFileListResultCallback
+        @extends Adaptive.IBaseCallback
+     */
      export interface IFileListResultCallback extends IBaseCallback {
           /**
+             @method
              On error result of a file operation.
              @param error Error processing the request.
              @since ARP1.0
           */
           onError(error:IFileListResultCallbackError);
           /**
+             @method
              On correct result of a file operation.
              @param files Array of resulting files/folders.
              @since ARP1.0
           */
           onResult(files:Array<FileDescriptor>);
           /**
+             @method
              On partial result of a file operation, containing a warning.
              @param files   Array of resulting files/folders.
              @param warning Warning condition encountered.

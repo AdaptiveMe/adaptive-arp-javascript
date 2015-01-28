@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseReaderBridge implements IBaseReader {
+       @class Adaptive.BaseReaderBridge
+       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseReaderBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseReaderBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Reader;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseReaderBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

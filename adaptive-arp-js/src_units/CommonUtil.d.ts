@@ -33,14 +33,17 @@ Release:
 */
 declare module Adaptive {
     /**
+       @property
        Global unique id for listeners and callbacks.
     */
     var registeredCounter: number;
     /**
+       @property
        Base url for for http/https JSON requests.
     */
     var bridgePath: string;
     /**
+       @class
        Utility class for Dictionary type support.
     */
     interface IDictionary<V> {

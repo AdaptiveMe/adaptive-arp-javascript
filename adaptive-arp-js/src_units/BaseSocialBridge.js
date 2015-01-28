@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseSocialBridge implements IBaseSocial {
+       @class Adaptive.BaseSocialBridge
+       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseSocialBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSocialBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Social;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseSocialBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     var IServiceResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceResultCallbackWarning}
         */
         IServiceResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -67,10 +71,30 @@ var Adaptive;
                 return IServiceResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.NotSecure=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.NotTrusted=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         IServiceResultCallbackWarning.NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Redirected=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Wrong_Params=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        /**
+           @enum [Adaptive.IServiceResultCallbackWarning.Unknown=Adaptive.IServiceResultCallbackWarning.*]
+           @static
+        */
         IServiceResultCallbackWarning.Unknown = new IServiceResultCallbackWarning("Unknown");
         return IServiceResultCallbackWarning;
     })();

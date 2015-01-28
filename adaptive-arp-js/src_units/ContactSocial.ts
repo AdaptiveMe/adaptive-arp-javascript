@@ -38,6 +38,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ContactSocial
+        @extends Adaptive.APIBean
         Structure representing the social data elements of a contact.
 
         @author Francisco Javier Martin Bueno

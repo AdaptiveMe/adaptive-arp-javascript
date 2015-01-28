@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.INetworkStatusListenerError} Adaptive.INetworkStatusListenerError
         Enumeration INetworkStatusListenerError
      */
      export class INetworkStatusListenerError {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']
+          */
           static NoPermission = new INetworkStatusListenerError("NoPermission");
+          /**
+             @property {Adaptive.INetworkStatusListenerError} [Unreachable='Unreachable']
+          */
           static Unreachable = new INetworkStatusListenerError("Unreachable");
+          /**
+             @property {Adaptive.INetworkStatusListenerError} [Unknown='Unknown']
+          */
           static Unknown = new INetworkStatusListenerError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.INetworkStatusListenerError}
           */
           static toObject(object : any) : INetworkStatusListenerError {
                if (object != null && object.value != null) {

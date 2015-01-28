@@ -50,6 +50,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class MailBridge extends BasePIMBridge implements IMail {
+       @class Adaptive.MailBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
@@ -58,6 +61,7 @@ var Adaptive;
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MailBridge() {

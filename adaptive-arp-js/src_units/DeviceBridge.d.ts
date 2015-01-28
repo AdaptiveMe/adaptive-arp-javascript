@@ -44,6 +44,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class DeviceBridge extends BaseSystemBridge implements IDevice {
+       @class Adaptive.DeviceBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
@@ -51,6 +54,7 @@ declare module Adaptive {
     */
     class DeviceBridge extends BaseSystemBridge implements IDevice {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

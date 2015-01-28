@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.INetworkStatusListenerWarning} Adaptive.INetworkStatusListenerWarning
         Enumeration INetworkStatusListenerWarning
      */
      export class INetworkStatusListenerWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']
+          */
           static IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
+          /**
+             @property {Adaptive.INetworkStatusListenerWarning} [IpAddressChanged='IpAddressChanged']
+          */
           static IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
+          /**
+             @property {Adaptive.INetworkStatusListenerWarning} [Unknown='Unknown']
+          */
           static Unknown = new INetworkStatusListenerWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.INetworkStatusListenerWarning}
           */
           static toObject(object : any) : INetworkStatusListenerWarning {
                if (object != null && object.value != null) {

@@ -33,22 +33,58 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     class ICapabilitiesNet {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.GSM=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static GSM: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.GPRS=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static GPRS: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.HSDPA=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static HSDPA: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.LTE=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static LTE: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.WIFI=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static WIFI: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Ethernet=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static Ethernet: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Unavailable=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static Unavailable: ICapabilitiesNet;
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Unknown=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         static Unknown: ICapabilitiesNet;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesNet}
         */
         static toObject(object: any): ICapabilitiesNet;
     }

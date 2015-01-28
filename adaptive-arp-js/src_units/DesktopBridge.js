@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class DesktopBridge extends BaseUIBridge implements IDesktop {
+       @class Adaptive.DesktopBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the Desktop operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var DesktopBridge = (function (_super) {
         __extends(DesktopBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DesktopBridge() {

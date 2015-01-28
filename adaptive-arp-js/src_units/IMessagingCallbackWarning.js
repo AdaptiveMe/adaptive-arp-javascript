@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     var IMessagingCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IMessagingCallbackWarning}
         */
         IMessagingCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IMessagingCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.UnableToSentAll=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.UnableToFetchAttachment=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         IMessagingCallbackWarning.UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.Unknown=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         IMessagingCallbackWarning.Unknown = new IMessagingCallbackWarning("Unknown");
         return IMessagingCallbackWarning;
     })();

@@ -43,20 +43,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IMessagingCallback
+       @extends {IBaseCallback}
+       @abstract
+    */
     interface IMessagingCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IMessagingCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param success true if sent;false otherwise
            @since ARP1.0
         */
         onResult(success: boolean): any;
         /**
+           @method
            This method is called on Warning
            @param success true if sent;false otherwise
            @param warning returned by the platform

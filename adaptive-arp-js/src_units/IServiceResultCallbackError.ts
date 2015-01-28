@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IServiceResultCallbackError} Adaptive.IServiceResultCallbackError
         Enumeration IServiceResultCallbackError
      */
      export class IServiceResultCallbackError {
@@ -42,21 +43,60 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
+          */
           static Forbidden = new IServiceResultCallbackError("Forbidden");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
+          */
           static NotFound = new IServiceResultCallbackError("NotFound");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
+          */
           static MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
+          */
           static NotAllowed = new IServiceResultCallbackError("NotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
+          */
           static NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
+          */
           static TimeOut = new IServiceResultCallbackError("TimeOut");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
+          */
           static NoResponse = new IServiceResultCallbackError("NoResponse");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
+          */
           static ServerError = new IServiceResultCallbackError("ServerError");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
+          */
           static Unreachable = new IServiceResultCallbackError("Unreachable");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [MalformedUrl='MalformedUrl']
+          */
           static MalformedUrl = new IServiceResultCallbackError("MalformedUrl");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [NotRegisteredService='NotRegisteredService']
+          */
           static NotRegisteredService = new IServiceResultCallbackError("NotRegisteredService");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new IServiceResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IServiceResultCallbackError}
           */
           static toObject(object : any) : IServiceResultCallbackError {
                if (object != null && object.value != null) {

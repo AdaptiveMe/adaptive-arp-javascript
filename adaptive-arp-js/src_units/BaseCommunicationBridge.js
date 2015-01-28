@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseCommunicationBridge implements IBaseCommunication {
+       @class Adaptive.BaseCommunicationBridge
+       @extends Adaptive.IBaseCommunication
        Base application for Communication purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseCommunicationBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseCommunicationBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Communication;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseCommunicationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

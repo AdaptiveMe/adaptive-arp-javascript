@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IImaging
+       @extends {IBaseMedia}
+       @abstract
+    */
     interface IImaging extends IBaseMedia {
     }
 }

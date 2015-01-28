@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.XMLBridge
+        @extends Adaptive.BaseDataBridge
         Interface for Managing the XML operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class XMLBridge extends BaseDataBridge implements IXML {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

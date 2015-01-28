@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     var IGeolocationListenerError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IGeolocationListenerError}
         */
         IGeolocationListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -67,10 +71,30 @@ var Adaptive;
                 return IGeolocationListenerError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IGeolocationListenerError.Disabled=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         IGeolocationListenerError.Disabled = new IGeolocationListenerError("Disabled");
+        /**
+           @enum [Adaptive.IGeolocationListenerError.RestrictedAccess=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         IGeolocationListenerError.RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
+        /**
+           @enum [Adaptive.IGeolocationListenerError.DeniedAccess=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         IGeolocationListenerError.DeniedAccess = new IGeolocationListenerError("DeniedAccess");
+        /**
+           @enum [Adaptive.IGeolocationListenerError.StatusNotDetermined=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         IGeolocationListenerError.StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
+        /**
+           @enum [Adaptive.IGeolocationListenerError.Unknown=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         IGeolocationListenerError.Unknown = new IGeolocationListenerError("Unknown");
         return IGeolocationListenerError;
     })();

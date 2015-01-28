@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     var ICapabilitiesNet = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesNet}
         */
         ICapabilitiesNet.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -73,13 +77,45 @@ var Adaptive;
                 return ICapabilitiesNet.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesNet.GSM=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.GSM = new ICapabilitiesNet("GSM");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.GPRS=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.GPRS = new ICapabilitiesNet("GPRS");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.HSDPA=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.HSDPA = new ICapabilitiesNet("HSDPA");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.LTE=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.LTE = new ICapabilitiesNet("LTE");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.WIFI=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.WIFI = new ICapabilitiesNet("WIFI");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Ethernet=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.Ethernet = new ICapabilitiesNet("Ethernet");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Unavailable=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.Unavailable = new ICapabilitiesNet("Unavailable");
+        /**
+           @enum [Adaptive.ICapabilitiesNet.Unknown=Adaptive.ICapabilitiesNet.*]
+           @static
+        */
         ICapabilitiesNet.Unknown = new ICapabilitiesNet("Unknown");
         return ICapabilitiesNet;
     })();

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class OCRBridge extends BaseReaderBridge implements IOCR {
+       @class Adaptive.OCRBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the OCR operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var OCRBridge = (function (_super) {
         __extends(OCRBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OCRBridge() {

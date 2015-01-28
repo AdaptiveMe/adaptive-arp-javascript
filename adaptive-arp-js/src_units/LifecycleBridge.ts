@@ -44,6 +44,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.LifecycleBridge
+        @extends Adaptive.BaseApplicationBridge
         Interface for Managing the Lifecycle listeners
 
         @author Carlos Lozano Diez
@@ -52,6 +54,7 @@ module Adaptive {
      export class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

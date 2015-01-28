@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BasePIMBridge implements IBasePIM {
+       @class Adaptive.BasePIMBridge
+       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BasePIMBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BasePIMBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.PIM;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BasePIMBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

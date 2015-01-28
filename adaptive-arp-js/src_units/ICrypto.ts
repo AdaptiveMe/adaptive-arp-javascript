@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ICrypto
+        @extends Adaptive.IBaseUtil
+     */
      export interface ICrypto extends IBaseUtil {
      }
 }

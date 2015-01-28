@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     var ILifecycleListenerWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILifecycleListenerWarning}
         */
         ILifecycleListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return ILifecycleListenerWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.MemoryLow=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.BatteryLow=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         ILifecycleListenerWarning.BatteryLow = new ILifecycleListenerWarning("BatteryLow");
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.Unknown=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         ILifecycleListenerWarning.Unknown = new ILifecycleListenerWarning("Unknown");
         return ILifecycleListenerWarning;
     })();

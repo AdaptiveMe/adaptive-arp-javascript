@@ -33,21 +33,53 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     class IFileSystemStorageType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Application=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Application: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Document=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Document: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Cloud=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Cloud: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Protected=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Protected: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Cache=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Cache: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.External=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static External: IFileSystemStorageType;
+        /**
+           @enum [Adaptive.IFileSystemStorageType.Unknown=Adaptive.IFileSystemStorageType.*]
+           @static
+        */
         static Unknown: IFileSystemStorageType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileSystemStorageType}
         */
         static toObject(object: any): IFileSystemStorageType;
     }

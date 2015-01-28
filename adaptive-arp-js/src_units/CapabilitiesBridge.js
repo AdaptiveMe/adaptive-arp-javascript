@@ -54,6 +54,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
+       @class Adaptive.CapabilitiesBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
@@ -62,6 +65,7 @@ var Adaptive;
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CapabilitiesBridge() {

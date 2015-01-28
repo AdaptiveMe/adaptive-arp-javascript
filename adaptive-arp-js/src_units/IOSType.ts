@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IOSType} Adaptive.IOSType
         Enumeration IOSType
      */
      export class IOSType {
@@ -42,21 +43,60 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IOSType} [iOS='iOS']
+          */
           static iOS = new IOSType("iOS");
+          /**
+             @property {Adaptive.IOSType} [OSX='OSX']
+          */
           static OSX = new IOSType("OSX");
+          /**
+             @property {Adaptive.IOSType} [Windows='Windows']
+          */
           static Windows = new IOSType("Windows");
+          /**
+             @property {Adaptive.IOSType} [WindowsPhone='WindowsPhone']
+          */
           static WindowsPhone = new IOSType("WindowsPhone");
+          /**
+             @property {Adaptive.IOSType} [Android='Android']
+          */
           static Android = new IOSType("Android");
+          /**
+             @property {Adaptive.IOSType} [Linux='Linux']
+          */
           static Linux = new IOSType("Linux");
+          /**
+             @property {Adaptive.IOSType} [Blackberry='Blackberry']
+          */
           static Blackberry = new IOSType("Blackberry");
+          /**
+             @property {Adaptive.IOSType} [Tizen='Tizen']
+          */
           static Tizen = new IOSType("Tizen");
+          /**
+             @property {Adaptive.IOSType} [FirefoxOS='FirefoxOS']
+          */
           static FirefoxOS = new IOSType("FirefoxOS");
+          /**
+             @property {Adaptive.IOSType} [Chromium='Chromium']
+          */
           static Chromium = new IOSType("Chromium");
+          /**
+             @property {Adaptive.IOSType} [Unspecified='Unspecified']
+          */
           static Unspecified = new IOSType("Unspecified");
+          /**
+             @property {Adaptive.IOSType} [Unknown='Unknown']
+          */
           static Unknown = new IOSType("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IOSType}
           */
           static toObject(object : any) : IOSType {
                if (object != null && object.value != null) {

@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     class ContactSocialNetwork {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Twitter=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static Twitter: ContactSocialNetwork;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Facebook=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static Facebook: ContactSocialNetwork;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.GooglePlus=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static GooglePlus: ContactSocialNetwork;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.LinkedIn=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static LinkedIn: ContactSocialNetwork;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Flickr=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static Flickr: ContactSocialNetwork;
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Unknown=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         static Unknown: ContactSocialNetwork;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactSocialNetwork}
         */
         static toObject(object: any): ContactSocialNetwork;
     }

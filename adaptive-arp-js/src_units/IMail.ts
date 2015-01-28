@@ -46,8 +46,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IMail
+        @extends Adaptive.IBasePIM
+     */
      export interface IMail extends IBasePIM {
           /**
+             @method
              Send an Email
              @param data     Payload of the email
              @param callback Result callback of the operation

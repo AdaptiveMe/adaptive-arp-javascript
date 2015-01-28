@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IMessagingCallbackWarning} Adaptive.IMessagingCallbackWarning
         Enumeration IMessagingCallbackWarning
      */
      export class IMessagingCallbackWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']
+          */
           static UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
+          /**
+             @property {Adaptive.IMessagingCallbackWarning} [UnableToFetchAttachment='UnableToFetchAttachment']
+          */
           static UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
+          /**
+             @property {Adaptive.IMessagingCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IMessagingCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IMessagingCallbackWarning}
           */
           static toObject(object : any) : IMessagingCallbackWarning {
                if (object != null && object.value != null) {

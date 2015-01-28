@@ -42,8 +42,14 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkReachability
+       @extends {IBaseCommunication}
+       @abstract
+    */
     interface INetworkReachability extends IBaseCommunication {
         /**
+           @method
            Whether there is connectivity to a host, via domain name or ip address, or not.
            @param host     domain name or ip address of host.
            @param callback Callback called at the end.
@@ -51,6 +57,7 @@ declare module Adaptive {
         */
         isNetworkReachable(host: string, callback: INetworkReachabilityCallback): any;
         /**
+           @method
            Whether there is connectivity to an url of a service or not.
            @param url      to look for
            @param callback Callback called at the end

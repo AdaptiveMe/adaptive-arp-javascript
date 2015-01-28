@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class DataStreamBridge extends BaseDataBridge implements IDataStream {
+       @class Adaptive.DataStreamBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the DataStream operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var DataStreamBridge = (function (_super) {
         __extends(DataStreamBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DataStreamBridge() {

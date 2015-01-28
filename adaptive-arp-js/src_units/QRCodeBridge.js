@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class QRCodeBridge extends BaseReaderBridge implements IQRCode {
+       @class Adaptive.QRCodeBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the QR Code operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var QRCodeBridge = (function (_super) {
         __extends(QRCodeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function QRCodeBridge() {

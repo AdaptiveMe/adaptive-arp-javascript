@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
+       @class Adaptive.GyroscopeBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Giroscope operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

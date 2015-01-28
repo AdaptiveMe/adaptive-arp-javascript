@@ -49,6 +49,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ContactBridge
+        @extends Adaptive.BasePIMBridge
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
@@ -57,6 +59,7 @@ module Adaptive {
      export class ContactBridge extends BasePIMBridge implements IContact {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

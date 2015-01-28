@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class PrintingBridge extends BaseApplicationBridge implements IPrinting {
+       @class Adaptive.PrintingBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Printing operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var PrintingBridge = (function (_super) {
         __extends(PrintingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function PrintingBridge() {

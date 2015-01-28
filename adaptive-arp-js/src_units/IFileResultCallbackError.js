@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     var IFileResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileResultCallbackError}
         */
         IFileResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return IFileResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileResultCallbackError.FileExists=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.FileExists = new IFileResultCallbackError("FileExists");
+        /**
+           @enum [Adaptive.IFileResultCallbackError.SourceInexistent=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.SourceInexistent = new IFileResultCallbackError("SourceInexistent");
+        /**
+           @enum [Adaptive.IFileResultCallbackError.DestionationExists=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.DestionationExists = new IFileResultCallbackError("DestionationExists");
+        /**
+           @enum [Adaptive.IFileResultCallbackError.InsufficientSpace=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.InsufficientSpace = new IFileResultCallbackError("InsufficientSpace");
+        /**
+           @enum [Adaptive.IFileResultCallbackError.Unauthorized=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.Unauthorized = new IFileResultCallbackError("Unauthorized");
+        /**
+           @enum [Adaptive.IFileResultCallbackError.Unknown=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         IFileResultCallbackError.Unknown = new IFileResultCallbackError("Unknown");
         return IFileResultCallbackError;
     })();

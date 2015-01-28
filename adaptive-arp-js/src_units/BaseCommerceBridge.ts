@@ -41,6 +41,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.BaseCommerceBridge
+        @extends Adaptive.IBaseCommerce
         Base application for Commerce purposes
 
         @author Carlos Lozano Diez
@@ -49,11 +51,13 @@ module Adaptive {
      export class BaseCommerceBridge implements IBaseCommerce {
 
           /**
+             @property {Adaptive.IAdaptiveRPGroup} apiGroup
              Group of API.
           */
           apiGroup : IAdaptiveRPGroup;
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {
@@ -61,13 +65,16 @@ module Adaptive {
           }
 
           /**
+             @method
              Return the API group for the given interface.
+             @return {Adaptive.IAdaptiveRPGroup}
           */
           getAPIGroup() : IAdaptiveRPGroup {
                return this.apiGroup;
           }
 
           /**
+             @method
              Return the API version for the given interface.
 
              @return {String} The version of the API.

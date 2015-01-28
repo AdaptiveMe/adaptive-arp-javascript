@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ContactPhoneType} Adaptive.ContactPhoneType
         Enumeration ContactPhoneType
      */
      export class ContactPhoneType {
@@ -42,17 +43,44 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ContactPhoneType} [Mobile='Mobile']
+          */
           static Mobile = new ContactPhoneType("Mobile");
+          /**
+             @property {Adaptive.ContactPhoneType} [Work='Work']
+          */
           static Work = new ContactPhoneType("Work");
+          /**
+             @property {Adaptive.ContactPhoneType} [Home='Home']
+          */
           static Home = new ContactPhoneType("Home");
+          /**
+             @property {Adaptive.ContactPhoneType} [Main='Main']
+          */
           static Main = new ContactPhoneType("Main");
+          /**
+             @property {Adaptive.ContactPhoneType} [HomeFax='HomeFax']
+          */
           static HomeFax = new ContactPhoneType("HomeFax");
+          /**
+             @property {Adaptive.ContactPhoneType} [WorkFax='WorkFax']
+          */
           static WorkFax = new ContactPhoneType("WorkFax");
+          /**
+             @property {Adaptive.ContactPhoneType} [Other='Other']
+          */
           static Other = new ContactPhoneType("Other");
+          /**
+             @property {Adaptive.ContactPhoneType} [Unknown='Unknown']
+          */
           static Unknown = new ContactPhoneType("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ContactPhoneType}
           */
           static toObject(object : any) : ContactPhoneType {
                if (object != null && object.value != null) {

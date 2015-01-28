@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IContactResultCallbackWarning} Adaptive.IContactResultCallbackWarning
         Enumeration IContactResultCallbackWarning
      */
      export class IContactResultCallbackWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
+          */
           static LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
+          /**
+             @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
+          */
           static No_Matches = new IContactResultCallbackWarning("No_Matches");
+          /**
+             @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IContactResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IContactResultCallbackWarning}
           */
           static toObject(object : any) : IContactResultCallbackWarning {
                if (object != null && object.value != null) {

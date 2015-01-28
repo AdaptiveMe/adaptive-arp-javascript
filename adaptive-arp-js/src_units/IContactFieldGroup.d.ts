@@ -33,23 +33,63 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IContactFieldGroup
        Enumeration IContactFieldGroup
     */
     class IContactFieldGroup {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IContactFieldGroup.PERSONAL_INFO=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static PERSONAL_INFO: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.PROFESSIONAL_INFO=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static PROFESSIONAL_INFO: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.ADDRESSES=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static ADDRESSES: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.PHONES=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static PHONES: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.EMAILS=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static EMAILS: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.WEBSITES=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static WEBSITES: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.SOCIALS=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static SOCIALS: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.TAGS=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static TAGS: IContactFieldGroup;
+        /**
+           @enum [Adaptive.IContactFieldGroup.Unknown=Adaptive.IContactFieldGroup.*]
+           @static
+        */
         static Unknown: IContactFieldGroup;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactFieldGroup}
         */
         static toObject(object: any): IContactFieldGroup;
     }

@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesNotification} Adaptive.ICapabilitiesNotification
         Enumeration ICapabilitiesNotification
      */
      export class ICapabilitiesNotification {
@@ -42,14 +43,32 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']
+          */
           static Alarm = new ICapabilitiesNotification("Alarm");
+          /**
+             @property {Adaptive.ICapabilitiesNotification} [LocalNotification='LocalNotification']
+          */
           static LocalNotification = new ICapabilitiesNotification("LocalNotification");
+          /**
+             @property {Adaptive.ICapabilitiesNotification} [RemoteNotification='RemoteNotification']
+          */
           static RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
+          /**
+             @property {Adaptive.ICapabilitiesNotification} [Vibration='Vibration']
+          */
           static Vibration = new ICapabilitiesNotification("Vibration");
+          /**
+             @property {Adaptive.ICapabilitiesNotification} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesNotification("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesNotification}
           */
           static toObject(object : any) : ICapabilitiesNotification {
                if (object != null && object.value != null) {

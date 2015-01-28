@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileSystemSecurity
        Enumeration IFileSystemSecurity
     */
     var IFileSystemSecurity = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileSystemSecurity}
         */
         IFileSystemSecurity.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IFileSystemSecurity.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileSystemSecurity.Default=Adaptive.IFileSystemSecurity.*]
+           @static
+        */
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");
+        /**
+           @enum [Adaptive.IFileSystemSecurity.Protected=Adaptive.IFileSystemSecurity.*]
+           @static
+        */
         IFileSystemSecurity.Protected = new IFileSystemSecurity("Protected");
+        /**
+           @enum [Adaptive.IFileSystemSecurity.Encrypted=Adaptive.IFileSystemSecurity.*]
+           @static
+        */
         IFileSystemSecurity.Encrypted = new IFileSystemSecurity("Encrypted");
+        /**
+           @enum [Adaptive.IFileSystemSecurity.Unknown=Adaptive.IFileSystemSecurity.*]
+           @static
+        */
         IFileSystemSecurity.Unknown = new IFileSystemSecurity("Unknown");
         return IFileSystemSecurity;
     })();

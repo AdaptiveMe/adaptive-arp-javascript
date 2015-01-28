@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class VibrationBridge extends BaseNotificationBridge implements IVibration {
+       @class Adaptive.VibrationBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Vibration operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class VibrationBridge extends BaseNotificationBridge implements IVibration {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.NotificationBridge
+        @extends Adaptive.BaseNotificationBridge
         Interface for Managing the Notification operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class NotificationBridge extends BaseNotificationBridge implements INotification {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

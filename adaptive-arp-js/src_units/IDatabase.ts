@@ -48,8 +48,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IDatabase
+        @extends Adaptive.IBaseData
+     */
      export interface IDatabase extends IBaseData {
           /**
+             @method
              Creates a database on default path for every platform.
              @param callback Asynchronous callback
              @param database Database object to create
@@ -57,6 +62,7 @@ module Adaptive {
           */
           createDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
+             @method
              Creates a databaseTable inside a database for every platform.
              @param database      Database for databaseTable creating.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
@@ -65,6 +71,7 @@ module Adaptive {
           */
           createTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
+             @method
              Deletes a database on default path for every platform.
              @param database Database object to delete
              @param callback Asynchronous callback
@@ -72,6 +79,7 @@ module Adaptive {
           */
           deleteDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
+             @method
              Deletes a databaseTable inside a database for every platform.
              @param database      Database for databaseTable removal.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
@@ -80,6 +88,7 @@ module Adaptive {
           */
           deleteTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
+             @method
              Executes SQL statement into the given database. The replacements
 should be passed as a parameter
              @param database     The database object reference.
@@ -90,6 +99,7 @@ should be passed as a parameter
           */
           executeSqlStatement(database:Database, statement:string, replacements:Array<string>, callback:IDatabaseTableResultCallback);
           /**
+             @method
              Executes SQL transaction (some statements chain) inside given database.
              @param database     The database object reference.
              @param statements   The statements to be executed during transaction.
@@ -100,17 +110,19 @@ should be passed as a parameter
           */
           executeSqlTransactions(database:Database, statements:Array<string>, rollbackFlag:boolean, callback:IDatabaseTableResultCallback);
           /**
+             @method
              Checks if database exists by given database name.
              @param database Database Object to check if exists
-             @return True if exists, false otherwise
+             @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
           existsDatabase(database:Database) : boolean;
           /**
+             @method
              Checks if databaseTable exists by given database name.
              @param database      Database for databaseTable consulting.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-             @return True if exists, false otherwise
+             @return {boolean} True if exists, false otherwise
              @since ARP1.0
           */
           existsTable(database:Database, databaseTable:DatabaseTable) : boolean;

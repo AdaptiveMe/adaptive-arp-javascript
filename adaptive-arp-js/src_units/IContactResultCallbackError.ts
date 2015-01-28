@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IContactResultCallbackError} Adaptive.IContactResultCallbackError
         Enumeration IContactResultCallbackError
      */
      export class IContactResultCallbackError {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
+          */
           static NoPermission = new IContactResultCallbackError("NoPermission");
+          /**
+             @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+          */
           static Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+          /**
+             @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new IContactResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IContactResultCallbackError}
           */
           static toObject(object : any) : IContactResultCallbackError {
                if (object != null && object.value != null) {

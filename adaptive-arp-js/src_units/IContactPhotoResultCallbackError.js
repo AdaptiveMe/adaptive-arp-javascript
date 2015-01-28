@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     var IContactPhotoResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactPhotoResultCallbackError}
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IContactPhotoResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.NoPermission=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.Wrong_Params=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.No_Photo=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.Unknown=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         IContactPhotoResultCallbackError.Unknown = new IContactPhotoResultCallbackError("Unknown");
         return IContactPhotoResultCallbackError;
     })();

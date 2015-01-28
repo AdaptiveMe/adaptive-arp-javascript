@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IButtonListener
+        @extends Adaptive.IBaseListener
+     */
      export interface IButtonListener extends IBaseListener {
           /**
+             @method
              No data received
              @param error occurred
              @since ARP1.0
           */
           onError(error:IButtonListenerError);
           /**
+             @method
              Called on button pressed
              @param button pressed
              @since ARP1.0
           */
           onResult(button:Button);
           /**
+             @method
              Data received with warning
              @param button  pressed
              @param warning happened

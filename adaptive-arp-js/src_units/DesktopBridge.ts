@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.DesktopBridge
+        @extends Adaptive.BaseUIBridge
         Interface for Managing the Desktop operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class DesktopBridge extends BaseUIBridge implements IDesktop {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

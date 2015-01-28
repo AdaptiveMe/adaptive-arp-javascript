@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.BrowserBridge
+        @extends Adaptive.BaseUIBridge
         Interface for Managing the browser operations
 
         @author Francisco Javier Martin Bueno
@@ -50,6 +52,7 @@ module Adaptive {
      export class BrowserBridge extends BaseUIBridge implements IBrowser {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

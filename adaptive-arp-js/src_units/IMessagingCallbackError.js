@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IMessagingCallbackError
        Enumeration IMessagingCallbackError
     */
     var IMessagingCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IMessagingCallbackError}
         */
         IMessagingCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return IMessagingCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IMessagingCallbackError.SIMNotPresent=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.SIMNotPresent = new IMessagingCallbackError("SIMNotPresent");
+        /**
+           @enum [Adaptive.IMessagingCallbackError.EmailAccountNotFound=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.EmailAccountNotFound = new IMessagingCallbackError("EmailAccountNotFound");
+        /**
+           @enum [Adaptive.IMessagingCallbackError.NotSent=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.NotSent = new IMessagingCallbackError("NotSent");
+        /**
+           @enum [Adaptive.IMessagingCallbackError.WrongParams=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.WrongParams = new IMessagingCallbackError("WrongParams");
+        /**
+           @enum [Adaptive.IMessagingCallbackError.NotSupported=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.NotSupported = new IMessagingCallbackError("NotSupported");
+        /**
+           @enum [Adaptive.IMessagingCallbackError.Unknown=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         IMessagingCallbackError.Unknown = new IMessagingCallbackError("Unknown");
         return IMessagingCallbackError;
     })();

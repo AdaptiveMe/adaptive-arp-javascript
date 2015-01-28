@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class SocketBridge extends BaseCommunicationBridge implements ISocket {
+       @class Adaptive.SocketBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Socket operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class SocketBridge extends BaseCommunicationBridge implements ISocket {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

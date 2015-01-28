@@ -49,8 +49,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IContact
+        @extends Adaptive.IBasePIM
+     */
      export interface IContact extends IBasePIM {
           /**
+             @method
              Get the contact photo
              @param contact  id to search for
              @param callback called for return
@@ -58,6 +63,7 @@ module Adaptive {
           */
           getContactPhoto(contact:ContactUid, callback:IContactPhotoResultCallback);
           /**
+             @method
              Get all the details of a contact according to its id
              @param contact  id to search for
              @param callback called for return
@@ -65,6 +71,7 @@ module Adaptive {
           */
           getContact(contact:ContactUid, callback:IContactResultCallback);
           /**
+             @method
              Get marked fields of all contacts
              @param callback called for return
              @param fields   to get for each Contact
@@ -72,6 +79,7 @@ module Adaptive {
           */
           getContactsForFields(callback:IContactResultCallback, fields:Array<IContactFieldGroup>);
           /**
+             @method
              Get marked fields of all contacts according to a filter
              @param callback called for return
              @param fields   to get for each Contact
@@ -80,12 +88,14 @@ module Adaptive {
           */
           getContactsWithFilter(callback:IContactResultCallback, fields:Array<IContactFieldGroup>, filter:Array<IContactFilter>);
           /**
+             @method
              Get all contacts
              @param callback called for return
              @since ARP1.0
           */
           getContacts(callback:IContactResultCallback);
           /**
+             @method
              Search contacts according to a term with a filter and send it to the callback
              @param term     string to search
              @param callback called for return
@@ -94,6 +104,7 @@ module Adaptive {
           */
           searchContactsWithFilter(term:string, callback:IContactResultCallback, filter:Array<IContactFilter>);
           /**
+             @method
              Search contacts according to a term and send it to the callback
              @param term     string to search
              @param callback called for return
@@ -101,10 +112,11 @@ module Adaptive {
           */
           searchContacts(term:string, callback:IContactResultCallback);
           /**
+             @method
              Set the contact photo
              @param contact  id to assign the photo
              @param pngImage photo as byte array
-             @return true if set is successful;false otherwise
+             @return {boolean} true if set is successful;false otherwise
              @since ARP1.0
           */
           setContactPhoto(contact:ContactUid, pngImage:Array<number>) : boolean;

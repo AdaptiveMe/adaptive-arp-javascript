@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.FileDescriptor
+       @extends Adaptive.APIBean
        Implementation of FileDescriptor bean.
 
        @author Carlos Lozano Diez

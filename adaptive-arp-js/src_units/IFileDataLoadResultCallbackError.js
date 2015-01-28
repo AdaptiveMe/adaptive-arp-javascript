@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileDataLoadResultCallbackError
        Enumeration IFileDataLoadResultCallbackError
     */
     var IFileDataLoadResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileDataLoadResultCallbackError}
         */
         IFileDataLoadResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IFileDataLoadResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileDataLoadResultCallbackError.InexistentFile=Adaptive.IFileDataLoadResultCallbackError.*]
+           @static
+        */
         IFileDataLoadResultCallbackError.InexistentFile = new IFileDataLoadResultCallbackError("InexistentFile");
+        /**
+           @enum [Adaptive.IFileDataLoadResultCallbackError.InsufficientSpace=Adaptive.IFileDataLoadResultCallbackError.*]
+           @static
+        */
         IFileDataLoadResultCallbackError.InsufficientSpace = new IFileDataLoadResultCallbackError("InsufficientSpace");
+        /**
+           @enum [Adaptive.IFileDataLoadResultCallbackError.Unauthorized=Adaptive.IFileDataLoadResultCallbackError.*]
+           @static
+        */
         IFileDataLoadResultCallbackError.Unauthorized = new IFileDataLoadResultCallbackError("Unauthorized");
+        /**
+           @enum [Adaptive.IFileDataLoadResultCallbackError.Unknown=Adaptive.IFileDataLoadResultCallbackError.*]
+           @static
+        */
         IFileDataLoadResultCallbackError.Unknown = new IFileDataLoadResultCallbackError("Unknown");
         return IFileDataLoadResultCallbackError;
     })();

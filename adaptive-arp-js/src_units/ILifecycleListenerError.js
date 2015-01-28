@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ILifecycleListenerError
        Enumeration ILifecycleListenerError
     */
     var ILifecycleListenerError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILifecycleListenerError}
         */
         ILifecycleListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return ILifecycleListenerError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Runtime=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         ILifecycleListenerError.Runtime = new ILifecycleListenerError("Runtime");
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Implementation=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         ILifecycleListenerError.Implementation = new ILifecycleListenerError("Implementation");
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Killed=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         ILifecycleListenerError.Killed = new ILifecycleListenerError("Killed");
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Unknown=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         ILifecycleListenerError.Unknown = new ILifecycleListenerError("Unknown");
         return ILifecycleListenerError;
     })();

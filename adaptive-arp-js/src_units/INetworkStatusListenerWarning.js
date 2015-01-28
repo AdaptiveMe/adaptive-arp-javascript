@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     var INetworkStatusListenerWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {INetworkStatusListenerWarning}
         */
         INetworkStatusListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return INetworkStatusListenerWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressNotAssigned=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         INetworkStatusListenerWarning.IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressChanged=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         INetworkStatusListenerWarning.IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.Unknown=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         INetworkStatusListenerWarning.Unknown = new INetworkStatusListenerWarning("Unknown");
         return INetworkStatusListenerWarning;
     })();

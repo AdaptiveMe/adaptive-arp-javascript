@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.DatabaseColumn
+       @extends Adaptive.APIBean
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa

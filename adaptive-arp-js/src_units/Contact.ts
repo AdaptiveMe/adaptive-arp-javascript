@@ -45,6 +45,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Contact
+        @extends Adaptive.ContactUid
         Structure representing the data elements of a contact.
 
         @author Francisco Javier Martin Bueno

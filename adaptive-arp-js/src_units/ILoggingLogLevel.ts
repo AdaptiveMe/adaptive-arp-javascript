@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ILoggingLogLevel} Adaptive.ILoggingLogLevel
         Enumeration ILoggingLogLevel
      */
      export class ILoggingLogLevel {
@@ -42,14 +43,32 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+          */
           static DEBUG = new ILoggingLogLevel("DEBUG");
+          /**
+             @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+          */
           static WARN = new ILoggingLogLevel("WARN");
+          /**
+             @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+          */
           static ERROR = new ILoggingLogLevel("ERROR");
+          /**
+             @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+          */
           static INFO = new ILoggingLogLevel("INFO");
+          /**
+             @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
+          */
           static Unknown = new ILoggingLogLevel("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ILoggingLogLevel}
           */
           static toObject(object : any) : ILoggingLogLevel {
                if (object != null && object.value != null) {

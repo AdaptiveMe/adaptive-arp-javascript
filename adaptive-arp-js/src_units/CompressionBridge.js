@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CompressionBridge extends BaseUtilBridge implements ICompression {
+       @class Adaptive.CompressionBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Compression operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var CompressionBridge = (function (_super) {
         __extends(CompressionBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CompressionBridge() {

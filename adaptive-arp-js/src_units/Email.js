@@ -43,6 +43,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Email
+       @extends Adaptive.APIBean
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno

@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Geolocation
+       @extends Adaptive.APIBean
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno

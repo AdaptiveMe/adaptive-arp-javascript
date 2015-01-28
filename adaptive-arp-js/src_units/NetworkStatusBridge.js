@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
+       @class Adaptive.NetworkStatusBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
@@ -57,6 +60,7 @@ var Adaptive;
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkStatusBridge() {

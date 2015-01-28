@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.AnalyticsBridge
+        @extends Adaptive.BaseApplicationBridge
         Interface for Analytics purposes
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

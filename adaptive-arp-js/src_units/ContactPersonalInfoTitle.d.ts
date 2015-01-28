@@ -33,19 +33,43 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     class ContactPersonalInfoTitle {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Mr=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         static Mr: ContactPersonalInfoTitle;
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Mrs=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         static Mrs: ContactPersonalInfoTitle;
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Ms=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         static Ms: ContactPersonalInfoTitle;
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Dr=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         static Dr: ContactPersonalInfoTitle;
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Unknown=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         static Unknown: ContactPersonalInfoTitle;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactPersonalInfoTitle}
         */
         static toObject(object: any): ContactPersonalInfoTitle;
     }

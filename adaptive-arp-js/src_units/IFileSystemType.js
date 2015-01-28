@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileSystemType
        Enumeration IFileSystemType
     */
     var IFileSystemType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileSystemType}
         */
         IFileSystemType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IFileSystemType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileSystemType.Directory=Adaptive.IFileSystemType.*]
+           @static
+        */
         IFileSystemType.Directory = new IFileSystemType("Directory");
+        /**
+           @enum [Adaptive.IFileSystemType.File=Adaptive.IFileSystemType.*]
+           @static
+        */
         IFileSystemType.File = new IFileSystemType("File");
+        /**
+           @enum [Adaptive.IFileSystemType.Unknown=Adaptive.IFileSystemType.*]
+           @static
+        */
         IFileSystemType.Unknown = new IFileSystemType("Unknown");
         return IFileSystemType;
     })();

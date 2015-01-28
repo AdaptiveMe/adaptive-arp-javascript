@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
+       @class Adaptive.NetworkReachabilityBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
@@ -57,6 +60,7 @@ var Adaptive;
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkReachabilityBridge() {

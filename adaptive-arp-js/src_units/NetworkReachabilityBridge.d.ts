@@ -42,6 +42,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
+       @class Adaptive.NetworkReachabilityBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
@@ -49,6 +52,7 @@ declare module Adaptive {
     */
     class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

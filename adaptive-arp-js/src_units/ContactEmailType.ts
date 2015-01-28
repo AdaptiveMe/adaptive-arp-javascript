@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ContactEmailType} Adaptive.ContactEmailType
         Enumeration ContactEmailType
      */
      export class ContactEmailType {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ContactEmailType} [Personal='Personal']
+          */
           static Personal = new ContactEmailType("Personal");
+          /**
+             @property {Adaptive.ContactEmailType} [Work='Work']
+          */
           static Work = new ContactEmailType("Work");
+          /**
+             @property {Adaptive.ContactEmailType} [Other='Other']
+          */
           static Other = new ContactEmailType("Other");
+          /**
+             @property {Adaptive.ContactEmailType} [Unknown='Unknown']
+          */
           static Unknown = new ContactEmailType("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ContactEmailType}
           */
           static toObject(object : any) : ContactEmailType {
                if (object != null && object.value != null) {

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class UpdateBridge extends BaseApplicationBridge implements IUpdate {
+       @class Adaptive.UpdateBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Update operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var UpdateBridge = (function (_super) {
         __extends(UpdateBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function UpdateBridge() {

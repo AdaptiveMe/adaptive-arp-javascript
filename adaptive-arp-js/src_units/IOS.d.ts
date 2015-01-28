@@ -42,10 +42,16 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IOS
+       @extends {IBaseSystem}
+       @abstract
+    */
     interface IOS extends IBaseSystem {
         /**
+           @method
            Returns the OSInfo for the current operating system.
-           @return OSInfo with name, version and vendor of the OS.
+           @return {OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         getOSInfo(): OSInfo;

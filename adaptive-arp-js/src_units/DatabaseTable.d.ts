@@ -36,6 +36,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.DatabaseTable
+       @extends Adaptive.APIBean
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa

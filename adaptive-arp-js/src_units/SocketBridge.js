@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class SocketBridge extends BaseCommunicationBridge implements ISocket {
+       @class Adaptive.SocketBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Socket operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var SocketBridge = (function (_super) {
         __extends(SocketBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function SocketBridge() {

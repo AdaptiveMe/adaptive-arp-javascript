@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.OpenIdBridge
+        @extends Adaptive.BaseSecurityBridge
         Interface for Managing the OpenID operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

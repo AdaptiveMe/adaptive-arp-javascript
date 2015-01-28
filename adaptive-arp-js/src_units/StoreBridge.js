@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class StoreBridge extends BaseCommerceBridge implements IStore {
+       @class Adaptive.StoreBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Managing the Store operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var StoreBridge = (function (_super) {
         __extends(StoreBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function StoreBridge() {

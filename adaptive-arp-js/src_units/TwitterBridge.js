@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class TwitterBridge extends BaseSocialBridge implements ITwitter {
+       @class Adaptive.TwitterBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Twitter operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var TwitterBridge = (function (_super) {
         __extends(TwitterBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TwitterBridge() {

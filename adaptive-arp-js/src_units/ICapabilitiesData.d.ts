@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesData
        Enumeration ICapabilitiesData
     */
     class ICapabilitiesData {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesData.Database=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         static Database: ICapabilitiesData;
+        /**
+           @enum [Adaptive.ICapabilitiesData.File=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         static File: ICapabilitiesData;
+        /**
+           @enum [Adaptive.ICapabilitiesData.Cloud=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         static Cloud: ICapabilitiesData;
+        /**
+           @enum [Adaptive.ICapabilitiesData.Unknown=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         static Unknown: ICapabilitiesData;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesData}
         */
         static toObject(object: any): ICapabilitiesData;
     }

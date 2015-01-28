@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class WalletBridge extends BaseCommerceBridge implements IWallet {
+       @class Adaptive.WalletBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Managing the Wallet operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var WalletBridge = (function (_super) {
         __extends(WalletBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function WalletBridge() {

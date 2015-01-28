@@ -44,6 +44,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ServiceRequest
+       @extends Adaptive.APIBean
        Represents a local or remote service request.
 
        @author Aryslan

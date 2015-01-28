@@ -41,6 +41,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class LoggingBridge extends BaseUtilBridge implements ILogging {
+       @class Adaptive.LoggingBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Logging operations
 
        @author Ferran Vila Conesa
@@ -48,6 +51,7 @@ declare module Adaptive {
     */
     class LoggingBridge extends BaseUtilBridge implements ILogging {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

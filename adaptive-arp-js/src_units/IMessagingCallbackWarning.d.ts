@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     class IMessagingCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.UnableToSentAll=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         static UnableToSentAll: IMessagingCallbackWarning;
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.UnableToFetchAttachment=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         static UnableToFetchAttachment: IMessagingCallbackWarning;
+        /**
+           @enum [Adaptive.IMessagingCallbackWarning.Unknown=Adaptive.IMessagingCallbackWarning.*]
+           @static
+        */
         static Unknown: IMessagingCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IMessagingCallbackWarning}
         */
         static toObject(object: any): IMessagingCallbackWarning;
     }

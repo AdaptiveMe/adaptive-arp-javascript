@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBluetooth
+       @extends {IBaseCommunication}
+       @abstract
+    */
     interface IBluetooth extends IBaseCommunication {
     }
 }

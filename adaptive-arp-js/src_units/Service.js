@@ -44,6 +44,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan

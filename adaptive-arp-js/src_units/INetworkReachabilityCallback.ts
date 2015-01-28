@@ -46,20 +46,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.INetworkReachabilityCallback
+        @extends Adaptive.IBaseCallback
+     */
      export interface INetworkReachabilityCallback extends IBaseCallback {
           /**
+             @method
              No data received - error condition, not authorized .
              @param error Error value
              @since ARP1.0
           */
           onError(error:INetworkReachabilityCallbackError);
           /**
+             @method
              Correct data received.
              @param reachable Indicates if the host is reachable
              @since ARP1.0
           */
           onResult(reachable:boolean);
           /**
+             @method
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param reachable Indicates if the host is reachable
              @param warning   Warning value

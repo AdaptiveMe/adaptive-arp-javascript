@@ -49,6 +49,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Contact
+       @extends Adaptive.ContactUid
        Structure representing the data elements of a contact.
 
        @author Francisco Javier Martin Bueno

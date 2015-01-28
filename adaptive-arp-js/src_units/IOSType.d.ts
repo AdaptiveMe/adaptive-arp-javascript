@@ -33,26 +33,78 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IOSType
        Enumeration IOSType
     */
     class IOSType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IOSType.iOS=Adaptive.IOSType.*]
+           @static
+        */
         static iOS: IOSType;
+        /**
+           @enum [Adaptive.IOSType.OSX=Adaptive.IOSType.*]
+           @static
+        */
         static OSX: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Windows=Adaptive.IOSType.*]
+           @static
+        */
         static Windows: IOSType;
+        /**
+           @enum [Adaptive.IOSType.WindowsPhone=Adaptive.IOSType.*]
+           @static
+        */
         static WindowsPhone: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Android=Adaptive.IOSType.*]
+           @static
+        */
         static Android: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Linux=Adaptive.IOSType.*]
+           @static
+        */
         static Linux: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Blackberry=Adaptive.IOSType.*]
+           @static
+        */
         static Blackberry: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Tizen=Adaptive.IOSType.*]
+           @static
+        */
         static Tizen: IOSType;
+        /**
+           @enum [Adaptive.IOSType.FirefoxOS=Adaptive.IOSType.*]
+           @static
+        */
         static FirefoxOS: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Chromium=Adaptive.IOSType.*]
+           @static
+        */
         static Chromium: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Unspecified=Adaptive.IOSType.*]
+           @static
+        */
         static Unspecified: IOSType;
+        /**
+           @enum [Adaptive.IOSType.Unknown=Adaptive.IOSType.*]
+           @static
+        */
         static Unknown: IOSType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IOSType}
         */
         static toObject(object: any): IOSType;
     }

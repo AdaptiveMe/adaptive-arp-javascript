@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IContactResultCallbackWarning
        Enumeration IContactResultCallbackWarning
     */
     var IContactResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactResultCallbackWarning}
         */
         IContactResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IContactResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IContactResultCallbackWarning.LimitExceeded=Adaptive.IContactResultCallbackWarning.*]
+           @static
+        */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
+        /**
+           @enum [Adaptive.IContactResultCallbackWarning.No_Matches=Adaptive.IContactResultCallbackWarning.*]
+           @static
+        */
         IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
+        /**
+           @enum [Adaptive.IContactResultCallbackWarning.Unknown=Adaptive.IContactResultCallbackWarning.*]
+           @static
+        */
         IContactResultCallbackWarning.Unknown = new IContactResultCallbackWarning("Unknown");
         return IContactResultCallbackWarning;
     })();

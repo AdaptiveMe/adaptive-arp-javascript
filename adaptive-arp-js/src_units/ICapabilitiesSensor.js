@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     var ICapabilitiesSensor = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesSensor}
         */
         ICapabilitiesSensor.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -73,13 +77,45 @@ var Adaptive;
                 return ICapabilitiesSensor.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Accelerometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Accelerometer = new ICapabilitiesSensor("Accelerometer");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.AmbientLight=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.AmbientLight = new ICapabilitiesSensor("AmbientLight");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Barometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Barometer = new ICapabilitiesSensor("Barometer");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Geolocation=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Geolocation = new ICapabilitiesSensor("Geolocation");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Gyroscope=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Gyroscope = new ICapabilitiesSensor("Gyroscope");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Magnetometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Magnetometer = new ICapabilitiesSensor("Magnetometer");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Proximity=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Proximity = new ICapabilitiesSensor("Proximity");
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Unknown=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         ICapabilitiesSensor.Unknown = new ICapabilitiesSensor("Unknown");
         return ICapabilitiesSensor;
     })();

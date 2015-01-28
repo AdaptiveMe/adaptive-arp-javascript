@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileListResultCallbackWarning
        Enumeration IFileListResultCallbackWarning
     */
     var IFileListResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileListResultCallbackWarning}
         */
         IFileListResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -61,7 +65,15 @@ var Adaptive;
                 return IFileListResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileListResultCallbackWarning.PartialResult=Adaptive.IFileListResultCallbackWarning.*]
+           @static
+        */
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
+        /**
+           @enum [Adaptive.IFileListResultCallbackWarning.Unknown=Adaptive.IFileListResultCallbackWarning.*]
+           @static
+        */
         IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
         return IFileListResultCallbackWarning;
     })();

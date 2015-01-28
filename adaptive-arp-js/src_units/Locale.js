@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Locale
+       @extends Adaptive.APIBean
        Represents a specific user or system locate.
 
        @author Aryslan

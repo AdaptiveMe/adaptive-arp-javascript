@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Database
+       @extends Adaptive.APIBean
        Structure representing a database reference.
 
        @author Ferran Vila Conesa

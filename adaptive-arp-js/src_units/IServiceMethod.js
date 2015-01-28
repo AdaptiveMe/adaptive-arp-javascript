@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     var IServiceMethod = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceMethod}
         */
         IServiceMethod.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IServiceMethod.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IServiceMethod.Post=Adaptive.IServiceMethod.*]
+           @static
+        */
         IServiceMethod.Post = new IServiceMethod("Post");
+        /**
+           @enum [Adaptive.IServiceMethod.Get=Adaptive.IServiceMethod.*]
+           @static
+        */
         IServiceMethod.Get = new IServiceMethod("Get");
+        /**
+           @enum [Adaptive.IServiceMethod.Unknown=Adaptive.IServiceMethod.*]
+           @static
+        */
         IServiceMethod.Unknown = new IServiceMethod("Unknown");
         return IServiceMethod;
     })();

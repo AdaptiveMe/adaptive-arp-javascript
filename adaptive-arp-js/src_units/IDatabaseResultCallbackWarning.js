@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     var IDatabaseResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseResultCallbackWarning}
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IDatabaseResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.DatabaseExists=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         IDatabaseResultCallbackWarning.DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.IsOpen=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         IDatabaseResultCallbackWarning.IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.Unknown=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         IDatabaseResultCallbackWarning.Unknown = new IDatabaseResultCallbackWarning("Unknown");
         return IDatabaseResultCallbackWarning;
     })();

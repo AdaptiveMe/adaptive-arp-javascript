@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.CloudBridge
+        @extends Adaptive.BaseDataBridge
         Interface for Managing the Cloud operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class CloudBridge extends BaseDataBridge implements ICloud {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

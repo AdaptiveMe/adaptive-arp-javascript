@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     class IDatabaseResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.NoSpace=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         static NoSpace: IDatabaseResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.SqlException=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         static SqlException: IDatabaseResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.NotDeleted=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         static NotDeleted: IDatabaseResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.Unknown=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         static Unknown: IDatabaseResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseResultCallbackError}
         */
         static toObject(object: any): IDatabaseResultCallbackError;
     }

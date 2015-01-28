@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.INetworkInfo
+        @extends Adaptive.IBaseCommunication
+     */
      export interface INetworkInfo extends IBaseCommunication {
      }
 }

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
+       @class Adaptive.NetworkNamingBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network naming operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var NetworkNamingBridge = (function (_super) {
         __extends(NetworkNamingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkNamingBridge() {

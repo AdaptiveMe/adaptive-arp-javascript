@@ -65,7 +65,7 @@ module Adaptive {
 
           /**
              Get the listener id.
-             @return long with the identifier of the listener.
+             @return {number} long with the identifier of the listener.
           */
           getId() : number {
                return this.id;

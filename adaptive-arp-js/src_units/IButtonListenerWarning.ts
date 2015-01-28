@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IButtonListenerWarning} Adaptive.IButtonListenerWarning
         Enumeration IButtonListenerWarning
      */
      export class IButtonListenerWarning {
@@ -42,11 +43,20 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+          */
           static Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+          /**
+             @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
+          */
           static Unknown = new IButtonListenerWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IButtonListenerWarning}
           */
           static toObject(object : any) : IButtonListenerWarning {
                if (object != null && object.value != null) {

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
+       @class Adaptive.GyroscopeBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Giroscope operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var GyroscopeBridge = (function (_super) {
         __extends(GyroscopeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GyroscopeBridge() {

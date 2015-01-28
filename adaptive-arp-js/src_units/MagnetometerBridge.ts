@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.MagnetometerBridge
+        @extends Adaptive.BaseSensorBridge
         Interface for Managing the Magnetometer operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

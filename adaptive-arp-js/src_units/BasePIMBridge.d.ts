@@ -39,6 +39,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BasePIMBridge implements IBasePIM {
+       @class Adaptive.BasePIMBridge
+       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
@@ -46,18 +49,23 @@ declare module Adaptive {
     */
     class BasePIMBridge implements IBasePIM {
         /**
+           @property
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

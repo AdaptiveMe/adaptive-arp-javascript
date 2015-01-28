@@ -39,6 +39,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BaseReaderBridge implements IBaseReader {
+       @class Adaptive.BaseReaderBridge
+       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
@@ -46,18 +49,23 @@ declare module Adaptive {
     */
     class BaseReaderBridge implements IBaseReader {
         /**
+           @property
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

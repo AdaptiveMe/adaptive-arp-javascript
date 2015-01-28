@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseMediaBridge implements IBaseMedia {
+       @class Adaptive.BaseMediaBridge
+       @extends Adaptive.IBaseMedia
        Base application for Media purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseMediaBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseMediaBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Media;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseMediaBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

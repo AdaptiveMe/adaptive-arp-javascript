@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class AlarmBridge extends BaseNotificationBridge implements IAlarm {
+       @class Adaptive.AlarmBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Alarm purposes
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class AlarmBridge extends BaseNotificationBridge implements IAlarm {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

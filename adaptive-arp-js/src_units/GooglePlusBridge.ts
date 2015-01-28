@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.GooglePlusBridge
+        @extends Adaptive.BaseSocialBridge
         Interface for Managing the Google Plus operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

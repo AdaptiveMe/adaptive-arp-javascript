@@ -47,15 +47,21 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IService
+        @extends Adaptive.IBaseCommunication
+     */
      export interface IService extends IBaseCommunication {
           /**
+             @method
              Get a reference to a registered service by name.
              @param serviceName Name of service.
-             @return A service, if registered, or null of the service does not exist.
+             @return {Service} A service, if registered, or null of the service does not exist.
              @since ARP1.0
           */
           getService(serviceName:string) : Service;
           /**
+             @method
              Request async a service for an Url
              @param serviceRequest Service Request to invoke
              @param service        Service to call
@@ -64,17 +70,20 @@ module Adaptive {
           */
           invokeService(serviceRequest:ServiceRequest, service:Service, callback:IServiceResultCallback);
           /**
+             @method
              Register a new service
              @param service to register
              @since ARP1.0
           */
           registerService(service:Service);
           /**
+             @method
              Unregister all services.
              @since ARP1.0
           */
           unregisterServices();
           /**
+             @method
              Unregister a service
              @param service to unregister
              @since ARP1.0

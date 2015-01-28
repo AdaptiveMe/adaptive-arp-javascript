@@ -43,6 +43,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.TelephonyBridge
+        @extends Adaptive.BaseCommunicationBridge
         Interface for Managing the Telephony operations
 
         @author Francisco Javier Martin Bueno
@@ -51,6 +53,7 @@ module Adaptive {
      export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

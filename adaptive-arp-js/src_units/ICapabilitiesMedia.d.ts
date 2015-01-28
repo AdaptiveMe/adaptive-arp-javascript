@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesMedia
        Enumeration ICapabilitiesMedia
     */
     class ICapabilitiesMedia {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Audio_Playback=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Audio_Playback: ICapabilitiesMedia;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Audio_Recording=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Audio_Recording: ICapabilitiesMedia;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Camera=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Camera: ICapabilitiesMedia;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Video_Playback=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Video_Playback: ICapabilitiesMedia;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Video_Recording=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Video_Recording: ICapabilitiesMedia;
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Unknown=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         static Unknown: ICapabilitiesMedia;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesMedia}
         */
         static toObject(object: any): ICapabilitiesMedia;
     }

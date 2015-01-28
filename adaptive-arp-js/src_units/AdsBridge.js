@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AdsBridge extends BaseCommerceBridge implements IAds {
+       @class Adaptive.AdsBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Advertising purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var AdsBridge = (function (_super) {
         __extends(AdsBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AdsBridge() {

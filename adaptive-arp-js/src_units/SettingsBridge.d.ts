@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class SettingsBridge extends BaseApplicationBridge implements ISettings {
+       @class Adaptive.SettingsBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Settings operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class SettingsBridge extends BaseApplicationBridge implements ISettings {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -33,22 +33,58 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     class ICapabilitiesSensor {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Accelerometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Accelerometer: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.AmbientLight=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static AmbientLight: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Barometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Barometer: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Geolocation=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Geolocation: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Gyroscope=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Gyroscope: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Magnetometer=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Magnetometer: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Proximity=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Proximity: ICapabilitiesSensor;
+        /**
+           @enum [Adaptive.ICapabilitiesSensor.Unknown=Adaptive.ICapabilitiesSensor.*]
+           @static
+        */
         static Unknown: ICapabilitiesSensor;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesSensor}
         */
         static toObject(object: any): ICapabilitiesSensor;
     }

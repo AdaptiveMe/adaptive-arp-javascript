@@ -46,6 +46,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class DatabaseBridge extends BaseDataBridge implements IDatabase {
+       @class Adaptive.DatabaseBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
@@ -53,6 +56,7 @@ declare module Adaptive {
     */
     class DatabaseBridge extends BaseDataBridge implements IDatabase {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactUid
+       @extends Adaptive.APIBean
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno

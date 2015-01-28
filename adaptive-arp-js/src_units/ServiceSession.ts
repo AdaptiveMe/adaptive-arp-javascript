@@ -38,6 +38,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ServiceSession
+        @extends Adaptive.APIBean
         Represents a session object for HTTP request and responses
 
         @author Ferran Vila Conesa

@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IFileDataStoreResultCallbackError
        Enumeration IFileDataStoreResultCallbackError
     */
     class IFileDataStoreResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackError.InexistentFile=Adaptive.IFileDataStoreResultCallbackError.*]
+           @static
+        */
         static InexistentFile: IFileDataStoreResultCallbackError;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackError.InsufficientSpace=Adaptive.IFileDataStoreResultCallbackError.*]
+           @static
+        */
         static InsufficientSpace: IFileDataStoreResultCallbackError;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackError.Unauthorized=Adaptive.IFileDataStoreResultCallbackError.*]
+           @static
+        */
         static Unauthorized: IFileDataStoreResultCallbackError;
+        /**
+           @enum [Adaptive.IFileDataStoreResultCallbackError.Unknown=Adaptive.IFileDataStoreResultCallbackError.*]
+           @static
+        */
         static Unknown: IFileDataStoreResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileDataStoreResultCallbackError}
         */
         static toObject(object: any): IFileDataStoreResultCallbackError;
     }

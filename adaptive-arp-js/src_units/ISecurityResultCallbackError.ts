@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ISecurityResultCallbackError} Adaptive.ISecurityResultCallbackError
         Enumeration ISecurityResultCallbackError
      */
      export class ISecurityResultCallbackError {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ISecurityResultCallbackError} [NoPermission='NoPermission']
+          */
           static NoPermission = new ISecurityResultCallbackError("NoPermission");
+          /**
+             @property {Adaptive.ISecurityResultCallbackError} [NoMatchesFound='NoMatchesFound']
+          */
           static NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
+          /**
+             @property {Adaptive.ISecurityResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new ISecurityResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ISecurityResultCallbackError}
           */
           static toObject(object : any) : ISecurityResultCallbackError {
                if (object != null && object.value != null) {

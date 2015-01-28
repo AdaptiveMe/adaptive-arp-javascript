@@ -43,20 +43,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileDataLoadResultCallback
+       @extends {IBaseCallback}
+       @abstract
+    */
     interface IFileDataLoadResultCallback extends IBaseCallback {
         /**
+           @method
            Error processing data retrieval/storage operation.
            @param error Error condition encountered.
            @since ARP1.0
         */
         onError(error: IFileDataLoadResultCallbackError): any;
         /**
+           @method
            Result of data retrieval operation.
            @param data Data loaded.
            @since ARP1.0
         */
         onResult(data: number[]): any;
         /**
+           @method
            Result with warning of data retrieval/storage operation.
            @param data    File being loaded.
            @param warning Warning condition encountered.

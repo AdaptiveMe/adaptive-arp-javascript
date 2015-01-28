@@ -177,6 +177,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AppRegistryBridge implements IAppRegistry {
+       @class Adaptive.AppRegistryBridge
+       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez
@@ -185,6 +188,13 @@ var Adaptive;
     var AppRegistryBridge = (function () {
         function AppRegistryBridge() {
         }
+        /**
+           Singleton instance of AppRegistry.
+           @static
+           @singleton
+           @method
+           @return {AppRegistryBridge}
+        */
         AppRegistryBridge.getInstance = function () {
             if (AppRegistryBridge.instance === null) {
                 AppRegistryBridge.instance = new AppRegistryBridge();
@@ -192,9 +202,10 @@ var Adaptive;
             return AppRegistryBridge.instance;
         };
         /**
+           @method
            Obtain a reference to the IAcceleration bridge.
 
-           @return IAcceleration bridge instance.
+           @return {AccelerationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAccelerationBridge = function () {
             if (AppRegistryBridge.instanceAcceleration === null) {
@@ -203,9 +214,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAcceleration;
         };
         /**
+           @method
            Obtain a reference to the IAds bridge.
 
-           @return IAds bridge instance.
+           @return {AdsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAdsBridge = function () {
             if (AppRegistryBridge.instanceAds === null) {
@@ -214,9 +226,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAds;
         };
         /**
+           @method
            Obtain a reference to the IAlarm bridge.
 
-           @return IAlarm bridge instance.
+           @return {AlarmBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAlarmBridge = function () {
             if (AppRegistryBridge.instanceAlarm === null) {
@@ -225,9 +238,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAlarm;
         };
         /**
+           @method
            Obtain a reference to the IAmbientLight bridge.
 
-           @return IAmbientLight bridge instance.
+           @return {AmbientLightBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAmbientLightBridge = function () {
             if (AppRegistryBridge.instanceAmbientLight === null) {
@@ -236,9 +250,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAmbientLight;
         };
         /**
+           @method
            Obtain a reference to the IAnalytics bridge.
 
-           @return IAnalytics bridge instance.
+           @return {AnalyticsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAnalyticsBridge = function () {
             if (AppRegistryBridge.instanceAnalytics === null) {
@@ -247,9 +262,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAnalytics;
         };
         /**
+           @method
            Obtain a reference to the IAudio bridge.
 
-           @return IAudio bridge instance.
+           @return {AudioBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAudioBridge = function () {
             if (AppRegistryBridge.instanceAudio === null) {
@@ -258,9 +274,10 @@ var Adaptive;
             return AppRegistryBridge.instanceAudio;
         };
         /**
+           @method
            Obtain a reference to the IBarcode bridge.
 
-           @return IBarcode bridge instance.
+           @return {BarcodeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBarcodeBridge = function () {
             if (AppRegistryBridge.instanceBarcode === null) {
@@ -269,9 +286,10 @@ var Adaptive;
             return AppRegistryBridge.instanceBarcode;
         };
         /**
+           @method
            Obtain a reference to the IBarometer bridge.
 
-           @return IBarometer bridge instance.
+           @return {BarometerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBarometerBridge = function () {
             if (AppRegistryBridge.instanceBarometer === null) {
@@ -280,9 +298,10 @@ var Adaptive;
             return AppRegistryBridge.instanceBarometer;
         };
         /**
+           @method
            Obtain a reference to the IBluetooth bridge.
 
-           @return IBluetooth bridge instance.
+           @return {BluetoothBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBluetoothBridge = function () {
             if (AppRegistryBridge.instanceBluetooth === null) {
@@ -291,9 +310,10 @@ var Adaptive;
             return AppRegistryBridge.instanceBluetooth;
         };
         /**
+           @method
            Obtain a reference to the IBrowser bridge.
 
-           @return IBrowser bridge instance.
+           @return {BrowserBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBrowserBridge = function () {
             if (AppRegistryBridge.instanceBrowser === null) {
@@ -302,9 +322,10 @@ var Adaptive;
             return AppRegistryBridge.instanceBrowser;
         };
         /**
+           @method
            Obtain a reference to the ICalendar bridge.
 
-           @return ICalendar bridge instance.
+           @return {CalendarBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCalendarBridge = function () {
             if (AppRegistryBridge.instanceCalendar === null) {
@@ -313,9 +334,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCalendar;
         };
         /**
+           @method
            Obtain a reference to the ICamera bridge.
 
-           @return ICamera bridge instance.
+           @return {CameraBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCameraBridge = function () {
             if (AppRegistryBridge.instanceCamera === null) {
@@ -324,9 +346,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCamera;
         };
         /**
+           @method
            Obtain a reference to the ICapabilities bridge.
 
-           @return ICapabilities bridge instance.
+           @return {CapabilitiesBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCapabilitiesBridge = function () {
             if (AppRegistryBridge.instanceCapabilities === null) {
@@ -335,9 +358,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCapabilities;
         };
         /**
+           @method
            Obtain a reference to the ICloud bridge.
 
-           @return ICloud bridge instance.
+           @return {CloudBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCloudBridge = function () {
             if (AppRegistryBridge.instanceCloud === null) {
@@ -346,9 +370,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCloud;
         };
         /**
+           @method
            Obtain a reference to the ICompression bridge.
 
-           @return ICompression bridge instance.
+           @return {CompressionBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCompressionBridge = function () {
             if (AppRegistryBridge.instanceCompression === null) {
@@ -357,9 +382,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCompression;
         };
         /**
+           @method
            Obtain a reference to the IConcurrent bridge.
 
-           @return IConcurrent bridge instance.
+           @return {ConcurrentBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getConcurrentBridge = function () {
             if (AppRegistryBridge.instanceConcurrent === null) {
@@ -368,9 +394,10 @@ var Adaptive;
             return AppRegistryBridge.instanceConcurrent;
         };
         /**
+           @method
            Obtain a reference to the IContact bridge.
 
-           @return IContact bridge instance.
+           @return {ContactBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getContactBridge = function () {
             if (AppRegistryBridge.instanceContact === null) {
@@ -379,9 +406,10 @@ var Adaptive;
             return AppRegistryBridge.instanceContact;
         };
         /**
+           @method
            Obtain a reference to the ICrypto bridge.
 
-           @return ICrypto bridge instance.
+           @return {CryptoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCryptoBridge = function () {
             if (AppRegistryBridge.instanceCrypto === null) {
@@ -390,9 +418,10 @@ var Adaptive;
             return AppRegistryBridge.instanceCrypto;
         };
         /**
+           @method
            Obtain a reference to the IDataStream bridge.
 
-           @return IDataStream bridge instance.
+           @return {DataStreamBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDataStreamBridge = function () {
             if (AppRegistryBridge.instanceDataStream === null) {
@@ -401,9 +430,10 @@ var Adaptive;
             return AppRegistryBridge.instanceDataStream;
         };
         /**
+           @method
            Obtain a reference to the IDatabase bridge.
 
-           @return IDatabase bridge instance.
+           @return {DatabaseBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDatabaseBridge = function () {
             if (AppRegistryBridge.instanceDatabase === null) {
@@ -412,9 +442,10 @@ var Adaptive;
             return AppRegistryBridge.instanceDatabase;
         };
         /**
+           @method
            Obtain a reference to the IDesktop bridge.
 
-           @return IDesktop bridge instance.
+           @return {DesktopBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDesktopBridge = function () {
             if (AppRegistryBridge.instanceDesktop === null) {
@@ -423,9 +454,10 @@ var Adaptive;
             return AppRegistryBridge.instanceDesktop;
         };
         /**
+           @method
            Obtain a reference to the IDevice bridge.
 
-           @return IDevice bridge instance.
+           @return {DeviceBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDeviceBridge = function () {
             if (AppRegistryBridge.instanceDevice === null) {
@@ -434,9 +466,10 @@ var Adaptive;
             return AppRegistryBridge.instanceDevice;
         };
         /**
+           @method
            Obtain a reference to the IDisplay bridge.
 
-           @return IDisplay bridge instance.
+           @return {DisplayBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDisplayBridge = function () {
             if (AppRegistryBridge.instanceDisplay === null) {
@@ -445,9 +478,10 @@ var Adaptive;
             return AppRegistryBridge.instanceDisplay;
         };
         /**
+           @method
            Obtain a reference to the IFacebook bridge.
 
-           @return IFacebook bridge instance.
+           @return {FacebookBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFacebookBridge = function () {
             if (AppRegistryBridge.instanceFacebook === null) {
@@ -456,9 +490,10 @@ var Adaptive;
             return AppRegistryBridge.instanceFacebook;
         };
         /**
+           @method
            Obtain a reference to the IFile bridge.
 
-           @return IFile bridge instance.
+           @return {FileBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFileBridge = function () {
             if (AppRegistryBridge.instanceFile === null) {
@@ -467,9 +502,10 @@ var Adaptive;
             return AppRegistryBridge.instanceFile;
         };
         /**
+           @method
            Obtain a reference to the IFileSystem bridge.
 
-           @return IFileSystem bridge instance.
+           @return {FileSystemBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFileSystemBridge = function () {
             if (AppRegistryBridge.instanceFileSystem === null) {
@@ -478,9 +514,10 @@ var Adaptive;
             return AppRegistryBridge.instanceFileSystem;
         };
         /**
+           @method
            Obtain a reference to the IGeolocation bridge.
 
-           @return IGeolocation bridge instance.
+           @return {GeolocationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGeolocationBridge = function () {
             if (AppRegistryBridge.instanceGeolocation === null) {
@@ -489,9 +526,10 @@ var Adaptive;
             return AppRegistryBridge.instanceGeolocation;
         };
         /**
+           @method
            Obtain a reference to the IGlobalization bridge.
 
-           @return IGlobalization bridge instance.
+           @return {GlobalizationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGlobalizationBridge = function () {
             if (AppRegistryBridge.instanceGlobalization === null) {
@@ -500,9 +538,10 @@ var Adaptive;
             return AppRegistryBridge.instanceGlobalization;
         };
         /**
+           @method
            Obtain a reference to the IGooglePlus bridge.
 
-           @return IGooglePlus bridge instance.
+           @return {GooglePlusBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGooglePlusBridge = function () {
             if (AppRegistryBridge.instanceGooglePlus === null) {
@@ -511,9 +550,10 @@ var Adaptive;
             return AppRegistryBridge.instanceGooglePlus;
         };
         /**
+           @method
            Obtain a reference to the IGyroscope bridge.
 
-           @return IGyroscope bridge instance.
+           @return {GyroscopeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGyroscopeBridge = function () {
             if (AppRegistryBridge.instanceGyroscope === null) {
@@ -522,9 +562,10 @@ var Adaptive;
             return AppRegistryBridge.instanceGyroscope;
         };
         /**
+           @method
            Obtain a reference to the IImaging bridge.
 
-           @return IImaging bridge instance.
+           @return {ImagingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getImagingBridge = function () {
             if (AppRegistryBridge.instanceImaging === null) {
@@ -533,9 +574,10 @@ var Adaptive;
             return AppRegistryBridge.instanceImaging;
         };
         /**
+           @method
            Obtain a reference to the IInternalStorage bridge.
 
-           @return IInternalStorage bridge instance.
+           @return {InternalStorageBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getInternalStorageBridge = function () {
             if (AppRegistryBridge.instanceInternalStorage === null) {
@@ -544,9 +586,10 @@ var Adaptive;
             return AppRegistryBridge.instanceInternalStorage;
         };
         /**
+           @method
            Obtain a reference to the ILifecycle bridge.
 
-           @return ILifecycle bridge instance.
+           @return {LifecycleBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLifecycleBridge = function () {
             if (AppRegistryBridge.instanceLifecycle === null) {
@@ -555,9 +598,10 @@ var Adaptive;
             return AppRegistryBridge.instanceLifecycle;
         };
         /**
+           @method
            Obtain a reference to the ILinkedIn bridge.
 
-           @return ILinkedIn bridge instance.
+           @return {LinkedInBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLinkedInBridge = function () {
             if (AppRegistryBridge.instanceLinkedIn === null) {
@@ -566,9 +610,10 @@ var Adaptive;
             return AppRegistryBridge.instanceLinkedIn;
         };
         /**
+           @method
            Obtain a reference to the ILogging bridge.
 
-           @return ILogging bridge instance.
+           @return {LoggingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLoggingBridge = function () {
             if (AppRegistryBridge.instanceLogging === null) {
@@ -577,9 +622,10 @@ var Adaptive;
             return AppRegistryBridge.instanceLogging;
         };
         /**
+           @method
            Obtain a reference to the IMagnetometer bridge.
 
-           @return IMagnetometer bridge instance.
+           @return {MagnetometerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMagnetometerBridge = function () {
             if (AppRegistryBridge.instanceMagnetometer === null) {
@@ -588,9 +634,10 @@ var Adaptive;
             return AppRegistryBridge.instanceMagnetometer;
         };
         /**
+           @method
            Obtain a reference to the IMail bridge.
 
-           @return IMail bridge instance.
+           @return {MailBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMailBridge = function () {
             if (AppRegistryBridge.instanceMail === null) {
@@ -599,9 +646,10 @@ var Adaptive;
             return AppRegistryBridge.instanceMail;
         };
         /**
+           @method
            Obtain a reference to the IManagement bridge.
 
-           @return IManagement bridge instance.
+           @return {ManagementBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getManagementBridge = function () {
             if (AppRegistryBridge.instanceManagement === null) {
@@ -610,9 +658,10 @@ var Adaptive;
             return AppRegistryBridge.instanceManagement;
         };
         /**
+           @method
            Obtain a reference to the IMap bridge.
 
-           @return IMap bridge instance.
+           @return {MapBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMapBridge = function () {
             if (AppRegistryBridge.instanceMap === null) {
@@ -621,9 +670,10 @@ var Adaptive;
             return AppRegistryBridge.instanceMap;
         };
         /**
+           @method
            Obtain a reference to the IMessaging bridge.
 
-           @return IMessaging bridge instance.
+           @return {MessagingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMessagingBridge = function () {
             if (AppRegistryBridge.instanceMessaging === null) {
@@ -632,9 +682,10 @@ var Adaptive;
             return AppRegistryBridge.instanceMessaging;
         };
         /**
+           @method
            Obtain a reference to the INFC bridge.
 
-           @return INFC bridge instance.
+           @return {NFCBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNFCBridge = function () {
             if (AppRegistryBridge.instanceNFC === null) {
@@ -643,9 +694,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNFC;
         };
         /**
+           @method
            Obtain a reference to the INetworkInfo bridge.
 
-           @return INetworkInfo bridge instance.
+           @return {NetworkInfoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkInfoBridge = function () {
             if (AppRegistryBridge.instanceNetworkInfo === null) {
@@ -654,9 +706,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNetworkInfo;
         };
         /**
+           @method
            Obtain a reference to the INetworkNaming bridge.
 
-           @return INetworkNaming bridge instance.
+           @return {NetworkNamingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkNamingBridge = function () {
             if (AppRegistryBridge.instanceNetworkNaming === null) {
@@ -665,9 +718,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNetworkNaming;
         };
         /**
+           @method
            Obtain a reference to the INetworkReachability bridge.
 
-           @return INetworkReachability bridge instance.
+           @return {NetworkReachabilityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkReachabilityBridge = function () {
             if (AppRegistryBridge.instanceNetworkReachability === null) {
@@ -676,9 +730,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNetworkReachability;
         };
         /**
+           @method
            Obtain a reference to the INetworkStatus bridge.
 
-           @return INetworkStatus bridge instance.
+           @return {NetworkStatusBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkStatusBridge = function () {
             if (AppRegistryBridge.instanceNetworkStatus === null) {
@@ -687,9 +742,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNetworkStatus;
         };
         /**
+           @method
            Obtain a reference to the INotification bridge.
 
-           @return INotification bridge instance.
+           @return {NotificationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNotificationBridge = function () {
             if (AppRegistryBridge.instanceNotification === null) {
@@ -698,9 +754,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNotification;
         };
         /**
+           @method
            Obtain a reference to the INotificationLocal bridge.
 
-           @return INotificationLocal bridge instance.
+           @return {NotificationLocalBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNotificationLocalBridge = function () {
             if (AppRegistryBridge.instanceNotificationLocal === null) {
@@ -709,9 +766,10 @@ var Adaptive;
             return AppRegistryBridge.instanceNotificationLocal;
         };
         /**
+           @method
            Obtain a reference to the IOAuth bridge.
 
-           @return IOAuth bridge instance.
+           @return {OAuthBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOAuthBridge = function () {
             if (AppRegistryBridge.instanceOAuth === null) {
@@ -720,9 +778,10 @@ var Adaptive;
             return AppRegistryBridge.instanceOAuth;
         };
         /**
+           @method
            Obtain a reference to the IOCR bridge.
 
-           @return IOCR bridge instance.
+           @return {OCRBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOCRBridge = function () {
             if (AppRegistryBridge.instanceOCR === null) {
@@ -731,9 +790,10 @@ var Adaptive;
             return AppRegistryBridge.instanceOCR;
         };
         /**
+           @method
            Obtain a reference to the IOS bridge.
 
-           @return IOS bridge instance.
+           @return {OSBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOSBridge = function () {
             if (AppRegistryBridge.instanceOS === null) {
@@ -742,9 +802,10 @@ var Adaptive;
             return AppRegistryBridge.instanceOS;
         };
         /**
+           @method
            Obtain a reference to the IOpenId bridge.
 
-           @return IOpenId bridge instance.
+           @return {OpenIdBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOpenIdBridge = function () {
             if (AppRegistryBridge.instanceOpenId === null) {
@@ -753,9 +814,10 @@ var Adaptive;
             return AppRegistryBridge.instanceOpenId;
         };
         /**
+           @method
            Obtain a reference to the IPrinting bridge.
 
-           @return IPrinting bridge instance.
+           @return {PrintingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getPrintingBridge = function () {
             if (AppRegistryBridge.instancePrinting === null) {
@@ -764,9 +826,10 @@ var Adaptive;
             return AppRegistryBridge.instancePrinting;
         };
         /**
+           @method
            Obtain a reference to the IProximity bridge.
 
-           @return IProximity bridge instance.
+           @return {ProximityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getProximityBridge = function () {
             if (AppRegistryBridge.instanceProximity === null) {
@@ -775,9 +838,10 @@ var Adaptive;
             return AppRegistryBridge.instanceProximity;
         };
         /**
+           @method
            Obtain a reference to the IQRCode bridge.
 
-           @return IQRCode bridge instance.
+           @return {QRCodeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getQRCodeBridge = function () {
             if (AppRegistryBridge.instanceQRCode === null) {
@@ -786,9 +850,10 @@ var Adaptive;
             return AppRegistryBridge.instanceQRCode;
         };
         /**
+           @method
            Obtain a reference to the IRSS bridge.
 
-           @return IRSS bridge instance.
+           @return {RSSBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getRSSBridge = function () {
             if (AppRegistryBridge.instanceRSS === null) {
@@ -797,9 +862,10 @@ var Adaptive;
             return AppRegistryBridge.instanceRSS;
         };
         /**
+           @method
            Obtain a reference to the IRuntime bridge.
 
-           @return IRuntime bridge instance.
+           @return {RuntimeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getRuntimeBridge = function () {
             if (AppRegistryBridge.instanceRuntime === null) {
@@ -808,9 +874,10 @@ var Adaptive;
             return AppRegistryBridge.instanceRuntime;
         };
         /**
+           @method
            Obtain a reference to the ISecurity bridge.
 
-           @return ISecurity bridge instance.
+           @return {SecurityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSecurityBridge = function () {
             if (AppRegistryBridge.instanceSecurity === null) {
@@ -819,9 +886,10 @@ var Adaptive;
             return AppRegistryBridge.instanceSecurity;
         };
         /**
+           @method
            Obtain a reference to the IService bridge.
 
-           @return IService bridge instance.
+           @return {ServiceBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getServiceBridge = function () {
             if (AppRegistryBridge.instanceService === null) {
@@ -830,9 +898,10 @@ var Adaptive;
             return AppRegistryBridge.instanceService;
         };
         /**
+           @method
            Obtain a reference to the ISettings bridge.
 
-           @return ISettings bridge instance.
+           @return {SettingsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSettingsBridge = function () {
             if (AppRegistryBridge.instanceSettings === null) {
@@ -841,9 +910,10 @@ var Adaptive;
             return AppRegistryBridge.instanceSettings;
         };
         /**
+           @method
            Obtain a reference to the ISocket bridge.
 
-           @return ISocket bridge instance.
+           @return {SocketBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSocketBridge = function () {
             if (AppRegistryBridge.instanceSocket === null) {
@@ -852,9 +922,10 @@ var Adaptive;
             return AppRegistryBridge.instanceSocket;
         };
         /**
+           @method
            Obtain a reference to the IStore bridge.
 
-           @return IStore bridge instance.
+           @return {StoreBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getStoreBridge = function () {
             if (AppRegistryBridge.instanceStore === null) {
@@ -863,9 +934,10 @@ var Adaptive;
             return AppRegistryBridge.instanceStore;
         };
         /**
+           @method
            Obtain a reference to the ITelephony bridge.
 
-           @return ITelephony bridge instance.
+           @return {TelephonyBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTelephonyBridge = function () {
             if (AppRegistryBridge.instanceTelephony === null) {
@@ -874,9 +946,10 @@ var Adaptive;
             return AppRegistryBridge.instanceTelephony;
         };
         /**
+           @method
            Obtain a reference to the ITimer bridge.
 
-           @return ITimer bridge instance.
+           @return {TimerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTimerBridge = function () {
             if (AppRegistryBridge.instanceTimer === null) {
@@ -885,9 +958,10 @@ var Adaptive;
             return AppRegistryBridge.instanceTimer;
         };
         /**
+           @method
            Obtain a reference to the ITwitter bridge.
 
-           @return ITwitter bridge instance.
+           @return {TwitterBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTwitterBridge = function () {
             if (AppRegistryBridge.instanceTwitter === null) {
@@ -896,9 +970,10 @@ var Adaptive;
             return AppRegistryBridge.instanceTwitter;
         };
         /**
+           @method
            Obtain a reference to the IUI bridge.
 
-           @return IUI bridge instance.
+           @return {UIBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getUIBridge = function () {
             if (AppRegistryBridge.instanceUI === null) {
@@ -907,9 +982,10 @@ var Adaptive;
             return AppRegistryBridge.instanceUI;
         };
         /**
+           @method
            Obtain a reference to the IUpdate bridge.
 
-           @return IUpdate bridge instance.
+           @return {UpdateBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getUpdateBridge = function () {
             if (AppRegistryBridge.instanceUpdate === null) {
@@ -918,9 +994,10 @@ var Adaptive;
             return AppRegistryBridge.instanceUpdate;
         };
         /**
+           @method
            Obtain a reference to the IVibration bridge.
 
-           @return IVibration bridge instance.
+           @return {VibrationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getVibrationBridge = function () {
             if (AppRegistryBridge.instanceVibration === null) {
@@ -929,9 +1006,10 @@ var Adaptive;
             return AppRegistryBridge.instanceVibration;
         };
         /**
+           @method
            Obtain a reference to the IVideo bridge.
 
-           @return IVideo bridge instance.
+           @return {VideoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getVideoBridge = function () {
             if (AppRegistryBridge.instanceVideo === null) {
@@ -940,9 +1018,10 @@ var Adaptive;
             return AppRegistryBridge.instanceVideo;
         };
         /**
+           @method
            Obtain a reference to the IWallet bridge.
 
-           @return IWallet bridge instance.
+           @return {WalletBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getWalletBridge = function () {
             if (AppRegistryBridge.instanceWallet === null) {
@@ -951,9 +1030,10 @@ var Adaptive;
             return AppRegistryBridge.instanceWallet;
         };
         /**
+           @method
            Obtain a reference to the IXML bridge.
 
-           @return IXML bridge instance.
+           @return {XMLBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getXMLBridge = function () {
             if (AppRegistryBridge.instanceXML === null) {
@@ -962,6 +1042,7 @@ var Adaptive;
             return AppRegistryBridge.instanceXML;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -971,80 +1052,361 @@ var Adaptive;
         };
         /**
            Singleton instance of AppRegistry.
+           @private
         */
         AppRegistryBridge.instance = null;
         /**
            Singleton instances of Bridges.
         */
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAcceleration = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAds = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAlarm = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAmbientLight = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAnalytics = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceAudio = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceBarcode = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceBarometer = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceBluetooth = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceBrowser = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCalendar = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCamera = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCapabilities = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCloud = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCompression = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceConcurrent = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceContact = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceCrypto = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceDataStream = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceDatabase = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceDesktop = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceDevice = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceDisplay = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceFacebook = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceFile = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceFileSystem = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceGeolocation = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceGlobalization = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceGooglePlus = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceGyroscope = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceImaging = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceInternalStorage = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceLifecycle = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceLinkedIn = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceLogging = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceMagnetometer = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceMail = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceManagement = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceMap = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceMessaging = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNFC = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNetworkInfo = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNetworkNaming = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNetworkReachability = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNetworkStatus = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNotification = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceNotificationLocal = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceOAuth = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceOCR = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceOS = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceOpenId = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instancePrinting = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceProximity = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceQRCode = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceRSS = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceRuntime = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceSecurity = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceService = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceSettings = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceSocket = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceStore = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceTelephony = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceTimer = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceTwitter = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceUI = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceUpdate = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceVibration = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceVideo = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceWallet = null;
+        /**
+           @static
+           @property
+        */
         AppRegistryBridge.instanceXML = null;
         return AppRegistryBridge;
     })();

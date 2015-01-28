@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactAddressType
        Enumeration ContactAddressType
     */
     class ContactAddressType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ContactAddressType.Home=Adaptive.ContactAddressType.*]
+           @static
+        */
         static Home: ContactAddressType;
+        /**
+           @enum [Adaptive.ContactAddressType.Work=Adaptive.ContactAddressType.*]
+           @static
+        */
         static Work: ContactAddressType;
+        /**
+           @enum [Adaptive.ContactAddressType.Other=Adaptive.ContactAddressType.*]
+           @static
+        */
         static Other: ContactAddressType;
+        /**
+           @enum [Adaptive.ContactAddressType.Unknown=Adaptive.ContactAddressType.*]
+           @static
+        */
         static Unknown: ContactAddressType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactAddressType}
         */
         static toObject(object: any): ContactAddressType;
     }

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AlarmBridge extends BaseNotificationBridge implements IAlarm {
+       @class Adaptive.AlarmBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Alarm purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var AlarmBridge = (function (_super) {
         __extends(AlarmBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AlarmBridge() {

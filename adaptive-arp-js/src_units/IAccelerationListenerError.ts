@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IAccelerationListenerError} Adaptive.IAccelerationListenerError
         Enumeration IAccelerationListenerError
      */
      export class IAccelerationListenerError {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']
+          */
           static Unauthorized = new IAccelerationListenerError("Unauthorized");
+          /**
+             @property {Adaptive.IAccelerationListenerError} [Unavailable='Unavailable']
+          */
           static Unavailable = new IAccelerationListenerError("Unavailable");
+          /**
+             @property {Adaptive.IAccelerationListenerError} [Unknown='Unknown']
+          */
           static Unknown = new IAccelerationListenerError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IAccelerationListenerError}
           */
           static toObject(object : any) : IAccelerationListenerError {
                if (object != null && object.value != null) {

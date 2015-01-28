@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
+       @class Adaptive.NetworkNamingBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network naming operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

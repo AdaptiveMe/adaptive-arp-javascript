@@ -44,6 +44,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.GeolocationBridge
+        @extends Adaptive.BaseSensorBridge
         Interface for Managing the Geolocation operations
 
         @author Francisco Javier Martin Bueno
@@ -52,6 +54,7 @@ module Adaptive {
      export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

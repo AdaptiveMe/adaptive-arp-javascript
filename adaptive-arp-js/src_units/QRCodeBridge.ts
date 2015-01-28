@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.QRCodeBridge
+        @extends Adaptive.BaseReaderBridge
         Interface for Managing the QR Code operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class QRCodeBridge extends BaseReaderBridge implements IQRCode {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

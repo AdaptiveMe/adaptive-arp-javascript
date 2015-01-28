@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     var IDatabaseTableResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseTableResultCallbackError}
         */
         IDatabaseTableResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return IDatabaseTableResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.NoSpace=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.NoSpace = new IDatabaseTableResultCallbackError("NoSpace");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.ReadOnlyTable=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.ReadOnlyTable = new IDatabaseTableResultCallbackError("ReadOnlyTable");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.SqlException=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.SqlException = new IDatabaseTableResultCallbackError("SqlException");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.DatabaseNotFound=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.DatabaseNotFound = new IDatabaseTableResultCallbackError("DatabaseNotFound");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.NoTableFound=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.NoTableFound = new IDatabaseTableResultCallbackError("NoTableFound");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.Unknown=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         IDatabaseTableResultCallbackError.Unknown = new IDatabaseTableResultCallbackError("Unknown");
         return IDatabaseTableResultCallbackError;
     })();

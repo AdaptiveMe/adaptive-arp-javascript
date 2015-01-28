@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IGeolocationListener
+        @extends Adaptive.IBaseListener
+     */
      export interface IGeolocationListener extends IBaseListener {
           /**
+             @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
              @since ARP1.0
           */
           onError(error:IGeolocationListenerError);
           /**
+             @method
              Correct data received.
              @param geolocation Geolocation Bean
              @since ARP1.0
           */
           onResult(geolocation:Geolocation);
           /**
+             @method
              Data received with warning - ie. HighDoP
              @param geolocation Geolocation Bean
              @param warning     Type of warning encountered during reading.

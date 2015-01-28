@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ISecurityResultCallbackWarning} Adaptive.ISecurityResultCallbackWarning
         Enumeration ISecurityResultCallbackWarning
      */
      export class ISecurityResultCallbackWarning {
@@ -42,11 +43,20 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
+          */
           static EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
+          /**
+             @property {Adaptive.ISecurityResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new ISecurityResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ISecurityResultCallbackWarning}
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
                if (object != null && object.value != null) {

@@ -42,6 +42,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ILogging
+       @extends {IBaseUtil}
+       @abstract
+    */
     interface ILogging extends IBaseUtil {
         /**
            Logs the given message, with the given log level if specified, to the standard platform/environment.

@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class ImagingBridge extends BaseMediaBridge implements IImaging {
+       @class Adaptive.ImagingBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the Imaging operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class ImagingBridge extends BaseMediaBridge implements IImaging {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

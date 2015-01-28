@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IButtonListenerError
        Enumeration IButtonListenerError
     */
     var IButtonListenerError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IButtonListenerError}
         */
         IButtonListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -61,7 +65,15 @@ var Adaptive;
                 return IButtonListenerError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IButtonListenerError.Not_Present=Adaptive.IButtonListenerError.*]
+           @static
+        */
         IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        /**
+           @enum [Adaptive.IButtonListenerError.Unknown=Adaptive.IButtonListenerError.*]
+           @static
+        */
         IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
         return IButtonListenerError;
     })();

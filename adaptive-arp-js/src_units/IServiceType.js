@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IServiceType
        Enumeration IServiceType
     */
     var IServiceType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceType}
         */
         IServiceType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -79,16 +83,60 @@ var Adaptive;
                 return IServiceType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeAmfSerialization=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeGwtRpc=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeOctetBinary=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeRemotingSerialization=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeRestJson=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeRestXml=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeSoapJson=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeSoapXml=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcJson=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
+        /**
+           @enum [Adaptive.IServiceType.ServiceTypeXmlRpcXml=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
+        /**
+           @enum [Adaptive.IServiceType.Unknown=Adaptive.IServiceType.*]
+           @static
+        */
         IServiceType.Unknown = new IServiceType("Unknown");
         return IServiceType;
     })();

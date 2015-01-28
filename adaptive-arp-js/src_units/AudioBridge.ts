@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.AudioBridge
+        @extends Adaptive.BaseMediaBridge
         Interface for Audio purposes
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class AudioBridge extends BaseMediaBridge implements IAudio {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

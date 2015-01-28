@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     class IContactResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IContactResultCallbackError.NoPermission=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         static NoPermission: IContactResultCallbackError;
+        /**
+           @enum [Adaptive.IContactResultCallbackError.Wrong_Params=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         static Wrong_Params: IContactResultCallbackError;
+        /**
+           @enum [Adaptive.IContactResultCallbackError.Unknown=Adaptive.IContactResultCallbackError.*]
+           @static
+        */
         static Unknown: IContactResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactResultCallbackError}
         */
         static toObject(object: any): IContactResultCallbackError;
     }

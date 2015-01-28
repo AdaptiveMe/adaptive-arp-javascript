@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileResultCallbackWarning
        Enumeration IFileResultCallbackWarning
     */
     var IFileResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileResultCallbackWarning}
         */
         IFileResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IFileResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileResultCallbackWarning.SourceNotDeleted=Adaptive.IFileResultCallbackWarning.*]
+           @static
+        */
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
+        /**
+           @enum [Adaptive.IFileResultCallbackWarning.RootDirectory=Adaptive.IFileResultCallbackWarning.*]
+           @static
+        */
         IFileResultCallbackWarning.RootDirectory = new IFileResultCallbackWarning("RootDirectory");
+        /**
+           @enum [Adaptive.IFileResultCallbackWarning.Unknown=Adaptive.IFileResultCallbackWarning.*]
+           @static
+        */
         IFileResultCallbackWarning.Unknown = new IFileResultCallbackWarning("Unknown");
         return IFileResultCallbackWarning;
     })();

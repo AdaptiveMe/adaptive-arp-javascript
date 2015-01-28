@@ -41,11 +41,17 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseListener
+       @extends {IAdaptiveRP}
+       @abstract
+    */
     interface IBaseListener extends IAdaptiveRP {
         /**
+           @method
            Retrieve unique id of callback/listener.
 
-           @return Callback/listener unique id.
+           @return {number} Callback/listener unique id.
         */
         getId(): number;
     }

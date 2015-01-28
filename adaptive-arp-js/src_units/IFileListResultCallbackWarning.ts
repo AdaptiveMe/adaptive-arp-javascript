@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileListResultCallbackWarning} Adaptive.IFileListResultCallbackWarning
         Enumeration IFileListResultCallbackWarning
      */
      export class IFileListResultCallbackWarning {
@@ -42,11 +43,20 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']
+          */
           static PartialResult = new IFileListResultCallbackWarning("PartialResult");
+          /**
+             @property {Adaptive.IFileListResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IFileListResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileListResultCallbackWarning}
           */
           static toObject(object : any) : IFileListResultCallbackWarning {
                if (object != null && object.value != null) {

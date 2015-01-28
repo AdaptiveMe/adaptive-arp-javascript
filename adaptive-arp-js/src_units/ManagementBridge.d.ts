@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class ManagementBridge extends BaseApplicationBridge implements IManagement {
+       @class Adaptive.ManagementBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Management operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class ManagementBridge extends BaseApplicationBridge implements IManagement {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

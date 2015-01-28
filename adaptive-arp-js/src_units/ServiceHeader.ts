@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ServiceHeader
+        @extends Adaptive.APIBean
         Structure representing the data of a http request or response header.
 
         @author Aryslan

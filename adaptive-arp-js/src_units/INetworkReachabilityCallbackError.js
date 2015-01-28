@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.INetworkReachabilityCallbackError
        Enumeration INetworkReachabilityCallbackError
     */
     var INetworkReachabilityCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {INetworkReachabilityCallbackError}
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -81,17 +85,65 @@ var Adaptive;
                 return INetworkReachabilityCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.Forbidden=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.Forbidden = new INetworkReachabilityCallbackError("Forbidden");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.NotFound=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.NotFound = new INetworkReachabilityCallbackError("NotFound");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.MethodNotAllowed=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.MethodNotAllowed = new INetworkReachabilityCallbackError("MethodNotAllowed");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.NotAllowed=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.NotAllowed = new INetworkReachabilityCallbackError("NotAllowed");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.NotAuthenticated=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.NotAuthenticated = new INetworkReachabilityCallbackError("NotAuthenticated");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.TimeOut=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.TimeOut = new INetworkReachabilityCallbackError("TimeOut");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.NoResponse=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.NoResponse = new INetworkReachabilityCallbackError("NoResponse");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.Unreachable=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.Wrong_Params=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.MalformedUrl=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.MalformedUrl = new INetworkReachabilityCallbackError("MalformedUrl");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.DomainUnresolvable=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.DomainUnresolvable = new INetworkReachabilityCallbackError("DomainUnresolvable");
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackError.Unknown=Adaptive.INetworkReachabilityCallbackError.*]
+           @static
+        */
         INetworkReachabilityCallbackError.Unknown = new INetworkReachabilityCallbackError("Unknown");
         return INetworkReachabilityCallbackError;
     })();

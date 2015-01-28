@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.InternalStorageBridge
+        @extends Adaptive.BaseDataBridge
         Interface for Managing the Internal Storage operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

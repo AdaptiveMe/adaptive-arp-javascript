@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
+       @class Adaptive.OAuthBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the OAuth operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var OAuthBridge = (function (_super) {
         __extends(OAuthBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OAuthBridge() {

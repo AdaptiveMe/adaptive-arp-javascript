@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     var ContactSocialNetwork = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactSocialNetwork}
         */
         ContactSocialNetwork.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return ContactSocialNetwork.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Twitter=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Facebook=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
+        /**
+           @enum [Adaptive.ContactSocialNetwork.GooglePlus=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");
+        /**
+           @enum [Adaptive.ContactSocialNetwork.LinkedIn=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.LinkedIn = new ContactSocialNetwork("LinkedIn");
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Flickr=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.Flickr = new ContactSocialNetwork("Flickr");
+        /**
+           @enum [Adaptive.ContactSocialNetwork.Unknown=Adaptive.ContactSocialNetwork.*]
+           @static
+        */
         ContactSocialNetwork.Unknown = new ContactSocialNetwork("Unknown");
         return ContactSocialNetwork;
     })();

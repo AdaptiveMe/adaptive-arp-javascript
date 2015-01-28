@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDataStream
+       @extends {IBaseData}
+       @abstract
+    */
     interface IDataStream extends IBaseData {
     }
 }

@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IDatabaseResultCallback
+        @extends Adaptive.IBaseCallback
+     */
      export interface IDatabaseResultCallback extends IBaseCallback {
           /**
+             @method
              Result callback for error responses
              @param error Returned error
              @since ARP1.0
           */
           onError(error:IDatabaseResultCallbackError);
           /**
+             @method
              Result callback for correct responses
              @param database Returns the database
              @since ARP1.0
           */
           onResult(database:Database);
           /**
+             @method
              Result callback for warning responses
              @param database Returns the database
              @param warning  Returned Warning

@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IGeolocationListenerWarning
        Enumeration IGeolocationListenerWarning
     */
     var IGeolocationListenerWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IGeolocationListenerWarning}
         */
         IGeolocationListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IGeolocationListenerWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.HighDoP=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.StaleData=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         IGeolocationListenerWarning.StaleData = new IGeolocationListenerWarning("StaleData");
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.Unknown=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         IGeolocationListenerWarning.Unknown = new IGeolocationListenerWarning("Unknown");
         return IGeolocationListenerWarning;
     })();

@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IMessagingCallbackError
        Enumeration IMessagingCallbackError
     */
     class IMessagingCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.SIMNotPresent=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static SIMNotPresent: IMessagingCallbackError;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.EmailAccountNotFound=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static EmailAccountNotFound: IMessagingCallbackError;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.NotSent=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static NotSent: IMessagingCallbackError;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.WrongParams=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static WrongParams: IMessagingCallbackError;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.NotSupported=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static NotSupported: IMessagingCallbackError;
+        /**
+           @enum [Adaptive.IMessagingCallbackError.Unknown=Adaptive.IMessagingCallbackError.*]
+           @static
+        */
         static Unknown: IMessagingCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IMessagingCallbackError}
         */
         static toObject(object: any): IMessagingCallbackError;
     }

@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IContactResultCallback
+        @extends Adaptive.IBaseCallback
+     */
      export interface IContactResultCallback extends IBaseCallback {
           /**
+             @method
              This method is called on Error
              @param error returned by the platform
              @since ARP1.0
           */
           onError(error:IContactResultCallbackError);
           /**
+             @method
              This method is called on Result
              @param contacts returned by the platform
              @since ARP1.0
           */
           onResult(contacts:Array<Contact>);
           /**
+             @method
              This method is called on Warning
              @param contacts returned by the platform
              @param warning  returned by the platform

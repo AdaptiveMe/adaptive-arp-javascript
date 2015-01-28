@@ -51,6 +51,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class ServiceBridge extends BaseCommunicationBridge implements IService {
+       @class Adaptive.ServiceBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
@@ -59,6 +62,7 @@ var Adaptive;
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ServiceBridge() {

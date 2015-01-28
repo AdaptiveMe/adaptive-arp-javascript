@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IContactFilter} Adaptive.IContactFilter
         Enumeration IContactFilter
      */
      export class IContactFilter {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+          */
           static HAS_PHONE = new IContactFilter("HAS_PHONE");
+          /**
+             @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+          */
           static HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+          /**
+             @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+          */
           static HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+          /**
+             @property {Adaptive.IContactFilter} [Unknown='Unknown']
+          */
           static Unknown = new IContactFilter("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IContactFilter}
           */
           static toObject(object : any) : IContactFilter {
                if (object != null && object.value != null) {

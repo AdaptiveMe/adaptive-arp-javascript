@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IContactPhotoResultCallbackError} Adaptive.IContactPhotoResultCallbackError
         Enumeration IContactPhotoResultCallbackError
      */
      export class IContactPhotoResultCallbackError {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
+          */
           static NoPermission = new IContactPhotoResultCallbackError("NoPermission");
+          /**
+             @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+          */
           static Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+          /**
+             @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+          */
           static No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+          /**
+             @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new IContactPhotoResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IContactPhotoResultCallbackError}
           */
           static toObject(object : any) : IContactPhotoResultCallbackError {
                if (object != null && object.value != null) {

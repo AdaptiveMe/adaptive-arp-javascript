@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     class ContactEmailType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ContactEmailType.Personal=Adaptive.ContactEmailType.*]
+           @static
+        */
         static Personal: ContactEmailType;
+        /**
+           @enum [Adaptive.ContactEmailType.Work=Adaptive.ContactEmailType.*]
+           @static
+        */
         static Work: ContactEmailType;
+        /**
+           @enum [Adaptive.ContactEmailType.Other=Adaptive.ContactEmailType.*]
+           @static
+        */
         static Other: ContactEmailType;
+        /**
+           @enum [Adaptive.ContactEmailType.Unknown=Adaptive.ContactEmailType.*]
+           @static
+        */
         static Unknown: ContactEmailType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactEmailType}
         */
         static toObject(object: any): ContactEmailType;
     }

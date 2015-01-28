@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
+       @class Adaptive.NetworkInfoBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network information operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

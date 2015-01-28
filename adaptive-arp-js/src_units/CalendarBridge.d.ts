@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class CalendarBridge extends BasePIMBridge implements ICalendar {
+       @class Adaptive.CalendarBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Calendar operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class CalendarBridge extends BasePIMBridge implements ICalendar {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class RSSBridge extends BaseSocialBridge implements IRSS {
+       @class Adaptive.RSSBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the RSS operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var RSSBridge = (function (_super) {
         __extends(RSSBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function RSSBridge() {

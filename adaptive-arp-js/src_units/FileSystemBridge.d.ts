@@ -41,6 +41,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class FileSystemBridge extends BaseDataBridge implements IFileSystem {
+       @class Adaptive.FileSystemBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
@@ -48,6 +51,7 @@ declare module Adaptive {
     */
     class FileSystemBridge extends BaseDataBridge implements IFileSystem {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

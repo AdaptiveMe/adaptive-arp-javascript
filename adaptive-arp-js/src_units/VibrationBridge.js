@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class VibrationBridge extends BaseNotificationBridge implements IVibration {
+       @class Adaptive.VibrationBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Vibration operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var VibrationBridge = (function (_super) {
         __extends(VibrationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function VibrationBridge() {

@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ILifecycleListener
+        @extends Adaptive.IBaseListener
+     */
      export interface ILifecycleListener extends IBaseListener {
           /**
+             @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
              @since ARP1.0
           */
           onError(error:ILifecycleListenerError);
           /**
+             @method
              Called when lifecycle changes somehow.
              @param lifecycle Lifecycle element
              @since ARP1.0
           */
           onResult(lifecycle:Lifecycle);
           /**
+             @method
              Data received with warning
              @param lifecycle Lifecycle element
              @param warning   Type of warning encountered during reading.

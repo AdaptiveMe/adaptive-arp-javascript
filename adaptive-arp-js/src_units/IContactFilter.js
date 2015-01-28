@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     var IContactFilter = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactFilter}
         */
         IContactFilter.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IContactFilter.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IContactFilter.HAS_PHONE=Adaptive.IContactFilter.*]
+           @static
+        */
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        /**
+           @enum [Adaptive.IContactFilter.HAS_EMAIL=Adaptive.IContactFilter.*]
+           @static
+        */
         IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        /**
+           @enum [Adaptive.IContactFilter.HAS_ADDRESS=Adaptive.IContactFilter.*]
+           @static
+        */
         IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        /**
+           @enum [Adaptive.IContactFilter.Unknown=Adaptive.IContactFilter.*]
+           @static
+        */
         IContactFilter.Unknown = new IContactFilter("Unknown");
         return IContactFilter;
     })();

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class UIBridge extends BaseUIBridge implements IUI {
+       @class Adaptive.UIBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the UI operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var UIBridge = (function (_super) {
         __extends(UIBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function UIBridge() {

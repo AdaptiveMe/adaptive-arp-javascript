@@ -44,8 +44,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IVideo
+        @extends Adaptive.IBaseMedia
+     */
      export interface IVideo extends IBaseMedia {
           /**
+             @method
              Play url video stream
              @param url of the video
              @since ARP1.0

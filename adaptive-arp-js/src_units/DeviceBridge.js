@@ -51,6 +51,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class DeviceBridge extends BaseSystemBridge implements IDevice {
+       @class Adaptive.DeviceBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
@@ -59,6 +62,7 @@ var Adaptive;
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DeviceBridge() {

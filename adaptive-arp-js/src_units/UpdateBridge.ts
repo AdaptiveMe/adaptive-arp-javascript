@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.UpdateBridge
+        @extends Adaptive.BaseApplicationBridge
         Interface for Managing the Update operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class UpdateBridge extends BaseApplicationBridge implements IUpdate {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

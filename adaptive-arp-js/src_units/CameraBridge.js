@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CameraBridge extends BaseMediaBridge implements ICamera {
+       @class Adaptive.CameraBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the camera operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var CameraBridge = (function (_super) {
         __extends(CameraBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CameraBridge() {

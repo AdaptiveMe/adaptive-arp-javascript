@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     var ICapabilitiesNotification = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesNotification}
         */
         ICapabilitiesNotification.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -67,10 +71,30 @@ var Adaptive;
                 return ICapabilitiesNotification.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Alarm=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.LocalNotification=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         ICapabilitiesNotification.LocalNotification = new ICapabilitiesNotification("LocalNotification");
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.RemoteNotification=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         ICapabilitiesNotification.RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Vibration=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         ICapabilitiesNotification.Vibration = new ICapabilitiesNotification("Vibration");
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Unknown=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         ICapabilitiesNotification.Unknown = new ICapabilitiesNotification("Unknown");
         return ICapabilitiesNotification;
     })();

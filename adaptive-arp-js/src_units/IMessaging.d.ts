@@ -42,8 +42,14 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IMessaging
+       @extends {IBasePIM}
+       @abstract
+    */
     interface IMessaging extends IBasePIM {
         /**
+           @method
            Send text SMS
            @param number   to send
            @param text     to send

@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IDesktop
+        @extends Adaptive.IBaseUI
+     */
      export interface IDesktop extends IBaseUI {
      }
 }

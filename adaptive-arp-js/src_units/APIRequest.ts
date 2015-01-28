@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.APIRequest
         Structure representing a HTML5 request to the native API.
 
         @author Carlos Lozano Diez

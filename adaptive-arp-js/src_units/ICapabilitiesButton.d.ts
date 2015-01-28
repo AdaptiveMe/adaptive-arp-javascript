@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesButton
        Enumeration ICapabilitiesButton
     */
     class ICapabilitiesButton {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesButton.HomeButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         static HomeButton: ICapabilitiesButton;
+        /**
+           @enum [Adaptive.ICapabilitiesButton.BackButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         static BackButton: ICapabilitiesButton;
+        /**
+           @enum [Adaptive.ICapabilitiesButton.OptionButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         static OptionButton: ICapabilitiesButton;
+        /**
+           @enum [Adaptive.ICapabilitiesButton.Unknown=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         static Unknown: ICapabilitiesButton;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesButton}
         */
         static toObject(object: any): ICapabilitiesButton;
     }

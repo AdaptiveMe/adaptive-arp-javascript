@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesMedia} Adaptive.ICapabilitiesMedia
         Enumeration ICapabilitiesMedia
      */
      export class ICapabilitiesMedia {
@@ -42,15 +43,36 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+          */
           static Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+          */
           static Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
+          */
           static Camera = new ICapabilitiesMedia("Camera");
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+          */
           static Video_Playback = new ICapabilitiesMedia("Video_Playback");
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+          */
           static Video_Recording = new ICapabilitiesMedia("Video_Recording");
+          /**
+             @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesMedia("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesMedia}
           */
           static toObject(object : any) : ICapabilitiesMedia {
                if (object != null && object.value != null) {

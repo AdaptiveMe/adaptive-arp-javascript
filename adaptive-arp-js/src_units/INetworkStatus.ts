@@ -45,20 +45,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.INetworkStatus
+        @extends Adaptive.IBaseCommunication
+     */
      export interface INetworkStatus extends IBaseCommunication {
           /**
+             @method
              Add the listener for network status changes of the app
              @param listener Listener with the result
              @since ARP1.0
           */
           addNetworkStatusListener(listener:INetworkStatusListener);
           /**
+             @method
              Un-registers an existing listener from receiving network status events.
              @param listener Listener with the result
              @since ARP1.0
           */
           removeNetworkStatusListener(listener:INetworkStatusListener);
           /**
+             @method
              Removes all existing listeners from receiving network status events.
              @since ARP1.0
           */

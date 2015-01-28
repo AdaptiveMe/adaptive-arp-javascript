@@ -43,20 +43,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IContactPhotoResultCallback
+       @extends {IBaseCallback}
+       @abstract
+    */
     interface IContactPhotoResultCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IContactPhotoResultCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param contactPhoto returned by the platform
            @since ARP1.0
         */
         onResult(contactPhoto: number[]): any;
         /**
+           @method
            This method is called on Warning
            @param contactPhoto returned by the platform
            @param warning      returned by the platform

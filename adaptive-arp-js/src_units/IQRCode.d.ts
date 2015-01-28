@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IQRCode
+       @extends {IBaseReader}
+       @abstract
+    */
     interface IQRCode extends IBaseReader {
     }
 }

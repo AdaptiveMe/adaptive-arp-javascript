@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IGeolocationListenerWarning
        Enumeration IGeolocationListenerWarning
     */
     class IGeolocationListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.HighDoP=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         static HighDoP: IGeolocationListenerWarning;
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.StaleData=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         static StaleData: IGeolocationListenerWarning;
+        /**
+           @enum [Adaptive.IGeolocationListenerWarning.Unknown=Adaptive.IGeolocationListenerWarning.*]
+           @static
+        */
         static Unknown: IGeolocationListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IGeolocationListenerWarning}
         */
         static toObject(object: any): IGeolocationListenerWarning;
     }

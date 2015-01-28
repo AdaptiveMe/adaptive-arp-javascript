@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ConcurrentBridge
+        @extends Adaptive.BaseUtilBridge
         Interface for Managing the Concurrent operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

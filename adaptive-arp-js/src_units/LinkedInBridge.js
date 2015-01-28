@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
+       @class Adaptive.LinkedInBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Linkedin operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var LinkedInBridge = (function (_super) {
         __extends(LinkedInBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LinkedInBridge() {

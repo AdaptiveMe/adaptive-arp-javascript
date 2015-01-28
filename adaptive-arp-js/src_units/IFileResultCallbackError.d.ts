@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     class IFileResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.FileExists=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static FileExists: IFileResultCallbackError;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.SourceInexistent=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static SourceInexistent: IFileResultCallbackError;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.DestionationExists=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static DestionationExists: IFileResultCallbackError;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.InsufficientSpace=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static InsufficientSpace: IFileResultCallbackError;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.Unauthorized=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static Unauthorized: IFileResultCallbackError;
+        /**
+           @enum [Adaptive.IFileResultCallbackError.Unknown=Adaptive.IFileResultCallbackError.*]
+           @static
+        */
         static Unknown: IFileResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileResultCallbackError}
         */
         static toObject(object: any): IFileResultCallbackError;
     }

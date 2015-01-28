@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IAccelerationListenerWarning} Adaptive.IAccelerationListenerWarning
         Enumeration IAccelerationListenerWarning
      */
      export class IAccelerationListenerWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IAccelerationListenerWarning} [NeedsCalibration='NeedsCalibration']
+          */
           static NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
+          /**
+             @property {Adaptive.IAccelerationListenerWarning} [Stale='Stale']
+          */
           static Stale = new IAccelerationListenerWarning("Stale");
+          /**
+             @property {Adaptive.IAccelerationListenerWarning} [Unknown='Unknown']
+          */
           static Unknown = new IAccelerationListenerWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IAccelerationListenerWarning}
           */
           static toObject(object : any) : IAccelerationListenerWarning {
                if (object != null && object.value != null) {

@@ -45,20 +45,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IAcceleration
+        @extends Adaptive.IBaseSensor
+     */
      export interface IAcceleration extends IBaseSensor {
           /**
+             @method
              Register a new listener that will receive acceleration events.
              @param listener to be registered.
              @since ARP1.0
           */
           addAccelerationListener(listener:IAccelerationListener);
           /**
+             @method
              De-registers an existing listener from receiving acceleration events.
              @param listener to be registered.
              @since ARP1.0
           */
           removeAccelerationListener(listener:IAccelerationListener);
           /**
+             @method
              Removed all existing listeners from receiving acceleration events.
              @since ARP1.0
           */

@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.INetworkStatusListenerError
        Enumeration INetworkStatusListenerError
     */
     var INetworkStatusListenerError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {INetworkStatusListenerError}
         */
         INetworkStatusListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return INetworkStatusListenerError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.INetworkStatusListenerError.NoPermission=Adaptive.INetworkStatusListenerError.*]
+           @static
+        */
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");
+        /**
+           @enum [Adaptive.INetworkStatusListenerError.Unreachable=Adaptive.INetworkStatusListenerError.*]
+           @static
+        */
         INetworkStatusListenerError.Unreachable = new INetworkStatusListenerError("Unreachable");
+        /**
+           @enum [Adaptive.INetworkStatusListenerError.Unknown=Adaptive.INetworkStatusListenerError.*]
+           @static
+        */
         INetworkStatusListenerError.Unknown = new INetworkStatusListenerError("Unknown");
         return INetworkStatusListenerError;
     })();

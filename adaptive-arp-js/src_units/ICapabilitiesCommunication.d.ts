@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     class ICapabilitiesCommunication {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Calendar=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Calendar: ICapabilitiesCommunication;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Contact=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Contact: ICapabilitiesCommunication;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Mail=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Mail: ICapabilitiesCommunication;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Messaging=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Messaging: ICapabilitiesCommunication;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Telephony=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Telephony: ICapabilitiesCommunication;
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Unknown=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         static Unknown: ICapabilitiesCommunication;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesCommunication}
         */
         static toObject(object: any): ICapabilitiesCommunication;
     }

@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseSecurityBridge implements IBaseSecurity {
+       @class Adaptive.BaseSecurityBridge
+       @extends Adaptive.IBaseSecurity
        Base application for Security purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseSecurityBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSecurityBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Security;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseSecurityBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

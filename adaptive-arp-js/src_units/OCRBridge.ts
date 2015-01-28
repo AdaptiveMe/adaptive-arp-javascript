@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.OCRBridge
+        @extends Adaptive.BaseReaderBridge
         Interface for Managing the OCR operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class OCRBridge extends BaseReaderBridge implements IOCR {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

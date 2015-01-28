@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ISecurityResultCallbackError
        Enumeration ISecurityResultCallbackError
     */
     var ISecurityResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ISecurityResultCallbackError}
         */
         ISecurityResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return ISecurityResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.NoPermission=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         ISecurityResultCallbackError.NoPermission = new ISecurityResultCallbackError("NoPermission");
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.NoMatchesFound=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         ISecurityResultCallbackError.NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.Unknown=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         ISecurityResultCallbackError.Unknown = new ISecurityResultCallbackError("Unknown");
         return ISecurityResultCallbackError;
     })();

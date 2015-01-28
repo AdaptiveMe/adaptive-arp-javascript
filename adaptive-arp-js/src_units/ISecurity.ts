@@ -46,8 +46,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ISecurity
+        @extends Adaptive.IBaseSecurity
+     */
      export interface ISecurity extends IBaseSecurity {
           /**
+             @method
              Deletes from the device internal storage the entry/entries containing the specified key names.
              @param keys             Array with the key names to delete.
              @param publicAccessName The name of the shared internal storage object (if needed).
@@ -56,6 +61,7 @@ module Adaptive {
           */
           deleteSecureKeyValuePairs(keys:Array<string>, publicAccessName:string, callback:ISecurityResultCallback);
           /**
+             @method
              Retrieves from the device internal storage the entry/entries containing the specified key names.
              @param keys             Array with the key names to retrieve.
              @param publicAccessName The name of the shared internal storage object (if needed).
@@ -64,12 +70,14 @@ module Adaptive {
           */
           getSecureKeyValuePairs(keys:Array<string>, publicAccessName:string, callback:ISecurityResultCallback);
           /**
+             @method
              Returns if the device has been modified in anyhow
-             @return true if the device has been modified; false otherwise
+             @return {boolean} true if the device has been modified; false otherwise
              @since ARP1.0
           */
           isDeviceModified() : boolean;
           /**
+             @method
              Stores in the device internal storage the specified item/s.
              @param keyValues        Array containing the items to store on the device internal memory.
              @param publicAccessName The name of the shared internal storage object (if needed).

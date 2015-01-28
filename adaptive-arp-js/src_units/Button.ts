@@ -38,6 +38,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Button
+        @extends Adaptive.APIBean
         Structure representing the a physical or logical button on a device.
 
         @author Francisco Javier Martin Bueno

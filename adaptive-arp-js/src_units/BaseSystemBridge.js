@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseSystemBridge implements IBaseSystem {
+       @class Adaptive.BaseSystemBridge
+       @extends Adaptive.IBaseSystem
        Base application for System purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseSystemBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSystemBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.System;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseSystemBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

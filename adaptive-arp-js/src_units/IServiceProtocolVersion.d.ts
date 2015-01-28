@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     class IServiceProtocolVersion {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion10=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         static HttpProtocolVersion10: IServiceProtocolVersion;
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.HttpProtocolVersion11=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         static HttpProtocolVersion11: IServiceProtocolVersion;
+        /**
+           @enum [Adaptive.IServiceProtocolVersion.Unknown=Adaptive.IServiceProtocolVersion.*]
+           @static
+        */
         static Unknown: IServiceProtocolVersion;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceProtocolVersion}
         */
         static toObject(object: any): IServiceProtocolVersion;
     }

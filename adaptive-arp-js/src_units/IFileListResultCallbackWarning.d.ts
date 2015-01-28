@@ -33,16 +33,28 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IFileListResultCallbackWarning
        Enumeration IFileListResultCallbackWarning
     */
     class IFileListResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IFileListResultCallbackWarning.PartialResult=Adaptive.IFileListResultCallbackWarning.*]
+           @static
+        */
         static PartialResult: IFileListResultCallbackWarning;
+        /**
+           @enum [Adaptive.IFileListResultCallbackWarning.Unknown=Adaptive.IFileListResultCallbackWarning.*]
+           @static
+        */
         static Unknown: IFileListResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileListResultCallbackWarning}
         */
         static toObject(object: any): IFileListResultCallbackWarning;
     }

@@ -38,6 +38,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Lifecycle
+        @extends Adaptive.APIBean
         Represents a specific application life-cycle stage.
 
         @author Francisco Javier Martin Bueno

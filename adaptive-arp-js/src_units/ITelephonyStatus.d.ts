@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     class ITelephonyStatus {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ITelephonyStatus.Dialing=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         static Dialing: ITelephonyStatus;
+        /**
+           @enum [Adaptive.ITelephonyStatus.Failed=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         static Failed: ITelephonyStatus;
+        /**
+           @enum [Adaptive.ITelephonyStatus.Unknown=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         static Unknown: ITelephonyStatus;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ITelephonyStatus}
         */
         static toObject(object: any): ITelephonyStatus;
     }

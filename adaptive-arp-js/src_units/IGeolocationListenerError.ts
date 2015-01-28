@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IGeolocationListenerError} Adaptive.IGeolocationListenerError
         Enumeration IGeolocationListenerError
      */
      export class IGeolocationListenerError {
@@ -42,14 +43,32 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']
+          */
           static Disabled = new IGeolocationListenerError("Disabled");
+          /**
+             @property {Adaptive.IGeolocationListenerError} [RestrictedAccess='RestrictedAccess']
+          */
           static RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
+          /**
+             @property {Adaptive.IGeolocationListenerError} [DeniedAccess='DeniedAccess']
+          */
           static DeniedAccess = new IGeolocationListenerError("DeniedAccess");
+          /**
+             @property {Adaptive.IGeolocationListenerError} [StatusNotDetermined='StatusNotDetermined']
+          */
           static StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
+          /**
+             @property {Adaptive.IGeolocationListenerError} [Unknown='Unknown']
+          */
           static Unknown = new IGeolocationListenerError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IGeolocationListenerError}
           */
           static toObject(object : any) : IGeolocationListenerError {
                if (object != null && object.value != null) {

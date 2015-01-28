@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CryptoBridge extends BaseUtilBridge implements ICrypto {
+       @class Adaptive.CryptoBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var CryptoBridge = (function (_super) {
         __extends(CryptoBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CryptoBridge() {

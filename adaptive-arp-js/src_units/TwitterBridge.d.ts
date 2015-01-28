@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class TwitterBridge extends BaseSocialBridge implements ITwitter {
+       @class Adaptive.TwitterBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Twitter operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class TwitterBridge extends BaseSocialBridge implements ITwitter {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

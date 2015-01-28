@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class TimerBridge extends BaseUtilBridge implements ITimer {
+       @class Adaptive.TimerBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Timer operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class TimerBridge extends BaseUtilBridge implements ITimer {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

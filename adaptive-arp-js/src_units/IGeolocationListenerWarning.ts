@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IGeolocationListenerWarning} Adaptive.IGeolocationListenerWarning
         Enumeration IGeolocationListenerWarning
      */
      export class IGeolocationListenerWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']
+          */
           static HighDoP = new IGeolocationListenerWarning("HighDoP");
+          /**
+             @property {Adaptive.IGeolocationListenerWarning} [StaleData='StaleData']
+          */
           static StaleData = new IGeolocationListenerWarning("StaleData");
+          /**
+             @property {Adaptive.IGeolocationListenerWarning} [Unknown='Unknown']
+          */
           static Unknown = new IGeolocationListenerWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IGeolocationListenerWarning}
           */
           static toObject(object : any) : IGeolocationListenerWarning {
                if (object != null && object.value != null) {

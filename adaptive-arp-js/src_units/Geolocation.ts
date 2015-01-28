@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Geolocation
+        @extends Adaptive.APIBean
         Structure representing the data a single geolocation reading.
 
         @author Francisco Javier Martin Bueno
@@ -173,7 +175,7 @@ module Adaptive {
           /**
              Gets Dilution of precision on the X measurement. Measured in meters.
 
-             @return xDoP Dilution of precision on the X measurement. Measured in meters.
+             @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
           */
           getXDoP() : number {
                return this.xDoP;
@@ -191,7 +193,7 @@ module Adaptive {
           /**
              Gets Dilution of precision on the Y measurement. Measured in meters.
 
-             @return yDoP Dilution of precision on the Y measurement. Measured in meters.
+             @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
           */
           getYDoP() : number {
                return this.yDoP;

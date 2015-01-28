@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileSystemSecurity} Adaptive.IFileSystemSecurity
         Enumeration IFileSystemSecurity
      */
      export class IFileSystemSecurity {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileSystemSecurity} [Default='Default']
+          */
           static Default = new IFileSystemSecurity("Default");
+          /**
+             @property {Adaptive.IFileSystemSecurity} [Protected='Protected']
+          */
           static Protected = new IFileSystemSecurity("Protected");
+          /**
+             @property {Adaptive.IFileSystemSecurity} [Encrypted='Encrypted']
+          */
           static Encrypted = new IFileSystemSecurity("Encrypted");
+          /**
+             @property {Adaptive.IFileSystemSecurity} [Unknown='Unknown']
+          */
           static Unknown = new IFileSystemSecurity("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileSystemSecurity}
           */
           static toObject(object : any) : IFileSystemSecurity {
                if (object != null && object.value != null) {

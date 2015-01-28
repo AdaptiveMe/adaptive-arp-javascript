@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.EmailAddress
+        @extends Adaptive.APIBean
         Structure representing the data elements of an email addressee.
 
         @author Francisco Javier Martin Bueno

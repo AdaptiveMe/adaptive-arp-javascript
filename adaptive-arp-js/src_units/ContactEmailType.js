@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     var ContactEmailType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactEmailType}
         */
         ContactEmailType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return ContactEmailType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ContactEmailType.Personal=Adaptive.ContactEmailType.*]
+           @static
+        */
         ContactEmailType.Personal = new ContactEmailType("Personal");
+        /**
+           @enum [Adaptive.ContactEmailType.Work=Adaptive.ContactEmailType.*]
+           @static
+        */
         ContactEmailType.Work = new ContactEmailType("Work");
+        /**
+           @enum [Adaptive.ContactEmailType.Other=Adaptive.ContactEmailType.*]
+           @static
+        */
         ContactEmailType.Other = new ContactEmailType("Other");
+        /**
+           @enum [Adaptive.ContactEmailType.Unknown=Adaptive.ContactEmailType.*]
+           @static
+        */
         ContactEmailType.Unknown = new ContactEmailType("Unknown");
         return ContactEmailType;
     })();

@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class UIBridge extends BaseUIBridge implements IUI {
+       @class Adaptive.UIBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the UI operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class UIBridge extends BaseUIBridge implements IUI {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

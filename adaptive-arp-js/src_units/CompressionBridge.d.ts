@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class CompressionBridge extends BaseUtilBridge implements ICompression {
+       @class Adaptive.CompressionBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Compression operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class CompressionBridge extends BaseUtilBridge implements ICompression {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

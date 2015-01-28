@@ -44,32 +44,42 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDevice
+       @extends {IBaseSystem}
+       @abstract
+    */
     interface IDevice extends IBaseSystem {
         /**
+           @method
            Register a new listener that will receive button events.
            @param listener to be registered.
            @since ARP1.0
         */
         addButtonListener(listener: IButtonListener): any;
         /**
+           @method
            Returns the device information for the current device executing the runtime.
-           @return DeviceInfo for the current device.
+           @return {DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
+           @method
            Gets the current Locale for the device.
-           @return The current Locale information.
+           @return {Locale} The current Locale information.
            @since ARP1.0
         */
         getLocaleCurrent(): Locale;
         /**
+           @method
            De-registers an existing listener from receiving button events.
            @param listener to be removed.
            @since ARP1.0
         */
         removeButtonListener(listener: IButtonListener): any;
         /**
+           @method
            Removed all existing listeners from receiving button events.
            @since ARP1.0
         */

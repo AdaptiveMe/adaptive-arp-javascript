@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class FacebookBridge extends BaseSocialBridge implements IFacebook {
+       @class Adaptive.FacebookBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Facebook operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var FacebookBridge = (function (_super) {
         __extends(FacebookBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FacebookBridge() {

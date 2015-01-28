@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     var ICapabilitiesCommunication = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesCommunication}
         */
         ICapabilitiesCommunication.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return ICapabilitiesCommunication.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Calendar=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Calendar = new ICapabilitiesCommunication("Calendar");
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Contact=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Contact = new ICapabilitiesCommunication("Contact");
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Mail=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Mail = new ICapabilitiesCommunication("Mail");
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Messaging=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Messaging = new ICapabilitiesCommunication("Messaging");
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Telephony=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Telephony = new ICapabilitiesCommunication("Telephony");
+        /**
+           @enum [Adaptive.ICapabilitiesCommunication.Unknown=Adaptive.ICapabilitiesCommunication.*]
+           @static
+        */
         ICapabilitiesCommunication.Unknown = new ICapabilitiesCommunication("Unknown");
         return ICapabilitiesCommunication;
     })();

@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.LifecycleState} Adaptive.LifecycleState
         Enumeration LifecycleState
      */
      export class LifecycleState {
@@ -42,18 +43,48 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.LifecycleState} [Starting='Starting']
+          */
           static Starting = new LifecycleState("Starting");
+          /**
+             @property {Adaptive.LifecycleState} [Started='Started']
+          */
           static Started = new LifecycleState("Started");
+          /**
+             @property {Adaptive.LifecycleState} [Running='Running']
+          */
           static Running = new LifecycleState("Running");
+          /**
+             @property {Adaptive.LifecycleState} [Pausing='Pausing']
+          */
           static Pausing = new LifecycleState("Pausing");
+          /**
+             @property {Adaptive.LifecycleState} [PausedIdle='PausedIdle']
+          */
           static PausedIdle = new LifecycleState("PausedIdle");
+          /**
+             @property {Adaptive.LifecycleState} [PausedRun='PausedRun']
+          */
           static PausedRun = new LifecycleState("PausedRun");
+          /**
+             @property {Adaptive.LifecycleState} [Resuming='Resuming']
+          */
           static Resuming = new LifecycleState("Resuming");
+          /**
+             @property {Adaptive.LifecycleState} [Stopping='Stopping']
+          */
           static Stopping = new LifecycleState("Stopping");
+          /**
+             @property {Adaptive.LifecycleState} [Unknown='Unknown']
+          */
           static Unknown = new LifecycleState("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.LifecycleState}
           */
           static toObject(object : any) : LifecycleState {
                if (object != null && object.value != null) {

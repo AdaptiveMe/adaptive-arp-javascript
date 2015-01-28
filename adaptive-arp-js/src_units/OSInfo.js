@@ -42,6 +42,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.OSInfo
+       @extends Adaptive.APIBean
        Represents the basic information about the operating system.
 
        @author Francisco Javier Martin Bueno

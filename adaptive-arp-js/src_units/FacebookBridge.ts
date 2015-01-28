@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.FacebookBridge
+        @extends Adaptive.BaseSocialBridge
         Interface for Managing the Facebook operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class FacebookBridge extends BaseSocialBridge implements IFacebook {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

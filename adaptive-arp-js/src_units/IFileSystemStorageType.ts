@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileSystemStorageType} Adaptive.IFileSystemStorageType
         Enumeration IFileSystemStorageType
      */
      export class IFileSystemStorageType {
@@ -42,16 +43,40 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Application='Application']
+          */
           static Application = new IFileSystemStorageType("Application");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Document='Document']
+          */
           static Document = new IFileSystemStorageType("Document");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Cloud='Cloud']
+          */
           static Cloud = new IFileSystemStorageType("Cloud");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Protected='Protected']
+          */
           static Protected = new IFileSystemStorageType("Protected");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Cache='Cache']
+          */
           static Cache = new IFileSystemStorageType("Cache");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [External='External']
+          */
           static External = new IFileSystemStorageType("External");
+          /**
+             @property {Adaptive.IFileSystemStorageType} [Unknown='Unknown']
+          */
           static Unknown = new IFileSystemStorageType("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileSystemStorageType}
           */
           static toObject(object : any) : IFileSystemStorageType {
                if (object != null && object.value != null) {

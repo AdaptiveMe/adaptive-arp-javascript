@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     class IServiceMethod {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IServiceMethod.Post=Adaptive.IServiceMethod.*]
+           @static
+        */
         static Post: IServiceMethod;
+        /**
+           @enum [Adaptive.IServiceMethod.Get=Adaptive.IServiceMethod.*]
+           @static
+        */
         static Get: IServiceMethod;
+        /**
+           @enum [Adaptive.IServiceMethod.Unknown=Adaptive.IServiceMethod.*]
+           @static
+        */
         static Unknown: IServiceMethod;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IServiceMethod}
         */
         static toObject(object: any): IServiceMethod;
     }

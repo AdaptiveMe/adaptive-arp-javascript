@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BarcodeBridge extends BaseReaderBridge implements IBarcode {
+       @class Adaptive.BarcodeBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Barcode Reading purposes
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class BarcodeBridge extends BaseReaderBridge implements IBarcode {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

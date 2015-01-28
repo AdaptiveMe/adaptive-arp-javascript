@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NFCBridge extends BaseReaderBridge implements INFC {
+       @class Adaptive.NFCBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the NFC operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var NFCBridge = (function (_super) {
         __extends(NFCBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NFCBridge() {

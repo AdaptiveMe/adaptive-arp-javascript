@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesMedia
        Enumeration ICapabilitiesMedia
     */
     var ICapabilitiesMedia = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesMedia}
         */
         ICapabilitiesMedia.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -69,11 +73,35 @@ var Adaptive;
                 return ICapabilitiesMedia.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Audio_Playback=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Audio_Recording=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Camera=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Video_Playback=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Video_Recording=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
+        /**
+           @enum [Adaptive.ICapabilitiesMedia.Unknown=Adaptive.ICapabilitiesMedia.*]
+           @static
+        */
         ICapabilitiesMedia.Unknown = new ICapabilitiesMedia("Unknown");
         return ICapabilitiesMedia;
     })();

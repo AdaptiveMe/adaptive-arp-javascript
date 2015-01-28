@@ -176,6 +176,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class AppRegistryBridge implements IAppRegistry {
+       @class Adaptive.AppRegistryBridge
+       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez
@@ -184,503 +187,862 @@ declare module Adaptive {
     class AppRegistryBridge implements IAppRegistry {
         /**
            Singleton instance of AppRegistry.
+           @private
         */
         private static instance;
+        /**
+           Singleton instance of AppRegistry.
+           @static
+           @singleton
+           @method
+           @return {AppRegistryBridge}
+        */
         static getInstance(): IAppRegistry;
         /**
            Singleton instances of Bridges.
         */
+        /**
+           @static
+           @property
+        */
         private static instanceAcceleration;
+        /**
+           @static
+           @property
+        */
         private static instanceAds;
+        /**
+           @static
+           @property
+        */
         private static instanceAlarm;
+        /**
+           @static
+           @property
+        */
         private static instanceAmbientLight;
+        /**
+           @static
+           @property
+        */
         private static instanceAnalytics;
+        /**
+           @static
+           @property
+        */
         private static instanceAudio;
+        /**
+           @static
+           @property
+        */
         private static instanceBarcode;
+        /**
+           @static
+           @property
+        */
         private static instanceBarometer;
+        /**
+           @static
+           @property
+        */
         private static instanceBluetooth;
+        /**
+           @static
+           @property
+        */
         private static instanceBrowser;
+        /**
+           @static
+           @property
+        */
         private static instanceCalendar;
+        /**
+           @static
+           @property
+        */
         private static instanceCamera;
+        /**
+           @static
+           @property
+        */
         private static instanceCapabilities;
+        /**
+           @static
+           @property
+        */
         private static instanceCloud;
+        /**
+           @static
+           @property
+        */
         private static instanceCompression;
+        /**
+           @static
+           @property
+        */
         private static instanceConcurrent;
+        /**
+           @static
+           @property
+        */
         private static instanceContact;
+        /**
+           @static
+           @property
+        */
         private static instanceCrypto;
+        /**
+           @static
+           @property
+        */
         private static instanceDataStream;
+        /**
+           @static
+           @property
+        */
         private static instanceDatabase;
+        /**
+           @static
+           @property
+        */
         private static instanceDesktop;
+        /**
+           @static
+           @property
+        */
         private static instanceDevice;
+        /**
+           @static
+           @property
+        */
         private static instanceDisplay;
+        /**
+           @static
+           @property
+        */
         private static instanceFacebook;
+        /**
+           @static
+           @property
+        */
         private static instanceFile;
+        /**
+           @static
+           @property
+        */
         private static instanceFileSystem;
+        /**
+           @static
+           @property
+        */
         private static instanceGeolocation;
+        /**
+           @static
+           @property
+        */
         private static instanceGlobalization;
+        /**
+           @static
+           @property
+        */
         private static instanceGooglePlus;
+        /**
+           @static
+           @property
+        */
         private static instanceGyroscope;
+        /**
+           @static
+           @property
+        */
         private static instanceImaging;
+        /**
+           @static
+           @property
+        */
         private static instanceInternalStorage;
+        /**
+           @static
+           @property
+        */
         private static instanceLifecycle;
+        /**
+           @static
+           @property
+        */
         private static instanceLinkedIn;
+        /**
+           @static
+           @property
+        */
         private static instanceLogging;
+        /**
+           @static
+           @property
+        */
         private static instanceMagnetometer;
+        /**
+           @static
+           @property
+        */
         private static instanceMail;
+        /**
+           @static
+           @property
+        */
         private static instanceManagement;
+        /**
+           @static
+           @property
+        */
         private static instanceMap;
+        /**
+           @static
+           @property
+        */
         private static instanceMessaging;
+        /**
+           @static
+           @property
+        */
         private static instanceNFC;
+        /**
+           @static
+           @property
+        */
         private static instanceNetworkInfo;
+        /**
+           @static
+           @property
+        */
         private static instanceNetworkNaming;
+        /**
+           @static
+           @property
+        */
         private static instanceNetworkReachability;
+        /**
+           @static
+           @property
+        */
         private static instanceNetworkStatus;
+        /**
+           @static
+           @property
+        */
         private static instanceNotification;
+        /**
+           @static
+           @property
+        */
         private static instanceNotificationLocal;
+        /**
+           @static
+           @property
+        */
         private static instanceOAuth;
+        /**
+           @static
+           @property
+        */
         private static instanceOCR;
+        /**
+           @static
+           @property
+        */
         private static instanceOS;
+        /**
+           @static
+           @property
+        */
         private static instanceOpenId;
+        /**
+           @static
+           @property
+        */
         private static instancePrinting;
+        /**
+           @static
+           @property
+        */
         private static instanceProximity;
+        /**
+           @static
+           @property
+        */
         private static instanceQRCode;
+        /**
+           @static
+           @property
+        */
         private static instanceRSS;
+        /**
+           @static
+           @property
+        */
         private static instanceRuntime;
+        /**
+           @static
+           @property
+        */
         private static instanceSecurity;
+        /**
+           @static
+           @property
+        */
         private static instanceService;
+        /**
+           @static
+           @property
+        */
         private static instanceSettings;
+        /**
+           @static
+           @property
+        */
         private static instanceSocket;
+        /**
+           @static
+           @property
+        */
         private static instanceStore;
+        /**
+           @static
+           @property
+        */
         private static instanceTelephony;
+        /**
+           @static
+           @property
+        */
         private static instanceTimer;
+        /**
+           @static
+           @property
+        */
         private static instanceTwitter;
+        /**
+           @static
+           @property
+        */
         private static instanceUI;
+        /**
+           @static
+           @property
+        */
         private static instanceUpdate;
+        /**
+           @static
+           @property
+        */
         private static instanceVibration;
+        /**
+           @static
+           @property
+        */
         private static instanceVideo;
+        /**
+           @static
+           @property
+        */
         private static instanceWallet;
+        /**
+           @static
+           @property
+        */
         private static instanceXML;
         /**
+           @method
            Obtain a reference to the IAcceleration bridge.
 
-           @return IAcceleration bridge instance.
+           @return {AccelerationBridge} bridge instance.
         */
         getAccelerationBridge(): IAcceleration;
         /**
+           @method
            Obtain a reference to the IAds bridge.
 
-           @return IAds bridge instance.
+           @return {AdsBridge} bridge instance.
         */
         getAdsBridge(): IAds;
         /**
+           @method
            Obtain a reference to the IAlarm bridge.
 
-           @return IAlarm bridge instance.
+           @return {AlarmBridge} bridge instance.
         */
         getAlarmBridge(): IAlarm;
         /**
+           @method
            Obtain a reference to the IAmbientLight bridge.
 
-           @return IAmbientLight bridge instance.
+           @return {AmbientLightBridge} bridge instance.
         */
         getAmbientLightBridge(): IAmbientLight;
         /**
+           @method
            Obtain a reference to the IAnalytics bridge.
 
-           @return IAnalytics bridge instance.
+           @return {AnalyticsBridge} bridge instance.
         */
         getAnalyticsBridge(): IAnalytics;
         /**
+           @method
            Obtain a reference to the IAudio bridge.
 
-           @return IAudio bridge instance.
+           @return {AudioBridge} bridge instance.
         */
         getAudioBridge(): IAudio;
         /**
+           @method
            Obtain a reference to the IBarcode bridge.
 
-           @return IBarcode bridge instance.
+           @return {BarcodeBridge} bridge instance.
         */
         getBarcodeBridge(): IBarcode;
         /**
+           @method
            Obtain a reference to the IBarometer bridge.
 
-           @return IBarometer bridge instance.
+           @return {BarometerBridge} bridge instance.
         */
         getBarometerBridge(): IBarometer;
         /**
+           @method
            Obtain a reference to the IBluetooth bridge.
 
-           @return IBluetooth bridge instance.
+           @return {BluetoothBridge} bridge instance.
         */
         getBluetoothBridge(): IBluetooth;
         /**
+           @method
            Obtain a reference to the IBrowser bridge.
 
-           @return IBrowser bridge instance.
+           @return {BrowserBridge} bridge instance.
         */
         getBrowserBridge(): IBrowser;
         /**
+           @method
            Obtain a reference to the ICalendar bridge.
 
-           @return ICalendar bridge instance.
+           @return {CalendarBridge} bridge instance.
         */
         getCalendarBridge(): ICalendar;
         /**
+           @method
            Obtain a reference to the ICamera bridge.
 
-           @return ICamera bridge instance.
+           @return {CameraBridge} bridge instance.
         */
         getCameraBridge(): ICamera;
         /**
+           @method
            Obtain a reference to the ICapabilities bridge.
 
-           @return ICapabilities bridge instance.
+           @return {CapabilitiesBridge} bridge instance.
         */
         getCapabilitiesBridge(): ICapabilities;
         /**
+           @method
            Obtain a reference to the ICloud bridge.
 
-           @return ICloud bridge instance.
+           @return {CloudBridge} bridge instance.
         */
         getCloudBridge(): ICloud;
         /**
+           @method
            Obtain a reference to the ICompression bridge.
 
-           @return ICompression bridge instance.
+           @return {CompressionBridge} bridge instance.
         */
         getCompressionBridge(): ICompression;
         /**
+           @method
            Obtain a reference to the IConcurrent bridge.
 
-           @return IConcurrent bridge instance.
+           @return {ConcurrentBridge} bridge instance.
         */
         getConcurrentBridge(): IConcurrent;
         /**
+           @method
            Obtain a reference to the IContact bridge.
 
-           @return IContact bridge instance.
+           @return {ContactBridge} bridge instance.
         */
         getContactBridge(): IContact;
         /**
+           @method
            Obtain a reference to the ICrypto bridge.
 
-           @return ICrypto bridge instance.
+           @return {CryptoBridge} bridge instance.
         */
         getCryptoBridge(): ICrypto;
         /**
+           @method
            Obtain a reference to the IDataStream bridge.
 
-           @return IDataStream bridge instance.
+           @return {DataStreamBridge} bridge instance.
         */
         getDataStreamBridge(): IDataStream;
         /**
+           @method
            Obtain a reference to the IDatabase bridge.
 
-           @return IDatabase bridge instance.
+           @return {DatabaseBridge} bridge instance.
         */
         getDatabaseBridge(): IDatabase;
         /**
+           @method
            Obtain a reference to the IDesktop bridge.
 
-           @return IDesktop bridge instance.
+           @return {DesktopBridge} bridge instance.
         */
         getDesktopBridge(): IDesktop;
         /**
+           @method
            Obtain a reference to the IDevice bridge.
 
-           @return IDevice bridge instance.
+           @return {DeviceBridge} bridge instance.
         */
         getDeviceBridge(): IDevice;
         /**
+           @method
            Obtain a reference to the IDisplay bridge.
 
-           @return IDisplay bridge instance.
+           @return {DisplayBridge} bridge instance.
         */
         getDisplayBridge(): IDisplay;
         /**
+           @method
            Obtain a reference to the IFacebook bridge.
 
-           @return IFacebook bridge instance.
+           @return {FacebookBridge} bridge instance.
         */
         getFacebookBridge(): IFacebook;
         /**
+           @method
            Obtain a reference to the IFile bridge.
 
-           @return IFile bridge instance.
+           @return {FileBridge} bridge instance.
         */
         getFileBridge(): IFile;
         /**
+           @method
            Obtain a reference to the IFileSystem bridge.
 
-           @return IFileSystem bridge instance.
+           @return {FileSystemBridge} bridge instance.
         */
         getFileSystemBridge(): IFileSystem;
         /**
+           @method
            Obtain a reference to the IGeolocation bridge.
 
-           @return IGeolocation bridge instance.
+           @return {GeolocationBridge} bridge instance.
         */
         getGeolocationBridge(): IGeolocation;
         /**
+           @method
            Obtain a reference to the IGlobalization bridge.
 
-           @return IGlobalization bridge instance.
+           @return {GlobalizationBridge} bridge instance.
         */
         getGlobalizationBridge(): IGlobalization;
         /**
+           @method
            Obtain a reference to the IGooglePlus bridge.
 
-           @return IGooglePlus bridge instance.
+           @return {GooglePlusBridge} bridge instance.
         */
         getGooglePlusBridge(): IGooglePlus;
         /**
+           @method
            Obtain a reference to the IGyroscope bridge.
 
-           @return IGyroscope bridge instance.
+           @return {GyroscopeBridge} bridge instance.
         */
         getGyroscopeBridge(): IGyroscope;
         /**
+           @method
            Obtain a reference to the IImaging bridge.
 
-           @return IImaging bridge instance.
+           @return {ImagingBridge} bridge instance.
         */
         getImagingBridge(): IImaging;
         /**
+           @method
            Obtain a reference to the IInternalStorage bridge.
 
-           @return IInternalStorage bridge instance.
+           @return {InternalStorageBridge} bridge instance.
         */
         getInternalStorageBridge(): IInternalStorage;
         /**
+           @method
            Obtain a reference to the ILifecycle bridge.
 
-           @return ILifecycle bridge instance.
+           @return {LifecycleBridge} bridge instance.
         */
         getLifecycleBridge(): ILifecycle;
         /**
+           @method
            Obtain a reference to the ILinkedIn bridge.
 
-           @return ILinkedIn bridge instance.
+           @return {LinkedInBridge} bridge instance.
         */
         getLinkedInBridge(): ILinkedIn;
         /**
+           @method
            Obtain a reference to the ILogging bridge.
 
-           @return ILogging bridge instance.
+           @return {LoggingBridge} bridge instance.
         */
         getLoggingBridge(): ILogging;
         /**
+           @method
            Obtain a reference to the IMagnetometer bridge.
 
-           @return IMagnetometer bridge instance.
+           @return {MagnetometerBridge} bridge instance.
         */
         getMagnetometerBridge(): IMagnetometer;
         /**
+           @method
            Obtain a reference to the IMail bridge.
 
-           @return IMail bridge instance.
+           @return {MailBridge} bridge instance.
         */
         getMailBridge(): IMail;
         /**
+           @method
            Obtain a reference to the IManagement bridge.
 
-           @return IManagement bridge instance.
+           @return {ManagementBridge} bridge instance.
         */
         getManagementBridge(): IManagement;
         /**
+           @method
            Obtain a reference to the IMap bridge.
 
-           @return IMap bridge instance.
+           @return {MapBridge} bridge instance.
         */
         getMapBridge(): IMap;
         /**
+           @method
            Obtain a reference to the IMessaging bridge.
 
-           @return IMessaging bridge instance.
+           @return {MessagingBridge} bridge instance.
         */
         getMessagingBridge(): IMessaging;
         /**
+           @method
            Obtain a reference to the INFC bridge.
 
-           @return INFC bridge instance.
+           @return {NFCBridge} bridge instance.
         */
         getNFCBridge(): INFC;
         /**
+           @method
            Obtain a reference to the INetworkInfo bridge.
 
-           @return INetworkInfo bridge instance.
+           @return {NetworkInfoBridge} bridge instance.
         */
         getNetworkInfoBridge(): INetworkInfo;
         /**
+           @method
            Obtain a reference to the INetworkNaming bridge.
 
-           @return INetworkNaming bridge instance.
+           @return {NetworkNamingBridge} bridge instance.
         */
         getNetworkNamingBridge(): INetworkNaming;
         /**
+           @method
            Obtain a reference to the INetworkReachability bridge.
 
-           @return INetworkReachability bridge instance.
+           @return {NetworkReachabilityBridge} bridge instance.
         */
         getNetworkReachabilityBridge(): INetworkReachability;
         /**
+           @method
            Obtain a reference to the INetworkStatus bridge.
 
-           @return INetworkStatus bridge instance.
+           @return {NetworkStatusBridge} bridge instance.
         */
         getNetworkStatusBridge(): INetworkStatus;
         /**
+           @method
            Obtain a reference to the INotification bridge.
 
-           @return INotification bridge instance.
+           @return {NotificationBridge} bridge instance.
         */
         getNotificationBridge(): INotification;
         /**
+           @method
            Obtain a reference to the INotificationLocal bridge.
 
-           @return INotificationLocal bridge instance.
+           @return {NotificationLocalBridge} bridge instance.
         */
         getNotificationLocalBridge(): INotificationLocal;
         /**
+           @method
            Obtain a reference to the IOAuth bridge.
 
-           @return IOAuth bridge instance.
+           @return {OAuthBridge} bridge instance.
         */
         getOAuthBridge(): IOAuth;
         /**
+           @method
            Obtain a reference to the IOCR bridge.
 
-           @return IOCR bridge instance.
+           @return {OCRBridge} bridge instance.
         */
         getOCRBridge(): IOCR;
         /**
+           @method
            Obtain a reference to the IOS bridge.
 
-           @return IOS bridge instance.
+           @return {OSBridge} bridge instance.
         */
         getOSBridge(): IOS;
         /**
+           @method
            Obtain a reference to the IOpenId bridge.
 
-           @return IOpenId bridge instance.
+           @return {OpenIdBridge} bridge instance.
         */
         getOpenIdBridge(): IOpenId;
         /**
+           @method
            Obtain a reference to the IPrinting bridge.
 
-           @return IPrinting bridge instance.
+           @return {PrintingBridge} bridge instance.
         */
         getPrintingBridge(): IPrinting;
         /**
+           @method
            Obtain a reference to the IProximity bridge.
 
-           @return IProximity bridge instance.
+           @return {ProximityBridge} bridge instance.
         */
         getProximityBridge(): IProximity;
         /**
+           @method
            Obtain a reference to the IQRCode bridge.
 
-           @return IQRCode bridge instance.
+           @return {QRCodeBridge} bridge instance.
         */
         getQRCodeBridge(): IQRCode;
         /**
+           @method
            Obtain a reference to the IRSS bridge.
 
-           @return IRSS bridge instance.
+           @return {RSSBridge} bridge instance.
         */
         getRSSBridge(): IRSS;
         /**
+           @method
            Obtain a reference to the IRuntime bridge.
 
-           @return IRuntime bridge instance.
+           @return {RuntimeBridge} bridge instance.
         */
         getRuntimeBridge(): IRuntime;
         /**
+           @method
            Obtain a reference to the ISecurity bridge.
 
-           @return ISecurity bridge instance.
+           @return {SecurityBridge} bridge instance.
         */
         getSecurityBridge(): ISecurity;
         /**
+           @method
            Obtain a reference to the IService bridge.
 
-           @return IService bridge instance.
+           @return {ServiceBridge} bridge instance.
         */
         getServiceBridge(): IService;
         /**
+           @method
            Obtain a reference to the ISettings bridge.
 
-           @return ISettings bridge instance.
+           @return {SettingsBridge} bridge instance.
         */
         getSettingsBridge(): ISettings;
         /**
+           @method
            Obtain a reference to the ISocket bridge.
 
-           @return ISocket bridge instance.
+           @return {SocketBridge} bridge instance.
         */
         getSocketBridge(): ISocket;
         /**
+           @method
            Obtain a reference to the IStore bridge.
 
-           @return IStore bridge instance.
+           @return {StoreBridge} bridge instance.
         */
         getStoreBridge(): IStore;
         /**
+           @method
            Obtain a reference to the ITelephony bridge.
 
-           @return ITelephony bridge instance.
+           @return {TelephonyBridge} bridge instance.
         */
         getTelephonyBridge(): ITelephony;
         /**
+           @method
            Obtain a reference to the ITimer bridge.
 
-           @return ITimer bridge instance.
+           @return {TimerBridge} bridge instance.
         */
         getTimerBridge(): ITimer;
         /**
+           @method
            Obtain a reference to the ITwitter bridge.
 
-           @return ITwitter bridge instance.
+           @return {TwitterBridge} bridge instance.
         */
         getTwitterBridge(): ITwitter;
         /**
+           @method
            Obtain a reference to the IUI bridge.
 
-           @return IUI bridge instance.
+           @return {UIBridge} bridge instance.
         */
         getUIBridge(): IUI;
         /**
+           @method
            Obtain a reference to the IUpdate bridge.
 
-           @return IUpdate bridge instance.
+           @return {UpdateBridge} bridge instance.
         */
         getUpdateBridge(): IUpdate;
         /**
+           @method
            Obtain a reference to the IVibration bridge.
 
-           @return IVibration bridge instance.
+           @return {VibrationBridge} bridge instance.
         */
         getVibrationBridge(): IVibration;
         /**
+           @method
            Obtain a reference to the IVideo bridge.
 
-           @return IVideo bridge instance.
+           @return {VideoBridge} bridge instance.
         */
         getVideoBridge(): IVideo;
         /**
+           @method
            Obtain a reference to the IWallet bridge.
 
-           @return IWallet bridge instance.
+           @return {WalletBridge} bridge instance.
         */
         getWalletBridge(): IWallet;
         /**
+           @method
            Obtain a reference to the IXML bridge.
 
-           @return IXML bridge instance.
+           @return {XMLBridge} bridge instance.
         */
         getXMLBridge(): IXML;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

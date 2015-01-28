@@ -44,29 +44,36 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IBrowser
+        @extends Adaptive.IBaseUI
+     */
      export interface IBrowser extends IBaseUI {
           /**
+             @method
              Method for opening a URL like a link in the native default browser
              @param url Url to open
-             @return The result of the operation
+             @return {boolean} The result of the operation
              @since ARP1.0
           */
           openExtenalBrowser(url:string) : boolean;
           /**
+             @method
              Method for opening a browser embedded into the application in a modal window
              @param url            Url to open
              @param title          Title of the Navigation bar
              @param backButtonText Title of the Back button bar
-             @return The result of the operation
+             @return {boolean} The result of the operation
              @since ARP1.0
           */
           openInternalBrowserModal(url:string, title:string, backButtonText:string) : boolean;
           /**
+             @method
              Method for opening a browser embedded into the application
              @param url            Url to open
              @param title          Title of the Navigation bar
              @param backButtonText Title of the Back button bar
-             @return The result of the operation
+             @return {boolean} The result of the operation
              @since ARP1.0
           */
           openInternalBrowser(url:string, title:string, backButtonText:string) : boolean;

@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ILifecycleListenerWarning} Adaptive.ILifecycleListenerWarning
         Enumeration ILifecycleListenerWarning
      */
      export class ILifecycleListenerWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']
+          */
           static MemoryLow = new ILifecycleListenerWarning("MemoryLow");
+          /**
+             @property {Adaptive.ILifecycleListenerWarning} [BatteryLow='BatteryLow']
+          */
           static BatteryLow = new ILifecycleListenerWarning("BatteryLow");
+          /**
+             @property {Adaptive.ILifecycleListenerWarning} [Unknown='Unknown']
+          */
           static Unknown = new ILifecycleListenerWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ILifecycleListenerWarning}
           */
           static toObject(object : any) : ILifecycleListenerWarning {
                if (object != null && object.value != null) {

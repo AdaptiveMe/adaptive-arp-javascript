@@ -42,20 +42,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGeolocation
+       @extends {IBaseSensor}
+       @abstract
+    */
     interface IGeolocation extends IBaseSensor {
         /**
+           @method
            Register a new listener that will receive geolocation events.
            @param listener to be registered.
            @since ARP1.0
         */
         addGeolocationListener(listener: IGeolocationListener): any;
         /**
+           @method
            De-registers an existing listener from receiving geolocation events.
            @param listener to be registered.
            @since ARP1.0
         */
         removeGeolocationListener(listener: IGeolocationListener): any;
         /**
+           @method
            Removed all existing listeners from receiving geolocation events.
            @since ARP1.0
         */

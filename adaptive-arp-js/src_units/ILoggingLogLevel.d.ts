@@ -33,19 +33,43 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     class ILoggingLogLevel {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ILoggingLogLevel.DEBUG=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         static DEBUG: ILoggingLogLevel;
+        /**
+           @enum [Adaptive.ILoggingLogLevel.WARN=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         static WARN: ILoggingLogLevel;
+        /**
+           @enum [Adaptive.ILoggingLogLevel.ERROR=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         static ERROR: ILoggingLogLevel;
+        /**
+           @enum [Adaptive.ILoggingLogLevel.INFO=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         static INFO: ILoggingLogLevel;
+        /**
+           @enum [Adaptive.ILoggingLogLevel.Unknown=Adaptive.ILoggingLogLevel.*]
+           @static
+        */
         static Unknown: ILoggingLogLevel;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILoggingLogLevel}
         */
         static toObject(object: any): ILoggingLogLevel;
     }

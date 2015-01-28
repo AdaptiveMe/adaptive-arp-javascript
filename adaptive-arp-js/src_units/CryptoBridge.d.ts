@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class CryptoBridge extends BaseUtilBridge implements ICrypto {
+       @class Adaptive.CryptoBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class CryptoBridge extends BaseUtilBridge implements ICrypto {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BarcodeBridge extends BaseReaderBridge implements IBarcode {
+       @class Adaptive.BarcodeBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Barcode Reading purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var BarcodeBridge = (function (_super) {
         __extends(BarcodeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BarcodeBridge() {

@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ServiceCookie
+        @extends Adaptive.APIBean
         Structure representing the cookieValue of a http cookie.
 
         @author Aryslan

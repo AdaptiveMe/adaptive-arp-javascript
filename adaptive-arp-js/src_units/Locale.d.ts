@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.Locale
+       @extends Adaptive.APIBean
        Represents a specific user or system locate.
 
        @author Aryslan

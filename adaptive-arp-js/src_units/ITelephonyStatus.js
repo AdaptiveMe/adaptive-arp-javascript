@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     var ITelephonyStatus = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ITelephonyStatus}
         */
         ITelephonyStatus.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return ITelephonyStatus.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ITelephonyStatus.Dialing=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         ITelephonyStatus.Dialing = new ITelephonyStatus("Dialing");
+        /**
+           @enum [Adaptive.ITelephonyStatus.Failed=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         ITelephonyStatus.Failed = new ITelephonyStatus("Failed");
+        /**
+           @enum [Adaptive.ITelephonyStatus.Unknown=Adaptive.ITelephonyStatus.*]
+           @static
+        */
         ITelephonyStatus.Unknown = new ITelephonyStatus("Unknown");
         return ITelephonyStatus;
     })();

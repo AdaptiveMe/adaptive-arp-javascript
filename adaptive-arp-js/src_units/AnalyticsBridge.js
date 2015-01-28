@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
+       @class Adaptive.AnalyticsBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Analytics purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var AnalyticsBridge = (function (_super) {
         __extends(AnalyticsBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AnalyticsBridge() {

@@ -54,6 +54,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class ContactBridge extends BasePIMBridge implements IContact {
+       @class Adaptive.ContactBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Contact operations
 
        @author Francisco Javier Martin Bueno
@@ -62,6 +65,7 @@ var Adaptive;
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ContactBridge() {

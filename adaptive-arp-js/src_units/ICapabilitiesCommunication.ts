@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesCommunication} Adaptive.ICapabilitiesCommunication
         Enumeration ICapabilitiesCommunication
      */
      export class ICapabilitiesCommunication {
@@ -42,15 +43,36 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']
+          */
           static Calendar = new ICapabilitiesCommunication("Calendar");
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Contact='Contact']
+          */
           static Contact = new ICapabilitiesCommunication("Contact");
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Mail='Mail']
+          */
           static Mail = new ICapabilitiesCommunication("Mail");
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Messaging='Messaging']
+          */
           static Messaging = new ICapabilitiesCommunication("Messaging");
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Telephony='Telephony']
+          */
           static Telephony = new ICapabilitiesCommunication("Telephony");
+          /**
+             @property {Adaptive.ICapabilitiesCommunication} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesCommunication("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesCommunication}
           */
           static toObject(object : any) : ICapabilitiesCommunication {
                if (object != null && object.value != null) {

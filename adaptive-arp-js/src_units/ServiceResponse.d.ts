@@ -36,6 +36,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ServiceResponse
+       @extends Adaptive.APIBean
        Represents a local or remote service response.
 
        @author Aryslan

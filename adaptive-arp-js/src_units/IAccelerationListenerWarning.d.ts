@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IAccelerationListenerWarning
        Enumeration IAccelerationListenerWarning
     */
     class IAccelerationListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IAccelerationListenerWarning.NeedsCalibration=Adaptive.IAccelerationListenerWarning.*]
+           @static
+        */
         static NeedsCalibration: IAccelerationListenerWarning;
+        /**
+           @enum [Adaptive.IAccelerationListenerWarning.Stale=Adaptive.IAccelerationListenerWarning.*]
+           @static
+        */
         static Stale: IAccelerationListenerWarning;
+        /**
+           @enum [Adaptive.IAccelerationListenerWarning.Unknown=Adaptive.IAccelerationListenerWarning.*]
+           @static
+        */
         static Unknown: IAccelerationListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IAccelerationListenerWarning}
         */
         static toObject(object: any): IAccelerationListenerWarning;
     }

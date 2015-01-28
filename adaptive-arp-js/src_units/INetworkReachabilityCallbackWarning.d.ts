@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.INetworkReachabilityCallbackWarning
        Enumeration INetworkReachabilityCallbackWarning
     */
     class INetworkReachabilityCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.IncorrectScheme=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static IncorrectScheme: INetworkReachabilityCallbackWarning;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotSecure=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static NotSecure: INetworkReachabilityCallbackWarning;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotTrusted=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static NotTrusted: INetworkReachabilityCallbackWarning;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.Redirected=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static Redirected: INetworkReachabilityCallbackWarning;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.NotRegisteredService=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static NotRegisteredService: INetworkReachabilityCallbackWarning;
+        /**
+           @enum [Adaptive.INetworkReachabilityCallbackWarning.Unknown=Adaptive.INetworkReachabilityCallbackWarning.*]
+           @static
+        */
         static Unknown: INetworkReachabilityCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {INetworkReachabilityCallbackWarning}
         */
         static toObject(object: any): INetworkReachabilityCallbackWarning;
     }

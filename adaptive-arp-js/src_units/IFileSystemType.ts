@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileSystemType} Adaptive.IFileSystemType
         Enumeration IFileSystemType
      */
      export class IFileSystemType {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileSystemType} [Directory='Directory']
+          */
           static Directory = new IFileSystemType("Directory");
+          /**
+             @property {Adaptive.IFileSystemType} [File='File']
+          */
           static File = new IFileSystemType("File");
+          /**
+             @property {Adaptive.IFileSystemType} [Unknown='Unknown']
+          */
           static Unknown = new IFileSystemType("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileSystemType}
           */
           static toObject(object : any) : IFileSystemType {
                if (object != null && object.value != null) {

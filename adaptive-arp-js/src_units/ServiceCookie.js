@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ServiceCookie
+       @extends Adaptive.APIBean
        Structure representing the cookieValue of a http cookie.
 
        @author Aryslan

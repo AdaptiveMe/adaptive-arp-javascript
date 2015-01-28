@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IAdaptiveRPGroup} Adaptive.IAdaptiveRPGroup
         Enumeration IAdaptiveRPGroup
      */
      export class IAdaptiveRPGroup {
@@ -42,25 +43,76 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Application='Application']
+          */
           static Application = new IAdaptiveRPGroup("Application");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Commerce='Commerce']
+          */
           static Commerce = new IAdaptiveRPGroup("Commerce");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Communication='Communication']
+          */
           static Communication = new IAdaptiveRPGroup("Communication");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Data='Data']
+          */
           static Data = new IAdaptiveRPGroup("Data");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Media='Media']
+          */
           static Media = new IAdaptiveRPGroup("Media");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Notification='Notification']
+          */
           static Notification = new IAdaptiveRPGroup("Notification");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [PIM='PIM']
+          */
           static PIM = new IAdaptiveRPGroup("PIM");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Reader='Reader']
+          */
           static Reader = new IAdaptiveRPGroup("Reader");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Security='Security']
+          */
           static Security = new IAdaptiveRPGroup("Security");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Sensor='Sensor']
+          */
           static Sensor = new IAdaptiveRPGroup("Sensor");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Social='Social']
+          */
           static Social = new IAdaptiveRPGroup("Social");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [System='System']
+          */
           static System = new IAdaptiveRPGroup("System");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [UI='UI']
+          */
           static UI = new IAdaptiveRPGroup("UI");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Util='Util']
+          */
           static Util = new IAdaptiveRPGroup("Util");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Kernel='Kernel']
+          */
           static Kernel = new IAdaptiveRPGroup("Kernel");
+          /**
+             @property {Adaptive.IAdaptiveRPGroup} [Unknown='Unknown']
+          */
           static Unknown = new IAdaptiveRPGroup("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IAdaptiveRPGroup}
           */
           static toObject(object : any) : IAdaptiveRPGroup {
                if (object != null && object.value != null) {

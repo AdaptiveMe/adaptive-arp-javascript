@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IContactPhotoResultCallbackWarning
        Enumeration IContactPhotoResultCallbackWarning
     */
     class IContactPhotoResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackWarning.LimitExceeded=Adaptive.IContactPhotoResultCallbackWarning.*]
+           @static
+        */
         static LimitExceeded: IContactPhotoResultCallbackWarning;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackWarning.No_Matches=Adaptive.IContactPhotoResultCallbackWarning.*]
+           @static
+        */
         static No_Matches: IContactPhotoResultCallbackWarning;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackWarning.Unknown=Adaptive.IContactPhotoResultCallbackWarning.*]
+           @static
+        */
         static Unknown: IContactPhotoResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactPhotoResultCallbackWarning}
         */
         static toObject(object: any): IContactPhotoResultCallbackWarning;
     }

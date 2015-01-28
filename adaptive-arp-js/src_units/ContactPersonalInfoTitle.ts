@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ContactPersonalInfoTitle} Adaptive.ContactPersonalInfoTitle
         Enumeration ContactPersonalInfoTitle
      */
      export class ContactPersonalInfoTitle {
@@ -42,14 +43,32 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']
+          */
           static Mr = new ContactPersonalInfoTitle("Mr");
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} [Mrs='Mrs']
+          */
           static Mrs = new ContactPersonalInfoTitle("Mrs");
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} [Ms='Ms']
+          */
           static Ms = new ContactPersonalInfoTitle("Ms");
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} [Dr='Dr']
+          */
           static Dr = new ContactPersonalInfoTitle("Dr");
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} [Unknown='Unknown']
+          */
           static Unknown = new ContactPersonalInfoTitle("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ContactPersonalInfoTitle}
           */
           static toObject(object : any) : ContactPersonalInfoTitle {
                if (object != null && object.value != null) {

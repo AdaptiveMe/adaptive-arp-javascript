@@ -38,6 +38,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ContactPersonalInfo
+        @extends Adaptive.APIBean
         Structure representing the personal info data elements of a contact.
 
         @author Francisco Javier Martin Bueno

@@ -45,6 +45,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.SecurityBridge
+        @extends Adaptive.BaseSecurityBridge
         Interface for Managing the Security operations
 
         @author Aryslan
@@ -53,6 +55,7 @@ module Adaptive {
      export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

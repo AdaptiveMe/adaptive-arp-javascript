@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ILifecycleListenerError
        Enumeration ILifecycleListenerError
     */
     class ILifecycleListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Runtime=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         static Runtime: ILifecycleListenerError;
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Implementation=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         static Implementation: ILifecycleListenerError;
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Killed=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         static Killed: ILifecycleListenerError;
+        /**
+           @enum [Adaptive.ILifecycleListenerError.Unknown=Adaptive.ILifecycleListenerError.*]
+           @static
+        */
         static Unknown: ILifecycleListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILifecycleListenerError}
         */
         static toObject(object: any): ILifecycleListenerError;
     }

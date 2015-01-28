@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Acceleration
+        @extends Adaptive.APIBean
         Structure representing the data of a single acceleration reading.
 
         @author Carlos Lozano Diez

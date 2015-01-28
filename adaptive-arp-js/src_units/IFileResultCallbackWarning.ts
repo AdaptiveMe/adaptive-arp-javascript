@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileResultCallbackWarning} Adaptive.IFileResultCallbackWarning
         Enumeration IFileResultCallbackWarning
      */
      export class IFileResultCallbackWarning {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']
+          */
           static SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
+          /**
+             @property {Adaptive.IFileResultCallbackWarning} [RootDirectory='RootDirectory']
+          */
           static RootDirectory = new IFileResultCallbackWarning("RootDirectory");
+          /**
+             @property {Adaptive.IFileResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IFileResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileResultCallbackWarning}
           */
           static toObject(object : any) : IFileResultCallbackWarning {
                if (object != null && object.value != null) {

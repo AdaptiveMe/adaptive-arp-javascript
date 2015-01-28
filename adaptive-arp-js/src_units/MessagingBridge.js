@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class MessagingBridge extends BasePIMBridge implements IMessaging {
+       @class Adaptive.MessagingBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
@@ -57,6 +60,7 @@ var Adaptive;
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MessagingBridge() {

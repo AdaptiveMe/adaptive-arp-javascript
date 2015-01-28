@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class XMLBridge extends BaseDataBridge implements IXML {
+       @class Adaptive.XMLBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the XML operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var XMLBridge = (function (_super) {
         __extends(XMLBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function XMLBridge() {

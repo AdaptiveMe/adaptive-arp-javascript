@@ -35,6 +35,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactPhone
+       @extends Adaptive.APIBean
        Structure representing the phone data elements of a contact.
 
        @author Francisco Javier Martin Bueno

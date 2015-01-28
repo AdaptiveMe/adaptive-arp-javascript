@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IOSType
        Enumeration IOSType
     */
     var IOSType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IOSType}
         */
         IOSType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -81,17 +85,65 @@ var Adaptive;
                 return IOSType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IOSType.iOS=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.iOS = new IOSType("iOS");
+        /**
+           @enum [Adaptive.IOSType.OSX=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.OSX = new IOSType("OSX");
+        /**
+           @enum [Adaptive.IOSType.Windows=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Windows = new IOSType("Windows");
+        /**
+           @enum [Adaptive.IOSType.WindowsPhone=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.WindowsPhone = new IOSType("WindowsPhone");
+        /**
+           @enum [Adaptive.IOSType.Android=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Android = new IOSType("Android");
+        /**
+           @enum [Adaptive.IOSType.Linux=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Linux = new IOSType("Linux");
+        /**
+           @enum [Adaptive.IOSType.Blackberry=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Blackberry = new IOSType("Blackberry");
+        /**
+           @enum [Adaptive.IOSType.Tizen=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Tizen = new IOSType("Tizen");
+        /**
+           @enum [Adaptive.IOSType.FirefoxOS=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.FirefoxOS = new IOSType("FirefoxOS");
+        /**
+           @enum [Adaptive.IOSType.Chromium=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Chromium = new IOSType("Chromium");
+        /**
+           @enum [Adaptive.IOSType.Unspecified=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Unspecified = new IOSType("Unspecified");
+        /**
+           @enum [Adaptive.IOSType.Unknown=Adaptive.IOSType.*]
+           @static
+        */
         IOSType.Unknown = new IOSType("Unknown");
         return IOSType;
     })();

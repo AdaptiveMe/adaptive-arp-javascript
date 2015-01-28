@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesNet} Adaptive.ICapabilitiesNet
         Enumeration ICapabilitiesNet
      */
      export class ICapabilitiesNet {
@@ -42,17 +43,44 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesNet} [GSM='GSM']
+          */
           static GSM = new ICapabilitiesNet("GSM");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [GPRS='GPRS']
+          */
           static GPRS = new ICapabilitiesNet("GPRS");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [HSDPA='HSDPA']
+          */
           static HSDPA = new ICapabilitiesNet("HSDPA");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [LTE='LTE']
+          */
           static LTE = new ICapabilitiesNet("LTE");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [WIFI='WIFI']
+          */
           static WIFI = new ICapabilitiesNet("WIFI");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [Ethernet='Ethernet']
+          */
           static Ethernet = new ICapabilitiesNet("Ethernet");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [Unavailable='Unavailable']
+          */
           static Unavailable = new ICapabilitiesNet("Unavailable");
+          /**
+             @property {Adaptive.ICapabilitiesNet} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesNet("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesNet}
           */
           static toObject(object : any) : ICapabilitiesNet {
                if (object != null && object.value != null) {

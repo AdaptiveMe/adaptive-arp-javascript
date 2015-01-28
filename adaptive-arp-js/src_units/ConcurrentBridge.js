@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
+       @class Adaptive.ConcurrentBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Concurrent operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var ConcurrentBridge = (function (_super) {
         __extends(ConcurrentBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ConcurrentBridge() {

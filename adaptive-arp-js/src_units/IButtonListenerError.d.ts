@@ -33,16 +33,28 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IButtonListenerError
        Enumeration IButtonListenerError
     */
     class IButtonListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IButtonListenerError.Not_Present=Adaptive.IButtonListenerError.*]
+           @static
+        */
         static Not_Present: IButtonListenerError;
+        /**
+           @enum [Adaptive.IButtonListenerError.Unknown=Adaptive.IButtonListenerError.*]
+           @static
+        */
         static Unknown: IButtonListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IButtonListenerError}
         */
         static toObject(object: any): IButtonListenerError;
     }

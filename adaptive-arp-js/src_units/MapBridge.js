@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class MapBridge extends BaseUIBridge implements IMap {
+       @class Adaptive.MapBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the Map operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var MapBridge = (function (_super) {
         __extends(MapBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MapBridge() {

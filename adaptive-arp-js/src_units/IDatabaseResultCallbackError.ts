@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IDatabaseResultCallbackError} Adaptive.IDatabaseResultCallbackError
         Enumeration IDatabaseResultCallbackError
      */
      export class IDatabaseResultCallbackError {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']
+          */
           static NoSpace = new IDatabaseResultCallbackError("NoSpace");
+          /**
+             @property {Adaptive.IDatabaseResultCallbackError} [SqlException='SqlException']
+          */
           static SqlException = new IDatabaseResultCallbackError("SqlException");
+          /**
+             @property {Adaptive.IDatabaseResultCallbackError} [NotDeleted='NotDeleted']
+          */
           static NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
+          /**
+             @property {Adaptive.IDatabaseResultCallbackError} [Unknown='Unknown']
+          */
           static Unknown = new IDatabaseResultCallbackError("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IDatabaseResultCallbackError}
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
                if (object != null && object.value != null) {

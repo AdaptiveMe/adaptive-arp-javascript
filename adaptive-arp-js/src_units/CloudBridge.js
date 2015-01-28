@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CloudBridge extends BaseDataBridge implements ICloud {
+       @class Adaptive.CloudBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var CloudBridge = (function (_super) {
         __extends(CloudBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CloudBridge() {

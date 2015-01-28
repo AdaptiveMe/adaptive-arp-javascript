@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
+       @class Adaptive.RuntimeBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Runtime operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class RuntimeBridge extends BaseSystemBridge implements IRuntime {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

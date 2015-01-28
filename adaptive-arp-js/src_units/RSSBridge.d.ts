@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class RSSBridge extends BaseSocialBridge implements IRSS {
+       @class Adaptive.RSSBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the RSS operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class RSSBridge extends BaseSocialBridge implements IRSS {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

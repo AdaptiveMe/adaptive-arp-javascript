@@ -44,6 +44,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.GlobalizationBridge
+        @extends Adaptive.BaseApplicationBridge
         Interface for Managing the Globalization results
 
         @author Francisco Javier Martin Bueno
@@ -52,6 +54,7 @@ module Adaptive {
      export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

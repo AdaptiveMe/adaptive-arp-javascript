@@ -44,20 +44,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IServiceResultCallback
+       @extends {IBaseCallback}
+       @abstract
+    */
     interface IServiceResultCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IServiceResultCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param response data
            @since ARP1.0
         */
         onResult(response: ServiceResponse): any;
         /**
+           @method
            This method is called on Warning
            @param response data
            @param warning  returned by the platform

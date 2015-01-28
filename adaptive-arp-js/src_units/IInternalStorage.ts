@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IInternalStorage
+        @extends Adaptive.IBaseData
+     */
      export interface IInternalStorage extends IBaseData {
      }
 }

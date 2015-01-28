@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.OAuthBridge
+        @extends Adaptive.BaseSecurityBridge
         Interface for Managing the OAuth operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

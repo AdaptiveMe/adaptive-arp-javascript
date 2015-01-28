@@ -44,6 +44,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class ServiceBridge extends BaseCommunicationBridge implements IService {
+       @class Adaptive.ServiceBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
@@ -51,6 +54,7 @@ declare module Adaptive {
     */
     class ServiceBridge extends BaseCommunicationBridge implements IService {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     class IDatabaseResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.DatabaseExists=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         static DatabaseExists: IDatabaseResultCallbackWarning;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.IsOpen=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         static IsOpen: IDatabaseResultCallbackWarning;
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackWarning.Unknown=Adaptive.IDatabaseResultCallbackWarning.*]
+           @static
+        */
         static Unknown: IDatabaseResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseResultCallbackWarning}
         */
         static toObject(object: any): IDatabaseResultCallbackWarning;
     }

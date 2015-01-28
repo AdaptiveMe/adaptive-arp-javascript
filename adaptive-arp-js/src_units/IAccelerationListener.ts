@@ -47,8 +47,13 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IAccelerationListener
+        @extends Adaptive.IBaseListener
+     */
      export interface IAccelerationListener extends IBaseListener {
           /**
+             @method
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
              @param error Error fired
@@ -56,12 +61,14 @@ listener and subsequently, the listener will be deactivated and removed from the
           */
           onError(error:IAccelerationListenerError);
           /**
+             @method
              Correct data received.
              @param acceleration Acceleration received
              @since ARP1.0
           */
           onResult(acceleration:Acceleration);
           /**
+             @method
              Data received with warning - ie. Needs calibration.
              @param acceleration Acceleration received
              @param warning      Warning fired

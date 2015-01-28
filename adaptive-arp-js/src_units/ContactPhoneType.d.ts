@@ -33,22 +33,58 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ContactPhoneType
        Enumeration ContactPhoneType
     */
     class ContactPhoneType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ContactPhoneType.Mobile=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Mobile: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.Work=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Work: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.Home=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Home: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.Main=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Main: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.HomeFax=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static HomeFax: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.WorkFax=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static WorkFax: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.Other=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Other: ContactPhoneType;
+        /**
+           @enum [Adaptive.ContactPhoneType.Unknown=Adaptive.ContactPhoneType.*]
+           @static
+        */
         static Unknown: ContactPhoneType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactPhoneType}
         */
         static toObject(object: any): ContactPhoneType;
     }

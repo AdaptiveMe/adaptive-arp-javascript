@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class CameraBridge extends BaseMediaBridge implements ICamera {
+       @class Adaptive.CameraBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the camera operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class CameraBridge extends BaseMediaBridge implements ICamera {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

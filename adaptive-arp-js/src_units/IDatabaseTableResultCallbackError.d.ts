@@ -33,20 +33,48 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     class IDatabaseTableResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.NoSpace=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static NoSpace: IDatabaseTableResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.ReadOnlyTable=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static ReadOnlyTable: IDatabaseTableResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.SqlException=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static SqlException: IDatabaseTableResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.DatabaseNotFound=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static DatabaseNotFound: IDatabaseTableResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.NoTableFound=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static NoTableFound: IDatabaseTableResultCallbackError;
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackError.Unknown=Adaptive.IDatabaseTableResultCallbackError.*]
+           @static
+        */
         static Unknown: IDatabaseTableResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseTableResultCallbackError}
         */
         static toObject(object: any): IDatabaseTableResultCallbackError;
     }

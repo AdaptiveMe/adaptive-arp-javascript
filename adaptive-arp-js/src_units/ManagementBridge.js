@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class ManagementBridge extends BaseApplicationBridge implements IManagement {
+       @class Adaptive.ManagementBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Management operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var ManagementBridge = (function (_super) {
         __extends(ManagementBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ManagementBridge() {

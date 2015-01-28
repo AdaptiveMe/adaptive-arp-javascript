@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     var ContactPersonalInfoTitle = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactPersonalInfoTitle}
         */
         ContactPersonalInfoTitle.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -67,10 +71,30 @@ var Adaptive;
                 return ContactPersonalInfoTitle.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Mr=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         ContactPersonalInfoTitle.Mr = new ContactPersonalInfoTitle("Mr");
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Mrs=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         ContactPersonalInfoTitle.Mrs = new ContactPersonalInfoTitle("Mrs");
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Ms=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         ContactPersonalInfoTitle.Ms = new ContactPersonalInfoTitle("Ms");
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Dr=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         ContactPersonalInfoTitle.Dr = new ContactPersonalInfoTitle("Dr");
+        /**
+           @enum [Adaptive.ContactPersonalInfoTitle.Unknown=Adaptive.ContactPersonalInfoTitle.*]
+           @static
+        */
         ContactPersonalInfoTitle.Unknown = new ContactPersonalInfoTitle("Unknown");
         return ContactPersonalInfoTitle;
     })();

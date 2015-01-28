@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class CalendarBridge extends BasePIMBridge implements ICalendar {
+       @class Adaptive.CalendarBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Calendar operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var CalendarBridge = (function (_super) {
         __extends(CalendarBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CalendarBridge() {

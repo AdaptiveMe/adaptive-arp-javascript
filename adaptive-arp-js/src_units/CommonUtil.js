@@ -34,10 +34,12 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @property
        Global unique id for listeners and callbacks.
     */
     Adaptive.registeredCounter = 0;
     /**
+       @property
        Base url for for http/https JSON requests.
     */
     Adaptive.bridgePath = "https://adaptiveapp";

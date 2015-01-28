@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class ProximityBridge extends BaseSensorBridge implements IProximity {
+       @class Adaptive.ProximityBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Proximity operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var ProximityBridge = (function (_super) {
         __extends(ProximityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ProximityBridge() {

@@ -33,19 +33,43 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     class ICapabilitiesNotification {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Alarm=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         static Alarm: ICapabilitiesNotification;
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.LocalNotification=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         static LocalNotification: ICapabilitiesNotification;
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.RemoteNotification=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         static RemoteNotification: ICapabilitiesNotification;
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Vibration=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         static Vibration: ICapabilitiesNotification;
+        /**
+           @enum [Adaptive.ICapabilitiesNotification.Unknown=Adaptive.ICapabilitiesNotification.*]
+           @static
+        */
         static Unknown: ICapabilitiesNotification;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesNotification}
         */
         static toObject(object: any): ICapabilitiesNotification;
     }

@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
+       @class Adaptive.BluetoothBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Bluetooth purposes
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

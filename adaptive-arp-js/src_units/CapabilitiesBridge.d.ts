@@ -47,6 +47,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
+       @class Adaptive.CapabilitiesBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
@@ -54,6 +57,7 @@ declare module Adaptive {
     */
     class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

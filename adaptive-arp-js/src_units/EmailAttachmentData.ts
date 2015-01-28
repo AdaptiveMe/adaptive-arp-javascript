@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.EmailAttachmentData
+        @extends Adaptive.APIBean
         Structure representing the binary attachment data.
 
         @author Francisco Javier Martin Bueno

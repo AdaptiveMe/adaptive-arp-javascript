@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
+       @class Adaptive.AmbientLightBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for managinf the Ambient Light
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var AmbientLightBridge = (function (_super) {
         __extends(AmbientLightBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AmbientLightBridge() {

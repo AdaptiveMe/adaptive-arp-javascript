@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
+       @class Adaptive.LinkedInBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Linkedin operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

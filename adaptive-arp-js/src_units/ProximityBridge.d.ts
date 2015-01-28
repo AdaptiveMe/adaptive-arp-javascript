@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class ProximityBridge extends BaseSensorBridge implements IProximity {
+       @class Adaptive.ProximityBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Proximity operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class ProximityBridge extends BaseSensorBridge implements IProximity {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

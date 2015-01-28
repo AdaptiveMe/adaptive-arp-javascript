@@ -44,6 +44,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.AccelerationBridge
+        @extends Adaptive.BaseSensorBridge
         Interface defining methods about the acceleration sensor
 
         @author Carlos Lozano Diez
@@ -52,6 +54,7 @@ module Adaptive {
      export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

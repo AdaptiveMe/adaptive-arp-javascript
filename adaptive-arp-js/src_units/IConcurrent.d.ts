@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IConcurrent
+       @extends {IBaseUtil}
+       @abstract
+    */
     interface IConcurrent extends IBaseUtil {
     }
 }

@@ -48,6 +48,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
+       @class Adaptive.TelephonyBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Telephony operations
 
        @author Francisco Javier Martin Bueno
@@ -56,6 +59,7 @@ var Adaptive;
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TelephonyBridge() {

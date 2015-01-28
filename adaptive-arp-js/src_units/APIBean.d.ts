@@ -33,6 +33,7 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.APIBean
        Structure representing a native response to the HTML5
 
        @author Carlos Lozano Diez

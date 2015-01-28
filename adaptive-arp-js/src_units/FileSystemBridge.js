@@ -48,6 +48,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class FileSystemBridge extends BaseDataBridge implements IFileSystem {
+       @class Adaptive.FileSystemBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
@@ -56,6 +59,7 @@ var Adaptive;
     var FileSystemBridge = (function (_super) {
         __extends(FileSystemBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FileSystemBridge() {

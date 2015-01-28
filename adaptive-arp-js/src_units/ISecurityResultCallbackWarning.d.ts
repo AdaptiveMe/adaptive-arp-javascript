@@ -33,16 +33,28 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ISecurityResultCallbackWarning
        Enumeration ISecurityResultCallbackWarning
     */
     class ISecurityResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ISecurityResultCallbackWarning.EntryOverride=Adaptive.ISecurityResultCallbackWarning.*]
+           @static
+        */
         static EntryOverride: ISecurityResultCallbackWarning;
+        /**
+           @enum [Adaptive.ISecurityResultCallbackWarning.Unknown=Adaptive.ISecurityResultCallbackWarning.*]
+           @static
+        */
         static Unknown: ISecurityResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ISecurityResultCallbackWarning}
         */
         static toObject(object: any): ISecurityResultCallbackWarning;
     }

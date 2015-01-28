@@ -37,6 +37,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan

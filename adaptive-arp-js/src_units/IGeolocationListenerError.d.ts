@@ -33,19 +33,43 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     class IGeolocationListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IGeolocationListenerError.Disabled=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         static Disabled: IGeolocationListenerError;
+        /**
+           @enum [Adaptive.IGeolocationListenerError.RestrictedAccess=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         static RestrictedAccess: IGeolocationListenerError;
+        /**
+           @enum [Adaptive.IGeolocationListenerError.DeniedAccess=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         static DeniedAccess: IGeolocationListenerError;
+        /**
+           @enum [Adaptive.IGeolocationListenerError.StatusNotDetermined=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         static StatusNotDetermined: IGeolocationListenerError;
+        /**
+           @enum [Adaptive.IGeolocationListenerError.Unknown=Adaptive.IGeolocationListenerError.*]
+           @static
+        */
         static Unknown: IGeolocationListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IGeolocationListenerError}
         */
         static toObject(object: any): IGeolocationListenerError;
     }

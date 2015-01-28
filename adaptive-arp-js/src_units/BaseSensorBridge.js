@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseSensorBridge implements IBaseSensor {
+       @class Adaptive.BaseSensorBridge
+       @extends Adaptive.IBaseSensor
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseSensorBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSensorBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Sensor;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseSensorBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

@@ -50,6 +50,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
+       @class Adaptive.SecurityBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the Security operations
 
        @author Aryslan
@@ -58,6 +61,7 @@ var Adaptive;
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function SecurityBridge() {

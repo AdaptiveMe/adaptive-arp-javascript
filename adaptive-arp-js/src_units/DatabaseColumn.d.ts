@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.DatabaseColumn
+       @extends Adaptive.APIBean
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa

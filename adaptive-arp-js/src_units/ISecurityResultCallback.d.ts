@@ -44,20 +44,28 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ISecurityResultCallback
+       @extends {IBaseCallback}
+       @abstract
+    */
     interface ISecurityResultCallback extends IBaseCallback {
         /**
+           @method
            No data received - error condition, not authorized .
            @param error Error values
            @since ARP1.0
         */
         onError(error: ISecurityResultCallbackError): any;
         /**
+           @method
            Correct data received.
            @param keyValues key and values
            @since ARP1.0
         */
         onResult(keyValues: SecureKeyPair[]): any;
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param keyValues key and values
            @param warning   Warning values

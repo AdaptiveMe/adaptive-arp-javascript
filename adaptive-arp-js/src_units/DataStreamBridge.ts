@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.DataStreamBridge
+        @extends Adaptive.BaseDataBridge
         Interface for Managing the DataStream operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class DataStreamBridge extends BaseDataBridge implements IDataStream {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

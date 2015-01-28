@@ -41,6 +41,11 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseUI
+       @extends {IAdaptiveRP}
+       @abstract
+    */
     interface IBaseUI extends IAdaptiveRP {
     }
 }

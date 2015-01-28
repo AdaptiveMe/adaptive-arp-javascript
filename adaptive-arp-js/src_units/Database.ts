@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.Database
+        @extends Adaptive.APIBean
         Structure representing a database reference.
 
         @author Ferran Vila Conesa

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class NotificationLocalBridge extends BaseNotificationBridge implements INotificationLocal {
+       @class Adaptive.NotificationLocalBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Local Notifications operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var NotificationLocalBridge = (function (_super) {
         __extends(NotificationLocalBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NotificationLocalBridge() {

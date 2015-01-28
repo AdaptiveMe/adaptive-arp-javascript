@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ISecurityResultCallbackError
        Enumeration ISecurityResultCallbackError
     */
     class ISecurityResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.NoPermission=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         static NoPermission: ISecurityResultCallbackError;
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.NoMatchesFound=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         static NoMatchesFound: ISecurityResultCallbackError;
+        /**
+           @enum [Adaptive.ISecurityResultCallbackError.Unknown=Adaptive.ISecurityResultCallbackError.*]
+           @static
+        */
         static Unknown: ISecurityResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ISecurityResultCallbackError}
         */
         static toObject(object: any): ISecurityResultCallbackError;
     }

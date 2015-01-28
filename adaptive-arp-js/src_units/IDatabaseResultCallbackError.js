@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     var IDatabaseResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseResultCallbackError}
         */
         IDatabaseResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IDatabaseResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.NoSpace=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         IDatabaseResultCallbackError.NoSpace = new IDatabaseResultCallbackError("NoSpace");
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.SqlException=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         IDatabaseResultCallbackError.SqlException = new IDatabaseResultCallbackError("SqlException");
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.NotDeleted=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         IDatabaseResultCallbackError.NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
+        /**
+           @enum [Adaptive.IDatabaseResultCallbackError.Unknown=Adaptive.IDatabaseResultCallbackError.*]
+           @static
+        */
         IDatabaseResultCallbackError.Unknown = new IDatabaseResultCallbackError("Unknown");
         return IDatabaseResultCallbackError;
     })();

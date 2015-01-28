@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IDatabaseTableResultCallbackWarning
        Enumeration IDatabaseTableResultCallbackWarning
     */
     var IDatabaseTableResultCallbackWarning = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IDatabaseTableResultCallbackWarning}
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return IDatabaseTableResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableExists=Adaptive.IDatabaseTableResultCallbackWarning.*]
+           @static
+        */
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackWarning.TableLocked=Adaptive.IDatabaseTableResultCallbackWarning.*]
+           @static
+        */
         IDatabaseTableResultCallbackWarning.TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackWarning.NoResults=Adaptive.IDatabaseTableResultCallbackWarning.*]
+           @static
+        */
         IDatabaseTableResultCallbackWarning.NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
+        /**
+           @enum [Adaptive.IDatabaseTableResultCallbackWarning.Unknown=Adaptive.IDatabaseTableResultCallbackWarning.*]
+           @static
+        */
         IDatabaseTableResultCallbackWarning.Unknown = new IDatabaseTableResultCallbackWarning("Unknown");
         return IDatabaseTableResultCallbackWarning;
     })();

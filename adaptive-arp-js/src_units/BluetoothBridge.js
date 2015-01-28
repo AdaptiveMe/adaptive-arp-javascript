@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
+       @class Adaptive.BluetoothBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Bluetooth purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var BluetoothBridge = (function (_super) {
         __extends(BluetoothBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BluetoothBridge() {

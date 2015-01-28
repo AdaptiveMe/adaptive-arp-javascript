@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.KeyPair
+       @extends Adaptive.APIBean
        Represents a basic bean to store keyName pair values
 
        @author Ferran Vila Conesa

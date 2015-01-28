@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesData
        Enumeration ICapabilitiesData
     */
     var ICapabilitiesData = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesData}
         */
         ICapabilitiesData.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return ICapabilitiesData.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesData.Database=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         ICapabilitiesData.Database = new ICapabilitiesData("Database");
+        /**
+           @enum [Adaptive.ICapabilitiesData.File=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         ICapabilitiesData.File = new ICapabilitiesData("File");
+        /**
+           @enum [Adaptive.ICapabilitiesData.Cloud=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         ICapabilitiesData.Cloud = new ICapabilitiesData("Cloud");
+        /**
+           @enum [Adaptive.ICapabilitiesData.Unknown=Adaptive.ICapabilitiesData.*]
+           @static
+        */
         ICapabilitiesData.Unknown = new ICapabilitiesData("Unknown");
         return ICapabilitiesData;
     })();

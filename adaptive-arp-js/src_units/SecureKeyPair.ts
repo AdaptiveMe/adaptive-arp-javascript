@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.SecureKeyPair
+        @extends Adaptive.APIBean
         Represents a single secureKey-value pair.
 
         @author Aryslan

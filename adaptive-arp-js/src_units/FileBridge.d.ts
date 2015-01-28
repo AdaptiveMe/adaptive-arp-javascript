@@ -52,6 +52,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class FileBridge extends BaseDataBridge implements IFile {
+       @class Adaptive.FileBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File operations
 
        @author Carlos Lozano Diez
@@ -59,6 +62,7 @@ declare module Adaptive {
     */
     class FileBridge extends BaseDataBridge implements IFile {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

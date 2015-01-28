@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.BarometerBridge
+        @extends Adaptive.BaseSensorBridge
         Interface for Barometer management purposes
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class BarometerBridge extends BaseSensorBridge implements IBarometer {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

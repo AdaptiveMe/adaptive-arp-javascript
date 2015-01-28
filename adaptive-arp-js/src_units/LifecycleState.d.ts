@@ -33,23 +33,63 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     class LifecycleState {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.LifecycleState.Starting=Adaptive.LifecycleState.*]
+           @static
+        */
         static Starting: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Started=Adaptive.LifecycleState.*]
+           @static
+        */
         static Started: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Running=Adaptive.LifecycleState.*]
+           @static
+        */
         static Running: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Pausing=Adaptive.LifecycleState.*]
+           @static
+        */
         static Pausing: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.PausedIdle=Adaptive.LifecycleState.*]
+           @static
+        */
         static PausedIdle: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.PausedRun=Adaptive.LifecycleState.*]
+           @static
+        */
         static PausedRun: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Resuming=Adaptive.LifecycleState.*]
+           @static
+        */
         static Resuming: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Stopping=Adaptive.LifecycleState.*]
+           @static
+        */
         static Stopping: LifecycleState;
+        /**
+           @enum [Adaptive.LifecycleState.Unknown=Adaptive.LifecycleState.*]
+           @static
+        */
         static Unknown: LifecycleState;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {LifecycleState}
         */
         static toObject(object: any): LifecycleState;
     }

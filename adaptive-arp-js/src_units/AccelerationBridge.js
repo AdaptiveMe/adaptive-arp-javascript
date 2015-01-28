@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
+       @class Adaptive.AccelerationBridge
+       @extends Adaptive.BaseSensorBridge
        Interface defining methods about the acceleration sensor
 
        @author Carlos Lozano Diez
@@ -57,6 +60,7 @@ var Adaptive;
     var AccelerationBridge = (function (_super) {
         __extends(AccelerationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AccelerationBridge() {

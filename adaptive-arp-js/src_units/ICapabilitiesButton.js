@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ICapabilitiesButton
        Enumeration ICapabilitiesButton
     */
     var ICapabilitiesButton = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ICapabilitiesButton}
         */
         ICapabilitiesButton.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return ICapabilitiesButton.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ICapabilitiesButton.HomeButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
+        /**
+           @enum [Adaptive.ICapabilitiesButton.BackButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
+        /**
+           @enum [Adaptive.ICapabilitiesButton.OptionButton=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         ICapabilitiesButton.OptionButton = new ICapabilitiesButton("OptionButton");
+        /**
+           @enum [Adaptive.ICapabilitiesButton.Unknown=Adaptive.ICapabilitiesButton.*]
+           @static
+        */
         ICapabilitiesButton.Unknown = new ICapabilitiesButton("Unknown");
         return ICapabilitiesButton;
     })();

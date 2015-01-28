@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
+       @class Adaptive.OpenIdBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the OpenID operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var OpenIdBridge = (function (_super) {
         __extends(OpenIdBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OpenIdBridge() {

@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IAmbientLight
+        @extends Adaptive.IBaseSensor
+     */
      export interface IAmbientLight extends IBaseSensor {
      }
 }

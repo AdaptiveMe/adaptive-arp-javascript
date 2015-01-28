@@ -37,6 +37,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.ContactProfessionalInfo
+        @extends Adaptive.APIBean
         Structure representing the professional info data elements of a contact.
 
         @author Francisco Javier Martin Bueno

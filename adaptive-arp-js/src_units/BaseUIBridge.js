@@ -40,6 +40,9 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BaseUIBridge implements IBaseUI {
+       @class Adaptive.BaseUIBridge
+       @extends Adaptive.IBaseUI
        Base application for UI purposes
 
        @author Carlos Lozano Diez
@@ -47,18 +50,22 @@ var Adaptive;
     */
     var BaseUIBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseUIBridge() {
             this.apiGroup = Adaptive.IAdaptiveRPGroup.UI;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         BaseUIBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

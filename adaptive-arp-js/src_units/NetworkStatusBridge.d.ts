@@ -42,6 +42,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
+       @class Adaptive.NetworkStatusBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
@@ -49,6 +52,7 @@ declare module Adaptive {
     */
     class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

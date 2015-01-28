@@ -33,6 +33,7 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.APIResponse
        Structure representing a JSON response to the HTML5 layer.
 
        @author Carlos Lozano Diez

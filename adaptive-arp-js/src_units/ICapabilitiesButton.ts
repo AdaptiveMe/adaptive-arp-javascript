@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ICapabilitiesButton} Adaptive.ICapabilitiesButton
         Enumeration ICapabilitiesButton
      */
      export class ICapabilitiesButton {
@@ -42,13 +43,28 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']
+          */
           static HomeButton = new ICapabilitiesButton("HomeButton");
+          /**
+             @property {Adaptive.ICapabilitiesButton} [BackButton='BackButton']
+          */
           static BackButton = new ICapabilitiesButton("BackButton");
+          /**
+             @property {Adaptive.ICapabilitiesButton} [OptionButton='OptionButton']
+          */
           static OptionButton = new ICapabilitiesButton("OptionButton");
+          /**
+             @property {Adaptive.ICapabilitiesButton} [Unknown='Unknown']
+          */
           static Unknown = new ICapabilitiesButton("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ICapabilitiesButton}
           */
           static toObject(object : any) : ICapabilitiesButton {
                if (object != null && object.value != null) {

@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     class IContactPhotoResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.NoPermission=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         static NoPermission: IContactPhotoResultCallbackError;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.Wrong_Params=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         static Wrong_Params: IContactPhotoResultCallbackError;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.No_Photo=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         static No_Photo: IContactPhotoResultCallbackError;
+        /**
+           @enum [Adaptive.IContactPhotoResultCallbackError.Unknown=Adaptive.IContactPhotoResultCallbackError.*]
+           @static
+        */
         static Unknown: IContactPhotoResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactPhotoResultCallbackError}
         */
         static toObject(object: any): IContactPhotoResultCallbackError;
     }

@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ServiceEndpoint
+       @extends Adaptive.APIBean
        Structure representing a remote or local service access end-point.
 
        @author Aryslan

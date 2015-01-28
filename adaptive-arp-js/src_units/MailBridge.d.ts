@@ -43,6 +43,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class MailBridge extends BasePIMBridge implements IMail {
+       @class Adaptive.MailBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
@@ -50,6 +53,7 @@ declare module Adaptive {
     */
     class MailBridge extends BasePIMBridge implements IMail {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

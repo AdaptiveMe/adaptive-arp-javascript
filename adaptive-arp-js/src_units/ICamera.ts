@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ICamera
+        @extends Adaptive.IBaseMedia
+     */
      export interface ICamera extends IBaseMedia {
      }
 }

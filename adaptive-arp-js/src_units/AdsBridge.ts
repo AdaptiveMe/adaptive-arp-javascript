@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.AdsBridge
+        @extends Adaptive.BaseCommerceBridge
         Interface for Advertising purposes
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class AdsBridge extends BaseCommerceBridge implements IAds {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

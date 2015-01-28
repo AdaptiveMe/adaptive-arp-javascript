@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.ICloud
+        @extends Adaptive.IBaseData
+     */
      export interface ICloud extends IBaseData {
      }
 }

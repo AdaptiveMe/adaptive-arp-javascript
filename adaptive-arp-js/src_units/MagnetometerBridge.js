@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
+       @class Adaptive.MagnetometerBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Magnetometer operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var MagnetometerBridge = (function (_super) {
         __extends(MagnetometerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MagnetometerBridge() {

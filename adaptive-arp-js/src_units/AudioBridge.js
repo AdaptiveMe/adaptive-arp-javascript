@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class AudioBridge extends BaseMediaBridge implements IAudio {
+       @class Adaptive.AudioBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Audio purposes
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var AudioBridge = (function (_super) {
         __extends(AudioBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AudioBridge() {

@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IContactFieldGroup} Adaptive.IContactFieldGroup
         Enumeration IContactFieldGroup
      */
      export class IContactFieldGroup {
@@ -42,18 +43,48 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+          */
           static PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+          /**
+             @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+          */
           static PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+          /**
+             @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+          */
           static ADDRESSES = new IContactFieldGroup("ADDRESSES");
+          /**
+             @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+          */
           static PHONES = new IContactFieldGroup("PHONES");
+          /**
+             @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+          */
           static EMAILS = new IContactFieldGroup("EMAILS");
+          /**
+             @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+          */
           static WEBSITES = new IContactFieldGroup("WEBSITES");
+          /**
+             @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+          */
           static SOCIALS = new IContactFieldGroup("SOCIALS");
+          /**
+             @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+          */
           static TAGS = new IContactFieldGroup("TAGS");
+          /**
+             @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
+          */
           static Unknown = new IContactFieldGroup("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IContactFieldGroup}
           */
           static toObject(object : any) : IContactFieldGroup {
                if (object != null && object.value != null) {

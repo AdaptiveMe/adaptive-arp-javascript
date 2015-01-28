@@ -35,17 +35,20 @@ Release:
 module Adaptive {
 
      /**
+        @property {number} registeredCounter
         Global unique id for listeners and callbacks.
      */
      export var registeredCounter : number = 0;
 
      /**
+        @property {string} bridgePath
         Base url for for http/https JSON requests.
      */
      export var bridgePath : string = "https://adaptiveapp";
 
      /**
-        Utility class for Dictionary type support.
+        @class Adaptive.IDictionary
+        Utility interface for Dictionary type support.
      */
      export interface IDictionary<V> {
           add(key: string, value: V): void;
@@ -55,6 +58,10 @@ module Adaptive {
           values(): V[];
      }
 
+     /**
+        @class Adaptive.Dictionary
+        Utility class for Dictionary type support.
+     */
      export class Dictionary<V> implements IDictionary<V>{
      
          _keys: Array<string> = new Array<string>();

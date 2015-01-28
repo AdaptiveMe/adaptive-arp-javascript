@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     class ILifecycleListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.MemoryLow=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         static MemoryLow: ILifecycleListenerWarning;
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.BatteryLow=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         static BatteryLow: ILifecycleListenerWarning;
+        /**
+           @enum [Adaptive.ILifecycleListenerWarning.Unknown=Adaptive.ILifecycleListenerWarning.*]
+           @static
+        */
         static Unknown: ILifecycleListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ILifecycleListenerWarning}
         */
         static toObject(object: any): ILifecycleListenerWarning;
     }

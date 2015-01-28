@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IAdaptiveRPGroup
        Enumeration IAdaptiveRPGroup
     */
     var IAdaptiveRPGroup = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IAdaptiveRPGroup}
         */
         IAdaptiveRPGroup.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -89,21 +93,85 @@ var Adaptive;
                 return IAdaptiveRPGroup.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Application=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Application = new IAdaptiveRPGroup("Application");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Commerce=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Commerce = new IAdaptiveRPGroup("Commerce");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Communication=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Communication = new IAdaptiveRPGroup("Communication");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Data=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Data = new IAdaptiveRPGroup("Data");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Media=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Media = new IAdaptiveRPGroup("Media");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Notification=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Notification = new IAdaptiveRPGroup("Notification");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.PIM=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.PIM = new IAdaptiveRPGroup("PIM");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Reader=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Reader = new IAdaptiveRPGroup("Reader");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Security=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Security = new IAdaptiveRPGroup("Security");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Sensor=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Sensor = new IAdaptiveRPGroup("Sensor");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Social=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Social = new IAdaptiveRPGroup("Social");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.System=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.System = new IAdaptiveRPGroup("System");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.UI=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.UI = new IAdaptiveRPGroup("UI");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Util=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Util = new IAdaptiveRPGroup("Util");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Kernel=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Kernel = new IAdaptiveRPGroup("Kernel");
+        /**
+           @enum [Adaptive.IAdaptiveRPGroup.Unknown=Adaptive.IAdaptiveRPGroup.*]
+           @static
+        */
         IAdaptiveRPGroup.Unknown = new IAdaptiveRPGroup("Unknown");
         return IAdaptiveRPGroup;
     })();

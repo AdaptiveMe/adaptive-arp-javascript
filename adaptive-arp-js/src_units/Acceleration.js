@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.Acceleration
+       @extends Adaptive.APIBean
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez

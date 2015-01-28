@@ -41,11 +41,16 @@ declare module Adaptive {
        @since 1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.APIBridge
+       @abstract
+    */
     interface APIBridge {
         /**
+           @method
            Invokes the given method specified in the API request object.
            @param request APIRequest object containing method name and parameters.
-           @return Object with JSON response or a zero length string is the response is asynchronous.
+           @return {APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
         */
         invoke(request: APIRequest): APIResponse;
     }

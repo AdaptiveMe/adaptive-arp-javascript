@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
+       @class Adaptive.RuntimeBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Runtime operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var RuntimeBridge = (function (_super) {
         __extends(RuntimeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function RuntimeBridge() {

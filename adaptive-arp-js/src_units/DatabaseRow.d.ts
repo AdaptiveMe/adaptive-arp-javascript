@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.DatabaseRow
+       @extends Adaptive.APIBean
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa

@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
+       @class Adaptive.GeolocationBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
@@ -57,6 +60,7 @@ var Adaptive;
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GeolocationBridge() {

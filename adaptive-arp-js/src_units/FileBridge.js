@@ -59,6 +59,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class FileBridge extends BaseDataBridge implements IFile {
+       @class Adaptive.FileBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File operations
 
        @author Carlos Lozano Diez
@@ -67,6 +70,7 @@ var Adaptive;
     var FileBridge = (function (_super) {
         __extends(FileBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FileBridge() {

@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
+       @class Adaptive.InternalStorageBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Internal Storage operations
 
        @author Carlos Lozano Diez
@@ -55,6 +58,7 @@ var Adaptive;
     var InternalStorageBridge = (function (_super) {
         __extends(InternalStorageBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function InternalStorageBridge() {

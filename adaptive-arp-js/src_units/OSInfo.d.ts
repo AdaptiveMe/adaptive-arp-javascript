@@ -35,6 +35,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.OSInfo
+       @extends Adaptive.APIBean
        Represents the basic information about the operating system.
 
        @author Francisco Javier Martin Bueno

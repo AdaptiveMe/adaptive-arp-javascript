@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.ContactAddressType
        Enumeration ContactAddressType
     */
     var ContactAddressType = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {ContactAddressType}
         */
         ContactAddressType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -65,9 +69,25 @@ var Adaptive;
                 return ContactAddressType.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.ContactAddressType.Home=Adaptive.ContactAddressType.*]
+           @static
+        */
         ContactAddressType.Home = new ContactAddressType("Home");
+        /**
+           @enum [Adaptive.ContactAddressType.Work=Adaptive.ContactAddressType.*]
+           @static
+        */
         ContactAddressType.Work = new ContactAddressType("Work");
+        /**
+           @enum [Adaptive.ContactAddressType.Other=Adaptive.ContactAddressType.*]
+           @static
+        */
         ContactAddressType.Other = new ContactAddressType("Other");
+        /**
+           @enum [Adaptive.ContactAddressType.Unknown=Adaptive.ContactAddressType.*]
+           @static
+        */
         ContactAddressType.Unknown = new ContactAddressType("Unknown");
         return ContactAddressType;
     })();

@@ -39,6 +39,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class BaseNotificationBridge implements IBaseNotification {
+       @class Adaptive.BaseNotificationBridge
+       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
@@ -46,18 +49,23 @@ declare module Adaptive {
     */
     class BaseNotificationBridge implements IBaseNotification {
         /**
+           @property
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.

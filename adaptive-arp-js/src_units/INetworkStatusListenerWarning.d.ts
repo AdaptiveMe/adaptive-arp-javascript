@@ -33,17 +33,33 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     class INetworkStatusListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressNotAssigned=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         static IpAddressNotAssigned: INetworkStatusListenerWarning;
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.IpAddressChanged=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         static IpAddressChanged: INetworkStatusListenerWarning;
+        /**
+           @enum [Adaptive.INetworkStatusListenerWarning.Unknown=Adaptive.INetworkStatusListenerWarning.*]
+           @static
+        */
         static Unknown: INetworkStatusListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {INetworkStatusListenerWarning}
         */
         static toObject(object: any): INetworkStatusListenerWarning;
     }

@@ -33,15 +33,18 @@ Release:
 */
 declare module Adaptive {
     /**
+       @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     var registeredCounter: number;
     /**
+       @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     var bridgePath: string;
     /**
-       Utility class for Dictionary type support.
+       @class Adaptive.IDictionary
+       Utility interface for Dictionary type support.
     */
     interface IDictionary<V> {
         add(key: string, value: V): void;
@@ -50,6 +53,10 @@ declare module Adaptive {
         keys(): string[];
         values(): V[];
     }
+    /**
+       @class Adaptive.Dictionary
+       Utility class for Dictionary type support.
+    */
     class Dictionary<V> implements IDictionary<V> {
         _keys: string[];
         _values: V[];
@@ -71,11 +78,15 @@ declare module Adaptive {
        @since 1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.APIBridge
+    */
     interface APIBridge {
         /**
+           @method
            Invokes the given method specified in the API request object.
            @param request APIRequest object containing method name and parameters.
-           @return Object with JSON response or a zero length string is the response is asynchronous.
+           @return {APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
         */
         invoke(request: APIRequest): APIResponse;
     }
@@ -86,20 +97,31 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAdaptiveRP
+    */
     interface IAdaptiveRP {
         /**
+           @method
            Method that returns the API group of the implementation
-           @return API Group name.
+           @return {IAdaptiveRPGroup} API Group name.
            @since ARP1.0
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Method that returns the API version of the implementation.
-           @return API Version string.
+           @return {string} API Version string.
            @since ARP1.0
         */
         getAPIVersion(): string;
     }
+    /**
+       @class Adaptive.IAppContext
+    */
+    /**
+       @class Adaptive.IAppContextWebview
+    */
     /**
        Interface to retrieve auto-registered service implementation references.
 
@@ -107,428 +129,502 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAppRegistry
+    */
     interface IAppRegistry {
         /**
+           @method
            Returns a reference to the registered AccelerationBridge.
 
-           @return AccelerationBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AccelerationBridge} reference or null if a bridge of this type is not registered.
         */
         getAccelerationBridge(): IAcceleration;
         /**
+           @method
            Returns a reference to the registered AdsBridge.
 
-           @return AdsBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AdsBridge} reference or null if a bridge of this type is not registered.
         */
         getAdsBridge(): IAds;
         /**
+           @method
            Returns a reference to the registered AlarmBridge.
 
-           @return AlarmBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AlarmBridge} reference or null if a bridge of this type is not registered.
         */
         getAlarmBridge(): IAlarm;
         /**
+           @method
            Returns a reference to the registered AmbientLightBridge.
 
-           @return AmbientLightBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AmbientLightBridge} reference or null if a bridge of this type is not registered.
         */
         getAmbientLightBridge(): IAmbientLight;
         /**
+           @method
            Returns a reference to the registered AnalyticsBridge.
 
-           @return AnalyticsBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AnalyticsBridge} reference or null if a bridge of this type is not registered.
         */
         getAnalyticsBridge(): IAnalytics;
         /**
+           @method
            Returns a reference to the registered AudioBridge.
 
-           @return AudioBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.AudioBridge} reference or null if a bridge of this type is not registered.
         */
         getAudioBridge(): IAudio;
         /**
+           @method
            Returns a reference to the registered BarcodeBridge.
 
-           @return BarcodeBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.BarcodeBridge} reference or null if a bridge of this type is not registered.
         */
         getBarcodeBridge(): IBarcode;
         /**
+           @method
            Returns a reference to the registered BarometerBridge.
 
-           @return BarometerBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.BarometerBridge} reference or null if a bridge of this type is not registered.
         */
         getBarometerBridge(): IBarometer;
         /**
+           @method
            Returns a reference to the registered BluetoothBridge.
 
-           @return BluetoothBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.BluetoothBridge} reference or null if a bridge of this type is not registered.
         */
         getBluetoothBridge(): IBluetooth;
         /**
+           @method
            Returns a reference to the registered BrowserBridge.
 
-           @return BrowserBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.BrowserBridge} reference or null if a bridge of this type is not registered.
         */
         getBrowserBridge(): IBrowser;
         /**
+           @method
            Returns a reference to the registered CalendarBridge.
 
-           @return CalendarBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CalendarBridge} reference or null if a bridge of this type is not registered.
         */
         getCalendarBridge(): ICalendar;
         /**
+           @method
            Returns a reference to the registered CameraBridge.
 
-           @return CameraBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CameraBridge} reference or null if a bridge of this type is not registered.
         */
         getCameraBridge(): ICamera;
         /**
+           @method
            Returns a reference to the registered CapabilitiesBridge.
 
-           @return CapabilitiesBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CapabilitiesBridge} reference or null if a bridge of this type is not registered.
         */
         getCapabilitiesBridge(): ICapabilities;
         /**
+           @method
            Returns a reference to the registered CloudBridge.
 
-           @return CloudBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CloudBridge} reference or null if a bridge of this type is not registered.
         */
         getCloudBridge(): ICloud;
         /**
+           @method
            Returns a reference to the registered CompressionBridge.
 
-           @return CompressionBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CompressionBridge} reference or null if a bridge of this type is not registered.
         */
         getCompressionBridge(): ICompression;
         /**
+           @method
            Returns a reference to the registered ConcurrentBridge.
 
-           @return ConcurrentBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ConcurrentBridge} reference or null if a bridge of this type is not registered.
         */
         getConcurrentBridge(): IConcurrent;
         /**
+           @method
            Returns a reference to the registered ContactBridge.
 
-           @return ContactBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ContactBridge} reference or null if a bridge of this type is not registered.
         */
         getContactBridge(): IContact;
         /**
+           @method
            Returns a reference to the registered CryptoBridge.
 
-           @return CryptoBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.CryptoBridge} reference or null if a bridge of this type is not registered.
         */
         getCryptoBridge(): ICrypto;
         /**
+           @method
            Returns a reference to the registered DataStreamBridge.
 
-           @return DataStreamBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.DataStreamBridge} reference or null if a bridge of this type is not registered.
         */
         getDataStreamBridge(): IDataStream;
         /**
+           @method
            Returns a reference to the registered DatabaseBridge.
 
-           @return DatabaseBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.DatabaseBridge} reference or null if a bridge of this type is not registered.
         */
         getDatabaseBridge(): IDatabase;
         /**
+           @method
            Returns a reference to the registered DesktopBridge.
 
-           @return DesktopBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.DesktopBridge} reference or null if a bridge of this type is not registered.
         */
         getDesktopBridge(): IDesktop;
         /**
+           @method
            Returns a reference to the registered DeviceBridge.
 
-           @return DeviceBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.DeviceBridge} reference or null if a bridge of this type is not registered.
         */
         getDeviceBridge(): IDevice;
         /**
+           @method
            Returns a reference to the registered DisplayBridge.
 
-           @return DisplayBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.DisplayBridge} reference or null if a bridge of this type is not registered.
         */
         getDisplayBridge(): IDisplay;
         /**
+           @method
            Returns a reference to the registered FacebookBridge.
 
-           @return FacebookBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.FacebookBridge} reference or null if a bridge of this type is not registered.
         */
         getFacebookBridge(): IFacebook;
         /**
+           @method
            Returns a reference to the registered FileBridge.
 
-           @return FileBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.FileBridge} reference or null if a bridge of this type is not registered.
         */
         getFileBridge(): IFile;
         /**
+           @method
            Returns a reference to the registered FileSystemBridge.
 
-           @return FileSystemBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.FileSystemBridge} reference or null if a bridge of this type is not registered.
         */
         getFileSystemBridge(): IFileSystem;
         /**
+           @method
            Returns a reference to the registered GeolocationBridge.
 
-           @return GeolocationBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.GeolocationBridge} reference or null if a bridge of this type is not registered.
         */
         getGeolocationBridge(): IGeolocation;
         /**
+           @method
            Returns a reference to the registered GlobalizationBridge.
 
-           @return GlobalizationBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.GlobalizationBridge} reference or null if a bridge of this type is not registered.
         */
         getGlobalizationBridge(): IGlobalization;
         /**
+           @method
            Returns a reference to the registered GooglePlusBridge.
 
-           @return GooglePlusBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.GooglePlusBridge} reference or null if a bridge of this type is not registered.
         */
         getGooglePlusBridge(): IGooglePlus;
         /**
+           @method
            Returns a reference to the registered GyroscopeBridge.
 
-           @return GyroscopeBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.GyroscopeBridge} reference or null if a bridge of this type is not registered.
         */
         getGyroscopeBridge(): IGyroscope;
         /**
+           @method
            Returns a reference to the registered ImagingBridge.
 
-           @return ImagingBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ImagingBridge} reference or null if a bridge of this type is not registered.
         */
         getImagingBridge(): IImaging;
         /**
+           @method
            Returns a reference to the registered InternalStorageBridge.
 
-           @return InternalStorageBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.InternalStorageBridge} reference or null if a bridge of this type is not registered.
         */
         getInternalStorageBridge(): IInternalStorage;
         /**
+           @method
            Returns a reference to the registered LifecycleBridge.
 
-           @return LifecycleBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.LifecycleBridge} reference or null if a bridge of this type is not registered.
         */
         getLifecycleBridge(): ILifecycle;
         /**
+           @method
            Returns a reference to the registered LinkedInBridge.
 
-           @return LinkedInBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.LinkedInBridge} reference or null if a bridge of this type is not registered.
         */
         getLinkedInBridge(): ILinkedIn;
         /**
+           @method
            Returns a reference to the registered LoggingBridge.
 
-           @return LoggingBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.LoggingBridge} reference or null if a bridge of this type is not registered.
         */
         getLoggingBridge(): ILogging;
         /**
+           @method
            Returns a reference to the registered MagnetometerBridge.
 
-           @return MagnetometerBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.MagnetometerBridge} reference or null if a bridge of this type is not registered.
         */
         getMagnetometerBridge(): IMagnetometer;
         /**
+           @method
            Returns a reference to the registered MailBridge.
 
-           @return MailBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.MailBridge} reference or null if a bridge of this type is not registered.
         */
         getMailBridge(): IMail;
         /**
+           @method
            Returns a reference to the registered ManagementBridge.
 
-           @return ManagementBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ManagementBridge} reference or null if a bridge of this type is not registered.
         */
         getManagementBridge(): IManagement;
         /**
+           @method
            Returns a reference to the registered MapBridge.
 
-           @return MapBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.MapBridge} reference or null if a bridge of this type is not registered.
         */
         getMapBridge(): IMap;
         /**
+           @method
            Returns a reference to the registered MessagingBridge.
 
-           @return MessagingBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.MessagingBridge} reference or null if a bridge of this type is not registered.
         */
         getMessagingBridge(): IMessaging;
         /**
+           @method
            Returns a reference to the registered NFCBridge.
 
-           @return NFCBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NFCBridge} reference or null if a bridge of this type is not registered.
         */
         getNFCBridge(): INFC;
         /**
+           @method
            Returns a reference to the registered NetworkInfoBridge.
 
-           @return NetworkInfoBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NetworkInfoBridge} reference or null if a bridge of this type is not registered.
         */
         getNetworkInfoBridge(): INetworkInfo;
         /**
+           @method
            Returns a reference to the registered NetworkNamingBridge.
 
-           @return NetworkNamingBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NetworkNamingBridge} reference or null if a bridge of this type is not registered.
         */
         getNetworkNamingBridge(): INetworkNaming;
         /**
+           @method
            Returns a reference to the registered NetworkReachabilityBridge.
 
-           @return NetworkReachabilityBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NetworkReachabilityBridge} reference or null if a bridge of this type is not registered.
         */
         getNetworkReachabilityBridge(): INetworkReachability;
         /**
+           @method
            Returns a reference to the registered NetworkStatusBridge.
 
-           @return NetworkStatusBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NetworkStatusBridge} reference or null if a bridge of this type is not registered.
         */
         getNetworkStatusBridge(): INetworkStatus;
         /**
+           @method
            Returns a reference to the registered NotificationBridge.
 
-           @return NotificationBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NotificationBridge} reference or null if a bridge of this type is not registered.
         */
         getNotificationBridge(): INotification;
         /**
+           @method
            Returns a reference to the registered NotificationLocalBridge.
 
-           @return NotificationLocalBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.NotificationLocalBridge} reference or null if a bridge of this type is not registered.
         */
         getNotificationLocalBridge(): INotificationLocal;
         /**
+           @method
            Returns a reference to the registered OAuthBridge.
 
-           @return OAuthBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.OAuthBridge} reference or null if a bridge of this type is not registered.
         */
         getOAuthBridge(): IOAuth;
         /**
+           @method
            Returns a reference to the registered OCRBridge.
 
-           @return OCRBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.OCRBridge} reference or null if a bridge of this type is not registered.
         */
         getOCRBridge(): IOCR;
         /**
+           @method
            Returns a reference to the registered OSBridge.
 
-           @return OSBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.OSBridge} reference or null if a bridge of this type is not registered.
         */
         getOSBridge(): IOS;
         /**
+           @method
            Returns a reference to the registered OpenIdBridge.
 
-           @return OpenIdBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.OpenIdBridge} reference or null if a bridge of this type is not registered.
         */
         getOpenIdBridge(): IOpenId;
         /**
+           @method
            Returns a reference to the registered PrintingBridge.
 
-           @return PrintingBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.PrintingBridge} reference or null if a bridge of this type is not registered.
         */
         getPrintingBridge(): IPrinting;
         /**
+           @method
            Returns a reference to the registered ProximityBridge.
 
-           @return ProximityBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ProximityBridge} reference or null if a bridge of this type is not registered.
         */
         getProximityBridge(): IProximity;
         /**
+           @method
            Returns a reference to the registered QRCodeBridge.
 
-           @return QRCodeBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.QRCodeBridge} reference or null if a bridge of this type is not registered.
         */
         getQRCodeBridge(): IQRCode;
         /**
+           @method
            Returns a reference to the registered RSSBridge.
 
-           @return RSSBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.RSSBridge} reference or null if a bridge of this type is not registered.
         */
         getRSSBridge(): IRSS;
         /**
+           @method
            Returns a reference to the registered RuntimeBridge.
 
-           @return RuntimeBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.RuntimeBridge} reference or null if a bridge of this type is not registered.
         */
         getRuntimeBridge(): IRuntime;
         /**
+           @method
            Returns a reference to the registered SecurityBridge.
 
-           @return SecurityBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.SecurityBridge} reference or null if a bridge of this type is not registered.
         */
         getSecurityBridge(): ISecurity;
         /**
+           @method
            Returns a reference to the registered ServiceBridge.
 
-           @return ServiceBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.ServiceBridge} reference or null if a bridge of this type is not registered.
         */
         getServiceBridge(): IService;
         /**
+           @method
            Returns a reference to the registered SettingsBridge.
 
-           @return SettingsBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.SettingsBridge} reference or null if a bridge of this type is not registered.
         */
         getSettingsBridge(): ISettings;
         /**
+           @method
            Returns a reference to the registered SocketBridge.
 
-           @return SocketBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.SocketBridge} reference or null if a bridge of this type is not registered.
         */
         getSocketBridge(): ISocket;
         /**
+           @method
            Returns a reference to the registered StoreBridge.
 
-           @return StoreBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.StoreBridge} reference or null if a bridge of this type is not registered.
         */
         getStoreBridge(): IStore;
         /**
+           @method
            Returns a reference to the registered TelephonyBridge.
 
-           @return TelephonyBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.TelephonyBridge} reference or null if a bridge of this type is not registered.
         */
         getTelephonyBridge(): ITelephony;
         /**
+           @method
            Returns a reference to the registered TimerBridge.
 
-           @return TimerBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.TimerBridge} reference or null if a bridge of this type is not registered.
         */
         getTimerBridge(): ITimer;
         /**
+           @method
            Returns a reference to the registered TwitterBridge.
 
-           @return TwitterBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.TwitterBridge} reference or null if a bridge of this type is not registered.
         */
         getTwitterBridge(): ITwitter;
         /**
+           @method
            Returns a reference to the registered UIBridge.
 
-           @return UIBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.UIBridge} reference or null if a bridge of this type is not registered.
         */
         getUIBridge(): IUI;
         /**
+           @method
            Returns a reference to the registered UpdateBridge.
 
-           @return UpdateBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.UpdateBridge} reference or null if a bridge of this type is not registered.
         */
         getUpdateBridge(): IUpdate;
         /**
+           @method
            Returns a reference to the registered VibrationBridge.
 
-           @return VibrationBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.VibrationBridge} reference or null if a bridge of this type is not registered.
         */
         getVibrationBridge(): IVibration;
         /**
+           @method
            Returns a reference to the registered VideoBridge.
 
-           @return VideoBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.VideoBridge} reference or null if a bridge of this type is not registered.
         */
         getVideoBridge(): IVideo;
         /**
+           @method
            Returns a reference to the registered WalletBridge.
 
-           @return WalletBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.WalletBridge} reference or null if a bridge of this type is not registered.
         */
         getWalletBridge(): IWallet;
         /**
+           @method
            Returns a reference to the registered XMLBridge.
 
-           @return XMLBridge reference or null if a bridge of this type is not registered.
+           @return {Adaptive.XMLBridge} reference or null if a bridge of this type is not registered.
         */
         getXMLBridge(): IXML;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -542,6 +638,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseApplication
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseApplication extends IAdaptiveRP {
     }
     /**
@@ -551,11 +651,16 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseCallback
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseCallback extends IAdaptiveRP {
         /**
+           @method
            Retrieve unique id of callback/listener.
 
-           @return Callback/listener unique id.
+           @return {number} Callback/listener unique id.
         */
         getId(): number;
     }
@@ -566,6 +671,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseCommerce
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseCommerce extends IAdaptiveRP {
     }
     /**
@@ -574,6 +683,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseCommunication
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseCommunication extends IAdaptiveRP {
     }
@@ -584,6 +697,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseData
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseData extends IAdaptiveRP {
     }
     /**
@@ -593,11 +710,16 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseListener
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseListener extends IAdaptiveRP {
         /**
+           @method
            Retrieve unique id of callback/listener.
 
-           @return Callback/listener unique id.
+           @return {number} Callback/listener unique id.
         */
         getId(): number;
     }
@@ -608,6 +730,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseMedia
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseMedia extends IAdaptiveRP {
     }
     /**
@@ -616,6 +742,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseNotification
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseNotification extends IAdaptiveRP {
     }
@@ -626,6 +756,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBasePIM
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBasePIM extends IAdaptiveRP {
     }
     /**
@@ -634,6 +768,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseReader
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseReader extends IAdaptiveRP {
     }
@@ -644,6 +782,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseSecurity
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseSecurity extends IAdaptiveRP {
     }
     /**
@@ -652,6 +794,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseSensor
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseSensor extends IAdaptiveRP {
     }
@@ -662,6 +808,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseSocial
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseSocial extends IAdaptiveRP {
     }
     /**
@@ -670,6 +820,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseSystem
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseSystem extends IAdaptiveRP {
     }
@@ -680,6 +834,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBaseUI
+       @extends Adaptive.IAdaptiveRP
+    */
     interface IBaseUI extends IAdaptiveRP {
     }
     /**
@@ -688,6 +846,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBaseUtil
+       @extends Adaptive.IAdaptiveRP
     */
     interface IBaseUtil extends IAdaptiveRP {
     }
@@ -698,6 +860,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAnalytics
+       @extends Adaptive.IBaseApplication
+    */
     interface IAnalytics extends IBaseApplication {
     }
     /**
@@ -707,31 +873,39 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGlobalization
+       @extends Adaptive.IBaseApplication
+    */
     interface IGlobalization extends IBaseApplication {
         /**
+           @method
            Returns the default locale of the application defined in the configuration file
-           @return Default Locale of the application
+           @return {Locale} Default Locale of the application
            @since ARP1.0
         */
         getDefaultLocale(): Locale;
         /**
+           @method
            List of supported locales for the application defined in the configuration file
-           @return List of locales
+           @return {Array<Locale>} List of locales
            @since ARP1.0
         */
         getLocaleSupportedDescriptors(): Locale[];
         /**
+           @method
            Gets the text/message corresponding to the given key and locale.
            @param key    to match text
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized text.
+           @return {string} Localized text.
            @since ARP1.0
         */
         getResourceLiteral(key: string, locale: Locale): string;
         /**
+           @method
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return Localized texts in the form of an object.
+           @return {Array<KeyPair>} Localized texts in the form of an object.
            @since ARP1.0
         */
         getResourceLiterals(locale: Locale): KeyPair[];
@@ -743,26 +917,34 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ILifecycle
+       @extends Adaptive.IBaseApplication
+    */
     interface ILifecycle extends IBaseApplication {
         /**
+           @method
            Add the listener for the lifecycle of the app
            @param listener Lifecycle listener
            @since ARP1.0
         */
         addLifecycleListener(listener: ILifecycleListener): any;
         /**
+           @method
            Whether the application is in background or not
-           @return true if the application is in background;false otherwise
+           @return {boolean} true if the application is in background;false otherwise
            @since ARP1.0
         */
         isBackground(): boolean;
         /**
+           @method
            Un-registers an existing listener from receiving lifecycle events.
            @param listener Lifecycle listener
            @since ARP1.0
         */
         removeLifecycleListener(listener: ILifecycleListener): any;
         /**
+           @method
            Removes all existing listeners from receiving lifecycle events.
            @since ARP1.0
         */
@@ -775,6 +957,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IManagement
+       @extends Adaptive.IBaseApplication
+    */
     interface IManagement extends IBaseApplication {
     }
     /**
@@ -783,6 +969,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IPrinting
+       @extends Adaptive.IBaseApplication
     */
     interface IPrinting extends IBaseApplication {
     }
@@ -793,6 +983,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ISettings
+       @extends Adaptive.IBaseApplication
+    */
     interface ISettings extends IBaseApplication {
     }
     /**
@@ -801,6 +995,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IUpdate
+       @extends Adaptive.IBaseApplication
     */
     interface IUpdate extends IBaseApplication {
     }
@@ -811,20 +1009,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IContactPhotoResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IContactPhotoResultCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IContactPhotoResultCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param contactPhoto returned by the platform
            @since ARP1.0
         */
         onResult(contactPhoto: number[]): any;
         /**
+           @method
            This method is called on Warning
            @param contactPhoto returned by the platform
            @param warning      returned by the platform
@@ -839,20 +1044,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IContactResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IContactResultCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IContactResultCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param contacts returned by the platform
            @since ARP1.0
         */
         onResult(contacts: Contact[]): any;
         /**
+           @method
            This method is called on Warning
            @param contacts returned by the platform
            @param warning  returned by the platform
@@ -867,20 +1079,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDatabaseResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IDatabaseResultCallback extends IBaseCallback {
         /**
+           @method
            Result callback for error responses
            @param error Returned error
            @since ARP1.0
         */
         onError(error: IDatabaseResultCallbackError): any;
         /**
+           @method
            Result callback for correct responses
            @param database Returns the database
            @since ARP1.0
         */
         onResult(database: Database): any;
         /**
+           @method
            Result callback for warning responses
            @param database Returns the database
            @param warning  Returned Warning
@@ -895,20 +1114,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDatabaseTableResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IDatabaseTableResultCallback extends IBaseCallback {
         /**
+           @method
            Result callback for error responses
            @param error Returned error
            @since ARP1.0
         */
         onError(error: IDatabaseTableResultCallbackError): any;
         /**
+           @method
            Result callback for correct responses
            @param databaseTable Returns the databaseTable
            @since ARP1.0
         */
         onResult(databaseTable: DatabaseTable): any;
         /**
+           @method
            Result callback for warning responses
            @param databaseTable Returns the databaseTable
            @param warning       Returned Warning
@@ -923,20 +1149,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileDataLoadResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IFileDataLoadResultCallback extends IBaseCallback {
         /**
+           @method
            Error processing data retrieval/storage operation.
            @param error Error condition encountered.
            @since ARP1.0
         */
         onError(error: IFileDataLoadResultCallbackError): any;
         /**
+           @method
            Result of data retrieval operation.
            @param data Data loaded.
            @since ARP1.0
         */
         onResult(data: number[]): any;
         /**
+           @method
            Result with warning of data retrieval/storage operation.
            @param data    File being loaded.
            @param warning Warning condition encountered.
@@ -951,20 +1184,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileDataStoreResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IFileDataStoreResultCallback extends IBaseCallback {
         /**
+           @method
            Error processing data retrieval/storage operation.
            @param error Error condition encountered.
            @since ARP1.0
         */
         onError(error: IFileDataStoreResultCallbackError): any;
         /**
+           @method
            Result of data storage operation.
            @param file File reference to stored data.
            @since ARP1.0
         */
         onResult(file: FileDescriptor): any;
         /**
+           @method
            Result with warning of data retrieval/storage operation.
            @param file    File being loaded/stored.
            @param warning Warning condition encountered.
@@ -979,20 +1219,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileListResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IFileListResultCallback extends IBaseCallback {
         /**
+           @method
            On error result of a file operation.
            @param error Error processing the request.
            @since ARP1.0
         */
         onError(error: IFileListResultCallbackError): any;
         /**
+           @method
            On correct result of a file operation.
            @param files Array of resulting files/folders.
            @since ARP1.0
         */
         onResult(files: FileDescriptor[]): any;
         /**
+           @method
            On partial result of a file operation, containing a warning.
            @param files   Array of resulting files/folders.
            @param warning Warning condition encountered.
@@ -1007,20 +1254,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IFileResultCallback extends IBaseCallback {
         /**
+           @method
            On error result of a file operation.
            @param error Error processing the request.
            @since ARP1.0
         */
         onError(error: IFileResultCallbackError): any;
         /**
+           @method
            On correct result of a file operation.
            @param storageFile Reference to the resulting file.
            @since ARP1.0
         */
         onResult(storageFile: FileDescriptor): any;
         /**
+           @method
            On partial result of a file operation, containing a warning.
            @param file    Reference to the offending file.
            @param warning Warning processing the request.
@@ -1035,20 +1289,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IMessagingCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IMessagingCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IMessagingCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param success true if sent;false otherwise
            @since ARP1.0
         */
         onResult(success: boolean): any;
         /**
+           @method
            This method is called on Warning
            @param success true if sent;false otherwise
            @param warning returned by the platform
@@ -1063,20 +1324,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkReachabilityCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface INetworkReachabilityCallback extends IBaseCallback {
         /**
+           @method
            No data received - error condition, not authorized .
            @param error Error value
            @since ARP1.0
         */
         onError(error: INetworkReachabilityCallbackError): any;
         /**
+           @method
            Correct data received.
            @param reachable Indicates if the host is reachable
            @since ARP1.0
         */
         onResult(reachable: boolean): any;
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param reachable Indicates if the host is reachable
            @param warning   Warning value
@@ -1091,20 +1359,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ISecurityResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface ISecurityResultCallback extends IBaseCallback {
         /**
+           @method
            No data received - error condition, not authorized .
            @param error Error values
            @since ARP1.0
         */
         onError(error: ISecurityResultCallbackError): any;
         /**
+           @method
            Correct data received.
            @param keyValues key and values
            @since ARP1.0
         */
         onResult(keyValues: SecureKeyPair[]): any;
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param keyValues key and values
            @param warning   Warning values
@@ -1119,20 +1394,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IServiceResultCallback
+       @extends Adaptive.IBaseCallback
+    */
     interface IServiceResultCallback extends IBaseCallback {
         /**
+           @method
            This method is called on Error
            @param error returned by the platform
            @since ARP1.0
         */
         onError(error: IServiceResultCallbackError): any;
         /**
+           @method
            This method is called on Result
            @param response data
            @since ARP1.0
         */
         onResult(response: ServiceResponse): any;
         /**
+           @method
            This method is called on Warning
            @param response data
            @param warning  returned by the platform
@@ -1147,6 +1429,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAds
+       @extends Adaptive.IBaseCommerce
+    */
     interface IAds extends IBaseCommerce {
     }
     /**
@@ -1155,6 +1441,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IStore
+       @extends Adaptive.IBaseCommerce
     */
     interface IStore extends IBaseCommerce {
     }
@@ -1165,6 +1455,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IWallet
+       @extends Adaptive.IBaseCommerce
+    */
     interface IWallet extends IBaseCommerce {
     }
     /**
@@ -1173,6 +1467,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBluetooth
+       @extends Adaptive.IBaseCommunication
     */
     interface IBluetooth extends IBaseCommunication {
     }
@@ -1183,6 +1481,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkInfo
+       @extends Adaptive.IBaseCommunication
+    */
     interface INetworkInfo extends IBaseCommunication {
     }
     /**
@@ -1191,6 +1493,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.INetworkNaming
+       @extends Adaptive.IBaseCommunication
     */
     interface INetworkNaming extends IBaseCommunication {
     }
@@ -1201,8 +1507,13 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkReachability
+       @extends Adaptive.IBaseCommunication
+    */
     interface INetworkReachability extends IBaseCommunication {
         /**
+           @method
            Whether there is connectivity to a host, via domain name or ip address, or not.
            @param host     domain name or ip address of host.
            @param callback Callback called at the end.
@@ -1210,6 +1521,7 @@ declare module Adaptive {
         */
         isNetworkReachable(host: string, callback: INetworkReachabilityCallback): any;
         /**
+           @method
            Whether there is connectivity to an url of a service or not.
            @param url      to look for
            @param callback Callback called at the end
@@ -1224,20 +1536,27 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkStatus
+       @extends Adaptive.IBaseCommunication
+    */
     interface INetworkStatus extends IBaseCommunication {
         /**
+           @method
            Add the listener for network status changes of the app
            @param listener Listener with the result
            @since ARP1.0
         */
         addNetworkStatusListener(listener: INetworkStatusListener): any;
         /**
+           @method
            Un-registers an existing listener from receiving network status events.
            @param listener Listener with the result
            @since ARP1.0
         */
         removeNetworkStatusListener(listener: INetworkStatusListener): any;
         /**
+           @method
            Removes all existing listeners from receiving network status events.
            @since ARP1.0
         */
@@ -1250,15 +1569,21 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IService
+       @extends Adaptive.IBaseCommunication
+    */
     interface IService extends IBaseCommunication {
         /**
+           @method
            Get a reference to a registered service by name.
            @param serviceName Name of service.
-           @return A service, if registered, or null of the service does not exist.
+           @return {Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         getService(serviceName: string): Service;
         /**
+           @method
            Request async a service for an Url
            @param serviceRequest Service Request to invoke
            @param service        Service to call
@@ -1267,17 +1592,20 @@ declare module Adaptive {
         */
         invokeService(serviceRequest: ServiceRequest, service: Service, callback: IServiceResultCallback): any;
         /**
+           @method
            Register a new service
            @param service to register
            @since ARP1.0
         */
         registerService(service: Service): any;
         /**
+           @method
            Unregister all services.
            @since ARP1.0
         */
         unregisterServices(): any;
         /**
+           @method
            Unregister a service
            @param service to unregister
            @since ARP1.0
@@ -1305,6 +1633,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ISocket
+       @extends Adaptive.IBaseCommunication
+    */
     interface ISocket extends IBaseCommunication {
     }
     /**
@@ -1314,11 +1646,16 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ITelephony
+       @extends Adaptive.IBaseCommunication
+    */
     interface ITelephony extends IBaseCommunication {
         /**
+           @method
            Invoke a phone call
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         call(number: string): ITelephonyStatus;
@@ -1330,6 +1667,10 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ICloud
+       @extends Adaptive.IBaseData
+    */
     interface ICloud extends IBaseData {
     }
     /**
@@ -1338,6 +1679,10 @@ declare module Adaptive {
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IDataStream
+       @extends Adaptive.IBaseData
     */
     interface IDataStream extends IBaseData {
     }
@@ -1348,8 +1693,13 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDatabase
+       @extends Adaptive.IBaseData
+    */
     interface IDatabase extends IBaseData {
         /**
+           @method
            Creates a database on default path for every platform.
            @param callback Asynchronous callback
            @param database Database object to create
@@ -1357,6 +1707,7 @@ declare module Adaptive {
         */
         createDatabase(database: Database, callback: IDatabaseResultCallback): any;
         /**
+           @method
            Creates a databaseTable inside a database for every platform.
            @param database      Database for databaseTable creating.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
@@ -1365,6 +1716,7 @@ declare module Adaptive {
         */
         createTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): any;
         /**
+           @method
            Deletes a database on default path for every platform.
            @param database Database object to delete
            @param callback Asynchronous callback
@@ -1372,6 +1724,7 @@ declare module Adaptive {
         */
         deleteDatabase(database: Database, callback: IDatabaseResultCallback): any;
         /**
+           @method
            Deletes a databaseTable inside a database for every platform.
            @param database      Database for databaseTable removal.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
@@ -1380,6 +1733,7 @@ declare module Adaptive {
         */
         deleteTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): any;
         /**
+           @method
            Executes SQL statement into the given database. The replacements
 should be passed as a parameter
            @param database     The database object reference.
@@ -1390,6 +1744,7 @@ should be passed as a parameter
         */
         executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): any;
         /**
+           @method
            Executes SQL transaction (some statements chain) inside given database.
            @param database     The database object reference.
            @param statements   The statements to be executed during transaction.
@@ -1400,17 +1755,19 @@ should be passed as a parameter
         */
         executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): any;
         /**
+           @method
            Checks if database exists by given database name.
            @param database Database Object to check if exists
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsDatabase(database: Database): boolean;
         /**
+           @method
            Checks if databaseTable exists by given database name.
            @param database      Database for databaseTable consulting.
            @param databaseTable DatabaseTable object with the name of the databaseTable inside.
-           @return True if exists, false otherwise
+           @return {boolean} True if exists, false otherwise
            @since ARP1.0
         */
         existsTable(database: Database, databaseTable: DatabaseTable): boolean;
@@ -1422,22 +1779,29 @@ should be passed as a parameter
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFile
+       @extends Adaptive.IBaseData
+    */
     interface IFile extends IBaseData {
         /**
+           @method
            Determine whether the current file/folder can be read from.
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is readable, false otherwise.
+           @return {boolean} True if the folder/file is readable, false otherwise.
            @since ARP1.0
         */
         canRead(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Determine whether the current file/folder can be written to.
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the folder/file is writable, false otherwise.
+           @return {boolean} True if the folder/file is writable, false otherwise.
            @since ARP1.0
         */
         canWrite(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Creates a file with the specified name.
            @param descriptor File descriptor of file or folder used for operation.
            @param callback   Result of the operation.
@@ -1445,22 +1809,25 @@ should be passed as a parameter
         */
         create(descriptor: FileDescriptor, callback: IFileResultCallback): any;
         /**
+           @method
            Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
 deleted if the cascade parameter is set to true.
            @param descriptor File descriptor of file or folder used for operation.
            @param cascade    Whether to delete sub-files and sub-folders.
-           @return True if files (and sub-files and folders) whether deleted.
+           @return {boolean} True if files (and sub-files and folders) whether deleted.
            @since ARP1.0
         */
         delete(descriptor: FileDescriptor, cascade: boolean): boolean;
         /**
+           @method
            Check whether the file/path exists.
            @param descriptor File descriptor of file or folder used for operation.
-           @return True if the file exists in the filesystem, false otherwise.
+           @return {boolean} True if the file exists in the filesystem, false otherwise.
            @since ARP1.0
         */
         exists(descriptor: FileDescriptor): boolean;
         /**
+           @method
            Loads the content of the file.
            @param descriptor File descriptor of file or folder used for operation.
            @param callback   Result of the operation.
@@ -1468,34 +1835,39 @@ deleted if the cascade parameter is set to true.
         */
         getContent(descriptor: FileDescriptor, callback: IFileDataLoadResultCallback): any;
         /**
+           @method
            Returns the file storage type of the file
            @param descriptor File descriptor of file or folder used for operation.
-           @return Storage Type file
+           @return {IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
         /**
+           @method
            Returns the file type
            @param descriptor File descriptor of file or folder used for operation.
-           @return Returns the file type of the file
+           @return {IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
         /**
+           @method
            Returns the security type of the file
            @param descriptor File descriptor of file or folder used for operation.
-           @return Security Level of the file
+           @return {IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
         /**
+           @method
            Check whether this is a path of a file.
            @param descriptor File descriptor of file or folder used for operation.
-           @return true if this is a path to a folder/directory, false if this is a path to a file.
+           @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
            @since ARP1.0
         */
         isDirectory(descriptor: FileDescriptor): boolean;
         /**
+           @method
            List all the files matching the speficied regex filter within this file/path reference. If the reference
 is a file, it will not yield any results.
            @param descriptor File descriptor of file or folder used for operation.
@@ -1505,6 +1877,7 @@ is a file, it will not yield any results.
         */
         listFilesForRegex(descriptor: FileDescriptor, regex: string, callback: IFileListResultCallback): any;
         /**
+           @method
            List all the files contained within this file/path reference. If the reference is a file, it will not yield
 any results.
            @param descriptor File descriptor of file or folder used for operation.
@@ -1513,14 +1886,16 @@ any results.
         */
         listFiles(descriptor: FileDescriptor, callback: IFileListResultCallback): any;
         /**
+           @method
            Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
            @param descriptor File descriptor of file or folder used for operation.
            @param recursive  Whether to create all parent path elements.
-           @return True if the path was created, false otherwise (or it exists already).
+           @return {boolean} True if the path was created, false otherwise (or it exists already).
            @since ARP1.0
         */
         mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;
         /**
+           @method
            Moves the current file to the given file destination, optionally overwriting and creating the path to the
 new destination file.
            @param source      File descriptor of file or folder used for operation as source.
@@ -1532,6 +1907,7 @@ new destination file.
         */
         move(source: FileDescriptor, destination: FileDescriptor, createPath: boolean, overwrite: boolean, callback: IFileResultCallback): any;
         /**
+           @method
            Sets the content of the file.
            @param descriptor File descriptor of file or folder used for operation.
            @param content    Binary content to store in the file.
@@ -1547,64 +1923,76 @@ new destination file.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IFileSystem
+       @extends Adaptive.IBaseData
+    */
     interface IFileSystem extends IBaseData {
         /**
+           @method
            Creates a new reference to a new or existing location in the filesystem.
 This method does not create the actual file in the specified folder.
            @param parent Parent directory.
            @param name   Name of new file or directory.
-           @return A reference to a new or existing location in the filesystem.
+           @return {FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
         createFileDescriptor(parent: FileDescriptor, name: string): FileDescriptor;
         /**
+           @method
            Returns a reference to the cache folder for the current application.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
-           @return Path to the application's cache folder.
+           @return {FileDescriptor} Path to the application's cache folder.
            @since ARP1.0
         */
         getApplicationCacheFolder(): FileDescriptor;
         /**
+           @method
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
-           @return Path to the application's cloud storage folder.
+           @return {FileDescriptor} Path to the application's cloud storage folder.
            @since ARP1.0
         */
         getApplicationCloudFolder(): FileDescriptor;
         /**
+           @method
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         getApplicationDocumentsFolder(): FileDescriptor;
         /**
+           @method
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
-           @return Path to the application folder.
+           @return {FileDescriptor} Path to the application folder.
            @since ARP1.0
         */
         getApplicationFolder(): FileDescriptor;
         /**
+           @method
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
-           @return Path to the application's protected storage folder.
+           @return {FileDescriptor} Path to the application's protected storage folder.
            @since ARP1.0
         */
         getApplicationProtectedFolder(): FileDescriptor;
         /**
+           @method
            Returns the file system dependent file separator.
-           @return char with the directory/file separator.
+           @return {string} char with the directory/file separator.
            @since ARP1.0
         */
         getSeparator(): string;
         /**
+           @method
            Returns a reference to the external storage folder provided by the OS. This may
 be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
-           @return Path to the application's documents folder.
+           @return {FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         getSystemExternalFolder(): FileDescriptor;
@@ -1616,6 +2004,10 @@ This path may or may not be writable by the current application.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IInternalStorage
+       @extends Adaptive.IBaseData
+    */
     interface IInternalStorage extends IBaseData {
     }
     /**
@@ -1624,6 +2016,10 @@ This path may or may not be writable by the current application.
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IXML
+       @extends Adaptive.IBaseData
     */
     interface IXML extends IBaseData {
     }
@@ -1634,8 +2030,13 @@ This path may or may not be writable by the current application.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAccelerationListener
+       @extends Adaptive.IBaseListener
+    */
     interface IAccelerationListener extends IBaseListener {
         /**
+           @method
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
            @param error Error fired
@@ -1643,12 +2044,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         onError(error: IAccelerationListenerError): any;
         /**
+           @method
            Correct data received.
            @param acceleration Acceleration received
            @since ARP1.0
         */
         onResult(acceleration: Acceleration): any;
         /**
+           @method
            Data received with warning - ie. Needs calibration.
            @param acceleration Acceleration received
            @param warning      Warning fired
@@ -1663,20 +2066,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IButtonListener
+       @extends Adaptive.IBaseListener
+    */
     interface IButtonListener extends IBaseListener {
         /**
+           @method
            No data received
            @param error occurred
            @since ARP1.0
         */
         onError(error: IButtonListenerError): any;
         /**
+           @method
            Called on button pressed
            @param button pressed
            @since ARP1.0
         */
         onResult(button: Button): any;
         /**
+           @method
            Data received with warning
            @param button  pressed
            @param warning happened
@@ -1691,20 +2101,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGeolocationListener
+       @extends Adaptive.IBaseListener
+    */
     interface IGeolocationListener extends IBaseListener {
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
            @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: IGeolocationListenerError): any;
         /**
+           @method
            Correct data received.
            @param geolocation Geolocation Bean
            @since ARP1.0
         */
         onResult(geolocation: Geolocation): any;
         /**
+           @method
            Data received with warning - ie. HighDoP
            @param geolocation Geolocation Bean
            @param warning     Type of warning encountered during reading.
@@ -1719,20 +2136,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ILifecycleListener
+       @extends Adaptive.IBaseListener
+    */
     interface ILifecycleListener extends IBaseListener {
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
            @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: ILifecycleListenerError): any;
         /**
+           @method
            Called when lifecycle changes somehow.
            @param lifecycle Lifecycle element
            @since ARP1.0
         */
         onResult(lifecycle: Lifecycle): any;
         /**
+           @method
            Data received with warning
            @param lifecycle Lifecycle element
            @param warning   Type of warning encountered during reading.
@@ -1747,20 +2171,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INetworkStatusListener
+       @extends Adaptive.IBaseListener
+    */
     interface INetworkStatusListener extends IBaseListener {
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
            @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: INetworkStatusListenerError): any;
         /**
+           @method
            Called when network connection changes somehow.
            @param network Change to this network.
            @since ARP1.0
         */
         onResult(network: ICapabilitiesNet): any;
         /**
+           @method
            Status received with warning
            @param network Change to this network.
            @param warning Type of warning encountered during reading.
@@ -1775,6 +2206,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAudio
+       @extends Adaptive.IBaseMedia
+    */
     interface IAudio extends IBaseMedia {
     }
     /**
@@ -1783,6 +2218,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.ICamera
+       @extends Adaptive.IBaseMedia
     */
     interface ICamera extends IBaseMedia {
     }
@@ -1793,6 +2232,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IImaging
+       @extends Adaptive.IBaseMedia
+    */
     interface IImaging extends IBaseMedia {
     }
     /**
@@ -1802,8 +2245,13 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IVideo
+       @extends Adaptive.IBaseMedia
+    */
     interface IVideo extends IBaseMedia {
         /**
+           @method
            Play url video stream
            @param url of the video
            @since ARP1.0
@@ -1817,6 +2265,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAlarm
+       @extends Adaptive.IBaseNotification
+    */
     interface IAlarm extends IBaseNotification {
     }
     /**
@@ -1825,6 +2277,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.INotification
+       @extends Adaptive.IBaseNotification
     */
     interface INotification extends IBaseNotification {
     }
@@ -1835,6 +2291,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.INotificationLocal
+       @extends Adaptive.IBaseNotification
+    */
     interface INotificationLocal extends IBaseNotification {
     }
     /**
@@ -1843,6 +2303,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IVibration
+       @extends Adaptive.IBaseNotification
     */
     interface IVibration extends IBaseNotification {
     }
@@ -1853,6 +2317,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ICalendar
+       @extends Adaptive.IBasePIM
+    */
     interface ICalendar extends IBasePIM {
     }
     /**
@@ -1862,8 +2330,13 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IContact
+       @extends Adaptive.IBasePIM
+    */
     interface IContact extends IBasePIM {
         /**
+           @method
            Get the contact photo
            @param contact  id to search for
            @param callback called for return
@@ -1871,6 +2344,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         getContactPhoto(contact: ContactUid, callback: IContactPhotoResultCallback): any;
         /**
+           @method
            Get all the details of a contact according to its id
            @param contact  id to search for
            @param callback called for return
@@ -1878,6 +2352,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         getContact(contact: ContactUid, callback: IContactResultCallback): any;
         /**
+           @method
            Get marked fields of all contacts
            @param callback called for return
            @param fields   to get for each Contact
@@ -1885,6 +2360,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): any;
         /**
+           @method
            Get marked fields of all contacts according to a filter
            @param callback called for return
            @param fields   to get for each Contact
@@ -1893,12 +2369,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): any;
         /**
+           @method
            Get all contacts
            @param callback called for return
            @since ARP1.0
         */
         getContacts(callback: IContactResultCallback): any;
         /**
+           @method
            Search contacts according to a term with a filter and send it to the callback
            @param term     string to search
            @param callback called for return
@@ -1907,6 +2385,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): any;
         /**
+           @method
            Search contacts according to a term and send it to the callback
            @param term     string to search
            @param callback called for return
@@ -1914,10 +2393,11 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         searchContacts(term: string, callback: IContactResultCallback): any;
         /**
+           @method
            Set the contact photo
            @param contact  id to assign the photo
            @param pngImage photo as byte array
-           @return true if set is successful;false otherwise
+           @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */
         setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
@@ -1929,8 +2409,13 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IMail
+       @extends Adaptive.IBasePIM
+    */
     interface IMail extends IBasePIM {
         /**
+           @method
            Send an Email
            @param data     Payload of the email
            @param callback Result callback of the operation
@@ -1945,8 +2430,13 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IMessaging
+       @extends Adaptive.IBasePIM
+    */
     interface IMessaging extends IBasePIM {
         /**
+           @method
            Send text SMS
            @param number   to send
            @param text     to send
@@ -1962,6 +2452,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBarcode
+       @extends Adaptive.IBaseReader
+    */
     interface IBarcode extends IBaseReader {
     }
     /**
@@ -1970,6 +2464,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.INFC
+       @extends Adaptive.IBaseReader
     */
     interface INFC extends IBaseReader {
     }
@@ -1980,6 +2478,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IOCR
+       @extends Adaptive.IBaseReader
+    */
     interface IOCR extends IBaseReader {
     }
     /**
@@ -1988,6 +2490,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IQRCode
+       @extends Adaptive.IBaseReader
     */
     interface IQRCode extends IBaseReader {
     }
@@ -1998,6 +2504,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IOAuth
+       @extends Adaptive.IBaseSecurity
+    */
     interface IOAuth extends IBaseSecurity {
     }
     /**
@@ -2006,6 +2516,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IOpenId
+       @extends Adaptive.IBaseSecurity
     */
     interface IOpenId extends IBaseSecurity {
     }
@@ -2016,8 +2530,13 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ISecurity
+       @extends Adaptive.IBaseSecurity
+    */
     interface ISecurity extends IBaseSecurity {
         /**
+           @method
            Deletes from the device internal storage the entry/entries containing the specified key names.
            @param keys             Array with the key names to delete.
            @param publicAccessName The name of the shared internal storage object (if needed).
@@ -2026,6 +2545,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
+           @method
            Retrieves from the device internal storage the entry/entries containing the specified key names.
            @param keys             Array with the key names to retrieve.
            @param publicAccessName The name of the shared internal storage object (if needed).
@@ -2034,12 +2554,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         */
         getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
+           @method
            Returns if the device has been modified in anyhow
-           @return true if the device has been modified; false otherwise
+           @return {boolean} true if the device has been modified; false otherwise
            @since ARP1.0
         */
         isDeviceModified(): boolean;
         /**
+           @method
            Stores in the device internal storage the specified item/s.
            @param keyValues        Array containing the items to store on the device internal memory.
            @param publicAccessName The name of the shared internal storage object (if needed).
@@ -2055,20 +2577,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAcceleration
+       @extends Adaptive.IBaseSensor
+    */
     interface IAcceleration extends IBaseSensor {
         /**
+           @method
            Register a new listener that will receive acceleration events.
            @param listener to be registered.
            @since ARP1.0
         */
         addAccelerationListener(listener: IAccelerationListener): any;
         /**
+           @method
            De-registers an existing listener from receiving acceleration events.
            @param listener to be registered.
            @since ARP1.0
         */
         removeAccelerationListener(listener: IAccelerationListener): any;
         /**
+           @method
            Removed all existing listeners from receiving acceleration events.
            @since ARP1.0
         */
@@ -2081,6 +2610,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IAmbientLight
+       @extends Adaptive.IBaseSensor
+    */
     interface IAmbientLight extends IBaseSensor {
     }
     /**
@@ -2089,6 +2622,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IBarometer
+       @extends Adaptive.IBaseSensor
     */
     interface IBarometer extends IBaseSensor {
     }
@@ -2099,20 +2636,27 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGeolocation
+       @extends Adaptive.IBaseSensor
+    */
     interface IGeolocation extends IBaseSensor {
         /**
+           @method
            Register a new listener that will receive geolocation events.
            @param listener to be registered.
            @since ARP1.0
         */
         addGeolocationListener(listener: IGeolocationListener): any;
         /**
+           @method
            De-registers an existing listener from receiving geolocation events.
            @param listener to be registered.
            @since ARP1.0
         */
         removeGeolocationListener(listener: IGeolocationListener): any;
         /**
+           @method
            Removed all existing listeners from receiving geolocation events.
            @since ARP1.0
         */
@@ -2125,6 +2669,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGyroscope
+       @extends Adaptive.IBaseSensor
+    */
     interface IGyroscope extends IBaseSensor {
     }
     /**
@@ -2133,6 +2681,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IMagnetometer
+       @extends Adaptive.IBaseSensor
     */
     interface IMagnetometer extends IBaseSensor {
     }
@@ -2143,6 +2695,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IProximity
+       @extends Adaptive.IBaseSensor
+    */
     interface IProximity extends IBaseSensor {
     }
     /**
@@ -2151,6 +2707,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IFacebook
+       @extends Adaptive.IBaseSocial
     */
     interface IFacebook extends IBaseSocial {
     }
@@ -2161,6 +2721,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IGooglePlus
+       @extends Adaptive.IBaseSocial
+    */
     interface IGooglePlus extends IBaseSocial {
     }
     /**
@@ -2169,6 +2733,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.ILinkedIn
+       @extends Adaptive.IBaseSocial
     */
     interface ILinkedIn extends IBaseSocial {
     }
@@ -2179,6 +2747,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IRSS
+       @extends Adaptive.IBaseSocial
+    */
     interface IRSS extends IBaseSocial {
     }
     /**
@@ -2187,6 +2759,10 @@ listener and subsequently, the listener will be deactivated and removed from the
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.ITwitter
+       @extends Adaptive.IBaseSocial
     */
     interface ITwitter extends IBaseSocial {
     }
@@ -2197,57 +2773,68 @@ listener and subsequently, the listener will be deactivated and removed from the
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ICapabilities
+       @extends Adaptive.IBaseSystem
+    */
     interface ICapabilities extends IBaseSystem {
         /**
+           @method
            Determines whether a specific hardware button is supported for interaction.
            @param type Type of feature to check.
-           @return true is supported, false otherwise.
+           @return {boolean} true is supported, false otherwise.
            @since ARP1.0
         */
         hasButtonSupport(type: ICapabilitiesButton): boolean;
         /**
+           @method
            Determines whether a specific Communication capability is supported by
 the device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
         /**
+           @method
            Determines whether a specific Data capability is supported by the device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasDataSupport(type: ICapabilitiesData): boolean;
         /**
+           @method
            Determines whether a specific Media capability is supported by the
 device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasMediaSupport(type: ICapabilitiesMedia): boolean;
         /**
+           @method
            Determines whether a specific Net capability is supported by the device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNetSupport(type: ICapabilitiesNet): boolean;
         /**
+           @method
            Determines whether a specific Notification capability is supported by the
 device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasNotificationSupport(type: ICapabilitiesNotification): boolean;
         /**
+           @method
            Determines whether a specific Sensor capability is supported by the
 device.
            @param type Type of feature to check.
-           @return true if supported, false otherwise.
+           @return {boolean} true if supported, false otherwise.
            @since ARP1.0
         */
         hasSensorSupport(type: ICapabilitiesSensor): boolean;
@@ -2259,32 +2846,41 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDevice
+       @extends Adaptive.IBaseSystem
+    */
     interface IDevice extends IBaseSystem {
         /**
+           @method
            Register a new listener that will receive button events.
            @param listener to be registered.
            @since ARP1.0
         */
         addButtonListener(listener: IButtonListener): any;
         /**
+           @method
            Returns the device information for the current device executing the runtime.
-           @return DeviceInfo for the current device.
+           @return {DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
+           @method
            Gets the current Locale for the device.
-           @return The current Locale information.
+           @return {Locale} The current Locale information.
            @since ARP1.0
         */
         getLocaleCurrent(): Locale;
         /**
+           @method
            De-registers an existing listener from receiving button events.
            @param listener to be removed.
            @since ARP1.0
         */
         removeButtonListener(listener: IButtonListener): any;
         /**
+           @method
            Removed all existing listeners from receiving button events.
            @since ARP1.0
         */
@@ -2297,6 +2893,10 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDisplay
+       @extends Adaptive.IBaseSystem
+    */
     interface IDisplay extends IBaseSystem {
     }
     /**
@@ -2306,10 +2906,15 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IOS
+       @extends Adaptive.IBaseSystem
+    */
     interface IOS extends IBaseSystem {
         /**
+           @method
            Returns the OSInfo for the current operating system.
-           @return OSInfo with name, version and vendor of the OS.
+           @return {OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         getOSInfo(): OSInfo;
@@ -2321,15 +2926,21 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IRuntime
+       @extends Adaptive.IBaseSystem
+    */
     interface IRuntime extends IBaseSystem {
         /**
+           @method
            Dismiss the current Application
            @since ARP1.0
         */
         dismissApplication(): any;
         /**
+           @method
            Whether the application dismiss the splash screen successfully or not
-           @return true if the application has dismissed the splash screen;false otherwise
+           @return {boolean} true if the application has dismissed the splash screen;false otherwise
            @since ARP1.0
         */
         dismissSplashScreen(): boolean;
@@ -2341,29 +2952,36 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IBrowser
+       @extends Adaptive.IBaseUI
+    */
     interface IBrowser extends IBaseUI {
         /**
+           @method
            Method for opening a URL like a link in the native default browser
            @param url Url to open
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openExtenalBrowser(url: string): boolean;
         /**
+           @method
            Method for opening a browser embedded into the application in a modal window
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowserModal(url: string, title: string, backButtonText: string): boolean;
         /**
+           @method
            Method for opening a browser embedded into the application
            @param url            Url to open
            @param title          Title of the Navigation bar
            @param backButtonText Title of the Back button bar
-           @return The result of the operation
+           @return {boolean} The result of the operation
            @since ARP1.0
         */
         openInternalBrowser(url: string, title: string, backButtonText: string): boolean;
@@ -2375,6 +2993,10 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IDesktop
+       @extends Adaptive.IBaseUI
+    */
     interface IDesktop extends IBaseUI {
     }
     /**
@@ -2383,6 +3005,10 @@ device.
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.IMap
+       @extends Adaptive.IBaseUI
     */
     interface IMap extends IBaseUI {
     }
@@ -2393,6 +3019,10 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IUI
+       @extends Adaptive.IBaseUI
+    */
     interface IUI extends IBaseUI {
     }
     /**
@@ -2401,6 +3031,10 @@ device.
        @author Carlos Lozano Diez
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.ICompression
+       @extends Adaptive.IBaseUtil
     */
     interface ICompression extends IBaseUtil {
     }
@@ -2411,6 +3045,10 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.IConcurrent
+       @extends Adaptive.IBaseUtil
+    */
     interface IConcurrent extends IBaseUtil {
     }
     /**
@@ -2420,6 +3058,10 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ICrypto
+       @extends Adaptive.IBaseUtil
+    */
     interface ICrypto extends IBaseUtil {
     }
     /**
@@ -2428,6 +3070,10 @@ device.
        @author Ferran Vila Conesa
        @since ARP1.0
        @version 1.0
+    */
+    /**
+       @class Adaptive.ILogging
+       @extends Adaptive.IBaseUtil
     */
     interface ILogging extends IBaseUtil {
         /**
@@ -2453,9 +3099,14 @@ device.
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ITimer
+       @extends Adaptive.IBaseUtil
+    */
     interface ITimer extends IBaseUtil {
     }
     /**
+       @class Adaptive.APIBean
        Structure representing a native response to the HTML5
 
        @author Carlos Lozano Diez
@@ -2475,6 +3126,7 @@ device.
         static toObject(object: any): APIBean;
     }
     /**
+       @class Adaptive.APIRequest
        Structure representing a HTML5 request to the native API.
 
        @author Carlos Lozano Diez
@@ -2569,6 +3221,7 @@ listener.
         static toObject(object: any): APIRequest;
     }
     /**
+       @class Adaptive.APIResponse
        Structure representing a JSON response to the HTML5 layer.
 
        @author Carlos Lozano Diez
@@ -2639,6 +3292,8 @@ listener.
         static toObject(object: any): APIResponse;
     }
     /**
+       @class Adaptive.Acceleration
+       @extends Adaptive.APIBean
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez
@@ -2734,6 +3389,8 @@ listener.
         static toObject(object: any): Acceleration;
     }
     /**
+       @class Adaptive.Button
+       @extends Adaptive.APIBean
        Structure representing the a physical or logical button on a device.
 
        @author Francisco Javier Martin Bueno
@@ -2772,6 +3429,8 @@ listener.
         static toObject(object: any): Button;
     }
     /**
+       @class Adaptive.ContactAddress
+       @extends Adaptive.APIBean
        Structure representing the address data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -2829,6 +3488,8 @@ listener.
         static toObject(object: any): ContactAddress;
     }
     /**
+       @class Adaptive.ContactEmail
+       @extends Adaptive.APIBean
        Structure representing the email data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -2905,6 +3566,8 @@ listener.
         static toObject(object: any): ContactEmail;
     }
     /**
+       @class Adaptive.ContactPersonalInfo
+       @extends Adaptive.APIBean
        Structure representing the personal info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3000,6 +3663,8 @@ listener.
         static toObject(object: any): ContactPersonalInfo;
     }
     /**
+       @class Adaptive.ContactPhone
+       @extends Adaptive.APIBean
        Structure representing the phone data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3057,6 +3722,8 @@ listener.
         static toObject(object: any): ContactPhone;
     }
     /**
+       @class Adaptive.ContactProfessionalInfo
+       @extends Adaptive.APIBean
        Structure representing the professional info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3133,6 +3800,8 @@ listener.
         static toObject(object: any): ContactProfessionalInfo;
     }
     /**
+       @class Adaptive.ContactSocial
+       @extends Adaptive.APIBean
        Structure representing the social data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3190,6 +3859,8 @@ listener.
         static toObject(object: any): ContactSocial;
     }
     /**
+       @class Adaptive.ContactTag
+       @extends Adaptive.APIBean
        Structure representing the assigned tags data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3247,6 +3918,8 @@ listener.
         static toObject(object: any): ContactTag;
     }
     /**
+       @class Adaptive.ContactUid
+       @extends Adaptive.APIBean
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3285,6 +3958,8 @@ listener.
         static toObject(object: any): ContactUid;
     }
     /**
+       @class Adaptive.ContactWebsite
+       @extends Adaptive.APIBean
        Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -3323,6 +3998,8 @@ listener.
         static toObject(object: any): ContactWebsite;
     }
     /**
+       @class Adaptive.Database
+       @extends Adaptive.APIBean
        Structure representing a database reference.
 
        @author Ferran Vila Conesa
@@ -3380,6 +4057,8 @@ listener.
         static toObject(object: any): Database;
     }
     /**
+       @class Adaptive.DatabaseColumn
+       @extends Adaptive.APIBean
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa
@@ -3418,6 +4097,8 @@ listener.
         static toObject(object: any): DatabaseColumn;
     }
     /**
+       @class Adaptive.DatabaseRow
+       @extends Adaptive.APIBean
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa
@@ -3456,6 +4137,8 @@ listener.
         static toObject(object: any): DatabaseRow;
     }
     /**
+       @class Adaptive.DatabaseTable
+       @extends Adaptive.APIBean
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa
@@ -3570,6 +4253,8 @@ listener.
         static toObject(object: any): DatabaseTable;
     }
     /**
+       @class Adaptive.DeviceInfo
+       @extends Adaptive.APIBean
        Structure representing the basic device information.
 
        @author Francisco Javier Martin Bueno
@@ -3664,6 +4349,8 @@ be unique for a specific instance of an application on a specific device.
         static toObject(object: any): DeviceInfo;
     }
     /**
+       @class Adaptive.Email
+       @extends Adaptive.APIBean
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno
@@ -3816,6 +4503,8 @@ be unique for a specific instance of an application on a specific device.
         static toObject(object: any): Email;
     }
     /**
+       @class Adaptive.EmailAddress
+       @extends Adaptive.APIBean
        Structure representing the data elements of an email addressee.
 
        @author Francisco Javier Martin Bueno
@@ -3854,6 +4543,8 @@ be unique for a specific instance of an application on a specific device.
         static toObject(object: any): EmailAddress;
     }
     /**
+       @class Adaptive.EmailAttachmentData
+       @extends Adaptive.APIBean
        Structure representing the binary attachment data.
 
        @author Francisco Javier Martin Bueno
@@ -3968,6 +4659,8 @@ be unique for a specific instance of an application on a specific device.
         static toObject(object: any): EmailAttachmentData;
     }
     /**
+       @class Adaptive.FileDescriptor
+       @extends Adaptive.APIBean
        Implementation of FileDescriptor bean.
 
        @author Carlos Lozano Diez
@@ -4070,6 +4763,8 @@ doesn't exist, this will be -1. Used internally.
         static toObject(object: any): FileDescriptor;
     }
     /**
+       @class Adaptive.Geolocation
+       @extends Adaptive.APIBean
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno
@@ -4172,7 +4867,7 @@ doesn't exist, this will be -1. Used internally.
         /**
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         getXDoP(): number;
         /**
@@ -4184,7 +4879,7 @@ doesn't exist, this will be -1. Used internally.
         /**
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         getYDoP(): number;
         /**
@@ -4199,6 +4894,8 @@ doesn't exist, this will be -1. Used internally.
         static toObject(object: any): Geolocation;
     }
     /**
+       @class Adaptive.KeyPair
+       @extends Adaptive.APIBean
        Represents a basic bean to store keyName pair values
 
        @author Ferran Vila Conesa
@@ -4256,6 +4953,8 @@ doesn't exist, this will be -1. Used internally.
         static toObject(object: any): KeyPair;
     }
     /**
+       @class Adaptive.Lifecycle
+       @extends Adaptive.APIBean
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno
@@ -4305,6 +5004,8 @@ Possible lifecycle States:
         static toObject(object: any): Lifecycle;
     }
     /**
+       @class Adaptive.Locale
+       @extends Adaptive.APIBean
        Represents a specific user or system locate.
 
        @author Aryslan
@@ -4362,6 +5063,8 @@ Possible lifecycle States:
         static toObject(object: any): Locale;
     }
     /**
+       @class Adaptive.OSInfo
+       @extends Adaptive.APIBean
        Represents the basic information about the operating system.
 
        @author Francisco Javier Martin Bueno
@@ -4435,6 +5138,8 @@ Possible lifecycle States:
         static toObject(object: any): OSInfo;
     }
     /**
+       @class Adaptive.SecureKeyPair
+       @extends Adaptive.APIBean
        Represents a single secureKey-value pair.
 
        @author Aryslan
@@ -4492,6 +5197,8 @@ Possible lifecycle States:
         static toObject(object: any): SecureKeyPair;
     }
     /**
+       @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan
@@ -4587,6 +5294,8 @@ Possible lifecycle States:
         static toObject(object: any): Service;
     }
     /**
+       @class Adaptive.ServiceCookie
+       @extends Adaptive.APIBean
        Structure representing the cookieValue of a http cookie.
 
        @author Aryslan
@@ -4758,6 +5467,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceCookie;
     }
     /**
+       @class Adaptive.ServiceEndpoint
+       @extends Adaptive.APIBean
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
@@ -4872,6 +5583,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceEndpoint;
     }
     /**
+       @class Adaptive.ServiceHeader
+       @extends Adaptive.APIBean
        Structure representing the data of a http request or response header.
 
        @author Aryslan
@@ -4929,6 +5642,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceHeader;
     }
     /**
+       @class Adaptive.ServiceRequest
+       @extends Adaptive.APIBean
        Represents a local or remote service request.
 
        @author Aryslan
@@ -5138,6 +5853,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceRequest;
     }
     /**
+       @class Adaptive.ServiceResponse
+       @extends Adaptive.APIBean
        Represents a local or remote service response.
 
        @author Aryslan
@@ -5309,6 +6026,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceResponse;
     }
     /**
+       @class Adaptive.ServiceSession
+       @extends Adaptive.APIBean
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
@@ -5366,6 +6085,8 @@ Possible lifecycle States:
         static toObject(object: any): ServiceSession;
     }
     /**
+       @class Adaptive.Contact
+       @extends Adaptive.ContactUid
        Structure representing the data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -5554,7 +6275,7 @@ Possible lifecycle States:
         constructor(id: number);
         /**
            Get the listener id.
-           @return long with the identifier of the listener.
+           @return {number} long with the identifier of the listener.
         */
         getId(): number;
         /**
@@ -5811,7 +6532,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         constructor(id: number);
         /**
            Get the listener id.
-           @return long with the identifier of the callback.
+           @return {number} long with the identifier of the callback.
         */
         getId(): number;
         /**
@@ -6366,6 +7087,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         onWarning(response: ServiceResponse, warning: IServiceResultCallbackWarning): void;
     }
     /**
+       @class Adaptive.BaseApplicationBridge
+       @extends Adaptive.IBaseApplication
        Base application for Application purposes
 
        @author Carlos Lozano Diez
@@ -6373,18 +7096,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseApplicationBridge implements IBaseApplication {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6392,6 +7120,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseCommerceBridge
+       @extends Adaptive.IBaseCommerce
        Base application for Commerce purposes
 
        @author Carlos Lozano Diez
@@ -6399,18 +7129,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseCommerceBridge implements IBaseCommerce {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6418,6 +7153,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseCommunicationBridge
+       @extends Adaptive.IBaseCommunication
        Base application for Communication purposes
 
        @author Carlos Lozano Diez
@@ -6425,18 +7162,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseCommunicationBridge implements IBaseCommunication {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6444,6 +7186,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseDataBridge
+       @extends Adaptive.IBaseData
        Base application for Data purposes
 
        @author Carlos Lozano Diez
@@ -6451,18 +7195,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseDataBridge implements IBaseData {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6470,6 +7219,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseMediaBridge
+       @extends Adaptive.IBaseMedia
        Base application for Media purposes
 
        @author Carlos Lozano Diez
@@ -6477,18 +7228,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseMediaBridge implements IBaseMedia {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6496,6 +7252,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseNotificationBridge
+       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
@@ -6503,18 +7261,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseNotificationBridge implements IBaseNotification {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6522,6 +7285,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BasePIMBridge
+       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
@@ -6529,18 +7294,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BasePIMBridge implements IBasePIM {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6548,6 +7318,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseReaderBridge
+       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
@@ -6555,18 +7327,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseReaderBridge implements IBaseReader {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6574,6 +7351,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseSecurityBridge
+       @extends Adaptive.IBaseSecurity
        Base application for Security purposes
 
        @author Carlos Lozano Diez
@@ -6581,18 +7360,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseSecurityBridge implements IBaseSecurity {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6600,6 +7384,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseSensorBridge
+       @extends Adaptive.IBaseSensor
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
@@ -6607,18 +7393,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseSensorBridge implements IBaseSensor {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6626,6 +7417,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseSocialBridge
+       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez
@@ -6633,18 +7426,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseSocialBridge implements IBaseSocial {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6652,6 +7450,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseSystemBridge
+       @extends Adaptive.IBaseSystem
        Base application for System purposes
 
        @author Carlos Lozano Diez
@@ -6659,18 +7459,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseSystemBridge implements IBaseSystem {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6678,6 +7483,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseUIBridge
+       @extends Adaptive.IBaseUI
        Base application for UI purposes
 
        @author Carlos Lozano Diez
@@ -6685,18 +7492,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseUIBridge implements IBaseUI {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6704,6 +7516,8 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.BaseUtilBridge
+       @extends Adaptive.IBaseUtil
        Base application for Utility purposes
 
        @author Carlos Lozano Diez
@@ -6711,18 +7525,23 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     class BaseUtilBridge implements IBaseUtil {
         /**
+           @property {Adaptive.IAdaptiveRPGroup} apiGroup
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @constructor
            Default constructor.
         */
         constructor();
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6730,6 +7549,1808 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @class Adaptive.AnalyticsBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Analytics purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.GlobalizationBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Globalization results
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Returns the default locale of the application defined in the configuration file
+
+           @return Default Locale of the application
+           @since ARP1.0
+        */
+        getDefaultLocale(): Locale;
+        /**
+           List of supported locales for the application defined in the configuration file
+
+           @return List of locales
+           @since ARP1.0
+        */
+        getLocaleSupportedDescriptors(): Locale[];
+        /**
+           Gets the text/message corresponding to the given key and locale.
+
+           @param key    to match text
+           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+           @return Localized text.
+           @since ARP1.0
+        */
+        getResourceLiteral(key: string, locale: Locale): string;
+        /**
+           Gets the full application configured literals (key/message pairs) corresponding to the given locale.
+
+           @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+           @return Localized texts in the form of an object.
+           @since ARP1.0
+        */
+        getResourceLiterals(locale: Locale): KeyPair[];
+    }
+    /**
+       @class Adaptive.LifecycleBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Lifecycle listeners
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Add the listener for the lifecycle of the app
+
+           @param listener Lifecycle listener
+           @since ARP1.0
+        */
+        addLifecycleListener(listener: ILifecycleListener): void;
+        /**
+           Whether the application is in background or not
+
+           @return true if the application is in background;false otherwise
+           @since ARP1.0
+        */
+        isBackground(): boolean;
+        /**
+           Un-registers an existing listener from receiving lifecycle events.
+
+           @param listener Lifecycle listener
+           @since ARP1.0
+        */
+        removeLifecycleListener(listener: ILifecycleListener): void;
+        /**
+           Removes all existing listeners from receiving lifecycle events.
+
+           @since ARP1.0
+        */
+        removeLifecycleListeners(): void;
+    }
+    /**
+       @class Adaptive.ManagementBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Management operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class ManagementBridge extends BaseApplicationBridge implements IManagement {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.PrintingBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Printing operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class PrintingBridge extends BaseApplicationBridge implements IPrinting {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.SettingsBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Settings operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class SettingsBridge extends BaseApplicationBridge implements ISettings {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.UpdateBridge
+       @extends Adaptive.BaseApplicationBridge
+       Interface for Managing the Update operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class UpdateBridge extends BaseApplicationBridge implements IUpdate {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.AdsBridge
+       @extends Adaptive.BaseCommerceBridge
+       Interface for Advertising purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AdsBridge extends BaseCommerceBridge implements IAds {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.StoreBridge
+       @extends Adaptive.BaseCommerceBridge
+       Interface for Managing the Store operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class StoreBridge extends BaseCommerceBridge implements IStore {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.WalletBridge
+       @extends Adaptive.BaseCommerceBridge
+       Interface for Managing the Wallet operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class WalletBridge extends BaseCommerceBridge implements IWallet {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.BluetoothBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Bluetooth purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NetworkInfoBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Network information operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NetworkNamingBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Network naming operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NetworkReachabilityBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Network reachability operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Whether there is connectivity to a host, via domain name or ip address, or not.
+
+           @param host     domain name or ip address of host.
+           @param callback Callback called at the end.
+           @since ARP1.0
+        */
+        isNetworkReachable(host: string, callback: INetworkReachabilityCallback): void;
+        /**
+           Whether there is connectivity to an url of a service or not.
+
+           @param url      to look for
+           @param callback Callback called at the end
+           @since ARP1.0
+        */
+        isNetworkServiceReachable(url: string, callback: INetworkReachabilityCallback): void;
+    }
+    /**
+       @class Adaptive.NetworkStatusBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Network status
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Add the listener for network status changes of the app
+
+           @param listener Listener with the result
+           @since ARP1.0
+        */
+        addNetworkStatusListener(listener: INetworkStatusListener): void;
+        /**
+           Un-registers an existing listener from receiving network status events.
+
+           @param listener Listener with the result
+           @since ARP1.0
+        */
+        removeNetworkStatusListener(listener: INetworkStatusListener): void;
+        /**
+           Removes all existing listeners from receiving network status events.
+
+           @since ARP1.0
+        */
+        removeNetworkStatusListeners(): void;
+    }
+    /**
+       @class Adaptive.ServiceBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Services operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class ServiceBridge extends BaseCommunicationBridge implements IService {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Get a reference to a registered service by name.
+
+           @param serviceName Name of service.
+           @return A service, if registered, or null of the service does not exist.
+           @since ARP1.0
+        */
+        getService(serviceName: string): Service;
+        /**
+           Request async a service for an Url
+
+           @param serviceRequest Service Request to invoke
+           @param service        Service to call
+           @param callback       Callback to execute with the result
+           @since ARP1.0
+        */
+        invokeService(serviceRequest: ServiceRequest, service: Service, callback: IServiceResultCallback): void;
+        /**
+           Register a new service
+
+           @param service to register
+           @since ARP1.0
+        */
+        registerService(service: Service): void;
+        /**
+           Unregister a service
+
+           @param service to unregister
+           @since ARP1.0
+        */
+        unregisterService(service: Service): void;
+        /**
+           Unregister all services.
+
+           @since ARP1.0
+        */
+        unregisterServices(): void;
+        /**
+           Check whether a service by the given service is already registered.
+
+           @param service Service to check
+           @return True if the service is registered, false otherwise.
+           @since ARP1.0
+        */
+        isRegistered_service(service: Service): boolean;
+        /**
+           Check whether a service by the given name is registered.
+
+           @param serviceName Name of service.
+           @return True if the service is registered, false otherwise.
+           @since ARP1.0
+        */
+        isRegistered_serviceName(serviceName: string): boolean;
+    }
+    /**
+       @class Adaptive.SocketBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Socket operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class SocketBridge extends BaseCommunicationBridge implements ISocket {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.TelephonyBridge
+       @extends Adaptive.BaseCommunicationBridge
+       Interface for Managing the Telephony operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Invoke a phone call
+
+           @param number to call
+           @return Status of the call
+           @since ARP1.0
+        */
+        call(number: string): ITelephonyStatus;
+    }
+    /**
+       @class Adaptive.CloudBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the Cloud operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CloudBridge extends BaseDataBridge implements ICloud {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.DataStreamBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the DataStream operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class DataStreamBridge extends BaseDataBridge implements IDataStream {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.DatabaseBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the Cloud operations
+
+       @author Ferran Vila Conesa
+       @since ARP1.0
+    */
+    class DatabaseBridge extends BaseDataBridge implements IDatabase {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Creates a database on default path for every platform.
+
+           @param callback Asynchronous callback
+           @param database Database object to create
+           @since ARP1.0
+        */
+        createDatabase(database: Database, callback: IDatabaseResultCallback): void;
+        /**
+           Creates a databaseTable inside a database for every platform.
+
+           @param database      Database for databaseTable creating.
+           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param callback      DatabaseTable callback with the response
+           @since ARP1.0
+        */
+        createTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
+        /**
+           Deletes a database on default path for every platform.
+
+           @param database Database object to delete
+           @param callback Asynchronous callback
+           @since ARP1.0
+        */
+        deleteDatabase(database: Database, callback: IDatabaseResultCallback): void;
+        /**
+           Deletes a databaseTable inside a database for every platform.
+
+           @param database      Database for databaseTable removal.
+           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @param callback      DatabaseTable callback with the response
+           @since ARP1.0
+        */
+        deleteTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
+        /**
+           Executes SQL statement into the given database. The replacements
+should be passed as a parameter
+
+           @param database     The database object reference.
+           @param statement    SQL statement.
+           @param replacements List of SQL statement replacements.
+           @param callback     DatabaseTable callback with the response.
+           @since ARP1.0
+        */
+        executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): void;
+        /**
+           Executes SQL transaction (some statements chain) inside given database.
+
+           @param database     The database object reference.
+           @param statements   The statements to be executed during transaction.
+           @param rollbackFlag Indicates if rollback should be performed when any
+                  statement execution fails.
+           @param callback     DatabaseTable callback with the response.
+           @since ARP1.0
+        */
+        executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): void;
+        /**
+           Checks if database exists by given database name.
+
+           @param database Database Object to check if exists
+           @return True if exists, false otherwise
+           @since ARP1.0
+        */
+        existsDatabase(database: Database): boolean;
+        /**
+           Checks if databaseTable exists by given database name.
+
+           @param database      Database for databaseTable consulting.
+           @param databaseTable DatabaseTable object with the name of the databaseTable inside.
+           @return True if exists, false otherwise
+           @since ARP1.0
+        */
+        existsTable(database: Database, databaseTable: DatabaseTable): boolean;
+    }
+    /**
+       @class Adaptive.FileBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the File operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class FileBridge extends BaseDataBridge implements IFile {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Determine whether the current file/folder can be read from.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return True if the folder/file is readable, false otherwise.
+           @since ARP1.0
+        */
+        canRead(descriptor: FileDescriptor): boolean;
+        /**
+           Determine whether the current file/folder can be written to.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return True if the folder/file is writable, false otherwise.
+           @since ARP1.0
+        */
+        canWrite(descriptor: FileDescriptor): boolean;
+        /**
+           Creates a file with the specified name.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param callback   Result of the operation.
+           @since ARP1.0
+        */
+        create(descriptor: FileDescriptor, callback: IFileResultCallback): void;
+        /**
+           Deletes the given file or path. If the file is a directory and contains files and or subdirectories, these will be
+deleted if the cascade parameter is set to true.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param cascade    Whether to delete sub-files and sub-folders.
+           @return True if files (and sub-files and folders) whether deleted.
+           @since ARP1.0
+        */
+        delete(descriptor: FileDescriptor, cascade: boolean): boolean;
+        /**
+           Check whether the file/path exists.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return True if the file exists in the filesystem, false otherwise.
+           @since ARP1.0
+        */
+        exists(descriptor: FileDescriptor): boolean;
+        /**
+           Loads the content of the file.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param callback   Result of the operation.
+           @since ARP1.0
+        */
+        getContent(descriptor: FileDescriptor, callback: IFileDataLoadResultCallback): void;
+        /**
+           Returns the file storage type of the file
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return Storage Type file
+           @since ARP1.0
+        */
+        getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
+        /**
+           Returns the file type
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return Returns the file type of the file
+           @since ARP1.0
+        */
+        getFileType(descriptor: FileDescriptor): IFileSystemType;
+        /**
+           Returns the security type of the file
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return Security Level of the file
+           @since ARP1.0
+        */
+        getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
+        /**
+           Check whether this is a path of a file.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @return true if this is a path to a folder/directory, false if this is a path to a file.
+           @since ARP1.0
+        */
+        isDirectory(descriptor: FileDescriptor): boolean;
+        /**
+           List all the files contained within this file/path reference. If the reference is a file, it will not yield
+any results.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param callback   Result of operation.
+           @since ARP1.0
+        */
+        listFiles(descriptor: FileDescriptor, callback: IFileListResultCallback): void;
+        /**
+           List all the files matching the speficied regex filter within this file/path reference. If the reference
+is a file, it will not yield any results.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
+           @param callback   Result of operation.
+           @since ARP1.0
+        */
+        listFilesForRegex(descriptor: FileDescriptor, regex: string, callback: IFileListResultCallback): void;
+        /**
+           Creates the parent path (or paths, if recursive) to the given file/path if it doesn't already exist.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param recursive  Whether to create all parent path elements.
+           @return True if the path was created, false otherwise (or it exists already).
+           @since ARP1.0
+        */
+        mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;
+        /**
+           Moves the current file to the given file destination, optionally overwriting and creating the path to the
+new destination file.
+
+           @param source      File descriptor of file or folder used for operation as source.
+           @param destination File descriptor of file or folder used for operation as destination.
+           @param createPath  True to create the path if it does not already exist.
+           @param callback    Result of the operation.
+           @param overwrite   True to create the path if it does not already exist.
+           @since ARP1.0
+        */
+        move(source: FileDescriptor, destination: FileDescriptor, createPath: boolean, overwrite: boolean, callback: IFileResultCallback): void;
+        /**
+           Sets the content of the file.
+
+           @param descriptor File descriptor of file or folder used for operation.
+           @param content    Binary content to store in the file.
+           @param callback   Result of the operation.
+           @since ARP1.0
+        */
+        setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): void;
+    }
+    /**
+       @class Adaptive.FileSystemBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the File System operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class FileSystemBridge extends BaseDataBridge implements IFileSystem {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Creates a new reference to a new or existing location in the filesystem.
+This method does not create the actual file in the specified folder.
+
+           @param parent Parent directory.
+           @param name   Name of new file or directory.
+           @return A reference to a new or existing location in the filesystem.
+           @since ARP1.0
+        */
+        createFileDescriptor(parent: FileDescriptor, name: string): FileDescriptor;
+        /**
+           Returns a reference to the cache folder for the current application.
+This path must always be writable by the current application.
+This path is volatile and may be cleaned by the OS periodically.
+
+           @return Path to the application's cache folder.
+           @since ARP1.0
+        */
+        getApplicationCacheFolder(): FileDescriptor;
+        /**
+           Returns a reference to the cloud synchronizable folder for the current application.
+This path must always be writable by the current application.
+
+           @return Path to the application's cloud storage folder.
+           @since ARP1.0
+        */
+        getApplicationCloudFolder(): FileDescriptor;
+        /**
+           Returns a reference to the documents folder for the current application.
+This path must always be writable by the current application.
+
+           @return Path to the application's documents folder.
+           @since ARP1.0
+        */
+        getApplicationDocumentsFolder(): FileDescriptor;
+        /**
+           Returns a reference to the application installation folder.
+This path may or may not be directly readable or writable - it usually contains the app binary and data.
+
+           @return Path to the application folder.
+           @since ARP1.0
+        */
+        getApplicationFolder(): FileDescriptor;
+        /**
+           Returns a reference to the protected storage folder for the current application.
+This path must always be writable by the current application.
+
+           @return Path to the application's protected storage folder.
+           @since ARP1.0
+        */
+        getApplicationProtectedFolder(): FileDescriptor;
+        /**
+           Returns the file system dependent file separator.
+
+           @return char with the directory/file separator.
+           @since ARP1.0
+        */
+        getSeparator(): string;
+        /**
+           Returns a reference to the external storage folder provided by the OS. This may
+be an external SSD card or similar. This type of storage is removable and by
+definition, not secure.
+This path may or may not be writable by the current application.
+
+           @return Path to the application's documents folder.
+           @since ARP1.0
+        */
+        getSystemExternalFolder(): FileDescriptor;
+    }
+    /**
+       @class Adaptive.InternalStorageBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the Internal Storage operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.XMLBridge
+       @extends Adaptive.BaseDataBridge
+       Interface for Managing the XML operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class XMLBridge extends BaseDataBridge implements IXML {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.AudioBridge
+       @extends Adaptive.BaseMediaBridge
+       Interface for Audio purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AudioBridge extends BaseMediaBridge implements IAudio {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.CameraBridge
+       @extends Adaptive.BaseMediaBridge
+       Interface for Managing the camera operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CameraBridge extends BaseMediaBridge implements ICamera {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.ImagingBridge
+       @extends Adaptive.BaseMediaBridge
+       Interface for Managing the Imaging operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class ImagingBridge extends BaseMediaBridge implements IImaging {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.VideoBridge
+       @extends Adaptive.BaseMediaBridge
+       Interface for Managing the Video operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class VideoBridge extends BaseMediaBridge implements IVideo {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Play url video stream
+
+           @param url of the video
+           @since ARP1.0
+        */
+        playStream(url: string): void;
+    }
+    /**
+       @class Adaptive.AlarmBridge
+       @extends Adaptive.BaseNotificationBridge
+       Interface for Alarm purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AlarmBridge extends BaseNotificationBridge implements IAlarm {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NotificationBridge
+       @extends Adaptive.BaseNotificationBridge
+       Interface for Managing the Notification operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NotificationBridge extends BaseNotificationBridge implements INotification {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NotificationLocalBridge
+       @extends Adaptive.BaseNotificationBridge
+       Interface for Managing the Local Notifications operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NotificationLocalBridge extends BaseNotificationBridge implements INotificationLocal {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.VibrationBridge
+       @extends Adaptive.BaseNotificationBridge
+       Interface for Managing the Vibration operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class VibrationBridge extends BaseNotificationBridge implements IVibration {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.CalendarBridge
+       @extends Adaptive.BasePIMBridge
+       Interface for Managing the Calendar operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CalendarBridge extends BasePIMBridge implements ICalendar {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.ContactBridge
+       @extends Adaptive.BasePIMBridge
+       Interface for Managing the Contact operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class ContactBridge extends BasePIMBridge implements IContact {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Get all the details of a contact according to its id
+
+           @param contact  id to search for
+           @param callback called for return
+           @since ARP1.0
+        */
+        getContact(contact: ContactUid, callback: IContactResultCallback): void;
+        /**
+           Get the contact photo
+
+           @param contact  id to search for
+           @param callback called for return
+           @since ARP1.0
+        */
+        getContactPhoto(contact: ContactUid, callback: IContactPhotoResultCallback): void;
+        /**
+           Get all contacts
+
+           @param callback called for return
+           @since ARP1.0
+        */
+        getContacts(callback: IContactResultCallback): void;
+        /**
+           Get marked fields of all contacts
+
+           @param callback called for return
+           @param fields   to get for each Contact
+           @since ARP1.0
+        */
+        getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): void;
+        /**
+           Get marked fields of all contacts according to a filter
+
+           @param callback called for return
+           @param fields   to get for each Contact
+           @param filter   to search for
+           @since ARP1.0
+        */
+        getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): void;
+        /**
+           Search contacts according to a term and send it to the callback
+
+           @param term     string to search
+           @param callback called for return
+           @since ARP1.0
+        */
+        searchContacts(term: string, callback: IContactResultCallback): void;
+        /**
+           Search contacts according to a term with a filter and send it to the callback
+
+           @param term     string to search
+           @param callback called for return
+           @param filter   to search for
+           @since ARP1.0
+        */
+        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): void;
+        /**
+           Set the contact photo
+
+           @param contact  id to assign the photo
+           @param pngImage photo as byte array
+           @return true if set is successful;false otherwise
+           @since ARP1.0
+        */
+        setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
+    }
+    /**
+       @class Adaptive.MailBridge
+       @extends Adaptive.BasePIMBridge
+       Interface for Managing the Mail operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class MailBridge extends BasePIMBridge implements IMail {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Send an Email
+
+           @param data     Payload of the email
+           @param callback Result callback of the operation
+           @since ARP1.0
+        */
+        sendEmail(data: Email, callback: IMessagingCallback): void;
+    }
+    /**
+       @class Adaptive.MessagingBridge
+       @extends Adaptive.BasePIMBridge
+       Interface for Managing the Messaging operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class MessagingBridge extends BasePIMBridge implements IMessaging {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Send text SMS
+
+           @param number   to send
+           @param text     to send
+           @param callback with the result
+           @since ARP1.0
+        */
+        sendSMS(number: string, text: string, callback: IMessagingCallback): void;
+    }
+    /**
+       @class Adaptive.BarcodeBridge
+       @extends Adaptive.BaseReaderBridge
+       Interface for Barcode Reading purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class BarcodeBridge extends BaseReaderBridge implements IBarcode {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.NFCBridge
+       @extends Adaptive.BaseReaderBridge
+       Interface for Managing the NFC operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class NFCBridge extends BaseReaderBridge implements INFC {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.OCRBridge
+       @extends Adaptive.BaseReaderBridge
+       Interface for Managing the OCR operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OCRBridge extends BaseReaderBridge implements IOCR {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.QRCodeBridge
+       @extends Adaptive.BaseReaderBridge
+       Interface for Managing the QR Code operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class QRCodeBridge extends BaseReaderBridge implements IQRCode {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.OAuthBridge
+       @extends Adaptive.BaseSecurityBridge
+       Interface for Managing the OAuth operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OAuthBridge extends BaseSecurityBridge implements IOAuth {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.OpenIdBridge
+       @extends Adaptive.BaseSecurityBridge
+       Interface for Managing the OpenID operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.SecurityBridge
+       @extends Adaptive.BaseSecurityBridge
+       Interface for Managing the Security operations
+
+       @author Aryslan
+       @since ARP1.0
+    */
+    class SecurityBridge extends BaseSecurityBridge implements ISecurity {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Deletes from the device internal storage the entry/entries containing the specified key names.
+
+           @param keys             Array with the key names to delete.
+           @param publicAccessName The name of the shared internal storage object (if needed).
+           @param callback         callback to be executed upon function result.
+           @since ARP 1.0
+        */
+        deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): void;
+        /**
+           Retrieves from the device internal storage the entry/entries containing the specified key names.
+
+           @param keys             Array with the key names to retrieve.
+           @param publicAccessName The name of the shared internal storage object (if needed).
+           @param callback         callback to be executed upon function result.
+           @since ARP 1.0
+        */
+        getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): void;
+        /**
+           Returns if the device has been modified in anyhow
+
+           @return true if the device has been modified; false otherwise
+           @since ARP1.0
+        */
+        isDeviceModified(): boolean;
+        /**
+           Stores in the device internal storage the specified item/s.
+
+           @param keyValues        Array containing the items to store on the device internal memory.
+           @param publicAccessName The name of the shared internal storage object (if needed).
+           @param callback         callback to be executed upon function result.
+           @since ARP 1.0
+        */
+        setSecureKeyValuePairs(keyValues: SecureKeyPair[], publicAccessName: string, callback: ISecurityResultCallback): void;
+    }
+    /**
+       @class Adaptive.AccelerationBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface defining methods about the acceleration sensor
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Register a new listener that will receive acceleration events.
+
+           @param listener to be registered.
+           @since ARP1.0
+        */
+        addAccelerationListener(listener: IAccelerationListener): void;
+        /**
+           De-registers an existing listener from receiving acceleration events.
+
+           @param listener to be registered.
+           @since ARP1.0
+        */
+        removeAccelerationListener(listener: IAccelerationListener): void;
+        /**
+           Removed all existing listeners from receiving acceleration events.
+
+           @since ARP1.0
+        */
+        removeAccelerationListeners(): void;
+    }
+    /**
+       @class Adaptive.AmbientLightBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for managinf the Ambient Light
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.BarometerBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for Barometer management purposes
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class BarometerBridge extends BaseSensorBridge implements IBarometer {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.GeolocationBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for Managing the Geolocation operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Register a new listener that will receive geolocation events.
+
+           @param listener to be registered.
+           @since ARP1.0
+        */
+        addGeolocationListener(listener: IGeolocationListener): void;
+        /**
+           De-registers an existing listener from receiving geolocation events.
+
+           @param listener to be registered.
+           @since ARP1.0
+        */
+        removeGeolocationListener(listener: IGeolocationListener): void;
+        /**
+           Removed all existing listeners from receiving geolocation events.
+
+           @since ARP1.0
+        */
+        removeGeolocationListeners(): void;
+    }
+    /**
+       @class Adaptive.GyroscopeBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for Managing the Giroscope operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.MagnetometerBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for Managing the Magnetometer operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.ProximityBridge
+       @extends Adaptive.BaseSensorBridge
+       Interface for Managing the Proximity operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class ProximityBridge extends BaseSensorBridge implements IProximity {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.FacebookBridge
+       @extends Adaptive.BaseSocialBridge
+       Interface for Managing the Facebook operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class FacebookBridge extends BaseSocialBridge implements IFacebook {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.GooglePlusBridge
+       @extends Adaptive.BaseSocialBridge
+       Interface for Managing the Google Plus operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.LinkedInBridge
+       @extends Adaptive.BaseSocialBridge
+       Interface for Managing the Linkedin operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.RSSBridge
+       @extends Adaptive.BaseSocialBridge
+       Interface for Managing the RSS operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class RSSBridge extends BaseSocialBridge implements IRSS {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.TwitterBridge
+       @extends Adaptive.BaseSocialBridge
+       Interface for Managing the Twitter operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class TwitterBridge extends BaseSocialBridge implements ITwitter {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.CapabilitiesBridge
+       @extends Adaptive.BaseSystemBridge
+       Interface for testing the Capabilities operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Determines whether a specific hardware button is supported for interaction.
+
+           @param type Type of feature to check.
+           @return true is supported, false otherwise.
+           @since ARP1.0
+        */
+        hasButtonSupport(type: ICapabilitiesButton): boolean;
+        /**
+           Determines whether a specific Communication capability is supported by
+the device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
+        /**
+           Determines whether a specific Data capability is supported by the device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasDataSupport(type: ICapabilitiesData): boolean;
+        /**
+           Determines whether a specific Media capability is supported by the
+device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasMediaSupport(type: ICapabilitiesMedia): boolean;
+        /**
+           Determines whether a specific Net capability is supported by the device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasNetSupport(type: ICapabilitiesNet): boolean;
+        /**
+           Determines whether a specific Notification capability is supported by the
+device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasNotificationSupport(type: ICapabilitiesNotification): boolean;
+        /**
+           Determines whether a specific Sensor capability is supported by the
+device.
+
+           @param type Type of feature to check.
+           @return true if supported, false otherwise.
+           @since ARP1.0
+        */
+        hasSensorSupport(type: ICapabilitiesSensor): boolean;
+    }
+    /**
+       @class Adaptive.DeviceBridge
+       @extends Adaptive.BaseSystemBridge
+       Interface for Managing the Device operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class DeviceBridge extends BaseSystemBridge implements IDevice {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Register a new listener that will receive button events.
+
+           @param listener to be registered.
+           @since ARP1.0
+        */
+        addButtonListener(listener: IButtonListener): void;
+        /**
+           Returns the device information for the current device executing the runtime.
+
+           @return DeviceInfo for the current device.
+           @since ARP1.0
+        */
+        getDeviceInfo(): DeviceInfo;
+        /**
+           Gets the current Locale for the device.
+
+           @return The current Locale information.
+           @since ARP1.0
+        */
+        getLocaleCurrent(): Locale;
+        /**
+           De-registers an existing listener from receiving button events.
+
+           @param listener to be removed.
+           @since ARP1.0
+        */
+        removeButtonListener(listener: IButtonListener): void;
+        /**
+           Removed all existing listeners from receiving button events.
+
+           @since ARP1.0
+        */
+        removeButtonListeners(): void;
+    }
+    /**
+       @class Adaptive.DisplayBridge
+       @extends Adaptive.BaseSystemBridge
+       Interface for Managing the Display operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class DisplayBridge extends BaseSystemBridge implements IDisplay {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.OSBridge
+       @extends Adaptive.BaseSystemBridge
+       Interface for Managing the OS operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class OSBridge extends BaseSystemBridge implements IOS {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Returns the OSInfo for the current operating system.
+
+           @return OSInfo with name, version and vendor of the OS.
+           @since ARP1.0
+        */
+        getOSInfo(): OSInfo;
+    }
+    /**
+       @class Adaptive.RuntimeBridge
+       @extends Adaptive.BaseSystemBridge
+       Interface for Managing the Runtime operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class RuntimeBridge extends BaseSystemBridge implements IRuntime {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Dismiss the current Application
+
+           @since ARP1.0
+        */
+        dismissApplication(): void;
+        /**
+           Whether the application dismiss the splash screen successfully or not
+
+           @return true if the application has dismissed the splash screen;false otherwise
+           @since ARP1.0
+        */
+        dismissSplashScreen(): boolean;
+    }
+    /**
+       @class Adaptive.BrowserBridge
+       @extends Adaptive.BaseUIBridge
+       Interface for Managing the browser operations
+
+       @author Francisco Javier Martin Bueno
+       @since ARP1.0
+    */
+    class BrowserBridge extends BaseUIBridge implements IBrowser {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Method for opening a URL like a link in the native default browser
+
+           @param url Url to open
+           @return The result of the operation
+           @since ARP1.0
+        */
+        openExtenalBrowser(url: string): boolean;
+        /**
+           Method for opening a browser embedded into the application
+
+           @param url            Url to open
+           @param title          Title of the Navigation bar
+           @param backButtonText Title of the Back button bar
+           @return The result of the operation
+           @since ARP1.0
+        */
+        openInternalBrowser(url: string, title: string, backButtonText: string): boolean;
+        /**
+           Method for opening a browser embedded into the application in a modal window
+
+           @param url            Url to open
+           @param title          Title of the Navigation bar
+           @param backButtonText Title of the Back button bar
+           @return The result of the operation
+           @since ARP1.0
+        */
+        openInternalBrowserModal(url: string, title: string, backButtonText: string): boolean;
+    }
+    /**
+       @class Adaptive.DesktopBridge
+       @extends Adaptive.BaseUIBridge
+       Interface for Managing the Desktop operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class DesktopBridge extends BaseUIBridge implements IDesktop {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.MapBridge
+       @extends Adaptive.BaseUIBridge
+       Interface for Managing the Map operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class MapBridge extends BaseUIBridge implements IMap {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.UIBridge
+       @extends Adaptive.BaseUIBridge
+       Interface for Managing the UI operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class UIBridge extends BaseUIBridge implements IUI {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.CompressionBridge
+       @extends Adaptive.BaseUtilBridge
+       Interface for Managing the Compression operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CompressionBridge extends BaseUtilBridge implements ICompression {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.ConcurrentBridge
+       @extends Adaptive.BaseUtilBridge
+       Interface for Managing the Concurrent operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.CryptoBridge
+       @extends Adaptive.BaseUtilBridge
+       Interface for Managing the Cloud operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class CryptoBridge extends BaseUtilBridge implements ICrypto {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.LoggingBridge
+       @extends Adaptive.BaseUtilBridge
+       Interface for Managing the Logging operations
+
+       @author Ferran Vila Conesa
+       @since ARP1.0
+    */
+    class LoggingBridge extends BaseUtilBridge implements ILogging {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+        /**
+           Logs the given message, with the given log level if specified, to the standard platform/environment.
+
+           @param level   Log level
+           @param message Message to be logged
+           @since ARP1.0
+        */
+        log_level_message(level: ILoggingLogLevel, message: string): void;
+        /**
+           Logs the given message, with the given log level if specified, to the standard platform/environment.
+
+           @param level    Log level
+           @param category Category/tag name to identify/filter the log.
+           @param message  Message to be logged
+           @since ARP1.0
+        */
+        log_level_category_message(level: ILoggingLogLevel, category: string, message: string): void;
+    }
+    /**
+       @class Adaptive.TimerBridge
+       @extends Adaptive.BaseUtilBridge
+       Interface for Managing the Timer operations
+
+       @author Carlos Lozano Diez
+       @since ARP1.0
+    */
+    class TimerBridge extends BaseUtilBridge implements ITimer {
+        /**
+           @constructor
+           Default constructor.
+        */
+        constructor();
+    }
+    /**
+       @class Adaptive.AppRegistryBridge
+       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez
@@ -6738,503 +9359,862 @@ listener and subsequently, the listener will be deactivated and removed from the
     class AppRegistryBridge implements IAppRegistry {
         /**
            Singleton instance of AppRegistry.
+           @private
         */
         private static instance;
+        /**
+           Singleton instance of AppRegistry.
+           @static
+           @singleton
+           @method
+           @return {Adaptive.AppRegistryBridge}
+        */
         static getInstance(): IAppRegistry;
         /**
            Singleton instances of Bridges.
         */
+        /**
+           @static
+           @property {Adaptive.IAcceleration} instanceAcceleration
+        */
         private static instanceAcceleration;
+        /**
+           @static
+           @property {Adaptive.IAds} instanceAds
+        */
         private static instanceAds;
+        /**
+           @static
+           @property {Adaptive.IAlarm} instanceAlarm
+        */
         private static instanceAlarm;
+        /**
+           @static
+           @property {Adaptive.IAmbientLight} instanceAmbientLight
+        */
         private static instanceAmbientLight;
+        /**
+           @static
+           @property {Adaptive.IAnalytics} instanceAnalytics
+        */
         private static instanceAnalytics;
+        /**
+           @static
+           @property {Adaptive.IAudio} instanceAudio
+        */
         private static instanceAudio;
+        /**
+           @static
+           @property {Adaptive.IBarcode} instanceBarcode
+        */
         private static instanceBarcode;
+        /**
+           @static
+           @property {Adaptive.IBarometer} instanceBarometer
+        */
         private static instanceBarometer;
+        /**
+           @static
+           @property {Adaptive.IBluetooth} instanceBluetooth
+        */
         private static instanceBluetooth;
+        /**
+           @static
+           @property {Adaptive.IBrowser} instanceBrowser
+        */
         private static instanceBrowser;
+        /**
+           @static
+           @property {Adaptive.ICalendar} instanceCalendar
+        */
         private static instanceCalendar;
+        /**
+           @static
+           @property {Adaptive.ICamera} instanceCamera
+        */
         private static instanceCamera;
+        /**
+           @static
+           @property {Adaptive.ICapabilities} instanceCapabilities
+        */
         private static instanceCapabilities;
+        /**
+           @static
+           @property {Adaptive.ICloud} instanceCloud
+        */
         private static instanceCloud;
+        /**
+           @static
+           @property {Adaptive.ICompression} instanceCompression
+        */
         private static instanceCompression;
+        /**
+           @static
+           @property {Adaptive.IConcurrent} instanceConcurrent
+        */
         private static instanceConcurrent;
+        /**
+           @static
+           @property {Adaptive.IContact} instanceContact
+        */
         private static instanceContact;
+        /**
+           @static
+           @property {Adaptive.ICrypto} instanceCrypto
+        */
         private static instanceCrypto;
+        /**
+           @static
+           @property {Adaptive.IDataStream} instanceDataStream
+        */
         private static instanceDataStream;
+        /**
+           @static
+           @property {Adaptive.IDatabase} instanceDatabase
+        */
         private static instanceDatabase;
+        /**
+           @static
+           @property {Adaptive.IDesktop} instanceDesktop
+        */
         private static instanceDesktop;
+        /**
+           @static
+           @property {Adaptive.IDevice} instanceDevice
+        */
         private static instanceDevice;
+        /**
+           @static
+           @property {Adaptive.IDisplay} instanceDisplay
+        */
         private static instanceDisplay;
+        /**
+           @static
+           @property {Adaptive.IFacebook} instanceFacebook
+        */
         private static instanceFacebook;
+        /**
+           @static
+           @property {Adaptive.IFile} instanceFile
+        */
         private static instanceFile;
+        /**
+           @static
+           @property {Adaptive.IFileSystem} instanceFileSystem
+        */
         private static instanceFileSystem;
+        /**
+           @static
+           @property {Adaptive.IGeolocation} instanceGeolocation
+        */
         private static instanceGeolocation;
+        /**
+           @static
+           @property {Adaptive.IGlobalization} instanceGlobalization
+        */
         private static instanceGlobalization;
+        /**
+           @static
+           @property {Adaptive.IGooglePlus} instanceGooglePlus
+        */
         private static instanceGooglePlus;
+        /**
+           @static
+           @property {Adaptive.IGyroscope} instanceGyroscope
+        */
         private static instanceGyroscope;
+        /**
+           @static
+           @property {Adaptive.IImaging} instanceImaging
+        */
         private static instanceImaging;
+        /**
+           @static
+           @property {Adaptive.IInternalStorage} instanceInternalStorage
+        */
         private static instanceInternalStorage;
+        /**
+           @static
+           @property {Adaptive.ILifecycle} instanceLifecycle
+        */
         private static instanceLifecycle;
+        /**
+           @static
+           @property {Adaptive.ILinkedIn} instanceLinkedIn
+        */
         private static instanceLinkedIn;
+        /**
+           @static
+           @property {Adaptive.ILogging} instanceLogging
+        */
         private static instanceLogging;
+        /**
+           @static
+           @property {Adaptive.IMagnetometer} instanceMagnetometer
+        */
         private static instanceMagnetometer;
+        /**
+           @static
+           @property {Adaptive.IMail} instanceMail
+        */
         private static instanceMail;
+        /**
+           @static
+           @property {Adaptive.IManagement} instanceManagement
+        */
         private static instanceManagement;
+        /**
+           @static
+           @property {Adaptive.IMap} instanceMap
+        */
         private static instanceMap;
+        /**
+           @static
+           @property {Adaptive.IMessaging} instanceMessaging
+        */
         private static instanceMessaging;
+        /**
+           @static
+           @property {Adaptive.INFC} instanceNFC
+        */
         private static instanceNFC;
+        /**
+           @static
+           @property {Adaptive.INetworkInfo} instanceNetworkInfo
+        */
         private static instanceNetworkInfo;
+        /**
+           @static
+           @property {Adaptive.INetworkNaming} instanceNetworkNaming
+        */
         private static instanceNetworkNaming;
+        /**
+           @static
+           @property {Adaptive.INetworkReachability} instanceNetworkReachability
+        */
         private static instanceNetworkReachability;
+        /**
+           @static
+           @property {Adaptive.INetworkStatus} instanceNetworkStatus
+        */
         private static instanceNetworkStatus;
+        /**
+           @static
+           @property {Adaptive.INotification} instanceNotification
+        */
         private static instanceNotification;
+        /**
+           @static
+           @property {Adaptive.INotificationLocal} instanceNotificationLocal
+        */
         private static instanceNotificationLocal;
+        /**
+           @static
+           @property {Adaptive.IOAuth} instanceOAuth
+        */
         private static instanceOAuth;
+        /**
+           @static
+           @property {Adaptive.IOCR} instanceOCR
+        */
         private static instanceOCR;
+        /**
+           @static
+           @property {Adaptive.IOS} instanceOS
+        */
         private static instanceOS;
+        /**
+           @static
+           @property {Adaptive.IOpenId} instanceOpenId
+        */
         private static instanceOpenId;
+        /**
+           @static
+           @property {Adaptive.IPrinting} instancePrinting
+        */
         private static instancePrinting;
+        /**
+           @static
+           @property {Adaptive.IProximity} instanceProximity
+        */
         private static instanceProximity;
+        /**
+           @static
+           @property {Adaptive.IQRCode} instanceQRCode
+        */
         private static instanceQRCode;
+        /**
+           @static
+           @property {Adaptive.IRSS} instanceRSS
+        */
         private static instanceRSS;
+        /**
+           @static
+           @property {Adaptive.IRuntime} instanceRuntime
+        */
         private static instanceRuntime;
+        /**
+           @static
+           @property {Adaptive.ISecurity} instanceSecurity
+        */
         private static instanceSecurity;
+        /**
+           @static
+           @property {Adaptive.IService} instanceService
+        */
         private static instanceService;
+        /**
+           @static
+           @property {Adaptive.ISettings} instanceSettings
+        */
         private static instanceSettings;
+        /**
+           @static
+           @property {Adaptive.ISocket} instanceSocket
+        */
         private static instanceSocket;
+        /**
+           @static
+           @property {Adaptive.IStore} instanceStore
+        */
         private static instanceStore;
+        /**
+           @static
+           @property {Adaptive.ITelephony} instanceTelephony
+        */
         private static instanceTelephony;
+        /**
+           @static
+           @property {Adaptive.ITimer} instanceTimer
+        */
         private static instanceTimer;
+        /**
+           @static
+           @property {Adaptive.ITwitter} instanceTwitter
+        */
         private static instanceTwitter;
+        /**
+           @static
+           @property {Adaptive.IUI} instanceUI
+        */
         private static instanceUI;
+        /**
+           @static
+           @property {Adaptive.IUpdate} instanceUpdate
+        */
         private static instanceUpdate;
+        /**
+           @static
+           @property {Adaptive.IVibration} instanceVibration
+        */
         private static instanceVibration;
+        /**
+           @static
+           @property {Adaptive.IVideo} instanceVideo
+        */
         private static instanceVideo;
+        /**
+           @static
+           @property {Adaptive.IWallet} instanceWallet
+        */
         private static instanceWallet;
+        /**
+           @static
+           @property {Adaptive.IXML} instanceXML
+        */
         private static instanceXML;
         /**
+           @method
            Obtain a reference to the IAcceleration bridge.
 
-           @return IAcceleration bridge instance.
+           @return {Adaptive.AccelerationBridge} bridge instance.
         */
         getAccelerationBridge(): IAcceleration;
         /**
+           @method
            Obtain a reference to the IAds bridge.
 
-           @return IAds bridge instance.
+           @return {Adaptive.AdsBridge} bridge instance.
         */
         getAdsBridge(): IAds;
         /**
+           @method
            Obtain a reference to the IAlarm bridge.
 
-           @return IAlarm bridge instance.
+           @return {Adaptive.AlarmBridge} bridge instance.
         */
         getAlarmBridge(): IAlarm;
         /**
+           @method
            Obtain a reference to the IAmbientLight bridge.
 
-           @return IAmbientLight bridge instance.
+           @return {Adaptive.AmbientLightBridge} bridge instance.
         */
         getAmbientLightBridge(): IAmbientLight;
         /**
+           @method
            Obtain a reference to the IAnalytics bridge.
 
-           @return IAnalytics bridge instance.
+           @return {Adaptive.AnalyticsBridge} bridge instance.
         */
         getAnalyticsBridge(): IAnalytics;
         /**
+           @method
            Obtain a reference to the IAudio bridge.
 
-           @return IAudio bridge instance.
+           @return {Adaptive.AudioBridge} bridge instance.
         */
         getAudioBridge(): IAudio;
         /**
+           @method
            Obtain a reference to the IBarcode bridge.
 
-           @return IBarcode bridge instance.
+           @return {Adaptive.BarcodeBridge} bridge instance.
         */
         getBarcodeBridge(): IBarcode;
         /**
+           @method
            Obtain a reference to the IBarometer bridge.
 
-           @return IBarometer bridge instance.
+           @return {Adaptive.BarometerBridge} bridge instance.
         */
         getBarometerBridge(): IBarometer;
         /**
+           @method
            Obtain a reference to the IBluetooth bridge.
 
-           @return IBluetooth bridge instance.
+           @return {Adaptive.BluetoothBridge} bridge instance.
         */
         getBluetoothBridge(): IBluetooth;
         /**
+           @method
            Obtain a reference to the IBrowser bridge.
 
-           @return IBrowser bridge instance.
+           @return {Adaptive.BrowserBridge} bridge instance.
         */
         getBrowserBridge(): IBrowser;
         /**
+           @method
            Obtain a reference to the ICalendar bridge.
 
-           @return ICalendar bridge instance.
+           @return {Adaptive.CalendarBridge} bridge instance.
         */
         getCalendarBridge(): ICalendar;
         /**
+           @method
            Obtain a reference to the ICamera bridge.
 
-           @return ICamera bridge instance.
+           @return {Adaptive.CameraBridge} bridge instance.
         */
         getCameraBridge(): ICamera;
         /**
+           @method
            Obtain a reference to the ICapabilities bridge.
 
-           @return ICapabilities bridge instance.
+           @return {Adaptive.CapabilitiesBridge} bridge instance.
         */
         getCapabilitiesBridge(): ICapabilities;
         /**
+           @method
            Obtain a reference to the ICloud bridge.
 
-           @return ICloud bridge instance.
+           @return {Adaptive.CloudBridge} bridge instance.
         */
         getCloudBridge(): ICloud;
         /**
+           @method
            Obtain a reference to the ICompression bridge.
 
-           @return ICompression bridge instance.
+           @return {Adaptive.CompressionBridge} bridge instance.
         */
         getCompressionBridge(): ICompression;
         /**
+           @method
            Obtain a reference to the IConcurrent bridge.
 
-           @return IConcurrent bridge instance.
+           @return {Adaptive.ConcurrentBridge} bridge instance.
         */
         getConcurrentBridge(): IConcurrent;
         /**
+           @method
            Obtain a reference to the IContact bridge.
 
-           @return IContact bridge instance.
+           @return {Adaptive.ContactBridge} bridge instance.
         */
         getContactBridge(): IContact;
         /**
+           @method
            Obtain a reference to the ICrypto bridge.
 
-           @return ICrypto bridge instance.
+           @return {Adaptive.CryptoBridge} bridge instance.
         */
         getCryptoBridge(): ICrypto;
         /**
+           @method
            Obtain a reference to the IDataStream bridge.
 
-           @return IDataStream bridge instance.
+           @return {Adaptive.DataStreamBridge} bridge instance.
         */
         getDataStreamBridge(): IDataStream;
         /**
+           @method
            Obtain a reference to the IDatabase bridge.
 
-           @return IDatabase bridge instance.
+           @return {Adaptive.DatabaseBridge} bridge instance.
         */
         getDatabaseBridge(): IDatabase;
         /**
+           @method
            Obtain a reference to the IDesktop bridge.
 
-           @return IDesktop bridge instance.
+           @return {Adaptive.DesktopBridge} bridge instance.
         */
         getDesktopBridge(): IDesktop;
         /**
+           @method
            Obtain a reference to the IDevice bridge.
 
-           @return IDevice bridge instance.
+           @return {Adaptive.DeviceBridge} bridge instance.
         */
         getDeviceBridge(): IDevice;
         /**
+           @method
            Obtain a reference to the IDisplay bridge.
 
-           @return IDisplay bridge instance.
+           @return {Adaptive.DisplayBridge} bridge instance.
         */
         getDisplayBridge(): IDisplay;
         /**
+           @method
            Obtain a reference to the IFacebook bridge.
 
-           @return IFacebook bridge instance.
+           @return {Adaptive.FacebookBridge} bridge instance.
         */
         getFacebookBridge(): IFacebook;
         /**
+           @method
            Obtain a reference to the IFile bridge.
 
-           @return IFile bridge instance.
+           @return {Adaptive.FileBridge} bridge instance.
         */
         getFileBridge(): IFile;
         /**
+           @method
            Obtain a reference to the IFileSystem bridge.
 
-           @return IFileSystem bridge instance.
+           @return {Adaptive.FileSystemBridge} bridge instance.
         */
         getFileSystemBridge(): IFileSystem;
         /**
+           @method
            Obtain a reference to the IGeolocation bridge.
 
-           @return IGeolocation bridge instance.
+           @return {Adaptive.GeolocationBridge} bridge instance.
         */
         getGeolocationBridge(): IGeolocation;
         /**
+           @method
            Obtain a reference to the IGlobalization bridge.
 
-           @return IGlobalization bridge instance.
+           @return {Adaptive.GlobalizationBridge} bridge instance.
         */
         getGlobalizationBridge(): IGlobalization;
         /**
+           @method
            Obtain a reference to the IGooglePlus bridge.
 
-           @return IGooglePlus bridge instance.
+           @return {Adaptive.GooglePlusBridge} bridge instance.
         */
         getGooglePlusBridge(): IGooglePlus;
         /**
+           @method
            Obtain a reference to the IGyroscope bridge.
 
-           @return IGyroscope bridge instance.
+           @return {Adaptive.GyroscopeBridge} bridge instance.
         */
         getGyroscopeBridge(): IGyroscope;
         /**
+           @method
            Obtain a reference to the IImaging bridge.
 
-           @return IImaging bridge instance.
+           @return {Adaptive.ImagingBridge} bridge instance.
         */
         getImagingBridge(): IImaging;
         /**
+           @method
            Obtain a reference to the IInternalStorage bridge.
 
-           @return IInternalStorage bridge instance.
+           @return {Adaptive.InternalStorageBridge} bridge instance.
         */
         getInternalStorageBridge(): IInternalStorage;
         /**
+           @method
            Obtain a reference to the ILifecycle bridge.
 
-           @return ILifecycle bridge instance.
+           @return {Adaptive.LifecycleBridge} bridge instance.
         */
         getLifecycleBridge(): ILifecycle;
         /**
+           @method
            Obtain a reference to the ILinkedIn bridge.
 
-           @return ILinkedIn bridge instance.
+           @return {Adaptive.LinkedInBridge} bridge instance.
         */
         getLinkedInBridge(): ILinkedIn;
         /**
+           @method
            Obtain a reference to the ILogging bridge.
 
-           @return ILogging bridge instance.
+           @return {Adaptive.LoggingBridge} bridge instance.
         */
         getLoggingBridge(): ILogging;
         /**
+           @method
            Obtain a reference to the IMagnetometer bridge.
 
-           @return IMagnetometer bridge instance.
+           @return {Adaptive.MagnetometerBridge} bridge instance.
         */
         getMagnetometerBridge(): IMagnetometer;
         /**
+           @method
            Obtain a reference to the IMail bridge.
 
-           @return IMail bridge instance.
+           @return {Adaptive.MailBridge} bridge instance.
         */
         getMailBridge(): IMail;
         /**
+           @method
            Obtain a reference to the IManagement bridge.
 
-           @return IManagement bridge instance.
+           @return {Adaptive.ManagementBridge} bridge instance.
         */
         getManagementBridge(): IManagement;
         /**
+           @method
            Obtain a reference to the IMap bridge.
 
-           @return IMap bridge instance.
+           @return {Adaptive.MapBridge} bridge instance.
         */
         getMapBridge(): IMap;
         /**
+           @method
            Obtain a reference to the IMessaging bridge.
 
-           @return IMessaging bridge instance.
+           @return {Adaptive.MessagingBridge} bridge instance.
         */
         getMessagingBridge(): IMessaging;
         /**
+           @method
            Obtain a reference to the INFC bridge.
 
-           @return INFC bridge instance.
+           @return {Adaptive.NFCBridge} bridge instance.
         */
         getNFCBridge(): INFC;
         /**
+           @method
            Obtain a reference to the INetworkInfo bridge.
 
-           @return INetworkInfo bridge instance.
+           @return {Adaptive.NetworkInfoBridge} bridge instance.
         */
         getNetworkInfoBridge(): INetworkInfo;
         /**
+           @method
            Obtain a reference to the INetworkNaming bridge.
 
-           @return INetworkNaming bridge instance.
+           @return {Adaptive.NetworkNamingBridge} bridge instance.
         */
         getNetworkNamingBridge(): INetworkNaming;
         /**
+           @method
            Obtain a reference to the INetworkReachability bridge.
 
-           @return INetworkReachability bridge instance.
+           @return {Adaptive.NetworkReachabilityBridge} bridge instance.
         */
         getNetworkReachabilityBridge(): INetworkReachability;
         /**
+           @method
            Obtain a reference to the INetworkStatus bridge.
 
-           @return INetworkStatus bridge instance.
+           @return {Adaptive.NetworkStatusBridge} bridge instance.
         */
         getNetworkStatusBridge(): INetworkStatus;
         /**
+           @method
            Obtain a reference to the INotification bridge.
 
-           @return INotification bridge instance.
+           @return {Adaptive.NotificationBridge} bridge instance.
         */
         getNotificationBridge(): INotification;
         /**
+           @method
            Obtain a reference to the INotificationLocal bridge.
 
-           @return INotificationLocal bridge instance.
+           @return {Adaptive.NotificationLocalBridge} bridge instance.
         */
         getNotificationLocalBridge(): INotificationLocal;
         /**
+           @method
            Obtain a reference to the IOAuth bridge.
 
-           @return IOAuth bridge instance.
+           @return {Adaptive.OAuthBridge} bridge instance.
         */
         getOAuthBridge(): IOAuth;
         /**
+           @method
            Obtain a reference to the IOCR bridge.
 
-           @return IOCR bridge instance.
+           @return {Adaptive.OCRBridge} bridge instance.
         */
         getOCRBridge(): IOCR;
         /**
+           @method
            Obtain a reference to the IOS bridge.
 
-           @return IOS bridge instance.
+           @return {Adaptive.OSBridge} bridge instance.
         */
         getOSBridge(): IOS;
         /**
+           @method
            Obtain a reference to the IOpenId bridge.
 
-           @return IOpenId bridge instance.
+           @return {Adaptive.OpenIdBridge} bridge instance.
         */
         getOpenIdBridge(): IOpenId;
         /**
+           @method
            Obtain a reference to the IPrinting bridge.
 
-           @return IPrinting bridge instance.
+           @return {Adaptive.PrintingBridge} bridge instance.
         */
         getPrintingBridge(): IPrinting;
         /**
+           @method
            Obtain a reference to the IProximity bridge.
 
-           @return IProximity bridge instance.
+           @return {Adaptive.ProximityBridge} bridge instance.
         */
         getProximityBridge(): IProximity;
         /**
+           @method
            Obtain a reference to the IQRCode bridge.
 
-           @return IQRCode bridge instance.
+           @return {Adaptive.QRCodeBridge} bridge instance.
         */
         getQRCodeBridge(): IQRCode;
         /**
+           @method
            Obtain a reference to the IRSS bridge.
 
-           @return IRSS bridge instance.
+           @return {Adaptive.RSSBridge} bridge instance.
         */
         getRSSBridge(): IRSS;
         /**
+           @method
            Obtain a reference to the IRuntime bridge.
 
-           @return IRuntime bridge instance.
+           @return {Adaptive.RuntimeBridge} bridge instance.
         */
         getRuntimeBridge(): IRuntime;
         /**
+           @method
            Obtain a reference to the ISecurity bridge.
 
-           @return ISecurity bridge instance.
+           @return {Adaptive.SecurityBridge} bridge instance.
         */
         getSecurityBridge(): ISecurity;
         /**
+           @method
            Obtain a reference to the IService bridge.
 
-           @return IService bridge instance.
+           @return {Adaptive.ServiceBridge} bridge instance.
         */
         getServiceBridge(): IService;
         /**
+           @method
            Obtain a reference to the ISettings bridge.
 
-           @return ISettings bridge instance.
+           @return {Adaptive.SettingsBridge} bridge instance.
         */
         getSettingsBridge(): ISettings;
         /**
+           @method
            Obtain a reference to the ISocket bridge.
 
-           @return ISocket bridge instance.
+           @return {Adaptive.SocketBridge} bridge instance.
         */
         getSocketBridge(): ISocket;
         /**
+           @method
            Obtain a reference to the IStore bridge.
 
-           @return IStore bridge instance.
+           @return {Adaptive.StoreBridge} bridge instance.
         */
         getStoreBridge(): IStore;
         /**
+           @method
            Obtain a reference to the ITelephony bridge.
 
-           @return ITelephony bridge instance.
+           @return {Adaptive.TelephonyBridge} bridge instance.
         */
         getTelephonyBridge(): ITelephony;
         /**
+           @method
            Obtain a reference to the ITimer bridge.
 
-           @return ITimer bridge instance.
+           @return {Adaptive.TimerBridge} bridge instance.
         */
         getTimerBridge(): ITimer;
         /**
+           @method
            Obtain a reference to the ITwitter bridge.
 
-           @return ITwitter bridge instance.
+           @return {Adaptive.TwitterBridge} bridge instance.
         */
         getTwitterBridge(): ITwitter;
         /**
+           @method
            Obtain a reference to the IUI bridge.
 
-           @return IUI bridge instance.
+           @return {Adaptive.UIBridge} bridge instance.
         */
         getUIBridge(): IUI;
         /**
+           @method
            Obtain a reference to the IUpdate bridge.
 
-           @return IUpdate bridge instance.
+           @return {Adaptive.UpdateBridge} bridge instance.
         */
         getUpdateBridge(): IUpdate;
         /**
+           @method
            Obtain a reference to the IVibration bridge.
 
-           @return IVibration bridge instance.
+           @return {Adaptive.VibrationBridge} bridge instance.
         */
         getVibrationBridge(): IVibration;
         /**
+           @method
            Obtain a reference to the IVideo bridge.
 
-           @return IVideo bridge instance.
+           @return {Adaptive.VideoBridge} bridge instance.
         */
         getVideoBridge(): IVideo;
         /**
+           @method
            Obtain a reference to the IWallet bridge.
 
-           @return IWallet bridge instance.
+           @return {Adaptive.WalletBridge} bridge instance.
         */
         getWalletBridge(): IWallet;
         /**
+           @method
            Obtain a reference to the IXML bridge.
 
-           @return IXML bridge instance.
+           @return {Adaptive.XMLBridge} bridge instance.
         */
         getXMLBridge(): IXML;
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -7242,1003 +10222,2118 @@ listener and subsequently, the listener will be deactivated and removed from the
         getAPIVersion(): string;
     }
     /**
+       @enum {Adaptive.ContactAddressType} Adaptive.ContactAddressType
        Enumeration ContactAddressType
     */
     class ContactAddressType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ContactAddressType} [Home='Home']
+        */
         static Home: ContactAddressType;
+        /**
+           @property {Adaptive.ContactAddressType} [Work='Work']
+        */
         static Work: ContactAddressType;
+        /**
+           @property {Adaptive.ContactAddressType} [Other='Other']
+        */
         static Other: ContactAddressType;
+        /**
+           @property {Adaptive.ContactAddressType} [Unknown='Unknown']
+        */
         static Unknown: ContactAddressType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactAddressType}
         */
         static toObject(object: any): ContactAddressType;
     }
     /**
+       @enum {Adaptive.ContactEmailType} Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     class ContactEmailType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ContactEmailType} [Personal='Personal']
+        */
         static Personal: ContactEmailType;
+        /**
+           @property {Adaptive.ContactEmailType} [Work='Work']
+        */
         static Work: ContactEmailType;
+        /**
+           @property {Adaptive.ContactEmailType} [Other='Other']
+        */
         static Other: ContactEmailType;
+        /**
+           @property {Adaptive.ContactEmailType} [Unknown='Unknown']
+        */
         static Unknown: ContactEmailType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactEmailType}
         */
         static toObject(object: any): ContactEmailType;
     }
     /**
+       @enum {Adaptive.ContactPersonalInfoTitle} Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     class ContactPersonalInfoTitle {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']
+        */
         static Mr: ContactPersonalInfoTitle;
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Mrs='Mrs']
+        */
         static Mrs: ContactPersonalInfoTitle;
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Ms='Ms']
+        */
         static Ms: ContactPersonalInfoTitle;
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Dr='Dr']
+        */
         static Dr: ContactPersonalInfoTitle;
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Unknown='Unknown']
+        */
         static Unknown: ContactPersonalInfoTitle;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactPersonalInfoTitle}
         */
         static toObject(object: any): ContactPersonalInfoTitle;
     }
     /**
+       @enum {Adaptive.ContactPhoneType} Adaptive.ContactPhoneType
        Enumeration ContactPhoneType
     */
     class ContactPhoneType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ContactPhoneType} [Mobile='Mobile']
+        */
         static Mobile: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [Work='Work']
+        */
         static Work: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [Home='Home']
+        */
         static Home: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [Main='Main']
+        */
         static Main: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [HomeFax='HomeFax']
+        */
         static HomeFax: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [WorkFax='WorkFax']
+        */
         static WorkFax: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [Other='Other']
+        */
         static Other: ContactPhoneType;
+        /**
+           @property {Adaptive.ContactPhoneType} [Unknown='Unknown']
+        */
         static Unknown: ContactPhoneType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactPhoneType}
         */
         static toObject(object: any): ContactPhoneType;
     }
     /**
+       @enum {Adaptive.ContactSocialNetwork} Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     class ContactSocialNetwork {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']
+        */
         static Twitter: ContactSocialNetwork;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Facebook='Facebook']
+        */
         static Facebook: ContactSocialNetwork;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [GooglePlus='GooglePlus']
+        */
         static GooglePlus: ContactSocialNetwork;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [LinkedIn='LinkedIn']
+        */
         static LinkedIn: ContactSocialNetwork;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Flickr='Flickr']
+        */
         static Flickr: ContactSocialNetwork;
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Unknown='Unknown']
+        */
         static Unknown: ContactSocialNetwork;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactSocialNetwork}
         */
         static toObject(object: any): ContactSocialNetwork;
     }
     /**
+       @enum {Adaptive.IAccelerationListenerError} Adaptive.IAccelerationListenerError
        Enumeration IAccelerationListenerError
     */
     class IAccelerationListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']
+        */
         static Unauthorized: IAccelerationListenerError;
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unavailable='Unavailable']
+        */
         static Unavailable: IAccelerationListenerError;
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unknown='Unknown']
+        */
         static Unknown: IAccelerationListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAccelerationListenerError}
         */
         static toObject(object: any): IAccelerationListenerError;
     }
     /**
+       @enum {Adaptive.IAccelerationListenerWarning} Adaptive.IAccelerationListenerWarning
        Enumeration IAccelerationListenerWarning
     */
     class IAccelerationListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [NeedsCalibration='NeedsCalibration']
+        */
         static NeedsCalibration: IAccelerationListenerWarning;
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [Stale='Stale']
+        */
         static Stale: IAccelerationListenerWarning;
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [Unknown='Unknown']
+        */
         static Unknown: IAccelerationListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAccelerationListenerWarning}
         */
         static toObject(object: any): IAccelerationListenerWarning;
     }
     /**
+       @enum {Adaptive.IAdaptiveRPGroup} Adaptive.IAdaptiveRPGroup
        Enumeration IAdaptiveRPGroup
     */
     class IAdaptiveRPGroup {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Application='Application']
+        */
         static Application: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Commerce='Commerce']
+        */
         static Commerce: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Communication='Communication']
+        */
         static Communication: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Data='Data']
+        */
         static Data: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Media='Media']
+        */
         static Media: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Notification='Notification']
+        */
         static Notification: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [PIM='PIM']
+        */
         static PIM: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Reader='Reader']
+        */
         static Reader: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Security='Security']
+        */
         static Security: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Sensor='Sensor']
+        */
         static Sensor: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Social='Social']
+        */
         static Social: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [System='System']
+        */
         static System: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [UI='UI']
+        */
         static UI: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Util='Util']
+        */
         static Util: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Kernel='Kernel']
+        */
         static Kernel: IAdaptiveRPGroup;
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Unknown='Unknown']
+        */
         static Unknown: IAdaptiveRPGroup;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         static toObject(object: any): IAdaptiveRPGroup;
     }
     /**
+       @enum {Adaptive.IButtonListenerError} Adaptive.IButtonListenerError
        Enumeration IButtonListenerError
     */
     class IButtonListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+        */
         static Not_Present: IButtonListenerError;
+        /**
+           @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
+        */
         static Unknown: IButtonListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IButtonListenerError}
         */
         static toObject(object: any): IButtonListenerError;
     }
     /**
+       @enum {Adaptive.IButtonListenerWarning} Adaptive.IButtonListenerWarning
        Enumeration IButtonListenerWarning
     */
     class IButtonListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+        */
         static Not_Implemented: IButtonListenerWarning;
+        /**
+           @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
+        */
         static Unknown: IButtonListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IButtonListenerWarning}
         */
         static toObject(object: any): IButtonListenerWarning;
     }
     /**
+       @enum {Adaptive.ICapabilitiesButton} Adaptive.ICapabilitiesButton
        Enumeration ICapabilitiesButton
     */
     class ICapabilitiesButton {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']
+        */
         static HomeButton: ICapabilitiesButton;
+        /**
+           @property {Adaptive.ICapabilitiesButton} [BackButton='BackButton']
+        */
         static BackButton: ICapabilitiesButton;
+        /**
+           @property {Adaptive.ICapabilitiesButton} [OptionButton='OptionButton']
+        */
         static OptionButton: ICapabilitiesButton;
+        /**
+           @property {Adaptive.ICapabilitiesButton} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesButton;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesButton}
         */
         static toObject(object: any): ICapabilitiesButton;
     }
     /**
+       @enum {Adaptive.ICapabilitiesCommunication} Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     class ICapabilitiesCommunication {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']
+        */
         static Calendar: ICapabilitiesCommunication;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Contact='Contact']
+        */
         static Contact: ICapabilitiesCommunication;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Mail='Mail']
+        */
         static Mail: ICapabilitiesCommunication;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Messaging='Messaging']
+        */
         static Messaging: ICapabilitiesCommunication;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Telephony='Telephony']
+        */
         static Telephony: ICapabilitiesCommunication;
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesCommunication;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesCommunication}
         */
         static toObject(object: any): ICapabilitiesCommunication;
     }
     /**
+       @enum {Adaptive.ICapabilitiesData} Adaptive.ICapabilitiesData
        Enumeration ICapabilitiesData
     */
     class ICapabilitiesData {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesData} [Database='Database']
+        */
         static Database: ICapabilitiesData;
+        /**
+           @property {Adaptive.ICapabilitiesData} [File='File']
+        */
         static File: ICapabilitiesData;
+        /**
+           @property {Adaptive.ICapabilitiesData} [Cloud='Cloud']
+        */
         static Cloud: ICapabilitiesData;
+        /**
+           @property {Adaptive.ICapabilitiesData} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesData;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesData}
         */
         static toObject(object: any): ICapabilitiesData;
     }
     /**
+       @enum {Adaptive.ICapabilitiesMedia} Adaptive.ICapabilitiesMedia
        Enumeration ICapabilitiesMedia
     */
     class ICapabilitiesMedia {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+        */
         static Audio_Playback: ICapabilitiesMedia;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+        */
         static Audio_Recording: ICapabilitiesMedia;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
+        */
         static Camera: ICapabilitiesMedia;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+        */
         static Video_Playback: ICapabilitiesMedia;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+        */
         static Video_Recording: ICapabilitiesMedia;
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesMedia;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesMedia}
         */
         static toObject(object: any): ICapabilitiesMedia;
     }
     /**
+       @enum {Adaptive.ICapabilitiesNet} Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     class ICapabilitiesNet {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [GSM='GSM']
+        */
         static GSM: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [GPRS='GPRS']
+        */
         static GPRS: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [HSDPA='HSDPA']
+        */
         static HSDPA: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [LTE='LTE']
+        */
         static LTE: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [WIFI='WIFI']
+        */
         static WIFI: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Ethernet='Ethernet']
+        */
         static Ethernet: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Unavailable='Unavailable']
+        */
         static Unavailable: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesNet;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesNet}
         */
         static toObject(object: any): ICapabilitiesNet;
     }
     /**
+       @enum {Adaptive.ICapabilitiesNotification} Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     class ICapabilitiesNotification {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']
+        */
         static Alarm: ICapabilitiesNotification;
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [LocalNotification='LocalNotification']
+        */
         static LocalNotification: ICapabilitiesNotification;
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [RemoteNotification='RemoteNotification']
+        */
         static RemoteNotification: ICapabilitiesNotification;
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Vibration='Vibration']
+        */
         static Vibration: ICapabilitiesNotification;
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesNotification;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesNotification}
         */
         static toObject(object: any): ICapabilitiesNotification;
     }
     /**
+       @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     class ICapabilitiesSensor {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Accelerometer='Accelerometer']
+        */
         static Accelerometer: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [AmbientLight='AmbientLight']
+        */
         static AmbientLight: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Barometer='Barometer']
+        */
         static Barometer: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Geolocation='Geolocation']
+        */
         static Geolocation: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Gyroscope='Gyroscope']
+        */
         static Gyroscope: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Magnetometer='Magnetometer']
+        */
         static Magnetometer: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Proximity='Proximity']
+        */
         static Proximity: ICapabilitiesSensor;
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Unknown='Unknown']
+        */
         static Unknown: ICapabilitiesSensor;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesSensor}
         */
         static toObject(object: any): ICapabilitiesSensor;
     }
     /**
+       @enum {Adaptive.IContactFieldGroup} Adaptive.IContactFieldGroup
        Enumeration IContactFieldGroup
     */
     class IContactFieldGroup {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+        */
         static PERSONAL_INFO: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+        */
         static PROFESSIONAL_INFO: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+        */
         static ADDRESSES: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+        */
         static PHONES: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+        */
         static EMAILS: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+        */
         static WEBSITES: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+        */
         static SOCIALS: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+        */
         static TAGS: IContactFieldGroup;
+        /**
+           @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
+        */
         static Unknown: IContactFieldGroup;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactFieldGroup}
         */
         static toObject(object: any): IContactFieldGroup;
     }
     /**
+       @enum {Adaptive.IContactFilter} Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     class IContactFilter {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+        */
         static HAS_PHONE: IContactFilter;
+        /**
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+        */
         static HAS_EMAIL: IContactFilter;
+        /**
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+        */
         static HAS_ADDRESS: IContactFilter;
+        /**
+           @property {Adaptive.IContactFilter} [Unknown='Unknown']
+        */
         static Unknown: IContactFilter;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactFilter}
         */
         static toObject(object: any): IContactFilter;
     }
     /**
+       @enum {Adaptive.IContactPhotoResultCallbackError} Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     class IContactPhotoResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
+        */
         static NoPermission: IContactPhotoResultCallbackError;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+        */
         static Wrong_Params: IContactPhotoResultCallbackError;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+        */
         static No_Photo: IContactPhotoResultCallbackError;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IContactPhotoResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactPhotoResultCallbackError}
         */
         static toObject(object: any): IContactPhotoResultCallbackError;
     }
     /**
+       @enum {Adaptive.IContactPhotoResultCallbackWarning} Adaptive.IContactPhotoResultCallbackWarning
        Enumeration IContactPhotoResultCallbackWarning
     */
     class IContactPhotoResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']
+        */
         static LimitExceeded: IContactPhotoResultCallbackWarning;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+        */
         static No_Matches: IContactPhotoResultCallbackWarning;
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IContactPhotoResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         static toObject(object: any): IContactPhotoResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IContactResultCallbackError} Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     class IContactResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
+        */
         static NoPermission: IContactResultCallbackError;
+        /**
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+        */
         static Wrong_Params: IContactResultCallbackError;
+        /**
+           @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IContactResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactResultCallbackError}
         */
         static toObject(object: any): IContactResultCallbackError;
     }
     /**
+       @enum {Adaptive.IContactResultCallbackWarning} Adaptive.IContactResultCallbackWarning
        Enumeration IContactResultCallbackWarning
     */
     class IContactResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
+        */
         static LimitExceeded: IContactResultCallbackWarning;
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
+        */
         static No_Matches: IContactResultCallbackWarning;
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IContactResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactResultCallbackWarning}
         */
         static toObject(object: any): IContactResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IDatabaseResultCallbackError} Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     class IDatabaseResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']
+        */
         static NoSpace: IDatabaseResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [SqlException='SqlException']
+        */
         static SqlException: IDatabaseResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [NotDeleted='NotDeleted']
+        */
         static NotDeleted: IDatabaseResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IDatabaseResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseResultCallbackError}
         */
         static toObject(object: any): IDatabaseResultCallbackError;
     }
     /**
+       @enum {Adaptive.IDatabaseResultCallbackWarning} Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     class IDatabaseResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']
+        */
         static DatabaseExists: IDatabaseResultCallbackWarning;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [IsOpen='IsOpen']
+        */
         static IsOpen: IDatabaseResultCallbackWarning;
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IDatabaseResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         static toObject(object: any): IDatabaseResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IDatabaseTableResultCallbackError} Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     class IDatabaseTableResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoSpace='NoSpace']
+        */
         static NoSpace: IDatabaseTableResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [ReadOnlyTable='ReadOnlyTable']
+        */
         static ReadOnlyTable: IDatabaseTableResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [SqlException='SqlException']
+        */
         static SqlException: IDatabaseTableResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [DatabaseNotFound='DatabaseNotFound']
+        */
         static DatabaseNotFound: IDatabaseTableResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoTableFound='NoTableFound']
+        */
         static NoTableFound: IDatabaseTableResultCallbackError;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IDatabaseTableResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseTableResultCallbackError}
         */
         static toObject(object: any): IDatabaseTableResultCallbackError;
     }
     /**
+       @enum {Adaptive.IDatabaseTableResultCallbackWarning} Adaptive.IDatabaseTableResultCallbackWarning
        Enumeration IDatabaseTableResultCallbackWarning
     */
     class IDatabaseTableResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']
+        */
         static TableExists: IDatabaseTableResultCallbackWarning;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableLocked='TableLocked']
+        */
         static TableLocked: IDatabaseTableResultCallbackWarning;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [NoResults='NoResults']
+        */
         static NoResults: IDatabaseTableResultCallbackWarning;
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IDatabaseTableResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         static toObject(object: any): IDatabaseTableResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IFileDataLoadResultCallbackError} Adaptive.IFileDataLoadResultCallbackError
        Enumeration IFileDataLoadResultCallbackError
     */
     class IFileDataLoadResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InexistentFile='InexistentFile']
+        */
         static InexistentFile: IFileDataLoadResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         static InsufficientSpace: IFileDataLoadResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unauthorized='Unauthorized']
+        */
         static Unauthorized: IFileDataLoadResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IFileDataLoadResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataLoadResultCallbackError}
         */
         static toObject(object: any): IFileDataLoadResultCallbackError;
     }
     /**
+       @enum {Adaptive.IFileDataLoadResultCallbackWarning} Adaptive.IFileDataLoadResultCallbackWarning
        Enumeration IFileDataLoadResultCallbackWarning
     */
     class IFileDataLoadResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
+        */
         static ExceedMaximumSize: IFileDataLoadResultCallbackWarning;
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IFileDataLoadResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataLoadResultCallbackWarning}
         */
         static toObject(object: any): IFileDataLoadResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IFileDataStoreResultCallbackError} Adaptive.IFileDataStoreResultCallbackError
        Enumeration IFileDataStoreResultCallbackError
     */
     class IFileDataStoreResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']
+        */
         static InexistentFile: IFileDataStoreResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         static InsufficientSpace: IFileDataStoreResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unauthorized='Unauthorized']
+        */
         static Unauthorized: IFileDataStoreResultCallbackError;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IFileDataStoreResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         static toObject(object: any): IFileDataStoreResultCallbackError;
     }
     /**
+       @enum {Adaptive.IFileDataStoreResultCallbackWarning} Adaptive.IFileDataStoreResultCallbackWarning
        Enumeration IFileDataStoreResultCallbackWarning
     */
     class IFileDataStoreResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
+        */
         static ExceedMaximumSize: IFileDataStoreResultCallbackWarning;
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IFileDataStoreResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataStoreResultCallbackWarning}
         */
         static toObject(object: any): IFileDataStoreResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IFileListResultCallbackError} Adaptive.IFileListResultCallbackError
        Enumeration IFileListResultCallbackError
     */
     class IFileListResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']
+        */
         static InexistentFile: IFileListResultCallbackError;
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [Unauthorized='Unauthorized']
+        */
         static Unauthorized: IFileListResultCallbackError;
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IFileListResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileListResultCallbackError}
         */
         static toObject(object: any): IFileListResultCallbackError;
     }
     /**
+       @enum {Adaptive.IFileListResultCallbackWarning} Adaptive.IFileListResultCallbackWarning
        Enumeration IFileListResultCallbackWarning
     */
     class IFileListResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']
+        */
         static PartialResult: IFileListResultCallbackWarning;
+        /**
+           @property {Adaptive.IFileListResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IFileListResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileListResultCallbackWarning}
         */
         static toObject(object: any): IFileListResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IFileResultCallbackError} Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     class IFileResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [FileExists='FileExists']
+        */
         static FileExists: IFileResultCallbackError;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [SourceInexistent='SourceInexistent']
+        */
         static SourceInexistent: IFileResultCallbackError;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [DestionationExists='DestionationExists']
+        */
         static DestionationExists: IFileResultCallbackError;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         static InsufficientSpace: IFileResultCallbackError;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [Unauthorized='Unauthorized']
+        */
         static Unauthorized: IFileResultCallbackError;
+        /**
+           @property {Adaptive.IFileResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IFileResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileResultCallbackError}
         */
         static toObject(object: any): IFileResultCallbackError;
     }
     /**
+       @enum {Adaptive.IFileResultCallbackWarning} Adaptive.IFileResultCallbackWarning
        Enumeration IFileResultCallbackWarning
     */
     class IFileResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']
+        */
         static SourceNotDeleted: IFileResultCallbackWarning;
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [RootDirectory='RootDirectory']
+        */
         static RootDirectory: IFileResultCallbackWarning;
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IFileResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileResultCallbackWarning}
         */
         static toObject(object: any): IFileResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IFileSystemSecurity} Adaptive.IFileSystemSecurity
        Enumeration IFileSystemSecurity
     */
     class IFileSystemSecurity {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Default='Default']
+        */
         static Default: IFileSystemSecurity;
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Protected='Protected']
+        */
         static Protected: IFileSystemSecurity;
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Encrypted='Encrypted']
+        */
         static Encrypted: IFileSystemSecurity;
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Unknown='Unknown']
+        */
         static Unknown: IFileSystemSecurity;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemSecurity}
         */
         static toObject(object: any): IFileSystemSecurity;
     }
     /**
+       @enum {Adaptive.IFileSystemStorageType} Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     class IFileSystemStorageType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Application='Application']
+        */
         static Application: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Document='Document']
+        */
         static Document: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Cloud='Cloud']
+        */
         static Cloud: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Protected='Protected']
+        */
         static Protected: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Cache='Cache']
+        */
         static Cache: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [External='External']
+        */
         static External: IFileSystemStorageType;
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Unknown='Unknown']
+        */
         static Unknown: IFileSystemStorageType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemStorageType}
         */
         static toObject(object: any): IFileSystemStorageType;
     }
     /**
+       @enum {Adaptive.IFileSystemType} Adaptive.IFileSystemType
        Enumeration IFileSystemType
     */
     class IFileSystemType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IFileSystemType} [Directory='Directory']
+        */
         static Directory: IFileSystemType;
+        /**
+           @property {Adaptive.IFileSystemType} [File='File']
+        */
         static File: IFileSystemType;
+        /**
+           @property {Adaptive.IFileSystemType} [Unknown='Unknown']
+        */
         static Unknown: IFileSystemType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemType}
         */
         static toObject(object: any): IFileSystemType;
     }
     /**
+       @enum {Adaptive.IGeolocationListenerError} Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     class IGeolocationListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']
+        */
         static Disabled: IGeolocationListenerError;
+        /**
+           @property {Adaptive.IGeolocationListenerError} [RestrictedAccess='RestrictedAccess']
+        */
         static RestrictedAccess: IGeolocationListenerError;
+        /**
+           @property {Adaptive.IGeolocationListenerError} [DeniedAccess='DeniedAccess']
+        */
         static DeniedAccess: IGeolocationListenerError;
+        /**
+           @property {Adaptive.IGeolocationListenerError} [StatusNotDetermined='StatusNotDetermined']
+        */
         static StatusNotDetermined: IGeolocationListenerError;
+        /**
+           @property {Adaptive.IGeolocationListenerError} [Unknown='Unknown']
+        */
         static Unknown: IGeolocationListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IGeolocationListenerError}
         */
         static toObject(object: any): IGeolocationListenerError;
     }
     /**
+       @enum {Adaptive.IGeolocationListenerWarning} Adaptive.IGeolocationListenerWarning
        Enumeration IGeolocationListenerWarning
     */
     class IGeolocationListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']
+        */
         static HighDoP: IGeolocationListenerWarning;
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [StaleData='StaleData']
+        */
         static StaleData: IGeolocationListenerWarning;
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [Unknown='Unknown']
+        */
         static Unknown: IGeolocationListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IGeolocationListenerWarning}
         */
         static toObject(object: any): IGeolocationListenerWarning;
     }
     /**
+       @enum {Adaptive.ILifecycleListenerError} Adaptive.ILifecycleListenerError
        Enumeration ILifecycleListenerError
     */
     class ILifecycleListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Runtime='Runtime']
+        */
         static Runtime: ILifecycleListenerError;
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Implementation='Implementation']
+        */
         static Implementation: ILifecycleListenerError;
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Killed='Killed']
+        */
         static Killed: ILifecycleListenerError;
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Unknown='Unknown']
+        */
         static Unknown: ILifecycleListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILifecycleListenerError}
         */
         static toObject(object: any): ILifecycleListenerError;
     }
     /**
+       @enum {Adaptive.ILifecycleListenerWarning} Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     class ILifecycleListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']
+        */
         static MemoryLow: ILifecycleListenerWarning;
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [BatteryLow='BatteryLow']
+        */
         static BatteryLow: ILifecycleListenerWarning;
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [Unknown='Unknown']
+        */
         static Unknown: ILifecycleListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILifecycleListenerWarning}
         */
         static toObject(object: any): ILifecycleListenerWarning;
     }
     /**
+       @enum {Adaptive.ILoggingLogLevel} Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     class ILoggingLogLevel {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+        */
         static DEBUG: ILoggingLogLevel;
+        /**
+           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+        */
         static WARN: ILoggingLogLevel;
+        /**
+           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+        */
         static ERROR: ILoggingLogLevel;
+        /**
+           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+        */
         static INFO: ILoggingLogLevel;
+        /**
+           @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
+        */
         static Unknown: ILoggingLogLevel;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILoggingLogLevel}
         */
         static toObject(object: any): ILoggingLogLevel;
     }
     /**
+       @enum {Adaptive.IMessagingCallbackError} Adaptive.IMessagingCallbackError
        Enumeration IMessagingCallbackError
     */
     class IMessagingCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [SIMNotPresent='SIMNotPresent']
+        */
         static SIMNotPresent: IMessagingCallbackError;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [EmailAccountNotFound='EmailAccountNotFound']
+        */
         static EmailAccountNotFound: IMessagingCallbackError;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [NotSent='NotSent']
+        */
         static NotSent: IMessagingCallbackError;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [WrongParams='WrongParams']
+        */
         static WrongParams: IMessagingCallbackError;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [NotSupported='NotSupported']
+        */
         static NotSupported: IMessagingCallbackError;
+        /**
+           @property {Adaptive.IMessagingCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IMessagingCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IMessagingCallbackError}
         */
         static toObject(object: any): IMessagingCallbackError;
     }
     /**
+       @enum {Adaptive.IMessagingCallbackWarning} Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     class IMessagingCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']
+        */
         static UnableToSentAll: IMessagingCallbackWarning;
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToFetchAttachment='UnableToFetchAttachment']
+        */
         static UnableToFetchAttachment: IMessagingCallbackWarning;
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IMessagingCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IMessagingCallbackWarning}
         */
         static toObject(object: any): IMessagingCallbackWarning;
     }
     /**
+       @enum {Adaptive.INetworkReachabilityCallbackError} Adaptive.INetworkReachabilityCallbackError
        Enumeration INetworkReachabilityCallbackError
     */
     class INetworkReachabilityCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Forbidden='Forbidden']
+        */
         static Forbidden: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotFound='NotFound']
+        */
         static NotFound: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [MethodNotAllowed='MethodNotAllowed']
+        */
         static MethodNotAllowed: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAllowed='NotAllowed']
+        */
         static NotAllowed: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAuthenticated='NotAuthenticated']
+        */
         static NotAuthenticated: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [TimeOut='TimeOut']
+        */
         static TimeOut: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NoResponse='NoResponse']
+        */
         static NoResponse: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unreachable='Unreachable']
+        */
         static Unreachable: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+        */
         static Wrong_Params: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
+        */
         static MalformedUrl: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [DomainUnresolvable='DomainUnresolvable']
+        */
         static DomainUnresolvable: INetworkReachabilityCallbackError;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unknown='Unknown']
+        */
         static Unknown: INetworkReachabilityCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkReachabilityCallbackError}
         */
         static toObject(object: any): INetworkReachabilityCallbackError;
     }
     /**
+       @enum {Adaptive.INetworkReachabilityCallbackWarning} Adaptive.INetworkReachabilityCallbackWarning
        Enumeration INetworkReachabilityCallbackWarning
     */
     class INetworkReachabilityCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']
+        */
         static IncorrectScheme: INetworkReachabilityCallbackWarning;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotSecure='NotSecure']
+        */
         static NotSecure: INetworkReachabilityCallbackWarning;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotTrusted='NotTrusted']
+        */
         static NotTrusted: INetworkReachabilityCallbackWarning;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Redirected='Redirected']
+        */
         static Redirected: INetworkReachabilityCallbackWarning;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotRegisteredService='NotRegisteredService']
+        */
         static NotRegisteredService: INetworkReachabilityCallbackWarning;
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: INetworkReachabilityCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         static toObject(object: any): INetworkReachabilityCallbackWarning;
     }
     /**
+       @enum {Adaptive.INetworkStatusListenerError} Adaptive.INetworkStatusListenerError
        Enumeration INetworkStatusListenerError
     */
     class INetworkStatusListenerError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']
+        */
         static NoPermission: INetworkStatusListenerError;
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [Unreachable='Unreachable']
+        */
         static Unreachable: INetworkStatusListenerError;
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [Unknown='Unknown']
+        */
         static Unknown: INetworkStatusListenerError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkStatusListenerError}
         */
         static toObject(object: any): INetworkStatusListenerError;
     }
     /**
+       @enum {Adaptive.INetworkStatusListenerWarning} Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     class INetworkStatusListenerWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']
+        */
         static IpAddressNotAssigned: INetworkStatusListenerWarning;
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressChanged='IpAddressChanged']
+        */
         static IpAddressChanged: INetworkStatusListenerWarning;
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [Unknown='Unknown']
+        */
         static Unknown: INetworkStatusListenerWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkStatusListenerWarning}
         */
         static toObject(object: any): INetworkStatusListenerWarning;
     }
     /**
+       @enum {Adaptive.IOSType} Adaptive.IOSType
        Enumeration IOSType
     */
     class IOSType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IOSType} [iOS='iOS']
+        */
         static iOS: IOSType;
+        /**
+           @property {Adaptive.IOSType} [OSX='OSX']
+        */
         static OSX: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Windows='Windows']
+        */
         static Windows: IOSType;
+        /**
+           @property {Adaptive.IOSType} [WindowsPhone='WindowsPhone']
+        */
         static WindowsPhone: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Android='Android']
+        */
         static Android: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Linux='Linux']
+        */
         static Linux: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Blackberry='Blackberry']
+        */
         static Blackberry: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Tizen='Tizen']
+        */
         static Tizen: IOSType;
+        /**
+           @property {Adaptive.IOSType} [FirefoxOS='FirefoxOS']
+        */
         static FirefoxOS: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Chromium='Chromium']
+        */
         static Chromium: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Unspecified='Unspecified']
+        */
         static Unspecified: IOSType;
+        /**
+           @property {Adaptive.IOSType} [Unknown='Unknown']
+        */
         static Unknown: IOSType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IOSType}
         */
         static toObject(object: any): IOSType;
     }
     /**
+       @enum {Adaptive.ISecurityResultCallbackError} Adaptive.ISecurityResultCallbackError
        Enumeration ISecurityResultCallbackError
     */
     class ISecurityResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [NoPermission='NoPermission']
+        */
         static NoPermission: ISecurityResultCallbackError;
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [NoMatchesFound='NoMatchesFound']
+        */
         static NoMatchesFound: ISecurityResultCallbackError;
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: ISecurityResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ISecurityResultCallbackError}
         */
         static toObject(object: any): ISecurityResultCallbackError;
     }
     /**
+       @enum {Adaptive.ISecurityResultCallbackWarning} Adaptive.ISecurityResultCallbackWarning
        Enumeration ISecurityResultCallbackWarning
     */
     class ISecurityResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
+        */
         static EntryOverride: ISecurityResultCallbackWarning;
+        /**
+           @property {Adaptive.ISecurityResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: ISecurityResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ISecurityResultCallbackWarning}
         */
         static toObject(object: any): ISecurityResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     class IServiceProtocolVersion {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
+        */
         static HttpProtocolVersion10: IServiceProtocolVersion;
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
+        */
         static HttpProtocolVersion11: IServiceProtocolVersion;
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
+        */
         static Unknown: IServiceProtocolVersion;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceProtocolVersion}
         */
         static toObject(object: any): IServiceProtocolVersion;
     }
     /**
+       @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     class IServiceMethod {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IServiceMethod} [Post='Post']
+        */
         static Post: IServiceMethod;
+        /**
+           @property {Adaptive.IServiceMethod} [Get='Get']
+        */
         static Get: IServiceMethod;
+        /**
+           @property {Adaptive.IServiceMethod} [Unknown='Unknown']
+        */
         static Unknown: IServiceMethod;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceMethod}
         */
         static toObject(object: any): IServiceMethod;
     }
     /**
+       @enum {Adaptive.IServiceType} Adaptive.IServiceType
        Enumeration IServiceType
     */
     class IServiceType {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+        */
         static ServiceTypeAmfSerialization: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+        */
         static ServiceTypeGwtRpc: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+        */
         static ServiceTypeOctetBinary: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+        */
         static ServiceTypeRemotingSerialization: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
+        */
         static ServiceTypeRestJson: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
+        */
         static ServiceTypeRestXml: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
+        */
         static ServiceTypeSoapJson: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
+        */
         static ServiceTypeSoapXml: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
+        */
         static ServiceTypeXmlRpcJson: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
+        */
         static ServiceTypeXmlRpcXml: IServiceType;
+        /**
+           @property {Adaptive.IServiceType} [Unknown='Unknown']
+        */
         static Unknown: IServiceType;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceType}
         */
         static toObject(object: any): IServiceType;
     }
     /**
+       @enum {Adaptive.IServiceResultCallbackError} Adaptive.IServiceResultCallbackError
        Enumeration IServiceResultCallbackError
     */
     class IServiceResultCallbackError {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
+        */
         static Forbidden: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
+        */
         static NotFound: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
+        */
         static MethodNotAllowed: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
+        */
         static NotAllowed: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
+        */
         static NotAuthenticated: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
+        */
         static TimeOut: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
+        */
         static NoResponse: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
+        */
         static ServerError: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
+        */
         static Unreachable: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [MalformedUrl='MalformedUrl']
+        */
         static MalformedUrl: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotRegisteredService='NotRegisteredService']
+        */
         static NotRegisteredService: IServiceResultCallbackError;
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Unknown='Unknown']
+        */
         static Unknown: IServiceResultCallbackError;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceResultCallbackError}
         */
         static toObject(object: any): IServiceResultCallbackError;
     }
     /**
+       @enum {Adaptive.IServiceResultCallbackWarning} Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     class IServiceResultCallbackWarning {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
+        */
         static NotSecure: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
+        */
         static NotTrusted: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
+        */
         static Redirected: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+        */
         static Wrong_Params: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
+        */
         static Unknown: IServiceResultCallbackWarning;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceResultCallbackWarning}
         */
         static toObject(object: any): IServiceResultCallbackWarning;
     }
     /**
+       @enum {Adaptive.ITelephonyStatus} Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     class ITelephonyStatus {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']
+        */
         static Dialing: ITelephonyStatus;
+        /**
+           @property {Adaptive.ITelephonyStatus} [Failed='Failed']
+        */
         static Failed: ITelephonyStatus;
+        /**
+           @property {Adaptive.ITelephonyStatus} [Unknown='Unknown']
+        */
         static Unknown: ITelephonyStatus;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ITelephonyStatus}
         */
         static toObject(object: any): ITelephonyStatus;
     }
     /**
+       @enum {Adaptive.LifecycleState} Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     class LifecycleState {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @property {Adaptive.LifecycleState} [Starting='Starting']
+        */
         static Starting: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Started='Started']
+        */
         static Started: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Running='Running']
+        */
         static Running: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Pausing='Pausing']
+        */
         static Pausing: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [PausedIdle='PausedIdle']
+        */
         static PausedIdle: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [PausedRun='PausedRun']
+        */
         static PausedRun: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Resuming='Resuming']
+        */
         static Resuming: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Stopping='Stopping']
+        */
         static Stopping: LifecycleState;
+        /**
+           @property {Adaptive.LifecycleState} [Unknown='Unknown']
+        */
         static Unknown: LifecycleState;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.LifecycleState}
         */
         static toObject(object: any): LifecycleState;
     }

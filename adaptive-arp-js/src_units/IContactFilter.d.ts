@@ -33,18 +33,38 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     class IContactFilter {
         value: string;
         constructor(value: string);
         toString(): string;
+        /**
+           @enum [Adaptive.IContactFilter.HAS_PHONE=Adaptive.IContactFilter.*]
+           @static
+        */
         static HAS_PHONE: IContactFilter;
+        /**
+           @enum [Adaptive.IContactFilter.HAS_EMAIL=Adaptive.IContactFilter.*]
+           @static
+        */
         static HAS_EMAIL: IContactFilter;
+        /**
+           @enum [Adaptive.IContactFilter.HAS_ADDRESS=Adaptive.IContactFilter.*]
+           @static
+        */
         static HAS_ADDRESS: IContactFilter;
+        /**
+           @enum [Adaptive.IContactFilter.Unknown=Adaptive.IContactFilter.*]
+           @static
+        */
         static Unknown: IContactFilter;
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IContactFilter}
         */
         static toObject(object: any): IContactFilter;
     }

@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IFileDataLoadResultCallbackWarning} Adaptive.IFileDataLoadResultCallbackWarning
         Enumeration IFileDataLoadResultCallbackWarning
      */
      export class IFileDataLoadResultCallbackWarning {
@@ -42,11 +43,20 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
+          */
           static ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
+          /**
+             @property {Adaptive.IFileDataLoadResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IFileDataLoadResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
                if (object != null && object.value != null) {

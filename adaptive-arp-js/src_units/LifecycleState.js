@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     var LifecycleState = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {LifecycleState}
         */
         LifecycleState.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -75,14 +79,50 @@ var Adaptive;
                 return LifecycleState.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.LifecycleState.Starting=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Starting = new LifecycleState("Starting");
+        /**
+           @enum [Adaptive.LifecycleState.Started=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Started = new LifecycleState("Started");
+        /**
+           @enum [Adaptive.LifecycleState.Running=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Running = new LifecycleState("Running");
+        /**
+           @enum [Adaptive.LifecycleState.Pausing=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Pausing = new LifecycleState("Pausing");
+        /**
+           @enum [Adaptive.LifecycleState.PausedIdle=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.PausedIdle = new LifecycleState("PausedIdle");
+        /**
+           @enum [Adaptive.LifecycleState.PausedRun=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.PausedRun = new LifecycleState("PausedRun");
+        /**
+           @enum [Adaptive.LifecycleState.Resuming=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Resuming = new LifecycleState("Resuming");
+        /**
+           @enum [Adaptive.LifecycleState.Stopping=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Stopping = new LifecycleState("Stopping");
+        /**
+           @enum [Adaptive.LifecycleState.Unknown=Adaptive.LifecycleState.*]
+           @static
+        */
         LifecycleState.Unknown = new LifecycleState("Unknown");
         return LifecycleState;
     })();

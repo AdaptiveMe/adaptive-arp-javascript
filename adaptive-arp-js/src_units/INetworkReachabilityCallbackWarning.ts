@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.INetworkReachabilityCallbackWarning} Adaptive.INetworkReachabilityCallbackWarning
         Enumeration INetworkReachabilityCallbackWarning
      */
      export class INetworkReachabilityCallbackWarning {
@@ -42,15 +43,36 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']
+          */
           static IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [NotSecure='NotSecure']
+          */
           static NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [NotTrusted='NotTrusted']
+          */
           static NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [Redirected='Redirected']
+          */
           static Redirected = new INetworkReachabilityCallbackWarning("Redirected");
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [NotRegisteredService='NotRegisteredService']
+          */
           static NotRegisteredService = new INetworkReachabilityCallbackWarning("NotRegisteredService");
+          /**
+             @property {Adaptive.INetworkReachabilityCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new INetworkReachabilityCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.INetworkReachabilityCallbackWarning}
           */
           static toObject(object : any) : INetworkReachabilityCallbackWarning {
                if (object != null && object.value != null) {

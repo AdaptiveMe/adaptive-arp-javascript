@@ -48,6 +48,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class OSBridge extends BaseSystemBridge implements IOS {
+       @class Adaptive.OSBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the OS operations
 
        @author Carlos Lozano Diez
@@ -56,6 +59,7 @@ var Adaptive;
     var OSBridge = (function (_super) {
         __extends(OSBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OSBridge() {

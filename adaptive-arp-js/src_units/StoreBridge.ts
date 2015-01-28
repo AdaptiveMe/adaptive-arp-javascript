@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.StoreBridge
+        @extends Adaptive.BaseCommerceBridge
         Interface for Managing the Store operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class StoreBridge extends BaseCommerceBridge implements IStore {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

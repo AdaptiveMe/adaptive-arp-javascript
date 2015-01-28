@@ -44,6 +44,10 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IBaseSystem
+        @extends Adaptive.IAdaptiveRP
+     */
      export interface IBaseSystem extends IAdaptiveRP {
      }
 }

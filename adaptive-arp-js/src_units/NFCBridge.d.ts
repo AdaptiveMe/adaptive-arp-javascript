@@ -40,6 +40,9 @@ Release:
 */
 declare module Adaptive {
     /**
+    export class NFCBridge extends BaseReaderBridge implements INFC {
+       @class Adaptive.NFCBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the NFC operations
 
        @author Carlos Lozano Diez
@@ -47,6 +50,7 @@ declare module Adaptive {
     */
     class NFCBridge extends BaseReaderBridge implements INFC {
         /**
+           @constructor
            Default constructor.
         */
         constructor();

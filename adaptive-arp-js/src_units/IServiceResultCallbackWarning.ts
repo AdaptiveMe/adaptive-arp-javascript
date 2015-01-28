@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IServiceResultCallbackWarning} Adaptive.IServiceResultCallbackWarning
         Enumeration IServiceResultCallbackWarning
      */
      export class IServiceResultCallbackWarning {
@@ -42,14 +43,32 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
+          */
           static NotSecure = new IServiceResultCallbackWarning("NotSecure");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
+          */
           static NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
+          */
           static Redirected = new IServiceResultCallbackWarning("Redirected");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+          */
           static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
+          */
           static Unknown = new IServiceResultCallbackWarning("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IServiceResultCallbackWarning}
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
                if (object != null && object.value != null) {

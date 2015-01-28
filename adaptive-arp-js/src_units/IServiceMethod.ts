@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod
         Enumeration IServiceMethod
      */
      export class IServiceMethod {
@@ -42,12 +43,24 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.IServiceMethod} [Post='Post']
+          */
           static Post = new IServiceMethod("Post");
+          /**
+             @property {Adaptive.IServiceMethod} [Get='Get']
+          */
           static Get = new IServiceMethod("Get");
+          /**
+             @property {Adaptive.IServiceMethod} [Unknown='Unknown']
+          */
           static Unknown = new IServiceMethod("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.IServiceMethod}
           */
           static toObject(object : any) : IServiceMethod {
                if (object != null && object.value != null) {

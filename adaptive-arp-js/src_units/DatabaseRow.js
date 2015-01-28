@@ -41,6 +41,8 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.DatabaseRow
+       @extends Adaptive.APIBean
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa

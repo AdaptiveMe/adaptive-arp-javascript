@@ -35,6 +35,7 @@ Release:
 module Adaptive {
 
      /**
+        @enum {Adaptive.ContactSocialNetwork} Adaptive.ContactSocialNetwork
         Enumeration ContactSocialNetwork
      */
      export class ContactSocialNetwork {
@@ -42,15 +43,36 @@ module Adaptive {
           constructor(public value:string){}
           toString(){return this.value;}
 
+          /**
+             @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']
+          */
           static Twitter = new ContactSocialNetwork("Twitter");
+          /**
+             @property {Adaptive.ContactSocialNetwork} [Facebook='Facebook']
+          */
           static Facebook = new ContactSocialNetwork("Facebook");
+          /**
+             @property {Adaptive.ContactSocialNetwork} [GooglePlus='GooglePlus']
+          */
           static GooglePlus = new ContactSocialNetwork("GooglePlus");
+          /**
+             @property {Adaptive.ContactSocialNetwork} [LinkedIn='LinkedIn']
+          */
           static LinkedIn = new ContactSocialNetwork("LinkedIn");
+          /**
+             @property {Adaptive.ContactSocialNetwork} [Flickr='Flickr']
+          */
           static Flickr = new ContactSocialNetwork("Flickr");
+          /**
+             @property {Adaptive.ContactSocialNetwork} [Unknown='Unknown']
+          */
           static Unknown = new ContactSocialNetwork("Unknown");
 
           /**
+             @method
+             @static
              Convert JSON parsed object to enumeration.
+             @return {Adaptive.ContactSocialNetwork}
           */
           static toObject(object : any) : ContactSocialNetwork {
                if (object != null && object.value != null) {

@@ -49,6 +49,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
+       @class Adaptive.GlobalizationBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Globalization results
 
        @author Francisco Javier Martin Bueno
@@ -57,6 +60,7 @@ var Adaptive;
     var GlobalizationBridge = (function (_super) {
         __extends(GlobalizationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GlobalizationBridge() {

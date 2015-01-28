@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.VibrationBridge
+        @extends Adaptive.BaseNotificationBridge
         Interface for Managing the Vibration operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class VibrationBridge extends BaseNotificationBridge implements IVibration {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

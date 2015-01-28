@@ -47,6 +47,9 @@ var __extends = this.__extends || function (d, b) {
 var Adaptive;
 (function (Adaptive) {
     /**
+    export class BrowserBridge extends BaseUIBridge implements IBrowser {
+       @class Adaptive.BrowserBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the browser operations
 
        @author Francisco Javier Martin Bueno
@@ -55,6 +58,7 @@ var Adaptive;
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BrowserBridge() {

@@ -47,20 +47,27 @@ module Adaptive {
         @since ARP1.0
         @version 1.0
      */
+     /**
+        @class Adaptive.IFileDataStoreResultCallback
+        @extends Adaptive.IBaseCallback
+     */
      export interface IFileDataStoreResultCallback extends IBaseCallback {
           /**
+             @method
              Error processing data retrieval/storage operation.
              @param error Error condition encountered.
              @since ARP1.0
           */
           onError(error:IFileDataStoreResultCallbackError);
           /**
+             @method
              Result of data storage operation.
              @param file File reference to stored data.
              @since ARP1.0
           */
           onResult(file:FileDescriptor);
           /**
+             @method
              Result with warning of data retrieval/storage operation.
              @param file    File being loaded/stored.
              @param warning Warning condition encountered.

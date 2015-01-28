@@ -42,6 +42,8 @@ Release:
 module Adaptive {
 
      /**
+        @class Adaptive.DisplayBridge
+        @extends Adaptive.BaseSystemBridge
         Interface for Managing the Display operations
 
         @author Carlos Lozano Diez
@@ -50,6 +52,7 @@ module Adaptive {
      export class DisplayBridge extends BaseSystemBridge implements IDisplay {
 
           /**
+             @constructor
              Default constructor.
           */
           constructor() {

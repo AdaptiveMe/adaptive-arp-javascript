@@ -34,6 +34,7 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @class Adaptive.IFileListResultCallbackError
        Enumeration IFileListResultCallbackError
     */
     var IFileListResultCallbackError = (function () {
@@ -44,7 +45,10 @@ var Adaptive;
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {IFileListResultCallbackError}
         */
         IFileListResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -63,8 +67,20 @@ var Adaptive;
                 return IFileListResultCallbackError.Unknown;
             }
         };
+        /**
+           @enum [Adaptive.IFileListResultCallbackError.InexistentFile=Adaptive.IFileListResultCallbackError.*]
+           @static
+        */
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");
+        /**
+           @enum [Adaptive.IFileListResultCallbackError.Unauthorized=Adaptive.IFileListResultCallbackError.*]
+           @static
+        */
         IFileListResultCallbackError.Unauthorized = new IFileListResultCallbackError("Unauthorized");
+        /**
+           @enum [Adaptive.IFileListResultCallbackError.Unknown=Adaptive.IFileListResultCallbackError.*]
+           @static
+        */
         IFileListResultCallbackError.Unknown = new IFileListResultCallbackError("Unknown");
         return IFileListResultCallbackError;
     })();

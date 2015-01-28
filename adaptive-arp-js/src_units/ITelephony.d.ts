@@ -42,11 +42,17 @@ declare module Adaptive {
        @since ARP1.0
        @version 1.0
     */
+    /**
+       @class Adaptive.ITelephony
+       @extends {IBaseCommunication}
+       @abstract
+    */
     interface ITelephony extends IBaseCommunication {
         /**
+           @method
            Invoke a phone call
            @param number to call
-           @return Status of the call
+           @return {ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         call(number: string): ITelephonyStatus;

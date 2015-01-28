@@ -40,13 +40,19 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     Adaptive.registeredCounter = 0;
     /**
+       @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
+    /**
+       @class Adaptive.Dictionary
+       Utility class for Dictionary type support.
+    */
     var Dictionary = (function () {
         function Dictionary(init) {
             this._keys = new Array();
@@ -87,6 +93,7 @@ var Adaptive;
     })();
     Adaptive.Dictionary = Dictionary;
     /**
+       @class Adaptive.APIBean
        Structure representing a native response to the HTML5
 
        @author Carlos Lozano Diez
@@ -112,6 +119,7 @@ var Adaptive;
     })();
     Adaptive.APIBean = APIBean;
     /**
+       @class Adaptive.APIRequest
        Structure representing a HTML5 request to the native API.
 
        @author Carlos Lozano Diez
@@ -231,6 +239,7 @@ listener.
     })();
     Adaptive.APIRequest = APIRequest;
     /**
+       @class Adaptive.APIResponse
        Structure representing a JSON response to the HTML5 layer.
 
        @author Carlos Lozano Diez
@@ -317,6 +326,8 @@ listener.
     })();
     Adaptive.APIResponse = APIResponse;
     /**
+       @class Adaptive.Acceleration
+       @extends Adaptive.APIBean
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez
@@ -433,6 +444,8 @@ listener.
     })(APIBean);
     Adaptive.Acceleration = Acceleration;
     /**
+       @class Adaptive.Button
+       @extends Adaptive.APIBean
        Structure representing the a physical or logical button on a device.
 
        @author Francisco Javier Martin Bueno
@@ -487,6 +500,8 @@ listener.
     })(APIBean);
     Adaptive.Button = Button;
     /**
+       @class Adaptive.ContactAddress
+       @extends Adaptive.APIBean
        Structure representing the address data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -563,6 +578,8 @@ listener.
     })(APIBean);
     Adaptive.ContactAddress = ContactAddress;
     /**
+       @class Adaptive.ContactEmail
+       @extends Adaptive.APIBean
        Structure representing the email data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -661,6 +678,8 @@ listener.
     })(APIBean);
     Adaptive.ContactEmail = ContactEmail;
     /**
+       @class Adaptive.ContactPersonalInfo
+       @extends Adaptive.APIBean
        Structure representing the personal info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -781,6 +800,8 @@ listener.
     })(APIBean);
     Adaptive.ContactPersonalInfo = ContactPersonalInfo;
     /**
+       @class Adaptive.ContactPhone
+       @extends Adaptive.APIBean
        Structure representing the phone data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -857,6 +878,8 @@ listener.
     })(APIBean);
     Adaptive.ContactPhone = ContactPhone;
     /**
+       @class Adaptive.ContactProfessionalInfo
+       @extends Adaptive.APIBean
        Structure representing the professional info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -951,6 +974,8 @@ listener.
     })(APIBean);
     Adaptive.ContactProfessionalInfo = ContactProfessionalInfo;
     /**
+       @class Adaptive.ContactSocial
+       @extends Adaptive.APIBean
        Structure representing the social data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -1027,6 +1052,8 @@ listener.
     })(APIBean);
     Adaptive.ContactSocial = ContactSocial;
     /**
+       @class Adaptive.ContactTag
+       @extends Adaptive.APIBean
        Structure representing the assigned tags data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -1099,6 +1126,8 @@ listener.
     })(APIBean);
     Adaptive.ContactTag = ContactTag;
     /**
+       @class Adaptive.ContactUid
+       @extends Adaptive.APIBean
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -1149,6 +1178,8 @@ listener.
     })(APIBean);
     Adaptive.ContactUid = ContactUid;
     /**
+       @class Adaptive.ContactWebsite
+       @extends Adaptive.APIBean
        Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -1199,6 +1230,8 @@ listener.
     })(APIBean);
     Adaptive.ContactWebsite = ContactWebsite;
     /**
+       @class Adaptive.Database
+       @extends Adaptive.APIBean
        Structure representing a database reference.
 
        @author Ferran Vila Conesa
@@ -1271,6 +1304,8 @@ listener.
     })(APIBean);
     Adaptive.Database = Database;
     /**
+       @class Adaptive.DatabaseColumn
+       @extends Adaptive.APIBean
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa
@@ -1321,6 +1356,8 @@ listener.
     })(APIBean);
     Adaptive.DatabaseColumn = DatabaseColumn;
     /**
+       @class Adaptive.DatabaseRow
+       @extends Adaptive.APIBean
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa
@@ -1377,6 +1414,8 @@ listener.
     })(APIBean);
     Adaptive.DatabaseRow = DatabaseRow;
     /**
+       @class Adaptive.DatabaseTable
+       @extends Adaptive.APIBean
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa
@@ -1535,6 +1574,8 @@ listener.
     })(APIBean);
     Adaptive.DatabaseTable = DatabaseTable;
     /**
+       @class Adaptive.DeviceInfo
+       @extends Adaptive.APIBean
        Structure representing the basic device information.
 
        @author Francisco Javier Martin Bueno
@@ -1649,6 +1690,8 @@ be unique for a specific instance of an application on a specific device.
     })(APIBean);
     Adaptive.DeviceInfo = DeviceInfo;
     /**
+       @class Adaptive.Email
+       @extends Adaptive.APIBean
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno
@@ -1871,6 +1914,8 @@ be unique for a specific instance of an application on a specific device.
     })(APIBean);
     Adaptive.Email = Email;
     /**
+       @class Adaptive.EmailAddress
+       @extends Adaptive.APIBean
        Structure representing the data elements of an email addressee.
 
        @author Francisco Javier Martin Bueno
@@ -1921,6 +1966,8 @@ be unique for a specific instance of an application on a specific device.
     })(APIBean);
     Adaptive.EmailAddress = EmailAddress;
     /**
+       @class Adaptive.EmailAttachmentData
+       @extends Adaptive.APIBean
        Structure representing the binary attachment data.
 
        @author Francisco Javier Martin Bueno
@@ -2065,6 +2112,8 @@ be unique for a specific instance of an application on a specific device.
     })(APIBean);
     Adaptive.EmailAttachmentData = EmailAttachmentData;
     /**
+       @class Adaptive.FileDescriptor
+       @extends Adaptive.APIBean
        Implementation of FileDescriptor bean.
 
        @author Carlos Lozano Diez
@@ -2206,6 +2255,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.FileDescriptor = FileDescriptor;
     /**
+       @class Adaptive.Geolocation
+       @extends Adaptive.APIBean
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno
@@ -2309,7 +2360,7 @@ doesn't exist, this will be -1. Used internally.
         /**
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         Geolocation.prototype.getXDoP = function () {
             return this.xDoP;
@@ -2325,7 +2376,7 @@ doesn't exist, this will be -1. Used internally.
         /**
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         Geolocation.prototype.getYDoP = function () {
             return this.yDoP;
@@ -2362,6 +2413,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.Geolocation = Geolocation;
     /**
+       @class Adaptive.KeyPair
+       @extends Adaptive.APIBean
        Represents a basic bean to store keyName pair values
 
        @author Ferran Vila Conesa
@@ -2434,6 +2487,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.KeyPair = KeyPair;
     /**
+       @class Adaptive.Lifecycle
+       @extends Adaptive.APIBean
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno
@@ -2488,6 +2543,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.Lifecycle = Lifecycle;
     /**
+       @class Adaptive.Locale
+       @extends Adaptive.APIBean
        Represents a specific user or system locate.
 
        @author Aryslan
@@ -2560,6 +2617,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.Locale = Locale;
     /**
+       @class Adaptive.OSInfo
+       @extends Adaptive.APIBean
        Represents the basic information about the operating system.
 
        @author Francisco Javier Martin Bueno
@@ -2655,6 +2714,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.OSInfo = OSInfo;
     /**
+       @class Adaptive.SecureKeyPair
+       @extends Adaptive.APIBean
        Represents a single secureKey-value pair.
 
        @author Aryslan
@@ -2727,6 +2788,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.SecureKeyPair = SecureKeyPair;
     /**
+       @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan
@@ -2855,6 +2918,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.Service = Service;
     /**
+       @class Adaptive.ServiceCookie
+       @extends Adaptive.APIBean
        Structure representing the cookieValue of a http cookie.
 
        @author Aryslan
@@ -3059,6 +3124,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceCookie = ServiceCookie;
     /**
+       @class Adaptive.ServiceEndpoint
+       @extends Adaptive.APIBean
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
@@ -3197,6 +3264,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceEndpoint = ServiceEndpoint;
     /**
+       @class Adaptive.ServiceHeader
+       @extends Adaptive.APIBean
        Structure representing the data of a http request or response header.
 
        @author Aryslan
@@ -3269,6 +3338,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceHeader = ServiceHeader;
     /**
+       @class Adaptive.ServiceRequest
+       @extends Adaptive.APIBean
        Represents a local or remote service request.
 
        @author Aryslan
@@ -3541,6 +3612,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceRequest = ServiceRequest;
     /**
+       @class Adaptive.ServiceResponse
+       @extends Adaptive.APIBean
        Represents a local or remote service response.
 
        @author Aryslan
@@ -3765,6 +3838,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceResponse = ServiceResponse;
     /**
+       @class Adaptive.ServiceSession
+       @extends Adaptive.APIBean
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
@@ -3853,6 +3928,8 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.ServiceSession = ServiceSession;
     /**
+       @class Adaptive.Contact
+       @extends Adaptive.ContactUid
        Structure representing the data elements of a contact.
 
        @author Francisco Javier Martin Bueno
@@ -4140,7 +4217,7 @@ doesn't exist, this will be -1. Used internally.
         }
         /**
            Get the listener id.
-           @return long with the identifier of the listener.
+           @return {number} long with the identifier of the listener.
         */
         BaseListener.prototype.getId = function () {
             return this.id;
@@ -4740,7 +4817,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         /**
            Get the listener id.
-           @return long with the identifier of the callback.
+           @return {number} long with the identifier of the callback.
         */
         BaseCallback.prototype.getId = function () {
             return this.id;
@@ -6155,6 +6232,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseCallback);
     Adaptive.ServiceResultCallback = ServiceResultCallback;
     /**
+       @class Adaptive.BaseApplicationBridge
+       @extends Adaptive.IBaseApplication
        Base application for Application purposes
 
        @author Carlos Lozano Diez
@@ -6162,18 +6241,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseApplicationBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseApplicationBridge() {
             this.apiGroup = IAdaptiveRPGroup.Application;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseApplicationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6185,6 +6268,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseApplicationBridge = BaseApplicationBridge;
     /**
+       @class Adaptive.BaseCommerceBridge
+       @extends Adaptive.IBaseCommerce
        Base application for Commerce purposes
 
        @author Carlos Lozano Diez
@@ -6192,18 +6277,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseCommerceBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseCommerceBridge() {
             this.apiGroup = IAdaptiveRPGroup.Commerce;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseCommerceBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6215,6 +6304,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseCommerceBridge = BaseCommerceBridge;
     /**
+       @class Adaptive.BaseCommunicationBridge
+       @extends Adaptive.IBaseCommunication
        Base application for Communication purposes
 
        @author Carlos Lozano Diez
@@ -6222,18 +6313,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseCommunicationBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseCommunicationBridge() {
             this.apiGroup = IAdaptiveRPGroup.Communication;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseCommunicationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6245,6 +6340,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseCommunicationBridge = BaseCommunicationBridge;
     /**
+       @class Adaptive.BaseDataBridge
+       @extends Adaptive.IBaseData
        Base application for Data purposes
 
        @author Carlos Lozano Diez
@@ -6252,18 +6349,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseDataBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseDataBridge() {
             this.apiGroup = IAdaptiveRPGroup.Data;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseDataBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6275,6 +6376,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseDataBridge = BaseDataBridge;
     /**
+       @class Adaptive.BaseMediaBridge
+       @extends Adaptive.IBaseMedia
        Base application for Media purposes
 
        @author Carlos Lozano Diez
@@ -6282,18 +6385,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseMediaBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseMediaBridge() {
             this.apiGroup = IAdaptiveRPGroup.Media;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseMediaBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6305,6 +6412,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseMediaBridge = BaseMediaBridge;
     /**
+       @class Adaptive.BaseNotificationBridge
+       @extends Adaptive.IBaseNotification
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
@@ -6312,18 +6421,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseNotificationBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseNotificationBridge() {
             this.apiGroup = IAdaptiveRPGroup.Notification;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseNotificationBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6335,6 +6448,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseNotificationBridge = BaseNotificationBridge;
     /**
+       @class Adaptive.BasePIMBridge
+       @extends Adaptive.IBasePIM
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
@@ -6342,18 +6457,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BasePIMBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BasePIMBridge() {
             this.apiGroup = IAdaptiveRPGroup.PIM;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BasePIMBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6365,6 +6484,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BasePIMBridge = BasePIMBridge;
     /**
+       @class Adaptive.BaseReaderBridge
+       @extends Adaptive.IBaseReader
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
@@ -6372,18 +6493,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseReaderBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseReaderBridge() {
             this.apiGroup = IAdaptiveRPGroup.Reader;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseReaderBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6395,6 +6520,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseReaderBridge = BaseReaderBridge;
     /**
+       @class Adaptive.BaseSecurityBridge
+       @extends Adaptive.IBaseSecurity
        Base application for Security purposes
 
        @author Carlos Lozano Diez
@@ -6402,18 +6529,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSecurityBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSecurityBridge() {
             this.apiGroup = IAdaptiveRPGroup.Security;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseSecurityBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6425,6 +6556,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseSecurityBridge = BaseSecurityBridge;
     /**
+       @class Adaptive.BaseSensorBridge
+       @extends Adaptive.IBaseSensor
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
@@ -6432,18 +6565,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSensorBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSensorBridge() {
             this.apiGroup = IAdaptiveRPGroup.Sensor;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseSensorBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6455,6 +6592,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseSensorBridge = BaseSensorBridge;
     /**
+       @class Adaptive.BaseSocialBridge
+       @extends Adaptive.IBaseSocial
        Base application for Social purposes
 
        @author Carlos Lozano Diez
@@ -6462,18 +6601,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSocialBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSocialBridge() {
             this.apiGroup = IAdaptiveRPGroup.Social;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseSocialBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6485,6 +6628,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseSocialBridge = BaseSocialBridge;
     /**
+       @class Adaptive.BaseSystemBridge
+       @extends Adaptive.IBaseSystem
        Base application for System purposes
 
        @author Carlos Lozano Diez
@@ -6492,18 +6637,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSystemBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseSystemBridge() {
             this.apiGroup = IAdaptiveRPGroup.System;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseSystemBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6515,6 +6664,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseSystemBridge = BaseSystemBridge;
     /**
+       @class Adaptive.BaseUIBridge
+       @extends Adaptive.IBaseUI
        Base application for UI purposes
 
        @author Carlos Lozano Diez
@@ -6522,18 +6673,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseUIBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseUIBridge() {
             this.apiGroup = IAdaptiveRPGroup.UI;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseUIBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6545,6 +6700,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseUIBridge = BaseUIBridge;
     /**
+       @class Adaptive.BaseUtilBridge
+       @extends Adaptive.IBaseUtil
        Base application for Utility purposes
 
        @author Carlos Lozano Diez
@@ -6552,18 +6709,22 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseUtilBridge = (function () {
         /**
+           @constructor
            Default constructor.
         */
         function BaseUtilBridge() {
             this.apiGroup = IAdaptiveRPGroup.Util;
         }
         /**
+           @method
            Return the API group for the given interface.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         BaseUtilBridge.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -6575,6 +6736,8 @@ listener and subsequently, the listener will be deactivated and removed from the
     })();
     Adaptive.BaseUtilBridge = BaseUtilBridge;
     /**
+       @class Adaptive.AnalyticsBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Analytics purposes
 
        @author Carlos Lozano Diez
@@ -6583,6 +6746,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var AnalyticsBridge = (function (_super) {
         __extends(AnalyticsBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AnalyticsBridge() {
@@ -6590,7 +6754,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return AnalyticsBridge;
     })(BaseApplicationBridge);
+    Adaptive.AnalyticsBridge = AnalyticsBridge;
     /**
+       @class Adaptive.GlobalizationBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Globalization results
 
        @author Francisco Javier Martin Bueno
@@ -6599,6 +6766,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var GlobalizationBridge = (function (_super) {
         __extends(GlobalizationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GlobalizationBridge() {
@@ -6778,7 +6946,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return GlobalizationBridge;
     })(BaseApplicationBridge);
+    Adaptive.GlobalizationBridge = GlobalizationBridge;
     /**
+       @class Adaptive.LifecycleBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
@@ -6787,6 +6958,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LifecycleBridge() {
@@ -6953,7 +7125,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return LifecycleBridge;
     })(BaseApplicationBridge);
+    Adaptive.LifecycleBridge = LifecycleBridge;
     /**
+       @class Adaptive.ManagementBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Management operations
 
        @author Carlos Lozano Diez
@@ -6962,6 +7137,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var ManagementBridge = (function (_super) {
         __extends(ManagementBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ManagementBridge() {
@@ -6969,7 +7145,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return ManagementBridge;
     })(BaseApplicationBridge);
+    Adaptive.ManagementBridge = ManagementBridge;
     /**
+       @class Adaptive.PrintingBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Printing operations
 
        @author Carlos Lozano Diez
@@ -6978,6 +7157,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var PrintingBridge = (function (_super) {
         __extends(PrintingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function PrintingBridge() {
@@ -6985,7 +7165,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return PrintingBridge;
     })(BaseApplicationBridge);
+    Adaptive.PrintingBridge = PrintingBridge;
     /**
+       @class Adaptive.SettingsBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Settings operations
 
        @author Carlos Lozano Diez
@@ -6994,6 +7177,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var SettingsBridge = (function (_super) {
         __extends(SettingsBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function SettingsBridge() {
@@ -7001,7 +7185,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return SettingsBridge;
     })(BaseApplicationBridge);
+    Adaptive.SettingsBridge = SettingsBridge;
     /**
+       @class Adaptive.UpdateBridge
+       @extends Adaptive.BaseApplicationBridge
        Interface for Managing the Update operations
 
        @author Carlos Lozano Diez
@@ -7010,6 +7197,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var UpdateBridge = (function (_super) {
         __extends(UpdateBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function UpdateBridge() {
@@ -7017,7 +7205,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return UpdateBridge;
     })(BaseApplicationBridge);
+    Adaptive.UpdateBridge = UpdateBridge;
     /**
+       @class Adaptive.AdsBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Advertising purposes
 
        @author Carlos Lozano Diez
@@ -7026,6 +7217,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var AdsBridge = (function (_super) {
         __extends(AdsBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AdsBridge() {
@@ -7033,7 +7225,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return AdsBridge;
     })(BaseCommerceBridge);
+    Adaptive.AdsBridge = AdsBridge;
     /**
+       @class Adaptive.StoreBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Managing the Store operations
 
        @author Carlos Lozano Diez
@@ -7042,6 +7237,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var StoreBridge = (function (_super) {
         __extends(StoreBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function StoreBridge() {
@@ -7049,7 +7245,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return StoreBridge;
     })(BaseCommerceBridge);
+    Adaptive.StoreBridge = StoreBridge;
     /**
+       @class Adaptive.WalletBridge
+       @extends Adaptive.BaseCommerceBridge
        Interface for Managing the Wallet operations
 
        @author Carlos Lozano Diez
@@ -7058,6 +7257,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var WalletBridge = (function (_super) {
         __extends(WalletBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function WalletBridge() {
@@ -7065,7 +7265,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return WalletBridge;
     })(BaseCommerceBridge);
+    Adaptive.WalletBridge = WalletBridge;
     /**
+       @class Adaptive.BluetoothBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Bluetooth purposes
 
        @author Carlos Lozano Diez
@@ -7074,6 +7277,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var BluetoothBridge = (function (_super) {
         __extends(BluetoothBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BluetoothBridge() {
@@ -7081,7 +7285,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return BluetoothBridge;
     })(BaseCommunicationBridge);
+    Adaptive.BluetoothBridge = BluetoothBridge;
     /**
+       @class Adaptive.NetworkInfoBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network information operations
 
        @author Carlos Lozano Diez
@@ -7090,6 +7297,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkInfoBridge() {
@@ -7097,7 +7305,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return NetworkInfoBridge;
     })(BaseCommunicationBridge);
+    Adaptive.NetworkInfoBridge = NetworkInfoBridge;
     /**
+       @class Adaptive.NetworkNamingBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network naming operations
 
        @author Carlos Lozano Diez
@@ -7106,6 +7317,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkNamingBridge = (function (_super) {
         __extends(NetworkNamingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkNamingBridge() {
@@ -7113,7 +7325,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return NetworkNamingBridge;
     })(BaseCommunicationBridge);
+    Adaptive.NetworkNamingBridge = NetworkNamingBridge;
     /**
+       @class Adaptive.NetworkReachabilityBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
@@ -7122,6 +7337,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkReachabilityBridge() {
@@ -7225,7 +7441,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return NetworkReachabilityBridge;
     })(BaseCommunicationBridge);
+    Adaptive.NetworkReachabilityBridge = NetworkReachabilityBridge;
     /**
+       @class Adaptive.NetworkStatusBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
@@ -7234,6 +7453,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NetworkStatusBridge() {
@@ -7360,7 +7580,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return NetworkStatusBridge;
     })(BaseCommunicationBridge);
+    Adaptive.NetworkStatusBridge = NetworkStatusBridge;
     /**
+       @class Adaptive.ServiceBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
@@ -7369,6 +7592,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ServiceBridge() {
@@ -7625,7 +7849,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return ServiceBridge;
     })(BaseCommunicationBridge);
+    Adaptive.ServiceBridge = ServiceBridge;
     /**
+       @class Adaptive.SocketBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Socket operations
 
        @author Carlos Lozano Diez
@@ -7634,6 +7861,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var SocketBridge = (function (_super) {
         __extends(SocketBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function SocketBridge() {
@@ -7641,7 +7869,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return SocketBridge;
     })(BaseCommunicationBridge);
+    Adaptive.SocketBridge = SocketBridge;
     /**
+       @class Adaptive.TelephonyBridge
+       @extends Adaptive.BaseCommunicationBridge
        Interface for Managing the Telephony operations
 
        @author Francisco Javier Martin Bueno
@@ -7650,6 +7881,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TelephonyBridge() {
@@ -7699,7 +7931,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         };
         return TelephonyBridge;
     })(BaseCommunicationBridge);
+    Adaptive.TelephonyBridge = TelephonyBridge;
     /**
+       @class Adaptive.CloudBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
@@ -7708,6 +7943,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var CloudBridge = (function (_super) {
         __extends(CloudBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CloudBridge() {
@@ -7715,7 +7951,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return CloudBridge;
     })(BaseDataBridge);
+    Adaptive.CloudBridge = CloudBridge;
     /**
+       @class Adaptive.DataStreamBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the DataStream operations
 
        @author Carlos Lozano Diez
@@ -7724,6 +7963,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var DataStreamBridge = (function (_super) {
         __extends(DataStreamBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DataStreamBridge() {
@@ -7731,7 +7971,10 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
         return DataStreamBridge;
     })(BaseDataBridge);
+    Adaptive.DataStreamBridge = DataStreamBridge;
     /**
+       @class Adaptive.DatabaseBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
@@ -7740,6 +7983,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var DatabaseBridge = (function (_super) {
         __extends(DatabaseBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DatabaseBridge() {
@@ -8135,7 +8379,10 @@ should be passed as a parameter
         };
         return DatabaseBridge;
     })(BaseDataBridge);
+    Adaptive.DatabaseBridge = DatabaseBridge;
     /**
+       @class Adaptive.FileBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File operations
 
        @author Carlos Lozano Diez
@@ -8144,6 +8391,7 @@ should be passed as a parameter
     var FileBridge = (function (_super) {
         __extends(FileBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FileBridge() {
@@ -8835,7 +9083,10 @@ new destination file.
         };
         return FileBridge;
     })(BaseDataBridge);
+    Adaptive.FileBridge = FileBridge;
     /**
+       @class Adaptive.FileSystemBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
@@ -8844,6 +9095,7 @@ new destination file.
     var FileSystemBridge = (function (_super) {
         __extends(FileSystemBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FileSystemBridge() {
@@ -9185,7 +9437,10 @@ This path may or may not be writable by the current application.
         };
         return FileSystemBridge;
     })(BaseDataBridge);
+    Adaptive.FileSystemBridge = FileSystemBridge;
     /**
+       @class Adaptive.InternalStorageBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the Internal Storage operations
 
        @author Carlos Lozano Diez
@@ -9194,6 +9449,7 @@ This path may or may not be writable by the current application.
     var InternalStorageBridge = (function (_super) {
         __extends(InternalStorageBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function InternalStorageBridge() {
@@ -9201,7 +9457,10 @@ This path may or may not be writable by the current application.
         }
         return InternalStorageBridge;
     })(BaseDataBridge);
+    Adaptive.InternalStorageBridge = InternalStorageBridge;
     /**
+       @class Adaptive.XMLBridge
+       @extends Adaptive.BaseDataBridge
        Interface for Managing the XML operations
 
        @author Carlos Lozano Diez
@@ -9210,6 +9469,7 @@ This path may or may not be writable by the current application.
     var XMLBridge = (function (_super) {
         __extends(XMLBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function XMLBridge() {
@@ -9217,7 +9477,10 @@ This path may or may not be writable by the current application.
         }
         return XMLBridge;
     })(BaseDataBridge);
+    Adaptive.XMLBridge = XMLBridge;
     /**
+       @class Adaptive.AudioBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Audio purposes
 
        @author Carlos Lozano Diez
@@ -9226,6 +9489,7 @@ This path may or may not be writable by the current application.
     var AudioBridge = (function (_super) {
         __extends(AudioBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AudioBridge() {
@@ -9233,7 +9497,10 @@ This path may or may not be writable by the current application.
         }
         return AudioBridge;
     })(BaseMediaBridge);
+    Adaptive.AudioBridge = AudioBridge;
     /**
+       @class Adaptive.CameraBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the camera operations
 
        @author Carlos Lozano Diez
@@ -9242,6 +9509,7 @@ This path may or may not be writable by the current application.
     var CameraBridge = (function (_super) {
         __extends(CameraBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CameraBridge() {
@@ -9249,7 +9517,10 @@ This path may or may not be writable by the current application.
         }
         return CameraBridge;
     })(BaseMediaBridge);
+    Adaptive.CameraBridge = CameraBridge;
     /**
+       @class Adaptive.ImagingBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the Imaging operations
 
        @author Carlos Lozano Diez
@@ -9258,6 +9529,7 @@ This path may or may not be writable by the current application.
     var ImagingBridge = (function (_super) {
         __extends(ImagingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ImagingBridge() {
@@ -9265,7 +9537,10 @@ This path may or may not be writable by the current application.
         }
         return ImagingBridge;
     })(BaseMediaBridge);
+    Adaptive.ImagingBridge = ImagingBridge;
     /**
+       @class Adaptive.VideoBridge
+       @extends Adaptive.BaseMediaBridge
        Interface for Managing the Video operations
 
        @author Carlos Lozano Diez
@@ -9274,6 +9549,7 @@ This path may or may not be writable by the current application.
     var VideoBridge = (function (_super) {
         __extends(VideoBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function VideoBridge() {
@@ -9306,7 +9582,10 @@ This path may or may not be writable by the current application.
         };
         return VideoBridge;
     })(BaseMediaBridge);
+    Adaptive.VideoBridge = VideoBridge;
     /**
+       @class Adaptive.AlarmBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Alarm purposes
 
        @author Carlos Lozano Diez
@@ -9315,6 +9594,7 @@ This path may or may not be writable by the current application.
     var AlarmBridge = (function (_super) {
         __extends(AlarmBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AlarmBridge() {
@@ -9322,7 +9602,10 @@ This path may or may not be writable by the current application.
         }
         return AlarmBridge;
     })(BaseNotificationBridge);
+    Adaptive.AlarmBridge = AlarmBridge;
     /**
+       @class Adaptive.NotificationBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Notification operations
 
        @author Carlos Lozano Diez
@@ -9331,6 +9614,7 @@ This path may or may not be writable by the current application.
     var NotificationBridge = (function (_super) {
         __extends(NotificationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NotificationBridge() {
@@ -9338,7 +9622,10 @@ This path may or may not be writable by the current application.
         }
         return NotificationBridge;
     })(BaseNotificationBridge);
+    Adaptive.NotificationBridge = NotificationBridge;
     /**
+       @class Adaptive.NotificationLocalBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Local Notifications operations
 
        @author Carlos Lozano Diez
@@ -9347,6 +9634,7 @@ This path may or may not be writable by the current application.
     var NotificationLocalBridge = (function (_super) {
         __extends(NotificationLocalBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NotificationLocalBridge() {
@@ -9354,7 +9642,10 @@ This path may or may not be writable by the current application.
         }
         return NotificationLocalBridge;
     })(BaseNotificationBridge);
+    Adaptive.NotificationLocalBridge = NotificationLocalBridge;
     /**
+       @class Adaptive.VibrationBridge
+       @extends Adaptive.BaseNotificationBridge
        Interface for Managing the Vibration operations
 
        @author Carlos Lozano Diez
@@ -9363,6 +9654,7 @@ This path may or may not be writable by the current application.
     var VibrationBridge = (function (_super) {
         __extends(VibrationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function VibrationBridge() {
@@ -9370,7 +9662,10 @@ This path may or may not be writable by the current application.
         }
         return VibrationBridge;
     })(BaseNotificationBridge);
+    Adaptive.VibrationBridge = VibrationBridge;
     /**
+       @class Adaptive.CalendarBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Calendar operations
 
        @author Carlos Lozano Diez
@@ -9379,6 +9674,7 @@ This path may or may not be writable by the current application.
     var CalendarBridge = (function (_super) {
         __extends(CalendarBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CalendarBridge() {
@@ -9386,7 +9682,10 @@ This path may or may not be writable by the current application.
         }
         return CalendarBridge;
     })(BasePIMBridge);
+    Adaptive.CalendarBridge = CalendarBridge;
     /**
+       @class Adaptive.ContactBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Contact operations
 
        @author Francisco Javier Martin Bueno
@@ -9395,6 +9694,7 @@ This path may or may not be writable by the current application.
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ContactBridge() {
@@ -9784,7 +10084,10 @@ This path may or may not be writable by the current application.
         };
         return ContactBridge;
     })(BasePIMBridge);
+    Adaptive.ContactBridge = ContactBridge;
     /**
+       @class Adaptive.MailBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
@@ -9793,6 +10096,7 @@ This path may or may not be writable by the current application.
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MailBridge() {
@@ -9848,7 +10152,10 @@ This path may or may not be writable by the current application.
         };
         return MailBridge;
     })(BasePIMBridge);
+    Adaptive.MailBridge = MailBridge;
     /**
+       @class Adaptive.MessagingBridge
+       @extends Adaptive.BasePIMBridge
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
@@ -9857,6 +10164,7 @@ This path may or may not be writable by the current application.
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MessagingBridge() {
@@ -9914,7 +10222,10 @@ This path may or may not be writable by the current application.
         };
         return MessagingBridge;
     })(BasePIMBridge);
+    Adaptive.MessagingBridge = MessagingBridge;
     /**
+       @class Adaptive.BarcodeBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Barcode Reading purposes
 
        @author Carlos Lozano Diez
@@ -9923,6 +10234,7 @@ This path may or may not be writable by the current application.
     var BarcodeBridge = (function (_super) {
         __extends(BarcodeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BarcodeBridge() {
@@ -9930,7 +10242,10 @@ This path may or may not be writable by the current application.
         }
         return BarcodeBridge;
     })(BaseReaderBridge);
+    Adaptive.BarcodeBridge = BarcodeBridge;
     /**
+       @class Adaptive.NFCBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the NFC operations
 
        @author Carlos Lozano Diez
@@ -9939,6 +10254,7 @@ This path may or may not be writable by the current application.
     var NFCBridge = (function (_super) {
         __extends(NFCBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function NFCBridge() {
@@ -9946,7 +10262,10 @@ This path may or may not be writable by the current application.
         }
         return NFCBridge;
     })(BaseReaderBridge);
+    Adaptive.NFCBridge = NFCBridge;
     /**
+       @class Adaptive.OCRBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the OCR operations
 
        @author Carlos Lozano Diez
@@ -9955,6 +10274,7 @@ This path may or may not be writable by the current application.
     var OCRBridge = (function (_super) {
         __extends(OCRBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OCRBridge() {
@@ -9962,7 +10282,10 @@ This path may or may not be writable by the current application.
         }
         return OCRBridge;
     })(BaseReaderBridge);
+    Adaptive.OCRBridge = OCRBridge;
     /**
+       @class Adaptive.QRCodeBridge
+       @extends Adaptive.BaseReaderBridge
        Interface for Managing the QR Code operations
 
        @author Carlos Lozano Diez
@@ -9971,6 +10294,7 @@ This path may or may not be writable by the current application.
     var QRCodeBridge = (function (_super) {
         __extends(QRCodeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function QRCodeBridge() {
@@ -9978,7 +10302,10 @@ This path may or may not be writable by the current application.
         }
         return QRCodeBridge;
     })(BaseReaderBridge);
+    Adaptive.QRCodeBridge = QRCodeBridge;
     /**
+       @class Adaptive.OAuthBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the OAuth operations
 
        @author Carlos Lozano Diez
@@ -9987,6 +10314,7 @@ This path may or may not be writable by the current application.
     var OAuthBridge = (function (_super) {
         __extends(OAuthBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OAuthBridge() {
@@ -9994,7 +10322,10 @@ This path may or may not be writable by the current application.
         }
         return OAuthBridge;
     })(BaseSecurityBridge);
+    Adaptive.OAuthBridge = OAuthBridge;
     /**
+       @class Adaptive.OpenIdBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the OpenID operations
 
        @author Carlos Lozano Diez
@@ -10003,6 +10334,7 @@ This path may or may not be writable by the current application.
     var OpenIdBridge = (function (_super) {
         __extends(OpenIdBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OpenIdBridge() {
@@ -10010,7 +10342,10 @@ This path may or may not be writable by the current application.
         }
         return OpenIdBridge;
     })(BaseSecurityBridge);
+    Adaptive.OpenIdBridge = OpenIdBridge;
     /**
+       @class Adaptive.SecurityBridge
+       @extends Adaptive.BaseSecurityBridge
        Interface for Managing the Security operations
 
        @author Aryslan
@@ -10019,6 +10354,7 @@ This path may or may not be writable by the current application.
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function SecurityBridge() {
@@ -10216,7 +10552,10 @@ This path may or may not be writable by the current application.
         };
         return SecurityBridge;
     })(BaseSecurityBridge);
+    Adaptive.SecurityBridge = SecurityBridge;
     /**
+       @class Adaptive.AccelerationBridge
+       @extends Adaptive.BaseSensorBridge
        Interface defining methods about the acceleration sensor
 
        @author Carlos Lozano Diez
@@ -10225,6 +10564,7 @@ This path may or may not be writable by the current application.
     var AccelerationBridge = (function (_super) {
         __extends(AccelerationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AccelerationBridge() {
@@ -10351,7 +10691,10 @@ This path may or may not be writable by the current application.
         };
         return AccelerationBridge;
     })(BaseSensorBridge);
+    Adaptive.AccelerationBridge = AccelerationBridge;
     /**
+       @class Adaptive.AmbientLightBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for managinf the Ambient Light
 
        @author Carlos Lozano Diez
@@ -10360,6 +10703,7 @@ This path may or may not be writable by the current application.
     var AmbientLightBridge = (function (_super) {
         __extends(AmbientLightBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function AmbientLightBridge() {
@@ -10367,7 +10711,10 @@ This path may or may not be writable by the current application.
         }
         return AmbientLightBridge;
     })(BaseSensorBridge);
+    Adaptive.AmbientLightBridge = AmbientLightBridge;
     /**
+       @class Adaptive.BarometerBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Barometer management purposes
 
        @author Carlos Lozano Diez
@@ -10376,6 +10723,7 @@ This path may or may not be writable by the current application.
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BarometerBridge() {
@@ -10383,7 +10731,10 @@ This path may or may not be writable by the current application.
         }
         return BarometerBridge;
     })(BaseSensorBridge);
+    Adaptive.BarometerBridge = BarometerBridge;
     /**
+       @class Adaptive.GeolocationBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
@@ -10392,6 +10743,7 @@ This path may or may not be writable by the current application.
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GeolocationBridge() {
@@ -10518,7 +10870,10 @@ This path may or may not be writable by the current application.
         };
         return GeolocationBridge;
     })(BaseSensorBridge);
+    Adaptive.GeolocationBridge = GeolocationBridge;
     /**
+       @class Adaptive.GyroscopeBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Giroscope operations
 
        @author Carlos Lozano Diez
@@ -10527,6 +10882,7 @@ This path may or may not be writable by the current application.
     var GyroscopeBridge = (function (_super) {
         __extends(GyroscopeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GyroscopeBridge() {
@@ -10534,7 +10890,10 @@ This path may or may not be writable by the current application.
         }
         return GyroscopeBridge;
     })(BaseSensorBridge);
+    Adaptive.GyroscopeBridge = GyroscopeBridge;
     /**
+       @class Adaptive.MagnetometerBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Magnetometer operations
 
        @author Carlos Lozano Diez
@@ -10543,6 +10902,7 @@ This path may or may not be writable by the current application.
     var MagnetometerBridge = (function (_super) {
         __extends(MagnetometerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MagnetometerBridge() {
@@ -10550,7 +10910,10 @@ This path may or may not be writable by the current application.
         }
         return MagnetometerBridge;
     })(BaseSensorBridge);
+    Adaptive.MagnetometerBridge = MagnetometerBridge;
     /**
+       @class Adaptive.ProximityBridge
+       @extends Adaptive.BaseSensorBridge
        Interface for Managing the Proximity operations
 
        @author Carlos Lozano Diez
@@ -10559,6 +10922,7 @@ This path may or may not be writable by the current application.
     var ProximityBridge = (function (_super) {
         __extends(ProximityBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ProximityBridge() {
@@ -10566,7 +10930,10 @@ This path may or may not be writable by the current application.
         }
         return ProximityBridge;
     })(BaseSensorBridge);
+    Adaptive.ProximityBridge = ProximityBridge;
     /**
+       @class Adaptive.FacebookBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Facebook operations
 
        @author Carlos Lozano Diez
@@ -10575,6 +10942,7 @@ This path may or may not be writable by the current application.
     var FacebookBridge = (function (_super) {
         __extends(FacebookBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function FacebookBridge() {
@@ -10582,7 +10950,10 @@ This path may or may not be writable by the current application.
         }
         return FacebookBridge;
     })(BaseSocialBridge);
+    Adaptive.FacebookBridge = FacebookBridge;
     /**
+       @class Adaptive.GooglePlusBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Google Plus operations
 
        @author Carlos Lozano Diez
@@ -10591,6 +10962,7 @@ This path may or may not be writable by the current application.
     var GooglePlusBridge = (function (_super) {
         __extends(GooglePlusBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function GooglePlusBridge() {
@@ -10598,7 +10970,10 @@ This path may or may not be writable by the current application.
         }
         return GooglePlusBridge;
     })(BaseSocialBridge);
+    Adaptive.GooglePlusBridge = GooglePlusBridge;
     /**
+       @class Adaptive.LinkedInBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Linkedin operations
 
        @author Carlos Lozano Diez
@@ -10607,6 +10982,7 @@ This path may or may not be writable by the current application.
     var LinkedInBridge = (function (_super) {
         __extends(LinkedInBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LinkedInBridge() {
@@ -10614,7 +10990,10 @@ This path may or may not be writable by the current application.
         }
         return LinkedInBridge;
     })(BaseSocialBridge);
+    Adaptive.LinkedInBridge = LinkedInBridge;
     /**
+       @class Adaptive.RSSBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the RSS operations
 
        @author Carlos Lozano Diez
@@ -10623,6 +11002,7 @@ This path may or may not be writable by the current application.
     var RSSBridge = (function (_super) {
         __extends(RSSBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function RSSBridge() {
@@ -10630,7 +11010,10 @@ This path may or may not be writable by the current application.
         }
         return RSSBridge;
     })(BaseSocialBridge);
+    Adaptive.RSSBridge = RSSBridge;
     /**
+       @class Adaptive.TwitterBridge
+       @extends Adaptive.BaseSocialBridge
        Interface for Managing the Twitter operations
 
        @author Carlos Lozano Diez
@@ -10639,6 +11022,7 @@ This path may or may not be writable by the current application.
     var TwitterBridge = (function (_super) {
         __extends(TwitterBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TwitterBridge() {
@@ -10646,7 +11030,10 @@ This path may or may not be writable by the current application.
         }
         return TwitterBridge;
     })(BaseSocialBridge);
+    Adaptive.TwitterBridge = TwitterBridge;
     /**
+       @class Adaptive.CapabilitiesBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
@@ -10655,6 +11042,7 @@ This path may or may not be writable by the current application.
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CapabilitiesBridge() {
@@ -10960,7 +11348,10 @@ device.
         };
         return CapabilitiesBridge;
     })(BaseSystemBridge);
+    Adaptive.CapabilitiesBridge = CapabilitiesBridge;
     /**
+       @class Adaptive.DeviceBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
@@ -10969,6 +11360,7 @@ device.
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DeviceBridge() {
@@ -11175,7 +11567,10 @@ device.
         };
         return DeviceBridge;
     })(BaseSystemBridge);
+    Adaptive.DeviceBridge = DeviceBridge;
     /**
+       @class Adaptive.DisplayBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Display operations
 
        @author Carlos Lozano Diez
@@ -11184,6 +11579,7 @@ device.
     var DisplayBridge = (function (_super) {
         __extends(DisplayBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DisplayBridge() {
@@ -11191,7 +11587,10 @@ device.
         }
         return DisplayBridge;
     })(BaseSystemBridge);
+    Adaptive.DisplayBridge = DisplayBridge;
     /**
+       @class Adaptive.OSBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the OS operations
 
        @author Carlos Lozano Diez
@@ -11200,6 +11599,7 @@ device.
     var OSBridge = (function (_super) {
         __extends(OSBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function OSBridge() {
@@ -11247,7 +11647,10 @@ device.
         };
         return OSBridge;
     })(BaseSystemBridge);
+    Adaptive.OSBridge = OSBridge;
     /**
+       @class Adaptive.RuntimeBridge
+       @extends Adaptive.BaseSystemBridge
        Interface for Managing the Runtime operations
 
        @author Carlos Lozano Diez
@@ -11256,6 +11659,7 @@ device.
     var RuntimeBridge = (function (_super) {
         __extends(RuntimeBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function RuntimeBridge() {
@@ -11326,7 +11730,10 @@ device.
         };
         return RuntimeBridge;
     })(BaseSystemBridge);
+    Adaptive.RuntimeBridge = RuntimeBridge;
     /**
+       @class Adaptive.BrowserBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the browser operations
 
        @author Francisco Javier Martin Bueno
@@ -11335,6 +11742,7 @@ device.
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function BrowserBridge() {
@@ -11476,7 +11884,10 @@ device.
         };
         return BrowserBridge;
     })(BaseUIBridge);
+    Adaptive.BrowserBridge = BrowserBridge;
     /**
+       @class Adaptive.DesktopBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the Desktop operations
 
        @author Carlos Lozano Diez
@@ -11485,6 +11896,7 @@ device.
     var DesktopBridge = (function (_super) {
         __extends(DesktopBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function DesktopBridge() {
@@ -11492,7 +11904,10 @@ device.
         }
         return DesktopBridge;
     })(BaseUIBridge);
+    Adaptive.DesktopBridge = DesktopBridge;
     /**
+       @class Adaptive.MapBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the Map operations
 
        @author Carlos Lozano Diez
@@ -11501,6 +11916,7 @@ device.
     var MapBridge = (function (_super) {
         __extends(MapBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function MapBridge() {
@@ -11508,7 +11924,10 @@ device.
         }
         return MapBridge;
     })(BaseUIBridge);
+    Adaptive.MapBridge = MapBridge;
     /**
+       @class Adaptive.UIBridge
+       @extends Adaptive.BaseUIBridge
        Interface for Managing the UI operations
 
        @author Carlos Lozano Diez
@@ -11517,6 +11936,7 @@ device.
     var UIBridge = (function (_super) {
         __extends(UIBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function UIBridge() {
@@ -11524,7 +11944,10 @@ device.
         }
         return UIBridge;
     })(BaseUIBridge);
+    Adaptive.UIBridge = UIBridge;
     /**
+       @class Adaptive.CompressionBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Compression operations
 
        @author Carlos Lozano Diez
@@ -11533,6 +11956,7 @@ device.
     var CompressionBridge = (function (_super) {
         __extends(CompressionBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CompressionBridge() {
@@ -11540,7 +11964,10 @@ device.
         }
         return CompressionBridge;
     })(BaseUtilBridge);
+    Adaptive.CompressionBridge = CompressionBridge;
     /**
+       @class Adaptive.ConcurrentBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Concurrent operations
 
        @author Carlos Lozano Diez
@@ -11549,6 +11976,7 @@ device.
     var ConcurrentBridge = (function (_super) {
         __extends(ConcurrentBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function ConcurrentBridge() {
@@ -11556,7 +11984,10 @@ device.
         }
         return ConcurrentBridge;
     })(BaseUtilBridge);
+    Adaptive.ConcurrentBridge = ConcurrentBridge;
     /**
+       @class Adaptive.CryptoBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
@@ -11565,6 +11996,7 @@ device.
     var CryptoBridge = (function (_super) {
         __extends(CryptoBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function CryptoBridge() {
@@ -11572,7 +12004,10 @@ device.
         }
         return CryptoBridge;
     })(BaseUtilBridge);
+    Adaptive.CryptoBridge = CryptoBridge;
     /**
+       @class Adaptive.LoggingBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Logging operations
 
        @author Ferran Vila Conesa
@@ -11581,6 +12016,7 @@ device.
     var LoggingBridge = (function (_super) {
         __extends(LoggingBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function LoggingBridge() {
@@ -11644,7 +12080,10 @@ device.
         };
         return LoggingBridge;
     })(BaseUtilBridge);
+    Adaptive.LoggingBridge = LoggingBridge;
     /**
+       @class Adaptive.TimerBridge
+       @extends Adaptive.BaseUtilBridge
        Interface for Managing the Timer operations
 
        @author Carlos Lozano Diez
@@ -11653,6 +12092,7 @@ device.
     var TimerBridge = (function (_super) {
         __extends(TimerBridge, _super);
         /**
+           @constructor
            Default constructor.
         */
         function TimerBridge() {
@@ -11660,7 +12100,10 @@ device.
         }
         return TimerBridge;
     })(BaseUtilBridge);
+    Adaptive.TimerBridge = TimerBridge;
     /**
+       @class Adaptive.AppRegistryBridge
+       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez
@@ -11669,6 +12112,13 @@ device.
     var AppRegistryBridge = (function () {
         function AppRegistryBridge() {
         }
+        /**
+           Singleton instance of AppRegistry.
+           @static
+           @singleton
+           @method
+           @return {Adaptive.AppRegistryBridge}
+        */
         AppRegistryBridge.getInstance = function () {
             if (AppRegistryBridge.instance === null) {
                 AppRegistryBridge.instance = new AppRegistryBridge();
@@ -11676,9 +12126,10 @@ device.
             return AppRegistryBridge.instance;
         };
         /**
+           @method
            Obtain a reference to the IAcceleration bridge.
 
-           @return IAcceleration bridge instance.
+           @return {Adaptive.AccelerationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAccelerationBridge = function () {
             if (AppRegistryBridge.instanceAcceleration === null) {
@@ -11687,9 +12138,10 @@ device.
             return AppRegistryBridge.instanceAcceleration;
         };
         /**
+           @method
            Obtain a reference to the IAds bridge.
 
-           @return IAds bridge instance.
+           @return {Adaptive.AdsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAdsBridge = function () {
             if (AppRegistryBridge.instanceAds === null) {
@@ -11698,9 +12150,10 @@ device.
             return AppRegistryBridge.instanceAds;
         };
         /**
+           @method
            Obtain a reference to the IAlarm bridge.
 
-           @return IAlarm bridge instance.
+           @return {Adaptive.AlarmBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAlarmBridge = function () {
             if (AppRegistryBridge.instanceAlarm === null) {
@@ -11709,9 +12162,10 @@ device.
             return AppRegistryBridge.instanceAlarm;
         };
         /**
+           @method
            Obtain a reference to the IAmbientLight bridge.
 
-           @return IAmbientLight bridge instance.
+           @return {Adaptive.AmbientLightBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAmbientLightBridge = function () {
             if (AppRegistryBridge.instanceAmbientLight === null) {
@@ -11720,9 +12174,10 @@ device.
             return AppRegistryBridge.instanceAmbientLight;
         };
         /**
+           @method
            Obtain a reference to the IAnalytics bridge.
 
-           @return IAnalytics bridge instance.
+           @return {Adaptive.AnalyticsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAnalyticsBridge = function () {
             if (AppRegistryBridge.instanceAnalytics === null) {
@@ -11731,9 +12186,10 @@ device.
             return AppRegistryBridge.instanceAnalytics;
         };
         /**
+           @method
            Obtain a reference to the IAudio bridge.
 
-           @return IAudio bridge instance.
+           @return {Adaptive.AudioBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getAudioBridge = function () {
             if (AppRegistryBridge.instanceAudio === null) {
@@ -11742,9 +12198,10 @@ device.
             return AppRegistryBridge.instanceAudio;
         };
         /**
+           @method
            Obtain a reference to the IBarcode bridge.
 
-           @return IBarcode bridge instance.
+           @return {Adaptive.BarcodeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBarcodeBridge = function () {
             if (AppRegistryBridge.instanceBarcode === null) {
@@ -11753,9 +12210,10 @@ device.
             return AppRegistryBridge.instanceBarcode;
         };
         /**
+           @method
            Obtain a reference to the IBarometer bridge.
 
-           @return IBarometer bridge instance.
+           @return {Adaptive.BarometerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBarometerBridge = function () {
             if (AppRegistryBridge.instanceBarometer === null) {
@@ -11764,9 +12222,10 @@ device.
             return AppRegistryBridge.instanceBarometer;
         };
         /**
+           @method
            Obtain a reference to the IBluetooth bridge.
 
-           @return IBluetooth bridge instance.
+           @return {Adaptive.BluetoothBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBluetoothBridge = function () {
             if (AppRegistryBridge.instanceBluetooth === null) {
@@ -11775,9 +12234,10 @@ device.
             return AppRegistryBridge.instanceBluetooth;
         };
         /**
+           @method
            Obtain a reference to the IBrowser bridge.
 
-           @return IBrowser bridge instance.
+           @return {Adaptive.BrowserBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getBrowserBridge = function () {
             if (AppRegistryBridge.instanceBrowser === null) {
@@ -11786,9 +12246,10 @@ device.
             return AppRegistryBridge.instanceBrowser;
         };
         /**
+           @method
            Obtain a reference to the ICalendar bridge.
 
-           @return ICalendar bridge instance.
+           @return {Adaptive.CalendarBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCalendarBridge = function () {
             if (AppRegistryBridge.instanceCalendar === null) {
@@ -11797,9 +12258,10 @@ device.
             return AppRegistryBridge.instanceCalendar;
         };
         /**
+           @method
            Obtain a reference to the ICamera bridge.
 
-           @return ICamera bridge instance.
+           @return {Adaptive.CameraBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCameraBridge = function () {
             if (AppRegistryBridge.instanceCamera === null) {
@@ -11808,9 +12270,10 @@ device.
             return AppRegistryBridge.instanceCamera;
         };
         /**
+           @method
            Obtain a reference to the ICapabilities bridge.
 
-           @return ICapabilities bridge instance.
+           @return {Adaptive.CapabilitiesBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCapabilitiesBridge = function () {
             if (AppRegistryBridge.instanceCapabilities === null) {
@@ -11819,9 +12282,10 @@ device.
             return AppRegistryBridge.instanceCapabilities;
         };
         /**
+           @method
            Obtain a reference to the ICloud bridge.
 
-           @return ICloud bridge instance.
+           @return {Adaptive.CloudBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCloudBridge = function () {
             if (AppRegistryBridge.instanceCloud === null) {
@@ -11830,9 +12294,10 @@ device.
             return AppRegistryBridge.instanceCloud;
         };
         /**
+           @method
            Obtain a reference to the ICompression bridge.
 
-           @return ICompression bridge instance.
+           @return {Adaptive.CompressionBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCompressionBridge = function () {
             if (AppRegistryBridge.instanceCompression === null) {
@@ -11841,9 +12306,10 @@ device.
             return AppRegistryBridge.instanceCompression;
         };
         /**
+           @method
            Obtain a reference to the IConcurrent bridge.
 
-           @return IConcurrent bridge instance.
+           @return {Adaptive.ConcurrentBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getConcurrentBridge = function () {
             if (AppRegistryBridge.instanceConcurrent === null) {
@@ -11852,9 +12318,10 @@ device.
             return AppRegistryBridge.instanceConcurrent;
         };
         /**
+           @method
            Obtain a reference to the IContact bridge.
 
-           @return IContact bridge instance.
+           @return {Adaptive.ContactBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getContactBridge = function () {
             if (AppRegistryBridge.instanceContact === null) {
@@ -11863,9 +12330,10 @@ device.
             return AppRegistryBridge.instanceContact;
         };
         /**
+           @method
            Obtain a reference to the ICrypto bridge.
 
-           @return ICrypto bridge instance.
+           @return {Adaptive.CryptoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getCryptoBridge = function () {
             if (AppRegistryBridge.instanceCrypto === null) {
@@ -11874,9 +12342,10 @@ device.
             return AppRegistryBridge.instanceCrypto;
         };
         /**
+           @method
            Obtain a reference to the IDataStream bridge.
 
-           @return IDataStream bridge instance.
+           @return {Adaptive.DataStreamBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDataStreamBridge = function () {
             if (AppRegistryBridge.instanceDataStream === null) {
@@ -11885,9 +12354,10 @@ device.
             return AppRegistryBridge.instanceDataStream;
         };
         /**
+           @method
            Obtain a reference to the IDatabase bridge.
 
-           @return IDatabase bridge instance.
+           @return {Adaptive.DatabaseBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDatabaseBridge = function () {
             if (AppRegistryBridge.instanceDatabase === null) {
@@ -11896,9 +12366,10 @@ device.
             return AppRegistryBridge.instanceDatabase;
         };
         /**
+           @method
            Obtain a reference to the IDesktop bridge.
 
-           @return IDesktop bridge instance.
+           @return {Adaptive.DesktopBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDesktopBridge = function () {
             if (AppRegistryBridge.instanceDesktop === null) {
@@ -11907,9 +12378,10 @@ device.
             return AppRegistryBridge.instanceDesktop;
         };
         /**
+           @method
            Obtain a reference to the IDevice bridge.
 
-           @return IDevice bridge instance.
+           @return {Adaptive.DeviceBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDeviceBridge = function () {
             if (AppRegistryBridge.instanceDevice === null) {
@@ -11918,9 +12390,10 @@ device.
             return AppRegistryBridge.instanceDevice;
         };
         /**
+           @method
            Obtain a reference to the IDisplay bridge.
 
-           @return IDisplay bridge instance.
+           @return {Adaptive.DisplayBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getDisplayBridge = function () {
             if (AppRegistryBridge.instanceDisplay === null) {
@@ -11929,9 +12402,10 @@ device.
             return AppRegistryBridge.instanceDisplay;
         };
         /**
+           @method
            Obtain a reference to the IFacebook bridge.
 
-           @return IFacebook bridge instance.
+           @return {Adaptive.FacebookBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFacebookBridge = function () {
             if (AppRegistryBridge.instanceFacebook === null) {
@@ -11940,9 +12414,10 @@ device.
             return AppRegistryBridge.instanceFacebook;
         };
         /**
+           @method
            Obtain a reference to the IFile bridge.
 
-           @return IFile bridge instance.
+           @return {Adaptive.FileBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFileBridge = function () {
             if (AppRegistryBridge.instanceFile === null) {
@@ -11951,9 +12426,10 @@ device.
             return AppRegistryBridge.instanceFile;
         };
         /**
+           @method
            Obtain a reference to the IFileSystem bridge.
 
-           @return IFileSystem bridge instance.
+           @return {Adaptive.FileSystemBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getFileSystemBridge = function () {
             if (AppRegistryBridge.instanceFileSystem === null) {
@@ -11962,9 +12438,10 @@ device.
             return AppRegistryBridge.instanceFileSystem;
         };
         /**
+           @method
            Obtain a reference to the IGeolocation bridge.
 
-           @return IGeolocation bridge instance.
+           @return {Adaptive.GeolocationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGeolocationBridge = function () {
             if (AppRegistryBridge.instanceGeolocation === null) {
@@ -11973,9 +12450,10 @@ device.
             return AppRegistryBridge.instanceGeolocation;
         };
         /**
+           @method
            Obtain a reference to the IGlobalization bridge.
 
-           @return IGlobalization bridge instance.
+           @return {Adaptive.GlobalizationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGlobalizationBridge = function () {
             if (AppRegistryBridge.instanceGlobalization === null) {
@@ -11984,9 +12462,10 @@ device.
             return AppRegistryBridge.instanceGlobalization;
         };
         /**
+           @method
            Obtain a reference to the IGooglePlus bridge.
 
-           @return IGooglePlus bridge instance.
+           @return {Adaptive.GooglePlusBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGooglePlusBridge = function () {
             if (AppRegistryBridge.instanceGooglePlus === null) {
@@ -11995,9 +12474,10 @@ device.
             return AppRegistryBridge.instanceGooglePlus;
         };
         /**
+           @method
            Obtain a reference to the IGyroscope bridge.
 
-           @return IGyroscope bridge instance.
+           @return {Adaptive.GyroscopeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getGyroscopeBridge = function () {
             if (AppRegistryBridge.instanceGyroscope === null) {
@@ -12006,9 +12486,10 @@ device.
             return AppRegistryBridge.instanceGyroscope;
         };
         /**
+           @method
            Obtain a reference to the IImaging bridge.
 
-           @return IImaging bridge instance.
+           @return {Adaptive.ImagingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getImagingBridge = function () {
             if (AppRegistryBridge.instanceImaging === null) {
@@ -12017,9 +12498,10 @@ device.
             return AppRegistryBridge.instanceImaging;
         };
         /**
+           @method
            Obtain a reference to the IInternalStorage bridge.
 
-           @return IInternalStorage bridge instance.
+           @return {Adaptive.InternalStorageBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getInternalStorageBridge = function () {
             if (AppRegistryBridge.instanceInternalStorage === null) {
@@ -12028,9 +12510,10 @@ device.
             return AppRegistryBridge.instanceInternalStorage;
         };
         /**
+           @method
            Obtain a reference to the ILifecycle bridge.
 
-           @return ILifecycle bridge instance.
+           @return {Adaptive.LifecycleBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLifecycleBridge = function () {
             if (AppRegistryBridge.instanceLifecycle === null) {
@@ -12039,9 +12522,10 @@ device.
             return AppRegistryBridge.instanceLifecycle;
         };
         /**
+           @method
            Obtain a reference to the ILinkedIn bridge.
 
-           @return ILinkedIn bridge instance.
+           @return {Adaptive.LinkedInBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLinkedInBridge = function () {
             if (AppRegistryBridge.instanceLinkedIn === null) {
@@ -12050,9 +12534,10 @@ device.
             return AppRegistryBridge.instanceLinkedIn;
         };
         /**
+           @method
            Obtain a reference to the ILogging bridge.
 
-           @return ILogging bridge instance.
+           @return {Adaptive.LoggingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getLoggingBridge = function () {
             if (AppRegistryBridge.instanceLogging === null) {
@@ -12061,9 +12546,10 @@ device.
             return AppRegistryBridge.instanceLogging;
         };
         /**
+           @method
            Obtain a reference to the IMagnetometer bridge.
 
-           @return IMagnetometer bridge instance.
+           @return {Adaptive.MagnetometerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMagnetometerBridge = function () {
             if (AppRegistryBridge.instanceMagnetometer === null) {
@@ -12072,9 +12558,10 @@ device.
             return AppRegistryBridge.instanceMagnetometer;
         };
         /**
+           @method
            Obtain a reference to the IMail bridge.
 
-           @return IMail bridge instance.
+           @return {Adaptive.MailBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMailBridge = function () {
             if (AppRegistryBridge.instanceMail === null) {
@@ -12083,9 +12570,10 @@ device.
             return AppRegistryBridge.instanceMail;
         };
         /**
+           @method
            Obtain a reference to the IManagement bridge.
 
-           @return IManagement bridge instance.
+           @return {Adaptive.ManagementBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getManagementBridge = function () {
             if (AppRegistryBridge.instanceManagement === null) {
@@ -12094,9 +12582,10 @@ device.
             return AppRegistryBridge.instanceManagement;
         };
         /**
+           @method
            Obtain a reference to the IMap bridge.
 
-           @return IMap bridge instance.
+           @return {Adaptive.MapBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMapBridge = function () {
             if (AppRegistryBridge.instanceMap === null) {
@@ -12105,9 +12594,10 @@ device.
             return AppRegistryBridge.instanceMap;
         };
         /**
+           @method
            Obtain a reference to the IMessaging bridge.
 
-           @return IMessaging bridge instance.
+           @return {Adaptive.MessagingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getMessagingBridge = function () {
             if (AppRegistryBridge.instanceMessaging === null) {
@@ -12116,9 +12606,10 @@ device.
             return AppRegistryBridge.instanceMessaging;
         };
         /**
+           @method
            Obtain a reference to the INFC bridge.
 
-           @return INFC bridge instance.
+           @return {Adaptive.NFCBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNFCBridge = function () {
             if (AppRegistryBridge.instanceNFC === null) {
@@ -12127,9 +12618,10 @@ device.
             return AppRegistryBridge.instanceNFC;
         };
         /**
+           @method
            Obtain a reference to the INetworkInfo bridge.
 
-           @return INetworkInfo bridge instance.
+           @return {Adaptive.NetworkInfoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkInfoBridge = function () {
             if (AppRegistryBridge.instanceNetworkInfo === null) {
@@ -12138,9 +12630,10 @@ device.
             return AppRegistryBridge.instanceNetworkInfo;
         };
         /**
+           @method
            Obtain a reference to the INetworkNaming bridge.
 
-           @return INetworkNaming bridge instance.
+           @return {Adaptive.NetworkNamingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkNamingBridge = function () {
             if (AppRegistryBridge.instanceNetworkNaming === null) {
@@ -12149,9 +12642,10 @@ device.
             return AppRegistryBridge.instanceNetworkNaming;
         };
         /**
+           @method
            Obtain a reference to the INetworkReachability bridge.
 
-           @return INetworkReachability bridge instance.
+           @return {Adaptive.NetworkReachabilityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkReachabilityBridge = function () {
             if (AppRegistryBridge.instanceNetworkReachability === null) {
@@ -12160,9 +12654,10 @@ device.
             return AppRegistryBridge.instanceNetworkReachability;
         };
         /**
+           @method
            Obtain a reference to the INetworkStatus bridge.
 
-           @return INetworkStatus bridge instance.
+           @return {Adaptive.NetworkStatusBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNetworkStatusBridge = function () {
             if (AppRegistryBridge.instanceNetworkStatus === null) {
@@ -12171,9 +12666,10 @@ device.
             return AppRegistryBridge.instanceNetworkStatus;
         };
         /**
+           @method
            Obtain a reference to the INotification bridge.
 
-           @return INotification bridge instance.
+           @return {Adaptive.NotificationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNotificationBridge = function () {
             if (AppRegistryBridge.instanceNotification === null) {
@@ -12182,9 +12678,10 @@ device.
             return AppRegistryBridge.instanceNotification;
         };
         /**
+           @method
            Obtain a reference to the INotificationLocal bridge.
 
-           @return INotificationLocal bridge instance.
+           @return {Adaptive.NotificationLocalBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getNotificationLocalBridge = function () {
             if (AppRegistryBridge.instanceNotificationLocal === null) {
@@ -12193,9 +12690,10 @@ device.
             return AppRegistryBridge.instanceNotificationLocal;
         };
         /**
+           @method
            Obtain a reference to the IOAuth bridge.
 
-           @return IOAuth bridge instance.
+           @return {Adaptive.OAuthBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOAuthBridge = function () {
             if (AppRegistryBridge.instanceOAuth === null) {
@@ -12204,9 +12702,10 @@ device.
             return AppRegistryBridge.instanceOAuth;
         };
         /**
+           @method
            Obtain a reference to the IOCR bridge.
 
-           @return IOCR bridge instance.
+           @return {Adaptive.OCRBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOCRBridge = function () {
             if (AppRegistryBridge.instanceOCR === null) {
@@ -12215,9 +12714,10 @@ device.
             return AppRegistryBridge.instanceOCR;
         };
         /**
+           @method
            Obtain a reference to the IOS bridge.
 
-           @return IOS bridge instance.
+           @return {Adaptive.OSBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOSBridge = function () {
             if (AppRegistryBridge.instanceOS === null) {
@@ -12226,9 +12726,10 @@ device.
             return AppRegistryBridge.instanceOS;
         };
         /**
+           @method
            Obtain a reference to the IOpenId bridge.
 
-           @return IOpenId bridge instance.
+           @return {Adaptive.OpenIdBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getOpenIdBridge = function () {
             if (AppRegistryBridge.instanceOpenId === null) {
@@ -12237,9 +12738,10 @@ device.
             return AppRegistryBridge.instanceOpenId;
         };
         /**
+           @method
            Obtain a reference to the IPrinting bridge.
 
-           @return IPrinting bridge instance.
+           @return {Adaptive.PrintingBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getPrintingBridge = function () {
             if (AppRegistryBridge.instancePrinting === null) {
@@ -12248,9 +12750,10 @@ device.
             return AppRegistryBridge.instancePrinting;
         };
         /**
+           @method
            Obtain a reference to the IProximity bridge.
 
-           @return IProximity bridge instance.
+           @return {Adaptive.ProximityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getProximityBridge = function () {
             if (AppRegistryBridge.instanceProximity === null) {
@@ -12259,9 +12762,10 @@ device.
             return AppRegistryBridge.instanceProximity;
         };
         /**
+           @method
            Obtain a reference to the IQRCode bridge.
 
-           @return IQRCode bridge instance.
+           @return {Adaptive.QRCodeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getQRCodeBridge = function () {
             if (AppRegistryBridge.instanceQRCode === null) {
@@ -12270,9 +12774,10 @@ device.
             return AppRegistryBridge.instanceQRCode;
         };
         /**
+           @method
            Obtain a reference to the IRSS bridge.
 
-           @return IRSS bridge instance.
+           @return {Adaptive.RSSBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getRSSBridge = function () {
             if (AppRegistryBridge.instanceRSS === null) {
@@ -12281,9 +12786,10 @@ device.
             return AppRegistryBridge.instanceRSS;
         };
         /**
+           @method
            Obtain a reference to the IRuntime bridge.
 
-           @return IRuntime bridge instance.
+           @return {Adaptive.RuntimeBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getRuntimeBridge = function () {
             if (AppRegistryBridge.instanceRuntime === null) {
@@ -12292,9 +12798,10 @@ device.
             return AppRegistryBridge.instanceRuntime;
         };
         /**
+           @method
            Obtain a reference to the ISecurity bridge.
 
-           @return ISecurity bridge instance.
+           @return {Adaptive.SecurityBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSecurityBridge = function () {
             if (AppRegistryBridge.instanceSecurity === null) {
@@ -12303,9 +12810,10 @@ device.
             return AppRegistryBridge.instanceSecurity;
         };
         /**
+           @method
            Obtain a reference to the IService bridge.
 
-           @return IService bridge instance.
+           @return {Adaptive.ServiceBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getServiceBridge = function () {
             if (AppRegistryBridge.instanceService === null) {
@@ -12314,9 +12822,10 @@ device.
             return AppRegistryBridge.instanceService;
         };
         /**
+           @method
            Obtain a reference to the ISettings bridge.
 
-           @return ISettings bridge instance.
+           @return {Adaptive.SettingsBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSettingsBridge = function () {
             if (AppRegistryBridge.instanceSettings === null) {
@@ -12325,9 +12834,10 @@ device.
             return AppRegistryBridge.instanceSettings;
         };
         /**
+           @method
            Obtain a reference to the ISocket bridge.
 
-           @return ISocket bridge instance.
+           @return {Adaptive.SocketBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getSocketBridge = function () {
             if (AppRegistryBridge.instanceSocket === null) {
@@ -12336,9 +12846,10 @@ device.
             return AppRegistryBridge.instanceSocket;
         };
         /**
+           @method
            Obtain a reference to the IStore bridge.
 
-           @return IStore bridge instance.
+           @return {Adaptive.StoreBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getStoreBridge = function () {
             if (AppRegistryBridge.instanceStore === null) {
@@ -12347,9 +12858,10 @@ device.
             return AppRegistryBridge.instanceStore;
         };
         /**
+           @method
            Obtain a reference to the ITelephony bridge.
 
-           @return ITelephony bridge instance.
+           @return {Adaptive.TelephonyBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTelephonyBridge = function () {
             if (AppRegistryBridge.instanceTelephony === null) {
@@ -12358,9 +12870,10 @@ device.
             return AppRegistryBridge.instanceTelephony;
         };
         /**
+           @method
            Obtain a reference to the ITimer bridge.
 
-           @return ITimer bridge instance.
+           @return {Adaptive.TimerBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTimerBridge = function () {
             if (AppRegistryBridge.instanceTimer === null) {
@@ -12369,9 +12882,10 @@ device.
             return AppRegistryBridge.instanceTimer;
         };
         /**
+           @method
            Obtain a reference to the ITwitter bridge.
 
-           @return ITwitter bridge instance.
+           @return {Adaptive.TwitterBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getTwitterBridge = function () {
             if (AppRegistryBridge.instanceTwitter === null) {
@@ -12380,9 +12894,10 @@ device.
             return AppRegistryBridge.instanceTwitter;
         };
         /**
+           @method
            Obtain a reference to the IUI bridge.
 
-           @return IUI bridge instance.
+           @return {Adaptive.UIBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getUIBridge = function () {
             if (AppRegistryBridge.instanceUI === null) {
@@ -12391,9 +12906,10 @@ device.
             return AppRegistryBridge.instanceUI;
         };
         /**
+           @method
            Obtain a reference to the IUpdate bridge.
 
-           @return IUpdate bridge instance.
+           @return {Adaptive.UpdateBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getUpdateBridge = function () {
             if (AppRegistryBridge.instanceUpdate === null) {
@@ -12402,9 +12918,10 @@ device.
             return AppRegistryBridge.instanceUpdate;
         };
         /**
+           @method
            Obtain a reference to the IVibration bridge.
 
-           @return IVibration bridge instance.
+           @return {Adaptive.VibrationBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getVibrationBridge = function () {
             if (AppRegistryBridge.instanceVibration === null) {
@@ -12413,9 +12930,10 @@ device.
             return AppRegistryBridge.instanceVibration;
         };
         /**
+           @method
            Obtain a reference to the IVideo bridge.
 
-           @return IVideo bridge instance.
+           @return {Adaptive.VideoBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getVideoBridge = function () {
             if (AppRegistryBridge.instanceVideo === null) {
@@ -12424,9 +12942,10 @@ device.
             return AppRegistryBridge.instanceVideo;
         };
         /**
+           @method
            Obtain a reference to the IWallet bridge.
 
-           @return IWallet bridge instance.
+           @return {Adaptive.WalletBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getWalletBridge = function () {
             if (AppRegistryBridge.instanceWallet === null) {
@@ -12435,9 +12954,10 @@ device.
             return AppRegistryBridge.instanceWallet;
         };
         /**
+           @method
            Obtain a reference to the IXML bridge.
 
-           @return IXML bridge instance.
+           @return {Adaptive.XMLBridge} bridge instance.
         */
         AppRegistryBridge.prototype.getXMLBridge = function () {
             if (AppRegistryBridge.instanceXML === null) {
@@ -12446,6 +12966,7 @@ device.
             return AppRegistryBridge.instanceXML;
         };
         /**
+           @method
            Return the API version for the given interface.
 
            @return {String} The version of the API.
@@ -12455,85 +12976,367 @@ device.
         };
         /**
            Singleton instance of AppRegistry.
+           @private
         */
         AppRegistryBridge.instance = null;
         /**
            Singleton instances of Bridges.
         */
+        /**
+           @static
+           @property {Adaptive.IAcceleration} instanceAcceleration
+        */
         AppRegistryBridge.instanceAcceleration = null;
+        /**
+           @static
+           @property {Adaptive.IAds} instanceAds
+        */
         AppRegistryBridge.instanceAds = null;
+        /**
+           @static
+           @property {Adaptive.IAlarm} instanceAlarm
+        */
         AppRegistryBridge.instanceAlarm = null;
+        /**
+           @static
+           @property {Adaptive.IAmbientLight} instanceAmbientLight
+        */
         AppRegistryBridge.instanceAmbientLight = null;
+        /**
+           @static
+           @property {Adaptive.IAnalytics} instanceAnalytics
+        */
         AppRegistryBridge.instanceAnalytics = null;
+        /**
+           @static
+           @property {Adaptive.IAudio} instanceAudio
+        */
         AppRegistryBridge.instanceAudio = null;
+        /**
+           @static
+           @property {Adaptive.IBarcode} instanceBarcode
+        */
         AppRegistryBridge.instanceBarcode = null;
+        /**
+           @static
+           @property {Adaptive.IBarometer} instanceBarometer
+        */
         AppRegistryBridge.instanceBarometer = null;
+        /**
+           @static
+           @property {Adaptive.IBluetooth} instanceBluetooth
+        */
         AppRegistryBridge.instanceBluetooth = null;
+        /**
+           @static
+           @property {Adaptive.IBrowser} instanceBrowser
+        */
         AppRegistryBridge.instanceBrowser = null;
+        /**
+           @static
+           @property {Adaptive.ICalendar} instanceCalendar
+        */
         AppRegistryBridge.instanceCalendar = null;
+        /**
+           @static
+           @property {Adaptive.ICamera} instanceCamera
+        */
         AppRegistryBridge.instanceCamera = null;
+        /**
+           @static
+           @property {Adaptive.ICapabilities} instanceCapabilities
+        */
         AppRegistryBridge.instanceCapabilities = null;
+        /**
+           @static
+           @property {Adaptive.ICloud} instanceCloud
+        */
         AppRegistryBridge.instanceCloud = null;
+        /**
+           @static
+           @property {Adaptive.ICompression} instanceCompression
+        */
         AppRegistryBridge.instanceCompression = null;
+        /**
+           @static
+           @property {Adaptive.IConcurrent} instanceConcurrent
+        */
         AppRegistryBridge.instanceConcurrent = null;
+        /**
+           @static
+           @property {Adaptive.IContact} instanceContact
+        */
         AppRegistryBridge.instanceContact = null;
+        /**
+           @static
+           @property {Adaptive.ICrypto} instanceCrypto
+        */
         AppRegistryBridge.instanceCrypto = null;
+        /**
+           @static
+           @property {Adaptive.IDataStream} instanceDataStream
+        */
         AppRegistryBridge.instanceDataStream = null;
+        /**
+           @static
+           @property {Adaptive.IDatabase} instanceDatabase
+        */
         AppRegistryBridge.instanceDatabase = null;
+        /**
+           @static
+           @property {Adaptive.IDesktop} instanceDesktop
+        */
         AppRegistryBridge.instanceDesktop = null;
+        /**
+           @static
+           @property {Adaptive.IDevice} instanceDevice
+        */
         AppRegistryBridge.instanceDevice = null;
+        /**
+           @static
+           @property {Adaptive.IDisplay} instanceDisplay
+        */
         AppRegistryBridge.instanceDisplay = null;
+        /**
+           @static
+           @property {Adaptive.IFacebook} instanceFacebook
+        */
         AppRegistryBridge.instanceFacebook = null;
+        /**
+           @static
+           @property {Adaptive.IFile} instanceFile
+        */
         AppRegistryBridge.instanceFile = null;
+        /**
+           @static
+           @property {Adaptive.IFileSystem} instanceFileSystem
+        */
         AppRegistryBridge.instanceFileSystem = null;
+        /**
+           @static
+           @property {Adaptive.IGeolocation} instanceGeolocation
+        */
         AppRegistryBridge.instanceGeolocation = null;
+        /**
+           @static
+           @property {Adaptive.IGlobalization} instanceGlobalization
+        */
         AppRegistryBridge.instanceGlobalization = null;
+        /**
+           @static
+           @property {Adaptive.IGooglePlus} instanceGooglePlus
+        */
         AppRegistryBridge.instanceGooglePlus = null;
+        /**
+           @static
+           @property {Adaptive.IGyroscope} instanceGyroscope
+        */
         AppRegistryBridge.instanceGyroscope = null;
+        /**
+           @static
+           @property {Adaptive.IImaging} instanceImaging
+        */
         AppRegistryBridge.instanceImaging = null;
+        /**
+           @static
+           @property {Adaptive.IInternalStorage} instanceInternalStorage
+        */
         AppRegistryBridge.instanceInternalStorage = null;
+        /**
+           @static
+           @property {Adaptive.ILifecycle} instanceLifecycle
+        */
         AppRegistryBridge.instanceLifecycle = null;
+        /**
+           @static
+           @property {Adaptive.ILinkedIn} instanceLinkedIn
+        */
         AppRegistryBridge.instanceLinkedIn = null;
+        /**
+           @static
+           @property {Adaptive.ILogging} instanceLogging
+        */
         AppRegistryBridge.instanceLogging = null;
+        /**
+           @static
+           @property {Adaptive.IMagnetometer} instanceMagnetometer
+        */
         AppRegistryBridge.instanceMagnetometer = null;
+        /**
+           @static
+           @property {Adaptive.IMail} instanceMail
+        */
         AppRegistryBridge.instanceMail = null;
+        /**
+           @static
+           @property {Adaptive.IManagement} instanceManagement
+        */
         AppRegistryBridge.instanceManagement = null;
+        /**
+           @static
+           @property {Adaptive.IMap} instanceMap
+        */
         AppRegistryBridge.instanceMap = null;
+        /**
+           @static
+           @property {Adaptive.IMessaging} instanceMessaging
+        */
         AppRegistryBridge.instanceMessaging = null;
+        /**
+           @static
+           @property {Adaptive.INFC} instanceNFC
+        */
         AppRegistryBridge.instanceNFC = null;
+        /**
+           @static
+           @property {Adaptive.INetworkInfo} instanceNetworkInfo
+        */
         AppRegistryBridge.instanceNetworkInfo = null;
+        /**
+           @static
+           @property {Adaptive.INetworkNaming} instanceNetworkNaming
+        */
         AppRegistryBridge.instanceNetworkNaming = null;
+        /**
+           @static
+           @property {Adaptive.INetworkReachability} instanceNetworkReachability
+        */
         AppRegistryBridge.instanceNetworkReachability = null;
+        /**
+           @static
+           @property {Adaptive.INetworkStatus} instanceNetworkStatus
+        */
         AppRegistryBridge.instanceNetworkStatus = null;
+        /**
+           @static
+           @property {Adaptive.INotification} instanceNotification
+        */
         AppRegistryBridge.instanceNotification = null;
+        /**
+           @static
+           @property {Adaptive.INotificationLocal} instanceNotificationLocal
+        */
         AppRegistryBridge.instanceNotificationLocal = null;
+        /**
+           @static
+           @property {Adaptive.IOAuth} instanceOAuth
+        */
         AppRegistryBridge.instanceOAuth = null;
+        /**
+           @static
+           @property {Adaptive.IOCR} instanceOCR
+        */
         AppRegistryBridge.instanceOCR = null;
+        /**
+           @static
+           @property {Adaptive.IOS} instanceOS
+        */
         AppRegistryBridge.instanceOS = null;
+        /**
+           @static
+           @property {Adaptive.IOpenId} instanceOpenId
+        */
         AppRegistryBridge.instanceOpenId = null;
+        /**
+           @static
+           @property {Adaptive.IPrinting} instancePrinting
+        */
         AppRegistryBridge.instancePrinting = null;
+        /**
+           @static
+           @property {Adaptive.IProximity} instanceProximity
+        */
         AppRegistryBridge.instanceProximity = null;
+        /**
+           @static
+           @property {Adaptive.IQRCode} instanceQRCode
+        */
         AppRegistryBridge.instanceQRCode = null;
+        /**
+           @static
+           @property {Adaptive.IRSS} instanceRSS
+        */
         AppRegistryBridge.instanceRSS = null;
+        /**
+           @static
+           @property {Adaptive.IRuntime} instanceRuntime
+        */
         AppRegistryBridge.instanceRuntime = null;
+        /**
+           @static
+           @property {Adaptive.ISecurity} instanceSecurity
+        */
         AppRegistryBridge.instanceSecurity = null;
+        /**
+           @static
+           @property {Adaptive.IService} instanceService
+        */
         AppRegistryBridge.instanceService = null;
+        /**
+           @static
+           @property {Adaptive.ISettings} instanceSettings
+        */
         AppRegistryBridge.instanceSettings = null;
+        /**
+           @static
+           @property {Adaptive.ISocket} instanceSocket
+        */
         AppRegistryBridge.instanceSocket = null;
+        /**
+           @static
+           @property {Adaptive.IStore} instanceStore
+        */
         AppRegistryBridge.instanceStore = null;
+        /**
+           @static
+           @property {Adaptive.ITelephony} instanceTelephony
+        */
         AppRegistryBridge.instanceTelephony = null;
+        /**
+           @static
+           @property {Adaptive.ITimer} instanceTimer
+        */
         AppRegistryBridge.instanceTimer = null;
+        /**
+           @static
+           @property {Adaptive.ITwitter} instanceTwitter
+        */
         AppRegistryBridge.instanceTwitter = null;
+        /**
+           @static
+           @property {Adaptive.IUI} instanceUI
+        */
         AppRegistryBridge.instanceUI = null;
+        /**
+           @static
+           @property {Adaptive.IUpdate} instanceUpdate
+        */
         AppRegistryBridge.instanceUpdate = null;
+        /**
+           @static
+           @property {Adaptive.IVibration} instanceVibration
+        */
         AppRegistryBridge.instanceVibration = null;
+        /**
+           @static
+           @property {Adaptive.IVideo} instanceVideo
+        */
         AppRegistryBridge.instanceVideo = null;
+        /**
+           @static
+           @property {Adaptive.IWallet} instanceWallet
+        */
         AppRegistryBridge.instanceWallet = null;
+        /**
+           @static
+           @property {Adaptive.IXML} instanceXML
+        */
         AppRegistryBridge.instanceXML = null;
         return AppRegistryBridge;
     })();
     Adaptive.AppRegistryBridge = AppRegistryBridge;
     /**
+       @enum {Adaptive.ContactAddressType} Adaptive.ContactAddressType
        Enumeration ContactAddressType
     */
     var ContactAddressType = (function () {
@@ -12544,7 +13347,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactAddressType}
         */
         ContactAddressType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12565,14 +13371,27 @@ device.
                 return ContactAddressType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ContactAddressType} [Home='Home']
+        */
         ContactAddressType.Home = new ContactAddressType("Home");
+        /**
+           @property {Adaptive.ContactAddressType} [Work='Work']
+        */
         ContactAddressType.Work = new ContactAddressType("Work");
+        /**
+           @property {Adaptive.ContactAddressType} [Other='Other']
+        */
         ContactAddressType.Other = new ContactAddressType("Other");
+        /**
+           @property {Adaptive.ContactAddressType} [Unknown='Unknown']
+        */
         ContactAddressType.Unknown = new ContactAddressType("Unknown");
         return ContactAddressType;
     })();
     Adaptive.ContactAddressType = ContactAddressType;
     /**
+       @enum {Adaptive.ContactEmailType} Adaptive.ContactEmailType
        Enumeration ContactEmailType
     */
     var ContactEmailType = (function () {
@@ -12583,7 +13402,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactEmailType}
         */
         ContactEmailType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12604,14 +13426,27 @@ device.
                 return ContactEmailType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ContactEmailType} [Personal='Personal']
+        */
         ContactEmailType.Personal = new ContactEmailType("Personal");
+        /**
+           @property {Adaptive.ContactEmailType} [Work='Work']
+        */
         ContactEmailType.Work = new ContactEmailType("Work");
+        /**
+           @property {Adaptive.ContactEmailType} [Other='Other']
+        */
         ContactEmailType.Other = new ContactEmailType("Other");
+        /**
+           @property {Adaptive.ContactEmailType} [Unknown='Unknown']
+        */
         ContactEmailType.Unknown = new ContactEmailType("Unknown");
         return ContactEmailType;
     })();
     Adaptive.ContactEmailType = ContactEmailType;
     /**
+       @enum {Adaptive.ContactPersonalInfoTitle} Adaptive.ContactPersonalInfoTitle
        Enumeration ContactPersonalInfoTitle
     */
     var ContactPersonalInfoTitle = (function () {
@@ -12622,7 +13457,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactPersonalInfoTitle}
         */
         ContactPersonalInfoTitle.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12645,15 +13483,31 @@ device.
                 return ContactPersonalInfoTitle.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']
+        */
         ContactPersonalInfoTitle.Mr = new ContactPersonalInfoTitle("Mr");
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Mrs='Mrs']
+        */
         ContactPersonalInfoTitle.Mrs = new ContactPersonalInfoTitle("Mrs");
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Ms='Ms']
+        */
         ContactPersonalInfoTitle.Ms = new ContactPersonalInfoTitle("Ms");
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Dr='Dr']
+        */
         ContactPersonalInfoTitle.Dr = new ContactPersonalInfoTitle("Dr");
+        /**
+           @property {Adaptive.ContactPersonalInfoTitle} [Unknown='Unknown']
+        */
         ContactPersonalInfoTitle.Unknown = new ContactPersonalInfoTitle("Unknown");
         return ContactPersonalInfoTitle;
     })();
     Adaptive.ContactPersonalInfoTitle = ContactPersonalInfoTitle;
     /**
+       @enum {Adaptive.ContactPhoneType} Adaptive.ContactPhoneType
        Enumeration ContactPhoneType
     */
     var ContactPhoneType = (function () {
@@ -12664,7 +13518,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactPhoneType}
         */
         ContactPhoneType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12693,18 +13550,43 @@ device.
                 return ContactPhoneType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ContactPhoneType} [Mobile='Mobile']
+        */
         ContactPhoneType.Mobile = new ContactPhoneType("Mobile");
+        /**
+           @property {Adaptive.ContactPhoneType} [Work='Work']
+        */
         ContactPhoneType.Work = new ContactPhoneType("Work");
+        /**
+           @property {Adaptive.ContactPhoneType} [Home='Home']
+        */
         ContactPhoneType.Home = new ContactPhoneType("Home");
+        /**
+           @property {Adaptive.ContactPhoneType} [Main='Main']
+        */
         ContactPhoneType.Main = new ContactPhoneType("Main");
+        /**
+           @property {Adaptive.ContactPhoneType} [HomeFax='HomeFax']
+        */
         ContactPhoneType.HomeFax = new ContactPhoneType("HomeFax");
+        /**
+           @property {Adaptive.ContactPhoneType} [WorkFax='WorkFax']
+        */
         ContactPhoneType.WorkFax = new ContactPhoneType("WorkFax");
+        /**
+           @property {Adaptive.ContactPhoneType} [Other='Other']
+        */
         ContactPhoneType.Other = new ContactPhoneType("Other");
+        /**
+           @property {Adaptive.ContactPhoneType} [Unknown='Unknown']
+        */
         ContactPhoneType.Unknown = new ContactPhoneType("Unknown");
         return ContactPhoneType;
     })();
     Adaptive.ContactPhoneType = ContactPhoneType;
     /**
+       @enum {Adaptive.ContactSocialNetwork} Adaptive.ContactSocialNetwork
        Enumeration ContactSocialNetwork
     */
     var ContactSocialNetwork = (function () {
@@ -12715,7 +13597,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ContactSocialNetwork}
         */
         ContactSocialNetwork.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12740,16 +13625,35 @@ device.
                 return ContactSocialNetwork.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']
+        */
         ContactSocialNetwork.Twitter = new ContactSocialNetwork("Twitter");
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Facebook='Facebook']
+        */
         ContactSocialNetwork.Facebook = new ContactSocialNetwork("Facebook");
+        /**
+           @property {Adaptive.ContactSocialNetwork} [GooglePlus='GooglePlus']
+        */
         ContactSocialNetwork.GooglePlus = new ContactSocialNetwork("GooglePlus");
+        /**
+           @property {Adaptive.ContactSocialNetwork} [LinkedIn='LinkedIn']
+        */
         ContactSocialNetwork.LinkedIn = new ContactSocialNetwork("LinkedIn");
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Flickr='Flickr']
+        */
         ContactSocialNetwork.Flickr = new ContactSocialNetwork("Flickr");
+        /**
+           @property {Adaptive.ContactSocialNetwork} [Unknown='Unknown']
+        */
         ContactSocialNetwork.Unknown = new ContactSocialNetwork("Unknown");
         return ContactSocialNetwork;
     })();
     Adaptive.ContactSocialNetwork = ContactSocialNetwork;
     /**
+       @enum {Adaptive.IAccelerationListenerError} Adaptive.IAccelerationListenerError
        Enumeration IAccelerationListenerError
     */
     var IAccelerationListenerError = (function () {
@@ -12760,7 +13664,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAccelerationListenerError}
         */
         IAccelerationListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12779,13 +13686,23 @@ device.
                 return IAccelerationListenerError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']
+        */
         IAccelerationListenerError.Unauthorized = new IAccelerationListenerError("Unauthorized");
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unavailable='Unavailable']
+        */
         IAccelerationListenerError.Unavailable = new IAccelerationListenerError("Unavailable");
+        /**
+           @property {Adaptive.IAccelerationListenerError} [Unknown='Unknown']
+        */
         IAccelerationListenerError.Unknown = new IAccelerationListenerError("Unknown");
         return IAccelerationListenerError;
     })();
     Adaptive.IAccelerationListenerError = IAccelerationListenerError;
     /**
+       @enum {Adaptive.IAccelerationListenerWarning} Adaptive.IAccelerationListenerWarning
        Enumeration IAccelerationListenerWarning
     */
     var IAccelerationListenerWarning = (function () {
@@ -12796,7 +13713,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAccelerationListenerWarning}
         */
         IAccelerationListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12815,13 +13735,23 @@ device.
                 return IAccelerationListenerWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [NeedsCalibration='NeedsCalibration']
+        */
         IAccelerationListenerWarning.NeedsCalibration = new IAccelerationListenerWarning("NeedsCalibration");
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [Stale='Stale']
+        */
         IAccelerationListenerWarning.Stale = new IAccelerationListenerWarning("Stale");
+        /**
+           @property {Adaptive.IAccelerationListenerWarning} [Unknown='Unknown']
+        */
         IAccelerationListenerWarning.Unknown = new IAccelerationListenerWarning("Unknown");
         return IAccelerationListenerWarning;
     })();
     Adaptive.IAccelerationListenerWarning = IAccelerationListenerWarning;
     /**
+       @enum {Adaptive.IAdaptiveRPGroup} Adaptive.IAdaptiveRPGroup
        Enumeration IAdaptiveRPGroup
     */
     var IAdaptiveRPGroup = (function () {
@@ -12832,7 +13762,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IAdaptiveRPGroup}
         */
         IAdaptiveRPGroup.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12877,26 +13810,75 @@ device.
                 return IAdaptiveRPGroup.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Application='Application']
+        */
         IAdaptiveRPGroup.Application = new IAdaptiveRPGroup("Application");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Commerce='Commerce']
+        */
         IAdaptiveRPGroup.Commerce = new IAdaptiveRPGroup("Commerce");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Communication='Communication']
+        */
         IAdaptiveRPGroup.Communication = new IAdaptiveRPGroup("Communication");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Data='Data']
+        */
         IAdaptiveRPGroup.Data = new IAdaptiveRPGroup("Data");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Media='Media']
+        */
         IAdaptiveRPGroup.Media = new IAdaptiveRPGroup("Media");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Notification='Notification']
+        */
         IAdaptiveRPGroup.Notification = new IAdaptiveRPGroup("Notification");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [PIM='PIM']
+        */
         IAdaptiveRPGroup.PIM = new IAdaptiveRPGroup("PIM");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Reader='Reader']
+        */
         IAdaptiveRPGroup.Reader = new IAdaptiveRPGroup("Reader");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Security='Security']
+        */
         IAdaptiveRPGroup.Security = new IAdaptiveRPGroup("Security");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Sensor='Sensor']
+        */
         IAdaptiveRPGroup.Sensor = new IAdaptiveRPGroup("Sensor");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Social='Social']
+        */
         IAdaptiveRPGroup.Social = new IAdaptiveRPGroup("Social");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [System='System']
+        */
         IAdaptiveRPGroup.System = new IAdaptiveRPGroup("System");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [UI='UI']
+        */
         IAdaptiveRPGroup.UI = new IAdaptiveRPGroup("UI");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Util='Util']
+        */
         IAdaptiveRPGroup.Util = new IAdaptiveRPGroup("Util");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Kernel='Kernel']
+        */
         IAdaptiveRPGroup.Kernel = new IAdaptiveRPGroup("Kernel");
+        /**
+           @property {Adaptive.IAdaptiveRPGroup} [Unknown='Unknown']
+        */
         IAdaptiveRPGroup.Unknown = new IAdaptiveRPGroup("Unknown");
         return IAdaptiveRPGroup;
     })();
     Adaptive.IAdaptiveRPGroup = IAdaptiveRPGroup;
     /**
+       @enum {Adaptive.IButtonListenerError} Adaptive.IButtonListenerError
        Enumeration IButtonListenerError
     */
     var IButtonListenerError = (function () {
@@ -12907,7 +13889,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IButtonListenerError}
         */
         IButtonListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12924,12 +13909,19 @@ device.
                 return IButtonListenerError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+        */
         IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        /**
+           @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
+        */
         IButtonListenerError.Unknown = new IButtonListenerError("Unknown");
         return IButtonListenerError;
     })();
     Adaptive.IButtonListenerError = IButtonListenerError;
     /**
+       @enum {Adaptive.IButtonListenerWarning} Adaptive.IButtonListenerWarning
        Enumeration IButtonListenerWarning
     */
     var IButtonListenerWarning = (function () {
@@ -12940,7 +13932,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IButtonListenerWarning}
         */
         IButtonListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12957,12 +13952,19 @@ device.
                 return IButtonListenerWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+        */
         IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+        /**
+           @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
+        */
         IButtonListenerWarning.Unknown = new IButtonListenerWarning("Unknown");
         return IButtonListenerWarning;
     })();
     Adaptive.IButtonListenerWarning = IButtonListenerWarning;
     /**
+       @enum {Adaptive.ICapabilitiesButton} Adaptive.ICapabilitiesButton
        Enumeration ICapabilitiesButton
     */
     var ICapabilitiesButton = (function () {
@@ -12973,7 +13975,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesButton}
         */
         ICapabilitiesButton.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -12994,14 +13999,27 @@ device.
                 return ICapabilitiesButton.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']
+        */
         ICapabilitiesButton.HomeButton = new ICapabilitiesButton("HomeButton");
+        /**
+           @property {Adaptive.ICapabilitiesButton} [BackButton='BackButton']
+        */
         ICapabilitiesButton.BackButton = new ICapabilitiesButton("BackButton");
+        /**
+           @property {Adaptive.ICapabilitiesButton} [OptionButton='OptionButton']
+        */
         ICapabilitiesButton.OptionButton = new ICapabilitiesButton("OptionButton");
+        /**
+           @property {Adaptive.ICapabilitiesButton} [Unknown='Unknown']
+        */
         ICapabilitiesButton.Unknown = new ICapabilitiesButton("Unknown");
         return ICapabilitiesButton;
     })();
     Adaptive.ICapabilitiesButton = ICapabilitiesButton;
     /**
+       @enum {Adaptive.ICapabilitiesCommunication} Adaptive.ICapabilitiesCommunication
        Enumeration ICapabilitiesCommunication
     */
     var ICapabilitiesCommunication = (function () {
@@ -13012,7 +14030,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesCommunication}
         */
         ICapabilitiesCommunication.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13037,16 +14058,35 @@ device.
                 return ICapabilitiesCommunication.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']
+        */
         ICapabilitiesCommunication.Calendar = new ICapabilitiesCommunication("Calendar");
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Contact='Contact']
+        */
         ICapabilitiesCommunication.Contact = new ICapabilitiesCommunication("Contact");
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Mail='Mail']
+        */
         ICapabilitiesCommunication.Mail = new ICapabilitiesCommunication("Mail");
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Messaging='Messaging']
+        */
         ICapabilitiesCommunication.Messaging = new ICapabilitiesCommunication("Messaging");
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Telephony='Telephony']
+        */
         ICapabilitiesCommunication.Telephony = new ICapabilitiesCommunication("Telephony");
+        /**
+           @property {Adaptive.ICapabilitiesCommunication} [Unknown='Unknown']
+        */
         ICapabilitiesCommunication.Unknown = new ICapabilitiesCommunication("Unknown");
         return ICapabilitiesCommunication;
     })();
     Adaptive.ICapabilitiesCommunication = ICapabilitiesCommunication;
     /**
+       @enum {Adaptive.ICapabilitiesData} Adaptive.ICapabilitiesData
        Enumeration ICapabilitiesData
     */
     var ICapabilitiesData = (function () {
@@ -13057,7 +14097,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesData}
         */
         ICapabilitiesData.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13078,14 +14121,27 @@ device.
                 return ICapabilitiesData.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesData} [Database='Database']
+        */
         ICapabilitiesData.Database = new ICapabilitiesData("Database");
+        /**
+           @property {Adaptive.ICapabilitiesData} [File='File']
+        */
         ICapabilitiesData.File = new ICapabilitiesData("File");
+        /**
+           @property {Adaptive.ICapabilitiesData} [Cloud='Cloud']
+        */
         ICapabilitiesData.Cloud = new ICapabilitiesData("Cloud");
+        /**
+           @property {Adaptive.ICapabilitiesData} [Unknown='Unknown']
+        */
         ICapabilitiesData.Unknown = new ICapabilitiesData("Unknown");
         return ICapabilitiesData;
     })();
     Adaptive.ICapabilitiesData = ICapabilitiesData;
     /**
+       @enum {Adaptive.ICapabilitiesMedia} Adaptive.ICapabilitiesMedia
        Enumeration ICapabilitiesMedia
     */
     var ICapabilitiesMedia = (function () {
@@ -13096,7 +14152,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesMedia}
         */
         ICapabilitiesMedia.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13121,16 +14180,35 @@ device.
                 return ICapabilitiesMedia.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+        */
         ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+        */
         ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
+        */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+        */
         ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+        */
         ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
+        /**
+           @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
+        */
         ICapabilitiesMedia.Unknown = new ICapabilitiesMedia("Unknown");
         return ICapabilitiesMedia;
     })();
     Adaptive.ICapabilitiesMedia = ICapabilitiesMedia;
     /**
+       @enum {Adaptive.ICapabilitiesNet} Adaptive.ICapabilitiesNet
        Enumeration ICapabilitiesNet
     */
     var ICapabilitiesNet = (function () {
@@ -13141,7 +14219,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesNet}
         */
         ICapabilitiesNet.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13170,18 +14251,43 @@ device.
                 return ICapabilitiesNet.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesNet} [GSM='GSM']
+        */
         ICapabilitiesNet.GSM = new ICapabilitiesNet("GSM");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [GPRS='GPRS']
+        */
         ICapabilitiesNet.GPRS = new ICapabilitiesNet("GPRS");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [HSDPA='HSDPA']
+        */
         ICapabilitiesNet.HSDPA = new ICapabilitiesNet("HSDPA");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [LTE='LTE']
+        */
         ICapabilitiesNet.LTE = new ICapabilitiesNet("LTE");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [WIFI='WIFI']
+        */
         ICapabilitiesNet.WIFI = new ICapabilitiesNet("WIFI");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Ethernet='Ethernet']
+        */
         ICapabilitiesNet.Ethernet = new ICapabilitiesNet("Ethernet");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Unavailable='Unavailable']
+        */
         ICapabilitiesNet.Unavailable = new ICapabilitiesNet("Unavailable");
+        /**
+           @property {Adaptive.ICapabilitiesNet} [Unknown='Unknown']
+        */
         ICapabilitiesNet.Unknown = new ICapabilitiesNet("Unknown");
         return ICapabilitiesNet;
     })();
     Adaptive.ICapabilitiesNet = ICapabilitiesNet;
     /**
+       @enum {Adaptive.ICapabilitiesNotification} Adaptive.ICapabilitiesNotification
        Enumeration ICapabilitiesNotification
     */
     var ICapabilitiesNotification = (function () {
@@ -13192,7 +14298,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesNotification}
         */
         ICapabilitiesNotification.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13215,15 +14324,31 @@ device.
                 return ICapabilitiesNotification.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']
+        */
         ICapabilitiesNotification.Alarm = new ICapabilitiesNotification("Alarm");
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [LocalNotification='LocalNotification']
+        */
         ICapabilitiesNotification.LocalNotification = new ICapabilitiesNotification("LocalNotification");
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [RemoteNotification='RemoteNotification']
+        */
         ICapabilitiesNotification.RemoteNotification = new ICapabilitiesNotification("RemoteNotification");
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Vibration='Vibration']
+        */
         ICapabilitiesNotification.Vibration = new ICapabilitiesNotification("Vibration");
+        /**
+           @property {Adaptive.ICapabilitiesNotification} [Unknown='Unknown']
+        */
         ICapabilitiesNotification.Unknown = new ICapabilitiesNotification("Unknown");
         return ICapabilitiesNotification;
     })();
     Adaptive.ICapabilitiesNotification = ICapabilitiesNotification;
     /**
+       @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
     var ICapabilitiesSensor = (function () {
@@ -13234,7 +14359,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesSensor}
         */
         ICapabilitiesSensor.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13263,18 +14391,43 @@ device.
                 return ICapabilitiesSensor.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Accelerometer='Accelerometer']
+        */
         ICapabilitiesSensor.Accelerometer = new ICapabilitiesSensor("Accelerometer");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [AmbientLight='AmbientLight']
+        */
         ICapabilitiesSensor.AmbientLight = new ICapabilitiesSensor("AmbientLight");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Barometer='Barometer']
+        */
         ICapabilitiesSensor.Barometer = new ICapabilitiesSensor("Barometer");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Geolocation='Geolocation']
+        */
         ICapabilitiesSensor.Geolocation = new ICapabilitiesSensor("Geolocation");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Gyroscope='Gyroscope']
+        */
         ICapabilitiesSensor.Gyroscope = new ICapabilitiesSensor("Gyroscope");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Magnetometer='Magnetometer']
+        */
         ICapabilitiesSensor.Magnetometer = new ICapabilitiesSensor("Magnetometer");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Proximity='Proximity']
+        */
         ICapabilitiesSensor.Proximity = new ICapabilitiesSensor("Proximity");
+        /**
+           @property {Adaptive.ICapabilitiesSensor} [Unknown='Unknown']
+        */
         ICapabilitiesSensor.Unknown = new ICapabilitiesSensor("Unknown");
         return ICapabilitiesSensor;
     })();
     Adaptive.ICapabilitiesSensor = ICapabilitiesSensor;
     /**
+       @enum {Adaptive.IContactFieldGroup} Adaptive.IContactFieldGroup
        Enumeration IContactFieldGroup
     */
     var IContactFieldGroup = (function () {
@@ -13285,7 +14438,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactFieldGroup}
         */
         IContactFieldGroup.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13316,19 +14472,47 @@ device.
                 return IContactFieldGroup.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+        */
         IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+        /**
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+        */
         IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        /**
+           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+        */
         IContactFieldGroup.ADDRESSES = new IContactFieldGroup("ADDRESSES");
+        /**
+           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+        */
         IContactFieldGroup.PHONES = new IContactFieldGroup("PHONES");
+        /**
+           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+        */
         IContactFieldGroup.EMAILS = new IContactFieldGroup("EMAILS");
+        /**
+           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+        */
         IContactFieldGroup.WEBSITES = new IContactFieldGroup("WEBSITES");
+        /**
+           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+        */
         IContactFieldGroup.SOCIALS = new IContactFieldGroup("SOCIALS");
+        /**
+           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+        */
         IContactFieldGroup.TAGS = new IContactFieldGroup("TAGS");
+        /**
+           @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
+        */
         IContactFieldGroup.Unknown = new IContactFieldGroup("Unknown");
         return IContactFieldGroup;
     })();
     Adaptive.IContactFieldGroup = IContactFieldGroup;
     /**
+       @enum {Adaptive.IContactFilter} Adaptive.IContactFilter
        Enumeration IContactFilter
     */
     var IContactFilter = (function () {
@@ -13339,7 +14523,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactFilter}
         */
         IContactFilter.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13360,14 +14547,27 @@ device.
                 return IContactFilter.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+        */
         IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        /**
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+        */
         IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        /**
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+        */
         IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        /**
+           @property {Adaptive.IContactFilter} [Unknown='Unknown']
+        */
         IContactFilter.Unknown = new IContactFilter("Unknown");
         return IContactFilter;
     })();
     Adaptive.IContactFilter = IContactFilter;
     /**
+       @enum {Adaptive.IContactPhotoResultCallbackError} Adaptive.IContactPhotoResultCallbackError
        Enumeration IContactPhotoResultCallbackError
     */
     var IContactPhotoResultCallbackError = (function () {
@@ -13378,7 +14578,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactPhotoResultCallbackError}
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13399,14 +14602,27 @@ device.
                 return IContactPhotoResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
+        */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+        */
         IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+        */
         IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
+        */
         IContactPhotoResultCallbackError.Unknown = new IContactPhotoResultCallbackError("Unknown");
         return IContactPhotoResultCallbackError;
     })();
     Adaptive.IContactPhotoResultCallbackError = IContactPhotoResultCallbackError;
     /**
+       @enum {Adaptive.IContactPhotoResultCallbackWarning} Adaptive.IContactPhotoResultCallbackWarning
        Enumeration IContactPhotoResultCallbackWarning
     */
     var IContactPhotoResultCallbackWarning = (function () {
@@ -13417,7 +14633,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         IContactPhotoResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13436,13 +14655,23 @@ device.
                 return IContactPhotoResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']
+        */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+        */
         IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+        /**
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
+        */
         IContactPhotoResultCallbackWarning.Unknown = new IContactPhotoResultCallbackWarning("Unknown");
         return IContactPhotoResultCallbackWarning;
     })();
     Adaptive.IContactPhotoResultCallbackWarning = IContactPhotoResultCallbackWarning;
     /**
+       @enum {Adaptive.IContactResultCallbackError} Adaptive.IContactResultCallbackError
        Enumeration IContactResultCallbackError
     */
     var IContactResultCallbackError = (function () {
@@ -13453,7 +14682,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactResultCallbackError}
         */
         IContactResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13472,13 +14704,23 @@ device.
                 return IContactResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
+        */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
+        /**
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+        */
         IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+        /**
+           @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
+        */
         IContactResultCallbackError.Unknown = new IContactResultCallbackError("Unknown");
         return IContactResultCallbackError;
     })();
     Adaptive.IContactResultCallbackError = IContactResultCallbackError;
     /**
+       @enum {Adaptive.IContactResultCallbackWarning} Adaptive.IContactResultCallbackWarning
        Enumeration IContactResultCallbackWarning
     */
     var IContactResultCallbackWarning = (function () {
@@ -13489,7 +14731,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IContactResultCallbackWarning}
         */
         IContactResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13508,13 +14753,23 @@ device.
                 return IContactResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
+        */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
+        */
         IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
+        /**
+           @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
+        */
         IContactResultCallbackWarning.Unknown = new IContactResultCallbackWarning("Unknown");
         return IContactResultCallbackWarning;
     })();
     Adaptive.IContactResultCallbackWarning = IContactResultCallbackWarning;
     /**
+       @enum {Adaptive.IDatabaseResultCallbackError} Adaptive.IDatabaseResultCallbackError
        Enumeration IDatabaseResultCallbackError
     */
     var IDatabaseResultCallbackError = (function () {
@@ -13525,7 +14780,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseResultCallbackError}
         */
         IDatabaseResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13546,14 +14804,27 @@ device.
                 return IDatabaseResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']
+        */
         IDatabaseResultCallbackError.NoSpace = new IDatabaseResultCallbackError("NoSpace");
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [SqlException='SqlException']
+        */
         IDatabaseResultCallbackError.SqlException = new IDatabaseResultCallbackError("SqlException");
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [NotDeleted='NotDeleted']
+        */
         IDatabaseResultCallbackError.NotDeleted = new IDatabaseResultCallbackError("NotDeleted");
+        /**
+           @property {Adaptive.IDatabaseResultCallbackError} [Unknown='Unknown']
+        */
         IDatabaseResultCallbackError.Unknown = new IDatabaseResultCallbackError("Unknown");
         return IDatabaseResultCallbackError;
     })();
     Adaptive.IDatabaseResultCallbackError = IDatabaseResultCallbackError;
     /**
+       @enum {Adaptive.IDatabaseResultCallbackWarning} Adaptive.IDatabaseResultCallbackWarning
        Enumeration IDatabaseResultCallbackWarning
     */
     var IDatabaseResultCallbackWarning = (function () {
@@ -13564,7 +14835,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13583,13 +14857,23 @@ device.
                 return IDatabaseResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']
+        */
         IDatabaseResultCallbackWarning.DatabaseExists = new IDatabaseResultCallbackWarning("DatabaseExists");
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [IsOpen='IsOpen']
+        */
         IDatabaseResultCallbackWarning.IsOpen = new IDatabaseResultCallbackWarning("IsOpen");
+        /**
+           @property {Adaptive.IDatabaseResultCallbackWarning} [Unknown='Unknown']
+        */
         IDatabaseResultCallbackWarning.Unknown = new IDatabaseResultCallbackWarning("Unknown");
         return IDatabaseResultCallbackWarning;
     })();
     Adaptive.IDatabaseResultCallbackWarning = IDatabaseResultCallbackWarning;
     /**
+       @enum {Adaptive.IDatabaseTableResultCallbackError} Adaptive.IDatabaseTableResultCallbackError
        Enumeration IDatabaseTableResultCallbackError
     */
     var IDatabaseTableResultCallbackError = (function () {
@@ -13600,7 +14884,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseTableResultCallbackError}
         */
         IDatabaseTableResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13625,16 +14912,35 @@ device.
                 return IDatabaseTableResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoSpace='NoSpace']
+        */
         IDatabaseTableResultCallbackError.NoSpace = new IDatabaseTableResultCallbackError("NoSpace");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [ReadOnlyTable='ReadOnlyTable']
+        */
         IDatabaseTableResultCallbackError.ReadOnlyTable = new IDatabaseTableResultCallbackError("ReadOnlyTable");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [SqlException='SqlException']
+        */
         IDatabaseTableResultCallbackError.SqlException = new IDatabaseTableResultCallbackError("SqlException");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [DatabaseNotFound='DatabaseNotFound']
+        */
         IDatabaseTableResultCallbackError.DatabaseNotFound = new IDatabaseTableResultCallbackError("DatabaseNotFound");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [NoTableFound='NoTableFound']
+        */
         IDatabaseTableResultCallbackError.NoTableFound = new IDatabaseTableResultCallbackError("NoTableFound");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackError} [Unknown='Unknown']
+        */
         IDatabaseTableResultCallbackError.Unknown = new IDatabaseTableResultCallbackError("Unknown");
         return IDatabaseTableResultCallbackError;
     })();
     Adaptive.IDatabaseTableResultCallbackError = IDatabaseTableResultCallbackError;
     /**
+       @enum {Adaptive.IDatabaseTableResultCallbackWarning} Adaptive.IDatabaseTableResultCallbackWarning
        Enumeration IDatabaseTableResultCallbackWarning
     */
     var IDatabaseTableResultCallbackWarning = (function () {
@@ -13645,7 +14951,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13666,14 +14975,27 @@ device.
                 return IDatabaseTableResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']
+        */
         IDatabaseTableResultCallbackWarning.TableExists = new IDatabaseTableResultCallbackWarning("TableExists");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableLocked='TableLocked']
+        */
         IDatabaseTableResultCallbackWarning.TableLocked = new IDatabaseTableResultCallbackWarning("TableLocked");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [NoResults='NoResults']
+        */
         IDatabaseTableResultCallbackWarning.NoResults = new IDatabaseTableResultCallbackWarning("NoResults");
+        /**
+           @property {Adaptive.IDatabaseTableResultCallbackWarning} [Unknown='Unknown']
+        */
         IDatabaseTableResultCallbackWarning.Unknown = new IDatabaseTableResultCallbackWarning("Unknown");
         return IDatabaseTableResultCallbackWarning;
     })();
     Adaptive.IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning;
     /**
+       @enum {Adaptive.IFileDataLoadResultCallbackError} Adaptive.IFileDataLoadResultCallbackError
        Enumeration IFileDataLoadResultCallbackError
     */
     var IFileDataLoadResultCallbackError = (function () {
@@ -13684,7 +15006,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataLoadResultCallbackError}
         */
         IFileDataLoadResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13705,14 +15030,27 @@ device.
                 return IFileDataLoadResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InexistentFile='InexistentFile']
+        */
         IFileDataLoadResultCallbackError.InexistentFile = new IFileDataLoadResultCallbackError("InexistentFile");
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         IFileDataLoadResultCallbackError.InsufficientSpace = new IFileDataLoadResultCallbackError("InsufficientSpace");
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unauthorized='Unauthorized']
+        */
         IFileDataLoadResultCallbackError.Unauthorized = new IFileDataLoadResultCallbackError("Unauthorized");
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackError} [Unknown='Unknown']
+        */
         IFileDataLoadResultCallbackError.Unknown = new IFileDataLoadResultCallbackError("Unknown");
         return IFileDataLoadResultCallbackError;
     })();
     Adaptive.IFileDataLoadResultCallbackError = IFileDataLoadResultCallbackError;
     /**
+       @enum {Adaptive.IFileDataLoadResultCallbackWarning} Adaptive.IFileDataLoadResultCallbackWarning
        Enumeration IFileDataLoadResultCallbackWarning
     */
     var IFileDataLoadResultCallbackWarning = (function () {
@@ -13723,7 +15061,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataLoadResultCallbackWarning}
         */
         IFileDataLoadResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13740,12 +15081,19 @@ device.
                 return IFileDataLoadResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
+        */
         IFileDataLoadResultCallbackWarning.ExceedMaximumSize = new IFileDataLoadResultCallbackWarning("ExceedMaximumSize");
+        /**
+           @property {Adaptive.IFileDataLoadResultCallbackWarning} [Unknown='Unknown']
+        */
         IFileDataLoadResultCallbackWarning.Unknown = new IFileDataLoadResultCallbackWarning("Unknown");
         return IFileDataLoadResultCallbackWarning;
     })();
     Adaptive.IFileDataLoadResultCallbackWarning = IFileDataLoadResultCallbackWarning;
     /**
+       @enum {Adaptive.IFileDataStoreResultCallbackError} Adaptive.IFileDataStoreResultCallbackError
        Enumeration IFileDataStoreResultCallbackError
     */
     var IFileDataStoreResultCallbackError = (function () {
@@ -13756,7 +15104,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         IFileDataStoreResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13777,14 +15128,27 @@ device.
                 return IFileDataStoreResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']
+        */
         IFileDataStoreResultCallbackError.InexistentFile = new IFileDataStoreResultCallbackError("InexistentFile");
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         IFileDataStoreResultCallbackError.InsufficientSpace = new IFileDataStoreResultCallbackError("InsufficientSpace");
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unauthorized='Unauthorized']
+        */
         IFileDataStoreResultCallbackError.Unauthorized = new IFileDataStoreResultCallbackError("Unauthorized");
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackError} [Unknown='Unknown']
+        */
         IFileDataStoreResultCallbackError.Unknown = new IFileDataStoreResultCallbackError("Unknown");
         return IFileDataStoreResultCallbackError;
     })();
     Adaptive.IFileDataStoreResultCallbackError = IFileDataStoreResultCallbackError;
     /**
+       @enum {Adaptive.IFileDataStoreResultCallbackWarning} Adaptive.IFileDataStoreResultCallbackWarning
        Enumeration IFileDataStoreResultCallbackWarning
     */
     var IFileDataStoreResultCallbackWarning = (function () {
@@ -13795,7 +15159,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileDataStoreResultCallbackWarning}
         */
         IFileDataStoreResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13812,12 +15179,19 @@ device.
                 return IFileDataStoreResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']
+        */
         IFileDataStoreResultCallbackWarning.ExceedMaximumSize = new IFileDataStoreResultCallbackWarning("ExceedMaximumSize");
+        /**
+           @property {Adaptive.IFileDataStoreResultCallbackWarning} [Unknown='Unknown']
+        */
         IFileDataStoreResultCallbackWarning.Unknown = new IFileDataStoreResultCallbackWarning("Unknown");
         return IFileDataStoreResultCallbackWarning;
     })();
     Adaptive.IFileDataStoreResultCallbackWarning = IFileDataStoreResultCallbackWarning;
     /**
+       @enum {Adaptive.IFileListResultCallbackError} Adaptive.IFileListResultCallbackError
        Enumeration IFileListResultCallbackError
     */
     var IFileListResultCallbackError = (function () {
@@ -13828,7 +15202,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileListResultCallbackError}
         */
         IFileListResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13847,13 +15224,23 @@ device.
                 return IFileListResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']
+        */
         IFileListResultCallbackError.InexistentFile = new IFileListResultCallbackError("InexistentFile");
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [Unauthorized='Unauthorized']
+        */
         IFileListResultCallbackError.Unauthorized = new IFileListResultCallbackError("Unauthorized");
+        /**
+           @property {Adaptive.IFileListResultCallbackError} [Unknown='Unknown']
+        */
         IFileListResultCallbackError.Unknown = new IFileListResultCallbackError("Unknown");
         return IFileListResultCallbackError;
     })();
     Adaptive.IFileListResultCallbackError = IFileListResultCallbackError;
     /**
+       @enum {Adaptive.IFileListResultCallbackWarning} Adaptive.IFileListResultCallbackWarning
        Enumeration IFileListResultCallbackWarning
     */
     var IFileListResultCallbackWarning = (function () {
@@ -13864,7 +15251,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileListResultCallbackWarning}
         */
         IFileListResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13881,12 +15271,19 @@ device.
                 return IFileListResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']
+        */
         IFileListResultCallbackWarning.PartialResult = new IFileListResultCallbackWarning("PartialResult");
+        /**
+           @property {Adaptive.IFileListResultCallbackWarning} [Unknown='Unknown']
+        */
         IFileListResultCallbackWarning.Unknown = new IFileListResultCallbackWarning("Unknown");
         return IFileListResultCallbackWarning;
     })();
     Adaptive.IFileListResultCallbackWarning = IFileListResultCallbackWarning;
     /**
+       @enum {Adaptive.IFileResultCallbackError} Adaptive.IFileResultCallbackError
        Enumeration IFileResultCallbackError
     */
     var IFileResultCallbackError = (function () {
@@ -13897,7 +15294,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileResultCallbackError}
         */
         IFileResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13922,16 +15322,35 @@ device.
                 return IFileResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileResultCallbackError} [FileExists='FileExists']
+        */
         IFileResultCallbackError.FileExists = new IFileResultCallbackError("FileExists");
+        /**
+           @property {Adaptive.IFileResultCallbackError} [SourceInexistent='SourceInexistent']
+        */
         IFileResultCallbackError.SourceInexistent = new IFileResultCallbackError("SourceInexistent");
+        /**
+           @property {Adaptive.IFileResultCallbackError} [DestionationExists='DestionationExists']
+        */
         IFileResultCallbackError.DestionationExists = new IFileResultCallbackError("DestionationExists");
+        /**
+           @property {Adaptive.IFileResultCallbackError} [InsufficientSpace='InsufficientSpace']
+        */
         IFileResultCallbackError.InsufficientSpace = new IFileResultCallbackError("InsufficientSpace");
+        /**
+           @property {Adaptive.IFileResultCallbackError} [Unauthorized='Unauthorized']
+        */
         IFileResultCallbackError.Unauthorized = new IFileResultCallbackError("Unauthorized");
+        /**
+           @property {Adaptive.IFileResultCallbackError} [Unknown='Unknown']
+        */
         IFileResultCallbackError.Unknown = new IFileResultCallbackError("Unknown");
         return IFileResultCallbackError;
     })();
     Adaptive.IFileResultCallbackError = IFileResultCallbackError;
     /**
+       @enum {Adaptive.IFileResultCallbackWarning} Adaptive.IFileResultCallbackWarning
        Enumeration IFileResultCallbackWarning
     */
     var IFileResultCallbackWarning = (function () {
@@ -13942,7 +15361,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileResultCallbackWarning}
         */
         IFileResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13961,13 +15383,23 @@ device.
                 return IFileResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']
+        */
         IFileResultCallbackWarning.SourceNotDeleted = new IFileResultCallbackWarning("SourceNotDeleted");
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [RootDirectory='RootDirectory']
+        */
         IFileResultCallbackWarning.RootDirectory = new IFileResultCallbackWarning("RootDirectory");
+        /**
+           @property {Adaptive.IFileResultCallbackWarning} [Unknown='Unknown']
+        */
         IFileResultCallbackWarning.Unknown = new IFileResultCallbackWarning("Unknown");
         return IFileResultCallbackWarning;
     })();
     Adaptive.IFileResultCallbackWarning = IFileResultCallbackWarning;
     /**
+       @enum {Adaptive.IFileSystemSecurity} Adaptive.IFileSystemSecurity
        Enumeration IFileSystemSecurity
     */
     var IFileSystemSecurity = (function () {
@@ -13978,7 +15410,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemSecurity}
         */
         IFileSystemSecurity.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -13999,14 +15434,27 @@ device.
                 return IFileSystemSecurity.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Default='Default']
+        */
         IFileSystemSecurity.Default = new IFileSystemSecurity("Default");
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Protected='Protected']
+        */
         IFileSystemSecurity.Protected = new IFileSystemSecurity("Protected");
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Encrypted='Encrypted']
+        */
         IFileSystemSecurity.Encrypted = new IFileSystemSecurity("Encrypted");
+        /**
+           @property {Adaptive.IFileSystemSecurity} [Unknown='Unknown']
+        */
         IFileSystemSecurity.Unknown = new IFileSystemSecurity("Unknown");
         return IFileSystemSecurity;
     })();
     Adaptive.IFileSystemSecurity = IFileSystemSecurity;
     /**
+       @enum {Adaptive.IFileSystemStorageType} Adaptive.IFileSystemStorageType
        Enumeration IFileSystemStorageType
     */
     var IFileSystemStorageType = (function () {
@@ -14017,7 +15465,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemStorageType}
         */
         IFileSystemStorageType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14044,17 +15495,39 @@ device.
                 return IFileSystemStorageType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Application='Application']
+        */
         IFileSystemStorageType.Application = new IFileSystemStorageType("Application");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Document='Document']
+        */
         IFileSystemStorageType.Document = new IFileSystemStorageType("Document");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Cloud='Cloud']
+        */
         IFileSystemStorageType.Cloud = new IFileSystemStorageType("Cloud");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Protected='Protected']
+        */
         IFileSystemStorageType.Protected = new IFileSystemStorageType("Protected");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Cache='Cache']
+        */
         IFileSystemStorageType.Cache = new IFileSystemStorageType("Cache");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [External='External']
+        */
         IFileSystemStorageType.External = new IFileSystemStorageType("External");
+        /**
+           @property {Adaptive.IFileSystemStorageType} [Unknown='Unknown']
+        */
         IFileSystemStorageType.Unknown = new IFileSystemStorageType("Unknown");
         return IFileSystemStorageType;
     })();
     Adaptive.IFileSystemStorageType = IFileSystemStorageType;
     /**
+       @enum {Adaptive.IFileSystemType} Adaptive.IFileSystemType
        Enumeration IFileSystemType
     */
     var IFileSystemType = (function () {
@@ -14065,7 +15538,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IFileSystemType}
         */
         IFileSystemType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14084,13 +15560,23 @@ device.
                 return IFileSystemType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IFileSystemType} [Directory='Directory']
+        */
         IFileSystemType.Directory = new IFileSystemType("Directory");
+        /**
+           @property {Adaptive.IFileSystemType} [File='File']
+        */
         IFileSystemType.File = new IFileSystemType("File");
+        /**
+           @property {Adaptive.IFileSystemType} [Unknown='Unknown']
+        */
         IFileSystemType.Unknown = new IFileSystemType("Unknown");
         return IFileSystemType;
     })();
     Adaptive.IFileSystemType = IFileSystemType;
     /**
+       @enum {Adaptive.IGeolocationListenerError} Adaptive.IGeolocationListenerError
        Enumeration IGeolocationListenerError
     */
     var IGeolocationListenerError = (function () {
@@ -14101,7 +15587,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IGeolocationListenerError}
         */
         IGeolocationListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14124,15 +15613,31 @@ device.
                 return IGeolocationListenerError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']
+        */
         IGeolocationListenerError.Disabled = new IGeolocationListenerError("Disabled");
+        /**
+           @property {Adaptive.IGeolocationListenerError} [RestrictedAccess='RestrictedAccess']
+        */
         IGeolocationListenerError.RestrictedAccess = new IGeolocationListenerError("RestrictedAccess");
+        /**
+           @property {Adaptive.IGeolocationListenerError} [DeniedAccess='DeniedAccess']
+        */
         IGeolocationListenerError.DeniedAccess = new IGeolocationListenerError("DeniedAccess");
+        /**
+           @property {Adaptive.IGeolocationListenerError} [StatusNotDetermined='StatusNotDetermined']
+        */
         IGeolocationListenerError.StatusNotDetermined = new IGeolocationListenerError("StatusNotDetermined");
+        /**
+           @property {Adaptive.IGeolocationListenerError} [Unknown='Unknown']
+        */
         IGeolocationListenerError.Unknown = new IGeolocationListenerError("Unknown");
         return IGeolocationListenerError;
     })();
     Adaptive.IGeolocationListenerError = IGeolocationListenerError;
     /**
+       @enum {Adaptive.IGeolocationListenerWarning} Adaptive.IGeolocationListenerWarning
        Enumeration IGeolocationListenerWarning
     */
     var IGeolocationListenerWarning = (function () {
@@ -14143,7 +15648,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IGeolocationListenerWarning}
         */
         IGeolocationListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14162,13 +15670,23 @@ device.
                 return IGeolocationListenerWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']
+        */
         IGeolocationListenerWarning.HighDoP = new IGeolocationListenerWarning("HighDoP");
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [StaleData='StaleData']
+        */
         IGeolocationListenerWarning.StaleData = new IGeolocationListenerWarning("StaleData");
+        /**
+           @property {Adaptive.IGeolocationListenerWarning} [Unknown='Unknown']
+        */
         IGeolocationListenerWarning.Unknown = new IGeolocationListenerWarning("Unknown");
         return IGeolocationListenerWarning;
     })();
     Adaptive.IGeolocationListenerWarning = IGeolocationListenerWarning;
     /**
+       @enum {Adaptive.ILifecycleListenerError} Adaptive.ILifecycleListenerError
        Enumeration ILifecycleListenerError
     */
     var ILifecycleListenerError = (function () {
@@ -14179,7 +15697,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILifecycleListenerError}
         */
         ILifecycleListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14200,14 +15721,27 @@ device.
                 return ILifecycleListenerError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Runtime='Runtime']
+        */
         ILifecycleListenerError.Runtime = new ILifecycleListenerError("Runtime");
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Implementation='Implementation']
+        */
         ILifecycleListenerError.Implementation = new ILifecycleListenerError("Implementation");
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Killed='Killed']
+        */
         ILifecycleListenerError.Killed = new ILifecycleListenerError("Killed");
+        /**
+           @property {Adaptive.ILifecycleListenerError} [Unknown='Unknown']
+        */
         ILifecycleListenerError.Unknown = new ILifecycleListenerError("Unknown");
         return ILifecycleListenerError;
     })();
     Adaptive.ILifecycleListenerError = ILifecycleListenerError;
     /**
+       @enum {Adaptive.ILifecycleListenerWarning} Adaptive.ILifecycleListenerWarning
        Enumeration ILifecycleListenerWarning
     */
     var ILifecycleListenerWarning = (function () {
@@ -14218,7 +15752,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILifecycleListenerWarning}
         */
         ILifecycleListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14237,13 +15774,23 @@ device.
                 return ILifecycleListenerWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']
+        */
         ILifecycleListenerWarning.MemoryLow = new ILifecycleListenerWarning("MemoryLow");
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [BatteryLow='BatteryLow']
+        */
         ILifecycleListenerWarning.BatteryLow = new ILifecycleListenerWarning("BatteryLow");
+        /**
+           @property {Adaptive.ILifecycleListenerWarning} [Unknown='Unknown']
+        */
         ILifecycleListenerWarning.Unknown = new ILifecycleListenerWarning("Unknown");
         return ILifecycleListenerWarning;
     })();
     Adaptive.ILifecycleListenerWarning = ILifecycleListenerWarning;
     /**
+       @enum {Adaptive.ILoggingLogLevel} Adaptive.ILoggingLogLevel
        Enumeration ILoggingLogLevel
     */
     var ILoggingLogLevel = (function () {
@@ -14254,7 +15801,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ILoggingLogLevel}
         */
         ILoggingLogLevel.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14277,15 +15827,31 @@ device.
                 return ILoggingLogLevel.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+        */
         ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
+        /**
+           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+        */
         ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
+        /**
+           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+        */
         ILoggingLogLevel.ERROR = new ILoggingLogLevel("ERROR");
+        /**
+           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+        */
         ILoggingLogLevel.INFO = new ILoggingLogLevel("INFO");
+        /**
+           @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
+        */
         ILoggingLogLevel.Unknown = new ILoggingLogLevel("Unknown");
         return ILoggingLogLevel;
     })();
     Adaptive.ILoggingLogLevel = ILoggingLogLevel;
     /**
+       @enum {Adaptive.IMessagingCallbackError} Adaptive.IMessagingCallbackError
        Enumeration IMessagingCallbackError
     */
     var IMessagingCallbackError = (function () {
@@ -14296,7 +15862,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IMessagingCallbackError}
         */
         IMessagingCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14321,16 +15890,35 @@ device.
                 return IMessagingCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IMessagingCallbackError} [SIMNotPresent='SIMNotPresent']
+        */
         IMessagingCallbackError.SIMNotPresent = new IMessagingCallbackError("SIMNotPresent");
+        /**
+           @property {Adaptive.IMessagingCallbackError} [EmailAccountNotFound='EmailAccountNotFound']
+        */
         IMessagingCallbackError.EmailAccountNotFound = new IMessagingCallbackError("EmailAccountNotFound");
+        /**
+           @property {Adaptive.IMessagingCallbackError} [NotSent='NotSent']
+        */
         IMessagingCallbackError.NotSent = new IMessagingCallbackError("NotSent");
+        /**
+           @property {Adaptive.IMessagingCallbackError} [WrongParams='WrongParams']
+        */
         IMessagingCallbackError.WrongParams = new IMessagingCallbackError("WrongParams");
+        /**
+           @property {Adaptive.IMessagingCallbackError} [NotSupported='NotSupported']
+        */
         IMessagingCallbackError.NotSupported = new IMessagingCallbackError("NotSupported");
+        /**
+           @property {Adaptive.IMessagingCallbackError} [Unknown='Unknown']
+        */
         IMessagingCallbackError.Unknown = new IMessagingCallbackError("Unknown");
         return IMessagingCallbackError;
     })();
     Adaptive.IMessagingCallbackError = IMessagingCallbackError;
     /**
+       @enum {Adaptive.IMessagingCallbackWarning} Adaptive.IMessagingCallbackWarning
        Enumeration IMessagingCallbackWarning
     */
     var IMessagingCallbackWarning = (function () {
@@ -14341,7 +15929,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IMessagingCallbackWarning}
         */
         IMessagingCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14360,13 +15951,23 @@ device.
                 return IMessagingCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']
+        */
         IMessagingCallbackWarning.UnableToSentAll = new IMessagingCallbackWarning("UnableToSentAll");
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [UnableToFetchAttachment='UnableToFetchAttachment']
+        */
         IMessagingCallbackWarning.UnableToFetchAttachment = new IMessagingCallbackWarning("UnableToFetchAttachment");
+        /**
+           @property {Adaptive.IMessagingCallbackWarning} [Unknown='Unknown']
+        */
         IMessagingCallbackWarning.Unknown = new IMessagingCallbackWarning("Unknown");
         return IMessagingCallbackWarning;
     })();
     Adaptive.IMessagingCallbackWarning = IMessagingCallbackWarning;
     /**
+       @enum {Adaptive.INetworkReachabilityCallbackError} Adaptive.INetworkReachabilityCallbackError
        Enumeration INetworkReachabilityCallbackError
     */
     var INetworkReachabilityCallbackError = (function () {
@@ -14377,7 +15978,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkReachabilityCallbackError}
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14414,22 +16018,59 @@ device.
                 return INetworkReachabilityCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Forbidden='Forbidden']
+        */
         INetworkReachabilityCallbackError.Forbidden = new INetworkReachabilityCallbackError("Forbidden");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotFound='NotFound']
+        */
         INetworkReachabilityCallbackError.NotFound = new INetworkReachabilityCallbackError("NotFound");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [MethodNotAllowed='MethodNotAllowed']
+        */
         INetworkReachabilityCallbackError.MethodNotAllowed = new INetworkReachabilityCallbackError("MethodNotAllowed");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAllowed='NotAllowed']
+        */
         INetworkReachabilityCallbackError.NotAllowed = new INetworkReachabilityCallbackError("NotAllowed");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NotAuthenticated='NotAuthenticated']
+        */
         INetworkReachabilityCallbackError.NotAuthenticated = new INetworkReachabilityCallbackError("NotAuthenticated");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [TimeOut='TimeOut']
+        */
         INetworkReachabilityCallbackError.TimeOut = new INetworkReachabilityCallbackError("TimeOut");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [NoResponse='NoResponse']
+        */
         INetworkReachabilityCallbackError.NoResponse = new INetworkReachabilityCallbackError("NoResponse");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unreachable='Unreachable']
+        */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+        */
         INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
+        */
         INetworkReachabilityCallbackError.MalformedUrl = new INetworkReachabilityCallbackError("MalformedUrl");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [DomainUnresolvable='DomainUnresolvable']
+        */
         INetworkReachabilityCallbackError.DomainUnresolvable = new INetworkReachabilityCallbackError("DomainUnresolvable");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackError} [Unknown='Unknown']
+        */
         INetworkReachabilityCallbackError.Unknown = new INetworkReachabilityCallbackError("Unknown");
         return INetworkReachabilityCallbackError;
     })();
     Adaptive.INetworkReachabilityCallbackError = INetworkReachabilityCallbackError;
     /**
+       @enum {Adaptive.INetworkReachabilityCallbackWarning} Adaptive.INetworkReachabilityCallbackWarning
        Enumeration INetworkReachabilityCallbackWarning
     */
     var INetworkReachabilityCallbackWarning = (function () {
@@ -14440,7 +16081,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         INetworkReachabilityCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14465,16 +16109,35 @@ device.
                 return INetworkReachabilityCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']
+        */
         INetworkReachabilityCallbackWarning.IncorrectScheme = new INetworkReachabilityCallbackWarning("IncorrectScheme");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotSecure='NotSecure']
+        */
         INetworkReachabilityCallbackWarning.NotSecure = new INetworkReachabilityCallbackWarning("NotSecure");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotTrusted='NotTrusted']
+        */
         INetworkReachabilityCallbackWarning.NotTrusted = new INetworkReachabilityCallbackWarning("NotTrusted");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Redirected='Redirected']
+        */
         INetworkReachabilityCallbackWarning.Redirected = new INetworkReachabilityCallbackWarning("Redirected");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [NotRegisteredService='NotRegisteredService']
+        */
         INetworkReachabilityCallbackWarning.NotRegisteredService = new INetworkReachabilityCallbackWarning("NotRegisteredService");
+        /**
+           @property {Adaptive.INetworkReachabilityCallbackWarning} [Unknown='Unknown']
+        */
         INetworkReachabilityCallbackWarning.Unknown = new INetworkReachabilityCallbackWarning("Unknown");
         return INetworkReachabilityCallbackWarning;
     })();
     Adaptive.INetworkReachabilityCallbackWarning = INetworkReachabilityCallbackWarning;
     /**
+       @enum {Adaptive.INetworkStatusListenerError} Adaptive.INetworkStatusListenerError
        Enumeration INetworkStatusListenerError
     */
     var INetworkStatusListenerError = (function () {
@@ -14485,7 +16148,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkStatusListenerError}
         */
         INetworkStatusListenerError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14504,13 +16170,23 @@ device.
                 return INetworkStatusListenerError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']
+        */
         INetworkStatusListenerError.NoPermission = new INetworkStatusListenerError("NoPermission");
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [Unreachable='Unreachable']
+        */
         INetworkStatusListenerError.Unreachable = new INetworkStatusListenerError("Unreachable");
+        /**
+           @property {Adaptive.INetworkStatusListenerError} [Unknown='Unknown']
+        */
         INetworkStatusListenerError.Unknown = new INetworkStatusListenerError("Unknown");
         return INetworkStatusListenerError;
     })();
     Adaptive.INetworkStatusListenerError = INetworkStatusListenerError;
     /**
+       @enum {Adaptive.INetworkStatusListenerWarning} Adaptive.INetworkStatusListenerWarning
        Enumeration INetworkStatusListenerWarning
     */
     var INetworkStatusListenerWarning = (function () {
@@ -14521,7 +16197,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.INetworkStatusListenerWarning}
         */
         INetworkStatusListenerWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14540,13 +16219,23 @@ device.
                 return INetworkStatusListenerWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']
+        */
         INetworkStatusListenerWarning.IpAddressNotAssigned = new INetworkStatusListenerWarning("IpAddressNotAssigned");
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [IpAddressChanged='IpAddressChanged']
+        */
         INetworkStatusListenerWarning.IpAddressChanged = new INetworkStatusListenerWarning("IpAddressChanged");
+        /**
+           @property {Adaptive.INetworkStatusListenerWarning} [Unknown='Unknown']
+        */
         INetworkStatusListenerWarning.Unknown = new INetworkStatusListenerWarning("Unknown");
         return INetworkStatusListenerWarning;
     })();
     Adaptive.INetworkStatusListenerWarning = INetworkStatusListenerWarning;
     /**
+       @enum {Adaptive.IOSType} Adaptive.IOSType
        Enumeration IOSType
     */
     var IOSType = (function () {
@@ -14557,7 +16246,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IOSType}
         */
         IOSType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14594,22 +16286,59 @@ device.
                 return IOSType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IOSType} [iOS='iOS']
+        */
         IOSType.iOS = new IOSType("iOS");
+        /**
+           @property {Adaptive.IOSType} [OSX='OSX']
+        */
         IOSType.OSX = new IOSType("OSX");
+        /**
+           @property {Adaptive.IOSType} [Windows='Windows']
+        */
         IOSType.Windows = new IOSType("Windows");
+        /**
+           @property {Adaptive.IOSType} [WindowsPhone='WindowsPhone']
+        */
         IOSType.WindowsPhone = new IOSType("WindowsPhone");
+        /**
+           @property {Adaptive.IOSType} [Android='Android']
+        */
         IOSType.Android = new IOSType("Android");
+        /**
+           @property {Adaptive.IOSType} [Linux='Linux']
+        */
         IOSType.Linux = new IOSType("Linux");
+        /**
+           @property {Adaptive.IOSType} [Blackberry='Blackberry']
+        */
         IOSType.Blackberry = new IOSType("Blackberry");
+        /**
+           @property {Adaptive.IOSType} [Tizen='Tizen']
+        */
         IOSType.Tizen = new IOSType("Tizen");
+        /**
+           @property {Adaptive.IOSType} [FirefoxOS='FirefoxOS']
+        */
         IOSType.FirefoxOS = new IOSType("FirefoxOS");
+        /**
+           @property {Adaptive.IOSType} [Chromium='Chromium']
+        */
         IOSType.Chromium = new IOSType("Chromium");
+        /**
+           @property {Adaptive.IOSType} [Unspecified='Unspecified']
+        */
         IOSType.Unspecified = new IOSType("Unspecified");
+        /**
+           @property {Adaptive.IOSType} [Unknown='Unknown']
+        */
         IOSType.Unknown = new IOSType("Unknown");
         return IOSType;
     })();
     Adaptive.IOSType = IOSType;
     /**
+       @enum {Adaptive.ISecurityResultCallbackError} Adaptive.ISecurityResultCallbackError
        Enumeration ISecurityResultCallbackError
     */
     var ISecurityResultCallbackError = (function () {
@@ -14620,7 +16349,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ISecurityResultCallbackError}
         */
         ISecurityResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14639,13 +16371,23 @@ device.
                 return ISecurityResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [NoPermission='NoPermission']
+        */
         ISecurityResultCallbackError.NoPermission = new ISecurityResultCallbackError("NoPermission");
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [NoMatchesFound='NoMatchesFound']
+        */
         ISecurityResultCallbackError.NoMatchesFound = new ISecurityResultCallbackError("NoMatchesFound");
+        /**
+           @property {Adaptive.ISecurityResultCallbackError} [Unknown='Unknown']
+        */
         ISecurityResultCallbackError.Unknown = new ISecurityResultCallbackError("Unknown");
         return ISecurityResultCallbackError;
     })();
     Adaptive.ISecurityResultCallbackError = ISecurityResultCallbackError;
     /**
+       @enum {Adaptive.ISecurityResultCallbackWarning} Adaptive.ISecurityResultCallbackWarning
        Enumeration ISecurityResultCallbackWarning
     */
     var ISecurityResultCallbackWarning = (function () {
@@ -14656,7 +16398,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ISecurityResultCallbackWarning}
         */
         ISecurityResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14673,12 +16418,19 @@ device.
                 return ISecurityResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
+        */
         ISecurityResultCallbackWarning.EntryOverride = new ISecurityResultCallbackWarning("EntryOverride");
+        /**
+           @property {Adaptive.ISecurityResultCallbackWarning} [Unknown='Unknown']
+        */
         ISecurityResultCallbackWarning.Unknown = new ISecurityResultCallbackWarning("Unknown");
         return ISecurityResultCallbackWarning;
     })();
     Adaptive.ISecurityResultCallbackWarning = ISecurityResultCallbackWarning;
     /**
+       @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
        Enumeration IServiceProtocolVersion
     */
     var IServiceProtocolVersion = (function () {
@@ -14689,7 +16441,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceProtocolVersion}
         */
         IServiceProtocolVersion.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14708,13 +16463,23 @@ device.
                 return IServiceProtocolVersion.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
+        */
         IServiceProtocolVersion.HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
+        */
         IServiceProtocolVersion.HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
+        /**
+           @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
+        */
         IServiceProtocolVersion.Unknown = new IServiceProtocolVersion("Unknown");
         return IServiceProtocolVersion;
     })();
     Adaptive.IServiceProtocolVersion = IServiceProtocolVersion;
     /**
+       @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod
        Enumeration IServiceMethod
     */
     var IServiceMethod = (function () {
@@ -14725,7 +16490,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceMethod}
         */
         IServiceMethod.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14744,13 +16512,23 @@ device.
                 return IServiceMethod.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IServiceMethod} [Post='Post']
+        */
         IServiceMethod.Post = new IServiceMethod("Post");
+        /**
+           @property {Adaptive.IServiceMethod} [Get='Get']
+        */
         IServiceMethod.Get = new IServiceMethod("Get");
+        /**
+           @property {Adaptive.IServiceMethod} [Unknown='Unknown']
+        */
         IServiceMethod.Unknown = new IServiceMethod("Unknown");
         return IServiceMethod;
     })();
     Adaptive.IServiceMethod = IServiceMethod;
     /**
+       @enum {Adaptive.IServiceType} Adaptive.IServiceType
        Enumeration IServiceType
     */
     var IServiceType = (function () {
@@ -14761,7 +16539,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceType}
         */
         IServiceType.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14796,21 +16577,55 @@ device.
                 return IServiceType.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+        */
         IServiceType.ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+        */
         IServiceType.ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+        */
         IServiceType.ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+        */
         IServiceType.ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
+        */
         IServiceType.ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
+        */
         IServiceType.ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
+        */
         IServiceType.ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
+        */
         IServiceType.ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
+        */
         IServiceType.ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
+        /**
+           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
+        */
         IServiceType.ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
+        /**
+           @property {Adaptive.IServiceType} [Unknown='Unknown']
+        */
         IServiceType.Unknown = new IServiceType("Unknown");
         return IServiceType;
     })();
     Adaptive.IServiceType = IServiceType;
     /**
+       @enum {Adaptive.IServiceResultCallbackError} Adaptive.IServiceResultCallbackError
        Enumeration IServiceResultCallbackError
     */
     var IServiceResultCallbackError = (function () {
@@ -14821,7 +16636,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceResultCallbackError}
         */
         IServiceResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14858,22 +16676,59 @@ device.
                 return IServiceResultCallbackError.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
+        */
         IServiceResultCallbackError.Forbidden = new IServiceResultCallbackError("Forbidden");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
+        */
         IServiceResultCallbackError.NotFound = new IServiceResultCallbackError("NotFound");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
+        */
         IServiceResultCallbackError.MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
+        */
         IServiceResultCallbackError.NotAllowed = new IServiceResultCallbackError("NotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
+        */
         IServiceResultCallbackError.NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
+        */
         IServiceResultCallbackError.TimeOut = new IServiceResultCallbackError("TimeOut");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
+        */
         IServiceResultCallbackError.NoResponse = new IServiceResultCallbackError("NoResponse");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
+        */
         IServiceResultCallbackError.ServerError = new IServiceResultCallbackError("ServerError");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
+        */
         IServiceResultCallbackError.Unreachable = new IServiceResultCallbackError("Unreachable");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [MalformedUrl='MalformedUrl']
+        */
         IServiceResultCallbackError.MalformedUrl = new IServiceResultCallbackError("MalformedUrl");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [NotRegisteredService='NotRegisteredService']
+        */
         IServiceResultCallbackError.NotRegisteredService = new IServiceResultCallbackError("NotRegisteredService");
+        /**
+           @property {Adaptive.IServiceResultCallbackError} [Unknown='Unknown']
+        */
         IServiceResultCallbackError.Unknown = new IServiceResultCallbackError("Unknown");
         return IServiceResultCallbackError;
     })();
     Adaptive.IServiceResultCallbackError = IServiceResultCallbackError;
     /**
+       @enum {Adaptive.IServiceResultCallbackWarning} Adaptive.IServiceResultCallbackWarning
        Enumeration IServiceResultCallbackWarning
     */
     var IServiceResultCallbackWarning = (function () {
@@ -14884,7 +16739,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceResultCallbackWarning}
         */
         IServiceResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14907,15 +16765,31 @@ device.
                 return IServiceResultCallbackWarning.Unknown;
             }
         };
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
+        */
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
+        */
         IServiceResultCallbackWarning.NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
+        */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+        */
         IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
+        */
         IServiceResultCallbackWarning.Unknown = new IServiceResultCallbackWarning("Unknown");
         return IServiceResultCallbackWarning;
     })();
     Adaptive.IServiceResultCallbackWarning = IServiceResultCallbackWarning;
     /**
+       @enum {Adaptive.ITelephonyStatus} Adaptive.ITelephonyStatus
        Enumeration ITelephonyStatus
     */
     var ITelephonyStatus = (function () {
@@ -14926,7 +16800,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.ITelephonyStatus}
         */
         ITelephonyStatus.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14945,13 +16822,23 @@ device.
                 return ITelephonyStatus.Unknown;
             }
         };
+        /**
+           @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']
+        */
         ITelephonyStatus.Dialing = new ITelephonyStatus("Dialing");
+        /**
+           @property {Adaptive.ITelephonyStatus} [Failed='Failed']
+        */
         ITelephonyStatus.Failed = new ITelephonyStatus("Failed");
+        /**
+           @property {Adaptive.ITelephonyStatus} [Unknown='Unknown']
+        */
         ITelephonyStatus.Unknown = new ITelephonyStatus("Unknown");
         return ITelephonyStatus;
     })();
     Adaptive.ITelephonyStatus = ITelephonyStatus;
     /**
+       @enum {Adaptive.LifecycleState} Adaptive.LifecycleState
        Enumeration LifecycleState
     */
     var LifecycleState = (function () {
@@ -14962,7 +16849,10 @@ device.
             return this.value;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to enumeration.
+           @return {Adaptive.LifecycleState}
         */
         LifecycleState.toObject = function (object) {
             if (object != null && object.value != null) {
@@ -14993,14 +16883,41 @@ device.
                 return LifecycleState.Unknown;
             }
         };
+        /**
+           @property {Adaptive.LifecycleState} [Starting='Starting']
+        */
         LifecycleState.Starting = new LifecycleState("Starting");
+        /**
+           @property {Adaptive.LifecycleState} [Started='Started']
+        */
         LifecycleState.Started = new LifecycleState("Started");
+        /**
+           @property {Adaptive.LifecycleState} [Running='Running']
+        */
         LifecycleState.Running = new LifecycleState("Running");
+        /**
+           @property {Adaptive.LifecycleState} [Pausing='Pausing']
+        */
         LifecycleState.Pausing = new LifecycleState("Pausing");
+        /**
+           @property {Adaptive.LifecycleState} [PausedIdle='PausedIdle']
+        */
         LifecycleState.PausedIdle = new LifecycleState("PausedIdle");
+        /**
+           @property {Adaptive.LifecycleState} [PausedRun='PausedRun']
+        */
         LifecycleState.PausedRun = new LifecycleState("PausedRun");
+        /**
+           @property {Adaptive.LifecycleState} [Resuming='Resuming']
+        */
         LifecycleState.Resuming = new LifecycleState("Resuming");
+        /**
+           @property {Adaptive.LifecycleState} [Stopping='Stopping']
+        */
         LifecycleState.Stopping = new LifecycleState("Stopping");
+        /**
+           @property {Adaptive.LifecycleState} [Unknown='Unknown']
+        */
         LifecycleState.Unknown = new LifecycleState("Unknown");
         return LifecycleState;
     })();

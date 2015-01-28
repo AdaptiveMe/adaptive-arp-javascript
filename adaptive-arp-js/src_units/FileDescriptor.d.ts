@@ -34,6 +34,8 @@ Release:
 */
 declare module Adaptive {
     /**
+       @class Adaptive.FileDescriptor
+       @extends Adaptive.APIBean
        Implementation of FileDescriptor bean.
 
        @author Carlos Lozano Diez
