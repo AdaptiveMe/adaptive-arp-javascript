@@ -54,7 +54,7 @@ module Adaptive {
      export class MessagingBridge extends BasePIMBridge implements IMessaging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

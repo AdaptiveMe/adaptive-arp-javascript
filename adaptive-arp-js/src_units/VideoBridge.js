@@ -57,7 +57,7 @@ var Adaptive;
     var VideoBridge = (function (_super) {
         __extends(VideoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function VideoBridge() {

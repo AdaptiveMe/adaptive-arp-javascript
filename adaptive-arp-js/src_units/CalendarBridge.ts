@@ -52,7 +52,7 @@ module Adaptive {
      export class CalendarBridge extends BasePIMBridge implements ICalendar {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

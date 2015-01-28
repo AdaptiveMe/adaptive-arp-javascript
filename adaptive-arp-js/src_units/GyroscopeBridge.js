@@ -57,7 +57,7 @@ var Adaptive;
     var GyroscopeBridge = (function (_super) {
         __extends(GyroscopeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GyroscopeBridge() {

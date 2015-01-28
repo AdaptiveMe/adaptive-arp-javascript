@@ -53,10 +53,11 @@ var Adaptive;
     var ServiceSession = (function (_super) {
         __extends(ServiceSession, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param cookies    The cookies of the response
-           @param attributes Attributes of the response
+           @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         function ServiceSession(cookies, attributes) {
@@ -65,36 +66,40 @@ var Adaptive;
             this.attributes = attributes;
         }
         /**
+           @method
            Gets the attributes of the response
 
-           @return Attributes of the response
+           @return {string[]} Attributes of the response
            @since ARP1.0
         */
         ServiceSession.prototype.getAttributes = function () {
             return this.attributes;
         };
         /**
+           @method
            Sets the attributes for the response
 
-           @param attributes Attributes of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         ServiceSession.prototype.setAttributes = function (attributes) {
             this.attributes = attributes;
         };
         /**
+           @method
            Returns the cookies of the response
 
-           @return The cookies of the response
+           @return {Adaptive.ServiceCookie[]} The cookies of the response
            @since ARP1.0
         */
         ServiceSession.prototype.getCookies = function () {
             return this.cookies;
         };
         /**
+           @method
            Sets the cookies of the response
 
-           @param cookies The cookies of the response
+           @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
            @since ARP1.0
         */
         ServiceSession.prototype.setCookies = function (cookies) {

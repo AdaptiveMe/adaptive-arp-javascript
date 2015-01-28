@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class UIBridge extends BaseUIBridge implements IUI {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

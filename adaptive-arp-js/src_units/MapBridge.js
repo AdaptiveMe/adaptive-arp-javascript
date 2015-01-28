@@ -57,7 +57,7 @@ var Adaptive;
     var MapBridge = (function (_super) {
         __extends(MapBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MapBridge() {

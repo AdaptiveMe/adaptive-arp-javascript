@@ -54,7 +54,7 @@ module Adaptive {
              @method
              Invoke a phone call
              @param number to call
-             @return {ITelephonyStatus} Status of the call
+             @return {Adaptive.ITelephonyStatus} Status of the call
              @since ARP1.0
           */
           call(number:string) : ITelephonyStatus;

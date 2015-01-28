@@ -91,9 +91,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IAccelerationListenerError
-           @param onResultFunction Function receiving parameters of type: Acceleration
-           @param onWarningFunction Function receiving parameters of type: Acceleration, IAccelerationListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         function AccelerationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

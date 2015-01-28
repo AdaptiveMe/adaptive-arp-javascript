@@ -55,7 +55,7 @@ module Adaptive {
      export class MailBridge extends BasePIMBridge implements IMail {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

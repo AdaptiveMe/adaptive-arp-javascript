@@ -53,9 +53,10 @@ var Adaptive;
     var Button = (function (_super) {
         __extends(Button, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param type Button type.
+           @param {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         function Button(type) {
@@ -63,18 +64,20 @@ var Adaptive;
             this.type = type;
         }
         /**
+           @method
            Returns the button type
 
-           @return type Button type.
+           @return {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         Button.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Setter for the button type
 
-           @param type Button Type
+           @param {Adaptive.ICapabilitiesButton} type Button Type
            @since ARP1.0
         */
         Button.prototype.setType = function (type) {

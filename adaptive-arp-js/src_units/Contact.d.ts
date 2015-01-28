@@ -84,129 +84,146 @@ declare module Adaptive {
         */
         professionalInfo: ContactProfessionalInfo;
         /**
+           @method constructor
            Constructor with all the fields
 
-           @param contactId        Identifier of the contact
-           @param personalInfo     Personal Information
-           @param professionalInfo Professional Information
-           @param contactAddresses Addresses of the contact
-           @param contactPhones    Phones of the contact
-           @param contactEmails    Emails of the contact
-           @param contactWebsites  Websites of the contact
-           @param contactSocials   Social Networks of the contact
-           @param contactTags      Tags of the contact
+           @param {string} contactId        Identifier of the contact
+           @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
+           @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
            @since ARP1.0
         */
         constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: ContactAddress[], contactPhones: ContactPhone[], contactEmails: ContactEmail[], contactWebsites: ContactWebsite[], contactSocials: ContactSocial[], contactTags: ContactTag[]);
         /**
+           @method
            Returns all the addresses of the Contact
 
-           @return ContactAddress[]
+           @return {Adaptive.ContactAddress[]} ContactAddress[]
            @since ARP1.0
         */
         getContactAddresses(): ContactAddress[];
         /**
+           @method
            Set the addresses of the Contact
 
-           @param contactAddresses Addresses of the contact
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
            @since ARP1.0
         */
         setContactAddresses(contactAddresses: ContactAddress[]): void;
         /**
+           @method
            Returns all the emails of the Contact
 
-           @return ContactEmail[]
+           @return {Adaptive.ContactEmail[]} ContactEmail[]
            @since ARP1.0
         */
         getContactEmails(): ContactEmail[];
         /**
+           @method
            Set the emails of the Contact
 
-           @param contactEmails Emails of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
            @since ARP1.0
         */
         setContactEmails(contactEmails: ContactEmail[]): void;
         /**
+           @method
            Returns all the phones of the Contact
 
-           @return ContactPhone[]
+           @return {Adaptive.ContactPhone[]} ContactPhone[]
            @since ARP1.0
         */
         getContactPhones(): ContactPhone[];
         /**
+           @method
            Set the phones of the Contact
 
-           @param contactPhones Phones of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
            @since ARP1.0
         */
         setContactPhones(contactPhones: ContactPhone[]): void;
         /**
+           @method
            Returns all the social network info of the Contact
 
-           @return ContactSocial[]
+           @return {Adaptive.ContactSocial[]} ContactSocial[]
            @since ARP1.0
         */
         getContactSocials(): ContactSocial[];
         /**
+           @method
            Set the social network info of the Contact
 
-           @param contactSocials Social Networks of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
            @since ARP1.0
         */
         setContactSocials(contactSocials: ContactSocial[]): void;
         /**
+           @method
            Returns the additional tags of the Contact
 
-           @return ContactTag[]
+           @return {Adaptive.ContactTag[]} ContactTag[]
            @since ARP1.0
         */
         getContactTags(): ContactTag[];
         /**
+           @method
            Set the additional tags of the Contact
 
-           @param contactTags Tags of the contact
+           @param {Adaptive.ContactTag[]} contactTags Tags of the contact
            @since ARP1.0
         */
         setContactTags(contactTags: ContactTag[]): void;
         /**
+           @method
            Returns all the websites of the Contact
 
-           @return ContactWebsite[]
+           @return {Adaptive.ContactWebsite[]} ContactWebsite[]
            @since ARP1.0
         */
         getContactWebsites(): ContactWebsite[];
         /**
+           @method
            Set the websites of the Contact
 
-           @param contactWebsites Websites of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
            @since ARP1.0
         */
         setContactWebsites(contactWebsites: ContactWebsite[]): void;
         /**
+           @method
            Returns the personal info of the Contact
 
-           @return ContactPersonalInfo of the Contact
+           @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
            @since ARP1.0
         */
         getPersonalInfo(): ContactPersonalInfo;
         /**
+           @method
            Set the personal info of the Contact
 
-           @param personalInfo Personal Information
+           @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
            @since ARP1.0
         */
         setPersonalInfo(personalInfo: ContactPersonalInfo): void;
         /**
+           @method
            Returns the professional info of the Contact
 
-           @return Array of personal info
+           @return {Adaptive.ContactProfessionalInfo} Array of personal info
            @since ARP1.0
         */
         getProfessionalInfo(): ContactProfessionalInfo;
         /**
+           @method
            Set the professional info of the Contact
 
-           @param professionalInfo Professional Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
            @since ARP1.0
         */
         setProfessionalInfo(professionalInfo: ContactProfessionalInfo): void;

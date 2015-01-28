@@ -58,7 +58,7 @@ var Adaptive;
     var LoggingBridge = (function (_super) {
         __extends(LoggingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LoggingBridge() {

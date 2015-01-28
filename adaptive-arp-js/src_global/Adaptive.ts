@@ -125,7 +125,7 @@ module Adaptive {
              @method
              Invokes the given method specified in the API request object.
              @param request APIRequest object containing method name and parameters.
-             @return {APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
+             @return {Adaptive.APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
           */
           invoke(request:APIRequest) : APIResponse;
      }
@@ -143,7 +143,7 @@ module Adaptive {
           /**
              @method
              Method that returns the API group of the implementation
-             @return {IAdaptiveRPGroup} API Group name.
+             @return {Adaptive.IAdaptiveRPGroup} API Group name.
              @since ARP1.0
           */
           getAPIGroup() : IAdaptiveRPGroup;
@@ -173,7 +173,7 @@ module Adaptive {
      */
      export interface IAppRegistry {
           /**
-             @method
+             @abstract
              Returns a reference to the registered AccelerationBridge.
 
              @return {Adaptive.AccelerationBridge} reference or null if a bridge of this type is not registered.
@@ -181,7 +181,7 @@ module Adaptive {
           getAccelerationBridge() : IAcceleration;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AdsBridge.
 
              @return {Adaptive.AdsBridge} reference or null if a bridge of this type is not registered.
@@ -189,7 +189,7 @@ module Adaptive {
           getAdsBridge() : IAds;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AlarmBridge.
 
              @return {Adaptive.AlarmBridge} reference or null if a bridge of this type is not registered.
@@ -197,7 +197,7 @@ module Adaptive {
           getAlarmBridge() : IAlarm;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AmbientLightBridge.
 
              @return {Adaptive.AmbientLightBridge} reference or null if a bridge of this type is not registered.
@@ -205,7 +205,7 @@ module Adaptive {
           getAmbientLightBridge() : IAmbientLight;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AnalyticsBridge.
 
              @return {Adaptive.AnalyticsBridge} reference or null if a bridge of this type is not registered.
@@ -213,7 +213,7 @@ module Adaptive {
           getAnalyticsBridge() : IAnalytics;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AudioBridge.
 
              @return {Adaptive.AudioBridge} reference or null if a bridge of this type is not registered.
@@ -221,7 +221,7 @@ module Adaptive {
           getAudioBridge() : IAudio;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BarcodeBridge.
 
              @return {Adaptive.BarcodeBridge} reference or null if a bridge of this type is not registered.
@@ -229,7 +229,7 @@ module Adaptive {
           getBarcodeBridge() : IBarcode;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BarometerBridge.
 
              @return {Adaptive.BarometerBridge} reference or null if a bridge of this type is not registered.
@@ -237,7 +237,7 @@ module Adaptive {
           getBarometerBridge() : IBarometer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BluetoothBridge.
 
              @return {Adaptive.BluetoothBridge} reference or null if a bridge of this type is not registered.
@@ -245,7 +245,7 @@ module Adaptive {
           getBluetoothBridge() : IBluetooth;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BrowserBridge.
 
              @return {Adaptive.BrowserBridge} reference or null if a bridge of this type is not registered.
@@ -253,7 +253,7 @@ module Adaptive {
           getBrowserBridge() : IBrowser;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CalendarBridge.
 
              @return {Adaptive.CalendarBridge} reference or null if a bridge of this type is not registered.
@@ -261,7 +261,7 @@ module Adaptive {
           getCalendarBridge() : ICalendar;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CameraBridge.
 
              @return {Adaptive.CameraBridge} reference or null if a bridge of this type is not registered.
@@ -269,7 +269,7 @@ module Adaptive {
           getCameraBridge() : ICamera;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CapabilitiesBridge.
 
              @return {Adaptive.CapabilitiesBridge} reference or null if a bridge of this type is not registered.
@@ -277,7 +277,7 @@ module Adaptive {
           getCapabilitiesBridge() : ICapabilities;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CloudBridge.
 
              @return {Adaptive.CloudBridge} reference or null if a bridge of this type is not registered.
@@ -285,7 +285,7 @@ module Adaptive {
           getCloudBridge() : ICloud;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CompressionBridge.
 
              @return {Adaptive.CompressionBridge} reference or null if a bridge of this type is not registered.
@@ -293,7 +293,7 @@ module Adaptive {
           getCompressionBridge() : ICompression;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ConcurrentBridge.
 
              @return {Adaptive.ConcurrentBridge} reference or null if a bridge of this type is not registered.
@@ -301,7 +301,7 @@ module Adaptive {
           getConcurrentBridge() : IConcurrent;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ContactBridge.
 
              @return {Adaptive.ContactBridge} reference or null if a bridge of this type is not registered.
@@ -309,7 +309,7 @@ module Adaptive {
           getContactBridge() : IContact;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CryptoBridge.
 
              @return {Adaptive.CryptoBridge} reference or null if a bridge of this type is not registered.
@@ -317,7 +317,7 @@ module Adaptive {
           getCryptoBridge() : ICrypto;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DataStreamBridge.
 
              @return {Adaptive.DataStreamBridge} reference or null if a bridge of this type is not registered.
@@ -325,7 +325,7 @@ module Adaptive {
           getDataStreamBridge() : IDataStream;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DatabaseBridge.
 
              @return {Adaptive.DatabaseBridge} reference or null if a bridge of this type is not registered.
@@ -333,7 +333,7 @@ module Adaptive {
           getDatabaseBridge() : IDatabase;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DesktopBridge.
 
              @return {Adaptive.DesktopBridge} reference or null if a bridge of this type is not registered.
@@ -341,7 +341,7 @@ module Adaptive {
           getDesktopBridge() : IDesktop;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DeviceBridge.
 
              @return {Adaptive.DeviceBridge} reference or null if a bridge of this type is not registered.
@@ -349,7 +349,7 @@ module Adaptive {
           getDeviceBridge() : IDevice;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DisplayBridge.
 
              @return {Adaptive.DisplayBridge} reference or null if a bridge of this type is not registered.
@@ -357,7 +357,7 @@ module Adaptive {
           getDisplayBridge() : IDisplay;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FacebookBridge.
 
              @return {Adaptive.FacebookBridge} reference or null if a bridge of this type is not registered.
@@ -365,7 +365,7 @@ module Adaptive {
           getFacebookBridge() : IFacebook;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FileBridge.
 
              @return {Adaptive.FileBridge} reference or null if a bridge of this type is not registered.
@@ -373,7 +373,7 @@ module Adaptive {
           getFileBridge() : IFile;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FileSystemBridge.
 
              @return {Adaptive.FileSystemBridge} reference or null if a bridge of this type is not registered.
@@ -381,7 +381,7 @@ module Adaptive {
           getFileSystemBridge() : IFileSystem;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GeolocationBridge.
 
              @return {Adaptive.GeolocationBridge} reference or null if a bridge of this type is not registered.
@@ -389,7 +389,7 @@ module Adaptive {
           getGeolocationBridge() : IGeolocation;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GlobalizationBridge.
 
              @return {Adaptive.GlobalizationBridge} reference or null if a bridge of this type is not registered.
@@ -397,7 +397,7 @@ module Adaptive {
           getGlobalizationBridge() : IGlobalization;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GooglePlusBridge.
 
              @return {Adaptive.GooglePlusBridge} reference or null if a bridge of this type is not registered.
@@ -405,7 +405,7 @@ module Adaptive {
           getGooglePlusBridge() : IGooglePlus;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GyroscopeBridge.
 
              @return {Adaptive.GyroscopeBridge} reference or null if a bridge of this type is not registered.
@@ -413,7 +413,7 @@ module Adaptive {
           getGyroscopeBridge() : IGyroscope;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ImagingBridge.
 
              @return {Adaptive.ImagingBridge} reference or null if a bridge of this type is not registered.
@@ -421,7 +421,7 @@ module Adaptive {
           getImagingBridge() : IImaging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered InternalStorageBridge.
 
              @return {Adaptive.InternalStorageBridge} reference or null if a bridge of this type is not registered.
@@ -429,7 +429,7 @@ module Adaptive {
           getInternalStorageBridge() : IInternalStorage;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LifecycleBridge.
 
              @return {Adaptive.LifecycleBridge} reference or null if a bridge of this type is not registered.
@@ -437,7 +437,7 @@ module Adaptive {
           getLifecycleBridge() : ILifecycle;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LinkedInBridge.
 
              @return {Adaptive.LinkedInBridge} reference or null if a bridge of this type is not registered.
@@ -445,7 +445,7 @@ module Adaptive {
           getLinkedInBridge() : ILinkedIn;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LoggingBridge.
 
              @return {Adaptive.LoggingBridge} reference or null if a bridge of this type is not registered.
@@ -453,7 +453,7 @@ module Adaptive {
           getLoggingBridge() : ILogging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MagnetometerBridge.
 
              @return {Adaptive.MagnetometerBridge} reference or null if a bridge of this type is not registered.
@@ -461,7 +461,7 @@ module Adaptive {
           getMagnetometerBridge() : IMagnetometer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MailBridge.
 
              @return {Adaptive.MailBridge} reference or null if a bridge of this type is not registered.
@@ -469,7 +469,7 @@ module Adaptive {
           getMailBridge() : IMail;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ManagementBridge.
 
              @return {Adaptive.ManagementBridge} reference or null if a bridge of this type is not registered.
@@ -477,7 +477,7 @@ module Adaptive {
           getManagementBridge() : IManagement;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MapBridge.
 
              @return {Adaptive.MapBridge} reference or null if a bridge of this type is not registered.
@@ -485,7 +485,7 @@ module Adaptive {
           getMapBridge() : IMap;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MessagingBridge.
 
              @return {Adaptive.MessagingBridge} reference or null if a bridge of this type is not registered.
@@ -493,7 +493,7 @@ module Adaptive {
           getMessagingBridge() : IMessaging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NFCBridge.
 
              @return {Adaptive.NFCBridge} reference or null if a bridge of this type is not registered.
@@ -501,7 +501,7 @@ module Adaptive {
           getNFCBridge() : INFC;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkInfoBridge.
 
              @return {Adaptive.NetworkInfoBridge} reference or null if a bridge of this type is not registered.
@@ -509,7 +509,7 @@ module Adaptive {
           getNetworkInfoBridge() : INetworkInfo;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkNamingBridge.
 
              @return {Adaptive.NetworkNamingBridge} reference or null if a bridge of this type is not registered.
@@ -517,7 +517,7 @@ module Adaptive {
           getNetworkNamingBridge() : INetworkNaming;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkReachabilityBridge.
 
              @return {Adaptive.NetworkReachabilityBridge} reference or null if a bridge of this type is not registered.
@@ -525,7 +525,7 @@ module Adaptive {
           getNetworkReachabilityBridge() : INetworkReachability;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkStatusBridge.
 
              @return {Adaptive.NetworkStatusBridge} reference or null if a bridge of this type is not registered.
@@ -533,7 +533,7 @@ module Adaptive {
           getNetworkStatusBridge() : INetworkStatus;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NotificationBridge.
 
              @return {Adaptive.NotificationBridge} reference or null if a bridge of this type is not registered.
@@ -541,7 +541,7 @@ module Adaptive {
           getNotificationBridge() : INotification;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NotificationLocalBridge.
 
              @return {Adaptive.NotificationLocalBridge} reference or null if a bridge of this type is not registered.
@@ -549,7 +549,7 @@ module Adaptive {
           getNotificationLocalBridge() : INotificationLocal;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OAuthBridge.
 
              @return {Adaptive.OAuthBridge} reference or null if a bridge of this type is not registered.
@@ -557,7 +557,7 @@ module Adaptive {
           getOAuthBridge() : IOAuth;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OCRBridge.
 
              @return {Adaptive.OCRBridge} reference or null if a bridge of this type is not registered.
@@ -565,7 +565,7 @@ module Adaptive {
           getOCRBridge() : IOCR;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OSBridge.
 
              @return {Adaptive.OSBridge} reference or null if a bridge of this type is not registered.
@@ -573,7 +573,7 @@ module Adaptive {
           getOSBridge() : IOS;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OpenIdBridge.
 
              @return {Adaptive.OpenIdBridge} reference or null if a bridge of this type is not registered.
@@ -581,7 +581,7 @@ module Adaptive {
           getOpenIdBridge() : IOpenId;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered PrintingBridge.
 
              @return {Adaptive.PrintingBridge} reference or null if a bridge of this type is not registered.
@@ -589,7 +589,7 @@ module Adaptive {
           getPrintingBridge() : IPrinting;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ProximityBridge.
 
              @return {Adaptive.ProximityBridge} reference or null if a bridge of this type is not registered.
@@ -597,7 +597,7 @@ module Adaptive {
           getProximityBridge() : IProximity;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered QRCodeBridge.
 
              @return {Adaptive.QRCodeBridge} reference or null if a bridge of this type is not registered.
@@ -605,7 +605,7 @@ module Adaptive {
           getQRCodeBridge() : IQRCode;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered RSSBridge.
 
              @return {Adaptive.RSSBridge} reference or null if a bridge of this type is not registered.
@@ -613,7 +613,7 @@ module Adaptive {
           getRSSBridge() : IRSS;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered RuntimeBridge.
 
              @return {Adaptive.RuntimeBridge} reference or null if a bridge of this type is not registered.
@@ -621,7 +621,7 @@ module Adaptive {
           getRuntimeBridge() : IRuntime;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SecurityBridge.
 
              @return {Adaptive.SecurityBridge} reference or null if a bridge of this type is not registered.
@@ -629,7 +629,7 @@ module Adaptive {
           getSecurityBridge() : ISecurity;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ServiceBridge.
 
              @return {Adaptive.ServiceBridge} reference or null if a bridge of this type is not registered.
@@ -637,7 +637,7 @@ module Adaptive {
           getServiceBridge() : IService;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SettingsBridge.
 
              @return {Adaptive.SettingsBridge} reference or null if a bridge of this type is not registered.
@@ -645,7 +645,7 @@ module Adaptive {
           getSettingsBridge() : ISettings;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SocketBridge.
 
              @return {Adaptive.SocketBridge} reference or null if a bridge of this type is not registered.
@@ -653,7 +653,7 @@ module Adaptive {
           getSocketBridge() : ISocket;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered StoreBridge.
 
              @return {Adaptive.StoreBridge} reference or null if a bridge of this type is not registered.
@@ -661,7 +661,7 @@ module Adaptive {
           getStoreBridge() : IStore;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TelephonyBridge.
 
              @return {Adaptive.TelephonyBridge} reference or null if a bridge of this type is not registered.
@@ -669,7 +669,7 @@ module Adaptive {
           getTelephonyBridge() : ITelephony;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TimerBridge.
 
              @return {Adaptive.TimerBridge} reference or null if a bridge of this type is not registered.
@@ -677,7 +677,7 @@ module Adaptive {
           getTimerBridge() : ITimer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TwitterBridge.
 
              @return {Adaptive.TwitterBridge} reference or null if a bridge of this type is not registered.
@@ -685,7 +685,7 @@ module Adaptive {
           getTwitterBridge() : ITwitter;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered UIBridge.
 
              @return {Adaptive.UIBridge} reference or null if a bridge of this type is not registered.
@@ -693,7 +693,7 @@ module Adaptive {
           getUIBridge() : IUI;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered UpdateBridge.
 
              @return {Adaptive.UpdateBridge} reference or null if a bridge of this type is not registered.
@@ -701,7 +701,7 @@ module Adaptive {
           getUpdateBridge() : IUpdate;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered VibrationBridge.
 
              @return {Adaptive.VibrationBridge} reference or null if a bridge of this type is not registered.
@@ -709,7 +709,7 @@ module Adaptive {
           getVibrationBridge() : IVibration;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered VideoBridge.
 
              @return {Adaptive.VideoBridge} reference or null if a bridge of this type is not registered.
@@ -717,7 +717,7 @@ module Adaptive {
           getVideoBridge() : IVideo;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered WalletBridge.
 
              @return {Adaptive.WalletBridge} reference or null if a bridge of this type is not registered.
@@ -725,7 +725,7 @@ module Adaptive {
           getWalletBridge() : IWallet;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered XMLBridge.
 
              @return {Adaptive.XMLBridge} reference or null if a bridge of this type is not registered.
@@ -767,7 +767,7 @@ module Adaptive {
      export interface IBaseCallback extends IAdaptiveRP {
 
           /**
-             @method
+             @abstract
              Retrieve unique id of callback/listener.
 
              @return {number} Callback/listener unique id.
@@ -828,7 +828,7 @@ module Adaptive {
      export interface IBaseListener extends IAdaptiveRP {
 
           /**
-             @method
+             @abstract
              Retrieve unique id of callback/listener.
 
              @return {number} Callback/listener unique id.
@@ -994,14 +994,14 @@ module Adaptive {
           /**
              @method
              Returns the default locale of the application defined in the configuration file
-             @return {Locale} Default Locale of the application
+             @return {Adaptive.Locale} Default Locale of the application
              @since ARP1.0
           */
           getDefaultLocale() : Locale;
           /**
              @method
              List of supported locales for the application defined in the configuration file
-             @return {Array<Locale>} List of locales
+             @return {Adaptive.Locale[]} List of locales
              @since ARP1.0
           */
           getLocaleSupportedDescriptors() : Array<Locale>;
@@ -1018,7 +1018,7 @@ module Adaptive {
              @method
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-             @return {Array<KeyPair>} Localized texts in the form of an object.
+             @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
              @since ARP1.0
           */
           getResourceLiterals(locale:Locale) : Array<KeyPair>;
@@ -1691,7 +1691,7 @@ module Adaptive {
              @method
              Get a reference to a registered service by name.
              @param serviceName Name of service.
-             @return {Service} A service, if registered, or null of the service does not exist.
+             @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
              @since ARP1.0
           */
           getService(serviceName:string) : Service;
@@ -1768,7 +1768,7 @@ module Adaptive {
              @method
              Invoke a phone call
              @param number to call
-             @return {ITelephonyStatus} Status of the call
+             @return {Adaptive.ITelephonyStatus} Status of the call
              @since ARP1.0
           */
           call(number:string) : ITelephonyStatus;
@@ -1951,7 +1951,7 @@ deleted if the cascade parameter is set to true.
              @method
              Returns the file storage type of the file
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemStorageType} Storage Type file
+             @return {Adaptive.IFileSystemStorageType} Storage Type file
              @since ARP1.0
           */
           getFileStorageType(descriptor:FileDescriptor) : IFileSystemStorageType;
@@ -1959,7 +1959,7 @@ deleted if the cascade parameter is set to true.
              @method
              Returns the file type
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemType} Returns the file type of the file
+             @return {Adaptive.IFileSystemType} Returns the file type of the file
              @since ARP1.0
           */
           getFileType(descriptor:FileDescriptor) : IFileSystemType;
@@ -1967,7 +1967,7 @@ deleted if the cascade parameter is set to true.
              @method
              Returns the security type of the file
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemSecurity} Security Level of the file
+             @return {Adaptive.IFileSystemSecurity} Security Level of the file
              @since ARP1.0
           */
           getSecurityType(descriptor:FileDescriptor) : IFileSystemSecurity;
@@ -2047,7 +2047,7 @@ new destination file.
 This method does not create the actual file in the specified folder.
              @param parent Parent directory.
              @param name   Name of new file or directory.
-             @return {FileDescriptor} A reference to a new or existing location in the filesystem.
+             @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
              @since ARP1.0
           */
           createFileDescriptor(parent:FileDescriptor, name:string) : FileDescriptor;
@@ -2056,7 +2056,7 @@ This method does not create the actual file in the specified folder.
              Returns a reference to the cache folder for the current application.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
-             @return {FileDescriptor} Path to the application's cache folder.
+             @return {Adaptive.FileDescriptor} Path to the application's cache folder.
              @since ARP1.0
           */
           getApplicationCacheFolder() : FileDescriptor;
@@ -2064,7 +2064,7 @@ This path is volatile and may be cleaned by the OS periodically.
              @method
              Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
-             @return {FileDescriptor} Path to the application's cloud storage folder.
+             @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
              @since ARP1.0
           */
           getApplicationCloudFolder() : FileDescriptor;
@@ -2072,7 +2072,7 @@ This path must always be writable by the current application.
              @method
              Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
-             @return {FileDescriptor} Path to the application's documents folder.
+             @return {Adaptive.FileDescriptor} Path to the application's documents folder.
              @since ARP1.0
           */
           getApplicationDocumentsFolder() : FileDescriptor;
@@ -2080,7 +2080,7 @@ This path must always be writable by the current application.
              @method
              Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
-             @return {FileDescriptor} Path to the application folder.
+             @return {Adaptive.FileDescriptor} Path to the application folder.
              @since ARP1.0
           */
           getApplicationFolder() : FileDescriptor;
@@ -2088,7 +2088,7 @@ This path may or may not be directly readable or writable - it usually contains 
              @method
              Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
-             @return {FileDescriptor} Path to the application's protected storage folder.
+             @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
              @since ARP1.0
           */
           getApplicationProtectedFolder() : FileDescriptor;
@@ -2105,7 +2105,7 @@ This path must always be writable by the current application.
 be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
-             @return {FileDescriptor} Path to the application's documents folder.
+             @return {Adaptive.FileDescriptor} Path to the application's documents folder.
              @since ARP1.0
           */
           getSystemExternalFolder() : FileDescriptor;
@@ -2974,14 +2974,14 @@ device.
           /**
              @method
              Returns the device information for the current device executing the runtime.
-             @return {DeviceInfo} DeviceInfo for the current device.
+             @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
              @since ARP1.0
           */
           getDeviceInfo() : DeviceInfo;
           /**
              @method
              Gets the current Locale for the device.
-             @return {Locale} The current Locale information.
+             @return {Adaptive.Locale} The current Locale information.
              @since ARP1.0
           */
           getLocaleCurrent() : Locale;
@@ -3027,7 +3027,7 @@ device.
           /**
              @method
              Returns the OSInfo for the current operating system.
-             @return {OSInfo} OSInfo with name, version and vendor of the OS.
+             @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
              @since ARP1.0
           */
           getOSInfo() : OSInfo;
@@ -3228,6 +3228,7 @@ device.
      */
      export class APIBean {
           /**
+             @method constructor
              Default constructor
 
              @since ARP1.0
@@ -3269,12 +3270,13 @@ device.
           */
           parameters : Array<string>;
           /**
+             @method constructor
              Constructor with all the parameters
 
-             @param bridgeType Name of the bridge to be invoked.
-             @param methodName Name of the method
-             @param parameters Array of parameters as JSON formatted strings.
-             @param asyncId    Id of callback or listener or zero if none for synchronous calls.
+             @param {string} bridgeType Name of the bridge to be invoked.
+             @param {string} methodName Name of the method
+             @param {string[]} parameters Array of parameters as JSON formatted strings.
+             @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
              @since ARP1.0
           */
           constructor(bridgeType: string, methodName: string, parameters: Array<string>, asyncId: number) {
@@ -3284,28 +3286,31 @@ device.
                this.asyncId = asyncId;
           }
           /**
+             @method
              Returns the callback or listener id assigned to this request OR zero if there is no associated callback or
 listener.
 
-             @return long with the unique id of the callback or listener, or zero if there is no associated async event.
+             @return {number} long with the unique id of the callback or listener, or zero if there is no associated async event.
           */
           getAsyncId() : number {
                return this.asyncId;
           }
 
           /**
+             @method
              Sets the callback or listener id to the request.
 
-             @param asyncId The unique id of the callback or listener.
+             @param {number} asyncId The unique id of the callback or listener.
           */
           setAsyncId(asyncId: number) {
                this.asyncId = asyncId;
           }
 
           /**
+             @method
              Bridge Type Getter
 
-             @return Bridge Type
+             @return {string} Bridge Type
              @since ARP1.0
           */
           getBridgeType() : string {
@@ -3313,9 +3318,10 @@ listener.
           }
 
           /**
+             @method
              Bridge Type Setter
 
-             @param bridgeType Bridge Type
+             @param {string} bridgeType Bridge Type
              @since ARP1.0
           */
           setBridgeType(bridgeType: string) {
@@ -3323,9 +3329,10 @@ listener.
           }
 
           /**
+             @method
              Method name Getter
 
-             @return Method name
+             @return {string} Method name
              @since ARP1.0
           */
           getMethodName() : string {
@@ -3333,9 +3340,10 @@ listener.
           }
 
           /**
+             @method
              Method name Setter
 
-             @param methodName Method name
+             @param {string} methodName Method name
              @since ARP1.0
           */
           setMethodName(methodName: string) {
@@ -3343,9 +3351,10 @@ listener.
           }
 
           /**
+             @method
              Parameters Getter
 
-             @return Parameters
+             @return {string[]} Parameters
              @since ARP1.0
           */
           getParameters() : Array<string> {
@@ -3353,9 +3362,10 @@ listener.
           }
 
           /**
+             @method
              Parameters Setter
 
-             @param parameters Parameters, JSON formatted strings of objects.
+             @param {string[]} parameters Parameters, JSON formatted strings of objects.
              @since ARP1.0
           */
           setParameters(parameters: Array<string>) {
@@ -3405,11 +3415,12 @@ listener.
           */
           statusMessage : string;
           /**
+             @method constructor
              Constructor with parameters.
 
-             @param response      String representing the JavaScript value or JSON object representation of the response.
-             @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
-             @param statusMessage Status message of the response.
+             @param {string} response      String representing the JavaScript value or JSON object representation of the response.
+             @param {number} statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+             @param {string} statusMessage Status message of the response.
           */
           constructor(response: string, statusCode: number, statusMessage: string) {
                this.response = response;
@@ -3417,9 +3428,10 @@ listener.
                this.statusMessage = statusMessage;
           }
           /**
+             @method
              Response getter
 
-             @return String representing the JavaScript value or JSON object representation of the response.
+             @return {string} String representing the JavaScript value or JSON object representation of the response.
              @since ARP1.0
           */
           getResponse() : string {
@@ -3427,45 +3439,50 @@ listener.
           }
 
           /**
+             @method
              Response setter
 
-             @param response String representing the JavaScript value or JSON object representation of the response.
+             @param {string} response String representing the JavaScript value or JSON object representation of the response.
           */
           setResponse(response: string) {
                this.response = response;
           }
 
           /**
+             @method
              Status code getter
 
-             @return Status code of the response (200 = OK, others are warning or error conditions).
+             @return {number} Status code of the response (200 = OK, others are warning or error conditions).
           */
           getStatusCode() : number {
                return this.statusCode;
           }
 
           /**
+             @method
              Status code setter
 
-             @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
+             @param {number} statusCode Status code of the response  (200 = OK, others are warning or error conditions).
           */
           setStatusCode(statusCode: number) {
                this.statusCode = statusCode;
           }
 
           /**
+             @method
              Status message getter
 
-             @return Status message of the response.
+             @return {string} Status message of the response.
           */
           getStatusMessage() : string {
                return this.statusMessage;
           }
 
           /**
+             @method
              Status message setter.
 
-             @param statusMessage Status message of the response
+             @param {string} statusMessage Status message of the response
           */
           setStatusMessage(statusMessage: string) {
                this.statusMessage = statusMessage;
@@ -3503,46 +3520,51 @@ listener.
           */
           path : string;
           /**
+             @method constructor
              Constructor with parameters
 
-             @param path    The path for the endpoint
-             @param methods The methods for calling a path
+             @param {string} path    The path for the endpoint
+             @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
           */
           constructor(path: string, methods: Array<IServiceMethod>) {
                this.path = path;
                this.methods = methods;
           }
           /**
+             @method
              Endpoint's path methods setter
 
-             @return Endpoint's path methods
+             @return {Adaptive.IServiceMethod[]} Endpoint's path methods
           */
           getMethods() : Array<IServiceMethod> {
                return this.methods;
           }
 
           /**
+             @method
              Endpoint's path methods setter
 
-             @param methods Endpoint's path methods
+             @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
           */
           setMethods(methods: Array<IServiceMethod>) {
                this.methods = methods;
           }
 
           /**
+             @method
              Endpoint's Path Getter
 
-             @return Endpoint's Path
+             @return {string} Endpoint's Path
           */
           getPath() : string {
                return this.path;
           }
 
           /**
+             @method
              Endpoint's path setter
 
-             @param path Endpoint's path
+             @param {string} path Endpoint's path
           */
           setPath(path: string) {
                this.path = path;
@@ -3598,12 +3620,13 @@ listener.
           */
           z : number;
           /**
+             @method constructor
              Constructor with fields
 
-             @param x         X Coordinate
-             @param y         Y Coordinate
-             @param z         Z Coordinate
-             @param timestamp Timestamp
+             @param {number} x         X Coordinate
+             @param {number} y         Y Coordinate
+             @param {number} z         Z Coordinate
+             @param {number} timestamp Timestamp
              @since ARP1.0
           */
           constructor(x: number, y: number, z: number, timestamp: number) {
@@ -3614,9 +3637,10 @@ listener.
                this.timestamp = timestamp;
           }
           /**
+             @method
              Timestamp Getter
 
-             @return Timestamp
+             @return {number} Timestamp
              @since ARP1.0
           */
           getTimestamp() : number {
@@ -3624,9 +3648,10 @@ listener.
           }
 
           /**
+             @method
              Timestamp Setter
 
-             @param timestamp Timestamp
+             @param {number} timestamp Timestamp
              @since ARP1.0
           */
           setTimestamp(timestamp: number) {
@@ -3634,9 +3659,10 @@ listener.
           }
 
           /**
+             @method
              X Coordinate Getter
 
-             @return X-axis component of the acceleration.
+             @return {number} X-axis component of the acceleration.
              @since ARP1.0
           */
           getX() : number {
@@ -3644,9 +3670,10 @@ listener.
           }
 
           /**
+             @method
              X Coordinate Setter
 
-             @param x X-axis component of the acceleration.
+             @param {number} x X-axis component of the acceleration.
              @since ARP1.0
           */
           setX(x: number) {
@@ -3654,9 +3681,10 @@ listener.
           }
 
           /**
+             @method
              Y Coordinate Getter
 
-             @return Y-axis component of the acceleration.
+             @return {number} Y-axis component of the acceleration.
              @since ARP1.0
           */
           getY() : number {
@@ -3664,9 +3692,10 @@ listener.
           }
 
           /**
+             @method
              Y Coordinate Setter
 
-             @param y Y-axis component of the acceleration.
+             @param {number} y Y-axis component of the acceleration.
              @since ARP1.0
           */
           setY(y: number) {
@@ -3674,9 +3703,10 @@ listener.
           }
 
           /**
+             @method
              Z Coordinate Getter
 
-             @return Z-axis component of the acceleration.
+             @return {number} Z-axis component of the acceleration.
              @since ARP1.0
           */
           getZ() : number {
@@ -3684,9 +3714,10 @@ listener.
           }
 
           /**
+             @method
              Z Coordinate Setter
 
-             @param z Z Coordinate
+             @param {number} z Z Coordinate
              @since ARP1.0
           */
           setZ(z: number) {
@@ -3723,9 +3754,10 @@ listener.
           */
           type : ICapabilitiesButton;
           /**
+             @method constructor
              Constructor with fields
 
-             @param type Button type.
+             @param {Adaptive.ICapabilitiesButton} type Button type.
              @since ARP1.0
           */
           constructor(type: ICapabilitiesButton) {
@@ -3733,9 +3765,10 @@ listener.
                this.type = type;
           }
           /**
+             @method
              Returns the button type
 
-             @return type Button type.
+             @return {Adaptive.ICapabilitiesButton} type Button type.
              @since ARP1.0
           */
           getType() : ICapabilitiesButton {
@@ -3743,9 +3776,10 @@ listener.
           }
 
           /**
+             @method
              Setter for the button type
 
-             @param type Button Type
+             @param {Adaptive.ICapabilitiesButton} type Button Type
              @since ARP1.0
           */
           setType(type: ICapabilitiesButton) {
@@ -3787,10 +3821,11 @@ listener.
           */
           address : string;
           /**
+             @method constructor
              Constructor with fields
 
-             @param address Address data.
-             @param type    Address type.
+             @param {string} address Address data.
+             @param {Adaptive.ContactAddressType} type    Address type.
              @since ARP1.0
           */
           constructor(address: string, type: ContactAddressType) {
@@ -3799,9 +3834,10 @@ listener.
                this.type = type;
           }
           /**
+             @method
              Returns the type of the address
 
-             @return AddressType Address type.
+             @return {Adaptive.ContactAddressType} AddressType Address type.
              @since ARP1.0
           */
           getType() : ContactAddressType {
@@ -3809,9 +3845,10 @@ listener.
           }
 
           /**
+             @method
              Set the address type
 
-             @param type Address type.
+             @param {Adaptive.ContactAddressType} type Address type.
              @since ARP1.0
           */
           setType(type: ContactAddressType) {
@@ -3819,9 +3856,10 @@ listener.
           }
 
           /**
+             @method
              Returns the Contact address
 
-             @return address Address data.
+             @return {string} address Address data.
              @since ARP1.0
           */
           getAddress() : string {
@@ -3829,9 +3867,10 @@ listener.
           }
 
           /**
+             @method
              Set the address of the Contact
 
-             @param address Address data.
+             @param {string} address Address data.
              @since ARP1.0
           */
           setAddress(address: string) {
@@ -3878,11 +3917,12 @@ listener.
           */
           primary : boolean;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param type    Type of the email
-             @param primary Is email primary
-             @param email   Email of the contact
+             @param {Adaptive.ContactEmailType} type    Type of the email
+             @param {boolean} primary Is email primary
+             @param {string} email   Email of the contact
              @since ARP1.0
           */
           constructor(type: ContactEmailType, primary: boolean, email: string) {
@@ -3892,9 +3932,10 @@ listener.
                this.email = email;
           }
           /**
+             @method
              Returns the type of the email
 
-             @return EmailType
+             @return {Adaptive.ContactEmailType} EmailType
              @since ARP1.0
           */
           getType() : ContactEmailType {
@@ -3902,9 +3943,10 @@ listener.
           }
 
           /**
+             @method
              Set the type of the email
 
-             @param type Type of the email
+             @param {Adaptive.ContactEmailType} type Type of the email
              @since ARP1.0
           */
           setType(type: ContactEmailType) {
@@ -3912,9 +3954,10 @@ listener.
           }
 
           /**
+             @method
              Returns the email of the Contact
 
-             @return email
+             @return {string} email
              @since ARP1.0
           */
           getEmail() : string {
@@ -3922,9 +3965,10 @@ listener.
           }
 
           /**
+             @method
              Set the email of the Contact
 
-             @param email Email of the contact
+             @param {string} email Email of the contact
              @since ARP1.0
           */
           setEmail(email: string) {
@@ -3932,9 +3976,10 @@ listener.
           }
 
           /**
+             @method
              Returns if the email is primary
 
-             @return true if the email is primary; false otherwise
+             @return {boolean} true if the email is primary; false otherwise
              @since ARP1.0
           */
           getPrimary() : boolean {
@@ -3942,9 +3987,10 @@ listener.
           }
 
           /**
+             @method
              Set if the email
 
-             @param primary true if the email is primary; false otherwise
+             @param {boolean} primary true if the email is primary; false otherwise
              @since ARP1.0
           */
           setPrimary(primary: boolean) {
@@ -3996,12 +4042,13 @@ listener.
           */
           name : string;
           /**
+             @method constructor
              The Constructor used by the implementation
 
-             @param name       of the Contact
-             @param middleName of the Contact
-             @param lastName   of the Contact
-             @param title      of the Contact
+             @param {string} name       of the Contact
+             @param {string} middleName of the Contact
+             @param {string} lastName   of the Contact
+             @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
              @since ARP1.0
           */
           constructor(name: string, middleName: string, lastName: string, title: ContactPersonalInfoTitle) {
@@ -4012,9 +4059,10 @@ listener.
                this.title = title;
           }
           /**
+             @method
              Returns the title of the Contact
 
-             @return Title
+             @return {Adaptive.ContactPersonalInfoTitle} Title
              @since ARP1.0
           */
           getTitle() : ContactPersonalInfoTitle {
@@ -4022,9 +4070,10 @@ listener.
           }
 
           /**
+             @method
              Set the Title of the Contact
 
-             @param title of the Contact
+             @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
              @since ARP1.0
           */
           setTitle(title: ContactPersonalInfoTitle) {
@@ -4032,9 +4081,10 @@ listener.
           }
 
           /**
+             @method
              Returns the last name of the Contact
 
-             @return lastName
+             @return {string} lastName
              @since ARP1.0
           */
           getLastName() : string {
@@ -4042,9 +4092,10 @@ listener.
           }
 
           /**
+             @method
              Set the last name of the Contact
 
-             @param lastName of the Contact
+             @param {string} lastName of the Contact
              @since ARP1.0
           */
           setLastName(lastName: string) {
@@ -4052,9 +4103,10 @@ listener.
           }
 
           /**
+             @method
              Returns the middle name of the Contact
 
-             @return middelName
+             @return {string} middelName
              @since ARP1.0
           */
           getMiddleName() : string {
@@ -4062,9 +4114,10 @@ listener.
           }
 
           /**
+             @method
              Set the middle name of the Contact
 
-             @param middleName of the Contact
+             @param {string} middleName of the Contact
              @since ARP1.0
           */
           setMiddleName(middleName: string) {
@@ -4072,9 +4125,10 @@ listener.
           }
 
           /**
+             @method
              Returns the name of the Contact
 
-             @return name
+             @return {string} name
              @since ARP1.0
           */
           getName() : string {
@@ -4082,9 +4136,10 @@ listener.
           }
 
           /**
+             @method
              Set the name of the Contact
 
-             @param name of the Contact
+             @param {string} name of the Contact
              @since ARP1.0
           */
           setName(name: string) {
@@ -4129,10 +4184,11 @@ listener.
           */
           phone : string;
           /**
+             @method constructor
              Constructor used by implementation to set the contact Phone
 
-             @param phone     Phone number
-             @param phoneType Type of Phone number
+             @param {string} phone     Phone number
+             @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
              @since ARP1.0
           */
           constructor(phone: string, phoneType: ContactPhoneType) {
@@ -4141,9 +4197,10 @@ listener.
                this.phoneType = phoneType;
           }
           /**
+             @method
              Returns the phone phoneType
 
-             @return phoneType
+             @return {Adaptive.ContactPhoneType} phoneType
              @since ARP1.0
           */
           getPhoneType() : ContactPhoneType {
@@ -4151,9 +4208,10 @@ listener.
           }
 
           /**
+             @method
              Set the phoneType of the phone number
 
-             @param phoneType Type of Phone number
+             @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
              @since ARP1.0
           */
           setPhoneType(phoneType: ContactPhoneType) {
@@ -4161,9 +4219,10 @@ listener.
           }
 
           /**
+             @method
              Returns the phone number
 
-             @return phone number
+             @return {string} phone number
              @since ARP1.0
           */
           getPhone() : string {
@@ -4171,9 +4230,10 @@ listener.
           }
 
           /**
+             @method
              Set the phone number
 
-             @param phone number
+             @param {string} phone number
              @since ARP1.0
           */
           setPhone(phone: string) {
@@ -4220,11 +4280,12 @@ listener.
           */
           jobTitle : string;
           /**
+             @method constructor
              Constructor used by implementation to set the ContactProfessionalInfo.
 
-             @param jobTitle       The job title
-             @param jobDescription The job description
-             @param company        The company of the job
+             @param {string} jobTitle       The job title
+             @param {string} jobDescription The job description
+             @param {string} company        The company of the job
              @since ARP1.0
           */
           constructor(jobTitle: string, jobDescription: string, company: string) {
@@ -4234,9 +4295,10 @@ listener.
                this.company = company;
           }
           /**
+             @method
              Returns the company of the job
 
-             @return company
+             @return {string} company
              @since ARP1.0
           */
           getCompany() : string {
@@ -4244,9 +4306,10 @@ listener.
           }
 
           /**
+             @method
              Set the company of the job
 
-             @param company The company of the job
+             @param {string} company The company of the job
              @since ARP1.0
           */
           setCompany(company: string) {
@@ -4254,9 +4317,10 @@ listener.
           }
 
           /**
+             @method
              Returns the description of the job
 
-             @return description
+             @return {string} description
              @since ARP1.0
           */
           getJobDescription() : string {
@@ -4264,9 +4328,10 @@ listener.
           }
 
           /**
+             @method
              Set the description of the job
 
-             @param jobDescription The job description
+             @param {string} jobDescription The job description
              @since ARP1.0
           */
           setJobDescription(jobDescription: string) {
@@ -4274,9 +4339,10 @@ listener.
           }
 
           /**
+             @method
              Returns the title of the job
 
-             @return title
+             @return {string} title
              @since ARP1.0
           */
           getJobTitle() : string {
@@ -4284,9 +4350,10 @@ listener.
           }
 
           /**
+             @method
              Set the title of the job
 
-             @param jobTitle The job title
+             @param {string} jobTitle The job title
              @since ARP1.0
           */
           setJobTitle(jobTitle: string) {
@@ -4326,10 +4393,11 @@ listener.
           */
           profileUrl : string;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param socialNetwork of the profile
-             @param profileUrl    of the user
+             @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
+             @param {string} profileUrl    of the user
              @since ARP1.0
           */
           constructor(socialNetwork: ContactSocialNetwork, profileUrl: string) {
@@ -4338,9 +4406,10 @@ listener.
                this.profileUrl = profileUrl;
           }
           /**
+             @method
              Returns the social network
 
-             @return socialNetwork
+             @return {Adaptive.ContactSocialNetwork} socialNetwork
              @since ARP1.0
           */
           getSocialNetwork() : ContactSocialNetwork {
@@ -4348,9 +4417,10 @@ listener.
           }
 
           /**
+             @method
              Set the social network
 
-             @param socialNetwork of the profile
+             @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
              @since ARP1.0
           */
           setSocialNetwork(socialNetwork: ContactSocialNetwork) {
@@ -4358,9 +4428,10 @@ listener.
           }
 
           /**
+             @method
              Returns the profile url of the user
 
-             @return profileUrl
+             @return {string} profileUrl
              @since ARP1.0
           */
           getProfileUrl() : string {
@@ -4368,9 +4439,10 @@ listener.
           }
 
           /**
+             @method
              Set the profile url of the iser
 
-             @param profileUrl of the user
+             @param {string} profileUrl of the user
              @since ARP1.0
           */
           setProfileUrl(profileUrl: string) {
@@ -4413,10 +4485,11 @@ listener.
           */
           tagValue : string;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param tagValue Value of the tag
-             @param tagName  Name of the tag
+             @param {string} tagValue Value of the tag
+             @param {string} tagName  Name of the tag
              @since ARP1.0
           */
           constructor(tagName: string, tagValue: string) {
@@ -4425,9 +4498,10 @@ listener.
                this.tagValue = tagValue;
           }
           /**
+             @method
              Returns the tagName of the Tag
 
-             @return tagName
+             @return {string} tagName
              @since ARP1.0
           */
           getTagName() : string {
@@ -4435,9 +4509,10 @@ listener.
           }
 
           /**
+             @method
              Set the tagName of the Tag
 
-             @param tagName Name of the tag
+             @param {string} tagName Name of the tag
              @since ARP1.0
           */
           setTagName(tagName: string) {
@@ -4445,9 +4520,10 @@ listener.
           }
 
           /**
+             @method
              Returns the tagValue of the Tag
 
-             @return tagValue
+             @return {string} tagValue
              @since ARP1.0
           */
           getTagValue() : string {
@@ -4455,9 +4531,10 @@ listener.
           }
 
           /**
+             @method
              Set the tagValue of the Tag
 
-             @param tagValue Value of the tag
+             @param {string} tagValue Value of the tag
              @since ARP1.0
           */
           setTagValue(tagValue: string) {
@@ -4492,9 +4569,10 @@ listener.
           */
           contactId : string;
           /**
+             @method constructor
              Constructor used by implementation to set the Contact id.
 
-             @param contactId Internal unique contact id.
+             @param {string} contactId Internal unique contact id.
              @since ARP1.0
           */
           constructor(contactId: string) {
@@ -4502,9 +4580,10 @@ listener.
                this.contactId = contactId;
           }
           /**
+             @method
              Returns the contact id
 
-             @return Contactid Internal unique contact id.
+             @return {string} Contactid Internal unique contact id.
              @since ARP1.0
           */
           getContactId() : string {
@@ -4512,9 +4591,10 @@ listener.
           }
 
           /**
+             @method
              Set the id of the Contact
 
-             @param contactId Internal unique contact id.
+             @param {string} contactId Internal unique contact id.
              @since ARP1.0
           */
           setContactId(contactId: string) {
@@ -4548,9 +4628,10 @@ listener.
           */
           url : string;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param url Url of the website
+             @param {string} url Url of the website
              @since ARP1.0
           */
           constructor(url: string) {
@@ -4558,9 +4639,10 @@ listener.
                this.url = url;
           }
           /**
+             @method
              Returns the url of the website
 
-             @return website url
+             @return {string} website url
              @since ARP1.0
           */
           getUrl() : string {
@@ -4568,9 +4650,10 @@ listener.
           }
 
           /**
+             @method
              Set the url of the website
 
-             @param url Url of the website
+             @param {string} url Url of the website
              @since ARP1.0
           */
           setUrl(url: string) {
@@ -4608,10 +4691,11 @@ listener.
           */
           name : string;
           /**
+             @method constructor
              Constructor using fields.
 
-             @param name     Name of the DatabaseTable.
-             @param compress Compression enabled.
+             @param {string} name     Name of the DatabaseTable.
+             @param {boolean} compress Compression enabled.
              @since ARP1.0
           */
           constructor(name: string, compress: boolean) {
@@ -4620,9 +4704,10 @@ listener.
                this.compress = compress;
           }
           /**
+             @method
              Returns if the table is compressed
 
-             @return Compression enabled
+             @return {boolean} Compression enabled
              @since ARP1.0
           */
           getCompress() : boolean {
@@ -4630,9 +4715,10 @@ listener.
           }
 
           /**
+             @method
              Sets if the table is compressed or not.
 
-             @param compress Compression enabled
+             @param {boolean} compress Compression enabled
              @since ARP1.0
           */
           setCompress(compress: boolean) {
@@ -4640,9 +4726,10 @@ listener.
           }
 
           /**
+             @method
              Returns the name.
 
-             @return The name of the table.
+             @return {string} The name of the table.
              @since ARP1.0
           */
           getName() : string {
@@ -4650,9 +4737,10 @@ listener.
           }
 
           /**
+             @method
              Sets the name of the table.
 
-             @param name The name of the table.
+             @param {string} name The name of the table.
              @since ARP1.0
           */
           setName(name: string) {
@@ -4687,9 +4775,10 @@ listener.
           */
           name : string;
           /**
+             @method constructor
              Constructor with fields
 
-             @param name Name of the column
+             @param {string} name Name of the column
              @since ARP1.0
           */
           constructor(name: string) {
@@ -4697,9 +4786,10 @@ listener.
                this.name = name;
           }
           /**
+             @method
              Returns the name of the column.
 
-             @return The name of the column.
+             @return {string} The name of the column.
              @since ARP1.0
           */
           getName() : string {
@@ -4707,9 +4797,10 @@ listener.
           }
 
           /**
+             @method
              Sets the name of the column.
 
-             @param name The name of the column.
+             @param {string} name The name of the column.
              @since ARP1.0
           */
           setName(name: string) {
@@ -4743,9 +4834,10 @@ listener.
           */
           values : Array<string>;
           /**
+             @method constructor
              Constructor for implementation using.
 
-             @param values The values of the row
+             @param {string[]} values The values of the row
              @since ARP1.0
           */
           constructor(values: Array<string>) {
@@ -4753,9 +4845,10 @@ listener.
                this.values = values;
           }
           /**
+             @method
              Returns the values of the row.
 
-             @return The values of the row.
+             @return {string[]} The values of the row.
              @since ARP1.0
           */
           getValues() : Array<string> {
@@ -4763,9 +4856,10 @@ listener.
           }
 
           /**
+             @method
              Sets the values of the row.
 
-             @param values The values of the row.
+             @param {string[]} values The values of the row.
              @since ARP1.0
           */
           setValues(values: Array<string>) {
@@ -4821,13 +4915,14 @@ listener.
           */
           rowCount : number;
           /**
+             @method constructor
              Constructor using fields
 
-             @param name            The name of the table
-             @param columnCount     The number of databaseColumns
-             @param rowCount        The number of databaseRows
-             @param databaseColumns The databaseColumns of the table
-             @param databaseRows    The databaseRows of the table
+             @param {string} name            The name of the table
+             @param {number} columnCount     The number of databaseColumns
+             @param {number} rowCount        The number of databaseRows
+             @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
+             @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
              @since ARP1.0
           */
           constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>) {
@@ -4839,9 +4934,10 @@ listener.
                this.databaseRows = databaseRows;
           }
           /**
+             @method
              Get the number of databaseColumns
 
-             @return The number of databaseColumns
+             @return {number} The number of databaseColumns
              @since ARP1.0
           */
           getColumnCount() : number {
@@ -4849,9 +4945,10 @@ listener.
           }
 
           /**
+             @method
              Sets the number of databaseColumns
 
-             @param columnCount The number of databaseColumns
+             @param {number} columnCount The number of databaseColumns
              @since ARP1.0
           */
           setColumnCount(columnCount: number) {
@@ -4859,9 +4956,10 @@ listener.
           }
 
           /**
+             @method
              Get the databaseColumns
 
-             @return The databaseColumns
+             @return {Adaptive.DatabaseColumn[]} The databaseColumns
              @since ARP1.0
           */
           getDatabaseColumns() : Array<DatabaseColumn> {
@@ -4869,9 +4967,10 @@ listener.
           }
 
           /**
+             @method
              Sets the databaseColumns of the table
 
-             @param databaseColumns The databaseColumns of the table
+             @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
              @since ARP1.0
           */
           setDatabaseColumns(databaseColumns: Array<DatabaseColumn>) {
@@ -4879,9 +4978,10 @@ listener.
           }
 
           /**
+             @method
              Get the databaseRows of the table
 
-             @return The databaseRows of the table
+             @return {Adaptive.DatabaseRow[]} The databaseRows of the table
              @since ARP1.0
           */
           getDatabaseRows() : Array<DatabaseRow> {
@@ -4889,9 +4989,10 @@ listener.
           }
 
           /**
+             @method
              Sets the databaseRows of the table
 
-             @param databaseRows The databaseRows of the table
+             @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
              @since ARP1.0
           */
           setDatabaseRows(databaseRows: Array<DatabaseRow>) {
@@ -4899,9 +5000,10 @@ listener.
           }
 
           /**
+             @method
              Returns the name of the table
 
-             @return The name of the table
+             @return {string} The name of the table
              @since ARP1.0
           */
           getName() : string {
@@ -4909,9 +5011,10 @@ listener.
           }
 
           /**
+             @method
              Sets the name of the table
 
-             @param name The name of the table
+             @param {string} name The name of the table
              @since ARP1.0
           */
           setName(name: string) {
@@ -4919,9 +5022,10 @@ listener.
           }
 
           /**
+             @method
              Get the number of databaseRows
 
-             @return The number of databaseRows
+             @return {number} The number of databaseRows
              @since ARP1.0
           */
           getRowCount() : number {
@@ -4929,9 +5033,10 @@ listener.
           }
 
           /**
+             @method
              Sets the number of databaseRows
 
-             @param rowCount The number of databaseRows
+             @param {number} rowCount The number of databaseRows
              @since ARP1.0
           */
           setRowCount(rowCount: number) {
@@ -5002,12 +5107,13 @@ be unique for a specific instance of an application on a specific device.
           */
           vendor : string;
           /**
+             @method constructor
              Constructor for the implementation of the platform.
 
-             @param name   or brand of the device.
-             @param model  of the device.
-             @param vendor of the device.
-             @param uuid   unique* identifier (* platform dependent).
+             @param {string} name   or brand of the device.
+             @param {string} model  of the device.
+             @param {string} vendor of the device.
+             @param {string} uuid   unique* identifier (* platform dependent).
              @since ARP1.0
           */
           constructor(name: string, model: string, vendor: string, uuid: string) {
@@ -5018,9 +5124,10 @@ be unique for a specific instance of an application on a specific device.
                this.uuid = uuid;
           }
           /**
+             @method
              Returns the model of the device.
 
-             @return String with the model of the device.
+             @return {string} String with the model of the device.
              @since ARP1.0
           */
           getModel() : string {
@@ -5028,18 +5135,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets Model of device - equivalent to device release or version.
 
-             @param model Model of device - equivalent to device release or version.
+             @param {string} model Model of device - equivalent to device release or version.
           */
           setModel(model: string) {
                this.model = model;
           }
 
           /**
+             @method
              Returns the name of the device.
 
-             @return String with device name.
+             @return {string} String with device name.
              @since ARP1.0
           */
           getName() : string {
@@ -5047,18 +5156,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets Name of device - equivalent to brand.
 
-             @param name Name of device - equivalent to brand.
+             @param {string} name Name of device - equivalent to brand.
           */
           setName(name: string) {
                this.name = name;
           }
 
           /**
+             @method
              Returns the platform dependent UUID of the device.
 
-             @return String with the 128-bit device identifier.
+             @return {string} String with the 128-bit device identifier.
              @since ARP1.0
           */
           getUuid() : string {
@@ -5066,10 +5177,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
 
-             @param uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+             @param {string} uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
           */
           setUuid(uuid: string) {
@@ -5077,9 +5189,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the vendor of the device.
 
-             @return String with the vendor name.
+             @return {string} String with the vendor name.
              @since ARP1.0
           */
           getVendor() : string {
@@ -5087,9 +5200,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets Vendor of the device hardware.
 
-             @param vendor Vendor of the device hardware.
+             @param {string} vendor Vendor of the device hardware.
           */
           setVendor(vendor: string) {
                this.vendor = vendor;
@@ -5149,15 +5263,16 @@ be unique for a specific instance of an application on a specific device.
           */
           toRecipients : Array<EmailAddress>;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param toRecipients        array of recipients
-             @param ccRecipients        array of cc recipients
-             @param bccRecipients       array of bcc recipients
-             @param emailAttachmentData array of attatchments
-             @param messageBody         body of the email
-             @param messageBodyMimeType mime type of the body
-             @param subject             of the email
+             @param {Adaptive.EmailAddress[]} toRecipients        array of recipients
+             @param {Adaptive.EmailAddress[]} ccRecipients        array of cc recipients
+             @param {Adaptive.EmailAddress[]} bccRecipients       array of bcc recipients
+             @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of attatchments
+             @param {string} messageBody         body of the email
+             @param {string} messageBodyMimeType mime type of the body
+             @param {string} subject             of the email
              @since ARP1.0
           */
           constructor(toRecipients: Array<EmailAddress>, ccRecipients: Array<EmailAddress>, bccRecipients: Array<EmailAddress>, emailAttachmentData: Array<EmailAttachmentData>, messageBody: string, messageBodyMimeType: string, subject: string) {
@@ -5171,9 +5286,10 @@ be unique for a specific instance of an application on a specific device.
                this.subject = subject;
           }
           /**
+             @method
              Returns the array of recipients
 
-             @return bccRecipients array of bcc recipients
+             @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
              @since ARP1.0
           */
           getBccRecipients() : Array<EmailAddress> {
@@ -5181,9 +5297,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the array of recipients
 
-             @param bccRecipients array of bcc recipients
+             @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
              @since ARP1.0
           */
           setBccRecipients(bccRecipients: Array<EmailAddress>) {
@@ -5191,9 +5308,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the array of recipients
 
-             @return ccRecipients array of cc recipients
+             @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
              @since ARP1.0
           */
           getCcRecipients() : Array<EmailAddress> {
@@ -5201,9 +5319,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the array of recipients
 
-             @param ccRecipients array of cc recipients
+             @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
              @since ARP1.0
           */
           setCcRecipients(ccRecipients: Array<EmailAddress>) {
@@ -5211,9 +5330,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns an array of attachments
 
-             @return emailAttachmentData array with the email attachments
+             @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
              @since ARP1.0
           */
           getEmailAttachmentData() : Array<EmailAttachmentData> {
@@ -5221,9 +5341,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the email attachment data array
 
-             @param emailAttachmentData array of email attatchments
+             @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
              @since ARP1.0
           */
           setEmailAttachmentData(emailAttachmentData: Array<EmailAttachmentData>) {
@@ -5231,9 +5352,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the message body of the email
 
-             @return message Body string of the email
+             @return {string} message Body string of the email
              @since ARP1.0
           */
           getMessageBody() : string {
@@ -5241,9 +5363,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the message body of the email
 
-             @param messageBody message body of the email
+             @param {string} messageBody message body of the email
              @since ARP1.0
           */
           setMessageBody(messageBody: string) {
@@ -5251,9 +5374,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the myme type of the message body
 
-             @return mime type string of the message boddy
+             @return {string} mime type string of the message boddy
              @since ARP1.0
           */
           getMessageBodyMimeType() : string {
@@ -5261,9 +5385,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the mime type for the message body
 
-             @param messageBodyMimeType type of the body message
+             @param {string} messageBodyMimeType type of the body message
              @since ARP1.0
           */
           setMessageBodyMimeType(messageBodyMimeType: string) {
@@ -5271,9 +5396,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the subject of the email
 
-             @return subject string of the email
+             @return {string} subject string of the email
              @since ARP1.0
           */
           getSubject() : string {
@@ -5281,9 +5407,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the subject of the email
 
-             @param subject of the email
+             @param {string} subject of the email
              @since ARP1.0
           */
           setSubject(subject: string) {
@@ -5291,9 +5418,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the array of recipients
 
-             @return toRecipients array of recipients
+             @return {Adaptive.EmailAddress[]} toRecipients array of recipients
              @since ARP1.0
           */
           getToRecipients() : Array<EmailAddress> {
@@ -5301,9 +5429,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the array of recipients
 
-             @param toRecipients array of recipients
+             @param {Adaptive.EmailAddress[]} toRecipients array of recipients
              @since ARP1.0
           */
           setToRecipients(toRecipients: Array<EmailAddress>) {
@@ -5383,9 +5512,10 @@ be unique for a specific instance of an application on a specific device.
           */
           address : string;
           /**
+             @method constructor
              Constructor used by implementation
 
-             @param address of the Email
+             @param {string} address of the Email
              @since ARP1.0
           */
           constructor(address: string) {
@@ -5393,9 +5523,10 @@ be unique for a specific instance of an application on a specific device.
                this.address = address;
           }
           /**
+             @method
              Returns the email address
 
-             @return address of the Email
+             @return {string} address of the Email
              @since ARP1.0
           */
           getAddress() : string {
@@ -5403,9 +5534,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the Email address
 
-             @param address of the Email
+             @param {string} address of the Email
              @since ARP1.0
           */
           setAddress(address: string) {
@@ -5455,13 +5587,14 @@ be unique for a specific instance of an application on a specific device.
           */
           size : number;
           /**
+             @method constructor
              Constructor with fields
 
-             @param data         raw data of the file attachment
-             @param size         size of the file attachment
-             @param fileName     name of the file attachment
-             @param mimeType     mime type of the file attachment
-             @param referenceUrl relative url of the file attachment
+             @param {number[]} data         raw data of the file attachment
+             @param {number} size         size of the file attachment
+             @param {string} fileName     name of the file attachment
+             @param {string} mimeType     mime type of the file attachment
+             @param {string} referenceUrl relative url of the file attachment
              @since ARP1.0
           */
           constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string) {
@@ -5473,9 +5606,10 @@ be unique for a specific instance of an application on a specific device.
                this.referenceUrl = referenceUrl;
           }
           /**
+             @method
              Returns the raw data in byte[]
 
-             @return data Octet-binary content of the attachment payload.
+             @return {number[]} data Octet-binary content of the attachment payload.
              @since ARP1.0
           */
           getData() : Array<number> {
@@ -5483,9 +5617,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the data of the attachment as a byte[]
 
-             @param data Sets the octet-binary content of the attachment.
+             @param {number[]} data Sets the octet-binary content of the attachment.
              @since ARP1.0
           */
           setData(data: Array<number>) {
@@ -5493,9 +5628,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the filename of the attachment
 
-             @return fileName Name of the attachment.
+             @return {string} fileName Name of the attachment.
              @since ARP1.0
           */
           getFileName() : string {
@@ -5503,9 +5639,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the name of the file attachment
 
-             @param fileName Name of the attachment.
+             @param {string} fileName Name of the attachment.
              @since ARP1.0
           */
           setFileName(fileName: string) {
@@ -5513,9 +5650,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the mime type of the attachment
 
-             @return mimeType
+             @return {string} mimeType
              @since ARP1.0
           */
           getMimeType() : string {
@@ -5523,9 +5661,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the mime type of the attachment
 
-             @param mimeType Mime-type of the attachment.
+             @param {string} mimeType Mime-type of the attachment.
              @since ARP1.0
           */
           setMimeType(mimeType: string) {
@@ -5533,9 +5672,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the absolute url of the file attachment
 
-             @return referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+             @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
              @since ARP1.0
           */
           getReferenceUrl() : string {
@@ -5543,9 +5683,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the absolute url of the attachment
 
-             @param referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+             @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
              @since ARP1.0
           */
           setReferenceUrl(referenceUrl: string) {
@@ -5553,9 +5694,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Returns the size of the attachment as a long
 
-             @return size Length in bytes of the octet-binary content.
+             @return {number} size Length in bytes of the octet-binary content.
              @since ARP1.0
           */
           getSize() : number {
@@ -5563,9 +5705,10 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Set the size of the attachment as a long
 
-             @param size Length in bytes of the octet-binary content ( should be same as data array length.)
+             @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
              @since ARP1.0
           */
           setSize(size: number) {
@@ -5611,15 +5754,17 @@ be unique for a specific instance of an application on a specific device.
           pathAbsolute : string;
           size : number;
           /**
+             @method constructor
              Default constructor.
           */
           constructor() {
                super();
           }
           /**
+             @method
              Returns the milliseconds passed since 1/1/1970 since the file was created.
 
-             @return Timestamp in milliseconds.
+             @return {number} Timestamp in milliseconds.
              @since ARP1.0
           */
           getDateCreated() : number {
@@ -5627,18 +5772,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the creation timestamp in milliseconds. Used internally.
 
-             @param dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
+             @param {number} dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
           */
           setDateCreated(dateCreated: number) {
                this.dateCreated = dateCreated;
           }
 
           /**
+             @method
              Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
-             @return Timestamp in milliseconds.
+             @return {number} Timestamp in milliseconds.
              @since ARP1.0
           */
           getDateModified() : number {
@@ -5646,18 +5793,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the file or folder modification timestamp in milliseconds. Used internally.
 
-             @param dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
+             @param {number} dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
           */
           setDateModified(dateModified: number) {
                this.dateModified = dateModified;
           }
 
           /**
+             @method
              Returns the name of the file if the reference is a file or the last path element of the folder.
 
-             @return The name of the file.
+             @return {string} The name of the file.
              @since ARP1.0
           */
           getName() : string {
@@ -5665,18 +5814,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the name of the file. Used internally.
 
-             @param name Name of the file or last folder path element.
+             @param {string} name Name of the file or last folder path element.
           */
           setName(name: string) {
                this.name = name;
           }
 
           /**
+             @method
              Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
-             @return The path to the file.
+             @return {string} The path to the file.
              @since ARP1.0
           */
           getPath() : string {
@@ -5684,18 +5835,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the path of the file or folder. Used internally.
 
-             @param path The path element of the file or folder.
+             @param {string} path The path element of the file or folder.
           */
           setPath(path: string) {
                this.path = path;
           }
 
           /**
+             @method
              Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
-             @return The absolute path to the file.
+             @return {string} The absolute path to the file.
              @since ARP1.0
           */
           getPathAbsolute() : string {
@@ -5703,18 +5856,20 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the absolute path of the file or folder. Used internally.
 
-             @param pathAbsolute String with the absolute path of file or folder.
+             @param {string} pathAbsolute String with the absolute path of file or folder.
           */
           setPathAbsolute(pathAbsolute: string) {
                this.pathAbsolute = pathAbsolute;
           }
 
           /**
+             @method
              Returns the size in bytes of the file or -1 if the reference is a folder.
 
-             @return Size in bytes of file.
+             @return {number} Size in bytes of file.
              @since ARP1.0
           */
           getSize() : number {
@@ -5722,10 +5877,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
              Sets the file size in bytes of the file. If the file is a folder, this will be 0. If the file
 doesn't exist, this will be -1. Used internally.
 
-             @param size The size in bytes of the file.
+             @param {number} size The size in bytes of the file.
           */
           setSize(size: number) {
                this.size = size;
@@ -5783,14 +5939,15 @@ doesn't exist, this will be -1. Used internally.
           */
           yDoP : number;
           /**
+             @method constructor
              Constructor with parameters
 
-             @param latitude  Latitude of the measurement
-             @param longitude Longitude of the measurement
-             @param altitude  Altitude of the measurement
-             @param xDoP      Dilution of precision on the X measurement
-             @param yDoP      Dilution of precision on the Y measurement
-             @param timestamp Timestamp of the measurement
+             @param {number} latitude  Latitude of the measurement
+             @param {number} longitude Longitude of the measurement
+             @param {number} altitude  Altitude of the measurement
+             @param {number} xDoP      Dilution of precision on the X measurement
+             @param {number} yDoP      Dilution of precision on the Y measurement
+             @param {number} timestamp Timestamp of the measurement
              @since ARP1.0
           */
           constructor(latitude: number, longitude: number, altitude: number, xDoP: number, yDoP: number, timestamp: number) {
@@ -5803,9 +5960,10 @@ doesn't exist, this will be -1. Used internally.
                this.timestamp = timestamp;
           }
           /**
+             @method
              Returns altitude in meters
 
-             @return Altitude of the measurement
+             @return {number} Altitude of the measurement
              @since ARP1.0
           */
           getAltitude() : number {
@@ -5813,9 +5971,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Set altitude in meters
 
-             @param altitude Altitude of the measurement
+             @param {number} altitude Altitude of the measurement
              @since ARP1.0
           */
           setAltitude(altitude: number) {
@@ -5823,9 +5982,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Returns the latitude in degrees
 
-             @return Latitude of the measurement
+             @return {number} Latitude of the measurement
              @since ARP1.0
           */
           getLatitude() : number {
@@ -5833,9 +5993,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Set the latitude in degrees
 
-             @param latitude Latitude of the measurement
+             @param {number} latitude Latitude of the measurement
              @since ARP1.0
           */
           setLatitude(latitude: number) {
@@ -5843,9 +6004,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Returns the longitude in degrees
 
-             @return Longitude of the measurement
+             @return {number} Longitude of the measurement
              @since ARP1.0
           */
           getLongitude() : number {
@@ -5853,9 +6015,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Returns the latitude in degrees
 
-             @param longitude Longitude of the measurement
+             @param {number} longitude Longitude of the measurement
              @since ARP1.0
           */
           setLongitude(longitude: number) {
@@ -5863,9 +6026,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Timestamp Getter
 
-             @return Timestamp
+             @return {number} Timestamp
              @since ARP1.0
           */
           getTimestamp() : number {
@@ -5873,9 +6037,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Timestamp Setter
 
-             @param timestamp Timestamp
+             @param {number} timestamp Timestamp
              @since ARP1.0
           */
           setTimestamp(timestamp: number) {
@@ -5883,36 +6048,40 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Gets Dilution of precision on the X measurement. Measured in meters.
 
-             @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
+             @return {number} xDoP Dilution of precision on the X measurement. Measured in meters.
           */
           getXDoP() : number {
                return this.xDoP;
           }
 
           /**
+             @method
              Sets Dilution of precision on the X measurement. Measured in meters.
 
-             @param xDoP Dilution of precision on the X measurement. Measured in meters.
+             @param {number} xDoP Dilution of precision on the X measurement. Measured in meters.
           */
           setXDoP(xDoP: number) {
                this.xDoP = xDoP;
           }
 
           /**
+             @method
              Gets Dilution of precision on the Y measurement. Measured in meters.
 
-             @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
+             @return {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
           */
           getYDoP() : number {
                return this.yDoP;
           }
 
           /**
+             @method
              Sets Dilution of precision on the Y measurement. Measured in meters.
 
-             @param yDoP Dilution of precision on the Y measurement. Measured in meters.
+             @param {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
           */
           setYDoP(yDoP: number) {
                this.yDoP = yDoP;
@@ -5954,10 +6123,11 @@ doesn't exist, this will be -1. Used internally.
           */
           keyValue : string;
           /**
+             @method constructor
              Constructor using fields
 
-             @param keyName  Key of the element
-             @param keyValue Value of the element
+             @param {string} keyName  Key of the element
+             @param {string} keyValue Value of the element
              @since ARP1.0
           */
           constructor(keyName: string, keyValue: string) {
@@ -5966,9 +6136,10 @@ doesn't exist, this will be -1. Used internally.
                this.keyValue = keyValue;
           }
           /**
+             @method
              Returns the keyName of the element
 
-             @return Key of the element
+             @return {string} Key of the element
              @since ARP1.0
           */
           getKeyName() : string {
@@ -5976,9 +6147,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Sets the keyName of the element
 
-             @param keyName Key of the element
+             @param {string} keyName Key of the element
              @since ARP1.0
           */
           setKeyName(keyName: string) {
@@ -5986,9 +6158,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Returns the keyValue of the element
 
-             @return Value of the element
+             @return {string} Value of the element
              @since ARP1.0
           */
           getKeyValue() : string {
@@ -5996,9 +6169,10 @@ doesn't exist, this will be -1. Used internally.
           }
 
           /**
+             @method
              Sets the keyValue of the element
 
-             @param keyValue Value of the element
+             @param {string} keyValue Value of the element
              @since ARP1.0
           */
           setKeyValue(keyValue: string) {
@@ -6044,9 +6218,10 @@ Possible lifecycle States:
           */
           state : LifecycleState;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param state of the app
+             @param {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           constructor(state: LifecycleState) {
@@ -6054,9 +6229,10 @@ Possible lifecycle States:
                this.state = state;
           }
           /**
+             @method
              Returns the state of the application
 
-             @return state of the app
+             @return {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           getState() : LifecycleState {
@@ -6064,9 +6240,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the State of the application
 
-             @param state of the app
+             @param {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           setState(state: LifecycleState) {
@@ -6108,10 +6285,11 @@ Possible lifecycle States:
           */
           language : string;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param country  Country of the Locale
-             @param language Language of the Locale
+             @param {string} country  Country of the Locale
+             @param {string} language Language of the Locale
              @since ARP1.0
           */
           constructor(language: string, country: string) {
@@ -6120,9 +6298,10 @@ Possible lifecycle States:
                this.country = country;
           }
           /**
+             @method
              Returns the country code
 
-             @return country code
+             @return {string} country code
              @since ARP1.0
           */
           getCountry() : string {
@@ -6130,9 +6309,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the country code
 
-             @param country code
+             @param {string} country code
              @since ARP1.0
           */
           setCountry(country: string) {
@@ -6140,9 +6320,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the language code
 
-             @return language code
+             @return {string} language code
              @since ARP1.0
           */
           getLanguage() : string {
@@ -6150,9 +6331,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the language code
 
-             @param language code
+             @param {string} language code
              @since ARP1.0
           */
           setLanguage(language: string) {
@@ -6195,11 +6377,12 @@ Possible lifecycle States:
           */
           version : string;
           /**
+             @method constructor
              Constructor used by implementation to set the OS information.
 
-             @param name    of the OS.
-             @param version of the OS.
-             @param vendor  of the OS.
+             @param {Adaptive.IOSType} name    of the OS.
+             @param {string} version of the OS.
+             @param {string} vendor  of the OS.
              @since ARP1.0
           */
           constructor(name: IOSType, version: string, vendor: string) {
@@ -6209,9 +6392,10 @@ Possible lifecycle States:
                this.vendor = vendor;
           }
           /**
+             @method
              Returns the name of the operating system.
 
-             @return OS name.
+             @return {Adaptive.IOSType} OS name.
              @since ARP1.0
           */
           getName() : IOSType {
@@ -6219,18 +6403,20 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets The name of the operating system.
 
-             @param name The name of the operating system.
+             @param {Adaptive.IOSType} name The name of the operating system.
           */
           setName(name: IOSType) {
                this.name = name;
           }
 
           /**
+             @method
              Returns the vendor of the operating system.
 
-             @return OS vendor.
+             @return {string} OS vendor.
              @since ARP1.0
           */
           getVendor() : string {
@@ -6238,18 +6424,20 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets The vendor of the operating system.
 
-             @param vendor The vendor of the operating system.
+             @param {string} vendor The vendor of the operating system.
           */
           setVendor(vendor: string) {
                this.vendor = vendor;
           }
 
           /**
+             @method
              Returns the version of the operating system.
 
-             @return OS version.
+             @return {string} OS version.
              @since ARP1.0
           */
           getVersion() : string {
@@ -6257,9 +6445,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets The version/identifier of the operating system.
 
-             @param version The version/identifier of the operating system.
+             @param {string} version The version/identifier of the operating system.
           */
           setVersion(version: string) {
                this.version = version;
@@ -6302,10 +6491,11 @@ Possible lifecycle States:
           */
           secureKey : string;
           /**
+             @method constructor
              Constructor with parameters
 
-             @param secureKey  name of the keypair
-             @param secureData value of the keypair
+             @param {string} secureKey  name of the keypair
+             @param {string} secureData value of the keypair
              @since ARP1.0
           */
           constructor(secureKey: string, secureData: string) {
@@ -6314,9 +6504,10 @@ Possible lifecycle States:
                this.secureData = secureData;
           }
           /**
+             @method
              Returns the object value
 
-             @return Value.
+             @return {string} Value.
              @since ARP 1.0
           */
           getSecureData() : string {
@@ -6324,9 +6515,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets the value for this object
 
-             @param secureData value to set.
+             @param {string} secureData value to set.
              @since ARP 1.0
           */
           setSecureData(secureData: string) {
@@ -6334,9 +6526,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the object secureKey name.
 
-             @return Key name.
+             @return {string} Key name.
              @since ARP 1.0
           */
           getSecureKey() : string {
@@ -6344,9 +6537,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets the secureKey name for this object.
 
-             @param secureKey Key name.
+             @param {string} secureKey Key name.
              @since ARP 1.0
           */
           setSecureKey(secureKey: string) {
@@ -6389,11 +6583,12 @@ Possible lifecycle States:
           */
           serviceEndpoints : Array<ServiceEndpoint>;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param serviceEndpoints Endpoints of the service
-             @param name             Name of the service
-             @param type             Type of the service
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+             @param {string} name             Name of the service
+             @param {Adaptive.IServiceType} type             Type of the service
              @since ARP1.0
           */
           constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string, type: IServiceType) {
@@ -6403,9 +6598,10 @@ Possible lifecycle States:
                this.type = type;
           }
           /**
+             @method
              Returns the type
 
-             @return type
+             @return {Adaptive.IServiceType} type
              @since ARP1.0
           */
           getType() : IServiceType {
@@ -6413,9 +6609,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the type
 
-             @param type Type of the service
+             @param {Adaptive.IServiceType} type Type of the service
              @since ARP1.0
           */
           setType(type: IServiceType) {
@@ -6423,9 +6620,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the name
 
-             @return name
+             @return {string} name
              @since ARP1.0
           */
           getName() : string {
@@ -6433,9 +6631,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the name
 
-             @param name Name of the service
+             @param {string} name Name of the service
              @since ARP1.0
           */
           setName(name: string) {
@@ -6443,9 +6642,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the serviceEndpoints
 
-             @return serviceEndpoints
+             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
              @since ARP1.0
           */
           getServiceEndpoints() : Array<ServiceEndpoint> {
@@ -6453,9 +6653,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the serviceEndpoints
 
-             @param serviceEndpoints Endpoint of the service
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
              @since ARP1.0
           */
           setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
@@ -6533,16 +6734,17 @@ Possible lifecycle States:
           */
           secure : boolean;
           /**
+             @method constructor
              Contructor with fields
 
-             @param cookieName  Name of the cookie
-             @param cookieValue Value of the cookie
-             @param domain      Domain of the cookie
-             @param path        Path of the cookie
-             @param scheme      Scheme of the cookie
-             @param secure      Privacy of the cookie
-             @param expiry      Expiration date of the cookie
-             @param creation    Creation date of the cookie
+             @param {string} cookieName  Name of the cookie
+             @param {string} cookieValue Value of the cookie
+             @param {string} domain      Domain of the cookie
+             @param {string} path        Path of the cookie
+             @param {string} scheme      Scheme of the cookie
+             @param {boolean} secure      Privacy of the cookie
+             @param {number} expiry      Expiration date of the cookie
+             @param {number} creation    Creation date of the cookie
              @since ARP1.0
           */
           constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
@@ -6557,9 +6759,10 @@ Possible lifecycle States:
                this.creation = creation;
           }
           /**
+             @method
              Returns the cookie cookieName
 
-             @return cookieName Name of the cookie
+             @return {string} cookieName Name of the cookie
              @since ARP1.0
           */
           getCookieName() : string {
@@ -6567,9 +6770,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the cookie cookieName
 
-             @param cookieName Name of the cookie
+             @param {string} cookieName Name of the cookie
              @since ARP1.0
           */
           setCookieName(cookieName: string) {
@@ -6577,9 +6781,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the cookie cookieValue
 
-             @return Value of the cookie
+             @return {string} Value of the cookie
              @since ARP1.0
           */
           getCookieValue() : string {
@@ -6587,9 +6792,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the cookie cookieValue
 
-             @param cookieValue Value of the cookie
+             @param {string} cookieValue Value of the cookie
              @since ARP1.0
           */
           setCookieValue(cookieValue: string) {
@@ -6597,9 +6803,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the creation date
 
-             @return Creation date of the cookie
+             @return {number} Creation date of the cookie
              @since ARP1.0
           */
           getCreation() : number {
@@ -6607,9 +6814,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets the creation date
 
-             @param creation Creation date of the cookie
+             @param {number} creation Creation date of the cookie
              @since ARP1.0
           */
           setCreation(creation: number) {
@@ -6617,9 +6825,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the domain
 
-             @return domain
+             @return {string} domain
              @since ARP1.0
           */
           getDomain() : string {
@@ -6627,9 +6836,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the domain
 
-             @param domain Domain of the cookie
+             @param {string} domain Domain of the cookie
              @since ARP1.0
           */
           setDomain(domain: string) {
@@ -6637,9 +6847,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the expiration date in milis
 
-             @return expiry
+             @return {number} expiry
              @since ARP1.0
           */
           getExpiry() : number {
@@ -6647,9 +6858,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the expiration date in milis
 
-             @param expiry Expiration date of the cookie
+             @param {number} expiry Expiration date of the cookie
              @since ARP1.0
           */
           setExpiry(expiry: number) {
@@ -6657,9 +6869,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the path
 
-             @return path
+             @return {string} path
              @since ARP1.0
           */
           getPath() : string {
@@ -6667,9 +6880,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the path
 
-             @param path Path of the cookie
+             @param {string} path Path of the cookie
              @since ARP1.0
           */
           setPath(path: string) {
@@ -6677,9 +6891,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the scheme
 
-             @return scheme
+             @return {string} scheme
              @since ARP1.0
           */
           getScheme() : string {
@@ -6687,9 +6902,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the scheme
 
-             @param scheme Scheme of the cookie
+             @param {string} scheme Scheme of the cookie
              @since ARP1.0
           */
           setScheme(scheme: string) {
@@ -6697,9 +6913,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns whether the cookie is secure or not
 
-             @return true if the cookie is secure; false otherwise
+             @return {boolean} true if the cookie is secure; false otherwise
              @since ARP1.0
           */
           getSecure() : boolean {
@@ -6707,9 +6924,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set whether the cookie is secure or not
 
-             @param secure Privacy of the cookie
+             @param {boolean} secure Privacy of the cookie
              @since ARP1.0
           */
           setSecure(secure: boolean) {
@@ -6766,13 +6984,14 @@ Possible lifecycle States:
           */
           scheme : string;
           /**
+             @method constructor
              Constructor with parameters
 
-             @param host   Remote service host
-             @param paths  Remote service Paths
-             @param port   Remote service Port
-             @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-             @param scheme Remote service scheme
+             @param {string} host   Remote service host
+             @param {Adaptive.ServicePath[]} paths  Remote service Paths
+             @param {number} port   Remote service Port
+             @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
+             @param {string} scheme Remote service scheme
              @since ARP1.0
           */
           constructor(host: string, paths: Array<ServicePath>, port: number, proxy: string, scheme: string) {
@@ -6784,9 +7003,10 @@ Possible lifecycle States:
                this.scheme = scheme;
           }
           /**
+             @method
              Returns the Remote service host
 
-             @return Remote service host
+             @return {string} Remote service host
              @since ARP1.0
           */
           getHost() : string {
@@ -6794,9 +7014,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the Remote service host
 
-             @param host Remote service host
+             @param {string} host Remote service host
              @since ARP1.0
           */
           setHost(host: string) {
@@ -6804,9 +7025,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the Remote service Paths
 
-             @return Remote service Paths
+             @return {Adaptive.ServicePath[]} Remote service Paths
              @since ARP1.0
           */
           getPaths() : Array<ServicePath> {
@@ -6814,9 +7036,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the Remote service Paths
 
-             @param paths Remote service Paths
+             @param {Adaptive.ServicePath[]} paths Remote service Paths
              @since ARP1.0
           */
           setPaths(paths: Array<ServicePath>) {
@@ -6824,9 +7047,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the Remote service Port
 
-             @return Remote service Port
+             @return {number} Remote service Port
              @since ARP1.0
           */
           getPort() : number {
@@ -6834,9 +7058,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the Remote service Port
 
-             @param port Remote service Port
+             @param {number} port Remote service Port
              @since ARP1.0
           */
           setPort(port: number) {
@@ -6844,9 +7069,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Return the Proxy url
 
-             @return Proxy url
+             @return {string} Proxy url
              @since ARP1.0
           */
           getProxy() : string {
@@ -6854,9 +7080,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the Proxy url
 
-             @param proxy Proxy url
+             @param {string} proxy Proxy url
              @since ARP1.0
           */
           setProxy(proxy: string) {
@@ -6864,9 +7091,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the Remote service scheme
 
-             @return Remote service scheme
+             @return {string} Remote service scheme
              @since ARP1.0
           */
           getScheme() : string {
@@ -6874,9 +7102,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the Remote service scheme
 
-             @param scheme Remote service scheme
+             @param {string} scheme Remote service scheme
              @since ARP1.0
           */
           setScheme(scheme: string) {
@@ -6928,10 +7157,11 @@ Possible lifecycle States:
           */
           name : string;
           /**
+             @method constructor
              Constructor with fields
 
-             @param name Name of the header
-             @param data Value of the header
+             @param {string} name Name of the header
+             @param {string} data Value of the header
              @since ARP1.0
           */
           constructor(name: string, data: string) {
@@ -6940,9 +7170,10 @@ Possible lifecycle States:
                this.data = data;
           }
           /**
+             @method
              Returns the header value
 
-             @return ServiceHeader value
+             @return {string} ServiceHeader value
              @since ARP1.0
           */
           getData() : string {
@@ -6950,9 +7181,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the header value
 
-             @param data ServiceHeader value
+             @param {string} data ServiceHeader value
              @since ARP1.0
           */
           setData(data: string) {
@@ -6960,9 +7192,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the header name
 
-             @return ServiceHeader name
+             @return {string} ServiceHeader name
              @since ARP1.0
           */
           getName() : string {
@@ -6970,9 +7203,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the header name
 
-             @param name Name of the header
+             @param {string} name Name of the header
              @since ARP1.0
           */
           setName(name: string) {
@@ -7043,18 +7277,19 @@ Possible lifecycle States:
           */
           serviceSession : ServiceSession;
           /**
+             @method constructor
              Contructor used by the implementation
 
-             @param content             Request/Response data content (plain text)
-             @param contentType         The request/response content type (MIME TYPE).
-             @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param contentLength       The length in bytes for the Content field.
-             @param contentBinary       The byte[] representing the Content field.
-             @param contentBinaryLength The length in bytes for the binary Content.
-             @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param method              The request method
-             @param protocolVersion     The HTTP procotol version to be used for this request.
-             @param serviceSession      The element service session
+             @param {string} content             Request/Response data content (plain text)
+             @param {string} contentType         The request/response content type (MIME TYPE).
+             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+             @param {number} contentLength       The length in bytes for the Content field.
+             @param {number[]} contentBinary       The byte[] representing the Content field.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {string} method              The request method
+             @param {Adaptive.IServiceProtocolVersion} protocolVersion     The HTTP procotol version to be used for this request.
+             @param {Adaptive.ServiceSession} serviceSession      The element service session
              @since ARP1.0
           */
           constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, method: string, protocolVersion: IServiceProtocolVersion, serviceSession: ServiceSession) {
@@ -7071,9 +7306,10 @@ Possible lifecycle States:
                this.serviceSession = serviceSession;
           }
           /**
+             @method
              Returns the protocol version
 
-             @return protocolVersion enum
+             @return {Adaptive.IServiceProtocolVersion} protocolVersion enum
              @since ARP1.0
           */
           getProtocolVersion() : IServiceProtocolVersion {
@@ -7081,9 +7317,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the protocol version
 
-             @param protocolVersion The HTTP procotol version to be used for this request.
+             @param {Adaptive.IServiceProtocolVersion} protocolVersion The HTTP procotol version to be used for this request.
              @since ARP1.0
           */
           setProtocolVersion(protocolVersion: IServiceProtocolVersion) {
@@ -7091,9 +7328,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content
 
-             @return content
+             @return {string} content
              @since ARP1.0
           */
           getContent() : string {
@@ -7101,9 +7339,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content
 
-             @param content Request/Response data content (plain text)
+             @param {string} content Request/Response data content (plain text)
              @since ARP1.0
           */
           setContent(content: string) {
@@ -7111,9 +7350,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the byte[] of the content
 
-             @return contentBinary
+             @return {number[]} contentBinary
              @since ARP1.0
           */
           getContentBinary() : Array<number> {
@@ -7121,9 +7361,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the byte[] of the content
 
-             @param contentBinary The byte[] representing the Content field.
+             @param {number[]} contentBinary The byte[] representing the Content field.
              @since ARP1.0
           */
           setContentBinary(contentBinary: Array<number>) {
@@ -7131,9 +7372,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Retrusn the binary content length
 
-             @return contentBinaryLength
+             @return {number} contentBinaryLength
              @since ARP1.0
           */
           getContentBinaryLength() : number {
@@ -7141,9 +7383,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the binary content length
 
-             @param contentBinaryLength The length in bytes for the binary Content.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
              @since ARP1.0
           */
           setContentBinaryLength(contentBinaryLength: number) {
@@ -7151,9 +7394,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content encoding
 
-             @return contentEncoding
+             @return {string} contentEncoding
              @since ARP1.0
           */
           getContentEncoding() : string {
@@ -7161,9 +7405,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content encoding
 
-             @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
              @since ARP1.0
           */
           setContentEncoding(contentEncoding: string) {
@@ -7171,9 +7416,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content length
 
-             @return contentLength
+             @return {number} contentLength
              @since ARP1.0
           */
           getContentLength() : number {
@@ -7181,9 +7427,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content length
 
-             @param contentLength The length in bytes for the Content field.
+             @param {number} contentLength The length in bytes for the Content field.
              @since ARP1.0
           */
           setContentLength(contentLength: number) {
@@ -7191,9 +7438,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content type
 
-             @return contentType
+             @return {string} contentType
              @since ARP1.0
           */
           getContentType() : string {
@@ -7201,9 +7449,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content type
 
-             @param contentType The request/response content type (MIME TYPE).
+             @param {string} contentType The request/response content type (MIME TYPE).
              @since ARP1.0
           */
           setContentType(contentType: string) {
@@ -7211,9 +7460,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the method
 
-             @return method
+             @return {string} method
              @since ARP1.0
           */
           getMethod() : string {
@@ -7221,9 +7471,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the method
 
-             @param method The request method
+             @param {string} method The request method
              @since ARP1.0
           */
           setMethod(method: string) {
@@ -7231,9 +7482,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the array of ServiceHeader
 
-             @return serviceHeaders
+             @return {Adaptive.ServiceHeader[]} serviceHeaders
              @since ARP1.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
@@ -7241,9 +7493,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the array of ServiceHeader
 
-             @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
              @since ARP1.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
@@ -7251,9 +7504,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Getter for service session
 
-             @return The element service session
+             @return {Adaptive.ServiceSession} The element service session
              @since ARP1.0
           */
           getServiceSession() : ServiceSession {
@@ -7261,9 +7515,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Setter for service session
 
-             @param serviceSession The element service session
+             @param {Adaptive.ServiceSession} serviceSession The element service session
              @since ARP1.0
           */
           setServiceSession(serviceSession: ServiceSession) {
@@ -7358,16 +7613,17 @@ Possible lifecycle States:
           */
           serviceSession : ServiceSession;
           /**
+             @method constructor
              Constructor with fields
 
-             @param content             Request/Response data content (plain text).
-             @param contentType         The request/response content type (MIME TYPE).
-             @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param contentLength       The length in bytes for the Content field.
-             @param contentBinary       The byte[] representing the binary Content.
-             @param contentBinaryLength The length in bytes for the binary Content.
-             @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param serviceSession      Information about the session
+             @param {string} content             Request/Response data content (plain text).
+             @param {string} contentType         The request/response content type (MIME TYPE).
+             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+             @param {number} contentLength       The length in bytes for the Content field.
+             @param {number[]} contentBinary       The byte[] representing the binary Content.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceSession} serviceSession      Information about the session
              @since ARP1.0
           */
           constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
@@ -7382,9 +7638,10 @@ Possible lifecycle States:
                this.serviceSession = serviceSession;
           }
           /**
+             @method
              Returns the content
 
-             @return content
+             @return {string} content
              @since ARP1.0
           */
           getContent() : string {
@@ -7392,9 +7649,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content
 
-             @param content Request/Response data content (plain text).
+             @param {string} content Request/Response data content (plain text).
              @since ARP1.0
           */
           setContent(content: string) {
@@ -7402,9 +7660,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the binary content
 
-             @return contentBinary
+             @return {number[]} contentBinary
              @since ARP1.0
           */
           getContentBinary() : Array<number> {
@@ -7412,9 +7671,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the binary content
 
-             @param contentBinary The byte[] representing the binary Content.
+             @param {number[]} contentBinary The byte[] representing the binary Content.
              @since ARP1.0
           */
           setContentBinary(contentBinary: Array<number>) {
@@ -7422,9 +7682,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the binary content length
 
-             @return contentBinaryLength
+             @return {number} contentBinaryLength
              @since ARP1.0
           */
           getContentBinaryLength() : number {
@@ -7432,9 +7693,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the binary content length
 
-             @param contentBinaryLength The length in bytes for the binary Content.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
              @since ARP1.0
           */
           setContentBinaryLength(contentBinaryLength: number) {
@@ -7442,9 +7704,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content encoding
 
-             @return contentEncoding
+             @return {string} contentEncoding
              @since ARP1.0
           */
           getContentEncoding() : string {
@@ -7452,9 +7715,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content encoding
 
-             @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
              @since ARP1.0
           */
           setContentEncoding(contentEncoding: string) {
@@ -7462,9 +7726,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content length
 
-             @return contentLength
+             @return {number} contentLength
              @since ARP1.0
           */
           getContentLength() : number {
@@ -7472,9 +7737,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content length
 
-             @param contentLength The length in bytes for the Content field.
+             @param {number} contentLength The length in bytes for the Content field.
              @since ARP1.0
           */
           setContentLength(contentLength: number) {
@@ -7482,9 +7748,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the content type
 
-             @return contentType
+             @return {string} contentType
              @since ARP1.0
           */
           getContentType() : string {
@@ -7492,9 +7759,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the content type
 
-             @param contentType The request/response content type (MIME TYPE).
+             @param {string} contentType The request/response content type (MIME TYPE).
              @since ARP1.0
           */
           setContentType(contentType: string) {
@@ -7502,9 +7770,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the array of ServiceHeader
 
-             @return serviceHeaders
+             @return {Adaptive.ServiceHeader[]} serviceHeaders
              @since ARP1.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
@@ -7512,9 +7781,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the array of ServiceHeader
 
-             @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
              @since ARP1.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
@@ -7522,9 +7792,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Getter for service session
 
-             @return The element service session
+             @return {Adaptive.ServiceSession} The element service session
              @since ARP1.0
           */
           getServiceSession() : ServiceSession {
@@ -7532,9 +7803,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Setter for service session
 
-             @param serviceSession The element service session
+             @param {Adaptive.ServiceSession} serviceSession The element service session
              @since ARP1.0
           */
           setServiceSession(serviceSession: ServiceSession) {
@@ -7599,10 +7871,11 @@ Possible lifecycle States:
           */
           cookies : Array<ServiceCookie>;
           /**
+             @method constructor
              Constructor with fields
 
-             @param cookies    The cookies of the response
-             @param attributes Attributes of the response
+             @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
+             @param {string[]} attributes Attributes of the response
              @since ARP1.0
           */
           constructor(cookies: Array<ServiceCookie>, attributes: Array<string>) {
@@ -7611,9 +7884,10 @@ Possible lifecycle States:
                this.attributes = attributes;
           }
           /**
+             @method
              Gets the attributes of the response
 
-             @return Attributes of the response
+             @return {string[]} Attributes of the response
              @since ARP1.0
           */
           getAttributes() : Array<string> {
@@ -7621,9 +7895,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets the attributes for the response
 
-             @param attributes Attributes of the response
+             @param {string[]} attributes Attributes of the response
              @since ARP1.0
           */
           setAttributes(attributes: Array<string>) {
@@ -7631,9 +7906,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the cookies of the response
 
-             @return The cookies of the response
+             @return {Adaptive.ServiceCookie[]} The cookies of the response
              @since ARP1.0
           */
           getCookies() : Array<ServiceCookie> {
@@ -7641,9 +7917,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Sets the cookies of the response
 
-             @param cookies The cookies of the response
+             @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
              @since ARP1.0
           */
           setCookies(cookies: Array<ServiceCookie>) {
@@ -7722,17 +7999,18 @@ Possible lifecycle States:
           */
           professionalInfo : ContactProfessionalInfo;
           /**
+             @method constructor
              Constructor with all the fields
 
-             @param contactId        Identifier of the contact
-             @param personalInfo     Personal Information
-             @param professionalInfo Professional Information
-             @param contactAddresses Addresses of the contact
-             @param contactPhones    Phones of the contact
-             @param contactEmails    Emails of the contact
-             @param contactWebsites  Websites of the contact
-             @param contactSocials   Social Networks of the contact
-             @param contactTags      Tags of the contact
+             @param {string} contactId        Identifier of the contact
+             @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
+             @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
+             @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
+             @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
+             @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
+             @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
+             @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
+             @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
              @since ARP1.0
           */
           constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: Array<ContactAddress>, contactPhones: Array<ContactPhone>, contactEmails: Array<ContactEmail>, contactWebsites: Array<ContactWebsite>, contactSocials: Array<ContactSocial>, contactTags: Array<ContactTag>) {
@@ -7747,9 +8025,10 @@ Possible lifecycle States:
                this.contactTags = contactTags;
           }
           /**
+             @method
              Returns all the addresses of the Contact
 
-             @return ContactAddress[]
+             @return {Adaptive.ContactAddress[]} ContactAddress[]
              @since ARP1.0
           */
           getContactAddresses() : Array<ContactAddress> {
@@ -7757,9 +8036,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the addresses of the Contact
 
-             @param contactAddresses Addresses of the contact
+             @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
              @since ARP1.0
           */
           setContactAddresses(contactAddresses: Array<ContactAddress>) {
@@ -7767,9 +8047,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns all the emails of the Contact
 
-             @return ContactEmail[]
+             @return {Adaptive.ContactEmail[]} ContactEmail[]
              @since ARP1.0
           */
           getContactEmails() : Array<ContactEmail> {
@@ -7777,9 +8058,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the emails of the Contact
 
-             @param contactEmails Emails of the contact
+             @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
              @since ARP1.0
           */
           setContactEmails(contactEmails: Array<ContactEmail>) {
@@ -7787,9 +8069,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns all the phones of the Contact
 
-             @return ContactPhone[]
+             @return {Adaptive.ContactPhone[]} ContactPhone[]
              @since ARP1.0
           */
           getContactPhones() : Array<ContactPhone> {
@@ -7797,9 +8080,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the phones of the Contact
 
-             @param contactPhones Phones of the contact
+             @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
              @since ARP1.0
           */
           setContactPhones(contactPhones: Array<ContactPhone>) {
@@ -7807,9 +8091,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns all the social network info of the Contact
 
-             @return ContactSocial[]
+             @return {Adaptive.ContactSocial[]} ContactSocial[]
              @since ARP1.0
           */
           getContactSocials() : Array<ContactSocial> {
@@ -7817,9 +8102,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the social network info of the Contact
 
-             @param contactSocials Social Networks of the contact
+             @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
              @since ARP1.0
           */
           setContactSocials(contactSocials: Array<ContactSocial>) {
@@ -7827,9 +8113,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the additional tags of the Contact
 
-             @return ContactTag[]
+             @return {Adaptive.ContactTag[]} ContactTag[]
              @since ARP1.0
           */
           getContactTags() : Array<ContactTag> {
@@ -7837,9 +8124,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the additional tags of the Contact
 
-             @param contactTags Tags of the contact
+             @param {Adaptive.ContactTag[]} contactTags Tags of the contact
              @since ARP1.0
           */
           setContactTags(contactTags: Array<ContactTag>) {
@@ -7847,9 +8135,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns all the websites of the Contact
 
-             @return ContactWebsite[]
+             @return {Adaptive.ContactWebsite[]} ContactWebsite[]
              @since ARP1.0
           */
           getContactWebsites() : Array<ContactWebsite> {
@@ -7857,9 +8146,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the websites of the Contact
 
-             @param contactWebsites Websites of the contact
+             @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
              @since ARP1.0
           */
           setContactWebsites(contactWebsites: Array<ContactWebsite>) {
@@ -7867,9 +8157,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the personal info of the Contact
 
-             @return ContactPersonalInfo of the Contact
+             @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
              @since ARP1.0
           */
           getPersonalInfo() : ContactPersonalInfo {
@@ -7877,9 +8168,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the personal info of the Contact
 
-             @param personalInfo Personal Information
+             @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
              @since ARP1.0
           */
           setPersonalInfo(personalInfo: ContactPersonalInfo) {
@@ -7887,9 +8179,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the professional info of the Contact
 
-             @return Array of personal info
+             @return {Adaptive.ContactProfessionalInfo} Array of personal info
              @since ARP1.0
           */
           getProfessionalInfo() : ContactProfessionalInfo {
@@ -7897,9 +8190,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the professional info of the Contact
 
-             @param professionalInfo Professional Information
+             @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
              @since ARP1.0
           */
           setProfessionalInfo(professionalInfo: ContactProfessionalInfo) {
@@ -8086,9 +8380,9 @@ Possible lifecycle States:
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: IAccelerationListenerError
-             @param onResultFunction Function receiving parameters of type: Acceleration
-             @param onWarningFunction Function receiving parameters of type: Acceleration, IAccelerationListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
           */
           constructor(onErrorFunction : (error : IAccelerationListenerError) => void, onResultFunction : (acceleration : Acceleration) => void, onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8197,9 +8491,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: IButtonListenerError
-             @param onResultFunction Function receiving parameters of type: Button
-             @param onWarningFunction Function receiving parameters of type: Button, IButtonListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);
@@ -8307,9 +8601,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: IGeolocationListenerError
-             @param onResultFunction Function receiving parameters of type: Geolocation
-             @param onWarningFunction Function receiving parameters of type: Geolocation, IGeolocationListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
           */
           constructor(onErrorFunction : (error : IGeolocationListenerError) => void, onResultFunction : (geolocation : Geolocation) => void, onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8417,9 +8711,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: ILifecycleListenerError
-             @param onResultFunction Function receiving parameters of type: Lifecycle
-             @param onWarningFunction Function receiving parameters of type: Lifecycle, ILifecycleListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
           */
           constructor(onErrorFunction : (error : ILifecycleListenerError) => void, onResultFunction : (lifecycle : Lifecycle) => void, onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void) {
                super(++registeredCounter);
@@ -8527,9 +8821,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: INetworkStatusListenerError
-             @param onResultFunction Function receiving parameters of type: ICapabilitiesNet
-             @param onWarningFunction Function receiving parameters of type: ICapabilitiesNet, INetworkStatusListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+             @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
           */
           constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
@@ -8689,9 +8983,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IContactPhotoResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<number>
-             @param onWarningFunction Function receiving parameters of type: Array<number>, IContactPhotoResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+             @param onResultFunction Function receiving parameters of type: number[]
+             @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactPhotoResultCallbackError) => void, onResultFunction : (contactPhoto : Array<number>) => void, onWarningFunction : (contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -8803,9 +9097,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IContactResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<Contact>
-             @param onWarningFunction Function receiving parameters of type: Array<Contact>, IContactResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactResultCallbackError) => void, onResultFunction : (contacts : Array<Contact>) => void, onWarningFunction : (contacts : Array<Contact>, warning : IContactResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -8917,9 +9211,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IDatabaseResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Database
-             @param onWarningFunction Function receiving parameters of type: Database, IDatabaseResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Database
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseResultCallbackError) => void, onResultFunction : (database : Database) => void, onWarningFunction : (database : Database, warning : IDatabaseResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9031,9 +9325,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IDatabaseTableResultCallbackError
-             @param onResultFunction Function receiving parameters of type: DatabaseTable
-             @param onWarningFunction Function receiving parameters of type: DatabaseTable, IDatabaseTableResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+             @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseTableResultCallbackError) => void, onResultFunction : (databaseTable : DatabaseTable) => void, onWarningFunction : (databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9145,9 +9439,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IFileDataLoadResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<number>
-             @param onWarningFunction Function receiving parameters of type: Array<number>, IFileDataLoadResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+             @param onResultFunction Function receiving parameters of type: number[]
+             @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileDataLoadResultCallbackError) => void, onResultFunction : (data : Array<number>) => void, onWarningFunction : (data : Array<number>, warning : IFileDataLoadResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9259,9 +9553,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IFileDataStoreResultCallbackError
-             @param onResultFunction Function receiving parameters of type: FileDescriptor
-             @param onWarningFunction Function receiving parameters of type: FileDescriptor, IFileDataStoreResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileDataStoreResultCallbackError) => void, onResultFunction : (file : FileDescriptor) => void, onWarningFunction : (file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9373,9 +9667,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IFileListResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<FileDescriptor>
-             @param onWarningFunction Function receiving parameters of type: Array<FileDescriptor>, IFileListResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileListResultCallbackError) => void, onResultFunction : (files : Array<FileDescriptor>) => void, onWarningFunction : (files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9487,9 +9781,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IFileResultCallbackError
-             @param onResultFunction Function receiving parameters of type: FileDescriptor
-             @param onWarningFunction Function receiving parameters of type: FileDescriptor, IFileResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileResultCallbackError) => void, onResultFunction : (storageFile : FileDescriptor) => void, onWarningFunction : (file : FileDescriptor, warning : IFileResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9601,9 +9895,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IMessagingCallbackError
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
              @param onResultFunction Function receiving parameters of type: boolean
-             @param onWarningFunction Function receiving parameters of type: boolean, IMessagingCallbackWarning
+             @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
           */
           constructor(onErrorFunction : (error : IMessagingCallbackError) => void, onResultFunction : (success : boolean) => void, onWarningFunction : (success : boolean, warning : IMessagingCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9715,9 +10009,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: INetworkReachabilityCallbackError
+             @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
              @param onResultFunction Function receiving parameters of type: boolean
-             @param onWarningFunction Function receiving parameters of type: boolean, INetworkReachabilityCallbackWarning
+             @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
           */
           constructor(onErrorFunction : (error : INetworkReachabilityCallbackError) => void, onResultFunction : (reachable : boolean) => void, onWarningFunction : (reachable : boolean, warning : INetworkReachabilityCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9829,9 +10123,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: ISecurityResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<SecureKeyPair>
-             @param onWarningFunction Function receiving parameters of type: Array<SecureKeyPair>, ISecurityResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+             @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
           */
           constructor(onErrorFunction : (error : ISecurityResultCallbackError) => void, onResultFunction : (keyValues : Array<SecureKeyPair>) => void, onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -9943,9 +10237,9 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IServiceResultCallbackError
-             @param onResultFunction Function receiving parameters of type: ServiceResponse
-             @param onWarningFunction Function receiving parameters of type: ServiceResponse, IServiceResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+             @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IServiceResultCallbackError) => void, onResultFunction : (response : ServiceResponse) => void, onWarningFunction : (response : ServiceResponse, warning : IServiceResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -10028,7 +10322,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10072,7 +10366,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10116,7 +10410,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10160,7 +10454,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10204,7 +10498,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10248,7 +10542,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10292,7 +10586,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10336,7 +10630,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10380,7 +10674,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10424,7 +10718,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10468,7 +10762,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10512,7 +10806,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10556,7 +10850,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10600,7 +10894,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10638,7 +10932,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10657,7 +10951,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -10667,7 +10961,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              Returns the default locale of the application defined in the configuration file
 
-             @return {Locale} Default Locale of the application
+             @return {Adaptive.Locale} Default Locale of the application
              @since ARP1.0
           */
           getDefaultLocale() : Locale {
@@ -10705,7 +10999,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              List of supported locales for the application defined in the configuration file
 
-             @return {[Adaptive.Locale]} List of locales
+             @return {Adaptive.Locale[]} List of locales
              @since ARP1.0
           */
           getLocaleSupportedDescriptors() : Array<Locale> {
@@ -10789,7 +11083,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-             @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
+             @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
              @since ARP1.0
           */
           getResourceLiterals(locale : Locale) : Array<KeyPair> {
@@ -10840,7 +11134,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11010,7 +11304,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class ManagementBridge extends BaseApplicationBridge implements IManagement {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11029,7 +11323,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class PrintingBridge extends BaseApplicationBridge implements IPrinting {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11048,7 +11342,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class SettingsBridge extends BaseApplicationBridge implements ISettings {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11067,7 +11361,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class UpdateBridge extends BaseApplicationBridge implements IUpdate {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11086,7 +11380,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class AdsBridge extends BaseCommerceBridge implements IAds {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11105,7 +11399,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class StoreBridge extends BaseCommerceBridge implements IStore {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11124,7 +11418,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class WalletBridge extends BaseCommerceBridge implements IWallet {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11143,7 +11437,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11162,7 +11456,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11181,7 +11475,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11200,7 +11494,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11311,7 +11605,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11443,7 +11737,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class ServiceBridge extends BaseCommunicationBridge implements IService {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11454,7 +11748,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Get a reference to a registered service by name.
 
              @param serviceName Name of service.
-             @return {Service} A service, if registered, or null of the service does not exist.
+             @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
              @since ARP1.0
           */
           getService(serviceName : string) : Service {
@@ -11703,7 +11997,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class SocketBridge extends BaseCommunicationBridge implements ISocket {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11722,7 +12016,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11733,7 +12027,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Invoke a phone call
 
              @param number to call
-             @return {ITelephonyStatus} Status of the call
+             @return {Adaptive.ITelephonyStatus} Status of the call
              @since ARP1.0
           */
           call(number : string) : ITelephonyStatus {
@@ -11781,7 +12075,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class CloudBridge extends BaseDataBridge implements ICloud {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11800,7 +12094,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class DataStreamBridge extends BaseDataBridge implements IDataStream {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -11819,7 +12113,7 @@ listener and subsequently, the listener will be deactivated and removed from the
      export class DatabaseBridge extends BaseDataBridge implements IDatabase {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -12210,7 +12504,7 @@ should be passed as a parameter
      export class FileBridge extends BaseDataBridge implements IFile {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -12476,7 +12770,7 @@ deleted if the cascade parameter is set to true.
              Returns the file storage type of the file
 
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemStorageType} Storage Type file
+             @return {Adaptive.IFileSystemStorageType} Storage Type file
              @since ARP1.0
           */
           getFileStorageType(descriptor : FileDescriptor) : IFileSystemStorageType {
@@ -12516,7 +12810,7 @@ deleted if the cascade parameter is set to true.
              Returns the file type
 
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemType} Returns the file type of the file
+             @return {Adaptive.IFileSystemType} Returns the file type of the file
              @since ARP1.0
           */
           getFileType(descriptor : FileDescriptor) : IFileSystemType {
@@ -12556,7 +12850,7 @@ deleted if the cascade parameter is set to true.
              Returns the security type of the file
 
              @param descriptor File descriptor of file or folder used for operation.
-             @return {IFileSystemSecurity} Security Level of the file
+             @return {Adaptive.IFileSystemSecurity} Security Level of the file
              @since ARP1.0
           */
           getSecurityType(descriptor : FileDescriptor) : IFileSystemSecurity {
@@ -12883,7 +13177,7 @@ new destination file.
      export class FileSystemBridge extends BaseDataBridge implements IFileSystem {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -12896,7 +13190,7 @@ This method does not create the actual file in the specified folder.
 
              @param parent Parent directory.
              @param name   Name of new file or directory.
-             @return {FileDescriptor} A reference to a new or existing location in the filesystem.
+             @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
              @since ARP1.0
           */
           createFileDescriptor(parent : FileDescriptor, name : string) : FileDescriptor {
@@ -12938,7 +13232,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
-             @return {FileDescriptor} Path to the application's cache folder.
+             @return {Adaptive.FileDescriptor} Path to the application's cache folder.
              @since ARP1.0
           */
           getApplicationCacheFolder() : FileDescriptor {
@@ -12977,7 +13271,7 @@ This path is volatile and may be cleaned by the OS periodically.
              Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
-             @return {FileDescriptor} Path to the application's cloud storage folder.
+             @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
              @since ARP1.0
           */
           getApplicationCloudFolder() : FileDescriptor {
@@ -13016,7 +13310,7 @@ This path must always be writable by the current application.
              Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
-             @return {FileDescriptor} Path to the application's documents folder.
+             @return {Adaptive.FileDescriptor} Path to the application's documents folder.
              @since ARP1.0
           */
           getApplicationDocumentsFolder() : FileDescriptor {
@@ -13055,7 +13349,7 @@ This path must always be writable by the current application.
              Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
-             @return {FileDescriptor} Path to the application folder.
+             @return {Adaptive.FileDescriptor} Path to the application folder.
              @since ARP1.0
           */
           getApplicationFolder() : FileDescriptor {
@@ -13094,7 +13388,7 @@ This path may or may not be directly readable or writable - it usually contains 
              Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
-             @return {FileDescriptor} Path to the application's protected storage folder.
+             @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
              @since ARP1.0
           */
           getApplicationProtectedFolder() : FileDescriptor {
@@ -13173,7 +13467,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
 
-             @return {FileDescriptor} Path to the application's documents folder.
+             @return {Adaptive.FileDescriptor} Path to the application's documents folder.
              @since ARP1.0
           */
           getSystemExternalFolder() : FileDescriptor {
@@ -13220,7 +13514,7 @@ This path may or may not be writable by the current application.
      export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13239,7 +13533,7 @@ This path may or may not be writable by the current application.
      export class XMLBridge extends BaseDataBridge implements IXML {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13258,7 +13552,7 @@ This path may or may not be writable by the current application.
      export class AudioBridge extends BaseMediaBridge implements IAudio {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13277,7 +13571,7 @@ This path may or may not be writable by the current application.
      export class CameraBridge extends BaseMediaBridge implements ICamera {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13296,7 +13590,7 @@ This path may or may not be writable by the current application.
      export class ImagingBridge extends BaseMediaBridge implements IImaging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13315,7 +13609,7 @@ This path may or may not be writable by the current application.
      export class VideoBridge extends BaseMediaBridge implements IVideo {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13359,7 +13653,7 @@ This path may or may not be writable by the current application.
      export class AlarmBridge extends BaseNotificationBridge implements IAlarm {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13378,7 +13672,7 @@ This path may or may not be writable by the current application.
      export class NotificationBridge extends BaseNotificationBridge implements INotification {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13397,7 +13691,7 @@ This path may or may not be writable by the current application.
      export class NotificationLocalBridge extends BaseNotificationBridge implements INotificationLocal {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13416,7 +13710,7 @@ This path may or may not be writable by the current application.
      export class VibrationBridge extends BaseNotificationBridge implements IVibration {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13435,7 +13729,7 @@ This path may or may not be writable by the current application.
      export class CalendarBridge extends BasePIMBridge implements ICalendar {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13454,7 +13748,7 @@ This path may or may not be writable by the current application.
      export class ContactBridge extends BasePIMBridge implements IContact {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13839,7 +14133,7 @@ This path may or may not be writable by the current application.
      export class MailBridge extends BasePIMBridge implements IMail {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13904,7 +14198,7 @@ This path may or may not be writable by the current application.
      export class MessagingBridge extends BasePIMBridge implements IMessaging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13971,7 +14265,7 @@ This path may or may not be writable by the current application.
      export class BarcodeBridge extends BaseReaderBridge implements IBarcode {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -13990,7 +14284,7 @@ This path may or may not be writable by the current application.
      export class NFCBridge extends BaseReaderBridge implements INFC {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14009,7 +14303,7 @@ This path may or may not be writable by the current application.
      export class OCRBridge extends BaseReaderBridge implements IOCR {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14028,7 +14322,7 @@ This path may or may not be writable by the current application.
      export class QRCodeBridge extends BaseReaderBridge implements IQRCode {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14047,7 +14341,7 @@ This path may or may not be writable by the current application.
      export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14066,7 +14360,7 @@ This path may or may not be writable by the current application.
      export class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14085,7 +14379,7 @@ This path may or may not be writable by the current application.
      export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14286,7 +14580,7 @@ This path may or may not be writable by the current application.
      export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14418,7 +14712,7 @@ This path may or may not be writable by the current application.
      export class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14437,7 +14731,7 @@ This path may or may not be writable by the current application.
      export class BarometerBridge extends BaseSensorBridge implements IBarometer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14456,7 +14750,7 @@ This path may or may not be writable by the current application.
      export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14588,7 +14882,7 @@ This path may or may not be writable by the current application.
      export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14607,7 +14901,7 @@ This path may or may not be writable by the current application.
      export class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14626,7 +14920,7 @@ This path may or may not be writable by the current application.
      export class ProximityBridge extends BaseSensorBridge implements IProximity {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14645,7 +14939,7 @@ This path may or may not be writable by the current application.
      export class FacebookBridge extends BaseSocialBridge implements IFacebook {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14664,7 +14958,7 @@ This path may or may not be writable by the current application.
      export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14683,7 +14977,7 @@ This path may or may not be writable by the current application.
      export class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14702,7 +14996,7 @@ This path may or may not be writable by the current application.
      export class RSSBridge extends BaseSocialBridge implements IRSS {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14721,7 +15015,7 @@ This path may or may not be writable by the current application.
      export class TwitterBridge extends BaseSocialBridge implements ITwitter {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -14740,7 +15034,7 @@ This path may or may not be writable by the current application.
      export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15043,7 +15337,7 @@ device.
      export class DeviceBridge extends BaseSystemBridge implements IDevice {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15094,7 +15388,7 @@ device.
           /**
              Returns the device information for the current device executing the runtime.
 
-             @return {DeviceInfo} DeviceInfo for the current device.
+             @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
              @since ARP1.0
           */
           getDeviceInfo() : DeviceInfo {
@@ -15132,7 +15426,7 @@ device.
           /**
              Gets the current Locale for the device.
 
-             @return {Locale} The current Locale information.
+             @return {Adaptive.Locale} The current Locale information.
              @since ARP1.0
           */
           getLocaleCurrent() : Locale {
@@ -15251,7 +15545,7 @@ device.
      export class DisplayBridge extends BaseSystemBridge implements IDisplay {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15270,7 +15564,7 @@ device.
      export class OSBridge extends BaseSystemBridge implements IOS {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15280,7 +15574,7 @@ device.
           /**
              Returns the OSInfo for the current operating system.
 
-             @return {OSInfo} OSInfo with name, version and vendor of the OS.
+             @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
              @since ARP1.0
           */
           getOSInfo() : OSInfo {
@@ -15327,7 +15621,7 @@ device.
      export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15407,7 +15701,7 @@ device.
      export class BrowserBridge extends BaseUIBridge implements IBrowser {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15554,7 +15848,7 @@ device.
      export class DesktopBridge extends BaseUIBridge implements IDesktop {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15573,7 +15867,7 @@ device.
      export class MapBridge extends BaseUIBridge implements IMap {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15592,7 +15886,7 @@ device.
      export class UIBridge extends BaseUIBridge implements IUI {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15611,7 +15905,7 @@ device.
      export class CompressionBridge extends BaseUtilBridge implements ICompression {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15630,7 +15924,7 @@ device.
      export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15649,7 +15943,7 @@ device.
      export class CryptoBridge extends BaseUtilBridge implements ICrypto {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15668,7 +15962,7 @@ device.
      export class LoggingBridge extends BaseUtilBridge implements ILogging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15743,7 +16037,7 @@ device.
      export class TimerBridge extends BaseUtilBridge implements ITimer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -15764,6 +16058,7 @@ device.
           /**
              @private
              @static
+             @property {Adaptive.AppRegistryBridge} instance
              Singleton instance of AppRegistry.
           */
           private static instance : IAppRegistry = null;
@@ -15783,355 +16078,352 @@ device.
           }
 
           /**
-             Singleton instances of Bridges.
-          */
-          /**
-             @static
+             @private
              @property {Adaptive.IAcceleration} instanceAcceleration
           */
           private static instanceAcceleration : IAcceleration = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAds} instanceAds
           */
           private static instanceAds : IAds = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAlarm} instanceAlarm
           */
           private static instanceAlarm : IAlarm = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAmbientLight} instanceAmbientLight
           */
           private static instanceAmbientLight : IAmbientLight = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAnalytics} instanceAnalytics
           */
           private static instanceAnalytics : IAnalytics = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAudio} instanceAudio
           */
           private static instanceAudio : IAudio = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBarcode} instanceBarcode
           */
           private static instanceBarcode : IBarcode = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBarometer} instanceBarometer
           */
           private static instanceBarometer : IBarometer = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBluetooth} instanceBluetooth
           */
           private static instanceBluetooth : IBluetooth = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBrowser} instanceBrowser
           */
           private static instanceBrowser : IBrowser = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICalendar} instanceCalendar
           */
           private static instanceCalendar : ICalendar = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICamera} instanceCamera
           */
           private static instanceCamera : ICamera = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICapabilities} instanceCapabilities
           */
           private static instanceCapabilities : ICapabilities = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICloud} instanceCloud
           */
           private static instanceCloud : ICloud = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICompression} instanceCompression
           */
           private static instanceCompression : ICompression = null;
           /**
-             @static
+             @private
              @property {Adaptive.IConcurrent} instanceConcurrent
           */
           private static instanceConcurrent : IConcurrent = null;
           /**
-             @static
+             @private
              @property {Adaptive.IContact} instanceContact
           */
           private static instanceContact : IContact = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICrypto} instanceCrypto
           */
           private static instanceCrypto : ICrypto = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDataStream} instanceDataStream
           */
           private static instanceDataStream : IDataStream = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDatabase} instanceDatabase
           */
           private static instanceDatabase : IDatabase = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDesktop} instanceDesktop
           */
           private static instanceDesktop : IDesktop = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDevice} instanceDevice
           */
           private static instanceDevice : IDevice = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDisplay} instanceDisplay
           */
           private static instanceDisplay : IDisplay = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFacebook} instanceFacebook
           */
           private static instanceFacebook : IFacebook = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFile} instanceFile
           */
           private static instanceFile : IFile = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFileSystem} instanceFileSystem
           */
           private static instanceFileSystem : IFileSystem = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGeolocation} instanceGeolocation
           */
           private static instanceGeolocation : IGeolocation = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGlobalization} instanceGlobalization
           */
           private static instanceGlobalization : IGlobalization = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGooglePlus} instanceGooglePlus
           */
           private static instanceGooglePlus : IGooglePlus = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGyroscope} instanceGyroscope
           */
           private static instanceGyroscope : IGyroscope = null;
           /**
-             @static
+             @private
              @property {Adaptive.IImaging} instanceImaging
           */
           private static instanceImaging : IImaging = null;
           /**
-             @static
+             @private
              @property {Adaptive.IInternalStorage} instanceInternalStorage
           */
           private static instanceInternalStorage : IInternalStorage = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILifecycle} instanceLifecycle
           */
           private static instanceLifecycle : ILifecycle = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILinkedIn} instanceLinkedIn
           */
           private static instanceLinkedIn : ILinkedIn = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILogging} instanceLogging
           */
           private static instanceLogging : ILogging = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMagnetometer} instanceMagnetometer
           */
           private static instanceMagnetometer : IMagnetometer = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMail} instanceMail
           */
           private static instanceMail : IMail = null;
           /**
-             @static
+             @private
              @property {Adaptive.IManagement} instanceManagement
           */
           private static instanceManagement : IManagement = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMap} instanceMap
           */
           private static instanceMap : IMap = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMessaging} instanceMessaging
           */
           private static instanceMessaging : IMessaging = null;
           /**
-             @static
+             @private
              @property {Adaptive.INFC} instanceNFC
           */
           private static instanceNFC : INFC = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkInfo} instanceNetworkInfo
           */
           private static instanceNetworkInfo : INetworkInfo = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkNaming} instanceNetworkNaming
           */
           private static instanceNetworkNaming : INetworkNaming = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkReachability} instanceNetworkReachability
           */
           private static instanceNetworkReachability : INetworkReachability = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkStatus} instanceNetworkStatus
           */
           private static instanceNetworkStatus : INetworkStatus = null;
           /**
-             @static
+             @private
              @property {Adaptive.INotification} instanceNotification
           */
           private static instanceNotification : INotification = null;
           /**
-             @static
+             @private
              @property {Adaptive.INotificationLocal} instanceNotificationLocal
           */
           private static instanceNotificationLocal : INotificationLocal = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOAuth} instanceOAuth
           */
           private static instanceOAuth : IOAuth = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOCR} instanceOCR
           */
           private static instanceOCR : IOCR = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOS} instanceOS
           */
           private static instanceOS : IOS = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOpenId} instanceOpenId
           */
           private static instanceOpenId : IOpenId = null;
           /**
-             @static
+             @private
              @property {Adaptive.IPrinting} instancePrinting
           */
           private static instancePrinting : IPrinting = null;
           /**
-             @static
+             @private
              @property {Adaptive.IProximity} instanceProximity
           */
           private static instanceProximity : IProximity = null;
           /**
-             @static
+             @private
              @property {Adaptive.IQRCode} instanceQRCode
           */
           private static instanceQRCode : IQRCode = null;
           /**
-             @static
+             @private
              @property {Adaptive.IRSS} instanceRSS
           */
           private static instanceRSS : IRSS = null;
           /**
-             @static
+             @private
              @property {Adaptive.IRuntime} instanceRuntime
           */
           private static instanceRuntime : IRuntime = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISecurity} instanceSecurity
           */
           private static instanceSecurity : ISecurity = null;
           /**
-             @static
+             @private
              @property {Adaptive.IService} instanceService
           */
           private static instanceService : IService = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISettings} instanceSettings
           */
           private static instanceSettings : ISettings = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISocket} instanceSocket
           */
           private static instanceSocket : ISocket = null;
           /**
-             @static
+             @private
              @property {Adaptive.IStore} instanceStore
           */
           private static instanceStore : IStore = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITelephony} instanceTelephony
           */
           private static instanceTelephony : ITelephony = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITimer} instanceTimer
           */
           private static instanceTimer : ITimer = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITwitter} instanceTwitter
           */
           private static instanceTwitter : ITwitter = null;
           /**
-             @static
+             @private
              @property {Adaptive.IUI} instanceUI
           */
           private static instanceUI : IUI = null;
           /**
-             @static
+             @private
              @property {Adaptive.IUpdate} instanceUpdate
           */
           private static instanceUpdate : IUpdate = null;
           /**
-             @static
+             @private
              @property {Adaptive.IVibration} instanceVibration
           */
           private static instanceVibration : IVibration = null;
           /**
-             @static
+             @private
              @property {Adaptive.IVideo} instanceVideo
           */
           private static instanceVideo : IVideo = null;
           /**
-             @static
+             @private
              @property {Adaptive.IWallet} instanceWallet
           */
           private static instanceWallet : IWallet = null;
           /**
-             @static
+             @private
              @property {Adaptive.IXML} instanceXML
           */
           private static instanceXML : IXML = null;

@@ -74,113 +74,128 @@ declare module Adaptive {
         */
         toRecipients: EmailAddress[];
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param toRecipients        array of recipients
-           @param ccRecipients        array of cc recipients
-           @param bccRecipients       array of bcc recipients
-           @param emailAttachmentData array of attatchments
-           @param messageBody         body of the email
-           @param messageBodyMimeType mime type of the body
-           @param subject             of the email
+           @param {Adaptive.EmailAddress[]} toRecipients        array of recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients        array of cc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients       array of bcc recipients
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of attatchments
+           @param {string} messageBody         body of the email
+           @param {string} messageBodyMimeType mime type of the body
+           @param {string} subject             of the email
            @since ARP1.0
         */
         constructor(toRecipients: EmailAddress[], ccRecipients: EmailAddress[], bccRecipients: EmailAddress[], emailAttachmentData: EmailAttachmentData[], messageBody: string, messageBodyMimeType: string, subject: string);
         /**
+           @method
            Returns the array of recipients
 
-           @return bccRecipients array of bcc recipients
+           @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         getBccRecipients(): EmailAddress[];
         /**
+           @method
            Set the array of recipients
 
-           @param bccRecipients array of bcc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         setBccRecipients(bccRecipients: EmailAddress[]): void;
         /**
+           @method
            Returns the array of recipients
 
-           @return ccRecipients array of cc recipients
+           @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         getCcRecipients(): EmailAddress[];
         /**
+           @method
            Set the array of recipients
 
-           @param ccRecipients array of cc recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         setCcRecipients(ccRecipients: EmailAddress[]): void;
         /**
+           @method
            Returns an array of attachments
 
-           @return emailAttachmentData array with the email attachments
+           @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
            @since ARP1.0
         */
         getEmailAttachmentData(): EmailAttachmentData[];
         /**
+           @method
            Set the email attachment data array
 
-           @param emailAttachmentData array of email attatchments
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
            @since ARP1.0
         */
         setEmailAttachmentData(emailAttachmentData: EmailAttachmentData[]): void;
         /**
+           @method
            Returns the message body of the email
 
-           @return message Body string of the email
+           @return {string} message Body string of the email
            @since ARP1.0
         */
         getMessageBody(): string;
         /**
+           @method
            Set the message body of the email
 
-           @param messageBody message body of the email
+           @param {string} messageBody message body of the email
            @since ARP1.0
         */
         setMessageBody(messageBody: string): void;
         /**
+           @method
            Returns the myme type of the message body
 
-           @return mime type string of the message boddy
+           @return {string} mime type string of the message boddy
            @since ARP1.0
         */
         getMessageBodyMimeType(): string;
         /**
+           @method
            Set the mime type for the message body
 
-           @param messageBodyMimeType type of the body message
+           @param {string} messageBodyMimeType type of the body message
            @since ARP1.0
         */
         setMessageBodyMimeType(messageBodyMimeType: string): void;
         /**
+           @method
            Returns the subject of the email
 
-           @return subject string of the email
+           @return {string} subject string of the email
            @since ARP1.0
         */
         getSubject(): string;
         /**
+           @method
            Set the subject of the email
 
-           @param subject of the email
+           @param {string} subject of the email
            @since ARP1.0
         */
         setSubject(subject: string): void;
         /**
+           @method
            Returns the array of recipients
 
-           @return toRecipients array of recipients
+           @return {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         getToRecipients(): EmailAddress[];
         /**
+           @method
            Set the array of recipients
 
-           @param toRecipients array of recipients
+           @param {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         setToRecipients(toRecipients: EmailAddress[]): void;

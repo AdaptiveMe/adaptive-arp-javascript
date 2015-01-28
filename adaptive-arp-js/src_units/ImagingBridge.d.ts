@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class ImagingBridge extends BaseMediaBridge implements IImaging {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

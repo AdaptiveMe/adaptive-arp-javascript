@@ -58,53 +58,60 @@ declare module Adaptive {
         */
         serviceEndpoints: ServiceEndpoint[];
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param serviceEndpoints Endpoints of the service
-           @param name             Name of the service
-           @param type             Type of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+           @param {string} name             Name of the service
+           @param {Adaptive.IServiceType} type             Type of the service
            @since ARP1.0
         */
         constructor(serviceEndpoints: ServiceEndpoint[], name: string, type: IServiceType);
         /**
+           @method
            Returns the type
 
-           @return type
+           @return {Adaptive.IServiceType} type
            @since ARP1.0
         */
         getType(): IServiceType;
         /**
+           @method
            Set the type
 
-           @param type Type of the service
+           @param {Adaptive.IServiceType} type Type of the service
            @since ARP1.0
         */
         setType(type: IServiceType): void;
         /**
+           @method
            Returns the name
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         getName(): string;
         /**
+           @method
            Set the name
 
-           @param name Name of the service
+           @param {string} name Name of the service
            @since ARP1.0
         */
         setName(name: string): void;
         /**
+           @method
            Returns the serviceEndpoints
 
-           @return serviceEndpoints
+           @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
            @since ARP1.0
         */
         getServiceEndpoints(): ServiceEndpoint[];
         /**
+           @method
            Set the serviceEndpoints
 
-           @param serviceEndpoints Endpoint of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
         setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;

@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class PrintingBridge extends BaseApplicationBridge implements IPrinting {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

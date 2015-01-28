@@ -90,9 +90,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IContactPhotoResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<number>
-             @param onWarningFunction Function receiving parameters of type: Array<number>, IContactPhotoResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+             @param onResultFunction Function receiving parameters of type: number[]
+             @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactPhotoResultCallbackError) => void, onResultFunction : (contactPhoto : Array<number>) => void, onWarningFunction : (contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) => void) {
                super(++registeredCounter);

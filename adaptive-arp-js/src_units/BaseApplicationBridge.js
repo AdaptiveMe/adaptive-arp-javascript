@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseApplicationBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseApplicationBridge() {

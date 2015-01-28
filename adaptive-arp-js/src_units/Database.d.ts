@@ -52,38 +52,43 @@ declare module Adaptive {
         */
         name: string;
         /**
+           @method constructor
            Constructor using fields.
 
-           @param name     Name of the DatabaseTable.
-           @param compress Compression enabled.
+           @param {string} name     Name of the DatabaseTable.
+           @param {boolean} compress Compression enabled.
            @since ARP1.0
         */
         constructor(name: string, compress: boolean);
         /**
+           @method
            Returns if the table is compressed
 
-           @return Compression enabled
+           @return {boolean} Compression enabled
            @since ARP1.0
         */
         getCompress(): boolean;
         /**
+           @method
            Sets if the table is compressed or not.
 
-           @param compress Compression enabled
+           @param {boolean} compress Compression enabled
            @since ARP1.0
         */
         setCompress(compress: boolean): void;
         /**
+           @method
            Returns the name.
 
-           @return The name of the table.
+           @return {string} The name of the table.
            @since ARP1.0
         */
         getName(): string;
         /**
+           @method
            Sets the name of the table.
 
-           @param name The name of the table.
+           @param {string} name The name of the table.
            @since ARP1.0
         */
         setName(name: string): void;

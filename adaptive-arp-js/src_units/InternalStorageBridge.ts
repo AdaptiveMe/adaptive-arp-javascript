@@ -52,7 +52,7 @@ module Adaptive {
      export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

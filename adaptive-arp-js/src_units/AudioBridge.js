@@ -57,7 +57,7 @@ var Adaptive;
     var AudioBridge = (function (_super) {
         __extends(AudioBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AudioBridge() {

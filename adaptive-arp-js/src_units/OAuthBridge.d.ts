@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class OAuthBridge extends BaseSecurityBridge implements IOAuth {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

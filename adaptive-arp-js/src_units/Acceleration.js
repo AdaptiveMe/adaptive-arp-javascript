@@ -52,12 +52,13 @@ var Adaptive;
     var Acceleration = (function (_super) {
         __extends(Acceleration, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param x         X Coordinate
-           @param y         Y Coordinate
-           @param z         Z Coordinate
-           @param timestamp Timestamp
+           @param {number} x         X Coordinate
+           @param {number} y         Y Coordinate
+           @param {number} z         Z Coordinate
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         function Acceleration(x, y, z, timestamp) {
@@ -68,72 +69,80 @@ var Adaptive;
             this.timestamp = timestamp;
         }
         /**
+           @method
            Timestamp Getter
 
-           @return Timestamp
+           @return {number} Timestamp
            @since ARP1.0
         */
         Acceleration.prototype.getTimestamp = function () {
             return this.timestamp;
         };
         /**
+           @method
            Timestamp Setter
 
-           @param timestamp Timestamp
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         Acceleration.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
         };
         /**
+           @method
            X Coordinate Getter
 
-           @return X-axis component of the acceleration.
+           @return {number} X-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getX = function () {
             return this.x;
         };
         /**
+           @method
            X Coordinate Setter
 
-           @param x X-axis component of the acceleration.
+           @param {number} x X-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.setX = function (x) {
             this.x = x;
         };
         /**
+           @method
            Y Coordinate Getter
 
-           @return Y-axis component of the acceleration.
+           @return {number} Y-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getY = function () {
             return this.y;
         };
         /**
+           @method
            Y Coordinate Setter
 
-           @param y Y-axis component of the acceleration.
+           @param {number} y Y-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.setY = function (y) {
             this.y = y;
         };
         /**
+           @method
            Z Coordinate Getter
 
-           @return Z-axis component of the acceleration.
+           @return {number} Z-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getZ = function () {
             return this.z;
         };
         /**
+           @method
            Z Coordinate Setter
 
-           @param z Z Coordinate
+           @param {number} z Z Coordinate
            @since ARP1.0
         */
         Acceleration.prototype.setZ = function (z) {

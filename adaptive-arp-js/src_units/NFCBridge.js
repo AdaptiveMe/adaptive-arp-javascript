@@ -57,7 +57,7 @@ var Adaptive;
     var NFCBridge = (function (_super) {
         __extends(NFCBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NFCBridge() {

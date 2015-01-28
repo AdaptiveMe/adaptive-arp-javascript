@@ -57,7 +57,7 @@ var Adaptive;
     var AdsBridge = (function (_super) {
         __extends(AdsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AdsBridge() {

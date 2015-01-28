@@ -57,7 +57,7 @@ var Adaptive;
     var ManagementBridge = (function (_super) {
         __extends(ManagementBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ManagementBridge() {

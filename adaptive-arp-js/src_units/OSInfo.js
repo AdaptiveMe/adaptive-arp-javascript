@@ -53,11 +53,12 @@ var Adaptive;
     var OSInfo = (function (_super) {
         __extends(OSInfo, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the OS information.
 
-           @param name    of the OS.
-           @param version of the OS.
-           @param vendor  of the OS.
+           @param {Adaptive.IOSType} name    of the OS.
+           @param {string} version of the OS.
+           @param {string} vendor  of the OS.
            @since ARP1.0
         */
         function OSInfo(name, version, vendor) {
@@ -67,52 +68,58 @@ var Adaptive;
             this.vendor = vendor;
         }
         /**
+           @method
            Returns the name of the operating system.
 
-           @return OS name.
+           @return {Adaptive.IOSType} OS name.
            @since ARP1.0
         */
         OSInfo.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets The name of the operating system.
 
-           @param name The name of the operating system.
+           @param {Adaptive.IOSType} name The name of the operating system.
         */
         OSInfo.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the vendor of the operating system.
 
-           @return OS vendor.
+           @return {string} OS vendor.
            @since ARP1.0
         */
         OSInfo.prototype.getVendor = function () {
             return this.vendor;
         };
         /**
+           @method
            Sets The vendor of the operating system.
 
-           @param vendor The vendor of the operating system.
+           @param {string} vendor The vendor of the operating system.
         */
         OSInfo.prototype.setVendor = function (vendor) {
             this.vendor = vendor;
         };
         /**
+           @method
            Returns the version of the operating system.
 
-           @return OS version.
+           @return {string} OS version.
            @since ARP1.0
         */
         OSInfo.prototype.getVersion = function () {
             return this.version;
         };
         /**
+           @method
            Sets The version/identifier of the operating system.
 
-           @param version The version/identifier of the operating system.
+           @param {string} version The version/identifier of the operating system.
         */
         OSInfo.prototype.setVersion = function (version) {
             this.version = version;

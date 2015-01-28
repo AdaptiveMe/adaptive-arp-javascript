@@ -57,7 +57,7 @@ var Adaptive;
     var CompressionBridge = (function (_super) {
         __extends(CompressionBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CompressionBridge() {

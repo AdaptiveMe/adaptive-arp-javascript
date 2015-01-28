@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class StoreBridge extends BaseCommerceBridge implements IStore {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

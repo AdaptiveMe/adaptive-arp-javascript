@@ -57,7 +57,7 @@ var Adaptive;
     var BluetoothBridge = (function (_super) {
         __extends(BluetoothBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BluetoothBridge() {

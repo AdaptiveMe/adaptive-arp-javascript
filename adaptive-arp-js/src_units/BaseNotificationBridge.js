@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseNotificationBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseNotificationBridge() {

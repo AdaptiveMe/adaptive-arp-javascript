@@ -52,7 +52,7 @@ module Adaptive {
      export class QRCodeBridge extends BaseReaderBridge implements IQRCode {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

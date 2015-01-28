@@ -61,67 +61,76 @@ be unique for a specific instance of an application on a specific device.
         */
         vendor: string;
         /**
+           @method constructor
            Constructor for the implementation of the platform.
 
-           @param name   or brand of the device.
-           @param model  of the device.
-           @param vendor of the device.
-           @param uuid   unique* identifier (* platform dependent).
+           @param {string} name   or brand of the device.
+           @param {string} model  of the device.
+           @param {string} vendor of the device.
+           @param {string} uuid   unique* identifier (* platform dependent).
            @since ARP1.0
         */
         constructor(name: string, model: string, vendor: string, uuid: string);
         /**
+           @method
            Returns the model of the device.
 
-           @return String with the model of the device.
+           @return {string} String with the model of the device.
            @since ARP1.0
         */
         getModel(): string;
         /**
+           @method
            Sets Model of device - equivalent to device release or version.
 
-           @param model Model of device - equivalent to device release or version.
+           @param {string} model Model of device - equivalent to device release or version.
         */
         setModel(model: string): void;
         /**
+           @method
            Returns the name of the device.
 
-           @return String with device name.
+           @return {string} String with device name.
            @since ARP1.0
         */
         getName(): string;
         /**
+           @method
            Sets Name of device - equivalent to brand.
 
-           @param name Name of device - equivalent to brand.
+           @param {string} name Name of device - equivalent to brand.
         */
         setName(name: string): void;
         /**
+           @method
            Returns the platform dependent UUID of the device.
 
-           @return String with the 128-bit device identifier.
+           @return {string} String with the 128-bit device identifier.
            @since ARP1.0
         */
         getUuid(): string;
         /**
+           @method
            Sets Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
 
-           @param uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+           @param {string} uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
         */
         setUuid(uuid: string): void;
         /**
+           @method
            Returns the vendor of the device.
 
-           @return String with the vendor name.
+           @return {string} String with the vendor name.
            @since ARP1.0
         */
         getVendor(): string;
         /**
+           @method
            Sets Vendor of the device hardware.
 
-           @param vendor Vendor of the device hardware.
+           @param {string} vendor Vendor of the device hardware.
         */
         setVendor(vendor: string): void;
         /**

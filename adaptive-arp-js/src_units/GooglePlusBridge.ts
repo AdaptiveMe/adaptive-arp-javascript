@@ -52,7 +52,7 @@ module Adaptive {
      export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

@@ -57,7 +57,7 @@ var Adaptive;
     var DataStreamBridge = (function (_super) {
         __extends(DataStreamBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DataStreamBridge() {

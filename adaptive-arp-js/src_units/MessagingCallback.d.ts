@@ -58,9 +58,9 @@ declare module Adaptive {
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IMessagingCallbackError
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
            @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, IMessagingCallbackWarning
+           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
         */
         constructor(onErrorFunction: (error: IMessagingCallbackError) => void, onResultFunction: (success: boolean) => void, onWarningFunction: (success: boolean, warning: IMessagingCallbackWarning) => void);
         /**

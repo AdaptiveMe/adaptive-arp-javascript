@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseUIBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseUIBridge() {

@@ -63,7 +63,7 @@ var Adaptive;
     var DatabaseBridge = (function (_super) {
         __extends(DatabaseBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DatabaseBridge() {

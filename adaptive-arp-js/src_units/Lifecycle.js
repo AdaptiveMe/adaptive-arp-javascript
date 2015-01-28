@@ -53,9 +53,10 @@ var Adaptive;
     var Lifecycle = (function (_super) {
         __extends(Lifecycle, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param state of the app
+           @param {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         function Lifecycle(state) {
@@ -63,18 +64,20 @@ var Adaptive;
             this.state = state;
         }
         /**
+           @method
            Returns the state of the application
 
-           @return state of the app
+           @return {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         Lifecycle.prototype.getState = function () {
             return this.state;
         };
         /**
+           @method
            Set the State of the application
 
-           @param state of the app
+           @param {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         Lifecycle.prototype.setState = function (state) {

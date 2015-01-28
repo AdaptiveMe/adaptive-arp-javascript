@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseSystemBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSystemBridge() {

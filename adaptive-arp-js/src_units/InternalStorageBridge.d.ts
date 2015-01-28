@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

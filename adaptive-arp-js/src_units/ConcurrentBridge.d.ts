@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

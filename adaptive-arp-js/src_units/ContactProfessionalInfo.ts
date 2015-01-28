@@ -60,11 +60,12 @@ module Adaptive {
           */
           jobTitle : string;
           /**
+             @method constructor
              Constructor used by implementation to set the ContactProfessionalInfo.
 
-             @param jobTitle       The job title
-             @param jobDescription The job description
-             @param company        The company of the job
+             @param {string} jobTitle       The job title
+             @param {string} jobDescription The job description
+             @param {string} company        The company of the job
              @since ARP1.0
           */
           constructor(jobTitle: string, jobDescription: string, company: string) {
@@ -75,9 +76,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the company of the job
 
-             @return company
+             @return {string} company
              @since ARP1.0
           */
           getCompany() : string {
@@ -85,9 +87,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the company of the job
 
-             @param company The company of the job
+             @param {string} company The company of the job
              @since ARP1.0
           */
           setCompany(company: string) {
@@ -95,9 +98,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the description of the job
 
-             @return description
+             @return {string} description
              @since ARP1.0
           */
           getJobDescription() : string {
@@ -105,9 +109,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the description of the job
 
-             @param jobDescription The job description
+             @param {string} jobDescription The job description
              @since ARP1.0
           */
           setJobDescription(jobDescription: string) {
@@ -115,9 +120,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the title of the job
 
-             @return title
+             @return {string} title
              @since ARP1.0
           */
           getJobTitle() : string {
@@ -125,9 +131,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the title of the job
 
-             @param jobTitle The job title
+             @param {string} jobTitle The job title
              @since ARP1.0
           */
           setJobTitle(jobTitle: string) {

@@ -68,95 +68,108 @@ declare module Adaptive {
         */
         yDoP: number;
         /**
+           @method constructor
            Constructor with parameters
 
-           @param latitude  Latitude of the measurement
-           @param longitude Longitude of the measurement
-           @param altitude  Altitude of the measurement
-           @param xDoP      Dilution of precision on the X measurement
-           @param yDoP      Dilution of precision on the Y measurement
-           @param timestamp Timestamp of the measurement
+           @param {number} latitude  Latitude of the measurement
+           @param {number} longitude Longitude of the measurement
+           @param {number} altitude  Altitude of the measurement
+           @param {number} xDoP      Dilution of precision on the X measurement
+           @param {number} yDoP      Dilution of precision on the Y measurement
+           @param {number} timestamp Timestamp of the measurement
            @since ARP1.0
         */
         constructor(latitude: number, longitude: number, altitude: number, xDoP: number, yDoP: number, timestamp: number);
         /**
+           @method
            Returns altitude in meters
 
-           @return Altitude of the measurement
+           @return {number} Altitude of the measurement
            @since ARP1.0
         */
         getAltitude(): number;
         /**
+           @method
            Set altitude in meters
 
-           @param altitude Altitude of the measurement
+           @param {number} altitude Altitude of the measurement
            @since ARP1.0
         */
         setAltitude(altitude: number): void;
         /**
+           @method
            Returns the latitude in degrees
 
-           @return Latitude of the measurement
+           @return {number} Latitude of the measurement
            @since ARP1.0
         */
         getLatitude(): number;
         /**
+           @method
            Set the latitude in degrees
 
-           @param latitude Latitude of the measurement
+           @param {number} latitude Latitude of the measurement
            @since ARP1.0
         */
         setLatitude(latitude: number): void;
         /**
+           @method
            Returns the longitude in degrees
 
-           @return Longitude of the measurement
+           @return {number} Longitude of the measurement
            @since ARP1.0
         */
         getLongitude(): number;
         /**
+           @method
            Returns the latitude in degrees
 
-           @param longitude Longitude of the measurement
+           @param {number} longitude Longitude of the measurement
            @since ARP1.0
         */
         setLongitude(longitude: number): void;
         /**
+           @method
            Timestamp Getter
 
-           @return Timestamp
+           @return {number} Timestamp
            @since ARP1.0
         */
         getTimestamp(): number;
         /**
+           @method
            Timestamp Setter
 
-           @param timestamp Timestamp
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         setTimestamp(timestamp: number): void;
         /**
+           @method
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         getXDoP(): number;
         /**
+           @method
            Sets Dilution of precision on the X measurement. Measured in meters.
 
-           @param xDoP Dilution of precision on the X measurement. Measured in meters.
+           @param {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         setXDoP(xDoP: number): void;
         /**
+           @method
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         getYDoP(): number;
         /**
+           @method
            Sets Dilution of precision on the Y measurement. Measured in meters.
 
-           @param yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @param {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         setYDoP(yDoP: number): void;
         /**

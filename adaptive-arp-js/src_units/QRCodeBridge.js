@@ -57,7 +57,7 @@ var Adaptive;
     var QRCodeBridge = (function (_super) {
         __extends(QRCodeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function QRCodeBridge() {

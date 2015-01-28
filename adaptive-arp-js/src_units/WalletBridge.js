@@ -57,7 +57,7 @@ var Adaptive;
     var WalletBridge = (function (_super) {
         __extends(WalletBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function WalletBridge() {

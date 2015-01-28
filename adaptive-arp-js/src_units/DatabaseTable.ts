@@ -70,13 +70,14 @@ module Adaptive {
           */
           rowCount : number;
           /**
+             @method constructor
              Constructor using fields
 
-             @param name            The name of the table
-             @param columnCount     The number of databaseColumns
-             @param rowCount        The number of databaseRows
-             @param databaseColumns The databaseColumns of the table
-             @param databaseRows    The databaseRows of the table
+             @param {string} name            The name of the table
+             @param {number} columnCount     The number of databaseColumns
+             @param {number} rowCount        The number of databaseRows
+             @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
+             @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
              @since ARP1.0
           */
           constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>) {
@@ -89,9 +90,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Get the number of databaseColumns
 
-             @return The number of databaseColumns
+             @return {number} The number of databaseColumns
              @since ARP1.0
           */
           getColumnCount() : number {
@@ -99,9 +101,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the number of databaseColumns
 
-             @param columnCount The number of databaseColumns
+             @param {number} columnCount The number of databaseColumns
              @since ARP1.0
           */
           setColumnCount(columnCount: number) {
@@ -109,9 +112,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Get the databaseColumns
 
-             @return The databaseColumns
+             @return {Adaptive.DatabaseColumn[]} The databaseColumns
              @since ARP1.0
           */
           getDatabaseColumns() : Array<DatabaseColumn> {
@@ -119,9 +123,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the databaseColumns of the table
 
-             @param databaseColumns The databaseColumns of the table
+             @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
              @since ARP1.0
           */
           setDatabaseColumns(databaseColumns: Array<DatabaseColumn>) {
@@ -129,9 +134,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Get the databaseRows of the table
 
-             @return The databaseRows of the table
+             @return {Adaptive.DatabaseRow[]} The databaseRows of the table
              @since ARP1.0
           */
           getDatabaseRows() : Array<DatabaseRow> {
@@ -139,9 +145,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the databaseRows of the table
 
-             @param databaseRows The databaseRows of the table
+             @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
              @since ARP1.0
           */
           setDatabaseRows(databaseRows: Array<DatabaseRow>) {
@@ -149,9 +156,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the name of the table
 
-             @return The name of the table
+             @return {string} The name of the table
              @since ARP1.0
           */
           getName() : string {
@@ -159,9 +167,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the name of the table
 
-             @param name The name of the table
+             @param {string} name The name of the table
              @since ARP1.0
           */
           setName(name: string) {
@@ -169,9 +178,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Get the number of databaseRows
 
-             @return The number of databaseRows
+             @return {number} The number of databaseRows
              @since ARP1.0
           */
           getRowCount() : number {
@@ -179,9 +189,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the number of databaseRows
 
-             @param rowCount The number of databaseRows
+             @param {number} rowCount The number of databaseRows
              @since ARP1.0
           */
           setRowCount(rowCount: number) {

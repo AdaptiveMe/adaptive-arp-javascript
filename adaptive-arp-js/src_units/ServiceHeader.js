@@ -52,10 +52,11 @@ var Adaptive;
     var ServiceHeader = (function (_super) {
         __extends(ServiceHeader, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param name Name of the header
-           @param data Value of the header
+           @param {string} name Name of the header
+           @param {string} data Value of the header
            @since ARP1.0
         */
         function ServiceHeader(name, data) {
@@ -64,36 +65,40 @@ var Adaptive;
             this.data = data;
         }
         /**
+           @method
            Returns the header value
 
-           @return ServiceHeader value
+           @return {string} ServiceHeader value
            @since ARP1.0
         */
         ServiceHeader.prototype.getData = function () {
             return this.data;
         };
         /**
+           @method
            Set the header value
 
-           @param data ServiceHeader value
+           @param {string} data ServiceHeader value
            @since ARP1.0
         */
         ServiceHeader.prototype.setData = function (data) {
             this.data = data;
         };
         /**
+           @method
            Returns the header name
 
-           @return ServiceHeader name
+           @return {string} ServiceHeader name
            @since ARP1.0
         */
         ServiceHeader.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the header name
 
-           @param name Name of the header
+           @param {string} name Name of the header
            @since ARP1.0
         */
         ServiceHeader.prototype.setName = function (name) {

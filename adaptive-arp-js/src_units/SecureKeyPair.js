@@ -52,10 +52,11 @@ var Adaptive;
     var SecureKeyPair = (function (_super) {
         __extends(SecureKeyPair, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param secureKey  name of the keypair
-           @param secureData value of the keypair
+           @param {string} secureKey  name of the keypair
+           @param {string} secureData value of the keypair
            @since ARP1.0
         */
         function SecureKeyPair(secureKey, secureData) {
@@ -64,36 +65,40 @@ var Adaptive;
             this.secureData = secureData;
         }
         /**
+           @method
            Returns the object value
 
-           @return Value.
+           @return {string} Value.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.getSecureData = function () {
             return this.secureData;
         };
         /**
+           @method
            Sets the value for this object
 
-           @param secureData value to set.
+           @param {string} secureData value to set.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.setSecureData = function (secureData) {
             this.secureData = secureData;
         };
         /**
+           @method
            Returns the object secureKey name.
 
-           @return Key name.
+           @return {string} Key name.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.getSecureKey = function () {
             return this.secureKey;
         };
         /**
+           @method
            Sets the secureKey name for this object.
 
-           @param secureKey Key name.
+           @param {string} secureKey Key name.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {

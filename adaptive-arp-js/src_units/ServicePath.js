@@ -44,43 +44,48 @@ var Adaptive;
     */
     var ServicePath = (function () {
         /**
+           @method constructor
            Constructor with parameters
 
-           @param path    The path for the endpoint
-           @param methods The methods for calling a path
+           @param {string} path    The path for the endpoint
+           @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
         */
         function ServicePath(path, methods) {
             this.path = path;
             this.methods = methods;
         }
         /**
+           @method
            Endpoint's path methods setter
 
-           @return Endpoint's path methods
+           @return {Adaptive.IServiceMethod[]} Endpoint's path methods
         */
         ServicePath.prototype.getMethods = function () {
             return this.methods;
         };
         /**
+           @method
            Endpoint's path methods setter
 
-           @param methods Endpoint's path methods
+           @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
         */
         ServicePath.prototype.setMethods = function (methods) {
             this.methods = methods;
         };
         /**
+           @method
            Endpoint's Path Getter
 
-           @return Endpoint's Path
+           @return {string} Endpoint's Path
         */
         ServicePath.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Endpoint's path setter
 
-           @param path Endpoint's path
+           @param {string} path Endpoint's path
         */
         ServicePath.prototype.setPath = function (path) {
             this.path = path;

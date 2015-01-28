@@ -52,10 +52,11 @@ var Adaptive;
     var ContactTag = (function (_super) {
         __extends(ContactTag, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param tagValue Value of the tag
-           @param tagName  Name of the tag
+           @param {string} tagValue Value of the tag
+           @param {string} tagName  Name of the tag
            @since ARP1.0
         */
         function ContactTag(tagName, tagValue) {
@@ -64,36 +65,40 @@ var Adaptive;
             this.tagValue = tagValue;
         }
         /**
+           @method
            Returns the tagName of the Tag
 
-           @return tagName
+           @return {string} tagName
            @since ARP1.0
         */
         ContactTag.prototype.getTagName = function () {
             return this.tagName;
         };
         /**
+           @method
            Set the tagName of the Tag
 
-           @param tagName Name of the tag
+           @param {string} tagName Name of the tag
            @since ARP1.0
         */
         ContactTag.prototype.setTagName = function (tagName) {
             this.tagName = tagName;
         };
         /**
+           @method
            Returns the tagValue of the Tag
 
-           @return tagValue
+           @return {string} tagValue
            @since ARP1.0
         */
         ContactTag.prototype.getTagValue = function () {
             return this.tagValue;
         };
         /**
+           @method
            Set the tagValue of the Tag
 
-           @param tagValue Value of the tag
+           @param {string} tagValue Value of the tag
            @since ARP1.0
         */
         ContactTag.prototype.setTagValue = function (tagValue) {

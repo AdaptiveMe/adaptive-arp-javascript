@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BasePIMBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BasePIMBridge() {

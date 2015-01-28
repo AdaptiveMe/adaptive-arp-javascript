@@ -57,7 +57,7 @@ var Adaptive;
     var ConcurrentBridge = (function (_super) {
         __extends(ConcurrentBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ConcurrentBridge() {

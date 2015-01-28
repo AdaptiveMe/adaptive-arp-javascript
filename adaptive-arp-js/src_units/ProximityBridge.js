@@ -57,7 +57,7 @@ var Adaptive;
     var ProximityBridge = (function (_super) {
         __extends(ProximityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ProximityBridge() {

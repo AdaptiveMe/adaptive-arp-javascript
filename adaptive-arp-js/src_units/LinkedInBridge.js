@@ -57,7 +57,7 @@ var Adaptive;
     var LinkedInBridge = (function (_super) {
         __extends(LinkedInBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LinkedInBridge() {

@@ -53,38 +53,43 @@ declare module Adaptive {
         */
         profileUrl: string;
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param socialNetwork of the profile
-           @param profileUrl    of the user
+           @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
+           @param {string} profileUrl    of the user
            @since ARP1.0
         */
         constructor(socialNetwork: ContactSocialNetwork, profileUrl: string);
         /**
+           @method
            Returns the social network
 
-           @return socialNetwork
+           @return {Adaptive.ContactSocialNetwork} socialNetwork
            @since ARP1.0
         */
         getSocialNetwork(): ContactSocialNetwork;
         /**
+           @method
            Set the social network
 
-           @param socialNetwork of the profile
+           @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
            @since ARP1.0
         */
         setSocialNetwork(socialNetwork: ContactSocialNetwork): void;
         /**
+           @method
            Returns the profile url of the user
 
-           @return profileUrl
+           @return {string} profileUrl
            @since ARP1.0
         */
         getProfileUrl(): string;
         /**
+           @method
            Set the profile url of the iser
 
-           @param profileUrl of the user
+           @param {string} profileUrl of the user
            @since ARP1.0
         */
         setProfileUrl(profileUrl: string): void;

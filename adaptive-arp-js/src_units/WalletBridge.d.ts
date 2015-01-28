@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class WalletBridge extends BaseCommerceBridge implements IWallet {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

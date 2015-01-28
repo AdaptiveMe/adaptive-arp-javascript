@@ -64,9 +64,10 @@ Possible lifecycle States:
           */
           state : LifecycleState;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param state of the app
+             @param {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           constructor(state: LifecycleState) {
@@ -75,9 +76,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Returns the state of the application
 
-             @return state of the app
+             @return {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           getState() : LifecycleState {
@@ -85,9 +87,10 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Set the State of the application
 
-             @param state of the app
+             @param {Adaptive.LifecycleState} state of the app
              @since ARP1.0
           */
           setState(state: LifecycleState) {

@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class AudioBridge extends BaseMediaBridge implements IAudio {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

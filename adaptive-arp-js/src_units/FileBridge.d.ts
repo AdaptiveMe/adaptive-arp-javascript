@@ -61,7 +61,7 @@ declare module Adaptive {
     */
     class FileBridge extends BaseDataBridge implements IFile {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();
@@ -119,7 +119,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemStorageType} Storage Type file
+           @return {Adaptive.IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
@@ -127,7 +127,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemType} Returns the file type of the file
+           @return {Adaptive.IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
@@ -135,7 +135,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemSecurity} Security Level of the file
+           @return {Adaptive.IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;

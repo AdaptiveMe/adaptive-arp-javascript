@@ -52,7 +52,7 @@ module Adaptive {
      export class SettingsBridge extends BaseApplicationBridge implements ISettings {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

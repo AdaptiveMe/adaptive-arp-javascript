@@ -52,16 +52,17 @@ var Adaptive;
     var ServiceCookie = (function (_super) {
         __extends(ServiceCookie, _super);
         /**
+           @method constructor
            Contructor with fields
 
-           @param cookieName  Name of the cookie
-           @param cookieValue Value of the cookie
-           @param domain      Domain of the cookie
-           @param path        Path of the cookie
-           @param scheme      Scheme of the cookie
-           @param secure      Privacy of the cookie
-           @param expiry      Expiration date of the cookie
-           @param creation    Creation date of the cookie
+           @param {string} cookieName  Name of the cookie
+           @param {string} cookieValue Value of the cookie
+           @param {string} domain      Domain of the cookie
+           @param {string} path        Path of the cookie
+           @param {string} scheme      Scheme of the cookie
+           @param {boolean} secure      Privacy of the cookie
+           @param {number} expiry      Expiration date of the cookie
+           @param {number} creation    Creation date of the cookie
            @since ARP1.0
         */
         function ServiceCookie(cookieName, cookieValue, domain, path, scheme, secure, expiry, creation) {
@@ -76,144 +77,160 @@ var Adaptive;
             this.creation = creation;
         }
         /**
+           @method
            Returns the cookie cookieName
 
-           @return cookieName Name of the cookie
+           @return {string} cookieName Name of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCookieName = function () {
             return this.cookieName;
         };
         /**
+           @method
            Set the cookie cookieName
 
-           @param cookieName Name of the cookie
+           @param {string} cookieName Name of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCookieName = function (cookieName) {
             this.cookieName = cookieName;
         };
         /**
+           @method
            Returns the cookie cookieValue
 
-           @return Value of the cookie
+           @return {string} Value of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCookieValue = function () {
             return this.cookieValue;
         };
         /**
+           @method
            Set the cookie cookieValue
 
-           @param cookieValue Value of the cookie
+           @param {string} cookieValue Value of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCookieValue = function (cookieValue) {
             this.cookieValue = cookieValue;
         };
         /**
+           @method
            Returns the creation date
 
-           @return Creation date of the cookie
+           @return {number} Creation date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCreation = function () {
             return this.creation;
         };
         /**
+           @method
            Sets the creation date
 
-           @param creation Creation date of the cookie
+           @param {number} creation Creation date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCreation = function (creation) {
             this.creation = creation;
         };
         /**
+           @method
            Returns the domain
 
-           @return domain
+           @return {string} domain
            @since ARP1.0
         */
         ServiceCookie.prototype.getDomain = function () {
             return this.domain;
         };
         /**
+           @method
            Set the domain
 
-           @param domain Domain of the cookie
+           @param {string} domain Domain of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setDomain = function (domain) {
             this.domain = domain;
         };
         /**
+           @method
            Returns the expiration date in milis
 
-           @return expiry
+           @return {number} expiry
            @since ARP1.0
         */
         ServiceCookie.prototype.getExpiry = function () {
             return this.expiry;
         };
         /**
+           @method
            Set the expiration date in milis
 
-           @param expiry Expiration date of the cookie
+           @param {number} expiry Expiration date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setExpiry = function (expiry) {
             this.expiry = expiry;
         };
         /**
+           @method
            Returns the path
 
-           @return path
+           @return {string} path
            @since ARP1.0
         */
         ServiceCookie.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Set the path
 
-           @param path Path of the cookie
+           @param {string} path Path of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setPath = function (path) {
             this.path = path;
         };
         /**
+           @method
            Returns the scheme
 
-           @return scheme
+           @return {string} scheme
            @since ARP1.0
         */
         ServiceCookie.prototype.getScheme = function () {
             return this.scheme;
         };
         /**
+           @method
            Set the scheme
 
-           @param scheme Scheme of the cookie
+           @param {string} scheme Scheme of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
         };
         /**
+           @method
            Returns whether the cookie is secure or not
 
-           @return true if the cookie is secure; false otherwise
+           @return {boolean} true if the cookie is secure; false otherwise
            @since ARP1.0
         */
         ServiceCookie.prototype.getSecure = function () {
             return this.secure;
         };
         /**
+           @method
            Set whether the cookie is secure or not
 
-           @param secure Privacy of the cookie
+           @param {boolean} secure Privacy of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setSecure = function (secure) {

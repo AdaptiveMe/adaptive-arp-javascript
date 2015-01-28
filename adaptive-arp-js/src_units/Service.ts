@@ -62,11 +62,12 @@ module Adaptive {
           */
           serviceEndpoints : Array<ServiceEndpoint>;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param serviceEndpoints Endpoints of the service
-             @param name             Name of the service
-             @param type             Type of the service
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+             @param {string} name             Name of the service
+             @param {Adaptive.IServiceType} type             Type of the service
              @since ARP1.0
           */
           constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string, type: IServiceType) {
@@ -77,9 +78,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the type
 
-             @return type
+             @return {Adaptive.IServiceType} type
              @since ARP1.0
           */
           getType() : IServiceType {
@@ -87,9 +89,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the type
 
-             @param type Type of the service
+             @param {Adaptive.IServiceType} type Type of the service
              @since ARP1.0
           */
           setType(type: IServiceType) {
@@ -97,9 +100,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the name
 
-             @return name
+             @return {string} name
              @since ARP1.0
           */
           getName() : string {
@@ -107,9 +111,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the name
 
-             @param name Name of the service
+             @param {string} name Name of the service
              @since ARP1.0
           */
           setName(name: string) {
@@ -117,9 +122,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the serviceEndpoints
 
-             @return serviceEndpoints
+             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
              @since ARP1.0
           */
           getServiceEndpoints() : Array<ServiceEndpoint> {
@@ -127,9 +133,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the serviceEndpoints
 
-             @param serviceEndpoints Endpoint of the service
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
              @since ARP1.0
           */
           setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {

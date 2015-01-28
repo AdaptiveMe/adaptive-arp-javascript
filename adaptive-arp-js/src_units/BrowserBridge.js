@@ -57,7 +57,7 @@ var Adaptive;
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BrowserBridge() {

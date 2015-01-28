@@ -64,7 +64,7 @@ var Adaptive;
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CapabilitiesBridge() {

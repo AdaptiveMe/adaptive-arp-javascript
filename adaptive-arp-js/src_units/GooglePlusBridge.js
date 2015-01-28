@@ -57,7 +57,7 @@ var Adaptive;
     var GooglePlusBridge = (function (_super) {
         __extends(GooglePlusBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GooglePlusBridge() {

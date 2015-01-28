@@ -91,9 +91,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: ISecurityResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<SecureKeyPair>
-             @param onWarningFunction Function receiving parameters of type: Array<SecureKeyPair>, ISecurityResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+             @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
           */
           constructor(onErrorFunction : (error : ISecurityResultCallbackError) => void, onResultFunction : (keyValues : Array<SecureKeyPair>) => void, onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void) {
                super(++registeredCounter);

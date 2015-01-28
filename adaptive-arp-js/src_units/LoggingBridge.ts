@@ -53,7 +53,7 @@ module Adaptive {
      export class LoggingBridge extends BaseUtilBridge implements ILogging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

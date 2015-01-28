@@ -52,13 +52,14 @@ var Adaptive;
     var EmailAttachmentData = (function (_super) {
         __extends(EmailAttachmentData, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param data         raw data of the file attachment
-           @param size         size of the file attachment
-           @param fileName     name of the file attachment
-           @param mimeType     mime type of the file attachment
-           @param referenceUrl relative url of the file attachment
+           @param {number[]} data         raw data of the file attachment
+           @param {number} size         size of the file attachment
+           @param {string} fileName     name of the file attachment
+           @param {string} mimeType     mime type of the file attachment
+           @param {string} referenceUrl relative url of the file attachment
            @since ARP1.0
         */
         function EmailAttachmentData(data, size, fileName, mimeType, referenceUrl) {
@@ -70,90 +71,100 @@ var Adaptive;
             this.referenceUrl = referenceUrl;
         }
         /**
+           @method
            Returns the raw data in byte[]
 
-           @return data Octet-binary content of the attachment payload.
+           @return {number[]} data Octet-binary content of the attachment payload.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getData = function () {
             return this.data;
         };
         /**
+           @method
            Set the data of the attachment as a byte[]
 
-           @param data Sets the octet-binary content of the attachment.
+           @param {number[]} data Sets the octet-binary content of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setData = function (data) {
             this.data = data;
         };
         /**
+           @method
            Returns the filename of the attachment
 
-           @return fileName Name of the attachment.
+           @return {string} fileName Name of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getFileName = function () {
             return this.fileName;
         };
         /**
+           @method
            Set the name of the file attachment
 
-           @param fileName Name of the attachment.
+           @param {string} fileName Name of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setFileName = function (fileName) {
             this.fileName = fileName;
         };
         /**
+           @method
            Returns the mime type of the attachment
 
-           @return mimeType
+           @return {string} mimeType
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getMimeType = function () {
             return this.mimeType;
         };
         /**
+           @method
            Set the mime type of the attachment
 
-           @param mimeType Mime-type of the attachment.
+           @param {string} mimeType Mime-type of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setMimeType = function (mimeType) {
             this.mimeType = mimeType;
         };
         /**
+           @method
            Returns the absolute url of the file attachment
 
-           @return referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+           @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getReferenceUrl = function () {
             return this.referenceUrl;
         };
         /**
+           @method
            Set the absolute url of the attachment
 
-           @param referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+           @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setReferenceUrl = function (referenceUrl) {
             this.referenceUrl = referenceUrl;
         };
         /**
+           @method
            Returns the size of the attachment as a long
 
-           @return size Length in bytes of the octet-binary content.
+           @return {number} size Length in bytes of the octet-binary content.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getSize = function () {
             return this.size;
         };
         /**
+           @method
            Set the size of the attachment as a long
 
-           @param size Length in bytes of the octet-binary content ( should be same as data array length.)
+           @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setSize = function (size) {

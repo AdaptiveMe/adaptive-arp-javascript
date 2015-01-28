@@ -187,6 +187,7 @@ declare module Adaptive {
         /**
            @private
            @static
+           @property {Adaptive.AppRegistryBridge} instance
            Singleton instance of AppRegistry.
         */
         private static instance;
@@ -199,355 +200,352 @@ declare module Adaptive {
         */
         static getInstance(): IAppRegistry;
         /**
-           Singleton instances of Bridges.
-        */
-        /**
-           @static
+           @private
            @property {Adaptive.IAcceleration} instanceAcceleration
         */
         private static instanceAcceleration;
         /**
-           @static
+           @private
            @property {Adaptive.IAds} instanceAds
         */
         private static instanceAds;
         /**
-           @static
+           @private
            @property {Adaptive.IAlarm} instanceAlarm
         */
         private static instanceAlarm;
         /**
-           @static
+           @private
            @property {Adaptive.IAmbientLight} instanceAmbientLight
         */
         private static instanceAmbientLight;
         /**
-           @static
+           @private
            @property {Adaptive.IAnalytics} instanceAnalytics
         */
         private static instanceAnalytics;
         /**
-           @static
+           @private
            @property {Adaptive.IAudio} instanceAudio
         */
         private static instanceAudio;
         /**
-           @static
+           @private
            @property {Adaptive.IBarcode} instanceBarcode
         */
         private static instanceBarcode;
         /**
-           @static
+           @private
            @property {Adaptive.IBarometer} instanceBarometer
         */
         private static instanceBarometer;
         /**
-           @static
+           @private
            @property {Adaptive.IBluetooth} instanceBluetooth
         */
         private static instanceBluetooth;
         /**
-           @static
+           @private
            @property {Adaptive.IBrowser} instanceBrowser
         */
         private static instanceBrowser;
         /**
-           @static
+           @private
            @property {Adaptive.ICalendar} instanceCalendar
         */
         private static instanceCalendar;
         /**
-           @static
+           @private
            @property {Adaptive.ICamera} instanceCamera
         */
         private static instanceCamera;
         /**
-           @static
+           @private
            @property {Adaptive.ICapabilities} instanceCapabilities
         */
         private static instanceCapabilities;
         /**
-           @static
+           @private
            @property {Adaptive.ICloud} instanceCloud
         */
         private static instanceCloud;
         /**
-           @static
+           @private
            @property {Adaptive.ICompression} instanceCompression
         */
         private static instanceCompression;
         /**
-           @static
+           @private
            @property {Adaptive.IConcurrent} instanceConcurrent
         */
         private static instanceConcurrent;
         /**
-           @static
+           @private
            @property {Adaptive.IContact} instanceContact
         */
         private static instanceContact;
         /**
-           @static
+           @private
            @property {Adaptive.ICrypto} instanceCrypto
         */
         private static instanceCrypto;
         /**
-           @static
+           @private
            @property {Adaptive.IDataStream} instanceDataStream
         */
         private static instanceDataStream;
         /**
-           @static
+           @private
            @property {Adaptive.IDatabase} instanceDatabase
         */
         private static instanceDatabase;
         /**
-           @static
+           @private
            @property {Adaptive.IDesktop} instanceDesktop
         */
         private static instanceDesktop;
         /**
-           @static
+           @private
            @property {Adaptive.IDevice} instanceDevice
         */
         private static instanceDevice;
         /**
-           @static
+           @private
            @property {Adaptive.IDisplay} instanceDisplay
         */
         private static instanceDisplay;
         /**
-           @static
+           @private
            @property {Adaptive.IFacebook} instanceFacebook
         */
         private static instanceFacebook;
         /**
-           @static
+           @private
            @property {Adaptive.IFile} instanceFile
         */
         private static instanceFile;
         /**
-           @static
+           @private
            @property {Adaptive.IFileSystem} instanceFileSystem
         */
         private static instanceFileSystem;
         /**
-           @static
+           @private
            @property {Adaptive.IGeolocation} instanceGeolocation
         */
         private static instanceGeolocation;
         /**
-           @static
+           @private
            @property {Adaptive.IGlobalization} instanceGlobalization
         */
         private static instanceGlobalization;
         /**
-           @static
+           @private
            @property {Adaptive.IGooglePlus} instanceGooglePlus
         */
         private static instanceGooglePlus;
         /**
-           @static
+           @private
            @property {Adaptive.IGyroscope} instanceGyroscope
         */
         private static instanceGyroscope;
         /**
-           @static
+           @private
            @property {Adaptive.IImaging} instanceImaging
         */
         private static instanceImaging;
         /**
-           @static
+           @private
            @property {Adaptive.IInternalStorage} instanceInternalStorage
         */
         private static instanceInternalStorage;
         /**
-           @static
+           @private
            @property {Adaptive.ILifecycle} instanceLifecycle
         */
         private static instanceLifecycle;
         /**
-           @static
+           @private
            @property {Adaptive.ILinkedIn} instanceLinkedIn
         */
         private static instanceLinkedIn;
         /**
-           @static
+           @private
            @property {Adaptive.ILogging} instanceLogging
         */
         private static instanceLogging;
         /**
-           @static
+           @private
            @property {Adaptive.IMagnetometer} instanceMagnetometer
         */
         private static instanceMagnetometer;
         /**
-           @static
+           @private
            @property {Adaptive.IMail} instanceMail
         */
         private static instanceMail;
         /**
-           @static
+           @private
            @property {Adaptive.IManagement} instanceManagement
         */
         private static instanceManagement;
         /**
-           @static
+           @private
            @property {Adaptive.IMap} instanceMap
         */
         private static instanceMap;
         /**
-           @static
+           @private
            @property {Adaptive.IMessaging} instanceMessaging
         */
         private static instanceMessaging;
         /**
-           @static
+           @private
            @property {Adaptive.INFC} instanceNFC
         */
         private static instanceNFC;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkInfo} instanceNetworkInfo
         */
         private static instanceNetworkInfo;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkNaming} instanceNetworkNaming
         */
         private static instanceNetworkNaming;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkReachability} instanceNetworkReachability
         */
         private static instanceNetworkReachability;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkStatus} instanceNetworkStatus
         */
         private static instanceNetworkStatus;
         /**
-           @static
+           @private
            @property {Adaptive.INotification} instanceNotification
         */
         private static instanceNotification;
         /**
-           @static
+           @private
            @property {Adaptive.INotificationLocal} instanceNotificationLocal
         */
         private static instanceNotificationLocal;
         /**
-           @static
+           @private
            @property {Adaptive.IOAuth} instanceOAuth
         */
         private static instanceOAuth;
         /**
-           @static
+           @private
            @property {Adaptive.IOCR} instanceOCR
         */
         private static instanceOCR;
         /**
-           @static
+           @private
            @property {Adaptive.IOS} instanceOS
         */
         private static instanceOS;
         /**
-           @static
+           @private
            @property {Adaptive.IOpenId} instanceOpenId
         */
         private static instanceOpenId;
         /**
-           @static
+           @private
            @property {Adaptive.IPrinting} instancePrinting
         */
         private static instancePrinting;
         /**
-           @static
+           @private
            @property {Adaptive.IProximity} instanceProximity
         */
         private static instanceProximity;
         /**
-           @static
+           @private
            @property {Adaptive.IQRCode} instanceQRCode
         */
         private static instanceQRCode;
         /**
-           @static
+           @private
            @property {Adaptive.IRSS} instanceRSS
         */
         private static instanceRSS;
         /**
-           @static
+           @private
            @property {Adaptive.IRuntime} instanceRuntime
         */
         private static instanceRuntime;
         /**
-           @static
+           @private
            @property {Adaptive.ISecurity} instanceSecurity
         */
         private static instanceSecurity;
         /**
-           @static
+           @private
            @property {Adaptive.IService} instanceService
         */
         private static instanceService;
         /**
-           @static
+           @private
            @property {Adaptive.ISettings} instanceSettings
         */
         private static instanceSettings;
         /**
-           @static
+           @private
            @property {Adaptive.ISocket} instanceSocket
         */
         private static instanceSocket;
         /**
-           @static
+           @private
            @property {Adaptive.IStore} instanceStore
         */
         private static instanceStore;
         /**
-           @static
+           @private
            @property {Adaptive.ITelephony} instanceTelephony
         */
         private static instanceTelephony;
         /**
-           @static
+           @private
            @property {Adaptive.ITimer} instanceTimer
         */
         private static instanceTimer;
         /**
-           @static
+           @private
            @property {Adaptive.ITwitter} instanceTwitter
         */
         private static instanceTwitter;
         /**
-           @static
+           @private
            @property {Adaptive.IUI} instanceUI
         */
         private static instanceUI;
         /**
-           @static
+           @private
            @property {Adaptive.IUpdate} instanceUpdate
         */
         private static instanceUpdate;
         /**
-           @static
+           @private
            @property {Adaptive.IVibration} instanceVibration
         */
         private static instanceVibration;
         /**
-           @static
+           @private
            @property {Adaptive.IVideo} instanceVideo
         */
         private static instanceVideo;
         /**
-           @static
+           @private
            @property {Adaptive.IWallet} instanceWallet
         */
         private static instanceWallet;
         /**
-           @static
+           @private
            @property {Adaptive.IXML} instanceXML
         */
         private static instanceXML;

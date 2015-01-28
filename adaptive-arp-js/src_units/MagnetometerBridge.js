@@ -57,7 +57,7 @@ var Adaptive;
     var MagnetometerBridge = (function (_super) {
         __extends(MagnetometerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MagnetometerBridge() {

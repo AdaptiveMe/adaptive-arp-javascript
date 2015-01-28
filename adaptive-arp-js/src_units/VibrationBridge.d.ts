@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class VibrationBridge extends BaseNotificationBridge implements IVibration {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

@@ -57,51 +57,58 @@ declare module Adaptive {
         */
         version: string;
         /**
+           @method constructor
            Constructor used by implementation to set the OS information.
 
-           @param name    of the OS.
-           @param version of the OS.
-           @param vendor  of the OS.
+           @param {Adaptive.IOSType} name    of the OS.
+           @param {string} version of the OS.
+           @param {string} vendor  of the OS.
            @since ARP1.0
         */
         constructor(name: IOSType, version: string, vendor: string);
         /**
+           @method
            Returns the name of the operating system.
 
-           @return OS name.
+           @return {Adaptive.IOSType} OS name.
            @since ARP1.0
         */
         getName(): IOSType;
         /**
+           @method
            Sets The name of the operating system.
 
-           @param name The name of the operating system.
+           @param {Adaptive.IOSType} name The name of the operating system.
         */
         setName(name: IOSType): void;
         /**
+           @method
            Returns the vendor of the operating system.
 
-           @return OS vendor.
+           @return {string} OS vendor.
            @since ARP1.0
         */
         getVendor(): string;
         /**
+           @method
            Sets The vendor of the operating system.
 
-           @param vendor The vendor of the operating system.
+           @param {string} vendor The vendor of the operating system.
         */
         setVendor(vendor: string): void;
         /**
+           @method
            Returns the version of the operating system.
 
-           @return OS version.
+           @return {string} OS version.
            @since ARP1.0
         */
         getVersion(): string;
         /**
+           @method
            Sets The version/identifier of the operating system.
 
-           @param version The version/identifier of the operating system.
+           @param {string} version The version/identifier of the operating system.
         */
         setVersion(version: string): void;
         /**

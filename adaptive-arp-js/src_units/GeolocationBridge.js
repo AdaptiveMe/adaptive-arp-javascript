@@ -59,7 +59,7 @@ var Adaptive;
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GeolocationBridge() {

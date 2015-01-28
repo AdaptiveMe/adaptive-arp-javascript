@@ -57,7 +57,7 @@ module Adaptive {
           apiGroup : IAdaptiveRPGroup;
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

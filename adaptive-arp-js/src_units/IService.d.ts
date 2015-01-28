@@ -53,7 +53,7 @@ declare module Adaptive {
            @method
            Get a reference to a registered service by name.
            @param serviceName Name of service.
-           @return {Service} A service, if registered, or null of the service does not exist.
+           @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         getService(serviceName: string): Service;

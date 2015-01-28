@@ -57,7 +57,7 @@ var Adaptive;
     var CryptoBridge = (function (_super) {
         __extends(CryptoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CryptoBridge() {

@@ -52,7 +52,7 @@ module Adaptive {
      export class NotificationBridge extends BaseNotificationBridge implements INotification {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

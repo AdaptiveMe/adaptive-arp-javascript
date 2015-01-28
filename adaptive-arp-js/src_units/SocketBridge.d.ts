@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class SocketBridge extends BaseCommunicationBridge implements ISocket {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class CameraBridge extends BaseMediaBridge implements ICamera {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

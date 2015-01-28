@@ -68,13 +68,14 @@ module Adaptive {
           */
           size : number;
           /**
+             @method constructor
              Constructor with fields
 
-             @param data         raw data of the file attachment
-             @param size         size of the file attachment
-             @param fileName     name of the file attachment
-             @param mimeType     mime type of the file attachment
-             @param referenceUrl relative url of the file attachment
+             @param {number[]} data         raw data of the file attachment
+             @param {number} size         size of the file attachment
+             @param {string} fileName     name of the file attachment
+             @param {string} mimeType     mime type of the file attachment
+             @param {string} referenceUrl relative url of the file attachment
              @since ARP1.0
           */
           constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string) {
@@ -87,9 +88,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the raw data in byte[]
 
-             @return data Octet-binary content of the attachment payload.
+             @return {number[]} data Octet-binary content of the attachment payload.
              @since ARP1.0
           */
           getData() : Array<number> {
@@ -97,9 +99,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the data of the attachment as a byte[]
 
-             @param data Sets the octet-binary content of the attachment.
+             @param {number[]} data Sets the octet-binary content of the attachment.
              @since ARP1.0
           */
           setData(data: Array<number>) {
@@ -107,9 +110,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the filename of the attachment
 
-             @return fileName Name of the attachment.
+             @return {string} fileName Name of the attachment.
              @since ARP1.0
           */
           getFileName() : string {
@@ -117,9 +121,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the name of the file attachment
 
-             @param fileName Name of the attachment.
+             @param {string} fileName Name of the attachment.
              @since ARP1.0
           */
           setFileName(fileName: string) {
@@ -127,9 +132,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the mime type of the attachment
 
-             @return mimeType
+             @return {string} mimeType
              @since ARP1.0
           */
           getMimeType() : string {
@@ -137,9 +143,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the mime type of the attachment
 
-             @param mimeType Mime-type of the attachment.
+             @param {string} mimeType Mime-type of the attachment.
              @since ARP1.0
           */
           setMimeType(mimeType: string) {
@@ -147,9 +154,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the absolute url of the file attachment
 
-             @return referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+             @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
              @since ARP1.0
           */
           getReferenceUrl() : string {
@@ -157,9 +165,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the absolute url of the attachment
 
-             @param referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+             @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
              @since ARP1.0
           */
           setReferenceUrl(referenceUrl: string) {
@@ -167,9 +176,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the size of the attachment as a long
 
-             @return size Length in bytes of the octet-binary content.
+             @return {number} size Length in bytes of the octet-binary content.
              @since ARP1.0
           */
           getSize() : number {
@@ -177,9 +187,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the size of the attachment as a long
 
-             @param size Length in bytes of the octet-binary content ( should be same as data array length.)
+             @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
              @since ARP1.0
           */
           setSize(size: number) {

@@ -54,11 +54,12 @@ var Adaptive;
     var Service = (function (_super) {
         __extends(Service, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param serviceEndpoints Endpoints of the service
-           @param name             Name of the service
-           @param type             Type of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+           @param {string} name             Name of the service
+           @param {Adaptive.IServiceType} type             Type of the service
            @since ARP1.0
         */
         function Service(serviceEndpoints, name, type) {
@@ -68,54 +69,60 @@ var Adaptive;
             this.type = type;
         }
         /**
+           @method
            Returns the type
 
-           @return type
+           @return {Adaptive.IServiceType} type
            @since ARP1.0
         */
         Service.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the type
 
-           @param type Type of the service
+           @param {Adaptive.IServiceType} type Type of the service
            @since ARP1.0
         */
         Service.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the name
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         Service.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the name
 
-           @param name Name of the service
+           @param {string} name Name of the service
            @since ARP1.0
         */
         Service.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the serviceEndpoints
 
-           @return serviceEndpoints
+           @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
            @since ARP1.0
         */
         Service.prototype.getServiceEndpoints = function () {
             return this.serviceEndpoints;
         };
         /**
+           @method
            Set the serviceEndpoints
 
-           @param serviceEndpoints Endpoint of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
         Service.prototype.setServiceEndpoints = function (serviceEndpoints) {

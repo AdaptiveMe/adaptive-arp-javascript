@@ -57,7 +57,7 @@ var Adaptive;
     var NetworkNamingBridge = (function (_super) {
         __extends(NetworkNamingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkNamingBridge() {

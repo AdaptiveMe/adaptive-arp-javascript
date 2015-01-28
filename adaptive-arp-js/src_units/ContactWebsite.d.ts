@@ -48,23 +48,26 @@ declare module Adaptive {
         */
         url: string;
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         constructor(url: string);
         /**
+           @method
            Returns the url of the website
 
-           @return website url
+           @return {string} website url
            @since ARP1.0
         */
         getUrl(): string;
         /**
+           @method
            Set the url of the website
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         setUrl(url: string): void;

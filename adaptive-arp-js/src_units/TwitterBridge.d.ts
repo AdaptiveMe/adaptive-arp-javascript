@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class TwitterBridge extends BaseSocialBridge implements ITwitter {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

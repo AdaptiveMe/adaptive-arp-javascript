@@ -59,7 +59,7 @@ var Adaptive;
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LifecycleBridge() {

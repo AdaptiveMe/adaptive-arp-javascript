@@ -57,7 +57,7 @@ var Adaptive;
     var CloudBridge = (function (_super) {
         __extends(CloudBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CloudBridge() {

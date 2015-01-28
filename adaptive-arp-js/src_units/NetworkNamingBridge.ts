@@ -52,7 +52,7 @@ module Adaptive {
      export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

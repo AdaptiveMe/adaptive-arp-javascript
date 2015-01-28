@@ -57,7 +57,7 @@ var Adaptive;
     var UpdateBridge = (function (_super) {
         __extends(UpdateBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function UpdateBridge() {

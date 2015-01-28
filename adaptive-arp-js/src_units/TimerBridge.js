@@ -57,7 +57,7 @@ var Adaptive;
     var TimerBridge = (function (_super) {
         __extends(TimerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TimerBridge() {

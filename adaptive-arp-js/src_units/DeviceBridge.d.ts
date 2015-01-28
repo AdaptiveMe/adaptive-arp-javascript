@@ -53,7 +53,7 @@ declare module Adaptive {
     */
     class DeviceBridge extends BaseSystemBridge implements IDevice {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();
@@ -67,14 +67,14 @@ declare module Adaptive {
         /**
            Returns the device information for the current device executing the runtime.
 
-           @return {DeviceInfo} DeviceInfo for the current device.
+           @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
            Gets the current Locale for the device.
 
-           @return {Locale} The current Locale information.
+           @return {Adaptive.Locale} The current Locale information.
            @since ARP1.0
         */
         getLocaleCurrent(): Locale;

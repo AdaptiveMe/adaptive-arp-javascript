@@ -88,9 +88,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: IButtonListenerError
-             @param onResultFunction Function receiving parameters of type: Button
-             @param onWarningFunction Function receiving parameters of type: Button, IButtonListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);

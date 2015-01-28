@@ -54,7 +54,7 @@ module Adaptive {
      export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

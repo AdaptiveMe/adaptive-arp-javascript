@@ -91,9 +91,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Lifecycle, ILifecycleListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         function LifecycleListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

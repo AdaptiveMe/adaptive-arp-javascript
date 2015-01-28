@@ -52,7 +52,7 @@ module Adaptive {
              @method
              Invokes the given method specified in the API request object.
              @param request APIRequest object containing method name and parameters.
-             @return {APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
+             @return {Adaptive.APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
           */
           invoke(request:APIRequest) : APIResponse;
      }

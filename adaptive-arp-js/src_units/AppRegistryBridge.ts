@@ -190,6 +190,7 @@ module Adaptive {
           /**
              @private
              @static
+             @property {Adaptive.AppRegistryBridge} instance
              Singleton instance of AppRegistry.
           */
           private static instance : IAppRegistry = null;
@@ -209,355 +210,352 @@ module Adaptive {
           }
 
           /**
-             Singleton instances of Bridges.
-          */
-          /**
-             @static
+             @private
              @property {Adaptive.IAcceleration} instanceAcceleration
           */
           private static instanceAcceleration : IAcceleration = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAds} instanceAds
           */
           private static instanceAds : IAds = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAlarm} instanceAlarm
           */
           private static instanceAlarm : IAlarm = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAmbientLight} instanceAmbientLight
           */
           private static instanceAmbientLight : IAmbientLight = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAnalytics} instanceAnalytics
           */
           private static instanceAnalytics : IAnalytics = null;
           /**
-             @static
+             @private
              @property {Adaptive.IAudio} instanceAudio
           */
           private static instanceAudio : IAudio = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBarcode} instanceBarcode
           */
           private static instanceBarcode : IBarcode = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBarometer} instanceBarometer
           */
           private static instanceBarometer : IBarometer = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBluetooth} instanceBluetooth
           */
           private static instanceBluetooth : IBluetooth = null;
           /**
-             @static
+             @private
              @property {Adaptive.IBrowser} instanceBrowser
           */
           private static instanceBrowser : IBrowser = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICalendar} instanceCalendar
           */
           private static instanceCalendar : ICalendar = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICamera} instanceCamera
           */
           private static instanceCamera : ICamera = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICapabilities} instanceCapabilities
           */
           private static instanceCapabilities : ICapabilities = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICloud} instanceCloud
           */
           private static instanceCloud : ICloud = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICompression} instanceCompression
           */
           private static instanceCompression : ICompression = null;
           /**
-             @static
+             @private
              @property {Adaptive.IConcurrent} instanceConcurrent
           */
           private static instanceConcurrent : IConcurrent = null;
           /**
-             @static
+             @private
              @property {Adaptive.IContact} instanceContact
           */
           private static instanceContact : IContact = null;
           /**
-             @static
+             @private
              @property {Adaptive.ICrypto} instanceCrypto
           */
           private static instanceCrypto : ICrypto = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDataStream} instanceDataStream
           */
           private static instanceDataStream : IDataStream = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDatabase} instanceDatabase
           */
           private static instanceDatabase : IDatabase = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDesktop} instanceDesktop
           */
           private static instanceDesktop : IDesktop = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDevice} instanceDevice
           */
           private static instanceDevice : IDevice = null;
           /**
-             @static
+             @private
              @property {Adaptive.IDisplay} instanceDisplay
           */
           private static instanceDisplay : IDisplay = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFacebook} instanceFacebook
           */
           private static instanceFacebook : IFacebook = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFile} instanceFile
           */
           private static instanceFile : IFile = null;
           /**
-             @static
+             @private
              @property {Adaptive.IFileSystem} instanceFileSystem
           */
           private static instanceFileSystem : IFileSystem = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGeolocation} instanceGeolocation
           */
           private static instanceGeolocation : IGeolocation = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGlobalization} instanceGlobalization
           */
           private static instanceGlobalization : IGlobalization = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGooglePlus} instanceGooglePlus
           */
           private static instanceGooglePlus : IGooglePlus = null;
           /**
-             @static
+             @private
              @property {Adaptive.IGyroscope} instanceGyroscope
           */
           private static instanceGyroscope : IGyroscope = null;
           /**
-             @static
+             @private
              @property {Adaptive.IImaging} instanceImaging
           */
           private static instanceImaging : IImaging = null;
           /**
-             @static
+             @private
              @property {Adaptive.IInternalStorage} instanceInternalStorage
           */
           private static instanceInternalStorage : IInternalStorage = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILifecycle} instanceLifecycle
           */
           private static instanceLifecycle : ILifecycle = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILinkedIn} instanceLinkedIn
           */
           private static instanceLinkedIn : ILinkedIn = null;
           /**
-             @static
+             @private
              @property {Adaptive.ILogging} instanceLogging
           */
           private static instanceLogging : ILogging = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMagnetometer} instanceMagnetometer
           */
           private static instanceMagnetometer : IMagnetometer = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMail} instanceMail
           */
           private static instanceMail : IMail = null;
           /**
-             @static
+             @private
              @property {Adaptive.IManagement} instanceManagement
           */
           private static instanceManagement : IManagement = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMap} instanceMap
           */
           private static instanceMap : IMap = null;
           /**
-             @static
+             @private
              @property {Adaptive.IMessaging} instanceMessaging
           */
           private static instanceMessaging : IMessaging = null;
           /**
-             @static
+             @private
              @property {Adaptive.INFC} instanceNFC
           */
           private static instanceNFC : INFC = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkInfo} instanceNetworkInfo
           */
           private static instanceNetworkInfo : INetworkInfo = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkNaming} instanceNetworkNaming
           */
           private static instanceNetworkNaming : INetworkNaming = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkReachability} instanceNetworkReachability
           */
           private static instanceNetworkReachability : INetworkReachability = null;
           /**
-             @static
+             @private
              @property {Adaptive.INetworkStatus} instanceNetworkStatus
           */
           private static instanceNetworkStatus : INetworkStatus = null;
           /**
-             @static
+             @private
              @property {Adaptive.INotification} instanceNotification
           */
           private static instanceNotification : INotification = null;
           /**
-             @static
+             @private
              @property {Adaptive.INotificationLocal} instanceNotificationLocal
           */
           private static instanceNotificationLocal : INotificationLocal = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOAuth} instanceOAuth
           */
           private static instanceOAuth : IOAuth = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOCR} instanceOCR
           */
           private static instanceOCR : IOCR = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOS} instanceOS
           */
           private static instanceOS : IOS = null;
           /**
-             @static
+             @private
              @property {Adaptive.IOpenId} instanceOpenId
           */
           private static instanceOpenId : IOpenId = null;
           /**
-             @static
+             @private
              @property {Adaptive.IPrinting} instancePrinting
           */
           private static instancePrinting : IPrinting = null;
           /**
-             @static
+             @private
              @property {Adaptive.IProximity} instanceProximity
           */
           private static instanceProximity : IProximity = null;
           /**
-             @static
+             @private
              @property {Adaptive.IQRCode} instanceQRCode
           */
           private static instanceQRCode : IQRCode = null;
           /**
-             @static
+             @private
              @property {Adaptive.IRSS} instanceRSS
           */
           private static instanceRSS : IRSS = null;
           /**
-             @static
+             @private
              @property {Adaptive.IRuntime} instanceRuntime
           */
           private static instanceRuntime : IRuntime = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISecurity} instanceSecurity
           */
           private static instanceSecurity : ISecurity = null;
           /**
-             @static
+             @private
              @property {Adaptive.IService} instanceService
           */
           private static instanceService : IService = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISettings} instanceSettings
           */
           private static instanceSettings : ISettings = null;
           /**
-             @static
+             @private
              @property {Adaptive.ISocket} instanceSocket
           */
           private static instanceSocket : ISocket = null;
           /**
-             @static
+             @private
              @property {Adaptive.IStore} instanceStore
           */
           private static instanceStore : IStore = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITelephony} instanceTelephony
           */
           private static instanceTelephony : ITelephony = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITimer} instanceTimer
           */
           private static instanceTimer : ITimer = null;
           /**
-             @static
+             @private
              @property {Adaptive.ITwitter} instanceTwitter
           */
           private static instanceTwitter : ITwitter = null;
           /**
-             @static
+             @private
              @property {Adaptive.IUI} instanceUI
           */
           private static instanceUI : IUI = null;
           /**
-             @static
+             @private
              @property {Adaptive.IUpdate} instanceUpdate
           */
           private static instanceUpdate : IUpdate = null;
           /**
-             @static
+             @private
              @property {Adaptive.IVibration} instanceVibration
           */
           private static instanceVibration : IVibration = null;
           /**
-             @static
+             @private
              @property {Adaptive.IVideo} instanceVideo
           */
           private static instanceVideo : IVideo = null;
           /**
-             @static
+             @private
              @property {Adaptive.IWallet} instanceWallet
           */
           private static instanceWallet : IWallet = null;
           /**
-             @static
+             @private
              @property {Adaptive.IXML} instanceXML
           */
           private static instanceXML : IXML = null;

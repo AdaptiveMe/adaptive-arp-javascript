@@ -58,7 +58,7 @@ var Adaptive;
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TelephonyBridge() {
@@ -68,7 +68,7 @@ var Adaptive;
            Invoke a phone call
 
            @param number to call
-           @return {ITelephonyStatus} Status of the call
+           @return {Adaptive.ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         TelephonyBridge.prototype.call = function (number) {

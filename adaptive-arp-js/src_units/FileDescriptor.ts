@@ -54,6 +54,7 @@ module Adaptive {
           pathAbsolute : string;
           size : number;
           /**
+             @method constructor
              Default constructor.
           */
           constructor() {
@@ -61,9 +62,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the milliseconds passed since 1/1/1970 since the file was created.
 
-             @return Timestamp in milliseconds.
+             @return {number} Timestamp in milliseconds.
              @since ARP1.0
           */
           getDateCreated() : number {
@@ -71,18 +73,20 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the creation timestamp in milliseconds. Used internally.
 
-             @param dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
+             @param {number} dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
           */
           setDateCreated(dateCreated: number) {
                this.dateCreated = dateCreated;
           }
 
           /**
+             @method
              Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
-             @return Timestamp in milliseconds.
+             @return {number} Timestamp in milliseconds.
              @since ARP1.0
           */
           getDateModified() : number {
@@ -90,18 +94,20 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the file or folder modification timestamp in milliseconds. Used internally.
 
-             @param dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
+             @param {number} dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
           */
           setDateModified(dateModified: number) {
                this.dateModified = dateModified;
           }
 
           /**
+             @method
              Returns the name of the file if the reference is a file or the last path element of the folder.
 
-             @return The name of the file.
+             @return {string} The name of the file.
              @since ARP1.0
           */
           getName() : string {
@@ -109,18 +115,20 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the name of the file. Used internally.
 
-             @param name Name of the file or last folder path element.
+             @param {string} name Name of the file or last folder path element.
           */
           setName(name: string) {
                this.name = name;
           }
 
           /**
+             @method
              Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
-             @return The path to the file.
+             @return {string} The path to the file.
              @since ARP1.0
           */
           getPath() : string {
@@ -128,18 +136,20 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the path of the file or folder. Used internally.
 
-             @param path The path element of the file or folder.
+             @param {string} path The path element of the file or folder.
           */
           setPath(path: string) {
                this.path = path;
           }
 
           /**
+             @method
              Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
-             @return The absolute path to the file.
+             @return {string} The absolute path to the file.
              @since ARP1.0
           */
           getPathAbsolute() : string {
@@ -147,18 +157,20 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the absolute path of the file or folder. Used internally.
 
-             @param pathAbsolute String with the absolute path of file or folder.
+             @param {string} pathAbsolute String with the absolute path of file or folder.
           */
           setPathAbsolute(pathAbsolute: string) {
                this.pathAbsolute = pathAbsolute;
           }
 
           /**
+             @method
              Returns the size in bytes of the file or -1 if the reference is a folder.
 
-             @return Size in bytes of file.
+             @return {number} Size in bytes of file.
              @since ARP1.0
           */
           getSize() : number {
@@ -166,10 +178,11 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the file size in bytes of the file. If the file is a folder, this will be 0. If the file
 doesn't exist, this will be -1. Used internally.
 
-             @param size The size in bytes of the file.
+             @param {number} size The size in bytes of the file.
           */
           setSize(size: number) {
                this.size = size;

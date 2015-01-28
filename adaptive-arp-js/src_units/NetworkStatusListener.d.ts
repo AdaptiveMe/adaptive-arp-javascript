@@ -59,9 +59,9 @@ declare module Adaptive {
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: ICapabilitiesNet, INetworkStatusListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (network: ICapabilitiesNet) => void, onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void);
         /**

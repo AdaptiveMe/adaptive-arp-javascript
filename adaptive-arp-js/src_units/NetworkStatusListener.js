@@ -91,9 +91,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: ICapabilitiesNet, INetworkStatusListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         function NetworkStatusListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

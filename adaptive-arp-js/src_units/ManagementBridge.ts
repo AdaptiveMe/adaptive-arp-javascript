@@ -52,7 +52,7 @@ module Adaptive {
      export class ManagementBridge extends BaseApplicationBridge implements IManagement {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

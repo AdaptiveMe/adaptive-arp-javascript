@@ -52,9 +52,10 @@ module Adaptive {
           */
           values : Array<string>;
           /**
+             @method constructor
              Constructor for implementation using.
 
-             @param values The values of the row
+             @param {string[]} values The values of the row
              @since ARP1.0
           */
           constructor(values: Array<string>) {
@@ -63,9 +64,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the values of the row.
 
-             @return The values of the row.
+             @return {string[]} The values of the row.
              @since ARP1.0
           */
           getValues() : Array<string> {
@@ -73,9 +75,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the values of the row.
 
-             @param values The values of the row.
+             @param {string[]} values The values of the row.
              @since ARP1.0
           */
           setValues(values: Array<string>) {

@@ -52,7 +52,7 @@ module Adaptive {
      export class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

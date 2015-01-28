@@ -52,7 +52,7 @@ module Adaptive {
      export class VideoBridge extends BaseMediaBridge implements IVideo {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

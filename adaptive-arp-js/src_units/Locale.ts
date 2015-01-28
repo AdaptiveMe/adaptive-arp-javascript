@@ -56,10 +56,11 @@ module Adaptive {
           */
           language : string;
           /**
+             @method constructor
              Constructor used by the implementation
 
-             @param country  Country of the Locale
-             @param language Language of the Locale
+             @param {string} country  Country of the Locale
+             @param {string} language Language of the Locale
              @since ARP1.0
           */
           constructor(language: string, country: string) {
@@ -69,9 +70,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the country code
 
-             @return country code
+             @return {string} country code
              @since ARP1.0
           */
           getCountry() : string {
@@ -79,9 +81,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the country code
 
-             @param country code
+             @param {string} country code
              @since ARP1.0
           */
           setCountry(country: string) {
@@ -89,9 +92,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the language code
 
-             @return language code
+             @return {string} language code
              @since ARP1.0
           */
           getLanguage() : string {
@@ -99,9 +103,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the language code
 
-             @param language code
+             @param {string} language code
              @since ARP1.0
           */
           setLanguage(language: string) {

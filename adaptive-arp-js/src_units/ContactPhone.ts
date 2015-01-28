@@ -57,10 +57,11 @@ module Adaptive {
           */
           phone : string;
           /**
+             @method constructor
              Constructor used by implementation to set the contact Phone
 
-             @param phone     Phone number
-             @param phoneType Type of Phone number
+             @param {string} phone     Phone number
+             @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
              @since ARP1.0
           */
           constructor(phone: string, phoneType: ContactPhoneType) {
@@ -70,9 +71,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the phone phoneType
 
-             @return phoneType
+             @return {Adaptive.ContactPhoneType} phoneType
              @since ARP1.0
           */
           getPhoneType() : ContactPhoneType {
@@ -80,9 +82,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the phoneType of the phone number
 
-             @param phoneType Type of Phone number
+             @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
              @since ARP1.0
           */
           setPhoneType(phoneType: ContactPhoneType) {
@@ -90,9 +93,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the phone number
 
-             @return phone number
+             @return {string} phone number
              @since ARP1.0
           */
           getPhone() : string {
@@ -100,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the phone number
 
-             @param phone number
+             @param {string} phone number
              @since ARP1.0
           */
           setPhone(phone: string) {

@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseMediaBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseMediaBridge() {

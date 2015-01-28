@@ -60,7 +60,7 @@ var Adaptive;
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SecurityBridge() {

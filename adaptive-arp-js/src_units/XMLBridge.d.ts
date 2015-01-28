@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class XMLBridge extends BaseDataBridge implements IXML {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

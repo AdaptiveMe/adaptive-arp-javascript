@@ -52,7 +52,7 @@ module Adaptive {
      export class NFCBridge extends BaseReaderBridge implements INFC {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

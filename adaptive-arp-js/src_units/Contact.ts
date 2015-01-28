@@ -88,17 +88,18 @@ module Adaptive {
           */
           professionalInfo : ContactProfessionalInfo;
           /**
+             @method constructor
              Constructor with all the fields
 
-             @param contactId        Identifier of the contact
-             @param personalInfo     Personal Information
-             @param professionalInfo Professional Information
-             @param contactAddresses Addresses of the contact
-             @param contactPhones    Phones of the contact
-             @param contactEmails    Emails of the contact
-             @param contactWebsites  Websites of the contact
-             @param contactSocials   Social Networks of the contact
-             @param contactTags      Tags of the contact
+             @param {string} contactId        Identifier of the contact
+             @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
+             @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
+             @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
+             @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
+             @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
+             @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
+             @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
+             @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
              @since ARP1.0
           */
           constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: Array<ContactAddress>, contactPhones: Array<ContactPhone>, contactEmails: Array<ContactEmail>, contactWebsites: Array<ContactWebsite>, contactSocials: Array<ContactSocial>, contactTags: Array<ContactTag>) {
@@ -114,9 +115,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns all the addresses of the Contact
 
-             @return ContactAddress[]
+             @return {Adaptive.ContactAddress[]} ContactAddress[]
              @since ARP1.0
           */
           getContactAddresses() : Array<ContactAddress> {
@@ -124,9 +126,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the addresses of the Contact
 
-             @param contactAddresses Addresses of the contact
+             @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
              @since ARP1.0
           */
           setContactAddresses(contactAddresses: Array<ContactAddress>) {
@@ -134,9 +137,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns all the emails of the Contact
 
-             @return ContactEmail[]
+             @return {Adaptive.ContactEmail[]} ContactEmail[]
              @since ARP1.0
           */
           getContactEmails() : Array<ContactEmail> {
@@ -144,9 +148,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the emails of the Contact
 
-             @param contactEmails Emails of the contact
+             @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
              @since ARP1.0
           */
           setContactEmails(contactEmails: Array<ContactEmail>) {
@@ -154,9 +159,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns all the phones of the Contact
 
-             @return ContactPhone[]
+             @return {Adaptive.ContactPhone[]} ContactPhone[]
              @since ARP1.0
           */
           getContactPhones() : Array<ContactPhone> {
@@ -164,9 +170,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the phones of the Contact
 
-             @param contactPhones Phones of the contact
+             @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
              @since ARP1.0
           */
           setContactPhones(contactPhones: Array<ContactPhone>) {
@@ -174,9 +181,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns all the social network info of the Contact
 
-             @return ContactSocial[]
+             @return {Adaptive.ContactSocial[]} ContactSocial[]
              @since ARP1.0
           */
           getContactSocials() : Array<ContactSocial> {
@@ -184,9 +192,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the social network info of the Contact
 
-             @param contactSocials Social Networks of the contact
+             @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
              @since ARP1.0
           */
           setContactSocials(contactSocials: Array<ContactSocial>) {
@@ -194,9 +203,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the additional tags of the Contact
 
-             @return ContactTag[]
+             @return {Adaptive.ContactTag[]} ContactTag[]
              @since ARP1.0
           */
           getContactTags() : Array<ContactTag> {
@@ -204,9 +214,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the additional tags of the Contact
 
-             @param contactTags Tags of the contact
+             @param {Adaptive.ContactTag[]} contactTags Tags of the contact
              @since ARP1.0
           */
           setContactTags(contactTags: Array<ContactTag>) {
@@ -214,9 +225,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns all the websites of the Contact
 
-             @return ContactWebsite[]
+             @return {Adaptive.ContactWebsite[]} ContactWebsite[]
              @since ARP1.0
           */
           getContactWebsites() : Array<ContactWebsite> {
@@ -224,9 +236,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the websites of the Contact
 
-             @param contactWebsites Websites of the contact
+             @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
              @since ARP1.0
           */
           setContactWebsites(contactWebsites: Array<ContactWebsite>) {
@@ -234,9 +247,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the personal info of the Contact
 
-             @return ContactPersonalInfo of the Contact
+             @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
              @since ARP1.0
           */
           getPersonalInfo() : ContactPersonalInfo {
@@ -244,9 +258,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the personal info of the Contact
 
-             @param personalInfo Personal Information
+             @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
              @since ARP1.0
           */
           setPersonalInfo(personalInfo: ContactPersonalInfo) {
@@ -254,9 +269,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the professional info of the Contact
 
-             @return Array of personal info
+             @return {Adaptive.ContactProfessionalInfo} Array of personal info
              @since ARP1.0
           */
           getProfessionalInfo() : ContactProfessionalInfo {
@@ -264,9 +280,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the professional info of the Contact
 
-             @param professionalInfo Professional Information
+             @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
              @since ARP1.0
           */
           setProfessionalInfo(professionalInfo: ContactProfessionalInfo) {

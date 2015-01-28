@@ -64,12 +64,13 @@ module Adaptive {
           */
           z : number;
           /**
+             @method constructor
              Constructor with fields
 
-             @param x         X Coordinate
-             @param y         Y Coordinate
-             @param z         Z Coordinate
-             @param timestamp Timestamp
+             @param {number} x         X Coordinate
+             @param {number} y         Y Coordinate
+             @param {number} z         Z Coordinate
+             @param {number} timestamp Timestamp
              @since ARP1.0
           */
           constructor(x: number, y: number, z: number, timestamp: number) {
@@ -81,9 +82,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Timestamp Getter
 
-             @return Timestamp
+             @return {number} Timestamp
              @since ARP1.0
           */
           getTimestamp() : number {
@@ -91,9 +93,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Timestamp Setter
 
-             @param timestamp Timestamp
+             @param {number} timestamp Timestamp
              @since ARP1.0
           */
           setTimestamp(timestamp: number) {
@@ -101,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              X Coordinate Getter
 
-             @return X-axis component of the acceleration.
+             @return {number} X-axis component of the acceleration.
              @since ARP1.0
           */
           getX() : number {
@@ -111,9 +115,10 @@ module Adaptive {
           }
 
           /**
+             @method
              X Coordinate Setter
 
-             @param x X-axis component of the acceleration.
+             @param {number} x X-axis component of the acceleration.
              @since ARP1.0
           */
           setX(x: number) {
@@ -121,9 +126,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Y Coordinate Getter
 
-             @return Y-axis component of the acceleration.
+             @return {number} Y-axis component of the acceleration.
              @since ARP1.0
           */
           getY() : number {
@@ -131,9 +137,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Y Coordinate Setter
 
-             @param y Y-axis component of the acceleration.
+             @param {number} y Y-axis component of the acceleration.
              @since ARP1.0
           */
           setY(y: number) {
@@ -141,9 +148,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Z Coordinate Getter
 
-             @return Z-axis component of the acceleration.
+             @return {number} Z-axis component of the acceleration.
              @since ARP1.0
           */
           getZ() : number {
@@ -151,9 +159,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Z Coordinate Setter
 
-             @param z Z Coordinate
+             @param {number} z Z Coordinate
              @since ARP1.0
           */
           setZ(z: number) {

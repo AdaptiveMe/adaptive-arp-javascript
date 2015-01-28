@@ -58,9 +58,9 @@ declare module Adaptive {
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<number>
-           @param onWarningFunction Function receiving parameters of type: Array<number>, IFileDataLoadResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param onResultFunction Function receiving parameters of type: number[]
+           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: number[]) => void, onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void);
         /**

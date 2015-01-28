@@ -56,7 +56,7 @@ declare module Adaptive {
     */
     class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

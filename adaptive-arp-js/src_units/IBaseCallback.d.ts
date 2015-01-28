@@ -47,7 +47,7 @@ declare module Adaptive {
     */
     interface IBaseCallback extends IAdaptiveRP {
         /**
-           @method
+           @abstract
            Retrieve unique id of callback/listener.
 
            @return {number} Callback/listener unique id.

@@ -61,7 +61,7 @@ var Adaptive;
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ServiceBridge() {
@@ -71,7 +71,7 @@ var Adaptive;
            Get a reference to a registered service by name.
 
            @param serviceName Name of service.
-           @return {Service} A service, if registered, or null of the service does not exist.
+           @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         ServiceBridge.prototype.getService = function (serviceName) {

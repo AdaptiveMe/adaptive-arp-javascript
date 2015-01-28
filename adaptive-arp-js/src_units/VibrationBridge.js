@@ -57,7 +57,7 @@ var Adaptive;
     var VibrationBridge = (function (_super) {
         __extends(VibrationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function VibrationBridge() {

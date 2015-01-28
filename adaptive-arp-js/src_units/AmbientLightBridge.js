@@ -57,7 +57,7 @@ var Adaptive;
     var AmbientLightBridge = (function (_super) {
         __extends(AmbientLightBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AmbientLightBridge() {

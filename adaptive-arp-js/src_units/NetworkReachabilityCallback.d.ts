@@ -58,9 +58,9 @@ declare module Adaptive {
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkReachabilityCallbackError
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
            @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, INetworkReachabilityCallbackWarning
+           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
         */
         constructor(onErrorFunction: (error: INetworkReachabilityCallbackError) => void, onResultFunction: (reachable: boolean) => void, onWarningFunction: (reachable: boolean, warning: INetworkReachabilityCallbackWarning) => void);
         /**

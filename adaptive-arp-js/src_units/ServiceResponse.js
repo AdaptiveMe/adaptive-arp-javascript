@@ -54,16 +54,17 @@ var Adaptive;
     var ServiceResponse = (function (_super) {
         __extends(ServiceResponse, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param content             Request/Response data content (plain text).
-           @param contentType         The request/response content type (MIME TYPE).
-           @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-           @param contentLength       The length in bytes for the Content field.
-           @param contentBinary       The byte[] representing the binary Content.
-           @param contentBinaryLength The length in bytes for the binary Content.
-           @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @param serviceSession      Information about the session
+           @param {string} content             Request/Response data content (plain text).
+           @param {string} contentType         The request/response content type (MIME TYPE).
+           @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+           @param {number} contentLength       The length in bytes for the Content field.
+           @param {number[]} contentBinary       The byte[] representing the binary Content.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {Adaptive.ServiceSession} serviceSession      Information about the session
            @since ARP1.0
         */
         function ServiceResponse(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, serviceSession) {
@@ -78,144 +79,160 @@ var Adaptive;
             this.serviceSession = serviceSession;
         }
         /**
+           @method
            Returns the content
 
-           @return content
+           @return {string} content
            @since ARP1.0
         */
         ServiceResponse.prototype.getContent = function () {
             return this.content;
         };
         /**
+           @method
            Set the content
 
-           @param content Request/Response data content (plain text).
+           @param {string} content Request/Response data content (plain text).
            @since ARP1.0
         */
         ServiceResponse.prototype.setContent = function (content) {
             this.content = content;
         };
         /**
+           @method
            Returns the binary content
 
-           @return contentBinary
+           @return {number[]} contentBinary
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentBinary = function () {
             return this.contentBinary;
         };
         /**
+           @method
            Set the binary content
 
-           @param contentBinary The byte[] representing the binary Content.
+           @param {number[]} contentBinary The byte[] representing the binary Content.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
         };
         /**
+           @method
            Returns the binary content length
 
-           @return contentBinaryLength
+           @return {number} contentBinaryLength
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
         };
         /**
+           @method
            Set the binary content length
 
-           @param contentBinaryLength The length in bytes for the binary Content.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
         };
         /**
+           @method
            Returns the content encoding
 
-           @return contentEncoding
+           @return {string} contentEncoding
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentEncoding = function () {
             return this.contentEncoding;
         };
         /**
+           @method
            Set the content encoding
 
-           @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
         };
         /**
+           @method
            Returns the content length
 
-           @return contentLength
+           @return {number} contentLength
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentLength = function () {
             return this.contentLength;
         };
         /**
+           @method
            Set the content length
 
-           @param contentLength The length in bytes for the Content field.
+           @param {number} contentLength The length in bytes for the Content field.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
         };
         /**
+           @method
            Returns the content type
 
-           @return contentType
+           @return {string} contentType
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentType = function () {
             return this.contentType;
         };
         /**
+           @method
            Set the content type
 
-           @param contentType The request/response content type (MIME TYPE).
+           @param {string} contentType The request/response content type (MIME TYPE).
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
         };
         /**
+           @method
            Returns the array of ServiceHeader
 
-           @return serviceHeaders
+           @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since ARP1.0
         */
         ServiceResponse.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
         };
         /**
+           @method
            Set the array of ServiceHeader
 
-           @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since ARP1.0
         */
         ServiceResponse.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
         };
         /**
+           @method
            Getter for service session
 
-           @return The element service session
+           @return {Adaptive.ServiceSession} The element service session
            @since ARP1.0
         */
         ServiceResponse.prototype.getServiceSession = function () {
             return this.serviceSession;
         };
         /**
+           @method
            Setter for service session
 
-           @param serviceSession The element service session
+           @param {Adaptive.ServiceSession} serviceSession The element service session
            @since ARP1.0
         */
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {

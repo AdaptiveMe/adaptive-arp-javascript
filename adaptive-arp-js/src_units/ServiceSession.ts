@@ -57,10 +57,11 @@ module Adaptive {
           */
           cookies : Array<ServiceCookie>;
           /**
+             @method constructor
              Constructor with fields
 
-             @param cookies    The cookies of the response
-             @param attributes Attributes of the response
+             @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
+             @param {string[]} attributes Attributes of the response
              @since ARP1.0
           */
           constructor(cookies: Array<ServiceCookie>, attributes: Array<string>) {
@@ -70,9 +71,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Gets the attributes of the response
 
-             @return Attributes of the response
+             @return {string[]} Attributes of the response
              @since ARP1.0
           */
           getAttributes() : Array<string> {
@@ -80,9 +82,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the attributes for the response
 
-             @param attributes Attributes of the response
+             @param {string[]} attributes Attributes of the response
              @since ARP1.0
           */
           setAttributes(attributes: Array<string>) {
@@ -90,9 +93,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the cookies of the response
 
-             @return The cookies of the response
+             @return {Adaptive.ServiceCookie[]} The cookies of the response
              @since ARP1.0
           */
           getCookies() : Array<ServiceCookie> {
@@ -100,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the cookies of the response
 
-             @param cookies The cookies of the response
+             @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
              @since ARP1.0
           */
           setCookies(cookies: Array<ServiceCookie>) {

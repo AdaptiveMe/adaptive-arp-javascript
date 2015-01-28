@@ -59,7 +59,7 @@ var Adaptive;
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkStatusBridge() {

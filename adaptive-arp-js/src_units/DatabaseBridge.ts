@@ -58,7 +58,7 @@ module Adaptive {
      export class DatabaseBridge extends BaseDataBridge implements IDatabase {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

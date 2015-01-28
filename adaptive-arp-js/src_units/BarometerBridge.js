@@ -57,7 +57,7 @@ var Adaptive;
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BarometerBridge() {

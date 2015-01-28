@@ -58,7 +58,7 @@ var Adaptive;
     var OSBridge = (function (_super) {
         __extends(OSBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OSBridge() {
@@ -67,7 +67,7 @@ var Adaptive;
         /**
            Returns the OSInfo for the current operating system.
 
-           @return {OSInfo} OSInfo with name, version and vendor of the OS.
+           @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         OSBridge.prototype.getOSInfo = function () {

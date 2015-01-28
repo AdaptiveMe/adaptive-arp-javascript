@@ -57,7 +57,7 @@ var Adaptive;
     var FacebookBridge = (function (_super) {
         __extends(FacebookBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function FacebookBridge() {

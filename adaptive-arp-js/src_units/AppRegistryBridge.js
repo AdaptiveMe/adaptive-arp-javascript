@@ -1052,359 +1052,357 @@ var Adaptive;
         /**
            @private
            @static
+           @property {Adaptive.AppRegistryBridge} instance
            Singleton instance of AppRegistry.
         */
         AppRegistryBridge.instance = null;
         /**
-           Singleton instances of Bridges.
-        */
-        /**
-           @static
+           @private
            @property {Adaptive.IAcceleration} instanceAcceleration
         */
         AppRegistryBridge.instanceAcceleration = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAds} instanceAds
         */
         AppRegistryBridge.instanceAds = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAlarm} instanceAlarm
         */
         AppRegistryBridge.instanceAlarm = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAmbientLight} instanceAmbientLight
         */
         AppRegistryBridge.instanceAmbientLight = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAnalytics} instanceAnalytics
         */
         AppRegistryBridge.instanceAnalytics = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAudio} instanceAudio
         */
         AppRegistryBridge.instanceAudio = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBarcode} instanceBarcode
         */
         AppRegistryBridge.instanceBarcode = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBarometer} instanceBarometer
         */
         AppRegistryBridge.instanceBarometer = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBluetooth} instanceBluetooth
         */
         AppRegistryBridge.instanceBluetooth = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBrowser} instanceBrowser
         */
         AppRegistryBridge.instanceBrowser = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICalendar} instanceCalendar
         */
         AppRegistryBridge.instanceCalendar = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICamera} instanceCamera
         */
         AppRegistryBridge.instanceCamera = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICapabilities} instanceCapabilities
         */
         AppRegistryBridge.instanceCapabilities = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICloud} instanceCloud
         */
         AppRegistryBridge.instanceCloud = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICompression} instanceCompression
         */
         AppRegistryBridge.instanceCompression = null;
         /**
-           @static
+           @private
            @property {Adaptive.IConcurrent} instanceConcurrent
         */
         AppRegistryBridge.instanceConcurrent = null;
         /**
-           @static
+           @private
            @property {Adaptive.IContact} instanceContact
         */
         AppRegistryBridge.instanceContact = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICrypto} instanceCrypto
         */
         AppRegistryBridge.instanceCrypto = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDataStream} instanceDataStream
         */
         AppRegistryBridge.instanceDataStream = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDatabase} instanceDatabase
         */
         AppRegistryBridge.instanceDatabase = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDesktop} instanceDesktop
         */
         AppRegistryBridge.instanceDesktop = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDevice} instanceDevice
         */
         AppRegistryBridge.instanceDevice = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDisplay} instanceDisplay
         */
         AppRegistryBridge.instanceDisplay = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFacebook} instanceFacebook
         */
         AppRegistryBridge.instanceFacebook = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFile} instanceFile
         */
         AppRegistryBridge.instanceFile = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFileSystem} instanceFileSystem
         */
         AppRegistryBridge.instanceFileSystem = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGeolocation} instanceGeolocation
         */
         AppRegistryBridge.instanceGeolocation = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGlobalization} instanceGlobalization
         */
         AppRegistryBridge.instanceGlobalization = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGooglePlus} instanceGooglePlus
         */
         AppRegistryBridge.instanceGooglePlus = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGyroscope} instanceGyroscope
         */
         AppRegistryBridge.instanceGyroscope = null;
         /**
-           @static
+           @private
            @property {Adaptive.IImaging} instanceImaging
         */
         AppRegistryBridge.instanceImaging = null;
         /**
-           @static
+           @private
            @property {Adaptive.IInternalStorage} instanceInternalStorage
         */
         AppRegistryBridge.instanceInternalStorage = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILifecycle} instanceLifecycle
         */
         AppRegistryBridge.instanceLifecycle = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILinkedIn} instanceLinkedIn
         */
         AppRegistryBridge.instanceLinkedIn = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILogging} instanceLogging
         */
         AppRegistryBridge.instanceLogging = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMagnetometer} instanceMagnetometer
         */
         AppRegistryBridge.instanceMagnetometer = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMail} instanceMail
         */
         AppRegistryBridge.instanceMail = null;
         /**
-           @static
+           @private
            @property {Adaptive.IManagement} instanceManagement
         */
         AppRegistryBridge.instanceManagement = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMap} instanceMap
         */
         AppRegistryBridge.instanceMap = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMessaging} instanceMessaging
         */
         AppRegistryBridge.instanceMessaging = null;
         /**
-           @static
+           @private
            @property {Adaptive.INFC} instanceNFC
         */
         AppRegistryBridge.instanceNFC = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkInfo} instanceNetworkInfo
         */
         AppRegistryBridge.instanceNetworkInfo = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkNaming} instanceNetworkNaming
         */
         AppRegistryBridge.instanceNetworkNaming = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkReachability} instanceNetworkReachability
         */
         AppRegistryBridge.instanceNetworkReachability = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkStatus} instanceNetworkStatus
         */
         AppRegistryBridge.instanceNetworkStatus = null;
         /**
-           @static
+           @private
            @property {Adaptive.INotification} instanceNotification
         */
         AppRegistryBridge.instanceNotification = null;
         /**
-           @static
+           @private
            @property {Adaptive.INotificationLocal} instanceNotificationLocal
         */
         AppRegistryBridge.instanceNotificationLocal = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOAuth} instanceOAuth
         */
         AppRegistryBridge.instanceOAuth = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOCR} instanceOCR
         */
         AppRegistryBridge.instanceOCR = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOS} instanceOS
         */
         AppRegistryBridge.instanceOS = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOpenId} instanceOpenId
         */
         AppRegistryBridge.instanceOpenId = null;
         /**
-           @static
+           @private
            @property {Adaptive.IPrinting} instancePrinting
         */
         AppRegistryBridge.instancePrinting = null;
         /**
-           @static
+           @private
            @property {Adaptive.IProximity} instanceProximity
         */
         AppRegistryBridge.instanceProximity = null;
         /**
-           @static
+           @private
            @property {Adaptive.IQRCode} instanceQRCode
         */
         AppRegistryBridge.instanceQRCode = null;
         /**
-           @static
+           @private
            @property {Adaptive.IRSS} instanceRSS
         */
         AppRegistryBridge.instanceRSS = null;
         /**
-           @static
+           @private
            @property {Adaptive.IRuntime} instanceRuntime
         */
         AppRegistryBridge.instanceRuntime = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISecurity} instanceSecurity
         */
         AppRegistryBridge.instanceSecurity = null;
         /**
-           @static
+           @private
            @property {Adaptive.IService} instanceService
         */
         AppRegistryBridge.instanceService = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISettings} instanceSettings
         */
         AppRegistryBridge.instanceSettings = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISocket} instanceSocket
         */
         AppRegistryBridge.instanceSocket = null;
         /**
-           @static
+           @private
            @property {Adaptive.IStore} instanceStore
         */
         AppRegistryBridge.instanceStore = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITelephony} instanceTelephony
         */
         AppRegistryBridge.instanceTelephony = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITimer} instanceTimer
         */
         AppRegistryBridge.instanceTimer = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITwitter} instanceTwitter
         */
         AppRegistryBridge.instanceTwitter = null;
         /**
-           @static
+           @private
            @property {Adaptive.IUI} instanceUI
         */
         AppRegistryBridge.instanceUI = null;
         /**
-           @static
+           @private
            @property {Adaptive.IUpdate} instanceUpdate
         */
         AppRegistryBridge.instanceUpdate = null;
         /**
-           @static
+           @private
            @property {Adaptive.IVibration} instanceVibration
         */
         AppRegistryBridge.instanceVibration = null;
         /**
-           @static
+           @private
            @property {Adaptive.IVideo} instanceVideo
         */
         AppRegistryBridge.instanceVideo = null;
         /**
-           @static
+           @private
            @property {Adaptive.IWallet} instanceWallet
         */
         AppRegistryBridge.instanceWallet = null;
         /**
-           @static
+           @private
            @property {Adaptive.IXML} instanceXML
         */
         AppRegistryBridge.instanceXML = null;

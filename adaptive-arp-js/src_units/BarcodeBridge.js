@@ -57,7 +57,7 @@ var Adaptive;
     var BarcodeBridge = (function (_super) {
         __extends(BarcodeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BarcodeBridge() {

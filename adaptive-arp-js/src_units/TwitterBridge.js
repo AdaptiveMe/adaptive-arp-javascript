@@ -57,7 +57,7 @@ var Adaptive;
     var TwitterBridge = (function (_super) {
         __extends(TwitterBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TwitterBridge() {

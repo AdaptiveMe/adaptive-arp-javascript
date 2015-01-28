@@ -60,7 +60,7 @@ var Adaptive;
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MailBridge() {

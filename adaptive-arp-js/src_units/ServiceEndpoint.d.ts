@@ -65,83 +65,94 @@ declare module Adaptive {
         */
         scheme: string;
         /**
+           @method constructor
            Constructor with parameters
 
-           @param host   Remote service host
-           @param paths  Remote service Paths
-           @param port   Remote service Port
-           @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-           @param scheme Remote service scheme
+           @param {string} host   Remote service host
+           @param {Adaptive.ServicePath[]} paths  Remote service Paths
+           @param {number} port   Remote service Port
+           @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         constructor(host: string, paths: ServicePath[], port: number, proxy: string, scheme: string);
         /**
+           @method
            Returns the Remote service host
 
-           @return Remote service host
+           @return {string} Remote service host
            @since ARP1.0
         */
         getHost(): string;
         /**
+           @method
            Set the Remote service host
 
-           @param host Remote service host
+           @param {string} host Remote service host
            @since ARP1.0
         */
         setHost(host: string): void;
         /**
+           @method
            Returns the Remote service Paths
 
-           @return Remote service Paths
+           @return {Adaptive.ServicePath[]} Remote service Paths
            @since ARP1.0
         */
         getPaths(): ServicePath[];
         /**
+           @method
            Set the Remote service Paths
 
-           @param paths Remote service Paths
+           @param {Adaptive.ServicePath[]} paths Remote service Paths
            @since ARP1.0
         */
         setPaths(paths: ServicePath[]): void;
         /**
+           @method
            Returns the Remote service Port
 
-           @return Remote service Port
+           @return {number} Remote service Port
            @since ARP1.0
         */
         getPort(): number;
         /**
+           @method
            Set the Remote service Port
 
-           @param port Remote service Port
+           @param {number} port Remote service Port
            @since ARP1.0
         */
         setPort(port: number): void;
         /**
+           @method
            Return the Proxy url
 
-           @return Proxy url
+           @return {string} Proxy url
            @since ARP1.0
         */
         getProxy(): string;
         /**
+           @method
            Set the Proxy url
 
-           @param proxy Proxy url
+           @param {string} proxy Proxy url
            @since ARP1.0
         */
         setProxy(proxy: string): void;
         /**
+           @method
            Returns the Remote service scheme
 
-           @return Remote service scheme
+           @return {string} Remote service scheme
            @since ARP1.0
         */
         getScheme(): string;
         /**
+           @method
            Set the Remote service scheme
 
-           @param scheme Remote service scheme
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         setScheme(scheme: string): void;

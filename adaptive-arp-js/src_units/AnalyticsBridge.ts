@@ -52,7 +52,7 @@ module Adaptive {
      export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

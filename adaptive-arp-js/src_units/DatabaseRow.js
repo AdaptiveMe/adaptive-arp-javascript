@@ -52,9 +52,10 @@ var Adaptive;
     var DatabaseRow = (function (_super) {
         __extends(DatabaseRow, _super);
         /**
+           @method constructor
            Constructor for implementation using.
 
-           @param values The values of the row
+           @param {string[]} values The values of the row
            @since ARP1.0
         */
         function DatabaseRow(values) {
@@ -62,18 +63,20 @@ var Adaptive;
             this.values = values;
         }
         /**
+           @method
            Returns the values of the row.
 
-           @return The values of the row.
+           @return {string[]} The values of the row.
            @since ARP1.0
         */
         DatabaseRow.prototype.getValues = function () {
             return this.values;
         };
         /**
+           @method
            Sets the values of the row.
 
-           @param values The values of the row.
+           @param {string[]} values The values of the row.
            @since ARP1.0
         */
         DatabaseRow.prototype.setValues = function (values) {

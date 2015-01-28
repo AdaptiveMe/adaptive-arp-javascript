@@ -52,110 +52,123 @@ var Adaptive;
     var FileDescriptor = (function (_super) {
         __extends(FileDescriptor, _super);
         /**
+           @method constructor
            Default constructor.
         */
         function FileDescriptor() {
             _super.call(this);
         }
         /**
+           @method
            Returns the milliseconds passed since 1/1/1970 since the file was created.
 
-           @return Timestamp in milliseconds.
+           @return {number} Timestamp in milliseconds.
            @since ARP1.0
         */
         FileDescriptor.prototype.getDateCreated = function () {
             return this.dateCreated;
         };
         /**
+           @method
            Sets the creation timestamp in milliseconds. Used internally.
 
-           @param dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
+           @param {number} dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
         */
         FileDescriptor.prototype.setDateCreated = function (dateCreated) {
             this.dateCreated = dateCreated;
         };
         /**
+           @method
            Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
-           @return Timestamp in milliseconds.
+           @return {number} Timestamp in milliseconds.
            @since ARP1.0
         */
         FileDescriptor.prototype.getDateModified = function () {
             return this.dateModified;
         };
         /**
+           @method
            Sets the file or folder modification timestamp in milliseconds. Used internally.
 
-           @param dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
+           @param {number} dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
         */
         FileDescriptor.prototype.setDateModified = function (dateModified) {
             this.dateModified = dateModified;
         };
         /**
+           @method
            Returns the name of the file if the reference is a file or the last path element of the folder.
 
-           @return The name of the file.
+           @return {string} The name of the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets the name of the file. Used internally.
 
-           @param name Name of the file or last folder path element.
+           @param {string} name Name of the file or last folder path element.
         */
         FileDescriptor.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
-           @return The path to the file.
+           @return {string} The path to the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Sets the path of the file or folder. Used internally.
 
-           @param path The path element of the file or folder.
+           @param {string} path The path element of the file or folder.
         */
         FileDescriptor.prototype.setPath = function (path) {
             this.path = path;
         };
         /**
+           @method
            Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
-           @return The absolute path to the file.
+           @return {string} The absolute path to the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getPathAbsolute = function () {
             return this.pathAbsolute;
         };
         /**
+           @method
            Sets the absolute path of the file or folder. Used internally.
 
-           @param pathAbsolute String with the absolute path of file or folder.
+           @param {string} pathAbsolute String with the absolute path of file or folder.
         */
         FileDescriptor.prototype.setPathAbsolute = function (pathAbsolute) {
             this.pathAbsolute = pathAbsolute;
         };
         /**
+           @method
            Returns the size in bytes of the file or -1 if the reference is a folder.
 
-           @return Size in bytes of file.
+           @return {number} Size in bytes of file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getSize = function () {
             return this.size;
         };
         /**
+           @method
            Sets the file size in bytes of the file. If the file is a folder, this will be 0. If the file
 doesn't exist, this will be -1. Used internally.
 
-           @param size The size in bytes of the file.
+           @param {number} size The size in bytes of the file.
         */
         FileDescriptor.prototype.setSize = function (size) {
             this.size = size;

@@ -82,16 +82,17 @@ module Adaptive {
           */
           serviceSession : ServiceSession;
           /**
+             @method constructor
              Constructor with fields
 
-             @param content             Request/Response data content (plain text).
-             @param contentType         The request/response content type (MIME TYPE).
-             @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param contentLength       The length in bytes for the Content field.
-             @param contentBinary       The byte[] representing the binary Content.
-             @param contentBinaryLength The length in bytes for the binary Content.
-             @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param serviceSession      Information about the session
+             @param {string} content             Request/Response data content (plain text).
+             @param {string} contentType         The request/response content type (MIME TYPE).
+             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+             @param {number} contentLength       The length in bytes for the Content field.
+             @param {number[]} contentBinary       The byte[] representing the binary Content.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceSession} serviceSession      Information about the session
              @since ARP1.0
           */
           constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
@@ -107,9 +108,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the content
 
-             @return content
+             @return {string} content
              @since ARP1.0
           */
           getContent() : string {
@@ -117,9 +119,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the content
 
-             @param content Request/Response data content (plain text).
+             @param {string} content Request/Response data content (plain text).
              @since ARP1.0
           */
           setContent(content: string) {
@@ -127,9 +130,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the binary content
 
-             @return contentBinary
+             @return {number[]} contentBinary
              @since ARP1.0
           */
           getContentBinary() : Array<number> {
@@ -137,9 +141,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the binary content
 
-             @param contentBinary The byte[] representing the binary Content.
+             @param {number[]} contentBinary The byte[] representing the binary Content.
              @since ARP1.0
           */
           setContentBinary(contentBinary: Array<number>) {
@@ -147,9 +152,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the binary content length
 
-             @return contentBinaryLength
+             @return {number} contentBinaryLength
              @since ARP1.0
           */
           getContentBinaryLength() : number {
@@ -157,9 +163,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the binary content length
 
-             @param contentBinaryLength The length in bytes for the binary Content.
+             @param {number} contentBinaryLength The length in bytes for the binary Content.
              @since ARP1.0
           */
           setContentBinaryLength(contentBinaryLength: number) {
@@ -167,9 +174,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the content encoding
 
-             @return contentEncoding
+             @return {string} contentEncoding
              @since ARP1.0
           */
           getContentEncoding() : string {
@@ -177,9 +185,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the content encoding
 
-             @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
              @since ARP1.0
           */
           setContentEncoding(contentEncoding: string) {
@@ -187,9 +196,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the content length
 
-             @return contentLength
+             @return {number} contentLength
              @since ARP1.0
           */
           getContentLength() : number {
@@ -197,9 +207,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the content length
 
-             @param contentLength The length in bytes for the Content field.
+             @param {number} contentLength The length in bytes for the Content field.
              @since ARP1.0
           */
           setContentLength(contentLength: number) {
@@ -207,9 +218,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the content type
 
-             @return contentType
+             @return {string} contentType
              @since ARP1.0
           */
           getContentType() : string {
@@ -217,9 +229,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the content type
 
-             @param contentType The request/response content type (MIME TYPE).
+             @param {string} contentType The request/response content type (MIME TYPE).
              @since ARP1.0
           */
           setContentType(contentType: string) {
@@ -227,9 +240,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the array of ServiceHeader
 
-             @return serviceHeaders
+             @return {Adaptive.ServiceHeader[]} serviceHeaders
              @since ARP1.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
@@ -237,9 +251,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the array of ServiceHeader
 
-             @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
              @since ARP1.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
@@ -247,9 +262,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Getter for service session
 
-             @return The element service session
+             @return {Adaptive.ServiceSession} The element service session
              @since ARP1.0
           */
           getServiceSession() : ServiceSession {
@@ -257,9 +273,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Setter for service session
 
-             @param serviceSession The element service session
+             @param {Adaptive.ServiceSession} serviceSession The element service session
              @since ARP1.0
           */
           setServiceSession(serviceSession: ServiceSession) {

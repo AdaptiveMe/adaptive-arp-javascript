@@ -94,9 +94,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IDatabaseResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Database
-           @param onWarningFunction Function receiving parameters of type: Database, IDatabaseResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Database
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
         */
         function DatabaseResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

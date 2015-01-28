@@ -43,6 +43,7 @@ var Adaptive;
     */
     var APIBean = (function () {
         /**
+           @method constructor
            Default constructor
 
            @since ARP1.0

@@ -52,7 +52,7 @@ module Adaptive {
      export class ImagingBridge extends BaseMediaBridge implements IImaging {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

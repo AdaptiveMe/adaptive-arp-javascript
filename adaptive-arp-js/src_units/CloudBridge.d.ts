@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class CloudBridge extends BaseDataBridge implements ICloud {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

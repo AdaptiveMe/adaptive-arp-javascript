@@ -57,7 +57,7 @@ var Adaptive;
     var CameraBridge = (function (_super) {
         __extends(CameraBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CameraBridge() {

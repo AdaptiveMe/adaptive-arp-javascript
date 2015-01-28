@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseSocialBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSocialBridge() {

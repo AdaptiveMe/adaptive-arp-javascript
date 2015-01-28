@@ -55,7 +55,7 @@ module Adaptive {
      export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

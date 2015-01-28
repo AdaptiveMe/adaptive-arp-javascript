@@ -52,38 +52,43 @@ declare module Adaptive {
         */
         tagValue: string;
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param tagValue Value of the tag
-           @param tagName  Name of the tag
+           @param {string} tagValue Value of the tag
+           @param {string} tagName  Name of the tag
            @since ARP1.0
         */
         constructor(tagName: string, tagValue: string);
         /**
+           @method
            Returns the tagName of the Tag
 
-           @return tagName
+           @return {string} tagName
            @since ARP1.0
         */
         getTagName(): string;
         /**
+           @method
            Set the tagName of the Tag
 
-           @param tagName Name of the tag
+           @param {string} tagName Name of the tag
            @since ARP1.0
         */
         setTagName(tagName: string): void;
         /**
+           @method
            Returns the tagValue of the Tag
 
-           @return tagValue
+           @return {string} tagValue
            @since ARP1.0
         */
         getTagValue(): string;
         /**
+           @method
            Set the tagValue of the Tag
 
-           @param tagValue Value of the tag
+           @param {string} tagValue Value of the tag
            @since ARP1.0
         */
         setTagValue(tagValue: string): void;

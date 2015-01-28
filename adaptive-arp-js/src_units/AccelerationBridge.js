@@ -59,7 +59,7 @@ var Adaptive;
     var AccelerationBridge = (function (_super) {
         __extends(AccelerationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AccelerationBridge() {

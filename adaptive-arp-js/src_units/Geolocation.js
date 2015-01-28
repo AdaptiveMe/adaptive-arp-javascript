@@ -52,14 +52,15 @@ var Adaptive;
     var Geolocation = (function (_super) {
         __extends(Geolocation, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param latitude  Latitude of the measurement
-           @param longitude Longitude of the measurement
-           @param altitude  Altitude of the measurement
-           @param xDoP      Dilution of precision on the X measurement
-           @param yDoP      Dilution of precision on the Y measurement
-           @param timestamp Timestamp of the measurement
+           @param {number} latitude  Latitude of the measurement
+           @param {number} longitude Longitude of the measurement
+           @param {number} altitude  Altitude of the measurement
+           @param {number} xDoP      Dilution of precision on the X measurement
+           @param {number} yDoP      Dilution of precision on the Y measurement
+           @param {number} timestamp Timestamp of the measurement
            @since ARP1.0
         */
         function Geolocation(latitude, longitude, altitude, xDoP, yDoP, timestamp) {
@@ -72,105 +73,117 @@ var Adaptive;
             this.timestamp = timestamp;
         }
         /**
+           @method
            Returns altitude in meters
 
-           @return Altitude of the measurement
+           @return {number} Altitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getAltitude = function () {
             return this.altitude;
         };
         /**
+           @method
            Set altitude in meters
 
-           @param altitude Altitude of the measurement
+           @param {number} altitude Altitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setAltitude = function (altitude) {
             this.altitude = altitude;
         };
         /**
+           @method
            Returns the latitude in degrees
 
-           @return Latitude of the measurement
+           @return {number} Latitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getLatitude = function () {
             return this.latitude;
         };
         /**
+           @method
            Set the latitude in degrees
 
-           @param latitude Latitude of the measurement
+           @param {number} latitude Latitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setLatitude = function (latitude) {
             this.latitude = latitude;
         };
         /**
+           @method
            Returns the longitude in degrees
 
-           @return Longitude of the measurement
+           @return {number} Longitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getLongitude = function () {
             return this.longitude;
         };
         /**
+           @method
            Returns the latitude in degrees
 
-           @param longitude Longitude of the measurement
+           @param {number} longitude Longitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setLongitude = function (longitude) {
             this.longitude = longitude;
         };
         /**
+           @method
            Timestamp Getter
 
-           @return Timestamp
+           @return {number} Timestamp
            @since ARP1.0
         */
         Geolocation.prototype.getTimestamp = function () {
             return this.timestamp;
         };
         /**
+           @method
            Timestamp Setter
 
-           @param timestamp Timestamp
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         Geolocation.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
         };
         /**
+           @method
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         Geolocation.prototype.getXDoP = function () {
             return this.xDoP;
         };
         /**
+           @method
            Sets Dilution of precision on the X measurement. Measured in meters.
 
-           @param xDoP Dilution of precision on the X measurement. Measured in meters.
+           @param {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         Geolocation.prototype.setXDoP = function (xDoP) {
             this.xDoP = xDoP;
         };
         /**
+           @method
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         Geolocation.prototype.getYDoP = function () {
             return this.yDoP;
         };
         /**
+           @method
            Sets Dilution of precision on the Y measurement. Measured in meters.
 
-           @param yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @param {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         Geolocation.prototype.setYDoP = function (yDoP) {
             this.yDoP = yDoP;

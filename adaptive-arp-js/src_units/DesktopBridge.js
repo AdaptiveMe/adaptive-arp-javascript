@@ -57,7 +57,7 @@ var Adaptive;
     var DesktopBridge = (function (_super) {
         __extends(DesktopBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DesktopBridge() {

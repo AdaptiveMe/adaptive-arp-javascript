@@ -59,7 +59,7 @@ var Adaptive;
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkReachabilityBridge() {

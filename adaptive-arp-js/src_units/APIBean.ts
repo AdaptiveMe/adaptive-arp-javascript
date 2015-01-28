@@ -45,6 +45,7 @@ module Adaptive {
      export class APIBean {
 
           /**
+             @method constructor
              Default constructor
 
              @since ARP1.0

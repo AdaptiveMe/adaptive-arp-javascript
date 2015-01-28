@@ -54,7 +54,7 @@ module Adaptive {
      export class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

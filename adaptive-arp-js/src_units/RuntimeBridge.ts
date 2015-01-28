@@ -52,7 +52,7 @@ module Adaptive {
      export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

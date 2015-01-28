@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseDataBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseDataBridge() {

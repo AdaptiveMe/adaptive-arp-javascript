@@ -57,7 +57,7 @@ var Adaptive;
     var SettingsBridge = (function (_super) {
         __extends(SettingsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SettingsBridge() {

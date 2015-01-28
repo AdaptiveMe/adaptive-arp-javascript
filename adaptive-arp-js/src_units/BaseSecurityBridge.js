@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseSecurityBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSecurityBridge() {

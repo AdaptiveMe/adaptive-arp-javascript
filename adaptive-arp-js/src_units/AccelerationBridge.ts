@@ -54,7 +54,7 @@ module Adaptive {
      export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

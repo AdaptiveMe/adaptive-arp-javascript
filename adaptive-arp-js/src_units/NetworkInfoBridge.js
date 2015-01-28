@@ -57,7 +57,7 @@ var Adaptive;
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkInfoBridge() {

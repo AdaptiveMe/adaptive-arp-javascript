@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

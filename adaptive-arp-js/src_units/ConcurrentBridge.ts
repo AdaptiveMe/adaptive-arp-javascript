@@ -52,7 +52,7 @@ module Adaptive {
      export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

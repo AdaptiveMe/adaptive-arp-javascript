@@ -57,7 +57,7 @@ var Adaptive;
     var AlarmBridge = (function (_super) {
         __extends(AlarmBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AlarmBridge() {

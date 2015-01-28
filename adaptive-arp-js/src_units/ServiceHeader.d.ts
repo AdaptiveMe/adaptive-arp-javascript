@@ -52,38 +52,43 @@ declare module Adaptive {
         */
         name: string;
         /**
+           @method constructor
            Constructor with fields
 
-           @param name Name of the header
-           @param data Value of the header
+           @param {string} name Name of the header
+           @param {string} data Value of the header
            @since ARP1.0
         */
         constructor(name: string, data: string);
         /**
+           @method
            Returns the header value
 
-           @return ServiceHeader value
+           @return {string} ServiceHeader value
            @since ARP1.0
         */
         getData(): string;
         /**
+           @method
            Set the header value
 
-           @param data ServiceHeader value
+           @param {string} data ServiceHeader value
            @since ARP1.0
         */
         setData(data: string): void;
         /**
+           @method
            Returns the header name
 
-           @return ServiceHeader name
+           @return {string} ServiceHeader name
            @since ARP1.0
         */
         getName(): string;
         /**
+           @method
            Set the header name
 
-           @param name Name of the header
+           @param {string} name Name of the header
            @since ARP1.0
         */
         setName(name: string): void;

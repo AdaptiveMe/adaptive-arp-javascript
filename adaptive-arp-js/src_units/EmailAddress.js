@@ -52,9 +52,10 @@ var Adaptive;
     var EmailAddress = (function (_super) {
         __extends(EmailAddress, _super);
         /**
+           @method constructor
            Constructor used by implementation
 
-           @param address of the Email
+           @param {string} address of the Email
            @since ARP1.0
         */
         function EmailAddress(address) {
@@ -62,18 +63,20 @@ var Adaptive;
             this.address = address;
         }
         /**
+           @method
            Returns the email address
 
-           @return address of the Email
+           @return {string} address of the Email
            @since ARP1.0
         */
         EmailAddress.prototype.getAddress = function () {
             return this.address;
         };
         /**
+           @method
            Set the Email address
 
-           @param address of the Email
+           @param {string} address of the Email
            @since ARP1.0
         */
         EmailAddress.prototype.setAddress = function (address) {

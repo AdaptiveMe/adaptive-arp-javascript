@@ -52,7 +52,7 @@ module Adaptive {
      export class CameraBridge extends BaseMediaBridge implements ICamera {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

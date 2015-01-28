@@ -117,7 +117,7 @@ module Adaptive {
      */
      export interface IAppRegistry {
           /**
-             @method
+             @abstract
              Returns a reference to the registered AccelerationBridge.
 
              @return {Adaptive.AccelerationBridge} reference or null if a bridge of this type is not registered.
@@ -125,7 +125,7 @@ module Adaptive {
           getAccelerationBridge() : IAcceleration;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AdsBridge.
 
              @return {Adaptive.AdsBridge} reference or null if a bridge of this type is not registered.
@@ -133,7 +133,7 @@ module Adaptive {
           getAdsBridge() : IAds;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AlarmBridge.
 
              @return {Adaptive.AlarmBridge} reference or null if a bridge of this type is not registered.
@@ -141,7 +141,7 @@ module Adaptive {
           getAlarmBridge() : IAlarm;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AmbientLightBridge.
 
              @return {Adaptive.AmbientLightBridge} reference or null if a bridge of this type is not registered.
@@ -149,7 +149,7 @@ module Adaptive {
           getAmbientLightBridge() : IAmbientLight;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AnalyticsBridge.
 
              @return {Adaptive.AnalyticsBridge} reference or null if a bridge of this type is not registered.
@@ -157,7 +157,7 @@ module Adaptive {
           getAnalyticsBridge() : IAnalytics;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered AudioBridge.
 
              @return {Adaptive.AudioBridge} reference or null if a bridge of this type is not registered.
@@ -165,7 +165,7 @@ module Adaptive {
           getAudioBridge() : IAudio;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BarcodeBridge.
 
              @return {Adaptive.BarcodeBridge} reference or null if a bridge of this type is not registered.
@@ -173,7 +173,7 @@ module Adaptive {
           getBarcodeBridge() : IBarcode;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BarometerBridge.
 
              @return {Adaptive.BarometerBridge} reference or null if a bridge of this type is not registered.
@@ -181,7 +181,7 @@ module Adaptive {
           getBarometerBridge() : IBarometer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BluetoothBridge.
 
              @return {Adaptive.BluetoothBridge} reference or null if a bridge of this type is not registered.
@@ -189,7 +189,7 @@ module Adaptive {
           getBluetoothBridge() : IBluetooth;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered BrowserBridge.
 
              @return {Adaptive.BrowserBridge} reference or null if a bridge of this type is not registered.
@@ -197,7 +197,7 @@ module Adaptive {
           getBrowserBridge() : IBrowser;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CalendarBridge.
 
              @return {Adaptive.CalendarBridge} reference or null if a bridge of this type is not registered.
@@ -205,7 +205,7 @@ module Adaptive {
           getCalendarBridge() : ICalendar;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CameraBridge.
 
              @return {Adaptive.CameraBridge} reference or null if a bridge of this type is not registered.
@@ -213,7 +213,7 @@ module Adaptive {
           getCameraBridge() : ICamera;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CapabilitiesBridge.
 
              @return {Adaptive.CapabilitiesBridge} reference or null if a bridge of this type is not registered.
@@ -221,7 +221,7 @@ module Adaptive {
           getCapabilitiesBridge() : ICapabilities;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CloudBridge.
 
              @return {Adaptive.CloudBridge} reference or null if a bridge of this type is not registered.
@@ -229,7 +229,7 @@ module Adaptive {
           getCloudBridge() : ICloud;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CompressionBridge.
 
              @return {Adaptive.CompressionBridge} reference or null if a bridge of this type is not registered.
@@ -237,7 +237,7 @@ module Adaptive {
           getCompressionBridge() : ICompression;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ConcurrentBridge.
 
              @return {Adaptive.ConcurrentBridge} reference or null if a bridge of this type is not registered.
@@ -245,7 +245,7 @@ module Adaptive {
           getConcurrentBridge() : IConcurrent;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ContactBridge.
 
              @return {Adaptive.ContactBridge} reference or null if a bridge of this type is not registered.
@@ -253,7 +253,7 @@ module Adaptive {
           getContactBridge() : IContact;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered CryptoBridge.
 
              @return {Adaptive.CryptoBridge} reference or null if a bridge of this type is not registered.
@@ -261,7 +261,7 @@ module Adaptive {
           getCryptoBridge() : ICrypto;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DataStreamBridge.
 
              @return {Adaptive.DataStreamBridge} reference or null if a bridge of this type is not registered.
@@ -269,7 +269,7 @@ module Adaptive {
           getDataStreamBridge() : IDataStream;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DatabaseBridge.
 
              @return {Adaptive.DatabaseBridge} reference or null if a bridge of this type is not registered.
@@ -277,7 +277,7 @@ module Adaptive {
           getDatabaseBridge() : IDatabase;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DesktopBridge.
 
              @return {Adaptive.DesktopBridge} reference or null if a bridge of this type is not registered.
@@ -285,7 +285,7 @@ module Adaptive {
           getDesktopBridge() : IDesktop;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DeviceBridge.
 
              @return {Adaptive.DeviceBridge} reference or null if a bridge of this type is not registered.
@@ -293,7 +293,7 @@ module Adaptive {
           getDeviceBridge() : IDevice;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered DisplayBridge.
 
              @return {Adaptive.DisplayBridge} reference or null if a bridge of this type is not registered.
@@ -301,7 +301,7 @@ module Adaptive {
           getDisplayBridge() : IDisplay;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FacebookBridge.
 
              @return {Adaptive.FacebookBridge} reference or null if a bridge of this type is not registered.
@@ -309,7 +309,7 @@ module Adaptive {
           getFacebookBridge() : IFacebook;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FileBridge.
 
              @return {Adaptive.FileBridge} reference or null if a bridge of this type is not registered.
@@ -317,7 +317,7 @@ module Adaptive {
           getFileBridge() : IFile;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered FileSystemBridge.
 
              @return {Adaptive.FileSystemBridge} reference or null if a bridge of this type is not registered.
@@ -325,7 +325,7 @@ module Adaptive {
           getFileSystemBridge() : IFileSystem;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GeolocationBridge.
 
              @return {Adaptive.GeolocationBridge} reference or null if a bridge of this type is not registered.
@@ -333,7 +333,7 @@ module Adaptive {
           getGeolocationBridge() : IGeolocation;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GlobalizationBridge.
 
              @return {Adaptive.GlobalizationBridge} reference or null if a bridge of this type is not registered.
@@ -341,7 +341,7 @@ module Adaptive {
           getGlobalizationBridge() : IGlobalization;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GooglePlusBridge.
 
              @return {Adaptive.GooglePlusBridge} reference or null if a bridge of this type is not registered.
@@ -349,7 +349,7 @@ module Adaptive {
           getGooglePlusBridge() : IGooglePlus;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered GyroscopeBridge.
 
              @return {Adaptive.GyroscopeBridge} reference or null if a bridge of this type is not registered.
@@ -357,7 +357,7 @@ module Adaptive {
           getGyroscopeBridge() : IGyroscope;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ImagingBridge.
 
              @return {Adaptive.ImagingBridge} reference or null if a bridge of this type is not registered.
@@ -365,7 +365,7 @@ module Adaptive {
           getImagingBridge() : IImaging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered InternalStorageBridge.
 
              @return {Adaptive.InternalStorageBridge} reference or null if a bridge of this type is not registered.
@@ -373,7 +373,7 @@ module Adaptive {
           getInternalStorageBridge() : IInternalStorage;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LifecycleBridge.
 
              @return {Adaptive.LifecycleBridge} reference or null if a bridge of this type is not registered.
@@ -381,7 +381,7 @@ module Adaptive {
           getLifecycleBridge() : ILifecycle;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LinkedInBridge.
 
              @return {Adaptive.LinkedInBridge} reference or null if a bridge of this type is not registered.
@@ -389,7 +389,7 @@ module Adaptive {
           getLinkedInBridge() : ILinkedIn;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered LoggingBridge.
 
              @return {Adaptive.LoggingBridge} reference or null if a bridge of this type is not registered.
@@ -397,7 +397,7 @@ module Adaptive {
           getLoggingBridge() : ILogging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MagnetometerBridge.
 
              @return {Adaptive.MagnetometerBridge} reference or null if a bridge of this type is not registered.
@@ -405,7 +405,7 @@ module Adaptive {
           getMagnetometerBridge() : IMagnetometer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MailBridge.
 
              @return {Adaptive.MailBridge} reference or null if a bridge of this type is not registered.
@@ -413,7 +413,7 @@ module Adaptive {
           getMailBridge() : IMail;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ManagementBridge.
 
              @return {Adaptive.ManagementBridge} reference or null if a bridge of this type is not registered.
@@ -421,7 +421,7 @@ module Adaptive {
           getManagementBridge() : IManagement;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MapBridge.
 
              @return {Adaptive.MapBridge} reference or null if a bridge of this type is not registered.
@@ -429,7 +429,7 @@ module Adaptive {
           getMapBridge() : IMap;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered MessagingBridge.
 
              @return {Adaptive.MessagingBridge} reference or null if a bridge of this type is not registered.
@@ -437,7 +437,7 @@ module Adaptive {
           getMessagingBridge() : IMessaging;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NFCBridge.
 
              @return {Adaptive.NFCBridge} reference or null if a bridge of this type is not registered.
@@ -445,7 +445,7 @@ module Adaptive {
           getNFCBridge() : INFC;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkInfoBridge.
 
              @return {Adaptive.NetworkInfoBridge} reference or null if a bridge of this type is not registered.
@@ -453,7 +453,7 @@ module Adaptive {
           getNetworkInfoBridge() : INetworkInfo;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkNamingBridge.
 
              @return {Adaptive.NetworkNamingBridge} reference or null if a bridge of this type is not registered.
@@ -461,7 +461,7 @@ module Adaptive {
           getNetworkNamingBridge() : INetworkNaming;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkReachabilityBridge.
 
              @return {Adaptive.NetworkReachabilityBridge} reference or null if a bridge of this type is not registered.
@@ -469,7 +469,7 @@ module Adaptive {
           getNetworkReachabilityBridge() : INetworkReachability;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NetworkStatusBridge.
 
              @return {Adaptive.NetworkStatusBridge} reference or null if a bridge of this type is not registered.
@@ -477,7 +477,7 @@ module Adaptive {
           getNetworkStatusBridge() : INetworkStatus;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NotificationBridge.
 
              @return {Adaptive.NotificationBridge} reference or null if a bridge of this type is not registered.
@@ -485,7 +485,7 @@ module Adaptive {
           getNotificationBridge() : INotification;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered NotificationLocalBridge.
 
              @return {Adaptive.NotificationLocalBridge} reference or null if a bridge of this type is not registered.
@@ -493,7 +493,7 @@ module Adaptive {
           getNotificationLocalBridge() : INotificationLocal;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OAuthBridge.
 
              @return {Adaptive.OAuthBridge} reference or null if a bridge of this type is not registered.
@@ -501,7 +501,7 @@ module Adaptive {
           getOAuthBridge() : IOAuth;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OCRBridge.
 
              @return {Adaptive.OCRBridge} reference or null if a bridge of this type is not registered.
@@ -509,7 +509,7 @@ module Adaptive {
           getOCRBridge() : IOCR;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OSBridge.
 
              @return {Adaptive.OSBridge} reference or null if a bridge of this type is not registered.
@@ -517,7 +517,7 @@ module Adaptive {
           getOSBridge() : IOS;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered OpenIdBridge.
 
              @return {Adaptive.OpenIdBridge} reference or null if a bridge of this type is not registered.
@@ -525,7 +525,7 @@ module Adaptive {
           getOpenIdBridge() : IOpenId;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered PrintingBridge.
 
              @return {Adaptive.PrintingBridge} reference or null if a bridge of this type is not registered.
@@ -533,7 +533,7 @@ module Adaptive {
           getPrintingBridge() : IPrinting;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ProximityBridge.
 
              @return {Adaptive.ProximityBridge} reference or null if a bridge of this type is not registered.
@@ -541,7 +541,7 @@ module Adaptive {
           getProximityBridge() : IProximity;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered QRCodeBridge.
 
              @return {Adaptive.QRCodeBridge} reference or null if a bridge of this type is not registered.
@@ -549,7 +549,7 @@ module Adaptive {
           getQRCodeBridge() : IQRCode;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered RSSBridge.
 
              @return {Adaptive.RSSBridge} reference or null if a bridge of this type is not registered.
@@ -557,7 +557,7 @@ module Adaptive {
           getRSSBridge() : IRSS;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered RuntimeBridge.
 
              @return {Adaptive.RuntimeBridge} reference or null if a bridge of this type is not registered.
@@ -565,7 +565,7 @@ module Adaptive {
           getRuntimeBridge() : IRuntime;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SecurityBridge.
 
              @return {Adaptive.SecurityBridge} reference or null if a bridge of this type is not registered.
@@ -573,7 +573,7 @@ module Adaptive {
           getSecurityBridge() : ISecurity;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered ServiceBridge.
 
              @return {Adaptive.ServiceBridge} reference or null if a bridge of this type is not registered.
@@ -581,7 +581,7 @@ module Adaptive {
           getServiceBridge() : IService;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SettingsBridge.
 
              @return {Adaptive.SettingsBridge} reference or null if a bridge of this type is not registered.
@@ -589,7 +589,7 @@ module Adaptive {
           getSettingsBridge() : ISettings;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered SocketBridge.
 
              @return {Adaptive.SocketBridge} reference or null if a bridge of this type is not registered.
@@ -597,7 +597,7 @@ module Adaptive {
           getSocketBridge() : ISocket;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered StoreBridge.
 
              @return {Adaptive.StoreBridge} reference or null if a bridge of this type is not registered.
@@ -605,7 +605,7 @@ module Adaptive {
           getStoreBridge() : IStore;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TelephonyBridge.
 
              @return {Adaptive.TelephonyBridge} reference or null if a bridge of this type is not registered.
@@ -613,7 +613,7 @@ module Adaptive {
           getTelephonyBridge() : ITelephony;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TimerBridge.
 
              @return {Adaptive.TimerBridge} reference or null if a bridge of this type is not registered.
@@ -621,7 +621,7 @@ module Adaptive {
           getTimerBridge() : ITimer;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered TwitterBridge.
 
              @return {Adaptive.TwitterBridge} reference or null if a bridge of this type is not registered.
@@ -629,7 +629,7 @@ module Adaptive {
           getTwitterBridge() : ITwitter;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered UIBridge.
 
              @return {Adaptive.UIBridge} reference or null if a bridge of this type is not registered.
@@ -637,7 +637,7 @@ module Adaptive {
           getUIBridge() : IUI;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered UpdateBridge.
 
              @return {Adaptive.UpdateBridge} reference or null if a bridge of this type is not registered.
@@ -645,7 +645,7 @@ module Adaptive {
           getUpdateBridge() : IUpdate;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered VibrationBridge.
 
              @return {Adaptive.VibrationBridge} reference or null if a bridge of this type is not registered.
@@ -653,7 +653,7 @@ module Adaptive {
           getVibrationBridge() : IVibration;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered VideoBridge.
 
              @return {Adaptive.VideoBridge} reference or null if a bridge of this type is not registered.
@@ -661,7 +661,7 @@ module Adaptive {
           getVideoBridge() : IVideo;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered WalletBridge.
 
              @return {Adaptive.WalletBridge} reference or null if a bridge of this type is not registered.
@@ -669,7 +669,7 @@ module Adaptive {
           getWalletBridge() : IWallet;
 
           /**
-             @method
+             @abstract
              Returns a reference to the registered XMLBridge.
 
              @return {Adaptive.XMLBridge} reference or null if a bridge of this type is not registered.

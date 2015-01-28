@@ -57,7 +57,7 @@ var Adaptive;
     var OpenIdBridge = (function (_super) {
         __extends(OpenIdBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OpenIdBridge() {

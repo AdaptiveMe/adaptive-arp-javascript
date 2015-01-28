@@ -102,6 +102,7 @@ var Adaptive;
     */
     var APIBean = (function () {
         /**
+           @method constructor
            Default constructor
 
            @since ARP1.0
@@ -128,12 +129,13 @@ var Adaptive;
     */
     var APIRequest = (function () {
         /**
+           @method constructor
            Constructor with all the parameters
 
-           @param bridgeType Name of the bridge to be invoked.
-           @param methodName Name of the method
-           @param parameters Array of parameters as JSON formatted strings.
-           @param asyncId    Id of callback or listener or zero if none for synchronous calls.
+           @param {string} bridgeType Name of the bridge to be invoked.
+           @param {string} methodName Name of the method
+           @param {string[]} parameters Array of parameters as JSON formatted strings.
+           @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
            @since ARP1.0
         */
         function APIRequest(bridgeType, methodName, parameters, asyncId) {
@@ -143,71 +145,79 @@ var Adaptive;
             this.asyncId = asyncId;
         }
         /**
+           @method
            Returns the callback or listener id assigned to this request OR zero if there is no associated callback or
 listener.
 
-           @return long with the unique id of the callback or listener, or zero if there is no associated async event.
+           @return {number} long with the unique id of the callback or listener, or zero if there is no associated async event.
         */
         APIRequest.prototype.getAsyncId = function () {
             return this.asyncId;
         };
         /**
+           @method
            Sets the callback or listener id to the request.
 
-           @param asyncId The unique id of the callback or listener.
+           @param {number} asyncId The unique id of the callback or listener.
         */
         APIRequest.prototype.setAsyncId = function (asyncId) {
             this.asyncId = asyncId;
         };
         /**
+           @method
            Bridge Type Getter
 
-           @return Bridge Type
+           @return {string} Bridge Type
            @since ARP1.0
         */
         APIRequest.prototype.getBridgeType = function () {
             return this.bridgeType;
         };
         /**
+           @method
            Bridge Type Setter
 
-           @param bridgeType Bridge Type
+           @param {string} bridgeType Bridge Type
            @since ARP1.0
         */
         APIRequest.prototype.setBridgeType = function (bridgeType) {
             this.bridgeType = bridgeType;
         };
         /**
+           @method
            Method name Getter
 
-           @return Method name
+           @return {string} Method name
            @since ARP1.0
         */
         APIRequest.prototype.getMethodName = function () {
             return this.methodName;
         };
         /**
+           @method
            Method name Setter
 
-           @param methodName Method name
+           @param {string} methodName Method name
            @since ARP1.0
         */
         APIRequest.prototype.setMethodName = function (methodName) {
             this.methodName = methodName;
         };
         /**
+           @method
            Parameters Getter
 
-           @return Parameters
+           @return {string[]} Parameters
            @since ARP1.0
         */
         APIRequest.prototype.getParameters = function () {
             return this.parameters;
         };
         /**
+           @method
            Parameters Setter
 
-           @param parameters Parameters, JSON formatted strings of objects.
+           @param {string[]} parameters Parameters, JSON formatted strings of objects.
            @since ARP1.0
         */
         APIRequest.prototype.setParameters = function (parameters) {
@@ -248,11 +258,12 @@ listener.
     */
     var APIResponse = (function () {
         /**
+           @method constructor
            Constructor with parameters.
 
-           @param response      String representing the JavaScript value or JSON object representation of the response.
-           @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
-           @param statusMessage Status message of the response.
+           @param {string} response      String representing the JavaScript value or JSON object representation of the response.
+           @param {number} statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+           @param {string} statusMessage Status message of the response.
         */
         function APIResponse(response, statusCode, statusMessage) {
             this.response = response;
@@ -260,50 +271,56 @@ listener.
             this.statusMessage = statusMessage;
         }
         /**
+           @method
            Response getter
 
-           @return String representing the JavaScript value or JSON object representation of the response.
+           @return {string} String representing the JavaScript value or JSON object representation of the response.
            @since ARP1.0
         */
         APIResponse.prototype.getResponse = function () {
             return this.response;
         };
         /**
+           @method
            Response setter
 
-           @param response String representing the JavaScript value or JSON object representation of the response.
+           @param {string} response String representing the JavaScript value or JSON object representation of the response.
         */
         APIResponse.prototype.setResponse = function (response) {
             this.response = response;
         };
         /**
+           @method
            Status code getter
 
-           @return Status code of the response (200 = OK, others are warning or error conditions).
+           @return {number} Status code of the response (200 = OK, others are warning or error conditions).
         */
         APIResponse.prototype.getStatusCode = function () {
             return this.statusCode;
         };
         /**
+           @method
            Status code setter
 
-           @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
+           @param {number} statusCode Status code of the response  (200 = OK, others are warning or error conditions).
         */
         APIResponse.prototype.setStatusCode = function (statusCode) {
             this.statusCode = statusCode;
         };
         /**
+           @method
            Status message getter
 
-           @return Status message of the response.
+           @return {string} Status message of the response.
         */
         APIResponse.prototype.getStatusMessage = function () {
             return this.statusMessage;
         };
         /**
+           @method
            Status message setter.
 
-           @param statusMessage Status message of the response
+           @param {string} statusMessage Status message of the response
         */
         APIResponse.prototype.setStatusMessage = function (statusMessage) {
             this.statusMessage = statusMessage;
@@ -335,43 +352,48 @@ listener.
     */
     var ServicePath = (function () {
         /**
+           @method constructor
            Constructor with parameters
 
-           @param path    The path for the endpoint
-           @param methods The methods for calling a path
+           @param {string} path    The path for the endpoint
+           @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
         */
         function ServicePath(path, methods) {
             this.path = path;
             this.methods = methods;
         }
         /**
+           @method
            Endpoint's path methods setter
 
-           @return Endpoint's path methods
+           @return {Adaptive.IServiceMethod[]} Endpoint's path methods
         */
         ServicePath.prototype.getMethods = function () {
             return this.methods;
         };
         /**
+           @method
            Endpoint's path methods setter
 
-           @param methods Endpoint's path methods
+           @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
         */
         ServicePath.prototype.setMethods = function (methods) {
             this.methods = methods;
         };
         /**
+           @method
            Endpoint's Path Getter
 
-           @return Endpoint's Path
+           @return {string} Endpoint's Path
         */
         ServicePath.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Endpoint's path setter
 
-           @param path Endpoint's path
+           @param {string} path Endpoint's path
         */
         ServicePath.prototype.setPath = function (path) {
             this.path = path;
@@ -413,12 +435,13 @@ listener.
     var Acceleration = (function (_super) {
         __extends(Acceleration, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param x         X Coordinate
-           @param y         Y Coordinate
-           @param z         Z Coordinate
-           @param timestamp Timestamp
+           @param {number} x         X Coordinate
+           @param {number} y         Y Coordinate
+           @param {number} z         Z Coordinate
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         function Acceleration(x, y, z, timestamp) {
@@ -429,72 +452,80 @@ listener.
             this.timestamp = timestamp;
         }
         /**
+           @method
            Timestamp Getter
 
-           @return Timestamp
+           @return {number} Timestamp
            @since ARP1.0
         */
         Acceleration.prototype.getTimestamp = function () {
             return this.timestamp;
         };
         /**
+           @method
            Timestamp Setter
 
-           @param timestamp Timestamp
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         Acceleration.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
         };
         /**
+           @method
            X Coordinate Getter
 
-           @return X-axis component of the acceleration.
+           @return {number} X-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getX = function () {
             return this.x;
         };
         /**
+           @method
            X Coordinate Setter
 
-           @param x X-axis component of the acceleration.
+           @param {number} x X-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.setX = function (x) {
             this.x = x;
         };
         /**
+           @method
            Y Coordinate Getter
 
-           @return Y-axis component of the acceleration.
+           @return {number} Y-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getY = function () {
             return this.y;
         };
         /**
+           @method
            Y Coordinate Setter
 
-           @param y Y-axis component of the acceleration.
+           @param {number} y Y-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.setY = function (y) {
             this.y = y;
         };
         /**
+           @method
            Z Coordinate Getter
 
-           @return Z-axis component of the acceleration.
+           @return {number} Z-axis component of the acceleration.
            @since ARP1.0
         */
         Acceleration.prototype.getZ = function () {
             return this.z;
         };
         /**
+           @method
            Z Coordinate Setter
 
-           @param z Z Coordinate
+           @param {number} z Z Coordinate
            @since ARP1.0
         */
         Acceleration.prototype.setZ = function (z) {
@@ -531,9 +562,10 @@ listener.
     var Button = (function (_super) {
         __extends(Button, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param type Button type.
+           @param {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         function Button(type) {
@@ -541,18 +573,20 @@ listener.
             this.type = type;
         }
         /**
+           @method
            Returns the button type
 
-           @return type Button type.
+           @return {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         Button.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Setter for the button type
 
-           @param type Button Type
+           @param {Adaptive.ICapabilitiesButton} type Button Type
            @since ARP1.0
         */
         Button.prototype.setType = function (type) {
@@ -587,10 +621,11 @@ listener.
     var ContactAddress = (function (_super) {
         __extends(ContactAddress, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param address Address data.
-           @param type    Address type.
+           @param {string} address Address data.
+           @param {Adaptive.ContactAddressType} type    Address type.
            @since ARP1.0
         */
         function ContactAddress(address, type) {
@@ -599,36 +634,40 @@ listener.
             this.type = type;
         }
         /**
+           @method
            Returns the type of the address
 
-           @return AddressType Address type.
+           @return {Adaptive.ContactAddressType} AddressType Address type.
            @since ARP1.0
         */
         ContactAddress.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the address type
 
-           @param type Address type.
+           @param {Adaptive.ContactAddressType} type Address type.
            @since ARP1.0
         */
         ContactAddress.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the Contact address
 
-           @return address Address data.
+           @return {string} address Address data.
            @since ARP1.0
         */
         ContactAddress.prototype.getAddress = function () {
             return this.address;
         };
         /**
+           @method
            Set the address of the Contact
 
-           @param address Address data.
+           @param {string} address Address data.
            @since ARP1.0
         */
         ContactAddress.prototype.setAddress = function (address) {
@@ -665,11 +704,12 @@ listener.
     var ContactEmail = (function (_super) {
         __extends(ContactEmail, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param type    Type of the email
-           @param primary Is email primary
-           @param email   Email of the contact
+           @param {Adaptive.ContactEmailType} type    Type of the email
+           @param {boolean} primary Is email primary
+           @param {string} email   Email of the contact
            @since ARP1.0
         */
         function ContactEmail(type, primary, email) {
@@ -679,54 +719,60 @@ listener.
             this.email = email;
         }
         /**
+           @method
            Returns the type of the email
 
-           @return EmailType
+           @return {Adaptive.ContactEmailType} EmailType
            @since ARP1.0
         */
         ContactEmail.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the type of the email
 
-           @param type Type of the email
+           @param {Adaptive.ContactEmailType} type Type of the email
            @since ARP1.0
         */
         ContactEmail.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the email of the Contact
 
-           @return email
+           @return {string} email
            @since ARP1.0
         */
         ContactEmail.prototype.getEmail = function () {
             return this.email;
         };
         /**
+           @method
            Set the email of the Contact
 
-           @param email Email of the contact
+           @param {string} email Email of the contact
            @since ARP1.0
         */
         ContactEmail.prototype.setEmail = function (email) {
             this.email = email;
         };
         /**
+           @method
            Returns if the email is primary
 
-           @return true if the email is primary; false otherwise
+           @return {boolean} true if the email is primary; false otherwise
            @since ARP1.0
         */
         ContactEmail.prototype.getPrimary = function () {
             return this.primary;
         };
         /**
+           @method
            Set if the email
 
-           @param primary true if the email is primary; false otherwise
+           @param {boolean} primary true if the email is primary; false otherwise
            @since ARP1.0
         */
         ContactEmail.prototype.setPrimary = function (primary) {
@@ -765,12 +811,13 @@ listener.
     var ContactPersonalInfo = (function (_super) {
         __extends(ContactPersonalInfo, _super);
         /**
+           @method constructor
            The Constructor used by the implementation
 
-           @param name       of the Contact
-           @param middleName of the Contact
-           @param lastName   of the Contact
-           @param title      of the Contact
+           @param {string} name       of the Contact
+           @param {string} middleName of the Contact
+           @param {string} lastName   of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
            @since ARP1.0
         */
         function ContactPersonalInfo(name, middleName, lastName, title) {
@@ -781,72 +828,80 @@ listener.
             this.title = title;
         }
         /**
+           @method
            Returns the title of the Contact
 
-           @return Title
+           @return {Adaptive.ContactPersonalInfoTitle} Title
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getTitle = function () {
             return this.title;
         };
         /**
+           @method
            Set the Title of the Contact
 
-           @param title of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setTitle = function (title) {
             this.title = title;
         };
         /**
+           @method
            Returns the last name of the Contact
 
-           @return lastName
+           @return {string} lastName
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getLastName = function () {
             return this.lastName;
         };
         /**
+           @method
            Set the last name of the Contact
 
-           @param lastName of the Contact
+           @param {string} lastName of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setLastName = function (lastName) {
             this.lastName = lastName;
         };
         /**
+           @method
            Returns the middle name of the Contact
 
-           @return middelName
+           @return {string} middelName
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getMiddleName = function () {
             return this.middleName;
         };
         /**
+           @method
            Set the middle name of the Contact
 
-           @param middleName of the Contact
+           @param {string} middleName of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setMiddleName = function (middleName) {
             this.middleName = middleName;
         };
         /**
+           @method
            Returns the name of the Contact
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the name of the Contact
 
-           @param name of the Contact
+           @param {string} name of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setName = function (name) {
@@ -887,10 +942,11 @@ listener.
     var ContactPhone = (function (_super) {
         __extends(ContactPhone, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the contact Phone
 
-           @param phone     Phone number
-           @param phoneType Type of Phone number
+           @param {string} phone     Phone number
+           @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
            @since ARP1.0
         */
         function ContactPhone(phone, phoneType) {
@@ -899,36 +955,40 @@ listener.
             this.phoneType = phoneType;
         }
         /**
+           @method
            Returns the phone phoneType
 
-           @return phoneType
+           @return {Adaptive.ContactPhoneType} phoneType
            @since ARP1.0
         */
         ContactPhone.prototype.getPhoneType = function () {
             return this.phoneType;
         };
         /**
+           @method
            Set the phoneType of the phone number
 
-           @param phoneType Type of Phone number
+           @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
            @since ARP1.0
         */
         ContactPhone.prototype.setPhoneType = function (phoneType) {
             this.phoneType = phoneType;
         };
         /**
+           @method
            Returns the phone number
 
-           @return phone number
+           @return {string} phone number
            @since ARP1.0
         */
         ContactPhone.prototype.getPhone = function () {
             return this.phone;
         };
         /**
+           @method
            Set the phone number
 
-           @param phone number
+           @param {string} phone number
            @since ARP1.0
         */
         ContactPhone.prototype.setPhone = function (phone) {
@@ -965,11 +1025,12 @@ listener.
     var ContactProfessionalInfo = (function (_super) {
         __extends(ContactProfessionalInfo, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the ContactProfessionalInfo.
 
-           @param jobTitle       The job title
-           @param jobDescription The job description
-           @param company        The company of the job
+           @param {string} jobTitle       The job title
+           @param {string} jobDescription The job description
+           @param {string} company        The company of the job
            @since ARP1.0
         */
         function ContactProfessionalInfo(jobTitle, jobDescription, company) {
@@ -979,54 +1040,60 @@ listener.
             this.company = company;
         }
         /**
+           @method
            Returns the company of the job
 
-           @return company
+           @return {string} company
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getCompany = function () {
             return this.company;
         };
         /**
+           @method
            Set the company of the job
 
-           @param company The company of the job
+           @param {string} company The company of the job
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setCompany = function (company) {
             this.company = company;
         };
         /**
+           @method
            Returns the description of the job
 
-           @return description
+           @return {string} description
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getJobDescription = function () {
             return this.jobDescription;
         };
         /**
+           @method
            Set the description of the job
 
-           @param jobDescription The job description
+           @param {string} jobDescription The job description
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setJobDescription = function (jobDescription) {
             this.jobDescription = jobDescription;
         };
         /**
+           @method
            Returns the title of the job
 
-           @return title
+           @return {string} title
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getJobTitle = function () {
             return this.jobTitle;
         };
         /**
+           @method
            Set the title of the job
 
-           @param jobTitle The job title
+           @param {string} jobTitle The job title
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {
@@ -1061,10 +1128,11 @@ listener.
     var ContactSocial = (function (_super) {
         __extends(ContactSocial, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param socialNetwork of the profile
-           @param profileUrl    of the user
+           @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
+           @param {string} profileUrl    of the user
            @since ARP1.0
         */
         function ContactSocial(socialNetwork, profileUrl) {
@@ -1073,36 +1141,40 @@ listener.
             this.profileUrl = profileUrl;
         }
         /**
+           @method
            Returns the social network
 
-           @return socialNetwork
+           @return {Adaptive.ContactSocialNetwork} socialNetwork
            @since ARP1.0
         */
         ContactSocial.prototype.getSocialNetwork = function () {
             return this.socialNetwork;
         };
         /**
+           @method
            Set the social network
 
-           @param socialNetwork of the profile
+           @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
            @since ARP1.0
         */
         ContactSocial.prototype.setSocialNetwork = function (socialNetwork) {
             this.socialNetwork = socialNetwork;
         };
         /**
+           @method
            Returns the profile url of the user
 
-           @return profileUrl
+           @return {string} profileUrl
            @since ARP1.0
         */
         ContactSocial.prototype.getProfileUrl = function () {
             return this.profileUrl;
         };
         /**
+           @method
            Set the profile url of the iser
 
-           @param profileUrl of the user
+           @param {string} profileUrl of the user
            @since ARP1.0
         */
         ContactSocial.prototype.setProfileUrl = function (profileUrl) {
@@ -1139,10 +1211,11 @@ listener.
     var ContactTag = (function (_super) {
         __extends(ContactTag, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param tagValue Value of the tag
-           @param tagName  Name of the tag
+           @param {string} tagValue Value of the tag
+           @param {string} tagName  Name of the tag
            @since ARP1.0
         */
         function ContactTag(tagName, tagValue) {
@@ -1151,36 +1224,40 @@ listener.
             this.tagValue = tagValue;
         }
         /**
+           @method
            Returns the tagName of the Tag
 
-           @return tagName
+           @return {string} tagName
            @since ARP1.0
         */
         ContactTag.prototype.getTagName = function () {
             return this.tagName;
         };
         /**
+           @method
            Set the tagName of the Tag
 
-           @param tagName Name of the tag
+           @param {string} tagName Name of the tag
            @since ARP1.0
         */
         ContactTag.prototype.setTagName = function (tagName) {
             this.tagName = tagName;
         };
         /**
+           @method
            Returns the tagValue of the Tag
 
-           @return tagValue
+           @return {string} tagValue
            @since ARP1.0
         */
         ContactTag.prototype.getTagValue = function () {
             return this.tagValue;
         };
         /**
+           @method
            Set the tagValue of the Tag
 
-           @param tagValue Value of the tag
+           @param {string} tagValue Value of the tag
            @since ARP1.0
         */
         ContactTag.prototype.setTagValue = function (tagValue) {
@@ -1213,9 +1290,10 @@ listener.
     var ContactUid = (function (_super) {
         __extends(ContactUid, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the Contact id.
 
-           @param contactId Internal unique contact id.
+           @param {string} contactId Internal unique contact id.
            @since ARP1.0
         */
         function ContactUid(contactId) {
@@ -1223,18 +1301,20 @@ listener.
             this.contactId = contactId;
         }
         /**
+           @method
            Returns the contact id
 
-           @return Contactid Internal unique contact id.
+           @return {string} Contactid Internal unique contact id.
            @since ARP1.0
         */
         ContactUid.prototype.getContactId = function () {
             return this.contactId;
         };
         /**
+           @method
            Set the id of the Contact
 
-           @param contactId Internal unique contact id.
+           @param {string} contactId Internal unique contact id.
            @since ARP1.0
         */
         ContactUid.prototype.setContactId = function (contactId) {
@@ -1265,9 +1345,10 @@ listener.
     var ContactWebsite = (function (_super) {
         __extends(ContactWebsite, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         function ContactWebsite(url) {
@@ -1275,18 +1356,20 @@ listener.
             this.url = url;
         }
         /**
+           @method
            Returns the url of the website
 
-           @return website url
+           @return {string} website url
            @since ARP1.0
         */
         ContactWebsite.prototype.getUrl = function () {
             return this.url;
         };
         /**
+           @method
            Set the url of the website
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         ContactWebsite.prototype.setUrl = function (url) {
@@ -1317,10 +1400,11 @@ listener.
     var Database = (function (_super) {
         __extends(Database, _super);
         /**
+           @method constructor
            Constructor using fields.
 
-           @param name     Name of the DatabaseTable.
-           @param compress Compression enabled.
+           @param {string} name     Name of the DatabaseTable.
+           @param {boolean} compress Compression enabled.
            @since ARP1.0
         */
         function Database(name, compress) {
@@ -1329,36 +1413,40 @@ listener.
             this.compress = compress;
         }
         /**
+           @method
            Returns if the table is compressed
 
-           @return Compression enabled
+           @return {boolean} Compression enabled
            @since ARP1.0
         */
         Database.prototype.getCompress = function () {
             return this.compress;
         };
         /**
+           @method
            Sets if the table is compressed or not.
 
-           @param compress Compression enabled
+           @param {boolean} compress Compression enabled
            @since ARP1.0
         */
         Database.prototype.setCompress = function (compress) {
             this.compress = compress;
         };
         /**
+           @method
            Returns the name.
 
-           @return The name of the table.
+           @return {string} The name of the table.
            @since ARP1.0
         */
         Database.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets the name of the table.
 
-           @param name The name of the table.
+           @param {string} name The name of the table.
            @since ARP1.0
         */
         Database.prototype.setName = function (name) {
@@ -1391,9 +1479,10 @@ listener.
     var DatabaseColumn = (function (_super) {
         __extends(DatabaseColumn, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param name Name of the column
+           @param {string} name Name of the column
            @since ARP1.0
         */
         function DatabaseColumn(name) {
@@ -1401,18 +1490,20 @@ listener.
             this.name = name;
         }
         /**
+           @method
            Returns the name of the column.
 
-           @return The name of the column.
+           @return {string} The name of the column.
            @since ARP1.0
         */
         DatabaseColumn.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets the name of the column.
 
-           @param name The name of the column.
+           @param {string} name The name of the column.
            @since ARP1.0
         */
         DatabaseColumn.prototype.setName = function (name) {
@@ -1443,9 +1534,10 @@ listener.
     var DatabaseRow = (function (_super) {
         __extends(DatabaseRow, _super);
         /**
+           @method constructor
            Constructor for implementation using.
 
-           @param values The values of the row
+           @param {string[]} values The values of the row
            @since ARP1.0
         */
         function DatabaseRow(values) {
@@ -1453,18 +1545,20 @@ listener.
             this.values = values;
         }
         /**
+           @method
            Returns the values of the row.
 
-           @return The values of the row.
+           @return {string[]} The values of the row.
            @since ARP1.0
         */
         DatabaseRow.prototype.getValues = function () {
             return this.values;
         };
         /**
+           @method
            Sets the values of the row.
 
-           @param values The values of the row.
+           @param {string[]} values The values of the row.
            @since ARP1.0
         */
         DatabaseRow.prototype.setValues = function (values) {
@@ -1501,13 +1595,14 @@ listener.
     var DatabaseTable = (function (_super) {
         __extends(DatabaseTable, _super);
         /**
+           @method constructor
            Constructor using fields
 
-           @param name            The name of the table
-           @param columnCount     The number of databaseColumns
-           @param rowCount        The number of databaseRows
-           @param databaseColumns The databaseColumns of the table
-           @param databaseRows    The databaseRows of the table
+           @param {string} name            The name of the table
+           @param {number} columnCount     The number of databaseColumns
+           @param {number} rowCount        The number of databaseRows
+           @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
+           @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
            @since ARP1.0
         */
         function DatabaseTable(name, columnCount, rowCount, databaseColumns, databaseRows) {
@@ -1519,90 +1614,100 @@ listener.
             this.databaseRows = databaseRows;
         }
         /**
+           @method
            Get the number of databaseColumns
 
-           @return The number of databaseColumns
+           @return {number} The number of databaseColumns
            @since ARP1.0
         */
         DatabaseTable.prototype.getColumnCount = function () {
             return this.columnCount;
         };
         /**
+           @method
            Sets the number of databaseColumns
 
-           @param columnCount The number of databaseColumns
+           @param {number} columnCount The number of databaseColumns
            @since ARP1.0
         */
         DatabaseTable.prototype.setColumnCount = function (columnCount) {
             this.columnCount = columnCount;
         };
         /**
+           @method
            Get the databaseColumns
 
-           @return The databaseColumns
+           @return {Adaptive.DatabaseColumn[]} The databaseColumns
            @since ARP1.0
         */
         DatabaseTable.prototype.getDatabaseColumns = function () {
             return this.databaseColumns;
         };
         /**
+           @method
            Sets the databaseColumns of the table
 
-           @param databaseColumns The databaseColumns of the table
+           @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @since ARP1.0
         */
         DatabaseTable.prototype.setDatabaseColumns = function (databaseColumns) {
             this.databaseColumns = databaseColumns;
         };
         /**
+           @method
            Get the databaseRows of the table
 
-           @return The databaseRows of the table
+           @return {Adaptive.DatabaseRow[]} The databaseRows of the table
            @since ARP1.0
         */
         DatabaseTable.prototype.getDatabaseRows = function () {
             return this.databaseRows;
         };
         /**
+           @method
            Sets the databaseRows of the table
 
-           @param databaseRows The databaseRows of the table
+           @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
            @since ARP1.0
         */
         DatabaseTable.prototype.setDatabaseRows = function (databaseRows) {
             this.databaseRows = databaseRows;
         };
         /**
+           @method
            Returns the name of the table
 
-           @return The name of the table
+           @return {string} The name of the table
            @since ARP1.0
         */
         DatabaseTable.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets the name of the table
 
-           @param name The name of the table
+           @param {string} name The name of the table
            @since ARP1.0
         */
         DatabaseTable.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Get the number of databaseRows
 
-           @return The number of databaseRows
+           @return {number} The number of databaseRows
            @since ARP1.0
         */
         DatabaseTable.prototype.getRowCount = function () {
             return this.rowCount;
         };
         /**
+           @method
            Sets the number of databaseRows
 
-           @param rowCount The number of databaseRows
+           @param {number} rowCount The number of databaseRows
            @since ARP1.0
         */
         DatabaseTable.prototype.setRowCount = function (rowCount) {
@@ -1661,12 +1766,13 @@ listener.
     var DeviceInfo = (function (_super) {
         __extends(DeviceInfo, _super);
         /**
+           @method constructor
            Constructor for the implementation of the platform.
 
-           @param name   or brand of the device.
-           @param model  of the device.
-           @param vendor of the device.
-           @param uuid   unique* identifier (* platform dependent).
+           @param {string} name   or brand of the device.
+           @param {string} model  of the device.
+           @param {string} vendor of the device.
+           @param {string} uuid   unique* identifier (* platform dependent).
            @since ARP1.0
         */
         function DeviceInfo(name, model, vendor, uuid) {
@@ -1677,71 +1783,79 @@ listener.
             this.uuid = uuid;
         }
         /**
+           @method
            Returns the model of the device.
 
-           @return String with the model of the device.
+           @return {string} String with the model of the device.
            @since ARP1.0
         */
         DeviceInfo.prototype.getModel = function () {
             return this.model;
         };
         /**
+           @method
            Sets Model of device - equivalent to device release or version.
 
-           @param model Model of device - equivalent to device release or version.
+           @param {string} model Model of device - equivalent to device release or version.
         */
         DeviceInfo.prototype.setModel = function (model) {
             this.model = model;
         };
         /**
+           @method
            Returns the name of the device.
 
-           @return String with device name.
+           @return {string} String with device name.
            @since ARP1.0
         */
         DeviceInfo.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets Name of device - equivalent to brand.
 
-           @param name Name of device - equivalent to brand.
+           @param {string} name Name of device - equivalent to brand.
         */
         DeviceInfo.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the platform dependent UUID of the device.
 
-           @return String with the 128-bit device identifier.
+           @return {string} String with the 128-bit device identifier.
            @since ARP1.0
         */
         DeviceInfo.prototype.getUuid = function () {
             return this.uuid;
         };
         /**
+           @method
            Sets Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
 
-           @param uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+           @param {string} uuid Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
         */
         DeviceInfo.prototype.setUuid = function (uuid) {
             this.uuid = uuid;
         };
         /**
+           @method
            Returns the vendor of the device.
 
-           @return String with the vendor name.
+           @return {string} String with the vendor name.
            @since ARP1.0
         */
         DeviceInfo.prototype.getVendor = function () {
             return this.vendor;
         };
         /**
+           @method
            Sets Vendor of the device hardware.
 
-           @param vendor Vendor of the device hardware.
+           @param {string} vendor Vendor of the device hardware.
         */
         DeviceInfo.prototype.setVendor = function (vendor) {
             this.vendor = vendor;
@@ -1777,15 +1891,16 @@ be unique for a specific instance of an application on a specific device.
     var Email = (function (_super) {
         __extends(Email, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param toRecipients        array of recipients
-           @param ccRecipients        array of cc recipients
-           @param bccRecipients       array of bcc recipients
-           @param emailAttachmentData array of attatchments
-           @param messageBody         body of the email
-           @param messageBodyMimeType mime type of the body
-           @param subject             of the email
+           @param {Adaptive.EmailAddress[]} toRecipients        array of recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients        array of cc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients       array of bcc recipients
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of attatchments
+           @param {string} messageBody         body of the email
+           @param {string} messageBodyMimeType mime type of the body
+           @param {string} subject             of the email
            @since ARP1.0
         */
         function Email(toRecipients, ccRecipients, bccRecipients, emailAttachmentData, messageBody, messageBodyMimeType, subject) {
@@ -1799,126 +1914,140 @@ be unique for a specific instance of an application on a specific device.
             this.subject = subject;
         }
         /**
+           @method
            Returns the array of recipients
 
-           @return bccRecipients array of bcc recipients
+           @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         Email.prototype.getBccRecipients = function () {
             return this.bccRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param bccRecipients array of bcc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         Email.prototype.setBccRecipients = function (bccRecipients) {
             this.bccRecipients = bccRecipients;
         };
         /**
+           @method
            Returns the array of recipients
 
-           @return ccRecipients array of cc recipients
+           @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         Email.prototype.getCcRecipients = function () {
             return this.ccRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param ccRecipients array of cc recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         Email.prototype.setCcRecipients = function (ccRecipients) {
             this.ccRecipients = ccRecipients;
         };
         /**
+           @method
            Returns an array of attachments
 
-           @return emailAttachmentData array with the email attachments
+           @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
            @since ARP1.0
         */
         Email.prototype.getEmailAttachmentData = function () {
             return this.emailAttachmentData;
         };
         /**
+           @method
            Set the email attachment data array
 
-           @param emailAttachmentData array of email attatchments
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
            @since ARP1.0
         */
         Email.prototype.setEmailAttachmentData = function (emailAttachmentData) {
             this.emailAttachmentData = emailAttachmentData;
         };
         /**
+           @method
            Returns the message body of the email
 
-           @return message Body string of the email
+           @return {string} message Body string of the email
            @since ARP1.0
         */
         Email.prototype.getMessageBody = function () {
             return this.messageBody;
         };
         /**
+           @method
            Set the message body of the email
 
-           @param messageBody message body of the email
+           @param {string} messageBody message body of the email
            @since ARP1.0
         */
         Email.prototype.setMessageBody = function (messageBody) {
             this.messageBody = messageBody;
         };
         /**
+           @method
            Returns the myme type of the message body
 
-           @return mime type string of the message boddy
+           @return {string} mime type string of the message boddy
            @since ARP1.0
         */
         Email.prototype.getMessageBodyMimeType = function () {
             return this.messageBodyMimeType;
         };
         /**
+           @method
            Set the mime type for the message body
 
-           @param messageBodyMimeType type of the body message
+           @param {string} messageBodyMimeType type of the body message
            @since ARP1.0
         */
         Email.prototype.setMessageBodyMimeType = function (messageBodyMimeType) {
             this.messageBodyMimeType = messageBodyMimeType;
         };
         /**
+           @method
            Returns the subject of the email
 
-           @return subject string of the email
+           @return {string} subject string of the email
            @since ARP1.0
         */
         Email.prototype.getSubject = function () {
             return this.subject;
         };
         /**
+           @method
            Set the subject of the email
 
-           @param subject of the email
+           @param {string} subject of the email
            @since ARP1.0
         */
         Email.prototype.setSubject = function (subject) {
             this.subject = subject;
         };
         /**
+           @method
            Returns the array of recipients
 
-           @return toRecipients array of recipients
+           @return {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         Email.prototype.getToRecipients = function () {
             return this.toRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param toRecipients array of recipients
+           @param {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         Email.prototype.setToRecipients = function (toRecipients) {
@@ -2001,9 +2130,10 @@ be unique for a specific instance of an application on a specific device.
     var EmailAddress = (function (_super) {
         __extends(EmailAddress, _super);
         /**
+           @method constructor
            Constructor used by implementation
 
-           @param address of the Email
+           @param {string} address of the Email
            @since ARP1.0
         */
         function EmailAddress(address) {
@@ -2011,18 +2141,20 @@ be unique for a specific instance of an application on a specific device.
             this.address = address;
         }
         /**
+           @method
            Returns the email address
 
-           @return address of the Email
+           @return {string} address of the Email
            @since ARP1.0
         */
         EmailAddress.prototype.getAddress = function () {
             return this.address;
         };
         /**
+           @method
            Set the Email address
 
-           @param address of the Email
+           @param {string} address of the Email
            @since ARP1.0
         */
         EmailAddress.prototype.setAddress = function (address) {
@@ -2053,13 +2185,14 @@ be unique for a specific instance of an application on a specific device.
     var EmailAttachmentData = (function (_super) {
         __extends(EmailAttachmentData, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param data         raw data of the file attachment
-           @param size         size of the file attachment
-           @param fileName     name of the file attachment
-           @param mimeType     mime type of the file attachment
-           @param referenceUrl relative url of the file attachment
+           @param {number[]} data         raw data of the file attachment
+           @param {number} size         size of the file attachment
+           @param {string} fileName     name of the file attachment
+           @param {string} mimeType     mime type of the file attachment
+           @param {string} referenceUrl relative url of the file attachment
            @since ARP1.0
         */
         function EmailAttachmentData(data, size, fileName, mimeType, referenceUrl) {
@@ -2071,90 +2204,100 @@ be unique for a specific instance of an application on a specific device.
             this.referenceUrl = referenceUrl;
         }
         /**
+           @method
            Returns the raw data in byte[]
 
-           @return data Octet-binary content of the attachment payload.
+           @return {number[]} data Octet-binary content of the attachment payload.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getData = function () {
             return this.data;
         };
         /**
+           @method
            Set the data of the attachment as a byte[]
 
-           @param data Sets the octet-binary content of the attachment.
+           @param {number[]} data Sets the octet-binary content of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setData = function (data) {
             this.data = data;
         };
         /**
+           @method
            Returns the filename of the attachment
 
-           @return fileName Name of the attachment.
+           @return {string} fileName Name of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getFileName = function () {
             return this.fileName;
         };
         /**
+           @method
            Set the name of the file attachment
 
-           @param fileName Name of the attachment.
+           @param {string} fileName Name of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setFileName = function (fileName) {
             this.fileName = fileName;
         };
         /**
+           @method
            Returns the mime type of the attachment
 
-           @return mimeType
+           @return {string} mimeType
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getMimeType = function () {
             return this.mimeType;
         };
         /**
+           @method
            Set the mime type of the attachment
 
-           @param mimeType Mime-type of the attachment.
+           @param {string} mimeType Mime-type of the attachment.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setMimeType = function (mimeType) {
             this.mimeType = mimeType;
         };
         /**
+           @method
            Returns the absolute url of the file attachment
 
-           @return referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+           @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getReferenceUrl = function () {
             return this.referenceUrl;
         };
         /**
+           @method
            Set the absolute url of the attachment
 
-           @param referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
+           @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setReferenceUrl = function (referenceUrl) {
             this.referenceUrl = referenceUrl;
         };
         /**
+           @method
            Returns the size of the attachment as a long
 
-           @return size Length in bytes of the octet-binary content.
+           @return {number} size Length in bytes of the octet-binary content.
            @since ARP1.0
         */
         EmailAttachmentData.prototype.getSize = function () {
             return this.size;
         };
         /**
+           @method
            Set the size of the attachment as a long
 
-           @param size Length in bytes of the octet-binary content ( should be same as data array length.)
+           @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
            @since ARP1.0
         */
         EmailAttachmentData.prototype.setSize = function (size) {
@@ -2199,110 +2342,123 @@ be unique for a specific instance of an application on a specific device.
     var FileDescriptor = (function (_super) {
         __extends(FileDescriptor, _super);
         /**
+           @method constructor
            Default constructor.
         */
         function FileDescriptor() {
             _super.call(this);
         }
         /**
+           @method
            Returns the milliseconds passed since 1/1/1970 since the file was created.
 
-           @return Timestamp in milliseconds.
+           @return {number} Timestamp in milliseconds.
            @since ARP1.0
         */
         FileDescriptor.prototype.getDateCreated = function () {
             return this.dateCreated;
         };
         /**
+           @method
            Sets the creation timestamp in milliseconds. Used internally.
 
-           @param dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
+           @param {number} dateCreated Timestamp of file creation or -1 if the file or folder doesn't exist.
         */
         FileDescriptor.prototype.setDateCreated = function (dateCreated) {
             this.dateCreated = dateCreated;
         };
         /**
+           @method
            Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
-           @return Timestamp in milliseconds.
+           @return {number} Timestamp in milliseconds.
            @since ARP1.0
         */
         FileDescriptor.prototype.getDateModified = function () {
             return this.dateModified;
         };
         /**
+           @method
            Sets the file or folder modification timestamp in milliseconds. Used internally.
 
-           @param dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
+           @param {number} dateModified Timestamp of file modification or -1 if the file or folder doesn't exist.
         */
         FileDescriptor.prototype.setDateModified = function (dateModified) {
             this.dateModified = dateModified;
         };
         /**
+           @method
            Returns the name of the file if the reference is a file or the last path element of the folder.
 
-           @return The name of the file.
+           @return {string} The name of the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets the name of the file. Used internally.
 
-           @param name Name of the file or last folder path element.
+           @param {string} name Name of the file or last folder path element.
         */
         FileDescriptor.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
-           @return The path to the file.
+           @return {string} The path to the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Sets the path of the file or folder. Used internally.
 
-           @param path The path element of the file or folder.
+           @param {string} path The path element of the file or folder.
         */
         FileDescriptor.prototype.setPath = function (path) {
             this.path = path;
         };
         /**
+           @method
            Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
-           @return The absolute path to the file.
+           @return {string} The absolute path to the file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getPathAbsolute = function () {
             return this.pathAbsolute;
         };
         /**
+           @method
            Sets the absolute path of the file or folder. Used internally.
 
-           @param pathAbsolute String with the absolute path of file or folder.
+           @param {string} pathAbsolute String with the absolute path of file or folder.
         */
         FileDescriptor.prototype.setPathAbsolute = function (pathAbsolute) {
             this.pathAbsolute = pathAbsolute;
         };
         /**
+           @method
            Returns the size in bytes of the file or -1 if the reference is a folder.
 
-           @return Size in bytes of file.
+           @return {number} Size in bytes of file.
            @since ARP1.0
         */
         FileDescriptor.prototype.getSize = function () {
             return this.size;
         };
         /**
+           @method
            Sets the file size in bytes of the file. If the file is a folder, this will be 0. If the file
 doesn't exist, this will be -1. Used internally.
 
-           @param size The size in bytes of the file.
+           @param {number} size The size in bytes of the file.
         */
         FileDescriptor.prototype.setSize = function (size) {
             this.size = size;
@@ -2342,14 +2498,15 @@ doesn't exist, this will be -1. Used internally.
     var Geolocation = (function (_super) {
         __extends(Geolocation, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param latitude  Latitude of the measurement
-           @param longitude Longitude of the measurement
-           @param altitude  Altitude of the measurement
-           @param xDoP      Dilution of precision on the X measurement
-           @param yDoP      Dilution of precision on the Y measurement
-           @param timestamp Timestamp of the measurement
+           @param {number} latitude  Latitude of the measurement
+           @param {number} longitude Longitude of the measurement
+           @param {number} altitude  Altitude of the measurement
+           @param {number} xDoP      Dilution of precision on the X measurement
+           @param {number} yDoP      Dilution of precision on the Y measurement
+           @param {number} timestamp Timestamp of the measurement
            @since ARP1.0
         */
         function Geolocation(latitude, longitude, altitude, xDoP, yDoP, timestamp) {
@@ -2362,105 +2519,117 @@ doesn't exist, this will be -1. Used internally.
             this.timestamp = timestamp;
         }
         /**
+           @method
            Returns altitude in meters
 
-           @return Altitude of the measurement
+           @return {number} Altitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getAltitude = function () {
             return this.altitude;
         };
         /**
+           @method
            Set altitude in meters
 
-           @param altitude Altitude of the measurement
+           @param {number} altitude Altitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setAltitude = function (altitude) {
             this.altitude = altitude;
         };
         /**
+           @method
            Returns the latitude in degrees
 
-           @return Latitude of the measurement
+           @return {number} Latitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getLatitude = function () {
             return this.latitude;
         };
         /**
+           @method
            Set the latitude in degrees
 
-           @param latitude Latitude of the measurement
+           @param {number} latitude Latitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setLatitude = function (latitude) {
             this.latitude = latitude;
         };
         /**
+           @method
            Returns the longitude in degrees
 
-           @return Longitude of the measurement
+           @return {number} Longitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.getLongitude = function () {
             return this.longitude;
         };
         /**
+           @method
            Returns the latitude in degrees
 
-           @param longitude Longitude of the measurement
+           @param {number} longitude Longitude of the measurement
            @since ARP1.0
         */
         Geolocation.prototype.setLongitude = function (longitude) {
             this.longitude = longitude;
         };
         /**
+           @method
            Timestamp Getter
 
-           @return Timestamp
+           @return {number} Timestamp
            @since ARP1.0
         */
         Geolocation.prototype.getTimestamp = function () {
             return this.timestamp;
         };
         /**
+           @method
            Timestamp Setter
 
-           @param timestamp Timestamp
+           @param {number} timestamp Timestamp
            @since ARP1.0
         */
         Geolocation.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
         };
         /**
+           @method
            Gets Dilution of precision on the X measurement. Measured in meters.
 
-           @return {Adaptive.number}xDoP Dilution of precision on the X measurement. Measured in meters.
+           @return {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         Geolocation.prototype.getXDoP = function () {
             return this.xDoP;
         };
         /**
+           @method
            Sets Dilution of precision on the X measurement. Measured in meters.
 
-           @param xDoP Dilution of precision on the X measurement. Measured in meters.
+           @param {number} xDoP Dilution of precision on the X measurement. Measured in meters.
         */
         Geolocation.prototype.setXDoP = function (xDoP) {
             this.xDoP = xDoP;
         };
         /**
+           @method
            Gets Dilution of precision on the Y measurement. Measured in meters.
 
-           @return {Adaptive.number}yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @return {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         Geolocation.prototype.getYDoP = function () {
             return this.yDoP;
         };
         /**
+           @method
            Sets Dilution of precision on the Y measurement. Measured in meters.
 
-           @param yDoP Dilution of precision on the Y measurement. Measured in meters.
+           @param {number} yDoP Dilution of precision on the Y measurement. Measured in meters.
         */
         Geolocation.prototype.setYDoP = function (yDoP) {
             this.yDoP = yDoP;
@@ -2500,10 +2669,11 @@ doesn't exist, this will be -1. Used internally.
     var KeyPair = (function (_super) {
         __extends(KeyPair, _super);
         /**
+           @method constructor
            Constructor using fields
 
-           @param keyName  Key of the element
-           @param keyValue Value of the element
+           @param {string} keyName  Key of the element
+           @param {string} keyValue Value of the element
            @since ARP1.0
         */
         function KeyPair(keyName, keyValue) {
@@ -2512,36 +2682,40 @@ doesn't exist, this will be -1. Used internally.
             this.keyValue = keyValue;
         }
         /**
+           @method
            Returns the keyName of the element
 
-           @return Key of the element
+           @return {string} Key of the element
            @since ARP1.0
         */
         KeyPair.prototype.getKeyName = function () {
             return this.keyName;
         };
         /**
+           @method
            Sets the keyName of the element
 
-           @param keyName Key of the element
+           @param {string} keyName Key of the element
            @since ARP1.0
         */
         KeyPair.prototype.setKeyName = function (keyName) {
             this.keyName = keyName;
         };
         /**
+           @method
            Returns the keyValue of the element
 
-           @return Value of the element
+           @return {string} Value of the element
            @since ARP1.0
         */
         KeyPair.prototype.getKeyValue = function () {
             return this.keyValue;
         };
         /**
+           @method
            Sets the keyValue of the element
 
-           @param keyValue Value of the element
+           @param {string} keyValue Value of the element
            @since ARP1.0
         */
         KeyPair.prototype.setKeyValue = function (keyValue) {
@@ -2574,9 +2748,10 @@ doesn't exist, this will be -1. Used internally.
     var Lifecycle = (function (_super) {
         __extends(Lifecycle, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param state of the app
+           @param {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         function Lifecycle(state) {
@@ -2584,18 +2759,20 @@ doesn't exist, this will be -1. Used internally.
             this.state = state;
         }
         /**
+           @method
            Returns the state of the application
 
-           @return state of the app
+           @return {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         Lifecycle.prototype.getState = function () {
             return this.state;
         };
         /**
+           @method
            Set the State of the application
 
-           @param state of the app
+           @param {Adaptive.LifecycleState} state of the app
            @since ARP1.0
         */
         Lifecycle.prototype.setState = function (state) {
@@ -2630,10 +2807,11 @@ doesn't exist, this will be -1. Used internally.
     var Locale = (function (_super) {
         __extends(Locale, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param country  Country of the Locale
-           @param language Language of the Locale
+           @param {string} country  Country of the Locale
+           @param {string} language Language of the Locale
            @since ARP1.0
         */
         function Locale(language, country) {
@@ -2642,36 +2820,40 @@ doesn't exist, this will be -1. Used internally.
             this.country = country;
         }
         /**
+           @method
            Returns the country code
 
-           @return country code
+           @return {string} country code
            @since ARP1.0
         */
         Locale.prototype.getCountry = function () {
             return this.country;
         };
         /**
+           @method
            Set the country code
 
-           @param country code
+           @param {string} country code
            @since ARP1.0
         */
         Locale.prototype.setCountry = function (country) {
             this.country = country;
         };
         /**
+           @method
            Returns the language code
 
-           @return language code
+           @return {string} language code
            @since ARP1.0
         */
         Locale.prototype.getLanguage = function () {
             return this.language;
         };
         /**
+           @method
            Set the language code
 
-           @param language code
+           @param {string} language code
            @since ARP1.0
         */
         Locale.prototype.setLanguage = function (language) {
@@ -2704,11 +2886,12 @@ doesn't exist, this will be -1. Used internally.
     var OSInfo = (function (_super) {
         __extends(OSInfo, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the OS information.
 
-           @param name    of the OS.
-           @param version of the OS.
-           @param vendor  of the OS.
+           @param {Adaptive.IOSType} name    of the OS.
+           @param {string} version of the OS.
+           @param {string} vendor  of the OS.
            @since ARP1.0
         */
         function OSInfo(name, version, vendor) {
@@ -2718,52 +2901,58 @@ doesn't exist, this will be -1. Used internally.
             this.vendor = vendor;
         }
         /**
+           @method
            Returns the name of the operating system.
 
-           @return OS name.
+           @return {Adaptive.IOSType} OS name.
            @since ARP1.0
         */
         OSInfo.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Sets The name of the operating system.
 
-           @param name The name of the operating system.
+           @param {Adaptive.IOSType} name The name of the operating system.
         */
         OSInfo.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the vendor of the operating system.
 
-           @return OS vendor.
+           @return {string} OS vendor.
            @since ARP1.0
         */
         OSInfo.prototype.getVendor = function () {
             return this.vendor;
         };
         /**
+           @method
            Sets The vendor of the operating system.
 
-           @param vendor The vendor of the operating system.
+           @param {string} vendor The vendor of the operating system.
         */
         OSInfo.prototype.setVendor = function (vendor) {
             this.vendor = vendor;
         };
         /**
+           @method
            Returns the version of the operating system.
 
-           @return OS version.
+           @return {string} OS version.
            @since ARP1.0
         */
         OSInfo.prototype.getVersion = function () {
             return this.version;
         };
         /**
+           @method
            Sets The version/identifier of the operating system.
 
-           @param version The version/identifier of the operating system.
+           @param {string} version The version/identifier of the operating system.
         */
         OSInfo.prototype.setVersion = function (version) {
             this.version = version;
@@ -2801,10 +2990,11 @@ doesn't exist, this will be -1. Used internally.
     var SecureKeyPair = (function (_super) {
         __extends(SecureKeyPair, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param secureKey  name of the keypair
-           @param secureData value of the keypair
+           @param {string} secureKey  name of the keypair
+           @param {string} secureData value of the keypair
            @since ARP1.0
         */
         function SecureKeyPair(secureKey, secureData) {
@@ -2813,36 +3003,40 @@ doesn't exist, this will be -1. Used internally.
             this.secureData = secureData;
         }
         /**
+           @method
            Returns the object value
 
-           @return Value.
+           @return {string} Value.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.getSecureData = function () {
             return this.secureData;
         };
         /**
+           @method
            Sets the value for this object
 
-           @param secureData value to set.
+           @param {string} secureData value to set.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.setSecureData = function (secureData) {
             this.secureData = secureData;
         };
         /**
+           @method
            Returns the object secureKey name.
 
-           @return Key name.
+           @return {string} Key name.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.getSecureKey = function () {
             return this.secureKey;
         };
         /**
+           @method
            Sets the secureKey name for this object.
 
-           @param secureKey Key name.
+           @param {string} secureKey Key name.
            @since ARP 1.0
         */
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {
@@ -2875,11 +3069,12 @@ doesn't exist, this will be -1. Used internally.
     var Service = (function (_super) {
         __extends(Service, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param serviceEndpoints Endpoints of the service
-           @param name             Name of the service
-           @param type             Type of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+           @param {string} name             Name of the service
+           @param {Adaptive.IServiceType} type             Type of the service
            @since ARP1.0
         */
         function Service(serviceEndpoints, name, type) {
@@ -2889,54 +3084,60 @@ doesn't exist, this will be -1. Used internally.
             this.type = type;
         }
         /**
+           @method
            Returns the type
 
-           @return type
+           @return {Adaptive.IServiceType} type
            @since ARP1.0
         */
         Service.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the type
 
-           @param type Type of the service
+           @param {Adaptive.IServiceType} type Type of the service
            @since ARP1.0
         */
         Service.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the name
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         Service.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the name
 
-           @param name Name of the service
+           @param {string} name Name of the service
            @since ARP1.0
         */
         Service.prototype.setName = function (name) {
             this.name = name;
         };
         /**
+           @method
            Returns the serviceEndpoints
 
-           @return serviceEndpoints
+           @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
            @since ARP1.0
         */
         Service.prototype.getServiceEndpoints = function () {
             return this.serviceEndpoints;
         };
         /**
+           @method
            Set the serviceEndpoints
 
-           @param serviceEndpoints Endpoint of the service
+           @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
            @since ARP1.0
         */
         Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
@@ -2985,16 +3186,17 @@ doesn't exist, this will be -1. Used internally.
     var ServiceCookie = (function (_super) {
         __extends(ServiceCookie, _super);
         /**
+           @method constructor
            Contructor with fields
 
-           @param cookieName  Name of the cookie
-           @param cookieValue Value of the cookie
-           @param domain      Domain of the cookie
-           @param path        Path of the cookie
-           @param scheme      Scheme of the cookie
-           @param secure      Privacy of the cookie
-           @param expiry      Expiration date of the cookie
-           @param creation    Creation date of the cookie
+           @param {string} cookieName  Name of the cookie
+           @param {string} cookieValue Value of the cookie
+           @param {string} domain      Domain of the cookie
+           @param {string} path        Path of the cookie
+           @param {string} scheme      Scheme of the cookie
+           @param {boolean} secure      Privacy of the cookie
+           @param {number} expiry      Expiration date of the cookie
+           @param {number} creation    Creation date of the cookie
            @since ARP1.0
         */
         function ServiceCookie(cookieName, cookieValue, domain, path, scheme, secure, expiry, creation) {
@@ -3009,144 +3211,160 @@ doesn't exist, this will be -1. Used internally.
             this.creation = creation;
         }
         /**
+           @method
            Returns the cookie cookieName
 
-           @return cookieName Name of the cookie
+           @return {string} cookieName Name of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCookieName = function () {
             return this.cookieName;
         };
         /**
+           @method
            Set the cookie cookieName
 
-           @param cookieName Name of the cookie
+           @param {string} cookieName Name of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCookieName = function (cookieName) {
             this.cookieName = cookieName;
         };
         /**
+           @method
            Returns the cookie cookieValue
 
-           @return Value of the cookie
+           @return {string} Value of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCookieValue = function () {
             return this.cookieValue;
         };
         /**
+           @method
            Set the cookie cookieValue
 
-           @param cookieValue Value of the cookie
+           @param {string} cookieValue Value of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCookieValue = function (cookieValue) {
             this.cookieValue = cookieValue;
         };
         /**
+           @method
            Returns the creation date
 
-           @return Creation date of the cookie
+           @return {number} Creation date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.getCreation = function () {
             return this.creation;
         };
         /**
+           @method
            Sets the creation date
 
-           @param creation Creation date of the cookie
+           @param {number} creation Creation date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setCreation = function (creation) {
             this.creation = creation;
         };
         /**
+           @method
            Returns the domain
 
-           @return domain
+           @return {string} domain
            @since ARP1.0
         */
         ServiceCookie.prototype.getDomain = function () {
             return this.domain;
         };
         /**
+           @method
            Set the domain
 
-           @param domain Domain of the cookie
+           @param {string} domain Domain of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setDomain = function (domain) {
             this.domain = domain;
         };
         /**
+           @method
            Returns the expiration date in milis
 
-           @return expiry
+           @return {number} expiry
            @since ARP1.0
         */
         ServiceCookie.prototype.getExpiry = function () {
             return this.expiry;
         };
         /**
+           @method
            Set the expiration date in milis
 
-           @param expiry Expiration date of the cookie
+           @param {number} expiry Expiration date of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setExpiry = function (expiry) {
             this.expiry = expiry;
         };
         /**
+           @method
            Returns the path
 
-           @return path
+           @return {string} path
            @since ARP1.0
         */
         ServiceCookie.prototype.getPath = function () {
             return this.path;
         };
         /**
+           @method
            Set the path
 
-           @param path Path of the cookie
+           @param {string} path Path of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setPath = function (path) {
             this.path = path;
         };
         /**
+           @method
            Returns the scheme
 
-           @return scheme
+           @return {string} scheme
            @since ARP1.0
         */
         ServiceCookie.prototype.getScheme = function () {
             return this.scheme;
         };
         /**
+           @method
            Set the scheme
 
-           @param scheme Scheme of the cookie
+           @param {string} scheme Scheme of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
         };
         /**
+           @method
            Returns whether the cookie is secure or not
 
-           @return true if the cookie is secure; false otherwise
+           @return {boolean} true if the cookie is secure; false otherwise
            @since ARP1.0
         */
         ServiceCookie.prototype.getSecure = function () {
             return this.secure;
         };
         /**
+           @method
            Set whether the cookie is secure or not
 
-           @param secure Privacy of the cookie
+           @param {boolean} secure Privacy of the cookie
            @since ARP1.0
         */
         ServiceCookie.prototype.setSecure = function (secure) {
@@ -3191,13 +3409,14 @@ doesn't exist, this will be -1. Used internally.
     var ServiceEndpoint = (function (_super) {
         __extends(ServiceEndpoint, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param host   Remote service host
-           @param paths  Remote service Paths
-           @param port   Remote service Port
-           @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-           @param scheme Remote service scheme
+           @param {string} host   Remote service host
+           @param {Adaptive.ServicePath[]} paths  Remote service Paths
+           @param {number} port   Remote service Port
+           @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         function ServiceEndpoint(host, paths, port, proxy, scheme) {
@@ -3209,90 +3428,100 @@ doesn't exist, this will be -1. Used internally.
             this.scheme = scheme;
         }
         /**
+           @method
            Returns the Remote service host
 
-           @return Remote service host
+           @return {string} Remote service host
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getHost = function () {
             return this.host;
         };
         /**
+           @method
            Set the Remote service host
 
-           @param host Remote service host
+           @param {string} host Remote service host
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setHost = function (host) {
             this.host = host;
         };
         /**
+           @method
            Returns the Remote service Paths
 
-           @return Remote service Paths
+           @return {Adaptive.ServicePath[]} Remote service Paths
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getPaths = function () {
             return this.paths;
         };
         /**
+           @method
            Set the Remote service Paths
 
-           @param paths Remote service Paths
+           @param {Adaptive.ServicePath[]} paths Remote service Paths
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setPaths = function (paths) {
             this.paths = paths;
         };
         /**
+           @method
            Returns the Remote service Port
 
-           @return Remote service Port
+           @return {number} Remote service Port
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getPort = function () {
             return this.port;
         };
         /**
+           @method
            Set the Remote service Port
 
-           @param port Remote service Port
+           @param {number} port Remote service Port
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setPort = function (port) {
             this.port = port;
         };
         /**
+           @method
            Return the Proxy url
 
-           @return Proxy url
+           @return {string} Proxy url
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getProxy = function () {
             return this.proxy;
         };
         /**
+           @method
            Set the Proxy url
 
-           @param proxy Proxy url
+           @param {string} proxy Proxy url
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setProxy = function (proxy) {
             this.proxy = proxy;
         };
         /**
+           @method
            Returns the Remote service scheme
 
-           @return Remote service scheme
+           @return {string} Remote service scheme
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getScheme = function () {
             return this.scheme;
         };
         /**
+           @method
            Set the Remote service scheme
 
-           @param scheme Remote service scheme
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setScheme = function (scheme) {
@@ -3341,10 +3570,11 @@ doesn't exist, this will be -1. Used internally.
     var ServiceHeader = (function (_super) {
         __extends(ServiceHeader, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param name Name of the header
-           @param data Value of the header
+           @param {string} name Name of the header
+           @param {string} data Value of the header
            @since ARP1.0
         */
         function ServiceHeader(name, data) {
@@ -3353,36 +3583,40 @@ doesn't exist, this will be -1. Used internally.
             this.data = data;
         }
         /**
+           @method
            Returns the header value
 
-           @return ServiceHeader value
+           @return {string} ServiceHeader value
            @since ARP1.0
         */
         ServiceHeader.prototype.getData = function () {
             return this.data;
         };
         /**
+           @method
            Set the header value
 
-           @param data ServiceHeader value
+           @param {string} data ServiceHeader value
            @since ARP1.0
         */
         ServiceHeader.prototype.setData = function (data) {
             this.data = data;
         };
         /**
+           @method
            Returns the header name
 
-           @return ServiceHeader name
+           @return {string} ServiceHeader name
            @since ARP1.0
         */
         ServiceHeader.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the header name
 
-           @param name Name of the header
+           @param {string} name Name of the header
            @since ARP1.0
         */
         ServiceHeader.prototype.setName = function (name) {
@@ -3415,18 +3649,19 @@ doesn't exist, this will be -1. Used internally.
     var ServiceRequest = (function (_super) {
         __extends(ServiceRequest, _super);
         /**
+           @method constructor
            Contructor used by the implementation
 
-           @param content             Request/Response data content (plain text)
-           @param contentType         The request/response content type (MIME TYPE).
-           @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-           @param contentLength       The length in bytes for the Content field.
-           @param contentBinary       The byte[] representing the Content field.
-           @param contentBinaryLength The length in bytes for the binary Content.
-           @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @param method              The request method
-           @param protocolVersion     The HTTP procotol version to be used for this request.
-           @param serviceSession      The element service session
+           @param {string} content             Request/Response data content (plain text)
+           @param {string} contentType         The request/response content type (MIME TYPE).
+           @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+           @param {number} contentLength       The length in bytes for the Content field.
+           @param {number[]} contentBinary       The byte[] representing the Content field.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {string} method              The request method
+           @param {Adaptive.IServiceProtocolVersion} protocolVersion     The HTTP procotol version to be used for this request.
+           @param {Adaptive.ServiceSession} serviceSession      The element service session
            @since ARP1.0
         */
         function ServiceRequest(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, method, protocolVersion, serviceSession) {
@@ -3443,180 +3678,200 @@ doesn't exist, this will be -1. Used internally.
             this.serviceSession = serviceSession;
         }
         /**
+           @method
            Returns the protocol version
 
-           @return protocolVersion enum
+           @return {Adaptive.IServiceProtocolVersion} protocolVersion enum
            @since ARP1.0
         */
         ServiceRequest.prototype.getProtocolVersion = function () {
             return this.protocolVersion;
         };
         /**
+           @method
            Set the protocol version
 
-           @param protocolVersion The HTTP procotol version to be used for this request.
+           @param {Adaptive.IServiceProtocolVersion} protocolVersion The HTTP procotol version to be used for this request.
            @since ARP1.0
         */
         ServiceRequest.prototype.setProtocolVersion = function (protocolVersion) {
             this.protocolVersion = protocolVersion;
         };
         /**
+           @method
            Returns the content
 
-           @return content
+           @return {string} content
            @since ARP1.0
         */
         ServiceRequest.prototype.getContent = function () {
             return this.content;
         };
         /**
+           @method
            Set the content
 
-           @param content Request/Response data content (plain text)
+           @param {string} content Request/Response data content (plain text)
            @since ARP1.0
         */
         ServiceRequest.prototype.setContent = function (content) {
             this.content = content;
         };
         /**
+           @method
            Returns the byte[] of the content
 
-           @return contentBinary
+           @return {number[]} contentBinary
            @since ARP1.0
         */
         ServiceRequest.prototype.getContentBinary = function () {
             return this.contentBinary;
         };
         /**
+           @method
            Set the byte[] of the content
 
-           @param contentBinary The byte[] representing the Content field.
+           @param {number[]} contentBinary The byte[] representing the Content field.
            @since ARP1.0
         */
         ServiceRequest.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
         };
         /**
+           @method
            Retrusn the binary content length
 
-           @return contentBinaryLength
+           @return {number} contentBinaryLength
            @since ARP1.0
         */
         ServiceRequest.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
         };
         /**
+           @method
            Set the binary content length
 
-           @param contentBinaryLength The length in bytes for the binary Content.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
            @since ARP1.0
         */
         ServiceRequest.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
         };
         /**
+           @method
            Returns the content encoding
 
-           @return contentEncoding
+           @return {string} contentEncoding
            @since ARP1.0
         */
         ServiceRequest.prototype.getContentEncoding = function () {
             return this.contentEncoding;
         };
         /**
+           @method
            Set the content encoding
 
-           @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
            @since ARP1.0
         */
         ServiceRequest.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
         };
         /**
+           @method
            Returns the content length
 
-           @return contentLength
+           @return {number} contentLength
            @since ARP1.0
         */
         ServiceRequest.prototype.getContentLength = function () {
             return this.contentLength;
         };
         /**
+           @method
            Set the content length
 
-           @param contentLength The length in bytes for the Content field.
+           @param {number} contentLength The length in bytes for the Content field.
            @since ARP1.0
         */
         ServiceRequest.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
         };
         /**
+           @method
            Returns the content type
 
-           @return contentType
+           @return {string} contentType
            @since ARP1.0
         */
         ServiceRequest.prototype.getContentType = function () {
             return this.contentType;
         };
         /**
+           @method
            Set the content type
 
-           @param contentType The request/response content type (MIME TYPE).
+           @param {string} contentType The request/response content type (MIME TYPE).
            @since ARP1.0
         */
         ServiceRequest.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
         };
         /**
+           @method
            Returns the method
 
-           @return method
+           @return {string} method
            @since ARP1.0
         */
         ServiceRequest.prototype.getMethod = function () {
             return this.method;
         };
         /**
+           @method
            Set the method
 
-           @param method The request method
+           @param {string} method The request method
            @since ARP1.0
         */
         ServiceRequest.prototype.setMethod = function (method) {
             this.method = method;
         };
         /**
+           @method
            Returns the array of ServiceHeader
 
-           @return serviceHeaders
+           @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since ARP1.0
         */
         ServiceRequest.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
         };
         /**
+           @method
            Set the array of ServiceHeader
 
-           @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since ARP1.0
         */
         ServiceRequest.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
         };
         /**
+           @method
            Getter for service session
 
-           @return The element service session
+           @return {Adaptive.ServiceSession} The element service session
            @since ARP1.0
         */
         ServiceRequest.prototype.getServiceSession = function () {
             return this.serviceSession;
         };
         /**
+           @method
            Setter for service session
 
-           @param serviceSession The element service session
+           @param {Adaptive.ServiceSession} serviceSession The element service session
            @since ARP1.0
         */
         ServiceRequest.prototype.setServiceSession = function (serviceSession) {
@@ -3689,16 +3944,17 @@ doesn't exist, this will be -1. Used internally.
     var ServiceResponse = (function (_super) {
         __extends(ServiceResponse, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param content             Request/Response data content (plain text).
-           @param contentType         The request/response content type (MIME TYPE).
-           @param contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-           @param contentLength       The length in bytes for the Content field.
-           @param contentBinary       The byte[] representing the binary Content.
-           @param contentBinaryLength The length in bytes for the binary Content.
-           @param serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @param serviceSession      Information about the session
+           @param {string} content             Request/Response data content (plain text).
+           @param {string} contentType         The request/response content type (MIME TYPE).
+           @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
+           @param {number} contentLength       The length in bytes for the Content field.
+           @param {number[]} contentBinary       The byte[] representing the binary Content.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {Adaptive.ServiceSession} serviceSession      Information about the session
            @since ARP1.0
         */
         function ServiceResponse(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, serviceSession) {
@@ -3713,144 +3969,160 @@ doesn't exist, this will be -1. Used internally.
             this.serviceSession = serviceSession;
         }
         /**
+           @method
            Returns the content
 
-           @return content
+           @return {string} content
            @since ARP1.0
         */
         ServiceResponse.prototype.getContent = function () {
             return this.content;
         };
         /**
+           @method
            Set the content
 
-           @param content Request/Response data content (plain text).
+           @param {string} content Request/Response data content (plain text).
            @since ARP1.0
         */
         ServiceResponse.prototype.setContent = function (content) {
             this.content = content;
         };
         /**
+           @method
            Returns the binary content
 
-           @return contentBinary
+           @return {number[]} contentBinary
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentBinary = function () {
             return this.contentBinary;
         };
         /**
+           @method
            Set the binary content
 
-           @param contentBinary The byte[] representing the binary Content.
+           @param {number[]} contentBinary The byte[] representing the binary Content.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
         };
         /**
+           @method
            Returns the binary content length
 
-           @return contentBinaryLength
+           @return {number} contentBinaryLength
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
         };
         /**
+           @method
            Set the binary content length
 
-           @param contentBinaryLength The length in bytes for the binary Content.
+           @param {number} contentBinaryLength The length in bytes for the binary Content.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
         };
         /**
+           @method
            Returns the content encoding
 
-           @return contentEncoding
+           @return {string} contentEncoding
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentEncoding = function () {
             return this.contentEncoding;
         };
         /**
+           @method
            Set the content encoding
 
-           @param contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
         };
         /**
+           @method
            Returns the content length
 
-           @return contentLength
+           @return {number} contentLength
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentLength = function () {
             return this.contentLength;
         };
         /**
+           @method
            Set the content length
 
-           @param contentLength The length in bytes for the Content field.
+           @param {number} contentLength The length in bytes for the Content field.
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
         };
         /**
+           @method
            Returns the content type
 
-           @return contentType
+           @return {string} contentType
            @since ARP1.0
         */
         ServiceResponse.prototype.getContentType = function () {
             return this.contentType;
         };
         /**
+           @method
            Set the content type
 
-           @param contentType The request/response content type (MIME TYPE).
+           @param {string} contentType The request/response content type (MIME TYPE).
            @since ARP1.0
         */
         ServiceResponse.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
         };
         /**
+           @method
            Returns the array of ServiceHeader
 
-           @return serviceHeaders
+           @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since ARP1.0
         */
         ServiceResponse.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
         };
         /**
+           @method
            Set the array of ServiceHeader
 
-           @param serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since ARP1.0
         */
         ServiceResponse.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
         };
         /**
+           @method
            Getter for service session
 
-           @return The element service session
+           @return {Adaptive.ServiceSession} The element service session
            @since ARP1.0
         */
         ServiceResponse.prototype.getServiceSession = function () {
             return this.serviceSession;
         };
         /**
+           @method
            Setter for service session
 
-           @param serviceSession The element service session
+           @param {Adaptive.ServiceSession} serviceSession The element service session
            @since ARP1.0
         */
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {
@@ -3915,10 +4187,11 @@ doesn't exist, this will be -1. Used internally.
     var ServiceSession = (function (_super) {
         __extends(ServiceSession, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param cookies    The cookies of the response
-           @param attributes Attributes of the response
+           @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         function ServiceSession(cookies, attributes) {
@@ -3927,36 +4200,40 @@ doesn't exist, this will be -1. Used internally.
             this.attributes = attributes;
         }
         /**
+           @method
            Gets the attributes of the response
 
-           @return Attributes of the response
+           @return {string[]} Attributes of the response
            @since ARP1.0
         */
         ServiceSession.prototype.getAttributes = function () {
             return this.attributes;
         };
         /**
+           @method
            Sets the attributes for the response
 
-           @param attributes Attributes of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         ServiceSession.prototype.setAttributes = function (attributes) {
             this.attributes = attributes;
         };
         /**
+           @method
            Returns the cookies of the response
 
-           @return The cookies of the response
+           @return {Adaptive.ServiceCookie[]} The cookies of the response
            @since ARP1.0
         */
         ServiceSession.prototype.getCookies = function () {
             return this.cookies;
         };
         /**
+           @method
            Sets the cookies of the response
 
-           @param cookies The cookies of the response
+           @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
            @since ARP1.0
         */
         ServiceSession.prototype.setCookies = function (cookies) {
@@ -4005,17 +4282,18 @@ doesn't exist, this will be -1. Used internally.
     var Contact = (function (_super) {
         __extends(Contact, _super);
         /**
+           @method constructor
            Constructor with all the fields
 
-           @param contactId        Identifier of the contact
-           @param personalInfo     Personal Information
-           @param professionalInfo Professional Information
-           @param contactAddresses Addresses of the contact
-           @param contactPhones    Phones of the contact
-           @param contactEmails    Emails of the contact
-           @param contactWebsites  Websites of the contact
-           @param contactSocials   Social Networks of the contact
-           @param contactTags      Tags of the contact
+           @param {string} contactId        Identifier of the contact
+           @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
+           @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
            @since ARP1.0
         */
         function Contact(contactId, personalInfo, professionalInfo, contactAddresses, contactPhones, contactEmails, contactWebsites, contactSocials, contactTags) {
@@ -4030,144 +4308,160 @@ doesn't exist, this will be -1. Used internally.
             this.contactTags = contactTags;
         }
         /**
+           @method
            Returns all the addresses of the Contact
 
-           @return ContactAddress[]
+           @return {Adaptive.ContactAddress[]} ContactAddress[]
            @since ARP1.0
         */
         Contact.prototype.getContactAddresses = function () {
             return this.contactAddresses;
         };
         /**
+           @method
            Set the addresses of the Contact
 
-           @param contactAddresses Addresses of the contact
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactAddresses = function (contactAddresses) {
             this.contactAddresses = contactAddresses;
         };
         /**
+           @method
            Returns all the emails of the Contact
 
-           @return ContactEmail[]
+           @return {Adaptive.ContactEmail[]} ContactEmail[]
            @since ARP1.0
         */
         Contact.prototype.getContactEmails = function () {
             return this.contactEmails;
         };
         /**
+           @method
            Set the emails of the Contact
 
-           @param contactEmails Emails of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactEmails = function (contactEmails) {
             this.contactEmails = contactEmails;
         };
         /**
+           @method
            Returns all the phones of the Contact
 
-           @return ContactPhone[]
+           @return {Adaptive.ContactPhone[]} ContactPhone[]
            @since ARP1.0
         */
         Contact.prototype.getContactPhones = function () {
             return this.contactPhones;
         };
         /**
+           @method
            Set the phones of the Contact
 
-           @param contactPhones Phones of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactPhones = function (contactPhones) {
             this.contactPhones = contactPhones;
         };
         /**
+           @method
            Returns all the social network info of the Contact
 
-           @return ContactSocial[]
+           @return {Adaptive.ContactSocial[]} ContactSocial[]
            @since ARP1.0
         */
         Contact.prototype.getContactSocials = function () {
             return this.contactSocials;
         };
         /**
+           @method
            Set the social network info of the Contact
 
-           @param contactSocials Social Networks of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactSocials = function (contactSocials) {
             this.contactSocials = contactSocials;
         };
         /**
+           @method
            Returns the additional tags of the Contact
 
-           @return ContactTag[]
+           @return {Adaptive.ContactTag[]} ContactTag[]
            @since ARP1.0
         */
         Contact.prototype.getContactTags = function () {
             return this.contactTags;
         };
         /**
+           @method
            Set the additional tags of the Contact
 
-           @param contactTags Tags of the contact
+           @param {Adaptive.ContactTag[]} contactTags Tags of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactTags = function (contactTags) {
             this.contactTags = contactTags;
         };
         /**
+           @method
            Returns all the websites of the Contact
 
-           @return ContactWebsite[]
+           @return {Adaptive.ContactWebsite[]} ContactWebsite[]
            @since ARP1.0
         */
         Contact.prototype.getContactWebsites = function () {
             return this.contactWebsites;
         };
         /**
+           @method
            Set the websites of the Contact
 
-           @param contactWebsites Websites of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactWebsites = function (contactWebsites) {
             this.contactWebsites = contactWebsites;
         };
         /**
+           @method
            Returns the personal info of the Contact
 
-           @return ContactPersonalInfo of the Contact
+           @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
            @since ARP1.0
         */
         Contact.prototype.getPersonalInfo = function () {
             return this.personalInfo;
         };
         /**
+           @method
            Set the personal info of the Contact
 
-           @param personalInfo Personal Information
+           @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
            @since ARP1.0
         */
         Contact.prototype.setPersonalInfo = function (personalInfo) {
             this.personalInfo = personalInfo;
         };
         /**
+           @method
            Returns the professional info of the Contact
 
-           @return Array of personal info
+           @return {Adaptive.ContactProfessionalInfo} Array of personal info
            @since ARP1.0
         */
         Contact.prototype.getProfessionalInfo = function () {
             return this.professionalInfo;
         };
         /**
+           @method
            Set the professional info of the Contact
 
-           @param professionalInfo Professional Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
            @since ARP1.0
         */
         Contact.prototype.setProfessionalInfo = function (professionalInfo) {
@@ -4347,9 +4641,9 @@ doesn't exist, this will be -1. Used internally.
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IAccelerationListenerError
-           @param onResultFunction Function receiving parameters of type: Acceleration
-           @param onWarningFunction Function receiving parameters of type: Acceleration, IAccelerationListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         function AccelerationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4461,9 +4755,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Button
-           @param onWarningFunction Function receiving parameters of type: Button, IButtonListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         function ButtonListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4574,9 +4868,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Geolocation
-           @param onWarningFunction Function receiving parameters of type: Geolocation, IGeolocationListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         function GeolocationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4687,9 +4981,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Lifecycle, ILifecycleListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         function LifecycleListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4800,9 +5094,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: ICapabilitiesNet, INetworkStatusListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         function NetworkStatusListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4950,9 +5244,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IContactPhotoResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<number>
-           @param onWarningFunction Function receiving parameters of type: Array<number>, IContactPhotoResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+           @param onResultFunction Function receiving parameters of type: number[]
+           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
         function ContactPhotoResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5066,9 +5360,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IContactResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<Contact>
-           @param onWarningFunction Function receiving parameters of type: Array<Contact>, IContactResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
         */
         function ContactResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5182,9 +5476,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IDatabaseResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Database
-           @param onWarningFunction Function receiving parameters of type: Database, IDatabaseResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Database
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
         */
         function DatabaseResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5298,9 +5592,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IDatabaseTableResultCallbackError
-           @param onResultFunction Function receiving parameters of type: DatabaseTable
-           @param onWarningFunction Function receiving parameters of type: DatabaseTable, IDatabaseTableResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+           @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
         */
         function DatabaseTableResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5414,9 +5708,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<number>
-           @param onWarningFunction Function receiving parameters of type: Array<number>, IFileDataLoadResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param onResultFunction Function receiving parameters of type: number[]
+           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         function FileDataLoadResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5530,9 +5824,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileDataStoreResultCallbackError
-           @param onResultFunction Function receiving parameters of type: FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: FileDescriptor, IFileDataStoreResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
         */
         function FileDataStoreResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5646,9 +5940,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileListResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<FileDescriptor>
-           @param onWarningFunction Function receiving parameters of type: Array<FileDescriptor>, IFileListResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
         */
         function FileListResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5762,9 +6056,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileResultCallbackError
-           @param onResultFunction Function receiving parameters of type: FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: FileDescriptor, IFileResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
         */
         function FileResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5878,9 +6172,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IMessagingCallbackError
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
            @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, IMessagingCallbackWarning
+           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
         */
         function MessagingCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5994,9 +6288,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkReachabilityCallbackError
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
            @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, INetworkReachabilityCallbackWarning
+           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
         */
         function NetworkReachabilityCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6110,9 +6404,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: ISecurityResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<SecureKeyPair>
-           @param onWarningFunction Function receiving parameters of type: Array<SecureKeyPair>, ISecurityResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+           @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
         function SecurityResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6226,9 +6520,9 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IServiceResultCallbackError
-           @param onResultFunction Function receiving parameters of type: ServiceResponse
-           @param onWarningFunction Function receiving parameters of type: ServiceResponse, IServiceResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+           @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+           @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
         */
         function ServiceResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -6307,7 +6601,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseApplicationBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseApplicationBridge() {
@@ -6343,7 +6637,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseCommerceBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseCommerceBridge() {
@@ -6379,7 +6673,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseCommunicationBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseCommunicationBridge() {
@@ -6415,7 +6709,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseDataBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseDataBridge() {
@@ -6451,7 +6745,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseMediaBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseMediaBridge() {
@@ -6487,7 +6781,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseNotificationBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseNotificationBridge() {
@@ -6523,7 +6817,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BasePIMBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BasePIMBridge() {
@@ -6559,7 +6853,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseReaderBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseReaderBridge() {
@@ -6595,7 +6889,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSecurityBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSecurityBridge() {
@@ -6631,7 +6925,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSensorBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSensorBridge() {
@@ -6667,7 +6961,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSocialBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSocialBridge() {
@@ -6703,7 +6997,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseSystemBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSystemBridge() {
@@ -6739,7 +7033,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseUIBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseUIBridge() {
@@ -6775,7 +7069,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     */
     var BaseUtilBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseUtilBridge() {
@@ -6812,7 +7106,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var AnalyticsBridge = (function (_super) {
         __extends(AnalyticsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AnalyticsBridge() {
@@ -6832,7 +7126,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var GlobalizationBridge = (function (_super) {
         __extends(GlobalizationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GlobalizationBridge() {
@@ -6841,7 +7135,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            Returns the default locale of the application defined in the configuration file
 
-           @return {Locale} Default Locale of the application
+           @return {Adaptive.Locale} Default Locale of the application
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getDefaultLocale = function () {
@@ -6881,7 +7175,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         /**
            List of supported locales for the application defined in the configuration file
 
-           @return {[Adaptive.Locale]} List of locales
+           @return {Adaptive.Locale[]} List of locales
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
@@ -6969,7 +7263,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
+           @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since ARP1.0
         */
         GlobalizationBridge.prototype.getResourceLiterals = function (locale) {
@@ -7024,7 +7318,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LifecycleBridge() {
@@ -7203,7 +7497,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var ManagementBridge = (function (_super) {
         __extends(ManagementBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ManagementBridge() {
@@ -7223,7 +7517,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var PrintingBridge = (function (_super) {
         __extends(PrintingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function PrintingBridge() {
@@ -7243,7 +7537,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var SettingsBridge = (function (_super) {
         __extends(SettingsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SettingsBridge() {
@@ -7263,7 +7557,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var UpdateBridge = (function (_super) {
         __extends(UpdateBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function UpdateBridge() {
@@ -7283,7 +7577,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var AdsBridge = (function (_super) {
         __extends(AdsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AdsBridge() {
@@ -7303,7 +7597,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var StoreBridge = (function (_super) {
         __extends(StoreBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function StoreBridge() {
@@ -7323,7 +7617,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var WalletBridge = (function (_super) {
         __extends(WalletBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function WalletBridge() {
@@ -7343,7 +7637,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var BluetoothBridge = (function (_super) {
         __extends(BluetoothBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BluetoothBridge() {
@@ -7363,7 +7657,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkInfoBridge() {
@@ -7383,7 +7677,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkNamingBridge = (function (_super) {
         __extends(NetworkNamingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkNamingBridge() {
@@ -7403,7 +7697,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkReachabilityBridge() {
@@ -7519,7 +7813,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NetworkStatusBridge() {
@@ -7658,7 +7952,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ServiceBridge() {
@@ -7668,7 +7962,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Get a reference to a registered service by name.
 
            @param serviceName Name of service.
-           @return {Service} A service, if registered, or null of the service does not exist.
+           @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
         ServiceBridge.prototype.getService = function (serviceName) {
@@ -7927,7 +8221,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var SocketBridge = (function (_super) {
         __extends(SocketBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SocketBridge() {
@@ -7947,7 +8241,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TelephonyBridge() {
@@ -7957,7 +8251,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Invoke a phone call
 
            @param number to call
-           @return {ITelephonyStatus} Status of the call
+           @return {Adaptive.ITelephonyStatus} Status of the call
            @since ARP1.0
         */
         TelephonyBridge.prototype.call = function (number) {
@@ -8009,7 +8303,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var CloudBridge = (function (_super) {
         __extends(CloudBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CloudBridge() {
@@ -8029,7 +8323,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var DataStreamBridge = (function (_super) {
         __extends(DataStreamBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DataStreamBridge() {
@@ -8049,7 +8343,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     var DatabaseBridge = (function (_super) {
         __extends(DatabaseBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DatabaseBridge() {
@@ -8457,7 +8751,7 @@ should be passed as a parameter
     var FileBridge = (function (_super) {
         __extends(FileBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function FileBridge() {
@@ -8734,7 +9028,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemStorageType} Storage Type file
+           @return {Adaptive.IFileSystemStorageType} Storage Type file
            @since ARP1.0
         */
         FileBridge.prototype.getFileStorageType = function (descriptor) {
@@ -8776,7 +9070,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemType} Returns the file type of the file
+           @return {Adaptive.IFileSystemType} Returns the file type of the file
            @since ARP1.0
         */
         FileBridge.prototype.getFileType = function (descriptor) {
@@ -8818,7 +9112,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
 
            @param descriptor File descriptor of file or folder used for operation.
-           @return {IFileSystemSecurity} Security Level of the file
+           @return {Adaptive.IFileSystemSecurity} Security Level of the file
            @since ARP1.0
         */
         FileBridge.prototype.getSecurityType = function (descriptor) {
@@ -9161,7 +9455,7 @@ new destination file.
     var FileSystemBridge = (function (_super) {
         __extends(FileSystemBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function FileSystemBridge() {
@@ -9173,7 +9467,7 @@ This method does not create the actual file in the specified folder.
 
            @param parent Parent directory.
            @param name   Name of new file or directory.
-           @return {FileDescriptor} A reference to a new or existing location in the filesystem.
+           @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
         FileSystemBridge.prototype.createFileDescriptor = function (parent, name) {
@@ -9217,7 +9511,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
-           @return {FileDescriptor} Path to the application's cache folder.
+           @return {Adaptive.FileDescriptor} Path to the application's cache folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
@@ -9258,7 +9552,7 @@ This path is volatile and may be cleaned by the OS periodically.
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
-           @return {FileDescriptor} Path to the application's cloud storage folder.
+           @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
@@ -9299,7 +9593,7 @@ This path must always be writable by the current application.
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
-           @return {FileDescriptor} Path to the application's documents folder.
+           @return {Adaptive.FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
@@ -9340,7 +9634,7 @@ This path must always be writable by the current application.
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
-           @return {FileDescriptor} Path to the application folder.
+           @return {Adaptive.FileDescriptor} Path to the application folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationFolder = function () {
@@ -9381,7 +9675,7 @@ This path may or may not be directly readable or writable - it usually contains 
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
-           @return {FileDescriptor} Path to the application's protected storage folder.
+           @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
@@ -9464,7 +9758,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
 
-           @return {FileDescriptor} Path to the application's documents folder.
+           @return {Adaptive.FileDescriptor} Path to the application's documents folder.
            @since ARP1.0
         */
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
@@ -9515,7 +9809,7 @@ This path may or may not be writable by the current application.
     var InternalStorageBridge = (function (_super) {
         __extends(InternalStorageBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function InternalStorageBridge() {
@@ -9535,7 +9829,7 @@ This path may or may not be writable by the current application.
     var XMLBridge = (function (_super) {
         __extends(XMLBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function XMLBridge() {
@@ -9555,7 +9849,7 @@ This path may or may not be writable by the current application.
     var AudioBridge = (function (_super) {
         __extends(AudioBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AudioBridge() {
@@ -9575,7 +9869,7 @@ This path may or may not be writable by the current application.
     var CameraBridge = (function (_super) {
         __extends(CameraBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CameraBridge() {
@@ -9595,7 +9889,7 @@ This path may or may not be writable by the current application.
     var ImagingBridge = (function (_super) {
         __extends(ImagingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ImagingBridge() {
@@ -9615,7 +9909,7 @@ This path may or may not be writable by the current application.
     var VideoBridge = (function (_super) {
         __extends(VideoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function VideoBridge() {
@@ -9660,7 +9954,7 @@ This path may or may not be writable by the current application.
     var AlarmBridge = (function (_super) {
         __extends(AlarmBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AlarmBridge() {
@@ -9680,7 +9974,7 @@ This path may or may not be writable by the current application.
     var NotificationBridge = (function (_super) {
         __extends(NotificationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NotificationBridge() {
@@ -9700,7 +9994,7 @@ This path may or may not be writable by the current application.
     var NotificationLocalBridge = (function (_super) {
         __extends(NotificationLocalBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NotificationLocalBridge() {
@@ -9720,7 +10014,7 @@ This path may or may not be writable by the current application.
     var VibrationBridge = (function (_super) {
         __extends(VibrationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function VibrationBridge() {
@@ -9740,7 +10034,7 @@ This path may or may not be writable by the current application.
     var CalendarBridge = (function (_super) {
         __extends(CalendarBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CalendarBridge() {
@@ -9760,7 +10054,7 @@ This path may or may not be writable by the current application.
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ContactBridge() {
@@ -10162,7 +10456,7 @@ This path may or may not be writable by the current application.
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MailBridge() {
@@ -10230,7 +10524,7 @@ This path may or may not be writable by the current application.
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MessagingBridge() {
@@ -10300,7 +10594,7 @@ This path may or may not be writable by the current application.
     var BarcodeBridge = (function (_super) {
         __extends(BarcodeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BarcodeBridge() {
@@ -10320,7 +10614,7 @@ This path may or may not be writable by the current application.
     var NFCBridge = (function (_super) {
         __extends(NFCBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NFCBridge() {
@@ -10340,7 +10634,7 @@ This path may or may not be writable by the current application.
     var OCRBridge = (function (_super) {
         __extends(OCRBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OCRBridge() {
@@ -10360,7 +10654,7 @@ This path may or may not be writable by the current application.
     var QRCodeBridge = (function (_super) {
         __extends(QRCodeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function QRCodeBridge() {
@@ -10380,7 +10674,7 @@ This path may or may not be writable by the current application.
     var OAuthBridge = (function (_super) {
         __extends(OAuthBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OAuthBridge() {
@@ -10400,7 +10694,7 @@ This path may or may not be writable by the current application.
     var OpenIdBridge = (function (_super) {
         __extends(OpenIdBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OpenIdBridge() {
@@ -10420,7 +10714,7 @@ This path may or may not be writable by the current application.
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SecurityBridge() {
@@ -10630,7 +10924,7 @@ This path may or may not be writable by the current application.
     var AccelerationBridge = (function (_super) {
         __extends(AccelerationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AccelerationBridge() {
@@ -10769,7 +11063,7 @@ This path may or may not be writable by the current application.
     var AmbientLightBridge = (function (_super) {
         __extends(AmbientLightBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AmbientLightBridge() {
@@ -10789,7 +11083,7 @@ This path may or may not be writable by the current application.
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BarometerBridge() {
@@ -10809,7 +11103,7 @@ This path may or may not be writable by the current application.
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GeolocationBridge() {
@@ -10948,7 +11242,7 @@ This path may or may not be writable by the current application.
     var GyroscopeBridge = (function (_super) {
         __extends(GyroscopeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GyroscopeBridge() {
@@ -10968,7 +11262,7 @@ This path may or may not be writable by the current application.
     var MagnetometerBridge = (function (_super) {
         __extends(MagnetometerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MagnetometerBridge() {
@@ -10988,7 +11282,7 @@ This path may or may not be writable by the current application.
     var ProximityBridge = (function (_super) {
         __extends(ProximityBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ProximityBridge() {
@@ -11008,7 +11302,7 @@ This path may or may not be writable by the current application.
     var FacebookBridge = (function (_super) {
         __extends(FacebookBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function FacebookBridge() {
@@ -11028,7 +11322,7 @@ This path may or may not be writable by the current application.
     var GooglePlusBridge = (function (_super) {
         __extends(GooglePlusBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function GooglePlusBridge() {
@@ -11048,7 +11342,7 @@ This path may or may not be writable by the current application.
     var LinkedInBridge = (function (_super) {
         __extends(LinkedInBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LinkedInBridge() {
@@ -11068,7 +11362,7 @@ This path may or may not be writable by the current application.
     var RSSBridge = (function (_super) {
         __extends(RSSBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function RSSBridge() {
@@ -11088,7 +11382,7 @@ This path may or may not be writable by the current application.
     var TwitterBridge = (function (_super) {
         __extends(TwitterBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TwitterBridge() {
@@ -11108,7 +11402,7 @@ This path may or may not be writable by the current application.
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CapabilitiesBridge() {
@@ -11426,7 +11720,7 @@ device.
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DeviceBridge() {
@@ -11478,7 +11772,7 @@ device.
         /**
            Returns the device information for the current device executing the runtime.
 
-           @return {DeviceInfo} DeviceInfo for the current device.
+           @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
            @since ARP1.0
         */
         DeviceBridge.prototype.getDeviceInfo = function () {
@@ -11518,7 +11812,7 @@ device.
         /**
            Gets the current Locale for the device.
 
-           @return {Locale} The current Locale information.
+           @return {Adaptive.Locale} The current Locale information.
            @since ARP1.0
         */
         DeviceBridge.prototype.getLocaleCurrent = function () {
@@ -11645,7 +11939,7 @@ device.
     var DisplayBridge = (function (_super) {
         __extends(DisplayBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DisplayBridge() {
@@ -11665,7 +11959,7 @@ device.
     var OSBridge = (function (_super) {
         __extends(OSBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OSBridge() {
@@ -11674,7 +11968,7 @@ device.
         /**
            Returns the OSInfo for the current operating system.
 
-           @return {OSInfo} OSInfo with name, version and vendor of the OS.
+           @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
            @since ARP1.0
         */
         OSBridge.prototype.getOSInfo = function () {
@@ -11725,7 +12019,7 @@ device.
     var RuntimeBridge = (function (_super) {
         __extends(RuntimeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function RuntimeBridge() {
@@ -11808,7 +12102,7 @@ device.
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BrowserBridge() {
@@ -11962,7 +12256,7 @@ device.
     var DesktopBridge = (function (_super) {
         __extends(DesktopBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DesktopBridge() {
@@ -11982,7 +12276,7 @@ device.
     var MapBridge = (function (_super) {
         __extends(MapBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MapBridge() {
@@ -12002,7 +12296,7 @@ device.
     var UIBridge = (function (_super) {
         __extends(UIBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function UIBridge() {
@@ -12022,7 +12316,7 @@ device.
     var CompressionBridge = (function (_super) {
         __extends(CompressionBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CompressionBridge() {
@@ -12042,7 +12336,7 @@ device.
     var ConcurrentBridge = (function (_super) {
         __extends(ConcurrentBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ConcurrentBridge() {
@@ -12062,7 +12356,7 @@ device.
     var CryptoBridge = (function (_super) {
         __extends(CryptoBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CryptoBridge() {
@@ -12082,7 +12376,7 @@ device.
     var LoggingBridge = (function (_super) {
         __extends(LoggingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function LoggingBridge() {
@@ -12158,7 +12452,7 @@ device.
     var TimerBridge = (function (_super) {
         __extends(TimerBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function TimerBridge() {
@@ -13043,359 +13337,357 @@ device.
         /**
            @private
            @static
+           @property {Adaptive.AppRegistryBridge} instance
            Singleton instance of AppRegistry.
         */
         AppRegistryBridge.instance = null;
         /**
-           Singleton instances of Bridges.
-        */
-        /**
-           @static
+           @private
            @property {Adaptive.IAcceleration} instanceAcceleration
         */
         AppRegistryBridge.instanceAcceleration = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAds} instanceAds
         */
         AppRegistryBridge.instanceAds = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAlarm} instanceAlarm
         */
         AppRegistryBridge.instanceAlarm = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAmbientLight} instanceAmbientLight
         */
         AppRegistryBridge.instanceAmbientLight = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAnalytics} instanceAnalytics
         */
         AppRegistryBridge.instanceAnalytics = null;
         /**
-           @static
+           @private
            @property {Adaptive.IAudio} instanceAudio
         */
         AppRegistryBridge.instanceAudio = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBarcode} instanceBarcode
         */
         AppRegistryBridge.instanceBarcode = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBarometer} instanceBarometer
         */
         AppRegistryBridge.instanceBarometer = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBluetooth} instanceBluetooth
         */
         AppRegistryBridge.instanceBluetooth = null;
         /**
-           @static
+           @private
            @property {Adaptive.IBrowser} instanceBrowser
         */
         AppRegistryBridge.instanceBrowser = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICalendar} instanceCalendar
         */
         AppRegistryBridge.instanceCalendar = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICamera} instanceCamera
         */
         AppRegistryBridge.instanceCamera = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICapabilities} instanceCapabilities
         */
         AppRegistryBridge.instanceCapabilities = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICloud} instanceCloud
         */
         AppRegistryBridge.instanceCloud = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICompression} instanceCompression
         */
         AppRegistryBridge.instanceCompression = null;
         /**
-           @static
+           @private
            @property {Adaptive.IConcurrent} instanceConcurrent
         */
         AppRegistryBridge.instanceConcurrent = null;
         /**
-           @static
+           @private
            @property {Adaptive.IContact} instanceContact
         */
         AppRegistryBridge.instanceContact = null;
         /**
-           @static
+           @private
            @property {Adaptive.ICrypto} instanceCrypto
         */
         AppRegistryBridge.instanceCrypto = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDataStream} instanceDataStream
         */
         AppRegistryBridge.instanceDataStream = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDatabase} instanceDatabase
         */
         AppRegistryBridge.instanceDatabase = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDesktop} instanceDesktop
         */
         AppRegistryBridge.instanceDesktop = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDevice} instanceDevice
         */
         AppRegistryBridge.instanceDevice = null;
         /**
-           @static
+           @private
            @property {Adaptive.IDisplay} instanceDisplay
         */
         AppRegistryBridge.instanceDisplay = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFacebook} instanceFacebook
         */
         AppRegistryBridge.instanceFacebook = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFile} instanceFile
         */
         AppRegistryBridge.instanceFile = null;
         /**
-           @static
+           @private
            @property {Adaptive.IFileSystem} instanceFileSystem
         */
         AppRegistryBridge.instanceFileSystem = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGeolocation} instanceGeolocation
         */
         AppRegistryBridge.instanceGeolocation = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGlobalization} instanceGlobalization
         */
         AppRegistryBridge.instanceGlobalization = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGooglePlus} instanceGooglePlus
         */
         AppRegistryBridge.instanceGooglePlus = null;
         /**
-           @static
+           @private
            @property {Adaptive.IGyroscope} instanceGyroscope
         */
         AppRegistryBridge.instanceGyroscope = null;
         /**
-           @static
+           @private
            @property {Adaptive.IImaging} instanceImaging
         */
         AppRegistryBridge.instanceImaging = null;
         /**
-           @static
+           @private
            @property {Adaptive.IInternalStorage} instanceInternalStorage
         */
         AppRegistryBridge.instanceInternalStorage = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILifecycle} instanceLifecycle
         */
         AppRegistryBridge.instanceLifecycle = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILinkedIn} instanceLinkedIn
         */
         AppRegistryBridge.instanceLinkedIn = null;
         /**
-           @static
+           @private
            @property {Adaptive.ILogging} instanceLogging
         */
         AppRegistryBridge.instanceLogging = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMagnetometer} instanceMagnetometer
         */
         AppRegistryBridge.instanceMagnetometer = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMail} instanceMail
         */
         AppRegistryBridge.instanceMail = null;
         /**
-           @static
+           @private
            @property {Adaptive.IManagement} instanceManagement
         */
         AppRegistryBridge.instanceManagement = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMap} instanceMap
         */
         AppRegistryBridge.instanceMap = null;
         /**
-           @static
+           @private
            @property {Adaptive.IMessaging} instanceMessaging
         */
         AppRegistryBridge.instanceMessaging = null;
         /**
-           @static
+           @private
            @property {Adaptive.INFC} instanceNFC
         */
         AppRegistryBridge.instanceNFC = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkInfo} instanceNetworkInfo
         */
         AppRegistryBridge.instanceNetworkInfo = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkNaming} instanceNetworkNaming
         */
         AppRegistryBridge.instanceNetworkNaming = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkReachability} instanceNetworkReachability
         */
         AppRegistryBridge.instanceNetworkReachability = null;
         /**
-           @static
+           @private
            @property {Adaptive.INetworkStatus} instanceNetworkStatus
         */
         AppRegistryBridge.instanceNetworkStatus = null;
         /**
-           @static
+           @private
            @property {Adaptive.INotification} instanceNotification
         */
         AppRegistryBridge.instanceNotification = null;
         /**
-           @static
+           @private
            @property {Adaptive.INotificationLocal} instanceNotificationLocal
         */
         AppRegistryBridge.instanceNotificationLocal = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOAuth} instanceOAuth
         */
         AppRegistryBridge.instanceOAuth = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOCR} instanceOCR
         */
         AppRegistryBridge.instanceOCR = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOS} instanceOS
         */
         AppRegistryBridge.instanceOS = null;
         /**
-           @static
+           @private
            @property {Adaptive.IOpenId} instanceOpenId
         */
         AppRegistryBridge.instanceOpenId = null;
         /**
-           @static
+           @private
            @property {Adaptive.IPrinting} instancePrinting
         */
         AppRegistryBridge.instancePrinting = null;
         /**
-           @static
+           @private
            @property {Adaptive.IProximity} instanceProximity
         */
         AppRegistryBridge.instanceProximity = null;
         /**
-           @static
+           @private
            @property {Adaptive.IQRCode} instanceQRCode
         */
         AppRegistryBridge.instanceQRCode = null;
         /**
-           @static
+           @private
            @property {Adaptive.IRSS} instanceRSS
         */
         AppRegistryBridge.instanceRSS = null;
         /**
-           @static
+           @private
            @property {Adaptive.IRuntime} instanceRuntime
         */
         AppRegistryBridge.instanceRuntime = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISecurity} instanceSecurity
         */
         AppRegistryBridge.instanceSecurity = null;
         /**
-           @static
+           @private
            @property {Adaptive.IService} instanceService
         */
         AppRegistryBridge.instanceService = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISettings} instanceSettings
         */
         AppRegistryBridge.instanceSettings = null;
         /**
-           @static
+           @private
            @property {Adaptive.ISocket} instanceSocket
         */
         AppRegistryBridge.instanceSocket = null;
         /**
-           @static
+           @private
            @property {Adaptive.IStore} instanceStore
         */
         AppRegistryBridge.instanceStore = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITelephony} instanceTelephony
         */
         AppRegistryBridge.instanceTelephony = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITimer} instanceTimer
         */
         AppRegistryBridge.instanceTimer = null;
         /**
-           @static
+           @private
            @property {Adaptive.ITwitter} instanceTwitter
         */
         AppRegistryBridge.instanceTwitter = null;
         /**
-           @static
+           @private
            @property {Adaptive.IUI} instanceUI
         */
         AppRegistryBridge.instanceUI = null;
         /**
-           @static
+           @private
            @property {Adaptive.IUpdate} instanceUpdate
         */
         AppRegistryBridge.instanceUpdate = null;
         /**
-           @static
+           @private
            @property {Adaptive.IVibration} instanceVibration
         */
         AppRegistryBridge.instanceVibration = null;
         /**
-           @static
+           @private
            @property {Adaptive.IVideo} instanceVideo
         */
         AppRegistryBridge.instanceVideo = null;
         /**
-           @static
+           @private
            @property {Adaptive.IWallet} instanceWallet
         */
         AppRegistryBridge.instanceWallet = null;
         /**
-           @static
+           @private
            @property {Adaptive.IXML} instanceXML
         */
         AppRegistryBridge.instanceXML = null;

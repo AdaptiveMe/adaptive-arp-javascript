@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class FacebookBridge extends BaseSocialBridge implements IFacebook {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

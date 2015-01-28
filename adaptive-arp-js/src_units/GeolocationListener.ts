@@ -88,9 +88,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: IGeolocationListenerError
-             @param onResultFunction Function receiving parameters of type: Geolocation
-             @param onWarningFunction Function receiving parameters of type: Geolocation, IGeolocationListenerWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+             @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+             @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
           */
           constructor(onErrorFunction : (error : IGeolocationListenerError) => void, onResultFunction : (geolocation : Geolocation) => void, onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void) {
                super(++registeredCounter);

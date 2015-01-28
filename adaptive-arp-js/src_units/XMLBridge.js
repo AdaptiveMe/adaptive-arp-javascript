@@ -57,7 +57,7 @@ var Adaptive;
     var XMLBridge = (function (_super) {
         __extends(XMLBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function XMLBridge() {

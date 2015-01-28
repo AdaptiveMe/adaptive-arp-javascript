@@ -53,7 +53,7 @@ module Adaptive {
           /**
              @method
              Returns the OSInfo for the current operating system.
-             @return {OSInfo} OSInfo with name, version and vendor of the OS.
+             @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
              @since ARP1.0
           */
           getOSInfo() : OSInfo;

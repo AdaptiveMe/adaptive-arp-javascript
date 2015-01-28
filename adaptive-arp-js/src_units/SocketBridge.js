@@ -57,7 +57,7 @@ var Adaptive;
     var SocketBridge = (function (_super) {
         __extends(SocketBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function SocketBridge() {

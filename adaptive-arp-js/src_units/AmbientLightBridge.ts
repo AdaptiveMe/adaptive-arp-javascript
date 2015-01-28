@@ -52,7 +52,7 @@ module Adaptive {
      export class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

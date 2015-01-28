@@ -56,7 +56,7 @@ declare module Adaptive {
     */
     class ContactBridge extends BasePIMBridge implements IContact {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

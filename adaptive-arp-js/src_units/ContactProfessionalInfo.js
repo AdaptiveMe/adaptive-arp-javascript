@@ -52,11 +52,12 @@ var Adaptive;
     var ContactProfessionalInfo = (function (_super) {
         __extends(ContactProfessionalInfo, _super);
         /**
+           @method constructor
            Constructor used by implementation to set the ContactProfessionalInfo.
 
-           @param jobTitle       The job title
-           @param jobDescription The job description
-           @param company        The company of the job
+           @param {string} jobTitle       The job title
+           @param {string} jobDescription The job description
+           @param {string} company        The company of the job
            @since ARP1.0
         */
         function ContactProfessionalInfo(jobTitle, jobDescription, company) {
@@ -66,54 +67,60 @@ var Adaptive;
             this.company = company;
         }
         /**
+           @method
            Returns the company of the job
 
-           @return company
+           @return {string} company
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getCompany = function () {
             return this.company;
         };
         /**
+           @method
            Set the company of the job
 
-           @param company The company of the job
+           @param {string} company The company of the job
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setCompany = function (company) {
             this.company = company;
         };
         /**
+           @method
            Returns the description of the job
 
-           @return description
+           @return {string} description
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getJobDescription = function () {
             return this.jobDescription;
         };
         /**
+           @method
            Set the description of the job
 
-           @param jobDescription The job description
+           @param {string} jobDescription The job description
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setJobDescription = function (jobDescription) {
             this.jobDescription = jobDescription;
         };
         /**
+           @method
            Returns the title of the job
 
-           @return title
+           @return {string} title
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.getJobTitle = function () {
             return this.jobTitle;
         };
         /**
+           @method
            Set the title of the job
 
-           @param jobTitle The job title
+           @param {string} jobTitle The job title
            @since ARP1.0
         */
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {

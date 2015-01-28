@@ -52,7 +52,7 @@ module Adaptive {
      export class OCRBridge extends BaseReaderBridge implements IOCR {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

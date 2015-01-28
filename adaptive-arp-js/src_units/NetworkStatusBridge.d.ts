@@ -51,7 +51,7 @@ declare module Adaptive {
     */
     class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseSensorBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseSensorBridge() {

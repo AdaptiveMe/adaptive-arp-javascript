@@ -53,38 +53,43 @@ declare module Adaptive {
         */
         cookies: ServiceCookie[];
         /**
+           @method constructor
            Constructor with fields
 
-           @param cookies    The cookies of the response
-           @param attributes Attributes of the response
+           @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         constructor(cookies: ServiceCookie[], attributes: string[]);
         /**
+           @method
            Gets the attributes of the response
 
-           @return Attributes of the response
+           @return {string[]} Attributes of the response
            @since ARP1.0
         */
         getAttributes(): string[];
         /**
+           @method
            Sets the attributes for the response
 
-           @param attributes Attributes of the response
+           @param {string[]} attributes Attributes of the response
            @since ARP1.0
         */
         setAttributes(attributes: string[]): void;
         /**
+           @method
            Returns the cookies of the response
 
-           @return The cookies of the response
+           @return {Adaptive.ServiceCookie[]} The cookies of the response
            @since ARP1.0
         */
         getCookies(): ServiceCookie[];
         /**
+           @method
            Sets the cookies of the response
 
-           @param cookies The cookies of the response
+           @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
            @since ARP1.0
         */
         setCookies(cookies: ServiceCookie[]): void;

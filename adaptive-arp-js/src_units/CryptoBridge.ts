@@ -52,7 +52,7 @@ module Adaptive {
      export class CryptoBridge extends BaseUtilBridge implements ICrypto {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

@@ -58,67 +58,76 @@ declare module Adaptive {
         */
         parameters: string[];
         /**
+           @method constructor
            Constructor with all the parameters
 
-           @param bridgeType Name of the bridge to be invoked.
-           @param methodName Name of the method
-           @param parameters Array of parameters as JSON formatted strings.
-           @param asyncId    Id of callback or listener or zero if none for synchronous calls.
+           @param {string} bridgeType Name of the bridge to be invoked.
+           @param {string} methodName Name of the method
+           @param {string[]} parameters Array of parameters as JSON formatted strings.
+           @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
            @since ARP1.0
         */
         constructor(bridgeType: string, methodName: string, parameters: string[], asyncId: number);
         /**
+           @method
            Returns the callback or listener id assigned to this request OR zero if there is no associated callback or
 listener.
 
-           @return long with the unique id of the callback or listener, or zero if there is no associated async event.
+           @return {number} long with the unique id of the callback or listener, or zero if there is no associated async event.
         */
         getAsyncId(): number;
         /**
+           @method
            Sets the callback or listener id to the request.
 
-           @param asyncId The unique id of the callback or listener.
+           @param {number} asyncId The unique id of the callback or listener.
         */
         setAsyncId(asyncId: number): void;
         /**
+           @method
            Bridge Type Getter
 
-           @return Bridge Type
+           @return {string} Bridge Type
            @since ARP1.0
         */
         getBridgeType(): string;
         /**
+           @method
            Bridge Type Setter
 
-           @param bridgeType Bridge Type
+           @param {string} bridgeType Bridge Type
            @since ARP1.0
         */
         setBridgeType(bridgeType: string): void;
         /**
+           @method
            Method name Getter
 
-           @return Method name
+           @return {string} Method name
            @since ARP1.0
         */
         getMethodName(): string;
         /**
+           @method
            Method name Setter
 
-           @param methodName Method name
+           @param {string} methodName Method name
            @since ARP1.0
         */
         setMethodName(methodName: string): void;
         /**
+           @method
            Parameters Getter
 
-           @return Parameters
+           @return {string[]} Parameters
            @since ARP1.0
         */
         getParameters(): string[];
         /**
+           @method
            Parameters Setter
 
-           @param parameters Parameters, JSON formatted strings of objects.
+           @param {string[]} parameters Parameters, JSON formatted strings of objects.
            @since ARP1.0
         */
         setParameters(parameters: string[]): void;

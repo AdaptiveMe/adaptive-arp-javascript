@@ -57,7 +57,7 @@ var Adaptive;
     var UIBridge = (function (_super) {
         __extends(UIBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function UIBridge() {

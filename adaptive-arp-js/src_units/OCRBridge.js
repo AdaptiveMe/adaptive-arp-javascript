@@ -57,7 +57,7 @@ var Adaptive;
     var OCRBridge = (function (_super) {
         __extends(OCRBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OCRBridge() {

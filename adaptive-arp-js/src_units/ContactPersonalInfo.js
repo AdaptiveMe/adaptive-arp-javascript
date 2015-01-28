@@ -53,12 +53,13 @@ var Adaptive;
     var ContactPersonalInfo = (function (_super) {
         __extends(ContactPersonalInfo, _super);
         /**
+           @method constructor
            The Constructor used by the implementation
 
-           @param name       of the Contact
-           @param middleName of the Contact
-           @param lastName   of the Contact
-           @param title      of the Contact
+           @param {string} name       of the Contact
+           @param {string} middleName of the Contact
+           @param {string} lastName   of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
            @since ARP1.0
         */
         function ContactPersonalInfo(name, middleName, lastName, title) {
@@ -69,72 +70,80 @@ var Adaptive;
             this.title = title;
         }
         /**
+           @method
            Returns the title of the Contact
 
-           @return Title
+           @return {Adaptive.ContactPersonalInfoTitle} Title
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getTitle = function () {
             return this.title;
         };
         /**
+           @method
            Set the Title of the Contact
 
-           @param title of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setTitle = function (title) {
             this.title = title;
         };
         /**
+           @method
            Returns the last name of the Contact
 
-           @return lastName
+           @return {string} lastName
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getLastName = function () {
             return this.lastName;
         };
         /**
+           @method
            Set the last name of the Contact
 
-           @param lastName of the Contact
+           @param {string} lastName of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setLastName = function (lastName) {
             this.lastName = lastName;
         };
         /**
+           @method
            Returns the middle name of the Contact
 
-           @return middelName
+           @return {string} middelName
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getMiddleName = function () {
             return this.middleName;
         };
         /**
+           @method
            Set the middle name of the Contact
 
-           @param middleName of the Contact
+           @param {string} middleName of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setMiddleName = function (middleName) {
             this.middleName = middleName;
         };
         /**
+           @method
            Returns the name of the Contact
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.getName = function () {
             return this.name;
         };
         /**
+           @method
            Set the name of the Contact
 
-           @param name of the Contact
+           @param {string} name of the Contact
            @since ARP1.0
         */
         ContactPersonalInfo.prototype.setName = function (name) {

@@ -53,13 +53,14 @@ var Adaptive;
     var ServiceEndpoint = (function (_super) {
         __extends(ServiceEndpoint, _super);
         /**
+           @method constructor
            Constructor with parameters
 
-           @param host   Remote service host
-           @param paths  Remote service Paths
-           @param port   Remote service Port
-           @param proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-           @param scheme Remote service scheme
+           @param {string} host   Remote service host
+           @param {Adaptive.ServicePath[]} paths  Remote service Paths
+           @param {number} port   Remote service Port
+           @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         function ServiceEndpoint(host, paths, port, proxy, scheme) {
@@ -71,90 +72,100 @@ var Adaptive;
             this.scheme = scheme;
         }
         /**
+           @method
            Returns the Remote service host
 
-           @return Remote service host
+           @return {string} Remote service host
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getHost = function () {
             return this.host;
         };
         /**
+           @method
            Set the Remote service host
 
-           @param host Remote service host
+           @param {string} host Remote service host
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setHost = function (host) {
             this.host = host;
         };
         /**
+           @method
            Returns the Remote service Paths
 
-           @return Remote service Paths
+           @return {Adaptive.ServicePath[]} Remote service Paths
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getPaths = function () {
             return this.paths;
         };
         /**
+           @method
            Set the Remote service Paths
 
-           @param paths Remote service Paths
+           @param {Adaptive.ServicePath[]} paths Remote service Paths
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setPaths = function (paths) {
             this.paths = paths;
         };
         /**
+           @method
            Returns the Remote service Port
 
-           @return Remote service Port
+           @return {number} Remote service Port
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getPort = function () {
             return this.port;
         };
         /**
+           @method
            Set the Remote service Port
 
-           @param port Remote service Port
+           @param {number} port Remote service Port
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setPort = function (port) {
             this.port = port;
         };
         /**
+           @method
            Return the Proxy url
 
-           @return Proxy url
+           @return {string} Proxy url
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getProxy = function () {
             return this.proxy;
         };
         /**
+           @method
            Set the Proxy url
 
-           @param proxy Proxy url
+           @param {string} proxy Proxy url
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setProxy = function (proxy) {
             this.proxy = proxy;
         };
         /**
+           @method
            Returns the Remote service scheme
 
-           @return Remote service scheme
+           @return {string} Remote service scheme
            @since ARP1.0
         */
         ServiceEndpoint.prototype.getScheme = function () {
             return this.scheme;
         };
         /**
+           @method
            Set the Remote service scheme
 
-           @param scheme Remote service scheme
+           @param {string} scheme Remote service scheme
            @since ARP1.0
         */
         ServiceEndpoint.prototype.setScheme = function (scheme) {

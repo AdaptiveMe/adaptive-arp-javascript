@@ -52,7 +52,7 @@ module Adaptive {
      export class UpdateBridge extends BaseApplicationBridge implements IUpdate {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

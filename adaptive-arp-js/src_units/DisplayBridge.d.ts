@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class DisplayBridge extends BaseSystemBridge implements IDisplay {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

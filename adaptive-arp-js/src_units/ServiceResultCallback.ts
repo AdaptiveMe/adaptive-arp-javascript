@@ -91,9 +91,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IServiceResultCallbackError
-             @param onResultFunction Function receiving parameters of type: ServiceResponse
-             @param onWarningFunction Function receiving parameters of type: ServiceResponse, IServiceResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+             @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IServiceResultCallbackError) => void, onResultFunction : (response : ServiceResponse) => void, onWarningFunction : (response : ServiceResponse, warning : IServiceResultCallbackWarning) => void) {
                super(++registeredCounter);

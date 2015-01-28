@@ -57,7 +57,7 @@ var Adaptive;
     var OAuthBridge = (function (_super) {
         __extends(OAuthBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function OAuthBridge() {

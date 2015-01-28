@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class CompressionBridge extends BaseUtilBridge implements ICompression {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

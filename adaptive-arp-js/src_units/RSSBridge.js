@@ -57,7 +57,7 @@ var Adaptive;
     var RSSBridge = (function (_super) {
         __extends(RSSBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function RSSBridge() {

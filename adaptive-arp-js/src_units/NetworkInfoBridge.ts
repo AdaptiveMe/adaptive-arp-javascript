@@ -52,7 +52,7 @@ module Adaptive {
      export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

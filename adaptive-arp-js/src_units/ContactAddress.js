@@ -53,10 +53,11 @@ var Adaptive;
     var ContactAddress = (function (_super) {
         __extends(ContactAddress, _super);
         /**
+           @method constructor
            Constructor with fields
 
-           @param address Address data.
-           @param type    Address type.
+           @param {string} address Address data.
+           @param {Adaptive.ContactAddressType} type    Address type.
            @since ARP1.0
         */
         function ContactAddress(address, type) {
@@ -65,36 +66,40 @@ var Adaptive;
             this.type = type;
         }
         /**
+           @method
            Returns the type of the address
 
-           @return AddressType Address type.
+           @return {Adaptive.ContactAddressType} AddressType Address type.
            @since ARP1.0
         */
         ContactAddress.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the address type
 
-           @param type Address type.
+           @param {Adaptive.ContactAddressType} type Address type.
            @since ARP1.0
         */
         ContactAddress.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the Contact address
 
-           @return address Address data.
+           @return {string} address Address data.
            @since ARP1.0
         */
         ContactAddress.prototype.getAddress = function () {
             return this.address;
         };
         /**
+           @method
            Set the address of the Contact
 
-           @param address Address data.
+           @param {string} address Address data.
            @since ARP1.0
         */
         ContactAddress.prototype.setAddress = function (address) {

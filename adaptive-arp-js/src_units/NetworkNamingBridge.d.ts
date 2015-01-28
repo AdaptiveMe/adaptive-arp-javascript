@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

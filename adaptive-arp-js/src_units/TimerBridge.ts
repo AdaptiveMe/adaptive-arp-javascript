@@ -52,7 +52,7 @@ module Adaptive {
      export class TimerBridge extends BaseUtilBridge implements ITimer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

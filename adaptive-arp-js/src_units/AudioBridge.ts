@@ -52,7 +52,7 @@ module Adaptive {
      export class AudioBridge extends BaseMediaBridge implements IAudio {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

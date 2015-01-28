@@ -57,7 +57,7 @@ var Adaptive;
     var RuntimeBridge = (function (_super) {
         __extends(RuntimeBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function RuntimeBridge() {

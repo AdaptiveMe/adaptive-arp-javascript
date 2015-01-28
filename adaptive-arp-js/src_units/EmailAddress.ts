@@ -52,9 +52,10 @@ module Adaptive {
           */
           address : string;
           /**
+             @method constructor
              Constructor used by implementation
 
-             @param address of the Email
+             @param {string} address of the Email
              @since ARP1.0
           */
           constructor(address: string) {
@@ -63,9 +64,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the email address
 
-             @return address of the Email
+             @return {string} address of the Email
              @since ARP1.0
           */
           getAddress() : string {
@@ -73,9 +75,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the Email address
 
-             @param address of the Email
+             @param {string} address of the Email
              @since ARP1.0
           */
           setAddress(address: string) {

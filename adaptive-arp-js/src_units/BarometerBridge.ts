@@ -52,7 +52,7 @@ module Adaptive {
      export class BarometerBridge extends BaseSensorBridge implements IBarometer {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

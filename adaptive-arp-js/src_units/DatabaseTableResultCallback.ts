@@ -91,9 +91,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IDatabaseTableResultCallbackError
-             @param onResultFunction Function receiving parameters of type: DatabaseTable
-             @param onWarningFunction Function receiving parameters of type: DatabaseTable, IDatabaseTableResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseTableResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.DatabaseTable
+             @param onWarningFunction Function receiving parameters of type: Adaptive.DatabaseTable, Adaptive.IDatabaseTableResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseTableResultCallbackError) => void, onResultFunction : (databaseTable : DatabaseTable) => void, onWarningFunction : (databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) => void) {
                super(++registeredCounter);

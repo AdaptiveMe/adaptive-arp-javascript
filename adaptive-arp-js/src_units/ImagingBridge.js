@@ -57,7 +57,7 @@ var Adaptive;
     var ImagingBridge = (function (_super) {
         __extends(ImagingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ImagingBridge() {

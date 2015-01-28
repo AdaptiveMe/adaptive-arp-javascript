@@ -57,7 +57,7 @@ var Adaptive;
     var StoreBridge = (function (_super) {
         __extends(StoreBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function StoreBridge() {

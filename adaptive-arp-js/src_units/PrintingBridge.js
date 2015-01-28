@@ -57,7 +57,7 @@ var Adaptive;
     var PrintingBridge = (function (_super) {
         __extends(PrintingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function PrintingBridge() {

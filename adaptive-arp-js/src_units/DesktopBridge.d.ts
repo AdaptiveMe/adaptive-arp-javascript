@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class DesktopBridge extends BaseUIBridge implements IDesktop {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

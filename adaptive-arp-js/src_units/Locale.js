@@ -52,10 +52,11 @@ var Adaptive;
     var Locale = (function (_super) {
         __extends(Locale, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param country  Country of the Locale
-           @param language Language of the Locale
+           @param {string} country  Country of the Locale
+           @param {string} language Language of the Locale
            @since ARP1.0
         */
         function Locale(language, country) {
@@ -64,36 +65,40 @@ var Adaptive;
             this.country = country;
         }
         /**
+           @method
            Returns the country code
 
-           @return country code
+           @return {string} country code
            @since ARP1.0
         */
         Locale.prototype.getCountry = function () {
             return this.country;
         };
         /**
+           @method
            Set the country code
 
-           @param country code
+           @param {string} country code
            @since ARP1.0
         */
         Locale.prototype.setCountry = function (country) {
             this.country = country;
         };
         /**
+           @method
            Returns the language code
 
-           @return language code
+           @return {string} language code
            @since ARP1.0
         */
         Locale.prototype.getLanguage = function () {
             return this.language;
         };
         /**
+           @method
            Set the language code
 
-           @param language code
+           @param {string} language code
            @since ARP1.0
         */
         Locale.prototype.setLanguage = function (language) {

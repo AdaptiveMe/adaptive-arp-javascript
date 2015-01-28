@@ -51,34 +51,39 @@ declare module Adaptive {
         */
         path: string;
         /**
+           @method constructor
            Constructor with parameters
 
-           @param path    The path for the endpoint
-           @param methods The methods for calling a path
+           @param {string} path    The path for the endpoint
+           @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
         */
         constructor(path: string, methods: IServiceMethod[]);
         /**
+           @method
            Endpoint's path methods setter
 
-           @return Endpoint's path methods
+           @return {Adaptive.IServiceMethod[]} Endpoint's path methods
         */
         getMethods(): IServiceMethod[];
         /**
+           @method
            Endpoint's path methods setter
 
-           @param methods Endpoint's path methods
+           @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
         */
         setMethods(methods: IServiceMethod[]): void;
         /**
+           @method
            Endpoint's Path Getter
 
-           @return Endpoint's Path
+           @return {string} Endpoint's Path
         */
         getPath(): string;
         /**
+           @method
            Endpoint's path setter
 
-           @param path Endpoint's path
+           @param {string} path Endpoint's path
         */
         setPath(path: string): void;
         /**

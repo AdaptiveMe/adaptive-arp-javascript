@@ -52,9 +52,10 @@ module Adaptive {
           */
           contactId : string;
           /**
+             @method constructor
              Constructor used by implementation to set the Contact id.
 
-             @param contactId Internal unique contact id.
+             @param {string} contactId Internal unique contact id.
              @since ARP1.0
           */
           constructor(contactId: string) {
@@ -63,9 +64,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the contact id
 
-             @return Contactid Internal unique contact id.
+             @return {string} Contactid Internal unique contact id.
              @since ARP1.0
           */
           getContactId() : string {
@@ -73,9 +75,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Set the id of the Contact
 
-             @param contactId Internal unique contact id.
+             @param {string} contactId Internal unique contact id.
              @since ARP1.0
           */
           setContactId(contactId: string) {

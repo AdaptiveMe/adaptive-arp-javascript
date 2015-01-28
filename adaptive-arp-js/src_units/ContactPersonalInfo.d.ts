@@ -61,68 +61,77 @@ declare module Adaptive {
         */
         name: string;
         /**
+           @method constructor
            The Constructor used by the implementation
 
-           @param name       of the Contact
-           @param middleName of the Contact
-           @param lastName   of the Contact
-           @param title      of the Contact
+           @param {string} name       of the Contact
+           @param {string} middleName of the Contact
+           @param {string} lastName   of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
            @since ARP1.0
         */
         constructor(name: string, middleName: string, lastName: string, title: ContactPersonalInfoTitle);
         /**
+           @method
            Returns the title of the Contact
 
-           @return Title
+           @return {Adaptive.ContactPersonalInfoTitle} Title
            @since ARP1.0
         */
         getTitle(): ContactPersonalInfoTitle;
         /**
+           @method
            Set the Title of the Contact
 
-           @param title of the Contact
+           @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
            @since ARP1.0
         */
         setTitle(title: ContactPersonalInfoTitle): void;
         /**
+           @method
            Returns the last name of the Contact
 
-           @return lastName
+           @return {string} lastName
            @since ARP1.0
         */
         getLastName(): string;
         /**
+           @method
            Set the last name of the Contact
 
-           @param lastName of the Contact
+           @param {string} lastName of the Contact
            @since ARP1.0
         */
         setLastName(lastName: string): void;
         /**
+           @method
            Returns the middle name of the Contact
 
-           @return middelName
+           @return {string} middelName
            @since ARP1.0
         */
         getMiddleName(): string;
         /**
+           @method
            Set the middle name of the Contact
 
-           @param middleName of the Contact
+           @param {string} middleName of the Contact
            @since ARP1.0
         */
         setMiddleName(middleName: string): void;
         /**
+           @method
            Returns the name of the Contact
 
-           @return name
+           @return {string} name
            @since ARP1.0
         */
         getName(): string;
         /**
+           @method
            Set the name of the Contact
 
-           @param name of the Contact
+           @param {string} name of the Contact
            @since ARP1.0
         */
         setName(name: string): void;

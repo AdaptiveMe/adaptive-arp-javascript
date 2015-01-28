@@ -93,9 +93,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IContactPhotoResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<number>
-           @param onWarningFunction Function receiving parameters of type: Array<number>, IContactPhotoResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+           @param onResultFunction Function receiving parameters of type: number[]
+           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
         function ContactPhotoResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

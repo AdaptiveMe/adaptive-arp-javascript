@@ -91,9 +91,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Button
-           @param onWarningFunction Function receiving parameters of type: Button, IButtonListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         function ButtonListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

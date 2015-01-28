@@ -57,7 +57,7 @@ var Adaptive;
     var DisplayBridge = (function (_super) {
         __extends(DisplayBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function DisplayBridge() {

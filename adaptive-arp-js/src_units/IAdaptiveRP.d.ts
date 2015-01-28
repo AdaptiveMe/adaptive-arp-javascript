@@ -47,7 +47,7 @@ declare module Adaptive {
         /**
            @method
            Method that returns the API group of the implementation
-           @return {IAdaptiveRPGroup} API Group name.
+           @return {Adaptive.IAdaptiveRPGroup} API Group name.
            @since ARP1.0
         */
         getAPIGroup(): IAdaptiveRPGroup;

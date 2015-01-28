@@ -52,7 +52,7 @@ module Adaptive {
      export class ProximityBridge extends BaseSensorBridge implements IProximity {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

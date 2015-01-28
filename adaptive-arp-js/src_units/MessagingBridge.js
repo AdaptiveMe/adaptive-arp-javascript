@@ -59,7 +59,7 @@ var Adaptive;
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function MessagingBridge() {

@@ -93,9 +93,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Array<number>
-           @param onWarningFunction Function receiving parameters of type: Array<number>, IFileDataLoadResultCallbackWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param onResultFunction Function receiving parameters of type: number[]
+           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         function FileDataLoadResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

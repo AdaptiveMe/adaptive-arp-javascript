@@ -52,7 +52,7 @@ module Adaptive {
      export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

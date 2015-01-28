@@ -57,7 +57,7 @@ var Adaptive;
     var InternalStorageBridge = (function (_super) {
         __extends(InternalStorageBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function InternalStorageBridge() {

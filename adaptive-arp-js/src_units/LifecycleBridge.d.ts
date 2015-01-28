@@ -51,7 +51,7 @@ declare module Adaptive {
     */
     class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

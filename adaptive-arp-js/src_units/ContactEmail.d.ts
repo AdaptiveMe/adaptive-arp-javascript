@@ -57,53 +57,60 @@ declare module Adaptive {
         */
         primary: boolean;
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param type    Type of the email
-           @param primary Is email primary
-           @param email   Email of the contact
+           @param {Adaptive.ContactEmailType} type    Type of the email
+           @param {boolean} primary Is email primary
+           @param {string} email   Email of the contact
            @since ARP1.0
         */
         constructor(type: ContactEmailType, primary: boolean, email: string);
         /**
+           @method
            Returns the type of the email
 
-           @return EmailType
+           @return {Adaptive.ContactEmailType} EmailType
            @since ARP1.0
         */
         getType(): ContactEmailType;
         /**
+           @method
            Set the type of the email
 
-           @param type Type of the email
+           @param {Adaptive.ContactEmailType} type Type of the email
            @since ARP1.0
         */
         setType(type: ContactEmailType): void;
         /**
+           @method
            Returns the email of the Contact
 
-           @return email
+           @return {string} email
            @since ARP1.0
         */
         getEmail(): string;
         /**
+           @method
            Set the email of the Contact
 
-           @param email Email of the contact
+           @param {string} email Email of the contact
            @since ARP1.0
         */
         setEmail(email: string): void;
         /**
+           @method
            Returns if the email is primary
 
-           @return true if the email is primary; false otherwise
+           @return {boolean} true if the email is primary; false otherwise
            @since ARP1.0
         */
         getPrimary(): boolean;
         /**
+           @method
            Set if the email
 
-           @param primary true if the email is primary; false otherwise
+           @param {boolean} primary true if the email is primary; false otherwise
            @since ARP1.0
         */
         setPrimary(primary: boolean): void;

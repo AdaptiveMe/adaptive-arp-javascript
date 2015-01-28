@@ -51,21 +51,21 @@ declare module Adaptive {
     */
     class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();
         /**
            Returns the default locale of the application defined in the configuration file
 
-           @return {Locale} Default Locale of the application
+           @return {Adaptive.Locale} Default Locale of the application
            @since ARP1.0
         */
         getDefaultLocale(): Locale;
         /**
            List of supported locales for the application defined in the configuration file
 
-           @return {[Adaptive.Locale]} List of locales
+           @return {Adaptive.Locale[]} List of locales
            @since ARP1.0
         */
         getLocaleSupportedDescriptors(): Locale[];
@@ -82,7 +82,7 @@ declare module Adaptive {
            Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
            @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
-           @return {[Adaptive.KeyPair]} Localized texts in the form of an object.
+           @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since ARP1.0
         */
         getResourceLiterals(locale: Locale): KeyPair[];

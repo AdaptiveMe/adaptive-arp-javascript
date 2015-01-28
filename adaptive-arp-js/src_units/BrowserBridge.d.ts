@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class BrowserBridge extends BaseUIBridge implements IBrowser {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

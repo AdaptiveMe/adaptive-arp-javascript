@@ -59,9 +59,9 @@ declare module Adaptive {
         /**
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: IAccelerationListenerError
-           @param onResultFunction Function receiving parameters of type: Acceleration
-           @param onWarningFunction Function receiving parameters of type: Acceleration, IAccelerationListenerWarning
+           @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         constructor(onErrorFunction: (error: IAccelerationListenerError) => void, onResultFunction: (acceleration: Acceleration) => void, onWarningFunction: (acceleration: Acceleration, warning: IAccelerationListenerWarning) => void);
         /**

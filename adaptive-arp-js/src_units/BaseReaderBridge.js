@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseReaderBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseReaderBridge() {

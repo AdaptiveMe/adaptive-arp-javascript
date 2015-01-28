@@ -52,7 +52,7 @@ module Adaptive {
      export class AlarmBridge extends BaseNotificationBridge implements IAlarm {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {

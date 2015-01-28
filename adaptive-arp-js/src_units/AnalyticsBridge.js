@@ -57,7 +57,7 @@ var Adaptive;
     var AnalyticsBridge = (function (_super) {
         __extends(AnalyticsBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function AnalyticsBridge() {

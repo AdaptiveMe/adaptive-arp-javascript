@@ -57,11 +57,12 @@ module Adaptive {
           */
           statusMessage : string;
           /**
+             @method constructor
              Constructor with parameters.
 
-             @param response      String representing the JavaScript value or JSON object representation of the response.
-             @param statusCode    Status code of the response (200 = OK, others are warning or error conditions).
-             @param statusMessage Status message of the response.
+             @param {string} response      String representing the JavaScript value or JSON object representation of the response.
+             @param {number} statusCode    Status code of the response (200 = OK, others are warning or error conditions).
+             @param {string} statusMessage Status message of the response.
           */
           constructor(response: string, statusCode: number, statusMessage: string) {
                this.response = response;
@@ -70,9 +71,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Response getter
 
-             @return String representing the JavaScript value or JSON object representation of the response.
+             @return {string} String representing the JavaScript value or JSON object representation of the response.
              @since ARP1.0
           */
           getResponse() : string {
@@ -80,45 +82,50 @@ module Adaptive {
           }
 
           /**
+             @method
              Response setter
 
-             @param response String representing the JavaScript value or JSON object representation of the response.
+             @param {string} response String representing the JavaScript value or JSON object representation of the response.
           */
           setResponse(response: string) {
                this.response = response;
           }
 
           /**
+             @method
              Status code getter
 
-             @return Status code of the response (200 = OK, others are warning or error conditions).
+             @return {number} Status code of the response (200 = OK, others are warning or error conditions).
           */
           getStatusCode() : number {
                return this.statusCode;
           }
 
           /**
+             @method
              Status code setter
 
-             @param statusCode Status code of the response  (200 = OK, others are warning or error conditions).
+             @param {number} statusCode Status code of the response  (200 = OK, others are warning or error conditions).
           */
           setStatusCode(statusCode: number) {
                this.statusCode = statusCode;
           }
 
           /**
+             @method
              Status message getter
 
-             @return Status message of the response.
+             @return {string} Status message of the response.
           */
           getStatusMessage() : string {
                return this.statusMessage;
           }
 
           /**
+             @method
              Status message setter.
 
-             @param statusMessage Status message of the response
+             @param {string} statusMessage Status message of the response
           */
           setStatusMessage(statusMessage: string) {
                this.statusMessage = statusMessage;

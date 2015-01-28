@@ -53,11 +53,12 @@ var Adaptive;
     var ContactEmail = (function (_super) {
         __extends(ContactEmail, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param type    Type of the email
-           @param primary Is email primary
-           @param email   Email of the contact
+           @param {Adaptive.ContactEmailType} type    Type of the email
+           @param {boolean} primary Is email primary
+           @param {string} email   Email of the contact
            @since ARP1.0
         */
         function ContactEmail(type, primary, email) {
@@ -67,54 +68,60 @@ var Adaptive;
             this.email = email;
         }
         /**
+           @method
            Returns the type of the email
 
-           @return EmailType
+           @return {Adaptive.ContactEmailType} EmailType
            @since ARP1.0
         */
         ContactEmail.prototype.getType = function () {
             return this.type;
         };
         /**
+           @method
            Set the type of the email
 
-           @param type Type of the email
+           @param {Adaptive.ContactEmailType} type Type of the email
            @since ARP1.0
         */
         ContactEmail.prototype.setType = function (type) {
             this.type = type;
         };
         /**
+           @method
            Returns the email of the Contact
 
-           @return email
+           @return {string} email
            @since ARP1.0
         */
         ContactEmail.prototype.getEmail = function () {
             return this.email;
         };
         /**
+           @method
            Set the email of the Contact
 
-           @param email Email of the contact
+           @param {string} email Email of the contact
            @since ARP1.0
         */
         ContactEmail.prototype.setEmail = function (email) {
             this.email = email;
         };
         /**
+           @method
            Returns if the email is primary
 
-           @return true if the email is primary; false otherwise
+           @return {boolean} true if the email is primary; false otherwise
            @since ARP1.0
         */
         ContactEmail.prototype.getPrimary = function () {
             return this.primary;
         };
         /**
+           @method
            Set if the email
 
-           @param primary true if the email is primary; false otherwise
+           @param {boolean} primary true if the email is primary; false otherwise
            @since ARP1.0
         */
         ContactEmail.prototype.setPrimary = function (primary) {

@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class RSSBridge extends BaseSocialBridge implements IRSS {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

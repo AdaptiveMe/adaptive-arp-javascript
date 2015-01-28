@@ -49,7 +49,7 @@ var Adaptive;
     */
     var BaseCommerceBridge = (function () {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function BaseCommerceBridge() {

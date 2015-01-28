@@ -91,9 +91,9 @@ module Adaptive {
           /**
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: IFileListResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Array<FileDescriptor>
-             @param onWarningFunction Function receiving parameters of type: Array<FileDescriptor>, IFileListResultCallbackWarning
+             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileListResultCallbackError) => void, onResultFunction : (files : Array<FileDescriptor>) => void, onWarningFunction : (files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) => void) {
                super(++registeredCounter);

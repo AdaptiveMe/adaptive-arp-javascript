@@ -64,7 +64,7 @@ var Adaptive;
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function ContactBridge() {

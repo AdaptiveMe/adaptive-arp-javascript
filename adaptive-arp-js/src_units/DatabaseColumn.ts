@@ -52,9 +52,10 @@ module Adaptive {
           */
           name : string;
           /**
+             @method constructor
              Constructor with fields
 
-             @param name Name of the column
+             @param {string} name Name of the column
              @since ARP1.0
           */
           constructor(name: string) {
@@ -63,9 +64,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the name of the column.
 
-             @return The name of the column.
+             @return {string} The name of the column.
              @since ARP1.0
           */
           getName() : string {
@@ -73,9 +75,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Sets the name of the column.
 
-             @param name The name of the column.
+             @param {string} name The name of the column.
              @since ARP1.0
           */
           setName(name: string) {

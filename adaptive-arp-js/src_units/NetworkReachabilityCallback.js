@@ -93,9 +93,9 @@ var Adaptive;
         /**
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: INetworkReachabilityCallbackError
+           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
            @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, INetworkReachabilityCallbackWarning
+           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
         */
         function NetworkReachabilityCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);

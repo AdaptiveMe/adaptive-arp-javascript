@@ -60,17 +60,18 @@ var Adaptive;
     var Contact = (function (_super) {
         __extends(Contact, _super);
         /**
+           @method constructor
            Constructor with all the fields
 
-           @param contactId        Identifier of the contact
-           @param personalInfo     Personal Information
-           @param professionalInfo Professional Information
-           @param contactAddresses Addresses of the contact
-           @param contactPhones    Phones of the contact
-           @param contactEmails    Emails of the contact
-           @param contactWebsites  Websites of the contact
-           @param contactSocials   Social Networks of the contact
-           @param contactTags      Tags of the contact
+           @param {string} contactId        Identifier of the contact
+           @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
+           @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
            @since ARP1.0
         */
         function Contact(contactId, personalInfo, professionalInfo, contactAddresses, contactPhones, contactEmails, contactWebsites, contactSocials, contactTags) {
@@ -85,144 +86,160 @@ var Adaptive;
             this.contactTags = contactTags;
         }
         /**
+           @method
            Returns all the addresses of the Contact
 
-           @return ContactAddress[]
+           @return {Adaptive.ContactAddress[]} ContactAddress[]
            @since ARP1.0
         */
         Contact.prototype.getContactAddresses = function () {
             return this.contactAddresses;
         };
         /**
+           @method
            Set the addresses of the Contact
 
-           @param contactAddresses Addresses of the contact
+           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactAddresses = function (contactAddresses) {
             this.contactAddresses = contactAddresses;
         };
         /**
+           @method
            Returns all the emails of the Contact
 
-           @return ContactEmail[]
+           @return {Adaptive.ContactEmail[]} ContactEmail[]
            @since ARP1.0
         */
         Contact.prototype.getContactEmails = function () {
             return this.contactEmails;
         };
         /**
+           @method
            Set the emails of the Contact
 
-           @param contactEmails Emails of the contact
+           @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactEmails = function (contactEmails) {
             this.contactEmails = contactEmails;
         };
         /**
+           @method
            Returns all the phones of the Contact
 
-           @return ContactPhone[]
+           @return {Adaptive.ContactPhone[]} ContactPhone[]
            @since ARP1.0
         */
         Contact.prototype.getContactPhones = function () {
             return this.contactPhones;
         };
         /**
+           @method
            Set the phones of the Contact
 
-           @param contactPhones Phones of the contact
+           @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactPhones = function (contactPhones) {
             this.contactPhones = contactPhones;
         };
         /**
+           @method
            Returns all the social network info of the Contact
 
-           @return ContactSocial[]
+           @return {Adaptive.ContactSocial[]} ContactSocial[]
            @since ARP1.0
         */
         Contact.prototype.getContactSocials = function () {
             return this.contactSocials;
         };
         /**
+           @method
            Set the social network info of the Contact
 
-           @param contactSocials Social Networks of the contact
+           @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactSocials = function (contactSocials) {
             this.contactSocials = contactSocials;
         };
         /**
+           @method
            Returns the additional tags of the Contact
 
-           @return ContactTag[]
+           @return {Adaptive.ContactTag[]} ContactTag[]
            @since ARP1.0
         */
         Contact.prototype.getContactTags = function () {
             return this.contactTags;
         };
         /**
+           @method
            Set the additional tags of the Contact
 
-           @param contactTags Tags of the contact
+           @param {Adaptive.ContactTag[]} contactTags Tags of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactTags = function (contactTags) {
             this.contactTags = contactTags;
         };
         /**
+           @method
            Returns all the websites of the Contact
 
-           @return ContactWebsite[]
+           @return {Adaptive.ContactWebsite[]} ContactWebsite[]
            @since ARP1.0
         */
         Contact.prototype.getContactWebsites = function () {
             return this.contactWebsites;
         };
         /**
+           @method
            Set the websites of the Contact
 
-           @param contactWebsites Websites of the contact
+           @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
            @since ARP1.0
         */
         Contact.prototype.setContactWebsites = function (contactWebsites) {
             this.contactWebsites = contactWebsites;
         };
         /**
+           @method
            Returns the personal info of the Contact
 
-           @return ContactPersonalInfo of the Contact
+           @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
            @since ARP1.0
         */
         Contact.prototype.getPersonalInfo = function () {
             return this.personalInfo;
         };
         /**
+           @method
            Set the personal info of the Contact
 
-           @param personalInfo Personal Information
+           @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
            @since ARP1.0
         */
         Contact.prototype.setPersonalInfo = function (personalInfo) {
             this.personalInfo = personalInfo;
         };
         /**
+           @method
            Returns the professional info of the Contact
 
-           @return Array of personal info
+           @return {Adaptive.ContactProfessionalInfo} Array of personal info
            @since ARP1.0
         */
         Contact.prototype.getProfessionalInfo = function () {
             return this.professionalInfo;
         };
         /**
+           @method
            Set the professional info of the Contact
 
-           @param professionalInfo Professional Information
+           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
            @since ARP1.0
         */
         Contact.prototype.setProfessionalInfo = function (professionalInfo) {

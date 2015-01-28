@@ -57,7 +57,7 @@ var Adaptive;
     var CalendarBridge = (function (_super) {
         __extends(CalendarBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function CalendarBridge() {

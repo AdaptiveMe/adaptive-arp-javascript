@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class MapBridge extends BaseUIBridge implements IMap {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

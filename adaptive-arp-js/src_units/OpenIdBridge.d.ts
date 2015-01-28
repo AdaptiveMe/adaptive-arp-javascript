@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

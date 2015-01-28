@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class DataStreamBridge extends BaseDataBridge implements IDataStream {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

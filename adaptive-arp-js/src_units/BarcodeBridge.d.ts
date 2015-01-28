@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class BarcodeBridge extends BaseReaderBridge implements IBarcode {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

@@ -49,7 +49,7 @@ declare module Adaptive {
     */
     class AdsBridge extends BaseCommerceBridge implements IAds {
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         constructor();

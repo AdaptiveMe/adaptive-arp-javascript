@@ -57,7 +57,7 @@ var Adaptive;
     var NotificationBridge = (function (_super) {
         __extends(NotificationBridge, _super);
         /**
-           @constructor
+           @method constructor
            Default constructor.
         */
         function NotificationBridge() {

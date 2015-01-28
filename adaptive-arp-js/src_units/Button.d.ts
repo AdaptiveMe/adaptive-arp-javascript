@@ -49,23 +49,26 @@ declare module Adaptive {
         */
         type: ICapabilitiesButton;
         /**
+           @method constructor
            Constructor with fields
 
-           @param type Button type.
+           @param {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         constructor(type: ICapabilitiesButton);
         /**
+           @method
            Returns the button type
 
-           @return type Button type.
+           @return {Adaptive.ICapabilitiesButton} type Button type.
            @since ARP1.0
         */
         getType(): ICapabilitiesButton;
         /**
+           @method
            Setter for the button type
 
-           @param type Button Type
+           @param {Adaptive.ICapabilitiesButton} type Button Type
            @since ARP1.0
         */
         setType(type: ICapabilitiesButton): void;

@@ -54,15 +54,16 @@ var Adaptive;
     var Email = (function (_super) {
         __extends(Email, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param toRecipients        array of recipients
-           @param ccRecipients        array of cc recipients
-           @param bccRecipients       array of bcc recipients
-           @param emailAttachmentData array of attatchments
-           @param messageBody         body of the email
-           @param messageBodyMimeType mime type of the body
-           @param subject             of the email
+           @param {Adaptive.EmailAddress[]} toRecipients        array of recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients        array of cc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients       array of bcc recipients
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of attatchments
+           @param {string} messageBody         body of the email
+           @param {string} messageBodyMimeType mime type of the body
+           @param {string} subject             of the email
            @since ARP1.0
         */
         function Email(toRecipients, ccRecipients, bccRecipients, emailAttachmentData, messageBody, messageBodyMimeType, subject) {
@@ -76,126 +77,140 @@ var Adaptive;
             this.subject = subject;
         }
         /**
+           @method
            Returns the array of recipients
 
-           @return bccRecipients array of bcc recipients
+           @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         Email.prototype.getBccRecipients = function () {
             return this.bccRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param bccRecipients array of bcc recipients
+           @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since ARP1.0
         */
         Email.prototype.setBccRecipients = function (bccRecipients) {
             this.bccRecipients = bccRecipients;
         };
         /**
+           @method
            Returns the array of recipients
 
-           @return ccRecipients array of cc recipients
+           @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         Email.prototype.getCcRecipients = function () {
             return this.ccRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param ccRecipients array of cc recipients
+           @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since ARP1.0
         */
         Email.prototype.setCcRecipients = function (ccRecipients) {
             this.ccRecipients = ccRecipients;
         };
         /**
+           @method
            Returns an array of attachments
 
-           @return emailAttachmentData array with the email attachments
+           @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
            @since ARP1.0
         */
         Email.prototype.getEmailAttachmentData = function () {
             return this.emailAttachmentData;
         };
         /**
+           @method
            Set the email attachment data array
 
-           @param emailAttachmentData array of email attatchments
+           @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
            @since ARP1.0
         */
         Email.prototype.setEmailAttachmentData = function (emailAttachmentData) {
             this.emailAttachmentData = emailAttachmentData;
         };
         /**
+           @method
            Returns the message body of the email
 
-           @return message Body string of the email
+           @return {string} message Body string of the email
            @since ARP1.0
         */
         Email.prototype.getMessageBody = function () {
             return this.messageBody;
         };
         /**
+           @method
            Set the message body of the email
 
-           @param messageBody message body of the email
+           @param {string} messageBody message body of the email
            @since ARP1.0
         */
         Email.prototype.setMessageBody = function (messageBody) {
             this.messageBody = messageBody;
         };
         /**
+           @method
            Returns the myme type of the message body
 
-           @return mime type string of the message boddy
+           @return {string} mime type string of the message boddy
            @since ARP1.0
         */
         Email.prototype.getMessageBodyMimeType = function () {
             return this.messageBodyMimeType;
         };
         /**
+           @method
            Set the mime type for the message body
 
-           @param messageBodyMimeType type of the body message
+           @param {string} messageBodyMimeType type of the body message
            @since ARP1.0
         */
         Email.prototype.setMessageBodyMimeType = function (messageBodyMimeType) {
             this.messageBodyMimeType = messageBodyMimeType;
         };
         /**
+           @method
            Returns the subject of the email
 
-           @return subject string of the email
+           @return {string} subject string of the email
            @since ARP1.0
         */
         Email.prototype.getSubject = function () {
             return this.subject;
         };
         /**
+           @method
            Set the subject of the email
 
-           @param subject of the email
+           @param {string} subject of the email
            @since ARP1.0
         */
         Email.prototype.setSubject = function (subject) {
             this.subject = subject;
         };
         /**
+           @method
            Returns the array of recipients
 
-           @return toRecipients array of recipients
+           @return {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         Email.prototype.getToRecipients = function () {
             return this.toRecipients;
         };
         /**
+           @method
            Set the array of recipients
 
-           @param toRecipients array of recipients
+           @param {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since ARP1.0
         */
         Email.prototype.setToRecipients = function (toRecipients) {

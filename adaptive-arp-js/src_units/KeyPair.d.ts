@@ -52,38 +52,43 @@ declare module Adaptive {
         */
         keyValue: string;
         /**
+           @method constructor
            Constructor using fields
 
-           @param keyName  Key of the element
-           @param keyValue Value of the element
+           @param {string} keyName  Key of the element
+           @param {string} keyValue Value of the element
            @since ARP1.0
         */
         constructor(keyName: string, keyValue: string);
         /**
+           @method
            Returns the keyName of the element
 
-           @return Key of the element
+           @return {string} Key of the element
            @since ARP1.0
         */
         getKeyName(): string;
         /**
+           @method
            Sets the keyName of the element
 
-           @param keyName Key of the element
+           @param {string} keyName Key of the element
            @since ARP1.0
         */
         setKeyName(keyName: string): void;
         /**
+           @method
            Returns the keyValue of the element
 
-           @return Value of the element
+           @return {string} Value of the element
            @since ARP1.0
         */
         getKeyValue(): string;
         /**
+           @method
            Sets the keyValue of the element
 
-           @param keyValue Value of the element
+           @param {string} keyValue Value of the element
            @since ARP1.0
         */
         setKeyValue(keyValue: string): void;

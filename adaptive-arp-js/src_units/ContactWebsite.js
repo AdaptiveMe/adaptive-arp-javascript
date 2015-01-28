@@ -52,9 +52,10 @@ var Adaptive;
     var ContactWebsite = (function (_super) {
         __extends(ContactWebsite, _super);
         /**
+           @method constructor
            Constructor used by the implementation
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         function ContactWebsite(url) {
@@ -62,18 +63,20 @@ var Adaptive;
             this.url = url;
         }
         /**
+           @method
            Returns the url of the website
 
-           @return website url
+           @return {string} website url
            @since ARP1.0
         */
         ContactWebsite.prototype.getUrl = function () {
             return this.url;
         };
         /**
+           @method
            Set the url of the website
 
-           @param url Url of the website
+           @param {string} url Url of the website
            @since ARP1.0
         */
         ContactWebsite.prototype.setUrl = function (url) {

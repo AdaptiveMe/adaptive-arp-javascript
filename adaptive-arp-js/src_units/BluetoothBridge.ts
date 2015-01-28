@@ -52,7 +52,7 @@ module Adaptive {
      export class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
 
           /**
-             @constructor
+             @method constructor
              Default constructor.
           */
           constructor() {
