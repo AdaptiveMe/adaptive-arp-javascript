@@ -41,22 +41,29 @@ module Adaptive {
         Base application for Listener purposes
         Auto-generated implementation of IBaseListener specification.
      */
+     /**
+        @class Adaptive.BaseListener
+        @extends Adaptive.IBaseListener
+     */
      export class BaseListener implements IBaseListener {
 
           /**
+             @property {number}
              Unique id of listener.
           */
           id : number;
 
           /**
+             @property {Adaptive.IAdaptiveRPGroup}
              Group of API.
           */
           apiGroup : IAdaptiveRPGroup;
 
           /**
+             @method constructor
              Constructor with listener id.
 
-             @param id  The id of the listener.
+             @param {number} id  The id of the listener.
           */
           constructor(id : number) {
                this.id = id;
@@ -64,14 +71,17 @@ module Adaptive {
           }
 
           /**
+             @method
+             @return {number}
              Get the listener id.
-             @return {number} long with the identifier of the listener.
           */
           getId() : number {
                return this.id;
           }
 
           /**
+             @method
+             @return {Adaptive.IAdaptiveRPGroup}
              Return the API group for the given interface.
           */
           getAPIGroup() : IAdaptiveRPGroup {
@@ -79,9 +89,11 @@ module Adaptive {
           }
 
           /**
+             @method
              Return the API version for the given interface.
 
-             @return {string} The version of the API.
+             @return {string}
+             The version of the API.
           */
           getAPIVersion() : string {
                return "v2.0.4"

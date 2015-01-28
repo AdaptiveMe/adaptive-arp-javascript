@@ -47,12 +47,21 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredAccelerationListener
+        @member Adaptive
+        @private
         AccelerationListener control dictionary.
      */
      export var registeredAccelerationListener = new Dictionary<IAccelerationListener>([]);
 
+        // AccelerationListener global listener handlers.
+
      /**
-        AccelerationListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IAccelerationListenerError} error
      */
      export function handleAccelerationListenerError(id : number, error : IAccelerationListenerError) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
@@ -62,6 +71,13 @@ module Adaptive {
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Acceleration} acceleration
+     */
      export function handleAccelerationListenerResult(id : number, acceleration : Acceleration) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -70,6 +86,14 @@ module Adaptive {
                listener.onResult(acceleration);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Acceleration} acceleration
+        @param {Adaptive.IAccelerationListenerWarning} warning
+     */
      export function handleAccelerationListenerWarning(id : number, acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -79,6 +103,10 @@ module Adaptive {
           }
      }
 
+     /**
+        @class Adaptive.AccelerationListener
+        @extends Adaptive.BaseListener
+     */
      export class AccelerationListener extends BaseListener implements IAccelerationListener {
 
           onErrorFunction : (error : IAccelerationListenerError) => void;
@@ -86,11 +114,12 @@ module Adaptive {
           onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
           */
           constructor(onErrorFunction : (error : IAccelerationListenerError) => void, onResultFunction : (acceleration : Acceleration) => void, onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void) {
                super(++registeredCounter);
@@ -112,10 +141,11 @@ module Adaptive {
           }
 
           /**
+             @method
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
+             @param {Adaptive.IAccelerationListenerError} error Error fired
 
-             @param error Error fired
              @since ARP1.0
           */
           public onError(error : IAccelerationListenerError) : void {
@@ -127,9 +157,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Correct data received.
+             @param {Adaptive.Acceleration} acceleration Acceleration received
 
-             @param acceleration Acceleration received
              @since ARP1.0
           */
           public onResult(acceleration : Acceleration) : void {
@@ -141,10 +172,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning - ie. Needs calibration.
+             @param {Adaptive.Acceleration} acceleration Acceleration received
+             @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
 
-             @param acceleration Acceleration received
-             @param warning      Warning fired
              @since ARP1.0
           */
           public onWarning(acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {

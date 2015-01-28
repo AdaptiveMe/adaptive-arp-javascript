@@ -34,12 +34,14 @@ Release:
 module Adaptive {
 
      /**
+        @private
         @property {number} registeredCounter
         Global unique id for listeners and callbacks.
      */
      export var registeredCounter : number = 0;
 
      /**
+        @private
         @property {string} bridgePath
         Base url for for http/https JSON requests.
      */
@@ -47,6 +49,7 @@ module Adaptive {
 
      /**
         @class Adaptive.IDictionary
+        @private
         Utility interface for Dictionary type support.
      */
      export interface IDictionary<V> {
@@ -58,6 +61,7 @@ module Adaptive {
      }
 
      /**
+        @private
         @class Adaptive.Dictionary
         Utility class for Dictionary type support.
      */
@@ -8290,22 +8294,29 @@ Possible lifecycle States:
                return result;
           }
      }
+     /**
+        @class Adaptive.BaseListener
+        @extends Adaptive.IBaseListener
+     */
      export class BaseListener implements IBaseListener {
 
           /**
+             @property {number}
              Unique id of listener.
           */
           id : number;
 
           /**
+             @property {Adaptive.IAdaptiveRPGroup}
              Group of API.
           */
           apiGroup : IAdaptiveRPGroup;
 
           /**
+             @method constructor
              Constructor with listener id.
 
-             @param id  The id of the listener.
+             @param {number} id  The id of the listener.
           */
           constructor(id : number) {
                this.id = id;
@@ -8313,14 +8324,17 @@ Possible lifecycle States:
           }
 
           /**
+             @method
+             @return {number}
              Get the listener id.
-             @return {number} long with the identifier of the listener.
           */
           getId() : number {
                return this.id;
           }
 
           /**
+             @method
+             @return {Adaptive.IAdaptiveRPGroup}
              Return the API group for the given interface.
           */
           getAPIGroup() : IAdaptiveRPGroup {
@@ -8328,9 +8342,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              Return the API version for the given interface.
 
-             @return {string} The version of the API.
+             @return {string}
+             The version of the API.
           */
           getAPIVersion() : string {
                return "v2.0.4"
@@ -8339,12 +8355,21 @@ Possible lifecycle States:
      }
 
      /**
+        @property {Adaptive.Dictionary} registeredAccelerationListener
+        @member Adaptive
+        @private
         AccelerationListener control dictionary.
      */
      export var registeredAccelerationListener = new Dictionary<IAccelerationListener>([]);
 
+        // AccelerationListener global listener handlers.
+
      /**
-        AccelerationListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IAccelerationListenerError} error
      */
      export function handleAccelerationListenerError(id : number, error : IAccelerationListenerError) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
@@ -8354,6 +8379,13 @@ Possible lifecycle States:
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Acceleration} acceleration
+     */
      export function handleAccelerationListenerResult(id : number, acceleration : Acceleration) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8362,6 +8394,14 @@ Possible lifecycle States:
                listener.onResult(acceleration);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Acceleration} acceleration
+        @param {Adaptive.IAccelerationListenerWarning} warning
+     */
      export function handleAccelerationListenerWarning(id : number, acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {
           var listener : IAccelerationListener = registeredAccelerationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8371,6 +8411,10 @@ Possible lifecycle States:
           }
      }
 
+     /**
+        @class Adaptive.AccelerationListener
+        @extends Adaptive.BaseListener
+     */
      export class AccelerationListener extends BaseListener implements IAccelerationListener {
 
           onErrorFunction : (error : IAccelerationListenerError) => void;
@@ -8378,11 +8422,12 @@ Possible lifecycle States:
           onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
           */
           constructor(onErrorFunction : (error : IAccelerationListenerError) => void, onResultFunction : (acceleration : Acceleration) => void, onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8404,10 +8449,11 @@ Possible lifecycle States:
           }
 
           /**
+             @method
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
+             @param {Adaptive.IAccelerationListenerError} error Error fired
 
-             @param error Error fired
              @since ARP1.0
           */
           public onError(error : IAccelerationListenerError) : void {
@@ -8419,9 +8465,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Correct data received.
+             @param {Adaptive.Acceleration} acceleration Acceleration received
 
-             @param acceleration Acceleration received
              @since ARP1.0
           */
           public onResult(acceleration : Acceleration) : void {
@@ -8433,10 +8480,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning - ie. Needs calibration.
+             @param {Adaptive.Acceleration} acceleration Acceleration received
+             @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
 
-             @param acceleration Acceleration received
-             @param warning      Warning fired
              @since ARP1.0
           */
           public onWarning(acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {
@@ -8450,12 +8498,21 @@ listener and subsequently, the listener will be deactivated and removed from the
      }
 
      /**
+        @property {Adaptive.Dictionary} registeredButtonListener
+        @member Adaptive
+        @private
         ButtonListener control dictionary.
      */
      export var registeredButtonListener = new Dictionary<IButtonListener>([]);
 
+        // ButtonListener global listener handlers.
+
      /**
-        ButtonListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IButtonListenerError} error
      */
      export function handleButtonListenerError(id : number, error : IButtonListenerError) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
@@ -8465,6 +8522,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Button} button
+     */
      export function handleButtonListenerResult(id : number, button : Button) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8473,6 +8537,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onResult(button);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Button} button
+        @param {Adaptive.IButtonListenerWarning} warning
+     */
      export function handleButtonListenerWarning(id : number, button : Button, warning : IButtonListenerWarning) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8482,6 +8554,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+     /**
+        @class Adaptive.ButtonListener
+        @extends Adaptive.BaseListener
+     */
      export class ButtonListener extends BaseListener implements IButtonListener {
 
           onErrorFunction : (error : IButtonListenerError) => void;
@@ -8489,11 +8565,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Button
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);
@@ -8515,9 +8592,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received
+             @param {Adaptive.IButtonListenerError} error occurred
 
-             @param error occurred
              @since ARP1.0
           */
           public onError(error : IButtonListenerError) : void {
@@ -8529,9 +8607,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Called on button pressed
+             @param {Adaptive.Button} button pressed
 
-             @param button pressed
              @since ARP1.0
           */
           public onResult(button : Button) : void {
@@ -8543,10 +8622,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning
+             @param {Adaptive.Button} button  pressed
+             @param {Adaptive.IButtonListenerWarning} warning happened
 
-             @param button  pressed
-             @param warning happened
              @since ARP1.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {
@@ -8560,12 +8640,21 @@ listener and subsequently, the listener will be deactivated and removed from the
      }
 
      /**
+        @property {Adaptive.Dictionary} registeredGeolocationListener
+        @member Adaptive
+        @private
         GeolocationListener control dictionary.
      */
      export var registeredGeolocationListener = new Dictionary<IGeolocationListener>([]);
 
+        // GeolocationListener global listener handlers.
+
      /**
-        GeolocationListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IGeolocationListenerError} error
      */
      export function handleGeolocationListenerError(id : number, error : IGeolocationListenerError) : void {
           var listener : IGeolocationListener = registeredGeolocationListener[""+id];
@@ -8575,6 +8664,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Geolocation} geolocation
+     */
      export function handleGeolocationListenerResult(id : number, geolocation : Geolocation) : void {
           var listener : IGeolocationListener = registeredGeolocationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8583,6 +8679,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onResult(geolocation);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Geolocation} geolocation
+        @param {Adaptive.IGeolocationListenerWarning} warning
+     */
      export function handleGeolocationListenerWarning(id : number, geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
           var listener : IGeolocationListener = registeredGeolocationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8592,6 +8696,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+     /**
+        @class Adaptive.GeolocationListener
+        @extends Adaptive.BaseListener
+     */
      export class GeolocationListener extends BaseListener implements IGeolocationListener {
 
           onErrorFunction : (error : IGeolocationListenerError) => void;
@@ -8599,11 +8707,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
           */
           constructor(onErrorFunction : (error : IGeolocationListenerError) => void, onResultFunction : (geolocation : Geolocation) => void, onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void) {
                super(++registeredCounter);
@@ -8625,9 +8734,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received - error condition, not authorized or hardware not available.
+             @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
 
-             @param error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : IGeolocationListenerError) : void {
@@ -8639,9 +8749,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Correct data received.
+             @param {Adaptive.Geolocation} geolocation Geolocation Bean
 
-             @param geolocation Geolocation Bean
              @since ARP1.0
           */
           public onResult(geolocation : Geolocation) : void {
@@ -8653,10 +8764,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning - ie. HighDoP
+             @param {Adaptive.Geolocation} geolocation Geolocation Bean
+             @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
 
-             @param geolocation Geolocation Bean
-             @param warning     Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
@@ -8670,12 +8782,21 @@ listener and subsequently, the listener will be deactivated and removed from the
      }
 
      /**
+        @property {Adaptive.Dictionary} registeredLifecycleListener
+        @member Adaptive
+        @private
         LifecycleListener control dictionary.
      */
      export var registeredLifecycleListener = new Dictionary<ILifecycleListener>([]);
 
+        // LifecycleListener global listener handlers.
+
      /**
-        LifecycleListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ILifecycleListenerError} error
      */
      export function handleLifecycleListenerError(id : number, error : ILifecycleListenerError) : void {
           var listener : ILifecycleListener = registeredLifecycleListener[""+id];
@@ -8685,6 +8806,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Lifecycle} lifecycle
+     */
      export function handleLifecycleListenerResult(id : number, lifecycle : Lifecycle) : void {
           var listener : ILifecycleListener = registeredLifecycleListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8693,6 +8821,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onResult(lifecycle);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Lifecycle} lifecycle
+        @param {Adaptive.ILifecycleListenerWarning} warning
+     */
      export function handleLifecycleListenerWarning(id : number, lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {
           var listener : ILifecycleListener = registeredLifecycleListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8702,6 +8838,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+     /**
+        @class Adaptive.LifecycleListener
+        @extends Adaptive.BaseListener
+     */
      export class LifecycleListener extends BaseListener implements ILifecycleListener {
 
           onErrorFunction : (error : ILifecycleListenerError) => void;
@@ -8709,11 +8849,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
           */
           constructor(onErrorFunction : (error : ILifecycleListenerError) => void, onResultFunction : (lifecycle : Lifecycle) => void, onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void) {
                super(++registeredCounter);
@@ -8735,9 +8876,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received - error condition, not authorized or hardware not available.
+             @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
 
-             @param error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : ILifecycleListenerError) : void {
@@ -8749,9 +8891,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Called when lifecycle changes somehow.
+             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
 
-             @param lifecycle Lifecycle element
              @since ARP1.0
           */
           public onResult(lifecycle : Lifecycle) : void {
@@ -8763,10 +8906,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Data received with warning
+             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
+             @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
 
-             @param lifecycle Lifecycle element
-             @param warning   Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {
@@ -8780,12 +8924,21 @@ listener and subsequently, the listener will be deactivated and removed from the
      }
 
      /**
+        @property {Adaptive.Dictionary} registeredNetworkStatusListener
+        @member Adaptive
+        @private
         NetworkStatusListener control dictionary.
      */
      export var registeredNetworkStatusListener = new Dictionary<INetworkStatusListener>([]);
 
+        // NetworkStatusListener global listener handlers.
+
      /**
-        NetworkStatusListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.INetworkStatusListenerError} error
      */
      export function handleNetworkStatusListenerError(id : number, error : INetworkStatusListenerError) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
@@ -8795,6 +8948,13 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ICapabilitiesNet} network
+     */
      export function handleNetworkStatusListenerResult(id : number, network : ICapabilitiesNet) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8803,6 +8963,14 @@ listener and subsequently, the listener will be deactivated and removed from the
                listener.onResult(network);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ICapabilitiesNet} network
+        @param {Adaptive.INetworkStatusListenerWarning} warning
+     */
      export function handleNetworkStatusListenerWarning(id : number, network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -8812,6 +8980,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
      }
 
+     /**
+        @class Adaptive.NetworkStatusListener
+        @extends Adaptive.BaseListener
+     */
      export class NetworkStatusListener extends BaseListener implements INetworkStatusListener {
 
           onErrorFunction : (error : INetworkStatusListenerError) => void;
@@ -8819,11 +8991,12 @@ listener and subsequently, the listener will be deactivated and removed from the
           onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-             @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
           */
           constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
@@ -8845,9 +9018,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              No data received - error condition, not authorized or hardware not available.
+             @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
 
-             @param error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : INetworkStatusListenerError) : void {
@@ -8859,9 +9033,10 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Called when network connection changes somehow.
+             @param {Adaptive.ICapabilitiesNet} network Change to this network.
 
-             @param network Change to this network.
              @since ARP1.0
           */
           public onResult(network : ICapabilitiesNet) : void {
@@ -8873,10 +9048,11 @@ listener and subsequently, the listener will be deactivated and removed from the
           }
 
           /**
+             @method
              Status received with warning
+             @param {Adaptive.ICapabilitiesNet} network Change to this network.
+             @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
 
-             @param network Change to this network.
-             @param warning Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {

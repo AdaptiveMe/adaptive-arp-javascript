@@ -40,16 +40,19 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @private
        @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     Adaptive.registeredCounter = 0;
     /**
+       @private
        @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
     /**
+       @private
        @class Adaptive.Dictionary
        Utility class for Dictionary type support.
     */
@@ -4565,33 +4568,43 @@ doesn't exist, this will be -1. Used internally.
         return Contact;
     })(ContactUid);
     Adaptive.Contact = Contact;
+    /**
+       @class Adaptive.BaseListener
+       @extends Adaptive.IBaseListener
+    */
     var BaseListener = (function () {
         /**
+           @method constructor
            Constructor with listener id.
 
-           @param id  The id of the listener.
+           @param {number} id  The id of the listener.
         */
         function BaseListener(id) {
             this.id = id;
             this.apiGroup = IAdaptiveRPGroup.Application;
         }
         /**
+           @method
+           @return {number}
            Get the listener id.
-           @return {number} long with the identifier of the listener.
         */
         BaseListener.prototype.getId = function () {
             return this.id;
         };
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         BaseListener.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
             return "v2.0.4";
@@ -4600,11 +4613,19 @@ doesn't exist, this will be -1. Used internally.
     })();
     Adaptive.BaseListener = BaseListener;
     /**
+       @property {Adaptive.Dictionary} registeredAccelerationListener
+       @member Adaptive
+       @private
        AccelerationListener control dictionary.
     */
     Adaptive.registeredAccelerationListener = new Dictionary([]);
+    // AccelerationListener global listener handlers.
     /**
-       AccelerationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IAccelerationListenerError} error
     */
     function handleAccelerationListenerError(id, error) {
         var listener = Adaptive.registeredAccelerationListener["" + id];
@@ -4616,6 +4637,13 @@ doesn't exist, this will be -1. Used internally.
         }
     }
     Adaptive.handleAccelerationListenerError = handleAccelerationListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Acceleration} acceleration
+    */
     function handleAccelerationListenerResult(id, acceleration) {
         var listener = Adaptive.registeredAccelerationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4626,6 +4654,14 @@ doesn't exist, this will be -1. Used internally.
         }
     }
     Adaptive.handleAccelerationListenerResult = handleAccelerationListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Acceleration} acceleration
+       @param {Adaptive.IAccelerationListenerWarning} warning
+    */
     function handleAccelerationListenerWarning(id, acceleration, warning) {
         var listener = Adaptive.registeredAccelerationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4636,14 +4672,19 @@ doesn't exist, this will be -1. Used internally.
         }
     }
     Adaptive.handleAccelerationListenerWarning = handleAccelerationListenerWarning;
+    /**
+       @class Adaptive.AccelerationListener
+       @extends Adaptive.BaseListener
+    */
     var AccelerationListener = (function (_super) {
         __extends(AccelerationListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         function AccelerationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4667,10 +4708,11 @@ doesn't exist, this will be -1. Used internally.
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
+           @param {Adaptive.IAccelerationListenerError} error Error fired
 
-           @param error Error fired
            @since ARP1.0
         */
         AccelerationListener.prototype.onError = function (error) {
@@ -4682,9 +4724,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Correct data received.
+           @param {Adaptive.Acceleration} acceleration Acceleration received
 
-           @param acceleration Acceleration received
            @since ARP1.0
         */
         AccelerationListener.prototype.onResult = function (acceleration) {
@@ -4696,10 +4739,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning - ie. Needs calibration.
+           @param {Adaptive.Acceleration} acceleration Acceleration received
+           @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
 
-           @param acceleration Acceleration received
-           @param warning      Warning fired
            @since ARP1.0
         */
         AccelerationListener.prototype.onWarning = function (acceleration, warning) {
@@ -4714,11 +4758,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseListener);
     Adaptive.AccelerationListener = AccelerationListener;
     /**
+       @property {Adaptive.Dictionary} registeredButtonListener
+       @member Adaptive
+       @private
        ButtonListener control dictionary.
     */
     Adaptive.registeredButtonListener = new Dictionary([]);
+    // ButtonListener global listener handlers.
     /**
-       ButtonListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IButtonListenerError} error
     */
     function handleButtonListenerError(id, error) {
         var listener = Adaptive.registeredButtonListener["" + id];
@@ -4730,6 +4782,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleButtonListenerError = handleButtonListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+    */
     function handleButtonListenerResult(id, button) {
         var listener = Adaptive.registeredButtonListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4740,6 +4799,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleButtonListenerResult = handleButtonListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+       @param {Adaptive.IButtonListenerWarning} warning
+    */
     function handleButtonListenerWarning(id, button, warning) {
         var listener = Adaptive.registeredButtonListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4750,14 +4817,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleButtonListenerWarning = handleButtonListenerWarning;
+    /**
+       @class Adaptive.ButtonListener
+       @extends Adaptive.BaseListener
+    */
     var ButtonListener = (function (_super) {
         __extends(ButtonListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Button
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         function ButtonListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4781,9 +4853,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received
+           @param {Adaptive.IButtonListenerError} error occurred
 
-           @param error occurred
            @since ARP1.0
         */
         ButtonListener.prototype.onError = function (error) {
@@ -4795,9 +4868,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Called on button pressed
+           @param {Adaptive.Button} button pressed
 
-           @param button pressed
            @since ARP1.0
         */
         ButtonListener.prototype.onResult = function (button) {
@@ -4809,10 +4883,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning
+           @param {Adaptive.Button} button  pressed
+           @param {Adaptive.IButtonListenerWarning} warning happened
 
-           @param button  pressed
-           @param warning happened
            @since ARP1.0
         */
         ButtonListener.prototype.onWarning = function (button, warning) {
@@ -4827,11 +4902,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseListener);
     Adaptive.ButtonListener = ButtonListener;
     /**
+       @property {Adaptive.Dictionary} registeredGeolocationListener
+       @member Adaptive
+       @private
        GeolocationListener control dictionary.
     */
     Adaptive.registeredGeolocationListener = new Dictionary([]);
+    // GeolocationListener global listener handlers.
     /**
-       GeolocationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IGeolocationListenerError} error
     */
     function handleGeolocationListenerError(id, error) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
@@ -4843,6 +4926,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleGeolocationListenerError = handleGeolocationListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+    */
     function handleGeolocationListenerResult(id, geolocation) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4853,6 +4943,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleGeolocationListenerResult = handleGeolocationListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+       @param {Adaptive.IGeolocationListenerWarning} warning
+    */
     function handleGeolocationListenerWarning(id, geolocation, warning) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4863,14 +4961,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleGeolocationListenerWarning = handleGeolocationListenerWarning;
+    /**
+       @class Adaptive.GeolocationListener
+       @extends Adaptive.BaseListener
+    */
     var GeolocationListener = (function (_super) {
         __extends(GeolocationListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         function GeolocationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -4894,9 +4997,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onError = function (error) {
@@ -4908,9 +5012,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Correct data received.
+           @param {Adaptive.Geolocation} geolocation Geolocation Bean
 
-           @param geolocation Geolocation Bean
            @since ARP1.0
         */
         GeolocationListener.prototype.onResult = function (geolocation) {
@@ -4922,10 +5027,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning - ie. HighDoP
+           @param {Adaptive.Geolocation} geolocation Geolocation Bean
+           @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
 
-           @param geolocation Geolocation Bean
-           @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onWarning = function (geolocation, warning) {
@@ -4940,11 +5046,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseListener);
     Adaptive.GeolocationListener = GeolocationListener;
     /**
+       @property {Adaptive.Dictionary} registeredLifecycleListener
+       @member Adaptive
+       @private
        LifecycleListener control dictionary.
     */
     Adaptive.registeredLifecycleListener = new Dictionary([]);
+    // LifecycleListener global listener handlers.
     /**
-       LifecycleListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ILifecycleListenerError} error
     */
     function handleLifecycleListenerError(id, error) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
@@ -4956,6 +5070,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleLifecycleListenerError = handleLifecycleListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+    */
     function handleLifecycleListenerResult(id, lifecycle) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4966,6 +5087,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleLifecycleListenerResult = handleLifecycleListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+       @param {Adaptive.ILifecycleListenerWarning} warning
+    */
     function handleLifecycleListenerWarning(id, lifecycle, warning) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -4976,14 +5105,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleLifecycleListenerWarning = handleLifecycleListenerWarning;
+    /**
+       @class Adaptive.LifecycleListener
+       @extends Adaptive.BaseListener
+    */
     var LifecycleListener = (function (_super) {
         __extends(LifecycleListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         function LifecycleListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5007,9 +5141,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onError = function (error) {
@@ -5021,9 +5156,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Called when lifecycle changes somehow.
+           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
 
-           @param lifecycle Lifecycle element
            @since ARP1.0
         */
         LifecycleListener.prototype.onResult = function (lifecycle) {
@@ -5035,10 +5171,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Data received with warning
+           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
+           @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
 
-           @param lifecycle Lifecycle element
-           @param warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onWarning = function (lifecycle, warning) {
@@ -5053,11 +5190,19 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(BaseListener);
     Adaptive.LifecycleListener = LifecycleListener;
     /**
+       @property {Adaptive.Dictionary} registeredNetworkStatusListener
+       @member Adaptive
+       @private
        NetworkStatusListener control dictionary.
     */
     Adaptive.registeredNetworkStatusListener = new Dictionary([]);
+    // NetworkStatusListener global listener handlers.
     /**
-       NetworkStatusListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkStatusListenerError} error
     */
     function handleNetworkStatusListenerError(id, error) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
@@ -5069,6 +5214,13 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkStatusListenerError = handleNetworkStatusListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+    */
     function handleNetworkStatusListenerResult(id, network) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -5079,6 +5231,14 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkStatusListenerResult = handleNetworkStatusListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.INetworkStatusListenerWarning} warning
+    */
     function handleNetworkStatusListenerWarning(id, network, warning) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -5089,14 +5249,19 @@ listener and subsequently, the listener will be deactivated and removed from the
         }
     }
     Adaptive.handleNetworkStatusListenerWarning = handleNetworkStatusListenerWarning;
+    /**
+       @class Adaptive.NetworkStatusListener
+       @extends Adaptive.BaseListener
+    */
     var NetworkStatusListener = (function (_super) {
         __extends(NetworkStatusListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         function NetworkStatusListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -5120,9 +5285,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onError = function (error) {
@@ -5134,9 +5300,10 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Called when network connection changes somehow.
+           @param {Adaptive.ICapabilitiesNet} network Change to this network.
 
-           @param network Change to this network.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onResult = function (network) {
@@ -5148,10 +5315,11 @@ listener and subsequently, the listener will be deactivated and removed from the
             }
         };
         /**
+           @method
            Status received with warning
+           @param {Adaptive.ICapabilitiesNet} network Change to this network.
+           @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
 
-           @param network Change to this network.
-           @param warning Type of warning encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onWarning = function (network, warning) {

@@ -33,17 +33,20 @@ Release:
 */
 declare module Adaptive {
     /**
+       @private
        @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     var registeredCounter: number;
     /**
+       @private
        @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     var bridgePath: string;
     /**
        @class Adaptive.IDictionary
+       @private
        Utility interface for Dictionary type support.
     */
     interface IDictionary<V> {
@@ -54,6 +57,7 @@ declare module Adaptive {
         values(): V[];
     }
     /**
+       @private
        @class Adaptive.Dictionary
        Utility class for Dictionary type support.
     */
@@ -6586,259 +6590,421 @@ Possible lifecycle States:
         */
         static toObject(object: any): Contact;
     }
+    /**
+       @class Adaptive.BaseListener
+       @extends Adaptive.IBaseListener
+    */
     class BaseListener implements IBaseListener {
         /**
+           @property {number}
            Unique id of listener.
         */
         id: number;
         /**
+           @property {Adaptive.IAdaptiveRPGroup}
            Group of API.
         */
         apiGroup: IAdaptiveRPGroup;
         /**
+           @method constructor
            Constructor with listener id.
 
-           @param id  The id of the listener.
+           @param {number} id  The id of the listener.
         */
         constructor(id: number);
         /**
+           @method
+           @return {number}
            Get the listener id.
-           @return {number} long with the identifier of the listener.
         */
         getId(): number;
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         getAPIVersion(): string;
     }
     /**
+       @property {Adaptive.Dictionary} registeredAccelerationListener
+       @member Adaptive
+       @private
        AccelerationListener control dictionary.
     */
     var registeredAccelerationListener: Dictionary<IAccelerationListener>;
     /**
-       AccelerationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IAccelerationListenerError} error
     */
     function handleAccelerationListenerError(id: number, error: IAccelerationListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Acceleration} acceleration
+    */
     function handleAccelerationListenerResult(id: number, acceleration: Acceleration): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Acceleration} acceleration
+       @param {Adaptive.IAccelerationListenerWarning} warning
+    */
     function handleAccelerationListenerWarning(id: number, acceleration: Acceleration, warning: IAccelerationListenerWarning): void;
+    /**
+       @class Adaptive.AccelerationListener
+       @extends Adaptive.BaseListener
+    */
     class AccelerationListener extends BaseListener implements IAccelerationListener {
         onErrorFunction: (error: IAccelerationListenerError) => void;
         onResultFunction: (acceleration: Acceleration) => void;
         onWarningFunction: (acceleration: Acceleration, warning: IAccelerationListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
         */
         constructor(onErrorFunction: (error: IAccelerationListenerError) => void, onResultFunction: (acceleration: Acceleration) => void, onWarningFunction: (acceleration: Acceleration, warning: IAccelerationListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
+           @param {Adaptive.IAccelerationListenerError} error Error fired
 
-           @param error Error fired
            @since ARP1.0
         */
         onError(error: IAccelerationListenerError): void;
         /**
+           @method
            Correct data received.
+           @param {Adaptive.Acceleration} acceleration Acceleration received
 
-           @param acceleration Acceleration received
            @since ARP1.0
         */
         onResult(acceleration: Acceleration): void;
         /**
+           @method
            Data received with warning - ie. Needs calibration.
+           @param {Adaptive.Acceleration} acceleration Acceleration received
+           @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
 
-           @param acceleration Acceleration received
-           @param warning      Warning fired
            @since ARP1.0
         */
         onWarning(acceleration: Acceleration, warning: IAccelerationListenerWarning): void;
     }
     /**
+       @property {Adaptive.Dictionary} registeredButtonListener
+       @member Adaptive
+       @private
        ButtonListener control dictionary.
     */
     var registeredButtonListener: Dictionary<IButtonListener>;
     /**
-       ButtonListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IButtonListenerError} error
     */
     function handleButtonListenerError(id: number, error: IButtonListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+    */
     function handleButtonListenerResult(id: number, button: Button): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+       @param {Adaptive.IButtonListenerWarning} warning
+    */
     function handleButtonListenerWarning(id: number, button: Button, warning: IButtonListenerWarning): void;
+    /**
+       @class Adaptive.ButtonListener
+       @extends Adaptive.BaseListener
+    */
     class ButtonListener extends BaseListener implements IButtonListener {
         onErrorFunction: (error: IButtonListenerError) => void;
         onResultFunction: (button: Button) => void;
         onWarningFunction: (button: Button, warning: IButtonListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Button
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         constructor(onErrorFunction: (error: IButtonListenerError) => void, onResultFunction: (button: Button) => void, onWarningFunction: (button: Button, warning: IButtonListenerWarning) => void);
         /**
+           @method
            No data received
+           @param {Adaptive.IButtonListenerError} error occurred
 
-           @param error occurred
            @since ARP1.0
         */
         onError(error: IButtonListenerError): void;
         /**
+           @method
            Called on button pressed
+           @param {Adaptive.Button} button pressed
 
-           @param button pressed
            @since ARP1.0
         */
         onResult(button: Button): void;
         /**
+           @method
            Data received with warning
+           @param {Adaptive.Button} button  pressed
+           @param {Adaptive.IButtonListenerWarning} warning happened
 
-           @param button  pressed
-           @param warning happened
            @since ARP1.0
         */
         onWarning(button: Button, warning: IButtonListenerWarning): void;
     }
     /**
+       @property {Adaptive.Dictionary} registeredGeolocationListener
+       @member Adaptive
+       @private
        GeolocationListener control dictionary.
     */
     var registeredGeolocationListener: Dictionary<IGeolocationListener>;
     /**
-       GeolocationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IGeolocationListenerError} error
     */
     function handleGeolocationListenerError(id: number, error: IGeolocationListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+    */
     function handleGeolocationListenerResult(id: number, geolocation: Geolocation): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+       @param {Adaptive.IGeolocationListenerWarning} warning
+    */
     function handleGeolocationListenerWarning(id: number, geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
+    /**
+       @class Adaptive.GeolocationListener
+       @extends Adaptive.BaseListener
+    */
     class GeolocationListener extends BaseListener implements IGeolocationListener {
         onErrorFunction: (error: IGeolocationListenerError) => void;
         onResultFunction: (geolocation: Geolocation) => void;
         onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         constructor(onErrorFunction: (error: IGeolocationListenerError) => void, onResultFunction: (geolocation: Geolocation) => void, onWarningFunction: (geolocation: Geolocation, warning: IGeolocationListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: IGeolocationListenerError): void;
         /**
+           @method
            Correct data received.
+           @param {Adaptive.Geolocation} geolocation Geolocation Bean
 
-           @param geolocation Geolocation Bean
            @since ARP1.0
         */
         onResult(geolocation: Geolocation): void;
         /**
+           @method
            Data received with warning - ie. HighDoP
+           @param {Adaptive.Geolocation} geolocation Geolocation Bean
+           @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
 
-           @param geolocation Geolocation Bean
-           @param warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(geolocation: Geolocation, warning: IGeolocationListenerWarning): void;
     }
     /**
+       @property {Adaptive.Dictionary} registeredLifecycleListener
+       @member Adaptive
+       @private
        LifecycleListener control dictionary.
     */
     var registeredLifecycleListener: Dictionary<ILifecycleListener>;
     /**
-       LifecycleListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ILifecycleListenerError} error
     */
     function handleLifecycleListenerError(id: number, error: ILifecycleListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+    */
     function handleLifecycleListenerResult(id: number, lifecycle: Lifecycle): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+       @param {Adaptive.ILifecycleListenerWarning} warning
+    */
     function handleLifecycleListenerWarning(id: number, lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;
+    /**
+       @class Adaptive.LifecycleListener
+       @extends Adaptive.BaseListener
+    */
     class LifecycleListener extends BaseListener implements ILifecycleListener {
         onErrorFunction: (error: ILifecycleListenerError) => void;
         onResultFunction: (lifecycle: Lifecycle) => void;
         onWarningFunction: (lifecycle: Lifecycle, warning: ILifecycleListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         constructor(onErrorFunction: (error: ILifecycleListenerError) => void, onResultFunction: (lifecycle: Lifecycle) => void, onWarningFunction: (lifecycle: Lifecycle, warning: ILifecycleListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: ILifecycleListenerError): void;
         /**
+           @method
            Called when lifecycle changes somehow.
+           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
 
-           @param lifecycle Lifecycle element
            @since ARP1.0
         */
         onResult(lifecycle: Lifecycle): void;
         /**
+           @method
            Data received with warning
+           @param {Adaptive.Lifecycle} lifecycle Lifecycle element
+           @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
 
-           @param lifecycle Lifecycle element
-           @param warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;
     }
     /**
+       @property {Adaptive.Dictionary} registeredNetworkStatusListener
+       @member Adaptive
+       @private
        NetworkStatusListener control dictionary.
     */
     var registeredNetworkStatusListener: Dictionary<INetworkStatusListener>;
     /**
-       NetworkStatusListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkStatusListenerError} error
     */
     function handleNetworkStatusListenerError(id: number, error: INetworkStatusListenerError): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+    */
     function handleNetworkStatusListenerResult(id: number, network: ICapabilitiesNet): void;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.INetworkStatusListenerWarning} warning
+    */
     function handleNetworkStatusListenerWarning(id: number, network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+    /**
+       @class Adaptive.NetworkStatusListener
+       @extends Adaptive.BaseListener
+    */
     class NetworkStatusListener extends BaseListener implements INetworkStatusListener {
         onErrorFunction: (error: INetworkStatusListenerError) => void;
         onResultFunction: (network: ICapabilitiesNet) => void;
         onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void;
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (network: ICapabilitiesNet) => void, onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void);
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
+           @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
 
-           @param error Type of error encountered during reading.
            @since ARP1.0
         */
         onError(error: INetworkStatusListenerError): void;
         /**
+           @method
            Called when network connection changes somehow.
+           @param {Adaptive.ICapabilitiesNet} network Change to this network.
 
-           @param network Change to this network.
            @since ARP1.0
         */
         onResult(network: ICapabilitiesNet): void;
         /**
+           @method
            Status received with warning
+           @param {Adaptive.ICapabilitiesNet} network Change to this network.
+           @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
 
-           @param network Change to this network.
-           @param warning Type of warning encountered during reading.
            @since ARP1.0
         */
         onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;

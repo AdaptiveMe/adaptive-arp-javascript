@@ -47,12 +47,21 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredButtonListener
+        @member Adaptive
+        @private
         ButtonListener control dictionary.
      */
      export var registeredButtonListener = new Dictionary<IButtonListener>([]);
 
+        // ButtonListener global listener handlers.
+
      /**
-        ButtonListener global listener handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IButtonListenerError} error
      */
      export function handleButtonListenerError(id : number, error : IButtonListenerError) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
@@ -62,6 +71,13 @@ module Adaptive {
                listener.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Button} button
+     */
      export function handleButtonListenerResult(id : number, button : Button) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -70,6 +86,14 @@ module Adaptive {
                listener.onResult(button);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Button} button
+        @param {Adaptive.IButtonListenerWarning} warning
+     */
      export function handleButtonListenerWarning(id : number, button : Button, warning : IButtonListenerWarning) : void {
           var listener : IButtonListener = registeredButtonListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
@@ -79,6 +103,10 @@ module Adaptive {
           }
      }
 
+     /**
+        @class Adaptive.ButtonListener
+        @extends Adaptive.BaseListener
+     */
      export class ButtonListener extends BaseListener implements IButtonListener {
 
           onErrorFunction : (error : IButtonListenerError) => void;
@@ -86,11 +114,12 @@ module Adaptive {
           onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Button
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);
@@ -112,9 +141,10 @@ module Adaptive {
           }
 
           /**
+             @method
              No data received
+             @param {Adaptive.IButtonListenerError} error occurred
 
-             @param error occurred
              @since ARP1.0
           */
           public onError(error : IButtonListenerError) : void {
@@ -126,9 +156,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Called on button pressed
+             @param {Adaptive.Button} button pressed
 
-             @param button pressed
              @since ARP1.0
           */
           public onResult(button : Button) : void {
@@ -140,10 +171,11 @@ module Adaptive {
           }
 
           /**
+             @method
              Data received with warning
+             @param {Adaptive.Button} button  pressed
+             @param {Adaptive.IButtonListenerWarning} warning happened
 
-             @param button  pressed
-             @param warning happened
              @since ARP1.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {
