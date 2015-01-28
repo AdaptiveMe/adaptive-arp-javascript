@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseCommerce
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseCommerce extends IAdaptiveRP {
      }

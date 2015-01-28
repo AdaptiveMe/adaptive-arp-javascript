@@ -114,7 +114,11 @@ module Adaptive {
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.KeyPair.
+             @return {Adaptive.KeyPair} Wrapped object instance.
           */
           static toObject(object : any) : KeyPair {
                var result : KeyPair = new KeyPair(null, null);

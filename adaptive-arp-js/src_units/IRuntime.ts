@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IRuntime
-        @extends Adaptive.IBaseSystem
      */
      export interface IRuntime extends IBaseSystem {
           /**

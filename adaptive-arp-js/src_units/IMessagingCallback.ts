@@ -48,7 +48,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IMessagingCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IMessagingCallback extends IBaseCallback {
           /**

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAds
-        @extends Adaptive.IBaseCommerce
      */
      export interface IAds extends IBaseCommerce {
      }

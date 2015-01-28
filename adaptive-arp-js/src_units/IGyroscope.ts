@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IGyroscope
-        @extends Adaptive.IBaseSensor
      */
      export interface IGyroscope extends IBaseSensor {
      }

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBarcode
-        @extends Adaptive.IBaseReader
      */
      export interface IBarcode extends IBaseReader {
      }

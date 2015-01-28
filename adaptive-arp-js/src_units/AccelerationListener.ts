@@ -109,17 +109,29 @@ module Adaptive {
      */
      export class AccelerationListener extends BaseListener implements IAccelerationListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IAccelerationListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (acceleration : Acceleration) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IAccelerationListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Acceleration
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Acceleration, Adaptive.IAccelerationListenerWarning
           */
           constructor(onErrorFunction : (error : IAccelerationListenerError) => void, onResultFunction : (acceleration : Acceleration) => void, onWarningFunction : (acceleration : Acceleration, warning : IAccelerationListenerWarning) => void) {
                super(++registeredCounter);
@@ -144,8 +156,7 @@ module Adaptive {
              @method
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
-             @param {Adaptive.IAccelerationListenerError} error Error fired
-
+             @param {Adaptive.IAccelerationListenerError} error error Error fired
              @since ARP1.0
           */
           public onError(error : IAccelerationListenerError) : void {
@@ -159,8 +170,7 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Correct data received.
-             @param {Adaptive.Acceleration} acceleration Acceleration received
-
+             @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
              @since ARP1.0
           */
           public onResult(acceleration : Acceleration) : void {
@@ -174,9 +184,8 @@ listener and subsequently, the listener will be deactivated and removed from the
           /**
              @method
              Data received with warning - ie. Needs calibration.
-             @param {Adaptive.Acceleration} acceleration Acceleration received
-             @param {Adaptive.IAccelerationListenerWarning} warning      Warning fired
-
+             @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
+             @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
              @since ARP1.0
           */
           public onWarning(acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {

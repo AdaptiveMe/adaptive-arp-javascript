@@ -48,7 +48,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ISecurity
-        @extends Adaptive.IBaseSecurity
      */
      export interface ISecurity extends IBaseSecurity {
           /**

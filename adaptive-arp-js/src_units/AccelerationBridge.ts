@@ -62,9 +62,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Register a new listener that will receive acceleration events.
 
-             @param listener to be registered.
+             @param {Adaptive.AccelerationListener} listener listener to be registered.
              @since ARP1.0
           */
           addAccelerationListener(listener : IAccelerationListener) : void {
@@ -103,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              De-registers an existing listener from receiving acceleration events.
 
-             @param listener to be registered.
+             @param {Adaptive.AccelerationListener} listener listener to be registered.
              @since ARP1.0
           */
           removeAccelerationListener(listener : IAccelerationListener) : void {
@@ -138,6 +140,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Removed all existing listeners from receiving acceleration events.
 
              @since ARP1.0

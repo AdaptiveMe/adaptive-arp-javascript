@@ -46,12 +46,22 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredNetworkReachabilityCallback
+        @member Adaptive
+        @private
         NetworkReachabilityCallback control dictionary.
      */
      export var registeredNetworkReachabilityCallback = new Dictionary<INetworkReachabilityCallback>([]);
 
+
+        // NetworkReachabilityCallback global listener handlers.
+
      /**
-        NetworkReachabilityCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.INetworkReachabilityCallbackError} error
      */
      export function handleNetworkReachabilityCallbackError(id : number, error : INetworkReachabilityCallbackError) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
@@ -62,6 +72,13 @@ module Adaptive {
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} reachable
+     */
      export function handleNetworkReachabilityCallbackResult(id : number, reachable : boolean) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -71,6 +88,14 @@ module Adaptive {
                callback.onResult(reachable);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {boolean} reachable
+        @param {Adaptive.INetworkReachabilityCallbackWarning} warning
+     */
      export function handleNetworkReachabilityCallbackWarning(id : number, reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {
           var callback : INetworkReachabilityCallback = registeredNetworkReachabilityCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -81,18 +106,36 @@ module Adaptive {
           }
      }
 
+
+     /**
+        @class Adaptive.NetworkReachabilityCallback
+        @extends Adaptive.BaseCallback
+     */
      export class NetworkReachabilityCallback extends BaseCallback implements INetworkReachabilityCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : INetworkReachabilityCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (reachable : boolean) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (reachable : boolean, warning : INetworkReachabilityCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
-             @param onResultFunction Function receiving parameters of type: boolean
-             @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: boolean
+             @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
           */
           constructor(onErrorFunction : (error : INetworkReachabilityCallbackError) => void, onResultFunction : (reachable : boolean) => void, onWarningFunction : (reachable : boolean, warning : INetworkReachabilityCallbackWarning) => void) {
                super(++registeredCounter);
@@ -114,9 +157,9 @@ module Adaptive {
           }
 
           /**
+             @method
              No data received - error condition, not authorized .
-
-             @param error Error value
+             @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
              @since ARP1.0
           */
           public onError(error : INetworkReachabilityCallbackError) : void {
@@ -128,9 +171,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Correct data received.
-
-             @param reachable Indicates if the host is reachable
+             @param {boolean} reachable reachable Indicates if the host is reachable
              @since ARP1.0
           */
           public onResult(reachable : boolean) : void {
@@ -142,10 +185,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Data received with warning - ie Found entries with existing key and values have been overriden
-
-             @param reachable Indicates if the host is reachable
-             @param warning   Warning value
+             @param {boolean} reachable reachable Indicates if the host is reachable
+             @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
              @since ARP1.0
           */
           public onWarning(reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {

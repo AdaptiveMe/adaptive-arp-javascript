@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseMedia
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseMedia extends IAdaptiveRP {
      }

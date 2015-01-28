@@ -47,12 +47,22 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredSecurityResultCallback
+        @member Adaptive
+        @private
         SecurityResultCallback control dictionary.
      */
      export var registeredSecurityResultCallback = new Dictionary<ISecurityResultCallback>([]);
 
+
+        // SecurityResultCallback global listener handlers.
+
      /**
-        SecurityResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.ISecurityResultCallbackError} error
      */
      export function handleSecurityResultCallbackError(id : number, error : ISecurityResultCallbackError) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
@@ -63,6 +73,13 @@ module Adaptive {
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.SecureKeyPair[]} keyValues
+     */
      export function handleSecurityResultCallbackResult(id : number, keyValues : Array<SecureKeyPair>) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -72,6 +89,14 @@ module Adaptive {
                callback.onResult(keyValues);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.SecureKeyPair[]} keyValues
+        @param {Adaptive.ISecurityResultCallbackWarning} warning
+     */
      export function handleSecurityResultCallbackWarning(id : number, keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) : void {
           var callback : ISecurityResultCallback = registeredSecurityResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -82,18 +107,36 @@ module Adaptive {
           }
      }
 
+
+     /**
+        @class Adaptive.SecurityResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class SecurityResultCallback extends BaseCallback implements ISecurityResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : ISecurityResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (keyValues : Array<SecureKeyPair>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
-             @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
           */
           constructor(onErrorFunction : (error : ISecurityResultCallbackError) => void, onResultFunction : (keyValues : Array<SecureKeyPair>) => void, onWarningFunction : (keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -115,9 +158,9 @@ module Adaptive {
           }
 
           /**
+             @method
              No data received - error condition, not authorized .
-
-             @param error Error values
+             @param {Adaptive.ISecurityResultCallbackError} error error Error values
              @since ARP1.0
           */
           public onError(error : ISecurityResultCallbackError) : void {
@@ -129,9 +172,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Correct data received.
-
-             @param keyValues key and values
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
              @since ARP1.0
           */
           public onResult(keyValues : Array<SecureKeyPair>) : void {
@@ -143,10 +186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Data received with warning - ie Found entries with existing key and values have been overriden
-
-             @param keyValues key and values
-             @param warning   Warning values
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
+             @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
              @since ARP1.0
           */
           public onWarning(keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) : void {

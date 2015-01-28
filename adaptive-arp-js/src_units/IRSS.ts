@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IRSS
-        @extends Adaptive.IBaseSocial
      */
      export interface IRSS extends IBaseSocial {
      }

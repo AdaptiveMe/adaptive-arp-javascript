@@ -62,9 +62,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Add the listener for network status changes of the app
 
-             @param listener Listener with the result
+             @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
              @since ARP1.0
           */
           addNetworkStatusListener(listener : INetworkStatusListener) : void {
@@ -103,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Un-registers an existing listener from receiving network status events.
 
-             @param listener Listener with the result
+             @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
              @since ARP1.0
           */
           removeNetworkStatusListener(listener : INetworkStatusListener) : void {
@@ -138,6 +140,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Removes all existing listeners from receiving network status events.
 
              @since ARP1.0

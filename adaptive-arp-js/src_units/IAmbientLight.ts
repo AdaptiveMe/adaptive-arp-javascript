@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAmbientLight
-        @extends Adaptive.IBaseSensor
      */
      export interface IAmbientLight extends IBaseSensor {
      }

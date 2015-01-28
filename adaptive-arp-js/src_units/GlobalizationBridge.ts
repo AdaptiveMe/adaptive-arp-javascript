@@ -62,6 +62,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns the default locale of the application defined in the configuration file
 
              @return {Adaptive.Locale} Default Locale of the application
@@ -100,6 +101,7 @@ module Adaptive {
           }
 
           /**
+             @method
              List of supported locales for the application defined in the configuration file
 
              @return {Adaptive.Locale[]} List of locales
@@ -141,10 +143,11 @@ module Adaptive {
           }
 
           /**
+             @method
              Gets the text/message corresponding to the given key and locale.
 
-             @param key    to match text
-             @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+             @param {string} key key    to match text
+             @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
              @since ARP1.0
           */
@@ -183,9 +186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
 
-             @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
+             @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
              @since ARP1.0
           */

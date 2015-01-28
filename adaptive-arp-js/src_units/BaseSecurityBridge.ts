@@ -42,7 +42,6 @@ module Adaptive {
 
      /**
         @class Adaptive.BaseSecurityBridge
-        @extends Adaptive.IBaseSecurity
         Base application for Security purposes
 
         @author Carlos Lozano Diez

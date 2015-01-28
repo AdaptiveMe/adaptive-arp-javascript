@@ -63,11 +63,12 @@ module Adaptive {
           }
 
           /**
+             @method
              Deletes from the device internal storage the entry/entries containing the specified key names.
 
-             @param keys             Array with the key names to delete.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {string[]} keys keys             Array with the key names to delete.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           deleteSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
@@ -111,11 +112,12 @@ module Adaptive {
           }
 
           /**
+             @method
              Retrieves from the device internal storage the entry/entries containing the specified key names.
 
-             @param keys             Array with the key names to retrieve.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {string[]} keys keys             Array with the key names to retrieve.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           getSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
@@ -159,6 +161,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Returns if the device has been modified in anyhow
 
              @return {boolean} true if the device has been modified; false otherwise
@@ -197,11 +200,12 @@ module Adaptive {
           }
 
           /**
+             @method
              Stores in the device internal storage the specified item/s.
 
-             @param keyValues        Array containing the items to store on the device internal memory.
-             @param publicAccessName The name of the shared internal storage object (if needed).
-             @param callback         callback to be executed upon function result.
+             @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
+             @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
+             @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
              @since ARP 1.0
           */
           setSecureKeyValuePairs(keyValues : Array<SecureKeyPair>, publicAccessName : string, callback : ISecurityResultCallback) : void {

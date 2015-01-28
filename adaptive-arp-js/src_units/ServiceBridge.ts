@@ -64,9 +64,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Get a reference to a registered service by name.
 
-             @param serviceName Name of service.
+             @param {string} serviceName serviceName Name of service.
              @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
              @since ARP1.0
           */
@@ -104,11 +105,12 @@ module Adaptive {
           }
 
           /**
+             @method
              Request async a service for an Url
 
-             @param serviceRequest Service Request to invoke
-             @param service        Service to call
-             @param callback       Callback to execute with the result
+             @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
+             @param {Adaptive.Service} service serviceRequest Service Request to invoke
+             @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
              @since ARP1.0
           */
           invokeService(serviceRequest : ServiceRequest, service : Service, callback : IServiceResultCallback) : void {
@@ -152,9 +154,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Register a new service
 
-             @param service to register
+             @param {Adaptive.Service} service service to register
              @since ARP1.0
           */
           registerService(service : Service) : void {
@@ -177,9 +180,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Unregister a service
 
-             @param service to unregister
+             @param {Adaptive.Service} service service to unregister
              @since ARP1.0
           */
           unregisterService(service : Service) : void {
@@ -202,6 +206,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Unregister all services.
 
              @since ARP1.0

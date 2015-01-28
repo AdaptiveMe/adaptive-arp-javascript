@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IConcurrent
-        @extends Adaptive.IBaseUtil
      */
      export interface IConcurrent extends IBaseUtil {
      }

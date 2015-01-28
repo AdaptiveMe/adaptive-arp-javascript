@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IInternalStorage
-        @extends Adaptive.IBaseData
      */
      export interface IInternalStorage extends IBaseData {
      }

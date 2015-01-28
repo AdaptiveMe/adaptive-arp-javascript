@@ -50,7 +50,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDatabase
-        @extends Adaptive.IBaseData
      */
      export interface IDatabase extends IBaseData {
           /**

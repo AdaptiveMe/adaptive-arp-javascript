@@ -109,17 +109,29 @@ module Adaptive {
      */
      export class ButtonListener extends BaseListener implements IButtonListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IButtonListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (button : Button) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Button
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Button
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
           */
           constructor(onErrorFunction : (error : IButtonListenerError) => void, onResultFunction : (button : Button) => void, onWarningFunction : (button : Button, warning : IButtonListenerWarning) => void) {
                super(++registeredCounter);
@@ -143,8 +155,7 @@ module Adaptive {
           /**
              @method
              No data received
-             @param {Adaptive.IButtonListenerError} error occurred
-
+             @param {Adaptive.IButtonListenerError} error error occurred
              @since ARP1.0
           */
           public onError(error : IButtonListenerError) : void {
@@ -158,8 +169,7 @@ module Adaptive {
           /**
              @method
              Called on button pressed
-             @param {Adaptive.Button} button pressed
-
+             @param {Adaptive.Button} button button pressed
              @since ARP1.0
           */
           public onResult(button : Button) : void {
@@ -173,9 +183,8 @@ module Adaptive {
           /**
              @method
              Data received with warning
-             @param {Adaptive.Button} button  pressed
-             @param {Adaptive.IButtonListenerWarning} warning happened
-
+             @param {Adaptive.Button} button button  pressed
+             @param {Adaptive.IButtonListenerWarning} warning warning happened
              @since ARP1.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {

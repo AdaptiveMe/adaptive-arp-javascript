@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAlarm
-        @extends Adaptive.IBaseNotification
      */
      export interface IAlarm extends IBaseNotification {
      }

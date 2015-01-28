@@ -109,17 +109,29 @@ module Adaptive {
      */
      export class GeolocationListener extends BaseListener implements IGeolocationListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IGeolocationListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (geolocation : Geolocation) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
           */
           constructor(onErrorFunction : (error : IGeolocationListenerError) => void, onResultFunction : (geolocation : Geolocation) => void, onWarningFunction : (geolocation : Geolocation, warning : IGeolocationListenerWarning) => void) {
                super(++registeredCounter);
@@ -143,8 +155,7 @@ module Adaptive {
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.IGeolocationListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : IGeolocationListenerError) : void {
@@ -158,8 +169,7 @@ module Adaptive {
           /**
              @method
              Correct data received.
-             @param {Adaptive.Geolocation} geolocation Geolocation Bean
-
+             @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
              @since ARP1.0
           */
           public onResult(geolocation : Geolocation) : void {
@@ -173,9 +183,8 @@ module Adaptive {
           /**
              @method
              Data received with warning - ie. HighDoP
-             @param {Adaptive.Geolocation} geolocation Geolocation Bean
-             @param {Adaptive.IGeolocationListenerWarning} warning     Type of warning encountered during reading.
-
+             @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
+             @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {

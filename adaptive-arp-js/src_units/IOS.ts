@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IOS
-        @extends Adaptive.IBaseSystem
      */
      export interface IOS extends IBaseSystem {
           /**

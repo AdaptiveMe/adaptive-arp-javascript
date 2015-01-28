@@ -114,7 +114,11 @@ module Adaptive {
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Database.
+             @return {Adaptive.Database} Wrapped object instance.
           */
           static toObject(object : any) : Database {
                var result : Database = new Database(null, null);

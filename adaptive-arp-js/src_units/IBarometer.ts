@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBarometer
-        @extends Adaptive.IBaseSensor
      */
      export interface IBarometer extends IBaseSensor {
      }

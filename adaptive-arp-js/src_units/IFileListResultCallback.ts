@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFileListResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IFileListResultCallback extends IBaseCallback {
           /**

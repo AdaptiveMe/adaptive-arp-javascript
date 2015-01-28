@@ -43,7 +43,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.BaseListener
-        @extends Adaptive.IBaseListener
      */
      export class BaseListener implements IBaseListener {
 

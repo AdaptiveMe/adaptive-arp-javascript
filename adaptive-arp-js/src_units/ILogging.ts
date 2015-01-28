@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ILogging
-        @extends Adaptive.IBaseUtil
      */
      export interface ILogging extends IBaseUtil {
           /**

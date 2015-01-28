@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICompression
-        @extends Adaptive.IBaseUtil
      */
      export interface ICompression extends IBaseUtil {
      }

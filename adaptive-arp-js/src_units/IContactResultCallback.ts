@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IContactResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IContactResultCallback extends IBaseCallback {
           /**

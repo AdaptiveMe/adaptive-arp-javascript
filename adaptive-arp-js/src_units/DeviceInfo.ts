@@ -169,7 +169,11 @@ be unique for a specific instance of an application on a specific device.
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo.
+             @return {Adaptive.DeviceInfo} Wrapped object instance.
           */
           static toObject(object : any) : DeviceInfo {
                var result : DeviceInfo = new DeviceInfo(null, null, null, null);

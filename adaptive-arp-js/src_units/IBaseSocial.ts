@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSocial
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSocial extends IAdaptiveRP {
      }

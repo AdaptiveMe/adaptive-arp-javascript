@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDisplay
-        @extends Adaptive.IBaseSystem
      */
      export interface IDisplay extends IBaseSystem {
      }

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDataStream
-        @extends Adaptive.IBaseData
      */
      export interface IDataStream extends IBaseData {
      }

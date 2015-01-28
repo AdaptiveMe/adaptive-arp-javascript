@@ -115,7 +115,11 @@ module Adaptive {
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPhone.
+             @return {Adaptive.ContactPhone} Wrapped object instance.
           */
           static toObject(object : any) : ContactPhone {
                var result : ContactPhone = new ContactPhone(null, null);

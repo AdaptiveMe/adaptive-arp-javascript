@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBasePIM
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBasePIM extends IAdaptiveRP {
      }

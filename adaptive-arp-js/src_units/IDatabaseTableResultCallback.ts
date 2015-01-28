@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IDatabaseTableResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface IDatabaseTableResultCallback extends IBaseCallback {
           /**

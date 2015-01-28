@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseReader
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseReader extends IAdaptiveRP {
      }

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IImaging
-        @extends Adaptive.IBaseMedia
      */
      export interface IImaging extends IBaseMedia {
      }

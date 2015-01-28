@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAudio
-        @extends Adaptive.IBaseMedia
      */
      export interface IAudio extends IBaseMedia {
      }

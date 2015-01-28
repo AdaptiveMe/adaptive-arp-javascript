@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IUI
-        @extends Adaptive.IBaseUI
      */
      export interface IUI extends IBaseUI {
      }

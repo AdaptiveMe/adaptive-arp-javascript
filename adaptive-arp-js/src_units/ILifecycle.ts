@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ILifecycle
-        @extends Adaptive.IBaseApplication
      */
      export interface ILifecycle extends IBaseApplication {
           /**

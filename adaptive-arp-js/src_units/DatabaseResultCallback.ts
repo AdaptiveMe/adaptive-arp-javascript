@@ -47,12 +47,22 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredDatabaseResultCallback
+        @member Adaptive
+        @private
         DatabaseResultCallback control dictionary.
      */
      export var registeredDatabaseResultCallback = new Dictionary<IDatabaseResultCallback>([]);
 
+
+        // DatabaseResultCallback global listener handlers.
+
      /**
-        DatabaseResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IDatabaseResultCallbackError} error
      */
      export function handleDatabaseResultCallbackError(id : number, error : IDatabaseResultCallbackError) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
@@ -63,6 +73,13 @@ module Adaptive {
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Database} database
+     */
      export function handleDatabaseResultCallbackResult(id : number, database : Database) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -72,6 +89,14 @@ module Adaptive {
                callback.onResult(database);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Database} database
+        @param {Adaptive.IDatabaseResultCallbackWarning} warning
+     */
      export function handleDatabaseResultCallbackWarning(id : number, database : Database, warning : IDatabaseResultCallbackWarning) : void {
           var callback : IDatabaseResultCallback = registeredDatabaseResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -82,18 +107,36 @@ module Adaptive {
           }
      }
 
+
+     /**
+        @class Adaptive.DatabaseResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class DatabaseResultCallback extends BaseCallback implements IDatabaseResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IDatabaseResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (database : Database) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (database : Database, warning : IDatabaseResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Database
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Database
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IDatabaseResultCallbackError) => void, onResultFunction : (database : Database) => void, onWarningFunction : (database : Database, warning : IDatabaseResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -115,9 +158,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Result callback for error responses
-
-             @param error Returned error
+             @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
              @since ARP1.0
           */
           public onError(error : IDatabaseResultCallbackError) : void {
@@ -129,9 +172,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Result callback for correct responses
-
-             @param database Returns the database
+             @param {Adaptive.Database} database database Returns the database
              @since ARP1.0
           */
           public onResult(database : Database) : void {
@@ -143,10 +186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Result callback for warning responses
-
-             @param database Returns the database
-             @param warning  Returned Warning
+             @param {Adaptive.Database} database database Returns the database
+             @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
              @since ARP1.0
           */
           public onWarning(database : Database, warning : IDatabaseResultCallbackWarning) : void {

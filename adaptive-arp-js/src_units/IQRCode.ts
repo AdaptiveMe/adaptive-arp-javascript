@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IQRCode
-        @extends Adaptive.IBaseReader
      */
      export interface IQRCode extends IBaseReader {
      }

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseNotification
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseNotification extends IAdaptiveRP {
      }

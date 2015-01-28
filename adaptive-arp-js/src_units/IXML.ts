@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IXML
-        @extends Adaptive.IBaseData
      */
      export interface IXML extends IBaseData {
      }

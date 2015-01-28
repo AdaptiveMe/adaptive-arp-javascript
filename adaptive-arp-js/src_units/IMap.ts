@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IMap
-        @extends Adaptive.IBaseUI
      */
      export interface IMap extends IBaseUI {
      }

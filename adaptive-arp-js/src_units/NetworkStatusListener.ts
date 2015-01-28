@@ -109,17 +109,29 @@ module Adaptive {
      */
      export class NetworkStatusListener extends BaseListener implements INetworkStatusListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : INetworkStatusListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (network : ICapabilitiesNet) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
           */
           constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
@@ -143,8 +155,7 @@ module Adaptive {
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.INetworkStatusListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : INetworkStatusListenerError) : void {
@@ -158,8 +169,7 @@ module Adaptive {
           /**
              @method
              Called when network connection changes somehow.
-             @param {Adaptive.ICapabilitiesNet} network Change to this network.
-
+             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
              @since ARP1.0
           */
           public onResult(network : ICapabilitiesNet) : void {
@@ -173,9 +183,8 @@ module Adaptive {
           /**
              @method
              Status received with warning
-             @param {Adaptive.ICapabilitiesNet} network Change to this network.
-             @param {Adaptive.INetworkStatusListenerWarning} warning Type of warning encountered during reading.
-
+             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IMagnetometer
-        @extends Adaptive.IBaseSensor
      */
      export interface IMagnetometer extends IBaseSensor {
      }

@@ -62,9 +62,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Register a new listener that will receive geolocation events.
 
-             @param listener to be registered.
+             @param {Adaptive.GeolocationListener} listener listener to be registered.
              @since ARP1.0
           */
           addGeolocationListener(listener : IGeolocationListener) : void {
@@ -103,9 +104,10 @@ module Adaptive {
           }
 
           /**
+             @method
              De-registers an existing listener from receiving geolocation events.
 
-             @param listener to be registered.
+             @param {Adaptive.GeolocationListener} listener listener to be registered.
              @since ARP1.0
           */
           removeGeolocationListener(listener : IGeolocationListener) : void {
@@ -138,6 +140,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Removed all existing listeners from receiving geolocation events.
 
              @since ARP1.0

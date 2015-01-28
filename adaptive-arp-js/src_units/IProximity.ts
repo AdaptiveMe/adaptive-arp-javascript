@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IProximity
-        @extends Adaptive.IBaseSensor
      */
      export interface IProximity extends IBaseSensor {
      }

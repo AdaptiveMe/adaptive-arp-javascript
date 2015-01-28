@@ -109,17 +109,29 @@ module Adaptive {
      */
      export class LifecycleListener extends BaseListener implements ILifecycleListener {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : ILifecycleListenerError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (lifecycle : Lifecycle) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
-             @param {function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-             @param {function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-             @param {function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
           */
           constructor(onErrorFunction : (error : ILifecycleListenerError) => void, onResultFunction : (lifecycle : Lifecycle) => void, onWarningFunction : (lifecycle : Lifecycle, warning : ILifecycleListenerWarning) => void) {
                super(++registeredCounter);
@@ -143,8 +155,7 @@ module Adaptive {
           /**
              @method
              No data received - error condition, not authorized or hardware not available.
-             @param {Adaptive.ILifecycleListenerError} error Type of error encountered during reading.
-
+             @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
              @since ARP1.0
           */
           public onError(error : ILifecycleListenerError) : void {
@@ -158,8 +169,7 @@ module Adaptive {
           /**
              @method
              Called when lifecycle changes somehow.
-             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-
+             @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
              @since ARP1.0
           */
           public onResult(lifecycle : Lifecycle) : void {
@@ -173,9 +183,8 @@ module Adaptive {
           /**
              @method
              Data received with warning
-             @param {Adaptive.Lifecycle} lifecycle Lifecycle element
-             @param {Adaptive.ILifecycleListenerWarning} warning   Type of warning encountered during reading.
-
+             @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
+             @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
              @since ARP1.0
           */
           public onWarning(lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {

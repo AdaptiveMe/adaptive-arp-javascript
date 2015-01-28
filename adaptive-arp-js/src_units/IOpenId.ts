@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IOpenId
-        @extends Adaptive.IBaseSecurity
      */
      export interface IOpenId extends IBaseSecurity {
      }

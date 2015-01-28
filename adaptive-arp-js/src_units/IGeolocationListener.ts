@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IGeolocationListener
-        @extends Adaptive.IBaseListener
      */
      export interface IGeolocationListener extends IBaseListener {
           /**

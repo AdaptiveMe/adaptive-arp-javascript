@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IManagement
-        @extends Adaptive.IBaseApplication
      */
      export interface IManagement extends IBaseApplication {
      }

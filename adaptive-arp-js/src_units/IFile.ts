@@ -54,7 +54,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IFile
-        @extends Adaptive.IBaseData
      */
      export interface IFile extends IBaseData {
           /**

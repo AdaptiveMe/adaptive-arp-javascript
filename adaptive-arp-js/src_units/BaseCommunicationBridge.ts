@@ -42,7 +42,6 @@ module Adaptive {
 
      /**
         @class Adaptive.BaseCommunicationBridge
-        @extends Adaptive.IBaseCommunication
         Base application for Communication purposes
 
         @author Carlos Lozano Diez

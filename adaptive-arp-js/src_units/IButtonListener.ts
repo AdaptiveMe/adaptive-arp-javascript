@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IButtonListener
-        @extends Adaptive.IBaseListener
      */
      export interface IButtonListener extends IBaseListener {
           /**

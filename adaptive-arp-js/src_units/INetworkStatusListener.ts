@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkStatusListener
-        @extends Adaptive.IBaseListener
      */
      export interface INetworkStatusListener extends IBaseListener {
           /**

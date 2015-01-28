@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ITimer
-        @extends Adaptive.IBaseUtil
      */
      export interface ITimer extends IBaseUtil {
      }

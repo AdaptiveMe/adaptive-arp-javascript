@@ -222,7 +222,11 @@ module Adaptive {
           }
 
           /**
+             @method
+             @static
              Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Geolocation.
+             @return {Adaptive.Geolocation} Wrapped object instance.
           */
           static toObject(object : any) : Geolocation {
                var result : Geolocation = new Geolocation(null, null, null, null, null, null);

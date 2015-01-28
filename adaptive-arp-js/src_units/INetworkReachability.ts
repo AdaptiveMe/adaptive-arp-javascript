@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INetworkReachability
-        @extends Adaptive.IBaseCommunication
      */
      export interface INetworkReachability extends IBaseCommunication {
           /**

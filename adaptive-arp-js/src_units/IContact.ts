@@ -51,7 +51,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IContact
-        @extends Adaptive.IBasePIM
      */
      export interface IContact extends IBasePIM {
           /**

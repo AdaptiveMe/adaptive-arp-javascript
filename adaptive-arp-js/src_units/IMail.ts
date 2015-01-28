@@ -48,7 +48,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IMail
-        @extends Adaptive.IBasePIM
      */
      export interface IMail extends IBasePIM {
           /**

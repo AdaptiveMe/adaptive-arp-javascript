@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ILinkedIn
-        @extends Adaptive.IBaseSocial
      */
      export interface ILinkedIn extends IBaseSocial {
      }

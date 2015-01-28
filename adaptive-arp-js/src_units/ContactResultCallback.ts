@@ -47,12 +47,22 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredContactResultCallback
+        @member Adaptive
+        @private
         ContactResultCallback control dictionary.
      */
      export var registeredContactResultCallback = new Dictionary<IContactResultCallback>([]);
 
+
+        // ContactResultCallback global listener handlers.
+
      /**
-        ContactResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IContactResultCallbackError} error
      */
      export function handleContactResultCallbackError(id : number, error : IContactResultCallbackError) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
@@ -63,6 +73,13 @@ module Adaptive {
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Contact[]} contacts
+     */
      export function handleContactResultCallbackResult(id : number, contacts : Array<Contact>) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -72,6 +89,14 @@ module Adaptive {
                callback.onResult(contacts);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.Contact[]} contacts
+        @param {Adaptive.IContactResultCallbackWarning} warning
+     */
      export function handleContactResultCallbackWarning(id : number, contacts : Array<Contact>, warning : IContactResultCallbackWarning) : void {
           var callback : IContactResultCallback = registeredContactResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -82,18 +107,36 @@ module Adaptive {
           }
      }
 
+
+     /**
+        @class Adaptive.ContactResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class ContactResultCallback extends BaseCallback implements IContactResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IContactResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (contacts : Array<Contact>) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (contacts : Array<Contact>, warning : IContactResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
-             @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IContactResultCallbackError) => void, onResultFunction : (contacts : Array<Contact>) => void, onWarningFunction : (contacts : Array<Contact>, warning : IContactResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -115,9 +158,9 @@ module Adaptive {
           }
 
           /**
+             @method
              This method is called on Error
-
-             @param error returned by the platform
+             @param {Adaptive.IContactResultCallbackError} error error returned by the platform
              @since ARP1.0
           */
           public onError(error : IContactResultCallbackError) : void {
@@ -129,9 +172,9 @@ module Adaptive {
           }
 
           /**
+             @method
              This method is called on Result
-
-             @param contacts returned by the platform
+             @param {Adaptive.Contact[]} contacts contacts returned by the platform
              @since ARP1.0
           */
           public onResult(contacts : Array<Contact>) : void {
@@ -143,10 +186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              This method is called on Warning
-
-             @param contacts returned by the platform
-             @param warning  returned by the platform
+             @param {Adaptive.Contact[]} contacts contacts returned by the platform
+             @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
              @since ARP1.0
           */
           public onWarning(contacts : Array<Contact>, warning : IContactResultCallbackWarning) : void {

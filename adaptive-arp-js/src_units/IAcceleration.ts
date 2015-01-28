@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAcceleration
-        @extends Adaptive.IBaseSensor
      */
      export interface IAcceleration extends IBaseSensor {
           /**

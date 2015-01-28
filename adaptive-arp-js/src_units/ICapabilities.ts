@@ -53,7 +53,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICapabilities
-        @extends Adaptive.IBaseSystem
      */
      export interface ICapabilities extends IBaseSystem {
           /**

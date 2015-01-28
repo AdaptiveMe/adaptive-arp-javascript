@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IOAuth
-        @extends Adaptive.IBaseSecurity
      */
      export interface IOAuth extends IBaseSecurity {
      }

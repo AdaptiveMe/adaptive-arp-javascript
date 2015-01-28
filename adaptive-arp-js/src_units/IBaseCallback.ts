@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseCallback
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseCallback extends IAdaptiveRP {
 

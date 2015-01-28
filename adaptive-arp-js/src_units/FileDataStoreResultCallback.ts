@@ -47,12 +47,22 @@ module Adaptive {
      */
 
      /**
+        @property {Adaptive.Dictionary} registeredFileDataStoreResultCallback
+        @member Adaptive
+        @private
         FileDataStoreResultCallback control dictionary.
      */
      export var registeredFileDataStoreResultCallback = new Dictionary<IFileDataStoreResultCallback>([]);
 
+
+        // FileDataStoreResultCallback global listener handlers.
+
      /**
-        FileDataStoreResultCallback global callback handlers.
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.IFileDataStoreResultCallbackError} error
      */
      export function handleFileDataStoreResultCallbackError(id : number, error : IFileDataStoreResultCallbackError) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
@@ -63,6 +73,13 @@ module Adaptive {
                callback.onError(error);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} file
+     */
      export function handleFileDataStoreResultCallbackResult(id : number, file : FileDescriptor) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -72,6 +89,14 @@ module Adaptive {
                callback.onResult(file);
           }
      }
+     /**
+        @method
+        @private
+        @member Adaptive
+        @param {number} id
+        @param {Adaptive.FileDescriptor} file
+        @param {Adaptive.IFileDataStoreResultCallbackWarning} warning
+     */
      export function handleFileDataStoreResultCallbackWarning(id : number, file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) : void {
           var callback : IFileDataStoreResultCallback = registeredFileDataStoreResultCallback[""+id];
           if (typeof callback === 'undefined' || callback == null) {
@@ -82,18 +107,36 @@ module Adaptive {
           }
      }
 
+
+     /**
+        @class Adaptive.FileDataStoreResultCallback
+        @extends Adaptive.BaseCallback
+     */
      export class FileDataStoreResultCallback extends BaseCallback implements IFileDataStoreResultCallback {
 
+          /**
+             @private
+             @property
+          */
           onErrorFunction : (error : IFileDataStoreResultCallbackError) => void;
+          /**
+             @private
+             @property
+          */
           onResultFunction : (file : FileDescriptor) => void;
+          /**
+             @private
+             @property
+          */
           onWarningFunction : (file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) => void;
 
           /**
+             @method constructor
              Constructor with anonymous handler functions for callback.
 
-             @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
-             @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-             @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
+             @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataStoreResultCallbackError
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileDataStoreResultCallbackWarning
           */
           constructor(onErrorFunction : (error : IFileDataStoreResultCallbackError) => void, onResultFunction : (file : FileDescriptor) => void, onWarningFunction : (file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) => void) {
                super(++registeredCounter);
@@ -115,9 +158,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Error processing data retrieval/storage operation.
-
-             @param error Error condition encountered.
+             @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
              @since ARP1.0
           */
           public onError(error : IFileDataStoreResultCallbackError) : void {
@@ -129,9 +172,9 @@ module Adaptive {
           }
 
           /**
+             @method
              Result of data storage operation.
-
-             @param file File reference to stored data.
+             @param {Adaptive.FileDescriptor} file file File reference to stored data.
              @since ARP1.0
           */
           public onResult(file : FileDescriptor) : void {
@@ -143,10 +186,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Result with warning of data retrieval/storage operation.
-
-             @param file    File being loaded/stored.
-             @param warning Warning condition encountered.
+             @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
+             @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
              @since ARP1.0
           */
           public onWarning(file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) : void {

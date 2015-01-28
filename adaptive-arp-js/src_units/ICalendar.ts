@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICalendar
-        @extends Adaptive.IBasePIM
      */
      export interface ICalendar extends IBasePIM {
      }

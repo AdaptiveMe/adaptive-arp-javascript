@@ -48,7 +48,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IGlobalization
-        @extends Adaptive.IBaseApplication
      */
      export interface IGlobalization extends IBaseApplication {
           /**

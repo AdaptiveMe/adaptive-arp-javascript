@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ITelephony
-        @extends Adaptive.IBaseCommunication
      */
      export interface ITelephony extends IBaseCommunication {
           /**

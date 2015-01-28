@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.INotificationLocal
-        @extends Adaptive.IBaseNotification
      */
      export interface INotificationLocal extends IBaseNotification {
      }

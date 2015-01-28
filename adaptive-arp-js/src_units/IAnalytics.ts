@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAnalytics
-        @extends Adaptive.IBaseApplication
      */
      export interface IAnalytics extends IBaseApplication {
      }

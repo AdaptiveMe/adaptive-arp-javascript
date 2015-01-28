@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBaseSensor
-        @extends Adaptive.IAdaptiveRP
      */
      export interface IBaseSensor extends IAdaptiveRP {
      }

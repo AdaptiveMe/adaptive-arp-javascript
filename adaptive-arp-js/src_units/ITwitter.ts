@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ITwitter
-        @extends Adaptive.IBaseSocial
      */
      export interface ITwitter extends IBaseSocial {
      }

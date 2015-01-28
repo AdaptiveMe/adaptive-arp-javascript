@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ISecurityResultCallback
-        @extends Adaptive.IBaseCallback
      */
      export interface ISecurityResultCallback extends IBaseCallback {
           /**

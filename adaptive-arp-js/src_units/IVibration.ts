@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IVibration
-        @extends Adaptive.IBaseNotification
      */
      export interface IVibration extends IBaseNotification {
      }

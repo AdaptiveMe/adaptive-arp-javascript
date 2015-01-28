@@ -47,7 +47,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IGeolocation
-        @extends Adaptive.IBaseSensor
      */
      export interface IGeolocation extends IBaseSensor {
           /**

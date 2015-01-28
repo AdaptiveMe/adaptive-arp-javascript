@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICrypto
-        @extends Adaptive.IBaseUtil
      */
      export interface ICrypto extends IBaseUtil {
      }

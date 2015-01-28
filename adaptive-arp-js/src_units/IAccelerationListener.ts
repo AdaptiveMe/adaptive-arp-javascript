@@ -49,7 +49,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IAccelerationListener
-        @extends Adaptive.IBaseListener
      */
      export interface IAccelerationListener extends IBaseListener {
           /**

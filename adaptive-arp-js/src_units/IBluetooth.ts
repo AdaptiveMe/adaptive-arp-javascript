@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.IBluetooth
-        @extends Adaptive.IBaseCommunication
      */
      export interface IBluetooth extends IBaseCommunication {
      }

@@ -46,7 +46,6 @@ module Adaptive {
      */
      /**
         @class Adaptive.ICamera
-        @extends Adaptive.IBaseMedia
      */
      export interface ICamera extends IBaseMedia {
      }

@@ -62,9 +62,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Add the listener for the lifecycle of the app
 
-             @param listener Lifecycle listener
+             @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
              @since ARP1.0
           */
           addLifecycleListener(listener : ILifecycleListener) : void {
@@ -103,6 +104,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Whether the application is in background or not
 
              @return {boolean} true if the application is in background;false otherwise
@@ -141,9 +143,10 @@ module Adaptive {
           }
 
           /**
+             @method
              Un-registers an existing listener from receiving lifecycle events.
 
-             @param listener Lifecycle listener
+             @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
              @since ARP1.0
           */
           removeLifecycleListener(listener : ILifecycleListener) : void {
@@ -176,6 +179,7 @@ module Adaptive {
           }
 
           /**
+             @method
              Removes all existing listeners from receiving lifecycle events.
 
              @since ARP1.0
