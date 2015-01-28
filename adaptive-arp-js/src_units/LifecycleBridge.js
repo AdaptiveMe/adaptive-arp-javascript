@@ -66,9 +66,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Add the listener for the lifecycle of the app
 
-           @param listener Lifecycle listener
+           @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
            @since ARP1.0
         */
         LifecycleBridge.prototype.addLifecycleListener = function (listener) {
@@ -109,6 +110,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Whether the application is in background or not
 
            @return {boolean} true if the application is in background;false otherwise
@@ -149,9 +151,10 @@ var Adaptive;
             return response;
         };
         /**
+           @method
            Un-registers an existing listener from receiving lifecycle events.
 
-           @param listener Lifecycle listener
+           @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
            @since ARP1.0
         */
         LifecycleBridge.prototype.removeLifecycleListener = function (listener) {
@@ -186,6 +189,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Removes all existing listeners from receiving lifecycle events.
 
            @since ARP1.0

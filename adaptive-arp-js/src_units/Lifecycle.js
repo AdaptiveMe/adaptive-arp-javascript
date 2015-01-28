@@ -84,7 +84,11 @@ var Adaptive;
             this.state = state;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
+           @return {Adaptive.Lifecycle} Wrapped object instance.
         */
         Lifecycle.toObject = function (object) {
             var result = new Lifecycle(null);

@@ -128,7 +128,11 @@ var Adaptive;
             this.primary = primary;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactEmail.
+           @return {Adaptive.ContactEmail} Wrapped object instance.
         */
         ContactEmail.toObject = function (object) {
             var result = new ContactEmail(null, null, null);

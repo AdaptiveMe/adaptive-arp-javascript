@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseUIBridge
-       @extends Adaptive.IBaseUI
        Base application for UI purposes
 
        @author Carlos Lozano Diez

@@ -172,7 +172,11 @@ var Adaptive;
             this.scheme = scheme;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
+           @return {Adaptive.ServiceEndpoint} Wrapped object instance.
         */
         ServiceEndpoint.toObject = function (object) {
             var result = new ServiceEndpoint(null, null, null, null, null);

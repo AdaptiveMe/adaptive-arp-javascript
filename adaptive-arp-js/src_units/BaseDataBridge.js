@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseDataBridge
-       @extends Adaptive.IBaseData
        Base application for Data purposes
 
        @author Carlos Lozano Diez

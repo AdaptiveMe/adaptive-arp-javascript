@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseSystemBridge
-       @extends Adaptive.IBaseSystem
        Base application for System purposes
 
        @author Carlos Lozano Diez

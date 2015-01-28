@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IFileResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileResultCallback
+       @member Adaptive
+       @private
        FileResultCallback control dictionary.
     */
     Adaptive.registeredFileResultCallback = new Adaptive.Dictionary([]);
+    // FileResultCallback global listener handlers.
     /**
-       FileResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileResultCallbackError} error
     */
     function handleFileResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleFileResultCallbackError = handleFileResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} storageFile
+    */
     function handleFileResultCallbackResult(id, storageFile) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleFileResultCallbackResult = handleFileResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor} file
+       @param {Adaptive.IFileResultCallbackWarning} warning
+    */
     function handleFileResultCallbackWarning(id, file, warning) {
         var callback = Adaptive.registeredFileResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleFileResultCallbackWarning = handleFileResultCallbackWarning;
+    /**
+       @class Adaptive.FileResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileResultCallback = (function (_super) {
         __extends(FileResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor, Adaptive.IFileResultCallbackWarning
         */
         function FileResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            On error result of a file operation.
-
-           @param error Error processing the request.
+           @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
            @since ARP1.0
         */
         FileResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            On correct result of a file operation.
-
-           @param storageFile Reference to the resulting file.
+           @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
            @since ARP1.0
         */
         FileResultCallback.prototype.onResult = function (storageFile) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            On partial result of a file operation, containing a warning.
-
-           @param file    Reference to the offending file.
-           @param warning Warning processing the request.
+           @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
+           @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
            @since ARP1.0
         */
         FileResultCallback.prototype.onWarning = function (file, warning) {

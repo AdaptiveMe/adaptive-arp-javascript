@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IContactResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredContactResultCallback
+       @member Adaptive
+       @private
        ContactResultCallback control dictionary.
     */
     Adaptive.registeredContactResultCallback = new Adaptive.Dictionary([]);
+    // ContactResultCallback global listener handlers.
     /**
-       ContactResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IContactResultCallbackError} error
     */
     function handleContactResultCallbackError(id, error) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleContactResultCallbackError = handleContactResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Contact[]} contacts
+    */
     function handleContactResultCallbackResult(id, contacts) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleContactResultCallbackResult = handleContactResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Contact[]} contacts
+       @param {Adaptive.IContactResultCallbackWarning} warning
+    */
     function handleContactResultCallbackWarning(id, contacts, warning) {
         var callback = Adaptive.registeredContactResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleContactResultCallbackWarning = handleContactResultCallbackWarning;
+    /**
+       @class Adaptive.ContactResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ContactResultCallback = (function (_super) {
         __extends(ContactResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Contact[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
         */
         function ContactResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IContactResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param contacts returned by the platform
+           @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onResult = function (contacts) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param contacts returned by the platform
-           @param warning  returned by the platform
+           @param {Adaptive.Contact[]} contacts contacts returned by the platform
+           @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
            @since ARP1.0
         */
         ContactResultCallback.prototype.onWarning = function (contacts, warning) {

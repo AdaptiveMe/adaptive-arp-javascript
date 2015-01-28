@@ -217,7 +217,11 @@ var Adaptive;
             this.toRecipients = toRecipients;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Email.
+           @return {Adaptive.Email} Wrapped object instance.
         */
         Email.toObject = function (object) {
             var result = new Email(null, null, null, null, null, null, null);

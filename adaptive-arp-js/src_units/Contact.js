@@ -246,7 +246,11 @@ var Adaptive;
             this.professionalInfo = professionalInfo;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Contact.
+           @return {Adaptive.Contact} Wrapped object instance.
         */
         Contact.toObject = function (object) {
             var result = new Contact(null, null, null, null, null, null, null, null, null);

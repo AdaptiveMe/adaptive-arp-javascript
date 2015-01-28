@@ -106,7 +106,11 @@ var Adaptive;
             this.cookies = cookies;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSession.
+           @return {Adaptive.ServiceSession} Wrapped object instance.
         */
         ServiceSession.toObject = function (object) {
             var result = new ServiceSession(null, null);

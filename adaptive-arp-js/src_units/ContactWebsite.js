@@ -83,7 +83,11 @@ var Adaptive;
             this.url = url;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite.
+           @return {Adaptive.ContactWebsite} Wrapped object instance.
         */
         ContactWebsite.toObject = function (object) {
             var result = new ContactWebsite(null);

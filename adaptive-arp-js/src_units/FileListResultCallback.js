@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IFileListResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileListResultCallback
+       @member Adaptive
+       @private
        FileListResultCallback control dictionary.
     */
     Adaptive.registeredFileListResultCallback = new Adaptive.Dictionary([]);
+    // FileListResultCallback global listener handlers.
     /**
-       FileListResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileListResultCallbackError} error
     */
     function handleFileListResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleFileListResultCallbackError = handleFileListResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor[]} files
+    */
     function handleFileListResultCallbackResult(id, files) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleFileListResultCallbackResult = handleFileListResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.FileDescriptor[]} files
+       @param {Adaptive.IFileListResultCallbackWarning} warning
+    */
     function handleFileListResultCallbackWarning(id, files, warning) {
         var callback = Adaptive.registeredFileListResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleFileListResultCallbackWarning = handleFileListResultCallbackWarning;
+    /**
+       @class Adaptive.FileListResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileListResultCallback = (function (_super) {
         __extends(FileListResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileListResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
         */
         function FileListResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            On error result of a file operation.
-
-           @param error Error processing the request.
+           @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            On correct result of a file operation.
-
-           @param files Array of resulting files/folders.
+           @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onResult = function (files) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            On partial result of a file operation, containing a warning.
-
-           @param files   Array of resulting files/folders.
-           @param warning Warning condition encountered.
+           @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
+           @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         FileListResultCallback.prototype.onWarning = function (files, warning) {

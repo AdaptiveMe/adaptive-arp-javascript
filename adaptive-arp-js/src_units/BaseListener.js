@@ -39,33 +39,42 @@ var Adaptive;
        Base application for Listener purposes
        Auto-generated implementation of IBaseListener specification.
     */
+    /**
+       @class Adaptive.BaseListener
+    */
     var BaseListener = (function () {
         /**
+           @method constructor
            Constructor with listener id.
 
-           @param id  The id of the listener.
+           @param {number} id  The id of the listener.
         */
         function BaseListener(id) {
             this.id = id;
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Application;
         }
         /**
+           @method
+           @return {number}
            Get the listener id.
-           @return {number} long with the identifier of the listener.
         */
         BaseListener.prototype.getId = function () {
             return this.id;
         };
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         BaseListener.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
             return "v2.0.4";

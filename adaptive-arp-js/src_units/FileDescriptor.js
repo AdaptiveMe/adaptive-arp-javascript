@@ -174,7 +174,11 @@ doesn't exist, this will be -1. Used internally.
             this.size = size;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor.
+           @return {Adaptive.FileDescriptor} Wrapped object instance.
         */
         FileDescriptor.toObject = function (object) {
             var result = new FileDescriptor();

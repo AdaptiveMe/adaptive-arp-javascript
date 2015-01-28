@@ -65,6 +65,7 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Returns the OSInfo for the current operating system.
 
            @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.

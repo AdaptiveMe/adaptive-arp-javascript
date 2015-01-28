@@ -34,16 +34,19 @@ Release:
 var Adaptive;
 (function (Adaptive) {
     /**
+       @private
        @property {number} registeredCounter
        Global unique id for listeners and callbacks.
     */
     Adaptive.registeredCounter = 0;
     /**
+       @private
        @property {string} bridgePath
        Base url for for http/https JSON requests.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
     /**
+       @private
        @class Adaptive.Dictionary
        Utility class for Dictionary type support.
     */

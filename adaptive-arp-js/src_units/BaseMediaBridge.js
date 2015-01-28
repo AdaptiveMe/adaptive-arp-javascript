@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseMediaBridge
-       @extends Adaptive.IBaseMedia
        Base application for Media purposes
 
        @author Carlos Lozano Diez

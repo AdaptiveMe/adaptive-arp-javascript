@@ -105,7 +105,11 @@ var Adaptive;
             this.language = language;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale.
+           @return {Adaptive.Locale} Wrapped object instance.
         */
         Locale.toObject = function (object) {
             var result = new Locale(null, null);

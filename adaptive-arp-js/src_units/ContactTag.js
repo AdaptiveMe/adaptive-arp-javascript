@@ -105,7 +105,11 @@ var Adaptive;
             this.tagValue = tagValue;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactTag.
+           @return {Adaptive.ContactTag} Wrapped object instance.
         */
         ContactTag.toObject = function (object) {
             var result = new ContactTag(null, null);

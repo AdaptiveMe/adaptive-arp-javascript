@@ -67,10 +67,11 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Send an Email
 
-           @param data     Payload of the email
-           @param callback Result callback of the operation
+           @param {Adaptive.Email} data data     Payload of the email
+           @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
            @since ARP1.0
         */
         MailBridge.prototype.sendEmail = function (data, callback) {

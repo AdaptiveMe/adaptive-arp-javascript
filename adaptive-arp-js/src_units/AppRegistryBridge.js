@@ -178,7 +178,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.AppRegistryBridge
-       @extends Adaptive.IAppRegistry
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez

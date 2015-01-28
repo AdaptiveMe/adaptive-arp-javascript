@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseUtilBridge
-       @extends Adaptive.IBaseUtil
        Base application for Utility purposes
 
        @author Carlos Lozano Diez

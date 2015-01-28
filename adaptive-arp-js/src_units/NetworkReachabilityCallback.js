@@ -49,11 +49,19 @@ var Adaptive;
        Auto-generated implementation of INetworkReachabilityCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredNetworkReachabilityCallback
+       @member Adaptive
+       @private
        NetworkReachabilityCallback control dictionary.
     */
     Adaptive.registeredNetworkReachabilityCallback = new Adaptive.Dictionary([]);
+    // NetworkReachabilityCallback global listener handlers.
     /**
-       NetworkReachabilityCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkReachabilityCallbackError} error
     */
     function handleNetworkReachabilityCallbackError(id, error) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkReachabilityCallbackError = handleNetworkReachabilityCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} reachable
+    */
     function handleNetworkReachabilityCallbackResult(id, reachable) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -77,6 +92,14 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkReachabilityCallbackResult = handleNetworkReachabilityCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} reachable
+       @param {Adaptive.INetworkReachabilityCallbackWarning} warning
+    */
     function handleNetworkReachabilityCallbackWarning(id, reachable, warning) {
         var callback = Adaptive.registeredNetworkReachabilityCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -88,14 +111,19 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkReachabilityCallbackWarning = handleNetworkReachabilityCallbackWarning;
+    /**
+       @class Adaptive.NetworkReachabilityCallback
+       @extends Adaptive.BaseCallback
+    */
     var NetworkReachabilityCallback = (function (_super) {
         __extends(NetworkReachabilityCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
-           @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkReachabilityCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: boolean
+           @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.INetworkReachabilityCallbackWarning
         */
         function NetworkReachabilityCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -119,9 +147,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received - error condition, not authorized .
-
-           @param error Error value
+           @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onError = function (error) {
@@ -133,9 +161,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Correct data received.
-
-           @param reachable Indicates if the host is reachable
+           @param {boolean} reachable reachable Indicates if the host is reachable
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onResult = function (reachable) {
@@ -147,10 +175,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
-
-           @param reachable Indicates if the host is reachable
-           @param warning   Warning value
+           @param {boolean} reachable reachable Indicates if the host is reachable
+           @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
            @since ARP1.0
         */
         NetworkReachabilityCallback.prototype.onWarning = function (reachable, warning) {

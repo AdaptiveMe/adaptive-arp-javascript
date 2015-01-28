@@ -84,7 +84,11 @@ var Adaptive;
             this.type = type;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button.
+           @return {Adaptive.Button} Wrapped object instance.
         */
         Button.toObject = function (object) {
             var result = new Button(null);

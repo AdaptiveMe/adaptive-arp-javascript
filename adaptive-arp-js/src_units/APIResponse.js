@@ -111,7 +111,11 @@ var Adaptive;
             this.statusMessage = statusMessage;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIResponse.
+           @return {Adaptive.APIResponse} Wrapped object instance.
         */
         APIResponse.toObject = function (object) {
             var result = new APIResponse(null, null, null);

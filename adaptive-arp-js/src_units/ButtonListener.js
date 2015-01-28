@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IButtonListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredButtonListener
+       @member Adaptive
+       @private
        ButtonListener control dictionary.
     */
     Adaptive.registeredButtonListener = new Adaptive.Dictionary([]);
+    // ButtonListener global listener handlers.
     /**
-       ButtonListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IButtonListenerError} error
     */
     function handleButtonListenerError(id, error) {
         var listener = Adaptive.registeredButtonListener["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleButtonListenerError = handleButtonListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+    */
     function handleButtonListenerResult(id, button) {
         var listener = Adaptive.registeredButtonListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -76,6 +91,14 @@ var Adaptive;
         }
     }
     Adaptive.handleButtonListenerResult = handleButtonListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Button} button
+       @param {Adaptive.IButtonListenerWarning} warning
+    */
     function handleButtonListenerWarning(id, button, warning) {
         var listener = Adaptive.registeredButtonListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -86,14 +109,19 @@ var Adaptive;
         }
     }
     Adaptive.handleButtonListenerWarning = handleButtonListenerWarning;
+    /**
+       @class Adaptive.ButtonListener
+       @extends Adaptive.BaseListener
+    */
     var ButtonListener = (function (_super) {
         __extends(ButtonListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Button
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IButtonListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Button
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Button, Adaptive.IButtonListenerWarning
         */
         function ButtonListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -117,9 +145,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received
-
-           @param error occurred
+           @param {Adaptive.IButtonListenerError} error error occurred
            @since ARP1.0
         */
         ButtonListener.prototype.onError = function (error) {
@@ -131,9 +159,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Called on button pressed
-
-           @param button pressed
+           @param {Adaptive.Button} button button pressed
            @since ARP1.0
         */
         ButtonListener.prototype.onResult = function (button) {
@@ -145,10 +173,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Data received with warning
-
-           @param button  pressed
-           @param warning happened
+           @param {Adaptive.Button} button button  pressed
+           @param {Adaptive.IButtonListenerWarning} warning warning happened
            @since ARP1.0
         */
         ButtonListener.prototype.onWarning = function (button, warning) {

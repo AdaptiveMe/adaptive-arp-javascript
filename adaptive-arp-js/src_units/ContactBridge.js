@@ -71,10 +71,11 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Get all the details of a contact according to its id
 
-           @param contact  id to search for
-           @param callback called for return
+           @param {Adaptive.ContactUid} contact contact  id to search for
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContact = function (contact, callback) {
@@ -119,10 +120,11 @@ var Adaptive;
             }
         };
         /**
+           @method
            Get the contact photo
 
-           @param contact  id to search for
-           @param callback called for return
+           @param {Adaptive.ContactUid} contact contact  id to search for
+           @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContactPhoto = function (contact, callback) {
@@ -167,9 +169,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Get all contacts
 
-           @param callback called for return
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.getContacts = function (callback) {
@@ -213,10 +216,11 @@ var Adaptive;
             }
         };
         /**
+           @method
            Get marked fields of all contacts
 
-           @param callback called for return
-           @param fields   to get for each Contact
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @since ARP1.0
         */
         ContactBridge.prototype.getContactsForFields = function (callback, fields) {
@@ -261,11 +265,12 @@ var Adaptive;
             }
         };
         /**
+           @method
            Get marked fields of all contacts according to a filter
 
-           @param callback called for return
-           @param fields   to get for each Contact
-           @param filter   to search for
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
+           @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since ARP1.0
         */
         ContactBridge.prototype.getContactsWithFilter = function (callback, fields, filter) {
@@ -311,10 +316,11 @@ var Adaptive;
             }
         };
         /**
+           @method
            Search contacts according to a term and send it to the callback
 
-           @param term     string to search
-           @param callback called for return
+           @param {string} term term     string to search
+           @param {Adaptive.ContactResultCallback} callback callback called for return
            @since ARP1.0
         */
         ContactBridge.prototype.searchContacts = function (term, callback) {
@@ -359,11 +365,12 @@ var Adaptive;
             }
         };
         /**
+           @method
            Search contacts according to a term with a filter and send it to the callback
 
-           @param term     string to search
-           @param callback called for return
-           @param filter   to search for
+           @param {string} term term     string to search
+           @param {Adaptive.ContactResultCallback} callback callback called for return
+           @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since ARP1.0
         */
         ContactBridge.prototype.searchContactsWithFilter = function (term, callback, filter) {
@@ -409,10 +416,11 @@ var Adaptive;
             }
         };
         /**
+           @method
            Set the contact photo
 
-           @param contact  id to assign the photo
-           @param pngImage photo as byte array
+           @param {Adaptive.ContactUid} contact contact  id to assign the photo
+           @param {number[]} pngImage pngImage photo as byte array
            @return {boolean} true if set is successful;false otherwise
            @since ARP1.0
         */

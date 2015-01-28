@@ -68,9 +68,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Register a new listener that will receive button events.
 
-           @param listener to be registered.
+           @param {Adaptive.ButtonListener} listener listener to be registered.
            @since ARP1.0
         */
         DeviceBridge.prototype.addButtonListener = function (listener) {
@@ -111,6 +112,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
@@ -151,6 +153,7 @@ var Adaptive;
             return response;
         };
         /**
+           @method
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
@@ -191,9 +194,10 @@ var Adaptive;
             return response;
         };
         /**
+           @method
            De-registers an existing listener from receiving button events.
 
-           @param listener to be removed.
+           @param {Adaptive.ButtonListener} listener listener to be removed.
            @since ARP1.0
         */
         DeviceBridge.prototype.removeButtonListener = function (listener) {
@@ -228,6 +232,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Removed all existing listeners from receiving button events.
 
            @since ARP1.0

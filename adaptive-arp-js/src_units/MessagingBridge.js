@@ -66,11 +66,12 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Send text SMS
 
-           @param number   to send
-           @param text     to send
-           @param callback with the result
+           @param {string} number number   to send
+           @param {string} text text     to send
+           @param {Adaptive.MessagingCallback} callback callback with the result
            @since ARP1.0
         */
         MessagingBridge.prototype.sendSMS = function (number, text, callback) {

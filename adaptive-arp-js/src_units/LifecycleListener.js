@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of ILifecycleListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredLifecycleListener
+       @member Adaptive
+       @private
        LifecycleListener control dictionary.
     */
     Adaptive.registeredLifecycleListener = new Adaptive.Dictionary([]);
+    // LifecycleListener global listener handlers.
     /**
-       LifecycleListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ILifecycleListenerError} error
     */
     function handleLifecycleListenerError(id, error) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleLifecycleListenerError = handleLifecycleListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+    */
     function handleLifecycleListenerResult(id, lifecycle) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -76,6 +91,14 @@ var Adaptive;
         }
     }
     Adaptive.handleLifecycleListenerResult = handleLifecycleListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Lifecycle} lifecycle
+       @param {Adaptive.ILifecycleListenerWarning} warning
+    */
     function handleLifecycleListenerWarning(id, lifecycle, warning) {
         var listener = Adaptive.registeredLifecycleListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -86,14 +109,19 @@ var Adaptive;
         }
     }
     Adaptive.handleLifecycleListenerWarning = handleLifecycleListenerWarning;
+    /**
+       @class Adaptive.LifecycleListener
+       @extends Adaptive.BaseListener
+    */
     var LifecycleListener = (function (_super) {
         __extends(LifecycleListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ILifecycleListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Lifecycle
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Lifecycle, Adaptive.ILifecycleListenerWarning
         */
         function LifecycleListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -117,9 +145,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onError = function (error) {
@@ -131,9 +159,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Called when lifecycle changes somehow.
-
-           @param lifecycle Lifecycle element
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @since ARP1.0
         */
         LifecycleListener.prototype.onResult = function (lifecycle) {
@@ -145,10 +173,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Data received with warning
-
-           @param lifecycle Lifecycle element
-           @param warning   Type of warning encountered during reading.
+           @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
+           @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
            @since ARP1.0
         */
         LifecycleListener.prototype.onWarning = function (lifecycle, warning) {

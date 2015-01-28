@@ -65,11 +65,12 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Creates a new reference to a new or existing location in the filesystem.
 This method does not create the actual file in the specified folder.
 
-           @param parent Parent directory.
-           @param name   Name of new file or directory.
+           @param {Adaptive.FileDescriptor} parent parent Parent directory.
+           @param {string} name name   Name of new file or directory.
            @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
            @since ARP1.0
         */
@@ -110,6 +111,7 @@ This method does not create the actual file in the specified folder.
             return response;
         };
         /**
+           @method
            Returns a reference to the cache folder for the current application.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
@@ -152,6 +154,7 @@ This path is volatile and may be cleaned by the OS periodically.
             return response;
         };
         /**
+           @method
            Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
 
@@ -193,6 +196,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
 
@@ -234,6 +238,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
@@ -275,6 +280,7 @@ This path may or may not be directly readable or writable - it usually contains 
             return response;
         };
         /**
+           @method
            Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
 
@@ -316,6 +322,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns the file system dependent file separator.
 
            @return {string} char with the directory/file separator.
@@ -356,6 +363,7 @@ This path must always be writable by the current application.
             return response;
         };
         /**
+           @method
            Returns a reference to the external storage folder provided by the OS. This may
 be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.

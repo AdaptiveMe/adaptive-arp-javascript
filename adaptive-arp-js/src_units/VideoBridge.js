@@ -64,9 +64,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Play url video stream
 
-           @param url of the video
+           @param {string} url url of the video
            @since ARP1.0
         */
         VideoBridge.prototype.playStream = function (url) {

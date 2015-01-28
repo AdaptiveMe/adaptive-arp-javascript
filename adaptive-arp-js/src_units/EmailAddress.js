@@ -83,7 +83,11 @@ var Adaptive;
             this.address = address;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress.
+           @return {Adaptive.EmailAddress} Wrapped object instance.
         */
         EmailAddress.toObject = function (object) {
             var result = new EmailAddress(null);

@@ -39,33 +39,42 @@ var Adaptive;
        Base application for Callback purposes
        Auto-generated implementation of IBaseCallback specification.
     */
+    /**
+       @class Adaptive.BaseCallback
+    */
     var BaseCallback = (function () {
         /**
+           @method constructor
            Constructor with callback id.
 
-           @param id  The id of the callback.
+           @param {number} id  The id of the callback.
         */
         function BaseCallback(id) {
             this.id = id;
             this.apiGroup = Adaptive.IAdaptiveRPGroup.Application;
         }
         /**
-           Get the listener id.
-           @return {number} long with the identifier of the callback.
+           @method
+           @return {number}
+           Get the callback id.
         */
         BaseCallback.prototype.getId = function () {
             return this.id;
         };
         /**
+           @method
+           @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
         BaseCallback.prototype.getAPIGroup = function () {
             return this.apiGroup;
         };
         /**
+           @method
            Return the API version for the given interface.
 
-           @return {string} The version of the API.
+           @return {string}
+           The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
             return "v2.0.4";

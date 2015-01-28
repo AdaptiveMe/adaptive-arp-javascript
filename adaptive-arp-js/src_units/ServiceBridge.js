@@ -68,9 +68,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Get a reference to a registered service by name.
 
-           @param serviceName Name of service.
+           @param {string} serviceName serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
            @since ARP1.0
         */
@@ -110,11 +111,12 @@ var Adaptive;
             return response;
         };
         /**
+           @method
            Request async a service for an Url
 
-           @param serviceRequest Service Request to invoke
-           @param service        Service to call
-           @param callback       Callback to execute with the result
+           @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
+           @param {Adaptive.Service} service serviceRequest Service Request to invoke
+           @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
            @since ARP1.0
         */
         ServiceBridge.prototype.invokeService = function (serviceRequest, service, callback) {
@@ -160,9 +162,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Register a new service
 
-           @param service to register
+           @param {Adaptive.Service} service service to register
            @since ARP1.0
         */
         ServiceBridge.prototype.registerService = function (service) {
@@ -185,9 +188,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Unregister a service
 
-           @param service to unregister
+           @param {Adaptive.Service} service service to unregister
            @since ARP1.0
         */
         ServiceBridge.prototype.unregisterService = function (service) {
@@ -210,6 +214,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Unregister all services.
 
            @since ARP1.0

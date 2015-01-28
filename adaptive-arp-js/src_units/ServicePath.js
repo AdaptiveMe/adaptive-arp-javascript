@@ -91,7 +91,11 @@ var Adaptive;
             this.path = path;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServicePath.
+           @return {Adaptive.ServicePath} Wrapped object instance.
         */
         ServicePath.toObject = function (object) {
             var result = new ServicePath(null, null);

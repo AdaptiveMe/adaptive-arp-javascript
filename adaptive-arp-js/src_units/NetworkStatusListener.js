@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of INetworkStatusListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredNetworkStatusListener
+       @member Adaptive
+       @private
        NetworkStatusListener control dictionary.
     */
     Adaptive.registeredNetworkStatusListener = new Adaptive.Dictionary([]);
+    // NetworkStatusListener global listener handlers.
     /**
-       NetworkStatusListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.INetworkStatusListenerError} error
     */
     function handleNetworkStatusListenerError(id, error) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkStatusListenerError = handleNetworkStatusListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+    */
     function handleNetworkStatusListenerResult(id, network) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -76,6 +91,14 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkStatusListenerResult = handleNetworkStatusListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.INetworkStatusListenerWarning} warning
+    */
     function handleNetworkStatusListenerWarning(id, network, warning) {
         var listener = Adaptive.registeredNetworkStatusListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -86,14 +109,19 @@ var Adaptive;
         }
     }
     Adaptive.handleNetworkStatusListenerWarning = handleNetworkStatusListenerWarning;
+    /**
+       @class Adaptive.NetworkStatusListener
+       @extends Adaptive.BaseListener
+    */
     var NetworkStatusListener = (function (_super) {
         __extends(NetworkStatusListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
         */
         function NetworkStatusListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -117,9 +145,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onError = function (error) {
@@ -131,9 +159,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Called when network connection changes somehow.
-
-           @param network Change to this network.
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onResult = function (network) {
@@ -145,10 +173,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Status received with warning
-
-           @param network Change to this network.
-           @param warning Type of warning encountered during reading.
+           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
            @since ARP1.0
         */
         NetworkStatusListener.prototype.onWarning = function (network, warning) {

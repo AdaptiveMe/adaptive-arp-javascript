@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IServiceResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredServiceResultCallback
+       @member Adaptive
+       @private
        ServiceResultCallback control dictionary.
     */
     Adaptive.registeredServiceResultCallback = new Adaptive.Dictionary([]);
+    // ServiceResultCallback global listener handlers.
     /**
-       ServiceResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IServiceResultCallbackError} error
     */
     function handleServiceResultCallbackError(id, error) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleServiceResultCallbackError = handleServiceResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+    */
     function handleServiceResultCallbackResult(id, response) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleServiceResultCallbackResult = handleServiceResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ServiceResponse} response
+       @param {Adaptive.IServiceResultCallbackWarning} warning
+    */
     function handleServiceResultCallbackWarning(id, response, warning) {
         var callback = Adaptive.registeredServiceResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleServiceResultCallbackWarning = handleServiceResultCallbackWarning;
+    /**
+       @class Adaptive.ServiceResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ServiceResultCallback = (function (_super) {
         __extends(ServiceResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
-           @param onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IServiceResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ServiceResponse
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ServiceResponse, Adaptive.IServiceResultCallbackWarning
         */
         function ServiceResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param response data
+           @param {Adaptive.ServiceResponse} response response data
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onResult = function (response) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param response data
-           @param warning  returned by the platform
+           @param {Adaptive.ServiceResponse} response response data
+           @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
            @since ARP1.0
         */
         ServiceResultCallback.prototype.onWarning = function (response, warning) {

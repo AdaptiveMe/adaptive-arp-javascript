@@ -125,7 +125,11 @@ var Adaptive;
             this.version = version;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.OSInfo.
+           @return {Adaptive.OSInfo} Wrapped object instance.
         */
         OSInfo.toObject = function (object) {
             var result = new OSInfo(null, null, null);

@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IDatabaseResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredDatabaseResultCallback
+       @member Adaptive
+       @private
        DatabaseResultCallback control dictionary.
     */
     Adaptive.registeredDatabaseResultCallback = new Adaptive.Dictionary([]);
+    // DatabaseResultCallback global listener handlers.
     /**
-       DatabaseResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDatabaseResultCallbackError} error
     */
     function handleDatabaseResultCallbackError(id, error) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleDatabaseResultCallbackError = handleDatabaseResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+    */
     function handleDatabaseResultCallbackResult(id, database) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleDatabaseResultCallbackResult = handleDatabaseResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Database} database
+       @param {Adaptive.IDatabaseResultCallbackWarning} warning
+    */
     function handleDatabaseResultCallbackWarning(id, database, warning) {
         var callback = Adaptive.registeredDatabaseResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleDatabaseResultCallbackWarning = handleDatabaseResultCallbackWarning;
+    /**
+       @class Adaptive.DatabaseResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var DatabaseResultCallback = (function (_super) {
         __extends(DatabaseResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Database
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDatabaseResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Database
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Database, Adaptive.IDatabaseResultCallbackWarning
         */
         function DatabaseResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            Result callback for error responses
-
-           @param error Returned error
+           @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Result callback for correct responses
-
-           @param database Returns the database
+           @param {Adaptive.Database} database database Returns the database
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onResult = function (database) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Result callback for warning responses
-
-           @param database Returns the database
-           @param warning  Returned Warning
+           @param {Adaptive.Database} database database Returns the database
+           @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
            @since ARP1.0
         */
         DatabaseResultCallback.prototype.onWarning = function (database, warning) {

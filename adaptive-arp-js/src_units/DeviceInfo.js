@@ -147,7 +147,11 @@ be unique for a specific instance of an application on a specific device.
             this.vendor = vendor;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo.
+           @return {Adaptive.DeviceInfo} Wrapped object instance.
         */
         DeviceInfo.toObject = function (object) {
             var result = new DeviceInfo(null, null, null, null);

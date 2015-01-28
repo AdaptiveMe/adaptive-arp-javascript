@@ -66,9 +66,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Register a new listener that will receive geolocation events.
 
-           @param listener to be registered.
+           @param {Adaptive.GeolocationListener} listener listener to be registered.
            @since ARP1.0
         */
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
@@ -109,9 +110,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            De-registers an existing listener from receiving geolocation events.
 
-           @param listener to be registered.
+           @param {Adaptive.GeolocationListener} listener listener to be registered.
            @since ARP1.0
         */
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
@@ -146,6 +148,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Removed all existing listeners from receiving geolocation events.
 
            @since ARP1.0

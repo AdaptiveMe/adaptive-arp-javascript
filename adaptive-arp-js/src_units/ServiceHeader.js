@@ -105,7 +105,11 @@ var Adaptive;
             this.name = name;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader.
+           @return {Adaptive.ServiceHeader} Wrapped object instance.
         */
         ServiceHeader.toObject = function (object) {
             var result = new ServiceHeader(null, null);

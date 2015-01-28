@@ -49,11 +49,19 @@ var Adaptive;
        Auto-generated implementation of IFileDataLoadResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredFileDataLoadResultCallback
+       @member Adaptive
+       @private
        FileDataLoadResultCallback control dictionary.
     */
     Adaptive.registeredFileDataLoadResultCallback = new Adaptive.Dictionary([]);
+    // FileDataLoadResultCallback global listener handlers.
     /**
-       FileDataLoadResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IFileDataLoadResultCallbackError} error
     */
     function handleFileDataLoadResultCallbackError(id, error) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleFileDataLoadResultCallbackError = handleFileDataLoadResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+    */
     function handleFileDataLoadResultCallbackResult(id, data) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -77,6 +92,14 @@ var Adaptive;
         }
     }
     Adaptive.handleFileDataLoadResultCallbackResult = handleFileDataLoadResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} data
+       @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
+    */
     function handleFileDataLoadResultCallbackWarning(id, data, warning) {
         var callback = Adaptive.registeredFileDataLoadResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -88,14 +111,19 @@ var Adaptive;
         }
     }
     Adaptive.handleFileDataLoadResultCallbackWarning = handleFileDataLoadResultCallbackWarning;
+    /**
+       @class Adaptive.FileDataLoadResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var FileDataLoadResultCallback = (function (_super) {
         __extends(FileDataLoadResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IFileDataLoadResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
         function FileDataLoadResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -119,9 +147,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            Error processing data retrieval/storage operation.
-
-           @param error Error condition encountered.
+           @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onError = function (error) {
@@ -133,9 +161,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Result of data retrieval operation.
-
-           @param data Data loaded.
+           @param {number[]} data data Data loaded.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onResult = function (data) {
@@ -147,10 +175,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Result with warning of data retrieval/storage operation.
-
-           @param data    File being loaded.
-           @param warning Warning condition encountered.
+           @param {number[]} data data    File being loaded.
+           @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
            @since ARP1.0
         */
         FileDataLoadResultCallback.prototype.onWarning = function (data, warning) {

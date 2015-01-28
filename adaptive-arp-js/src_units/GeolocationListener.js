@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of IGeolocationListener specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredGeolocationListener
+       @member Adaptive
+       @private
        GeolocationListener control dictionary.
     */
     Adaptive.registeredGeolocationListener = new Adaptive.Dictionary([]);
+    // GeolocationListener global listener handlers.
     /**
-       GeolocationListener global listener handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IGeolocationListenerError} error
     */
     function handleGeolocationListenerError(id, error) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleGeolocationListenerError = handleGeolocationListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+    */
     function handleGeolocationListenerResult(id, geolocation) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -76,6 +91,14 @@ var Adaptive;
         }
     }
     Adaptive.handleGeolocationListenerResult = handleGeolocationListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.Geolocation} geolocation
+       @param {Adaptive.IGeolocationListenerWarning} warning
+    */
     function handleGeolocationListenerWarning(id, geolocation, warning) {
         var listener = Adaptive.registeredGeolocationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
@@ -86,14 +109,19 @@ var Adaptive;
         }
     }
     Adaptive.handleGeolocationListenerWarning = handleGeolocationListenerWarning;
+    /**
+       @class Adaptive.GeolocationListener
+       @extends Adaptive.BaseListener
+    */
     var GeolocationListener = (function (_super) {
         __extends(GeolocationListener, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for listener.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
-           @param onResultFunction Function receiving parameters of type: Adaptive.Geolocation
-           @param onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IGeolocationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Geolocation
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Geolocation, Adaptive.IGeolocationListenerWarning
         */
         function GeolocationListener(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -117,9 +145,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received - error condition, not authorized or hardware not available.
-
-           @param error Type of error encountered during reading.
+           @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onError = function (error) {
@@ -131,9 +159,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Correct data received.
-
-           @param geolocation Geolocation Bean
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
            @since ARP1.0
         */
         GeolocationListener.prototype.onResult = function (geolocation) {
@@ -145,10 +173,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Data received with warning - ie. HighDoP
-
-           @param geolocation Geolocation Bean
-           @param warning     Type of warning encountered during reading.
+           @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
+           @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
            @since ARP1.0
         */
         GeolocationListener.prototype.onWarning = function (geolocation, warning) {

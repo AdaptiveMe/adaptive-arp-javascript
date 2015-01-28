@@ -49,11 +49,19 @@ var Adaptive;
        Auto-generated implementation of IContactPhotoResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredContactPhotoResultCallback
+       @member Adaptive
+       @private
        ContactPhotoResultCallback control dictionary.
     */
     Adaptive.registeredContactPhotoResultCallback = new Adaptive.Dictionary([]);
+    // ContactPhotoResultCallback global listener handlers.
     /**
-       ContactPhotoResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IContactPhotoResultCallbackError} error
     */
     function handleContactPhotoResultCallbackError(id, error) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleContactPhotoResultCallbackError = handleContactPhotoResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+    */
     function handleContactPhotoResultCallbackResult(id, contactPhoto) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -77,6 +92,14 @@ var Adaptive;
         }
     }
     Adaptive.handleContactPhotoResultCallbackResult = handleContactPhotoResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {number[]} contactPhoto
+       @param {Adaptive.IContactPhotoResultCallbackWarning} warning
+    */
     function handleContactPhotoResultCallbackWarning(id, contactPhoto, warning) {
         var callback = Adaptive.registeredContactPhotoResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -88,14 +111,19 @@ var Adaptive;
         }
     }
     Adaptive.handleContactPhotoResultCallbackWarning = handleContactPhotoResultCallbackWarning;
+    /**
+       @class Adaptive.ContactPhotoResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var ContactPhotoResultCallback = (function (_super) {
         __extends(ContactPhotoResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
-           @param onResultFunction Function receiving parameters of type: number[]
-           @param onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IContactPhotoResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: number[]
+           @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
         function ContactPhotoResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -119,9 +147,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onError = function (error) {
@@ -133,9 +161,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param contactPhoto returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onResult = function (contactPhoto) {
@@ -147,10 +175,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param contactPhoto returned by the platform
-           @param warning      returned by the platform
+           @param {number[]} contactPhoto contactPhoto returned by the platform
+           @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
            @since ARP1.0
         */
         ContactPhotoResultCallback.prototype.onWarning = function (contactPhoto, warning) {

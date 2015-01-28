@@ -149,7 +149,11 @@ var Adaptive;
             this.z = z;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Acceleration.
+           @return {Adaptive.Acceleration} Wrapped object instance.
         */
         Acceleration.toObject = function (object) {
             var result = new Acceleration(null, null, null, null);

@@ -83,7 +83,11 @@ var Adaptive;
             this.values = values;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow.
+           @return {Adaptive.DatabaseRow} Wrapped object instance.
         */
         DatabaseRow.toObject = function (object) {
             var result = new DatabaseRow(null);

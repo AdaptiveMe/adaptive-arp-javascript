@@ -51,7 +51,11 @@ var Adaptive;
         function APIBean() {
         }
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean.
+           @return {Adaptive.APIBean} Wrapped object instance.
         */
         APIBean.toObject = function (object) {
             var result = new APIBean();

@@ -41,7 +41,6 @@ var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.BaseSensorBridge
-       @extends Adaptive.IBaseSensor
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez

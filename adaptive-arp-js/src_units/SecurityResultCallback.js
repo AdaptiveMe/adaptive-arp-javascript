@@ -50,11 +50,19 @@ var Adaptive;
        Auto-generated implementation of ISecurityResultCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredSecurityResultCallback
+       @member Adaptive
+       @private
        SecurityResultCallback control dictionary.
     */
     Adaptive.registeredSecurityResultCallback = new Adaptive.Dictionary([]);
+    // SecurityResultCallback global listener handlers.
     /**
-       SecurityResultCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.ISecurityResultCallbackError} error
     */
     function handleSecurityResultCallbackError(id, error) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
@@ -67,6 +75,13 @@ var Adaptive;
         }
     }
     Adaptive.handleSecurityResultCallbackError = handleSecurityResultCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+    */
     function handleSecurityResultCallbackResult(id, keyValues) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -78,6 +93,14 @@ var Adaptive;
         }
     }
     Adaptive.handleSecurityResultCallbackResult = handleSecurityResultCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.SecureKeyPair[]} keyValues
+       @param {Adaptive.ISecurityResultCallbackWarning} warning
+    */
     function handleSecurityResultCallbackWarning(id, keyValues, warning) {
         var callback = Adaptive.registeredSecurityResultCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -89,14 +112,19 @@ var Adaptive;
         }
     }
     Adaptive.handleSecurityResultCallbackWarning = handleSecurityResultCallbackWarning;
+    /**
+       @class Adaptive.SecurityResultCallback
+       @extends Adaptive.BaseCallback
+    */
     var SecurityResultCallback = (function (_super) {
         __extends(SecurityResultCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
-           @param onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
-           @param onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.ISecurityResultCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
         function SecurityResultCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -120,9 +148,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            No data received - error condition, not authorized .
-
-           @param error Error values
+           @param {Adaptive.ISecurityResultCallbackError} error error Error values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onError = function (error) {
@@ -134,9 +162,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            Correct data received.
-
-           @param keyValues key and values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onResult = function (keyValues) {
@@ -148,10 +176,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Data received with warning - ie Found entries with existing key and values have been overriden
-
-           @param keyValues key and values
-           @param warning   Warning values
+           @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
+           @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
            @since ARP1.0
         */
         SecurityResultCallback.prototype.onWarning = function (keyValues, warning) {

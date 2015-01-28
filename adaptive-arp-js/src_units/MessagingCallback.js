@@ -49,11 +49,19 @@ var Adaptive;
        Auto-generated implementation of IMessagingCallback specification.
     */
     /**
+       @property {Adaptive.Dictionary} registeredMessagingCallback
+       @member Adaptive
+       @private
        MessagingCallback control dictionary.
     */
     Adaptive.registeredMessagingCallback = new Adaptive.Dictionary([]);
+    // MessagingCallback global listener handlers.
     /**
-       MessagingCallback global callback handlers.
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IMessagingCallbackError} error
     */
     function handleMessagingCallbackError(id, error) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
@@ -66,6 +74,13 @@ var Adaptive;
         }
     }
     Adaptive.handleMessagingCallbackError = handleMessagingCallbackError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+    */
     function handleMessagingCallbackResult(id, success) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -77,6 +92,14 @@ var Adaptive;
         }
     }
     Adaptive.handleMessagingCallbackResult = handleMessagingCallbackResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {boolean} success
+       @param {Adaptive.IMessagingCallbackWarning} warning
+    */
     function handleMessagingCallbackWarning(id, success, warning) {
         var callback = Adaptive.registeredMessagingCallback["" + id];
         if (typeof callback === 'undefined' || callback == null) {
@@ -88,14 +111,19 @@ var Adaptive;
         }
     }
     Adaptive.handleMessagingCallbackWarning = handleMessagingCallbackWarning;
+    /**
+       @class Adaptive.MessagingCallback
+       @extends Adaptive.BaseCallback
+    */
     var MessagingCallback = (function (_super) {
         __extends(MessagingCallback, _super);
         /**
+           @method constructor
            Constructor with anonymous handler functions for callback.
 
-           @param onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
-           @param onResultFunction Function receiving parameters of type: boolean
-           @param onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IMessagingCallbackError
+           @param {Function} onResultFunction Function receiving parameters of type: boolean
+           @param {Function} onWarningFunction Function receiving parameters of type: boolean, Adaptive.IMessagingCallbackWarning
         */
         function MessagingCallback(onErrorFunction, onResultFunction, onWarningFunction) {
             _super.call(this, ++Adaptive.registeredCounter);
@@ -119,9 +147,9 @@ var Adaptive;
             }
         }
         /**
+           @method
            This method is called on Error
-
-           @param error returned by the platform
+           @param {Adaptive.IMessagingCallbackError} error error returned by the platform
            @since ARP1.0
         */
         MessagingCallback.prototype.onError = function (error) {
@@ -133,9 +161,9 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Result
-
-           @param success true if sent;false otherwise
+           @param {boolean} success success true if sent;false otherwise
            @since ARP1.0
         */
         MessagingCallback.prototype.onResult = function (success) {
@@ -147,10 +175,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            This method is called on Warning
-
-           @param success true if sent;false otherwise
-           @param warning returned by the platform
+           @param {boolean} success success true if sent;false otherwise
+           @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
            @since ARP1.0
         */
         MessagingCallback.prototype.onWarning = function (success, warning) {

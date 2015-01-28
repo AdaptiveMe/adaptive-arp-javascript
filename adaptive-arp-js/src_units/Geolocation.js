@@ -189,7 +189,11 @@ var Adaptive;
             this.yDoP = yDoP;
         };
         /**
+           @method
+           @static
            Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Geolocation.
+           @return {Adaptive.Geolocation} Wrapped object instance.
         */
         Geolocation.toObject = function (object) {
             var result = new Geolocation(null, null, null, null, null, null);

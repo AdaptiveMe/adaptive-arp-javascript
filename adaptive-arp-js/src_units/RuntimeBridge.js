@@ -64,6 +64,7 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Dismiss the current Application
 
            @since ARP1.0
@@ -87,6 +88,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Whether the application dismiss the splash screen successfully or not
 
            @return {boolean} true if the application has dismissed the splash screen;false otherwise

@@ -66,9 +66,10 @@ var Adaptive;
             _super.call(this);
         }
         /**
+           @method
            Add the listener for network status changes of the app
 
-           @param listener Listener with the result
+           @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
            @since ARP1.0
         */
         NetworkStatusBridge.prototype.addNetworkStatusListener = function (listener) {
@@ -109,9 +110,10 @@ var Adaptive;
             }
         };
         /**
+           @method
            Un-registers an existing listener from receiving network status events.
 
-           @param listener Listener with the result
+           @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
            @since ARP1.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListener = function (listener) {
@@ -146,6 +148,7 @@ var Adaptive;
             }
         };
         /**
+           @method
            Removes all existing listeners from receiving network status events.
 
            @since ARP1.0
