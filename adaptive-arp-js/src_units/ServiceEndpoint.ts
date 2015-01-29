@@ -48,14 +48,17 @@ module Adaptive {
      export class ServiceEndpoint {
 
           /**
+             @property {Adaptive.IServiceCertificateValidation} validationType
              Type of validation to be performed for SSL hosts.
           */
           validationType : IServiceCertificateValidation;
           /**
+             @property {string} hostURI
              The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
           */
           hostURI : string;
           /**
+             @property {Adaptive.ServicePath[]} paths
              The remote service paths (to be added to the hostURI and port url).
           */
           paths : Array<ServicePath>;

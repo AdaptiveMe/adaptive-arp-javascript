@@ -49,14 +49,17 @@ module Adaptive {
      export class ContactEmail extends APIBean {
 
           /**
+             @property {Adaptive.ContactEmailType} type
              The type of the email
           */
           type : ContactEmailType;
           /**
+             @property {string} email
              Email of the Contact
           */
           email : string;
           /**
+             @property {boolean} primary
              Whether the email is the primary one or not
           */
           primary : boolean;

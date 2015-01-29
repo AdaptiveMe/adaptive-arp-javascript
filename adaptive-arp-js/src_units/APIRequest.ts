@@ -45,18 +45,22 @@ module Adaptive {
      export class APIRequest {
 
           /**
+             @property {number} asyncId
              Identifier of callback or listener for async operations.
           */
           asyncId : number;
           /**
+             @property {string} bridgeType
              String representing the bridge type to obtain.
           */
           bridgeType : string;
           /**
+             @property {string} methodName
              String representing the method name to call.
           */
           methodName : string;
           /**
+             @property {string[]} parameters
              Parameters of the request as JSON formatted strings.
           */
           parameters : Array<string>;

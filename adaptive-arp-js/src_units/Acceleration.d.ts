@@ -44,18 +44,22 @@ declare module Adaptive {
     */
     class Acceleration extends APIBean {
         /**
+           @property {number} timestamp
            Timestamp of the acceleration reading.
         */
         timestamp: number;
         /**
+           @property {number} x
            X-axis component of the acceleration.
         */
         x: number;
         /**
+           @property {number} y
            Y-axis component of the acceleration.
         */
         y: number;
         /**
+           @property {number} z
            Z-axis component of the acceleration.
         */
         z: number;

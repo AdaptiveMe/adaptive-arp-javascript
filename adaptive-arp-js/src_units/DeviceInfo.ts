@@ -48,19 +48,23 @@ module Adaptive {
      export class DeviceInfo extends APIBean {
 
           /**
+             @property {string} model
              Model of device - equivalent to device release or version.
           */
           model : string;
           /**
+             @property {string} name
              Name of device - equivalent to brand.
           */
           name : string;
           /**
+             @property {string} uuid
              Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
           */
           uuid : string;
           /**
+             @property {string} vendor
              Vendor of the device hardware.
           */
           vendor : string;

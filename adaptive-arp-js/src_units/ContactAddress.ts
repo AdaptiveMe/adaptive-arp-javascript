@@ -49,10 +49,12 @@ module Adaptive {
      export class ContactAddress extends APIBean {
 
           /**
+             @property {Adaptive.ContactAddressType} type
              The address type
           */
           type : ContactAddressType;
           /**
+             @property {string} address
              The Contact address
           */
           address : string;

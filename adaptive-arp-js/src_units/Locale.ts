@@ -48,10 +48,12 @@ module Adaptive {
      export class Locale extends APIBean {
 
           /**
+             @property {string} country
              A valid ISO Country Code.
           */
           country : string;
           /**
+             @property {string} language
              A valid ISO Language Code.
           */
           language : string;

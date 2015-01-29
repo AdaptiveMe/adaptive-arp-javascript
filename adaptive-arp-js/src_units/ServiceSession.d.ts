@@ -46,10 +46,12 @@ declare module Adaptive {
     */
     class ServiceSession extends APIBean {
         /**
+           @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response.
         */
         attributes: ServiceSessionAttribute[];
         /**
+           @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response.
         */
         cookies: ServiceSessionCookie[];

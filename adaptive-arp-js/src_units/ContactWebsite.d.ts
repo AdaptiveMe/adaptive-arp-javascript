@@ -44,6 +44,7 @@ declare module Adaptive {
     */
     class ContactWebsite extends APIBean {
         /**
+           @property {string} url
            The url of the website
         */
         url: string;

@@ -42,14 +42,17 @@ declare module Adaptive {
     */
     class APIResponse {
         /**
+           @property {string} response
            String representing the JavaScript value or JSON object representation of the response.
         */
         response: string;
         /**
+           @property {number} statusCode
            Status code of the response
         */
         statusCode: number;
         /**
+           @property {string} statusMessage
            Status message of the response
         */
         statusMessage: string;

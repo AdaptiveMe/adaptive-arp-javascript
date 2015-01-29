@@ -44,10 +44,12 @@ declare module Adaptive {
     */
     class SecureKeyPair extends APIBean {
         /**
+           @property {string} secureData
            Value of the secured element
         */
         secureData: string;
         /**
+           @property {string} secureKey
            Key of the secured element
         */
         secureKey: string;

@@ -48,34 +48,42 @@ module Adaptive {
      export class ServiceSessionCookie extends APIBean {
 
           /**
+             @property {string} cookieName
              Name ot the cookie.
           */
           cookieName : string;
           /**
+             @property {string} cookieValue
              Value of the ServiceCookie.
           */
           cookieValue : string;
           /**
+             @property {number} creation
              ServiceCookie creation timestamp in milliseconds.
           */
           creation : number;
           /**
+             @property {string} domain
              Domain for which the cookie is valid.
           */
           domain : string;
           /**
+             @property {number} expiry
              ServiceCookie expiry in milliseconds or -1 for session only.
           */
           expiry : number;
           /**
+             @property {string} path
              URI path for which the cookie is valid.
           */
           path : string;
           /**
+             @property {string} scheme
              Scheme of the domain - http/https - for which the cookie is valid.
           */
           scheme : string;
           /**
+             @property {boolean} secure
              ServiceCookie is secure (https only).
           */
           secure : boolean;

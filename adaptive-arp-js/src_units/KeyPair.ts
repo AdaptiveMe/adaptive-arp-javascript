@@ -48,10 +48,12 @@ module Adaptive {
      export class KeyPair extends APIBean {
 
           /**
+             @property {string} keyName
              Key of the element
           */
           keyName : string;
           /**
+             @property {string} keyValue
              Value of the element
           */
           keyValue : string;

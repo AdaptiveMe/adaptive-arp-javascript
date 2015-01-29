@@ -44,6 +44,7 @@ declare module Adaptive {
     */
     class DatabaseColumn extends APIBean {
         /**
+           @property {string} name
            Name of the column
         */
         name: string;

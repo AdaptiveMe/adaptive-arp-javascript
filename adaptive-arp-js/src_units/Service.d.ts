@@ -43,10 +43,12 @@ declare module Adaptive {
     */
     class Service {
         /**
+           @property {string} name
            The service name
         */
         name: string;
         /**
+           @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service
         */
         serviceEndpoints: ServiceEndpoint[];

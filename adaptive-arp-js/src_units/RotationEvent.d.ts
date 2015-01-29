@@ -46,24 +46,28 @@ declare module Adaptive {
     */
     class RotationEvent extends APIBean {
         /**
+           @property {Adaptive.ICapabilitiesOrientation} destination
            The orientation we're rotating to. This is the future orientation when the state of the event is
 WillStartRotation. This will be the current orientation when the rotation is finished with the state
 DidFinishRotation.
         */
         destination: ICapabilitiesOrientation;
         /**
+           @property {Adaptive.ICapabilitiesOrientation} origin
            The orientation we're rotating from. This is the current orientation when the state of the event is
 WillStartRotation. This will be the previous orientation when the rotation is finished with the state
 DidFinishRotation.
         */
         origin: ICapabilitiesOrientation;
         /**
+           @property {Adaptive.RotationEventState} state
            The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
 for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
 concluded.
         */
         state: RotationEventState;
         /**
+           @property {number} timestamp
            The timestamps in milliseconds when the event was fired.
         */
         timestamp: number;

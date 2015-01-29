@@ -45,21 +45,25 @@ declare module Adaptive {
     */
     class ServiceToken extends APIBean {
         /**
+           @property {Adaptive.IServiceMethod} invocationMethod
            Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
 other invocation methods. This is also defined per function of each endpoint in the platform's XML file.
         */
         invocationMethod: IServiceMethod;
         /**
+           @property {string} endpointName
            Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
 host and port combination for a given service.
         */
         endpointName: string;
         /**
+           @property {string} functionName
            Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
 to a relative path of a function published on a remote service.
         */
         functionName: string;
         /**
+           @property {string} serviceName
            Name of the service configured in the platform's services XML file.
         */
         serviceName: string;

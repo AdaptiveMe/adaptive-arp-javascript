@@ -48,22 +48,27 @@ module Adaptive {
      export class EmailAttachmentData extends APIBean {
 
           /**
+             @property {number[]} data
              The raw data for the current file attachment (byte array)
           */
           data : Array<number>;
           /**
+             @property {string} fileName
              The name of the current file attachment
           */
           fileName : string;
           /**
+             @property {string} mimeType
              The mime type of the current attachment
           */
           mimeType : string;
           /**
+             @property {string} referenceUrl
              The relative path where the contents for the attachment file could be located.
           */
           referenceUrl : string;
           /**
+             @property {number} size
              The data size (in bytes) of the current file attachment
           */
           size : number;

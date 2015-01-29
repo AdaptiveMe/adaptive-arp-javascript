@@ -49,10 +49,12 @@ module Adaptive {
      export class ContactPhone extends APIBean {
 
           /**
+             @property {Adaptive.ContactPhoneType} phoneType
              The phone number phoneType
           */
           phoneType : ContactPhoneType;
           /**
+             @property {string} phone
              The phone number
           */
           phone : string;

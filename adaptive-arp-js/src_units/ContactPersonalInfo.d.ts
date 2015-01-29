@@ -45,18 +45,22 @@ declare module Adaptive {
     */
     class ContactPersonalInfo extends APIBean {
         /**
+           @property {Adaptive.ContactPersonalInfoTitle} title
            The title of the Contact
         */
         title: ContactPersonalInfoTitle;
         /**
+           @property {string} lastName
            The last name of the Contact
         */
         lastName: string;
         /**
+           @property {string} middleName
            The middle name of the Contact if it proceeds
         */
         middleName: string;
         /**
+           @property {string} name
            The name of the Contact
         */
         name: string;

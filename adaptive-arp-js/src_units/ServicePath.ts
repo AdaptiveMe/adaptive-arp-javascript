@@ -48,14 +48,17 @@ module Adaptive {
      export class ServicePath {
 
           /**
+             @property {Adaptive.IServiceType} type
              Service endpoint type.
           */
           type : IServiceType;
           /**
+             @property {Adaptive.IServiceMethod[]} methods
              The methods for calling a path.
           */
           methods : Array<IServiceMethod>;
           /**
+             @property {string} path
              The path for the endpoint.
           */
           path : string;

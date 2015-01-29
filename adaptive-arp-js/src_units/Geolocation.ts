@@ -48,26 +48,32 @@ module Adaptive {
      export class Geolocation extends APIBean {
 
           /**
+             @property {number} altitude
              The current device altitude (or Z coordinate). Measured in meters.
           */
           altitude : number;
           /**
+             @property {number} latitude
              The Y coordinate (or latitude). Measured in degrees.
           */
           latitude : number;
           /**
+             @property {number} longitude
              The X coordinate (or longitude). Measured in degrees.
           */
           longitude : number;
           /**
+             @property {number} timestamp
              Timestamp of the geolocation reading.
           */
           timestamp : number;
           /**
+             @property {number} xDoP
              Dilution of precision on the X measurement. Measured in meters.
           */
           xDoP : number;
           /**
+             @property {number} yDoP
              Dilution of precision on the Y measurement. Measured in meters.
           */
           yDoP : number;

@@ -44,6 +44,7 @@ declare module Adaptive {
     */
     class DatabaseRow extends APIBean {
         /**
+           @property {string[]} values
            The values of the row.
         */
         values: string[];

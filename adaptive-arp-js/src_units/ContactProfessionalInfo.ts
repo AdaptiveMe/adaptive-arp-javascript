@@ -48,14 +48,17 @@ module Adaptive {
      export class ContactProfessionalInfo extends APIBean {
 
           /**
+             @property {string} company
              The company of the job
           */
           company : string;
           /**
+             @property {string} jobDescription
              The job description
           */
           jobDescription : string;
           /**
+             @property {string} jobTitle
              The job title
           */
           jobTitle : string;

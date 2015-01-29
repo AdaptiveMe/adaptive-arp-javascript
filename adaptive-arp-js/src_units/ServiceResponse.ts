@@ -50,27 +50,33 @@ module Adaptive {
      export class ServiceResponse extends APIBean {
 
           /**
+             @property {string} content
              Response data content. The content should be in some well-known web format - in specific, binaries returned
 should be encoded in base64.
           */
           content : string;
           /**
+             @property {string} contentEncoding
              Encoding of the binary payload - by default assumed to be UTF8.
           */
           contentEncoding : string;
           /**
+             @property {number} contentLength
              The length in bytes for the Content field.
           */
           contentLength : number;
           /**
+             @property {string} contentType
              The request/response content type (MIME TYPE).
           */
           contentType : string;
           /**
+             @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included on the I/O service request.
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
+             @property {Adaptive.ServiceSession} serviceSession
              Information about the session.
           */
           serviceSession : ServiceSession;

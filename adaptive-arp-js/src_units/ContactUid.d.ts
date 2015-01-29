@@ -44,6 +44,7 @@ declare module Adaptive {
     */
     class ContactUid extends APIBean {
         /**
+           @property {string} contactId
            The id of the Contact
         */
         contactId: string;

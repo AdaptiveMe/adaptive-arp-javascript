@@ -45,6 +45,7 @@ declare module Adaptive {
     */
     class Button extends APIBean {
         /**
+           @property {Adaptive.ICapabilitiesButton} type
            Button type
         */
         type: ICapabilitiesButton;

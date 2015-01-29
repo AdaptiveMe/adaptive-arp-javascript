@@ -46,22 +46,27 @@ declare module Adaptive {
     */
     class DatabaseTable extends APIBean {
         /**
+           @property {number} columnCount
            Number of databaseColumns.
         */
         columnCount: number;
         /**
+           @property {Adaptive.DatabaseColumn[]} databaseColumns
            Definition of databaseColumns.
         */
         databaseColumns: DatabaseColumn[];
         /**
+           @property {Adaptive.DatabaseRow[]} databaseRows
            Rows of the table containing the data.
         */
         databaseRows: DatabaseRow[];
         /**
+           @property {string} name
            Name of the table.
         */
         name: string;
         /**
+           @property {number} rowCount
            Number of databaseRows.
         */
         rowCount: number;

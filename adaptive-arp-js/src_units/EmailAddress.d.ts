@@ -44,6 +44,7 @@ declare module Adaptive {
     */
     class EmailAddress extends APIBean {
         /**
+           @property {string} address
            The Email address
         */
         address: string;

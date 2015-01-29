@@ -3312,18 +3312,22 @@ of the device. For device orientation, use the IDevice APIs.
      */
      export class APIRequest {
           /**
+             @property {number} asyncId
              Identifier of callback or listener for async operations.
           */
           asyncId : number;
           /**
+             @property {string} bridgeType
              String representing the bridge type to obtain.
           */
           bridgeType : string;
           /**
+             @property {string} methodName
              String representing the method name to call.
           */
           methodName : string;
           /**
+             @property {string[]} parameters
              Parameters of the request as JSON formatted strings.
           */
           parameters : Array<string>;
@@ -3465,14 +3469,17 @@ listener.
      */
      export class APIResponse {
           /**
+             @property {string} response
              String representing the JavaScript value or JSON object representation of the response.
           */
           response : string;
           /**
+             @property {number} statusCode
              Status code of the response
           */
           statusCode : number;
           /**
+             @property {string} statusMessage
              Status message of the response
           */
           statusMessage : string;
@@ -3578,10 +3585,12 @@ listener.
      */
      export class Service {
           /**
+             @property {string} name
              The service name
           */
           name : string;
           /**
+             @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
              Endpoint of the service
           */
           serviceEndpoints : Array<ServiceEndpoint>;
@@ -3678,14 +3687,17 @@ listener.
      */
      export class ServiceEndpoint {
           /**
+             @property {Adaptive.IServiceCertificateValidation} validationType
              Type of validation to be performed for SSL hosts.
           */
           validationType : IServiceCertificateValidation;
           /**
+             @property {string} hostURI
              The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
           */
           hostURI : string;
           /**
+             @property {Adaptive.ServicePath[]} paths
              The remote service paths (to be added to the hostURI and port url).
           */
           paths : Array<ServicePath>;
@@ -3809,14 +3821,17 @@ listener.
      */
      export class ServicePath {
           /**
+             @property {Adaptive.IServiceType} type
              Service endpoint type.
           */
           type : IServiceType;
           /**
+             @property {Adaptive.IServiceMethod[]} methods
              The methods for calling a path.
           */
           methods : Array<IServiceMethod>;
           /**
+             @property {string} path
              The path for the endpoint.
           */
           path : string;
@@ -3943,18 +3958,22 @@ listener.
      */
      export class Acceleration extends APIBean {
           /**
+             @property {number} timestamp
              Timestamp of the acceleration reading.
           */
           timestamp : number;
           /**
+             @property {number} x
              X-axis component of the acceleration.
           */
           x : number;
           /**
+             @property {number} y
              Y-axis component of the acceleration.
           */
           y : number;
           /**
+             @property {number} z
              Z-axis component of the acceleration.
           */
           z : number;
@@ -4093,6 +4112,7 @@ listener.
      */
      export class Button extends APIBean {
           /**
+             @property {Adaptive.ICapabilitiesButton} type
              Button type
           */
           type : ICapabilitiesButton;
@@ -4160,10 +4180,12 @@ listener.
      */
      export class ContactAddress extends APIBean {
           /**
+             @property {Adaptive.ContactAddressType} type
              The address type
           */
           type : ContactAddressType;
           /**
+             @property {string} address
              The Contact address
           */
           address : string;
@@ -4256,14 +4278,17 @@ listener.
      */
      export class ContactEmail extends APIBean {
           /**
+             @property {Adaptive.ContactEmailType} type
              The type of the email
           */
           type : ContactEmailType;
           /**
+             @property {string} email
              Email of the Contact
           */
           email : string;
           /**
+             @property {boolean} primary
              Whether the email is the primary one or not
           */
           primary : boolean;
@@ -4381,18 +4406,22 @@ listener.
      */
      export class ContactPersonalInfo extends APIBean {
           /**
+             @property {Adaptive.ContactPersonalInfoTitle} title
              The title of the Contact
           */
           title : ContactPersonalInfoTitle;
           /**
+             @property {string} lastName
              The last name of the Contact
           */
           lastName : string;
           /**
+             @property {string} middleName
              The middle name of the Contact if it proceeds
           */
           middleName : string;
           /**
+             @property {string} name
              The name of the Contact
           */
           name : string;
@@ -4535,10 +4564,12 @@ listener.
      */
      export class ContactPhone extends APIBean {
           /**
+             @property {Adaptive.ContactPhoneType} phoneType
              The phone number phoneType
           */
           phoneType : ContactPhoneType;
           /**
+             @property {string} phone
              The phone number
           */
           phone : string;
@@ -4631,14 +4662,17 @@ listener.
      */
      export class ContactProfessionalInfo extends APIBean {
           /**
+             @property {string} company
              The company of the job
           */
           company : string;
           /**
+             @property {string} jobDescription
              The job description
           */
           jobDescription : string;
           /**
+             @property {string} jobTitle
              The job title
           */
           jobTitle : string;
@@ -4752,10 +4786,12 @@ listener.
      */
      export class ContactSocial extends APIBean {
           /**
+             @property {Adaptive.ContactSocialNetwork} socialNetwork
              The social network
           */
           socialNetwork : ContactSocialNetwork;
           /**
+             @property {string} profileUrl
              The profileUrl
           */
           profileUrl : string;
@@ -4848,10 +4884,12 @@ listener.
      */
      export class ContactTag extends APIBean {
           /**
+             @property {string} tagName
              The tagName of the Tag
           */
           tagName : string;
           /**
+             @property {string} tagValue
              The tagValue of the Tag
           */
           tagValue : string;
@@ -4940,6 +4978,7 @@ listener.
      */
      export class ContactUid extends APIBean {
           /**
+             @property {string} contactId
              The id of the Contact
           */
           contactId : string;
@@ -5003,6 +5042,7 @@ listener.
      */
      export class ContactWebsite extends APIBean {
           /**
+             @property {string} url
              The url of the website
           */
           url : string;
@@ -5066,10 +5106,12 @@ listener.
      */
      export class Database extends APIBean {
           /**
+             @property {boolean} compress
              Indicates if database was created or needs to be created as Compressed.
           */
           compress : boolean;
           /**
+             @property {string} name
              Database Name (name of the .db local file).
           */
           name : string;
@@ -5158,6 +5200,7 @@ listener.
      */
      export class DatabaseColumn extends APIBean {
           /**
+             @property {string} name
              Name of the column
           */
           name : string;
@@ -5221,6 +5264,7 @@ listener.
      */
      export class DatabaseRow extends APIBean {
           /**
+             @property {string[]} values
              The values of the row.
           */
           values : Array<string>;
@@ -5290,22 +5334,27 @@ listener.
      */
      export class DatabaseTable extends APIBean {
           /**
+             @property {number} columnCount
              Number of databaseColumns.
           */
           columnCount : number;
           /**
+             @property {Adaptive.DatabaseColumn[]} databaseColumns
              Definition of databaseColumns.
           */
           databaseColumns : Array<DatabaseColumn>;
           /**
+             @property {Adaptive.DatabaseRow[]} databaseRows
              Rows of the table containing the data.
           */
           databaseRows : Array<DatabaseRow>;
           /**
+             @property {string} name
              Name of the table.
           */
           name : string;
           /**
+             @property {number} rowCount
              Number of databaseRows.
           */
           rowCount : number;
@@ -5489,19 +5538,23 @@ listener.
      */
      export class DeviceInfo extends APIBean {
           /**
+             @property {string} model
              Model of device - equivalent to device release or version.
           */
           model : string;
           /**
+             @property {string} name
              Name of device - equivalent to brand.
           */
           name : string;
           /**
+             @property {string} uuid
              Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
           */
           uuid : string;
           /**
+             @property {string} vendor
              Vendor of the device hardware.
           */
           vendor : string;
@@ -5638,30 +5691,37 @@ be unique for a specific instance of an application on a specific device.
      */
      export class Email extends APIBean {
           /**
+             @property {Adaptive.EmailAddress[]} bccRecipients
              Array of Email Blind Carbon Copy recipients
           */
           bccRecipients : Array<EmailAddress>;
           /**
+             @property {Adaptive.EmailAddress[]} ccRecipients
              Array of Email Carbon Copy recipients
           */
           ccRecipients : Array<EmailAddress>;
           /**
+             @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
              Array of attatchments
           */
           emailAttachmentData : Array<EmailAttachmentData>;
           /**
+             @property {string} messageBody
              Message body
           */
           messageBody : string;
           /**
+             @property {string} messageBodyMimeType
              Message body mime type
           */
           messageBodyMimeType : string;
           /**
+             @property {string} subject
              Subject of the email
           */
           subject : string;
           /**
+             @property {Adaptive.EmailAddress[]} toRecipients
              Array of Email recipients
           */
           toRecipients : Array<EmailAddress>;
@@ -5915,6 +5975,7 @@ be unique for a specific instance of an application on a specific device.
      */
      export class EmailAddress extends APIBean {
           /**
+             @property {string} address
              The Email address
           */
           address : string;
@@ -5978,22 +6039,27 @@ be unique for a specific instance of an application on a specific device.
      */
      export class EmailAttachmentData extends APIBean {
           /**
+             @property {number[]} data
              The raw data for the current file attachment (byte array)
           */
           data : Array<number>;
           /**
+             @property {string} fileName
              The name of the current file attachment
           */
           fileName : string;
           /**
+             @property {string} mimeType
              The mime type of the current attachment
           */
           mimeType : string;
           /**
+             @property {string} referenceUrl
              The relative path where the contents for the attachment file could be located.
           */
           referenceUrl : string;
           /**
+             @property {number} size
              The data size (in bytes) of the current file attachment
           */
           size : number;
@@ -6334,26 +6400,32 @@ doesn't exist, this will be -1. Used internally.
      */
      export class Geolocation extends APIBean {
           /**
+             @property {number} altitude
              The current device altitude (or Z coordinate). Measured in meters.
           */
           altitude : number;
           /**
+             @property {number} latitude
              The Y coordinate (or latitude). Measured in degrees.
           */
           latitude : number;
           /**
+             @property {number} longitude
              The X coordinate (or longitude). Measured in degrees.
           */
           longitude : number;
           /**
+             @property {number} timestamp
              Timestamp of the geolocation reading.
           */
           timestamp : number;
           /**
+             @property {number} xDoP
              Dilution of precision on the X measurement. Measured in meters.
           */
           xDoP : number;
           /**
+             @property {number} yDoP
              Dilution of precision on the Y measurement. Measured in meters.
           */
           yDoP : number;
@@ -6538,10 +6610,12 @@ doesn't exist, this will be -1. Used internally.
      */
      export class KeyPair extends APIBean {
           /**
+             @property {string} keyName
              Key of the element
           */
           keyName : string;
           /**
+             @property {string} keyValue
              Value of the element
           */
           keyValue : string;
@@ -6630,10 +6704,12 @@ doesn't exist, this will be -1. Used internally.
      */
      export class KeyValue extends APIBean {
           /**
+             @property {string} keyData
              Value of the key.
           */
           keyData : string;
           /**
+             @property {string} keyName
              Name of the key for the value.
           */
           keyName : string;
@@ -6722,6 +6798,7 @@ doesn't exist, this will be -1. Used internally.
      */
      export class Lifecycle extends APIBean {
           /**
+             @property {Adaptive.LifecycleState} state
              Represent the state of the app
 <p>
 Possible lifecycle States:
@@ -6800,10 +6877,12 @@ Possible lifecycle States:
      */
      export class Locale extends APIBean {
           /**
+             @property {string} country
              A valid ISO Country Code.
           */
           country : string;
           /**
+             @property {string} language
              A valid ISO Language Code.
           */
           language : string;
@@ -6892,14 +6971,17 @@ Possible lifecycle States:
      */
      export class OSInfo extends APIBean {
           /**
+             @property {Adaptive.IOSType} name
              The name of the operating system.
           */
           name : IOSType;
           /**
+             @property {string} vendor
              The vendor of the operating system.
           */
           vendor : string;
           /**
+             @property {string} version
              The version/identifier of the operating system.
           */
           version : string;
@@ -7014,24 +7096,28 @@ Possible lifecycle States:
      */
      export class RotationEvent extends APIBean {
           /**
+             @property {Adaptive.ICapabilitiesOrientation} destination
              The orientation we're rotating to. This is the future orientation when the state of the event is
 WillStartRotation. This will be the current orientation when the rotation is finished with the state
 DidFinishRotation.
           */
           destination : ICapabilitiesOrientation;
           /**
+             @property {Adaptive.ICapabilitiesOrientation} origin
              The orientation we're rotating from. This is the current orientation when the state of the event is
 WillStartRotation. This will be the previous orientation when the rotation is finished with the state
 DidFinishRotation.
           */
           origin : ICapabilitiesOrientation;
           /**
+             @property {Adaptive.RotationEventState} state
              The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
 for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
 concluded.
           */
           state : RotationEventState;
           /**
+             @property {number} timestamp
              The timestamps in milliseconds when the event was fired.
           */
           timestamp : number;
@@ -7182,10 +7268,12 @@ concluded.
      */
      export class SecureKeyPair extends APIBean {
           /**
+             @property {string} secureData
              Value of the secured element
           */
           secureData : string;
           /**
+             @property {string} secureKey
              Key of the secured element
           */
           secureKey : string;
@@ -7274,54 +7362,64 @@ concluded.
      */
      export class ServiceRequest extends APIBean {
           /**
+             @property {Adaptive.ServiceRequestParameter[]} bodyParameters
              Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero.
           */
           bodyParameters : Array<ServiceRequestParameter>;
           /**
+             @property {string} content
              Request data content (plain text). This should be populated by the application. The content should be
 in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
 type should be set respectively by the application.
           */
           content : string;
           /**
+             @property {string} contentEncoding
              Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentEncoding : string;
           /**
+             @property {number} contentLength
              The length in bytes of the content. This may be populated by the application, the platform
 calculates this length automatically if a specific contentLength is not specified.
           */
           contentLength : number;
           /**
+             @property {string} contentType
              The request content type (MIME TYPE). This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentType : string;
           /**
+             @property {Adaptive.ServiceRequestParameter[]} queryParameters
              Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero.
           */
           queryParameters : Array<ServiceRequestParameter>;
           /**
+             @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
 In specific, the platform maintains request and response state automatically.
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
+             @property {Adaptive.ServiceSession} serviceSession
              Session attributes and cookies. This may be populated by the application, the platform populates
 this field with defaults for the service and the previous state information. In specific, the platform
 maintains request and response state automatically.
           */
           serviceSession : ServiceSession;
           /**
+             @property {Adaptive.ServiceToken} serviceToken
              Token used for the creation of the request with the destination service, endpoint, function and method
 identifiers. This should not be manipulated by the application directly.
           */
           serviceToken : ServiceToken;
           /**
+             @property {string} userAgent
              This attribute allows for the default user-agent string to be overridden by the application.
           */
           userAgent : string;
@@ -7632,27 +7730,33 @@ identifiers. This should not be manipulated by the application directly.
      */
      export class ServiceResponse extends APIBean {
           /**
+             @property {string} content
              Response data content. The content should be in some well-known web format - in specific, binaries returned
 should be encoded in base64.
           */
           content : string;
           /**
+             @property {string} contentEncoding
              Encoding of the binary payload - by default assumed to be UTF8.
           */
           contentEncoding : string;
           /**
+             @property {number} contentLength
              The length in bytes for the Content field.
           */
           contentLength : number;
           /**
+             @property {string} contentType
              The request/response content type (MIME TYPE).
           */
           contentType : string;
           /**
+             @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included on the I/O service request.
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
+             @property {Adaptive.ServiceSession} serviceSession
              Information about the session.
           */
           serviceSession : ServiceSession;
@@ -7855,10 +7959,12 @@ should be encoded in base64.
      */
      export class ServiceSession extends APIBean {
           /**
+             @property {Adaptive.ServiceSessionAttribute[]} attributes
              The attributes of the request or response.
           */
           attributes : Array<ServiceSessionAttribute>;
           /**
+             @property {Adaptive.ServiceSessionCookie[]} cookies
              The cookies of the request or response.
           */
           cookies : Array<ServiceSessionCookie>;
@@ -7967,34 +8073,42 @@ should be encoded in base64.
      */
      export class ServiceSessionCookie extends APIBean {
           /**
+             @property {string} cookieName
              Name ot the cookie.
           */
           cookieName : string;
           /**
+             @property {string} cookieValue
              Value of the ServiceCookie.
           */
           cookieValue : string;
           /**
+             @property {number} creation
              ServiceCookie creation timestamp in milliseconds.
           */
           creation : number;
           /**
+             @property {string} domain
              Domain for which the cookie is valid.
           */
           domain : string;
           /**
+             @property {number} expiry
              ServiceCookie expiry in milliseconds or -1 for session only.
           */
           expiry : number;
           /**
+             @property {string} path
              URI path for which the cookie is valid.
           */
           path : string;
           /**
+             @property {string} scheme
              Scheme of the domain - http/https - for which the cookie is valid.
           */
           scheme : string;
           /**
+             @property {boolean} secure
              ServiceCookie is secure (https only).
           */
           secure : boolean;
@@ -8233,21 +8347,25 @@ should be encoded in base64.
      */
      export class ServiceToken extends APIBean {
           /**
+             @property {Adaptive.IServiceMethod} invocationMethod
              Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
 other invocation methods. This is also defined per function of each endpoint in the platform's XML file.
           */
           invocationMethod : IServiceMethod;
           /**
+             @property {string} endpointName
              Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
 host and port combination for a given service.
           */
           endpointName : string;
           /**
+             @property {string} functionName
              Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
 to a relative path of a function published on a remote service.
           */
           functionName : string;
           /**
+             @property {string} serviceName
              Name of the service configured in the platform's services XML file.
           */
           serviceName : string;
@@ -8390,34 +8508,42 @@ to a relative path of a function published on a remote service.
      */
      export class Contact extends ContactUid {
           /**
+             @property {Adaptive.ContactAddress[]} contactAddresses
              The adresses from the contact
           */
           contactAddresses : Array<ContactAddress>;
           /**
+             @property {Adaptive.ContactEmail[]} contactEmails
              The emails from the contact
           */
           contactEmails : Array<ContactEmail>;
           /**
+             @property {Adaptive.ContactPhone[]} contactPhones
              The phones from the contact
           */
           contactPhones : Array<ContactPhone>;
           /**
+             @property {Adaptive.ContactSocial[]} contactSocials
              The social network info from the contact
           */
           contactSocials : Array<ContactSocial>;
           /**
+             @property {Adaptive.ContactTag[]} contactTags
              The aditional tags from the contact
           */
           contactTags : Array<ContactTag>;
           /**
+             @property {Adaptive.ContactWebsite[]} contactWebsites
              The websites from the contact
           */
           contactWebsites : Array<ContactWebsite>;
           /**
+             @property {Adaptive.ContactPersonalInfo} personalInfo
              The personal info from the contact
           */
           personalInfo : ContactPersonalInfo;
           /**
+             @property {Adaptive.ContactProfessionalInfo} professionalInfo
              The professional info from the contact
           */
           professionalInfo : ContactProfessionalInfo;

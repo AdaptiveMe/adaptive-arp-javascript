@@ -48,10 +48,12 @@ module Adaptive {
      export class ContactTag extends APIBean {
 
           /**
+             @property {string} tagName
              The tagName of the Tag
           */
           tagName : string;
           /**
+             @property {string} tagValue
              The tagValue of the Tag
           */
           tagValue : string;

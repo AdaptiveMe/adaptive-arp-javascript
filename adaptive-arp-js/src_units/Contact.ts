@@ -56,34 +56,42 @@ module Adaptive {
      export class Contact extends ContactUid {
 
           /**
+             @property {Adaptive.ContactAddress[]} contactAddresses
              The adresses from the contact
           */
           contactAddresses : Array<ContactAddress>;
           /**
+             @property {Adaptive.ContactEmail[]} contactEmails
              The emails from the contact
           */
           contactEmails : Array<ContactEmail>;
           /**
+             @property {Adaptive.ContactPhone[]} contactPhones
              The phones from the contact
           */
           contactPhones : Array<ContactPhone>;
           /**
+             @property {Adaptive.ContactSocial[]} contactSocials
              The social network info from the contact
           */
           contactSocials : Array<ContactSocial>;
           /**
+             @property {Adaptive.ContactTag[]} contactTags
              The aditional tags from the contact
           */
           contactTags : Array<ContactTag>;
           /**
+             @property {Adaptive.ContactWebsite[]} contactWebsites
              The websites from the contact
           */
           contactWebsites : Array<ContactWebsite>;
           /**
+             @property {Adaptive.ContactPersonalInfo} personalInfo
              The personal info from the contact
           */
           personalInfo : ContactPersonalInfo;
           /**
+             @property {Adaptive.ContactProfessionalInfo} professionalInfo
              The professional info from the contact
           */
           professionalInfo : ContactProfessionalInfo;

@@ -44,10 +44,12 @@ declare module Adaptive {
     */
     class Database extends APIBean {
         /**
+           @property {boolean} compress
            Indicates if database was created or needs to be created as Compressed.
         */
         compress: boolean;
         /**
+           @property {string} name
            Database Name (name of the .db local file).
         */
         name: string;

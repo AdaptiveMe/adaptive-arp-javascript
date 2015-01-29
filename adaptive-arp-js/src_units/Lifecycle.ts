@@ -49,6 +49,7 @@ module Adaptive {
      export class Lifecycle extends APIBean {
 
           /**
+             @property {Adaptive.LifecycleState} state
              Represent the state of the app
 <p>
 Possible lifecycle States:

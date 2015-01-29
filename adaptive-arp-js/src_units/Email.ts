@@ -50,30 +50,37 @@ module Adaptive {
      export class Email extends APIBean {
 
           /**
+             @property {Adaptive.EmailAddress[]} bccRecipients
              Array of Email Blind Carbon Copy recipients
           */
           bccRecipients : Array<EmailAddress>;
           /**
+             @property {Adaptive.EmailAddress[]} ccRecipients
              Array of Email Carbon Copy recipients
           */
           ccRecipients : Array<EmailAddress>;
           /**
+             @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
              Array of attatchments
           */
           emailAttachmentData : Array<EmailAttachmentData>;
           /**
+             @property {string} messageBody
              Message body
           */
           messageBody : string;
           /**
+             @property {string} messageBodyMimeType
              Message body mime type
           */
           messageBodyMimeType : string;
           /**
+             @property {string} subject
              Subject of the email
           */
           subject : string;
           /**
+             @property {Adaptive.EmailAddress[]} toRecipients
              Array of Email recipients
           */
           toRecipients : Array<EmailAddress>;

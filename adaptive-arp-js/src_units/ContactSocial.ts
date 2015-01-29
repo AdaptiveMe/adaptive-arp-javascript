@@ -49,10 +49,12 @@ module Adaptive {
      export class ContactSocial extends APIBean {
 
           /**
+             @property {Adaptive.ContactSocialNetwork} socialNetwork
              The social network
           */
           socialNetwork : ContactSocialNetwork;
           /**
+             @property {string} profileUrl
              The profileUrl
           */
           profileUrl : string;

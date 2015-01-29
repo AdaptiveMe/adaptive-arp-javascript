@@ -49,14 +49,17 @@ module Adaptive {
      export class OSInfo extends APIBean {
 
           /**
+             @property {Adaptive.IOSType} name
              The name of the operating system.
           */
           name : IOSType;
           /**
+             @property {string} vendor
              The vendor of the operating system.
           */
           vendor : string;
           /**
+             @property {string} version
              The version/identifier of the operating system.
           */
           version : string;
