@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ module Adaptive {
         Interface for Managing the Runtime operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -51,14 +51,14 @@ module Adaptive {
           /**
              @method
              Dismiss the current Application
-             @since ARP1.0
+             @since ARP 2.0
           */
           dismissApplication();
           /**
              @method
              Whether the application dismiss the splash screen successfully or not
              @return {boolean} true if the application has dismissed the splash screen;false otherwise
-             @since ARP1.0
+             @since ARP 2.0
           */
           dismissSplashScreen() : boolean;
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            No data received - error condition, not authorized .
            @param {Adaptive.ISecurityResultCallbackError} error error Error values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -165,7 +165,7 @@ var Adaptive;
            @method
            Correct data received.
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onResult = function (keyValues) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -180,7 +180,7 @@ var Adaptive;
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onWarning = function (keyValues, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

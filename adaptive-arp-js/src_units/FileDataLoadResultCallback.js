@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -150,7 +150,7 @@ var Adaptive;
            @method
            Error processing data retrieval/storage operation.
            @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -164,7 +164,7 @@ var Adaptive;
            @method
            Result of data retrieval operation.
            @param {number[]} data data Data loaded.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onResult = function (data) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -179,7 +179,7 @@ var Adaptive;
            Result with warning of data retrieval/storage operation.
            @param {number[]} data data    File being loaded.
            @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onWarning = function (data, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

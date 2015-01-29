@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the Lifecycle listeners
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP1.0
+             @since ARP 2.0
           */
           onError(error:ILifecycleListenerError);
           /**
              @method
              Called when lifecycle changes somehow.
              @param lifecycle Lifecycle element
-             @since ARP1.0
+             @since ARP 2.0
           */
           onResult(lifecycle:Lifecycle);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              Data received with warning
              @param lifecycle Lifecycle element
              @param warning   Type of warning encountered during reading.
-             @since ARP1.0
+             @since ARP 2.0
           */
           onWarning(lifecycle:Lifecycle, warning:ILifecycleListenerWarning);
      }

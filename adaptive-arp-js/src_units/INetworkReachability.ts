@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Interface for Managing the Network reachability operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -54,7 +54,7 @@ module Adaptive {
              Whether there is connectivity to a host, via domain name or ip address, or not.
              @param host     domain name or ip address of host.
              @param callback Callback called at the end.
-             @since ARP1.0
+             @since ARP 2.0
           */
           isNetworkReachable(host:string, callback:INetworkReachabilityCallback);
           /**
@@ -62,7 +62,7 @@ module Adaptive {
              Whether there is connectivity to an url of a service or not.
              @param url      to look for
              @param callback Callback called at the end
-             @since ARP1.0
+             @since ARP 2.0
           */
           isNetworkServiceReachable(url:string, callback:INetworkReachabilityCallback);
      }

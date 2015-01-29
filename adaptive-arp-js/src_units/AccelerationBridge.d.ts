@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface defining methods about the acceleration sensor
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Register a new listener that will receive acceleration events.
 
            @param {Adaptive.AccelerationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         addAccelerationListener(listener: IAccelerationListener): void;
         /**
@@ -68,14 +68,14 @@ declare module Adaptive {
            De-registers an existing listener from receiving acceleration events.
 
            @param {Adaptive.AccelerationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeAccelerationListener(listener: IAccelerationListener): void;
         /**
            @method
            Removed all existing listeners from receiving acceleration events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeAccelerationListeners(): void;
     }

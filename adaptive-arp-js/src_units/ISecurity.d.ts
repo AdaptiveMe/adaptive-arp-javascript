@@ -31,7 +31,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Interface for Managing the Security operations
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -53,7 +53,7 @@ declare module Adaptive {
            @param keys             Array with the key names to delete.
            @param publicAccessName The name of the shared internal storage object (if needed).
            @param callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
@@ -62,14 +62,14 @@ declare module Adaptive {
            @param keys             Array with the key names to retrieve.
            @param publicAccessName The name of the shared internal storage object (if needed).
            @param callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
            @method
            Returns if the device has been modified in anyhow
            @return {boolean} true if the device has been modified; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         isDeviceModified(): boolean;
         /**
@@ -78,7 +78,7 @@ declare module Adaptive {
            @param keyValues        Array containing the items to store on the device internal memory.
            @param publicAccessName The name of the shared internal storage object (if needed).
            @param callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         setSecureKeyValuePairs(keyValues: SecureKeyPair[], publicAccessName: string, callback: ISecurityResultCallback): any;
     }

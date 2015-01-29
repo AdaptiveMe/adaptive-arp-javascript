@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceSession = (function (_super) {
@@ -58,7 +58,7 @@ var Adaptive;
 
            @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceSession(cookies, attributes) {
             _super.call(this);
@@ -70,7 +70,7 @@ var Adaptive;
            Gets the attributes of the response
 
            @return {string[]} Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.getAttributes = function () {
             return this.attributes;
@@ -80,7 +80,7 @@ var Adaptive;
            Sets the attributes for the response
 
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.setAttributes = function (attributes) {
             this.attributes = attributes;
@@ -90,7 +90,7 @@ var Adaptive;
            Returns the cookies of the response
 
            @return {Adaptive.ServiceCookie[]} The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.getCookies = function () {
             return this.cookies;
@@ -100,7 +100,7 @@ var Adaptive;
            Sets the cookies of the response
 
            @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.setCookies = function (cookies) {
             this.cookies = cookies;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactWebsite = (function (_super) {
@@ -56,7 +56,7 @@ var Adaptive;
            Constructor used by the implementation
 
            @param {string} url Url of the website
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactWebsite(url) {
             _super.call(this);
@@ -67,7 +67,7 @@ var Adaptive;
            Returns the url of the website
 
            @return {string} website url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactWebsite.prototype.getUrl = function () {
             return this.url;
@@ -77,7 +77,7 @@ var Adaptive;
            Set the url of the website
 
            @param {string} url Url of the website
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactWebsite.prototype.setUrl = function (url) {
             this.url = url;

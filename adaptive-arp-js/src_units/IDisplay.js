@@ -27,10 +27,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseSystem.ts"/>
+///<reference path="ICapabilitiesOrientation.ts"/>
+///<reference path="IDisplayOrientationListener.ts"/>
 //# sourceMappingURL=IDisplay.js.map

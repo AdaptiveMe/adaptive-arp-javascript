@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing the phone data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactPhone = (function (_super) {
@@ -58,7 +58,7 @@ var Adaptive;
 
            @param {string} phone     Phone number
            @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactPhone(phone, phoneType) {
             _super.call(this);
@@ -70,7 +70,7 @@ var Adaptive;
            Returns the phone phoneType
 
            @return {Adaptive.ContactPhoneType} phoneType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.getPhoneType = function () {
             return this.phoneType;
@@ -80,7 +80,7 @@ var Adaptive;
            Set the phoneType of the phone number
 
            @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.setPhoneType = function (phoneType) {
             this.phoneType = phoneType;
@@ -90,7 +90,7 @@ var Adaptive;
            Returns the phone number
 
            @return {string} phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.getPhone = function () {
             return this.phone;
@@ -100,7 +100,7 @@ var Adaptive;
            Set the phone number
 
            @param {string} phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.setPhone = function (phone) {
             this.phone = phone;

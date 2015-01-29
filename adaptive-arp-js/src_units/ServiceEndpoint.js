@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceEndpoint = (function (_super) {
@@ -61,7 +61,7 @@ var Adaptive;
            @param {number} port   Remote service Port
            @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceEndpoint(host, paths, port, proxy, scheme) {
             _super.call(this);
@@ -76,7 +76,7 @@ var Adaptive;
            Returns the Remote service host
 
            @return {string} Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getHost = function () {
             return this.host;
@@ -86,7 +86,7 @@ var Adaptive;
            Set the Remote service host
 
            @param {string} host Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setHost = function (host) {
             this.host = host;
@@ -96,7 +96,7 @@ var Adaptive;
            Returns the Remote service Paths
 
            @return {Adaptive.ServicePath[]} Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getPaths = function () {
             return this.paths;
@@ -106,7 +106,7 @@ var Adaptive;
            Set the Remote service Paths
 
            @param {Adaptive.ServicePath[]} paths Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setPaths = function (paths) {
             this.paths = paths;
@@ -116,7 +116,7 @@ var Adaptive;
            Returns the Remote service Port
 
            @return {number} Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getPort = function () {
             return this.port;
@@ -126,7 +126,7 @@ var Adaptive;
            Set the Remote service Port
 
            @param {number} port Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setPort = function (port) {
             this.port = port;
@@ -136,7 +136,7 @@ var Adaptive;
            Return the Proxy url
 
            @return {string} Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getProxy = function () {
             return this.proxy;
@@ -146,7 +146,7 @@ var Adaptive;
            Set the Proxy url
 
            @param {string} proxy Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setProxy = function (proxy) {
             this.proxy = proxy;
@@ -156,7 +156,7 @@ var Adaptive;
            Returns the Remote service scheme
 
            @return {string} Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getScheme = function () {
             return this.scheme;
@@ -166,7 +166,7 @@ var Adaptive;
            Set the Remote service scheme
 
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setScheme = function (scheme) {
             this.scheme = scheme;

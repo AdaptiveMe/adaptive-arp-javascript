@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,7 +50,7 @@ module Adaptive {
         Structure representing the data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class Contact extends ContactUid {
@@ -100,7 +100,7 @@ module Adaptive {
              @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
              @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
              @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: Array<ContactAddress>, contactPhones: Array<ContactPhone>, contactEmails: Array<ContactEmail>, contactWebsites: Array<ContactWebsite>, contactSocials: Array<ContactSocial>, contactTags: Array<ContactTag>) {
                super(contactId);
@@ -119,7 +119,7 @@ module Adaptive {
              Returns all the addresses of the Contact
 
              @return {Adaptive.ContactAddress[]} ContactAddress[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactAddresses() : Array<ContactAddress> {
                return this.contactAddresses;
@@ -130,7 +130,7 @@ module Adaptive {
              Set the addresses of the Contact
 
              @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactAddresses(contactAddresses: Array<ContactAddress>) {
                this.contactAddresses = contactAddresses;
@@ -141,7 +141,7 @@ module Adaptive {
              Returns all the emails of the Contact
 
              @return {Adaptive.ContactEmail[]} ContactEmail[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactEmails() : Array<ContactEmail> {
                return this.contactEmails;
@@ -152,7 +152,7 @@ module Adaptive {
              Set the emails of the Contact
 
              @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactEmails(contactEmails: Array<ContactEmail>) {
                this.contactEmails = contactEmails;
@@ -163,7 +163,7 @@ module Adaptive {
              Returns all the phones of the Contact
 
              @return {Adaptive.ContactPhone[]} ContactPhone[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactPhones() : Array<ContactPhone> {
                return this.contactPhones;
@@ -174,7 +174,7 @@ module Adaptive {
              Set the phones of the Contact
 
              @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactPhones(contactPhones: Array<ContactPhone>) {
                this.contactPhones = contactPhones;
@@ -185,7 +185,7 @@ module Adaptive {
              Returns all the social network info of the Contact
 
              @return {Adaptive.ContactSocial[]} ContactSocial[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactSocials() : Array<ContactSocial> {
                return this.contactSocials;
@@ -196,7 +196,7 @@ module Adaptive {
              Set the social network info of the Contact
 
              @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactSocials(contactSocials: Array<ContactSocial>) {
                this.contactSocials = contactSocials;
@@ -207,7 +207,7 @@ module Adaptive {
              Returns the additional tags of the Contact
 
              @return {Adaptive.ContactTag[]} ContactTag[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactTags() : Array<ContactTag> {
                return this.contactTags;
@@ -218,7 +218,7 @@ module Adaptive {
              Set the additional tags of the Contact
 
              @param {Adaptive.ContactTag[]} contactTags Tags of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactTags(contactTags: Array<ContactTag>) {
                this.contactTags = contactTags;
@@ -229,7 +229,7 @@ module Adaptive {
              Returns all the websites of the Contact
 
              @return {Adaptive.ContactWebsite[]} ContactWebsite[]
-             @since ARP1.0
+             @since ARP 2.0
           */
           getContactWebsites() : Array<ContactWebsite> {
                return this.contactWebsites;
@@ -240,7 +240,7 @@ module Adaptive {
              Set the websites of the Contact
 
              @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setContactWebsites(contactWebsites: Array<ContactWebsite>) {
                this.contactWebsites = contactWebsites;
@@ -251,7 +251,7 @@ module Adaptive {
              Returns the personal info of the Contact
 
              @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           getPersonalInfo() : ContactPersonalInfo {
                return this.personalInfo;
@@ -262,7 +262,7 @@ module Adaptive {
              Set the personal info of the Contact
 
              @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
-             @since ARP1.0
+             @since ARP 2.0
           */
           setPersonalInfo(personalInfo: ContactPersonalInfo) {
                this.personalInfo = personalInfo;
@@ -273,7 +273,7 @@ module Adaptive {
              Returns the professional info of the Contact
 
              @return {Adaptive.ContactProfessionalInfo} Array of personal info
-             @since ARP1.0
+             @since ARP 2.0
           */
           getProfessionalInfo() : ContactProfessionalInfo {
                return this.professionalInfo;
@@ -284,7 +284,7 @@ module Adaptive {
              Set the professional info of the Contact
 
              @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-             @since ARP1.0
+             @since ARP 2.0
           */
           setProfessionalInfo(professionalInfo: ContactProfessionalInfo) {
                this.professionalInfo = professionalInfo;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the basic device information.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class DeviceInfo extends APIBean {
@@ -72,7 +72,7 @@ be unique for a specific instance of an application on a specific device.
              @param {string} model  of the device.
              @param {string} vendor of the device.
              @param {string} uuid   unique* identifier (* platform dependent).
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(name: string, model: string, vendor: string, uuid: string) {
                super();
@@ -87,7 +87,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the model of the device.
 
              @return {string} String with the model of the device.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getModel() : string {
                return this.model;
@@ -108,7 +108,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the name of the device.
 
              @return {string} String with device name.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getName() : string {
                return this.name;
@@ -129,7 +129,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the platform dependent UUID of the device.
 
              @return {string} String with the 128-bit device identifier.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getUuid() : string {
                return this.uuid;
@@ -152,7 +152,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the vendor of the device.
 
              @return {string} String with the vendor name.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getVendor() : string {
                return this.vendor;

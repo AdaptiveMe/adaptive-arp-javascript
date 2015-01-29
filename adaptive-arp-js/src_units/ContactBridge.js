@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,7 +59,7 @@ var Adaptive;
        Interface for Managing the Contact operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
@@ -76,7 +76,7 @@ var Adaptive;
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContact = function (contact, callback) {
             // Create and populate API request.
@@ -88,7 +88,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -125,7 +125,7 @@ var Adaptive;
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactPhoto = function (contact, callback) {
             // Create and populate API request.
@@ -137,7 +137,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -173,7 +173,7 @@ var Adaptive;
            Get all contacts
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContacts = function (callback) {
             // Create and populate API request.
@@ -184,7 +184,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -221,7 +221,7 @@ var Adaptive;
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactsForFields = function (callback, fields) {
             // Create and populate API request.
@@ -233,7 +233,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -271,7 +271,7 @@ var Adaptive;
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactsWithFilter = function (callback, fields, filter) {
             // Create and populate API request.
@@ -284,7 +284,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -321,7 +321,7 @@ var Adaptive;
 
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.searchContacts = function (term, callback) {
             // Create and populate API request.
@@ -333,7 +333,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -371,7 +371,7 @@ var Adaptive;
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.searchContactsWithFilter = function (term, callback, filter) {
             // Create and populate API request.
@@ -384,7 +384,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -422,7 +422,7 @@ var Adaptive;
            @param {Adaptive.ContactUid} contact contact  id to assign the photo
            @param {number[]} pngImage pngImage photo as byte array
            @return {boolean} true if set is successful;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.setContactPhoto = function (contact, pngImage) {
             // Create and populate API request.
@@ -435,7 +435,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

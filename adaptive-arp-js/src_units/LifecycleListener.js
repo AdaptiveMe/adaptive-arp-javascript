@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -148,7 +148,7 @@ var Adaptive;
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -162,7 +162,7 @@ var Adaptive;
            @method
            Called when lifecycle changes somehow.
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onResult = function (lifecycle) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -177,7 +177,7 @@ var Adaptive;
            Data received with warning
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onWarning = function (lifecycle, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

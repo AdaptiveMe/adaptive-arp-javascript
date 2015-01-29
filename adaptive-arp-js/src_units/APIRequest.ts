@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ module Adaptive {
         Structure representing a HTML5 request to the native API.
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class APIRequest {
@@ -68,7 +68,7 @@ module Adaptive {
              @param {string} methodName Name of the method
              @param {string[]} parameters Array of parameters as JSON formatted strings.
              @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(bridgeType: string, methodName: string, parameters: Array<string>, asyncId: number) {
                this.bridgeType = bridgeType;
@@ -103,7 +103,7 @@ listener.
              Bridge Type Getter
 
              @return {string} Bridge Type
-             @since ARP1.0
+             @since ARP 2.0
           */
           getBridgeType() : string {
                return this.bridgeType;
@@ -114,7 +114,7 @@ listener.
              Bridge Type Setter
 
              @param {string} bridgeType Bridge Type
-             @since ARP1.0
+             @since ARP 2.0
           */
           setBridgeType(bridgeType: string) {
                this.bridgeType = bridgeType;
@@ -125,7 +125,7 @@ listener.
              Method name Getter
 
              @return {string} Method name
-             @since ARP1.0
+             @since ARP 2.0
           */
           getMethodName() : string {
                return this.methodName;
@@ -136,7 +136,7 @@ listener.
              Method name Setter
 
              @param {string} methodName Method name
-             @since ARP1.0
+             @since ARP 2.0
           */
           setMethodName(methodName: string) {
                this.methodName = methodName;
@@ -147,7 +147,7 @@ listener.
              Parameters Getter
 
              @return {string[]} Parameters
-             @since ARP1.0
+             @since ARP 2.0
           */
           getParameters() : Array<string> {
                return this.parameters;
@@ -158,7 +158,7 @@ listener.
              Parameters Setter
 
              @param {string[]} parameters Parameters, JSON formatted strings of objects.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setParameters(parameters: Array<string>) {
                this.parameters = parameters;

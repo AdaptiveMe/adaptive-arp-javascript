@@ -31,7 +31,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Interface for Managing the File loading callback responses
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -51,14 +51,14 @@ declare module Adaptive {
            @method
            Error processing data retrieval/storage operation.
            @param error Error condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IFileDataLoadResultCallbackError): any;
         /**
            @method
            Result of data retrieval operation.
            @param data Data loaded.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(data: number[]): any;
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Result with warning of data retrieval/storage operation.
            @param data    File being loaded.
            @param warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): any;
     }

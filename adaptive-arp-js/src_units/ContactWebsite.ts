@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the website data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class ContactWebsite extends APIBean {
@@ -56,7 +56,7 @@ module Adaptive {
              Constructor used by the implementation
 
              @param {string} url Url of the website
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(url: string) {
                super();
@@ -68,7 +68,7 @@ module Adaptive {
              Returns the url of the website
 
              @return {string} website url
-             @since ARP1.0
+             @since ARP 2.0
           */
           getUrl() : string {
                return this.url;
@@ -79,7 +79,7 @@ module Adaptive {
              Set the url of the website
 
              @param {string} url Url of the website
-             @since ARP1.0
+             @since ARP 2.0
           */
           setUrl(url: string) {
                this.url = url;

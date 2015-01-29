@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Structure representing the data elements of an email.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class Email extends APIBean {
@@ -88,7 +88,7 @@ module Adaptive {
              @param {string} messageBody         body of the email
              @param {string} messageBodyMimeType mime type of the body
              @param {string} subject             of the email
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(toRecipients: Array<EmailAddress>, ccRecipients: Array<EmailAddress>, bccRecipients: Array<EmailAddress>, emailAttachmentData: Array<EmailAttachmentData>, messageBody: string, messageBodyMimeType: string, subject: string) {
                super();
@@ -106,7 +106,7 @@ module Adaptive {
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           getBccRecipients() : Array<EmailAddress> {
                return this.bccRecipients;
@@ -117,7 +117,7 @@ module Adaptive {
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           setBccRecipients(bccRecipients: Array<EmailAddress>) {
                this.bccRecipients = bccRecipients;
@@ -128,7 +128,7 @@ module Adaptive {
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCcRecipients() : Array<EmailAddress> {
                return this.ccRecipients;
@@ -139,7 +139,7 @@ module Adaptive {
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCcRecipients(ccRecipients: Array<EmailAddress>) {
                this.ccRecipients = ccRecipients;
@@ -150,7 +150,7 @@ module Adaptive {
              Returns an array of attachments
 
              @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
-             @since ARP1.0
+             @since ARP 2.0
           */
           getEmailAttachmentData() : Array<EmailAttachmentData> {
                return this.emailAttachmentData;
@@ -161,7 +161,7 @@ module Adaptive {
              Set the email attachment data array
 
              @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
-             @since ARP1.0
+             @since ARP 2.0
           */
           setEmailAttachmentData(emailAttachmentData: Array<EmailAttachmentData>) {
                this.emailAttachmentData = emailAttachmentData;
@@ -172,7 +172,7 @@ module Adaptive {
              Returns the message body of the email
 
              @return {string} message Body string of the email
-             @since ARP1.0
+             @since ARP 2.0
           */
           getMessageBody() : string {
                return this.messageBody;
@@ -183,7 +183,7 @@ module Adaptive {
              Set the message body of the email
 
              @param {string} messageBody message body of the email
-             @since ARP1.0
+             @since ARP 2.0
           */
           setMessageBody(messageBody: string) {
                this.messageBody = messageBody;
@@ -194,7 +194,7 @@ module Adaptive {
              Returns the myme type of the message body
 
              @return {string} mime type string of the message boddy
-             @since ARP1.0
+             @since ARP 2.0
           */
           getMessageBodyMimeType() : string {
                return this.messageBodyMimeType;
@@ -205,7 +205,7 @@ module Adaptive {
              Set the mime type for the message body
 
              @param {string} messageBodyMimeType type of the body message
-             @since ARP1.0
+             @since ARP 2.0
           */
           setMessageBodyMimeType(messageBodyMimeType: string) {
                this.messageBodyMimeType = messageBodyMimeType;
@@ -216,7 +216,7 @@ module Adaptive {
              Returns the subject of the email
 
              @return {string} subject string of the email
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSubject() : string {
                return this.subject;
@@ -227,7 +227,7 @@ module Adaptive {
              Set the subject of the email
 
              @param {string} subject of the email
-             @since ARP1.0
+             @since ARP 2.0
           */
           setSubject(subject: string) {
                this.subject = subject;
@@ -238,7 +238,7 @@ module Adaptive {
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} toRecipients array of recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           getToRecipients() : Array<EmailAddress> {
                return this.toRecipients;
@@ -249,7 +249,7 @@ module Adaptive {
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} toRecipients array of recipients
-             @since ARP1.0
+             @since ARP 2.0
           */
           setToRecipients(toRecipients: Array<EmailAddress>) {
                this.toRecipients = toRecipients;

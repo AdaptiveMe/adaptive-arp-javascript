@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Structure representing the personal info data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class ContactPersonalInfo extends APIBean {
@@ -72,7 +72,7 @@ module Adaptive {
              @param {string} middleName of the Contact
              @param {string} lastName   of the Contact
              @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(name: string, middleName: string, lastName: string, title: ContactPersonalInfoTitle) {
                super();
@@ -87,7 +87,7 @@ module Adaptive {
              Returns the title of the Contact
 
              @return {Adaptive.ContactPersonalInfoTitle} Title
-             @since ARP1.0
+             @since ARP 2.0
           */
           getTitle() : ContactPersonalInfoTitle {
                return this.title;
@@ -98,7 +98,7 @@ module Adaptive {
              Set the Title of the Contact
 
              @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setTitle(title: ContactPersonalInfoTitle) {
                this.title = title;
@@ -109,7 +109,7 @@ module Adaptive {
              Returns the last name of the Contact
 
              @return {string} lastName
-             @since ARP1.0
+             @since ARP 2.0
           */
           getLastName() : string {
                return this.lastName;
@@ -120,7 +120,7 @@ module Adaptive {
              Set the last name of the Contact
 
              @param {string} lastName of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setLastName(lastName: string) {
                this.lastName = lastName;
@@ -131,7 +131,7 @@ module Adaptive {
              Returns the middle name of the Contact
 
              @return {string} middelName
-             @since ARP1.0
+             @since ARP 2.0
           */
           getMiddleName() : string {
                return this.middleName;
@@ -142,7 +142,7 @@ module Adaptive {
              Set the middle name of the Contact
 
              @param {string} middleName of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setMiddleName(middleName: string) {
                this.middleName = middleName;
@@ -153,7 +153,7 @@ module Adaptive {
              Returns the name of the Contact
 
              @return {string} name
-             @since ARP1.0
+             @since ARP 2.0
           */
           getName() : string {
                return this.name;
@@ -164,7 +164,7 @@ module Adaptive {
              Set the name of the Contact
 
              @param {string} name of the Contact
-             @since ARP1.0
+             @since ARP 2.0
           */
           setName(name: string) {
                this.name = name;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,7 +45,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -57,7 +57,7 @@ module Adaptive {
              Creates a database on default path for every platform.
              @param callback Asynchronous callback
              @param database Database object to create
-             @since ARP1.0
+             @since ARP 2.0
           */
           createDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
@@ -66,7 +66,7 @@ module Adaptive {
              @param database      Database for databaseTable creating.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param callback      DatabaseTable callback with the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           createTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
@@ -74,7 +74,7 @@ module Adaptive {
              Deletes a database on default path for every platform.
              @param database Database object to delete
              @param callback Asynchronous callback
-             @since ARP1.0
+             @since ARP 2.0
           */
           deleteDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
@@ -83,7 +83,7 @@ module Adaptive {
              @param database      Database for databaseTable removal.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param callback      DatabaseTable callback with the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           deleteTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
@@ -94,7 +94,7 @@ should be passed as a parameter
              @param statement    SQL statement.
              @param replacements List of SQL statement replacements.
              @param callback     DatabaseTable callback with the response.
-             @since ARP1.0
+             @since ARP 2.0
           */
           executeSqlStatement(database:Database, statement:string, replacements:Array<string>, callback:IDatabaseTableResultCallback);
           /**
@@ -105,7 +105,7 @@ should be passed as a parameter
              @param rollbackFlag Indicates if rollback should be performed when any
                     statement execution fails.
              @param callback     DatabaseTable callback with the response.
-             @since ARP1.0
+             @since ARP 2.0
           */
           executeSqlTransactions(database:Database, statements:Array<string>, rollbackFlag:boolean, callback:IDatabaseTableResultCallback);
           /**
@@ -113,7 +113,7 @@ should be passed as a parameter
              Checks if database exists by given database name.
              @param database Database Object to check if exists
              @return {boolean} True if exists, false otherwise
-             @since ARP1.0
+             @since ARP 2.0
           */
           existsDatabase(database:Database) : boolean;
           /**
@@ -122,7 +122,7 @@ should be passed as a parameter
              @param database      Database for databaseTable consulting.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @return {boolean} True if exists, false otherwise
-             @since ARP1.0
+             @since ARP 2.0
           */
           existsTable(database:Database, databaseTable:DatabaseTable) : boolean;
      }

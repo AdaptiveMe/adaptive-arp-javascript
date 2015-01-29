@@ -4,10 +4,13 @@
 /// <reference path="ButtonListener.d.ts" />
 /// <reference path="CommonUtil.d.ts" />
 /// <reference path="DeviceInfo.d.ts" />
+/// <reference path="DeviceOrientationListener.d.ts" />
 /// <reference path="IAdaptiveRPGroup.d.ts" />
 /// <reference path="IBaseSystem.d.ts" />
 /// <reference path="IButtonListener.d.ts" />
+/// <reference path="ICapabilitiesOrientation.d.ts" />
 /// <reference path="IDevice.d.ts" />
+/// <reference path="IDeviceOrientationListener.d.ts" />
 /// <reference path="Locale.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
@@ -38,7 +41,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,7 +52,7 @@ declare module Adaptive {
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     class DeviceBridge extends BaseSystemBridge implements IDevice {
         /**
@@ -62,15 +65,23 @@ declare module Adaptive {
            Register a new listener that will receive button events.
 
            @param {Adaptive.ButtonListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         addButtonListener(listener: IButtonListener): void;
+        /**
+           @method
+           Add a listener to start receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
+           @since ARP 2.0.5
+        */
+        addDeviceOrientationListener(listener: IDeviceOrientationListener): void;
         /**
            @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
@@ -78,23 +89,47 @@ declare module Adaptive {
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getLocaleCurrent(): Locale;
+        /**
+           @method
+           Returns the current orientation of the device. Please note that this may be different from the orientation
+of the display. For display orientation, use the IDisplay APIs.
+
+           @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
+           @since ARP 2.0.5
+        */
+        getOrientationCurrent(): ICapabilitiesOrientation;
         /**
            @method
            De-registers an existing listener from receiving button events.
 
            @param {Adaptive.ButtonListener} listener listener to be removed.
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeButtonListener(listener: IButtonListener): void;
         /**
            @method
            Removed all existing listeners from receiving button events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeButtonListeners(): void;
+        /**
+           @method
+           Remove a listener to stop receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
+           @since ARP 2.0.5
+        */
+        removeDeviceOrientationListener(listener: IDeviceOrientationListener): void;
+        /**
+           @method
+           Remove all listeners receiving device orientation events.
+
+           @since ARP 2.0.5
+        */
+        removeDeviceOrientationListeners(): void;
     }
 }

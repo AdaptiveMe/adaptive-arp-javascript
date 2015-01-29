@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the assigned tags data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactTag = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} tagValue Value of the tag
            @param {string} tagName  Name of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactTag(tagName, tagValue) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns the tagName of the Tag
 
            @return {string} tagName
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.getTagName = function () {
             return this.tagName;
@@ -79,7 +79,7 @@ var Adaptive;
            Set the tagName of the Tag
 
            @param {string} tagName Name of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.setTagName = function (tagName) {
             this.tagName = tagName;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the tagValue of the Tag
 
            @return {string} tagValue
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.getTagValue = function () {
             return this.tagValue;
@@ -99,7 +99,7 @@ var Adaptive;
            Set the tagValue of the Tag
 
            @param {string} tagValue Value of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.setTagValue = function (tagValue) {
             this.tagValue = tagValue;

@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Represents an instance of a service.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class Service extends APIBean {
@@ -64,7 +64,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
            @param {string} name             Name of the service
            @param {Adaptive.IServiceType} type             Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(serviceEndpoints: ServiceEndpoint[], name: string, type: IServiceType);
         /**
@@ -72,7 +72,7 @@ declare module Adaptive {
            Returns the type
 
            @return {Adaptive.IServiceType} type
-           @since ARP1.0
+           @since ARP 2.0
         */
         getType(): IServiceType;
         /**
@@ -80,7 +80,7 @@ declare module Adaptive {
            Set the type
 
            @param {Adaptive.IServiceType} type Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         setType(type: IServiceType): void;
         /**
@@ -88,7 +88,7 @@ declare module Adaptive {
            Returns the name
 
            @return {string} name
-           @since ARP1.0
+           @since ARP 2.0
         */
         getName(): string;
         /**
@@ -96,7 +96,7 @@ declare module Adaptive {
            Set the name
 
            @param {string} name Name of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         setName(name: string): void;
         /**
@@ -104,7 +104,7 @@ declare module Adaptive {
            Returns the serviceEndpoints
 
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-           @since ARP1.0
+           @since ARP 2.0
         */
         getServiceEndpoints(): ServiceEndpoint[];
         /**
@@ -112,7 +112,7 @@ declare module Adaptive {
            Set the serviceEndpoints
 
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;
         /**

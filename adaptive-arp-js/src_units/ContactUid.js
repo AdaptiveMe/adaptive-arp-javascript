@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactUid = (function (_super) {
@@ -56,7 +56,7 @@ var Adaptive;
            Constructor used by implementation to set the Contact id.
 
            @param {string} contactId Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactUid(contactId) {
             _super.call(this);
@@ -67,7 +67,7 @@ var Adaptive;
            Returns the contact id
 
            @return {string} Contactid Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactUid.prototype.getContactId = function () {
             return this.contactId;
@@ -77,7 +77,7 @@ var Adaptive;
            Set the id of the Contact
 
            @param {string} contactId Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactUid.prototype.setContactId = function (contactId) {
             this.contactId = contactId;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,7 +51,7 @@ module Adaptive {
         Interface for Managing the Services operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class ServiceBridge extends BaseCommunicationBridge implements IService {
 
@@ -69,7 +69,7 @@ module Adaptive {
 
              @param {string} serviceName serviceName Name of service.
              @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getService(serviceName : string) : Service {
                // Create and populate API request.
@@ -81,7 +81,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Service = null;
@@ -111,7 +111,7 @@ module Adaptive {
              @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
              @param {Adaptive.Service} service serviceRequest Service Request to invoke
              @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-             @since ARP1.0
+             @since ARP 2.0
           */
           invokeService(serviceRequest : ServiceRequest, service : Service, callback : IServiceResultCallback) : void {
                // Create and populate API request.
@@ -124,7 +124,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -158,7 +158,7 @@ module Adaptive {
              Register a new service
 
              @param {Adaptive.Service} service service to register
-             @since ARP1.0
+             @since ARP 2.0
           */
           registerService(service : Service) : void {
                // Create and populate API request.
@@ -170,7 +170,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -184,7 +184,7 @@ module Adaptive {
              Unregister a service
 
              @param {Adaptive.Service} service service to unregister
-             @since ARP1.0
+             @since ARP 2.0
           */
           unregisterService(service : Service) : void {
                // Create and populate API request.
@@ -196,7 +196,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -209,7 +209,7 @@ module Adaptive {
              @method
              Unregister all services.
 
-             @since ARP1.0
+             @since ARP 2.0
           */
           unregisterServices() : void {
                // Create and populate API request.
@@ -220,7 +220,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -234,7 +234,7 @@ module Adaptive {
 
              @param service Service to check
              @return True if the service is registered, false otherwise.
-             @since ARP1.0
+             @since ARP 2.0
           */
           isRegistered_service(service : Service) : boolean {
                // Create and populate API request.
@@ -246,7 +246,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -274,7 +274,7 @@ module Adaptive {
 
              @param serviceName Name of service.
              @return True if the service is registered, false otherwise.
-             @since ARP1.0
+             @since ARP 2.0
           */
           isRegistered_serviceName(serviceName : string) : boolean {
                // Create and populate API request.
@@ -286,7 +286,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;

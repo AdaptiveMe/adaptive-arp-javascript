@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Add the listener for network status changes of the app
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         addNetworkStatusListener(listener: INetworkStatusListener): void;
         /**
@@ -68,14 +68,14 @@ declare module Adaptive {
            Un-registers an existing listener from receiving network status events.
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeNetworkStatusListener(listener: INetworkStatusListener): void;
         /**
            @method
            Removes all existing listeners from receiving network status events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeNetworkStatusListeners(): void;
     }

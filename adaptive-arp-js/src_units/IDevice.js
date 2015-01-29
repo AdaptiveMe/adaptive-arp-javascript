@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -35,5 +35,7 @@ Release:
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseSystem.ts"/>
 ///<reference path="IButtonListener.ts"/>
+///<reference path="ICapabilitiesOrientation.ts"/>
+///<reference path="IDeviceOrientationListener.ts"/>
 ///<reference path="Locale.ts"/>
 //# sourceMappingURL=IDevice.js.map

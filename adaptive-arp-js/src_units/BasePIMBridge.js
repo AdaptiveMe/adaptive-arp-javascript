@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ var Adaptive;
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BasePIMBridge = (function () {
         /**
@@ -69,7 +69,7 @@ var Adaptive;
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BasePIMBridge;
     })();

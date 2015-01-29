@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,7 +53,7 @@ var Adaptive;
        Interface for Managing the Telephony operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
@@ -70,7 +70,7 @@ var Adaptive;
 
            @param {string} number number to call
            @return {Adaptive.ITelephonyStatus} Status of the call
-           @since ARP1.0
+           @since ARP 2.0
         */
         TelephonyBridge.prototype.call = function (number) {
             // Create and populate API request.
@@ -82,7 +82,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the data elements of an email addressee.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var EmailAddress = (function (_super) {
@@ -56,7 +56,7 @@ var Adaptive;
            Constructor used by implementation
 
            @param {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         function EmailAddress(address) {
             _super.call(this);
@@ -67,7 +67,7 @@ var Adaptive;
            Returns the email address
 
            @return {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAddress.prototype.getAddress = function () {
             return this.address;
@@ -77,7 +77,7 @@ var Adaptive;
            Set the Email address
 
            @param {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAddress.prototype.setAddress = function (address) {
             this.address = address;

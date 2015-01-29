@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ var Adaptive;
        Interface for Barometer management purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);

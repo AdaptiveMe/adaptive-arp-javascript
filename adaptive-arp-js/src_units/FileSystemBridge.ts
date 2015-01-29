@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ module Adaptive {
         Interface for Managing the File System operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class FileSystemBridge extends BaseDataBridge implements IFileSystem {
 
@@ -68,7 +68,7 @@ This method does not create the actual file in the specified folder.
              @param {Adaptive.FileDescriptor} parent parent Parent directory.
              @param {string} name name   Name of new file or directory.
              @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-             @since ARP1.0
+             @since ARP 2.0
           */
           createFileDescriptor(parent : FileDescriptor, name : string) : FileDescriptor {
                // Create and populate API request.
@@ -81,7 +81,7 @@ This method does not create the actual file in the specified folder.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -111,7 +111,7 @@ This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
              @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationCacheFolder() : FileDescriptor {
                // Create and populate API request.
@@ -122,7 +122,7 @@ This path is volatile and may be cleaned by the OS periodically.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -151,7 +151,7 @@ This path is volatile and may be cleaned by the OS periodically.
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationCloudFolder() : FileDescriptor {
                // Create and populate API request.
@@ -162,7 +162,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -191,7 +191,7 @@ This path must always be writable by the current application.
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationDocumentsFolder() : FileDescriptor {
                // Create and populate API request.
@@ -202,7 +202,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -231,7 +231,7 @@ This path must always be writable by the current application.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
              @return {Adaptive.FileDescriptor} Path to the application folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationFolder() : FileDescriptor {
                // Create and populate API request.
@@ -242,7 +242,7 @@ This path may or may not be directly readable or writable - it usually contains 
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -271,7 +271,7 @@ This path may or may not be directly readable or writable - it usually contains 
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationProtectedFolder() : FileDescriptor {
                // Create and populate API request.
@@ -282,7 +282,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -310,7 +310,7 @@ This path must always be writable by the current application.
              Returns the file system dependent file separator.
 
              @return {string} char with the directory/file separator.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSeparator() : string {
                // Create and populate API request.
@@ -321,7 +321,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -352,7 +352,7 @@ definition, not secure.
 This path may or may not be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSystemExternalFolder() : FileDescriptor {
                // Create and populate API request.
@@ -363,7 +363,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the column specification of a data column.
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class DatabaseColumn extends APIBean {
@@ -56,7 +56,7 @@ module Adaptive {
              Constructor with fields
 
              @param {string} name Name of the column
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(name: string) {
                super();
@@ -68,7 +68,7 @@ module Adaptive {
              Returns the name of the column.
 
              @return {string} The name of the column.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getName() : string {
                return this.name;
@@ -79,7 +79,7 @@ module Adaptive {
              Sets the name of the column.
 
              @param {string} name The name of the column.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setName(name: string) {
                this.name = name;

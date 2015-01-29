@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: ILifecycleListenerError): void;
         /**
            @method
            Called when lifecycle changes somehow.
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(lifecycle: Lifecycle): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Data received with warning
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): void;
     }

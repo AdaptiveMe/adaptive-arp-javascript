@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -156,7 +156,7 @@ module Adaptive {
              @method
              No data received - error condition, not authorized or hardware not available.
              @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onError(error : IGeolocationListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -170,7 +170,7 @@ module Adaptive {
              @method
              Correct data received.
              @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onResult(geolocation : Geolocation) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -185,7 +185,7 @@ module Adaptive {
              Data received with warning - ie. HighDoP
              @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
              @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

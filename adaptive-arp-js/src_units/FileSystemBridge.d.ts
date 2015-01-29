@@ -35,7 +35,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ declare module Adaptive {
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     class FileSystemBridge extends BaseDataBridge implements IFileSystem {
         /**
@@ -62,7 +62,7 @@ This method does not create the actual file in the specified folder.
            @param {Adaptive.FileDescriptor} parent parent Parent directory.
            @param {string} name name   Name of new file or directory.
            @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-           @since ARP1.0
+           @since ARP 2.0
         */
         createFileDescriptor(parent: FileDescriptor, name: string): FileDescriptor;
         /**
@@ -72,7 +72,7 @@ This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
            @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getApplicationCacheFolder(): FileDescriptor;
         /**
@@ -81,7 +81,7 @@ This path is volatile and may be cleaned by the OS periodically.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getApplicationCloudFolder(): FileDescriptor;
         /**
@@ -90,7 +90,7 @@ This path must always be writable by the current application.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getApplicationDocumentsFolder(): FileDescriptor;
         /**
@@ -99,7 +99,7 @@ This path must always be writable by the current application.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
            @return {Adaptive.FileDescriptor} Path to the application folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getApplicationFolder(): FileDescriptor;
         /**
@@ -108,7 +108,7 @@ This path may or may not be directly readable or writable - it usually contains 
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getApplicationProtectedFolder(): FileDescriptor;
         /**
@@ -116,7 +116,7 @@ This path must always be writable by the current application.
            Returns the file system dependent file separator.
 
            @return {string} char with the directory/file separator.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getSeparator(): string;
         /**
@@ -127,7 +127,7 @@ definition, not secure.
 This path may or may not be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getSystemExternalFolder(): FileDescriptor;
     }

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,6 +50,7 @@ declare module Adaptive {
            Invokes the given method specified in the API request object.
            @param request APIRequest object containing method name and parameters.
            @return {Adaptive.APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
+           @since ARP 2.0
         */
         invoke(request: APIRequest): APIResponse;
     }

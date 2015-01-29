@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the binary attachment data.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class EmailAttachmentData extends APIBean {
@@ -76,7 +76,7 @@ module Adaptive {
              @param {string} fileName     name of the file attachment
              @param {string} mimeType     mime type of the file attachment
              @param {string} referenceUrl relative url of the file attachment
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string) {
                super();
@@ -92,7 +92,7 @@ module Adaptive {
              Returns the raw data in byte[]
 
              @return {number[]} data Octet-binary content of the attachment payload.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getData() : Array<number> {
                return this.data;
@@ -103,7 +103,7 @@ module Adaptive {
              Set the data of the attachment as a byte[]
 
              @param {number[]} data Sets the octet-binary content of the attachment.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setData(data: Array<number>) {
                this.data = data;
@@ -114,7 +114,7 @@ module Adaptive {
              Returns the filename of the attachment
 
              @return {string} fileName Name of the attachment.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getFileName() : string {
                return this.fileName;
@@ -125,7 +125,7 @@ module Adaptive {
              Set the name of the file attachment
 
              @param {string} fileName Name of the attachment.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setFileName(fileName: string) {
                this.fileName = fileName;
@@ -136,7 +136,7 @@ module Adaptive {
              Returns the mime type of the attachment
 
              @return {string} mimeType
-             @since ARP1.0
+             @since ARP 2.0
           */
           getMimeType() : string {
                return this.mimeType;
@@ -147,7 +147,7 @@ module Adaptive {
              Set the mime type of the attachment
 
              @param {string} mimeType Mime-type of the attachment.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setMimeType(mimeType: string) {
                this.mimeType = mimeType;
@@ -158,7 +158,7 @@ module Adaptive {
              Returns the absolute url of the file attachment
 
              @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getReferenceUrl() : string {
                return this.referenceUrl;
@@ -169,7 +169,7 @@ module Adaptive {
              Set the absolute url of the attachment
 
              @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-             @since ARP1.0
+             @since ARP 2.0
           */
           setReferenceUrl(referenceUrl: string) {
                this.referenceUrl = referenceUrl;
@@ -180,7 +180,7 @@ module Adaptive {
              Returns the size of the attachment as a long
 
              @return {number} size Length in bytes of the octet-binary content.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSize() : number {
                return this.size;
@@ -191,7 +191,7 @@ module Adaptive {
              Set the size of the attachment as a long
 
              @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
-             @since ARP1.0
+             @since ARP 2.0
           */
           setSize(size: number) {
                this.size = size;

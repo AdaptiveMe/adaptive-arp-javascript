@@ -34,7 +34,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,7 +45,7 @@ declare module Adaptive {
        Interface for Advertising purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     class AdsBridge extends BaseCommerceBridge implements IAds {
         /**

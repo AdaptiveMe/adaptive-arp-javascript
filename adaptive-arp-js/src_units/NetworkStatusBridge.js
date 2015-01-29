@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
@@ -70,7 +70,7 @@ var Adaptive;
            Add the listener for network status changes of the app
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.addNetworkStatusListener = function (listener) {
             // Create and populate API request.
@@ -81,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -114,7 +114,7 @@ var Adaptive;
            Un-registers an existing listener from receiving network status events.
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListener = function (listener) {
             // Create and populate API request.
@@ -125,7 +125,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            Removes all existing listeners from receiving network status events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListeners = function () {
             // Create and populate API request.
@@ -162,7 +162,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              Result callback for error responses
              @param error Returned error
-             @since ARP1.0
+             @since ARP 2.0
           */
           onError(error:IDatabaseTableResultCallbackError);
           /**
              @method
              Result callback for correct responses
              @param databaseTable Returns the databaseTable
-             @since ARP1.0
+             @since ARP 2.0
           */
           onResult(databaseTable:DatabaseTable);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              Result callback for warning responses
              @param databaseTable Returns the databaseTable
              @param warning       Returned Warning
-             @since ARP1.0
+             @since ARP 2.0
           */
           onWarning(databaseTable:DatabaseTable, warning:IDatabaseTableResultCallbackWarning);
      }

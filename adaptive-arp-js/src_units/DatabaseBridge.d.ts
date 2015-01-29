@@ -40,7 +40,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,7 +51,7 @@ declare module Adaptive {
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
     */
     class DatabaseBridge extends BaseDataBridge implements IDatabase {
         /**
@@ -65,7 +65,7 @@ declare module Adaptive {
 
            @param {Adaptive.Database} database database Database object to create
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP1.0
+           @since ARP 2.0
         */
         createDatabase(database: Database, callback: IDatabaseResultCallback): void;
         /**
@@ -75,7 +75,7 @@ declare module Adaptive {
            @param {Adaptive.Database} database database      Database for databaseTable creating.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         createTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
         /**
@@ -84,7 +84,7 @@ declare module Adaptive {
 
            @param {Adaptive.Database} database database Database object to delete
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP1.0
+           @since ARP 2.0
         */
         deleteDatabase(database: Database, callback: IDatabaseResultCallback): void;
         /**
@@ -94,7 +94,7 @@ declare module Adaptive {
            @param {Adaptive.Database} database database      Database for databaseTable removal.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         deleteTable(database: Database, databaseTable: DatabaseTable, callback: IDatabaseTableResultCallback): void;
         /**
@@ -106,7 +106,7 @@ should be passed as a parameter
            @param {string} statement statement    SQL statement.
            @param {string[]} replacements replacements List of SQL statement replacements.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP1.0
+           @since ARP 2.0
         */
         executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): void;
         /**
@@ -118,7 +118,7 @@ should be passed as a parameter
            @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                   statement execution fails.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP1.0
+           @since ARP 2.0
         */
         executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): void;
         /**
@@ -127,7 +127,7 @@ should be passed as a parameter
 
            @param {Adaptive.Database} database database Database Object to check if exists
            @return {boolean} True if exists, false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         existsDatabase(database: Database): boolean;
         /**
@@ -137,7 +137,7 @@ should be passed as a parameter
            @param {Adaptive.Database} database database      Database for databaseTable consulting.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @return {boolean} True if exists, false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         existsTable(database: Database, databaseTable: DatabaseTable): boolean;
     }

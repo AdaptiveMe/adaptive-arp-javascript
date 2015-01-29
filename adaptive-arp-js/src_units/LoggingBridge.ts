@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ module Adaptive {
         Interface for Managing the Logging operations
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class LoggingBridge extends BaseUtilBridge implements ILogging {
 
@@ -65,7 +65,7 @@ module Adaptive {
 
              @param level   Log level
              @param message Message to be logged
-             @since ARP1.0
+             @since ARP 2.0
           */
           log_level_message(level : ILoggingLogLevel, message : string) : void {
                // Create and populate API request.
@@ -78,7 +78,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -93,7 +93,7 @@ module Adaptive {
              @param level    Log level
              @param category Category/tag name to identify/filter the log.
              @param message  Message to be logged
-             @since ARP1.0
+             @since ARP 2.0
           */
           log_level_category_message(level : ILoggingLogLevel, category : string, message : string) : void {
                // Create and populate API request.
@@ -107,7 +107,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {

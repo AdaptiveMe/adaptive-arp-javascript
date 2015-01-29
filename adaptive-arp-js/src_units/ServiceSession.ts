@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Represents a session object for HTTP request and responses
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class ServiceSession extends APIBean {
@@ -62,7 +62,7 @@ module Adaptive {
 
              @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
              @param {string[]} attributes Attributes of the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(cookies: Array<ServiceCookie>, attributes: Array<string>) {
                super();
@@ -75,7 +75,7 @@ module Adaptive {
              Gets the attributes of the response
 
              @return {string[]} Attributes of the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           getAttributes() : Array<string> {
                return this.attributes;
@@ -86,7 +86,7 @@ module Adaptive {
              Sets the attributes for the response
 
              @param {string[]} attributes Attributes of the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           setAttributes(attributes: Array<string>) {
                this.attributes = attributes;
@@ -97,7 +97,7 @@ module Adaptive {
              Returns the cookies of the response
 
              @return {Adaptive.ServiceCookie[]} The cookies of the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCookies() : Array<ServiceCookie> {
                return this.cookies;
@@ -108,7 +108,7 @@ module Adaptive {
              Sets the cookies of the response
 
              @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCookies(cookies: Array<ServiceCookie>) {
                this.cookies = cookies;

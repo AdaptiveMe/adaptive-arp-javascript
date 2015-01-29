@@ -27,44 +27,29 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-///<reference path="APIRequest.ts"/>
-///<reference path="APIResponse.ts"/>
-///<reference path="BaseSystemBridge.ts"/>
-///<reference path="CommonUtil.ts"/>
-///<reference path="IAdaptiveRPGroup.ts"/>
-///<reference path="IBaseSystem.ts"/>
-///<reference path="IDisplay.ts"/>
-var Adaptive;
-(function (Adaptive) {
+declare module Adaptive {
     /**
-       @class Adaptive.DisplayBridge
-       @extends Adaptive.BaseSystemBridge
-       Interface for Managing the Display operations
-
-       @author Carlos Lozano Diez
-       @since ARP1.0
+       @enum {Adaptive.IDeviceOrientationListenerWarning} Adaptive.IDeviceOrientationListenerWarning
+       Enumeration IDeviceOrientationListenerWarning
     */
-    var DisplayBridge = (function (_super) {
-        __extends(DisplayBridge, _super);
+    class IDeviceOrientationListenerWarning {
+        value: string;
+        constructor(value: string);
+        toString(): string;
         /**
-           @method constructor
-           Default constructor.
+           @property {Adaptive.IDeviceOrientationListenerWarning} [Unknown='Unknown']
         */
-        function DisplayBridge() {
-            _super.call(this);
-        }
-        return DisplayBridge;
-    })(Adaptive.BaseSystemBridge);
-    Adaptive.DisplayBridge = DisplayBridge;
-})(Adaptive || (Adaptive = {}));
-//# sourceMappingURL=DisplayBridge.js.map
+        static Unknown: IDeviceOrientationListenerWarning;
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDeviceOrientationListenerWarning}
+        */
+        static toObject(object: any): IDeviceOrientationListenerWarning;
+    }
+}

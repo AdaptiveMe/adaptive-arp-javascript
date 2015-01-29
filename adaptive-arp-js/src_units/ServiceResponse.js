@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ var Adaptive;
        Represents a local or remote service response.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceResponse = (function (_super) {
@@ -65,7 +65,7 @@ var Adaptive;
            @param {number} contentBinaryLength The length in bytes for the binary Content.
            @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession      Information about the session
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceResponse(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, serviceSession) {
             _super.call(this);
@@ -83,7 +83,7 @@ var Adaptive;
            Returns the content
 
            @return {string} content
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContent = function () {
             return this.content;
@@ -93,7 +93,7 @@ var Adaptive;
            Set the content
 
            @param {string} content Request/Response data content (plain text).
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContent = function (content) {
             this.content = content;
@@ -103,7 +103,7 @@ var Adaptive;
            Returns the binary content
 
            @return {number[]} contentBinary
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentBinary = function () {
             return this.contentBinary;
@@ -113,7 +113,7 @@ var Adaptive;
            Set the binary content
 
            @param {number[]} contentBinary The byte[] representing the binary Content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
@@ -123,7 +123,7 @@ var Adaptive;
            Returns the binary content length
 
            @return {number} contentBinaryLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
@@ -133,7 +133,7 @@ var Adaptive;
            Set the binary content length
 
            @param {number} contentBinaryLength The length in bytes for the binary Content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
@@ -143,7 +143,7 @@ var Adaptive;
            Returns the content encoding
 
            @return {string} contentEncoding
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentEncoding = function () {
             return this.contentEncoding;
@@ -153,7 +153,7 @@ var Adaptive;
            Set the content encoding
 
            @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
@@ -163,7 +163,7 @@ var Adaptive;
            Returns the content length
 
            @return {number} contentLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentLength = function () {
             return this.contentLength;
@@ -173,7 +173,7 @@ var Adaptive;
            Set the content length
 
            @param {number} contentLength The length in bytes for the Content field.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
@@ -183,7 +183,7 @@ var Adaptive;
            Returns the content type
 
            @return {string} contentType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentType = function () {
             return this.contentType;
@@ -193,7 +193,7 @@ var Adaptive;
            Set the content type
 
            @param {string} contentType The request/response content type (MIME TYPE).
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
@@ -203,7 +203,7 @@ var Adaptive;
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
@@ -213,7 +213,7 @@ var Adaptive;
            Set the array of ServiceHeader
 
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
@@ -223,7 +223,7 @@ var Adaptive;
            Getter for service session
 
            @return {Adaptive.ServiceSession} The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getServiceSession = function () {
             return this.serviceSession;
@@ -233,7 +233,7 @@ var Adaptive;
            Setter for service session
 
            @param {Adaptive.ServiceSession} serviceSession The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;

@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -106,14 +106,14 @@ declare module Adaptive {
            @method
            No data received - error condition, not authorized .
            @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: INetworkReachabilityCallbackError): void;
         /**
            @method
            Correct data received.
            @param {boolean} reachable reachable Indicates if the host is reachable
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(reachable: boolean): void;
         /**
@@ -121,7 +121,7 @@ declare module Adaptive {
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param {boolean} reachable reachable Indicates if the host is reachable
            @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(reachable: boolean, warning: INetworkReachabilityCallbackWarning): void;
     }

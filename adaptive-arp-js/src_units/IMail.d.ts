@@ -31,7 +31,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -52,7 +52,7 @@ declare module Adaptive {
            Send an Email
            @param data     Payload of the email
            @param callback Result callback of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         sendEmail(data: Email, callback: IMessagingCallback): any;
     }

@@ -34,7 +34,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,7 +45,7 @@ declare module Adaptive {
        Interface for Managing the browser operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     class BrowserBridge extends BaseUIBridge implements IBrowser {
         /**
@@ -59,7 +59,7 @@ declare module Adaptive {
 
            @param {string} url url Url to open
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         openExtenalBrowser(url: string): boolean;
         /**
@@ -70,7 +70,7 @@ declare module Adaptive {
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         openInternalBrowser(url: string, title: string, backButtonText: string): boolean;
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         openInternalBrowserModal(url: string, title: string, backButtonText: string): boolean;
     }

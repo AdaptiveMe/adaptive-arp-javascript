@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the cookieValue of a http cookie.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceCookie = (function (_super) {
@@ -63,7 +63,7 @@ var Adaptive;
            @param {boolean} secure      Privacy of the cookie
            @param {number} expiry      Expiration date of the cookie
            @param {number} creation    Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceCookie(cookieName, cookieValue, domain, path, scheme, secure, expiry, creation) {
             _super.call(this);
@@ -81,7 +81,7 @@ var Adaptive;
            Returns the cookie cookieName
 
            @return {string} cookieName Name of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCookieName = function () {
             return this.cookieName;
@@ -91,7 +91,7 @@ var Adaptive;
            Set the cookie cookieName
 
            @param {string} cookieName Name of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCookieName = function (cookieName) {
             this.cookieName = cookieName;
@@ -101,7 +101,7 @@ var Adaptive;
            Returns the cookie cookieValue
 
            @return {string} Value of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCookieValue = function () {
             return this.cookieValue;
@@ -111,7 +111,7 @@ var Adaptive;
            Set the cookie cookieValue
 
            @param {string} cookieValue Value of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCookieValue = function (cookieValue) {
             this.cookieValue = cookieValue;
@@ -121,7 +121,7 @@ var Adaptive;
            Returns the creation date
 
            @return {number} Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCreation = function () {
             return this.creation;
@@ -131,7 +131,7 @@ var Adaptive;
            Sets the creation date
 
            @param {number} creation Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCreation = function (creation) {
             this.creation = creation;
@@ -141,7 +141,7 @@ var Adaptive;
            Returns the domain
 
            @return {string} domain
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getDomain = function () {
             return this.domain;
@@ -151,7 +151,7 @@ var Adaptive;
            Set the domain
 
            @param {string} domain Domain of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setDomain = function (domain) {
             this.domain = domain;
@@ -161,7 +161,7 @@ var Adaptive;
            Returns the expiration date in milis
 
            @return {number} expiry
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getExpiry = function () {
             return this.expiry;
@@ -171,7 +171,7 @@ var Adaptive;
            Set the expiration date in milis
 
            @param {number} expiry Expiration date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setExpiry = function (expiry) {
             this.expiry = expiry;
@@ -181,7 +181,7 @@ var Adaptive;
            Returns the path
 
            @return {string} path
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getPath = function () {
             return this.path;
@@ -191,7 +191,7 @@ var Adaptive;
            Set the path
 
            @param {string} path Path of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setPath = function (path) {
             this.path = path;
@@ -201,7 +201,7 @@ var Adaptive;
            Returns the scheme
 
            @return {string} scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getScheme = function () {
             return this.scheme;
@@ -211,7 +211,7 @@ var Adaptive;
            Set the scheme
 
            @param {string} scheme Scheme of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
@@ -221,7 +221,7 @@ var Adaptive;
            Returns whether the cookie is secure or not
 
            @return {boolean} true if the cookie is secure; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getSecure = function () {
             return this.secure;
@@ -231,7 +231,7 @@ var Adaptive;
            Set whether the cookie is secure or not
 
            @param {boolean} secure Privacy of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setSecure = function (secure) {
             this.secure = secure;

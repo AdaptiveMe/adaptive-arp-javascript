@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
@@ -70,7 +70,7 @@ var Adaptive;
            Register a new listener that will receive geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
             // Create and populate API request.
@@ -81,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -114,7 +114,7 @@ var Adaptive;
            De-registers an existing listener from receiving geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
             // Create and populate API request.
@@ -125,7 +125,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            Removed all existing listeners from receiving geolocation events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.removeGeolocationListeners = function () {
             // Create and populate API request.
@@ -162,7 +162,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

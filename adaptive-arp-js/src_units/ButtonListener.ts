@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -156,7 +156,7 @@ module Adaptive {
              @method
              No data received
              @param {Adaptive.IButtonListenerError} error error occurred
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onError(error : IButtonListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -170,7 +170,7 @@ module Adaptive {
              @method
              Called on button pressed
              @param {Adaptive.Button} button button pressed
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onResult(button : Button) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -185,7 +185,7 @@ module Adaptive {
              Data received with warning
              @param {Adaptive.Button} button button  pressed
              @param {Adaptive.IButtonListenerWarning} warning warning happened
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

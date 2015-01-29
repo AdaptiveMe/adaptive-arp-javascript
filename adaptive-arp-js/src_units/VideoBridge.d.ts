@@ -34,7 +34,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,7 +45,7 @@ declare module Adaptive {
        Interface for Managing the Video operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     class VideoBridge extends BaseMediaBridge implements IVideo {
         /**
@@ -58,7 +58,7 @@ declare module Adaptive {
            Play url video stream
 
            @param {string} url url of the video
-           @since ARP1.0
+           @since ARP 2.0
         */
         playStream(url: string): void;
     }

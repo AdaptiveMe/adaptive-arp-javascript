@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Represents a specific user or system locate.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Locale = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} country  Country of the Locale
            @param {string} language Language of the Locale
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Locale(language, country) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns the country code
 
            @return {string} country code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.getCountry = function () {
             return this.country;
@@ -79,7 +79,7 @@ var Adaptive;
            Set the country code
 
            @param {string} country code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.setCountry = function (country) {
             this.country = country;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the language code
 
            @return {string} language code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.getLanguage = function () {
             return this.language;
@@ -99,7 +99,7 @@ var Adaptive;
            Set the language code
 
            @param {string} language code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.setLanguage = function (language) {
             this.language = language;

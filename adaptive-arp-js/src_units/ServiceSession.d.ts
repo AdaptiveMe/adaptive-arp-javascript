@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class ServiceSession extends APIBean {
@@ -58,7 +58,7 @@ declare module Adaptive {
 
            @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(cookies: ServiceCookie[], attributes: string[]);
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Gets the attributes of the response
 
            @return {string[]} Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         getAttributes(): string[];
         /**
@@ -74,7 +74,7 @@ declare module Adaptive {
            Sets the attributes for the response
 
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         setAttributes(attributes: string[]): void;
         /**
@@ -82,7 +82,7 @@ declare module Adaptive {
            Returns the cookies of the response
 
            @return {Adaptive.ServiceCookie[]} The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         getCookies(): ServiceCookie[];
         /**
@@ -90,7 +90,7 @@ declare module Adaptive {
            Sets the cookies of the response
 
            @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         setCookies(cookies: ServiceCookie[]): void;
         /**

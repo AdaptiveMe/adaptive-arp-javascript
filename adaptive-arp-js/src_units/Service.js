@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ var Adaptive;
        Represents an instance of a service.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Service = (function (_super) {
@@ -60,7 +60,7 @@ var Adaptive;
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
            @param {string} name             Name of the service
            @param {Adaptive.IServiceType} type             Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Service(serviceEndpoints, name, type) {
             _super.call(this);
@@ -73,7 +73,7 @@ var Adaptive;
            Returns the type
 
            @return {Adaptive.IServiceType} type
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getType = function () {
             return this.type;
@@ -83,7 +83,7 @@ var Adaptive;
            Set the type
 
            @param {Adaptive.IServiceType} type Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setType = function (type) {
             this.type = type;
@@ -93,7 +93,7 @@ var Adaptive;
            Returns the name
 
            @return {string} name
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getName = function () {
             return this.name;
@@ -103,7 +103,7 @@ var Adaptive;
            Set the name
 
            @param {string} name Name of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setName = function (name) {
             this.name = name;
@@ -113,7 +113,7 @@ var Adaptive;
            Returns the serviceEndpoints
 
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getServiceEndpoints = function () {
             return this.serviceEndpoints;
@@ -123,7 +123,7 @@ var Adaptive;
            Set the serviceEndpoints
 
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
             this.serviceEndpoints = serviceEndpoints;

@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -53,7 +53,7 @@ declare module Adaptive {
            Get a reference to a registered service by name.
            @param serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getService(serviceName: string): Service;
         /**
@@ -62,41 +62,41 @@ declare module Adaptive {
            @param serviceRequest Service Request to invoke
            @param service        Service to call
            @param callback       Callback to execute with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         invokeService(serviceRequest: ServiceRequest, service: Service, callback: IServiceResultCallback): any;
         /**
            @method
            Register a new service
            @param service to register
-           @since ARP1.0
+           @since ARP 2.0
         */
         registerService(service: Service): any;
         /**
            @method
            Unregister all services.
-           @since ARP1.0
+           @since ARP 2.0
         */
         unregisterServices(): any;
         /**
            @method
            Unregister a service
            @param service to unregister
-           @since ARP1.0
+           @since ARP 2.0
         */
         unregisterService(service: Service): any;
         /**
            Check whether a service by the given name is registered.
            @param serviceName Name of service.
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         isRegistered_serviceName(serviceName: string): boolean;
         /**
            Check whether a service by the given name is registered.
            @param serviceName Name of service.
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         isRegistered_service(service: Service): boolean;
     }

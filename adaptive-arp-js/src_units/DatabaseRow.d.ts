@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class DatabaseRow extends APIBean {
@@ -52,7 +52,7 @@ declare module Adaptive {
            Constructor for implementation using.
 
            @param {string[]} values The values of the row
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(values: string[]);
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Returns the values of the row.
 
            @return {string[]} The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getValues(): string[];
         /**
@@ -68,7 +68,7 @@ declare module Adaptive {
            Sets the values of the row.
 
            @param {string[]} values The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         setValues(values: string[]): void;
         /**

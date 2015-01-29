@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Represents an instance of a service.
 
         @author Aryslan
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class Service extends APIBean {
@@ -68,7 +68,7 @@ module Adaptive {
              @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
              @param {string} name             Name of the service
              @param {Adaptive.IServiceType} type             Type of the service
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string, type: IServiceType) {
                super();
@@ -82,7 +82,7 @@ module Adaptive {
              Returns the type
 
              @return {Adaptive.IServiceType} type
-             @since ARP1.0
+             @since ARP 2.0
           */
           getType() : IServiceType {
                return this.type;
@@ -93,7 +93,7 @@ module Adaptive {
              Set the type
 
              @param {Adaptive.IServiceType} type Type of the service
-             @since ARP1.0
+             @since ARP 2.0
           */
           setType(type: IServiceType) {
                this.type = type;
@@ -104,7 +104,7 @@ module Adaptive {
              Returns the name
 
              @return {string} name
-             @since ARP1.0
+             @since ARP 2.0
           */
           getName() : string {
                return this.name;
@@ -115,7 +115,7 @@ module Adaptive {
              Set the name
 
              @param {string} name Name of the service
-             @since ARP1.0
+             @since ARP 2.0
           */
           setName(name: string) {
                this.name = name;
@@ -126,7 +126,7 @@ module Adaptive {
              Returns the serviceEndpoints
 
              @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             @since ARP1.0
+             @since ARP 2.0
           */
           getServiceEndpoints() : Array<ServiceEndpoint> {
                return this.serviceEndpoints;
@@ -137,7 +137,7 @@ module Adaptive {
              Set the serviceEndpoints
 
              @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-             @since ARP1.0
+             @since ARP 2.0
           */
           setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
                this.serviceEndpoints = serviceEndpoints;

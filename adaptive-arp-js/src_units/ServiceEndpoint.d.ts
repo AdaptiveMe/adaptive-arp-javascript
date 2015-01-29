@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class ServiceEndpoint extends APIBean {
@@ -73,7 +73,7 @@ declare module Adaptive {
            @param {number} port   Remote service Port
            @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(host: string, paths: ServicePath[], port: number, proxy: string, scheme: string);
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            Returns the Remote service host
 
            @return {string} Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         getHost(): string;
         /**
@@ -89,7 +89,7 @@ declare module Adaptive {
            Set the Remote service host
 
            @param {string} host Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         setHost(host: string): void;
         /**
@@ -97,7 +97,7 @@ declare module Adaptive {
            Returns the Remote service Paths
 
            @return {Adaptive.ServicePath[]} Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         getPaths(): ServicePath[];
         /**
@@ -105,7 +105,7 @@ declare module Adaptive {
            Set the Remote service Paths
 
            @param {Adaptive.ServicePath[]} paths Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         setPaths(paths: ServicePath[]): void;
         /**
@@ -113,7 +113,7 @@ declare module Adaptive {
            Returns the Remote service Port
 
            @return {number} Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         getPort(): number;
         /**
@@ -121,7 +121,7 @@ declare module Adaptive {
            Set the Remote service Port
 
            @param {number} port Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         setPort(port: number): void;
         /**
@@ -129,7 +129,7 @@ declare module Adaptive {
            Return the Proxy url
 
            @return {string} Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         getProxy(): string;
         /**
@@ -137,7 +137,7 @@ declare module Adaptive {
            Set the Proxy url
 
            @param {string} proxy Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         setProxy(proxy: string): void;
         /**
@@ -145,7 +145,7 @@ declare module Adaptive {
            Returns the Remote service scheme
 
            @return {string} Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         getScheme(): string;
         /**
@@ -153,7 +153,7 @@ declare module Adaptive {
            Set the Remote service scheme
 
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         setScheme(scheme: string): void;
         /**

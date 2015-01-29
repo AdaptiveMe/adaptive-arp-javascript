@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP1.0
+             @since ARP 2.0
           */
           onError(error:IContactResultCallbackError);
           /**
              @method
              This method is called on Result
              @param contacts returned by the platform
-             @since ARP1.0
+             @since ARP 2.0
           */
           onResult(contacts:Array<Contact>);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              This method is called on Warning
              @param contacts returned by the platform
              @param warning  returned by the platform
-             @since ARP1.0
+             @since ARP 2.0
           */
           onWarning(contacts:Array<Contact>, warning:IContactResultCallbackWarning);
      }

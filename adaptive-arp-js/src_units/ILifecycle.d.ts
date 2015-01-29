@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -50,27 +50,27 @@ declare module Adaptive {
            @method
            Add the listener for the lifecycle of the app
            @param listener Lifecycle listener
-           @since ARP1.0
+           @since ARP 2.0
         */
         addLifecycleListener(listener: ILifecycleListener): any;
         /**
            @method
            Whether the application is in background or not
            @return {boolean} true if the application is in background;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         isBackground(): boolean;
         /**
            @method
            Un-registers an existing listener from receiving lifecycle events.
            @param listener Lifecycle listener
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeLifecycleListener(listener: ILifecycleListener): any;
         /**
            @method
            Removes all existing listeners from receiving lifecycle events.
-           @since ARP1.0
+           @since ARP 2.0
         */
         removeLifecycleListeners(): any;
     }

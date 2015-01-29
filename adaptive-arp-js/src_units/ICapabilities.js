@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,5 +39,6 @@ Release:
 ///<reference path="ICapabilitiesMedia.ts"/>
 ///<reference path="ICapabilitiesNet.ts"/>
 ///<reference path="ICapabilitiesNotification.ts"/>
+///<reference path="ICapabilitiesOrientation.ts"/>
 ///<reference path="ICapabilitiesSensor.ts"/>
 //# sourceMappingURL=ICapabilities.js.map

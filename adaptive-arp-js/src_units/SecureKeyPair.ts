@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Represents a single secureKey-value pair.
 
         @author Aryslan
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class SecureKeyPair extends APIBean {
@@ -61,7 +61,7 @@ module Adaptive {
 
              @param {string} secureKey  name of the keypair
              @param {string} secureData value of the keypair
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(secureKey: string, secureData: string) {
                super();
@@ -74,7 +74,7 @@ module Adaptive {
              Returns the object value
 
              @return {string} Value.
-             @since ARP 1.0
+             @since ARP 2.0
           */
           getSecureData() : string {
                return this.secureData;
@@ -85,7 +85,7 @@ module Adaptive {
              Sets the value for this object
 
              @param {string} secureData value to set.
-             @since ARP 1.0
+             @since ARP 2.0
           */
           setSecureData(secureData: string) {
                this.secureData = secureData;
@@ -96,7 +96,7 @@ module Adaptive {
              Returns the object secureKey name.
 
              @return {string} Key name.
-             @since ARP 1.0
+             @since ARP 2.0
           */
           getSecureKey() : string {
                return this.secureKey;
@@ -107,7 +107,7 @@ module Adaptive {
              Sets the secureKey name for this object.
 
              @param {string} secureKey Key name.
-             @since ARP 1.0
+             @since ARP 2.0
           */
           setSecureKey(secureKey: string) {
                this.secureKey = secureKey;

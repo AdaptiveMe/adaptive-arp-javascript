@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -100,7 +100,7 @@ var Adaptive;
        Structure representing a native response to the HTML5
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var APIBean = (function () {
@@ -108,7 +108,7 @@ var Adaptive;
            @method constructor
            Default constructor
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         function APIBean() {
         }
@@ -131,7 +131,7 @@ var Adaptive;
        Structure representing a HTML5 request to the native API.
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var APIRequest = (function () {
@@ -143,7 +143,7 @@ var Adaptive;
            @param {string} methodName Name of the method
            @param {string[]} parameters Array of parameters as JSON formatted strings.
            @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function APIRequest(bridgeType, methodName, parameters, asyncId) {
             this.bridgeType = bridgeType;
@@ -175,7 +175,7 @@ listener.
            Bridge Type Getter
 
            @return {string} Bridge Type
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.getBridgeType = function () {
             return this.bridgeType;
@@ -185,7 +185,7 @@ listener.
            Bridge Type Setter
 
            @param {string} bridgeType Bridge Type
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.setBridgeType = function (bridgeType) {
             this.bridgeType = bridgeType;
@@ -195,7 +195,7 @@ listener.
            Method name Getter
 
            @return {string} Method name
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.getMethodName = function () {
             return this.methodName;
@@ -205,7 +205,7 @@ listener.
            Method name Setter
 
            @param {string} methodName Method name
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.setMethodName = function (methodName) {
             this.methodName = methodName;
@@ -215,7 +215,7 @@ listener.
            Parameters Getter
 
            @return {string[]} Parameters
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.getParameters = function () {
             return this.parameters;
@@ -225,7 +225,7 @@ listener.
            Parameters Setter
 
            @param {string[]} parameters Parameters, JSON formatted strings of objects.
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIRequest.prototype.setParameters = function (parameters) {
             this.parameters = parameters;
@@ -264,7 +264,7 @@ listener.
        Structure representing a JSON response to the HTML5 layer.
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var APIResponse = (function () {
@@ -286,7 +286,7 @@ listener.
            Response getter
 
            @return {string} String representing the JavaScript value or JSON object representation of the response.
-           @since ARP1.0
+           @since ARP 2.0
         */
         APIResponse.prototype.getResponse = function () {
             return this.response;
@@ -362,7 +362,7 @@ listener.
        Structure representing a service path for one endpoint
 
        @author fnva
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServicePath = (function () {
@@ -448,7 +448,7 @@ listener.
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Acceleration = (function (_super) {
@@ -461,7 +461,7 @@ listener.
            @param {number} y         Y Coordinate
            @param {number} z         Z Coordinate
            @param {number} timestamp Timestamp
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Acceleration(x, y, z, timestamp) {
             _super.call(this);
@@ -475,7 +475,7 @@ listener.
            Timestamp Getter
 
            @return {number} Timestamp
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.getTimestamp = function () {
             return this.timestamp;
@@ -485,7 +485,7 @@ listener.
            Timestamp Setter
 
            @param {number} timestamp Timestamp
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
@@ -495,7 +495,7 @@ listener.
            X Coordinate Getter
 
            @return {number} X-axis component of the acceleration.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.getX = function () {
             return this.x;
@@ -505,7 +505,7 @@ listener.
            X Coordinate Setter
 
            @param {number} x X-axis component of the acceleration.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.setX = function (x) {
             this.x = x;
@@ -515,7 +515,7 @@ listener.
            Y Coordinate Getter
 
            @return {number} Y-axis component of the acceleration.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.getY = function () {
             return this.y;
@@ -525,7 +525,7 @@ listener.
            Y Coordinate Setter
 
            @param {number} y Y-axis component of the acceleration.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.setY = function (y) {
             this.y = y;
@@ -535,7 +535,7 @@ listener.
            Z Coordinate Getter
 
            @return {number} Z-axis component of the acceleration.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.getZ = function () {
             return this.z;
@@ -545,7 +545,7 @@ listener.
            Z Coordinate Setter
 
            @param {number} z Z Coordinate
-           @since ARP1.0
+           @since ARP 2.0
         */
         Acceleration.prototype.setZ = function (z) {
             this.z = z;
@@ -579,7 +579,7 @@ listener.
        Structure representing the a physical or logical button on a device.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Button = (function (_super) {
@@ -589,7 +589,7 @@ listener.
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Button(type) {
             _super.call(this);
@@ -600,7 +600,7 @@ listener.
            Returns the button type
 
            @return {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Button.prototype.getType = function () {
             return this.type;
@@ -610,7 +610,7 @@ listener.
            Setter for the button type
 
            @param {Adaptive.ICapabilitiesButton} type Button Type
-           @since ARP1.0
+           @since ARP 2.0
         */
         Button.prototype.setType = function (type) {
             this.type = type;
@@ -642,7 +642,7 @@ listener.
        Structure representing the address data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactAddress = (function (_super) {
@@ -653,7 +653,7 @@ listener.
 
            @param {string} address Address data.
            @param {Adaptive.ContactAddressType} type    Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactAddress(address, type) {
             _super.call(this);
@@ -665,7 +665,7 @@ listener.
            Returns the type of the address
 
            @return {Adaptive.ContactAddressType} AddressType Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.getType = function () {
             return this.type;
@@ -675,7 +675,7 @@ listener.
            Set the address type
 
            @param {Adaptive.ContactAddressType} type Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.setType = function (type) {
             this.type = type;
@@ -685,7 +685,7 @@ listener.
            Returns the Contact address
 
            @return {string} address Address data.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.getAddress = function () {
             return this.address;
@@ -695,7 +695,7 @@ listener.
            Set the address of the Contact
 
            @param {string} address Address data.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.setAddress = function (address) {
             this.address = address;
@@ -729,7 +729,7 @@ listener.
        Structure representing the email data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactEmail = (function (_super) {
@@ -741,7 +741,7 @@ listener.
            @param {Adaptive.ContactEmailType} type    Type of the email
            @param {boolean} primary Is email primary
            @param {string} email   Email of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactEmail(type, primary, email) {
             _super.call(this);
@@ -754,7 +754,7 @@ listener.
            Returns the type of the email
 
            @return {Adaptive.ContactEmailType} EmailType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.getType = function () {
             return this.type;
@@ -764,7 +764,7 @@ listener.
            Set the type of the email
 
            @param {Adaptive.ContactEmailType} type Type of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.setType = function (type) {
             this.type = type;
@@ -774,7 +774,7 @@ listener.
            Returns the email of the Contact
 
            @return {string} email
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.getEmail = function () {
             return this.email;
@@ -784,7 +784,7 @@ listener.
            Set the email of the Contact
 
            @param {string} email Email of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.setEmail = function (email) {
             this.email = email;
@@ -794,7 +794,7 @@ listener.
            Returns if the email is primary
 
            @return {boolean} true if the email is primary; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.getPrimary = function () {
             return this.primary;
@@ -804,7 +804,7 @@ listener.
            Set if the email
 
            @param {boolean} primary true if the email is primary; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactEmail.prototype.setPrimary = function (primary) {
             this.primary = primary;
@@ -840,7 +840,7 @@ listener.
        Structure representing the personal info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactPersonalInfo = (function (_super) {
@@ -853,7 +853,7 @@ listener.
            @param {string} middleName of the Contact
            @param {string} lastName   of the Contact
            @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactPersonalInfo(name, middleName, lastName, title) {
             _super.call(this);
@@ -867,7 +867,7 @@ listener.
            Returns the title of the Contact
 
            @return {Adaptive.ContactPersonalInfoTitle} Title
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.getTitle = function () {
             return this.title;
@@ -877,7 +877,7 @@ listener.
            Set the Title of the Contact
 
            @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.setTitle = function (title) {
             this.title = title;
@@ -887,7 +887,7 @@ listener.
            Returns the last name of the Contact
 
            @return {string} lastName
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.getLastName = function () {
             return this.lastName;
@@ -897,7 +897,7 @@ listener.
            Set the last name of the Contact
 
            @param {string} lastName of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.setLastName = function (lastName) {
             this.lastName = lastName;
@@ -907,7 +907,7 @@ listener.
            Returns the middle name of the Contact
 
            @return {string} middelName
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.getMiddleName = function () {
             return this.middleName;
@@ -917,7 +917,7 @@ listener.
            Set the middle name of the Contact
 
            @param {string} middleName of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.setMiddleName = function (middleName) {
             this.middleName = middleName;
@@ -927,7 +927,7 @@ listener.
            Returns the name of the Contact
 
            @return {string} name
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.getName = function () {
             return this.name;
@@ -937,7 +937,7 @@ listener.
            Set the name of the Contact
 
            @param {string} name of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPersonalInfo.prototype.setName = function (name) {
             this.name = name;
@@ -975,7 +975,7 @@ listener.
        Structure representing the phone data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactPhone = (function (_super) {
@@ -986,7 +986,7 @@ listener.
 
            @param {string} phone     Phone number
            @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactPhone(phone, phoneType) {
             _super.call(this);
@@ -998,7 +998,7 @@ listener.
            Returns the phone phoneType
 
            @return {Adaptive.ContactPhoneType} phoneType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.getPhoneType = function () {
             return this.phoneType;
@@ -1008,7 +1008,7 @@ listener.
            Set the phoneType of the phone number
 
            @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.setPhoneType = function (phoneType) {
             this.phoneType = phoneType;
@@ -1018,7 +1018,7 @@ listener.
            Returns the phone number
 
            @return {string} phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.getPhone = function () {
             return this.phone;
@@ -1028,7 +1028,7 @@ listener.
            Set the phone number
 
            @param {string} phone number
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhone.prototype.setPhone = function (phone) {
             this.phone = phone;
@@ -1062,7 +1062,7 @@ listener.
        Structure representing the professional info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactProfessionalInfo = (function (_super) {
@@ -1074,7 +1074,7 @@ listener.
            @param {string} jobTitle       The job title
            @param {string} jobDescription The job description
            @param {string} company        The company of the job
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactProfessionalInfo(jobTitle, jobDescription, company) {
             _super.call(this);
@@ -1087,7 +1087,7 @@ listener.
            Returns the company of the job
 
            @return {string} company
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.getCompany = function () {
             return this.company;
@@ -1097,7 +1097,7 @@ listener.
            Set the company of the job
 
            @param {string} company The company of the job
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.setCompany = function (company) {
             this.company = company;
@@ -1107,7 +1107,7 @@ listener.
            Returns the description of the job
 
            @return {string} description
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.getJobDescription = function () {
             return this.jobDescription;
@@ -1117,7 +1117,7 @@ listener.
            Set the description of the job
 
            @param {string} jobDescription The job description
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.setJobDescription = function (jobDescription) {
             this.jobDescription = jobDescription;
@@ -1127,7 +1127,7 @@ listener.
            Returns the title of the job
 
            @return {string} title
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.getJobTitle = function () {
             return this.jobTitle;
@@ -1137,7 +1137,7 @@ listener.
            Set the title of the job
 
            @param {string} jobTitle The job title
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {
             this.jobTitle = jobTitle;
@@ -1169,7 +1169,7 @@ listener.
        Structure representing the social data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactSocial = (function (_super) {
@@ -1180,7 +1180,7 @@ listener.
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
            @param {string} profileUrl    of the user
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactSocial(socialNetwork, profileUrl) {
             _super.call(this);
@@ -1192,7 +1192,7 @@ listener.
            Returns the social network
 
            @return {Adaptive.ContactSocialNetwork} socialNetwork
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.getSocialNetwork = function () {
             return this.socialNetwork;
@@ -1202,7 +1202,7 @@ listener.
            Set the social network
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.setSocialNetwork = function (socialNetwork) {
             this.socialNetwork = socialNetwork;
@@ -1212,7 +1212,7 @@ listener.
            Returns the profile url of the user
 
            @return {string} profileUrl
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.getProfileUrl = function () {
             return this.profileUrl;
@@ -1222,7 +1222,7 @@ listener.
            Set the profile url of the iser
 
            @param {string} profileUrl of the user
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.setProfileUrl = function (profileUrl) {
             this.profileUrl = profileUrl;
@@ -1256,7 +1256,7 @@ listener.
        Structure representing the assigned tags data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactTag = (function (_super) {
@@ -1267,7 +1267,7 @@ listener.
 
            @param {string} tagValue Value of the tag
            @param {string} tagName  Name of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactTag(tagName, tagValue) {
             _super.call(this);
@@ -1279,7 +1279,7 @@ listener.
            Returns the tagName of the Tag
 
            @return {string} tagName
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.getTagName = function () {
             return this.tagName;
@@ -1289,7 +1289,7 @@ listener.
            Set the tagName of the Tag
 
            @param {string} tagName Name of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.setTagName = function (tagName) {
             this.tagName = tagName;
@@ -1299,7 +1299,7 @@ listener.
            Returns the tagValue of the Tag
 
            @return {string} tagValue
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.getTagValue = function () {
             return this.tagValue;
@@ -1309,7 +1309,7 @@ listener.
            Set the tagValue of the Tag
 
            @param {string} tagValue Value of the tag
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactTag.prototype.setTagValue = function (tagValue) {
             this.tagValue = tagValue;
@@ -1339,7 +1339,7 @@ listener.
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactUid = (function (_super) {
@@ -1349,7 +1349,7 @@ listener.
            Constructor used by implementation to set the Contact id.
 
            @param {string} contactId Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactUid(contactId) {
             _super.call(this);
@@ -1360,7 +1360,7 @@ listener.
            Returns the contact id
 
            @return {string} Contactid Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactUid.prototype.getContactId = function () {
             return this.contactId;
@@ -1370,7 +1370,7 @@ listener.
            Set the id of the Contact
 
            @param {string} contactId Internal unique contact id.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactUid.prototype.setContactId = function (contactId) {
             this.contactId = contactId;
@@ -1398,7 +1398,7 @@ listener.
        Structure representing the website data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactWebsite = (function (_super) {
@@ -1408,7 +1408,7 @@ listener.
            Constructor used by the implementation
 
            @param {string} url Url of the website
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactWebsite(url) {
             _super.call(this);
@@ -1419,7 +1419,7 @@ listener.
            Returns the url of the website
 
            @return {string} website url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactWebsite.prototype.getUrl = function () {
             return this.url;
@@ -1429,7 +1429,7 @@ listener.
            Set the url of the website
 
            @param {string} url Url of the website
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactWebsite.prototype.setUrl = function (url) {
             this.url = url;
@@ -1457,7 +1457,7 @@ listener.
        Structure representing a database reference.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Database = (function (_super) {
@@ -1468,7 +1468,7 @@ listener.
 
            @param {string} name     Name of the DatabaseTable.
            @param {boolean} compress Compression enabled.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Database(name, compress) {
             _super.call(this);
@@ -1480,7 +1480,7 @@ listener.
            Returns if the table is compressed
 
            @return {boolean} Compression enabled
-           @since ARP1.0
+           @since ARP 2.0
         */
         Database.prototype.getCompress = function () {
             return this.compress;
@@ -1490,7 +1490,7 @@ listener.
            Sets if the table is compressed or not.
 
            @param {boolean} compress Compression enabled
-           @since ARP1.0
+           @since ARP 2.0
         */
         Database.prototype.setCompress = function (compress) {
             this.compress = compress;
@@ -1500,7 +1500,7 @@ listener.
            Returns the name.
 
            @return {string} The name of the table.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Database.prototype.getName = function () {
             return this.name;
@@ -1510,7 +1510,7 @@ listener.
            Sets the name of the table.
 
            @param {string} name The name of the table.
-           @since ARP1.0
+           @since ARP 2.0
         */
         Database.prototype.setName = function (name) {
             this.name = name;
@@ -1540,7 +1540,7 @@ listener.
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseColumn = (function (_super) {
@@ -1550,7 +1550,7 @@ listener.
            Constructor with fields
 
            @param {string} name Name of the column
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseColumn(name) {
             _super.call(this);
@@ -1561,7 +1561,7 @@ listener.
            Returns the name of the column.
 
            @return {string} The name of the column.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseColumn.prototype.getName = function () {
             return this.name;
@@ -1571,7 +1571,7 @@ listener.
            Sets the name of the column.
 
            @param {string} name The name of the column.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseColumn.prototype.setName = function (name) {
             this.name = name;
@@ -1599,7 +1599,7 @@ listener.
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseRow = (function (_super) {
@@ -1609,7 +1609,7 @@ listener.
            Constructor for implementation using.
 
            @param {string[]} values The values of the row
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseRow(values) {
             _super.call(this);
@@ -1620,7 +1620,7 @@ listener.
            Returns the values of the row.
 
            @return {string[]} The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseRow.prototype.getValues = function () {
             return this.values;
@@ -1630,7 +1630,7 @@ listener.
            Sets the values of the row.
 
            @param {string[]} values The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseRow.prototype.setValues = function (values) {
             this.values = values;
@@ -1664,7 +1664,7 @@ listener.
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseTable = (function (_super) {
@@ -1678,7 +1678,7 @@ listener.
            @param {number} rowCount        The number of databaseRows
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseTable(name, columnCount, rowCount, databaseColumns, databaseRows) {
             _super.call(this);
@@ -1693,7 +1693,7 @@ listener.
            Get the number of databaseColumns
 
            @return {number} The number of databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getColumnCount = function () {
             return this.columnCount;
@@ -1703,7 +1703,7 @@ listener.
            Sets the number of databaseColumns
 
            @param {number} columnCount The number of databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setColumnCount = function (columnCount) {
             this.columnCount = columnCount;
@@ -1713,7 +1713,7 @@ listener.
            Get the databaseColumns
 
            @return {Adaptive.DatabaseColumn[]} The databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getDatabaseColumns = function () {
             return this.databaseColumns;
@@ -1723,7 +1723,7 @@ listener.
            Sets the databaseColumns of the table
 
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setDatabaseColumns = function (databaseColumns) {
             this.databaseColumns = databaseColumns;
@@ -1733,7 +1733,7 @@ listener.
            Get the databaseRows of the table
 
            @return {Adaptive.DatabaseRow[]} The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getDatabaseRows = function () {
             return this.databaseRows;
@@ -1743,7 +1743,7 @@ listener.
            Sets the databaseRows of the table
 
            @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setDatabaseRows = function (databaseRows) {
             this.databaseRows = databaseRows;
@@ -1753,7 +1753,7 @@ listener.
            Returns the name of the table
 
            @return {string} The name of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getName = function () {
             return this.name;
@@ -1763,7 +1763,7 @@ listener.
            Sets the name of the table
 
            @param {string} name The name of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setName = function (name) {
             this.name = name;
@@ -1773,7 +1773,7 @@ listener.
            Get the number of databaseRows
 
            @return {number} The number of databaseRows
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getRowCount = function () {
             return this.rowCount;
@@ -1783,7 +1783,7 @@ listener.
            Sets the number of databaseRows
 
            @param {number} rowCount The number of databaseRows
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setRowCount = function (rowCount) {
             this.rowCount = rowCount;
@@ -1839,7 +1839,7 @@ listener.
        Structure representing the basic device information.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DeviceInfo = (function (_super) {
@@ -1852,7 +1852,7 @@ listener.
            @param {string} model  of the device.
            @param {string} vendor of the device.
            @param {string} uuid   unique* identifier (* platform dependent).
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DeviceInfo(name, model, vendor, uuid) {
             _super.call(this);
@@ -1866,7 +1866,7 @@ listener.
            Returns the model of the device.
 
            @return {string} String with the model of the device.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceInfo.prototype.getModel = function () {
             return this.model;
@@ -1885,7 +1885,7 @@ listener.
            Returns the name of the device.
 
            @return {string} String with device name.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceInfo.prototype.getName = function () {
             return this.name;
@@ -1904,7 +1904,7 @@ listener.
            Returns the platform dependent UUID of the device.
 
            @return {string} String with the 128-bit device identifier.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceInfo.prototype.getUuid = function () {
             return this.uuid;
@@ -1925,7 +1925,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the vendor of the device.
 
            @return {string} String with the vendor name.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceInfo.prototype.getVendor = function () {
             return this.vendor;
@@ -1968,7 +1968,7 @@ be unique for a specific instance of an application on a specific device.
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Email = (function (_super) {
@@ -1984,7 +1984,7 @@ be unique for a specific instance of an application on a specific device.
            @param {string} messageBody         body of the email
            @param {string} messageBodyMimeType mime type of the body
            @param {string} subject             of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Email(toRecipients, ccRecipients, bccRecipients, emailAttachmentData, messageBody, messageBodyMimeType, subject) {
             _super.call(this);
@@ -2001,7 +2001,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getBccRecipients = function () {
             return this.bccRecipients;
@@ -2011,7 +2011,7 @@ be unique for a specific instance of an application on a specific device.
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setBccRecipients = function (bccRecipients) {
             this.bccRecipients = bccRecipients;
@@ -2021,7 +2021,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getCcRecipients = function () {
             return this.ccRecipients;
@@ -2031,7 +2031,7 @@ be unique for a specific instance of an application on a specific device.
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setCcRecipients = function (ccRecipients) {
             this.ccRecipients = ccRecipients;
@@ -2041,7 +2041,7 @@ be unique for a specific instance of an application on a specific device.
            Returns an array of attachments
 
            @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getEmailAttachmentData = function () {
             return this.emailAttachmentData;
@@ -2051,7 +2051,7 @@ be unique for a specific instance of an application on a specific device.
            Set the email attachment data array
 
            @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setEmailAttachmentData = function (emailAttachmentData) {
             this.emailAttachmentData = emailAttachmentData;
@@ -2061,7 +2061,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the message body of the email
 
            @return {string} message Body string of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getMessageBody = function () {
             return this.messageBody;
@@ -2071,7 +2071,7 @@ be unique for a specific instance of an application on a specific device.
            Set the message body of the email
 
            @param {string} messageBody message body of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setMessageBody = function (messageBody) {
             this.messageBody = messageBody;
@@ -2081,7 +2081,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the myme type of the message body
 
            @return {string} mime type string of the message boddy
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getMessageBodyMimeType = function () {
             return this.messageBodyMimeType;
@@ -2091,7 +2091,7 @@ be unique for a specific instance of an application on a specific device.
            Set the mime type for the message body
 
            @param {string} messageBodyMimeType type of the body message
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setMessageBodyMimeType = function (messageBodyMimeType) {
             this.messageBodyMimeType = messageBodyMimeType;
@@ -2101,7 +2101,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the subject of the email
 
            @return {string} subject string of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getSubject = function () {
             return this.subject;
@@ -2111,7 +2111,7 @@ be unique for a specific instance of an application on a specific device.
            Set the subject of the email
 
            @param {string} subject of the email
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setSubject = function (subject) {
             this.subject = subject;
@@ -2121,7 +2121,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.getToRecipients = function () {
             return this.toRecipients;
@@ -2131,7 +2131,7 @@ be unique for a specific instance of an application on a specific device.
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP1.0
+           @since ARP 2.0
         */
         Email.prototype.setToRecipients = function (toRecipients) {
             this.toRecipients = toRecipients;
@@ -2211,7 +2211,7 @@ be unique for a specific instance of an application on a specific device.
        Structure representing the data elements of an email addressee.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var EmailAddress = (function (_super) {
@@ -2221,7 +2221,7 @@ be unique for a specific instance of an application on a specific device.
            Constructor used by implementation
 
            @param {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         function EmailAddress(address) {
             _super.call(this);
@@ -2232,7 +2232,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the email address
 
            @return {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAddress.prototype.getAddress = function () {
             return this.address;
@@ -2242,7 +2242,7 @@ be unique for a specific instance of an application on a specific device.
            Set the Email address
 
            @param {string} address of the Email
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAddress.prototype.setAddress = function (address) {
             this.address = address;
@@ -2270,7 +2270,7 @@ be unique for a specific instance of an application on a specific device.
        Structure representing the binary attachment data.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var EmailAttachmentData = (function (_super) {
@@ -2284,7 +2284,7 @@ be unique for a specific instance of an application on a specific device.
            @param {string} fileName     name of the file attachment
            @param {string} mimeType     mime type of the file attachment
            @param {string} referenceUrl relative url of the file attachment
-           @since ARP1.0
+           @since ARP 2.0
         */
         function EmailAttachmentData(data, size, fileName, mimeType, referenceUrl) {
             _super.call(this);
@@ -2299,7 +2299,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the raw data in byte[]
 
            @return {number[]} data Octet-binary content of the attachment payload.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.getData = function () {
             return this.data;
@@ -2309,7 +2309,7 @@ be unique for a specific instance of an application on a specific device.
            Set the data of the attachment as a byte[]
 
            @param {number[]} data Sets the octet-binary content of the attachment.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.setData = function (data) {
             this.data = data;
@@ -2319,7 +2319,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the filename of the attachment
 
            @return {string} fileName Name of the attachment.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.getFileName = function () {
             return this.fileName;
@@ -2329,7 +2329,7 @@ be unique for a specific instance of an application on a specific device.
            Set the name of the file attachment
 
            @param {string} fileName Name of the attachment.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.setFileName = function (fileName) {
             this.fileName = fileName;
@@ -2339,7 +2339,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the mime type of the attachment
 
            @return {string} mimeType
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.getMimeType = function () {
             return this.mimeType;
@@ -2349,7 +2349,7 @@ be unique for a specific instance of an application on a specific device.
            Set the mime type of the attachment
 
            @param {string} mimeType Mime-type of the attachment.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.setMimeType = function (mimeType) {
             this.mimeType = mimeType;
@@ -2359,7 +2359,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the absolute url of the file attachment
 
            @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.getReferenceUrl = function () {
             return this.referenceUrl;
@@ -2369,7 +2369,7 @@ be unique for a specific instance of an application on a specific device.
            Set the absolute url of the attachment
 
            @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.setReferenceUrl = function (referenceUrl) {
             this.referenceUrl = referenceUrl;
@@ -2379,7 +2379,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the size of the attachment as a long
 
            @return {number} size Length in bytes of the octet-binary content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.getSize = function () {
             return this.size;
@@ -2389,7 +2389,7 @@ be unique for a specific instance of an application on a specific device.
            Set the size of the attachment as a long
 
            @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
-           @since ARP1.0
+           @since ARP 2.0
         */
         EmailAttachmentData.prototype.setSize = function (size) {
             this.size = size;
@@ -2448,7 +2448,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the milliseconds passed since 1/1/1970 since the file was created.
 
            @return {number} Timestamp in milliseconds.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getDateCreated = function () {
             return this.dateCreated;
@@ -2467,7 +2467,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
            @return {number} Timestamp in milliseconds.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getDateModified = function () {
             return this.dateModified;
@@ -2486,7 +2486,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the name of the file if the reference is a file or the last path element of the folder.
 
            @return {string} The name of the file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getName = function () {
             return this.name;
@@ -2505,7 +2505,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
            @return {string} The path to the file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getPath = function () {
             return this.path;
@@ -2524,7 +2524,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
            @return {string} The absolute path to the file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getPathAbsolute = function () {
             return this.pathAbsolute;
@@ -2543,7 +2543,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the size in bytes of the file or -1 if the reference is a folder.
 
            @return {number} Size in bytes of file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDescriptor.prototype.getSize = function () {
             return this.size;
@@ -2591,7 +2591,7 @@ doesn't exist, this will be -1. Used internally.
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Geolocation = (function (_super) {
@@ -2606,7 +2606,7 @@ doesn't exist, this will be -1. Used internally.
            @param {number} xDoP      Dilution of precision on the X measurement
            @param {number} yDoP      Dilution of precision on the Y measurement
            @param {number} timestamp Timestamp of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Geolocation(latitude, longitude, altitude, xDoP, yDoP, timestamp) {
             _super.call(this);
@@ -2622,7 +2622,7 @@ doesn't exist, this will be -1. Used internally.
            Returns altitude in meters
 
            @return {number} Altitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.getAltitude = function () {
             return this.altitude;
@@ -2632,7 +2632,7 @@ doesn't exist, this will be -1. Used internally.
            Set altitude in meters
 
            @param {number} altitude Altitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.setAltitude = function (altitude) {
             this.altitude = altitude;
@@ -2642,7 +2642,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the latitude in degrees
 
            @return {number} Latitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.getLatitude = function () {
             return this.latitude;
@@ -2652,7 +2652,7 @@ doesn't exist, this will be -1. Used internally.
            Set the latitude in degrees
 
            @param {number} latitude Latitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.setLatitude = function (latitude) {
             this.latitude = latitude;
@@ -2662,7 +2662,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the longitude in degrees
 
            @return {number} Longitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.getLongitude = function () {
             return this.longitude;
@@ -2672,7 +2672,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the latitude in degrees
 
            @param {number} longitude Longitude of the measurement
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.setLongitude = function (longitude) {
             this.longitude = longitude;
@@ -2682,7 +2682,7 @@ doesn't exist, this will be -1. Used internally.
            Timestamp Getter
 
            @return {number} Timestamp
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.getTimestamp = function () {
             return this.timestamp;
@@ -2692,7 +2692,7 @@ doesn't exist, this will be -1. Used internally.
            Timestamp Setter
 
            @param {number} timestamp Timestamp
-           @since ARP1.0
+           @since ARP 2.0
         */
         Geolocation.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
@@ -2766,7 +2766,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a basic bean to store keyName pair values
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var KeyPair = (function (_super) {
@@ -2777,7 +2777,7 @@ doesn't exist, this will be -1. Used internally.
 
            @param {string} keyName  Key of the element
            @param {string} keyValue Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         function KeyPair(keyName, keyValue) {
             _super.call(this);
@@ -2789,7 +2789,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the keyName of the element
 
            @return {string} Key of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.getKeyName = function () {
             return this.keyName;
@@ -2799,7 +2799,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the keyName of the element
 
            @param {string} keyName Key of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.setKeyName = function (keyName) {
             this.keyName = keyName;
@@ -2809,7 +2809,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the keyValue of the element
 
            @return {string} Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.getKeyValue = function () {
             return this.keyValue;
@@ -2819,7 +2819,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the keyValue of the element
 
            @param {string} keyValue Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.setKeyValue = function (keyValue) {
             this.keyValue = keyValue;
@@ -2849,7 +2849,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Lifecycle = (function (_super) {
@@ -2859,7 +2859,7 @@ doesn't exist, this will be -1. Used internally.
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Lifecycle(state) {
             _super.call(this);
@@ -2870,7 +2870,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the state of the application
 
            @return {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         Lifecycle.prototype.getState = function () {
             return this.state;
@@ -2880,7 +2880,7 @@ doesn't exist, this will be -1. Used internally.
            Set the State of the application
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         Lifecycle.prototype.setState = function (state) {
             this.state = state;
@@ -2912,7 +2912,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a specific user or system locate.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Locale = (function (_super) {
@@ -2923,7 +2923,7 @@ doesn't exist, this will be -1. Used internally.
 
            @param {string} country  Country of the Locale
            @param {string} language Language of the Locale
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Locale(language, country) {
             _super.call(this);
@@ -2935,7 +2935,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the country code
 
            @return {string} country code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.getCountry = function () {
             return this.country;
@@ -2945,7 +2945,7 @@ doesn't exist, this will be -1. Used internally.
            Set the country code
 
            @param {string} country code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.setCountry = function (country) {
             this.country = country;
@@ -2955,7 +2955,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the language code
 
            @return {string} language code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.getLanguage = function () {
             return this.language;
@@ -2965,7 +2965,7 @@ doesn't exist, this will be -1. Used internally.
            Set the language code
 
            @param {string} language code
-           @since ARP1.0
+           @since ARP 2.0
         */
         Locale.prototype.setLanguage = function (language) {
             this.language = language;
@@ -2995,7 +2995,7 @@ doesn't exist, this will be -1. Used internally.
        Represents the basic information about the operating system.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var OSInfo = (function (_super) {
@@ -3007,7 +3007,7 @@ doesn't exist, this will be -1. Used internally.
            @param {Adaptive.IOSType} name    of the OS.
            @param {string} version of the OS.
            @param {string} vendor  of the OS.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function OSInfo(name, version, vendor) {
             _super.call(this);
@@ -3020,7 +3020,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the name of the operating system.
 
            @return {Adaptive.IOSType} OS name.
-           @since ARP1.0
+           @since ARP 2.0
         */
         OSInfo.prototype.getName = function () {
             return this.name;
@@ -3039,7 +3039,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the vendor of the operating system.
 
            @return {string} OS vendor.
-           @since ARP1.0
+           @since ARP 2.0
         */
         OSInfo.prototype.getVendor = function () {
             return this.vendor;
@@ -3058,7 +3058,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the version of the operating system.
 
            @return {string} OS version.
-           @since ARP1.0
+           @since ARP 2.0
         */
         OSInfo.prototype.getVersion = function () {
             return this.version;
@@ -3098,12 +3098,155 @@ doesn't exist, this will be -1. Used internally.
     })(APIBean);
     Adaptive.OSInfo = OSInfo;
     /**
+       @class Adaptive.RotationEvent
+       @extends Adaptive.APIBean
+       Object for reporting orientation change events for device and display.
+
+       @author Carlos Lozano Diez
+       @since ARP 2.0.5
+       @version 1.0
+    */
+    var RotationEvent = (function (_super) {
+        __extends(RotationEvent, _super);
+        /**
+           @method constructor
+           Convenience constructor.
+
+           @param {Adaptive.ICapabilitiesOrientation} origin      Source orientation when the event was fired.
+           @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation when the event was fired.
+           @param {Adaptive.RotationEventState} state       State of the event (WillBegin, DidFinish).
+           @param {number} timestamp   Timestamp in milliseconds when the event was fired.
+           @since ARP 2.0.5
+        */
+        function RotationEvent(origin, destination, state, timestamp) {
+            _super.call(this);
+            this.origin = origin;
+            this.destination = destination;
+            this.state = state;
+            this.timestamp = timestamp;
+        }
+        /**
+           @method
+           Gets the destination orientation of the event.
+
+           @return {Adaptive.ICapabilitiesOrientation} Destination orientation.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.getDestination = function () {
+            return this.destination;
+        };
+        /**
+           @method
+           Sets the destination orientation of the event.
+
+           @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.setDestination = function (destination) {
+            this.destination = destination;
+        };
+        /**
+           @method
+           Get the origin orientation of the event.
+
+           @return {Adaptive.ICapabilitiesOrientation} Origin orientation.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.getOrigin = function () {
+            return this.origin;
+        };
+        /**
+           @method
+           Set the origin orientation of the event.
+
+           @param {Adaptive.ICapabilitiesOrientation} origin Origin orientation
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.setOrigin = function (origin) {
+            this.origin = origin;
+        };
+        /**
+           @method
+           Gets the current state of the event.
+
+           @return {Adaptive.RotationEventState} State of the event.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.getState = function () {
+            return this.state;
+        };
+        /**
+           @method
+           Sets the current state of the event.
+
+           @param {Adaptive.RotationEventState} state The state of the event.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.setState = function (state) {
+            this.state = state;
+        };
+        /**
+           @method
+           Gets the timestamp in milliseconds of the event.
+
+           @return {number} Timestamp of the event.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.getTimestamp = function () {
+            return this.timestamp;
+        };
+        /**
+           @method
+           Sets the timestamp in milliseconds of the event.
+
+           @param {number} timestamp Timestamp of the event.
+           @since ARP 2.0.5
+        */
+        RotationEvent.prototype.setTimestamp = function (timestamp) {
+            this.timestamp = timestamp;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent.
+           @return {Adaptive.RotationEvent} Wrapped object instance.
+        */
+        RotationEvent.toObject = function (object) {
+            var result = new RotationEvent(null, null, null, null);
+            // Assign values to bean fields.
+            if (object != null && object.origin != null) {
+                result.origin = ICapabilitiesOrientation.toObject(object.origin);
+            }
+            else {
+                result.origin = ICapabilitiesOrientation.toObject(null);
+            }
+            if (object != null && object.destination != null) {
+                result.destination = ICapabilitiesOrientation.toObject(object.destination);
+            }
+            else {
+                result.destination = ICapabilitiesOrientation.toObject(null);
+            }
+            if (object != null && object.state != null) {
+                result.state = RotationEventState.toObject(object.state);
+            }
+            else {
+                result.state = RotationEventState.toObject(null);
+            }
+            if (object != null && object.timestamp != null)
+                result.timestamp = object.timestamp;
+            return result;
+        };
+        return RotationEvent;
+    })(APIBean);
+    Adaptive.RotationEvent = RotationEvent;
+    /**
        @class Adaptive.SecureKeyPair
        @extends Adaptive.APIBean
        Represents a single secureKey-value pair.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var SecureKeyPair = (function (_super) {
@@ -3114,7 +3257,7 @@ doesn't exist, this will be -1. Used internally.
 
            @param {string} secureKey  name of the keypair
            @param {string} secureData value of the keypair
-           @since ARP1.0
+           @since ARP 2.0
         */
         function SecureKeyPair(secureKey, secureData) {
             _super.call(this);
@@ -3126,7 +3269,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the object value
 
            @return {string} Value.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecureKeyPair.prototype.getSecureData = function () {
             return this.secureData;
@@ -3136,7 +3279,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the value for this object
 
            @param {string} secureData value to set.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecureKeyPair.prototype.setSecureData = function (secureData) {
             this.secureData = secureData;
@@ -3146,7 +3289,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the object secureKey name.
 
            @return {string} Key name.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecureKeyPair.prototype.getSecureKey = function () {
             return this.secureKey;
@@ -3156,7 +3299,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the secureKey name for this object.
 
            @param {string} secureKey Key name.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {
             this.secureKey = secureKey;
@@ -3186,7 +3329,7 @@ doesn't exist, this will be -1. Used internally.
        Represents an instance of a service.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Service = (function (_super) {
@@ -3198,7 +3341,7 @@ doesn't exist, this will be -1. Used internally.
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
            @param {string} name             Name of the service
            @param {Adaptive.IServiceType} type             Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Service(serviceEndpoints, name, type) {
             _super.call(this);
@@ -3211,7 +3354,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the type
 
            @return {Adaptive.IServiceType} type
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getType = function () {
             return this.type;
@@ -3221,7 +3364,7 @@ doesn't exist, this will be -1. Used internally.
            Set the type
 
            @param {Adaptive.IServiceType} type Type of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setType = function (type) {
             this.type = type;
@@ -3231,7 +3374,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the name
 
            @return {string} name
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getName = function () {
             return this.name;
@@ -3241,7 +3384,7 @@ doesn't exist, this will be -1. Used internally.
            Set the name
 
            @param {string} name Name of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setName = function (name) {
             this.name = name;
@@ -3251,7 +3394,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the serviceEndpoints
 
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.getServiceEndpoints = function () {
             return this.serviceEndpoints;
@@ -3261,7 +3404,7 @@ doesn't exist, this will be -1. Used internally.
            Set the serviceEndpoints
 
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-           @since ARP1.0
+           @since ARP 2.0
         */
         Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
             this.serviceEndpoints = serviceEndpoints;
@@ -3307,7 +3450,7 @@ doesn't exist, this will be -1. Used internally.
        Structure representing the cookieValue of a http cookie.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceCookie = (function (_super) {
@@ -3324,7 +3467,7 @@ doesn't exist, this will be -1. Used internally.
            @param {boolean} secure      Privacy of the cookie
            @param {number} expiry      Expiration date of the cookie
            @param {number} creation    Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceCookie(cookieName, cookieValue, domain, path, scheme, secure, expiry, creation) {
             _super.call(this);
@@ -3342,7 +3485,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the cookie cookieName
 
            @return {string} cookieName Name of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCookieName = function () {
             return this.cookieName;
@@ -3352,7 +3495,7 @@ doesn't exist, this will be -1. Used internally.
            Set the cookie cookieName
 
            @param {string} cookieName Name of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCookieName = function (cookieName) {
             this.cookieName = cookieName;
@@ -3362,7 +3505,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the cookie cookieValue
 
            @return {string} Value of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCookieValue = function () {
             return this.cookieValue;
@@ -3372,7 +3515,7 @@ doesn't exist, this will be -1. Used internally.
            Set the cookie cookieValue
 
            @param {string} cookieValue Value of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCookieValue = function (cookieValue) {
             this.cookieValue = cookieValue;
@@ -3382,7 +3525,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the creation date
 
            @return {number} Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getCreation = function () {
             return this.creation;
@@ -3392,7 +3535,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the creation date
 
            @param {number} creation Creation date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setCreation = function (creation) {
             this.creation = creation;
@@ -3402,7 +3545,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the domain
 
            @return {string} domain
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getDomain = function () {
             return this.domain;
@@ -3412,7 +3555,7 @@ doesn't exist, this will be -1. Used internally.
            Set the domain
 
            @param {string} domain Domain of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setDomain = function (domain) {
             this.domain = domain;
@@ -3422,7 +3565,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the expiration date in milis
 
            @return {number} expiry
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getExpiry = function () {
             return this.expiry;
@@ -3432,7 +3575,7 @@ doesn't exist, this will be -1. Used internally.
            Set the expiration date in milis
 
            @param {number} expiry Expiration date of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setExpiry = function (expiry) {
             this.expiry = expiry;
@@ -3442,7 +3585,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the path
 
            @return {string} path
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getPath = function () {
             return this.path;
@@ -3452,7 +3595,7 @@ doesn't exist, this will be -1. Used internally.
            Set the path
 
            @param {string} path Path of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setPath = function (path) {
             this.path = path;
@@ -3462,7 +3605,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the scheme
 
            @return {string} scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getScheme = function () {
             return this.scheme;
@@ -3472,7 +3615,7 @@ doesn't exist, this will be -1. Used internally.
            Set the scheme
 
            @param {string} scheme Scheme of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
@@ -3482,7 +3625,7 @@ doesn't exist, this will be -1. Used internally.
            Returns whether the cookie is secure or not
 
            @return {boolean} true if the cookie is secure; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.getSecure = function () {
             return this.secure;
@@ -3492,7 +3635,7 @@ doesn't exist, this will be -1. Used internally.
            Set whether the cookie is secure or not
 
            @param {boolean} secure Privacy of the cookie
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceCookie.prototype.setSecure = function (secure) {
             this.secure = secure;
@@ -3534,7 +3677,7 @@ doesn't exist, this will be -1. Used internally.
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceEndpoint = (function (_super) {
@@ -3548,7 +3691,7 @@ doesn't exist, this will be -1. Used internally.
            @param {number} port   Remote service Port
            @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceEndpoint(host, paths, port, proxy, scheme) {
             _super.call(this);
@@ -3563,7 +3706,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the Remote service host
 
            @return {string} Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getHost = function () {
             return this.host;
@@ -3573,7 +3716,7 @@ doesn't exist, this will be -1. Used internally.
            Set the Remote service host
 
            @param {string} host Remote service host
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setHost = function (host) {
             this.host = host;
@@ -3583,7 +3726,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the Remote service Paths
 
            @return {Adaptive.ServicePath[]} Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getPaths = function () {
             return this.paths;
@@ -3593,7 +3736,7 @@ doesn't exist, this will be -1. Used internally.
            Set the Remote service Paths
 
            @param {Adaptive.ServicePath[]} paths Remote service Paths
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setPaths = function (paths) {
             this.paths = paths;
@@ -3603,7 +3746,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the Remote service Port
 
            @return {number} Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getPort = function () {
             return this.port;
@@ -3613,7 +3756,7 @@ doesn't exist, this will be -1. Used internally.
            Set the Remote service Port
 
            @param {number} port Remote service Port
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setPort = function (port) {
             this.port = port;
@@ -3623,7 +3766,7 @@ doesn't exist, this will be -1. Used internally.
            Return the Proxy url
 
            @return {string} Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getProxy = function () {
             return this.proxy;
@@ -3633,7 +3776,7 @@ doesn't exist, this will be -1. Used internally.
            Set the Proxy url
 
            @param {string} proxy Proxy url
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setProxy = function (proxy) {
             this.proxy = proxy;
@@ -3643,7 +3786,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the Remote service scheme
 
            @return {string} Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.getScheme = function () {
             return this.scheme;
@@ -3653,7 +3796,7 @@ doesn't exist, this will be -1. Used internally.
            Set the Remote service scheme
 
            @param {string} scheme Remote service scheme
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceEndpoint.prototype.setScheme = function (scheme) {
             this.scheme = scheme;
@@ -3699,7 +3842,7 @@ doesn't exist, this will be -1. Used internally.
        Structure representing the data of a http request or response header.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceHeader = (function (_super) {
@@ -3710,7 +3853,7 @@ doesn't exist, this will be -1. Used internally.
 
            @param {string} name Name of the header
            @param {string} data Value of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceHeader(name, data) {
             _super.call(this);
@@ -3722,7 +3865,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the header value
 
            @return {string} ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.getData = function () {
             return this.data;
@@ -3732,7 +3875,7 @@ doesn't exist, this will be -1. Used internally.
            Set the header value
 
            @param {string} data ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.setData = function (data) {
             this.data = data;
@@ -3742,7 +3885,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the header name
 
            @return {string} ServiceHeader name
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.getName = function () {
             return this.name;
@@ -3752,7 +3895,7 @@ doesn't exist, this will be -1. Used internally.
            Set the header name
 
            @param {string} name Name of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.setName = function (name) {
             this.name = name;
@@ -3782,7 +3925,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a local or remote service request.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceRequest = (function (_super) {
@@ -3801,7 +3944,7 @@ doesn't exist, this will be -1. Used internally.
            @param {string} method              The request method
            @param {Adaptive.IServiceProtocolVersion} protocolVersion     The HTTP procotol version to be used for this request.
            @param {Adaptive.ServiceSession} serviceSession      The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceRequest(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, method, protocolVersion, serviceSession) {
             _super.call(this);
@@ -3821,7 +3964,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the protocol version
 
            @return {Adaptive.IServiceProtocolVersion} protocolVersion enum
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getProtocolVersion = function () {
             return this.protocolVersion;
@@ -3831,7 +3974,7 @@ doesn't exist, this will be -1. Used internally.
            Set the protocol version
 
            @param {Adaptive.IServiceProtocolVersion} protocolVersion The HTTP procotol version to be used for this request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setProtocolVersion = function (protocolVersion) {
             this.protocolVersion = protocolVersion;
@@ -3841,7 +3984,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content
 
            @return {string} content
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContent = function () {
             return this.content;
@@ -3851,7 +3994,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content
 
            @param {string} content Request/Response data content (plain text)
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContent = function (content) {
             this.content = content;
@@ -3861,7 +4004,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the byte[] of the content
 
            @return {number[]} contentBinary
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContentBinary = function () {
             return this.contentBinary;
@@ -3871,7 +4014,7 @@ doesn't exist, this will be -1. Used internally.
            Set the byte[] of the content
 
            @param {number[]} contentBinary The byte[] representing the Content field.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
@@ -3881,7 +4024,7 @@ doesn't exist, this will be -1. Used internally.
            Retrusn the binary content length
 
            @return {number} contentBinaryLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
@@ -3891,7 +4034,7 @@ doesn't exist, this will be -1. Used internally.
            Set the binary content length
 
            @param {number} contentBinaryLength The length in bytes for the binary Content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
@@ -3901,7 +4044,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content encoding
 
            @return {string} contentEncoding
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContentEncoding = function () {
             return this.contentEncoding;
@@ -3911,7 +4054,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content encoding
 
            @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
@@ -3921,7 +4064,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content length
 
            @return {number} contentLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContentLength = function () {
             return this.contentLength;
@@ -3931,7 +4074,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content length
 
            @param {number} contentLength The length in bytes for the Content field.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
@@ -3941,7 +4084,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content type
 
            @return {string} contentType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getContentType = function () {
             return this.contentType;
@@ -3951,7 +4094,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content type
 
            @param {string} contentType The request/response content type (MIME TYPE).
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
@@ -3961,7 +4104,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the method
 
            @return {string} method
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getMethod = function () {
             return this.method;
@@ -3971,7 +4114,7 @@ doesn't exist, this will be -1. Used internally.
            Set the method
 
            @param {string} method The request method
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setMethod = function (method) {
             this.method = method;
@@ -3981,7 +4124,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
@@ -3991,7 +4134,7 @@ doesn't exist, this will be -1. Used internally.
            Set the array of ServiceHeader
 
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
@@ -4001,7 +4144,7 @@ doesn't exist, this will be -1. Used internally.
            Getter for service session
 
            @return {Adaptive.ServiceSession} The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.getServiceSession = function () {
             return this.serviceSession;
@@ -4011,7 +4154,7 @@ doesn't exist, this will be -1. Used internally.
            Setter for service session
 
            @param {Adaptive.ServiceSession} serviceSession The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceRequest.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;
@@ -4081,7 +4224,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a local or remote service response.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceResponse = (function (_super) {
@@ -4098,7 +4241,7 @@ doesn't exist, this will be -1. Used internally.
            @param {number} contentBinaryLength The length in bytes for the binary Content.
            @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession      Information about the session
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceResponse(content, contentType, contentEncoding, contentLength, contentBinary, contentBinaryLength, serviceHeaders, serviceSession) {
             _super.call(this);
@@ -4116,7 +4259,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content
 
            @return {string} content
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContent = function () {
             return this.content;
@@ -4126,7 +4269,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content
 
            @param {string} content Request/Response data content (plain text).
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContent = function (content) {
             this.content = content;
@@ -4136,7 +4279,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the binary content
 
            @return {number[]} contentBinary
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentBinary = function () {
             return this.contentBinary;
@@ -4146,7 +4289,7 @@ doesn't exist, this will be -1. Used internally.
            Set the binary content
 
            @param {number[]} contentBinary The byte[] representing the binary Content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentBinary = function (contentBinary) {
             this.contentBinary = contentBinary;
@@ -4156,7 +4299,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the binary content length
 
            @return {number} contentBinaryLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentBinaryLength = function () {
             return this.contentBinaryLength;
@@ -4166,7 +4309,7 @@ doesn't exist, this will be -1. Used internally.
            Set the binary content length
 
            @param {number} contentBinaryLength The length in bytes for the binary Content.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentBinaryLength = function (contentBinaryLength) {
             this.contentBinaryLength = contentBinaryLength;
@@ -4176,7 +4319,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content encoding
 
            @return {string} contentEncoding
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentEncoding = function () {
             return this.contentEncoding;
@@ -4186,7 +4329,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content encoding
 
            @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentEncoding = function (contentEncoding) {
             this.contentEncoding = contentEncoding;
@@ -4196,7 +4339,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content length
 
            @return {number} contentLength
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentLength = function () {
             return this.contentLength;
@@ -4206,7 +4349,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content length
 
            @param {number} contentLength The length in bytes for the Content field.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentLength = function (contentLength) {
             this.contentLength = contentLength;
@@ -4216,7 +4359,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the content type
 
            @return {string} contentType
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getContentType = function () {
             return this.contentType;
@@ -4226,7 +4369,7 @@ doesn't exist, this will be -1. Used internally.
            Set the content type
 
            @param {string} contentType The request/response content type (MIME TYPE).
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setContentType = function (contentType) {
             this.contentType = contentType;
@@ -4236,7 +4379,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getServiceHeaders = function () {
             return this.serviceHeaders;
@@ -4246,7 +4389,7 @@ doesn't exist, this will be -1. Used internally.
            Set the array of ServiceHeader
 
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setServiceHeaders = function (serviceHeaders) {
             this.serviceHeaders = serviceHeaders;
@@ -4256,7 +4399,7 @@ doesn't exist, this will be -1. Used internally.
            Getter for service session
 
            @return {Adaptive.ServiceSession} The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.getServiceSession = function () {
             return this.serviceSession;
@@ -4266,7 +4409,7 @@ doesn't exist, this will be -1. Used internally.
            Setter for service session
 
            @param {Adaptive.ServiceSession} serviceSession The element service session
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResponse.prototype.setServiceSession = function (serviceSession) {
             this.serviceSession = serviceSession;
@@ -4328,7 +4471,7 @@ doesn't exist, this will be -1. Used internally.
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceSession = (function (_super) {
@@ -4339,7 +4482,7 @@ doesn't exist, this will be -1. Used internally.
 
            @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceSession(cookies, attributes) {
             _super.call(this);
@@ -4351,7 +4494,7 @@ doesn't exist, this will be -1. Used internally.
            Gets the attributes of the response
 
            @return {string[]} Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.getAttributes = function () {
             return this.attributes;
@@ -4361,7 +4504,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the attributes for the response
 
            @param {string[]} attributes Attributes of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.setAttributes = function (attributes) {
             this.attributes = attributes;
@@ -4371,7 +4514,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the cookies of the response
 
            @return {Adaptive.ServiceCookie[]} The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.getCookies = function () {
             return this.cookies;
@@ -4381,7 +4524,7 @@ doesn't exist, this will be -1. Used internally.
            Sets the cookies of the response
 
            @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceSession.prototype.setCookies = function (cookies) {
             this.cookies = cookies;
@@ -4427,7 +4570,7 @@ doesn't exist, this will be -1. Used internally.
        Structure representing the data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Contact = (function (_super) {
@@ -4445,7 +4588,7 @@ doesn't exist, this will be -1. Used internally.
            @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
            @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
            @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Contact(contactId, personalInfo, professionalInfo, contactAddresses, contactPhones, contactEmails, contactWebsites, contactSocials, contactTags) {
             _super.call(this, contactId);
@@ -4463,7 +4606,7 @@ doesn't exist, this will be -1. Used internally.
            Returns all the addresses of the Contact
 
            @return {Adaptive.ContactAddress[]} ContactAddress[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactAddresses = function () {
             return this.contactAddresses;
@@ -4473,7 +4616,7 @@ doesn't exist, this will be -1. Used internally.
            Set the addresses of the Contact
 
            @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactAddresses = function (contactAddresses) {
             this.contactAddresses = contactAddresses;
@@ -4483,7 +4626,7 @@ doesn't exist, this will be -1. Used internally.
            Returns all the emails of the Contact
 
            @return {Adaptive.ContactEmail[]} ContactEmail[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactEmails = function () {
             return this.contactEmails;
@@ -4493,7 +4636,7 @@ doesn't exist, this will be -1. Used internally.
            Set the emails of the Contact
 
            @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactEmails = function (contactEmails) {
             this.contactEmails = contactEmails;
@@ -4503,7 +4646,7 @@ doesn't exist, this will be -1. Used internally.
            Returns all the phones of the Contact
 
            @return {Adaptive.ContactPhone[]} ContactPhone[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactPhones = function () {
             return this.contactPhones;
@@ -4513,7 +4656,7 @@ doesn't exist, this will be -1. Used internally.
            Set the phones of the Contact
 
            @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactPhones = function (contactPhones) {
             this.contactPhones = contactPhones;
@@ -4523,7 +4666,7 @@ doesn't exist, this will be -1. Used internally.
            Returns all the social network info of the Contact
 
            @return {Adaptive.ContactSocial[]} ContactSocial[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactSocials = function () {
             return this.contactSocials;
@@ -4533,7 +4676,7 @@ doesn't exist, this will be -1. Used internally.
            Set the social network info of the Contact
 
            @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactSocials = function (contactSocials) {
             this.contactSocials = contactSocials;
@@ -4543,7 +4686,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the additional tags of the Contact
 
            @return {Adaptive.ContactTag[]} ContactTag[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactTags = function () {
             return this.contactTags;
@@ -4553,7 +4696,7 @@ doesn't exist, this will be -1. Used internally.
            Set the additional tags of the Contact
 
            @param {Adaptive.ContactTag[]} contactTags Tags of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactTags = function (contactTags) {
             this.contactTags = contactTags;
@@ -4563,7 +4706,7 @@ doesn't exist, this will be -1. Used internally.
            Returns all the websites of the Contact
 
            @return {Adaptive.ContactWebsite[]} ContactWebsite[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactWebsites = function () {
             return this.contactWebsites;
@@ -4573,7 +4716,7 @@ doesn't exist, this will be -1. Used internally.
            Set the websites of the Contact
 
            @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactWebsites = function (contactWebsites) {
             this.contactWebsites = contactWebsites;
@@ -4583,7 +4726,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the personal info of the Contact
 
            @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getPersonalInfo = function () {
             return this.personalInfo;
@@ -4593,7 +4736,7 @@ doesn't exist, this will be -1. Used internally.
            Set the personal info of the Contact
 
            @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setPersonalInfo = function (personalInfo) {
             this.personalInfo = personalInfo;
@@ -4603,7 +4746,7 @@ doesn't exist, this will be -1. Used internally.
            Returns the professional info of the Contact
 
            @return {Adaptive.ContactProfessionalInfo} Array of personal info
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getProfessionalInfo = function () {
             return this.professionalInfo;
@@ -4613,7 +4756,7 @@ doesn't exist, this will be -1. Used internally.
            Set the professional info of the Contact
 
            @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setProfessionalInfo = function (professionalInfo) {
             this.professionalInfo = professionalInfo;
@@ -4758,7 +4901,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseListener;
     })();
@@ -4863,7 +5006,7 @@ doesn't exist, this will be -1. Used internally.
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
            @param {Adaptive.IAccelerationListenerError} error error Error fired
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -4877,7 +5020,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Correct data received.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onResult = function (acceleration) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -4892,7 +5035,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. Needs calibration.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
            @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onWarning = function (acceleration, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5004,7 +5147,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received
            @param {Adaptive.IButtonListenerError} error error occurred
-           @since ARP1.0
+           @since ARP 2.0
         */
         ButtonListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5018,7 +5161,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Called on button pressed
            @param {Adaptive.Button} button button pressed
-           @since ARP1.0
+           @since ARP 2.0
         */
         ButtonListener.prototype.onResult = function (button) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5033,7 +5176,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning
            @param {Adaptive.Button} button button  pressed
            @param {Adaptive.IButtonListenerWarning} warning warning happened
-           @since ARP1.0
+           @since ARP 2.0
         */
         ButtonListener.prototype.onWarning = function (button, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5046,6 +5189,292 @@ listener and subsequently, the listener will be deactivated and removed from the
         return ButtonListener;
     })(BaseListener);
     Adaptive.ButtonListener = ButtonListener;
+    /**
+       @property {Adaptive.Dictionary} registeredDeviceOrientationListener
+       @member Adaptive
+       @private
+       DeviceOrientationListener control dictionary.
+    */
+    Adaptive.registeredDeviceOrientationListener = new Dictionary([]);
+    // DeviceOrientationListener global listener handlers.
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDeviceOrientationListenerError} error
+    */
+    function handleDeviceOrientationListenerError(id, error) {
+        var listener = Adaptive.registeredDeviceOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDeviceOrientationListener dictionary.");
+        }
+        else {
+            listener.onError(error);
+        }
+    }
+    Adaptive.handleDeviceOrientationListenerError = handleDeviceOrientationListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.RotationEvent} event
+    */
+    function handleDeviceOrientationListenerResult(id, event) {
+        var listener = Adaptive.registeredDeviceOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDeviceOrientationListener dictionary.");
+        }
+        else {
+            listener.onResult(event);
+        }
+    }
+    Adaptive.handleDeviceOrientationListenerResult = handleDeviceOrientationListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.IDeviceOrientationListenerWarning} warning
+    */
+    function handleDeviceOrientationListenerWarning(id, event, warning) {
+        var listener = Adaptive.registeredDeviceOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDeviceOrientationListener dictionary.");
+        }
+        else {
+            listener.onWarning(event, warning);
+        }
+    }
+    Adaptive.handleDeviceOrientationListenerWarning = handleDeviceOrientationListenerWarning;
+    /**
+       @class Adaptive.DeviceOrientationListener
+       @extends Adaptive.BaseListener
+    */
+    var DeviceOrientationListener = (function (_super) {
+        __extends(DeviceOrientationListener, _super);
+        /**
+           @method constructor
+           Constructor with anonymous handler functions for listener.
+
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDeviceOrientationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.RotationEvent
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.RotationEvent, Adaptive.IDeviceOrientationListenerWarning
+        */
+        function DeviceOrientationListener(onErrorFunction, onResultFunction, onWarningFunction) {
+            _super.call(this, ++Adaptive.registeredCounter);
+            if (onErrorFunction == null) {
+                console.error("ERROR: DeviceOrientationListener onErrorFunction is not defined.");
+            }
+            else {
+                this.onErrorFunction = onErrorFunction;
+            }
+            if (onResultFunction == null) {
+                console.error("ERROR: DeviceOrientationListener onResultFunction is not defined.");
+            }
+            else {
+                this.onResultFunction = onResultFunction;
+            }
+            if (onWarningFunction == null) {
+                console.error("ERROR: DeviceOrientationListener onWarningFunction is not defined.");
+            }
+            else {
+                this.onWarningFunction = onWarningFunction;
+            }
+        }
+        /**
+           @method
+           Although extremely unlikely, this event will be fired if something beyond the control of the
+platform impedes the rotation of the device.
+           @param {Adaptive.IDeviceOrientationListenerError} error error The error condition... generally unknown as it is unexpected!
+           @since ARP 2.0.5
+        */
+        DeviceOrientationListener.prototype.onError = function (error) {
+            if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
+                console.warn("WARNING: DeviceOrientationListener contains a null reference to onErrorFunction.");
+            }
+            else {
+                this.onErrorFunction(error);
+            }
+        };
+        /**
+           @method
+           Event fired with the successful start and finish of a rotation.
+           @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
+           @since ARP 2.0.5
+        */
+        DeviceOrientationListener.prototype.onResult = function (event) {
+            if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
+                console.warn("WARNING: DeviceOrientationListener contains a null reference to onResultFunction.");
+            }
+            else {
+                this.onResultFunction(event);
+            }
+        };
+        /**
+           @method
+           Event fired with a warning when the rotation is aborted. In specific, this
+event may be fired if the devices vetoes the rotation before rotation is completed.
+           @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.IDeviceOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
+           @since ARP 2.0.5
+        */
+        DeviceOrientationListener.prototype.onWarning = function (event, warning) {
+            if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
+                console.warn("WARNING: DeviceOrientationListener contains a null reference to onWarningFunction.");
+            }
+            else {
+                this.onWarningFunction(event, warning);
+            }
+        };
+        return DeviceOrientationListener;
+    })(BaseListener);
+    Adaptive.DeviceOrientationListener = DeviceOrientationListener;
+    /**
+       @property {Adaptive.Dictionary} registeredDisplayOrientationListener
+       @member Adaptive
+       @private
+       DisplayOrientationListener control dictionary.
+    */
+    Adaptive.registeredDisplayOrientationListener = new Dictionary([]);
+    // DisplayOrientationListener global listener handlers.
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.IDisplayOrientationListenerError} error
+    */
+    function handleDisplayOrientationListenerError(id, error) {
+        var listener = Adaptive.registeredDisplayOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDisplayOrientationListener dictionary.");
+        }
+        else {
+            listener.onError(error);
+        }
+    }
+    Adaptive.handleDisplayOrientationListenerError = handleDisplayOrientationListenerError;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.RotationEvent} event
+    */
+    function handleDisplayOrientationListenerResult(id, event) {
+        var listener = Adaptive.registeredDisplayOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDisplayOrientationListener dictionary.");
+        }
+        else {
+            listener.onResult(event);
+        }
+    }
+    Adaptive.handleDisplayOrientationListenerResult = handleDisplayOrientationListenerResult;
+    /**
+       @method
+       @private
+       @member Adaptive
+       @param {number} id
+       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.IDisplayOrientationListenerWarning} warning
+    */
+    function handleDisplayOrientationListenerWarning(id, event, warning) {
+        var listener = Adaptive.registeredDisplayOrientationListener["" + id];
+        if (typeof listener === 'undefined' || listener == null) {
+            console.error("ERROR: No listener with id " + id + " registered in registeredDisplayOrientationListener dictionary.");
+        }
+        else {
+            listener.onWarning(event, warning);
+        }
+    }
+    Adaptive.handleDisplayOrientationListenerWarning = handleDisplayOrientationListenerWarning;
+    /**
+       @class Adaptive.DisplayOrientationListener
+       @extends Adaptive.BaseListener
+    */
+    var DisplayOrientationListener = (function (_super) {
+        __extends(DisplayOrientationListener, _super);
+        /**
+           @method constructor
+           Constructor with anonymous handler functions for listener.
+
+           @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.IDisplayOrientationListenerError
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.RotationEvent
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.RotationEvent, Adaptive.IDisplayOrientationListenerWarning
+        */
+        function DisplayOrientationListener(onErrorFunction, onResultFunction, onWarningFunction) {
+            _super.call(this, ++Adaptive.registeredCounter);
+            if (onErrorFunction == null) {
+                console.error("ERROR: DisplayOrientationListener onErrorFunction is not defined.");
+            }
+            else {
+                this.onErrorFunction = onErrorFunction;
+            }
+            if (onResultFunction == null) {
+                console.error("ERROR: DisplayOrientationListener onResultFunction is not defined.");
+            }
+            else {
+                this.onResultFunction = onResultFunction;
+            }
+            if (onWarningFunction == null) {
+                console.error("ERROR: DisplayOrientationListener onWarningFunction is not defined.");
+            }
+            else {
+                this.onWarningFunction = onWarningFunction;
+            }
+        }
+        /**
+           @method
+           Although extremely unlikely, this event will be fired if something beyond the control of the
+platform impedes the rotation of the display.
+           @param {Adaptive.IDisplayOrientationListenerError} error error The error condition... generally unknown as it is unexpected!
+           @since ARP 2.0.5
+        */
+        DisplayOrientationListener.prototype.onError = function (error) {
+            if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
+                console.warn("WARNING: DisplayOrientationListener contains a null reference to onErrorFunction.");
+            }
+            else {
+                this.onErrorFunction(error);
+            }
+        };
+        /**
+           @method
+           Event fired with the successful start and finish of a rotation.
+           @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
+           @since ARP 2.0.5
+        */
+        DisplayOrientationListener.prototype.onResult = function (event) {
+            if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
+                console.warn("WARNING: DisplayOrientationListener contains a null reference to onResultFunction.");
+            }
+            else {
+                this.onResultFunction(event);
+            }
+        };
+        /**
+           @method
+           Event fired with a warning when the rotation is aborted. In specific, this
+event may be fired if the application vetoes display rotation before rotation is completed.
+           @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.IDisplayOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
+           @since ARP 2.0.5
+        */
+        DisplayOrientationListener.prototype.onWarning = function (event, warning) {
+            if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
+                console.warn("WARNING: DisplayOrientationListener contains a null reference to onWarningFunction.");
+            }
+            else {
+                this.onWarningFunction(event, warning);
+            }
+        };
+        return DisplayOrientationListener;
+    })(BaseListener);
+    Adaptive.DisplayOrientationListener = DisplayOrientationListener;
     /**
        @property {Adaptive.Dictionary} registeredGeolocationListener
        @member Adaptive
@@ -5145,7 +5574,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5159,7 +5588,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Correct data received.
            @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationListener.prototype.onResult = function (geolocation) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5174,7 +5603,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. HighDoP
            @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
            @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationListener.prototype.onWarning = function (geolocation, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5286,7 +5715,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5300,7 +5729,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Called when lifecycle changes somehow.
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onResult = function (lifecycle) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5315,7 +5744,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning
            @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
            @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleListener.prototype.onWarning = function (lifecycle, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5427,7 +5856,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5441,7 +5870,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Called when network connection changes somehow.
            @param {Adaptive.ICapabilitiesNet} network network Change to this network.
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusListener.prototype.onResult = function (network) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5456,7 +5885,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Status received with warning
            @param {Adaptive.ICapabilitiesNet} network network Change to this network.
            @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusListener.prototype.onWarning = function (network, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5507,7 +5936,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseCallback;
     })();
@@ -5614,7 +6043,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Error
            @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhotoResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5628,7 +6057,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Result
            @param {number[]} contactPhoto contactPhoto returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhotoResultCallback.prototype.onResult = function (contactPhoto) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5643,7 +6072,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            This method is called on Warning
            @param {number[]} contactPhoto contactPhoto returned by the platform
            @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactPhotoResultCallback.prototype.onWarning = function (contactPhoto, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5758,7 +6187,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Error
            @param {Adaptive.IContactResultCallbackError} error error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5772,7 +6201,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Result
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactResultCallback.prototype.onResult = function (contacts) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5787,7 +6216,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            This method is called on Warning
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactResultCallback.prototype.onWarning = function (contacts, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -5902,7 +6331,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result callback for error responses
            @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -5916,7 +6345,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result callback for correct responses
            @param {Adaptive.Database} database database Returns the database
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseResultCallback.prototype.onResult = function (database) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -5931,7 +6360,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Result callback for warning responses
            @param {Adaptive.Database} database database Returns the database
            @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseResultCallback.prototype.onWarning = function (database, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6046,7 +6475,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result callback for error responses
            @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTableResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6060,7 +6489,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result callback for correct responses
            @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTableResultCallback.prototype.onResult = function (databaseTable) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6075,7 +6504,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Result callback for warning responses
            @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
            @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTableResultCallback.prototype.onWarning = function (databaseTable, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6190,7 +6619,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Error processing data retrieval/storage operation.
            @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6204,7 +6633,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result of data retrieval operation.
            @param {number[]} data data Data loaded.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onResult = function (data) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6219,7 +6648,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Result with warning of data retrieval/storage operation.
            @param {number[]} data data    File being loaded.
            @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataLoadResultCallback.prototype.onWarning = function (data, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6334,7 +6763,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Error processing data retrieval/storage operation.
            @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataStoreResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6348,7 +6777,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Result of data storage operation.
            @param {Adaptive.FileDescriptor} file file File reference to stored data.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataStoreResultCallback.prototype.onResult = function (file) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6363,7 +6792,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Result with warning of data retrieval/storage operation.
            @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
            @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileDataStoreResultCallback.prototype.onWarning = function (file, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6478,7 +6907,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            On error result of a file operation.
            @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6492,7 +6921,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onResult = function (files) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6507,7 +6936,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
            @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onWarning = function (files, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6622,7 +7051,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            On error result of a file operation.
            @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6636,7 +7065,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileResultCallback.prototype.onResult = function (storageFile) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6651,7 +7080,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
            @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileResultCallback.prototype.onWarning = function (file, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6766,7 +7195,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Error
            @param {Adaptive.IMessagingCallbackError} error error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6780,7 +7209,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Result
            @param {boolean} success success true if sent;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onResult = function (success) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6795,7 +7224,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            This method is called on Warning
            @param {boolean} success success true if sent;false otherwise
            @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onWarning = function (success, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -6910,7 +7339,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received - error condition, not authorized .
            @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkReachabilityCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -6924,7 +7353,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Correct data received.
            @param {boolean} reachable reachable Indicates if the host is reachable
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkReachabilityCallback.prototype.onResult = function (reachable) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -6939,7 +7368,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param {boolean} reachable reachable Indicates if the host is reachable
            @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkReachabilityCallback.prototype.onWarning = function (reachable, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -7054,7 +7483,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            No data received - error condition, not authorized .
            @param {Adaptive.ISecurityResultCallbackError} error error Error values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -7068,7 +7497,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Correct data received.
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onResult = function (keyValues) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -7083,7 +7512,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityResultCallback.prototype.onWarning = function (keyValues, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -7198,7 +7627,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Error
            @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -7212,7 +7641,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            This method is called on Result
            @param {Adaptive.ServiceResponse} response response data
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResultCallback.prototype.onResult = function (response) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -7227,7 +7656,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            This method is called on Warning
            @param {Adaptive.ServiceResponse} response response data
            @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceResultCallback.prototype.onWarning = function (response, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -7245,7 +7674,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Application purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseApplicationBridge = (function () {
         /**
@@ -7270,7 +7699,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseApplicationBridge;
     })();
@@ -7280,7 +7709,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Commerce purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseCommerceBridge = (function () {
         /**
@@ -7305,7 +7734,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseCommerceBridge;
     })();
@@ -7315,7 +7744,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Communication purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseCommunicationBridge = (function () {
         /**
@@ -7340,7 +7769,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseCommunicationBridge;
     })();
@@ -7350,7 +7779,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Data purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseDataBridge = (function () {
         /**
@@ -7375,7 +7804,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseDataBridge;
     })();
@@ -7385,7 +7814,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Media purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseMediaBridge = (function () {
         /**
@@ -7410,7 +7839,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseMediaBridge;
     })();
@@ -7420,7 +7849,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Notification purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseNotificationBridge = (function () {
         /**
@@ -7445,7 +7874,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseNotificationBridge;
     })();
@@ -7455,7 +7884,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BasePIMBridge = (function () {
         /**
@@ -7480,7 +7909,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BasePIMBridge;
     })();
@@ -7490,7 +7919,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Reader purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseReaderBridge = (function () {
         /**
@@ -7515,7 +7944,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseReaderBridge;
     })();
@@ -7525,7 +7954,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Security purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseSecurityBridge = (function () {
         /**
@@ -7550,7 +7979,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseSecurityBridge;
     })();
@@ -7560,7 +7989,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseSensorBridge = (function () {
         /**
@@ -7585,7 +8014,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseSensorBridge;
     })();
@@ -7595,7 +8024,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Social purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseSocialBridge = (function () {
         /**
@@ -7620,7 +8049,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseSocialBridge;
     })();
@@ -7630,7 +8059,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for System purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseSystemBridge = (function () {
         /**
@@ -7655,7 +8084,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseSystemBridge;
     })();
@@ -7665,7 +8094,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for UI purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseUIBridge = (function () {
         /**
@@ -7690,7 +8119,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseUIBridge;
     })();
@@ -7700,7 +8129,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Base application for Utility purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BaseUtilBridge = (function () {
         /**
@@ -7725,7 +8154,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         return BaseUtilBridge;
     })();
@@ -7736,7 +8165,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Analytics purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AnalyticsBridge = (function (_super) {
         __extends(AnalyticsBridge, _super);
@@ -7756,7 +8185,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Globalization results
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GlobalizationBridge = (function (_super) {
         __extends(GlobalizationBridge, _super);
@@ -7772,7 +8201,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Returns the default locale of the application defined in the configuration file
 
            @return {Adaptive.Locale} Default Locale of the application
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getDefaultLocale = function () {
             // Create and populate API request.
@@ -7783,7 +8212,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -7813,7 +8242,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            List of supported locales for the application defined in the configuration file
 
            @return {Adaptive.Locale[]} List of locales
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
             // Create and populate API request.
@@ -7824,7 +8253,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -7859,7 +8288,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @param {string} key key    to match text
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {string} Localized text.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getResourceLiteral = function (key, locale) {
             // Create and populate API request.
@@ -7872,7 +8301,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -7903,7 +8332,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getResourceLiterals = function (locale) {
             // Create and populate API request.
@@ -7915,7 +8344,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -7952,7 +8381,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
@@ -7968,7 +8397,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Add the listener for the lifecycle of the app
 
            @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleBridge.prototype.addLifecycleListener = function (listener) {
             // Create and populate API request.
@@ -7979,7 +8408,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -8012,7 +8441,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Whether the application is in background or not
 
            @return {boolean} true if the application is in background;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleBridge.prototype.isBackground = function () {
             // Create and populate API request.
@@ -8023,7 +8452,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8053,7 +8482,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Un-registers an existing listener from receiving lifecycle events.
 
            @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleBridge.prototype.removeLifecycleListener = function (listener) {
             // Create and populate API request.
@@ -8064,7 +8493,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8090,7 +8519,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Removes all existing listeners from receiving lifecycle events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         LifecycleBridge.prototype.removeLifecycleListeners = function () {
             // Create and populate API request.
@@ -8101,7 +8530,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8135,7 +8564,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Management operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ManagementBridge = (function (_super) {
         __extends(ManagementBridge, _super);
@@ -8155,7 +8584,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Printing operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var PrintingBridge = (function (_super) {
         __extends(PrintingBridge, _super);
@@ -8175,7 +8604,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Settings operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var SettingsBridge = (function (_super) {
         __extends(SettingsBridge, _super);
@@ -8195,7 +8624,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Update operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var UpdateBridge = (function (_super) {
         __extends(UpdateBridge, _super);
@@ -8215,7 +8644,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Advertising purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AdsBridge = (function (_super) {
         __extends(AdsBridge, _super);
@@ -8235,7 +8664,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Store operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var StoreBridge = (function (_super) {
         __extends(StoreBridge, _super);
@@ -8255,7 +8684,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Wallet operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var WalletBridge = (function (_super) {
         __extends(WalletBridge, _super);
@@ -8275,7 +8704,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Bluetooth purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BluetoothBridge = (function (_super) {
         __extends(BluetoothBridge, _super);
@@ -8295,7 +8724,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Network information operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);
@@ -8315,7 +8744,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Network naming operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NetworkNamingBridge = (function (_super) {
         __extends(NetworkNamingBridge, _super);
@@ -8335,7 +8764,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
@@ -8352,7 +8781,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {string} host host     domain name or ip address of host.
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkReachabilityBridge.prototype.isNetworkReachable = function (host, callback) {
             // Create and populate API request.
@@ -8364,7 +8793,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8401,7 +8830,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {string} url url      to look for
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkReachabilityBridge.prototype.isNetworkServiceReachable = function (url, callback) {
             // Create and populate API request.
@@ -8413,7 +8842,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8453,7 +8882,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NetworkStatusBridge = (function (_super) {
         __extends(NetworkStatusBridge, _super);
@@ -8469,7 +8898,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Add the listener for network status changes of the app
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.addNetworkStatusListener = function (listener) {
             // Create and populate API request.
@@ -8480,7 +8909,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -8513,7 +8942,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Un-registers an existing listener from receiving network status events.
 
            @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListener = function (listener) {
             // Create and populate API request.
@@ -8524,7 +8953,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8550,7 +8979,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Removes all existing listeners from receiving network status events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         NetworkStatusBridge.prototype.removeNetworkStatusListeners = function () {
             // Create and populate API request.
@@ -8561,7 +8990,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8595,7 +9024,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
@@ -8612,7 +9041,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {string} serviceName serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.getService = function (serviceName) {
             // Create and populate API request.
@@ -8624,7 +9053,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8656,7 +9085,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
            @param {Adaptive.Service} service serviceRequest Service Request to invoke
            @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.invokeService = function (serviceRequest, service, callback) {
             // Create and populate API request.
@@ -8669,7 +9098,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -8705,7 +9134,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Register a new service
 
            @param {Adaptive.Service} service service to register
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.registerService = function (service) {
             // Create and populate API request.
@@ -8717,7 +9146,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8731,7 +9160,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Unregister a service
 
            @param {Adaptive.Service} service service to unregister
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.unregisterService = function (service) {
             // Create and populate API request.
@@ -8743,7 +9172,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8756,7 +9185,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Unregister all services.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.unregisterServices = function () {
             // Create and populate API request.
@@ -8767,7 +9196,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -8781,7 +9210,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param service Service to check
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.isRegistered_service = function (service) {
             // Create and populate API request.
@@ -8793,7 +9222,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8823,7 +9252,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param serviceName Name of service.
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.isRegistered_serviceName = function (serviceName) {
             // Create and populate API request.
@@ -8835,7 +9264,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -8869,7 +9298,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Socket operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var SocketBridge = (function (_super) {
         __extends(SocketBridge, _super);
@@ -8889,7 +9318,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Telephony operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var TelephonyBridge = (function (_super) {
         __extends(TelephonyBridge, _super);
@@ -8906,7 +9335,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {string} number number to call
            @return {Adaptive.ITelephonyStatus} Status of the call
-           @since ARP1.0
+           @since ARP 2.0
         */
         TelephonyBridge.prototype.call = function (number) {
             // Create and populate API request.
@@ -8918,7 +9347,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -8952,7 +9381,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CloudBridge = (function (_super) {
         __extends(CloudBridge, _super);
@@ -8972,7 +9401,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the DataStream operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DataStreamBridge = (function (_super) {
         __extends(DataStreamBridge, _super);
@@ -8992,7 +9421,7 @@ listener and subsequently, the listener will be deactivated and removed from the
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DatabaseBridge = (function (_super) {
         __extends(DatabaseBridge, _super);
@@ -9009,7 +9438,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {Adaptive.Database} database database Database object to create
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.createDatabase = function (database, callback) {
             // Create and populate API request.
@@ -9021,7 +9450,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9059,7 +9488,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @param {Adaptive.Database} database database      Database for databaseTable creating.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.createTable = function (database, databaseTable, callback) {
             // Create and populate API request.
@@ -9072,7 +9501,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9109,7 +9538,7 @@ listener and subsequently, the listener will be deactivated and removed from the
 
            @param {Adaptive.Database} database database Database object to delete
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.deleteDatabase = function (database, callback) {
             // Create and populate API request.
@@ -9121,7 +9550,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9159,7 +9588,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @param {Adaptive.Database} database database      Database for databaseTable removal.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.deleteTable = function (database, databaseTable, callback) {
             // Create and populate API request.
@@ -9172,7 +9601,7 @@ listener and subsequently, the listener will be deactivated and removed from the
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9212,7 +9641,7 @@ should be passed as a parameter
            @param {string} statement statement    SQL statement.
            @param {string[]} replacements replacements List of SQL statement replacements.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.executeSqlStatement = function (database, statement, replacements, callback) {
             // Create and populate API request.
@@ -9226,7 +9655,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9266,7 +9695,7 @@ should be passed as a parameter
            @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                   statement execution fails.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.executeSqlTransactions = function (database, statements, rollbackFlag, callback) {
             // Create and populate API request.
@@ -9280,7 +9709,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9317,7 +9746,7 @@ should be passed as a parameter
 
            @param {Adaptive.Database} database database Database Object to check if exists
            @return {boolean} True if exists, false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.existsDatabase = function (database) {
             // Create and populate API request.
@@ -9329,7 +9758,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9361,7 +9790,7 @@ should be passed as a parameter
            @param {Adaptive.Database} database database      Database for databaseTable consulting.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @return {boolean} True if exists, false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseBridge.prototype.existsTable = function (database, databaseTable) {
             // Create and populate API request.
@@ -9374,7 +9803,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9408,7 +9837,7 @@ should be passed as a parameter
        Interface for Managing the File operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var FileBridge = (function (_super) {
         __extends(FileBridge, _super);
@@ -9425,7 +9854,7 @@ should be passed as a parameter
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is readable, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.canRead = function (descriptor) {
             // Create and populate API request.
@@ -9437,7 +9866,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9468,7 +9897,7 @@ should be passed as a parameter
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is writable, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.canWrite = function (descriptor) {
             // Create and populate API request.
@@ -9480,7 +9909,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9511,7 +9940,7 @@ should be passed as a parameter
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {Adaptive.FileResultCallback} callback callback   Result of the operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.create = function (descriptor, callback) {
             // Create and populate API request.
@@ -9523,7 +9952,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9562,7 +9991,7 @@ deleted if the cascade parameter is set to true.
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {boolean} cascade cascade    Whether to delete sub-files and sub-folders.
            @return {boolean} True if files (and sub-files and folders) whether deleted.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.delete = function (descriptor, cascade) {
             // Create and populate API request.
@@ -9575,7 +10004,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9606,7 +10035,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the file exists in the filesystem, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.exists = function (descriptor) {
             // Create and populate API request.
@@ -9618,7 +10047,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9649,7 +10078,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {Adaptive.FileDataLoadResultCallback} callback callback   Result of the operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.getContent = function (descriptor, callback) {
             // Create and populate API request.
@@ -9661,7 +10090,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9698,7 +10127,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemStorageType} Storage Type file
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.getFileStorageType = function (descriptor) {
             // Create and populate API request.
@@ -9710,7 +10139,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9741,7 +10170,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemType} Returns the file type of the file
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.getFileType = function (descriptor) {
             // Create and populate API request.
@@ -9753,7 +10182,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9784,7 +10213,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemSecurity} Security Level of the file
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.getSecurityType = function (descriptor) {
             // Create and populate API request.
@@ -9796,7 +10225,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -9827,7 +10256,7 @@ deleted if the cascade parameter is set to true.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.isDirectory = function (descriptor) {
             // Create and populate API request.
@@ -9839,7 +10268,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -9871,7 +10300,7 @@ any results.
 
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.listFiles = function (descriptor, callback) {
             // Create and populate API request.
@@ -9883,7 +10312,7 @@ any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9922,7 +10351,7 @@ is a file, it will not yield any results.
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {string} regex regex      Filter (eg. *.jpg, *.png, Fil*) name string.
            @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.listFilesForRegex = function (descriptor, regex, callback) {
             // Create and populate API request.
@@ -9935,7 +10364,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -9973,7 +10402,7 @@ is a file, it will not yield any results.
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {boolean} recursive recursive  Whether to create all parent path elements.
            @return {boolean} True if the path was created, false otherwise (or it exists already).
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.mkDir = function (descriptor, recursive) {
             // Create and populate API request.
@@ -9986,7 +10415,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -10021,7 +10450,7 @@ new destination file.
            @param {boolean} createPath createPath  True to create the path if it does not already exist.
            @param {boolean} overwrite overwrite   True to create the path if it does not already exist.
            @param {Adaptive.FileResultCallback} callback callback    Result of the operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.move = function (source, destination, createPath, overwrite, callback) {
             // Create and populate API request.
@@ -10036,7 +10465,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10074,7 +10503,7 @@ new destination file.
            @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
            @param {number[]} content content    Binary content to store in the file.
            @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileBridge.prototype.setContent = function (descriptor, content, callback) {
             // Create and populate API request.
@@ -10087,7 +10516,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10127,7 +10556,7 @@ new destination file.
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var FileSystemBridge = (function (_super) {
         __extends(FileSystemBridge, _super);
@@ -10146,7 +10575,7 @@ This method does not create the actual file in the specified folder.
            @param {Adaptive.FileDescriptor} parent parent Parent directory.
            @param {string} name name   Name of new file or directory.
            @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.createFileDescriptor = function (parent, name) {
             // Create and populate API request.
@@ -10159,7 +10588,7 @@ This method does not create the actual file in the specified folder.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10191,7 +10620,7 @@ This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
            @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
             // Create and populate API request.
@@ -10202,7 +10631,7 @@ This path is volatile and may be cleaned by the OS periodically.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10233,7 +10662,7 @@ This path is volatile and may be cleaned by the OS periodically.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
             // Create and populate API request.
@@ -10244,7 +10673,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10275,7 +10704,7 @@ This path must always be writable by the current application.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
             // Create and populate API request.
@@ -10286,7 +10715,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10317,7 +10746,7 @@ This path must always be writable by the current application.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
            @return {Adaptive.FileDescriptor} Path to the application folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getApplicationFolder = function () {
             // Create and populate API request.
@@ -10328,7 +10757,7 @@ This path may or may not be directly readable or writable - it usually contains 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10359,7 +10788,7 @@ This path may or may not be directly readable or writable - it usually contains 
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
             // Create and populate API request.
@@ -10370,7 +10799,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10400,7 +10829,7 @@ This path must always be writable by the current application.
            Returns the file system dependent file separator.
 
            @return {string} char with the directory/file separator.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getSeparator = function () {
             // Create and populate API request.
@@ -10411,7 +10840,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10444,7 +10873,7 @@ definition, not secure.
 This path may or may not be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
             // Create and populate API request.
@@ -10455,7 +10884,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10489,7 +10918,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Internal Storage operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var InternalStorageBridge = (function (_super) {
         __extends(InternalStorageBridge, _super);
@@ -10509,7 +10938,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the XML operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var XMLBridge = (function (_super) {
         __extends(XMLBridge, _super);
@@ -10529,7 +10958,7 @@ This path may or may not be writable by the current application.
        Interface for Audio purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AudioBridge = (function (_super) {
         __extends(AudioBridge, _super);
@@ -10549,7 +10978,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the camera operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CameraBridge = (function (_super) {
         __extends(CameraBridge, _super);
@@ -10569,7 +10998,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Imaging operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ImagingBridge = (function (_super) {
         __extends(ImagingBridge, _super);
@@ -10589,7 +11018,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Video operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var VideoBridge = (function (_super) {
         __extends(VideoBridge, _super);
@@ -10605,7 +11034,7 @@ This path may or may not be writable by the current application.
            Play url video stream
 
            @param {string} url url of the video
-           @since ARP1.0
+           @since ARP 2.0
         */
         VideoBridge.prototype.playStream = function (url) {
             // Create and populate API request.
@@ -10617,7 +11046,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10635,7 +11064,7 @@ This path may or may not be writable by the current application.
        Interface for Alarm purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AlarmBridge = (function (_super) {
         __extends(AlarmBridge, _super);
@@ -10655,7 +11084,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Notification operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NotificationBridge = (function (_super) {
         __extends(NotificationBridge, _super);
@@ -10675,7 +11104,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Local Notifications operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NotificationLocalBridge = (function (_super) {
         __extends(NotificationLocalBridge, _super);
@@ -10695,7 +11124,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Vibration operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var VibrationBridge = (function (_super) {
         __extends(VibrationBridge, _super);
@@ -10715,7 +11144,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Calendar operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CalendarBridge = (function (_super) {
         __extends(CalendarBridge, _super);
@@ -10735,7 +11164,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Contact operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ContactBridge = (function (_super) {
         __extends(ContactBridge, _super);
@@ -10752,7 +11181,7 @@ This path may or may not be writable by the current application.
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContact = function (contact, callback) {
             // Create and populate API request.
@@ -10764,7 +11193,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10801,7 +11230,7 @@ This path may or may not be writable by the current application.
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactPhoto = function (contact, callback) {
             // Create and populate API request.
@@ -10813,7 +11242,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10849,7 +11278,7 @@ This path may or may not be writable by the current application.
            Get all contacts
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContacts = function (callback) {
             // Create and populate API request.
@@ -10860,7 +11289,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10897,7 +11326,7 @@ This path may or may not be writable by the current application.
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactsForFields = function (callback, fields) {
             // Create and populate API request.
@@ -10909,7 +11338,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10947,7 +11376,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.getContactsWithFilter = function (callback, fields, filter) {
             // Create and populate API request.
@@ -10960,7 +11389,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10997,7 +11426,7 @@ This path may or may not be writable by the current application.
 
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.searchContacts = function (term, callback) {
             // Create and populate API request.
@@ -11009,7 +11438,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11047,7 +11476,7 @@ This path may or may not be writable by the current application.
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.searchContactsWithFilter = function (term, callback, filter) {
             // Create and populate API request.
@@ -11060,7 +11489,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11098,7 +11527,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.ContactUid} contact contact  id to assign the photo
            @param {number[]} pngImage pngImage photo as byte array
            @return {boolean} true if set is successful;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactBridge.prototype.setContactPhoto = function (contact, pngImage) {
             // Create and populate API request.
@@ -11111,7 +11540,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11145,7 +11574,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
@@ -11162,7 +11591,7 @@ This path may or may not be writable by the current application.
 
            @param {Adaptive.Email} data data     Payload of the email
            @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         MailBridge.prototype.sendEmail = function (data, callback) {
             // Create and populate API request.
@@ -11174,7 +11603,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11214,7 +11643,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
@@ -11232,7 +11661,7 @@ This path may or may not be writable by the current application.
            @param {string} number number   to send
            @param {string} text text     to send
            @param {Adaptive.MessagingCallback} callback callback with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingBridge.prototype.sendSMS = function (number, text, callback) {
             // Create and populate API request.
@@ -11245,7 +11674,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11285,7 +11714,7 @@ This path may or may not be writable by the current application.
        Interface for Barcode Reading purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BarcodeBridge = (function (_super) {
         __extends(BarcodeBridge, _super);
@@ -11305,7 +11734,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the NFC operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var NFCBridge = (function (_super) {
         __extends(NFCBridge, _super);
@@ -11325,7 +11754,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the OCR operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var OCRBridge = (function (_super) {
         __extends(OCRBridge, _super);
@@ -11345,7 +11774,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the QR Code operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var QRCodeBridge = (function (_super) {
         __extends(QRCodeBridge, _super);
@@ -11365,7 +11794,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the OAuth operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var OAuthBridge = (function (_super) {
         __extends(OAuthBridge, _super);
@@ -11385,7 +11814,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the OpenID operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var OpenIdBridge = (function (_super) {
         __extends(OpenIdBridge, _super);
@@ -11405,7 +11834,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Security operations
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
     */
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
@@ -11423,7 +11852,7 @@ This path may or may not be writable by the current application.
            @param {string[]} keys keys             Array with the key names to delete.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecurityBridge.prototype.deleteSecureKeyValuePairs = function (keys, publicAccessName, callback) {
             // Create and populate API request.
@@ -11436,7 +11865,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11474,7 +11903,7 @@ This path may or may not be writable by the current application.
            @param {string[]} keys keys             Array with the key names to retrieve.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecurityBridge.prototype.getSecureKeyValuePairs = function (keys, publicAccessName, callback) {
             // Create and populate API request.
@@ -11487,7 +11916,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11523,7 +11952,7 @@ This path may or may not be writable by the current application.
            Returns if the device has been modified in anyhow
 
            @return {boolean} true if the device has been modified; false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         SecurityBridge.prototype.isDeviceModified = function () {
             // Create and populate API request.
@@ -11534,7 +11963,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11566,7 +11995,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 1.0
+           @since ARP 2.0
         */
         SecurityBridge.prototype.setSecureKeyValuePairs = function (keyValues, publicAccessName, callback) {
             // Create and populate API request.
@@ -11579,7 +12008,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11619,7 +12048,7 @@ This path may or may not be writable by the current application.
        Interface defining methods about the acceleration sensor
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AccelerationBridge = (function (_super) {
         __extends(AccelerationBridge, _super);
@@ -11635,7 +12064,7 @@ This path may or may not be writable by the current application.
            Register a new listener that will receive acceleration events.
 
            @param {Adaptive.AccelerationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationBridge.prototype.addAccelerationListener = function (listener) {
             // Create and populate API request.
@@ -11646,7 +12075,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredAccelerationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -11679,7 +12108,7 @@ This path may or may not be writable by the current application.
            De-registers an existing listener from receiving acceleration events.
 
            @param {Adaptive.AccelerationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationBridge.prototype.removeAccelerationListener = function (listener) {
             // Create and populate API request.
@@ -11690,7 +12119,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11716,7 +12145,7 @@ This path may or may not be writable by the current application.
            @method
            Removed all existing listeners from receiving acceleration events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationBridge.prototype.removeAccelerationListeners = function () {
             // Create and populate API request.
@@ -11727,7 +12156,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11761,7 +12190,7 @@ This path may or may not be writable by the current application.
        Interface for managinf the Ambient Light
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AmbientLightBridge = (function (_super) {
         __extends(AmbientLightBridge, _super);
@@ -11781,7 +12210,7 @@ This path may or may not be writable by the current application.
        Interface for Barometer management purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BarometerBridge = (function (_super) {
         __extends(BarometerBridge, _super);
@@ -11801,7 +12230,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GeolocationBridge = (function (_super) {
         __extends(GeolocationBridge, _super);
@@ -11817,7 +12246,7 @@ This path may or may not be writable by the current application.
            Register a new listener that will receive geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.addGeolocationListener = function (listener) {
             // Create and populate API request.
@@ -11828,7 +12257,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -11861,7 +12290,7 @@ This path may or may not be writable by the current application.
            De-registers an existing listener from receiving geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.removeGeolocationListener = function (listener) {
             // Create and populate API request.
@@ -11872,7 +12301,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11898,7 +12327,7 @@ This path may or may not be writable by the current application.
            @method
            Removed all existing listeners from receiving geolocation events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         GeolocationBridge.prototype.removeGeolocationListeners = function () {
             // Create and populate API request.
@@ -11909,7 +12338,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11943,7 +12372,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Giroscope operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GyroscopeBridge = (function (_super) {
         __extends(GyroscopeBridge, _super);
@@ -11963,7 +12392,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Magnetometer operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var MagnetometerBridge = (function (_super) {
         __extends(MagnetometerBridge, _super);
@@ -11983,7 +12412,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Proximity operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ProximityBridge = (function (_super) {
         __extends(ProximityBridge, _super);
@@ -12003,7 +12432,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Facebook operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var FacebookBridge = (function (_super) {
         __extends(FacebookBridge, _super);
@@ -12023,7 +12452,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Google Plus operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GooglePlusBridge = (function (_super) {
         __extends(GooglePlusBridge, _super);
@@ -12043,7 +12472,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Linkedin operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var LinkedInBridge = (function (_super) {
         __extends(LinkedInBridge, _super);
@@ -12063,7 +12492,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the RSS operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var RSSBridge = (function (_super) {
         __extends(RSSBridge, _super);
@@ -12083,7 +12512,7 @@ This path may or may not be writable by the current application.
        Interface for Managing the Twitter operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var TwitterBridge = (function (_super) {
         __extends(TwitterBridge, _super);
@@ -12103,7 +12532,7 @@ This path may or may not be writable by the current application.
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
@@ -12116,11 +12545,99 @@ This path may or may not be writable by the current application.
         }
         /**
            @method
+           Obtains the default orientation of the device/display. If no default orientation is available on
+the platform, this method will return the current orientation. To capture device or display orientation
+changes please use the IDevice and IDisplay functions and listeners API respectively.
+
+           @return {Adaptive.ICapabilitiesOrientation} The default orientation for the device/display.
+           @since ARP 2.0.5
+        */
+        CapabilitiesBridge.prototype.getOrientationDefault = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.getOrientationDefault' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'CapabilitiesBridge.getOrientationDefault' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'CapabilitiesBridge.getOrientationDefault' request.");
+            }
+            return response;
+        };
+        /**
+           @method
+           Provides the device/display orientations supported by the platform. A platform will usually
+support at least one orientation. This is usually PortaitUp.
+
+           @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
+           @since ARP 2.0.5
+        */
+        CapabilitiesBridge.prototype.getOrientationsSupported = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = new Array();
+                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
+                            response.push(ICapabilitiesOrientation.toObject(__value__));
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.getOrientationsSupported' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'CapabilitiesBridge.getOrientationsSupported' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'CapabilitiesBridge.getOrientationsSupported' request.");
+            }
+            return response;
+        };
+        /**
+           @method
            Determines whether a specific hardware button is supported for interaction.
 
            @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
            @return {boolean} true is supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasButtonSupport = function (type) {
             // Create and populate API request.
@@ -12132,7 +12649,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12164,7 +12681,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasCommunicationSupport = function (type) {
             // Create and populate API request.
@@ -12176,7 +12693,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12207,7 +12724,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasDataSupport = function (type) {
             // Create and populate API request.
@@ -12219,7 +12736,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12251,7 +12768,7 @@ device.
 
            @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasMediaSupport = function (type) {
             // Create and populate API request.
@@ -12263,7 +12780,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12294,7 +12811,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasNetSupport = function (type) {
             // Create and populate API request.
@@ -12306,7 +12823,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12338,7 +12855,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasNotificationSupport = function (type) {
             // Create and populate API request.
@@ -12350,7 +12867,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12377,12 +12894,55 @@ device.
         };
         /**
            @method
+           Determines whether the device/display supports a given orientation.
+
+           @param {Adaptive.ICapabilitiesOrientation} orientation orientation Orientation type.
+           @return {boolean} True if the given orientation is supported, false otherwise.
+           @since ARP 2.0.5
+        */
+        CapabilitiesBridge.prototype.hasOrientationSupport = function (orientation) {
+            // Create and populate API request.
+            var arParams = [];
+            arParams.push(JSON.stringify(orientation));
+            var apiRequest = new APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = false;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = !!apiResponse.getResponse();
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasOrientationSupport' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'CapabilitiesBridge.hasOrientationSupport' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'CapabilitiesBridge.hasOrientationSupport' request.");
+            }
+            return response;
+        };
+        /**
+           @method
            Determines whether a specific Sensor capability is supported by the
 device.
 
            @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         CapabilitiesBridge.prototype.hasSensorSupport = function (type) {
             // Create and populate API request.
@@ -12394,7 +12954,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12428,7 +12988,7 @@ device.
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
@@ -12444,7 +13004,7 @@ device.
            Register a new listener that will receive button events.
 
            @param {Adaptive.ButtonListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.addButtonListener = function (listener) {
             // Create and populate API request.
@@ -12455,7 +13015,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -12485,10 +13045,54 @@ device.
         };
         /**
            @method
+           Add a listener to start receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.addDeviceOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDevice", "addDeviceOrientationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            // Add listener reference to local dictionary.
+            Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove listener reference from local dictionary due to invalid response.
+                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.addDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                    console.error("ERROR: 'DeviceBridge.addDeviceOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                // Remove listener reference from local dictionary due to invalid response.
+                Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.addDeviceOrientationListener' request.");
+            }
+        };
+        /**
+           @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
@@ -12499,7 +13103,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12529,7 +13133,7 @@ device.
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
@@ -12540,7 +13144,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12567,10 +13171,52 @@ device.
         };
         /**
            @method
+           Returns the current orientation of the device. Please note that this may be different from the orientation
+of the display. For display orientation, use the IDisplay APIs.
+
+           @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.getOrientationCurrent = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getOrientationCurrent' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.getOrientationCurrent' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.getOrientationCurrent' request.");
+            }
+            return response;
+        };
+        /**
+           @method
            De-registers an existing listener from receiving button events.
 
            @param {Adaptive.ButtonListener} listener listener to be removed.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.removeButtonListener = function (listener) {
             // Create and populate API request.
@@ -12581,7 +13227,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -12607,7 +13253,7 @@ device.
            @method
            Removed all existing listeners from receiving button events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.removeButtonListeners = function () {
             // Create and populate API request.
@@ -12618,7 +13264,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -12643,6 +13289,84 @@ device.
                 console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeButtonListeners' request.");
             }
         };
+        /**
+           @method
+           Remove a listener to stop receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.removeDeviceOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove listener reference from local dictionary.
+                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListener' request.");
+            }
+        };
+        /**
+           @method
+           Remove all listeners receiving device orientation events.
+
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.removeDeviceOrientationListeners = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove all listeners references from local dictionary.
+                        var keys = Adaptive.registeredDeviceOrientationListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredDeviceOrientationListener.remove(key);
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListeners' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListeners' request.");
+            }
+        };
         return DeviceBridge;
     })(BaseSystemBridge);
     Adaptive.DeviceBridge = DeviceBridge;
@@ -12652,7 +13376,7 @@ device.
        Interface for Managing the Display operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DisplayBridge = (function (_super) {
         __extends(DisplayBridge, _super);
@@ -12663,6 +13387,170 @@ device.
         function DisplayBridge() {
             _super.call(this);
         }
+        /**
+           @method
+           Add a listener to start receiving display orientation change events.
+
+           @param {Adaptive.DisplayOrientationListener} listener listener Listener to add to receive orientation change events.
+           @since ARP 2.0.5
+        */
+        DisplayBridge.prototype.addDisplayOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDisplay", "addDisplayOrientationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            // Add listener reference to local dictionary.
+            Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove listener reference from local dictionary due to invalid response.
+                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.addDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
+                    console.error("ERROR: 'DisplayBridge.addDisplayOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                // Remove listener reference from local dictionary due to invalid response.
+                Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
+                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.addDisplayOrientationListener' request.");
+            }
+        };
+        /**
+           @method
+           Returns the current orientation of the display. Please note that this may be different from the orientation
+of the device. For device orientation, use the IDevice APIs.
+
+           @return {Adaptive.ICapabilitiesOrientation} The current orientation of the display.
+           @since ARP 2.0.5
+        */
+        DisplayBridge.prototype.getOrientationCurrent = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.getOrientationCurrent' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DisplayBridge.getOrientationCurrent' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.getOrientationCurrent' request.");
+            }
+            return response;
+        };
+        /**
+           @method
+           Remove a listener to stop receiving display orientation change events.
+
+           @param {Adaptive.DisplayOrientationListener} listener listener Listener to remove from receiving orientation change events.
+           @since ARP 2.0.5
+        */
+        DisplayBridge.prototype.removeDisplayOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListener", arParams, listener.getId());
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove listener reference from local dictionary.
+                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListener' request.");
+            }
+        };
+        /**
+           @method
+           Remove all listeners receiving display orientation events.
+
+           @since ARP 2.0.5
+        */
+        DisplayBridge.prototype.removeDisplayOrientationListeners = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListeners", arParams, -1);
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove all listeners references from local dictionary.
+                        var keys = Adaptive.registeredDisplayOrientationListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredDisplayOrientationListener.remove(key);
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListeners' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListeners' request.");
+            }
+        };
         return DisplayBridge;
     })(BaseSystemBridge);
     Adaptive.DisplayBridge = DisplayBridge;
@@ -12672,7 +13560,7 @@ device.
        Interface for Managing the OS operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var OSBridge = (function (_super) {
         __extends(OSBridge, _super);
@@ -12688,7 +13576,7 @@ device.
            Returns the OSInfo for the current operating system.
 
            @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
-           @since ARP1.0
+           @since ARP 2.0
         */
         OSBridge.prototype.getOSInfo = function () {
             // Create and populate API request.
@@ -12699,7 +13587,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12733,7 +13621,7 @@ device.
        Interface for Managing the Runtime operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var RuntimeBridge = (function (_super) {
         __extends(RuntimeBridge, _super);
@@ -12748,7 +13636,7 @@ device.
            @method
            Dismiss the current Application
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         RuntimeBridge.prototype.dismissApplication = function () {
             // Create and populate API request.
@@ -12759,7 +13647,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -12773,7 +13661,7 @@ device.
            Whether the application dismiss the splash screen successfully or not
 
            @return {boolean} true if the application has dismissed the splash screen;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         RuntimeBridge.prototype.dismissSplashScreen = function () {
             // Create and populate API request.
@@ -12784,7 +13672,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12818,7 +13706,7 @@ device.
        Interface for Managing the browser operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
@@ -12835,7 +13723,7 @@ device.
 
            @param {string} url url Url to open
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         BrowserBridge.prototype.openExtenalBrowser = function (url) {
             // Create and populate API request.
@@ -12847,7 +13735,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12880,7 +13768,7 @@ device.
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         BrowserBridge.prototype.openInternalBrowser = function (url, title, backButtonText) {
             // Create and populate API request.
@@ -12894,7 +13782,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12927,7 +13815,7 @@ device.
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         BrowserBridge.prototype.openInternalBrowserModal = function (url, title, backButtonText) {
             // Create and populate API request.
@@ -12941,7 +13829,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12975,7 +13863,7 @@ device.
        Interface for Managing the Desktop operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DesktopBridge = (function (_super) {
         __extends(DesktopBridge, _super);
@@ -12995,7 +13883,7 @@ device.
        Interface for Managing the Map operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var MapBridge = (function (_super) {
         __extends(MapBridge, _super);
@@ -13015,7 +13903,7 @@ device.
        Interface for Managing the UI operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var UIBridge = (function (_super) {
         __extends(UIBridge, _super);
@@ -13035,7 +13923,7 @@ device.
        Interface for Managing the Compression operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CompressionBridge = (function (_super) {
         __extends(CompressionBridge, _super);
@@ -13055,7 +13943,7 @@ device.
        Interface for Managing the Concurrent operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ConcurrentBridge = (function (_super) {
         __extends(ConcurrentBridge, _super);
@@ -13075,7 +13963,7 @@ device.
        Interface for Managing the Cloud operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var CryptoBridge = (function (_super) {
         __extends(CryptoBridge, _super);
@@ -13095,7 +13983,7 @@ device.
        Interface for Managing the Logging operations
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
     */
     var LoggingBridge = (function (_super) {
         __extends(LoggingBridge, _super);
@@ -13111,7 +13999,7 @@ device.
 
            @param level   Log level
            @param message Message to be logged
-           @since ARP1.0
+           @since ARP 2.0
         */
         LoggingBridge.prototype.log_level_message = function (level, message) {
             // Create and populate API request.
@@ -13124,7 +14012,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -13139,7 +14027,7 @@ device.
            @param level    Log level
            @param category Category/tag name to identify/filter the log.
            @param message  Message to be logged
-           @since ARP1.0
+           @since ARP 2.0
         */
         LoggingBridge.prototype.log_level_category_message = function (level, category, message) {
             // Create and populate API request.
@@ -13153,7 +14041,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -13171,7 +14059,7 @@ device.
        Interface for Managing the Timer operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var TimerBridge = (function (_super) {
         __extends(TimerBridge, _super);
@@ -13190,7 +14078,7 @@ device.
        Interface to retrieve auto-registered service implementation references.
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
     */
     var AppRegistryBridge = (function () {
         function AppRegistryBridge() {
@@ -14055,7 +14943,7 @@ device.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.0.4";
+            return "v2.0.5";
         };
         /**
            @private
@@ -15430,6 +16318,67 @@ device.
     })();
     Adaptive.ICapabilitiesNotification = ICapabilitiesNotification;
     /**
+       @enum {Adaptive.ICapabilitiesOrientation} Adaptive.ICapabilitiesOrientation
+       Enumeration ICapabilitiesOrientation
+    */
+    var ICapabilitiesOrientation = (function () {
+        function ICapabilitiesOrientation(value) {
+            this.value = value;
+        }
+        ICapabilitiesOrientation.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.ICapabilitiesOrientation}
+        */
+        ICapabilitiesOrientation.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Portrait_Up":
+                        return ICapabilitiesOrientation.Portrait_Up;
+                    case "Portrait_Down":
+                        return ICapabilitiesOrientation.Portrait_Down;
+                    case "Landscape_Left":
+                        return ICapabilitiesOrientation.Landscape_Left;
+                    case "Landscape_Right":
+                        return ICapabilitiesOrientation.Landscape_Right;
+                    case "Unknown":
+                        return ICapabilitiesOrientation.Unknown;
+                    default:
+                        return ICapabilitiesOrientation.Unknown;
+                }
+            }
+            else {
+                return ICapabilitiesOrientation.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+        */
+        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+        /**
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+        */
+        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+        /**
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+        */
+        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+        /**
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+        */
+        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+        /**
+           @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
+        */
+        ICapabilitiesOrientation.Unknown = new ICapabilitiesOrientation("Unknown");
+        return ICapabilitiesOrientation;
+    })();
+    Adaptive.ICapabilitiesOrientation = ICapabilitiesOrientation;
+    /**
        @enum {Adaptive.ICapabilitiesSensor} Adaptive.ICapabilitiesSensor
        Enumeration ICapabilitiesSensor
     */
@@ -16076,6 +17025,160 @@ device.
         return IDatabaseTableResultCallbackWarning;
     })();
     Adaptive.IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning;
+    /**
+       @enum {Adaptive.IDeviceOrientationListenerError} Adaptive.IDeviceOrientationListenerError
+       Enumeration IDeviceOrientationListenerError
+    */
+    var IDeviceOrientationListenerError = (function () {
+        function IDeviceOrientationListenerError(value) {
+            this.value = value;
+        }
+        IDeviceOrientationListenerError.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDeviceOrientationListenerError}
+        */
+        IDeviceOrientationListenerError.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Unknown":
+                        return IDeviceOrientationListenerError.Unknown;
+                    default:
+                        return IDeviceOrientationListenerError.Unknown;
+                }
+            }
+            else {
+                return IDeviceOrientationListenerError.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.IDeviceOrientationListenerError} [Unknown='Unknown']
+        */
+        IDeviceOrientationListenerError.Unknown = new IDeviceOrientationListenerError("Unknown");
+        return IDeviceOrientationListenerError;
+    })();
+    Adaptive.IDeviceOrientationListenerError = IDeviceOrientationListenerError;
+    /**
+       @enum {Adaptive.IDeviceOrientationListenerWarning} Adaptive.IDeviceOrientationListenerWarning
+       Enumeration IDeviceOrientationListenerWarning
+    */
+    var IDeviceOrientationListenerWarning = (function () {
+        function IDeviceOrientationListenerWarning(value) {
+            this.value = value;
+        }
+        IDeviceOrientationListenerWarning.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDeviceOrientationListenerWarning}
+        */
+        IDeviceOrientationListenerWarning.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Unknown":
+                        return IDeviceOrientationListenerWarning.Unknown;
+                    default:
+                        return IDeviceOrientationListenerWarning.Unknown;
+                }
+            }
+            else {
+                return IDeviceOrientationListenerWarning.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.IDeviceOrientationListenerWarning} [Unknown='Unknown']
+        */
+        IDeviceOrientationListenerWarning.Unknown = new IDeviceOrientationListenerWarning("Unknown");
+        return IDeviceOrientationListenerWarning;
+    })();
+    Adaptive.IDeviceOrientationListenerWarning = IDeviceOrientationListenerWarning;
+    /**
+       @enum {Adaptive.IDisplayOrientationListenerError} Adaptive.IDisplayOrientationListenerError
+       Enumeration IDisplayOrientationListenerError
+    */
+    var IDisplayOrientationListenerError = (function () {
+        function IDisplayOrientationListenerError(value) {
+            this.value = value;
+        }
+        IDisplayOrientationListenerError.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDisplayOrientationListenerError}
+        */
+        IDisplayOrientationListenerError.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Unknown":
+                        return IDisplayOrientationListenerError.Unknown;
+                    default:
+                        return IDisplayOrientationListenerError.Unknown;
+                }
+            }
+            else {
+                return IDisplayOrientationListenerError.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.IDisplayOrientationListenerError} [Unknown='Unknown']
+        */
+        IDisplayOrientationListenerError.Unknown = new IDisplayOrientationListenerError("Unknown");
+        return IDisplayOrientationListenerError;
+    })();
+    Adaptive.IDisplayOrientationListenerError = IDisplayOrientationListenerError;
+    /**
+       @enum {Adaptive.IDisplayOrientationListenerWarning} Adaptive.IDisplayOrientationListenerWarning
+       Enumeration IDisplayOrientationListenerWarning
+    */
+    var IDisplayOrientationListenerWarning = (function () {
+        function IDisplayOrientationListenerWarning(value) {
+            this.value = value;
+        }
+        IDisplayOrientationListenerWarning.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IDisplayOrientationListenerWarning}
+        */
+        IDisplayOrientationListenerWarning.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Application_Vetoed":
+                        return IDisplayOrientationListenerWarning.Application_Vetoed;
+                    case "Unknown":
+                        return IDisplayOrientationListenerWarning.Unknown;
+                    default:
+                        return IDisplayOrientationListenerWarning.Unknown;
+                }
+            }
+            else {
+                return IDisplayOrientationListenerWarning.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+        */
+        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        /**
+           @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
+        */
+        IDisplayOrientationListenerWarning.Unknown = new IDisplayOrientationListenerWarning("Unknown");
+        return IDisplayOrientationListenerWarning;
+    })();
+    Adaptive.IDisplayOrientationListenerWarning = IDisplayOrientationListenerWarning;
     /**
        @enum {Adaptive.IFileDataLoadResultCallbackError} Adaptive.IFileDataLoadResultCallbackError
        Enumeration IFileDataLoadResultCallbackError
@@ -18004,5 +19107,60 @@ device.
         return LifecycleState;
     })();
     Adaptive.LifecycleState = LifecycleState;
+    /**
+       @enum {Adaptive.RotationEventState} Adaptive.RotationEventState
+       Enumeration RotationEventState
+    */
+    var RotationEventState = (function () {
+        function RotationEventState(value) {
+            this.value = value;
+        }
+        RotationEventState.prototype.toString = function () {
+            return this.value;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.RotationEventState}
+        */
+        RotationEventState.toObject = function (object) {
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "WillStartRotation":
+                        return RotationEventState.WillStartRotation;
+                    case "IsRotating":
+                        return RotationEventState.IsRotating;
+                    case "DidFinishRotation":
+                        return RotationEventState.DidFinishRotation;
+                    case "Unknown":
+                        return RotationEventState.Unknown;
+                    default:
+                        return RotationEventState.Unknown;
+                }
+            }
+            else {
+                return RotationEventState.Unknown;
+            }
+        };
+        /**
+           @property {Adaptive.RotationEventState} [WillStartRotation='WillStartRotation']
+        */
+        RotationEventState.WillStartRotation = new RotationEventState("WillStartRotation");
+        /**
+           @property {Adaptive.RotationEventState} [IsRotating='IsRotating']
+        */
+        RotationEventState.IsRotating = new RotationEventState("IsRotating");
+        /**
+           @property {Adaptive.RotationEventState} [DidFinishRotation='DidFinishRotation']
+        */
+        RotationEventState.DidFinishRotation = new RotationEventState("DidFinishRotation");
+        /**
+           @property {Adaptive.RotationEventState} [Unknown='Unknown']
+        */
+        RotationEventState.Unknown = new RotationEventState("Unknown");
+        return RotationEventState;
+    })();
+    Adaptive.RotationEventState = RotationEventState;
 })(Adaptive || (Adaptive = {}));
 //# sourceMappingURL=Adaptive.js.map

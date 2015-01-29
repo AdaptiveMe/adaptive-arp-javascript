@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -150,7 +150,7 @@ var Adaptive;
            @method
            This method is called on Error
            @param {Adaptive.IMessagingCallbackError} error error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -164,7 +164,7 @@ var Adaptive;
            @method
            This method is called on Result
            @param {boolean} success success true if sent;false otherwise
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onResult = function (success) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -179,7 +179,7 @@ var Adaptive;
            This method is called on Warning
            @param {boolean} success success true if sent;false otherwise
            @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         MessagingCallback.prototype.onWarning = function (success, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

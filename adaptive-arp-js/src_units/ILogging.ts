@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Interface for Managing the Logging operations
 
         @author Ferran Vila Conesa
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -54,14 +54,14 @@ module Adaptive {
              @param level    Log level
              @param category Category/tag name to identify/filter the log.
              @param message  Message to be logged
-             @since ARP1.0
+             @since ARP 2.0
           */
           log_level_category_message(level:ILoggingLogLevel, category:string, message:string);
           /**
              Logs the given message, with the given log level if specified, to the standard platform/environment.
              @param level   Log level
              @param message Message to be logged
-             @since ARP1.0
+             @since ARP 2.0
           */
           log_level_message(level:ILoggingLogLevel, message:string);
      }

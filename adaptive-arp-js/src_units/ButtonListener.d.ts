@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            No data received
            @param {Adaptive.IButtonListenerError} error error occurred
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IButtonListenerError): void;
         /**
            @method
            Called on button pressed
            @param {Adaptive.Button} button button pressed
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(button: Button): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Data received with warning
            @param {Adaptive.Button} button button  pressed
            @param {Adaptive.IButtonListenerWarning} warning warning happened
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(button: Button, warning: IButtonListenerWarning): void;
     }

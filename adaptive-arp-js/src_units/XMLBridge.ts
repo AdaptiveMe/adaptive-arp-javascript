@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ module Adaptive {
         Interface for Managing the XML operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class XMLBridge extends BaseDataBridge implements IXML {
 

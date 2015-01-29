@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing the address data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactAddress = (function (_super) {
@@ -58,7 +58,7 @@ var Adaptive;
 
            @param {string} address Address data.
            @param {Adaptive.ContactAddressType} type    Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactAddress(address, type) {
             _super.call(this);
@@ -70,7 +70,7 @@ var Adaptive;
            Returns the type of the address
 
            @return {Adaptive.ContactAddressType} AddressType Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.getType = function () {
             return this.type;
@@ -80,7 +80,7 @@ var Adaptive;
            Set the address type
 
            @param {Adaptive.ContactAddressType} type Address type.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.setType = function (type) {
             this.type = type;
@@ -90,7 +90,7 @@ var Adaptive;
            Returns the Contact address
 
            @return {string} address Address data.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.getAddress = function () {
             return this.address;
@@ -100,7 +100,7 @@ var Adaptive;
            Set the address of the Contact
 
            @param {string} address Address data.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactAddress.prototype.setAddress = function (address) {
             this.address = address;

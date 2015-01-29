@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Interface for Managing the File System operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -56,7 +56,7 @@ This method does not create the actual file in the specified folder.
              @param parent Parent directory.
              @param name   Name of new file or directory.
              @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-             @since ARP1.0
+             @since ARP 2.0
           */
           createFileDescriptor(parent:FileDescriptor, name:string) : FileDescriptor;
           /**
@@ -65,7 +65,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
              @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationCacheFolder() : FileDescriptor;
           /**
@@ -73,7 +73,7 @@ This path is volatile and may be cleaned by the OS periodically.
              Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationCloudFolder() : FileDescriptor;
           /**
@@ -81,7 +81,7 @@ This path must always be writable by the current application.
              Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationDocumentsFolder() : FileDescriptor;
           /**
@@ -89,7 +89,7 @@ This path must always be writable by the current application.
              Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
              @return {Adaptive.FileDescriptor} Path to the application folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationFolder() : FileDescriptor;
           /**
@@ -97,14 +97,14 @@ This path may or may not be directly readable or writable - it usually contains 
              Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getApplicationProtectedFolder() : FileDescriptor;
           /**
              @method
              Returns the file system dependent file separator.
              @return {string} char with the directory/file separator.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSeparator() : string;
           /**
@@ -114,7 +114,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSystemExternalFolder() : FileDescriptor;
      }

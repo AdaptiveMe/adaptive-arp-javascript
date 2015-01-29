@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Represents a basic bean to store keyName pair values
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var KeyPair = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} keyName  Key of the element
            @param {string} keyValue Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         function KeyPair(keyName, keyValue) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns the keyName of the element
 
            @return {string} Key of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.getKeyName = function () {
             return this.keyName;
@@ -79,7 +79,7 @@ var Adaptive;
            Sets the keyName of the element
 
            @param {string} keyName Key of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.setKeyName = function (keyName) {
             this.keyName = keyName;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the keyValue of the element
 
            @return {string} Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.getKeyValue = function () {
             return this.keyValue;
@@ -99,7 +99,7 @@ var Adaptive;
            Sets the keyValue of the element
 
            @param {string} keyValue Value of the element
-           @since ARP1.0
+           @since ARP 2.0
         */
         KeyPair.prototype.setKeyValue = function (keyValue) {
             this.keyValue = keyValue;

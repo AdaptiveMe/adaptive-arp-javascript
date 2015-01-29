@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Globalization results
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var GlobalizationBridge = (function (_super) {
         __extends(GlobalizationBridge, _super);
@@ -70,7 +70,7 @@ var Adaptive;
            Returns the default locale of the application defined in the configuration file
 
            @return {Adaptive.Locale} Default Locale of the application
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getDefaultLocale = function () {
             // Create and populate API request.
@@ -81,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -111,7 +111,7 @@ var Adaptive;
            List of supported locales for the application defined in the configuration file
 
            @return {Adaptive.Locale[]} List of locales
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
             // Create and populate API request.
@@ -122,7 +122,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -157,7 +157,7 @@ var Adaptive;
            @param {string} key key    to match text
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {string} Localized text.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getResourceLiteral = function (key, locale) {
             // Create and populate API request.
@@ -170,7 +170,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -201,7 +201,7 @@ var Adaptive;
 
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-           @since ARP1.0
+           @since ARP 2.0
         */
         GlobalizationBridge.prototype.getResourceLiterals = function (locale) {
             // Create and populate API request.
@@ -213,7 +213,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;

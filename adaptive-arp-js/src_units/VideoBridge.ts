@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ module Adaptive {
         Interface for Managing the Video operations
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class VideoBridge extends BaseMediaBridge implements IVideo {
 
@@ -64,7 +64,7 @@ module Adaptive {
              Play url video stream
 
              @param {string} url url of the video
-             @since ARP1.0
+             @since ARP 2.0
           */
           playStream(url : string) : void {
                // Create and populate API request.
@@ -76,7 +76,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {

@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing the data of a http request or response header.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class ServiceHeader extends APIBean {
@@ -57,7 +57,7 @@ declare module Adaptive {
 
            @param {string} name Name of the header
            @param {string} data Value of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(name: string, data: string);
         /**
@@ -65,7 +65,7 @@ declare module Adaptive {
            Returns the header value
 
            @return {string} ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         getData(): string;
         /**
@@ -73,7 +73,7 @@ declare module Adaptive {
            Set the header value
 
            @param {string} data ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         setData(data: string): void;
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            Returns the header name
 
            @return {string} ServiceHeader name
-           @since ARP1.0
+           @since ARP 2.0
         */
         getName(): string;
         /**
@@ -89,7 +89,7 @@ declare module Adaptive {
            Set the header name
 
            @param {string} name Name of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         setName(name: string): void;
         /**

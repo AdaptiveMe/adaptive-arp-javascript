@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Interface for Managing the Messaging responses
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -54,14 +54,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP1.0
+             @since ARP 2.0
           */
           onError(error:IMessagingCallbackError);
           /**
              @method
              This method is called on Result
              @param success true if sent;false otherwise
-             @since ARP1.0
+             @since ARP 2.0
           */
           onResult(success:boolean);
           /**
@@ -69,7 +69,7 @@ module Adaptive {
              This method is called on Warning
              @param success true if sent;false otherwise
              @param warning returned by the platform
-             @since ARP1.0
+             @since ARP 2.0
           */
           onWarning(success:boolean, warning:IMessagingCallbackWarning);
      }

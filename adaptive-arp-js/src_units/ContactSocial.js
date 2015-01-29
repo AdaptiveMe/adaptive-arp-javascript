@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing the social data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ContactSocial = (function (_super) {
@@ -58,7 +58,7 @@ var Adaptive;
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
            @param {string} profileUrl    of the user
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ContactSocial(socialNetwork, profileUrl) {
             _super.call(this);
@@ -70,7 +70,7 @@ var Adaptive;
            Returns the social network
 
            @return {Adaptive.ContactSocialNetwork} socialNetwork
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.getSocialNetwork = function () {
             return this.socialNetwork;
@@ -80,7 +80,7 @@ var Adaptive;
            Set the social network
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.setSocialNetwork = function (socialNetwork) {
             this.socialNetwork = socialNetwork;
@@ -90,7 +90,7 @@ var Adaptive;
            Returns the profile url of the user
 
            @return {string} profileUrl
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.getProfileUrl = function () {
             return this.profileUrl;
@@ -100,7 +100,7 @@ var Adaptive;
            Set the profile url of the iser
 
            @param {string} profileUrl of the user
-           @since ARP1.0
+           @since ARP 2.0
         */
         ContactSocial.prototype.setProfileUrl = function (profileUrl) {
             this.profileUrl = profileUrl;

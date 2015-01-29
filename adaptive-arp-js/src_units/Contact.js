@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Structure representing the data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var Contact = (function (_super) {
@@ -72,7 +72,7 @@ var Adaptive;
            @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
            @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
            @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         function Contact(contactId, personalInfo, professionalInfo, contactAddresses, contactPhones, contactEmails, contactWebsites, contactSocials, contactTags) {
             _super.call(this, contactId);
@@ -90,7 +90,7 @@ var Adaptive;
            Returns all the addresses of the Contact
 
            @return {Adaptive.ContactAddress[]} ContactAddress[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactAddresses = function () {
             return this.contactAddresses;
@@ -100,7 +100,7 @@ var Adaptive;
            Set the addresses of the Contact
 
            @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactAddresses = function (contactAddresses) {
             this.contactAddresses = contactAddresses;
@@ -110,7 +110,7 @@ var Adaptive;
            Returns all the emails of the Contact
 
            @return {Adaptive.ContactEmail[]} ContactEmail[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactEmails = function () {
             return this.contactEmails;
@@ -120,7 +120,7 @@ var Adaptive;
            Set the emails of the Contact
 
            @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactEmails = function (contactEmails) {
             this.contactEmails = contactEmails;
@@ -130,7 +130,7 @@ var Adaptive;
            Returns all the phones of the Contact
 
            @return {Adaptive.ContactPhone[]} ContactPhone[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactPhones = function () {
             return this.contactPhones;
@@ -140,7 +140,7 @@ var Adaptive;
            Set the phones of the Contact
 
            @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactPhones = function (contactPhones) {
             this.contactPhones = contactPhones;
@@ -150,7 +150,7 @@ var Adaptive;
            Returns all the social network info of the Contact
 
            @return {Adaptive.ContactSocial[]} ContactSocial[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactSocials = function () {
             return this.contactSocials;
@@ -160,7 +160,7 @@ var Adaptive;
            Set the social network info of the Contact
 
            @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactSocials = function (contactSocials) {
             this.contactSocials = contactSocials;
@@ -170,7 +170,7 @@ var Adaptive;
            Returns the additional tags of the Contact
 
            @return {Adaptive.ContactTag[]} ContactTag[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactTags = function () {
             return this.contactTags;
@@ -180,7 +180,7 @@ var Adaptive;
            Set the additional tags of the Contact
 
            @param {Adaptive.ContactTag[]} contactTags Tags of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactTags = function (contactTags) {
             this.contactTags = contactTags;
@@ -190,7 +190,7 @@ var Adaptive;
            Returns all the websites of the Contact
 
            @return {Adaptive.ContactWebsite[]} ContactWebsite[]
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getContactWebsites = function () {
             return this.contactWebsites;
@@ -200,7 +200,7 @@ var Adaptive;
            Set the websites of the Contact
 
            @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setContactWebsites = function (contactWebsites) {
             this.contactWebsites = contactWebsites;
@@ -210,7 +210,7 @@ var Adaptive;
            Returns the personal info of the Contact
 
            @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getPersonalInfo = function () {
             return this.personalInfo;
@@ -220,7 +220,7 @@ var Adaptive;
            Set the personal info of the Contact
 
            @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setPersonalInfo = function (personalInfo) {
             this.personalInfo = personalInfo;
@@ -230,7 +230,7 @@ var Adaptive;
            Returns the professional info of the Contact
 
            @return {Adaptive.ContactProfessionalInfo} Array of personal info
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.getProfessionalInfo = function () {
             return this.professionalInfo;
@@ -240,7 +240,7 @@ var Adaptive;
            Set the professional info of the Contact
 
            @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-           @since ARP1.0
+           @since ARP 2.0
         */
         Contact.prototype.setProfessionalInfo = function (professionalInfo) {
             this.professionalInfo = professionalInfo;

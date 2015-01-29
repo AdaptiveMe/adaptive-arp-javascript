@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,10 +43,13 @@ var __extends = this.__extends || function (d, b) {
 ///<reference path="ButtonListener.ts"/>
 ///<reference path="CommonUtil.ts"/>
 ///<reference path="DeviceInfo.ts"/>
+///<reference path="DeviceOrientationListener.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseSystem.ts"/>
 ///<reference path="IButtonListener.ts"/>
+///<reference path="ICapabilitiesOrientation.ts"/>
 ///<reference path="IDevice.ts"/>
+///<reference path="IDeviceOrientationListener.ts"/>
 ///<reference path="Locale.ts"/>
 var Adaptive;
 (function (Adaptive) {
@@ -56,7 +59,7 @@ var Adaptive;
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
@@ -72,7 +75,7 @@ var Adaptive;
            Register a new listener that will receive button events.
 
            @param {Adaptive.ButtonListener} listener listener to be registered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.addButtonListener = function (listener) {
             // Create and populate API request.
@@ -83,7 +86,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -113,10 +116,54 @@ var Adaptive;
         };
         /**
            @method
+           Add a listener to start receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.addDeviceOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new Adaptive.APIRequest("IDevice", "addDeviceOrientationListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            // Add listener reference to local dictionary.
+            Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    }
+                    else {
+                        // Remove listener reference from local dictionary due to invalid response.
+                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.addDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                    console.error("ERROR: 'DeviceBridge.addDeviceOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                // Remove listener reference from local dictionary due to invalid response.
+                Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.addDeviceOrientationListener' request.");
+            }
+        };
+        /**
+           @method
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
@@ -127,7 +174,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -157,7 +204,7 @@ var Adaptive;
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
@@ -168,7 +215,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -195,10 +242,52 @@ var Adaptive;
         };
         /**
            @method
+           Returns the current orientation of the device. Please note that this may be different from the orientation
+of the display. For display orientation, use the IDisplay APIs.
+
+           @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.getOrientationCurrent = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.getOrientationCurrent' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.getOrientationCurrent' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.getOrientationCurrent' request.");
+            }
+            return response;
+        };
+        /**
+           @method
            De-registers an existing listener from receiving button events.
 
            @param {Adaptive.ButtonListener} listener listener to be removed.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.removeButtonListener = function (listener) {
             // Create and populate API request.
@@ -209,7 +298,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -235,7 +324,7 @@ var Adaptive;
            @method
            Removed all existing listeners from receiving button events.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         DeviceBridge.prototype.removeButtonListeners = function () {
             // Create and populate API request.
@@ -246,7 +335,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -269,6 +358,84 @@ var Adaptive;
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeButtonListeners' request.");
+            }
+        };
+        /**
+           @method
+           Remove a listener to stop receiving device orientation change events.
+
+           @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.removeDeviceOrientationListener = function (listener) {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new Adaptive.APIRequest("IDevice", "removeDeviceOrientationListener", arParams, listener.getId());
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove listener reference from local dictionary.
+                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListener' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListener' request.");
+            }
+        };
+        /**
+           @method
+           Remove all listeners receiving device orientation events.
+
+           @since ARP 2.0.5
+        */
+        DeviceBridge.prototype.removeDeviceOrientationListeners = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new Adaptive.APIRequest("IDevice", "removeDeviceOrientationListeners", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.send(JSON.stringify(apiRequest));
+            // Check response.
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        // Remove all listeners references from local dictionary.
+                        var keys = Adaptive.registeredDeviceOrientationListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredDeviceOrientationListener.remove(key);
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListeners' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListeners' request.");
             }
         };
         return DeviceBridge;

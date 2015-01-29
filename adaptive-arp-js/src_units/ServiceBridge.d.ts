@@ -38,7 +38,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,7 +49,7 @@ declare module Adaptive {
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     class ServiceBridge extends BaseCommunicationBridge implements IService {
         /**
@@ -63,7 +63,7 @@ declare module Adaptive {
 
            @param {string} serviceName serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP1.0
+           @since ARP 2.0
         */
         getService(serviceName: string): Service;
         /**
@@ -73,7 +73,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
            @param {Adaptive.Service} service serviceRequest Service Request to invoke
            @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         invokeService(serviceRequest: ServiceRequest, service: Service, callback: IServiceResultCallback): void;
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            Register a new service
 
            @param {Adaptive.Service} service service to register
-           @since ARP1.0
+           @since ARP 2.0
         */
         registerService(service: Service): void;
         /**
@@ -89,14 +89,14 @@ declare module Adaptive {
            Unregister a service
 
            @param {Adaptive.Service} service service to unregister
-           @since ARP1.0
+           @since ARP 2.0
         */
         unregisterService(service: Service): void;
         /**
            @method
            Unregister all services.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         unregisterServices(): void;
         /**
@@ -104,7 +104,7 @@ declare module Adaptive {
 
            @param service Service to check
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         isRegistered_service(service: Service): boolean;
         /**
@@ -112,7 +112,7 @@ declare module Adaptive {
 
            @param serviceName Name of service.
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         isRegistered_serviceName(serviceName: string): boolean;
     }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,7 +49,7 @@ module Adaptive {
         Interface defining methods about the acceleration sensor
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
 
@@ -66,7 +66,7 @@ module Adaptive {
              Register a new listener that will receive acceleration events.
 
              @param {Adaptive.AccelerationListener} listener listener to be registered.
-             @since ARP1.0
+             @since ARP 2.0
           */
           addAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
@@ -77,7 +77,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                // Add listener reference to local dictionary.
                registeredAccelerationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -108,7 +108,7 @@ module Adaptive {
              De-registers an existing listener from receiving acceleration events.
 
              @param {Adaptive.AccelerationListener} listener listener to be registered.
-             @since ARP1.0
+             @since ARP 2.0
           */
           removeAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
@@ -119,7 +119,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -143,7 +143,7 @@ module Adaptive {
              @method
              Removed all existing listeners from receiving acceleration events.
 
-             @since ARP1.0
+             @since ARP 2.0
           */
           removeAccelerationListeners() : void {
                // Create and populate API request.
@@ -154,7 +154,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,7 +49,7 @@ module Adaptive {
         Interface for Managing the Globalization results
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
 
@@ -66,7 +66,7 @@ module Adaptive {
              Returns the default locale of the application defined in the configuration file
 
              @return {Adaptive.Locale} Default Locale of the application
-             @since ARP1.0
+             @since ARP 2.0
           */
           getDefaultLocale() : Locale {
                // Create and populate API request.
@@ -77,7 +77,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -105,7 +105,7 @@ module Adaptive {
              List of supported locales for the application defined in the configuration file
 
              @return {Adaptive.Locale[]} List of locales
-             @since ARP1.0
+             @since ARP 2.0
           */
           getLocaleSupportedDescriptors() : Array<Locale> {
                // Create and populate API request.
@@ -116,7 +116,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -149,7 +149,7 @@ module Adaptive {
              @param {string} key key    to match text
              @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getResourceLiteral(key : string, locale : Locale) : string {
                // Create and populate API request.
@@ -162,7 +162,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -191,7 +191,7 @@ module Adaptive {
 
              @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getResourceLiterals(locale : Locale) : Array<KeyPair> {
                // Create and populate API request.
@@ -203,7 +203,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<KeyPair> = null;

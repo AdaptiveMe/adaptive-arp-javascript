@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -182,7 +182,7 @@ module Adaptive {
         Interface to retrieve auto-registered service implementation references.
 
         @author Carlos Lozano Diez
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class AppRegistryBridge implements IAppRegistry {
 
@@ -1476,7 +1476,7 @@ module Adaptive {
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.0.4"
+               return "v2.0.5"
           }
      }
 }

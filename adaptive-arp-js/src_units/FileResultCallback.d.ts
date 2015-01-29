@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            On error result of a file operation.
            @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IFileResultCallbackError): void;
         /**
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(storageFile: FileDescriptor): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
            @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(file: FileDescriptor, warning: IFileResultCallbackWarning): void;
     }

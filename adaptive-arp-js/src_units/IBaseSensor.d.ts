@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,7 @@ declare module Adaptive {
        Base application for Sensor purposes
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing a row for a data table.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseRow = (function (_super) {
@@ -56,7 +56,7 @@ var Adaptive;
            Constructor for implementation using.
 
            @param {string[]} values The values of the row
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseRow(values) {
             _super.call(this);
@@ -67,7 +67,7 @@ var Adaptive;
            Returns the values of the row.
 
            @return {string[]} The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseRow.prototype.getValues = function () {
             return this.values;
@@ -77,7 +77,7 @@ var Adaptive;
            Sets the values of the row.
 
            @param {string[]} values The values of the row.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseRow.prototype.setValues = function (values) {
             this.values = values;

@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the Security result callback
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            No data received - error condition, not authorized .
            @param error Error values
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: ISecurityResultCallbackError): any;
         /**
            @method
            Correct data received.
            @param keyValues key and values
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(keyValues: SecureKeyPair[]): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param keyValues key and values
            @param warning   Warning values
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): any;
     }

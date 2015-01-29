@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,7 +49,7 @@ module Adaptive {
         Interface for Managing the Messaging operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
      */
      export class MessagingBridge extends BasePIMBridge implements IMessaging {
 
@@ -68,7 +68,7 @@ module Adaptive {
              @param {string} number number   to send
              @param {string} text text     to send
              @param {Adaptive.MessagingCallback} callback callback with the result
-             @since ARP1.0
+             @since ARP 2.0
           */
           sendSMS(number : string, text : string, callback : IMessagingCallback) : void {
                // Create and populate API request.
@@ -81,7 +81,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ var Adaptive;
        Structure representing a service path for one endpoint
 
        @author fnva
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServicePath = (function () {

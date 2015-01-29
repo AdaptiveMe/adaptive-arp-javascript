@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ var Adaptive;
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseTable = (function (_super) {
@@ -62,7 +62,7 @@ var Adaptive;
            @param {number} rowCount        The number of databaseRows
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseTable(name, columnCount, rowCount, databaseColumns, databaseRows) {
             _super.call(this);
@@ -77,7 +77,7 @@ var Adaptive;
            Get the number of databaseColumns
 
            @return {number} The number of databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getColumnCount = function () {
             return this.columnCount;
@@ -87,7 +87,7 @@ var Adaptive;
            Sets the number of databaseColumns
 
            @param {number} columnCount The number of databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setColumnCount = function (columnCount) {
             this.columnCount = columnCount;
@@ -97,7 +97,7 @@ var Adaptive;
            Get the databaseColumns
 
            @return {Adaptive.DatabaseColumn[]} The databaseColumns
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getDatabaseColumns = function () {
             return this.databaseColumns;
@@ -107,7 +107,7 @@ var Adaptive;
            Sets the databaseColumns of the table
 
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setDatabaseColumns = function (databaseColumns) {
             this.databaseColumns = databaseColumns;
@@ -117,7 +117,7 @@ var Adaptive;
            Get the databaseRows of the table
 
            @return {Adaptive.DatabaseRow[]} The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getDatabaseRows = function () {
             return this.databaseRows;
@@ -127,7 +127,7 @@ var Adaptive;
            Sets the databaseRows of the table
 
            @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setDatabaseRows = function (databaseRows) {
             this.databaseRows = databaseRows;
@@ -137,7 +137,7 @@ var Adaptive;
            Returns the name of the table
 
            @return {string} The name of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getName = function () {
             return this.name;
@@ -147,7 +147,7 @@ var Adaptive;
            Sets the name of the table
 
            @param {string} name The name of the table
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setName = function (name) {
             this.name = name;
@@ -157,7 +157,7 @@ var Adaptive;
            Get the number of databaseRows
 
            @return {number} The number of databaseRows
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.getRowCount = function () {
             return this.rowCount;
@@ -167,7 +167,7 @@ var Adaptive;
            Sets the number of databaseRows
 
            @param {number} rowCount The number of databaseRows
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseTable.prototype.setRowCount = function (rowCount) {
             this.rowCount = rowCount;

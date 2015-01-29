@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            Result callback for error responses
            @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IDatabaseResultCallbackError): void;
         /**
            @method
            Result callback for correct responses
            @param {Adaptive.Database} database database Returns the database
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(database: Database): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Result callback for warning responses
            @param {Adaptive.Database} database database Returns the database
            @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(database: Database, warning: IDatabaseResultCallbackWarning): void;
     }

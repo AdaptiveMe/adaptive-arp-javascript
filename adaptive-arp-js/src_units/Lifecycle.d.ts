@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,15 +40,15 @@ declare module Adaptive {
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     class Lifecycle extends APIBean {
         /**
            Represent the state of the app
-<p/>
+<p>
 Possible lifecycle States:
-<p/>
+<p>
 1. Starting    - Before starting.
 2. Started     - Start concluded.
 3. Running     - Accepts user interaction - running in foreground.
@@ -64,7 +64,7 @@ Possible lifecycle States:
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         constructor(state: LifecycleState);
         /**
@@ -72,7 +72,7 @@ Possible lifecycle States:
            Returns the state of the application
 
            @return {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         getState(): LifecycleState;
         /**
@@ -80,7 +80,7 @@ Possible lifecycle States:
            Set the State of the application
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP1.0
+           @since ARP 2.0
         */
         setState(state: LifecycleState): void;
         /**

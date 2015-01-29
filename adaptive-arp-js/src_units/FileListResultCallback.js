@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            On error result of a file operation.
            @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -165,7 +165,7 @@ var Adaptive;
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onResult = function (files) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -180,7 +180,7 @@ var Adaptive;
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
            @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP1.0
+           @since ARP 2.0
         */
         FileListResultCallback.prototype.onWarning = function (files, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

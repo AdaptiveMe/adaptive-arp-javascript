@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the column specification of a data column.
 
        @author Ferran Vila Conesa
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var DatabaseColumn = (function (_super) {
@@ -56,7 +56,7 @@ var Adaptive;
            Constructor with fields
 
            @param {string} name Name of the column
-           @since ARP1.0
+           @since ARP 2.0
         */
         function DatabaseColumn(name) {
             _super.call(this);
@@ -67,7 +67,7 @@ var Adaptive;
            Returns the name of the column.
 
            @return {string} The name of the column.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseColumn.prototype.getName = function () {
             return this.name;
@@ -77,7 +77,7 @@ var Adaptive;
            Sets the name of the column.
 
            @param {string} name The name of the column.
-           @since ARP1.0
+           @since ARP 2.0
         */
         DatabaseColumn.prototype.setName = function (name) {
             this.name = name;

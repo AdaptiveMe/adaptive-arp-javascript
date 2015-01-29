@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,7 +56,7 @@ var Adaptive;
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
@@ -73,7 +73,7 @@ var Adaptive;
 
            @param {string} serviceName serviceName Name of service.
            @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.getService = function (serviceName) {
             // Create and populate API request.
@@ -85,7 +85,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -117,7 +117,7 @@ var Adaptive;
            @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
            @param {Adaptive.Service} service serviceRequest Service Request to invoke
            @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.invokeService = function (serviceRequest, service, callback) {
             // Create and populate API request.
@@ -130,7 +130,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -166,7 +166,7 @@ var Adaptive;
            Register a new service
 
            @param {Adaptive.Service} service service to register
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.registerService = function (service) {
             // Create and populate API request.
@@ -178,7 +178,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -192,7 +192,7 @@ var Adaptive;
            Unregister a service
 
            @param {Adaptive.Service} service service to unregister
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.unregisterService = function (service) {
             // Create and populate API request.
@@ -204,7 +204,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -217,7 +217,7 @@ var Adaptive;
            @method
            Unregister all services.
 
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.unregisterServices = function () {
             // Create and populate API request.
@@ -228,7 +228,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -242,7 +242,7 @@ var Adaptive;
 
            @param service Service to check
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.isRegistered_service = function (service) {
             // Create and populate API request.
@@ -254,7 +254,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -284,7 +284,7 @@ var Adaptive;
 
            @param serviceName Name of service.
            @return True if the service is registered, false otherwise.
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceBridge.prototype.isRegistered_serviceName = function (serviceName) {
             // Create and populate API request.
@@ -296,7 +296,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.4");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Interface for Managing the Globalization results
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      /**
@@ -54,14 +54,14 @@ module Adaptive {
              @method
              Returns the default locale of the application defined in the configuration file
              @return {Adaptive.Locale} Default Locale of the application
-             @since ARP1.0
+             @since ARP 2.0
           */
           getDefaultLocale() : Locale;
           /**
              @method
              List of supported locales for the application defined in the configuration file
              @return {Adaptive.Locale[]} List of locales
-             @since ARP1.0
+             @since ARP 2.0
           */
           getLocaleSupportedDescriptors() : Array<Locale>;
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              @param key    to match text
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getResourceLiteral(key:string, locale:Locale) : string;
           /**
@@ -78,7 +78,7 @@ module Adaptive {
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-             @since ARP1.0
+             @since ARP 2.0
           */
           getResourceLiterals(locale:Locale) : Array<KeyPair>;
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the cookieValue of a http cookie.
 
         @author Aryslan
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class ServiceCookie extends APIBean {
@@ -91,7 +91,7 @@ module Adaptive {
              @param {boolean} secure      Privacy of the cookie
              @param {number} expiry      Expiration date of the cookie
              @param {number} creation    Creation date of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
                super();
@@ -110,7 +110,7 @@ module Adaptive {
              Returns the cookie cookieName
 
              @return {string} cookieName Name of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCookieName() : string {
                return this.cookieName;
@@ -121,7 +121,7 @@ module Adaptive {
              Set the cookie cookieName
 
              @param {string} cookieName Name of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCookieName(cookieName: string) {
                this.cookieName = cookieName;
@@ -132,7 +132,7 @@ module Adaptive {
              Returns the cookie cookieValue
 
              @return {string} Value of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCookieValue() : string {
                return this.cookieValue;
@@ -143,7 +143,7 @@ module Adaptive {
              Set the cookie cookieValue
 
              @param {string} cookieValue Value of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCookieValue(cookieValue: string) {
                this.cookieValue = cookieValue;
@@ -154,7 +154,7 @@ module Adaptive {
              Returns the creation date
 
              @return {number} Creation date of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCreation() : number {
                return this.creation;
@@ -165,7 +165,7 @@ module Adaptive {
              Sets the creation date
 
              @param {number} creation Creation date of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCreation(creation: number) {
                this.creation = creation;
@@ -176,7 +176,7 @@ module Adaptive {
              Returns the domain
 
              @return {string} domain
-             @since ARP1.0
+             @since ARP 2.0
           */
           getDomain() : string {
                return this.domain;
@@ -187,7 +187,7 @@ module Adaptive {
              Set the domain
 
              @param {string} domain Domain of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setDomain(domain: string) {
                this.domain = domain;
@@ -198,7 +198,7 @@ module Adaptive {
              Returns the expiration date in milis
 
              @return {number} expiry
-             @since ARP1.0
+             @since ARP 2.0
           */
           getExpiry() : number {
                return this.expiry;
@@ -209,7 +209,7 @@ module Adaptive {
              Set the expiration date in milis
 
              @param {number} expiry Expiration date of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setExpiry(expiry: number) {
                this.expiry = expiry;
@@ -220,7 +220,7 @@ module Adaptive {
              Returns the path
 
              @return {string} path
-             @since ARP1.0
+             @since ARP 2.0
           */
           getPath() : string {
                return this.path;
@@ -231,7 +231,7 @@ module Adaptive {
              Set the path
 
              @param {string} path Path of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setPath(path: string) {
                this.path = path;
@@ -242,7 +242,7 @@ module Adaptive {
              Returns the scheme
 
              @return {string} scheme
-             @since ARP1.0
+             @since ARP 2.0
           */
           getScheme() : string {
                return this.scheme;
@@ -253,7 +253,7 @@ module Adaptive {
              Set the scheme
 
              @param {string} scheme Scheme of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setScheme(scheme: string) {
                this.scheme = scheme;
@@ -264,7 +264,7 @@ module Adaptive {
              Returns whether the cookie is secure or not
 
              @return {boolean} true if the cookie is secure; false otherwise
-             @since ARP1.0
+             @since ARP 2.0
           */
           getSecure() : boolean {
                return this.secure;
@@ -275,7 +275,7 @@ module Adaptive {
              Set whether the cookie is secure or not
 
              @param {boolean} secure Privacy of the cookie
-             @since ARP1.0
+             @since ARP 2.0
           */
           setSecure(secure: boolean) {
                this.secure = secure;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the data of a http request or response header.
 
        @author Aryslan
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     var ServiceHeader = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} name Name of the header
            @param {string} data Value of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         function ServiceHeader(name, data) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns the header value
 
            @return {string} ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.getData = function () {
             return this.data;
@@ -79,7 +79,7 @@ var Adaptive;
            Set the header value
 
            @param {string} data ServiceHeader value
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.setData = function (data) {
             this.data = data;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the header name
 
            @return {string} ServiceHeader name
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.getName = function () {
             return this.name;
@@ -99,7 +99,7 @@ var Adaptive;
            Set the header name
 
            @param {string} name Name of the header
-           @since ARP1.0
+           @since ARP 2.0
         */
         ServiceHeader.prototype.setName = function (name) {
             this.name = name;

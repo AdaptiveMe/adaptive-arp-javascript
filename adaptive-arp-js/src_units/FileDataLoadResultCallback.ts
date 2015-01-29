@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -160,7 +160,7 @@ module Adaptive {
              @method
              Error processing data retrieval/storage operation.
              @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onError(error : IFileDataLoadResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -174,7 +174,7 @@ module Adaptive {
              @method
              Result of data retrieval operation.
              @param {number[]} data data Data loaded.
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onResult(data : Array<number>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -189,7 +189,7 @@ module Adaptive {
              Result with warning of data retrieval/storage operation.
              @param {number[]} data data    File being loaded.
              @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
-             @since ARP1.0
+             @since ARP 2.0
           */
           public onWarning(data : Array<number>, warning : IFileDataLoadResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

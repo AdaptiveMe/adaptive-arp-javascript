@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -149,7 +149,7 @@ var Adaptive;
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
            @param {Adaptive.IAccelerationListenerError} error error Error fired
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -163,7 +163,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            @method
            Correct data received.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onResult = function (acceleration) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -178,7 +178,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. Needs calibration.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
            @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
-           @since ARP1.0
+           @since ARP 2.0
         */
         AccelerationListener.prototype.onWarning = function (acceleration, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

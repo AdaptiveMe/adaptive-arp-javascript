@@ -37,7 +37,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ declare module Adaptive {
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
     */
     class MailBridge extends BasePIMBridge implements IMail {
         /**
@@ -62,7 +62,7 @@ declare module Adaptive {
 
            @param {Adaptive.Email} data data     Payload of the email
            @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
-           @since ARP1.0
+           @since ARP 2.0
         */
         sendEmail(data: Email, callback: IMessagingCallback): void;
     }

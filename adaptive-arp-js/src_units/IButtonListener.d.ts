@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the button  operations
 
        @author Carlos Lozano Diez
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            No data received
            @param error occurred
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IButtonListenerError): any;
         /**
            @method
            Called on button pressed
            @param button pressed
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(button: Button): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            Data received with warning
            @param button  pressed
            @param warning happened
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(button: Button, warning: IButtonListenerWarning): any;
     }

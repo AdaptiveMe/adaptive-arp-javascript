@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the professional info data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP1.0
+        @since ARP 2.0
         @version 1.0
      */
      export class ContactProfessionalInfo extends APIBean {
@@ -66,7 +66,7 @@ module Adaptive {
              @param {string} jobTitle       The job title
              @param {string} jobDescription The job description
              @param {string} company        The company of the job
-             @since ARP1.0
+             @since ARP 2.0
           */
           constructor(jobTitle: string, jobDescription: string, company: string) {
                super();
@@ -80,7 +80,7 @@ module Adaptive {
              Returns the company of the job
 
              @return {string} company
-             @since ARP1.0
+             @since ARP 2.0
           */
           getCompany() : string {
                return this.company;
@@ -91,7 +91,7 @@ module Adaptive {
              Set the company of the job
 
              @param {string} company The company of the job
-             @since ARP1.0
+             @since ARP 2.0
           */
           setCompany(company: string) {
                this.company = company;
@@ -102,7 +102,7 @@ module Adaptive {
              Returns the description of the job
 
              @return {string} description
-             @since ARP1.0
+             @since ARP 2.0
           */
           getJobDescription() : string {
                return this.jobDescription;
@@ -113,7 +113,7 @@ module Adaptive {
              Set the description of the job
 
              @param {string} jobDescription The job description
-             @since ARP1.0
+             @since ARP 2.0
           */
           setJobDescription(jobDescription: string) {
                this.jobDescription = jobDescription;
@@ -124,7 +124,7 @@ module Adaptive {
              Returns the title of the job
 
              @return {string} title
-             @since ARP1.0
+             @since ARP 2.0
           */
           getJobTitle() : string {
                return this.jobTitle;
@@ -135,7 +135,7 @@ module Adaptive {
              Set the title of the job
 
              @param {string} jobTitle The job title
-             @since ARP1.0
+             @since ARP 2.0
           */
           setJobTitle(jobTitle: string) {
                this.jobTitle = jobTitle;

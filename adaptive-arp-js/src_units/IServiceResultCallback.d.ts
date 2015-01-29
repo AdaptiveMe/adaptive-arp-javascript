@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.4
+    * @version v2.0.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP1.0
+       @since ARP 2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            This method is called on Error
            @param error returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         onError(error: IServiceResultCallbackError): any;
         /**
            @method
            This method is called on Result
            @param response data
-           @since ARP1.0
+           @since ARP 2.0
         */
         onResult(response: ServiceResponse): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            This method is called on Warning
            @param response data
            @param warning  returned by the platform
-           @since ARP1.0
+           @since ARP 2.0
         */
         onWarning(response: ServiceResponse, warning: IServiceResultCallbackWarning): any;
     }
