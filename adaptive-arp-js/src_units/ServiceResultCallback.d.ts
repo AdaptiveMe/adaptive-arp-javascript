@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            This method is called on Error
            @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IServiceResultCallbackError): void;
         /**
            @method
            This method is called on Result
            @param {Adaptive.ServiceResponse} response response data
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(response: ServiceResponse): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            This method is called on Warning
            @param {Adaptive.ServiceResponse} response response data
            @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(response: ServiceResponse, warning: IServiceResultCallbackWarning): void;
     }

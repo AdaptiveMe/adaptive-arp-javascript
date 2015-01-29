@@ -1,7 +1,8 @@
 /// <reference path="APIBean.d.ts" />
-/// <reference path="IServiceProtocolVersion.d.ts" />
 /// <reference path="ServiceHeader.d.ts" />
+/// <reference path="ServiceRequestParameter.d.ts" />
 /// <reference path="ServiceSession.d.ts" />
+/// <reference path="ServiceToken.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -31,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,89 +43,93 @@ declare module Adaptive {
        Represents a local or remote service request.
 
        @author Aryslan
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ServiceRequest extends APIBean {
         /**
-           The HTTP procotol version to be used for this request.
+           Body parameters to be included in the body of the request to a service. These may be applied
+during GET/POST operations. No body parameters are included if this array is null or length zero.
         */
-        protocolVersion: IServiceProtocolVersion;
+        bodyParameters: ServiceRequestParameter[];
         /**
-           Request/Response data content (plain text).
+           Request data content (plain text). This should be populated by the application. The content should be
+in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
+type should be set respectively by the application.
         */
         content: string;
         /**
-           The byte[] representing the Content field.
-        */
-        contentBinary: number[];
-        /**
-           The length in bytes for the binary Content.
-        */
-        contentBinaryLength: number;
-        /**
-           Encoding of the binary payload - by default assumed to be UTF8.
+           Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service.
         */
         contentEncoding: string;
         /**
-           The length in bytes for the Content field.
+           The length in bytes of the content. This may be populated by the application, the platform
+calculates this length automatically if a specific contentLength is not specified.
         */
         contentLength: number;
         /**
-           The request/response content type (MIME TYPE).
+           The request content type (MIME TYPE). This may be populated by the application, the platform
+populates this field with defaults for the service.
         */
         contentType: string;
         /**
-           The request method
+           Query string parameters to be appended to the service URL when making the request. These may be applied
+during GET/POST operations. No query parameters are appended if this array is null or length zero.
         */
-        method: string;
+        queryParameters: ServiceRequestParameter[];
         /**
-           The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+           The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
+application, the platform populates this field with defaults for the service and the previous headers.
+In specific, the platform maintains request and response state automatically.
         */
         serviceHeaders: ServiceHeader[];
         /**
-           Information about the session
+           Session attributes and cookies. This may be populated by the application, the platform populates
+this field with defaults for the service and the previous state information. In specific, the platform
+maintains request and response state automatically.
         */
         serviceSession: ServiceSession;
         /**
+           Token used for the creation of the request with the destination service, endpoint, function and method
+identifiers. This should not be manipulated by the application directly.
+        */
+        serviceToken: ServiceToken;
+        /**
+           This attribute allows for the default user-agent string to be overridden by the application.
+        */
+        userAgent: string;
+        /**
            @method constructor
-           Contructor used by the implementation
+           Convenience constructor.
 
-           @param {string} content             Request/Response data content (plain text)
-           @param {string} contentType         The request/response content type (MIME TYPE).
-           @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-           @param {number} contentLength       The length in bytes for the Content field.
-           @param {number[]} contentBinary       The byte[] representing the Content field.
-           @param {number} contentBinaryLength The length in bytes for the binary Content.
-           @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @param {string} method              The request method
-           @param {Adaptive.IServiceProtocolVersion} protocolVersion     The HTTP procotol version to be used for this request.
-           @param {Adaptive.ServiceSession} serviceSession      The element service session
-           @since ARP 2.0
+           @param {string} content      Content payload.
+           @param {Adaptive.ServiceToken} serviceToken ServiceToken for the request.
+           @since v2.0.6
         */
-        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: number[], contentBinaryLength: number, serviceHeaders: ServiceHeader[], method: string, protocolVersion: IServiceProtocolVersion, serviceSession: ServiceSession);
+        constructor(content: string, serviceToken: ServiceToken);
         /**
            @method
-           Returns the protocol version
+           Gets the body parameters of the request.
 
-           @return {Adaptive.IServiceProtocolVersion} protocolVersion enum
-           @since ARP 2.0
+           @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
+           @since v2.0.6
         */
-        getProtocolVersion(): IServiceProtocolVersion;
+        getBodyParameters(): ServiceRequestParameter[];
         /**
            @method
-           Set the protocol version
+           Sets the body parameters of the request.
 
-           @param {Adaptive.IServiceProtocolVersion} protocolVersion The HTTP procotol version to be used for this request.
-           @since ARP 2.0
+           @param {Adaptive.ServiceRequestParameter[]} bodyParameters ServiceRequestParameter array or null if none are specified.
+           @since v2.0.6
         */
-        setProtocolVersion(protocolVersion: IServiceProtocolVersion): void;
+        setBodyParameters(bodyParameters: ServiceRequestParameter[]): void;
         /**
            @method
            Returns the content
 
            @return {string} content
-           @since ARP 2.0
+           @since v2.0
         */
         getContent(): string;
         /**
@@ -132,47 +137,15 @@ declare module Adaptive {
            Set the content
 
            @param {string} content Request/Response data content (plain text)
-           @since ARP 2.0
+           @since v2.0
         */
         setContent(content: string): void;
-        /**
-           @method
-           Returns the byte[] of the content
-
-           @return {number[]} contentBinary
-           @since ARP 2.0
-        */
-        getContentBinary(): number[];
-        /**
-           @method
-           Set the byte[] of the content
-
-           @param {number[]} contentBinary The byte[] representing the Content field.
-           @since ARP 2.0
-        */
-        setContentBinary(contentBinary: number[]): void;
-        /**
-           @method
-           Retrusn the binary content length
-
-           @return {number} contentBinaryLength
-           @since ARP 2.0
-        */
-        getContentBinaryLength(): number;
-        /**
-           @method
-           Set the binary content length
-
-           @param {number} contentBinaryLength The length in bytes for the binary Content.
-           @since ARP 2.0
-        */
-        setContentBinaryLength(contentBinaryLength: number): void;
         /**
            @method
            Returns the content encoding
 
            @return {string} contentEncoding
-           @since ARP 2.0
+           @since v2.0
         */
         getContentEncoding(): string;
         /**
@@ -180,7 +153,7 @@ declare module Adaptive {
            Set the content encoding
 
            @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since ARP 2.0
+           @since v2.0
         */
         setContentEncoding(contentEncoding: string): void;
         /**
@@ -188,7 +161,7 @@ declare module Adaptive {
            Returns the content length
 
            @return {number} contentLength
-           @since ARP 2.0
+           @since v2.0
         */
         getContentLength(): number;
         /**
@@ -196,7 +169,7 @@ declare module Adaptive {
            Set the content length
 
            @param {number} contentLength The length in bytes for the Content field.
-           @since ARP 2.0
+           @since v2.0
         */
         setContentLength(contentLength: number): void;
         /**
@@ -204,7 +177,7 @@ declare module Adaptive {
            Returns the content type
 
            @return {string} contentType
-           @since ARP 2.0
+           @since v2.0
         */
         getContentType(): string;
         /**
@@ -212,31 +185,31 @@ declare module Adaptive {
            Set the content type
 
            @param {string} contentType The request/response content type (MIME TYPE).
-           @since ARP 2.0
+           @since v2.0
         */
         setContentType(contentType: string): void;
         /**
            @method
-           Returns the method
+           Gets the query parameters of the request.
 
-           @return {string} method
-           @since ARP 2.0
+           @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
+           @since v2.0.6
         */
-        getMethod(): string;
+        getQueryParameters(): ServiceRequestParameter[];
         /**
            @method
-           Set the method
+           Sets the query parameters of the request.
 
-           @param {string} method The request method
-           @since ARP 2.0
+           @param {Adaptive.ServiceRequestParameter[]} queryParameters ServiceRequestParameter array or null if none are specified.
+           @since v2.0.6
         */
-        setMethod(method: string): void;
+        setQueryParameters(queryParameters: ServiceRequestParameter[]): void;
         /**
            @method
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
-           @since ARP 2.0
+           @since v2.0
         */
         getServiceHeaders(): ServiceHeader[];
         /**
@@ -244,7 +217,7 @@ declare module Adaptive {
            Set the array of ServiceHeader
 
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-           @since ARP 2.0
+           @since v2.0
         */
         setServiceHeaders(serviceHeaders: ServiceHeader[]): void;
         /**
@@ -252,7 +225,7 @@ declare module Adaptive {
            Getter for service session
 
            @return {Adaptive.ServiceSession} The element service session
-           @since ARP 2.0
+           @since v2.0
         */
         getServiceSession(): ServiceSession;
         /**
@@ -260,9 +233,41 @@ declare module Adaptive {
            Setter for service session
 
            @param {Adaptive.ServiceSession} serviceSession The element service session
-           @since ARP 2.0
+           @since v2.0
         */
         setServiceSession(serviceSession: ServiceSession): void;
+        /**
+           @method
+           Gets the ServiceToken of the request.
+
+           @return {Adaptive.ServiceToken} ServiceToken.
+           @since v2.0.6
+        */
+        getServiceToken(): ServiceToken;
+        /**
+           @method
+           Sets the ServiceToken of the request.
+
+           @param {Adaptive.ServiceToken} serviceToken ServiceToken to be used for the invocation.
+           @since v2.0.6
+        */
+        setServiceToken(serviceToken: ServiceToken): void;
+        /**
+           @method
+           Gets the overridden user-agent string.
+
+           @return {string} User-agent string.
+           @since v2.0.6
+        */
+        getUserAgent(): string;
+        /**
+           @method
+           Sets the user-agent to override the default user-agent string.
+
+           @param {string} userAgent User-agent string.
+           @since v2.0.6
+        */
+        setUserAgent(userAgent: string): void;
         /**
            @method
            @static

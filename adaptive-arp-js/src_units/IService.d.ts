@@ -1,8 +1,9 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
 /// <reference path="IBaseCommunication.d.ts" />
+/// <reference path="IServiceMethod.d.ts" />
 /// <reference path="IServiceResultCallback.d.ts" />
-/// <reference path="Service.d.ts" />
 /// <reference path="ServiceRequest.d.ts" />
+/// <reference path="ServiceToken.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -32,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +42,7 @@ declare module Adaptive {
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -50,54 +51,53 @@ declare module Adaptive {
     interface IService extends IBaseCommunication {
         /**
            @method
-           Get a reference to a registered service by name.
-           @param serviceName Name of service.
-           @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP 2.0
+           Create a service request for the given ServiceToken. This method creates the request, populating
+existing headers and cookies for the same service. The request is populated with all the defaults
+for the service being invoked and requires only the request body to be set. Headers and cookies may be
+manipulated as needed by the application before submitting the ServiceRequest via invokeService.
+           @param serviceToken ServiceToken to be used for the creation of the request.
+           @return {Adaptive.ServiceRequest} ServiceRequest with pre-populated headers, cookies and defaults for the service.
+           @since v2.0.6
         */
-        getService(serviceName: string): Service;
+        getServiceRequest(serviceToken: ServiceToken): ServiceRequest;
         /**
            @method
-           Request async a service for an Url
-           @param serviceRequest Service Request to invoke
-           @param service        Service to call
-           @param callback       Callback to execute with the result
-           @since ARP 2.0
+           Obtains a ServiceToken for the given parameters to be used for the creation of requests.
+           @param serviceName  Service name.
+           @param endpointName Endpoint name.
+           @param functionName Function name.
+           @param method       Method type.
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter combination is not
+configured in the platform's XML service definition file.
+           @since v2.0.6
         */
-        invokeService(serviceRequest: ServiceRequest, service: Service, callback: IServiceResultCallback): any;
+        getServiceToken(serviceName: string, endpointName: string, functionName: string, method: IServiceMethod): ServiceToken;
         /**
            @method
-           Register a new service
-           @param service to register
-           @since ARP 2.0
+           Returns all the possible service tokens configured in the platform's XML service definition file.
+           @return {Adaptive.ServiceToken[]} Array of service tokens configured.
+           @since v2.0.6
         */
-        registerService(service: Service): any;
+        getServicesRegistered(): ServiceToken[];
         /**
            @method
-           Unregister all services.
-           @since ARP 2.0
+           Executes the given ServiceRequest and provides responses to the given callback handler.
+           @param serviceRequest ServiceRequest with the request body.
+           @param callback       IServiceResultCallback to handle the ServiceResponse.
+           @since v2.0.6
         */
-        unregisterServices(): any;
+        invokeService(serviceRequest: ServiceRequest, callback: IServiceResultCallback): any;
         /**
            @method
-           Unregister a service
-           @param service to unregister
-           @since ARP 2.0
+           Checks whether a specific service, endpoint, function and method type is configured in the platform's
+XML service definition file.
+           @param serviceName  Service name.
+           @param endpointName Endpoint name.
+           @param functionName Function name.
+           @param method       Method type.
+           @return {boolean} Returns true if the service is configured, false otherwise.
+           @since v2.0.6
         */
-        unregisterService(service: Service): any;
-        /**
-           Check whether a service by the given name is registered.
-           @param serviceName Name of service.
-           @return True if the service is registered, false otherwise.
-           @since ARP 2.0
-        */
-        isRegistered_serviceName(serviceName: string): boolean;
-        /**
-           Check whether a service by the given name is registered.
-           @param serviceName Name of service.
-           @return True if the service is registered, false otherwise.
-           @since ARP 2.0
-        */
-        isRegistered_service(service: Service): boolean;
+        isServiceRegistered(serviceName: string, endpointName: string, functionName: string, method: IServiceMethod): boolean;
     }
 }

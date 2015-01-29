@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.6
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -60,7 +60,7 @@ var Adaptive;
            @since v2.0.6
         */
         function ServiceHeader(keyName, keyData) {
-            _super.call(this, keyNamekeyData);
+            _super.call(this, keyName, keyData);
         }
         /**
            @method

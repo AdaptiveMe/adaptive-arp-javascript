@@ -1,5 +1,6 @@
 /// <reference path="APIBean.d.ts" />
-/// <reference path="ServiceCookie.d.ts" />
+/// <reference path="ServiceSessionAttribute.d.ts" />
+/// <reference path="ServiceSessionCookie.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -29,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,59 +41,59 @@ declare module Adaptive {
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ServiceSession extends APIBean {
         /**
-           The attributes of the response
+           The attributes of the request or response.
         */
-        attributes: string[];
+        attributes: ServiceSessionAttribute[];
         /**
-           The cookies of the response
+           The cookies of the request or response.
         */
-        cookies: ServiceCookie[];
+        cookies: ServiceSessionCookie[];
         /**
            @method constructor
-           Constructor with fields
+           Constructor with fields.
 
-           @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
-           @param {string[]} attributes Attributes of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionCookie[]} cookies    The cookies of the request or response.
+           @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+           @since v2.0
         */
-        constructor(cookies: ServiceCookie[], attributes: string[]);
+        constructor(cookies: ServiceSessionCookie[], attributes: ServiceSessionAttribute[]);
         /**
            @method
-           Gets the attributes of the response
+           Gets the attributes of the request or response.
 
-           @return {string[]} Attributes of the response
-           @since ARP 2.0
+           @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
+           @since v2.0
         */
-        getAttributes(): string[];
+        getAttributes(): ServiceSessionAttribute[];
         /**
            @method
-           Sets the attributes for the response
+           Sets the attributes for the request or response.
 
-           @param {string[]} attributes Attributes of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+           @since v2.0
         */
-        setAttributes(attributes: string[]): void;
+        setAttributes(attributes: ServiceSessionAttribute[]): void;
         /**
            @method
-           Returns the cookies of the response
+           Returns the cookies of the request or response.
 
-           @return {Adaptive.ServiceCookie[]} The cookies of the response
-           @since ARP 2.0
+           @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
+           @since v2.0
         */
-        getCookies(): ServiceCookie[];
+        getCookies(): ServiceSessionCookie[];
         /**
            @method
-           Sets the cookies of the response
+           Sets the cookies of the request or response.
 
-           @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
+           @since v2.0
         */
-        setCookies(cookies: ServiceCookie[]): void;
+        setCookies(cookies: ServiceSessionCookie[]): void;
         /**
            @method
            @static

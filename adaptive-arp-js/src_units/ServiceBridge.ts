@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.6
+    * @version v2.0.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -85,7 +85,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ServiceRequest = null;
@@ -133,7 +133,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ServiceToken = null;
@@ -172,7 +172,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<ServiceToken> = null;
@@ -216,7 +216,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -270,7 +270,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
