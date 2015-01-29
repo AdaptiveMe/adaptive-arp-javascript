@@ -169,8 +169,8 @@ var Adaptive;
             this.asyncId = asyncId;
         }
         Object.defineProperty(APIRequest.prototype, &quot;asyncIdProperty&quot;, {
-<span id='Adaptive-APIRequest-property-asyncIdProperty'>            /**
-</span>               @property {number} asyncIdProperty
+<span id='Adaptive-APIRequest-property-asyncId'>            /**
+</span>               @property {number} asyncId
                Identifier of callback or listener for async operations. The &#39;asyncIdProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;asyncId&#39;.
             */
             get: function () {
@@ -183,8 +183,8 @@ var Adaptive;
             configurable: true
         });
         Object.defineProperty(APIRequest.prototype, &quot;bridgeTypeProperty&quot;, {
-<span id='Adaptive-APIRequest-property-bridgeTypeProperty'>            /**
-</span>               @property {string} bridgeTypeProperty
+<span id='Adaptive-APIRequest-property-bridgeType'>            /**
+</span>               @property {string} bridgeType
                String representing the bridge type to obtain. The &#39;bridgeTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;bridgeType&#39;.
             */
             get: function () {
@@ -197,8 +197,8 @@ var Adaptive;
             configurable: true
         });
         Object.defineProperty(APIRequest.prototype, &quot;methodNameProperty&quot;, {
-<span id='Adaptive-APIRequest-property-methodNameProperty'>            /**
-</span>               @property {string} methodNameProperty
+<span id='Adaptive-APIRequest-property-methodName'>            /**
+</span>               @property {string} methodName
                String representing the method name to call. The &#39;methodNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;methodName&#39;.
             */
             get: function () {
@@ -211,8 +211,8 @@ var Adaptive;
             configurable: true
         });
         Object.defineProperty(APIRequest.prototype, &quot;parametersProperty&quot;, {
-<span id='Adaptive-APIRequest-property-parametersProperty'>            /**
-</span>               @property {string[]} parametersProperty
+<span id='Adaptive-APIRequest-property-parameters'>            /**
+</span>               @property {string[]} parameters
                Parameters of the request as JSON formatted strings. The &#39;parametersProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;parameters&#39;.
             */
             get: function () {
@@ -355,8 +355,8 @@ listener.
             this.statusMessage = statusMessage;
         }
         Object.defineProperty(APIResponse.prototype, &quot;responseProperty&quot;, {
-<span id='Adaptive-APIResponse-property-responseProperty'>            /**
-</span>               @property {string} responseProperty
+<span id='Adaptive-APIResponse-property-response'>            /**
+</span>               @property {string} response
                String representing the JavaScript value or JSON object representation of the response. The &#39;responseProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;response&#39;.
             */
             get: function () {
@@ -369,8 +369,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(APIResponse.prototype, &quot;statusCodeProperty&quot;, {
-<span id='Adaptive-APIResponse-property-statusCodeProperty'>            /**
-</span>               @property {number} statusCodeProperty
+<span id='Adaptive-APIResponse-property-statusCode'>            /**
+</span>               @property {number} statusCode
                Status code of the response The &#39;statusCodeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;statusCode&#39;.
             */
             get: function () {
@@ -383,8 +383,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(APIResponse.prototype, &quot;statusMessageProperty&quot;, {
-<span id='Adaptive-APIResponse-property-statusMessageProperty'>            /**
-</span>               @property {string} statusMessageProperty
+<span id='Adaptive-APIResponse-property-statusMessage'>            /**
+</span>               @property {string} statusMessage
                Status message of the response The &#39;statusMessageProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;statusMessage&#39;.
             */
             get: function () {
@@ -494,8 +494,8 @@ listener.
             this.name = name;
         }
         Object.defineProperty(Service.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-Service-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-Service-property-name'>            /**
+</span>               @property {string} name
                The service name The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -508,8 +508,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(Service.prototype, &quot;serviceEndpointsProperty&quot;, {
-<span id='Adaptive-Service-property-serviceEndpointsProperty'>            /**
-</span>               @property {Adaptive.ServiceEndpoint[]} serviceEndpointsProperty
+<span id='Adaptive-Service-property-serviceEndpoints'>            /**
+</span>               @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
                Endpoint of the service The &#39;serviceEndpointsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceEndpoints&#39;.
             */
             get: function () {
@@ -612,8 +612,8 @@ listener.
             this.paths = paths;
         }
         Object.defineProperty(ServiceEndpoint.prototype, &quot;validationTypeProperty&quot;, {
-<span id='Adaptive-ServiceEndpoint-property-validationTypeProperty'>            /**
-</span>               @property {Adaptive.IServiceCertificateValidation} validationTypeProperty
+<span id='Adaptive-ServiceEndpoint-property-validationType'>            /**
+</span>               @property {Adaptive.IServiceCertificateValidation} validationType
                Type of validation to be performed for SSL hosts. The &#39;validationTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;validationType&#39;.
             */
             get: function () {
@@ -626,8 +626,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ServiceEndpoint.prototype, &quot;hostURIProperty&quot;, {
-<span id='Adaptive-ServiceEndpoint-property-hostURIProperty'>            /**
-</span>               @property {string} hostURIProperty
+<span id='Adaptive-ServiceEndpoint-property-hostURI'>            /**
+</span>               @property {string} hostURI
                The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The &#39;hostURIProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;hostURI&#39;.
             */
             get: function () {
@@ -640,8 +640,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ServiceEndpoint.prototype, &quot;pathsProperty&quot;, {
-<span id='Adaptive-ServiceEndpoint-property-pathsProperty'>            /**
-</span>               @property {Adaptive.ServicePath[]} pathsProperty
+<span id='Adaptive-ServiceEndpoint-property-paths'>            /**
+</span>               @property {Adaptive.ServicePath[]} paths
                The remote service paths (to be added to the hostURI and port url). The &#39;pathsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;paths&#39;.
             */
             get: function () {
@@ -772,8 +772,8 @@ listener.
             this.type = type;
         }
         Object.defineProperty(ServicePath.prototype, &quot;typeProperty&quot;, {
-<span id='Adaptive-ServicePath-property-typeProperty'>            /**
-</span>               @property {Adaptive.IServiceType} typeProperty
+<span id='Adaptive-ServicePath-property-type'>            /**
+</span>               @property {Adaptive.IServiceType} type
                Service endpoint type. The &#39;typeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;type&#39;.
             */
             get: function () {
@@ -786,8 +786,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ServicePath.prototype, &quot;methodsProperty&quot;, {
-<span id='Adaptive-ServicePath-property-methodsProperty'>            /**
-</span>               @property {Adaptive.IServiceMethod[]} methodsProperty
+<span id='Adaptive-ServicePath-property-methods'>            /**
+</span>               @property {Adaptive.IServiceMethod[]} methods
                The methods for calling a path. The &#39;methodsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;methods&#39;.
             */
             get: function () {
@@ -800,8 +800,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ServicePath.prototype, &quot;pathProperty&quot;, {
-<span id='Adaptive-ServicePath-property-pathProperty'>            /**
-</span>               @property {string} pathProperty
+<span id='Adaptive-ServicePath-property-path'>            /**
+</span>               @property {string} path
                The path for the endpoint. The &#39;pathProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;path&#39;.
             */
             get: function () {
@@ -937,8 +937,8 @@ listener.
             this.timestamp = timestamp;
         }
         Object.defineProperty(Acceleration.prototype, &quot;timestampProperty&quot;, {
-<span id='Adaptive-Acceleration-property-timestampProperty'>            /**
-</span>               @property {number} timestampProperty
+<span id='Adaptive-Acceleration-property-timestamp'>            /**
+</span>               @property {number} timestamp
                Timestamp of the acceleration reading. The &#39;timestampProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;timestamp&#39;.
             */
             get: function () {
@@ -951,8 +951,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(Acceleration.prototype, &quot;xProperty&quot;, {
-<span id='Adaptive-Acceleration-property-xProperty'>            /**
-</span>               @property {number} xProperty
+<span id='Adaptive-Acceleration-property-x'>            /**
+</span>               @property {number} x
                X-axis component of the acceleration. The &#39;xProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;x&#39;.
             */
             get: function () {
@@ -965,8 +965,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(Acceleration.prototype, &quot;yProperty&quot;, {
-<span id='Adaptive-Acceleration-property-yProperty'>            /**
-</span>               @property {number} yProperty
+<span id='Adaptive-Acceleration-property-y'>            /**
+</span>               @property {number} y
                Y-axis component of the acceleration. The &#39;yProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;y&#39;.
             */
             get: function () {
@@ -979,8 +979,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(Acceleration.prototype, &quot;zProperty&quot;, {
-<span id='Adaptive-Acceleration-property-zProperty'>            /**
-</span>               @property {number} zProperty
+<span id='Adaptive-Acceleration-property-z'>            /**
+</span>               @property {number} z
                Z-axis component of the acceleration. The &#39;zProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;z&#39;.
             */
             get: function () {
@@ -1118,8 +1118,8 @@ listener.
             this.type = type;
         }
         Object.defineProperty(Button.prototype, &quot;typeProperty&quot;, {
-<span id='Adaptive-Button-property-typeProperty'>            /**
-</span>               @property {Adaptive.ICapabilitiesButton} typeProperty
+<span id='Adaptive-Button-property-type'>            /**
+</span>               @property {Adaptive.ICapabilitiesButton} type
                Button type The &#39;typeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;type&#39;.
             */
             get: function () {
@@ -1197,8 +1197,8 @@ listener.
             this.type = type;
         }
         Object.defineProperty(ContactAddress.prototype, &quot;typeProperty&quot;, {
-<span id='Adaptive-ContactAddress-property-typeProperty'>            /**
-</span>               @property {Adaptive.ContactAddressType} typeProperty
+<span id='Adaptive-ContactAddress-property-type'>            /**
+</span>               @property {Adaptive.ContactAddressType} type
                The address type The &#39;typeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;type&#39;.
             */
             get: function () {
@@ -1211,8 +1211,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactAddress.prototype, &quot;addressProperty&quot;, {
-<span id='Adaptive-ContactAddress-property-addressProperty'>            /**
-</span>               @property {string} addressProperty
+<span id='Adaptive-ContactAddress-property-address'>            /**
+</span>               @property {string} address
                The Contact address The &#39;addressProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;address&#39;.
             */
             get: function () {
@@ -1314,8 +1314,8 @@ listener.
             this.email = email;
         }
         Object.defineProperty(ContactEmail.prototype, &quot;typeProperty&quot;, {
-<span id='Adaptive-ContactEmail-property-typeProperty'>            /**
-</span>               @property {Adaptive.ContactEmailType} typeProperty
+<span id='Adaptive-ContactEmail-property-type'>            /**
+</span>               @property {Adaptive.ContactEmailType} type
                The type of the email The &#39;typeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;type&#39;.
             */
             get: function () {
@@ -1328,8 +1328,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactEmail.prototype, &quot;emailProperty&quot;, {
-<span id='Adaptive-ContactEmail-property-emailProperty'>            /**
-</span>               @property {string} emailProperty
+<span id='Adaptive-ContactEmail-property-email'>            /**
+</span>               @property {string} email
                Email of the Contact The &#39;emailProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;email&#39;.
             */
             get: function () {
@@ -1342,8 +1342,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactEmail.prototype, &quot;primaryProperty&quot;, {
-<span id='Adaptive-ContactEmail-property-primaryProperty'>            /**
-</span>               @property {boolean} primaryProperty
+<span id='Adaptive-ContactEmail-property-primary'>            /**
+</span>               @property {boolean} primary
                Whether the email is the primary one or not The &#39;primaryProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;primary&#39;.
             */
             get: function () {
@@ -1469,8 +1469,8 @@ listener.
             this.title = title;
         }
         Object.defineProperty(ContactPersonalInfo.prototype, &quot;titleProperty&quot;, {
-<span id='Adaptive-ContactPersonalInfo-property-titleProperty'>            /**
-</span>               @property {Adaptive.ContactPersonalInfoTitle} titleProperty
+<span id='Adaptive-ContactPersonalInfo-property-title'>            /**
+</span>               @property {Adaptive.ContactPersonalInfoTitle} title
                The title of the Contact The &#39;titleProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;title&#39;.
             */
             get: function () {
@@ -1483,8 +1483,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactPersonalInfo.prototype, &quot;lastNameProperty&quot;, {
-<span id='Adaptive-ContactPersonalInfo-property-lastNameProperty'>            /**
-</span>               @property {string} lastNameProperty
+<span id='Adaptive-ContactPersonalInfo-property-lastName'>            /**
+</span>               @property {string} lastName
                The last name of the Contact The &#39;lastNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;lastName&#39;.
             */
             get: function () {
@@ -1497,8 +1497,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactPersonalInfo.prototype, &quot;middleNameProperty&quot;, {
-<span id='Adaptive-ContactPersonalInfo-property-middleNameProperty'>            /**
-</span>               @property {string} middleNameProperty
+<span id='Adaptive-ContactPersonalInfo-property-middleName'>            /**
+</span>               @property {string} middleName
                The middle name of the Contact if it proceeds The &#39;middleNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;middleName&#39;.
             */
             get: function () {
@@ -1511,8 +1511,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactPersonalInfo.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-ContactPersonalInfo-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-ContactPersonalInfo-property-name'>            /**
+</span>               @property {string} name
                The name of the Contact The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -1656,8 +1656,8 @@ listener.
             this.phoneType = phoneType;
         }
         Object.defineProperty(ContactPhone.prototype, &quot;phoneTypeProperty&quot;, {
-<span id='Adaptive-ContactPhone-property-phoneTypeProperty'>            /**
-</span>               @property {Adaptive.ContactPhoneType} phoneTypeProperty
+<span id='Adaptive-ContactPhone-property-phoneType'>            /**
+</span>               @property {Adaptive.ContactPhoneType} phoneType
                The phone number phoneType The &#39;phoneTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;phoneType&#39;.
             */
             get: function () {
@@ -1670,8 +1670,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactPhone.prototype, &quot;phoneProperty&quot;, {
-<span id='Adaptive-ContactPhone-property-phoneProperty'>            /**
-</span>               @property {string} phoneProperty
+<span id='Adaptive-ContactPhone-property-phone'>            /**
+</span>               @property {string} phone
                The phone number The &#39;phoneProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;phone&#39;.
             */
             get: function () {
@@ -1773,8 +1773,8 @@ listener.
             this.company = company;
         }
         Object.defineProperty(ContactProfessionalInfo.prototype, &quot;companyProperty&quot;, {
-<span id='Adaptive-ContactProfessionalInfo-property-companyProperty'>            /**
-</span>               @property {string} companyProperty
+<span id='Adaptive-ContactProfessionalInfo-property-company'>            /**
+</span>               @property {string} company
                The company of the job The &#39;companyProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;company&#39;.
             */
             get: function () {
@@ -1787,8 +1787,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactProfessionalInfo.prototype, &quot;jobDescriptionProperty&quot;, {
-<span id='Adaptive-ContactProfessionalInfo-property-jobDescriptionProperty'>            /**
-</span>               @property {string} jobDescriptionProperty
+<span id='Adaptive-ContactProfessionalInfo-property-jobDescription'>            /**
+</span>               @property {string} jobDescription
                The job description The &#39;jobDescriptionProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;jobDescription&#39;.
             */
             get: function () {
@@ -1801,8 +1801,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactProfessionalInfo.prototype, &quot;jobTitleProperty&quot;, {
-<span id='Adaptive-ContactProfessionalInfo-property-jobTitleProperty'>            /**
-</span>               @property {string} jobTitleProperty
+<span id='Adaptive-ContactProfessionalInfo-property-jobTitle'>            /**
+</span>               @property {string} jobTitle
                The job title The &#39;jobTitleProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;jobTitle&#39;.
             */
             get: function () {
@@ -1920,8 +1920,8 @@ listener.
             this.profileUrl = profileUrl;
         }
         Object.defineProperty(ContactSocial.prototype, &quot;socialNetworkProperty&quot;, {
-<span id='Adaptive-ContactSocial-property-socialNetworkProperty'>            /**
-</span>               @property {Adaptive.ContactSocialNetwork} socialNetworkProperty
+<span id='Adaptive-ContactSocial-property-socialNetwork'>            /**
+</span>               @property {Adaptive.ContactSocialNetwork} socialNetwork
                The social network The &#39;socialNetworkProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;socialNetwork&#39;.
             */
             get: function () {
@@ -1934,8 +1934,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactSocial.prototype, &quot;profileUrlProperty&quot;, {
-<span id='Adaptive-ContactSocial-property-profileUrlProperty'>            /**
-</span>               @property {string} profileUrlProperty
+<span id='Adaptive-ContactSocial-property-profileUrl'>            /**
+</span>               @property {string} profileUrl
                The profileUrl The &#39;profileUrlProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;profileUrl&#39;.
             */
             get: function () {
@@ -2035,8 +2035,8 @@ listener.
             this.tagValue = tagValue;
         }
         Object.defineProperty(ContactTag.prototype, &quot;tagNameProperty&quot;, {
-<span id='Adaptive-ContactTag-property-tagNameProperty'>            /**
-</span>               @property {string} tagNameProperty
+<span id='Adaptive-ContactTag-property-tagName'>            /**
+</span>               @property {string} tagName
                The tagName of the Tag The &#39;tagNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;tagName&#39;.
             */
             get: function () {
@@ -2049,8 +2049,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(ContactTag.prototype, &quot;tagValueProperty&quot;, {
-<span id='Adaptive-ContactTag-property-tagValueProperty'>            /**
-</span>               @property {string} tagValueProperty
+<span id='Adaptive-ContactTag-property-tagValue'>            /**
+</span>               @property {string} tagValue
                The tagValue of the Tag The &#39;tagValueProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;tagValue&#39;.
             */
             get: function () {
@@ -2144,8 +2144,8 @@ listener.
             this.contactId = contactId;
         }
         Object.defineProperty(ContactUid.prototype, &quot;contactIdProperty&quot;, {
-<span id='Adaptive-ContactUid-property-contactIdProperty'>            /**
-</span>               @property {string} contactIdProperty
+<span id='Adaptive-ContactUid-property-contactId'>            /**
+</span>               @property {string} contactId
                The id of the Contact The &#39;contactIdProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactId&#39;.
             */
             get: function () {
@@ -2217,8 +2217,8 @@ listener.
             this.url = url;
         }
         Object.defineProperty(ContactWebsite.prototype, &quot;urlProperty&quot;, {
-<span id='Adaptive-ContactWebsite-property-urlProperty'>            /**
-</span>               @property {string} urlProperty
+<span id='Adaptive-ContactWebsite-property-url'>            /**
+</span>               @property {string} url
                The url of the website The &#39;urlProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;url&#39;.
             */
             get: function () {
@@ -2292,8 +2292,8 @@ listener.
             this.compress = compress;
         }
         Object.defineProperty(Database.prototype, &quot;compressProperty&quot;, {
-<span id='Adaptive-Database-property-compressProperty'>            /**
-</span>               @property {boolean} compressProperty
+<span id='Adaptive-Database-property-compress'>            /**
+</span>               @property {boolean} compress
                Indicates if database was created or needs to be created as Compressed. The &#39;compressProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;compress&#39;.
             */
             get: function () {
@@ -2306,8 +2306,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(Database.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-Database-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-Database-property-name'>            /**
+</span>               @property {string} name
                Database Name (name of the .db local file). The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -2401,8 +2401,8 @@ listener.
             this.name = name;
         }
         Object.defineProperty(DatabaseColumn.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-DatabaseColumn-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-DatabaseColumn-property-name'>            /**
+</span>               @property {string} name
                Name of the column The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -2474,8 +2474,8 @@ listener.
             this.values = values;
         }
         Object.defineProperty(DatabaseRow.prototype, &quot;valuesProperty&quot;, {
-<span id='Adaptive-DatabaseRow-property-valuesProperty'>            /**
-</span>               @property {string[]} valuesProperty
+<span id='Adaptive-DatabaseRow-property-values'>            /**
+</span>               @property {string[]} values
                The values of the row. The &#39;valuesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;values&#39;.
             */
             get: function () {
@@ -2561,8 +2561,8 @@ listener.
             this.databaseRows = databaseRows;
         }
         Object.defineProperty(DatabaseTable.prototype, &quot;columnCountProperty&quot;, {
-<span id='Adaptive-DatabaseTable-property-columnCountProperty'>            /**
-</span>               @property {number} columnCountProperty
+<span id='Adaptive-DatabaseTable-property-columnCount'>            /**
+</span>               @property {number} columnCount
                Number of databaseColumns. The &#39;columnCountProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;columnCount&#39;.
             */
             get: function () {
@@ -2575,8 +2575,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DatabaseTable.prototype, &quot;databaseColumnsProperty&quot;, {
-<span id='Adaptive-DatabaseTable-property-databaseColumnsProperty'>            /**
-</span>               @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+<span id='Adaptive-DatabaseTable-property-databaseColumns'>            /**
+</span>               @property {Adaptive.DatabaseColumn[]} databaseColumns
                Definition of databaseColumns. The &#39;databaseColumnsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;databaseColumns&#39;.
             */
             get: function () {
@@ -2589,8 +2589,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DatabaseTable.prototype, &quot;databaseRowsProperty&quot;, {
-<span id='Adaptive-DatabaseTable-property-databaseRowsProperty'>            /**
-</span>               @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+<span id='Adaptive-DatabaseTable-property-databaseRows'>            /**
+</span>               @property {Adaptive.DatabaseRow[]} databaseRows
                Rows of the table containing the data. The &#39;databaseRowsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;databaseRows&#39;.
             */
             get: function () {
@@ -2603,8 +2603,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DatabaseTable.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-DatabaseTable-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-DatabaseTable-property-name'>            /**
+</span>               @property {string} name
                Name of the table. The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -2617,8 +2617,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DatabaseTable.prototype, &quot;rowCountProperty&quot;, {
-<span id='Adaptive-DatabaseTable-property-rowCountProperty'>            /**
-</span>               @property {number} rowCountProperty
+<span id='Adaptive-DatabaseTable-property-rowCount'>            /**
+</span>               @property {number} rowCount
                Number of databaseRows. The &#39;rowCountProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;rowCount&#39;.
             */
             get: function () {
@@ -2804,8 +2804,8 @@ listener.
             this.uuid = uuid;
         }
         Object.defineProperty(DeviceInfo.prototype, &quot;modelProperty&quot;, {
-<span id='Adaptive-DeviceInfo-property-modelProperty'>            /**
-</span>               @property {string} modelProperty
+<span id='Adaptive-DeviceInfo-property-model'>            /**
+</span>               @property {string} model
                Model of device - equivalent to device release or version. The &#39;modelProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;model&#39;.
             */
             get: function () {
@@ -2818,8 +2818,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DeviceInfo.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-DeviceInfo-property-nameProperty'>            /**
-</span>               @property {string} nameProperty
+<span id='Adaptive-DeviceInfo-property-name'>            /**
+</span>               @property {string} name
                Name of device - equivalent to brand. The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -2832,8 +2832,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DeviceInfo.prototype, &quot;uuidProperty&quot;, {
-<span id='Adaptive-DeviceInfo-property-uuidProperty'>            /**
-</span>               @property {string} uuidProperty
+<span id='Adaptive-DeviceInfo-property-uuid'>            /**
+</span>               @property {string} uuid
                Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
   be unique for a specific instance of an application on a specific device. The &#39;uuidProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;uuid&#39;.
             */
@@ -2847,8 +2847,8 @@ listener.
             configurable: true
         });
         Object.defineProperty(DeviceInfo.prototype, &quot;vendorProperty&quot;, {
-<span id='Adaptive-DeviceInfo-property-vendorProperty'>            /**
-</span>               @property {string} vendorProperty
+<span id='Adaptive-DeviceInfo-property-vendor'>            /**
+</span>               @property {string} vendor
                Vendor of the device hardware. The &#39;vendorProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;vendor&#39;.
             */
             get: function () {
@@ -2996,8 +2996,8 @@ be unique for a specific instance of an application on a specific device.
             this.subject = subject;
         }
         Object.defineProperty(Email.prototype, &quot;bccRecipientsProperty&quot;, {
-<span id='Adaptive-Email-property-bccRecipientsProperty'>            /**
-</span>               @property {Adaptive.EmailAddress[]} bccRecipientsProperty
+<span id='Adaptive-Email-property-bccRecipients'>            /**
+</span>               @property {Adaptive.EmailAddress[]} bccRecipients
                Array of Email Blind Carbon Copy recipients The &#39;bccRecipientsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;bccRecipients&#39;.
             */
             get: function () {
@@ -3010,8 +3010,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;ccRecipientsProperty&quot;, {
-<span id='Adaptive-Email-property-ccRecipientsProperty'>            /**
-</span>               @property {Adaptive.EmailAddress[]} ccRecipientsProperty
+<span id='Adaptive-Email-property-ccRecipients'>            /**
+</span>               @property {Adaptive.EmailAddress[]} ccRecipients
                Array of Email Carbon Copy recipients The &#39;ccRecipientsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;ccRecipients&#39;.
             */
             get: function () {
@@ -3024,8 +3024,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;emailAttachmentDataProperty&quot;, {
-<span id='Adaptive-Email-property-emailAttachmentDataProperty'>            /**
-</span>               @property {Adaptive.EmailAttachmentData[]} emailAttachmentDataProperty
+<span id='Adaptive-Email-property-emailAttachmentData'>            /**
+</span>               @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
                Array of attatchments The &#39;emailAttachmentDataProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;emailAttachmentData&#39;.
             */
             get: function () {
@@ -3038,8 +3038,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;messageBodyProperty&quot;, {
-<span id='Adaptive-Email-property-messageBodyProperty'>            /**
-</span>               @property {string} messageBodyProperty
+<span id='Adaptive-Email-property-messageBody'>            /**
+</span>               @property {string} messageBody
                Message body The &#39;messageBodyProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;messageBody&#39;.
             */
             get: function () {
@@ -3052,8 +3052,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;messageBodyMimeTypeProperty&quot;, {
-<span id='Adaptive-Email-property-messageBodyMimeTypeProperty'>            /**
-</span>               @property {string} messageBodyMimeTypeProperty
+<span id='Adaptive-Email-property-messageBodyMimeType'>            /**
+</span>               @property {string} messageBodyMimeType
                Message body mime type The &#39;messageBodyMimeTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;messageBodyMimeType&#39;.
             */
             get: function () {
@@ -3066,8 +3066,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;subjectProperty&quot;, {
-<span id='Adaptive-Email-property-subjectProperty'>            /**
-</span>               @property {string} subjectProperty
+<span id='Adaptive-Email-property-subject'>            /**
+</span>               @property {string} subject
                Subject of the email The &#39;subjectProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;subject&#39;.
             */
             get: function () {
@@ -3080,8 +3080,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(Email.prototype, &quot;toRecipientsProperty&quot;, {
-<span id='Adaptive-Email-property-toRecipientsProperty'>            /**
-</span>               @property {Adaptive.EmailAddress[]} toRecipientsProperty
+<span id='Adaptive-Email-property-toRecipients'>            /**
+</span>               @property {Adaptive.EmailAddress[]} toRecipients
                Array of Email recipients The &#39;toRecipientsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;toRecipients&#39;.
             */
             get: function () {
@@ -3325,8 +3325,8 @@ be unique for a specific instance of an application on a specific device.
             this.address = address;
         }
         Object.defineProperty(EmailAddress.prototype, &quot;addressProperty&quot;, {
-<span id='Adaptive-EmailAddress-property-addressProperty'>            /**
-</span>               @property {string} addressProperty
+<span id='Adaptive-EmailAddress-property-address'>            /**
+</span>               @property {string} address
                The Email address The &#39;addressProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;address&#39;.
             */
             get: function () {
@@ -3406,8 +3406,8 @@ be unique for a specific instance of an application on a specific device.
             this.referenceUrl = referenceUrl;
         }
         Object.defineProperty(EmailAttachmentData.prototype, &quot;dataProperty&quot;, {
-<span id='Adaptive-EmailAttachmentData-property-dataProperty'>            /**
-</span>               @property {number[]} dataProperty
+<span id='Adaptive-EmailAttachmentData-property-data'>            /**
+</span>               @property {number[]} data
                The raw data for the current file attachment (byte array) The &#39;dataProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;data&#39;.
             */
             get: function () {
@@ -3420,8 +3420,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(EmailAttachmentData.prototype, &quot;fileNameProperty&quot;, {
-<span id='Adaptive-EmailAttachmentData-property-fileNameProperty'>            /**
-</span>               @property {string} fileNameProperty
+<span id='Adaptive-EmailAttachmentData-property-fileName'>            /**
+</span>               @property {string} fileName
                The name of the current file attachment The &#39;fileNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;fileName&#39;.
             */
             get: function () {
@@ -3434,8 +3434,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(EmailAttachmentData.prototype, &quot;mimeTypeProperty&quot;, {
-<span id='Adaptive-EmailAttachmentData-property-mimeTypeProperty'>            /**
-</span>               @property {string} mimeTypeProperty
+<span id='Adaptive-EmailAttachmentData-property-mimeType'>            /**
+</span>               @property {string} mimeType
                The mime type of the current attachment The &#39;mimeTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;mimeType&#39;.
             */
             get: function () {
@@ -3448,8 +3448,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(EmailAttachmentData.prototype, &quot;referenceUrlProperty&quot;, {
-<span id='Adaptive-EmailAttachmentData-property-referenceUrlProperty'>            /**
-</span>               @property {string} referenceUrlProperty
+<span id='Adaptive-EmailAttachmentData-property-referenceUrl'>            /**
+</span>               @property {string} referenceUrl
                The relative path where the contents for the attachment file could be located. The &#39;referenceUrlProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;referenceUrl&#39;.
             */
             get: function () {
@@ -3462,8 +3462,8 @@ be unique for a specific instance of an application on a specific device.
             configurable: true
         });
         Object.defineProperty(EmailAttachmentData.prototype, &quot;sizeProperty&quot;, {
-<span id='Adaptive-EmailAttachmentData-property-sizeProperty'>            /**
-</span>               @property {number} sizeProperty
+<span id='Adaptive-EmailAttachmentData-property-size'>            /**
+</span>               @property {number} size
                The data size (in bytes) of the current file attachment The &#39;sizeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;size&#39;.
             */
             get: function () {
@@ -3859,8 +3859,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.timestamp = timestamp;
         }
         Object.defineProperty(Geolocation.prototype, &quot;altitudeProperty&quot;, {
-<span id='Adaptive-Geolocation-property-altitudeProperty'>            /**
-</span>               @property {number} altitudeProperty
+<span id='Adaptive-Geolocation-property-altitude'>            /**
+</span>               @property {number} altitude
                The current device altitude (or Z coordinate). Measured in meters. The &#39;altitudeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;altitude&#39;.
             */
             get: function () {
@@ -3873,8 +3873,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Geolocation.prototype, &quot;latitudeProperty&quot;, {
-<span id='Adaptive-Geolocation-property-latitudeProperty'>            /**
-</span>               @property {number} latitudeProperty
+<span id='Adaptive-Geolocation-property-latitude'>            /**
+</span>               @property {number} latitude
                The Y coordinate (or latitude). Measured in degrees. The &#39;latitudeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;latitude&#39;.
             */
             get: function () {
@@ -3887,8 +3887,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Geolocation.prototype, &quot;longitudeProperty&quot;, {
-<span id='Adaptive-Geolocation-property-longitudeProperty'>            /**
-</span>               @property {number} longitudeProperty
+<span id='Adaptive-Geolocation-property-longitude'>            /**
+</span>               @property {number} longitude
                The X coordinate (or longitude). Measured in degrees. The &#39;longitudeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;longitude&#39;.
             */
             get: function () {
@@ -3901,8 +3901,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Geolocation.prototype, &quot;timestampProperty&quot;, {
-<span id='Adaptive-Geolocation-property-timestampProperty'>            /**
-</span>               @property {number} timestampProperty
+<span id='Adaptive-Geolocation-property-timestamp'>            /**
+</span>               @property {number} timestamp
                Timestamp of the geolocation reading. The &#39;timestampProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;timestamp&#39;.
             */
             get: function () {
@@ -3915,8 +3915,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Geolocation.prototype, &quot;xDoPProperty&quot;, {
-<span id='Adaptive-Geolocation-property-xDoPProperty'>            /**
-</span>               @property {number} xDoPProperty
+<span id='Adaptive-Geolocation-property-xDoP'>            /**
+</span>               @property {number} xDoP
                Dilution of precision on the X measurement. Measured in meters. The &#39;xDoPProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;xDoP&#39;.
             */
             get: function () {
@@ -3929,8 +3929,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Geolocation.prototype, &quot;yDoPProperty&quot;, {
-<span id='Adaptive-Geolocation-property-yDoPProperty'>            /**
-</span>               @property {number} yDoPProperty
+<span id='Adaptive-Geolocation-property-yDoP'>            /**
+</span>               @property {number} yDoP
                Dilution of precision on the Y measurement. Measured in meters. The &#39;yDoPProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;yDoP&#39;.
             */
             get: function () {
@@ -4110,8 +4110,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.keyValue = keyValue;
         }
         Object.defineProperty(KeyPair.prototype, &quot;keyNameProperty&quot;, {
-<span id='Adaptive-KeyPair-property-keyNameProperty'>            /**
-</span>               @property {string} keyNameProperty
+<span id='Adaptive-KeyPair-property-keyName'>            /**
+</span>               @property {string} keyName
                Key of the element The &#39;keyNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;keyName&#39;.
             */
             get: function () {
@@ -4124,8 +4124,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(KeyPair.prototype, &quot;keyValueProperty&quot;, {
-<span id='Adaptive-KeyPair-property-keyValueProperty'>            /**
-</span>               @property {string} keyValueProperty
+<span id='Adaptive-KeyPair-property-keyValue'>            /**
+</span>               @property {string} keyValue
                Value of the element The &#39;keyValueProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;keyValue&#39;.
             */
             get: function () {
@@ -4221,8 +4221,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.keyData = keyData;
         }
         Object.defineProperty(KeyValue.prototype, &quot;keyDataProperty&quot;, {
-<span id='Adaptive-KeyValue-property-keyDataProperty'>            /**
-</span>               @property {string} keyDataProperty
+<span id='Adaptive-KeyValue-property-keyData'>            /**
+</span>               @property {string} keyData
                Value of the key. The &#39;keyDataProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;keyData&#39;.
             */
             get: function () {
@@ -4235,8 +4235,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(KeyValue.prototype, &quot;keyNameProperty&quot;, {
-<span id='Adaptive-KeyValue-property-keyNameProperty'>            /**
-</span>               @property {string} keyNameProperty
+<span id='Adaptive-KeyValue-property-keyName'>            /**
+</span>               @property {string} keyName
                Name of the key for the value. The &#39;keyNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;keyName&#39;.
             */
             get: function () {
@@ -4330,8 +4330,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.state = state;
         }
         Object.defineProperty(Lifecycle.prototype, &quot;stateProperty&quot;, {
-<span id='Adaptive-Lifecycle-property-stateProperty'>            /**
-</span>               @property {Adaptive.LifecycleState} stateProperty
+<span id='Adaptive-Lifecycle-property-state'>            /**
+</span>               @property {Adaptive.LifecycleState} state
                Represent the state of the app
   &lt;p&gt;
   Possible lifecycle States:
@@ -4420,8 +4420,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.country = country;
         }
         Object.defineProperty(Locale.prototype, &quot;countryProperty&quot;, {
-<span id='Adaptive-Locale-property-countryProperty'>            /**
-</span>               @property {string} countryProperty
+<span id='Adaptive-Locale-property-country'>            /**
+</span>               @property {string} country
                A valid ISO Country Code. The &#39;countryProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;country&#39;.
             */
             get: function () {
@@ -4434,8 +4434,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Locale.prototype, &quot;languageProperty&quot;, {
-<span id='Adaptive-Locale-property-languageProperty'>            /**
-</span>               @property {string} languageProperty
+<span id='Adaptive-Locale-property-language'>            /**
+</span>               @property {string} language
                A valid ISO Language Code. The &#39;languageProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;language&#39;.
             */
             get: function () {
@@ -4533,8 +4533,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.vendor = vendor;
         }
         Object.defineProperty(OSInfo.prototype, &quot;nameProperty&quot;, {
-<span id='Adaptive-OSInfo-property-nameProperty'>            /**
-</span>               @property {Adaptive.IOSType} nameProperty
+<span id='Adaptive-OSInfo-property-name'>            /**
+</span>               @property {Adaptive.IOSType} name
                The name of the operating system. The &#39;nameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;name&#39;.
             */
             get: function () {
@@ -4547,8 +4547,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(OSInfo.prototype, &quot;vendorProperty&quot;, {
-<span id='Adaptive-OSInfo-property-vendorProperty'>            /**
-</span>               @property {string} vendorProperty
+<span id='Adaptive-OSInfo-property-vendor'>            /**
+</span>               @property {string} vendor
                The vendor of the operating system. The &#39;vendorProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;vendor&#39;.
             */
             get: function () {
@@ -4561,8 +4561,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(OSInfo.prototype, &quot;versionProperty&quot;, {
-<span id='Adaptive-OSInfo-property-versionProperty'>            /**
-</span>               @property {string} versionProperty
+<span id='Adaptive-OSInfo-property-version'>            /**
+</span>               @property {string} version
                The version/identifier of the operating system. The &#39;versionProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;version&#39;.
             */
             get: function () {
@@ -4685,8 +4685,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.timestamp = timestamp;
         }
         Object.defineProperty(RotationEvent.prototype, &quot;destinationProperty&quot;, {
-<span id='Adaptive-RotationEvent-property-destinationProperty'>            /**
-</span>               @property {Adaptive.ICapabilitiesOrientation} destinationProperty
+<span id='Adaptive-RotationEvent-property-destination'>            /**
+</span>               @property {Adaptive.ICapabilitiesOrientation} destination
                The orientation we&#39;re rotating to. This is the future orientation when the state of the event is
   WillStartRotation. This will be the current orientation when the rotation is finished with the state
   DidFinishRotation. The &#39;destinationProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;destination&#39;.
@@ -4701,8 +4701,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(RotationEvent.prototype, &quot;originProperty&quot;, {
-<span id='Adaptive-RotationEvent-property-originProperty'>            /**
-</span>               @property {Adaptive.ICapabilitiesOrientation} originProperty
+<span id='Adaptive-RotationEvent-property-origin'>            /**
+</span>               @property {Adaptive.ICapabilitiesOrientation} origin
                The orientation we&#39;re rotating from. This is the current orientation when the state of the event is
   WillStartRotation. This will be the previous orientation when the rotation is finished with the state
   DidFinishRotation. The &#39;originProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;origin&#39;.
@@ -4717,8 +4717,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(RotationEvent.prototype, &quot;stateProperty&quot;, {
-<span id='Adaptive-RotationEvent-property-stateProperty'>            /**
-</span>               @property {Adaptive.RotationEventState} stateProperty
+<span id='Adaptive-RotationEvent-property-state'>            /**
+</span>               @property {Adaptive.RotationEventState} state
                The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
   for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
   concluded. The &#39;stateProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;state&#39;.
@@ -4733,8 +4733,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(RotationEvent.prototype, &quot;timestampProperty&quot;, {
-<span id='Adaptive-RotationEvent-property-timestampProperty'>            /**
-</span>               @property {number} timestampProperty
+<span id='Adaptive-RotationEvent-property-timestamp'>            /**
+</span>               @property {number} timestamp
                The timestamps in milliseconds when the event was fired. The &#39;timestampProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;timestamp&#39;.
             */
             get: function () {
@@ -4886,8 +4886,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.secureData = secureData;
         }
         Object.defineProperty(SecureKeyPair.prototype, &quot;secureDataProperty&quot;, {
-<span id='Adaptive-SecureKeyPair-property-secureDataProperty'>            /**
-</span>               @property {string} secureDataProperty
+<span id='Adaptive-SecureKeyPair-property-secureData'>            /**
+</span>               @property {string} secureData
                Value of the secured element The &#39;secureDataProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;secureData&#39;.
             */
             get: function () {
@@ -4900,8 +4900,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(SecureKeyPair.prototype, &quot;secureKeyProperty&quot;, {
-<span id='Adaptive-SecureKeyPair-property-secureKeyProperty'>            /**
-</span>               @property {string} secureKeyProperty
+<span id='Adaptive-SecureKeyPair-property-secureKey'>            /**
+</span>               @property {string} secureKey
                Key of the secured element The &#39;secureKeyProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;secureKey&#39;.
             */
             get: function () {
@@ -4997,8 +4997,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.serviceToken = serviceToken;
         }
         Object.defineProperty(ServiceRequest.prototype, &quot;bodyParametersProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-bodyParametersProperty'>            /**
-</span>               @property {Adaptive.ServiceRequestParameter[]} bodyParametersProperty
+<span id='Adaptive-ServiceRequest-property-bodyParameters'>            /**
+</span>               @property {Adaptive.ServiceRequestParameter[]} bodyParameters
                Body parameters to be included in the body of the request to a service. These may be applied
   during GET/POST operations. No body parameters are included if this array is null or length zero. The &#39;bodyParametersProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;bodyParameters&#39;.
             */
@@ -5012,8 +5012,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;contentProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-contentProperty'>            /**
-</span>               @property {string} contentProperty
+<span id='Adaptive-ServiceRequest-property-content'>            /**
+</span>               @property {string} content
                Request data content (plain text). This should be populated by the application. The content should be
   in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
   type should be set respectively by the application. The &#39;contentProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;content&#39;.
@@ -5028,8 +5028,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;contentEncodingProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-contentEncodingProperty'>            /**
-</span>               @property {string} contentEncodingProperty
+<span id='Adaptive-ServiceRequest-property-contentEncoding'>            /**
+</span>               @property {string} contentEncoding
                Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
   populates this field with defaults for the service. The &#39;contentEncodingProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentEncoding&#39;.
             */
@@ -5043,8 +5043,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;contentLengthProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-contentLengthProperty'>            /**
-</span>               @property {number} contentLengthProperty
+<span id='Adaptive-ServiceRequest-property-contentLength'>            /**
+</span>               @property {number} contentLength
                The length in bytes of the content. This may be populated by the application, the platform
   calculates this length automatically if a specific contentLength is not specified. The &#39;contentLengthProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentLength&#39;.
             */
@@ -5058,8 +5058,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;contentTypeProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-contentTypeProperty'>            /**
-</span>               @property {string} contentTypeProperty
+<span id='Adaptive-ServiceRequest-property-contentType'>            /**
+</span>               @property {string} contentType
                The request content type (MIME TYPE). This may be populated by the application, the platform
   populates this field with defaults for the service. The &#39;contentTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentType&#39;.
             */
@@ -5073,8 +5073,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;queryParametersProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-queryParametersProperty'>            /**
-</span>               @property {Adaptive.ServiceRequestParameter[]} queryParametersProperty
+<span id='Adaptive-ServiceRequest-property-queryParameters'>            /**
+</span>               @property {Adaptive.ServiceRequestParameter[]} queryParameters
                Query string parameters to be appended to the service URL when making the request. These may be applied
   during GET/POST operations. No query parameters are appended if this array is null or length zero. The &#39;queryParametersProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;queryParameters&#39;.
             */
@@ -5088,8 +5088,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;serviceHeadersProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-serviceHeadersProperty'>            /**
-</span>               @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+<span id='Adaptive-ServiceRequest-property-serviceHeaders'>            /**
+</span>               @property {Adaptive.ServiceHeader[]} serviceHeaders
                The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
   application, the platform populates this field with defaults for the service and the previous headers.
   In specific, the platform maintains request and response state automatically. The &#39;serviceHeadersProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceHeaders&#39;.
@@ -5104,8 +5104,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;serviceSessionProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-serviceSessionProperty'>            /**
-</span>               @property {Adaptive.ServiceSession} serviceSessionProperty
+<span id='Adaptive-ServiceRequest-property-serviceSession'>            /**
+</span>               @property {Adaptive.ServiceSession} serviceSession
                Session attributes and cookies. This may be populated by the application, the platform populates
   this field with defaults for the service and the previous state information. In specific, the platform
   maintains request and response state automatically. The &#39;serviceSessionProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceSession&#39;.
@@ -5120,8 +5120,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;serviceTokenProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-serviceTokenProperty'>            /**
-</span>               @property {Adaptive.ServiceToken} serviceTokenProperty
+<span id='Adaptive-ServiceRequest-property-serviceToken'>            /**
+</span>               @property {Adaptive.ServiceToken} serviceToken
                Token used for the creation of the request with the destination service, endpoint, function and method
   identifiers. This should not be manipulated by the application directly. The &#39;serviceTokenProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceToken&#39;.
             */
@@ -5135,8 +5135,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceRequest.prototype, &quot;userAgentProperty&quot;, {
-<span id='Adaptive-ServiceRequest-property-userAgentProperty'>            /**
-</span>               @property {string} userAgentProperty
+<span id='Adaptive-ServiceRequest-property-userAgent'>            /**
+</span>               @property {string} userAgent
                This attribute allows for the default user-agent string to be overridden by the application. The &#39;userAgentProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;userAgent&#39;.
             */
             get: function () {
@@ -5454,8 +5454,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.serviceSession = serviceSession;
         }
         Object.defineProperty(ServiceResponse.prototype, &quot;contentProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-contentProperty'>            /**
-</span>               @property {string} contentProperty
+<span id='Adaptive-ServiceResponse-property-content'>            /**
+</span>               @property {string} content
                Response data content. The content should be in some well-known web format - in specific, binaries returned
   should be encoded in base64. The &#39;contentProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;content&#39;.
             */
@@ -5469,8 +5469,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceResponse.prototype, &quot;contentEncodingProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-contentEncodingProperty'>            /**
-</span>               @property {string} contentEncodingProperty
+<span id='Adaptive-ServiceResponse-property-contentEncoding'>            /**
+</span>               @property {string} contentEncoding
                Encoding of the binary payload - by default assumed to be UTF8. The &#39;contentEncodingProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentEncoding&#39;.
             */
             get: function () {
@@ -5483,8 +5483,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceResponse.prototype, &quot;contentLengthProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-contentLengthProperty'>            /**
-</span>               @property {number} contentLengthProperty
+<span id='Adaptive-ServiceResponse-property-contentLength'>            /**
+</span>               @property {number} contentLength
                The length in bytes for the Content field. The &#39;contentLengthProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentLength&#39;.
             */
             get: function () {
@@ -5497,8 +5497,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceResponse.prototype, &quot;contentTypeProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-contentTypeProperty'>            /**
-</span>               @property {string} contentTypeProperty
+<span id='Adaptive-ServiceResponse-property-contentType'>            /**
+</span>               @property {string} contentType
                The request/response content type (MIME TYPE). The &#39;contentTypeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contentType&#39;.
             */
             get: function () {
@@ -5511,8 +5511,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceResponse.prototype, &quot;serviceHeadersProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-serviceHeadersProperty'>            /**
-</span>               @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+<span id='Adaptive-ServiceResponse-property-serviceHeaders'>            /**
+</span>               @property {Adaptive.ServiceHeader[]} serviceHeaders
                The serviceHeaders array (name,value pairs) to be included on the I/O service request. The &#39;serviceHeadersProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceHeaders&#39;.
             */
             get: function () {
@@ -5525,8 +5525,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceResponse.prototype, &quot;serviceSessionProperty&quot;, {
-<span id='Adaptive-ServiceResponse-property-serviceSessionProperty'>            /**
-</span>               @property {Adaptive.ServiceSession} serviceSessionProperty
+<span id='Adaptive-ServiceResponse-property-serviceSession'>            /**
+</span>               @property {Adaptive.ServiceSession} serviceSession
                Information about the session. The &#39;serviceSessionProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceSession&#39;.
             */
             get: function () {
@@ -5724,8 +5724,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.attributes = attributes;
         }
         Object.defineProperty(ServiceSession.prototype, &quot;attributesProperty&quot;, {
-<span id='Adaptive-ServiceSession-property-attributesProperty'>            /**
-</span>               @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+<span id='Adaptive-ServiceSession-property-attributes'>            /**
+</span>               @property {Adaptive.ServiceSessionAttribute[]} attributes
                The attributes of the request or response. The &#39;attributesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;attributes&#39;.
             */
             get: function () {
@@ -5738,8 +5738,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSession.prototype, &quot;cookiesProperty&quot;, {
-<span id='Adaptive-ServiceSession-property-cookiesProperty'>            /**
-</span>               @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+<span id='Adaptive-ServiceSession-property-cookies'>            /**
+</span>               @property {Adaptive.ServiceSessionCookie[]} cookies
                The cookies of the request or response. The &#39;cookiesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;cookies&#39;.
             */
             get: function () {
@@ -5867,8 +5867,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.creation = creation;
         }
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;cookieNameProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-cookieNameProperty'>            /**
-</span>               @property {string} cookieNameProperty
+<span id='Adaptive-ServiceSessionCookie-property-cookieName'>            /**
+</span>               @property {string} cookieName
                Name ot the cookie. The &#39;cookieNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;cookieName&#39;.
             */
             get: function () {
@@ -5881,8 +5881,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;cookieValueProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-cookieValueProperty'>            /**
-</span>               @property {string} cookieValueProperty
+<span id='Adaptive-ServiceSessionCookie-property-cookieValue'>            /**
+</span>               @property {string} cookieValue
                Value of the ServiceCookie. The &#39;cookieValueProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;cookieValue&#39;.
             */
             get: function () {
@@ -5895,8 +5895,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;creationProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-creationProperty'>            /**
-</span>               @property {number} creationProperty
+<span id='Adaptive-ServiceSessionCookie-property-creation'>            /**
+</span>               @property {number} creation
                ServiceCookie creation timestamp in milliseconds. The &#39;creationProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;creation&#39;.
             */
             get: function () {
@@ -5909,8 +5909,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;domainProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-domainProperty'>            /**
-</span>               @property {string} domainProperty
+<span id='Adaptive-ServiceSessionCookie-property-domain'>            /**
+</span>               @property {string} domain
                Domain for which the cookie is valid. The &#39;domainProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;domain&#39;.
             */
             get: function () {
@@ -5923,8 +5923,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;expiryProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-expiryProperty'>            /**
-</span>               @property {number} expiryProperty
+<span id='Adaptive-ServiceSessionCookie-property-expiry'>            /**
+</span>               @property {number} expiry
                ServiceCookie expiry in milliseconds or -1 for session only. The &#39;expiryProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;expiry&#39;.
             */
             get: function () {
@@ -5937,8 +5937,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;pathProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-pathProperty'>            /**
-</span>               @property {string} pathProperty
+<span id='Adaptive-ServiceSessionCookie-property-path'>            /**
+</span>               @property {string} path
                URI path for which the cookie is valid. The &#39;pathProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;path&#39;.
             */
             get: function () {
@@ -5951,8 +5951,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;schemeProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-schemeProperty'>            /**
-</span>               @property {string} schemeProperty
+<span id='Adaptive-ServiceSessionCookie-property-scheme'>            /**
+</span>               @property {string} scheme
                Scheme of the domain - http/https - for which the cookie is valid. The &#39;schemeProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;scheme&#39;.
             */
             get: function () {
@@ -5965,8 +5965,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceSessionCookie.prototype, &quot;secureProperty&quot;, {
-<span id='Adaptive-ServiceSessionCookie-property-secureProperty'>            /**
-</span>               @property {boolean} secureProperty
+<span id='Adaptive-ServiceSessionCookie-property-secure'>            /**
+</span>               @property {boolean} secure
                ServiceCookie is secure (https only). The &#39;secureProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;secure&#39;.
             */
             get: function () {
@@ -6198,8 +6198,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.invocationMethod = invocationMethod;
         }
         Object.defineProperty(ServiceToken.prototype, &quot;invocationMethodProperty&quot;, {
-<span id='Adaptive-ServiceToken-property-invocationMethodProperty'>            /**
-</span>               @property {Adaptive.IServiceMethod} invocationMethodProperty
+<span id='Adaptive-ServiceToken-property-invocationMethod'>            /**
+</span>               @property {Adaptive.IServiceMethod} invocationMethod
                Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
   other invocation methods. This is also defined per function of each endpoint in the platform&#39;s XML file. The &#39;invocationMethodProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;invocationMethod&#39;.
             */
@@ -6213,8 +6213,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceToken.prototype, &quot;endpointNameProperty&quot;, {
-<span id='Adaptive-ServiceToken-property-endpointNameProperty'>            /**
-</span>               @property {string} endpointNameProperty
+<span id='Adaptive-ServiceToken-property-endpointName'>            /**
+</span>               @property {string} endpointName
                Name of the endpoint configured in the platform&#39;s services XML file. This is a reference to a specific schema,
   host and port combination for a given service. The &#39;endpointNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;endpointName&#39;.
             */
@@ -6228,8 +6228,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceToken.prototype, &quot;functionNameProperty&quot;, {
-<span id='Adaptive-ServiceToken-property-functionNameProperty'>            /**
-</span>               @property {string} functionNameProperty
+<span id='Adaptive-ServiceToken-property-functionName'>            /**
+</span>               @property {string} functionName
                Name of the function configured in the platform&#39;s services XML file for a specific endpoint. This is a reference
   to a relative path of a function published on a remote service. The &#39;functionNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;functionName&#39;.
             */
@@ -6243,8 +6243,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(ServiceToken.prototype, &quot;serviceNameProperty&quot;, {
-<span id='Adaptive-ServiceToken-property-serviceNameProperty'>            /**
-</span>               @property {string} serviceNameProperty
+<span id='Adaptive-ServiceToken-property-serviceName'>            /**
+</span>               @property {string} serviceName
                Name of the service configured in the platform&#39;s services XML file. The &#39;serviceNameProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;serviceName&#39;.
             */
             get: function () {
@@ -6401,8 +6401,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             this.contactTags = contactTags;
         }
         Object.defineProperty(Contact.prototype, &quot;contactAddressesProperty&quot;, {
-<span id='Adaptive-Contact-property-contactAddressesProperty'>            /**
-</span>               @property {Adaptive.ContactAddress[]} contactAddressesProperty
+<span id='Adaptive-Contact-property-contactAddresses'>            /**
+</span>               @property {Adaptive.ContactAddress[]} contactAddresses
                The adresses from the contact The &#39;contactAddressesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactAddresses&#39;.
             */
             get: function () {
@@ -6415,8 +6415,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;contactEmailsProperty&quot;, {
-<span id='Adaptive-Contact-property-contactEmailsProperty'>            /**
-</span>               @property {Adaptive.ContactEmail[]} contactEmailsProperty
+<span id='Adaptive-Contact-property-contactEmails'>            /**
+</span>               @property {Adaptive.ContactEmail[]} contactEmails
                The emails from the contact The &#39;contactEmailsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactEmails&#39;.
             */
             get: function () {
@@ -6429,8 +6429,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;contactPhonesProperty&quot;, {
-<span id='Adaptive-Contact-property-contactPhonesProperty'>            /**
-</span>               @property {Adaptive.ContactPhone[]} contactPhonesProperty
+<span id='Adaptive-Contact-property-contactPhones'>            /**
+</span>               @property {Adaptive.ContactPhone[]} contactPhones
                The phones from the contact The &#39;contactPhonesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactPhones&#39;.
             */
             get: function () {
@@ -6443,8 +6443,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;contactSocialsProperty&quot;, {
-<span id='Adaptive-Contact-property-contactSocialsProperty'>            /**
-</span>               @property {Adaptive.ContactSocial[]} contactSocialsProperty
+<span id='Adaptive-Contact-property-contactSocials'>            /**
+</span>               @property {Adaptive.ContactSocial[]} contactSocials
                The social network info from the contact The &#39;contactSocialsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactSocials&#39;.
             */
             get: function () {
@@ -6457,8 +6457,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;contactTagsProperty&quot;, {
-<span id='Adaptive-Contact-property-contactTagsProperty'>            /**
-</span>               @property {Adaptive.ContactTag[]} contactTagsProperty
+<span id='Adaptive-Contact-property-contactTags'>            /**
+</span>               @property {Adaptive.ContactTag[]} contactTags
                The aditional tags from the contact The &#39;contactTagsProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactTags&#39;.
             */
             get: function () {
@@ -6471,8 +6471,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;contactWebsitesProperty&quot;, {
-<span id='Adaptive-Contact-property-contactWebsitesProperty'>            /**
-</span>               @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+<span id='Adaptive-Contact-property-contactWebsites'>            /**
+</span>               @property {Adaptive.ContactWebsite[]} contactWebsites
                The websites from the contact The &#39;contactWebsitesProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;contactWebsites&#39;.
             */
             get: function () {
@@ -6485,8 +6485,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;personalInfoProperty&quot;, {
-<span id='Adaptive-Contact-property-personalInfoProperty'>            /**
-</span>               @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+<span id='Adaptive-Contact-property-personalInfo'>            /**
+</span>               @property {Adaptive.ContactPersonalInfo} personalInfo
                The personal info from the contact The &#39;personalInfoProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;personalInfo&#39;.
             */
             get: function () {
@@ -6499,8 +6499,8 @@ doesn&#39;t exist, this will be -1. Used internally.
             configurable: true
         });
         Object.defineProperty(Contact.prototype, &quot;professionalInfoProperty&quot;, {
-<span id='Adaptive-Contact-property-professionalInfoProperty'>            /**
-</span>               @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+<span id='Adaptive-Contact-property-professionalInfo'>            /**
+</span>               @property {Adaptive.ContactProfessionalInfo} professionalInfo
                The professional info from the contact The &#39;professionalInfoProperty&#39; is registered with the ECMAScript 5 Object.defineProperty() for the class field &#39;professionalInfo&#39;.
             */
             get: function () {
