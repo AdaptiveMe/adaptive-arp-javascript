@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.0
+    * @version v2.1.1
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -86,7 +86,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -130,7 +130,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -174,7 +174,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -215,7 +215,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -257,7 +257,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -298,7 +298,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -335,7 +335,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -376,7 +376,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -413,7 +413,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

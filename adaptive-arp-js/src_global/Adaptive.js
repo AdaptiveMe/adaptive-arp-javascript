@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.0
+    * @version v2.1.1
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -6918,7 +6918,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseListener;
     })();
@@ -7953,7 +7953,7 @@ event may be fired if the application vetoes display rotation before rotation is
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseCallback;
     })();
@@ -9716,7 +9716,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseApplicationBridge;
     })();
@@ -9751,7 +9751,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseCommerceBridge;
     })();
@@ -9786,7 +9786,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseCommunicationBridge;
     })();
@@ -9821,7 +9821,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseDataBridge;
     })();
@@ -9856,7 +9856,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseMediaBridge;
     })();
@@ -9891,7 +9891,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseNotificationBridge;
     })();
@@ -9926,7 +9926,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BasePIMBridge;
     })();
@@ -9961,7 +9961,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseReaderBridge;
     })();
@@ -9996,7 +9996,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseSecurityBridge;
     })();
@@ -10031,7 +10031,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseSensorBridge;
     })();
@@ -10066,7 +10066,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseSocialBridge;
     })();
@@ -10101,7 +10101,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseSystemBridge;
     })();
@@ -10136,7 +10136,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseUIBridge;
     })();
@@ -10171,7 +10171,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         return BaseUtilBridge;
     })();
@@ -10229,7 +10229,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10270,7 +10270,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10318,7 +10318,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10361,7 +10361,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -10425,7 +10425,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -10469,7 +10469,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -10510,7 +10510,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10547,7 +10547,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -10810,7 +10810,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10859,7 +10859,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -10926,7 +10926,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -10970,7 +10970,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11007,7 +11007,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -11073,7 +11073,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11123,7 +11123,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11164,7 +11164,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11210,7 +11210,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11266,7 +11266,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11349,7 +11349,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -11452,7 +11452,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11503,7 +11503,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11552,7 +11552,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11603,7 +11603,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11657,7 +11657,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11711,7 +11711,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -11760,7 +11760,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11805,7 +11805,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11868,7 +11868,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11911,7 +11911,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -11954,7 +11954,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12006,7 +12006,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12049,7 +12049,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12092,7 +12092,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12141,7 +12141,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12184,7 +12184,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12227,7 +12227,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12270,7 +12270,7 @@ deleted if the cascade parameter is set to true.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12314,7 +12314,7 @@ any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12366,7 +12366,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12417,7 +12417,7 @@ is a file, it will not yield any results.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -12467,7 +12467,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12518,7 +12518,7 @@ new destination file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -12590,7 +12590,7 @@ This method does not create the actual file in the specified folder.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12633,7 +12633,7 @@ This path is volatile and may be cleaned by the OS periodically.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12675,7 +12675,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12717,7 +12717,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12759,7 +12759,7 @@ This path may or may not be directly readable or writable - it usually contains 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12801,7 +12801,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12842,7 +12842,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -12886,7 +12886,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -13048,7 +13048,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -13195,7 +13195,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13244,7 +13244,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13291,7 +13291,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13340,7 +13340,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13391,7 +13391,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13440,7 +13440,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13491,7 +13491,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13542,7 +13542,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -13605,7 +13605,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13676,7 +13676,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13867,7 +13867,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13918,7 +13918,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -13965,7 +13965,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14010,7 +14010,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -14077,7 +14077,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredAccelerationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -14121,7 +14121,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -14158,7 +14158,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -14259,7 +14259,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -14303,7 +14303,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -14340,7 +14340,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -14563,7 +14563,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -14605,7 +14605,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -14651,7 +14651,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14695,7 +14695,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14738,7 +14738,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14782,7 +14782,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14825,7 +14825,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14869,7 +14869,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14912,7 +14912,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -14956,7 +14956,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -15017,7 +15017,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -15061,7 +15061,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -15105,7 +15105,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -15146,7 +15146,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -15188,7 +15188,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -15229,7 +15229,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15266,7 +15266,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15307,7 +15307,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15344,7 +15344,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15405,7 +15405,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -15450,7 +15450,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -15491,7 +15491,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15528,7 +15528,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15589,7 +15589,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -15649,7 +15649,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -15674,7 +15674,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -15737,7 +15737,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -15784,7 +15784,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -15831,7 +15831,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -16014,7 +16014,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -16043,7 +16043,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -16945,7 +16945,7 @@ of the device. For device orientation, use the IDevice APIs.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.1.0";
+            return "v2.1.1";
         };
         /**
            @private

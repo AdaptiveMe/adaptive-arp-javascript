@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.0
+    * @version v2.1.1
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -116,7 +116,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -162,7 +162,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -203,7 +203,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<KeyPair> = null;

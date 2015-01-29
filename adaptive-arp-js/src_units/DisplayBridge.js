@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.0
+    * @version v2.1.1
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -82,7 +82,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             // Add listener reference to local dictionary.
             Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -127,7 +127,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -168,7 +168,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -205,7 +205,7 @@ of the device. For device orientation, use the IDevice APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
