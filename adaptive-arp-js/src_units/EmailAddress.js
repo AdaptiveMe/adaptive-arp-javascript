@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,6 +62,20 @@ var Adaptive;
             _super.call(this);
             this.address = address;
         }
+        Object.defineProperty(EmailAddress.prototype, "addressProperty", {
+            /**
+               @property {string} addressProperty
+               The Email address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+            */
+            get: function () {
+                return this.address;
+            },
+            set: function (address) {
+                this.address = address;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the email address

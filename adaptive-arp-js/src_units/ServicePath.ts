@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,16 +52,55 @@ module Adaptive {
              Service endpoint type.
           */
           type : IServiceType;
+
+          /**
+             @property {Adaptive.IServiceType} typeProperty
+             Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : IServiceType {
+               return this.type;
+          }
+
+          set typeProperty(type:IServiceType) {
+               this.type = type;
+          }
+
           /**
              @property {Adaptive.IServiceMethod[]} methods
              The methods for calling a path.
           */
           methods : Array<IServiceMethod>;
+
+          /**
+             @property {Adaptive.IServiceMethod[]} methodsProperty
+             The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
+          */
+          get methodsProperty() : Array<IServiceMethod> {
+               return this.methods;
+          }
+
+          set methodsProperty(methods:Array<IServiceMethod>) {
+               this.methods = methods;
+          }
+
           /**
              @property {string} path
              The path for the endpoint.
           */
           path : string;
+
+          /**
+             @property {string} pathProperty
+             The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+          */
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           /**
              @method constructor
              Constructor with parameters.

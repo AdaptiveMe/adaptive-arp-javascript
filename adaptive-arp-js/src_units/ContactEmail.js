@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,6 +67,48 @@ var Adaptive;
             this.primary = primary;
             this.email = email;
         }
+        Object.defineProperty(ContactEmail.prototype, "typeProperty", {
+            /**
+               @property {Adaptive.ContactEmailType} typeProperty
+               The type of the email The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+            */
+            get: function () {
+                return this.type;
+            },
+            set: function (type) {
+                this.type = type;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactEmail.prototype, "emailProperty", {
+            /**
+               @property {string} emailProperty
+               Email of the Contact The 'emailProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'email'.
+            */
+            get: function () {
+                return this.email;
+            },
+            set: function (email) {
+                this.email = email;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactEmail.prototype, "primaryProperty", {
+            /**
+               @property {boolean} primaryProperty
+               Whether the email is the primary one or not The 'primaryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'primary'.
+            */
+            get: function () {
+                return this.primary;
+            },
+            set: function (primary) {
+                this.primary = primary;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the type of the email

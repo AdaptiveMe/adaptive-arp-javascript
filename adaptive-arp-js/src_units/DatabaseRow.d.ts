@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,6 +48,11 @@ declare module Adaptive {
            The values of the row.
         */
         values: string[];
+        /**
+           @property {string[]} valuesProperty
+           The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
+        */
+        valuesProperty: string[];
         /**
            @method constructor
            Constructor for implementation using.

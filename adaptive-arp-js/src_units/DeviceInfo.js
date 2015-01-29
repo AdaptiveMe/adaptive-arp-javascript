@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -68,6 +68,63 @@ var Adaptive;
             this.vendor = vendor;
             this.uuid = uuid;
         }
+        Object.defineProperty(DeviceInfo.prototype, "modelProperty", {
+            /**
+               @property {string} modelProperty
+               Model of device - equivalent to device release or version. The 'modelProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'model'.
+            */
+            get: function () {
+                return this.model;
+            },
+            set: function (model) {
+                this.model = model;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DeviceInfo.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               Name of device - equivalent to brand. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DeviceInfo.prototype, "uuidProperty", {
+            /**
+               @property {string} uuidProperty
+               Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+  be unique for a specific instance of an application on a specific device. The 'uuidProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'uuid'.
+            */
+            get: function () {
+                return this.uuid;
+            },
+            set: function (uuid) {
+                this.uuid = uuid;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DeviceInfo.prototype, "vendorProperty", {
+            /**
+               @property {string} vendorProperty
+               Vendor of the device hardware. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+            */
+            get: function () {
+                return this.vendor;
+            },
+            set: function (vendor) {
+                this.vendor = vendor;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the model of the device.

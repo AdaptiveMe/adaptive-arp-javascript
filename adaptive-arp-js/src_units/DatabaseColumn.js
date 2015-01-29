@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,6 +62,20 @@ var Adaptive;
             _super.call(this);
             this.name = name;
         }
+        Object.defineProperty(DatabaseColumn.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               Name of the column The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the name of the column.

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -65,6 +65,34 @@ var Adaptive;
             this.phone = phone;
             this.phoneType = phoneType;
         }
+        Object.defineProperty(ContactPhone.prototype, "phoneTypeProperty", {
+            /**
+               @property {Adaptive.ContactPhoneType} phoneTypeProperty
+               The phone number phoneType The 'phoneTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phoneType'.
+            */
+            get: function () {
+                return this.phoneType;
+            },
+            set: function (phoneType) {
+                this.phoneType = phoneType;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactPhone.prototype, "phoneProperty", {
+            /**
+               @property {string} phoneProperty
+               The phone number The 'phoneProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phone'.
+            */
+            get: function () {
+                return this.phone;
+            },
+            set: function (phone) {
+                this.phone = phone;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the phone phoneType

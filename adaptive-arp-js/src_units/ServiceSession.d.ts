@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,10 +51,20 @@ declare module Adaptive {
         */
         attributes: ServiceSessionAttribute[];
         /**
+           @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+           The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
+        */
+        attributesProperty: ServiceSessionAttribute[];
+        /**
            @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response.
         */
         cookies: ServiceSessionCookie[];
+        /**
+           @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+           The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
+        */
+        cookiesProperty: ServiceSessionCookie[];
         /**
            @method constructor
            Constructor with fields.

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,15 +50,30 @@ declare module Adaptive {
         */
         type: ContactEmailType;
         /**
+           @property {Adaptive.ContactEmailType} typeProperty
+           The type of the email The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+        */
+        typeProperty: ContactEmailType;
+        /**
            @property {string} email
            Email of the Contact
         */
         email: string;
         /**
+           @property {string} emailProperty
+           Email of the Contact The 'emailProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'email'.
+        */
+        emailProperty: string;
+        /**
            @property {boolean} primary
            Whether the email is the primary one or not
         */
         primary: boolean;
+        /**
+           @property {boolean} primaryProperty
+           Whether the email is the primary one or not The 'primaryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'primary'.
+        */
+        primaryProperty: boolean;
         /**
            @method constructor
            Constructor used by the implementation

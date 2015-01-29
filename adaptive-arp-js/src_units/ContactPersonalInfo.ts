@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,21 +53,73 @@ module Adaptive {
              The title of the Contact
           */
           title : ContactPersonalInfoTitle;
+
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} titleProperty
+             The title of the Contact The 'titleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'title'.
+          */
+          get titleProperty() : ContactPersonalInfoTitle {
+               return this.title;
+          }
+
+          set titleProperty(title:ContactPersonalInfoTitle) {
+               this.title = title;
+          }
+
           /**
              @property {string} lastName
              The last name of the Contact
           */
           lastName : string;
+
+          /**
+             @property {string} lastNameProperty
+             The last name of the Contact The 'lastNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'lastName'.
+          */
+          get lastNameProperty() : string {
+               return this.lastName;
+          }
+
+          set lastNameProperty(lastName:string) {
+               this.lastName = lastName;
+          }
+
           /**
              @property {string} middleName
              The middle name of the Contact if it proceeds
           */
           middleName : string;
+
+          /**
+             @property {string} middleNameProperty
+             The middle name of the Contact if it proceeds The 'middleNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'middleName'.
+          */
+          get middleNameProperty() : string {
+               return this.middleName;
+          }
+
+          set middleNameProperty(middleName:string) {
+               this.middleName = middleName;
+          }
+
           /**
              @property {string} name
              The name of the Contact
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             The name of the Contact The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @method constructor
              The Constructor used by the implementation

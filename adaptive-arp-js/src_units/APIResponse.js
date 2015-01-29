@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,6 +55,48 @@ var Adaptive;
             this.statusCode = statusCode;
             this.statusMessage = statusMessage;
         }
+        Object.defineProperty(APIResponse.prototype, "responseProperty", {
+            /**
+               @property {string} responseProperty
+               String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
+            */
+            get: function () {
+                return this.response;
+            },
+            set: function (response) {
+                this.response = response;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(APIResponse.prototype, "statusCodeProperty", {
+            /**
+               @property {number} statusCodeProperty
+               Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+            */
+            get: function () {
+                return this.statusCode;
+            },
+            set: function (statusCode) {
+                this.statusCode = statusCode;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(APIResponse.prototype, "statusMessageProperty", {
+            /**
+               @property {string} statusMessageProperty
+               Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
+            */
+            get: function () {
+                return this.statusMessage;
+            },
+            set: function (statusMessage) {
+                this.statusMessage = statusMessage;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Response getter

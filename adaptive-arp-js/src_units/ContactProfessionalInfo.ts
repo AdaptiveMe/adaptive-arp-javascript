@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,16 +52,55 @@ module Adaptive {
              The company of the job
           */
           company : string;
+
+          /**
+             @property {string} companyProperty
+             The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
+          */
+          get companyProperty() : string {
+               return this.company;
+          }
+
+          set companyProperty(company:string) {
+               this.company = company;
+          }
+
           /**
              @property {string} jobDescription
              The job description
           */
           jobDescription : string;
+
+          /**
+             @property {string} jobDescriptionProperty
+             The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
+          */
+          get jobDescriptionProperty() : string {
+               return this.jobDescription;
+          }
+
+          set jobDescriptionProperty(jobDescription:string) {
+               this.jobDescription = jobDescription;
+          }
+
           /**
              @property {string} jobTitle
              The job title
           */
           jobTitle : string;
+
+          /**
+             @property {string} jobTitleProperty
+             The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
+          */
+          get jobTitleProperty() : string {
+               return this.jobTitle;
+          }
+
+          set jobTitleProperty(jobTitle:string) {
+               this.jobTitle = jobTitle;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the ContactProfessionalInfo.

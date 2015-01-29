@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,11 +52,37 @@ module Adaptive {
              Value of the key.
           */
           keyData : string;
+
+          /**
+             @property {string} keyDataProperty
+             Value of the key. The 'keyDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyData'.
+          */
+          get keyDataProperty() : string {
+               return this.keyData;
+          }
+
+          set keyDataProperty(keyData:string) {
+               this.keyData = keyData;
+          }
+
           /**
              @property {string} keyName
              Name of the key for the value.
           */
           keyName : string;
+
+          /**
+             @property {string} keyNameProperty
+             Name of the key for the value. The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
+          */
+          get keyNameProperty() : string {
+               return this.keyName;
+          }
+
+          set keyNameProperty(keyName:string) {
+               this.keyName = keyName;
+          }
+
           /**
              @method constructor
              Convenience constructor.

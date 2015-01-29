@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,21 +52,73 @@ module Adaptive {
              Timestamp of the acceleration reading.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             Timestamp of the acceleration reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @property {number} x
              X-axis component of the acceleration.
           */
           x : number;
+
+          /**
+             @property {number} xProperty
+             X-axis component of the acceleration. The 'xProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'x'.
+          */
+          get xProperty() : number {
+               return this.x;
+          }
+
+          set xProperty(x:number) {
+               this.x = x;
+          }
+
           /**
              @property {number} y
              Y-axis component of the acceleration.
           */
           y : number;
+
+          /**
+             @property {number} yProperty
+             Y-axis component of the acceleration. The 'yProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'y'.
+          */
+          get yProperty() : number {
+               return this.y;
+          }
+
+          set yProperty(y:number) {
+               this.y = y;
+          }
+
           /**
              @property {number} z
              Z-axis component of the acceleration.
           */
           z : number;
+
+          /**
+             @property {number} zProperty
+             Z-axis component of the acceleration. The 'zProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'z'.
+          */
+          get zProperty() : number {
+               return this.z;
+          }
+
+          set zProperty(z:number) {
+               this.z = z;
+          }
+
           /**
              @method constructor
              Constructor with fields

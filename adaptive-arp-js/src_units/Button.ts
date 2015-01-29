@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,6 +53,19 @@ module Adaptive {
              Button type
           */
           type : ICapabilitiesButton;
+
+          /**
+             @property {Adaptive.ICapabilitiesButton} typeProperty
+             Button type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : ICapabilitiesButton {
+               return this.type;
+          }
+
+          set typeProperty(type:ICapabilitiesButton) {
+               this.type = type;
+          }
+
           /**
              @method constructor
              Constructor with fields

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,6 +52,19 @@ module Adaptive {
              The url of the website
           */
           url : string;
+
+          /**
+             @property {string} urlProperty
+             The url of the website The 'urlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'url'.
+          */
+          get urlProperty() : string {
+               return this.url;
+          }
+
+          set urlProperty(url:string) {
+               this.url = url;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation

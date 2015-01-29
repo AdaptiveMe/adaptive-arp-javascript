@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,31 +52,109 @@ module Adaptive {
              The current device altitude (or Z coordinate). Measured in meters.
           */
           altitude : number;
+
+          /**
+             @property {number} altitudeProperty
+             The current device altitude (or Z coordinate). Measured in meters. The 'altitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'altitude'.
+          */
+          get altitudeProperty() : number {
+               return this.altitude;
+          }
+
+          set altitudeProperty(altitude:number) {
+               this.altitude = altitude;
+          }
+
           /**
              @property {number} latitude
              The Y coordinate (or latitude). Measured in degrees.
           */
           latitude : number;
+
+          /**
+             @property {number} latitudeProperty
+             The Y coordinate (or latitude). Measured in degrees. The 'latitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'latitude'.
+          */
+          get latitudeProperty() : number {
+               return this.latitude;
+          }
+
+          set latitudeProperty(latitude:number) {
+               this.latitude = latitude;
+          }
+
           /**
              @property {number} longitude
              The X coordinate (or longitude). Measured in degrees.
           */
           longitude : number;
+
+          /**
+             @property {number} longitudeProperty
+             The X coordinate (or longitude). Measured in degrees. The 'longitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'longitude'.
+          */
+          get longitudeProperty() : number {
+               return this.longitude;
+          }
+
+          set longitudeProperty(longitude:number) {
+               this.longitude = longitude;
+          }
+
           /**
              @property {number} timestamp
              Timestamp of the geolocation reading.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             Timestamp of the geolocation reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @property {number} xDoP
              Dilution of precision on the X measurement. Measured in meters.
           */
           xDoP : number;
+
+          /**
+             @property {number} xDoPProperty
+             Dilution of precision on the X measurement. Measured in meters. The 'xDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'xDoP'.
+          */
+          get xDoPProperty() : number {
+               return this.xDoP;
+          }
+
+          set xDoPProperty(xDoP:number) {
+               this.xDoP = xDoP;
+          }
+
           /**
              @property {number} yDoP
              Dilution of precision on the Y measurement. Measured in meters.
           */
           yDoP : number;
+
+          /**
+             @property {number} yDoPProperty
+             Dilution of precision on the Y measurement. Measured in meters. The 'yDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'yDoP'.
+          */
+          get yDoPProperty() : number {
+               return this.yDoP;
+          }
+
+          set yDoPProperty(yDoP:number) {
+               this.yDoP = yDoP;
+          }
+
           /**
              @method constructor
              Constructor with parameters

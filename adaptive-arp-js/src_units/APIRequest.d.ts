@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,20 +47,40 @@ declare module Adaptive {
         */
         asyncId: number;
         /**
+           @property {number} asyncIdProperty
+           Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
+        */
+        asyncIdProperty: number;
+        /**
            @property {string} bridgeType
            String representing the bridge type to obtain.
         */
         bridgeType: string;
+        /**
+           @property {string} bridgeTypeProperty
+           String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
+        */
+        bridgeTypeProperty: string;
         /**
            @property {string} methodName
            String representing the method name to call.
         */
         methodName: string;
         /**
+           @property {string} methodNameProperty
+           String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
+        */
+        methodNameProperty: string;
+        /**
            @property {string[]} parameters
            Parameters of the request as JSON formatted strings.
         */
         parameters: string[];
+        /**
+           @property {string[]} parametersProperty
+           Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
+        */
+        parametersProperty: string[];
         /**
            @method constructor
            Constructor with all the parameters

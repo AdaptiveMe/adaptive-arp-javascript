@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,10 +49,20 @@ declare module Adaptive {
         */
         country: string;
         /**
+           @property {string} countryProperty
+           A valid ISO Country Code. The 'countryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'country'.
+        */
+        countryProperty: string;
+        /**
            @property {string} language
            A valid ISO Language Code.
         */
         language: string;
+        /**
+           @property {string} languageProperty
+           A valid ISO Language Code. The 'languageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'language'.
+        */
+        languageProperty: string;
         /**
            @method constructor
            Constructor used by the implementation

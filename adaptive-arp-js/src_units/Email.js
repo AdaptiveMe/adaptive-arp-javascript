@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,6 +76,104 @@ var Adaptive;
             this.messageBodyMimeType = messageBodyMimeType;
             this.subject = subject;
         }
+        Object.defineProperty(Email.prototype, "bccRecipientsProperty", {
+            /**
+               @property {Adaptive.EmailAddress[]} bccRecipientsProperty
+               Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
+            */
+            get: function () {
+                return this.bccRecipients;
+            },
+            set: function (bccRecipients) {
+                this.bccRecipients = bccRecipients;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "ccRecipientsProperty", {
+            /**
+               @property {Adaptive.EmailAddress[]} ccRecipientsProperty
+               Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
+            */
+            get: function () {
+                return this.ccRecipients;
+            },
+            set: function (ccRecipients) {
+                this.ccRecipients = ccRecipients;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "emailAttachmentDataProperty", {
+            /**
+               @property {Adaptive.EmailAttachmentData[]} emailAttachmentDataProperty
+               Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
+            */
+            get: function () {
+                return this.emailAttachmentData;
+            },
+            set: function (emailAttachmentData) {
+                this.emailAttachmentData = emailAttachmentData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "messageBodyProperty", {
+            /**
+               @property {string} messageBodyProperty
+               Message body The 'messageBodyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBody'.
+            */
+            get: function () {
+                return this.messageBody;
+            },
+            set: function (messageBody) {
+                this.messageBody = messageBody;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "messageBodyMimeTypeProperty", {
+            /**
+               @property {string} messageBodyMimeTypeProperty
+               Message body mime type The 'messageBodyMimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBodyMimeType'.
+            */
+            get: function () {
+                return this.messageBodyMimeType;
+            },
+            set: function (messageBodyMimeType) {
+                this.messageBodyMimeType = messageBodyMimeType;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "subjectProperty", {
+            /**
+               @property {string} subjectProperty
+               Subject of the email The 'subjectProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'subject'.
+            */
+            get: function () {
+                return this.subject;
+            },
+            set: function (subject) {
+                this.subject = subject;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Email.prototype, "toRecipientsProperty", {
+            /**
+               @property {Adaptive.EmailAddress[]} toRecipientsProperty
+               Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
+            */
+            get: function () {
+                return this.toRecipients;
+            },
+            set: function (toRecipients) {
+                this.toRecipients = toRecipients;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the array of recipients

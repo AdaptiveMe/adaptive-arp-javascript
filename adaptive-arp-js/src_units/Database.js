@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,6 +64,34 @@ var Adaptive;
             this.name = name;
             this.compress = compress;
         }
+        Object.defineProperty(Database.prototype, "compressProperty", {
+            /**
+               @property {boolean} compressProperty
+               Indicates if database was created or needs to be created as Compressed. The 'compressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'compress'.
+            */
+            get: function () {
+                return this.compress;
+            },
+            set: function (compress) {
+                this.compress = compress;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Database.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               Database Name (name of the .db local file). The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns if the table is compressed

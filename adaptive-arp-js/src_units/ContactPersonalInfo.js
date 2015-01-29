@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -69,6 +69,62 @@ var Adaptive;
             this.lastName = lastName;
             this.title = title;
         }
+        Object.defineProperty(ContactPersonalInfo.prototype, "titleProperty", {
+            /**
+               @property {Adaptive.ContactPersonalInfoTitle} titleProperty
+               The title of the Contact The 'titleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'title'.
+            */
+            get: function () {
+                return this.title;
+            },
+            set: function (title) {
+                this.title = title;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactPersonalInfo.prototype, "lastNameProperty", {
+            /**
+               @property {string} lastNameProperty
+               The last name of the Contact The 'lastNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'lastName'.
+            */
+            get: function () {
+                return this.lastName;
+            },
+            set: function (lastName) {
+                this.lastName = lastName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactPersonalInfo.prototype, "middleNameProperty", {
+            /**
+               @property {string} middleNameProperty
+               The middle name of the Contact if it proceeds The 'middleNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'middleName'.
+            */
+            get: function () {
+                return this.middleName;
+            },
+            set: function (middleName) {
+                this.middleName = middleName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactPersonalInfo.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               The name of the Contact The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the title of the Contact

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,6 +67,48 @@ var Adaptive;
             this.version = version;
             this.vendor = vendor;
         }
+        Object.defineProperty(OSInfo.prototype, "nameProperty", {
+            /**
+               @property {Adaptive.IOSType} nameProperty
+               The name of the operating system. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(OSInfo.prototype, "vendorProperty", {
+            /**
+               @property {string} vendorProperty
+               The vendor of the operating system. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+            */
+            get: function () {
+                return this.vendor;
+            },
+            set: function (vendor) {
+                this.vendor = vendor;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(OSInfo.prototype, "versionProperty", {
+            /**
+               @property {string} versionProperty
+               The version/identifier of the operating system. The 'versionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'version'.
+            */
+            get: function () {
+                return this.version;
+            },
+            set: function (version) {
+                this.version = version;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the name of the operating system.

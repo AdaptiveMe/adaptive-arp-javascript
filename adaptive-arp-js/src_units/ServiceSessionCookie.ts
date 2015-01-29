@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,41 +52,145 @@ module Adaptive {
              Name ot the cookie.
           */
           cookieName : string;
+
+          /**
+             @property {string} cookieNameProperty
+             Name ot the cookie. The 'cookieNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieName'.
+          */
+          get cookieNameProperty() : string {
+               return this.cookieName;
+          }
+
+          set cookieNameProperty(cookieName:string) {
+               this.cookieName = cookieName;
+          }
+
           /**
              @property {string} cookieValue
              Value of the ServiceCookie.
           */
           cookieValue : string;
+
+          /**
+             @property {string} cookieValueProperty
+             Value of the ServiceCookie. The 'cookieValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieValue'.
+          */
+          get cookieValueProperty() : string {
+               return this.cookieValue;
+          }
+
+          set cookieValueProperty(cookieValue:string) {
+               this.cookieValue = cookieValue;
+          }
+
           /**
              @property {number} creation
              ServiceCookie creation timestamp in milliseconds.
           */
           creation : number;
+
+          /**
+             @property {number} creationProperty
+             ServiceCookie creation timestamp in milliseconds. The 'creationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'creation'.
+          */
+          get creationProperty() : number {
+               return this.creation;
+          }
+
+          set creationProperty(creation:number) {
+               this.creation = creation;
+          }
+
           /**
              @property {string} domain
              Domain for which the cookie is valid.
           */
           domain : string;
+
+          /**
+             @property {string} domainProperty
+             Domain for which the cookie is valid. The 'domainProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'domain'.
+          */
+          get domainProperty() : string {
+               return this.domain;
+          }
+
+          set domainProperty(domain:string) {
+               this.domain = domain;
+          }
+
           /**
              @property {number} expiry
              ServiceCookie expiry in milliseconds or -1 for session only.
           */
           expiry : number;
+
+          /**
+             @property {number} expiryProperty
+             ServiceCookie expiry in milliseconds or -1 for session only. The 'expiryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'expiry'.
+          */
+          get expiryProperty() : number {
+               return this.expiry;
+          }
+
+          set expiryProperty(expiry:number) {
+               this.expiry = expiry;
+          }
+
           /**
              @property {string} path
              URI path for which the cookie is valid.
           */
           path : string;
+
+          /**
+             @property {string} pathProperty
+             URI path for which the cookie is valid. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+          */
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           /**
              @property {string} scheme
              Scheme of the domain - http/https - for which the cookie is valid.
           */
           scheme : string;
+
+          /**
+             @property {string} schemeProperty
+             Scheme of the domain - http/https - for which the cookie is valid. The 'schemeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'scheme'.
+          */
+          get schemeProperty() : string {
+               return this.scheme;
+          }
+
+          set schemeProperty(scheme:string) {
+               this.scheme = scheme;
+          }
+
           /**
              @property {boolean} secure
              ServiceCookie is secure (https only).
           */
           secure : boolean;
+
+          /**
+             @property {boolean} secureProperty
+             ServiceCookie is secure (https only). The 'secureProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secure'.
+          */
+          get secureProperty() : boolean {
+               return this.secure;
+          }
+
+          set secureProperty(secure:boolean) {
+               this.secure = secure;
+          }
+
           /**
              @method constructor
              Contructor with fields

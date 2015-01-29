@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,10 +49,20 @@ declare module Adaptive {
         */
         model: string;
         /**
+           @property {string} modelProperty
+           Model of device - equivalent to device release or version. The 'modelProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'model'.
+        */
+        modelProperty: string;
+        /**
            @property {string} name
            Name of device - equivalent to brand.
         */
         name: string;
+        /**
+           @property {string} nameProperty
+           Name of device - equivalent to brand. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+        */
+        nameProperty: string;
         /**
            @property {string} uuid
            Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
@@ -60,10 +70,21 @@ be unique for a specific instance of an application on a specific device.
         */
         uuid: string;
         /**
+           @property {string} uuidProperty
+           Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+be unique for a specific instance of an application on a specific device. The 'uuidProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'uuid'.
+        */
+        uuidProperty: string;
+        /**
            @property {string} vendor
            Vendor of the device hardware.
         */
         vendor: string;
+        /**
+           @property {string} vendorProperty
+           Vendor of the device hardware. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+        */
+        vendorProperty: string;
         /**
            @method constructor
            Constructor for the implementation of the platform.

@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,11 +44,17 @@ declare module Adaptive {
     */
     class FileDescriptor extends APIBean {
         dateCreated: number;
+        dateCreatedProperty: number;
         dateModified: number;
+        dateModifiedProperty: number;
         name: string;
+        nameProperty: string;
         path: string;
+        pathProperty: string;
         pathAbsolute: string;
+        pathAbsoluteProperty: string;
         size: number;
+        sizeProperty: number;
         /**
            @method constructor
            Default constructor.

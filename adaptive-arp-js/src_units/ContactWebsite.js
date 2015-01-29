@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,6 +62,20 @@ var Adaptive;
             _super.call(this);
             this.url = url;
         }
+        Object.defineProperty(ContactWebsite.prototype, "urlProperty", {
+            /**
+               @property {string} urlProperty
+               The url of the website The 'urlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'url'.
+            */
+            get: function () {
+                return this.url;
+            },
+            set: function (url) {
+                this.url = url;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the url of the website

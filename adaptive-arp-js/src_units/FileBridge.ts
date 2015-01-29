@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -89,7 +89,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -130,7 +130,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -171,7 +171,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -221,7 +221,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -262,7 +262,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -303,7 +303,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -350,7 +350,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemStorageType = null;
@@ -391,7 +391,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemType = null;
@@ -432,7 +432,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemSecurity = null;
@@ -473,7 +473,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -515,7 +515,7 @@ any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -565,7 +565,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -614,7 +614,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -662,7 +662,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -711,7 +711,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));

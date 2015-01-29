@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,25 +49,50 @@ declare module Adaptive {
         */
         data: number[];
         /**
+           @property {number[]} dataProperty
+           The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
+        */
+        dataProperty: number[];
+        /**
            @property {string} fileName
            The name of the current file attachment
         */
         fileName: string;
+        /**
+           @property {string} fileNameProperty
+           The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
+        */
+        fileNameProperty: string;
         /**
            @property {string} mimeType
            The mime type of the current attachment
         */
         mimeType: string;
         /**
+           @property {string} mimeTypeProperty
+           The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
+        */
+        mimeTypeProperty: string;
+        /**
            @property {string} referenceUrl
            The relative path where the contents for the attachment file could be located.
         */
         referenceUrl: string;
         /**
+           @property {string} referenceUrlProperty
+           The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
+        */
+        referenceUrlProperty: string;
+        /**
            @property {number} size
            The data size (in bytes) of the current file attachment
         */
         size: number;
+        /**
+           @property {number} sizeProperty
+           The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
+        */
+        sizeProperty: number;
         /**
            @method constructor
            Constructor with fields

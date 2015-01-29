@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -69,6 +69,65 @@ var Adaptive;
             this.functionName = functionName;
             this.invocationMethod = invocationMethod;
         }
+        Object.defineProperty(ServiceToken.prototype, "invocationMethodProperty", {
+            /**
+               @property {Adaptive.IServiceMethod} invocationMethodProperty
+               Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
+  other invocation methods. This is also defined per function of each endpoint in the platform's XML file. The 'invocationMethodProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'invocationMethod'.
+            */
+            get: function () {
+                return this.invocationMethod;
+            },
+            set: function (invocationMethod) {
+                this.invocationMethod = invocationMethod;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServiceToken.prototype, "endpointNameProperty", {
+            /**
+               @property {string} endpointNameProperty
+               Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
+  host and port combination for a given service. The 'endpointNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'endpointName'.
+            */
+            get: function () {
+                return this.endpointName;
+            },
+            set: function (endpointName) {
+                this.endpointName = endpointName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServiceToken.prototype, "functionNameProperty", {
+            /**
+               @property {string} functionNameProperty
+               Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
+  to a relative path of a function published on a remote service. The 'functionNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'functionName'.
+            */
+            get: function () {
+                return this.functionName;
+            },
+            set: function (functionName) {
+                this.functionName = functionName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServiceToken.prototype, "serviceNameProperty", {
+            /**
+               @property {string} serviceNameProperty
+               Name of the service configured in the platform's services XML file. The 'serviceNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceName'.
+            */
+            get: function () {
+                return this.serviceName;
+            },
+            set: function (serviceName) {
+                this.serviceName = serviceName;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Get token's invocation method type.

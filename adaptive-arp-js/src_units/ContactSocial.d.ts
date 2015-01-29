@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,10 +50,20 @@ declare module Adaptive {
         */
         socialNetwork: ContactSocialNetwork;
         /**
+           @property {Adaptive.ContactSocialNetwork} socialNetworkProperty
+           The social network The 'socialNetworkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'socialNetwork'.
+        */
+        socialNetworkProperty: ContactSocialNetwork;
+        /**
            @property {string} profileUrl
            The profileUrl
         */
         profileUrl: string;
+        /**
+           @property {string} profileUrlProperty
+           The profileUrl The 'profileUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'profileUrl'.
+        */
+        profileUrlProperty: string;
         /**
            @method constructor
            Constructor used by the implementation

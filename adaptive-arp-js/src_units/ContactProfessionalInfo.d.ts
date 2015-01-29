@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,15 +49,30 @@ declare module Adaptive {
         */
         company: string;
         /**
+           @property {string} companyProperty
+           The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
+        */
+        companyProperty: string;
+        /**
            @property {string} jobDescription
            The job description
         */
         jobDescription: string;
         /**
+           @property {string} jobDescriptionProperty
+           The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
+        */
+        jobDescriptionProperty: string;
+        /**
            @property {string} jobTitle
            The job title
         */
         jobTitle: string;
+        /**
+           @property {string} jobTitleProperty
+           The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
+        */
+        jobTitleProperty: string;
         /**
            @method constructor
            Constructor used by implementation to set the ContactProfessionalInfo.

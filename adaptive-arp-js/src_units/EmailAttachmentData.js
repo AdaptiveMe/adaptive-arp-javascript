@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -70,6 +70,76 @@ var Adaptive;
             this.mimeType = mimeType;
             this.referenceUrl = referenceUrl;
         }
+        Object.defineProperty(EmailAttachmentData.prototype, "dataProperty", {
+            /**
+               @property {number[]} dataProperty
+               The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
+            */
+            get: function () {
+                return this.data;
+            },
+            set: function (data) {
+                this.data = data;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(EmailAttachmentData.prototype, "fileNameProperty", {
+            /**
+               @property {string} fileNameProperty
+               The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
+            */
+            get: function () {
+                return this.fileName;
+            },
+            set: function (fileName) {
+                this.fileName = fileName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(EmailAttachmentData.prototype, "mimeTypeProperty", {
+            /**
+               @property {string} mimeTypeProperty
+               The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
+            */
+            get: function () {
+                return this.mimeType;
+            },
+            set: function (mimeType) {
+                this.mimeType = mimeType;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(EmailAttachmentData.prototype, "referenceUrlProperty", {
+            /**
+               @property {string} referenceUrlProperty
+               The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
+            */
+            get: function () {
+                return this.referenceUrl;
+            },
+            set: function (referenceUrl) {
+                this.referenceUrl = referenceUrl;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(EmailAttachmentData.prototype, "sizeProperty", {
+            /**
+               @property {number} sizeProperty
+               The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
+            */
+            get: function () {
+                return this.size;
+            },
+            set: function (size) {
+                this.size = size;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the raw data in byte[]

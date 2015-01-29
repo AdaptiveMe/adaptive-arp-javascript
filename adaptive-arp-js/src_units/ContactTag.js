@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,6 +64,34 @@ var Adaptive;
             this.tagName = tagName;
             this.tagValue = tagValue;
         }
+        Object.defineProperty(ContactTag.prototype, "tagNameProperty", {
+            /**
+               @property {string} tagNameProperty
+               The tagName of the Tag The 'tagNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagName'.
+            */
+            get: function () {
+                return this.tagName;
+            },
+            set: function (tagName) {
+                this.tagName = tagName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactTag.prototype, "tagValueProperty", {
+            /**
+               @property {string} tagValueProperty
+               The tagValue of the Tag The 'tagValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagValue'.
+            */
+            get: function () {
+                return this.tagValue;
+            },
+            set: function (tagValue) {
+                this.tagValue = tagValue;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the tagName of the Tag

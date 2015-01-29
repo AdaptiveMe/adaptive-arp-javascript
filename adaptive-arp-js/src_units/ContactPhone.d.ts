@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,10 +50,20 @@ declare module Adaptive {
         */
         phoneType: ContactPhoneType;
         /**
+           @property {Adaptive.ContactPhoneType} phoneTypeProperty
+           The phone number phoneType The 'phoneTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phoneType'.
+        */
+        phoneTypeProperty: ContactPhoneType;
+        /**
            @property {string} phone
            The phone number
         */
         phone: string;
+        /**
+           @property {string} phoneProperty
+           The phone number The 'phoneProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phone'.
+        */
+        phoneProperty: string;
         /**
            @method constructor
            Constructor used by implementation to set the contact Phone

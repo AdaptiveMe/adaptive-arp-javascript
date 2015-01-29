@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,11 +53,37 @@ module Adaptive {
              The address type
           */
           type : ContactAddressType;
+
+          /**
+             @property {Adaptive.ContactAddressType} typeProperty
+             The address type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : ContactAddressType {
+               return this.type;
+          }
+
+          set typeProperty(type:ContactAddressType) {
+               this.type = type;
+          }
+
           /**
              @property {string} address
              The Contact address
           */
           address : string;
+
+          /**
+             @property {string} addressProperty
+             The Contact address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+          */
+          get addressProperty() : string {
+               return this.address;
+          }
+
+          set addressProperty(address:string) {
+               this.address = address;
+          }
+
           /**
              @method constructor
              Constructor with fields

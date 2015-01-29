@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,20 +49,40 @@ declare module Adaptive {
         */
         timestamp: number;
         /**
+           @property {number} timestampProperty
+           Timestamp of the acceleration reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
            @property {number} x
            X-axis component of the acceleration.
         */
         x: number;
+        /**
+           @property {number} xProperty
+           X-axis component of the acceleration. The 'xProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'x'.
+        */
+        xProperty: number;
         /**
            @property {number} y
            Y-axis component of the acceleration.
         */
         y: number;
         /**
+           @property {number} yProperty
+           Y-axis component of the acceleration. The 'yProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'y'.
+        */
+        yProperty: number;
+        /**
            @property {number} z
            Z-axis component of the acceleration.
         */
         z: number;
+        /**
+           @property {number} zProperty
+           Z-axis component of the acceleration. The 'zProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'z'.
+        */
+        zProperty: number;
         /**
            @method constructor
            Constructor with fields

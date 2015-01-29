@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -65,6 +65,34 @@ var Adaptive;
             this.address = address;
             this.type = type;
         }
+        Object.defineProperty(ContactAddress.prototype, "typeProperty", {
+            /**
+               @property {Adaptive.ContactAddressType} typeProperty
+               The address type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+            */
+            get: function () {
+                return this.type;
+            },
+            set: function (type) {
+                this.type = type;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactAddress.prototype, "addressProperty", {
+            /**
+               @property {string} addressProperty
+               The Contact address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+            */
+            get: function () {
+                return this.address;
+            },
+            set: function (address) {
+                this.address = address;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the type of the address

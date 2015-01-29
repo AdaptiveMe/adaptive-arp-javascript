@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,26 +54,91 @@ module Adaptive {
              Number of databaseColumns.
           */
           columnCount : number;
+
+          /**
+             @property {number} columnCountProperty
+             Number of databaseColumns. The 'columnCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'columnCount'.
+          */
+          get columnCountProperty() : number {
+               return this.columnCount;
+          }
+
+          set columnCountProperty(columnCount:number) {
+               this.columnCount = columnCount;
+          }
+
           /**
              @property {Adaptive.DatabaseColumn[]} databaseColumns
              Definition of databaseColumns.
           */
           databaseColumns : Array<DatabaseColumn>;
+
+          /**
+             @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+             Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
+          */
+          get databaseColumnsProperty() : Array<DatabaseColumn> {
+               return this.databaseColumns;
+          }
+
+          set databaseColumnsProperty(databaseColumns:Array<DatabaseColumn>) {
+               this.databaseColumns = databaseColumns;
+          }
+
           /**
              @property {Adaptive.DatabaseRow[]} databaseRows
              Rows of the table containing the data.
           */
           databaseRows : Array<DatabaseRow>;
+
+          /**
+             @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+             Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
+          */
+          get databaseRowsProperty() : Array<DatabaseRow> {
+               return this.databaseRows;
+          }
+
+          set databaseRowsProperty(databaseRows:Array<DatabaseRow>) {
+               this.databaseRows = databaseRows;
+          }
+
           /**
              @property {string} name
              Name of the table.
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Name of the table. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @property {number} rowCount
              Number of databaseRows.
           */
           rowCount : number;
+
+          /**
+             @property {number} rowCountProperty
+             Number of databaseRows. The 'rowCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rowCount'.
+          */
+          get rowCountProperty() : number {
+               return this.rowCount;
+          }
+
+          set rowCountProperty(rowCount:number) {
+               this.rowCount = rowCount;
+          }
+
           /**
              @method constructor
              Constructor using fields

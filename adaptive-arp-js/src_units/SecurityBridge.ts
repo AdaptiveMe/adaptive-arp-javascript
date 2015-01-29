@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -82,7 +82,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -131,7 +131,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -176,7 +176,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -219,7 +219,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));

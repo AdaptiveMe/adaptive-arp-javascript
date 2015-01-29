@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,6 +56,21 @@ WillStartRotation. This will be the current orientation when the rotation is fin
 DidFinishRotation.
           */
           destination : ICapabilitiesOrientation;
+
+          /**
+             @property {Adaptive.ICapabilitiesOrientation} destinationProperty
+             The orientation we're rotating to. This is the future orientation when the state of the event is
+WillStartRotation. This will be the current orientation when the rotation is finished with the state
+DidFinishRotation. The 'destinationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'destination'.
+          */
+          get destinationProperty() : ICapabilitiesOrientation {
+               return this.destination;
+          }
+
+          set destinationProperty(destination:ICapabilitiesOrientation) {
+               this.destination = destination;
+          }
+
           /**
              @property {Adaptive.ICapabilitiesOrientation} origin
              The orientation we're rotating from. This is the current orientation when the state of the event is
@@ -63,6 +78,21 @@ WillStartRotation. This will be the previous orientation when the rotation is fi
 DidFinishRotation.
           */
           origin : ICapabilitiesOrientation;
+
+          /**
+             @property {Adaptive.ICapabilitiesOrientation} originProperty
+             The orientation we're rotating from. This is the current orientation when the state of the event is
+WillStartRotation. This will be the previous orientation when the rotation is finished with the state
+DidFinishRotation. The 'originProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'origin'.
+          */
+          get originProperty() : ICapabilitiesOrientation {
+               return this.origin;
+          }
+
+          set originProperty(origin:ICapabilitiesOrientation) {
+               this.origin = origin;
+          }
+
           /**
              @property {Adaptive.RotationEventState} state
              The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
@@ -70,11 +100,39 @@ for functions to be pre-emptively performed (veto change, re-layout, etc.) befor
 concluded.
           */
           state : RotationEventState;
+
+          /**
+             @property {Adaptive.RotationEventState} stateProperty
+             The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
+for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
+concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+          */
+          get stateProperty() : RotationEventState {
+               return this.state;
+          }
+
+          set stateProperty(state:RotationEventState) {
+               this.state = state;
+          }
+
           /**
              @property {number} timestamp
              The timestamps in milliseconds when the event was fired.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @method constructor
              Convenience constructor.

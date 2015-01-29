@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -70,6 +70,68 @@ var Adaptive;
             this.state = state;
             this.timestamp = timestamp;
         }
+        Object.defineProperty(RotationEvent.prototype, "destinationProperty", {
+            /**
+               @property {Adaptive.ICapabilitiesOrientation} destinationProperty
+               The orientation we're rotating to. This is the future orientation when the state of the event is
+  WillStartRotation. This will be the current orientation when the rotation is finished with the state
+  DidFinishRotation. The 'destinationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'destination'.
+            */
+            get: function () {
+                return this.destination;
+            },
+            set: function (destination) {
+                this.destination = destination;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(RotationEvent.prototype, "originProperty", {
+            /**
+               @property {Adaptive.ICapabilitiesOrientation} originProperty
+               The orientation we're rotating from. This is the current orientation when the state of the event is
+  WillStartRotation. This will be the previous orientation when the rotation is finished with the state
+  DidFinishRotation. The 'originProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'origin'.
+            */
+            get: function () {
+                return this.origin;
+            },
+            set: function (origin) {
+                this.origin = origin;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(RotationEvent.prototype, "stateProperty", {
+            /**
+               @property {Adaptive.RotationEventState} stateProperty
+               The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
+  for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
+  concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+            */
+            get: function () {
+                return this.state;
+            },
+            set: function (state) {
+                this.state = state;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(RotationEvent.prototype, "timestampProperty", {
+            /**
+               @property {number} timestampProperty
+               The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+            */
+            get: function () {
+                return this.timestamp;
+            },
+            set: function (timestamp) {
+                this.timestamp = timestamp;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Gets the destination orientation of the event.

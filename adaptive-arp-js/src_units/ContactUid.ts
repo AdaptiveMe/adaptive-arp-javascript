@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,6 +52,19 @@ module Adaptive {
              The id of the Contact
           */
           contactId : string;
+
+          /**
+             @property {string} contactIdProperty
+             The id of the Contact The 'contactIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactId'.
+          */
+          get contactIdProperty() : string {
+               return this.contactId;
+          }
+
+          set contactIdProperty(contactId:string) {
+               this.contactId = contactId;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the Contact id.

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,6 +58,66 @@ var Adaptive;
         function FileDescriptor() {
             _super.call(this);
         }
+        Object.defineProperty(FileDescriptor.prototype, "dateCreatedProperty", {
+            get: function () {
+                return this.dateCreated;
+            },
+            set: function (dateCreated) {
+                this.dateCreated = dateCreated;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FileDescriptor.prototype, "dateModifiedProperty", {
+            get: function () {
+                return this.dateModified;
+            },
+            set: function (dateModified) {
+                this.dateModified = dateModified;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FileDescriptor.prototype, "nameProperty", {
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FileDescriptor.prototype, "pathProperty", {
+            get: function () {
+                return this.path;
+            },
+            set: function (path) {
+                this.path = path;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FileDescriptor.prototype, "pathAbsoluteProperty", {
+            get: function () {
+                return this.pathAbsolute;
+            },
+            set: function (pathAbsolute) {
+                this.pathAbsolute = pathAbsolute;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(FileDescriptor.prototype, "sizeProperty", {
+            get: function () {
+                return this.size;
+            },
+            set: function (size) {
+                this.size = size;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the milliseconds passed since 1/1/1970 since the file was created.

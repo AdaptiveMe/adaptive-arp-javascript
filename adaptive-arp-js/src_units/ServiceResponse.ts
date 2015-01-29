@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,31 +55,110 @@ module Adaptive {
 should be encoded in base64.
           */
           content : string;
+
+          /**
+             @property {string} contentProperty
+             Response data content. The content should be in some well-known web format - in specific, binaries returned
+should be encoded in base64. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
+          */
+          get contentProperty() : string {
+               return this.content;
+          }
+
+          set contentProperty(content:string) {
+               this.content = content;
+          }
+
           /**
              @property {string} contentEncoding
              Encoding of the binary payload - by default assumed to be UTF8.
           */
           contentEncoding : string;
+
+          /**
+             @property {string} contentEncodingProperty
+             Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+          */
+          get contentEncodingProperty() : string {
+               return this.contentEncoding;
+          }
+
+          set contentEncodingProperty(contentEncoding:string) {
+               this.contentEncoding = contentEncoding;
+          }
+
           /**
              @property {number} contentLength
              The length in bytes for the Content field.
           */
           contentLength : number;
+
+          /**
+             @property {number} contentLengthProperty
+             The length in bytes for the Content field. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
+          */
+          get contentLengthProperty() : number {
+               return this.contentLength;
+          }
+
+          set contentLengthProperty(contentLength:number) {
+               this.contentLength = contentLength;
+          }
+
           /**
              @property {string} contentType
              The request/response content type (MIME TYPE).
           */
           contentType : string;
+
+          /**
+             @property {string} contentTypeProperty
+             The request/response content type (MIME TYPE). The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
+          */
+          get contentTypeProperty() : string {
+               return this.contentType;
+          }
+
+          set contentTypeProperty(contentType:string) {
+               this.contentType = contentType;
+          }
+
           /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included on the I/O service request.
           */
           serviceHeaders : Array<ServiceHeader>;
+
+          /**
+             @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+             The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
+          */
+          get serviceHeadersProperty() : Array<ServiceHeader> {
+               return this.serviceHeaders;
+          }
+
+          set serviceHeadersProperty(serviceHeaders:Array<ServiceHeader>) {
+               this.serviceHeaders = serviceHeaders;
+          }
+
           /**
              @property {Adaptive.ServiceSession} serviceSession
              Information about the session.
           */
           serviceSession : ServiceSession;
+
+          /**
+             @property {Adaptive.ServiceSession} serviceSessionProperty
+             Information about the session. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
+          */
+          get serviceSessionProperty() : ServiceSession {
+               return this.serviceSession;
+          }
+
+          set serviceSessionProperty(serviceSession:ServiceSession) {
+               this.serviceSession = serviceSession;
+          }
+
           /**
              @method constructor
              Constructor with fields

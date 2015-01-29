@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,6 +64,34 @@ var Adaptive;
             this.language = language;
             this.country = country;
         }
+        Object.defineProperty(Locale.prototype, "countryProperty", {
+            /**
+               @property {string} countryProperty
+               A valid ISO Country Code. The 'countryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'country'.
+            */
+            get: function () {
+                return this.country;
+            },
+            set: function (country) {
+                this.country = country;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Locale.prototype, "languageProperty", {
+            /**
+               @property {string} languageProperty
+               A valid ISO Language Code. The 'languageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'language'.
+            */
+            get: function () {
+                return this.language;
+            },
+            set: function (language) {
+                this.language = language;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the country code

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -66,6 +66,34 @@ var Adaptive;
             this.cookies = cookies;
             this.attributes = attributes;
         }
+        Object.defineProperty(ServiceSession.prototype, "attributesProperty", {
+            /**
+               @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+               The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
+            */
+            get: function () {
+                return this.attributes;
+            },
+            set: function (attributes) {
+                this.attributes = attributes;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServiceSession.prototype, "cookiesProperty", {
+            /**
+               @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+               The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
+            */
+            get: function () {
+                return this.cookies;
+            },
+            set: function (cookies) {
+                this.cookies = cookies;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Gets the attributes of the request or response.

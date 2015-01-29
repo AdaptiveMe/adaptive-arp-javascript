@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,10 +49,20 @@ declare module Adaptive {
         */
         keyData: string;
         /**
+           @property {string} keyDataProperty
+           Value of the key. The 'keyDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyData'.
+        */
+        keyDataProperty: string;
+        /**
            @property {string} keyName
            Name of the key for the value.
         */
         keyName: string;
+        /**
+           @property {string} keyNameProperty
+           Name of the key for the value. The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
+        */
+        keyNameProperty: string;
         /**
            @method constructor
            Convenience constructor.

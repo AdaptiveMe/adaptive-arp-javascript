@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,11 +48,65 @@ module Adaptive {
      export class FileDescriptor extends APIBean {
 
           dateCreated : number;
+
+          get dateCreatedProperty() : number {
+               return this.dateCreated;
+          }
+
+          set dateCreatedProperty(dateCreated:number) {
+               this.dateCreated = dateCreated;
+          }
+
           dateModified : number;
+
+          get dateModifiedProperty() : number {
+               return this.dateModified;
+          }
+
+          set dateModifiedProperty(dateModified:number) {
+               this.dateModified = dateModified;
+          }
+
           name : string;
+
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           path : string;
+
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           pathAbsolute : string;
+
+          get pathAbsoluteProperty() : string {
+               return this.pathAbsolute;
+          }
+
+          set pathAbsoluteProperty(pathAbsolute:string) {
+               this.pathAbsolute = pathAbsolute;
+          }
+
           size : number;
+
+          get sizeProperty() : number {
+               return this.size;
+          }
+
+          set sizeProperty(size:number) {
+               this.size = size;
+          }
+
           /**
              @method constructor
              Default constructor.

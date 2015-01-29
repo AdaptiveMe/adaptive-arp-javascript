@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,40 +57,80 @@ declare module Adaptive {
         */
         contactAddresses: ContactAddress[];
         /**
+           @property {Adaptive.ContactAddress[]} contactAddressesProperty
+           The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
+        */
+        contactAddressesProperty: ContactAddress[];
+        /**
            @property {Adaptive.ContactEmail[]} contactEmails
            The emails from the contact
         */
         contactEmails: ContactEmail[];
+        /**
+           @property {Adaptive.ContactEmail[]} contactEmailsProperty
+           The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
+        */
+        contactEmailsProperty: ContactEmail[];
         /**
            @property {Adaptive.ContactPhone[]} contactPhones
            The phones from the contact
         */
         contactPhones: ContactPhone[];
         /**
+           @property {Adaptive.ContactPhone[]} contactPhonesProperty
+           The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
+        */
+        contactPhonesProperty: ContactPhone[];
+        /**
            @property {Adaptive.ContactSocial[]} contactSocials
            The social network info from the contact
         */
         contactSocials: ContactSocial[];
+        /**
+           @property {Adaptive.ContactSocial[]} contactSocialsProperty
+           The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
+        */
+        contactSocialsProperty: ContactSocial[];
         /**
            @property {Adaptive.ContactTag[]} contactTags
            The aditional tags from the contact
         */
         contactTags: ContactTag[];
         /**
+           @property {Adaptive.ContactTag[]} contactTagsProperty
+           The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
+        */
+        contactTagsProperty: ContactTag[];
+        /**
            @property {Adaptive.ContactWebsite[]} contactWebsites
            The websites from the contact
         */
         contactWebsites: ContactWebsite[];
+        /**
+           @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+           The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
+        */
+        contactWebsitesProperty: ContactWebsite[];
         /**
            @property {Adaptive.ContactPersonalInfo} personalInfo
            The personal info from the contact
         */
         personalInfo: ContactPersonalInfo;
         /**
+           @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+           The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
+        */
+        personalInfoProperty: ContactPersonalInfo;
+        /**
            @property {Adaptive.ContactProfessionalInfo} professionalInfo
            The professional info from the contact
         */
         professionalInfo: ContactProfessionalInfo;
+        /**
+           @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+           The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
+        */
+        professionalInfoProperty: ContactProfessionalInfo;
         /**
            @method constructor
            Constructor with all the fields

@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,30 +52,61 @@ should be encoded in base64.
         */
         content: string;
         /**
+           @property {string} contentProperty
+           Response data content. The content should be in some well-known web format - in specific, binaries returned
+should be encoded in base64. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
+        */
+        contentProperty: string;
+        /**
            @property {string} contentEncoding
            Encoding of the binary payload - by default assumed to be UTF8.
         */
         contentEncoding: string;
+        /**
+           @property {string} contentEncodingProperty
+           Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+        */
+        contentEncodingProperty: string;
         /**
            @property {number} contentLength
            The length in bytes for the Content field.
         */
         contentLength: number;
         /**
+           @property {number} contentLengthProperty
+           The length in bytes for the Content field. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
+        */
+        contentLengthProperty: number;
+        /**
            @property {string} contentType
            The request/response content type (MIME TYPE).
         */
         contentType: string;
+        /**
+           @property {string} contentTypeProperty
+           The request/response content type (MIME TYPE). The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
+        */
+        contentTypeProperty: string;
         /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included on the I/O service request.
         */
         serviceHeaders: ServiceHeader[];
         /**
+           @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+           The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
+        */
+        serviceHeadersProperty: ServiceHeader[];
+        /**
            @property {Adaptive.ServiceSession} serviceSession
            Information about the session.
         */
         serviceSession: ServiceSession;
+        /**
+           @property {Adaptive.ServiceSession} serviceSessionProperty
+           Information about the session. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
+        */
+        serviceSessionProperty: ServiceSession;
         /**
            @method constructor
            Constructor with fields

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -50,15 +50,30 @@ declare module Adaptive {
         */
         name: IOSType;
         /**
+           @property {Adaptive.IOSType} nameProperty
+           The name of the operating system. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+        */
+        nameProperty: IOSType;
+        /**
            @property {string} vendor
            The vendor of the operating system.
         */
         vendor: string;
         /**
+           @property {string} vendorProperty
+           The vendor of the operating system. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+        */
+        vendorProperty: string;
+        /**
            @property {string} version
            The version/identifier of the operating system.
         */
         version: string;
+        /**
+           @property {string} versionProperty
+           The version/identifier of the operating system. The 'versionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'version'.
+        */
+        versionProperty: string;
         /**
            @method constructor
            Constructor used by implementation to set the OS information.

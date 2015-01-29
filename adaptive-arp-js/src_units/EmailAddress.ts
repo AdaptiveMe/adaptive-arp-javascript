@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,6 +52,19 @@ module Adaptive {
              The Email address
           */
           address : string;
+
+          /**
+             @property {string} addressProperty
+             The Email address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+          */
+          get addressProperty() : string {
+               return this.address;
+          }
+
+          set addressProperty(address:string) {
+               this.address = address;
+          }
+
           /**
              @method constructor
              Constructor used by implementation

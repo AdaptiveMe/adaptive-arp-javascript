@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,16 +49,55 @@ module Adaptive {
              String representing the JavaScript value or JSON object representation of the response.
           */
           response : string;
+
+          /**
+             @property {string} responseProperty
+             String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
+          */
+          get responseProperty() : string {
+               return this.response;
+          }
+
+          set responseProperty(response:string) {
+               this.response = response;
+          }
+
           /**
              @property {number} statusCode
              Status code of the response
           */
           statusCode : number;
+
+          /**
+             @property {number} statusCodeProperty
+             Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+          */
+          get statusCodeProperty() : number {
+               return this.statusCode;
+          }
+
+          set statusCodeProperty(statusCode:number) {
+               this.statusCode = statusCode;
+          }
+
           /**
              @property {string} statusMessage
              Status message of the response
           */
           statusMessage : string;
+
+          /**
+             @property {string} statusMessageProperty
+             Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
+          */
+          get statusMessageProperty() : string {
+               return this.statusMessage;
+          }
+
+          set statusMessageProperty(statusMessage:string) {
+               this.statusMessage = statusMessage;
+          }
+
           /**
              @method constructor
              Constructor with parameters.

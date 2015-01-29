@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -65,6 +65,34 @@ var Adaptive;
             this.socialNetwork = socialNetwork;
             this.profileUrl = profileUrl;
         }
+        Object.defineProperty(ContactSocial.prototype, "socialNetworkProperty", {
+            /**
+               @property {Adaptive.ContactSocialNetwork} socialNetworkProperty
+               The social network The 'socialNetworkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'socialNetwork'.
+            */
+            get: function () {
+                return this.socialNetwork;
+            },
+            set: function (socialNetwork) {
+                this.socialNetwork = socialNetwork;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactSocial.prototype, "profileUrlProperty", {
+            /**
+               @property {string} profileUrlProperty
+               The profileUrl The 'profileUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'profileUrl'.
+            */
+            get: function () {
+                return this.profileUrl;
+            },
+            set: function (profileUrl) {
+                this.profileUrl = profileUrl;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the social network

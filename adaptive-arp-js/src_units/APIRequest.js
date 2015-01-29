@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,6 +58,62 @@ var Adaptive;
             this.parameters = parameters;
             this.asyncId = asyncId;
         }
+        Object.defineProperty(APIRequest.prototype, "asyncIdProperty", {
+            /**
+               @property {number} asyncIdProperty
+               Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
+            */
+            get: function () {
+                return this.asyncId;
+            },
+            set: function (asyncId) {
+                this.asyncId = asyncId;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(APIRequest.prototype, "bridgeTypeProperty", {
+            /**
+               @property {string} bridgeTypeProperty
+               String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
+            */
+            get: function () {
+                return this.bridgeType;
+            },
+            set: function (bridgeType) {
+                this.bridgeType = bridgeType;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(APIRequest.prototype, "methodNameProperty", {
+            /**
+               @property {string} methodNameProperty
+               String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
+            */
+            get: function () {
+                return this.methodName;
+            },
+            set: function (methodName) {
+                this.methodName = methodName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(APIRequest.prototype, "parametersProperty", {
+            /**
+               @property {string[]} parametersProperty
+               Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
+            */
+            get: function () {
+                return this.parameters;
+            },
+            set: function (parameters) {
+                this.parameters = parameters;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the callback or listener id assigned to this request OR zero if there is no associated callback or

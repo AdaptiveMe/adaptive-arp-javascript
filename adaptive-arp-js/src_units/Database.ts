@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,11 +52,37 @@ module Adaptive {
              Indicates if database was created or needs to be created as Compressed.
           */
           compress : boolean;
+
+          /**
+             @property {boolean} compressProperty
+             Indicates if database was created or needs to be created as Compressed. The 'compressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'compress'.
+          */
+          get compressProperty() : boolean {
+               return this.compress;
+          }
+
+          set compressProperty(compress:boolean) {
+               this.compress = compress;
+          }
+
           /**
              @property {string} name
              Database Name (name of the .db local file).
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Database Name (name of the .db local file). The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @method constructor
              Constructor using fields.

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,6 +58,48 @@ var Adaptive;
             this.methods = methods;
             this.type = type;
         }
+        Object.defineProperty(ServicePath.prototype, "typeProperty", {
+            /**
+               @property {Adaptive.IServiceType} typeProperty
+               Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+            */
+            get: function () {
+                return this.type;
+            },
+            set: function (type) {
+                this.type = type;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServicePath.prototype, "methodsProperty", {
+            /**
+               @property {Adaptive.IServiceMethod[]} methodsProperty
+               The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
+            */
+            get: function () {
+                return this.methods;
+            },
+            set: function (methods) {
+                this.methods = methods;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ServicePath.prototype, "pathProperty", {
+            /**
+               @property {string} pathProperty
+               The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+            */
+            get: function () {
+                return this.path;
+            },
+            set: function (path) {
+                this.path = path;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Gets the protocol for the path.

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ var Adaptive;
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.0.8";
+            return "v2.1.0";
         };
         return BaseListener;
     })();

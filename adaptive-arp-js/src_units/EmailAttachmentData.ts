@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,26 +52,91 @@ module Adaptive {
              The raw data for the current file attachment (byte array)
           */
           data : Array<number>;
+
+          /**
+             @property {number[]} dataProperty
+             The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
+          */
+          get dataProperty() : Array<number> {
+               return this.data;
+          }
+
+          set dataProperty(data:Array<number>) {
+               this.data = data;
+          }
+
           /**
              @property {string} fileName
              The name of the current file attachment
           */
           fileName : string;
+
+          /**
+             @property {string} fileNameProperty
+             The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
+          */
+          get fileNameProperty() : string {
+               return this.fileName;
+          }
+
+          set fileNameProperty(fileName:string) {
+               this.fileName = fileName;
+          }
+
           /**
              @property {string} mimeType
              The mime type of the current attachment
           */
           mimeType : string;
+
+          /**
+             @property {string} mimeTypeProperty
+             The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
+          */
+          get mimeTypeProperty() : string {
+               return this.mimeType;
+          }
+
+          set mimeTypeProperty(mimeType:string) {
+               this.mimeType = mimeType;
+          }
+
           /**
              @property {string} referenceUrl
              The relative path where the contents for the attachment file could be located.
           */
           referenceUrl : string;
+
+          /**
+             @property {string} referenceUrlProperty
+             The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
+          */
+          get referenceUrlProperty() : string {
+               return this.referenceUrl;
+          }
+
+          set referenceUrlProperty(referenceUrl:string) {
+               this.referenceUrl = referenceUrl;
+          }
+
           /**
              @property {number} size
              The data size (in bytes) of the current file attachment
           */
           size : number;
+
+          /**
+             @property {number} sizeProperty
+             The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
+          */
+          get sizeProperty() : number {
+               return this.size;
+          }
+
+          set sizeProperty(size:number) {
+               this.size = size;
+          }
+
           /**
              @method constructor
              Constructor with fields

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -3316,21 +3316,73 @@ of the device. For device orientation, use the IDevice APIs.
              Identifier of callback or listener for async operations.
           */
           asyncId : number;
+
+          /**
+             @property {number} asyncIdProperty
+             Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
+          */
+          get asyncIdProperty() : number {
+               return this.asyncId;
+          }
+
+          set asyncIdProperty(asyncId:number) {
+               this.asyncId = asyncId;
+          }
+
           /**
              @property {string} bridgeType
              String representing the bridge type to obtain.
           */
           bridgeType : string;
+
+          /**
+             @property {string} bridgeTypeProperty
+             String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
+          */
+          get bridgeTypeProperty() : string {
+               return this.bridgeType;
+          }
+
+          set bridgeTypeProperty(bridgeType:string) {
+               this.bridgeType = bridgeType;
+          }
+
           /**
              @property {string} methodName
              String representing the method name to call.
           */
           methodName : string;
+
+          /**
+             @property {string} methodNameProperty
+             String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
+          */
+          get methodNameProperty() : string {
+               return this.methodName;
+          }
+
+          set methodNameProperty(methodName:string) {
+               this.methodName = methodName;
+          }
+
           /**
              @property {string[]} parameters
              Parameters of the request as JSON formatted strings.
           */
           parameters : Array<string>;
+
+          /**
+             @property {string[]} parametersProperty
+             Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
+          */
+          get parametersProperty() : Array<string> {
+               return this.parameters;
+          }
+
+          set parametersProperty(parameters:Array<string>) {
+               this.parameters = parameters;
+          }
+
           /**
              @method constructor
              Constructor with all the parameters
@@ -3473,16 +3525,55 @@ listener.
              String representing the JavaScript value or JSON object representation of the response.
           */
           response : string;
+
+          /**
+             @property {string} responseProperty
+             String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
+          */
+          get responseProperty() : string {
+               return this.response;
+          }
+
+          set responseProperty(response:string) {
+               this.response = response;
+          }
+
           /**
              @property {number} statusCode
              Status code of the response
           */
           statusCode : number;
+
+          /**
+             @property {number} statusCodeProperty
+             Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+          */
+          get statusCodeProperty() : number {
+               return this.statusCode;
+          }
+
+          set statusCodeProperty(statusCode:number) {
+               this.statusCode = statusCode;
+          }
+
           /**
              @property {string} statusMessage
              Status message of the response
           */
           statusMessage : string;
+
+          /**
+             @property {string} statusMessageProperty
+             Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
+          */
+          get statusMessageProperty() : string {
+               return this.statusMessage;
+          }
+
+          set statusMessageProperty(statusMessage:string) {
+               this.statusMessage = statusMessage;
+          }
+
           /**
              @method constructor
              Constructor with parameters.
@@ -3589,11 +3680,37 @@ listener.
              The service name
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
              Endpoint of the service
           */
           serviceEndpoints : Array<ServiceEndpoint>;
+
+          /**
+             @property {Adaptive.ServiceEndpoint[]} serviceEndpointsProperty
+             Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
+          */
+          get serviceEndpointsProperty() : Array<ServiceEndpoint> {
+               return this.serviceEndpoints;
+          }
+
+          set serviceEndpointsProperty(serviceEndpoints:Array<ServiceEndpoint>) {
+               this.serviceEndpoints = serviceEndpoints;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -3691,16 +3808,55 @@ listener.
              Type of validation to be performed for SSL hosts.
           */
           validationType : IServiceCertificateValidation;
+
+          /**
+             @property {Adaptive.IServiceCertificateValidation} validationTypeProperty
+             Type of validation to be performed for SSL hosts. The 'validationTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'validationType'.
+          */
+          get validationTypeProperty() : IServiceCertificateValidation {
+               return this.validationType;
+          }
+
+          set validationTypeProperty(validationType:IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
           /**
              @property {string} hostURI
              The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
           */
           hostURI : string;
+
+          /**
+             @property {string} hostURIProperty
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The 'hostURIProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'hostURI'.
+          */
+          get hostURIProperty() : string {
+               return this.hostURI;
+          }
+
+          set hostURIProperty(hostURI:string) {
+               this.hostURI = hostURI;
+          }
+
           /**
              @property {Adaptive.ServicePath[]} paths
              The remote service paths (to be added to the hostURI and port url).
           */
           paths : Array<ServicePath>;
+
+          /**
+             @property {Adaptive.ServicePath[]} pathsProperty
+             The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
+          */
+          get pathsProperty() : Array<ServicePath> {
+               return this.paths;
+          }
+
+          set pathsProperty(paths:Array<ServicePath>) {
+               this.paths = paths;
+          }
+
           /**
              @method constructor
              Constructor with parameters
@@ -3825,16 +3981,55 @@ listener.
              Service endpoint type.
           */
           type : IServiceType;
+
+          /**
+             @property {Adaptive.IServiceType} typeProperty
+             Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : IServiceType {
+               return this.type;
+          }
+
+          set typeProperty(type:IServiceType) {
+               this.type = type;
+          }
+
           /**
              @property {Adaptive.IServiceMethod[]} methods
              The methods for calling a path.
           */
           methods : Array<IServiceMethod>;
+
+          /**
+             @property {Adaptive.IServiceMethod[]} methodsProperty
+             The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
+          */
+          get methodsProperty() : Array<IServiceMethod> {
+               return this.methods;
+          }
+
+          set methodsProperty(methods:Array<IServiceMethod>) {
+               this.methods = methods;
+          }
+
           /**
              @property {string} path
              The path for the endpoint.
           */
           path : string;
+
+          /**
+             @property {string} pathProperty
+             The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+          */
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           /**
              @method constructor
              Constructor with parameters.
@@ -3962,21 +4157,73 @@ listener.
              Timestamp of the acceleration reading.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             Timestamp of the acceleration reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @property {number} x
              X-axis component of the acceleration.
           */
           x : number;
+
+          /**
+             @property {number} xProperty
+             X-axis component of the acceleration. The 'xProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'x'.
+          */
+          get xProperty() : number {
+               return this.x;
+          }
+
+          set xProperty(x:number) {
+               this.x = x;
+          }
+
           /**
              @property {number} y
              Y-axis component of the acceleration.
           */
           y : number;
+
+          /**
+             @property {number} yProperty
+             Y-axis component of the acceleration. The 'yProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'y'.
+          */
+          get yProperty() : number {
+               return this.y;
+          }
+
+          set yProperty(y:number) {
+               this.y = y;
+          }
+
           /**
              @property {number} z
              Z-axis component of the acceleration.
           */
           z : number;
+
+          /**
+             @property {number} zProperty
+             Z-axis component of the acceleration. The 'zProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'z'.
+          */
+          get zProperty() : number {
+               return this.z;
+          }
+
+          set zProperty(z:number) {
+               this.z = z;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -4116,6 +4363,19 @@ listener.
              Button type
           */
           type : ICapabilitiesButton;
+
+          /**
+             @property {Adaptive.ICapabilitiesButton} typeProperty
+             Button type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : ICapabilitiesButton {
+               return this.type;
+          }
+
+          set typeProperty(type:ICapabilitiesButton) {
+               this.type = type;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -4184,11 +4444,37 @@ listener.
              The address type
           */
           type : ContactAddressType;
+
+          /**
+             @property {Adaptive.ContactAddressType} typeProperty
+             The address type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : ContactAddressType {
+               return this.type;
+          }
+
+          set typeProperty(type:ContactAddressType) {
+               this.type = type;
+          }
+
           /**
              @property {string} address
              The Contact address
           */
           address : string;
+
+          /**
+             @property {string} addressProperty
+             The Contact address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+          */
+          get addressProperty() : string {
+               return this.address;
+          }
+
+          set addressProperty(address:string) {
+               this.address = address;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -4282,16 +4568,55 @@ listener.
              The type of the email
           */
           type : ContactEmailType;
+
+          /**
+             @property {Adaptive.ContactEmailType} typeProperty
+             The type of the email The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : ContactEmailType {
+               return this.type;
+          }
+
+          set typeProperty(type:ContactEmailType) {
+               this.type = type;
+          }
+
           /**
              @property {string} email
              Email of the Contact
           */
           email : string;
+
+          /**
+             @property {string} emailProperty
+             Email of the Contact The 'emailProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'email'.
+          */
+          get emailProperty() : string {
+               return this.email;
+          }
+
+          set emailProperty(email:string) {
+               this.email = email;
+          }
+
           /**
              @property {boolean} primary
              Whether the email is the primary one or not
           */
           primary : boolean;
+
+          /**
+             @property {boolean} primaryProperty
+             Whether the email is the primary one or not The 'primaryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'primary'.
+          */
+          get primaryProperty() : boolean {
+               return this.primary;
+          }
+
+          set primaryProperty(primary:boolean) {
+               this.primary = primary;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -4410,21 +4735,73 @@ listener.
              The title of the Contact
           */
           title : ContactPersonalInfoTitle;
+
+          /**
+             @property {Adaptive.ContactPersonalInfoTitle} titleProperty
+             The title of the Contact The 'titleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'title'.
+          */
+          get titleProperty() : ContactPersonalInfoTitle {
+               return this.title;
+          }
+
+          set titleProperty(title:ContactPersonalInfoTitle) {
+               this.title = title;
+          }
+
           /**
              @property {string} lastName
              The last name of the Contact
           */
           lastName : string;
+
+          /**
+             @property {string} lastNameProperty
+             The last name of the Contact The 'lastNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'lastName'.
+          */
+          get lastNameProperty() : string {
+               return this.lastName;
+          }
+
+          set lastNameProperty(lastName:string) {
+               this.lastName = lastName;
+          }
+
           /**
              @property {string} middleName
              The middle name of the Contact if it proceeds
           */
           middleName : string;
+
+          /**
+             @property {string} middleNameProperty
+             The middle name of the Contact if it proceeds The 'middleNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'middleName'.
+          */
+          get middleNameProperty() : string {
+               return this.middleName;
+          }
+
+          set middleNameProperty(middleName:string) {
+               this.middleName = middleName;
+          }
+
           /**
              @property {string} name
              The name of the Contact
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             The name of the Contact The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @method constructor
              The Constructor used by the implementation
@@ -4568,11 +4945,37 @@ listener.
              The phone number phoneType
           */
           phoneType : ContactPhoneType;
+
+          /**
+             @property {Adaptive.ContactPhoneType} phoneTypeProperty
+             The phone number phoneType The 'phoneTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phoneType'.
+          */
+          get phoneTypeProperty() : ContactPhoneType {
+               return this.phoneType;
+          }
+
+          set phoneTypeProperty(phoneType:ContactPhoneType) {
+               this.phoneType = phoneType;
+          }
+
           /**
              @property {string} phone
              The phone number
           */
           phone : string;
+
+          /**
+             @property {string} phoneProperty
+             The phone number The 'phoneProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phone'.
+          */
+          get phoneProperty() : string {
+               return this.phone;
+          }
+
+          set phoneProperty(phone:string) {
+               this.phone = phone;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the contact Phone
@@ -4666,16 +5069,55 @@ listener.
              The company of the job
           */
           company : string;
+
+          /**
+             @property {string} companyProperty
+             The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
+          */
+          get companyProperty() : string {
+               return this.company;
+          }
+
+          set companyProperty(company:string) {
+               this.company = company;
+          }
+
           /**
              @property {string} jobDescription
              The job description
           */
           jobDescription : string;
+
+          /**
+             @property {string} jobDescriptionProperty
+             The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
+          */
+          get jobDescriptionProperty() : string {
+               return this.jobDescription;
+          }
+
+          set jobDescriptionProperty(jobDescription:string) {
+               this.jobDescription = jobDescription;
+          }
+
           /**
              @property {string} jobTitle
              The job title
           */
           jobTitle : string;
+
+          /**
+             @property {string} jobTitleProperty
+             The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
+          */
+          get jobTitleProperty() : string {
+               return this.jobTitle;
+          }
+
+          set jobTitleProperty(jobTitle:string) {
+               this.jobTitle = jobTitle;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the ContactProfessionalInfo.
@@ -4790,11 +5232,37 @@ listener.
              The social network
           */
           socialNetwork : ContactSocialNetwork;
+
+          /**
+             @property {Adaptive.ContactSocialNetwork} socialNetworkProperty
+             The social network The 'socialNetworkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'socialNetwork'.
+          */
+          get socialNetworkProperty() : ContactSocialNetwork {
+               return this.socialNetwork;
+          }
+
+          set socialNetworkProperty(socialNetwork:ContactSocialNetwork) {
+               this.socialNetwork = socialNetwork;
+          }
+
           /**
              @property {string} profileUrl
              The profileUrl
           */
           profileUrl : string;
+
+          /**
+             @property {string} profileUrlProperty
+             The profileUrl The 'profileUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'profileUrl'.
+          */
+          get profileUrlProperty() : string {
+               return this.profileUrl;
+          }
+
+          set profileUrlProperty(profileUrl:string) {
+               this.profileUrl = profileUrl;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -4888,11 +5356,37 @@ listener.
              The tagName of the Tag
           */
           tagName : string;
+
+          /**
+             @property {string} tagNameProperty
+             The tagName of the Tag The 'tagNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagName'.
+          */
+          get tagNameProperty() : string {
+               return this.tagName;
+          }
+
+          set tagNameProperty(tagName:string) {
+               this.tagName = tagName;
+          }
+
           /**
              @property {string} tagValue
              The tagValue of the Tag
           */
           tagValue : string;
+
+          /**
+             @property {string} tagValueProperty
+             The tagValue of the Tag The 'tagValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagValue'.
+          */
+          get tagValueProperty() : string {
+               return this.tagValue;
+          }
+
+          set tagValueProperty(tagValue:string) {
+               this.tagValue = tagValue;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -4982,6 +5476,19 @@ listener.
              The id of the Contact
           */
           contactId : string;
+
+          /**
+             @property {string} contactIdProperty
+             The id of the Contact The 'contactIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactId'.
+          */
+          get contactIdProperty() : string {
+               return this.contactId;
+          }
+
+          set contactIdProperty(contactId:string) {
+               this.contactId = contactId;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the Contact id.
@@ -5046,6 +5553,19 @@ listener.
              The url of the website
           */
           url : string;
+
+          /**
+             @property {string} urlProperty
+             The url of the website The 'urlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'url'.
+          */
+          get urlProperty() : string {
+               return this.url;
+          }
+
+          set urlProperty(url:string) {
+               this.url = url;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -5110,11 +5630,37 @@ listener.
              Indicates if database was created or needs to be created as Compressed.
           */
           compress : boolean;
+
+          /**
+             @property {boolean} compressProperty
+             Indicates if database was created or needs to be created as Compressed. The 'compressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'compress'.
+          */
+          get compressProperty() : boolean {
+               return this.compress;
+          }
+
+          set compressProperty(compress:boolean) {
+               this.compress = compress;
+          }
+
           /**
              @property {string} name
              Database Name (name of the .db local file).
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Database Name (name of the .db local file). The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @method constructor
              Constructor using fields.
@@ -5204,6 +5750,19 @@ listener.
              Name of the column
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Name of the column The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -5268,6 +5827,19 @@ listener.
              The values of the row.
           */
           values : Array<string>;
+
+          /**
+             @property {string[]} valuesProperty
+             The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
+          */
+          get valuesProperty() : Array<string> {
+               return this.values;
+          }
+
+          set valuesProperty(values:Array<string>) {
+               this.values = values;
+          }
+
           /**
              @method constructor
              Constructor for implementation using.
@@ -5338,26 +5910,91 @@ listener.
              Number of databaseColumns.
           */
           columnCount : number;
+
+          /**
+             @property {number} columnCountProperty
+             Number of databaseColumns. The 'columnCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'columnCount'.
+          */
+          get columnCountProperty() : number {
+               return this.columnCount;
+          }
+
+          set columnCountProperty(columnCount:number) {
+               this.columnCount = columnCount;
+          }
+
           /**
              @property {Adaptive.DatabaseColumn[]} databaseColumns
              Definition of databaseColumns.
           */
           databaseColumns : Array<DatabaseColumn>;
+
+          /**
+             @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+             Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
+          */
+          get databaseColumnsProperty() : Array<DatabaseColumn> {
+               return this.databaseColumns;
+          }
+
+          set databaseColumnsProperty(databaseColumns:Array<DatabaseColumn>) {
+               this.databaseColumns = databaseColumns;
+          }
+
           /**
              @property {Adaptive.DatabaseRow[]} databaseRows
              Rows of the table containing the data.
           */
           databaseRows : Array<DatabaseRow>;
+
+          /**
+             @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+             Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
+          */
+          get databaseRowsProperty() : Array<DatabaseRow> {
+               return this.databaseRows;
+          }
+
+          set databaseRowsProperty(databaseRows:Array<DatabaseRow>) {
+               this.databaseRows = databaseRows;
+          }
+
           /**
              @property {string} name
              Name of the table.
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Name of the table. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @property {number} rowCount
              Number of databaseRows.
           */
           rowCount : number;
+
+          /**
+             @property {number} rowCountProperty
+             Number of databaseRows. The 'rowCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rowCount'.
+          */
+          get rowCountProperty() : number {
+               return this.rowCount;
+          }
+
+          set rowCountProperty(rowCount:number) {
+               this.rowCount = rowCount;
+          }
+
           /**
              @method constructor
              Constructor using fields
@@ -5542,22 +6179,75 @@ listener.
              Model of device - equivalent to device release or version.
           */
           model : string;
+
+          /**
+             @property {string} modelProperty
+             Model of device - equivalent to device release or version. The 'modelProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'model'.
+          */
+          get modelProperty() : string {
+               return this.model;
+          }
+
+          set modelProperty(model:string) {
+               this.model = model;
+          }
+
           /**
              @property {string} name
              Name of device - equivalent to brand.
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             Name of device - equivalent to brand. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @property {string} uuid
              Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device.
           */
           uuid : string;
+
+          /**
+             @property {string} uuidProperty
+             Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
+be unique for a specific instance of an application on a specific device. The 'uuidProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'uuid'.
+          */
+          get uuidProperty() : string {
+               return this.uuid;
+          }
+
+          set uuidProperty(uuid:string) {
+               this.uuid = uuid;
+          }
+
           /**
              @property {string} vendor
              Vendor of the device hardware.
           */
           vendor : string;
+
+          /**
+             @property {string} vendorProperty
+             Vendor of the device hardware. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+          */
+          get vendorProperty() : string {
+               return this.vendor;
+          }
+
+          set vendorProperty(vendor:string) {
+               this.vendor = vendor;
+          }
+
           /**
              @method constructor
              Constructor for the implementation of the platform.
@@ -5695,36 +6385,127 @@ be unique for a specific instance of an application on a specific device.
              Array of Email Blind Carbon Copy recipients
           */
           bccRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} bccRecipientsProperty
+             Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
+          */
+          get bccRecipientsProperty() : Array<EmailAddress> {
+               return this.bccRecipients;
+          }
+
+          set bccRecipientsProperty(bccRecipients:Array<EmailAddress>) {
+               this.bccRecipients = bccRecipients;
+          }
+
           /**
              @property {Adaptive.EmailAddress[]} ccRecipients
              Array of Email Carbon Copy recipients
           */
           ccRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} ccRecipientsProperty
+             Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
+          */
+          get ccRecipientsProperty() : Array<EmailAddress> {
+               return this.ccRecipients;
+          }
+
+          set ccRecipientsProperty(ccRecipients:Array<EmailAddress>) {
+               this.ccRecipients = ccRecipients;
+          }
+
           /**
              @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
              Array of attatchments
           */
           emailAttachmentData : Array<EmailAttachmentData>;
+
+          /**
+             @property {Adaptive.EmailAttachmentData[]} emailAttachmentDataProperty
+             Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
+          */
+          get emailAttachmentDataProperty() : Array<EmailAttachmentData> {
+               return this.emailAttachmentData;
+          }
+
+          set emailAttachmentDataProperty(emailAttachmentData:Array<EmailAttachmentData>) {
+               this.emailAttachmentData = emailAttachmentData;
+          }
+
           /**
              @property {string} messageBody
              Message body
           */
           messageBody : string;
+
+          /**
+             @property {string} messageBodyProperty
+             Message body The 'messageBodyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBody'.
+          */
+          get messageBodyProperty() : string {
+               return this.messageBody;
+          }
+
+          set messageBodyProperty(messageBody:string) {
+               this.messageBody = messageBody;
+          }
+
           /**
              @property {string} messageBodyMimeType
              Message body mime type
           */
           messageBodyMimeType : string;
+
+          /**
+             @property {string} messageBodyMimeTypeProperty
+             Message body mime type The 'messageBodyMimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBodyMimeType'.
+          */
+          get messageBodyMimeTypeProperty() : string {
+               return this.messageBodyMimeType;
+          }
+
+          set messageBodyMimeTypeProperty(messageBodyMimeType:string) {
+               this.messageBodyMimeType = messageBodyMimeType;
+          }
+
           /**
              @property {string} subject
              Subject of the email
           */
           subject : string;
+
+          /**
+             @property {string} subjectProperty
+             Subject of the email The 'subjectProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'subject'.
+          */
+          get subjectProperty() : string {
+               return this.subject;
+          }
+
+          set subjectProperty(subject:string) {
+               this.subject = subject;
+          }
+
           /**
              @property {Adaptive.EmailAddress[]} toRecipients
              Array of Email recipients
           */
           toRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} toRecipientsProperty
+             Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
+          */
+          get toRecipientsProperty() : Array<EmailAddress> {
+               return this.toRecipients;
+          }
+
+          set toRecipientsProperty(toRecipients:Array<EmailAddress>) {
+               this.toRecipients = toRecipients;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -5979,6 +6760,19 @@ be unique for a specific instance of an application on a specific device.
              The Email address
           */
           address : string;
+
+          /**
+             @property {string} addressProperty
+             The Email address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
+          */
+          get addressProperty() : string {
+               return this.address;
+          }
+
+          set addressProperty(address:string) {
+               this.address = address;
+          }
+
           /**
              @method constructor
              Constructor used by implementation
@@ -6043,26 +6837,91 @@ be unique for a specific instance of an application on a specific device.
              The raw data for the current file attachment (byte array)
           */
           data : Array<number>;
+
+          /**
+             @property {number[]} dataProperty
+             The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
+          */
+          get dataProperty() : Array<number> {
+               return this.data;
+          }
+
+          set dataProperty(data:Array<number>) {
+               this.data = data;
+          }
+
           /**
              @property {string} fileName
              The name of the current file attachment
           */
           fileName : string;
+
+          /**
+             @property {string} fileNameProperty
+             The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
+          */
+          get fileNameProperty() : string {
+               return this.fileName;
+          }
+
+          set fileNameProperty(fileName:string) {
+               this.fileName = fileName;
+          }
+
           /**
              @property {string} mimeType
              The mime type of the current attachment
           */
           mimeType : string;
+
+          /**
+             @property {string} mimeTypeProperty
+             The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
+          */
+          get mimeTypeProperty() : string {
+               return this.mimeType;
+          }
+
+          set mimeTypeProperty(mimeType:string) {
+               this.mimeType = mimeType;
+          }
+
           /**
              @property {string} referenceUrl
              The relative path where the contents for the attachment file could be located.
           */
           referenceUrl : string;
+
+          /**
+             @property {string} referenceUrlProperty
+             The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
+          */
+          get referenceUrlProperty() : string {
+               return this.referenceUrl;
+          }
+
+          set referenceUrlProperty(referenceUrl:string) {
+               this.referenceUrl = referenceUrl;
+          }
+
           /**
              @property {number} size
              The data size (in bytes) of the current file attachment
           */
           size : number;
+
+          /**
+             @property {number} sizeProperty
+             The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
+          */
+          get sizeProperty() : number {
+               return this.size;
+          }
+
+          set sizeProperty(size:number) {
+               this.size = size;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -6229,11 +7088,65 @@ be unique for a specific instance of an application on a specific device.
      */
      export class FileDescriptor extends APIBean {
           dateCreated : number;
+
+          get dateCreatedProperty() : number {
+               return this.dateCreated;
+          }
+
+          set dateCreatedProperty(dateCreated:number) {
+               this.dateCreated = dateCreated;
+          }
+
           dateModified : number;
+
+          get dateModifiedProperty() : number {
+               return this.dateModified;
+          }
+
+          set dateModifiedProperty(dateModified:number) {
+               this.dateModified = dateModified;
+          }
+
           name : string;
+
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           path : string;
+
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           pathAbsolute : string;
+
+          get pathAbsoluteProperty() : string {
+               return this.pathAbsolute;
+          }
+
+          set pathAbsoluteProperty(pathAbsolute:string) {
+               this.pathAbsolute = pathAbsolute;
+          }
+
           size : number;
+
+          get sizeProperty() : number {
+               return this.size;
+          }
+
+          set sizeProperty(size:number) {
+               this.size = size;
+          }
+
           /**
              @method constructor
              Default constructor.
@@ -6404,31 +7317,109 @@ doesn't exist, this will be -1. Used internally.
              The current device altitude (or Z coordinate). Measured in meters.
           */
           altitude : number;
+
+          /**
+             @property {number} altitudeProperty
+             The current device altitude (or Z coordinate). Measured in meters. The 'altitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'altitude'.
+          */
+          get altitudeProperty() : number {
+               return this.altitude;
+          }
+
+          set altitudeProperty(altitude:number) {
+               this.altitude = altitude;
+          }
+
           /**
              @property {number} latitude
              The Y coordinate (or latitude). Measured in degrees.
           */
           latitude : number;
+
+          /**
+             @property {number} latitudeProperty
+             The Y coordinate (or latitude). Measured in degrees. The 'latitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'latitude'.
+          */
+          get latitudeProperty() : number {
+               return this.latitude;
+          }
+
+          set latitudeProperty(latitude:number) {
+               this.latitude = latitude;
+          }
+
           /**
              @property {number} longitude
              The X coordinate (or longitude). Measured in degrees.
           */
           longitude : number;
+
+          /**
+             @property {number} longitudeProperty
+             The X coordinate (or longitude). Measured in degrees. The 'longitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'longitude'.
+          */
+          get longitudeProperty() : number {
+               return this.longitude;
+          }
+
+          set longitudeProperty(longitude:number) {
+               this.longitude = longitude;
+          }
+
           /**
              @property {number} timestamp
              Timestamp of the geolocation reading.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             Timestamp of the geolocation reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @property {number} xDoP
              Dilution of precision on the X measurement. Measured in meters.
           */
           xDoP : number;
+
+          /**
+             @property {number} xDoPProperty
+             Dilution of precision on the X measurement. Measured in meters. The 'xDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'xDoP'.
+          */
+          get xDoPProperty() : number {
+               return this.xDoP;
+          }
+
+          set xDoPProperty(xDoP:number) {
+               this.xDoP = xDoP;
+          }
+
           /**
              @property {number} yDoP
              Dilution of precision on the Y measurement. Measured in meters.
           */
           yDoP : number;
+
+          /**
+             @property {number} yDoPProperty
+             Dilution of precision on the Y measurement. Measured in meters. The 'yDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'yDoP'.
+          */
+          get yDoPProperty() : number {
+               return this.yDoP;
+          }
+
+          set yDoPProperty(yDoP:number) {
+               this.yDoP = yDoP;
+          }
+
           /**
              @method constructor
              Constructor with parameters
@@ -6614,11 +7605,37 @@ doesn't exist, this will be -1. Used internally.
              Key of the element
           */
           keyName : string;
+
+          /**
+             @property {string} keyNameProperty
+             Key of the element The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
+          */
+          get keyNameProperty() : string {
+               return this.keyName;
+          }
+
+          set keyNameProperty(keyName:string) {
+               this.keyName = keyName;
+          }
+
           /**
              @property {string} keyValue
              Value of the element
           */
           keyValue : string;
+
+          /**
+             @property {string} keyValueProperty
+             Value of the element The 'keyValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyValue'.
+          */
+          get keyValueProperty() : string {
+               return this.keyValue;
+          }
+
+          set keyValueProperty(keyValue:string) {
+               this.keyValue = keyValue;
+          }
+
           /**
              @method constructor
              Constructor using fields
@@ -6708,11 +7725,37 @@ doesn't exist, this will be -1. Used internally.
              Value of the key.
           */
           keyData : string;
+
+          /**
+             @property {string} keyDataProperty
+             Value of the key. The 'keyDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyData'.
+          */
+          get keyDataProperty() : string {
+               return this.keyData;
+          }
+
+          set keyDataProperty(keyData:string) {
+               this.keyData = keyData;
+          }
+
           /**
              @property {string} keyName
              Name of the key for the value.
           */
           keyName : string;
+
+          /**
+             @property {string} keyNameProperty
+             Name of the key for the value. The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
+          */
+          get keyNameProperty() : string {
+               return this.keyName;
+          }
+
+          set keyNameProperty(keyName:string) {
+               this.keyName = keyName;
+          }
+
           /**
              @method constructor
              Convenience constructor.
@@ -6813,6 +7856,30 @@ Possible lifecycle States:
 6. Stopping    - Before stopping.
           */
           state : LifecycleState;
+
+          /**
+             @property {Adaptive.LifecycleState} stateProperty
+             Represent the state of the app
+<p>
+Possible lifecycle States:
+<p>
+1. Starting    - Before starting.
+2. Started     - Start concluded.
+3. Running     - Accepts user interaction - running in foreground.
+4. Pausing     - Before going to background.
+4.1 PausedIdle - In background, no scheduled background activity (passive).
+4.2 PausedRun  - In background, scheduled background activity (periodic network access, gps access, etc.)
+5. Resuming    - Before going to foreground, followed by Running state.
+6. Stopping    - Before stopping. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+          */
+          get stateProperty() : LifecycleState {
+               return this.state;
+          }
+
+          set stateProperty(state:LifecycleState) {
+               this.state = state;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -6881,11 +7948,37 @@ Possible lifecycle States:
              A valid ISO Country Code.
           */
           country : string;
+
+          /**
+             @property {string} countryProperty
+             A valid ISO Country Code. The 'countryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'country'.
+          */
+          get countryProperty() : string {
+               return this.country;
+          }
+
+          set countryProperty(country:string) {
+               this.country = country;
+          }
+
           /**
              @property {string} language
              A valid ISO Language Code.
           */
           language : string;
+
+          /**
+             @property {string} languageProperty
+             A valid ISO Language Code. The 'languageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'language'.
+          */
+          get languageProperty() : string {
+               return this.language;
+          }
+
+          set languageProperty(language:string) {
+               this.language = language;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
@@ -6975,16 +8068,55 @@ Possible lifecycle States:
              The name of the operating system.
           */
           name : IOSType;
+
+          /**
+             @property {Adaptive.IOSType} nameProperty
+             The name of the operating system. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : IOSType {
+               return this.name;
+          }
+
+          set nameProperty(name:IOSType) {
+               this.name = name;
+          }
+
           /**
              @property {string} vendor
              The vendor of the operating system.
           */
           vendor : string;
+
+          /**
+             @property {string} vendorProperty
+             The vendor of the operating system. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
+          */
+          get vendorProperty() : string {
+               return this.vendor;
+          }
+
+          set vendorProperty(vendor:string) {
+               this.vendor = vendor;
+          }
+
           /**
              @property {string} version
              The version/identifier of the operating system.
           */
           version : string;
+
+          /**
+             @property {string} versionProperty
+             The version/identifier of the operating system. The 'versionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'version'.
+          */
+          get versionProperty() : string {
+               return this.version;
+          }
+
+          set versionProperty(version:string) {
+               this.version = version;
+          }
+
           /**
              @method constructor
              Constructor used by implementation to set the OS information.
@@ -7102,6 +8234,21 @@ WillStartRotation. This will be the current orientation when the rotation is fin
 DidFinishRotation.
           */
           destination : ICapabilitiesOrientation;
+
+          /**
+             @property {Adaptive.ICapabilitiesOrientation} destinationProperty
+             The orientation we're rotating to. This is the future orientation when the state of the event is
+WillStartRotation. This will be the current orientation when the rotation is finished with the state
+DidFinishRotation. The 'destinationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'destination'.
+          */
+          get destinationProperty() : ICapabilitiesOrientation {
+               return this.destination;
+          }
+
+          set destinationProperty(destination:ICapabilitiesOrientation) {
+               this.destination = destination;
+          }
+
           /**
              @property {Adaptive.ICapabilitiesOrientation} origin
              The orientation we're rotating from. This is the current orientation when the state of the event is
@@ -7109,6 +8256,21 @@ WillStartRotation. This will be the previous orientation when the rotation is fi
 DidFinishRotation.
           */
           origin : ICapabilitiesOrientation;
+
+          /**
+             @property {Adaptive.ICapabilitiesOrientation} originProperty
+             The orientation we're rotating from. This is the current orientation when the state of the event is
+WillStartRotation. This will be the previous orientation when the rotation is finished with the state
+DidFinishRotation. The 'originProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'origin'.
+          */
+          get originProperty() : ICapabilitiesOrientation {
+               return this.origin;
+          }
+
+          set originProperty(origin:ICapabilitiesOrientation) {
+               this.origin = origin;
+          }
+
           /**
              @property {Adaptive.RotationEventState} state
              The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
@@ -7116,11 +8278,39 @@ for functions to be pre-emptively performed (veto change, re-layout, etc.) befor
 concluded.
           */
           state : RotationEventState;
+
+          /**
+             @property {Adaptive.RotationEventState} stateProperty
+             The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
+for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
+concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+          */
+          get stateProperty() : RotationEventState {
+               return this.state;
+          }
+
+          set stateProperty(state:RotationEventState) {
+               this.state = state;
+          }
+
           /**
              @property {number} timestamp
              The timestamps in milliseconds when the event was fired.
           */
           timestamp : number;
+
+          /**
+             @property {number} timestampProperty
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
           /**
              @method constructor
              Convenience constructor.
@@ -7272,11 +8462,37 @@ concluded.
              Value of the secured element
           */
           secureData : string;
+
+          /**
+             @property {string} secureDataProperty
+             Value of the secured element The 'secureDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureData'.
+          */
+          get secureDataProperty() : string {
+               return this.secureData;
+          }
+
+          set secureDataProperty(secureData:string) {
+               this.secureData = secureData;
+          }
+
           /**
              @property {string} secureKey
              Key of the secured element
           */
           secureKey : string;
+
+          /**
+             @property {string} secureKeyProperty
+             Key of the secured element The 'secureKeyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureKey'.
+          */
+          get secureKeyProperty() : string {
+               return this.secureKey;
+          }
+
+          set secureKeyProperty(secureKey:string) {
+               this.secureKey = secureKey;
+          }
+
           /**
              @method constructor
              Constructor with parameters
@@ -7367,6 +8583,20 @@ concluded.
 during GET/POST operations. No body parameters are included if this array is null or length zero.
           */
           bodyParameters : Array<ServiceRequestParameter>;
+
+          /**
+             @property {Adaptive.ServiceRequestParameter[]} bodyParametersProperty
+             Body parameters to be included in the body of the request to a service. These may be applied
+during GET/POST operations. No body parameters are included if this array is null or length zero. The 'bodyParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bodyParameters'.
+          */
+          get bodyParametersProperty() : Array<ServiceRequestParameter> {
+               return this.bodyParameters;
+          }
+
+          set bodyParametersProperty(bodyParameters:Array<ServiceRequestParameter>) {
+               this.bodyParameters = bodyParameters;
+          }
+
           /**
              @property {string} content
              Request data content (plain text). This should be populated by the application. The content should be
@@ -7374,30 +8604,101 @@ in some well-known web format - in specific, binaries submitted should be encode
 type should be set respectively by the application.
           */
           content : string;
+
+          /**
+             @property {string} contentProperty
+             Request data content (plain text). This should be populated by the application. The content should be
+in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
+type should be set respectively by the application. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
+          */
+          get contentProperty() : string {
+               return this.content;
+          }
+
+          set contentProperty(content:string) {
+               this.content = content;
+          }
+
           /**
              @property {string} contentEncoding
              Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentEncoding : string;
+
+          /**
+             @property {string} contentEncodingProperty
+             Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+          */
+          get contentEncodingProperty() : string {
+               return this.contentEncoding;
+          }
+
+          set contentEncodingProperty(contentEncoding:string) {
+               this.contentEncoding = contentEncoding;
+          }
+
           /**
              @property {number} contentLength
              The length in bytes of the content. This may be populated by the application, the platform
 calculates this length automatically if a specific contentLength is not specified.
           */
           contentLength : number;
+
+          /**
+             @property {number} contentLengthProperty
+             The length in bytes of the content. This may be populated by the application, the platform
+calculates this length automatically if a specific contentLength is not specified. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
+          */
+          get contentLengthProperty() : number {
+               return this.contentLength;
+          }
+
+          set contentLengthProperty(contentLength:number) {
+               this.contentLength = contentLength;
+          }
+
           /**
              @property {string} contentType
              The request content type (MIME TYPE). This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentType : string;
+
+          /**
+             @property {string} contentTypeProperty
+             The request content type (MIME TYPE). This may be populated by the application, the platform
+populates this field with defaults for the service. The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
+          */
+          get contentTypeProperty() : string {
+               return this.contentType;
+          }
+
+          set contentTypeProperty(contentType:string) {
+               this.contentType = contentType;
+          }
+
           /**
              @property {Adaptive.ServiceRequestParameter[]} queryParameters
              Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero.
           */
           queryParameters : Array<ServiceRequestParameter>;
+
+          /**
+             @property {Adaptive.ServiceRequestParameter[]} queryParametersProperty
+             Query string parameters to be appended to the service URL when making the request. These may be applied
+during GET/POST operations. No query parameters are appended if this array is null or length zero. The 'queryParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'queryParameters'.
+          */
+          get queryParametersProperty() : Array<ServiceRequestParameter> {
+               return this.queryParameters;
+          }
+
+          set queryParametersProperty(queryParameters:Array<ServiceRequestParameter>) {
+               this.queryParameters = queryParameters;
+          }
+
           /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
@@ -7405,6 +8706,21 @@ application, the platform populates this field with defaults for the service and
 In specific, the platform maintains request and response state automatically.
           */
           serviceHeaders : Array<ServiceHeader>;
+
+          /**
+             @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+             The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
+application, the platform populates this field with defaults for the service and the previous headers.
+In specific, the platform maintains request and response state automatically. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
+          */
+          get serviceHeadersProperty() : Array<ServiceHeader> {
+               return this.serviceHeaders;
+          }
+
+          set serviceHeadersProperty(serviceHeaders:Array<ServiceHeader>) {
+               this.serviceHeaders = serviceHeaders;
+          }
+
           /**
              @property {Adaptive.ServiceSession} serviceSession
              Session attributes and cookies. This may be populated by the application, the platform populates
@@ -7412,17 +8728,59 @@ this field with defaults for the service and the previous state information. In 
 maintains request and response state automatically.
           */
           serviceSession : ServiceSession;
+
+          /**
+             @property {Adaptive.ServiceSession} serviceSessionProperty
+             Session attributes and cookies. This may be populated by the application, the platform populates
+this field with defaults for the service and the previous state information. In specific, the platform
+maintains request and response state automatically. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
+          */
+          get serviceSessionProperty() : ServiceSession {
+               return this.serviceSession;
+          }
+
+          set serviceSessionProperty(serviceSession:ServiceSession) {
+               this.serviceSession = serviceSession;
+          }
+
           /**
              @property {Adaptive.ServiceToken} serviceToken
              Token used for the creation of the request with the destination service, endpoint, function and method
 identifiers. This should not be manipulated by the application directly.
           */
           serviceToken : ServiceToken;
+
+          /**
+             @property {Adaptive.ServiceToken} serviceTokenProperty
+             Token used for the creation of the request with the destination service, endpoint, function and method
+identifiers. This should not be manipulated by the application directly. The 'serviceTokenProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceToken'.
+          */
+          get serviceTokenProperty() : ServiceToken {
+               return this.serviceToken;
+          }
+
+          set serviceTokenProperty(serviceToken:ServiceToken) {
+               this.serviceToken = serviceToken;
+          }
+
           /**
              @property {string} userAgent
              This attribute allows for the default user-agent string to be overridden by the application.
           */
           userAgent : string;
+
+          /**
+             @property {string} userAgentProperty
+             This attribute allows for the default user-agent string to be overridden by the application. The 'userAgentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'userAgent'.
+          */
+          get userAgentProperty() : string {
+               return this.userAgent;
+          }
+
+          set userAgentProperty(userAgent:string) {
+               this.userAgent = userAgent;
+          }
+
           /**
              @method constructor
              Convenience constructor.
@@ -7735,31 +9093,110 @@ identifiers. This should not be manipulated by the application directly.
 should be encoded in base64.
           */
           content : string;
+
+          /**
+             @property {string} contentProperty
+             Response data content. The content should be in some well-known web format - in specific, binaries returned
+should be encoded in base64. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
+          */
+          get contentProperty() : string {
+               return this.content;
+          }
+
+          set contentProperty(content:string) {
+               this.content = content;
+          }
+
           /**
              @property {string} contentEncoding
              Encoding of the binary payload - by default assumed to be UTF8.
           */
           contentEncoding : string;
+
+          /**
+             @property {string} contentEncodingProperty
+             Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+          */
+          get contentEncodingProperty() : string {
+               return this.contentEncoding;
+          }
+
+          set contentEncodingProperty(contentEncoding:string) {
+               this.contentEncoding = contentEncoding;
+          }
+
           /**
              @property {number} contentLength
              The length in bytes for the Content field.
           */
           contentLength : number;
+
+          /**
+             @property {number} contentLengthProperty
+             The length in bytes for the Content field. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
+          */
+          get contentLengthProperty() : number {
+               return this.contentLength;
+          }
+
+          set contentLengthProperty(contentLength:number) {
+               this.contentLength = contentLength;
+          }
+
           /**
              @property {string} contentType
              The request/response content type (MIME TYPE).
           */
           contentType : string;
+
+          /**
+             @property {string} contentTypeProperty
+             The request/response content type (MIME TYPE). The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
+          */
+          get contentTypeProperty() : string {
+               return this.contentType;
+          }
+
+          set contentTypeProperty(contentType:string) {
+               this.contentType = contentType;
+          }
+
           /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included on the I/O service request.
           */
           serviceHeaders : Array<ServiceHeader>;
+
+          /**
+             @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+             The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
+          */
+          get serviceHeadersProperty() : Array<ServiceHeader> {
+               return this.serviceHeaders;
+          }
+
+          set serviceHeadersProperty(serviceHeaders:Array<ServiceHeader>) {
+               this.serviceHeaders = serviceHeaders;
+          }
+
           /**
              @property {Adaptive.ServiceSession} serviceSession
              Information about the session.
           */
           serviceSession : ServiceSession;
+
+          /**
+             @property {Adaptive.ServiceSession} serviceSessionProperty
+             Information about the session. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
+          */
+          get serviceSessionProperty() : ServiceSession {
+               return this.serviceSession;
+          }
+
+          set serviceSessionProperty(serviceSession:ServiceSession) {
+               this.serviceSession = serviceSession;
+          }
+
           /**
              @method constructor
              Constructor with fields
@@ -7963,11 +9400,37 @@ should be encoded in base64.
              The attributes of the request or response.
           */
           attributes : Array<ServiceSessionAttribute>;
+
+          /**
+             @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+             The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
+          */
+          get attributesProperty() : Array<ServiceSessionAttribute> {
+               return this.attributes;
+          }
+
+          set attributesProperty(attributes:Array<ServiceSessionAttribute>) {
+               this.attributes = attributes;
+          }
+
           /**
              @property {Adaptive.ServiceSessionCookie[]} cookies
              The cookies of the request or response.
           */
           cookies : Array<ServiceSessionCookie>;
+
+          /**
+             @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+             The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
+          */
+          get cookiesProperty() : Array<ServiceSessionCookie> {
+               return this.cookies;
+          }
+
+          set cookiesProperty(cookies:Array<ServiceSessionCookie>) {
+               this.cookies = cookies;
+          }
+
           /**
              @method constructor
              Constructor with fields.
@@ -8077,41 +9540,145 @@ should be encoded in base64.
              Name ot the cookie.
           */
           cookieName : string;
+
+          /**
+             @property {string} cookieNameProperty
+             Name ot the cookie. The 'cookieNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieName'.
+          */
+          get cookieNameProperty() : string {
+               return this.cookieName;
+          }
+
+          set cookieNameProperty(cookieName:string) {
+               this.cookieName = cookieName;
+          }
+
           /**
              @property {string} cookieValue
              Value of the ServiceCookie.
           */
           cookieValue : string;
+
+          /**
+             @property {string} cookieValueProperty
+             Value of the ServiceCookie. The 'cookieValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieValue'.
+          */
+          get cookieValueProperty() : string {
+               return this.cookieValue;
+          }
+
+          set cookieValueProperty(cookieValue:string) {
+               this.cookieValue = cookieValue;
+          }
+
           /**
              @property {number} creation
              ServiceCookie creation timestamp in milliseconds.
           */
           creation : number;
+
+          /**
+             @property {number} creationProperty
+             ServiceCookie creation timestamp in milliseconds. The 'creationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'creation'.
+          */
+          get creationProperty() : number {
+               return this.creation;
+          }
+
+          set creationProperty(creation:number) {
+               this.creation = creation;
+          }
+
           /**
              @property {string} domain
              Domain for which the cookie is valid.
           */
           domain : string;
+
+          /**
+             @property {string} domainProperty
+             Domain for which the cookie is valid. The 'domainProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'domain'.
+          */
+          get domainProperty() : string {
+               return this.domain;
+          }
+
+          set domainProperty(domain:string) {
+               this.domain = domain;
+          }
+
           /**
              @property {number} expiry
              ServiceCookie expiry in milliseconds or -1 for session only.
           */
           expiry : number;
+
+          /**
+             @property {number} expiryProperty
+             ServiceCookie expiry in milliseconds or -1 for session only. The 'expiryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'expiry'.
+          */
+          get expiryProperty() : number {
+               return this.expiry;
+          }
+
+          set expiryProperty(expiry:number) {
+               this.expiry = expiry;
+          }
+
           /**
              @property {string} path
              URI path for which the cookie is valid.
           */
           path : string;
+
+          /**
+             @property {string} pathProperty
+             URI path for which the cookie is valid. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+          */
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
           /**
              @property {string} scheme
              Scheme of the domain - http/https - for which the cookie is valid.
           */
           scheme : string;
+
+          /**
+             @property {string} schemeProperty
+             Scheme of the domain - http/https - for which the cookie is valid. The 'schemeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'scheme'.
+          */
+          get schemeProperty() : string {
+               return this.scheme;
+          }
+
+          set schemeProperty(scheme:string) {
+               this.scheme = scheme;
+          }
+
           /**
              @property {boolean} secure
              ServiceCookie is secure (https only).
           */
           secure : boolean;
+
+          /**
+             @property {boolean} secureProperty
+             ServiceCookie is secure (https only). The 'secureProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secure'.
+          */
+          get secureProperty() : boolean {
+               return this.secure;
+          }
+
+          set secureProperty(secure:boolean) {
+               this.secure = secure;
+          }
+
           /**
              @method constructor
              Contructor with fields
@@ -8352,23 +9919,78 @@ should be encoded in base64.
 other invocation methods. This is also defined per function of each endpoint in the platform's XML file.
           */
           invocationMethod : IServiceMethod;
+
+          /**
+             @property {Adaptive.IServiceMethod} invocationMethodProperty
+             Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
+other invocation methods. This is also defined per function of each endpoint in the platform's XML file. The 'invocationMethodProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'invocationMethod'.
+          */
+          get invocationMethodProperty() : IServiceMethod {
+               return this.invocationMethod;
+          }
+
+          set invocationMethodProperty(invocationMethod:IServiceMethod) {
+               this.invocationMethod = invocationMethod;
+          }
+
           /**
              @property {string} endpointName
              Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
 host and port combination for a given service.
           */
           endpointName : string;
+
+          /**
+             @property {string} endpointNameProperty
+             Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
+host and port combination for a given service. The 'endpointNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'endpointName'.
+          */
+          get endpointNameProperty() : string {
+               return this.endpointName;
+          }
+
+          set endpointNameProperty(endpointName:string) {
+               this.endpointName = endpointName;
+          }
+
           /**
              @property {string} functionName
              Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
 to a relative path of a function published on a remote service.
           */
           functionName : string;
+
+          /**
+             @property {string} functionNameProperty
+             Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
+to a relative path of a function published on a remote service. The 'functionNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'functionName'.
+          */
+          get functionNameProperty() : string {
+               return this.functionName;
+          }
+
+          set functionNameProperty(functionName:string) {
+               this.functionName = functionName;
+          }
+
           /**
              @property {string} serviceName
              Name of the service configured in the platform's services XML file.
           */
           serviceName : string;
+
+          /**
+             @property {string} serviceNameProperty
+             Name of the service configured in the platform's services XML file. The 'serviceNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceName'.
+          */
+          get serviceNameProperty() : string {
+               return this.serviceName;
+          }
+
+          set serviceNameProperty(serviceName:string) {
+               this.serviceName = serviceName;
+          }
+
           /**
              @method constructor
              Convenience constructor.
@@ -8512,41 +10134,145 @@ to a relative path of a function published on a remote service.
              The adresses from the contact
           */
           contactAddresses : Array<ContactAddress>;
+
+          /**
+             @property {Adaptive.ContactAddress[]} contactAddressesProperty
+             The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
+          */
+          get contactAddressesProperty() : Array<ContactAddress> {
+               return this.contactAddresses;
+          }
+
+          set contactAddressesProperty(contactAddresses:Array<ContactAddress>) {
+               this.contactAddresses = contactAddresses;
+          }
+
           /**
              @property {Adaptive.ContactEmail[]} contactEmails
              The emails from the contact
           */
           contactEmails : Array<ContactEmail>;
+
+          /**
+             @property {Adaptive.ContactEmail[]} contactEmailsProperty
+             The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
+          */
+          get contactEmailsProperty() : Array<ContactEmail> {
+               return this.contactEmails;
+          }
+
+          set contactEmailsProperty(contactEmails:Array<ContactEmail>) {
+               this.contactEmails = contactEmails;
+          }
+
           /**
              @property {Adaptive.ContactPhone[]} contactPhones
              The phones from the contact
           */
           contactPhones : Array<ContactPhone>;
+
+          /**
+             @property {Adaptive.ContactPhone[]} contactPhonesProperty
+             The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
+          */
+          get contactPhonesProperty() : Array<ContactPhone> {
+               return this.contactPhones;
+          }
+
+          set contactPhonesProperty(contactPhones:Array<ContactPhone>) {
+               this.contactPhones = contactPhones;
+          }
+
           /**
              @property {Adaptive.ContactSocial[]} contactSocials
              The social network info from the contact
           */
           contactSocials : Array<ContactSocial>;
+
+          /**
+             @property {Adaptive.ContactSocial[]} contactSocialsProperty
+             The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
+          */
+          get contactSocialsProperty() : Array<ContactSocial> {
+               return this.contactSocials;
+          }
+
+          set contactSocialsProperty(contactSocials:Array<ContactSocial>) {
+               this.contactSocials = contactSocials;
+          }
+
           /**
              @property {Adaptive.ContactTag[]} contactTags
              The aditional tags from the contact
           */
           contactTags : Array<ContactTag>;
+
+          /**
+             @property {Adaptive.ContactTag[]} contactTagsProperty
+             The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
+          */
+          get contactTagsProperty() : Array<ContactTag> {
+               return this.contactTags;
+          }
+
+          set contactTagsProperty(contactTags:Array<ContactTag>) {
+               this.contactTags = contactTags;
+          }
+
           /**
              @property {Adaptive.ContactWebsite[]} contactWebsites
              The websites from the contact
           */
           contactWebsites : Array<ContactWebsite>;
+
+          /**
+             @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+             The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
+          */
+          get contactWebsitesProperty() : Array<ContactWebsite> {
+               return this.contactWebsites;
+          }
+
+          set contactWebsitesProperty(contactWebsites:Array<ContactWebsite>) {
+               this.contactWebsites = contactWebsites;
+          }
+
           /**
              @property {Adaptive.ContactPersonalInfo} personalInfo
              The personal info from the contact
           */
           personalInfo : ContactPersonalInfo;
+
+          /**
+             @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+             The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
+          */
+          get personalInfoProperty() : ContactPersonalInfo {
+               return this.personalInfo;
+          }
+
+          set personalInfoProperty(personalInfo:ContactPersonalInfo) {
+               this.personalInfo = personalInfo;
+          }
+
           /**
              @property {Adaptive.ContactProfessionalInfo} professionalInfo
              The professional info from the contact
           */
           professionalInfo : ContactProfessionalInfo;
+
+          /**
+             @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+             The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
+          */
+          get professionalInfoProperty() : ContactProfessionalInfo {
+               return this.professionalInfo;
+          }
+
+          set professionalInfoProperty(professionalInfo:ContactProfessionalInfo) {
+               this.professionalInfo = professionalInfo;
+          }
+
           /**
              @method constructor
              Constructor with all the fields
@@ -9011,7 +10737,7 @@ to a relative path of a function published on a remote service.
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
 
      }
@@ -10132,7 +11858,7 @@ event may be fired if the application vetoes display rotation before rotation is
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
 
      }
@@ -12060,7 +13786,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12103,7 +13829,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12146,7 +13872,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12189,7 +13915,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12232,7 +13958,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12275,7 +14001,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12318,7 +14044,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12361,7 +14087,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12404,7 +14130,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12447,7 +14173,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12490,7 +14216,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12533,7 +14259,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12576,7 +14302,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12619,7 +14345,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
 
@@ -12676,7 +14402,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -12715,7 +14441,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -12761,7 +14487,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -12802,7 +14528,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<KeyPair> = null;
@@ -12863,7 +14589,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredLifecycleListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -12905,7 +14631,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -12944,7 +14670,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -12979,7 +14705,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -13229,7 +14955,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13276,7 +15002,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13340,7 +15066,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredNetworkStatusListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -13382,7 +15108,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -13417,7 +15143,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -13480,7 +15206,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ServiceRequest = null;
@@ -13528,7 +15254,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ServiceToken = null;
@@ -13567,7 +15293,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<ServiceToken> = null;
@@ -13611,7 +15337,7 @@ configured in the platform's XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13665,7 +15391,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -13744,7 +15470,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ITelephonyStatus = null;
@@ -13842,7 +15568,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13891,7 +15617,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13938,7 +15664,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13987,7 +15713,7 @@ XML service definition file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14039,7 +15765,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14091,7 +15817,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14138,7 +15864,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14181,7 +15907,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14241,7 +15967,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14282,7 +16008,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14323,7 +16049,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14373,7 +16099,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14414,7 +16140,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14455,7 +16181,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14502,7 +16228,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemStorageType = null;
@@ -14543,7 +16269,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemType = null;
@@ -14584,7 +16310,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemSecurity = null;
@@ -14625,7 +16351,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14667,7 +16393,7 @@ any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14717,7 +16443,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14766,7 +16492,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14814,7 +16540,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14863,7 +16589,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14932,7 +16658,7 @@ This method does not create the actual file in the specified folder.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14973,7 +16699,7 @@ This path is volatile and may be cleaned by the OS periodically.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15013,7 +16739,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15053,7 +16779,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15093,7 +16819,7 @@ This path may or may not be directly readable or writable - it usually contains 
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15133,7 +16859,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15172,7 +16898,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -15214,7 +16940,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -15368,7 +17094,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -15509,7 +17235,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15556,7 +17282,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15601,7 +17327,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15648,7 +17374,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15697,7 +17423,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15744,7 +17470,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15793,7 +17519,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15842,7 +17568,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -15902,7 +17628,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15970,7 +17696,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -16152,7 +17878,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -16201,7 +17927,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -16246,7 +17972,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16289,7 +18015,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -16353,7 +18079,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredAccelerationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -16395,7 +18121,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16430,7 +18156,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16526,7 +18252,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredGeolocationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -16568,7 +18294,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16603,7 +18329,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16815,7 +18541,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -16855,7 +18581,7 @@ support at least one orientation. This is usually PortaitUp.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<ICapabilitiesOrientation> = null;
@@ -16899,7 +18625,7 @@ support at least one orientation. This is usually PortaitUp.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16941,7 +18667,7 @@ the device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16982,7 +18708,7 @@ the device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17024,7 +18750,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17065,7 +18791,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17107,7 +18833,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17148,7 +18874,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17190,7 +18916,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17248,7 +18974,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredButtonListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17290,7 +19016,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredDeviceOrientationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17332,7 +19058,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : DeviceInfo = null;
@@ -17371,7 +19097,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -17411,7 +19137,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -17450,7 +19176,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17485,7 +19211,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17524,7 +19250,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17559,7 +19285,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17617,7 +19343,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                // Add listener reference to local dictionary.
                registeredDisplayOrientationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17660,7 +19386,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -17699,7 +19425,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17734,7 +19460,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17792,7 +19518,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : OSInfo = null;
@@ -17849,7 +19575,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17874,7 +19600,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17934,7 +19660,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17979,7 +19705,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -18024,7 +19750,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -18198,7 +19924,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -18227,7 +19953,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -19555,7 +21281,7 @@ of the device. For device orientation, use the IDevice APIs.
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.0.8"
+               return "v2.1.0"
           }
      }
      /**

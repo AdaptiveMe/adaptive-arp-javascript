@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,15 +47,30 @@ declare module Adaptive {
         */
         response: string;
         /**
+           @property {string} responseProperty
+           String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
+        */
+        responseProperty: string;
+        /**
            @property {number} statusCode
            Status code of the response
         */
         statusCode: number;
         /**
+           @property {number} statusCodeProperty
+           Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+        */
+        statusCodeProperty: number;
+        /**
            @property {string} statusMessage
            Status message of the response
         */
         statusMessage: string;
+        /**
+           @property {string} statusMessageProperty
+           Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
+        */
+        statusMessageProperty: string;
         /**
            @method constructor
            Constructor with parameters.

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,6 +64,34 @@ var Adaptive;
             this.keyName = keyName;
             this.keyValue = keyValue;
         }
+        Object.defineProperty(KeyPair.prototype, "keyNameProperty", {
+            /**
+               @property {string} keyNameProperty
+               Key of the element The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
+            */
+            get: function () {
+                return this.keyName;
+            },
+            set: function (keyName) {
+                this.keyName = keyName;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(KeyPair.prototype, "keyValueProperty", {
+            /**
+               @property {string} keyValueProperty
+               Value of the element The 'keyValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyValue'.
+            */
+            get: function () {
+                return this.keyValue;
+            },
+            set: function (keyValue) {
+                this.keyValue = keyValue;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the keyName of the element

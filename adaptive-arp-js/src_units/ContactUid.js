@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,6 +62,20 @@ var Adaptive;
             _super.call(this);
             this.contactId = contactId;
         }
+        Object.defineProperty(ContactUid.prototype, "contactIdProperty", {
+            /**
+               @property {string} contactIdProperty
+               The id of the Contact The 'contactIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactId'.
+            */
+            get: function () {
+                return this.contactId;
+            },
+            set: function (contactId) {
+                this.contactId = contactId;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the contact id

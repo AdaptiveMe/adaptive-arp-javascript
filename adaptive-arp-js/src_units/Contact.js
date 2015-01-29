@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -85,6 +85,118 @@ var Adaptive;
             this.contactSocials = contactSocials;
             this.contactTags = contactTags;
         }
+        Object.defineProperty(Contact.prototype, "contactAddressesProperty", {
+            /**
+               @property {Adaptive.ContactAddress[]} contactAddressesProperty
+               The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
+            */
+            get: function () {
+                return this.contactAddresses;
+            },
+            set: function (contactAddresses) {
+                this.contactAddresses = contactAddresses;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "contactEmailsProperty", {
+            /**
+               @property {Adaptive.ContactEmail[]} contactEmailsProperty
+               The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
+            */
+            get: function () {
+                return this.contactEmails;
+            },
+            set: function (contactEmails) {
+                this.contactEmails = contactEmails;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "contactPhonesProperty", {
+            /**
+               @property {Adaptive.ContactPhone[]} contactPhonesProperty
+               The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
+            */
+            get: function () {
+                return this.contactPhones;
+            },
+            set: function (contactPhones) {
+                this.contactPhones = contactPhones;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "contactSocialsProperty", {
+            /**
+               @property {Adaptive.ContactSocial[]} contactSocialsProperty
+               The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
+            */
+            get: function () {
+                return this.contactSocials;
+            },
+            set: function (contactSocials) {
+                this.contactSocials = contactSocials;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "contactTagsProperty", {
+            /**
+               @property {Adaptive.ContactTag[]} contactTagsProperty
+               The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
+            */
+            get: function () {
+                return this.contactTags;
+            },
+            set: function (contactTags) {
+                this.contactTags = contactTags;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "contactWebsitesProperty", {
+            /**
+               @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+               The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
+            */
+            get: function () {
+                return this.contactWebsites;
+            },
+            set: function (contactWebsites) {
+                this.contactWebsites = contactWebsites;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "personalInfoProperty", {
+            /**
+               @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+               The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
+            */
+            get: function () {
+                return this.personalInfo;
+            },
+            set: function (personalInfo) {
+                this.personalInfo = personalInfo;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Contact.prototype, "professionalInfoProperty", {
+            /**
+               @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+               The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
+            */
+            get: function () {
+                return this.professionalInfo;
+            },
+            set: function (professionalInfo) {
+                this.professionalInfo = professionalInfo;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns all the addresses of the Contact

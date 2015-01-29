@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,6 +55,34 @@ var Adaptive;
             this.serviceEndpoints = serviceEndpoints;
             this.name = name;
         }
+        Object.defineProperty(Service.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Service.prototype, "serviceEndpointsProperty", {
+            /**
+               @property {Adaptive.ServiceEndpoint[]} serviceEndpointsProperty
+               Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
+            */
+            get: function () {
+                return this.serviceEndpoints;
+            },
+            set: function (serviceEndpoints) {
+                this.serviceEndpoints = serviceEndpoints;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the name

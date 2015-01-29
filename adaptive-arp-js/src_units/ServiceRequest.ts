@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,6 +57,20 @@ module Adaptive {
 during GET/POST operations. No body parameters are included if this array is null or length zero.
           */
           bodyParameters : Array<ServiceRequestParameter>;
+
+          /**
+             @property {Adaptive.ServiceRequestParameter[]} bodyParametersProperty
+             Body parameters to be included in the body of the request to a service. These may be applied
+during GET/POST operations. No body parameters are included if this array is null or length zero. The 'bodyParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bodyParameters'.
+          */
+          get bodyParametersProperty() : Array<ServiceRequestParameter> {
+               return this.bodyParameters;
+          }
+
+          set bodyParametersProperty(bodyParameters:Array<ServiceRequestParameter>) {
+               this.bodyParameters = bodyParameters;
+          }
+
           /**
              @property {string} content
              Request data content (plain text). This should be populated by the application. The content should be
@@ -64,30 +78,101 @@ in some well-known web format - in specific, binaries submitted should be encode
 type should be set respectively by the application.
           */
           content : string;
+
+          /**
+             @property {string} contentProperty
+             Request data content (plain text). This should be populated by the application. The content should be
+in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
+type should be set respectively by the application. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
+          */
+          get contentProperty() : string {
+               return this.content;
+          }
+
+          set contentProperty(content:string) {
+               this.content = content;
+          }
+
           /**
              @property {string} contentEncoding
              Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentEncoding : string;
+
+          /**
+             @property {string} contentEncodingProperty
+             Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+          */
+          get contentEncodingProperty() : string {
+               return this.contentEncoding;
+          }
+
+          set contentEncodingProperty(contentEncoding:string) {
+               this.contentEncoding = contentEncoding;
+          }
+
           /**
              @property {number} contentLength
              The length in bytes of the content. This may be populated by the application, the platform
 calculates this length automatically if a specific contentLength is not specified.
           */
           contentLength : number;
+
+          /**
+             @property {number} contentLengthProperty
+             The length in bytes of the content. This may be populated by the application, the platform
+calculates this length automatically if a specific contentLength is not specified. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
+          */
+          get contentLengthProperty() : number {
+               return this.contentLength;
+          }
+
+          set contentLengthProperty(contentLength:number) {
+               this.contentLength = contentLength;
+          }
+
           /**
              @property {string} contentType
              The request content type (MIME TYPE). This may be populated by the application, the platform
 populates this field with defaults for the service.
           */
           contentType : string;
+
+          /**
+             @property {string} contentTypeProperty
+             The request content type (MIME TYPE). This may be populated by the application, the platform
+populates this field with defaults for the service. The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
+          */
+          get contentTypeProperty() : string {
+               return this.contentType;
+          }
+
+          set contentTypeProperty(contentType:string) {
+               this.contentType = contentType;
+          }
+
           /**
              @property {Adaptive.ServiceRequestParameter[]} queryParameters
              Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero.
           */
           queryParameters : Array<ServiceRequestParameter>;
+
+          /**
+             @property {Adaptive.ServiceRequestParameter[]} queryParametersProperty
+             Query string parameters to be appended to the service URL when making the request. These may be applied
+during GET/POST operations. No query parameters are appended if this array is null or length zero. The 'queryParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'queryParameters'.
+          */
+          get queryParametersProperty() : Array<ServiceRequestParameter> {
+               return this.queryParameters;
+          }
+
+          set queryParametersProperty(queryParameters:Array<ServiceRequestParameter>) {
+               this.queryParameters = queryParameters;
+          }
+
           /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
@@ -95,6 +180,21 @@ application, the platform populates this field with defaults for the service and
 In specific, the platform maintains request and response state automatically.
           */
           serviceHeaders : Array<ServiceHeader>;
+
+          /**
+             @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+             The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
+application, the platform populates this field with defaults for the service and the previous headers.
+In specific, the platform maintains request and response state automatically. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
+          */
+          get serviceHeadersProperty() : Array<ServiceHeader> {
+               return this.serviceHeaders;
+          }
+
+          set serviceHeadersProperty(serviceHeaders:Array<ServiceHeader>) {
+               this.serviceHeaders = serviceHeaders;
+          }
+
           /**
              @property {Adaptive.ServiceSession} serviceSession
              Session attributes and cookies. This may be populated by the application, the platform populates
@@ -102,17 +202,59 @@ this field with defaults for the service and the previous state information. In 
 maintains request and response state automatically.
           */
           serviceSession : ServiceSession;
+
+          /**
+             @property {Adaptive.ServiceSession} serviceSessionProperty
+             Session attributes and cookies. This may be populated by the application, the platform populates
+this field with defaults for the service and the previous state information. In specific, the platform
+maintains request and response state automatically. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
+          */
+          get serviceSessionProperty() : ServiceSession {
+               return this.serviceSession;
+          }
+
+          set serviceSessionProperty(serviceSession:ServiceSession) {
+               this.serviceSession = serviceSession;
+          }
+
           /**
              @property {Adaptive.ServiceToken} serviceToken
              Token used for the creation of the request with the destination service, endpoint, function and method
 identifiers. This should not be manipulated by the application directly.
           */
           serviceToken : ServiceToken;
+
+          /**
+             @property {Adaptive.ServiceToken} serviceTokenProperty
+             Token used for the creation of the request with the destination service, endpoint, function and method
+identifiers. This should not be manipulated by the application directly. The 'serviceTokenProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceToken'.
+          */
+          get serviceTokenProperty() : ServiceToken {
+               return this.serviceToken;
+          }
+
+          set serviceTokenProperty(serviceToken:ServiceToken) {
+               this.serviceToken = serviceToken;
+          }
+
           /**
              @property {string} userAgent
              This attribute allows for the default user-agent string to be overridden by the application.
           */
           userAgent : string;
+
+          /**
+             @property {string} userAgentProperty
+             This attribute allows for the default user-agent string to be overridden by the application. The 'userAgentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'userAgent'.
+          */
+          get userAgentProperty() : string {
+               return this.userAgent;
+          }
+
+          set userAgentProperty(userAgent:string) {
+               this.userAgent = userAgent;
+          }
+
           /**
              @method constructor
              Convenience constructor.

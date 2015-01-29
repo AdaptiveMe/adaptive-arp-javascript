@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,21 +49,73 @@ module Adaptive {
              Identifier of callback or listener for async operations.
           */
           asyncId : number;
+
+          /**
+             @property {number} asyncIdProperty
+             Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
+          */
+          get asyncIdProperty() : number {
+               return this.asyncId;
+          }
+
+          set asyncIdProperty(asyncId:number) {
+               this.asyncId = asyncId;
+          }
+
           /**
              @property {string} bridgeType
              String representing the bridge type to obtain.
           */
           bridgeType : string;
+
+          /**
+             @property {string} bridgeTypeProperty
+             String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
+          */
+          get bridgeTypeProperty() : string {
+               return this.bridgeType;
+          }
+
+          set bridgeTypeProperty(bridgeType:string) {
+               this.bridgeType = bridgeType;
+          }
+
           /**
              @property {string} methodName
              String representing the method name to call.
           */
           methodName : string;
+
+          /**
+             @property {string} methodNameProperty
+             String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
+          */
+          get methodNameProperty() : string {
+               return this.methodName;
+          }
+
+          set methodNameProperty(methodName:string) {
+               this.methodName = methodName;
+          }
+
           /**
              @property {string[]} parameters
              Parameters of the request as JSON formatted strings.
           */
           parameters : Array<string>;
+
+          /**
+             @property {string[]} parametersProperty
+             Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
+          */
+          get parametersProperty() : Array<string> {
+               return this.parameters;
+          }
+
+          set parametersProperty(parameters:Array<string>) {
+               this.parameters = parameters;
+          }
+
           /**
              @method constructor
              Constructor with all the parameters

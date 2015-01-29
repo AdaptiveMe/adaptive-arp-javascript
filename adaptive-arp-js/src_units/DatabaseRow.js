@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,6 +62,20 @@ var Adaptive;
             _super.call(this);
             this.values = values;
         }
+        Object.defineProperty(DatabaseRow.prototype, "valuesProperty", {
+            /**
+               @property {string[]} valuesProperty
+               The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
+            */
+            get: function () {
+                return this.values;
+            },
+            set: function (values) {
+                this.values = values;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the values of the row.

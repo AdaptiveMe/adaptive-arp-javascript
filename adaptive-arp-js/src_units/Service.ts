@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,37 @@ module Adaptive {
              The service name
           */
           name : string;
+
+          /**
+             @property {string} nameProperty
+             The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
           /**
              @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
              Endpoint of the service
           */
           serviceEndpoints : Array<ServiceEndpoint>;
+
+          /**
+             @property {Adaptive.ServiceEndpoint[]} serviceEndpointsProperty
+             Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
+          */
+          get serviceEndpointsProperty() : Array<ServiceEndpoint> {
+               return this.serviceEndpoints;
+          }
+
+          set serviceEndpointsProperty(serviceEndpoints:Array<ServiceEndpoint>) {
+               this.serviceEndpoints = serviceEndpoints;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation

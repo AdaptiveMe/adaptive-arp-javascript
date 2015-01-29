@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,6 +63,31 @@ var Adaptive;
             _super.call(this);
             this.state = state;
         }
+        Object.defineProperty(Lifecycle.prototype, "stateProperty", {
+            /**
+               @property {Adaptive.LifecycleState} stateProperty
+               Represent the state of the app
+  <p>
+  Possible lifecycle States:
+  <p>
+  1. Starting    - Before starting.
+  2. Started     - Start concluded.
+  3. Running     - Accepts user interaction - running in foreground.
+  4. Pausing     - Before going to background.
+  4.1 PausedIdle - In background, no scheduled background activity (passive).
+  4.2 PausedRun  - In background, scheduled background activity (periodic network access, gps access, etc.)
+  5. Resuming    - Before going to foreground, followed by Running state.
+  6. Stopping    - Before stopping. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+            */
+            get: function () {
+                return this.state;
+            },
+            set: function (state) {
+                this.state = state;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the state of the application

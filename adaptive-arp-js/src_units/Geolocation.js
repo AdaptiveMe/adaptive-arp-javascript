@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,6 +72,90 @@ var Adaptive;
             this.yDoP = yDoP;
             this.timestamp = timestamp;
         }
+        Object.defineProperty(Geolocation.prototype, "altitudeProperty", {
+            /**
+               @property {number} altitudeProperty
+               The current device altitude (or Z coordinate). Measured in meters. The 'altitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'altitude'.
+            */
+            get: function () {
+                return this.altitude;
+            },
+            set: function (altitude) {
+                this.altitude = altitude;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Geolocation.prototype, "latitudeProperty", {
+            /**
+               @property {number} latitudeProperty
+               The Y coordinate (or latitude). Measured in degrees. The 'latitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'latitude'.
+            */
+            get: function () {
+                return this.latitude;
+            },
+            set: function (latitude) {
+                this.latitude = latitude;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Geolocation.prototype, "longitudeProperty", {
+            /**
+               @property {number} longitudeProperty
+               The X coordinate (or longitude). Measured in degrees. The 'longitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'longitude'.
+            */
+            get: function () {
+                return this.longitude;
+            },
+            set: function (longitude) {
+                this.longitude = longitude;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Geolocation.prototype, "timestampProperty", {
+            /**
+               @property {number} timestampProperty
+               Timestamp of the geolocation reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+            */
+            get: function () {
+                return this.timestamp;
+            },
+            set: function (timestamp) {
+                this.timestamp = timestamp;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Geolocation.prototype, "xDoPProperty", {
+            /**
+               @property {number} xDoPProperty
+               Dilution of precision on the X measurement. Measured in meters. The 'xDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'xDoP'.
+            */
+            get: function () {
+                return this.xDoP;
+            },
+            set: function (xDoP) {
+                this.xDoP = xDoP;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Geolocation.prototype, "yDoPProperty", {
+            /**
+               @property {number} yDoPProperty
+               Dilution of precision on the Y measurement. Measured in meters. The 'yDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'yDoP'.
+            */
+            get: function () {
+                return this.yDoP;
+            },
+            set: function (yDoP) {
+                this.yDoP = yDoP;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns altitude in meters

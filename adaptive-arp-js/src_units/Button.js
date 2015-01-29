@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,6 +63,20 @@ var Adaptive;
             _super.call(this);
             this.type = type;
         }
+        Object.defineProperty(Button.prototype, "typeProperty", {
+            /**
+               @property {Adaptive.ICapabilitiesButton} typeProperty
+               Button type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+            */
+            get: function () {
+                return this.type;
+            },
+            set: function (type) {
+                this.type = type;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the button type

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -81,7 +81,7 @@ This method does not create the actual file in the specified folder.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -122,7 +122,7 @@ This path is volatile and may be cleaned by the OS periodically.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -162,7 +162,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -202,7 +202,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -242,7 +242,7 @@ This path may or may not be directly readable or writable - it usually contains 
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -282,7 +282,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -321,7 +321,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -363,7 +363,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.0");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;

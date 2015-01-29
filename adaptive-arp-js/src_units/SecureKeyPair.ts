@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,11 +52,37 @@ module Adaptive {
              Value of the secured element
           */
           secureData : string;
+
+          /**
+             @property {string} secureDataProperty
+             Value of the secured element The 'secureDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureData'.
+          */
+          get secureDataProperty() : string {
+               return this.secureData;
+          }
+
+          set secureDataProperty(secureData:string) {
+               this.secureData = secureData;
+          }
+
           /**
              @property {string} secureKey
              Key of the secured element
           */
           secureKey : string;
+
+          /**
+             @property {string} secureKeyProperty
+             Key of the secured element The 'secureKeyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureKey'.
+          */
+          get secureKeyProperty() : string {
+               return this.secureKey;
+          }
+
+          set secureKeyProperty(secureKey:string) {
+               this.secureKey = secureKey;
+          }
+
           /**
              @method constructor
              Constructor with parameters

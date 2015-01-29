@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -64,6 +64,34 @@ var Adaptive;
             this.secureKey = secureKey;
             this.secureData = secureData;
         }
+        Object.defineProperty(SecureKeyPair.prototype, "secureDataProperty", {
+            /**
+               @property {string} secureDataProperty
+               Value of the secured element The 'secureDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureData'.
+            */
+            get: function () {
+                return this.secureData;
+            },
+            set: function (secureData) {
+                this.secureData = secureData;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SecureKeyPair.prototype, "secureKeyProperty", {
+            /**
+               @property {string} secureKeyProperty
+               Key of the secured element The 'secureKeyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureKey'.
+            */
+            get: function () {
+                return this.secureKey;
+            },
+            set: function (secureKey) {
+                this.secureKey = secureKey;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the object value

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,6 +72,76 @@ var Adaptive;
             this.databaseColumns = databaseColumns;
             this.databaseRows = databaseRows;
         }
+        Object.defineProperty(DatabaseTable.prototype, "columnCountProperty", {
+            /**
+               @property {number} columnCountProperty
+               Number of databaseColumns. The 'columnCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'columnCount'.
+            */
+            get: function () {
+                return this.columnCount;
+            },
+            set: function (columnCount) {
+                this.columnCount = columnCount;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DatabaseTable.prototype, "databaseColumnsProperty", {
+            /**
+               @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+               Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
+            */
+            get: function () {
+                return this.databaseColumns;
+            },
+            set: function (databaseColumns) {
+                this.databaseColumns = databaseColumns;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DatabaseTable.prototype, "databaseRowsProperty", {
+            /**
+               @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+               Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
+            */
+            get: function () {
+                return this.databaseRows;
+            },
+            set: function (databaseRows) {
+                this.databaseRows = databaseRows;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DatabaseTable.prototype, "nameProperty", {
+            /**
+               @property {string} nameProperty
+               Name of the table. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+            */
+            get: function () {
+                return this.name;
+            },
+            set: function (name) {
+                this.name = name;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DatabaseTable.prototype, "rowCountProperty", {
+            /**
+               @property {number} rowCountProperty
+               Number of databaseRows. The 'rowCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rowCount'.
+            */
+            get: function () {
+                return this.rowCount;
+            },
+            set: function (rowCount) {
+                this.rowCount = rowCount;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Get the number of databaseColumns

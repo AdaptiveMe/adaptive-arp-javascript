@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -49,15 +49,30 @@ declare module Adaptive {
         */
         type: IServiceType;
         /**
+           @property {Adaptive.IServiceType} typeProperty
+           Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+        */
+        typeProperty: IServiceType;
+        /**
            @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path.
         */
         methods: IServiceMethod[];
         /**
+           @property {Adaptive.IServiceMethod[]} methodsProperty
+           The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
+        */
+        methodsProperty: IServiceMethod[];
+        /**
            @property {string} path
            The path for the endpoint.
         */
         path: string;
+        /**
+           @property {string} pathProperty
+           The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+        */
+        pathProperty: string;
         /**
            @method constructor
            Constructor with parameters.

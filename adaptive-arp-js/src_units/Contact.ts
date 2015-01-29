@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -60,41 +60,145 @@ module Adaptive {
              The adresses from the contact
           */
           contactAddresses : Array<ContactAddress>;
+
+          /**
+             @property {Adaptive.ContactAddress[]} contactAddressesProperty
+             The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
+          */
+          get contactAddressesProperty() : Array<ContactAddress> {
+               return this.contactAddresses;
+          }
+
+          set contactAddressesProperty(contactAddresses:Array<ContactAddress>) {
+               this.contactAddresses = contactAddresses;
+          }
+
           /**
              @property {Adaptive.ContactEmail[]} contactEmails
              The emails from the contact
           */
           contactEmails : Array<ContactEmail>;
+
+          /**
+             @property {Adaptive.ContactEmail[]} contactEmailsProperty
+             The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
+          */
+          get contactEmailsProperty() : Array<ContactEmail> {
+               return this.contactEmails;
+          }
+
+          set contactEmailsProperty(contactEmails:Array<ContactEmail>) {
+               this.contactEmails = contactEmails;
+          }
+
           /**
              @property {Adaptive.ContactPhone[]} contactPhones
              The phones from the contact
           */
           contactPhones : Array<ContactPhone>;
+
+          /**
+             @property {Adaptive.ContactPhone[]} contactPhonesProperty
+             The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
+          */
+          get contactPhonesProperty() : Array<ContactPhone> {
+               return this.contactPhones;
+          }
+
+          set contactPhonesProperty(contactPhones:Array<ContactPhone>) {
+               this.contactPhones = contactPhones;
+          }
+
           /**
              @property {Adaptive.ContactSocial[]} contactSocials
              The social network info from the contact
           */
           contactSocials : Array<ContactSocial>;
+
+          /**
+             @property {Adaptive.ContactSocial[]} contactSocialsProperty
+             The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
+          */
+          get contactSocialsProperty() : Array<ContactSocial> {
+               return this.contactSocials;
+          }
+
+          set contactSocialsProperty(contactSocials:Array<ContactSocial>) {
+               this.contactSocials = contactSocials;
+          }
+
           /**
              @property {Adaptive.ContactTag[]} contactTags
              The aditional tags from the contact
           */
           contactTags : Array<ContactTag>;
+
+          /**
+             @property {Adaptive.ContactTag[]} contactTagsProperty
+             The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
+          */
+          get contactTagsProperty() : Array<ContactTag> {
+               return this.contactTags;
+          }
+
+          set contactTagsProperty(contactTags:Array<ContactTag>) {
+               this.contactTags = contactTags;
+          }
+
           /**
              @property {Adaptive.ContactWebsite[]} contactWebsites
              The websites from the contact
           */
           contactWebsites : Array<ContactWebsite>;
+
+          /**
+             @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+             The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
+          */
+          get contactWebsitesProperty() : Array<ContactWebsite> {
+               return this.contactWebsites;
+          }
+
+          set contactWebsitesProperty(contactWebsites:Array<ContactWebsite>) {
+               this.contactWebsites = contactWebsites;
+          }
+
           /**
              @property {Adaptive.ContactPersonalInfo} personalInfo
              The personal info from the contact
           */
           personalInfo : ContactPersonalInfo;
+
+          /**
+             @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+             The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
+          */
+          get personalInfoProperty() : ContactPersonalInfo {
+               return this.personalInfo;
+          }
+
+          set personalInfoProperty(personalInfo:ContactPersonalInfo) {
+               this.personalInfo = personalInfo;
+          }
+
           /**
              @property {Adaptive.ContactProfessionalInfo} professionalInfo
              The professional info from the contact
           */
           professionalInfo : ContactProfessionalInfo;
+
+          /**
+             @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+             The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
+          */
+          get professionalInfoProperty() : ContactProfessionalInfo {
+               return this.professionalInfo;
+          }
+
+          set professionalInfoProperty(professionalInfo:ContactProfessionalInfo) {
+               this.professionalInfo = professionalInfo;
+          }
+
           /**
              @method constructor
              Constructor with all the fields

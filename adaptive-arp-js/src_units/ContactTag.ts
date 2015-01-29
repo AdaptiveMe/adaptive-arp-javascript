@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,11 +52,37 @@ module Adaptive {
              The tagName of the Tag
           */
           tagName : string;
+
+          /**
+             @property {string} tagNameProperty
+             The tagName of the Tag The 'tagNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagName'.
+          */
+          get tagNameProperty() : string {
+               return this.tagName;
+          }
+
+          set tagNameProperty(tagName:string) {
+               this.tagName = tagName;
+          }
+
           /**
              @property {string} tagValue
              The tagValue of the Tag
           */
           tagValue : string;
+
+          /**
+             @property {string} tagValueProperty
+             The tagValue of the Tag The 'tagValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagValue'.
+          */
+          get tagValueProperty() : string {
+               return this.tagValue;
+          }
+
+          set tagValueProperty(tagValue:string) {
+               this.tagValue = tagValue;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -66,6 +66,48 @@ var Adaptive;
             this.jobDescription = jobDescription;
             this.company = company;
         }
+        Object.defineProperty(ContactProfessionalInfo.prototype, "companyProperty", {
+            /**
+               @property {string} companyProperty
+               The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
+            */
+            get: function () {
+                return this.company;
+            },
+            set: function (company) {
+                this.company = company;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactProfessionalInfo.prototype, "jobDescriptionProperty", {
+            /**
+               @property {string} jobDescriptionProperty
+               The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
+            */
+            get: function () {
+                return this.jobDescription;
+            },
+            set: function (jobDescription) {
+                this.jobDescription = jobDescription;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ContactProfessionalInfo.prototype, "jobTitleProperty", {
+            /**
+               @property {string} jobTitleProperty
+               The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
+            */
+            get: function () {
+                return this.jobTitle;
+            },
+            set: function (jobTitle) {
+                this.jobTitle = jobTitle;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the company of the job

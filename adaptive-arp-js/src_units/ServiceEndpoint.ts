@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,16 +52,55 @@ module Adaptive {
              Type of validation to be performed for SSL hosts.
           */
           validationType : IServiceCertificateValidation;
+
+          /**
+             @property {Adaptive.IServiceCertificateValidation} validationTypeProperty
+             Type of validation to be performed for SSL hosts. The 'validationTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'validationType'.
+          */
+          get validationTypeProperty() : IServiceCertificateValidation {
+               return this.validationType;
+          }
+
+          set validationTypeProperty(validationType:IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
           /**
              @property {string} hostURI
              The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
           */
           hostURI : string;
+
+          /**
+             @property {string} hostURIProperty
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The 'hostURIProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'hostURI'.
+          */
+          get hostURIProperty() : string {
+               return this.hostURI;
+          }
+
+          set hostURIProperty(hostURI:string) {
+               this.hostURI = hostURI;
+          }
+
           /**
              @property {Adaptive.ServicePath[]} paths
              The remote service paths (to be added to the hostURI and port url).
           */
           paths : Array<ServicePath>;
+
+          /**
+             @property {Adaptive.ServicePath[]} pathsProperty
+             The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
+          */
+          get pathsProperty() : Array<ServicePath> {
+               return this.paths;
+          }
+
+          set pathsProperty(paths:Array<ServicePath>) {
+               this.paths = paths;
+          }
+
           /**
              @method constructor
              Constructor with parameters

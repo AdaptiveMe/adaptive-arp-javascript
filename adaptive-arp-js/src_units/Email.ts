@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.8
+    * @version v2.1.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,36 +54,127 @@ module Adaptive {
              Array of Email Blind Carbon Copy recipients
           */
           bccRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} bccRecipientsProperty
+             Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
+          */
+          get bccRecipientsProperty() : Array<EmailAddress> {
+               return this.bccRecipients;
+          }
+
+          set bccRecipientsProperty(bccRecipients:Array<EmailAddress>) {
+               this.bccRecipients = bccRecipients;
+          }
+
           /**
              @property {Adaptive.EmailAddress[]} ccRecipients
              Array of Email Carbon Copy recipients
           */
           ccRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} ccRecipientsProperty
+             Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
+          */
+          get ccRecipientsProperty() : Array<EmailAddress> {
+               return this.ccRecipients;
+          }
+
+          set ccRecipientsProperty(ccRecipients:Array<EmailAddress>) {
+               this.ccRecipients = ccRecipients;
+          }
+
           /**
              @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
              Array of attatchments
           */
           emailAttachmentData : Array<EmailAttachmentData>;
+
+          /**
+             @property {Adaptive.EmailAttachmentData[]} emailAttachmentDataProperty
+             Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
+          */
+          get emailAttachmentDataProperty() : Array<EmailAttachmentData> {
+               return this.emailAttachmentData;
+          }
+
+          set emailAttachmentDataProperty(emailAttachmentData:Array<EmailAttachmentData>) {
+               this.emailAttachmentData = emailAttachmentData;
+          }
+
           /**
              @property {string} messageBody
              Message body
           */
           messageBody : string;
+
+          /**
+             @property {string} messageBodyProperty
+             Message body The 'messageBodyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBody'.
+          */
+          get messageBodyProperty() : string {
+               return this.messageBody;
+          }
+
+          set messageBodyProperty(messageBody:string) {
+               this.messageBody = messageBody;
+          }
+
           /**
              @property {string} messageBodyMimeType
              Message body mime type
           */
           messageBodyMimeType : string;
+
+          /**
+             @property {string} messageBodyMimeTypeProperty
+             Message body mime type The 'messageBodyMimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBodyMimeType'.
+          */
+          get messageBodyMimeTypeProperty() : string {
+               return this.messageBodyMimeType;
+          }
+
+          set messageBodyMimeTypeProperty(messageBodyMimeType:string) {
+               this.messageBodyMimeType = messageBodyMimeType;
+          }
+
           /**
              @property {string} subject
              Subject of the email
           */
           subject : string;
+
+          /**
+             @property {string} subjectProperty
+             Subject of the email The 'subjectProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'subject'.
+          */
+          get subjectProperty() : string {
+               return this.subject;
+          }
+
+          set subjectProperty(subject:string) {
+               this.subject = subject;
+          }
+
           /**
              @property {Adaptive.EmailAddress[]} toRecipients
              Array of Email recipients
           */
           toRecipients : Array<EmailAddress>;
+
+          /**
+             @property {Adaptive.EmailAddress[]} toRecipientsProperty
+             Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
+          */
+          get toRecipientsProperty() : Array<EmailAddress> {
+               return this.toRecipients;
+          }
+
+          set toRecipientsProperty(toRecipients:Array<EmailAddress>) {
+               this.toRecipients = toRecipients;
+          }
+
           /**
              @method constructor
              Constructor used by the implementation
