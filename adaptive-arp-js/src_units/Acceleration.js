@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the data of a single acceleration reading.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Acceleration = (function (_super) {
@@ -59,7 +59,7 @@ var Adaptive;
            @param {number} y         Y Coordinate
            @param {number} z         Z Coordinate
            @param {number} timestamp Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         function Acceleration(x, y, z, timestamp) {
             _super.call(this);
@@ -73,7 +73,7 @@ var Adaptive;
            Timestamp Getter
 
            @return {number} Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.getTimestamp = function () {
             return this.timestamp;
@@ -83,7 +83,7 @@ var Adaptive;
            Timestamp Setter
 
            @param {number} timestamp Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;
@@ -93,7 +93,7 @@ var Adaptive;
            X Coordinate Getter
 
            @return {number} X-axis component of the acceleration.
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.getX = function () {
             return this.x;
@@ -103,7 +103,7 @@ var Adaptive;
            X Coordinate Setter
 
            @param {number} x X-axis component of the acceleration.
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.setX = function (x) {
             this.x = x;
@@ -113,7 +113,7 @@ var Adaptive;
            Y Coordinate Getter
 
            @return {number} Y-axis component of the acceleration.
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.getY = function () {
             return this.y;
@@ -123,7 +123,7 @@ var Adaptive;
            Y Coordinate Setter
 
            @param {number} y Y-axis component of the acceleration.
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.setY = function (y) {
             this.y = y;
@@ -133,7 +133,7 @@ var Adaptive;
            Z Coordinate Getter
 
            @return {number} Z-axis component of the acceleration.
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.getZ = function () {
             return this.z;
@@ -143,7 +143,7 @@ var Adaptive;
            Z Coordinate Setter
 
            @param {number} z Z Coordinate
-           @since ARP 2.0
+           @since v2.0
         */
         Acceleration.prototype.setZ = function (z) {
             this.z = z;

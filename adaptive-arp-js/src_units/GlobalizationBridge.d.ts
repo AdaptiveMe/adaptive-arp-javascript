@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface for Managing the Globalization results
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Returns the default locale of the application defined in the configuration file
 
            @return {Adaptive.Locale} Default Locale of the application
-           @since ARP 2.0
+           @since v2.0
         */
         getDefaultLocale(): Locale;
         /**
@@ -68,7 +68,7 @@ declare module Adaptive {
            List of supported locales for the application defined in the configuration file
 
            @return {Adaptive.Locale[]} List of locales
-           @since ARP 2.0
+           @since v2.0
         */
         getLocaleSupportedDescriptors(): Locale[];
         /**
@@ -78,7 +78,7 @@ declare module Adaptive {
            @param {string} key key    to match text
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {string} Localized text.
-           @since ARP 2.0
+           @since v2.0
         */
         getResourceLiteral(key: string, locale: Locale): string;
         /**
@@ -87,7 +87,7 @@ declare module Adaptive {
 
            @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-           @since ARP 2.0
+           @since v2.0
         */
         getResourceLiterals(locale: Locale): KeyPair[];
     }

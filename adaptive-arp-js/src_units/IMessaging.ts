@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Interface for Managing the Messaging operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -55,7 +55,7 @@ module Adaptive {
              @param number   to send
              @param text     to send
              @param callback with the result
-             @since ARP 2.0
+             @since v2.0
           */
           sendSMS(number:string, text:string, callback:IMessagingCallback);
      }

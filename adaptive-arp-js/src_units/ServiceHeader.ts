@@ -27,90 +27,36 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIBean.ts"/>
+///<reference path="KeyValue.ts"/>
 
 module Adaptive {
 
      /**
         @class Adaptive.ServiceHeader
-        @extends Adaptive.APIBean
+        @extends Adaptive.KeyValue
         Structure representing the data of a http request or response header.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
-     export class ServiceHeader extends APIBean {
+     export class ServiceHeader extends KeyValue {
 
-          /**
-             Value of the header
-          */
-          data : string;
-          /**
-             Name ot the header
-          */
-          name : string;
           /**
              @method constructor
-             Constructor with fields
+             Convenience constructor.
 
-             @param {string} name Name of the header
-             @param {string} data Value of the header
-             @since ARP 2.0
+             @param {string} keyName Name of the key.
+             @param {string} keyData Value of the key.
+             @since v2.0.6
           */
-          constructor(name: string, data: string) {
-               super();
-               this.name = name;
-               this.data = data;
-          }
-
-          /**
-             @method
-             Returns the header value
-
-             @return {string} ServiceHeader value
-             @since ARP 2.0
-          */
-          getData() : string {
-               return this.data;
-          }
-
-          /**
-             @method
-             Set the header value
-
-             @param {string} data ServiceHeader value
-             @since ARP 2.0
-          */
-          setData(data: string) {
-               this.data = data;
-          }
-
-          /**
-             @method
-             Returns the header name
-
-             @return {string} ServiceHeader name
-             @since ARP 2.0
-          */
-          getName() : string {
-               return this.name;
-          }
-
-          /**
-             @method
-             Set the header name
-
-             @param {string} name Name of the header
-             @since ARP 2.0
-          */
-          setName(name: string) {
-               this.name = name;
+          constructor(keyName: string, keyData: string) {
+               super(keyNamekeyData);
           }
 
           /**
@@ -123,9 +69,9 @@ module Adaptive {
           static toObject(object : any) : ServiceHeader {
                var result : ServiceHeader = new ServiceHeader(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.data!=null) result.data = object.data;
+               // Assign values to parent bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
 
                return result;
           }

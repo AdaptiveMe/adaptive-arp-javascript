@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing the address data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ContactAddress extends APIBean {
@@ -58,7 +58,7 @@ declare module Adaptive {
 
            @param {string} address Address data.
            @param {Adaptive.ContactAddressType} type    Address type.
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(address: string, type: ContactAddressType);
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Returns the type of the address
 
            @return {Adaptive.ContactAddressType} AddressType Address type.
-           @since ARP 2.0
+           @since v2.0
         */
         getType(): ContactAddressType;
         /**
@@ -74,7 +74,7 @@ declare module Adaptive {
            Set the address type
 
            @param {Adaptive.ContactAddressType} type Address type.
-           @since ARP 2.0
+           @since v2.0
         */
         setType(type: ContactAddressType): void;
         /**
@@ -82,7 +82,7 @@ declare module Adaptive {
            Returns the Contact address
 
            @return {string} address Address data.
-           @since ARP 2.0
+           @since v2.0
         */
         getAddress(): string;
         /**
@@ -90,7 +90,7 @@ declare module Adaptive {
            Set the address of the Contact
 
            @param {string} address Address data.
-           @since ARP 2.0
+           @since v2.0
         */
         setAddress(address: string): void;
         /**

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,13 +44,13 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
+             @property {Adaptive.IServiceResultCallbackWarning} [CertificateUntrusted='CertificateUntrusted']
+          */
+          static CertificateUntrusted = new IServiceResultCallbackWarning("CertificateUntrusted");
+          /**
              @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
           */
           static NotSecure = new IServiceResultCallbackWarning("NotSecure");
-          /**
-             @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
-          */
-          static NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
           /**
              @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
           */
@@ -73,10 +73,10 @@ module Adaptive {
           static toObject(object : any) : IServiceResultCallbackWarning {
                if (object != null && object.value != null) {
                     switch(object.value) {
+                         case "CertificateUntrusted":
+                              return IServiceResultCallbackWarning.CertificateUntrusted;
                          case "NotSecure":
                               return IServiceResultCallbackWarning.NotSecure;
-                         case "NotTrusted":
-                              return IServiceResultCallbackWarning.NotTrusted;
                          case "Redirected":
                               return IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":

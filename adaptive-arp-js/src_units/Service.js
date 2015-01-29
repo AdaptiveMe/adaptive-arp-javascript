@@ -27,73 +27,40 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-///<reference path="APIBean.ts"/>
-///<reference path="IServiceType.ts"/>
 ///<reference path="ServiceEndpoint.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.Service
-       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
-    var Service = (function (_super) {
-        __extends(Service, _super);
+    var Service = (function () {
         /**
            @method constructor
            Constructor used by the implementation
 
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
            @param {string} name             Name of the service
-           @param {Adaptive.IServiceType} type             Type of the service
-           @since ARP 2.0
+           @since v2.0.6
         */
-        function Service(serviceEndpoints, name, type) {
-            _super.call(this);
+        function Service(serviceEndpoints, name) {
             this.serviceEndpoints = serviceEndpoints;
             this.name = name;
-            this.type = type;
         }
-        /**
-           @method
-           Returns the type
-
-           @return {Adaptive.IServiceType} type
-           @since ARP 2.0
-        */
-        Service.prototype.getType = function () {
-            return this.type;
-        };
-        /**
-           @method
-           Set the type
-
-           @param {Adaptive.IServiceType} type Type of the service
-           @since ARP 2.0
-        */
-        Service.prototype.setType = function (type) {
-            this.type = type;
-        };
         /**
            @method
            Returns the name
 
            @return {string} name
-           @since ARP 2.0
+           @since v2.0
         */
         Service.prototype.getName = function () {
             return this.name;
@@ -103,7 +70,7 @@ var Adaptive;
            Set the name
 
            @param {string} name Name of the service
-           @since ARP 2.0
+           @since v2.0
         */
         Service.prototype.setName = function (name) {
             this.name = name;
@@ -113,7 +80,7 @@ var Adaptive;
            Returns the serviceEndpoints
 
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-           @since ARP 2.0
+           @since v2.0
         */
         Service.prototype.getServiceEndpoints = function () {
             return this.serviceEndpoints;
@@ -123,7 +90,7 @@ var Adaptive;
            Set the serviceEndpoints
 
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-           @since ARP 2.0
+           @since v2.0
         */
         Service.prototype.setServiceEndpoints = function (serviceEndpoints) {
             this.serviceEndpoints = serviceEndpoints;
@@ -136,7 +103,7 @@ var Adaptive;
            @return {Adaptive.Service} Wrapped object instance.
         */
         Service.toObject = function (object) {
-            var result = new Service(null, null, null);
+            var result = new Service(null, null);
             // Assign values to bean fields.
             if (object != null && object.serviceEndpoints != null) {
                 result.serviceEndpoints = new Array();
@@ -152,16 +119,10 @@ var Adaptive;
             }
             if (object != null && object.name != null)
                 result.name = object.name;
-            if (object != null && object.type != null) {
-                result.type = Adaptive.IServiceType.toObject(object.type);
-            }
-            else {
-                result.type = Adaptive.IServiceType.toObject(null);
-            }
             return result;
         };
         return Service;
-    })(Adaptive.APIBean);
+    })();
     Adaptive.Service = Service;
 })(Adaptive || (Adaptive = {}));
 //# sourceMappingURL=Service.js.map

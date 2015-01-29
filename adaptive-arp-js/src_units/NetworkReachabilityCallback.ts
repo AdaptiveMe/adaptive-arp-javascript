@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -160,7 +160,7 @@ module Adaptive {
              @method
              No data received - error condition, not authorized .
              @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : INetworkReachabilityCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -174,7 +174,7 @@ module Adaptive {
              @method
              Correct data received.
              @param {boolean} reachable reachable Indicates if the host is reachable
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(reachable : boolean) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -189,7 +189,7 @@ module Adaptive {
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param {boolean} reachable reachable Indicates if the host is reachable
              @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ var Adaptive;
        Interface for Managing the browser operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     var BrowserBridge = (function (_super) {
         __extends(BrowserBridge, _super);
@@ -69,7 +69,7 @@ var Adaptive;
 
            @param {string} url url Url to open
            @return {boolean} The result of the operation
-           @since ARP 2.0
+           @since v2.0
         */
         BrowserBridge.prototype.openExtenalBrowser = function (url) {
             // Create and populate API request.
@@ -81,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -114,7 +114,7 @@ var Adaptive;
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP 2.0
+           @since v2.0
         */
         BrowserBridge.prototype.openInternalBrowser = function (url, title, backButtonText) {
             // Create and populate API request.
@@ -128,7 +128,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -161,7 +161,7 @@ var Adaptive;
            @param {string} title title          Title of the Navigation bar
            @param {string} backButtonText backButtonText Title of the Back button bar
            @return {boolean} The result of the operation
-           @since ARP 2.0
+           @since v2.0
         */
         BrowserBridge.prototype.openInternalBrowserModal = function (url, title, backButtonText) {
             // Create and populate API request.
@@ -175,7 +175,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

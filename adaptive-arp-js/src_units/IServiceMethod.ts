@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,13 +44,17 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceMethod} [Post='Post']
+             @property {Adaptive.IServiceMethod} [POST='POST']
           */
-          static Post = new IServiceMethod("Post");
+          static POST = new IServiceMethod("POST");
           /**
-             @property {Adaptive.IServiceMethod} [Get='Get']
+             @property {Adaptive.IServiceMethod} [GET='GET']
           */
-          static Get = new IServiceMethod("Get");
+          static GET = new IServiceMethod("GET");
+          /**
+             @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+          */
+          static HEAD = new IServiceMethod("HEAD");
           /**
              @property {Adaptive.IServiceMethod} [Unknown='Unknown']
           */
@@ -65,10 +69,12 @@ module Adaptive {
           static toObject(object : any) : IServiceMethod {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Post":
-                              return IServiceMethod.Post;
-                         case "Get":
-                              return IServiceMethod.Get;
+                         case "POST":
+                              return IServiceMethod.POST;
+                         case "GET":
+                              return IServiceMethod.GET;
+                         case "HEAD":
+                              return IServiceMethod.HEAD;
                          case "Unknown":
                               return IServiceMethod.Unknown;
                          default:

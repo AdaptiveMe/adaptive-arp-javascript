@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ declare module Adaptive {
        Base application for PIM purposes
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     class BasePIMBridge implements IBasePIM {
         /**

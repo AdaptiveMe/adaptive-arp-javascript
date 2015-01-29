@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the File operations callback
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            On error result of a file operation.
            @param error Error processing the request.
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IFileResultCallbackError): any;
         /**
            @method
            On correct result of a file operation.
            @param storageFile Reference to the resulting file.
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(storageFile: FileDescriptor): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            On partial result of a file operation, containing a warning.
            @param file    Reference to the offending file.
            @param warning Warning processing the request.
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(file: FileDescriptor, warning: IFileResultCallbackWarning): any;
     }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     var MessagingBridge = (function (_super) {
         __extends(MessagingBridge, _super);
@@ -72,7 +72,7 @@ var Adaptive;
            @param {string} number number   to send
            @param {string} text text     to send
            @param {Adaptive.MessagingCallback} callback callback with the result
-           @since ARP 2.0
+           @since v2.0
         */
         MessagingBridge.prototype.sendSMS = function (number, text, callback) {
             // Create and populate API request.
@@ -85,7 +85,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));

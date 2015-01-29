@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -130,7 +130,7 @@ module Adaptive {
              Invokes the given method specified in the API request object.
              @param request APIRequest object containing method name and parameters.
              @return {Adaptive.APIResponse} Object with JSON response or a zero length string is the response is asynchronous.
-             @since ARP 2.0
+             @since v2.0
           */
           invoke(request:APIRequest) : APIResponse;
      }
@@ -138,7 +138,7 @@ module Adaptive {
         Master interface for all the Groups and Types of Interfaces os the Project
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -149,14 +149,14 @@ module Adaptive {
              @method
              Method that returns the API group of the implementation
              @return {Adaptive.IAdaptiveRPGroup} API Group name.
-             @since ARP 2.0
+             @since v2.0
           */
           getAPIGroup() : IAdaptiveRPGroup;
           /**
              @method
              Method that returns the API version of the implementation.
              @return {string} API Version string.
-             @since ARP 2.0
+             @since v2.0
           */
           getAPIVersion() : string;
      }
@@ -170,7 +170,7 @@ module Adaptive {
         Interface to retrieve auto-registered service implementation references.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -749,7 +749,7 @@ module Adaptive {
         Base application for Application purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -761,7 +761,7 @@ module Adaptive {
         Base application for Callback purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -782,7 +782,7 @@ module Adaptive {
         Base application for Commerce purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -794,7 +794,7 @@ module Adaptive {
         Base application for Communication purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -806,7 +806,7 @@ module Adaptive {
         Base application for Data purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -818,7 +818,7 @@ module Adaptive {
         Base application for Listener purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -839,7 +839,7 @@ module Adaptive {
         Base application for Media purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -851,7 +851,7 @@ module Adaptive {
         Base application for Notification purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -863,7 +863,7 @@ module Adaptive {
         Base application for PIM purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -875,7 +875,7 @@ module Adaptive {
         Base application for Reader purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -887,7 +887,7 @@ module Adaptive {
         Base application for Security purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -899,7 +899,7 @@ module Adaptive {
         Base application for Sensor purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -911,7 +911,7 @@ module Adaptive {
         Base application for Social purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -923,7 +923,7 @@ module Adaptive {
         Base application for System purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -935,7 +935,7 @@ module Adaptive {
         Base application for UI purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -947,7 +947,7 @@ module Adaptive {
         Base application for Utility purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -959,7 +959,7 @@ module Adaptive {
         Interface for Analytics purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -971,7 +971,7 @@ module Adaptive {
         Interface for Managing the Globalization results
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -982,14 +982,14 @@ module Adaptive {
              @method
              Returns the default locale of the application defined in the configuration file
              @return {Adaptive.Locale} Default Locale of the application
-             @since ARP 2.0
+             @since v2.0
           */
           getDefaultLocale() : Locale;
           /**
              @method
              List of supported locales for the application defined in the configuration file
              @return {Adaptive.Locale[]} List of locales
-             @since ARP 2.0
+             @since v2.0
           */
           getLocaleSupportedDescriptors() : Array<Locale>;
           /**
@@ -998,7 +998,7 @@ module Adaptive {
              @param key    to match text
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
-             @since ARP 2.0
+             @since v2.0
           */
           getResourceLiteral(key:string, locale:Locale) : string;
           /**
@@ -1006,7 +1006,7 @@ module Adaptive {
              Gets the full application configured literals (key/message pairs) corresponding to the given locale.
              @param locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-             @since ARP 2.0
+             @since v2.0
           */
           getResourceLiterals(locale:Locale) : Array<KeyPair>;
      }
@@ -1014,7 +1014,7 @@ module Adaptive {
         Interface for Managing the Lifecycle listeners
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1025,27 +1025,27 @@ module Adaptive {
              @method
              Add the listener for the lifecycle of the app
              @param listener Lifecycle listener
-             @since ARP 2.0
+             @since v2.0
           */
           addLifecycleListener(listener:ILifecycleListener);
           /**
              @method
              Whether the application is in background or not
              @return {boolean} true if the application is in background;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           isBackground() : boolean;
           /**
              @method
              Un-registers an existing listener from receiving lifecycle events.
              @param listener Lifecycle listener
-             @since ARP 2.0
+             @since v2.0
           */
           removeLifecycleListener(listener:ILifecycleListener);
           /**
              @method
              Removes all existing listeners from receiving lifecycle events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeLifecycleListeners();
      }
@@ -1053,7 +1053,7 @@ module Adaptive {
         Interface for Managing the Management operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1065,7 +1065,7 @@ module Adaptive {
         Interface for Managing the Printing operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1077,7 +1077,7 @@ module Adaptive {
         Interface for Managing the Settings operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1089,7 +1089,7 @@ module Adaptive {
         Interface for Managing the Update operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1101,7 +1101,7 @@ module Adaptive {
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1112,14 +1112,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IContactPhotoResultCallbackError);
           /**
              @method
              This method is called on Result
              @param contactPhoto returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(contactPhoto:Array<number>);
           /**
@@ -1127,7 +1127,7 @@ module Adaptive {
              This method is called on Warning
              @param contactPhoto returned by the platform
              @param warning      returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(contactPhoto:Array<number>, warning:IContactPhotoResultCallbackWarning);
      }
@@ -1135,7 +1135,7 @@ module Adaptive {
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1146,14 +1146,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IContactResultCallbackError);
           /**
              @method
              This method is called on Result
              @param contacts returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(contacts:Array<Contact>);
           /**
@@ -1161,7 +1161,7 @@ module Adaptive {
              This method is called on Warning
              @param contacts returned by the platform
              @param warning  returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(contacts:Array<Contact>, warning:IContactResultCallbackWarning);
      }
@@ -1169,7 +1169,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1180,14 +1180,14 @@ module Adaptive {
              @method
              Result callback for error responses
              @param error Returned error
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IDatabaseResultCallbackError);
           /**
              @method
              Result callback for correct responses
              @param database Returns the database
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(database:Database);
           /**
@@ -1195,7 +1195,7 @@ module Adaptive {
              Result callback for warning responses
              @param database Returns the database
              @param warning  Returned Warning
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(database:Database, warning:IDatabaseResultCallbackWarning);
      }
@@ -1203,7 +1203,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1214,14 +1214,14 @@ module Adaptive {
              @method
              Result callback for error responses
              @param error Returned error
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IDatabaseTableResultCallbackError);
           /**
              @method
              Result callback for correct responses
              @param databaseTable Returns the databaseTable
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(databaseTable:DatabaseTable);
           /**
@@ -1229,7 +1229,7 @@ module Adaptive {
              Result callback for warning responses
              @param databaseTable Returns the databaseTable
              @param warning       Returned Warning
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(databaseTable:DatabaseTable, warning:IDatabaseTableResultCallbackWarning);
      }
@@ -1237,7 +1237,7 @@ module Adaptive {
         Interface for Managing the File loading callback responses
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1248,14 +1248,14 @@ module Adaptive {
              @method
              Error processing data retrieval/storage operation.
              @param error Error condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IFileDataLoadResultCallbackError);
           /**
              @method
              Result of data retrieval operation.
              @param data Data loaded.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(data:Array<number>);
           /**
@@ -1263,7 +1263,7 @@ module Adaptive {
              Result with warning of data retrieval/storage operation.
              @param data    File being loaded.
              @param warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(data:Array<number>, warning:IFileDataLoadResultCallbackWarning);
      }
@@ -1271,7 +1271,7 @@ module Adaptive {
         Interface for Managing the File store operations callback
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1282,14 +1282,14 @@ module Adaptive {
              @method
              Error processing data retrieval/storage operation.
              @param error Error condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IFileDataStoreResultCallbackError);
           /**
              @method
              Result of data storage operation.
              @param file File reference to stored data.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(file:FileDescriptor);
           /**
@@ -1297,7 +1297,7 @@ module Adaptive {
              Result with warning of data retrieval/storage operation.
              @param file    File being loaded/stored.
              @param warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(file:FileDescriptor, warning:IFileDataStoreResultCallbackWarning);
      }
@@ -1305,7 +1305,7 @@ module Adaptive {
         Interface for Managing the File result operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1316,14 +1316,14 @@ module Adaptive {
              @method
              On error result of a file operation.
              @param error Error processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IFileListResultCallbackError);
           /**
              @method
              On correct result of a file operation.
              @param files Array of resulting files/folders.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(files:Array<FileDescriptor>);
           /**
@@ -1331,7 +1331,7 @@ module Adaptive {
              On partial result of a file operation, containing a warning.
              @param files   Array of resulting files/folders.
              @param warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(files:Array<FileDescriptor>, warning:IFileListResultCallbackWarning);
      }
@@ -1339,7 +1339,7 @@ module Adaptive {
         Interface for Managing the File operations callback
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1350,14 +1350,14 @@ module Adaptive {
              @method
              On error result of a file operation.
              @param error Error processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IFileResultCallbackError);
           /**
              @method
              On correct result of a file operation.
              @param storageFile Reference to the resulting file.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(storageFile:FileDescriptor);
           /**
@@ -1365,7 +1365,7 @@ module Adaptive {
              On partial result of a file operation, containing a warning.
              @param file    Reference to the offending file.
              @param warning Warning processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(file:FileDescriptor, warning:IFileResultCallbackWarning);
      }
@@ -1373,7 +1373,7 @@ module Adaptive {
         Interface for Managing the Messaging responses
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1384,14 +1384,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IMessagingCallbackError);
           /**
              @method
              This method is called on Result
              @param success true if sent;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(success:boolean);
           /**
@@ -1399,7 +1399,7 @@ module Adaptive {
              This method is called on Warning
              @param success true if sent;false otherwise
              @param warning returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(success:boolean, warning:IMessagingCallbackWarning);
      }
@@ -1407,7 +1407,7 @@ module Adaptive {
         Interface for Managing the Network reachability callback result
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1418,14 +1418,14 @@ module Adaptive {
              @method
              No data received - error condition, not authorized .
              @param error Error value
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:INetworkReachabilityCallbackError);
           /**
              @method
              Correct data received.
              @param reachable Indicates if the host is reachable
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(reachable:boolean);
           /**
@@ -1433,7 +1433,7 @@ module Adaptive {
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param reachable Indicates if the host is reachable
              @param warning   Warning value
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(reachable:boolean, warning:INetworkReachabilityCallbackWarning);
      }
@@ -1441,7 +1441,7 @@ module Adaptive {
         Interface for Managing the Security result callback
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1452,14 +1452,14 @@ module Adaptive {
              @method
              No data received - error condition, not authorized .
              @param error Error values
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:ISecurityResultCallbackError);
           /**
              @method
              Correct data received.
              @param keyValues key and values
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(keyValues:Array<SecureKeyPair>);
           /**
@@ -1467,7 +1467,7 @@ module Adaptive {
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param keyValues key and values
              @param warning   Warning values
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(keyValues:Array<SecureKeyPair>, warning:ISecurityResultCallbackWarning);
      }
@@ -1475,7 +1475,7 @@ module Adaptive {
         Interface for Managing the Services operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1486,14 +1486,14 @@ module Adaptive {
              @method
              This method is called on Error
              @param error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IServiceResultCallbackError);
           /**
              @method
              This method is called on Result
              @param response data
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(response:ServiceResponse);
           /**
@@ -1501,7 +1501,7 @@ module Adaptive {
              This method is called on Warning
              @param response data
              @param warning  returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(response:ServiceResponse, warning:IServiceResultCallbackWarning);
      }
@@ -1509,7 +1509,7 @@ module Adaptive {
         Interface for Advertising purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1521,7 +1521,7 @@ module Adaptive {
         Interface for Managing the Store operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1533,7 +1533,7 @@ module Adaptive {
         Interface for Managing the Wallet operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1545,7 +1545,7 @@ module Adaptive {
         Interface for Bluetooth purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1557,7 +1557,7 @@ module Adaptive {
         Interface for Managing the Network information operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1569,7 +1569,7 @@ module Adaptive {
         Interface for Managing the Network naming operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1581,7 +1581,7 @@ module Adaptive {
         Interface for Managing the Network reachability operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1593,7 +1593,7 @@ module Adaptive {
              Whether there is connectivity to a host, via domain name or ip address, or not.
              @param host     domain name or ip address of host.
              @param callback Callback called at the end.
-             @since ARP 2.0
+             @since v2.0
           */
           isNetworkReachable(host:string, callback:INetworkReachabilityCallback);
           /**
@@ -1601,7 +1601,7 @@ module Adaptive {
              Whether there is connectivity to an url of a service or not.
              @param url      to look for
              @param callback Callback called at the end
-             @since ARP 2.0
+             @since v2.0
           */
           isNetworkServiceReachable(url:string, callback:INetworkReachabilityCallback);
      }
@@ -1609,7 +1609,7 @@ module Adaptive {
         Interface for Managing the Network status
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1620,20 +1620,20 @@ module Adaptive {
              @method
              Add the listener for network status changes of the app
              @param listener Listener with the result
-             @since ARP 2.0
+             @since v2.0
           */
           addNetworkStatusListener(listener:INetworkStatusListener);
           /**
              @method
              Un-registers an existing listener from receiving network status events.
              @param listener Listener with the result
-             @since ARP 2.0
+             @since v2.0
           */
           removeNetworkStatusListener(listener:INetworkStatusListener);
           /**
              @method
              Removes all existing listeners from receiving network status events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeNetworkStatusListeners();
      }
@@ -1641,7 +1641,7 @@ module Adaptive {
         Interface for Managing the Services operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1650,61 +1650,60 @@ module Adaptive {
      export interface IService extends IBaseCommunication {
           /**
              @method
-             Get a reference to a registered service by name.
-             @param serviceName Name of service.
-             @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-             @since ARP 2.0
+             Create a service request for the given ServiceToken. This method creates the request, populating
+existing headers and cookies for the same service. The request is populated with all the defaults
+for the service being invoked and requires only the request body to be set. Headers and cookies may be
+manipulated as needed by the application before submitting the ServiceRequest via invokeService.
+             @param serviceToken ServiceToken to be used for the creation of the request.
+             @return {Adaptive.ServiceRequest} ServiceRequest with pre-populated headers, cookies and defaults for the service.
+             @since v2.0.6
           */
-          getService(serviceName:string) : Service;
+          getServiceRequest(serviceToken:ServiceToken) : ServiceRequest;
           /**
              @method
-             Request async a service for an Url
-             @param serviceRequest Service Request to invoke
-             @param service        Service to call
-             @param callback       Callback to execute with the result
-             @since ARP 2.0
+             Obtains a ServiceToken for the given parameters to be used for the creation of requests.
+             @param serviceName  Service name.
+             @param endpointName Endpoint name.
+             @param functionName Function name.
+             @param method       Method type.
+             @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter combination is not
+configured in the platform's XML service definition file.
+             @since v2.0.6
           */
-          invokeService(serviceRequest:ServiceRequest, service:Service, callback:IServiceResultCallback);
+          getServiceToken(serviceName:string, endpointName:string, functionName:string, method:IServiceMethod) : ServiceToken;
           /**
              @method
-             Register a new service
-             @param service to register
-             @since ARP 2.0
+             Returns all the possible service tokens configured in the platform's XML service definition file.
+             @return {Adaptive.ServiceToken[]} Array of service tokens configured.
+             @since v2.0.6
           */
-          registerService(service:Service);
+          getServicesRegistered() : Array<ServiceToken>;
           /**
              @method
-             Unregister all services.
-             @since ARP 2.0
+             Executes the given ServiceRequest and provides responses to the given callback handler.
+             @param serviceRequest ServiceRequest with the request body.
+             @param callback       IServiceResultCallback to handle the ServiceResponse.
+             @since v2.0.6
           */
-          unregisterServices();
+          invokeService(serviceRequest:ServiceRequest, callback:IServiceResultCallback);
           /**
              @method
-             Unregister a service
-             @param service to unregister
-             @since ARP 2.0
+             Checks whether a specific service, endpoint, function and method type is configured in the platform's
+XML service definition file.
+             @param serviceName  Service name.
+             @param endpointName Endpoint name.
+             @param functionName Function name.
+             @param method       Method type.
+             @return {boolean} Returns true if the service is configured, false otherwise.
+             @since v2.0.6
           */
-          unregisterService(service:Service);
-          /**
-             Check whether a service by the given name is registered.
-             @param serviceName Name of service.
-             @return True if the service is registered, false otherwise.
-             @since ARP 2.0
-          */
-          isRegistered_serviceName(serviceName:string) : boolean;
-          /**
-             Check whether a service by the given name is registered.
-             @param serviceName Name of service.
-             @return True if the service is registered, false otherwise.
-             @since ARP 2.0
-          */
-          isRegistered_service(service:Service) : boolean;
+          isServiceRegistered(serviceName:string, endpointName:string, functionName:string, method:IServiceMethod) : boolean;
      }
      /**
         Interface for Managing the Socket operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1716,7 +1715,7 @@ module Adaptive {
         Interface for Managing the Telephony operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1728,7 +1727,7 @@ module Adaptive {
              Invoke a phone call
              @param number to call
              @return {Adaptive.ITelephonyStatus} Status of the call
-             @since ARP 2.0
+             @since v2.0
           */
           call(number:string) : ITelephonyStatus;
      }
@@ -1736,7 +1735,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1748,7 +1747,7 @@ module Adaptive {
         Interface for Managing the DataStream operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1760,7 +1759,7 @@ module Adaptive {
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1772,7 +1771,7 @@ module Adaptive {
              Creates a database on default path for every platform.
              @param callback Asynchronous callback
              @param database Database object to create
-             @since ARP 2.0
+             @since v2.0
           */
           createDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
@@ -1781,7 +1780,7 @@ module Adaptive {
              @param database      Database for databaseTable creating.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param callback      DatabaseTable callback with the response
-             @since ARP 2.0
+             @since v2.0
           */
           createTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
@@ -1789,7 +1788,7 @@ module Adaptive {
              Deletes a database on default path for every platform.
              @param database Database object to delete
              @param callback Asynchronous callback
-             @since ARP 2.0
+             @since v2.0
           */
           deleteDatabase(database:Database, callback:IDatabaseResultCallback);
           /**
@@ -1798,7 +1797,7 @@ module Adaptive {
              @param database      Database for databaseTable removal.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param callback      DatabaseTable callback with the response
-             @since ARP 2.0
+             @since v2.0
           */
           deleteTable(database:Database, databaseTable:DatabaseTable, callback:IDatabaseTableResultCallback);
           /**
@@ -1809,7 +1808,7 @@ should be passed as a parameter
              @param statement    SQL statement.
              @param replacements List of SQL statement replacements.
              @param callback     DatabaseTable callback with the response.
-             @since ARP 2.0
+             @since v2.0
           */
           executeSqlStatement(database:Database, statement:string, replacements:Array<string>, callback:IDatabaseTableResultCallback);
           /**
@@ -1820,7 +1819,7 @@ should be passed as a parameter
              @param rollbackFlag Indicates if rollback should be performed when any
                     statement execution fails.
              @param callback     DatabaseTable callback with the response.
-             @since ARP 2.0
+             @since v2.0
           */
           executeSqlTransactions(database:Database, statements:Array<string>, rollbackFlag:boolean, callback:IDatabaseTableResultCallback);
           /**
@@ -1828,7 +1827,7 @@ should be passed as a parameter
              Checks if database exists by given database name.
              @param database Database Object to check if exists
              @return {boolean} True if exists, false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           existsDatabase(database:Database) : boolean;
           /**
@@ -1837,7 +1836,7 @@ should be passed as a parameter
              @param database      Database for databaseTable consulting.
              @param databaseTable DatabaseTable object with the name of the databaseTable inside.
              @return {boolean} True if exists, false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           existsTable(database:Database, databaseTable:DatabaseTable) : boolean;
      }
@@ -1845,7 +1844,7 @@ should be passed as a parameter
         Interface for Managing the File operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -1857,7 +1856,7 @@ should be passed as a parameter
              Determine whether the current file/folder can be read from.
              @param descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is readable, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           canRead(descriptor:FileDescriptor) : boolean;
           /**
@@ -1865,7 +1864,7 @@ should be passed as a parameter
              Determine whether the current file/folder can be written to.
              @param descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is writable, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           canWrite(descriptor:FileDescriptor) : boolean;
           /**
@@ -1873,7 +1872,7 @@ should be passed as a parameter
              Creates a file with the specified name.
              @param descriptor File descriptor of file or folder used for operation.
              @param callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           create(descriptor:FileDescriptor, callback:IFileResultCallback);
           /**
@@ -1883,7 +1882,7 @@ deleted if the cascade parameter is set to true.
              @param descriptor File descriptor of file or folder used for operation.
              @param cascade    Whether to delete sub-files and sub-folders.
              @return {boolean} True if files (and sub-files and folders) whether deleted.
-             @since ARP 2.0
+             @since v2.0
           */
           delete(descriptor:FileDescriptor, cascade:boolean) : boolean;
           /**
@@ -1891,7 +1890,7 @@ deleted if the cascade parameter is set to true.
              Check whether the file/path exists.
              @param descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the file exists in the filesystem, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           exists(descriptor:FileDescriptor) : boolean;
           /**
@@ -1899,7 +1898,7 @@ deleted if the cascade parameter is set to true.
              Loads the content of the file.
              @param descriptor File descriptor of file or folder used for operation.
              @param callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           getContent(descriptor:FileDescriptor, callback:IFileDataLoadResultCallback);
           /**
@@ -1907,7 +1906,7 @@ deleted if the cascade parameter is set to true.
              Returns the file storage type of the file
              @param descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemStorageType} Storage Type file
-             @since ARP 2.0
+             @since v2.0
           */
           getFileStorageType(descriptor:FileDescriptor) : IFileSystemStorageType;
           /**
@@ -1915,7 +1914,7 @@ deleted if the cascade parameter is set to true.
              Returns the file type
              @param descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemType} Returns the file type of the file
-             @since ARP 2.0
+             @since v2.0
           */
           getFileType(descriptor:FileDescriptor) : IFileSystemType;
           /**
@@ -1923,7 +1922,7 @@ deleted if the cascade parameter is set to true.
              Returns the security type of the file
              @param descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemSecurity} Security Level of the file
-             @since ARP 2.0
+             @since v2.0
           */
           getSecurityType(descriptor:FileDescriptor) : IFileSystemSecurity;
           /**
@@ -1931,7 +1930,7 @@ deleted if the cascade parameter is set to true.
              Check whether this is a path of a file.
              @param descriptor File descriptor of file or folder used for operation.
              @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
-             @since ARP 2.0
+             @since v2.0
           */
           isDirectory(descriptor:FileDescriptor) : boolean;
           /**
@@ -1941,7 +1940,7 @@ is a file, it will not yield any results.
              @param descriptor File descriptor of file or folder used for operation.
              @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
              @param callback   Result of operation.
-             @since ARP 2.0
+             @since v2.0
           */
           listFilesForRegex(descriptor:FileDescriptor, regex:string, callback:IFileListResultCallback);
           /**
@@ -1950,7 +1949,7 @@ is a file, it will not yield any results.
 any results.
              @param descriptor File descriptor of file or folder used for operation.
              @param callback   Result of operation.
-             @since ARP 2.0
+             @since v2.0
           */
           listFiles(descriptor:FileDescriptor, callback:IFileListResultCallback);
           /**
@@ -1959,7 +1958,7 @@ any results.
              @param descriptor File descriptor of file or folder used for operation.
              @param recursive  Whether to create all parent path elements.
              @return {boolean} True if the path was created, false otherwise (or it exists already).
-             @since ARP 2.0
+             @since v2.0
           */
           mkDir(descriptor:FileDescriptor, recursive:boolean) : boolean;
           /**
@@ -1971,7 +1970,7 @@ new destination file.
              @param createPath  True to create the path if it does not already exist.
              @param callback    Result of the operation.
              @param overwrite   True to create the path if it does not already exist.
-             @since ARP 2.0
+             @since v2.0
           */
           move(source:FileDescriptor, destination:FileDescriptor, createPath:boolean, overwrite:boolean, callback:IFileResultCallback);
           /**
@@ -1980,7 +1979,7 @@ new destination file.
              @param descriptor File descriptor of file or folder used for operation.
              @param content    Binary content to store in the file.
              @param callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           setContent(descriptor:FileDescriptor, content:Array<number>, callback:IFileDataStoreResultCallback);
      }
@@ -1988,7 +1987,7 @@ new destination file.
         Interface for Managing the File System operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2002,7 +2001,7 @@ This method does not create the actual file in the specified folder.
              @param parent Parent directory.
              @param name   Name of new file or directory.
              @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-             @since ARP 2.0
+             @since v2.0
           */
           createFileDescriptor(parent:FileDescriptor, name:string) : FileDescriptor;
           /**
@@ -2011,7 +2010,7 @@ This method does not create the actual file in the specified folder.
 This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
              @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationCacheFolder() : FileDescriptor;
           /**
@@ -2019,7 +2018,7 @@ This path is volatile and may be cleaned by the OS periodically.
              Returns a reference to the cloud synchronizable folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationCloudFolder() : FileDescriptor;
           /**
@@ -2027,7 +2026,7 @@ This path must always be writable by the current application.
              Returns a reference to the documents folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationDocumentsFolder() : FileDescriptor;
           /**
@@ -2035,7 +2034,7 @@ This path must always be writable by the current application.
              Returns a reference to the application installation folder.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
              @return {Adaptive.FileDescriptor} Path to the application folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationFolder() : FileDescriptor;
           /**
@@ -2043,14 +2042,14 @@ This path may or may not be directly readable or writable - it usually contains 
              Returns a reference to the protected storage folder for the current application.
 This path must always be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationProtectedFolder() : FileDescriptor;
           /**
              @method
              Returns the file system dependent file separator.
              @return {string} char with the directory/file separator.
-             @since ARP 2.0
+             @since v2.0
           */
           getSeparator() : string;
           /**
@@ -2060,7 +2059,7 @@ be an external SSD card or similar. This type of storage is removable and by
 definition, not secure.
 This path may or may not be writable by the current application.
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getSystemExternalFolder() : FileDescriptor;
      }
@@ -2068,7 +2067,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Internal Storage operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2080,7 +2079,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the XML operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2092,7 +2091,7 @@ This path may or may not be writable by the current application.
         Interface defines the response methods of the acceleration operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2104,14 +2103,14 @@ This path may or may not be writable by the current application.
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
              @param error Error fired
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IAccelerationListenerError);
           /**
              @method
              Correct data received.
              @param acceleration Acceleration received
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(acceleration:Acceleration);
           /**
@@ -2119,7 +2118,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning - ie. Needs calibration.
              @param acceleration Acceleration received
              @param warning      Warning fired
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(acceleration:Acceleration, warning:IAccelerationListenerWarning);
      }
@@ -2127,7 +2126,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         Interface for Managing the button  operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2138,14 +2137,14 @@ listener and subsequently, the listener will be deactivated and removed from the
              @method
              No data received
              @param error occurred
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IButtonListenerError);
           /**
              @method
              Called on button pressed
              @param button pressed
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(button:Button);
           /**
@@ -2153,7 +2152,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning
              @param button  pressed
              @param warning happened
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(button:Button, warning:IButtonListenerWarning);
      }
@@ -2161,7 +2160,7 @@ listener and subsequently, the listener will be deactivated and removed from the
         Interface for handling device orientation change events.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0.5
+        @since v2.0.5
         @version 1.0
      */
      /**
@@ -2173,14 +2172,14 @@ listener and subsequently, the listener will be deactivated and removed from the
              Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the device.
              @param error The error condition... generally unknown as it is unexpected!
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onError(error:IDeviceOrientationListenerError);
           /**
              @method
              Event fired with the successful start and finish of a rotation.
              @param event RotationEvent containing origin, destination and state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onResult(event:RotationEvent);
           /**
@@ -2189,7 +2188,7 @@ platform impedes the rotation of the device.
 event may be fired if the devices vetoes the rotation before rotation is completed.
              @param event   RotationEvent containing origin, destination and state of the event.
              @param warning Type of condition that aborted rotation execution.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onWarning(event:RotationEvent, warning:IDeviceOrientationListenerWarning);
      }
@@ -2197,7 +2196,7 @@ event may be fired if the devices vetoes the rotation before rotation is complet
         Interface for handling display orientation change events.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0.5
+        @since v2.0.5
         @version 1.0
      */
      /**
@@ -2209,14 +2208,14 @@ event may be fired if the devices vetoes the rotation before rotation is complet
              Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the display.
              @param error The error condition... generally unknown as it is unexpected!
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onError(error:IDisplayOrientationListenerError);
           /**
              @method
              Event fired with the successful start and finish of a rotation.
              @param event RotationEvent containing origin, destination and state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onResult(event:RotationEvent);
           /**
@@ -2225,7 +2224,7 @@ platform impedes the rotation of the display.
 event may be fired if the application vetoes display rotation before rotation is completed.
              @param event   RotationEvent containing origin, destination and state of the event.
              @param warning Type of condition that aborted rotation execution.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onWarning(event:RotationEvent, warning:IDisplayOrientationListenerWarning);
      }
@@ -2233,7 +2232,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Geolocation results
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2244,14 +2243,14 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IGeolocationListenerError);
           /**
              @method
              Correct data received.
              @param geolocation Geolocation Bean
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(geolocation:Geolocation);
           /**
@@ -2259,7 +2258,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning - ie. HighDoP
              @param geolocation Geolocation Bean
              @param warning     Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(geolocation:Geolocation, warning:IGeolocationListenerWarning);
      }
@@ -2267,7 +2266,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Lifecycle listeners
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2278,14 +2277,14 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:ILifecycleListenerError);
           /**
              @method
              Called when lifecycle changes somehow.
              @param lifecycle Lifecycle element
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(lifecycle:Lifecycle);
           /**
@@ -2293,7 +2292,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning
              @param lifecycle Lifecycle element
              @param warning   Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(lifecycle:Lifecycle, warning:ILifecycleListenerWarning);
      }
@@ -2301,7 +2300,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Network status listener events
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2312,14 +2311,14 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:INetworkStatusListenerError);
           /**
              @method
              Called when network connection changes somehow.
              @param network Change to this network.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(network:ICapabilitiesNet);
           /**
@@ -2327,7 +2326,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Status received with warning
              @param network Change to this network.
              @param warning Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(network:ICapabilitiesNet, warning:INetworkStatusListenerWarning);
      }
@@ -2335,7 +2334,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Audio purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2347,7 +2346,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the camera operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2359,7 +2358,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Imaging operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2371,7 +2370,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Video operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2382,7 +2381,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Play url video stream
              @param url of the video
-             @since ARP 2.0
+             @since v2.0
           */
           playStream(url:string);
      }
@@ -2390,7 +2389,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Alarm purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2402,7 +2401,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Notification operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2414,7 +2413,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Local Notifications operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2426,7 +2425,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Vibration operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2438,7 +2437,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Calendar operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2450,7 +2449,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2462,7 +2461,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Get the contact photo
              @param contact  id to search for
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContactPhoto(contact:ContactUid, callback:IContactPhotoResultCallback);
           /**
@@ -2470,7 +2469,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Get all the details of a contact according to its id
              @param contact  id to search for
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContact(contact:ContactUid, callback:IContactResultCallback);
           /**
@@ -2478,7 +2477,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Get marked fields of all contacts
              @param callback called for return
              @param fields   to get for each Contact
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsForFields(callback:IContactResultCallback, fields:Array<IContactFieldGroup>);
           /**
@@ -2487,14 +2486,14 @@ event may be fired if the application vetoes display rotation before rotation is
              @param callback called for return
              @param fields   to get for each Contact
              @param filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsWithFilter(callback:IContactResultCallback, fields:Array<IContactFieldGroup>, filter:Array<IContactFilter>);
           /**
              @method
              Get all contacts
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContacts(callback:IContactResultCallback);
           /**
@@ -2503,7 +2502,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param term     string to search
              @param callback called for return
              @param filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           searchContactsWithFilter(term:string, callback:IContactResultCallback, filter:Array<IContactFilter>);
           /**
@@ -2511,7 +2510,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Search contacts according to a term and send it to the callback
              @param term     string to search
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           searchContacts(term:string, callback:IContactResultCallback);
           /**
@@ -2520,7 +2519,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param contact  id to assign the photo
              @param pngImage photo as byte array
              @return {boolean} true if set is successful;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           setContactPhoto(contact:ContactUid, pngImage:Array<number>) : boolean;
      }
@@ -2528,7 +2527,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Mail operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2540,7 +2539,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Send an Email
              @param data     Payload of the email
              @param callback Result callback of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           sendEmail(data:Email, callback:IMessagingCallback);
      }
@@ -2548,7 +2547,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Messaging operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2561,7 +2560,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param number   to send
              @param text     to send
              @param callback with the result
-             @since ARP 2.0
+             @since v2.0
           */
           sendSMS(number:string, text:string, callback:IMessagingCallback);
      }
@@ -2569,7 +2568,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Barcode Reading purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2581,7 +2580,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the NFC operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2593,7 +2592,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the OCR operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2605,7 +2604,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the QR Code operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2617,7 +2616,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the OAuth operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2629,7 +2628,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the OpenID operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2641,7 +2640,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Security operations
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2654,7 +2653,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param keys             Array with the key names to delete.
              @param publicAccessName The name of the shared internal storage object (if needed).
              @param callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           deleteSecureKeyValuePairs(keys:Array<string>, publicAccessName:string, callback:ISecurityResultCallback);
           /**
@@ -2663,14 +2662,14 @@ event may be fired if the application vetoes display rotation before rotation is
              @param keys             Array with the key names to retrieve.
              @param publicAccessName The name of the shared internal storage object (if needed).
              @param callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           getSecureKeyValuePairs(keys:Array<string>, publicAccessName:string, callback:ISecurityResultCallback);
           /**
              @method
              Returns if the device has been modified in anyhow
              @return {boolean} true if the device has been modified; false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           isDeviceModified() : boolean;
           /**
@@ -2679,7 +2678,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param keyValues        Array containing the items to store on the device internal memory.
              @param publicAccessName The name of the shared internal storage object (if needed).
              @param callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           setSecureKeyValuePairs(keyValues:Array<SecureKeyPair>, publicAccessName:string, callback:ISecurityResultCallback);
      }
@@ -2687,7 +2686,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface defining methods about the acceleration sensor
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2698,20 +2697,20 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Register a new listener that will receive acceleration events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addAccelerationListener(listener:IAccelerationListener);
           /**
              @method
              De-registers an existing listener from receiving acceleration events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           removeAccelerationListener(listener:IAccelerationListener);
           /**
              @method
              Removed all existing listeners from receiving acceleration events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeAccelerationListeners();
      }
@@ -2719,7 +2718,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for managinf the Ambient Light
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2731,7 +2730,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Barometer management purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2743,7 +2742,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Geolocation operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2754,20 +2753,20 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Register a new listener that will receive geolocation events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addGeolocationListener(listener:IGeolocationListener);
           /**
              @method
              De-registers an existing listener from receiving geolocation events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           removeGeolocationListener(listener:IGeolocationListener);
           /**
              @method
              Removed all existing listeners from receiving geolocation events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeGeolocationListeners();
      }
@@ -2775,7 +2774,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Giroscope operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2787,7 +2786,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Magnetometer operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2799,7 +2798,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Proximity operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2811,7 +2810,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Facebook operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2823,7 +2822,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Google Plus operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2835,7 +2834,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Linkedin operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2847,7 +2846,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the RSS operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2859,7 +2858,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Twitter operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2871,7 +2870,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for testing the Capabilities operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2884,7 +2883,7 @@ event may be fired if the application vetoes display rotation before rotation is
 the platform, this method will return the current orientation. To capture device or display orientation
 changes please use the IDevice and IDisplay functions and listeners API respectively.
              @return {Adaptive.ICapabilitiesOrientation} The default orientation for the device/display.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationDefault() : ICapabilitiesOrientation;
           /**
@@ -2892,7 +2891,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
              Provides the device/display orientations supported by the platform. A platform will usually
 support at least one orientation. This is usually PortaitUp.
              @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationsSupported() : Array<ICapabilitiesOrientation>;
           /**
@@ -2900,7 +2899,7 @@ support at least one orientation. This is usually PortaitUp.
              Determines whether a specific hardware button is supported for interaction.
              @param type Type of feature to check.
              @return {boolean} true is supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasButtonSupport(type:ICapabilitiesButton) : boolean;
           /**
@@ -2909,7 +2908,7 @@ support at least one orientation. This is usually PortaitUp.
 the device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasCommunicationSupport(type:ICapabilitiesCommunication) : boolean;
           /**
@@ -2917,7 +2916,7 @@ the device.
              Determines whether a specific Data capability is supported by the device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasDataSupport(type:ICapabilitiesData) : boolean;
           /**
@@ -2926,7 +2925,7 @@ the device.
 device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasMediaSupport(type:ICapabilitiesMedia) : boolean;
           /**
@@ -2934,7 +2933,7 @@ device.
              Determines whether a specific Net capability is supported by the device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasNetSupport(type:ICapabilitiesNet) : boolean;
           /**
@@ -2943,7 +2942,7 @@ device.
 device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasNotificationSupport(type:ICapabilitiesNotification) : boolean;
           /**
@@ -2951,7 +2950,7 @@ device.
              Determines whether the device/display supports a given orientation.
              @param orientation Orientation type.
              @return {boolean} True if the given orientation is supported, false otherwise.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           hasOrientationSupport(orientation:ICapabilitiesOrientation) : boolean;
           /**
@@ -2960,7 +2959,7 @@ device.
 device.
              @param type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasSensorSupport(type:ICapabilitiesSensor) : boolean;
      }
@@ -2968,7 +2967,7 @@ device.
         Interface for Managing the Device operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -2979,28 +2978,28 @@ device.
              @method
              Register a new listener that will receive button events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addButtonListener(listener:IButtonListener);
           /**
              @method
              Add a listener to start receiving device orientation change events.
              @param listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDeviceOrientationListener(listener:IDeviceOrientationListener);
           /**
              @method
              Returns the device information for the current device executing the runtime.
              @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-             @since ARP 2.0
+             @since v2.0
           */
           getDeviceInfo() : DeviceInfo;
           /**
              @method
              Gets the current Locale for the device.
              @return {Adaptive.Locale} The current Locale information.
-             @since ARP 2.0
+             @since v2.0
           */
           getLocaleCurrent() : Locale;
           /**
@@ -3008,33 +3007,33 @@ device.
              Returns the current orientation of the device. Please note that this may be different from the orientation
 of the display. For display orientation, use the IDisplay APIs.
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation;
           /**
              @method
              De-registers an existing listener from receiving button events.
              @param listener to be removed.
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListener(listener:IButtonListener);
           /**
              @method
              Removed all existing listeners from receiving button events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListeners();
           /**
              @method
              Remove a listener to stop receiving device orientation change events.
              @param listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListener(listener:IDeviceOrientationListener);
           /**
              @method
              Remove all listeners receiving device orientation events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListeners();
      }
@@ -3042,7 +3041,7 @@ of the display. For display orientation, use the IDisplay APIs.
         Interface for Managing the Display operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3053,7 +3052,7 @@ of the display. For display orientation, use the IDisplay APIs.
              @method
              Add a listener to start receiving display orientation change events.
              @param listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDisplayOrientationListener(listener:IDisplayOrientationListener);
           /**
@@ -3061,20 +3060,20 @@ of the display. For display orientation, use the IDisplay APIs.
              Returns the current orientation of the display. Please note that this may be different from the orientation
 of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the display.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation;
           /**
              @method
              Remove a listener to stop receiving display orientation change events.
              @param listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListener(listener:IDisplayOrientationListener);
           /**
              @method
              Remove all listeners receiving display orientation events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListeners();
      }
@@ -3082,7 +3081,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the OS operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3093,7 +3092,7 @@ of the device. For device orientation, use the IDevice APIs.
              @method
              Returns the OSInfo for the current operating system.
              @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
-             @since ARP 2.0
+             @since v2.0
           */
           getOSInfo() : OSInfo;
      }
@@ -3101,7 +3100,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Runtime operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3111,14 +3110,14 @@ of the device. For device orientation, use the IDevice APIs.
           /**
              @method
              Dismiss the current Application
-             @since ARP 2.0
+             @since v2.0
           */
           dismissApplication();
           /**
              @method
              Whether the application dismiss the splash screen successfully or not
              @return {boolean} true if the application has dismissed the splash screen;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           dismissSplashScreen() : boolean;
      }
@@ -3126,7 +3125,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the browser operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3138,7 +3137,7 @@ of the device. For device orientation, use the IDevice APIs.
              Method for opening a URL like a link in the native default browser
              @param url Url to open
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openExtenalBrowser(url:string) : boolean;
           /**
@@ -3148,7 +3147,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param title          Title of the Navigation bar
              @param backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openInternalBrowserModal(url:string, title:string, backButtonText:string) : boolean;
           /**
@@ -3158,7 +3157,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param title          Title of the Navigation bar
              @param backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openInternalBrowser(url:string, title:string, backButtonText:string) : boolean;
      }
@@ -3166,7 +3165,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Desktop operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3178,7 +3177,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Map operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3190,7 +3189,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the UI operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3202,7 +3201,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Compression operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3214,7 +3213,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Concurrent operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3226,7 +3225,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Cloud operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3238,7 +3237,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Logging operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3250,14 +3249,14 @@ of the device. For device orientation, use the IDevice APIs.
              @param level    Log level
              @param category Category/tag name to identify/filter the log.
              @param message  Message to be logged
-             @since ARP 2.0
+             @since v2.0
           */
           log_level_category_message(level:ILoggingLogLevel, category:string, message:string);
           /**
              Logs the given message, with the given log level if specified, to the standard platform/environment.
              @param level   Log level
              @param message Message to be logged
-             @since ARP 2.0
+             @since v2.0
           */
           log_level_message(level:ILoggingLogLevel, message:string);
      }
@@ -3265,7 +3264,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Timer operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -3278,7 +3277,7 @@ of the device. For device orientation, use the IDevice APIs.
         Structure representing a native response to the HTML5
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class APIBean {
@@ -3286,7 +3285,7 @@ of the device. For device orientation, use the IDevice APIs.
              @method constructor
              Default constructor
 
-             @since ARP 2.0
+             @since v2.0
           */
           constructor() {
           }
@@ -3308,7 +3307,7 @@ of the device. For device orientation, use the IDevice APIs.
         Structure representing a HTML5 request to the native API.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class APIRequest {
@@ -3336,7 +3335,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param {string} methodName Name of the method
              @param {string[]} parameters Array of parameters as JSON formatted strings.
              @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(bridgeType: string, methodName: string, parameters: Array<string>, asyncId: number) {
                this.bridgeType = bridgeType;
@@ -3370,7 +3369,7 @@ listener.
              Bridge Type Getter
 
              @return {string} Bridge Type
-             @since ARP 2.0
+             @since v2.0
           */
           getBridgeType() : string {
                return this.bridgeType;
@@ -3381,7 +3380,7 @@ listener.
              Bridge Type Setter
 
              @param {string} bridgeType Bridge Type
-             @since ARP 2.0
+             @since v2.0
           */
           setBridgeType(bridgeType: string) {
                this.bridgeType = bridgeType;
@@ -3392,7 +3391,7 @@ listener.
              Method name Getter
 
              @return {string} Method name
-             @since ARP 2.0
+             @since v2.0
           */
           getMethodName() : string {
                return this.methodName;
@@ -3403,7 +3402,7 @@ listener.
              Method name Setter
 
              @param {string} methodName Method name
-             @since ARP 2.0
+             @since v2.0
           */
           setMethodName(methodName: string) {
                this.methodName = methodName;
@@ -3414,7 +3413,7 @@ listener.
              Parameters Getter
 
              @return {string[]} Parameters
-             @since ARP 2.0
+             @since v2.0
           */
           getParameters() : Array<string> {
                return this.parameters;
@@ -3425,7 +3424,7 @@ listener.
              Parameters Setter
 
              @param {string[]} parameters Parameters, JSON formatted strings of objects.
-             @since ARP 2.0
+             @since v2.0
           */
           setParameters(parameters: Array<string>) {
                this.parameters = parameters;
@@ -3461,7 +3460,7 @@ listener.
         Structure representing a JSON response to the HTML5 layer.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class APIResponse {
@@ -3495,7 +3494,7 @@ listener.
              Response getter
 
              @return {string} String representing the JavaScript value or JSON object representation of the response.
-             @since ARP 2.0
+             @since v2.0
           */
           getResponse() : string {
                return this.response;
@@ -3570,38 +3569,299 @@ listener.
           }
      }
      /**
-        @class Adaptive.ServicePath
-        Structure representing a service path for one endpoint
+        @class Adaptive.Service
+        Represents an instance of a service.
 
-        @author fnva
-        @since ARP 2.0
+        @author Aryslan
+        @since v2.0
         @version 1.0
      */
-     export class ServicePath {
+     export class Service {
           /**
-             The methods for calling a path
+             The service name
           */
-          methods : Array<IServiceMethod>;
+          name : string;
           /**
-             The path for the endpoint
+             Endpoint of the service
           */
-          path : string;
+          serviceEndpoints : Array<ServiceEndpoint>;
+          /**
+             @method constructor
+             Constructor used by the implementation
+
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+             @param {string} name             Name of the service
+             @since v2.0.6
+          */
+          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string) {
+               this.serviceEndpoints = serviceEndpoints;
+               this.name = name;
+          }
+          /**
+             @method
+             Returns the name
+
+             @return {string} name
+             @since v2.0
+          */
+          getName() : string {
+               return this.name;
+          }
+
+          /**
+             @method
+             Set the name
+
+             @param {string} name Name of the service
+             @since v2.0
+          */
+          setName(name: string) {
+               this.name = name;
+          }
+
+          /**
+             @method
+             Returns the serviceEndpoints
+
+             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
+             @since v2.0
+          */
+          getServiceEndpoints() : Array<ServiceEndpoint> {
+               return this.serviceEndpoints;
+          }
+
+          /**
+             @method
+             Set the serviceEndpoints
+
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
+             @since v2.0
+          */
+          setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
+               this.serviceEndpoints = serviceEndpoints;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service.
+             @return {Adaptive.Service} Wrapped object instance.
+          */
+          static toObject(object : any) : Service {
+               var result : Service = new Service(null, null);
+
+               // Assign values to bean fields.
+               if (object != null && object.serviceEndpoints != null) {
+                    result.serviceEndpoints = new Array<ServiceEndpoint>();
+                    for(var i = 0; i < object.serviceEndpoints.length; i++) {
+                         var __value__ = object.serviceEndpoints[i];
+                         if (__value__ != null) {
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(__value__));
+                         } else {
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
+                         }
+                    }
+               }
+               if (object!=null && object.name!=null) result.name = object.name;
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServiceEndpoint
+        Structure representing a remote or local service access end-point.
+
+        @author Aryslan
+        @since v2.0
+        @version 1.0
+     */
+     export class ServiceEndpoint {
+          /**
+             Type of validation to be performed for SSL hosts.
+          */
+          validationType : IServiceCertificateValidation;
+          /**
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
+          */
+          hostURI : string;
+          /**
+             The remote service paths (to be added to the hostURI and port url).
+          */
+          paths : Array<ServicePath>;
           /**
              @method constructor
              Constructor with parameters
 
+             @param {string} hostURI Remote service hostURI
+             @param {Adaptive.ServicePath[]} paths   Remote service Paths
+             @since v2.0.6
+          */
+          constructor(hostURI: string, paths: Array<ServicePath>) {
+               this.hostURI = hostURI;
+               this.paths = paths;
+          }
+          /**
+             @method
+             Gets the validation type for the certificate of a SSL host.
+
+             @return {Adaptive.IServiceCertificateValidation} Type of validation.
+             @since v2.0.6
+          */
+          getValidationType() : IServiceCertificateValidation {
+               return this.validationType;
+          }
+
+          /**
+             @method
+             Sets the validation type for the certificate of a SSL host.
+
+             @param {Adaptive.IServiceCertificateValidation} validationType Type of validation.
+             @since v2.0.6
+          */
+          setValidationType(validationType: IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
+          /**
+             @method
+             Returns the Remote service hostURI
+
+             @return {string} Remote service hostURI
+             @since v2.0
+          */
+          getHostURI() : string {
+               return this.hostURI;
+          }
+
+          /**
+             @method
+             Set the Remote service hostURI
+
+             @param {string} hostURI Remote service hostURI
+             @since v2.0
+          */
+          setHostURI(hostURI: string) {
+               this.hostURI = hostURI;
+          }
+
+          /**
+             @method
+             Returns the Remote service Paths
+
+             @return {Adaptive.ServicePath[]} Remote service Paths
+             @since v2.0
+          */
+          getPaths() : Array<ServicePath> {
+               return this.paths;
+          }
+
+          /**
+             @method
+             Set the Remote service Paths
+
+             @param {Adaptive.ServicePath[]} paths Remote service Paths
+             @since v2.0
+          */
+          setPaths(paths: Array<ServicePath>) {
+               this.paths = paths;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
+             @return {Adaptive.ServiceEndpoint} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceEndpoint {
+               var result : ServiceEndpoint = new ServiceEndpoint(null, null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.validationType!=null) {
+                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
+               } else {
+                    result.validationType = IServiceCertificateValidation.toObject(null);
+               }
+               if (object!=null && object.hostURI!=null) result.hostURI = object.hostURI;
+               if (object != null && object.paths != null) {
+                    result.paths = new Array<ServicePath>();
+                    for(var i = 0; i < object.paths.length; i++) {
+                         var __value__ = object.paths[i];
+                         if (__value__ != null) {
+                              result.paths.push(ServicePath.toObject(__value__));
+                         } else {
+                              result.paths.push(ServicePath.toObject(null));
+                         }
+                    }
+               }
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServicePath
+        Structure representing a service path for one endpoint
+
+        @author fnva
+        @since v2.0.4
+        @version 1.0
+     */
+     export class ServicePath {
+          /**
+             Service endpoint type.
+          */
+          type : IServiceType;
+          /**
+             The methods for calling a path.
+          */
+          methods : Array<IServiceMethod>;
+          /**
+             The path for the endpoint.
+          */
+          path : string;
+          /**
+             @method constructor
+             Constructor with parameters.
+
              @param {string} path    The path for the endpoint
              @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
+             @param {Adaptive.IServiceType} type    Protocol type.
+             @since v2.0.6
           */
-          constructor(path: string, methods: Array<IServiceMethod>) {
+          constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType) {
                this.path = path;
                this.methods = methods;
+               this.type = type;
           }
+          /**
+             @method
+             Gets the protocol for the path.
+
+             @return {Adaptive.IServiceType} Type of protocol.
+             @since v2.0.6
+          */
+          getType() : IServiceType {
+               return this.type;
+          }
+
+          /**
+             @method
+             Sets the protocol for the path.
+
+             @param {Adaptive.IServiceType} type Type of protocol.
+             @since v2.0.6
+          */
+          setType(type: IServiceType) {
+               this.type = type;
+          }
+
           /**
              @method
              Endpoint's path methods setter
 
              @return {Adaptive.IServiceMethod[]} Endpoint's path methods
+             @since v2.0.4
           */
           getMethods() : Array<IServiceMethod> {
                return this.methods;
@@ -3612,6 +3872,7 @@ listener.
              Endpoint's path methods setter
 
              @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
+             @since v2.0.4
           */
           setMethods(methods: Array<IServiceMethod>) {
                this.methods = methods;
@@ -3622,6 +3883,7 @@ listener.
              Endpoint's Path Getter
 
              @return {string} Endpoint's Path
+             @since v2.0.4
           */
           getPath() : string {
                return this.path;
@@ -3632,6 +3894,7 @@ listener.
              Endpoint's path setter
 
              @param {string} path Endpoint's path
+             @since v2.0.4
           */
           setPath(path: string) {
                this.path = path;
@@ -3645,7 +3908,7 @@ listener.
              @return {Adaptive.ServicePath} Wrapped object instance.
           */
           static toObject(object : any) : ServicePath {
-               var result : ServicePath = new ServicePath(null, null);
+               var result : ServicePath = new ServicePath(null, null, null);
 
                // Assign values to bean fields.
                if (object!=null && object.path!=null) result.path = object.path;
@@ -3660,6 +3923,11 @@ listener.
                          }
                     }
                }
+               if (object!=null && object.type!=null) {
+                    result.type = IServiceType.toObject(object.type);
+               } else {
+                    result.type = IServiceType.toObject(null);
+               }
 
                return result;
           }
@@ -3670,7 +3938,7 @@ listener.
         Structure representing the data of a single acceleration reading.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Acceleration extends APIBean {
@@ -3698,7 +3966,7 @@ listener.
              @param {number} y         Y Coordinate
              @param {number} z         Z Coordinate
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(x: number, y: number, z: number, timestamp: number) {
                super();
@@ -3712,7 +3980,7 @@ listener.
              Timestamp Getter
 
              @return {number} Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           getTimestamp() : number {
                return this.timestamp;
@@ -3723,7 +3991,7 @@ listener.
              Timestamp Setter
 
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           setTimestamp(timestamp: number) {
                this.timestamp = timestamp;
@@ -3734,7 +4002,7 @@ listener.
              X Coordinate Getter
 
              @return {number} X-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getX() : number {
                return this.x;
@@ -3745,7 +4013,7 @@ listener.
              X Coordinate Setter
 
              @param {number} x X-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           setX(x: number) {
                this.x = x;
@@ -3756,7 +4024,7 @@ listener.
              Y Coordinate Getter
 
              @return {number} Y-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getY() : number {
                return this.y;
@@ -3767,7 +4035,7 @@ listener.
              Y Coordinate Setter
 
              @param {number} y Y-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           setY(y: number) {
                this.y = y;
@@ -3778,7 +4046,7 @@ listener.
              Z Coordinate Getter
 
              @return {number} Z-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getZ() : number {
                return this.z;
@@ -3789,7 +4057,7 @@ listener.
              Z Coordinate Setter
 
              @param {number} z Z Coordinate
-             @since ARP 2.0
+             @since v2.0
           */
           setZ(z: number) {
                this.z = z;
@@ -3820,7 +4088,7 @@ listener.
         Structure representing the a physical or logical button on a device.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Button extends APIBean {
@@ -3833,7 +4101,7 @@ listener.
              Constructor with fields
 
              @param {Adaptive.ICapabilitiesButton} type Button type.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(type: ICapabilitiesButton) {
                super();
@@ -3844,7 +4112,7 @@ listener.
              Returns the button type
 
              @return {Adaptive.ICapabilitiesButton} type Button type.
-             @since ARP 2.0
+             @since v2.0
           */
           getType() : ICapabilitiesButton {
                return this.type;
@@ -3855,7 +4123,7 @@ listener.
              Setter for the button type
 
              @param {Adaptive.ICapabilitiesButton} type Button Type
-             @since ARP 2.0
+             @since v2.0
           */
           setType(type: ICapabilitiesButton) {
                this.type = type;
@@ -3887,7 +4155,7 @@ listener.
         Structure representing the address data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactAddress extends APIBean {
@@ -3905,7 +4173,7 @@ listener.
 
              @param {string} address Address data.
              @param {Adaptive.ContactAddressType} type    Address type.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(address: string, type: ContactAddressType) {
                super();
@@ -3917,7 +4185,7 @@ listener.
              Returns the type of the address
 
              @return {Adaptive.ContactAddressType} AddressType Address type.
-             @since ARP 2.0
+             @since v2.0
           */
           getType() : ContactAddressType {
                return this.type;
@@ -3928,7 +4196,7 @@ listener.
              Set the address type
 
              @param {Adaptive.ContactAddressType} type Address type.
-             @since ARP 2.0
+             @since v2.0
           */
           setType(type: ContactAddressType) {
                this.type = type;
@@ -3939,7 +4207,7 @@ listener.
              Returns the Contact address
 
              @return {string} address Address data.
-             @since ARP 2.0
+             @since v2.0
           */
           getAddress() : string {
                return this.address;
@@ -3950,7 +4218,7 @@ listener.
              Set the address of the Contact
 
              @param {string} address Address data.
-             @since ARP 2.0
+             @since v2.0
           */
           setAddress(address: string) {
                this.address = address;
@@ -3983,7 +4251,7 @@ listener.
         Structure representing the email data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactEmail extends APIBean {
@@ -4006,7 +4274,7 @@ listener.
              @param {Adaptive.ContactEmailType} type    Type of the email
              @param {boolean} primary Is email primary
              @param {string} email   Email of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(type: ContactEmailType, primary: boolean, email: string) {
                super();
@@ -4019,7 +4287,7 @@ listener.
              Returns the type of the email
 
              @return {Adaptive.ContactEmailType} EmailType
-             @since ARP 2.0
+             @since v2.0
           */
           getType() : ContactEmailType {
                return this.type;
@@ -4030,7 +4298,7 @@ listener.
              Set the type of the email
 
              @param {Adaptive.ContactEmailType} type Type of the email
-             @since ARP 2.0
+             @since v2.0
           */
           setType(type: ContactEmailType) {
                this.type = type;
@@ -4041,7 +4309,7 @@ listener.
              Returns the email of the Contact
 
              @return {string} email
-             @since ARP 2.0
+             @since v2.0
           */
           getEmail() : string {
                return this.email;
@@ -4052,7 +4320,7 @@ listener.
              Set the email of the Contact
 
              @param {string} email Email of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setEmail(email: string) {
                this.email = email;
@@ -4063,7 +4331,7 @@ listener.
              Returns if the email is primary
 
              @return {boolean} true if the email is primary; false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           getPrimary() : boolean {
                return this.primary;
@@ -4074,7 +4342,7 @@ listener.
              Set if the email
 
              @param {boolean} primary true if the email is primary; false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           setPrimary(primary: boolean) {
                this.primary = primary;
@@ -4108,7 +4376,7 @@ listener.
         Structure representing the personal info data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactPersonalInfo extends APIBean {
@@ -4136,7 +4404,7 @@ listener.
              @param {string} middleName of the Contact
              @param {string} lastName   of the Contact
              @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string, middleName: string, lastName: string, title: ContactPersonalInfoTitle) {
                super();
@@ -4150,7 +4418,7 @@ listener.
              Returns the title of the Contact
 
              @return {Adaptive.ContactPersonalInfoTitle} Title
-             @since ARP 2.0
+             @since v2.0
           */
           getTitle() : ContactPersonalInfoTitle {
                return this.title;
@@ -4161,7 +4429,7 @@ listener.
              Set the Title of the Contact
 
              @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           setTitle(title: ContactPersonalInfoTitle) {
                this.title = title;
@@ -4172,7 +4440,7 @@ listener.
              Returns the last name of the Contact
 
              @return {string} lastName
-             @since ARP 2.0
+             @since v2.0
           */
           getLastName() : string {
                return this.lastName;
@@ -4183,7 +4451,7 @@ listener.
              Set the last name of the Contact
 
              @param {string} lastName of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           setLastName(lastName: string) {
                this.lastName = lastName;
@@ -4194,7 +4462,7 @@ listener.
              Returns the middle name of the Contact
 
              @return {string} middelName
-             @since ARP 2.0
+             @since v2.0
           */
           getMiddleName() : string {
                return this.middleName;
@@ -4205,7 +4473,7 @@ listener.
              Set the middle name of the Contact
 
              @param {string} middleName of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           setMiddleName(middleName: string) {
                this.middleName = middleName;
@@ -4216,7 +4484,7 @@ listener.
              Returns the name of the Contact
 
              @return {string} name
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -4227,7 +4495,7 @@ listener.
              Set the name of the Contact
 
              @param {string} name of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -4262,7 +4530,7 @@ listener.
         Structure representing the phone data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactPhone extends APIBean {
@@ -4280,7 +4548,7 @@ listener.
 
              @param {string} phone     Phone number
              @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(phone: string, phoneType: ContactPhoneType) {
                super();
@@ -4292,7 +4560,7 @@ listener.
              Returns the phone phoneType
 
              @return {Adaptive.ContactPhoneType} phoneType
-             @since ARP 2.0
+             @since v2.0
           */
           getPhoneType() : ContactPhoneType {
                return this.phoneType;
@@ -4303,7 +4571,7 @@ listener.
              Set the phoneType of the phone number
 
              @param {Adaptive.ContactPhoneType} phoneType Type of Phone number
-             @since ARP 2.0
+             @since v2.0
           */
           setPhoneType(phoneType: ContactPhoneType) {
                this.phoneType = phoneType;
@@ -4314,7 +4582,7 @@ listener.
              Returns the phone number
 
              @return {string} phone number
-             @since ARP 2.0
+             @since v2.0
           */
           getPhone() : string {
                return this.phone;
@@ -4325,7 +4593,7 @@ listener.
              Set the phone number
 
              @param {string} phone number
-             @since ARP 2.0
+             @since v2.0
           */
           setPhone(phone: string) {
                this.phone = phone;
@@ -4358,7 +4626,7 @@ listener.
         Structure representing the professional info data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactProfessionalInfo extends APIBean {
@@ -4381,7 +4649,7 @@ listener.
              @param {string} jobTitle       The job title
              @param {string} jobDescription The job description
              @param {string} company        The company of the job
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(jobTitle: string, jobDescription: string, company: string) {
                super();
@@ -4394,7 +4662,7 @@ listener.
              Returns the company of the job
 
              @return {string} company
-             @since ARP 2.0
+             @since v2.0
           */
           getCompany() : string {
                return this.company;
@@ -4405,7 +4673,7 @@ listener.
              Set the company of the job
 
              @param {string} company The company of the job
-             @since ARP 2.0
+             @since v2.0
           */
           setCompany(company: string) {
                this.company = company;
@@ -4416,7 +4684,7 @@ listener.
              Returns the description of the job
 
              @return {string} description
-             @since ARP 2.0
+             @since v2.0
           */
           getJobDescription() : string {
                return this.jobDescription;
@@ -4427,7 +4695,7 @@ listener.
              Set the description of the job
 
              @param {string} jobDescription The job description
-             @since ARP 2.0
+             @since v2.0
           */
           setJobDescription(jobDescription: string) {
                this.jobDescription = jobDescription;
@@ -4438,7 +4706,7 @@ listener.
              Returns the title of the job
 
              @return {string} title
-             @since ARP 2.0
+             @since v2.0
           */
           getJobTitle() : string {
                return this.jobTitle;
@@ -4449,7 +4717,7 @@ listener.
              Set the title of the job
 
              @param {string} jobTitle The job title
-             @since ARP 2.0
+             @since v2.0
           */
           setJobTitle(jobTitle: string) {
                this.jobTitle = jobTitle;
@@ -4479,7 +4747,7 @@ listener.
         Structure representing the social data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactSocial extends APIBean {
@@ -4497,7 +4765,7 @@ listener.
 
              @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
              @param {string} profileUrl    of the user
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(socialNetwork: ContactSocialNetwork, profileUrl: string) {
                super();
@@ -4509,7 +4777,7 @@ listener.
              Returns the social network
 
              @return {Adaptive.ContactSocialNetwork} socialNetwork
-             @since ARP 2.0
+             @since v2.0
           */
           getSocialNetwork() : ContactSocialNetwork {
                return this.socialNetwork;
@@ -4520,7 +4788,7 @@ listener.
              Set the social network
 
              @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
-             @since ARP 2.0
+             @since v2.0
           */
           setSocialNetwork(socialNetwork: ContactSocialNetwork) {
                this.socialNetwork = socialNetwork;
@@ -4531,7 +4799,7 @@ listener.
              Returns the profile url of the user
 
              @return {string} profileUrl
-             @since ARP 2.0
+             @since v2.0
           */
           getProfileUrl() : string {
                return this.profileUrl;
@@ -4542,7 +4810,7 @@ listener.
              Set the profile url of the iser
 
              @param {string} profileUrl of the user
-             @since ARP 2.0
+             @since v2.0
           */
           setProfileUrl(profileUrl: string) {
                this.profileUrl = profileUrl;
@@ -4575,7 +4843,7 @@ listener.
         Structure representing the assigned tags data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactTag extends APIBean {
@@ -4593,7 +4861,7 @@ listener.
 
              @param {string} tagValue Value of the tag
              @param {string} tagName  Name of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(tagName: string, tagValue: string) {
                super();
@@ -4605,7 +4873,7 @@ listener.
              Returns the tagName of the Tag
 
              @return {string} tagName
-             @since ARP 2.0
+             @since v2.0
           */
           getTagName() : string {
                return this.tagName;
@@ -4616,7 +4884,7 @@ listener.
              Set the tagName of the Tag
 
              @param {string} tagName Name of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           setTagName(tagName: string) {
                this.tagName = tagName;
@@ -4627,7 +4895,7 @@ listener.
              Returns the tagValue of the Tag
 
              @return {string} tagValue
-             @since ARP 2.0
+             @since v2.0
           */
           getTagValue() : string {
                return this.tagValue;
@@ -4638,7 +4906,7 @@ listener.
              Set the tagValue of the Tag
 
              @param {string} tagValue Value of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           setTagValue(tagValue: string) {
                this.tagValue = tagValue;
@@ -4667,7 +4935,7 @@ listener.
         Structure representing the internal unique identifier data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactUid extends APIBean {
@@ -4680,7 +4948,7 @@ listener.
              Constructor used by implementation to set the Contact id.
 
              @param {string} contactId Internal unique contact id.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(contactId: string) {
                super();
@@ -4691,7 +4959,7 @@ listener.
              Returns the contact id
 
              @return {string} Contactid Internal unique contact id.
-             @since ARP 2.0
+             @since v2.0
           */
           getContactId() : string {
                return this.contactId;
@@ -4702,7 +4970,7 @@ listener.
              Set the id of the Contact
 
              @param {string} contactId Internal unique contact id.
-             @since ARP 2.0
+             @since v2.0
           */
           setContactId(contactId: string) {
                this.contactId = contactId;
@@ -4730,7 +4998,7 @@ listener.
         Structure representing the website data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactWebsite extends APIBean {
@@ -4743,7 +5011,7 @@ listener.
              Constructor used by the implementation
 
              @param {string} url Url of the website
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(url: string) {
                super();
@@ -4754,7 +5022,7 @@ listener.
              Returns the url of the website
 
              @return {string} website url
-             @since ARP 2.0
+             @since v2.0
           */
           getUrl() : string {
                return this.url;
@@ -4765,7 +5033,7 @@ listener.
              Set the url of the website
 
              @param {string} url Url of the website
-             @since ARP 2.0
+             @since v2.0
           */
           setUrl(url: string) {
                this.url = url;
@@ -4793,7 +5061,7 @@ listener.
         Structure representing a database reference.
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Database extends APIBean {
@@ -4811,7 +5079,7 @@ listener.
 
              @param {string} name     Name of the DatabaseTable.
              @param {boolean} compress Compression enabled.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string, compress: boolean) {
                super();
@@ -4823,7 +5091,7 @@ listener.
              Returns if the table is compressed
 
              @return {boolean} Compression enabled
-             @since ARP 2.0
+             @since v2.0
           */
           getCompress() : boolean {
                return this.compress;
@@ -4834,7 +5102,7 @@ listener.
              Sets if the table is compressed or not.
 
              @param {boolean} compress Compression enabled
-             @since ARP 2.0
+             @since v2.0
           */
           setCompress(compress: boolean) {
                this.compress = compress;
@@ -4845,7 +5113,7 @@ listener.
              Returns the name.
 
              @return {string} The name of the table.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -4856,7 +5124,7 @@ listener.
              Sets the name of the table.
 
              @param {string} name The name of the table.
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -4885,7 +5153,7 @@ listener.
         Structure representing the column specification of a data column.
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class DatabaseColumn extends APIBean {
@@ -4898,7 +5166,7 @@ listener.
              Constructor with fields
 
              @param {string} name Name of the column
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string) {
                super();
@@ -4909,7 +5177,7 @@ listener.
              Returns the name of the column.
 
              @return {string} The name of the column.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -4920,7 +5188,7 @@ listener.
              Sets the name of the column.
 
              @param {string} name The name of the column.
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -4948,7 +5216,7 @@ listener.
         Structure representing a row for a data table.
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class DatabaseRow extends APIBean {
@@ -4961,7 +5229,7 @@ listener.
              Constructor for implementation using.
 
              @param {string[]} values The values of the row
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(values: Array<string>) {
                super();
@@ -4972,7 +5240,7 @@ listener.
              Returns the values of the row.
 
              @return {string[]} The values of the row.
-             @since ARP 2.0
+             @since v2.0
           */
           getValues() : Array<string> {
                return this.values;
@@ -4983,7 +5251,7 @@ listener.
              Sets the values of the row.
 
              @param {string[]} values The values of the row.
-             @since ARP 2.0
+             @since v2.0
           */
           setValues(values: Array<string>) {
                this.values = values;
@@ -5017,7 +5285,7 @@ listener.
         Represents a data table composed of databaseColumns and databaseRows.
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class DatabaseTable extends APIBean {
@@ -5050,7 +5318,7 @@ listener.
              @param {number} rowCount        The number of databaseRows
              @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
              @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>) {
                super();
@@ -5065,7 +5333,7 @@ listener.
              Get the number of databaseColumns
 
              @return {number} The number of databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           getColumnCount() : number {
                return this.columnCount;
@@ -5076,7 +5344,7 @@ listener.
              Sets the number of databaseColumns
 
              @param {number} columnCount The number of databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           setColumnCount(columnCount: number) {
                this.columnCount = columnCount;
@@ -5087,7 +5355,7 @@ listener.
              Get the databaseColumns
 
              @return {Adaptive.DatabaseColumn[]} The databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           getDatabaseColumns() : Array<DatabaseColumn> {
                return this.databaseColumns;
@@ -5098,7 +5366,7 @@ listener.
              Sets the databaseColumns of the table
 
              @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setDatabaseColumns(databaseColumns: Array<DatabaseColumn>) {
                this.databaseColumns = databaseColumns;
@@ -5109,7 +5377,7 @@ listener.
              Get the databaseRows of the table
 
              @return {Adaptive.DatabaseRow[]} The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           getDatabaseRows() : Array<DatabaseRow> {
                return this.databaseRows;
@@ -5120,7 +5388,7 @@ listener.
              Sets the databaseRows of the table
 
              @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setDatabaseRows(databaseRows: Array<DatabaseRow>) {
                this.databaseRows = databaseRows;
@@ -5131,7 +5399,7 @@ listener.
              Returns the name of the table
 
              @return {string} The name of the table
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -5142,7 +5410,7 @@ listener.
              Sets the name of the table
 
              @param {string} name The name of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -5153,7 +5421,7 @@ listener.
              Get the number of databaseRows
 
              @return {number} The number of databaseRows
-             @since ARP 2.0
+             @since v2.0
           */
           getRowCount() : number {
                return this.rowCount;
@@ -5164,7 +5432,7 @@ listener.
              Sets the number of databaseRows
 
              @param {number} rowCount The number of databaseRows
-             @since ARP 2.0
+             @since v2.0
           */
           setRowCount(rowCount: number) {
                this.rowCount = rowCount;
@@ -5216,7 +5484,7 @@ listener.
         Structure representing the basic device information.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class DeviceInfo extends APIBean {
@@ -5245,7 +5513,7 @@ be unique for a specific instance of an application on a specific device.
              @param {string} model  of the device.
              @param {string} vendor of the device.
              @param {string} uuid   unique* identifier (* platform dependent).
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string, model: string, vendor: string, uuid: string) {
                super();
@@ -5259,7 +5527,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the model of the device.
 
              @return {string} String with the model of the device.
-             @since ARP 2.0
+             @since v2.0
           */
           getModel() : string {
                return this.model;
@@ -5280,7 +5548,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the name of the device.
 
              @return {string} String with device name.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -5301,7 +5569,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the platform dependent UUID of the device.
 
              @return {string} String with the 128-bit device identifier.
-             @since ARP 2.0
+             @since v2.0
           */
           getUuid() : string {
                return this.uuid;
@@ -5324,7 +5592,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the vendor of the device.
 
              @return {string} String with the vendor name.
-             @since ARP 2.0
+             @since v2.0
           */
           getVendor() : string {
                return this.vendor;
@@ -5365,7 +5633,7 @@ be unique for a specific instance of an application on a specific device.
         Structure representing the data elements of an email.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Email extends APIBean {
@@ -5408,7 +5676,7 @@ be unique for a specific instance of an application on a specific device.
              @param {string} messageBody         body of the email
              @param {string} messageBodyMimeType mime type of the body
              @param {string} subject             of the email
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(toRecipients: Array<EmailAddress>, ccRecipients: Array<EmailAddress>, bccRecipients: Array<EmailAddress>, emailAttachmentData: Array<EmailAttachmentData>, messageBody: string, messageBodyMimeType: string, subject: string) {
                super();
@@ -5425,7 +5693,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-             @since ARP 2.0
+             @since v2.0
           */
           getBccRecipients() : Array<EmailAddress> {
                return this.bccRecipients;
@@ -5436,7 +5704,7 @@ be unique for a specific instance of an application on a specific device.
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-             @since ARP 2.0
+             @since v2.0
           */
           setBccRecipients(bccRecipients: Array<EmailAddress>) {
                this.bccRecipients = bccRecipients;
@@ -5447,7 +5715,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-             @since ARP 2.0
+             @since v2.0
           */
           getCcRecipients() : Array<EmailAddress> {
                return this.ccRecipients;
@@ -5458,7 +5726,7 @@ be unique for a specific instance of an application on a specific device.
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-             @since ARP 2.0
+             @since v2.0
           */
           setCcRecipients(ccRecipients: Array<EmailAddress>) {
                this.ccRecipients = ccRecipients;
@@ -5469,7 +5737,7 @@ be unique for a specific instance of an application on a specific device.
              Returns an array of attachments
 
              @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
-             @since ARP 2.0
+             @since v2.0
           */
           getEmailAttachmentData() : Array<EmailAttachmentData> {
                return this.emailAttachmentData;
@@ -5480,7 +5748,7 @@ be unique for a specific instance of an application on a specific device.
              Set the email attachment data array
 
              @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
-             @since ARP 2.0
+             @since v2.0
           */
           setEmailAttachmentData(emailAttachmentData: Array<EmailAttachmentData>) {
                this.emailAttachmentData = emailAttachmentData;
@@ -5491,7 +5759,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the message body of the email
 
              @return {string} message Body string of the email
-             @since ARP 2.0
+             @since v2.0
           */
           getMessageBody() : string {
                return this.messageBody;
@@ -5502,7 +5770,7 @@ be unique for a specific instance of an application on a specific device.
              Set the message body of the email
 
              @param {string} messageBody message body of the email
-             @since ARP 2.0
+             @since v2.0
           */
           setMessageBody(messageBody: string) {
                this.messageBody = messageBody;
@@ -5513,7 +5781,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the myme type of the message body
 
              @return {string} mime type string of the message boddy
-             @since ARP 2.0
+             @since v2.0
           */
           getMessageBodyMimeType() : string {
                return this.messageBodyMimeType;
@@ -5524,7 +5792,7 @@ be unique for a specific instance of an application on a specific device.
              Set the mime type for the message body
 
              @param {string} messageBodyMimeType type of the body message
-             @since ARP 2.0
+             @since v2.0
           */
           setMessageBodyMimeType(messageBodyMimeType: string) {
                this.messageBodyMimeType = messageBodyMimeType;
@@ -5535,7 +5803,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the subject of the email
 
              @return {string} subject string of the email
-             @since ARP 2.0
+             @since v2.0
           */
           getSubject() : string {
                return this.subject;
@@ -5546,7 +5814,7 @@ be unique for a specific instance of an application on a specific device.
              Set the subject of the email
 
              @param {string} subject of the email
-             @since ARP 2.0
+             @since v2.0
           */
           setSubject(subject: string) {
                this.subject = subject;
@@ -5557,7 +5825,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the array of recipients
 
              @return {Adaptive.EmailAddress[]} toRecipients array of recipients
-             @since ARP 2.0
+             @since v2.0
           */
           getToRecipients() : Array<EmailAddress> {
                return this.toRecipients;
@@ -5568,7 +5836,7 @@ be unique for a specific instance of an application on a specific device.
              Set the array of recipients
 
              @param {Adaptive.EmailAddress[]} toRecipients array of recipients
-             @since ARP 2.0
+             @since v2.0
           */
           setToRecipients(toRecipients: Array<EmailAddress>) {
                this.toRecipients = toRecipients;
@@ -5642,7 +5910,7 @@ be unique for a specific instance of an application on a specific device.
         Structure representing the data elements of an email addressee.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class EmailAddress extends APIBean {
@@ -5655,7 +5923,7 @@ be unique for a specific instance of an application on a specific device.
              Constructor used by implementation
 
              @param {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(address: string) {
                super();
@@ -5666,7 +5934,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the email address
 
              @return {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           getAddress() : string {
                return this.address;
@@ -5677,7 +5945,7 @@ be unique for a specific instance of an application on a specific device.
              Set the Email address
 
              @param {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           setAddress(address: string) {
                this.address = address;
@@ -5705,7 +5973,7 @@ be unique for a specific instance of an application on a specific device.
         Structure representing the binary attachment data.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class EmailAttachmentData extends APIBean {
@@ -5738,7 +6006,7 @@ be unique for a specific instance of an application on a specific device.
              @param {string} fileName     name of the file attachment
              @param {string} mimeType     mime type of the file attachment
              @param {string} referenceUrl relative url of the file attachment
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string) {
                super();
@@ -5753,7 +6021,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the raw data in byte[]
 
              @return {number[]} data Octet-binary content of the attachment payload.
-             @since ARP 2.0
+             @since v2.0
           */
           getData() : Array<number> {
                return this.data;
@@ -5764,7 +6032,7 @@ be unique for a specific instance of an application on a specific device.
              Set the data of the attachment as a byte[]
 
              @param {number[]} data Sets the octet-binary content of the attachment.
-             @since ARP 2.0
+             @since v2.0
           */
           setData(data: Array<number>) {
                this.data = data;
@@ -5775,7 +6043,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the filename of the attachment
 
              @return {string} fileName Name of the attachment.
-             @since ARP 2.0
+             @since v2.0
           */
           getFileName() : string {
                return this.fileName;
@@ -5786,7 +6054,7 @@ be unique for a specific instance of an application on a specific device.
              Set the name of the file attachment
 
              @param {string} fileName Name of the attachment.
-             @since ARP 2.0
+             @since v2.0
           */
           setFileName(fileName: string) {
                this.fileName = fileName;
@@ -5797,7 +6065,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the mime type of the attachment
 
              @return {string} mimeType
-             @since ARP 2.0
+             @since v2.0
           */
           getMimeType() : string {
                return this.mimeType;
@@ -5808,7 +6076,7 @@ be unique for a specific instance of an application on a specific device.
              Set the mime type of the attachment
 
              @param {string} mimeType Mime-type of the attachment.
-             @since ARP 2.0
+             @since v2.0
           */
           setMimeType(mimeType: string) {
                this.mimeType = mimeType;
@@ -5819,7 +6087,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the absolute url of the file attachment
 
              @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-             @since ARP 2.0
+             @since v2.0
           */
           getReferenceUrl() : string {
                return this.referenceUrl;
@@ -5830,7 +6098,7 @@ be unique for a specific instance of an application on a specific device.
              Set the absolute url of the attachment
 
              @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-             @since ARP 2.0
+             @since v2.0
           */
           setReferenceUrl(referenceUrl: string) {
                this.referenceUrl = referenceUrl;
@@ -5841,7 +6109,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the size of the attachment as a long
 
              @return {number} size Length in bytes of the octet-binary content.
-             @since ARP 2.0
+             @since v2.0
           */
           getSize() : number {
                return this.size;
@@ -5852,7 +6120,7 @@ be unique for a specific instance of an application on a specific device.
              Set the size of the attachment as a long
 
              @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
-             @since ARP 2.0
+             @since v2.0
           */
           setSize(size: number) {
                this.size = size;
@@ -5912,7 +6180,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the milliseconds passed since 1/1/1970 since the file was created.
 
              @return {number} Timestamp in milliseconds.
-             @since ARP 2.0
+             @since v2.0
           */
           getDateCreated() : number {
                return this.dateCreated;
@@ -5933,7 +6201,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
              @return {number} Timestamp in milliseconds.
-             @since ARP 2.0
+             @since v2.0
           */
           getDateModified() : number {
                return this.dateModified;
@@ -5954,7 +6222,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the name of the file if the reference is a file or the last path element of the folder.
 
              @return {string} The name of the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -5975,7 +6243,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
              @return {string} The path to the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getPath() : string {
                return this.path;
@@ -5996,7 +6264,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
              @return {string} The absolute path to the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getPathAbsolute() : string {
                return this.pathAbsolute;
@@ -6017,7 +6285,7 @@ be unique for a specific instance of an application on a specific device.
              Returns the size in bytes of the file or -1 if the reference is a folder.
 
              @return {number} Size in bytes of file.
-             @since ARP 2.0
+             @since v2.0
           */
           getSize() : number {
                return this.size;
@@ -6061,7 +6329,7 @@ doesn't exist, this will be -1. Used internally.
         Structure representing the data a single geolocation reading.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Geolocation extends APIBean {
@@ -6099,7 +6367,7 @@ doesn't exist, this will be -1. Used internally.
              @param {number} xDoP      Dilution of precision on the X measurement
              @param {number} yDoP      Dilution of precision on the Y measurement
              @param {number} timestamp Timestamp of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(latitude: number, longitude: number, altitude: number, xDoP: number, yDoP: number, timestamp: number) {
                super();
@@ -6115,7 +6383,7 @@ doesn't exist, this will be -1. Used internally.
              Returns altitude in meters
 
              @return {number} Altitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getAltitude() : number {
                return this.altitude;
@@ -6126,7 +6394,7 @@ doesn't exist, this will be -1. Used internally.
              Set altitude in meters
 
              @param {number} altitude Altitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setAltitude(altitude: number) {
                this.altitude = altitude;
@@ -6137,7 +6405,7 @@ doesn't exist, this will be -1. Used internally.
              Returns the latitude in degrees
 
              @return {number} Latitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getLatitude() : number {
                return this.latitude;
@@ -6148,7 +6416,7 @@ doesn't exist, this will be -1. Used internally.
              Set the latitude in degrees
 
              @param {number} latitude Latitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setLatitude(latitude: number) {
                this.latitude = latitude;
@@ -6159,7 +6427,7 @@ doesn't exist, this will be -1. Used internally.
              Returns the longitude in degrees
 
              @return {number} Longitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getLongitude() : number {
                return this.longitude;
@@ -6170,7 +6438,7 @@ doesn't exist, this will be -1. Used internally.
              Returns the latitude in degrees
 
              @param {number} longitude Longitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setLongitude(longitude: number) {
                this.longitude = longitude;
@@ -6181,7 +6449,7 @@ doesn't exist, this will be -1. Used internally.
              Timestamp Getter
 
              @return {number} Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           getTimestamp() : number {
                return this.timestamp;
@@ -6192,7 +6460,7 @@ doesn't exist, this will be -1. Used internally.
              Timestamp Setter
 
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           setTimestamp(timestamp: number) {
                this.timestamp = timestamp;
@@ -6265,7 +6533,7 @@ doesn't exist, this will be -1. Used internally.
         Represents a basic bean to store keyName pair values
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class KeyPair extends APIBean {
@@ -6283,7 +6551,7 @@ doesn't exist, this will be -1. Used internally.
 
              @param {string} keyName  Key of the element
              @param {string} keyValue Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(keyName: string, keyValue: string) {
                super();
@@ -6295,7 +6563,7 @@ doesn't exist, this will be -1. Used internally.
              Returns the keyName of the element
 
              @return {string} Key of the element
-             @since ARP 2.0
+             @since v2.0
           */
           getKeyName() : string {
                return this.keyName;
@@ -6306,7 +6574,7 @@ doesn't exist, this will be -1. Used internally.
              Sets the keyName of the element
 
              @param {string} keyName Key of the element
-             @since ARP 2.0
+             @since v2.0
           */
           setKeyName(keyName: string) {
                this.keyName = keyName;
@@ -6317,7 +6585,7 @@ doesn't exist, this will be -1. Used internally.
              Returns the keyValue of the element
 
              @return {string} Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           getKeyValue() : string {
                return this.keyValue;
@@ -6328,7 +6596,7 @@ doesn't exist, this will be -1. Used internally.
              Sets the keyValue of the element
 
              @param {string} keyValue Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           setKeyValue(keyValue: string) {
                this.keyValue = keyValue;
@@ -6352,12 +6620,104 @@ doesn't exist, this will be -1. Used internally.
           }
      }
      /**
+        @class Adaptive.KeyValue
+        @extends Adaptive.APIBean
+        General key/value holder class.
+
+        @author Carlos Lozano Diez
+        @since 2.0.6
+        @version 1.0
+     */
+     export class KeyValue extends APIBean {
+          /**
+             Value of the key.
+          */
+          keyData : string;
+          /**
+             Name of the key for the value.
+          */
+          keyName : string;
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} keyName Name of the key.
+             @param {string} keyData Value of the key.
+             @since v2.0.6
+          */
+          constructor(keyName: string, keyData: string) {
+               super();
+               this.keyName = keyName;
+               this.keyData = keyData;
+          }
+          /**
+             @method
+             Gets the value of the key.
+
+             @return {string} Value of the key.
+             @since v2.0.6
+          */
+          getKeyData() : string {
+               return this.keyData;
+          }
+
+          /**
+             @method
+             Sets the value of the key.
+
+             @param {string} keyData Value of the key.
+             @since v2.0.6
+          */
+          setKeyData(keyData: string) {
+               this.keyData = keyData;
+          }
+
+          /**
+             @method
+             Gets the name of the key.
+
+             @return {string} Key name.
+             @since v2.0.6
+          */
+          getKeyName() : string {
+               return this.keyName;
+          }
+
+          /**
+             @method
+             Sets the name of the key.
+
+             @param {string} keyName Key name.
+             @since v2.0.6
+          */
+          setKeyName(keyName: string) {
+               this.keyName = keyName;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.KeyValue.
+             @return {Adaptive.KeyValue} Wrapped object instance.
+          */
+          static toObject(object : any) : KeyValue {
+               var result : KeyValue = new KeyValue(null, null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+
+               return result;
+          }
+     }
+     /**
         @class Adaptive.Lifecycle
         @extends Adaptive.APIBean
         Represents a specific application life-cycle stage.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Lifecycle extends APIBean {
@@ -6381,7 +6741,7 @@ Possible lifecycle States:
              Constructor used by the implementation
 
              @param {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(state: LifecycleState) {
                super();
@@ -6392,7 +6752,7 @@ Possible lifecycle States:
              Returns the state of the application
 
              @return {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           getState() : LifecycleState {
                return this.state;
@@ -6403,7 +6763,7 @@ Possible lifecycle States:
              Set the State of the application
 
              @param {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           setState(state: LifecycleState) {
                this.state = state;
@@ -6435,7 +6795,7 @@ Possible lifecycle States:
         Represents a specific user or system locate.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Locale extends APIBean {
@@ -6453,7 +6813,7 @@ Possible lifecycle States:
 
              @param {string} country  Country of the Locale
              @param {string} language Language of the Locale
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(language: string, country: string) {
                super();
@@ -6465,7 +6825,7 @@ Possible lifecycle States:
              Returns the country code
 
              @return {string} country code
-             @since ARP 2.0
+             @since v2.0
           */
           getCountry() : string {
                return this.country;
@@ -6476,7 +6836,7 @@ Possible lifecycle States:
              Set the country code
 
              @param {string} country code
-             @since ARP 2.0
+             @since v2.0
           */
           setCountry(country: string) {
                this.country = country;
@@ -6487,7 +6847,7 @@ Possible lifecycle States:
              Returns the language code
 
              @return {string} language code
-             @since ARP 2.0
+             @since v2.0
           */
           getLanguage() : string {
                return this.language;
@@ -6498,7 +6858,7 @@ Possible lifecycle States:
              Set the language code
 
              @param {string} language code
-             @since ARP 2.0
+             @since v2.0
           */
           setLanguage(language: string) {
                this.language = language;
@@ -6527,7 +6887,7 @@ Possible lifecycle States:
         Represents the basic information about the operating system.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class OSInfo extends APIBean {
@@ -6550,7 +6910,7 @@ Possible lifecycle States:
              @param {Adaptive.IOSType} name    of the OS.
              @param {string} version of the OS.
              @param {string} vendor  of the OS.
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: IOSType, version: string, vendor: string) {
                super();
@@ -6563,7 +6923,7 @@ Possible lifecycle States:
              Returns the name of the operating system.
 
              @return {Adaptive.IOSType} OS name.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : IOSType {
                return this.name;
@@ -6584,7 +6944,7 @@ Possible lifecycle States:
              Returns the vendor of the operating system.
 
              @return {string} OS vendor.
-             @since ARP 2.0
+             @since v2.0
           */
           getVendor() : string {
                return this.vendor;
@@ -6605,7 +6965,7 @@ Possible lifecycle States:
              Returns the version of the operating system.
 
              @return {string} OS version.
-             @since ARP 2.0
+             @since v2.0
           */
           getVersion() : string {
                return this.version;
@@ -6649,7 +7009,7 @@ Possible lifecycle States:
         Object for reporting orientation change events for device and display.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0.5
+        @since v2.0.5
         @version 1.0
      */
      export class RotationEvent extends APIBean {
@@ -6683,7 +7043,7 @@ concluded.
              @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation when the event was fired.
              @param {Adaptive.RotationEventState} state       State of the event (WillBegin, DidFinish).
              @param {number} timestamp   Timestamp in milliseconds when the event was fired.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           constructor(origin: ICapabilitiesOrientation, destination: ICapabilitiesOrientation, state: RotationEventState, timestamp: number) {
                super();
@@ -6697,7 +7057,7 @@ concluded.
              Gets the destination orientation of the event.
 
              @return {Adaptive.ICapabilitiesOrientation} Destination orientation.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getDestination() : ICapabilitiesOrientation {
                return this.destination;
@@ -6708,7 +7068,7 @@ concluded.
              Sets the destination orientation of the event.
 
              @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           setDestination(destination: ICapabilitiesOrientation) {
                this.destination = destination;
@@ -6719,7 +7079,7 @@ concluded.
              Get the origin orientation of the event.
 
              @return {Adaptive.ICapabilitiesOrientation} Origin orientation.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrigin() : ICapabilitiesOrientation {
                return this.origin;
@@ -6730,7 +7090,7 @@ concluded.
              Set the origin orientation of the event.
 
              @param {Adaptive.ICapabilitiesOrientation} origin Origin orientation
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           setOrigin(origin: ICapabilitiesOrientation) {
                this.origin = origin;
@@ -6741,7 +7101,7 @@ concluded.
              Gets the current state of the event.
 
              @return {Adaptive.RotationEventState} State of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getState() : RotationEventState {
                return this.state;
@@ -6752,7 +7112,7 @@ concluded.
              Sets the current state of the event.
 
              @param {Adaptive.RotationEventState} state The state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           setState(state: RotationEventState) {
                this.state = state;
@@ -6763,7 +7123,7 @@ concluded.
              Gets the timestamp in milliseconds of the event.
 
              @return {number} Timestamp of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getTimestamp() : number {
                return this.timestamp;
@@ -6774,7 +7134,7 @@ concluded.
              Sets the timestamp in milliseconds of the event.
 
              @param {number} timestamp Timestamp of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           setTimestamp(timestamp: number) {
                this.timestamp = timestamp;
@@ -6817,7 +7177,7 @@ concluded.
         Represents a single secureKey-value pair.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class SecureKeyPair extends APIBean {
@@ -6835,7 +7195,7 @@ concluded.
 
              @param {string} secureKey  name of the keypair
              @param {string} secureData value of the keypair
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(secureKey: string, secureData: string) {
                super();
@@ -6847,7 +7207,7 @@ concluded.
              Returns the object value
 
              @return {string} Value.
-             @since ARP 2.0
+             @since v2.0
           */
           getSecureData() : string {
                return this.secureData;
@@ -6858,7 +7218,7 @@ concluded.
              Sets the value for this object
 
              @param {string} secureData value to set.
-             @since ARP 2.0
+             @since v2.0
           */
           setSecureData(secureData: string) {
                this.secureData = secureData;
@@ -6869,7 +7229,7 @@ concluded.
              Returns the object secureKey name.
 
              @return {string} Key name.
-             @since ARP 2.0
+             @since v2.0
           */
           getSecureKey() : string {
                return this.secureKey;
@@ -6880,7 +7240,7 @@ concluded.
              Sets the secureKey name for this object.
 
              @param {string} secureKey Key name.
-             @since ARP 2.0
+             @since v2.0
           */
           setSecureKey(secureKey: string) {
                this.secureKey = secureKey;
@@ -6904,786 +7264,100 @@ concluded.
           }
      }
      /**
-        @class Adaptive.Service
-        @extends Adaptive.APIBean
-        Represents an instance of a service.
-
-        @author Aryslan
-        @since ARP 2.0
-        @version 1.0
-     */
-     export class Service extends APIBean {
-          /**
-             The type of the service
-          */
-          type : IServiceType;
-          /**
-             The service name
-          */
-          name : string;
-          /**
-             Endpoint of the service
-          */
-          serviceEndpoints : Array<ServiceEndpoint>;
-          /**
-             @method constructor
-             Constructor used by the implementation
-
-             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
-             @param {string} name             Name of the service
-             @param {Adaptive.IServiceType} type             Type of the service
-             @since ARP 2.0
-          */
-          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string, type: IServiceType) {
-               super();
-               this.serviceEndpoints = serviceEndpoints;
-               this.name = name;
-               this.type = type;
-          }
-          /**
-             @method
-             Returns the type
-
-             @return {Adaptive.IServiceType} type
-             @since ARP 2.0
-          */
-          getType() : IServiceType {
-               return this.type;
-          }
-
-          /**
-             @method
-             Set the type
-
-             @param {Adaptive.IServiceType} type Type of the service
-             @since ARP 2.0
-          */
-          setType(type: IServiceType) {
-               this.type = type;
-          }
-
-          /**
-             @method
-             Returns the name
-
-             @return {string} name
-             @since ARP 2.0
-          */
-          getName() : string {
-               return this.name;
-          }
-
-          /**
-             @method
-             Set the name
-
-             @param {string} name Name of the service
-             @since ARP 2.0
-          */
-          setName(name: string) {
-               this.name = name;
-          }
-
-          /**
-             @method
-             Returns the serviceEndpoints
-
-             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             @since ARP 2.0
-          */
-          getServiceEndpoints() : Array<ServiceEndpoint> {
-               return this.serviceEndpoints;
-          }
-
-          /**
-             @method
-             Set the serviceEndpoints
-
-             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-             @since ARP 2.0
-          */
-          setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
-               this.serviceEndpoints = serviceEndpoints;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Service.
-             @return {Adaptive.Service} Wrapped object instance.
-          */
-          static toObject(object : any) : Service {
-               var result : Service = new Service(null, null, null);
-
-               // Assign values to bean fields.
-               if (object != null && object.serviceEndpoints != null) {
-                    result.serviceEndpoints = new Array<ServiceEndpoint>();
-                    for(var i = 0; i < object.serviceEndpoints.length; i++) {
-                         var __value__ = object.serviceEndpoints[i];
-                         if (__value__ != null) {
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(__value__));
-                         } else {
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
-                         }
-                    }
-               }
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.type!=null) {
-                    result.type = IServiceType.toObject(object.type);
-               } else {
-                    result.type = IServiceType.toObject(null);
-               }
-
-               return result;
-          }
-     }
-     /**
-        @class Adaptive.ServiceCookie
-        @extends Adaptive.APIBean
-        Structure representing the cookieValue of a http cookie.
-
-        @author Aryslan
-        @since ARP 2.0
-        @version 1.0
-     */
-     export class ServiceCookie extends APIBean {
-          /**
-             Name ot the cookie
-          */
-          cookieName : string;
-          /**
-             Value of the ServiceCookie
-          */
-          cookieValue : string;
-          /**
-             ServiceCookie creation timestamp in milliseconds.
-          */
-          creation : number;
-          /**
-             Domain for which the cookie is valid.
-          */
-          domain : string;
-          /**
-             ServiceCookie expiry in milliseconds or -1 for session only.
-          */
-          expiry : number;
-          /**
-             URI path for which the cookie is valid.
-          */
-          path : string;
-          /**
-             Scheme of the domain - http/https - for which the cookie is valid.
-          */
-          scheme : string;
-          /**
-             ServiceCookie is secure (https only)
-          */
-          secure : boolean;
-          /**
-             @method constructor
-             Contructor with fields
-
-             @param {string} cookieName  Name of the cookie
-             @param {string} cookieValue Value of the cookie
-             @param {string} domain      Domain of the cookie
-             @param {string} path        Path of the cookie
-             @param {string} scheme      Scheme of the cookie
-             @param {boolean} secure      Privacy of the cookie
-             @param {number} expiry      Expiration date of the cookie
-             @param {number} creation    Creation date of the cookie
-             @since ARP 2.0
-          */
-          constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
-               super();
-               this.cookieName = cookieName;
-               this.cookieValue = cookieValue;
-               this.domain = domain;
-               this.path = path;
-               this.scheme = scheme;
-               this.secure = secure;
-               this.expiry = expiry;
-               this.creation = creation;
-          }
-          /**
-             @method
-             Returns the cookie cookieName
-
-             @return {string} cookieName Name of the cookie
-             @since ARP 2.0
-          */
-          getCookieName() : string {
-               return this.cookieName;
-          }
-
-          /**
-             @method
-             Set the cookie cookieName
-
-             @param {string} cookieName Name of the cookie
-             @since ARP 2.0
-          */
-          setCookieName(cookieName: string) {
-               this.cookieName = cookieName;
-          }
-
-          /**
-             @method
-             Returns the cookie cookieValue
-
-             @return {string} Value of the cookie
-             @since ARP 2.0
-          */
-          getCookieValue() : string {
-               return this.cookieValue;
-          }
-
-          /**
-             @method
-             Set the cookie cookieValue
-
-             @param {string} cookieValue Value of the cookie
-             @since ARP 2.0
-          */
-          setCookieValue(cookieValue: string) {
-               this.cookieValue = cookieValue;
-          }
-
-          /**
-             @method
-             Returns the creation date
-
-             @return {number} Creation date of the cookie
-             @since ARP 2.0
-          */
-          getCreation() : number {
-               return this.creation;
-          }
-
-          /**
-             @method
-             Sets the creation date
-
-             @param {number} creation Creation date of the cookie
-             @since ARP 2.0
-          */
-          setCreation(creation: number) {
-               this.creation = creation;
-          }
-
-          /**
-             @method
-             Returns the domain
-
-             @return {string} domain
-             @since ARP 2.0
-          */
-          getDomain() : string {
-               return this.domain;
-          }
-
-          /**
-             @method
-             Set the domain
-
-             @param {string} domain Domain of the cookie
-             @since ARP 2.0
-          */
-          setDomain(domain: string) {
-               this.domain = domain;
-          }
-
-          /**
-             @method
-             Returns the expiration date in milis
-
-             @return {number} expiry
-             @since ARP 2.0
-          */
-          getExpiry() : number {
-               return this.expiry;
-          }
-
-          /**
-             @method
-             Set the expiration date in milis
-
-             @param {number} expiry Expiration date of the cookie
-             @since ARP 2.0
-          */
-          setExpiry(expiry: number) {
-               this.expiry = expiry;
-          }
-
-          /**
-             @method
-             Returns the path
-
-             @return {string} path
-             @since ARP 2.0
-          */
-          getPath() : string {
-               return this.path;
-          }
-
-          /**
-             @method
-             Set the path
-
-             @param {string} path Path of the cookie
-             @since ARP 2.0
-          */
-          setPath(path: string) {
-               this.path = path;
-          }
-
-          /**
-             @method
-             Returns the scheme
-
-             @return {string} scheme
-             @since ARP 2.0
-          */
-          getScheme() : string {
-               return this.scheme;
-          }
-
-          /**
-             @method
-             Set the scheme
-
-             @param {string} scheme Scheme of the cookie
-             @since ARP 2.0
-          */
-          setScheme(scheme: string) {
-               this.scheme = scheme;
-          }
-
-          /**
-             @method
-             Returns whether the cookie is secure or not
-
-             @return {boolean} true if the cookie is secure; false otherwise
-             @since ARP 2.0
-          */
-          getSecure() : boolean {
-               return this.secure;
-          }
-
-          /**
-             @method
-             Set whether the cookie is secure or not
-
-             @param {boolean} secure Privacy of the cookie
-             @since ARP 2.0
-          */
-          setSecure(secure: boolean) {
-               this.secure = secure;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceCookie.
-             @return {Adaptive.ServiceCookie} Wrapped object instance.
-          */
-          static toObject(object : any) : ServiceCookie {
-               var result : ServiceCookie = new ServiceCookie(null, null, null, null, null, null, null, null);
-
-               // Assign values to bean fields.
-               if (object!=null && object.cookieName!=null) result.cookieName = object.cookieName;
-               if (object!=null && object.cookieValue!=null) result.cookieValue = object.cookieValue;
-               if (object!=null && object.domain!=null) result.domain = object.domain;
-               if (object!=null && object.path!=null) result.path = object.path;
-               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
-               if (object!=null && object.secure!=null) result.secure = object.secure;
-               if (object!=null && object.expiry!=null) result.expiry = object.expiry;
-               if (object!=null && object.creation!=null) result.creation = object.creation;
-
-               return result;
-          }
-     }
-     /**
-        @class Adaptive.ServiceEndpoint
-        @extends Adaptive.APIBean
-        Structure representing a remote or local service access end-point.
-
-        @author Aryslan
-        @since ARP 2.0
-        @version 1.0
-     */
-     export class ServiceEndpoint extends APIBean {
-          /**
-             The remote service host (alias or IP).
-          */
-          host : string;
-          /**
-             The remote service paths (to be added to the host and port url).
-          */
-          paths : Array<ServicePath>;
-          /**
-             The remote service accessible port.
-          */
-          port : number;
-          /**
-             The proxy url - if needed - to access the remote service. If IP and port are used, use the following syntax: "http://<IP>:<Port>".
-          */
-          proxy : string;
-          /**
-             The remote service scheme.
-          */
-          scheme : string;
-          /**
-             @method constructor
-             Constructor with parameters
-
-             @param {string} host   Remote service host
-             @param {Adaptive.ServicePath[]} paths  Remote service Paths
-             @param {number} port   Remote service Port
-             @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-             @param {string} scheme Remote service scheme
-             @since ARP 2.0
-          */
-          constructor(host: string, paths: Array<ServicePath>, port: number, proxy: string, scheme: string) {
-               super();
-               this.host = host;
-               this.paths = paths;
-               this.port = port;
-               this.proxy = proxy;
-               this.scheme = scheme;
-          }
-          /**
-             @method
-             Returns the Remote service host
-
-             @return {string} Remote service host
-             @since ARP 2.0
-          */
-          getHost() : string {
-               return this.host;
-          }
-
-          /**
-             @method
-             Set the Remote service host
-
-             @param {string} host Remote service host
-             @since ARP 2.0
-          */
-          setHost(host: string) {
-               this.host = host;
-          }
-
-          /**
-             @method
-             Returns the Remote service Paths
-
-             @return {Adaptive.ServicePath[]} Remote service Paths
-             @since ARP 2.0
-          */
-          getPaths() : Array<ServicePath> {
-               return this.paths;
-          }
-
-          /**
-             @method
-             Set the Remote service Paths
-
-             @param {Adaptive.ServicePath[]} paths Remote service Paths
-             @since ARP 2.0
-          */
-          setPaths(paths: Array<ServicePath>) {
-               this.paths = paths;
-          }
-
-          /**
-             @method
-             Returns the Remote service Port
-
-             @return {number} Remote service Port
-             @since ARP 2.0
-          */
-          getPort() : number {
-               return this.port;
-          }
-
-          /**
-             @method
-             Set the Remote service Port
-
-             @param {number} port Remote service Port
-             @since ARP 2.0
-          */
-          setPort(port: number) {
-               this.port = port;
-          }
-
-          /**
-             @method
-             Return the Proxy url
-
-             @return {string} Proxy url
-             @since ARP 2.0
-          */
-          getProxy() : string {
-               return this.proxy;
-          }
-
-          /**
-             @method
-             Set the Proxy url
-
-             @param {string} proxy Proxy url
-             @since ARP 2.0
-          */
-          setProxy(proxy: string) {
-               this.proxy = proxy;
-          }
-
-          /**
-             @method
-             Returns the Remote service scheme
-
-             @return {string} Remote service scheme
-             @since ARP 2.0
-          */
-          getScheme() : string {
-               return this.scheme;
-          }
-
-          /**
-             @method
-             Set the Remote service scheme
-
-             @param {string} scheme Remote service scheme
-             @since ARP 2.0
-          */
-          setScheme(scheme: string) {
-               this.scheme = scheme;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
-             @return {Adaptive.ServiceEndpoint} Wrapped object instance.
-          */
-          static toObject(object : any) : ServiceEndpoint {
-               var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
-
-               // Assign values to bean fields.
-               if (object!=null && object.host!=null) result.host = object.host;
-               if (object != null && object.paths != null) {
-                    result.paths = new Array<ServicePath>();
-                    for(var i = 0; i < object.paths.length; i++) {
-                         var __value__ = object.paths[i];
-                         if (__value__ != null) {
-                              result.paths.push(ServicePath.toObject(__value__));
-                         } else {
-                              result.paths.push(ServicePath.toObject(null));
-                         }
-                    }
-               }
-               if (object!=null && object.port!=null) result.port = object.port;
-               if (object!=null && object.proxy!=null) result.proxy = object.proxy;
-               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
-
-               return result;
-          }
-     }
-     /**
-        @class Adaptive.ServiceHeader
-        @extends Adaptive.APIBean
-        Structure representing the data of a http request or response header.
-
-        @author Aryslan
-        @since ARP 2.0
-        @version 1.0
-     */
-     export class ServiceHeader extends APIBean {
-          /**
-             Value of the header
-          */
-          data : string;
-          /**
-             Name ot the header
-          */
-          name : string;
-          /**
-             @method constructor
-             Constructor with fields
-
-             @param {string} name Name of the header
-             @param {string} data Value of the header
-             @since ARP 2.0
-          */
-          constructor(name: string, data: string) {
-               super();
-               this.name = name;
-               this.data = data;
-          }
-          /**
-             @method
-             Returns the header value
-
-             @return {string} ServiceHeader value
-             @since ARP 2.0
-          */
-          getData() : string {
-               return this.data;
-          }
-
-          /**
-             @method
-             Set the header value
-
-             @param {string} data ServiceHeader value
-             @since ARP 2.0
-          */
-          setData(data: string) {
-               this.data = data;
-          }
-
-          /**
-             @method
-             Returns the header name
-
-             @return {string} ServiceHeader name
-             @since ARP 2.0
-          */
-          getName() : string {
-               return this.name;
-          }
-
-          /**
-             @method
-             Set the header name
-
-             @param {string} name Name of the header
-             @since ARP 2.0
-          */
-          setName(name: string) {
-               this.name = name;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader.
-             @return {Adaptive.ServiceHeader} Wrapped object instance.
-          */
-          static toObject(object : any) : ServiceHeader {
-               var result : ServiceHeader = new ServiceHeader(null, null);
-
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.data!=null) result.data = object.data;
-
-               return result;
-          }
-     }
-     /**
         @class Adaptive.ServiceRequest
         @extends Adaptive.APIBean
         Represents a local or remote service request.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ServiceRequest extends APIBean {
           /**
-             The HTTP procotol version to be used for this request.
+             Body parameters to be included in the body of the request to a service. These may be applied
+during GET/POST operations. No body parameters are included if this array is null or length zero.
           */
-          protocolVersion : IServiceProtocolVersion;
+          bodyParameters : Array<ServiceRequestParameter>;
           /**
-             Request/Response data content (plain text).
+             Request data content (plain text). This should be populated by the application. The content should be
+in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
+type should be set respectively by the application.
           */
           content : string;
           /**
-             The byte[] representing the Content field.
-          */
-          contentBinary : Array<number>;
-          /**
-             The length in bytes for the binary Content.
-          */
-          contentBinaryLength : number;
-          /**
-             Encoding of the binary payload - by default assumed to be UTF8.
+             Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service.
           */
           contentEncoding : string;
           /**
-             The length in bytes for the Content field.
+             The length in bytes of the content. This may be populated by the application, the platform
+calculates this length automatically if a specific contentLength is not specified.
           */
           contentLength : number;
           /**
-             The request/response content type (MIME TYPE).
+             The request content type (MIME TYPE). This may be populated by the application, the platform
+populates this field with defaults for the service.
           */
           contentType : string;
           /**
-             The request method
+             Query string parameters to be appended to the service URL when making the request. These may be applied
+during GET/POST operations. No query parameters are appended if this array is null or length zero.
           */
-          method : string;
+          queryParameters : Array<ServiceRequestParameter>;
           /**
-             The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
+application, the platform populates this field with defaults for the service and the previous headers.
+In specific, the platform maintains request and response state automatically.
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
-             Information about the session
+             Session attributes and cookies. This may be populated by the application, the platform populates
+this field with defaults for the service and the previous state information. In specific, the platform
+maintains request and response state automatically.
           */
           serviceSession : ServiceSession;
           /**
-             @method constructor
-             Contructor used by the implementation
-
-             @param {string} content             Request/Response data content (plain text)
-             @param {string} contentType         The request/response content type (MIME TYPE).
-             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param {number} contentLength       The length in bytes for the Content field.
-             @param {number[]} contentBinary       The byte[] representing the Content field.
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param {string} method              The request method
-             @param {Adaptive.IServiceProtocolVersion} protocolVersion     The HTTP procotol version to be used for this request.
-             @param {Adaptive.ServiceSession} serviceSession      The element service session
-             @since ARP 2.0
+             Token used for the creation of the request with the destination service, endpoint, function and method
+identifiers. This should not be manipulated by the application directly.
           */
-          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, method: string, protocolVersion: IServiceProtocolVersion, serviceSession: ServiceSession) {
+          serviceToken : ServiceToken;
+          /**
+             This attribute allows for the default user-agent string to be overridden by the application.
+          */
+          userAgent : string;
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} content      Content payload.
+             @param {Adaptive.ServiceToken} serviceToken ServiceToken for the request.
+             @since v2.0.6
+          */
+          constructor(content: string, serviceToken: ServiceToken) {
                super();
                this.content = content;
-               this.contentType = contentType;
-               this.contentEncoding = contentEncoding;
-               this.contentLength = contentLength;
-               this.contentBinary = contentBinary;
-               this.contentBinaryLength = contentBinaryLength;
-               this.serviceHeaders = serviceHeaders;
-               this.method = method;
-               this.protocolVersion = protocolVersion;
-               this.serviceSession = serviceSession;
+               this.serviceToken = serviceToken;
           }
           /**
              @method
-             Returns the protocol version
+             Gets the body parameters of the request.
 
-             @return {Adaptive.IServiceProtocolVersion} protocolVersion enum
-             @since ARP 2.0
+             @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
+             @since v2.0.6
           */
-          getProtocolVersion() : IServiceProtocolVersion {
-               return this.protocolVersion;
+          getBodyParameters() : Array<ServiceRequestParameter> {
+               return this.bodyParameters;
           }
 
           /**
              @method
-             Set the protocol version
+             Sets the body parameters of the request.
 
-             @param {Adaptive.IServiceProtocolVersion} protocolVersion The HTTP procotol version to be used for this request.
-             @since ARP 2.0
+             @param {Adaptive.ServiceRequestParameter[]} bodyParameters ServiceRequestParameter array or null if none are specified.
+             @since v2.0.6
           */
-          setProtocolVersion(protocolVersion: IServiceProtocolVersion) {
-               this.protocolVersion = protocolVersion;
+          setBodyParameters(bodyParameters: Array<ServiceRequestParameter>) {
+               this.bodyParameters = bodyParameters;
           }
 
           /**
@@ -7691,7 +7365,7 @@ concluded.
              Returns the content
 
              @return {string} content
-             @since ARP 2.0
+             @since v2.0
           */
           getContent() : string {
                return this.content;
@@ -7702,7 +7376,7 @@ concluded.
              Set the content
 
              @param {string} content Request/Response data content (plain text)
-             @since ARP 2.0
+             @since v2.0
           */
           setContent(content: string) {
                this.content = content;
@@ -7710,54 +7384,10 @@ concluded.
 
           /**
              @method
-             Returns the byte[] of the content
-
-             @return {number[]} contentBinary
-             @since ARP 2.0
-          */
-          getContentBinary() : Array<number> {
-               return this.contentBinary;
-          }
-
-          /**
-             @method
-             Set the byte[] of the content
-
-             @param {number[]} contentBinary The byte[] representing the Content field.
-             @since ARP 2.0
-          */
-          setContentBinary(contentBinary: Array<number>) {
-               this.contentBinary = contentBinary;
-          }
-
-          /**
-             @method
-             Retrusn the binary content length
-
-             @return {number} contentBinaryLength
-             @since ARP 2.0
-          */
-          getContentBinaryLength() : number {
-               return this.contentBinaryLength;
-          }
-
-          /**
-             @method
-             Set the binary content length
-
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @since ARP 2.0
-          */
-          setContentBinaryLength(contentBinaryLength: number) {
-               this.contentBinaryLength = contentBinaryLength;
-          }
-
-          /**
-             @method
              Returns the content encoding
 
              @return {string} contentEncoding
-             @since ARP 2.0
+             @since v2.0
           */
           getContentEncoding() : string {
                return this.contentEncoding;
@@ -7768,7 +7398,7 @@ concluded.
              Set the content encoding
 
              @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentEncoding(contentEncoding: string) {
                this.contentEncoding = contentEncoding;
@@ -7779,7 +7409,7 @@ concluded.
              Returns the content length
 
              @return {number} contentLength
-             @since ARP 2.0
+             @since v2.0
           */
           getContentLength() : number {
                return this.contentLength;
@@ -7790,7 +7420,7 @@ concluded.
              Set the content length
 
              @param {number} contentLength The length in bytes for the Content field.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentLength(contentLength: number) {
                this.contentLength = contentLength;
@@ -7801,7 +7431,7 @@ concluded.
              Returns the content type
 
              @return {string} contentType
-             @since ARP 2.0
+             @since v2.0
           */
           getContentType() : string {
                return this.contentType;
@@ -7812,7 +7442,7 @@ concluded.
              Set the content type
 
              @param {string} contentType The request/response content type (MIME TYPE).
-             @since ARP 2.0
+             @since v2.0
           */
           setContentType(contentType: string) {
                this.contentType = contentType;
@@ -7820,24 +7450,24 @@ concluded.
 
           /**
              @method
-             Returns the method
+             Gets the query parameters of the request.
 
-             @return {string} method
-             @since ARP 2.0
+             @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
+             @since v2.0.6
           */
-          getMethod() : string {
-               return this.method;
+          getQueryParameters() : Array<ServiceRequestParameter> {
+               return this.queryParameters;
           }
 
           /**
              @method
-             Set the method
+             Sets the query parameters of the request.
 
-             @param {string} method The request method
-             @since ARP 2.0
+             @param {Adaptive.ServiceRequestParameter[]} queryParameters ServiceRequestParameter array or null if none are specified.
+             @since v2.0.6
           */
-          setMethod(method: string) {
-               this.method = method;
+          setQueryParameters(queryParameters: Array<ServiceRequestParameter>) {
+               this.queryParameters = queryParameters;
           }
 
           /**
@@ -7845,7 +7475,7 @@ concluded.
              Returns the array of ServiceHeader
 
              @return {Adaptive.ServiceHeader[]} serviceHeaders
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
                return this.serviceHeaders;
@@ -7856,7 +7486,7 @@ concluded.
              Set the array of ServiceHeader
 
              @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
                this.serviceHeaders = serviceHeaders;
@@ -7867,7 +7497,7 @@ concluded.
              Getter for service session
 
              @return {Adaptive.ServiceSession} The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceSession() : ServiceSession {
                return this.serviceSession;
@@ -7878,10 +7508,54 @@ concluded.
              Setter for service session
 
              @param {Adaptive.ServiceSession} serviceSession The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceSession(serviceSession: ServiceSession) {
                this.serviceSession = serviceSession;
+          }
+
+          /**
+             @method
+             Gets the ServiceToken of the request.
+
+             @return {Adaptive.ServiceToken} ServiceToken.
+             @since v2.0.6
+          */
+          getServiceToken() : ServiceToken {
+               return this.serviceToken;
+          }
+
+          /**
+             @method
+             Sets the ServiceToken of the request.
+
+             @param {Adaptive.ServiceToken} serviceToken ServiceToken to be used for the invocation.
+             @since v2.0.6
+          */
+          setServiceToken(serviceToken: ServiceToken) {
+               this.serviceToken = serviceToken;
+          }
+
+          /**
+             @method
+             Gets the overridden user-agent string.
+
+             @return {string} User-agent string.
+             @since v2.0.6
+          */
+          getUserAgent() : string {
+               return this.userAgent;
+          }
+
+          /**
+             @method
+             Sets the user-agent to override the default user-agent string.
+
+             @param {string} userAgent User-agent string.
+             @since v2.0.6
+          */
+          setUserAgent(userAgent: string) {
+               this.userAgent = userAgent;
           }
 
           /**
@@ -7892,21 +7566,14 @@ concluded.
              @return {Adaptive.ServiceRequest} Wrapped object instance.
           */
           static toObject(object : any) : ServiceRequest {
-               var result : ServiceRequest = new ServiceRequest(null, null, null, null, null, null, null, null, null, null);
+               var result : ServiceRequest = new ServiceRequest(null, null);
 
                // Assign values to bean fields.
+               if (object!=null && object.userAgent!=null) result.userAgent = object.userAgent;
                if (object!=null && object.content!=null) result.content = object.content;
                if (object!=null && object.contentType!=null) result.contentType = object.contentType;
                if (object!=null && object.contentEncoding!=null) result.contentEncoding = object.contentEncoding;
                if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
-               if (object != null && object.contentBinary != null) {
-                    result.contentBinary = new Array<number>();
-                    for(var i = 0; i < object.contentBinary.length; i++) {
-                         var __value__ = object.contentBinary[i];
-                         if (__value__ != null) result.contentBinary.push(__value__);
-                    }
-               }
-               if (object!=null && object.contentBinaryLength!=null) result.contentBinaryLength = object.contentBinaryLength;
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -7918,16 +7585,37 @@ concluded.
                          }
                     }
                }
-               if (object!=null && object.method!=null) result.method = object.method;
-               if (object!=null && object.protocolVersion!=null) {
-                    result.protocolVersion = IServiceProtocolVersion.toObject(object.protocolVersion);
-               } else {
-                    result.protocolVersion = IServiceProtocolVersion.toObject(null);
-               }
                if (object!=null && object.serviceSession!=null) {
                     result.serviceSession = ServiceSession.toObject(object.serviceSession);
                } else {
                     result.serviceSession = ServiceSession.toObject(null);
+               }
+               if (object != null && object.queryParameters != null) {
+                    result.queryParameters = new Array<ServiceRequestParameter>();
+                    for(var i = 0; i < object.queryParameters.length; i++) {
+                         var __value__ = object.queryParameters[i];
+                         if (__value__ != null) {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(__value__));
+                         } else {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(null));
+                         }
+                    }
+               }
+               if (object != null && object.bodyParameters != null) {
+                    result.bodyParameters = new Array<ServiceRequestParameter>();
+                    for(var i = 0; i < object.bodyParameters.length; i++) {
+                         var __value__ = object.bodyParameters[i];
+                         if (__value__ != null) {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(__value__));
+                         } else {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(null));
+                         }
+                    }
+               }
+               if (object!=null && object.serviceToken!=null) {
+                    result.serviceToken = ServiceToken.toObject(object.serviceToken);
+               } else {
+                    result.serviceToken = ServiceToken.toObject(null);
                }
 
                return result;
@@ -7939,22 +7627,15 @@ concluded.
         Represents a local or remote service response.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ServiceResponse extends APIBean {
           /**
-             Request/Response data content (plain text).
+             Response data content. The content should be in some well-known web format - in specific, binaries returned
+should be encoded in base64.
           */
           content : string;
-          /**
-             The byte[] representing the binary Content.
-          */
-          contentBinary : Array<number>;
-          /**
-             The length in bytes for the binary Content.
-          */
-          contentBinaryLength : number;
           /**
              Encoding of the binary payload - by default assumed to be UTF8.
           */
@@ -7972,31 +7653,27 @@ concluded.
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
-             Information about the session
+             Information about the session.
           */
           serviceSession : ServiceSession;
           /**
              @method constructor
              Constructor with fields
 
-             @param {string} content             Request/Response data content (plain text).
-             @param {string} contentType         The request/response content type (MIME TYPE).
-             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param {number} contentLength       The length in bytes for the Content field.
-             @param {number[]} contentBinary       The byte[] representing the binary Content.
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param {Adaptive.ServiceSession} serviceSession      Information about the session
-             @since ARP 2.0
+             @param {string} content         Request/Response data content (plain text).
+             @param {string} contentType     The request/response content type (MIME TYPE).
+             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {number} contentLength   The length in bytes for the Content field.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceSession} serviceSession  Information about the session
+             @since v2.0
           */
-          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
+          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
                super();
                this.content = content;
                this.contentType = contentType;
                this.contentEncoding = contentEncoding;
                this.contentLength = contentLength;
-               this.contentBinary = contentBinary;
-               this.contentBinaryLength = contentBinaryLength;
                this.serviceHeaders = serviceHeaders;
                this.serviceSession = serviceSession;
           }
@@ -8005,7 +7682,7 @@ concluded.
              Returns the content
 
              @return {string} content
-             @since ARP 2.0
+             @since v2.0
           */
           getContent() : string {
                return this.content;
@@ -8016,7 +7693,7 @@ concluded.
              Set the content
 
              @param {string} content Request/Response data content (plain text).
-             @since ARP 2.0
+             @since v2.0
           */
           setContent(content: string) {
                this.content = content;
@@ -8024,54 +7701,10 @@ concluded.
 
           /**
              @method
-             Returns the binary content
-
-             @return {number[]} contentBinary
-             @since ARP 2.0
-          */
-          getContentBinary() : Array<number> {
-               return this.contentBinary;
-          }
-
-          /**
-             @method
-             Set the binary content
-
-             @param {number[]} contentBinary The byte[] representing the binary Content.
-             @since ARP 2.0
-          */
-          setContentBinary(contentBinary: Array<number>) {
-               this.contentBinary = contentBinary;
-          }
-
-          /**
-             @method
-             Returns the binary content length
-
-             @return {number} contentBinaryLength
-             @since ARP 2.0
-          */
-          getContentBinaryLength() : number {
-               return this.contentBinaryLength;
-          }
-
-          /**
-             @method
-             Set the binary content length
-
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @since ARP 2.0
-          */
-          setContentBinaryLength(contentBinaryLength: number) {
-               this.contentBinaryLength = contentBinaryLength;
-          }
-
-          /**
-             @method
              Returns the content encoding
 
              @return {string} contentEncoding
-             @since ARP 2.0
+             @since v2.0
           */
           getContentEncoding() : string {
                return this.contentEncoding;
@@ -8082,7 +7715,7 @@ concluded.
              Set the content encoding
 
              @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentEncoding(contentEncoding: string) {
                this.contentEncoding = contentEncoding;
@@ -8093,7 +7726,7 @@ concluded.
              Returns the content length
 
              @return {number} contentLength
-             @since ARP 2.0
+             @since v2.0
           */
           getContentLength() : number {
                return this.contentLength;
@@ -8104,7 +7737,7 @@ concluded.
              Set the content length
 
              @param {number} contentLength The length in bytes for the Content field.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentLength(contentLength: number) {
                this.contentLength = contentLength;
@@ -8115,7 +7748,7 @@ concluded.
              Returns the content type
 
              @return {string} contentType
-             @since ARP 2.0
+             @since v2.0
           */
           getContentType() : string {
                return this.contentType;
@@ -8126,7 +7759,7 @@ concluded.
              Set the content type
 
              @param {string} contentType The request/response content type (MIME TYPE).
-             @since ARP 2.0
+             @since v2.0
           */
           setContentType(contentType: string) {
                this.contentType = contentType;
@@ -8137,7 +7770,7 @@ concluded.
              Returns the array of ServiceHeader
 
              @return {Adaptive.ServiceHeader[]} serviceHeaders
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
                return this.serviceHeaders;
@@ -8148,7 +7781,7 @@ concluded.
              Set the array of ServiceHeader
 
              @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
                this.serviceHeaders = serviceHeaders;
@@ -8159,7 +7792,7 @@ concluded.
              Getter for service session
 
              @return {Adaptive.ServiceSession} The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceSession() : ServiceSession {
                return this.serviceSession;
@@ -8170,7 +7803,7 @@ concluded.
              Setter for service session
 
              @param {Adaptive.ServiceSession} serviceSession The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceSession(serviceSession: ServiceSession) {
                this.serviceSession = serviceSession;
@@ -8184,21 +7817,13 @@ concluded.
              @return {Adaptive.ServiceResponse} Wrapped object instance.
           */
           static toObject(object : any) : ServiceResponse {
-               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null, null);
+               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null);
 
                // Assign values to bean fields.
                if (object!=null && object.content!=null) result.content = object.content;
                if (object!=null && object.contentType!=null) result.contentType = object.contentType;
                if (object!=null && object.contentEncoding!=null) result.contentEncoding = object.contentEncoding;
                if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
-               if (object != null && object.contentBinary != null) {
-                    result.contentBinary = new Array<number>();
-                    for(var i = 0; i < object.contentBinary.length; i++) {
-                         var __value__ = object.contentBinary[i];
-                         if (__value__ != null) result.contentBinary.push(__value__);
-                    }
-               }
-               if (object!=null && object.contentBinaryLength!=null) result.contentBinaryLength = object.contentBinaryLength;
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -8225,72 +7850,72 @@ concluded.
         Represents a session object for HTTP request and responses
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ServiceSession extends APIBean {
           /**
-             The attributes of the response
+             The attributes of the request or response.
           */
-          attributes : Array<string>;
+          attributes : Array<ServiceSessionAttribute>;
           /**
-             The cookies of the response
+             The cookies of the request or response.
           */
-          cookies : Array<ServiceCookie>;
+          cookies : Array<ServiceSessionCookie>;
           /**
              @method constructor
-             Constructor with fields
+             Constructor with fields.
 
-             @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
-             @param {string[]} attributes Attributes of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionCookie[]} cookies    The cookies of the request or response.
+             @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+             @since v2.0
           */
-          constructor(cookies: Array<ServiceCookie>, attributes: Array<string>) {
+          constructor(cookies: Array<ServiceSessionCookie>, attributes: Array<ServiceSessionAttribute>) {
                super();
                this.cookies = cookies;
                this.attributes = attributes;
           }
           /**
              @method
-             Gets the attributes of the response
+             Gets the attributes of the request or response.
 
-             @return {string[]} Attributes of the response
-             @since ARP 2.0
+             @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
+             @since v2.0
           */
-          getAttributes() : Array<string> {
+          getAttributes() : Array<ServiceSessionAttribute> {
                return this.attributes;
           }
 
           /**
              @method
-             Sets the attributes for the response
+             Sets the attributes for the request or response.
 
-             @param {string[]} attributes Attributes of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+             @since v2.0
           */
-          setAttributes(attributes: Array<string>) {
+          setAttributes(attributes: Array<ServiceSessionAttribute>) {
                this.attributes = attributes;
           }
 
           /**
              @method
-             Returns the cookies of the response
+             Returns the cookies of the request or response.
 
-             @return {Adaptive.ServiceCookie[]} The cookies of the response
-             @since ARP 2.0
+             @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
+             @since v2.0
           */
-          getCookies() : Array<ServiceCookie> {
+          getCookies() : Array<ServiceSessionCookie> {
                return this.cookies;
           }
 
           /**
              @method
-             Sets the cookies of the response
+             Sets the cookies of the request or response.
 
-             @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
+             @since v2.0
           */
-          setCookies(cookies: Array<ServiceCookie>) {
+          setCookies(cookies: Array<ServiceSessionCookie>) {
                this.cookies = cookies;
           }
 
@@ -8306,22 +7931,449 @@ concluded.
 
                // Assign values to bean fields.
                if (object != null && object.cookies != null) {
-                    result.cookies = new Array<ServiceCookie>();
+                    result.cookies = new Array<ServiceSessionCookie>();
                     for(var i = 0; i < object.cookies.length; i++) {
                          var __value__ = object.cookies[i];
                          if (__value__ != null) {
-                              result.cookies.push(ServiceCookie.toObject(__value__));
+                              result.cookies.push(ServiceSessionCookie.toObject(__value__));
                          } else {
-                              result.cookies.push(ServiceCookie.toObject(null));
+                              result.cookies.push(ServiceSessionCookie.toObject(null));
                          }
                     }
                }
                if (object != null && object.attributes != null) {
-                    result.attributes = new Array<string>();
+                    result.attributes = new Array<ServiceSessionAttribute>();
                     for(var i = 0; i < object.attributes.length; i++) {
                          var __value__ = object.attributes[i];
-                         if (__value__ != null) result.attributes.push(__value__);
+                         if (__value__ != null) {
+                              result.attributes.push(ServiceSessionAttribute.toObject(__value__));
+                         } else {
+                              result.attributes.push(ServiceSessionAttribute.toObject(null));
+                         }
                     }
+               }
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServiceSessionCookie
+        @extends Adaptive.APIBean
+        Structure representing the cookieValue of a http cookie.
+
+        @author Aryslan
+        @since v2.0
+        @version 1.0
+     */
+     export class ServiceSessionCookie extends APIBean {
+          /**
+             Name ot the cookie.
+          */
+          cookieName : string;
+          /**
+             Value of the ServiceCookie.
+          */
+          cookieValue : string;
+          /**
+             ServiceCookie creation timestamp in milliseconds.
+          */
+          creation : number;
+          /**
+             Domain for which the cookie is valid.
+          */
+          domain : string;
+          /**
+             ServiceCookie expiry in milliseconds or -1 for session only.
+          */
+          expiry : number;
+          /**
+             URI path for which the cookie is valid.
+          */
+          path : string;
+          /**
+             Scheme of the domain - http/https - for which the cookie is valid.
+          */
+          scheme : string;
+          /**
+             ServiceCookie is secure (https only).
+          */
+          secure : boolean;
+          /**
+             @method constructor
+             Contructor with fields
+
+             @param {string} cookieName  Name of the cookie
+             @param {string} cookieValue Value of the cookie
+             @param {string} domain      Domain of the cookie
+             @param {string} path        Path of the cookie
+             @param {string} scheme      Scheme of the cookie
+             @param {boolean} secure      Privacy of the cookie
+             @param {number} expiry      Expiration date of the cookie
+             @param {number} creation    Creation date of the cookie
+             @since v2.0
+          */
+          constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
+               super();
+               this.cookieName = cookieName;
+               this.cookieValue = cookieValue;
+               this.domain = domain;
+               this.path = path;
+               this.scheme = scheme;
+               this.secure = secure;
+               this.expiry = expiry;
+               this.creation = creation;
+          }
+          /**
+             @method
+             Returns the cookie cookieName
+
+             @return {string} cookieName Name of the cookie
+             @since v2.0
+          */
+          getCookieName() : string {
+               return this.cookieName;
+          }
+
+          /**
+             @method
+             Set the cookie cookieName
+
+             @param {string} cookieName Name of the cookie
+             @since v2.0
+          */
+          setCookieName(cookieName: string) {
+               this.cookieName = cookieName;
+          }
+
+          /**
+             @method
+             Returns the cookie cookieValue
+
+             @return {string} Value of the cookie
+             @since v2.0
+          */
+          getCookieValue() : string {
+               return this.cookieValue;
+          }
+
+          /**
+             @method
+             Set the cookie cookieValue
+
+             @param {string} cookieValue Value of the cookie
+             @since v2.0
+          */
+          setCookieValue(cookieValue: string) {
+               this.cookieValue = cookieValue;
+          }
+
+          /**
+             @method
+             Returns the creation date
+
+             @return {number} Creation date of the cookie
+             @since v2.0
+          */
+          getCreation() : number {
+               return this.creation;
+          }
+
+          /**
+             @method
+             Sets the creation date
+
+             @param {number} creation Creation date of the cookie
+             @since v2.0
+          */
+          setCreation(creation: number) {
+               this.creation = creation;
+          }
+
+          /**
+             @method
+             Returns the domain
+
+             @return {string} domain
+             @since v2.0
+          */
+          getDomain() : string {
+               return this.domain;
+          }
+
+          /**
+             @method
+             Set the domain
+
+             @param {string} domain Domain of the cookie
+             @since v2.0
+          */
+          setDomain(domain: string) {
+               this.domain = domain;
+          }
+
+          /**
+             @method
+             Returns the expiration date in milis
+
+             @return {number} expiry
+             @since v2.0
+          */
+          getExpiry() : number {
+               return this.expiry;
+          }
+
+          /**
+             @method
+             Set the expiration date in milis
+
+             @param {number} expiry Expiration date of the cookie
+             @since v2.0
+          */
+          setExpiry(expiry: number) {
+               this.expiry = expiry;
+          }
+
+          /**
+             @method
+             Returns the path
+
+             @return {string} path
+             @since v2.0
+          */
+          getPath() : string {
+               return this.path;
+          }
+
+          /**
+             @method
+             Set the path
+
+             @param {string} path Path of the cookie
+             @since v2.0
+          */
+          setPath(path: string) {
+               this.path = path;
+          }
+
+          /**
+             @method
+             Returns the scheme
+
+             @return {string} scheme
+             @since v2.0
+          */
+          getScheme() : string {
+               return this.scheme;
+          }
+
+          /**
+             @method
+             Set the scheme
+
+             @param {string} scheme Scheme of the cookie
+             @since v2.0
+          */
+          setScheme(scheme: string) {
+               this.scheme = scheme;
+          }
+
+          /**
+             @method
+             Returns whether the cookie is secure or not
+
+             @return {boolean} true if the cookie is secure; false otherwise
+             @since v2.0
+          */
+          getSecure() : boolean {
+               return this.secure;
+          }
+
+          /**
+             @method
+             Set whether the cookie is secure or not
+
+             @param {boolean} secure Privacy of the cookie
+             @since v2.0
+          */
+          setSecure(secure: boolean) {
+               this.secure = secure;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie.
+             @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceSessionCookie {
+               var result : ServiceSessionCookie = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.cookieName!=null) result.cookieName = object.cookieName;
+               if (object!=null && object.cookieValue!=null) result.cookieValue = object.cookieValue;
+               if (object!=null && object.domain!=null) result.domain = object.domain;
+               if (object!=null && object.path!=null) result.path = object.path;
+               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
+               if (object!=null && object.secure!=null) result.secure = object.secure;
+               if (object!=null && object.expiry!=null) result.expiry = object.expiry;
+               if (object!=null && object.creation!=null) result.creation = object.creation;
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServiceToken
+        @extends Adaptive.APIBean
+        Object representing a specific service, path, function and invocation method for accessing external services.
+
+        @author Carlos Lozano Diez
+        @since v2.0.6
+        @version 1.0
+     */
+     export class ServiceToken extends APIBean {
+          /**
+             Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
+other invocation methods. This is also defined per function of each endpoint in the platform's XML file.
+          */
+          invocationMethod : IServiceMethod;
+          /**
+             Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
+host and port combination for a given service.
+          */
+          endpointName : string;
+          /**
+             Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
+to a relative path of a function published on a remote service.
+          */
+          functionName : string;
+          /**
+             Name of the service configured in the platform's services XML file.
+          */
+          serviceName : string;
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} serviceName      Name of the configured service.
+             @param {string} endpointName     Name of the endpoint configured for the service.
+             @param {string} functionName     Name of the function configured for the endpoint.
+             @param {Adaptive.IServiceMethod} invocationMethod Method type configured for the function.
+             @since v2.0.6
+          */
+          constructor(serviceName: string, endpointName: string, functionName: string, invocationMethod: IServiceMethod) {
+               super();
+               this.serviceName = serviceName;
+               this.endpointName = endpointName;
+               this.functionName = functionName;
+               this.invocationMethod = invocationMethod;
+          }
+          /**
+             @method
+             Get token's invocation method type.
+
+             @return {Adaptive.IServiceMethod} Invocation method type.
+             @since v2.0.6
+          */
+          getInvocationMethod() : IServiceMethod {
+               return this.invocationMethod;
+          }
+
+          /**
+             @method
+             Sets the invocation method type.
+
+             @param {Adaptive.IServiceMethod} invocationMethod Method type.
+             @since v2.0.6
+          */
+          setInvocationMethod(invocationMethod: IServiceMethod) {
+               this.invocationMethod = invocationMethod;
+          }
+
+          /**
+             @method
+             Get token's endpoint name.
+
+             @return {string} Endpoint name.
+             @since v2.0.6
+          */
+          getEndpointName() : string {
+               return this.endpointName;
+          }
+
+          /**
+             @method
+             Set the endpoint name.
+
+             @param {string} endpointName Endpoint name.
+             @since v2.0.6
+          */
+          setEndpointName(endpointName: string) {
+               this.endpointName = endpointName;
+          }
+
+          /**
+             @method
+             Get token's function name.
+
+             @return {string} Function name.
+             @since v2.0.6
+          */
+          getFunctionName() : string {
+               return this.functionName;
+          }
+
+          /**
+             @method
+             Sets the function name.
+
+             @param {string} functionName Function name.
+             @since v2.0.6
+          */
+          setFunctionName(functionName: string) {
+               this.functionName = functionName;
+          }
+
+          /**
+             @method
+             Get token's service name.
+
+             @return {string} Service name.
+             @since v2.0.6
+          */
+          getServiceName() : string {
+               return this.serviceName;
+          }
+
+          /**
+             @method
+             Sets token's service name.
+
+             @param {string} serviceName Service name.
+             @since v2.0.6
+          */
+          setServiceName(serviceName: string) {
+               this.serviceName = serviceName;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceToken.
+             @return {Adaptive.ServiceToken} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceToken {
+               var result : ServiceToken = new ServiceToken(null, null, null, null);
+
+               // Assign values to bean fields.
+               if (object!=null && object.serviceName!=null) result.serviceName = object.serviceName;
+               if (object!=null && object.endpointName!=null) result.endpointName = object.endpointName;
+               if (object!=null && object.functionName!=null) result.functionName = object.functionName;
+               if (object!=null && object.invocationMethod!=null) {
+                    result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
+               } else {
+                    result.invocationMethod = IServiceMethod.toObject(null);
                }
 
                return result;
@@ -8333,7 +8385,7 @@ concluded.
         Structure representing the data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Contact extends ContactUid {
@@ -8382,7 +8434,7 @@ concluded.
              @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
              @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
              @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: Array<ContactAddress>, contactPhones: Array<ContactPhone>, contactEmails: Array<ContactEmail>, contactWebsites: Array<ContactWebsite>, contactSocials: Array<ContactSocial>, contactTags: Array<ContactTag>) {
                super(contactId);
@@ -8400,7 +8452,7 @@ concluded.
              Returns all the addresses of the Contact
 
              @return {Adaptive.ContactAddress[]} ContactAddress[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactAddresses() : Array<ContactAddress> {
                return this.contactAddresses;
@@ -8411,7 +8463,7 @@ concluded.
              Set the addresses of the Contact
 
              @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactAddresses(contactAddresses: Array<ContactAddress>) {
                this.contactAddresses = contactAddresses;
@@ -8422,7 +8474,7 @@ concluded.
              Returns all the emails of the Contact
 
              @return {Adaptive.ContactEmail[]} ContactEmail[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactEmails() : Array<ContactEmail> {
                return this.contactEmails;
@@ -8433,7 +8485,7 @@ concluded.
              Set the emails of the Contact
 
              @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactEmails(contactEmails: Array<ContactEmail>) {
                this.contactEmails = contactEmails;
@@ -8444,7 +8496,7 @@ concluded.
              Returns all the phones of the Contact
 
              @return {Adaptive.ContactPhone[]} ContactPhone[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactPhones() : Array<ContactPhone> {
                return this.contactPhones;
@@ -8455,7 +8507,7 @@ concluded.
              Set the phones of the Contact
 
              @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactPhones(contactPhones: Array<ContactPhone>) {
                this.contactPhones = contactPhones;
@@ -8466,7 +8518,7 @@ concluded.
              Returns all the social network info of the Contact
 
              @return {Adaptive.ContactSocial[]} ContactSocial[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactSocials() : Array<ContactSocial> {
                return this.contactSocials;
@@ -8477,7 +8529,7 @@ concluded.
              Set the social network info of the Contact
 
              @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactSocials(contactSocials: Array<ContactSocial>) {
                this.contactSocials = contactSocials;
@@ -8488,7 +8540,7 @@ concluded.
              Returns the additional tags of the Contact
 
              @return {Adaptive.ContactTag[]} ContactTag[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactTags() : Array<ContactTag> {
                return this.contactTags;
@@ -8499,7 +8551,7 @@ concluded.
              Set the additional tags of the Contact
 
              @param {Adaptive.ContactTag[]} contactTags Tags of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactTags(contactTags: Array<ContactTag>) {
                this.contactTags = contactTags;
@@ -8510,7 +8562,7 @@ concluded.
              Returns all the websites of the Contact
 
              @return {Adaptive.ContactWebsite[]} ContactWebsite[]
-             @since ARP 2.0
+             @since v2.0
           */
           getContactWebsites() : Array<ContactWebsite> {
                return this.contactWebsites;
@@ -8521,7 +8573,7 @@ concluded.
              Set the websites of the Contact
 
              @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
-             @since ARP 2.0
+             @since v2.0
           */
           setContactWebsites(contactWebsites: Array<ContactWebsite>) {
                this.contactWebsites = contactWebsites;
@@ -8532,7 +8584,7 @@ concluded.
              Returns the personal info of the Contact
 
              @return {Adaptive.ContactPersonalInfo} ContactPersonalInfo of the Contact
-             @since ARP 2.0
+             @since v2.0
           */
           getPersonalInfo() : ContactPersonalInfo {
                return this.personalInfo;
@@ -8543,7 +8595,7 @@ concluded.
              Set the personal info of the Contact
 
              @param {Adaptive.ContactPersonalInfo} personalInfo Personal Information
-             @since ARP 2.0
+             @since v2.0
           */
           setPersonalInfo(personalInfo: ContactPersonalInfo) {
                this.personalInfo = personalInfo;
@@ -8554,7 +8606,7 @@ concluded.
              Returns the professional info of the Contact
 
              @return {Adaptive.ContactProfessionalInfo} Array of personal info
-             @since ARP 2.0
+             @since v2.0
           */
           getProfessionalInfo() : ContactProfessionalInfo {
                return this.professionalInfo;
@@ -8565,7 +8617,7 @@ concluded.
              Set the professional info of the Contact
 
              @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-             @since ARP 2.0
+             @since v2.0
           */
           setProfessionalInfo(professionalInfo: ContactProfessionalInfo) {
                this.professionalInfo = professionalInfo;
@@ -8666,6 +8718,120 @@ concluded.
           }
      }
      /**
+        @class Adaptive.ServiceHeader
+        @extends Adaptive.KeyValue
+        Structure representing the data of a http request or response header.
+
+        @author Aryslan
+        @since v2.0
+        @version 1.0
+     */
+     export class ServiceHeader extends KeyValue {
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} keyName Name of the key.
+             @param {string} keyData Value of the key.
+             @since v2.0.6
+          */
+          constructor(keyName: string, keyData: string) {
+               super(keyNamekeyData);
+          }
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader.
+             @return {Adaptive.ServiceHeader} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceHeader {
+               var result : ServiceHeader = new ServiceHeader(null, null);
+
+               // Assign values to parent bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServiceRequestParameter
+        @extends Adaptive.KeyValue
+        Object representing a request parameter.
+
+        @author Carlos Lozano Diez
+        @since 2.0.6
+        @version 1.0
+     */
+     export class ServiceRequestParameter extends KeyValue {
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} keyName Name of the key.
+             @param {string} keyData Value of the key.
+             @since v2.0.6
+          */
+          constructor(keyName: string, keyData: string) {
+               super(keyNamekeyData);
+          }
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter.
+             @return {Adaptive.ServiceRequestParameter} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceRequestParameter {
+               var result : ServiceRequestParameter = new ServiceRequestParameter(null, null);
+
+               // Assign values to parent bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+
+               return result;
+          }
+     }
+     /**
+        @class Adaptive.ServiceSessionAttribute
+        @extends Adaptive.KeyValue
+        Object representing a service session attribute.
+
+        @author Carlos Lozano Diez
+        @since 2.0.6
+        @version 1.0
+     */
+     export class ServiceSessionAttribute extends KeyValue {
+          /**
+             @method constructor
+             Convenience constructor.
+
+             @param {string} keyName Name of the key.
+             @param {string} keyData Value of the key.
+             @since v2.0.6
+          */
+          constructor(keyName: string, keyData: string) {
+               super(keyNamekeyData);
+          }
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute.
+             @return {Adaptive.ServiceSessionAttribute} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceSessionAttribute {
+               var result : ServiceSessionAttribute = new ServiceSessionAttribute(null, null);
+
+               // Assign values to parent bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+
+               return result;
+          }
+     }
+     /**
         @class Adaptive.BaseListener
      */
      export class BaseListener implements IBaseListener {
@@ -8719,7 +8885,7 @@ concluded.
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
 
      }
@@ -8835,7 +9001,7 @@ concluded.
              No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
              @param {Adaptive.IAccelerationListenerError} error error Error fired
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IAccelerationListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -8849,7 +9015,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              @method
              Correct data received.
              @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(acceleration : Acceleration) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -8864,7 +9030,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning - ie. Needs calibration.
              @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
              @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(acceleration : Acceleration, warning : IAccelerationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -8986,7 +9152,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              @method
              No data received
              @param {Adaptive.IButtonListenerError} error error occurred
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IButtonListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9000,7 +9166,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              @method
              Called on button pressed
              @param {Adaptive.Button} button button pressed
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(button : Button) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9015,7 +9181,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Data received with warning
              @param {Adaptive.Button} button button  pressed
              @param {Adaptive.IButtonListenerWarning} warning warning happened
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(button : Button, warning : IButtonListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9138,7 +9304,7 @@ listener and subsequently, the listener will be deactivated and removed from the
              Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the device.
              @param {Adaptive.IDeviceOrientationListenerError} error error The error condition... generally unknown as it is unexpected!
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onError(error : IDeviceOrientationListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9152,7 +9318,7 @@ platform impedes the rotation of the device.
              @method
              Event fired with the successful start and finish of a rotation.
              @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onResult(event : RotationEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9168,7 +9334,7 @@ platform impedes the rotation of the device.
 event may be fired if the devices vetoes the rotation before rotation is completed.
              @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
              @param {Adaptive.IDeviceOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onWarning(event : RotationEvent, warning : IDeviceOrientationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9291,7 +9457,7 @@ event may be fired if the devices vetoes the rotation before rotation is complet
              Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the display.
              @param {Adaptive.IDisplayOrientationListenerError} error error The error condition... generally unknown as it is unexpected!
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onError(error : IDisplayOrientationListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9305,7 +9471,7 @@ platform impedes the rotation of the display.
              @method
              Event fired with the successful start and finish of a rotation.
              @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onResult(event : RotationEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9321,7 +9487,7 @@ platform impedes the rotation of the display.
 event may be fired if the application vetoes display rotation before rotation is completed.
              @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
              @param {Adaptive.IDisplayOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           public onWarning(event : RotationEvent, warning : IDisplayOrientationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9443,7 +9609,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param {Adaptive.IGeolocationListenerError} error error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IGeolocationListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9457,7 +9623,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Correct data received.
              @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(geolocation : Geolocation) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9472,7 +9638,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning - ie. HighDoP
              @param {Adaptive.Geolocation} geolocation geolocation Geolocation Bean
              @param {Adaptive.IGeolocationListenerWarning} warning warning     Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(geolocation : Geolocation, warning : IGeolocationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9594,7 +9760,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param {Adaptive.ILifecycleListenerError} error error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : ILifecycleListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9608,7 +9774,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Called when lifecycle changes somehow.
              @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(lifecycle : Lifecycle) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9623,7 +9789,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning
              @param {Adaptive.Lifecycle} lifecycle lifecycle Lifecycle element
              @param {Adaptive.ILifecycleListenerWarning} warning warning   Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(lifecycle : Lifecycle, warning : ILifecycleListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9745,7 +9911,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized or hardware not available.
              @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : INetworkStatusListenerError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9759,7 +9925,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Called when network connection changes somehow.
              @param {Adaptive.ICapabilitiesNet} network network Change to this network.
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(network : ICapabilitiesNet) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9774,7 +9940,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Status received with warning
              @param {Adaptive.ICapabilitiesNet} network network Change to this network.
              @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -9840,7 +10006,7 @@ event may be fired if the application vetoes display rotation before rotation is
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
 
      }
@@ -9961,7 +10127,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Error
              @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IContactPhotoResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -9975,7 +10141,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Result
              @param {number[]} contactPhoto contactPhoto returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(contactPhoto : Array<number>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -9990,7 +10156,7 @@ event may be fired if the application vetoes display rotation before rotation is
              This method is called on Warning
              @param {number[]} contactPhoto contactPhoto returned by the platform
              @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(contactPhoto : Array<number>, warning : IContactPhotoResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10118,7 +10284,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Error
              @param {Adaptive.IContactResultCallbackError} error error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IContactResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10132,7 +10298,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Result
              @param {Adaptive.Contact[]} contacts contacts returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(contacts : Array<Contact>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10147,7 +10313,7 @@ event may be fired if the application vetoes display rotation before rotation is
              This method is called on Warning
              @param {Adaptive.Contact[]} contacts contacts returned by the platform
              @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(contacts : Array<Contact>, warning : IContactResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10275,7 +10441,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result callback for error responses
              @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IDatabaseResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10289,7 +10455,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result callback for correct responses
              @param {Adaptive.Database} database database Returns the database
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(database : Database) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10304,7 +10470,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Result callback for warning responses
              @param {Adaptive.Database} database database Returns the database
              @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(database : Database, warning : IDatabaseResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10432,7 +10598,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result callback for error responses
              @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IDatabaseTableResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10446,7 +10612,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result callback for correct responses
              @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(databaseTable : DatabaseTable) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10461,7 +10627,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Result callback for warning responses
              @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
              @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10589,7 +10755,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Error processing data retrieval/storage operation.
              @param {Adaptive.IFileDataLoadResultCallbackError} error error Error condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IFileDataLoadResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10603,7 +10769,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result of data retrieval operation.
              @param {number[]} data data Data loaded.
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(data : Array<number>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10618,7 +10784,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Result with warning of data retrieval/storage operation.
              @param {number[]} data data    File being loaded.
              @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(data : Array<number>, warning : IFileDataLoadResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10746,7 +10912,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Error processing data retrieval/storage operation.
              @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IFileDataStoreResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10760,7 +10926,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Result of data storage operation.
              @param {Adaptive.FileDescriptor} file file File reference to stored data.
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(file : FileDescriptor) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10775,7 +10941,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Result with warning of data retrieval/storage operation.
              @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
              @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(file : FileDescriptor, warning : IFileDataStoreResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -10903,7 +11069,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              On error result of a file operation.
              @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IFileListResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -10917,7 +11083,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              On correct result of a file operation.
              @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(files : Array<FileDescriptor>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -10932,7 +11098,7 @@ event may be fired if the application vetoes display rotation before rotation is
              On partial result of a file operation, containing a warning.
              @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
              @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(files : Array<FileDescriptor>, warning : IFileListResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11060,7 +11226,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              On error result of a file operation.
              @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IFileResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -11074,7 +11240,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              On correct result of a file operation.
              @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(storageFile : FileDescriptor) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -11089,7 +11255,7 @@ event may be fired if the application vetoes display rotation before rotation is
              On partial result of a file operation, containing a warning.
              @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
              @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(file : FileDescriptor, warning : IFileResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11217,7 +11383,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Error
              @param {Adaptive.IMessagingCallbackError} error error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IMessagingCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -11231,7 +11397,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Result
              @param {boolean} success success true if sent;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(success : boolean) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -11246,7 +11412,7 @@ event may be fired if the application vetoes display rotation before rotation is
              This method is called on Warning
              @param {boolean} success success true if sent;false otherwise
              @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(success : boolean, warning : IMessagingCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11374,7 +11540,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized .
              @param {Adaptive.INetworkReachabilityCallbackError} error error Error value
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : INetworkReachabilityCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -11388,7 +11554,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Correct data received.
              @param {boolean} reachable reachable Indicates if the host is reachable
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(reachable : boolean) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -11403,7 +11569,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param {boolean} reachable reachable Indicates if the host is reachable
              @param {Adaptive.INetworkReachabilityCallbackWarning} warning warning   Warning value
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(reachable : boolean, warning : INetworkReachabilityCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11531,7 +11697,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              No data received - error condition, not authorized .
              @param {Adaptive.ISecurityResultCallbackError} error error Error values
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : ISecurityResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -11545,7 +11711,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Correct data received.
              @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(keyValues : Array<SecureKeyPair>) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -11560,7 +11726,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Data received with warning - ie Found entries with existing key and values have been overriden
              @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
              @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(keyValues : Array<SecureKeyPair>, warning : ISecurityResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11688,7 +11854,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Error
              @param {Adaptive.IServiceResultCallbackError} error error returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IServiceResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -11702,7 +11868,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              This method is called on Result
              @param {Adaptive.ServiceResponse} response response data
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(response : ServiceResponse) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -11717,7 +11883,7 @@ event may be fired if the application vetoes display rotation before rotation is
              This method is called on Warning
              @param {Adaptive.ServiceResponse} response response data
              @param {Adaptive.IServiceResultCallbackWarning} warning warning  returned by the platform
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(response : ServiceResponse, warning : IServiceResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
@@ -11734,7 +11900,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Application purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseApplicationBridge implements IBaseApplication {
 
@@ -11768,7 +11934,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11777,7 +11943,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Commerce purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseCommerceBridge implements IBaseCommerce {
 
@@ -11811,7 +11977,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11820,7 +11986,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Communication purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseCommunicationBridge implements IBaseCommunication {
 
@@ -11854,7 +12020,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11863,7 +12029,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Data purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseDataBridge implements IBaseData {
 
@@ -11897,7 +12063,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11906,7 +12072,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Media purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseMediaBridge implements IBaseMedia {
 
@@ -11940,7 +12106,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11949,7 +12115,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Notification purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseNotificationBridge implements IBaseNotification {
 
@@ -11983,7 +12149,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -11992,7 +12158,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for PIM purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BasePIMBridge implements IBasePIM {
 
@@ -12026,7 +12192,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12035,7 +12201,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Reader purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseReaderBridge implements IBaseReader {
 
@@ -12069,7 +12235,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12078,7 +12244,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Security purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseSecurityBridge implements IBaseSecurity {
 
@@ -12112,7 +12278,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12121,7 +12287,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Sensor purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseSensorBridge implements IBaseSensor {
 
@@ -12155,7 +12321,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12164,7 +12330,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Social purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseSocialBridge implements IBaseSocial {
 
@@ -12198,7 +12364,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12207,7 +12373,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for System purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseSystemBridge implements IBaseSystem {
 
@@ -12241,7 +12407,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12250,7 +12416,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for UI purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseUIBridge implements IBaseUI {
 
@@ -12284,7 +12450,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12293,7 +12459,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Base application for Utility purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseUtilBridge implements IBaseUtil {
 
@@ -12327,7 +12493,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 
@@ -12337,7 +12503,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Analytics purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AnalyticsBridge extends BaseApplicationBridge implements IAnalytics {
 
@@ -12356,7 +12522,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Globalization results
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class GlobalizationBridge extends BaseApplicationBridge implements IGlobalization {
 
@@ -12373,7 +12539,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Returns the default locale of the application defined in the configuration file
 
              @return {Adaptive.Locale} Default Locale of the application
-             @since ARP 2.0
+             @since v2.0
           */
           getDefaultLocale() : Locale {
                // Create and populate API request.
@@ -12384,7 +12550,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -12412,7 +12578,7 @@ event may be fired if the application vetoes display rotation before rotation is
              List of supported locales for the application defined in the configuration file
 
              @return {Adaptive.Locale[]} List of locales
-             @since ARP 2.0
+             @since v2.0
           */
           getLocaleSupportedDescriptors() : Array<Locale> {
                // Create and populate API request.
@@ -12423,7 +12589,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<Locale> = null;
@@ -12456,7 +12622,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param {string} key key    to match text
              @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {string} Localized text.
-             @since ARP 2.0
+             @since v2.0
           */
           getResourceLiteral(key : string, locale : Locale) : string {
                // Create and populate API request.
@@ -12469,7 +12635,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -12498,7 +12664,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {Adaptive.Locale} locale locale The locale object to get localized message, or the locale desciptor ("language" or "language-country" two-letters ISO codes.
              @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
-             @since ARP 2.0
+             @since v2.0
           */
           getResourceLiterals(locale : Locale) : Array<KeyPair> {
                // Create and populate API request.
@@ -12510,7 +12676,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<KeyPair> = null;
@@ -12543,7 +12709,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Lifecycle listeners
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class LifecycleBridge extends BaseApplicationBridge implements ILifecycle {
 
@@ -12560,7 +12726,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Add the listener for the lifecycle of the app
 
              @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-             @since ARP 2.0
+             @since v2.0
           */
           addLifecycleListener(listener : ILifecycleListener) : void {
                // Create and populate API request.
@@ -12571,7 +12737,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredLifecycleListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -12602,7 +12768,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Whether the application is in background or not
 
              @return {boolean} true if the application is in background;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           isBackground() : boolean {
                // Create and populate API request.
@@ -12613,7 +12779,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -12641,7 +12807,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Un-registers an existing listener from receiving lifecycle events.
 
              @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-             @since ARP 2.0
+             @since v2.0
           */
           removeLifecycleListener(listener : ILifecycleListener) : void {
                // Create and populate API request.
@@ -12652,7 +12818,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -12676,7 +12842,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Removes all existing listeners from receiving lifecycle events.
 
-             @since ARP 2.0
+             @since v2.0
           */
           removeLifecycleListeners() : void {
                // Create and populate API request.
@@ -12687,7 +12853,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -12717,7 +12883,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Management operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class ManagementBridge extends BaseApplicationBridge implements IManagement {
 
@@ -12736,7 +12902,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Printing operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class PrintingBridge extends BaseApplicationBridge implements IPrinting {
 
@@ -12755,7 +12921,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Settings operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class SettingsBridge extends BaseApplicationBridge implements ISettings {
 
@@ -12774,7 +12940,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Update operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class UpdateBridge extends BaseApplicationBridge implements IUpdate {
 
@@ -12793,7 +12959,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Advertising purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AdsBridge extends BaseCommerceBridge implements IAds {
 
@@ -12812,7 +12978,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Store operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class StoreBridge extends BaseCommerceBridge implements IStore {
 
@@ -12831,7 +12997,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Wallet operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class WalletBridge extends BaseCommerceBridge implements IWallet {
 
@@ -12850,7 +13016,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Bluetooth purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BluetoothBridge extends BaseCommunicationBridge implements IBluetooth {
 
@@ -12869,7 +13035,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Network information operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NetworkInfoBridge extends BaseCommunicationBridge implements INetworkInfo {
 
@@ -12888,7 +13054,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Network naming operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NetworkNamingBridge extends BaseCommunicationBridge implements INetworkNaming {
 
@@ -12907,7 +13073,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Network reachability operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
 
@@ -12925,7 +13091,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {string} host host     domain name or ip address of host.
              @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
-             @since ARP 2.0
+             @since v2.0
           */
           isNetworkReachable(host : string, callback : INetworkReachabilityCallback) : void {
                // Create and populate API request.
@@ -12937,7 +13103,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -12972,7 +13138,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {string} url url      to look for
              @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
-             @since ARP 2.0
+             @since v2.0
           */
           isNetworkServiceReachable(url : string, callback : INetworkReachabilityCallback) : void {
                // Create and populate API request.
@@ -12984,7 +13150,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13020,7 +13186,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Network status
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NetworkStatusBridge extends BaseCommunicationBridge implements INetworkStatus {
 
@@ -13037,7 +13203,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Add the listener for network status changes of the app
 
              @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-             @since ARP 2.0
+             @since v2.0
           */
           addNetworkStatusListener(listener : INetworkStatusListener) : void {
                // Create and populate API request.
@@ -13048,7 +13214,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredNetworkStatusListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -13079,7 +13245,7 @@ event may be fired if the application vetoes display rotation before rotation is
              Un-registers an existing listener from receiving network status events.
 
              @param {Adaptive.NetworkStatusListener} listener listener Listener with the result
-             @since ARP 2.0
+             @since v2.0
           */
           removeNetworkStatusListener(listener : INetworkStatusListener) : void {
                // Create and populate API request.
@@ -13090,7 +13256,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -13114,7 +13280,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @method
              Removes all existing listeners from receiving network status events.
 
-             @since ARP 2.0
+             @since v2.0
           */
           removeNetworkStatusListeners() : void {
                // Create and populate API request.
@@ -13125,7 +13291,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -13155,7 +13321,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Services operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class ServiceBridge extends BaseCommunicationBridge implements IService {
 
@@ -13169,66 +13335,157 @@ event may be fired if the application vetoes display rotation before rotation is
 
           /**
              @method
-             Get a reference to a registered service by name.
+             Create a service request for the given ServiceToken. This method creates the request, populating
+existing headers and cookies for the same service. The request is populated with all the defaults
+for the service being invoked and requires only the request body to be set. Headers and cookies may be
+manipulated as needed by the application before submitting the ServiceRequest via invokeService.
 
-             @param {string} serviceName serviceName Name of service.
-             @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-             @since ARP 2.0
+             @param {Adaptive.ServiceToken} serviceToken serviceToken ServiceToken to be used for the creation of the request.
+             @return {Adaptive.ServiceRequest} ServiceRequest with pre-populated headers, cookies and defaults for the service.
+             @since v2.0.6
           */
-          getService(serviceName : string) : Service {
+          getServiceRequest(serviceToken : ServiceToken) : ServiceRequest {
                // Create and populate API request.
                var arParams : string[] = [];
-               arParams.push(JSON.stringify(serviceName));
-               var apiRequest : APIRequest = new APIRequest("IService","getService",arParams, -1 /* = synchronous call */);
+               arParams.push(JSON.stringify(serviceToken));
+               var apiRequest : APIRequest = new APIRequest("IService","getServiceRequest",arParams, -1 /* = synchronous call */);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
-               var response : Service = null;
+               var response : ServiceRequest = null;
                // Check response.
                if (xhr.status == 200 ) {
                     // Process response.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                         response = Service.toObject(JSON.parse(apiResponse.getResponse()));
+                         response = ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getService' ["+apiResponse.getStatusMessage()+"].");
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceRequest' ["+apiResponse.getStatusMessage()+"].");
                          }
                     } else {
-                         console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
+                         console.error("ERROR: 'ServiceBridge.getServiceRequest' incorrect response received.");
                     }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getService' request.");
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceRequest' request.");
                }
                return response;
           }
 
           /**
              @method
-             Request async a service for an Url
+             Obtains a ServiceToken for the given parameters to be used for the creation of requests.
 
-             @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
-             @param {Adaptive.Service} service serviceRequest Service Request to invoke
-             @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-             @since ARP 2.0
+             @param {string} serviceName serviceName  Service name.
+             @param {string} endpointName endpointName Endpoint name.
+             @param {string} functionName functionName Function name.
+             @param {Adaptive.IServiceMethod} method method       Method type.
+             @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter combination is not
+configured in the platform's XML service definition file.
+             @since v2.0.6
           */
-          invokeService(serviceRequest : ServiceRequest, service : Service, callback : IServiceResultCallback) : void {
+          getServiceToken(serviceName : string, endpointName : string, functionName : string, method : IServiceMethod) : ServiceToken {
+               // Create and populate API request.
+               var arParams : string[] = [];
+               arParams.push(JSON.stringify(serviceName));
+               arParams.push(JSON.stringify(endpointName));
+               arParams.push(JSON.stringify(functionName));
+               arParams.push(JSON.stringify(method));
+               var apiRequest : APIRequest = new APIRequest("IService","getServiceToken",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
+               // Create and send JSON request.
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.send(JSON.stringify(apiRequest));
+               // Prepare response.
+               var response : ServiceToken = null;
+               // Check response.
+               if (xhr.status == 200 ) {
+                    // Process response.
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceToken' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'ServiceBridge.getServiceToken' incorrect response received.");
+                    }
+               } else {
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceToken' request.");
+               }
+               return response;
+          }
+
+          /**
+             @method
+             Returns all the possible service tokens configured in the platform's XML service definition file.
+
+             @return {Adaptive.ServiceToken[]} Array of service tokens configured.
+             @since v2.0.6
+          */
+          getServicesRegistered() : Array<ServiceToken> {
+               // Create and populate API request.
+               var arParams : string[] = [];
+               var apiRequest : APIRequest = new APIRequest("IService","getServicesRegistered",arParams, -1 /* = synchronous call */);
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
+               // Create and send JSON request.
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+               xhr.send(JSON.stringify(apiRequest));
+               // Prepare response.
+               var response : Array<ServiceToken> = null;
+               // Check response.
+               if (xhr.status == 200 ) {
+                    // Process response.
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         response = new Array<ServiceToken>();
+                         for(var __value__ in JSON.parse(apiResponse.getResponse())) {
+                              response.push(ServiceToken.toObject(__value__));
+                         }
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServicesRegistered' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'ServiceBridge.getServicesRegistered' incorrect response received.");
+                    }
+               } else {
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServicesRegistered' request.");
+               }
+               return response;
+          }
+
+          /**
+             @method
+             Executes the given ServiceRequest and provides responses to the given callback handler.
+
+             @param {Adaptive.ServiceRequest} serviceRequest serviceRequest ServiceRequest with the request body.
+             @param {Adaptive.ServiceResultCallback} callback callback       IServiceResultCallback to handle the ServiceResponse.
+             @since v2.0.6
+          */
+          invokeService(serviceRequest : ServiceRequest, callback : IServiceResultCallback) : void {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
-               arParams.push(JSON.stringify(service));
                var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13259,138 +13516,30 @@ event may be fired if the application vetoes display rotation before rotation is
 
           /**
              @method
-             Register a new service
+             Checks whether a specific service, endpoint, function and method type is configured in the platform's
+XML service definition file.
 
-             @param {Adaptive.Service} service service to register
-             @since ARP 2.0
+             @param {string} serviceName serviceName  Service name.
+             @param {string} endpointName endpointName Endpoint name.
+             @param {string} functionName functionName Function name.
+             @param {Adaptive.IServiceMethod} method method       Method type.
+             @return {boolean} Returns true if the service is configured, false otherwise.
+             @since v2.0.6
           */
-          registerService(service : Service) : void {
-               // Create and populate API request.
-               var arParams : string[] = [];
-               arParams.push(JSON.stringify(service));
-               var apiRequest : APIRequest = new APIRequest("IService","registerService",arParams, -1 /* = synchronous call */);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status == 200 ) {
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.registerService' request.");
-               }
-          }
-
-          /**
-             @method
-             Unregister a service
-
-             @param {Adaptive.Service} service service to unregister
-             @since ARP 2.0
-          */
-          unregisterService(service : Service) : void {
-               // Create and populate API request.
-               var arParams : string[] = [];
-               arParams.push(JSON.stringify(service));
-               var apiRequest : APIRequest = new APIRequest("IService","unregisterService",arParams, -1 /* = synchronous call */);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status == 200 ) {
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterService' request.");
-               }
-          }
-
-          /**
-             @method
-             Unregister all services.
-
-             @since ARP 2.0
-          */
-          unregisterServices() : void {
-               // Create and populate API request.
-               var arParams : string[] = [];
-               var apiRequest : APIRequest = new APIRequest("IService","unregisterServices",arParams, -1 /* = synchronous call */);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status == 200 ) {
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.unregisterServices' request.");
-               }
-          }
-
-          /**
-             Check whether a service by the given service is already registered.
-
-             @param service Service to check
-             @return True if the service is registered, false otherwise.
-             @since ARP 2.0
-          */
-          isRegistered_service(service : Service) : boolean {
-               // Create and populate API request.
-               var arParams : string[] = [];
-               arParams.push(JSON.stringify(service));
-               var apiRequest : APIRequest = new APIRequest("IService","isRegistered_service",arParams, -1 /* = synchronous call */);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-               xhr.send(JSON.stringify(apiRequest));
-               // Prepare response.
-               var response : boolean = false;
-               // Check response.
-               if (xhr.status == 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                              response = !!apiResponse.getResponse();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isRegistered_service' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.isRegistered_service' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.isRegistered_service' request.");
-               }
-               return response;
-          }
-
-          /**
-             Check whether a service by the given name is registered.
-
-             @param serviceName Name of service.
-             @return True if the service is registered, false otherwise.
-             @since ARP 2.0
-          */
-          isRegistered_serviceName(serviceName : string) : boolean {
+          isServiceRegistered(serviceName : string, endpointName : string, functionName : string, method : IServiceMethod) : boolean {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceName));
-               var apiRequest : APIRequest = new APIRequest("IService","isRegistered_serviceName",arParams, -1 /* = synchronous call */);
+               arParams.push(JSON.stringify(endpointName));
+               arParams.push(JSON.stringify(functionName));
+               arParams.push(JSON.stringify(method));
+               var apiRequest : APIRequest = new APIRequest("IService","isServiceRegistered",arParams, -1 /* = synchronous call */);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -13402,13 +13551,13 @@ event may be fired if the application vetoes display rotation before rotation is
                          if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                               response = !!apiResponse.getResponse();
                          } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isRegistered_serviceName' ["+apiResponse.getStatusMessage()+"].");
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isServiceRegistered' ["+apiResponse.getStatusMessage()+"].");
                          }
                     } else {
-                         console.error("ERROR: 'ServiceBridge.isRegistered_serviceName' incorrect response received.");
+                         console.error("ERROR: 'ServiceBridge.isServiceRegistered' incorrect response received.");
                     }
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.isRegistered_serviceName' request.");
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.isServiceRegistered' request.");
                }
                return response;
           }
@@ -13420,7 +13569,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Socket operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class SocketBridge extends BaseCommunicationBridge implements ISocket {
 
@@ -13439,7 +13588,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Telephony operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
 
@@ -13457,7 +13606,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {string} number number to call
              @return {Adaptive.ITelephonyStatus} Status of the call
-             @since ARP 2.0
+             @since v2.0
           */
           call(number : string) : ITelephonyStatus {
                // Create and populate API request.
@@ -13469,7 +13618,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ITelephonyStatus = null;
@@ -13499,7 +13648,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Cloud operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CloudBridge extends BaseDataBridge implements ICloud {
 
@@ -13518,7 +13667,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the DataStream operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class DataStreamBridge extends BaseDataBridge implements IDataStream {
 
@@ -13537,7 +13686,7 @@ event may be fired if the application vetoes display rotation before rotation is
         Interface for Managing the Cloud operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
      */
      export class DatabaseBridge extends BaseDataBridge implements IDatabase {
 
@@ -13555,7 +13704,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {Adaptive.Database} database database Database object to create
              @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-             @since ARP 2.0
+             @since v2.0
           */
           createDatabase(database : Database, callback : IDatabaseResultCallback) : void {
                // Create and populate API request.
@@ -13567,7 +13716,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13603,7 +13752,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param {Adaptive.Database} database database      Database for databaseTable creating.
              @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-             @since ARP 2.0
+             @since v2.0
           */
           createTable(database : Database, databaseTable : DatabaseTable, callback : IDatabaseTableResultCallback) : void {
                // Create and populate API request.
@@ -13616,7 +13765,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13651,7 +13800,7 @@ event may be fired if the application vetoes display rotation before rotation is
 
              @param {Adaptive.Database} database database Database object to delete
              @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-             @since ARP 2.0
+             @since v2.0
           */
           deleteDatabase(database : Database, callback : IDatabaseResultCallback) : void {
                // Create and populate API request.
@@ -13663,7 +13812,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13699,7 +13848,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @param {Adaptive.Database} database database      Database for databaseTable removal.
              @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
              @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-             @since ARP 2.0
+             @since v2.0
           */
           deleteTable(database : Database, databaseTable : DatabaseTable, callback : IDatabaseTableResultCallback) : void {
                // Create and populate API request.
@@ -13712,7 +13861,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13750,7 +13899,7 @@ should be passed as a parameter
              @param {string} statement statement    SQL statement.
              @param {string[]} replacements replacements List of SQL statement replacements.
              @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-             @since ARP 2.0
+             @since v2.0
           */
           executeSqlStatement(database : Database, statement : string, replacements : Array<string>, callback : IDatabaseTableResultCallback) : void {
                // Create and populate API request.
@@ -13764,7 +13913,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13802,7 +13951,7 @@ should be passed as a parameter
              @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                     statement execution fails.
              @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-             @since ARP 2.0
+             @since v2.0
           */
           executeSqlTransactions(database : Database, statements : Array<string>, rollbackFlag : boolean, callback : IDatabaseTableResultCallback) : void {
                // Create and populate API request.
@@ -13816,7 +13965,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -13851,7 +14000,7 @@ should be passed as a parameter
 
              @param {Adaptive.Database} database database Database Object to check if exists
              @return {boolean} True if exists, false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           existsDatabase(database : Database) : boolean {
                // Create and populate API request.
@@ -13863,7 +14012,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -13893,7 +14042,7 @@ should be passed as a parameter
              @param {Adaptive.Database} database database      Database for databaseTable consulting.
              @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
              @return {boolean} True if exists, false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           existsTable(database : Database, databaseTable : DatabaseTable) : boolean {
                // Create and populate API request.
@@ -13906,7 +14055,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -13936,7 +14085,7 @@ should be passed as a parameter
         Interface for Managing the File operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class FileBridge extends BaseDataBridge implements IFile {
 
@@ -13954,7 +14103,7 @@ should be passed as a parameter
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is readable, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           canRead(descriptor : FileDescriptor) : boolean {
                // Create and populate API request.
@@ -13966,7 +14115,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -13995,7 +14144,7 @@ should be passed as a parameter
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the folder/file is writable, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           canWrite(descriptor : FileDescriptor) : boolean {
                // Create and populate API request.
@@ -14007,7 +14156,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14036,7 +14185,7 @@ should be passed as a parameter
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {Adaptive.FileResultCallback} callback callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           create(descriptor : FileDescriptor, callback : IFileResultCallback) : void {
                // Create and populate API request.
@@ -14048,7 +14197,7 @@ should be passed as a parameter
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14085,7 +14234,7 @@ deleted if the cascade parameter is set to true.
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {boolean} cascade cascade    Whether to delete sub-files and sub-folders.
              @return {boolean} True if files (and sub-files and folders) whether deleted.
-             @since ARP 2.0
+             @since v2.0
           */
           delete(descriptor : FileDescriptor, cascade : boolean) : boolean {
                // Create and populate API request.
@@ -14098,7 +14247,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14127,7 +14276,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} True if the file exists in the filesystem, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           exists(descriptor : FileDescriptor) : boolean {
                // Create and populate API request.
@@ -14139,7 +14288,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14168,7 +14317,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {Adaptive.FileDataLoadResultCallback} callback callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           getContent(descriptor : FileDescriptor, callback : IFileDataLoadResultCallback) : void {
                // Create and populate API request.
@@ -14180,7 +14329,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14215,7 +14364,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemStorageType} Storage Type file
-             @since ARP 2.0
+             @since v2.0
           */
           getFileStorageType(descriptor : FileDescriptor) : IFileSystemStorageType {
                // Create and populate API request.
@@ -14227,7 +14376,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemStorageType = null;
@@ -14256,7 +14405,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemType} Returns the file type of the file
-             @since ARP 2.0
+             @since v2.0
           */
           getFileType(descriptor : FileDescriptor) : IFileSystemType {
                // Create and populate API request.
@@ -14268,7 +14417,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemType = null;
@@ -14297,7 +14446,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {Adaptive.IFileSystemSecurity} Security Level of the file
-             @since ARP 2.0
+             @since v2.0
           */
           getSecurityType(descriptor : FileDescriptor) : IFileSystemSecurity {
                // Create and populate API request.
@@ -14309,7 +14458,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : IFileSystemSecurity = null;
@@ -14338,7 +14487,7 @@ deleted if the cascade parameter is set to true.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
-             @since ARP 2.0
+             @since v2.0
           */
           isDirectory(descriptor : FileDescriptor) : boolean {
                // Create and populate API request.
@@ -14350,7 +14499,7 @@ deleted if the cascade parameter is set to true.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14380,7 +14529,7 @@ any results.
 
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
-             @since ARP 2.0
+             @since v2.0
           */
           listFiles(descriptor : FileDescriptor, callback : IFileListResultCallback) : void {
                // Create and populate API request.
@@ -14392,7 +14541,7 @@ any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14429,7 +14578,7 @@ is a file, it will not yield any results.
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {string} regex regex      Filter (eg. *.jpg, *.png, Fil*) name string.
              @param {Adaptive.FileListResultCallback} callback callback   Result of operation.
-             @since ARP 2.0
+             @since v2.0
           */
           listFilesForRegex(descriptor : FileDescriptor, regex : string, callback : IFileListResultCallback) : void {
                // Create and populate API request.
@@ -14442,7 +14591,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileListResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14478,7 +14627,7 @@ is a file, it will not yield any results.
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {boolean} recursive recursive  Whether to create all parent path elements.
              @return {boolean} True if the path was created, false otherwise (or it exists already).
-             @since ARP 2.0
+             @since v2.0
           */
           mkDir(descriptor : FileDescriptor, recursive : boolean) : boolean {
                // Create and populate API request.
@@ -14491,7 +14640,7 @@ is a file, it will not yield any results.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -14524,7 +14673,7 @@ new destination file.
              @param {boolean} createPath createPath  True to create the path if it does not already exist.
              @param {boolean} overwrite overwrite   True to create the path if it does not already exist.
              @param {Adaptive.FileResultCallback} callback callback    Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           move(source : FileDescriptor, destination : FileDescriptor, createPath : boolean, overwrite : boolean, callback : IFileResultCallback) : void {
                // Create and populate API request.
@@ -14539,7 +14688,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14575,7 +14724,7 @@ new destination file.
              @param {Adaptive.FileDescriptor} descriptor descriptor File descriptor of file or folder used for operation.
              @param {number[]} content content    Binary content to store in the file.
              @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
-             @since ARP 2.0
+             @since v2.0
           */
           setContent(descriptor : FileDescriptor, content : Array<number>, callback : IFileDataStoreResultCallback) : void {
                // Create and populate API request.
@@ -14588,7 +14737,7 @@ new destination file.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -14624,7 +14773,7 @@ new destination file.
         Interface for Managing the File System operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class FileSystemBridge extends BaseDataBridge implements IFileSystem {
 
@@ -14644,7 +14793,7 @@ This method does not create the actual file in the specified folder.
              @param {Adaptive.FileDescriptor} parent parent Parent directory.
              @param {string} name name   Name of new file or directory.
              @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-             @since ARP 2.0
+             @since v2.0
           */
           createFileDescriptor(parent : FileDescriptor, name : string) : FileDescriptor {
                // Create and populate API request.
@@ -14657,7 +14806,7 @@ This method does not create the actual file in the specified folder.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14687,7 +14836,7 @@ This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
              @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationCacheFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14698,7 +14847,7 @@ This path is volatile and may be cleaned by the OS periodically.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14727,7 +14876,7 @@ This path is volatile and may be cleaned by the OS periodically.
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationCloudFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14738,7 +14887,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14767,7 +14916,7 @@ This path must always be writable by the current application.
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationDocumentsFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14778,7 +14927,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14807,7 +14956,7 @@ This path must always be writable by the current application.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
              @return {Adaptive.FileDescriptor} Path to the application folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14818,7 +14967,7 @@ This path may or may not be directly readable or writable - it usually contains 
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14847,7 +14996,7 @@ This path may or may not be directly readable or writable - it usually contains 
 This path must always be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getApplicationProtectedFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14858,7 +15007,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14886,7 +15035,7 @@ This path must always be writable by the current application.
              Returns the file system dependent file separator.
 
              @return {string} char with the directory/file separator.
-             @since ARP 2.0
+             @since v2.0
           */
           getSeparator() : string {
                // Create and populate API request.
@@ -14897,7 +15046,7 @@ This path must always be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -14928,7 +15077,7 @@ definition, not secure.
 This path may or may not be writable by the current application.
 
              @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-             @since ARP 2.0
+             @since v2.0
           */
           getSystemExternalFolder() : FileDescriptor {
                // Create and populate API request.
@@ -14939,7 +15088,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -14969,7 +15118,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Internal Storage operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class InternalStorageBridge extends BaseDataBridge implements IInternalStorage {
 
@@ -14988,7 +15137,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the XML operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class XMLBridge extends BaseDataBridge implements IXML {
 
@@ -15007,7 +15156,7 @@ This path may or may not be writable by the current application.
         Interface for Audio purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AudioBridge extends BaseMediaBridge implements IAudio {
 
@@ -15026,7 +15175,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the camera operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CameraBridge extends BaseMediaBridge implements ICamera {
 
@@ -15045,7 +15194,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Imaging operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class ImagingBridge extends BaseMediaBridge implements IImaging {
 
@@ -15064,7 +15213,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Video operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class VideoBridge extends BaseMediaBridge implements IVideo {
 
@@ -15081,7 +15230,7 @@ This path may or may not be writable by the current application.
              Play url video stream
 
              @param {string} url url of the video
-             @since ARP 2.0
+             @since v2.0
           */
           playStream(url : string) : void {
                // Create and populate API request.
@@ -15093,7 +15242,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -15109,7 +15258,7 @@ This path may or may not be writable by the current application.
         Interface for Alarm purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AlarmBridge extends BaseNotificationBridge implements IAlarm {
 
@@ -15128,7 +15277,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Notification operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NotificationBridge extends BaseNotificationBridge implements INotification {
 
@@ -15147,7 +15296,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Local Notifications operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NotificationLocalBridge extends BaseNotificationBridge implements INotificationLocal {
 
@@ -15166,7 +15315,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Vibration operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class VibrationBridge extends BaseNotificationBridge implements IVibration {
 
@@ -15185,7 +15334,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Calendar operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CalendarBridge extends BasePIMBridge implements ICalendar {
 
@@ -15204,7 +15353,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class ContactBridge extends BasePIMBridge implements IContact {
 
@@ -15222,7 +15371,7 @@ This path may or may not be writable by the current application.
 
              @param {Adaptive.ContactUid} contact contact  id to search for
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContact(contact : ContactUid, callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -15234,7 +15383,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15269,7 +15418,7 @@ This path may or may not be writable by the current application.
 
              @param {Adaptive.ContactUid} contact contact  id to search for
              @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContactPhoto(contact : ContactUid, callback : IContactPhotoResultCallback) : void {
                // Create and populate API request.
@@ -15281,7 +15430,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15315,7 +15464,7 @@ This path may or may not be writable by the current application.
              Get all contacts
 
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContacts(callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -15326,7 +15475,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15361,7 +15510,7 @@ This path may or may not be writable by the current application.
 
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsForFields(callback : IContactResultCallback, fields : Array<IContactFieldGroup>) : void {
                // Create and populate API request.
@@ -15373,7 +15522,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15409,7 +15558,7 @@ This path may or may not be writable by the current application.
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
              @param {Adaptive.IContactFilter[]} filter filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsWithFilter(callback : IContactResultCallback, fields : Array<IContactFieldGroup>, filter : Array<IContactFilter>) : void {
                // Create and populate API request.
@@ -15422,7 +15571,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15457,7 +15606,7 @@ This path may or may not be writable by the current application.
 
              @param {string} term term     string to search
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           searchContacts(term : string, callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -15469,7 +15618,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15505,7 +15654,7 @@ This path may or may not be writable by the current application.
              @param {string} term term     string to search
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFilter[]} filter filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           searchContactsWithFilter(term : string, callback : IContactResultCallback, filter : Array<IContactFilter>) : void {
                // Create and populate API request.
@@ -15518,7 +15667,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15554,7 +15703,7 @@ This path may or may not be writable by the current application.
              @param {Adaptive.ContactUid} contact contact  id to assign the photo
              @param {number[]} pngImage pngImage photo as byte array
              @return {boolean} true if set is successful;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           setContactPhoto(contact : ContactUid, pngImage : Array<number>) : boolean {
                // Create and populate API request.
@@ -15567,7 +15716,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -15597,7 +15746,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Mail operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class MailBridge extends BasePIMBridge implements IMail {
 
@@ -15615,7 +15764,7 @@ This path may or may not be writable by the current application.
 
              @param {Adaptive.Email} data data     Payload of the email
              @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           sendEmail(data : Email, callback : IMessagingCallback) : void {
                // Create and populate API request.
@@ -15627,7 +15776,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15663,7 +15812,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Messaging operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class MessagingBridge extends BasePIMBridge implements IMessaging {
 
@@ -15682,7 +15831,7 @@ This path may or may not be writable by the current application.
              @param {string} number number   to send
              @param {string} text text     to send
              @param {Adaptive.MessagingCallback} callback callback with the result
-             @since ARP 2.0
+             @since v2.0
           */
           sendSMS(number : string, text : string, callback : IMessagingCallback) : void {
                // Create and populate API request.
@@ -15695,7 +15844,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15731,7 +15880,7 @@ This path may or may not be writable by the current application.
         Interface for Barcode Reading purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BarcodeBridge extends BaseReaderBridge implements IBarcode {
 
@@ -15750,7 +15899,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the NFC operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class NFCBridge extends BaseReaderBridge implements INFC {
 
@@ -15769,7 +15918,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the OCR operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class OCRBridge extends BaseReaderBridge implements IOCR {
 
@@ -15788,7 +15937,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the QR Code operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class QRCodeBridge extends BaseReaderBridge implements IQRCode {
 
@@ -15807,7 +15956,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the OAuth operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class OAuthBridge extends BaseSecurityBridge implements IOAuth {
 
@@ -15826,7 +15975,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the OpenID operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class OpenIdBridge extends BaseSecurityBridge implements IOpenId {
 
@@ -15845,7 +15994,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Security operations
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
      */
      export class SecurityBridge extends BaseSecurityBridge implements ISecurity {
 
@@ -15864,7 +16013,7 @@ This path may or may not be writable by the current application.
              @param {string[]} keys keys             Array with the key names to delete.
              @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
              @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           deleteSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
                // Create and populate API request.
@@ -15877,7 +16026,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15913,7 +16062,7 @@ This path may or may not be writable by the current application.
              @param {string[]} keys keys             Array with the key names to retrieve.
              @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
              @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           getSecureKeyValuePairs(keys : Array<string>, publicAccessName : string, callback : ISecurityResultCallback) : void {
                // Create and populate API request.
@@ -15926,7 +16075,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -15960,7 +16109,7 @@ This path may or may not be writable by the current application.
              Returns if the device has been modified in anyhow
 
              @return {boolean} true if the device has been modified; false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           isDeviceModified() : boolean {
                // Create and populate API request.
@@ -15971,7 +16120,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16001,7 +16150,7 @@ This path may or may not be writable by the current application.
              @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
              @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
              @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-             @since ARP 2.0
+             @since v2.0
           */
           setSecureKeyValuePairs(keyValues : Array<SecureKeyPair>, publicAccessName : string, callback : ISecurityResultCallback) : void {
                // Create and populate API request.
@@ -16014,7 +16163,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -16050,7 +16199,7 @@ This path may or may not be writable by the current application.
         Interface defining methods about the acceleration sensor
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AccelerationBridge extends BaseSensorBridge implements IAcceleration {
 
@@ -16067,7 +16216,7 @@ This path may or may not be writable by the current application.
              Register a new listener that will receive acceleration events.
 
              @param {Adaptive.AccelerationListener} listener listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
@@ -16078,7 +16227,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredAccelerationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -16109,7 +16258,7 @@ This path may or may not be writable by the current application.
              De-registers an existing listener from receiving acceleration events.
 
              @param {Adaptive.AccelerationListener} listener listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           removeAccelerationListener(listener : IAccelerationListener) : void {
                // Create and populate API request.
@@ -16120,7 +16269,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16144,7 +16293,7 @@ This path may or may not be writable by the current application.
              @method
              Removed all existing listeners from receiving acceleration events.
 
-             @since ARP 2.0
+             @since v2.0
           */
           removeAccelerationListeners() : void {
                // Create and populate API request.
@@ -16155,7 +16304,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16185,7 +16334,7 @@ This path may or may not be writable by the current application.
         Interface for managinf the Ambient Light
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AmbientLightBridge extends BaseSensorBridge implements IAmbientLight {
 
@@ -16204,7 +16353,7 @@ This path may or may not be writable by the current application.
         Interface for Barometer management purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BarometerBridge extends BaseSensorBridge implements IBarometer {
 
@@ -16223,7 +16372,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Geolocation operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
 
@@ -16240,7 +16389,7 @@ This path may or may not be writable by the current application.
              Register a new listener that will receive geolocation events.
 
              @param {Adaptive.GeolocationListener} listener listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addGeolocationListener(listener : IGeolocationListener) : void {
                // Create and populate API request.
@@ -16251,7 +16400,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredGeolocationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -16282,7 +16431,7 @@ This path may or may not be writable by the current application.
              De-registers an existing listener from receiving geolocation events.
 
              @param {Adaptive.GeolocationListener} listener listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           removeGeolocationListener(listener : IGeolocationListener) : void {
                // Create and populate API request.
@@ -16293,7 +16442,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16317,7 +16466,7 @@ This path may or may not be writable by the current application.
              @method
              Removed all existing listeners from receiving geolocation events.
 
-             @since ARP 2.0
+             @since v2.0
           */
           removeGeolocationListeners() : void {
                // Create and populate API request.
@@ -16328,7 +16477,7 @@ This path may or may not be writable by the current application.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -16358,7 +16507,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Giroscope operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class GyroscopeBridge extends BaseSensorBridge implements IGyroscope {
 
@@ -16377,7 +16526,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Magnetometer operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class MagnetometerBridge extends BaseSensorBridge implements IMagnetometer {
 
@@ -16396,7 +16545,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Proximity operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class ProximityBridge extends BaseSensorBridge implements IProximity {
 
@@ -16415,7 +16564,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Facebook operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class FacebookBridge extends BaseSocialBridge implements IFacebook {
 
@@ -16434,7 +16583,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Google Plus operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class GooglePlusBridge extends BaseSocialBridge implements IGooglePlus {
 
@@ -16453,7 +16602,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Linkedin operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class LinkedInBridge extends BaseSocialBridge implements ILinkedIn {
 
@@ -16472,7 +16621,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the RSS operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class RSSBridge extends BaseSocialBridge implements IRSS {
 
@@ -16491,7 +16640,7 @@ This path may or may not be writable by the current application.
         Interface for Managing the Twitter operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class TwitterBridge extends BaseSocialBridge implements ITwitter {
 
@@ -16510,7 +16659,7 @@ This path may or may not be writable by the current application.
         Interface for testing the Capabilities operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
 
@@ -16529,7 +16678,7 @@ the platform, this method will return the current orientation. To capture device
 changes please use the IDevice and IDisplay functions and listeners API respectively.
 
              @return {Adaptive.ICapabilitiesOrientation} The default orientation for the device/display.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationDefault() : ICapabilitiesOrientation {
                // Create and populate API request.
@@ -16540,7 +16689,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -16569,7 +16718,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
 support at least one orientation. This is usually PortaitUp.
 
              @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationsSupported() : Array<ICapabilitiesOrientation> {
                // Create and populate API request.
@@ -16580,7 +16729,7 @@ support at least one orientation. This is usually PortaitUp.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Array<ICapabilitiesOrientation> = null;
@@ -16612,7 +16761,7 @@ support at least one orientation. This is usually PortaitUp.
 
              @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
              @return {boolean} true is supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasButtonSupport(type : ICapabilitiesButton) : boolean {
                // Create and populate API request.
@@ -16624,7 +16773,7 @@ support at least one orientation. This is usually PortaitUp.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16654,7 +16803,7 @@ the device.
 
              @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasCommunicationSupport(type : ICapabilitiesCommunication) : boolean {
                // Create and populate API request.
@@ -16666,7 +16815,7 @@ the device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16695,7 +16844,7 @@ the device.
 
              @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasDataSupport(type : ICapabilitiesData) : boolean {
                // Create and populate API request.
@@ -16707,7 +16856,7 @@ the device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16737,7 +16886,7 @@ device.
 
              @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasMediaSupport(type : ICapabilitiesMedia) : boolean {
                // Create and populate API request.
@@ -16749,7 +16898,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16778,7 +16927,7 @@ device.
 
              @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasNetSupport(type : ICapabilitiesNet) : boolean {
                // Create and populate API request.
@@ -16790,7 +16939,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16820,7 +16969,7 @@ device.
 
              @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasNotificationSupport(type : ICapabilitiesNotification) : boolean {
                // Create and populate API request.
@@ -16832,7 +16981,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16861,7 +17010,7 @@ device.
 
              @param {Adaptive.ICapabilitiesOrientation} orientation orientation Orientation type.
              @return {boolean} True if the given orientation is supported, false otherwise.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           hasOrientationSupport(orientation : ICapabilitiesOrientation) : boolean {
                // Create and populate API request.
@@ -16873,7 +17022,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16903,7 +17052,7 @@ device.
 
              @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
              @return {boolean} true if supported, false otherwise.
-             @since ARP 2.0
+             @since v2.0
           */
           hasSensorSupport(type : ICapabilitiesSensor) : boolean {
                // Create and populate API request.
@@ -16915,7 +17064,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -16945,7 +17094,7 @@ device.
         Interface for Managing the Device operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class DeviceBridge extends BaseSystemBridge implements IDevice {
 
@@ -16962,7 +17111,7 @@ device.
              Register a new listener that will receive button events.
 
              @param {Adaptive.ButtonListener} listener listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addButtonListener(listener : IButtonListener) : void {
                // Create and populate API request.
@@ -16973,7 +17122,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredButtonListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17004,7 +17153,7 @@ device.
              Add a listener to start receiving device orientation change events.
 
              @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDeviceOrientationListener(listener : IDeviceOrientationListener) : void {
                // Create and populate API request.
@@ -17015,7 +17164,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredDeviceOrientationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17046,7 +17195,7 @@ device.
              Returns the device information for the current device executing the runtime.
 
              @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-             @since ARP 2.0
+             @since v2.0
           */
           getDeviceInfo() : DeviceInfo {
                // Create and populate API request.
@@ -17057,7 +17206,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : DeviceInfo = null;
@@ -17085,7 +17234,7 @@ device.
              Gets the current Locale for the device.
 
              @return {Adaptive.Locale} The current Locale information.
-             @since ARP 2.0
+             @since v2.0
           */
           getLocaleCurrent() : Locale {
                // Create and populate API request.
@@ -17096,7 +17245,7 @@ device.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : Locale = null;
@@ -17125,7 +17274,7 @@ device.
 of the display. For display orientation, use the IDisplay APIs.
 
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation {
                // Create and populate API request.
@@ -17136,7 +17285,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -17164,7 +17313,7 @@ of the display. For display orientation, use the IDisplay APIs.
              De-registers an existing listener from receiving button events.
 
              @param {Adaptive.ButtonListener} listener listener to be removed.
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListener(listener : IButtonListener) : void {
                // Create and populate API request.
@@ -17175,7 +17324,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17199,7 +17348,7 @@ of the display. For display orientation, use the IDisplay APIs.
              @method
              Removed all existing listeners from receiving button events.
 
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListeners() : void {
                // Create and populate API request.
@@ -17210,7 +17359,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17238,7 +17387,7 @@ of the display. For display orientation, use the IDisplay APIs.
              Remove a listener to stop receiving device orientation change events.
 
              @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListener(listener : IDeviceOrientationListener) : void {
                // Create and populate API request.
@@ -17249,7 +17398,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17273,7 +17422,7 @@ of the display. For display orientation, use the IDisplay APIs.
              @method
              Remove all listeners receiving device orientation events.
 
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListeners() : void {
                // Create and populate API request.
@@ -17284,7 +17433,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17314,7 +17463,7 @@ of the display. For display orientation, use the IDisplay APIs.
         Interface for Managing the Display operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class DisplayBridge extends BaseSystemBridge implements IDisplay {
 
@@ -17331,7 +17480,7 @@ of the display. For display orientation, use the IDisplay APIs.
              Add a listener to start receiving display orientation change events.
 
              @param {Adaptive.DisplayOrientationListener} listener listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDisplayOrientationListener(listener : IDisplayOrientationListener) : void {
                // Create and populate API request.
@@ -17342,7 +17491,7 @@ of the display. For display orientation, use the IDisplay APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add listener reference to local dictionary.
                registeredDisplayOrientationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
@@ -17374,7 +17523,7 @@ of the display. For display orientation, use the IDisplay APIs.
 of the device. For device orientation, use the IDevice APIs.
 
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the display.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation {
                // Create and populate API request.
@@ -17385,7 +17534,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
@@ -17413,7 +17562,7 @@ of the device. For device orientation, use the IDevice APIs.
              Remove a listener to stop receiving display orientation change events.
 
              @param {Adaptive.DisplayOrientationListener} listener listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListener(listener : IDisplayOrientationListener) : void {
                // Create and populate API request.
@@ -17424,7 +17573,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17448,7 +17597,7 @@ of the device. For device orientation, use the IDevice APIs.
              @method
              Remove all listeners receiving display orientation events.
 
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListeners() : void {
                // Create and populate API request.
@@ -17459,7 +17608,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17489,7 +17638,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the OS operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class OSBridge extends BaseSystemBridge implements IOS {
 
@@ -17506,7 +17655,7 @@ of the device. For device orientation, use the IDevice APIs.
              Returns the OSInfo for the current operating system.
 
              @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
-             @since ARP 2.0
+             @since v2.0
           */
           getOSInfo() : OSInfo {
                // Create and populate API request.
@@ -17517,7 +17666,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : OSInfo = null;
@@ -17547,7 +17696,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Runtime operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class RuntimeBridge extends BaseSystemBridge implements IRuntime {
 
@@ -17563,7 +17712,7 @@ of the device. For device orientation, use the IDevice APIs.
              @method
              Dismiss the current Application
 
-             @since ARP 2.0
+             @since v2.0
           */
           dismissApplication() : void {
                // Create and populate API request.
@@ -17574,7 +17723,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17588,7 +17737,7 @@ of the device. For device orientation, use the IDevice APIs.
              Whether the application dismiss the splash screen successfully or not
 
              @return {boolean} true if the application has dismissed the splash screen;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           dismissSplashScreen() : boolean {
                // Create and populate API request.
@@ -17599,7 +17748,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17629,7 +17778,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the browser operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class BrowserBridge extends BaseUIBridge implements IBrowser {
 
@@ -17647,7 +17796,7 @@ of the device. For device orientation, use the IDevice APIs.
 
              @param {string} url url Url to open
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openExtenalBrowser(url : string) : boolean {
                // Create and populate API request.
@@ -17659,7 +17808,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17690,7 +17839,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param {string} title title          Title of the Navigation bar
              @param {string} backButtonText backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openInternalBrowser(url : string, title : string, backButtonText : string) : boolean {
                // Create and populate API request.
@@ -17704,7 +17853,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17735,7 +17884,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param {string} title title          Title of the Navigation bar
              @param {string} backButtonText backButtonText Title of the Back button bar
              @return {boolean} The result of the operation
-             @since ARP 2.0
+             @since v2.0
           */
           openInternalBrowserModal(url : string, title : string, backButtonText : string) : boolean {
                // Create and populate API request.
@@ -17749,7 +17898,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;
@@ -17779,7 +17928,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Desktop operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class DesktopBridge extends BaseUIBridge implements IDesktop {
 
@@ -17798,7 +17947,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Map operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class MapBridge extends BaseUIBridge implements IMap {
 
@@ -17817,7 +17966,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the UI operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class UIBridge extends BaseUIBridge implements IUI {
 
@@ -17836,7 +17985,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Compression operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CompressionBridge extends BaseUtilBridge implements ICompression {
 
@@ -17855,7 +18004,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Concurrent operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class ConcurrentBridge extends BaseUtilBridge implements IConcurrent {
 
@@ -17874,7 +18023,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Cloud operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class CryptoBridge extends BaseUtilBridge implements ICrypto {
 
@@ -17893,7 +18042,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Logging operations
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
      */
      export class LoggingBridge extends BaseUtilBridge implements ILogging {
 
@@ -17910,7 +18059,7 @@ of the device. For device orientation, use the IDevice APIs.
 
              @param level   Log level
              @param message Message to be logged
-             @since ARP 2.0
+             @since v2.0
           */
           log_level_message(level : ILoggingLogLevel, message : string) : void {
                // Create and populate API request.
@@ -17923,7 +18072,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17938,7 +18087,7 @@ of the device. For device orientation, use the IDevice APIs.
              @param level    Log level
              @param category Category/tag name to identify/filter the log.
              @param message  Message to be logged
-             @since ARP 2.0
+             @since v2.0
           */
           log_level_category_message(level : ILoggingLogLevel, category : string, message : string) : void {
                // Create and populate API request.
@@ -17952,7 +18101,7 @@ of the device. For device orientation, use the IDevice APIs.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {
@@ -17968,7 +18117,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface for Managing the Timer operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class TimerBridge extends BaseUtilBridge implements ITimer {
 
@@ -17986,7 +18135,7 @@ of the device. For device orientation, use the IDevice APIs.
         Interface to retrieve auto-registered service implementation references.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class AppRegistryBridge implements IAppRegistry {
 
@@ -19280,7 +19429,7 @@ of the device. For device orientation, use the IDevice APIs.
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
      /**
@@ -22422,47 +22571,59 @@ of the device. For device orientation, use the IDevice APIs.
 
      }
      /**
-        @enum {Adaptive.IServiceProtocolVersion} Adaptive.IServiceProtocolVersion
-        Enumeration IServiceProtocolVersion
+        @enum {Adaptive.IServiceCertificateValidation} Adaptive.IServiceCertificateValidation
+        Enumeration IServiceCertificateValidation
      */
-     export class IServiceProtocolVersion {
+     export class IServiceCertificateValidation {
 
           constructor(public value:string){}
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion10='HttpProtocolVersion10']
+             @property {Adaptive.IServiceCertificateValidation} [None='None']
           */
-          static HttpProtocolVersion10 = new IServiceProtocolVersion("HttpProtocolVersion10");
+          static None = new IServiceCertificateValidation("None");
           /**
-             @property {Adaptive.IServiceProtocolVersion} [HttpProtocolVersion11='HttpProtocolVersion11']
+             @property {Adaptive.IServiceCertificateValidation} [Normal='Normal']
           */
-          static HttpProtocolVersion11 = new IServiceProtocolVersion("HttpProtocolVersion11");
+          static Normal = new IServiceCertificateValidation("Normal");
           /**
-             @property {Adaptive.IServiceProtocolVersion} [Unknown='Unknown']
+             @property {Adaptive.IServiceCertificateValidation} [Extended='Extended']
           */
-          static Unknown = new IServiceProtocolVersion("Unknown");
+          static Extended = new IServiceCertificateValidation("Extended");
+          /**
+             @property {Adaptive.IServiceCertificateValidation} [Extreme='Extreme']
+          */
+          static Extreme = new IServiceCertificateValidation("Extreme");
+          /**
+             @property {Adaptive.IServiceCertificateValidation} [Unknown='Unknown']
+          */
+          static Unknown = new IServiceCertificateValidation("Unknown");
 
           /**
              @method
              @static
              Convert JSON parsed object to enumeration.
-             @return {Adaptive.IServiceProtocolVersion}
+             @return {Adaptive.IServiceCertificateValidation}
           */
-          static toObject(object : any) : IServiceProtocolVersion {
+          static toObject(object : any) : IServiceCertificateValidation {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "HttpProtocolVersion10":
-                              return IServiceProtocolVersion.HttpProtocolVersion10;
-                         case "HttpProtocolVersion11":
-                              return IServiceProtocolVersion.HttpProtocolVersion11;
+                         case "None":
+                              return IServiceCertificateValidation.None;
+                         case "Normal":
+                              return IServiceCertificateValidation.Normal;
+                         case "Extended":
+                              return IServiceCertificateValidation.Extended;
+                         case "Extreme":
+                              return IServiceCertificateValidation.Extreme;
                          case "Unknown":
-                              return IServiceProtocolVersion.Unknown;
+                              return IServiceCertificateValidation.Unknown;
                          default:
-                              return IServiceProtocolVersion.Unknown;
+                              return IServiceCertificateValidation.Unknown;
                     }
                } else {
-                    return IServiceProtocolVersion.Unknown;
+                    return IServiceCertificateValidation.Unknown;
                }
           }
 
@@ -22477,13 +22638,17 @@ of the device. For device orientation, use the IDevice APIs.
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceMethod} [Post='Post']
+             @property {Adaptive.IServiceMethod} [POST='POST']
           */
-          static Post = new IServiceMethod("Post");
+          static POST = new IServiceMethod("POST");
           /**
-             @property {Adaptive.IServiceMethod} [Get='Get']
+             @property {Adaptive.IServiceMethod} [GET='GET']
           */
-          static Get = new IServiceMethod("Get");
+          static GET = new IServiceMethod("GET");
+          /**
+             @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+          */
+          static HEAD = new IServiceMethod("HEAD");
           /**
              @property {Adaptive.IServiceMethod} [Unknown='Unknown']
           */
@@ -22498,10 +22663,12 @@ of the device. For device orientation, use the IDevice APIs.
           static toObject(object : any) : IServiceMethod {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Post":
-                              return IServiceMethod.Post;
-                         case "Get":
-                              return IServiceMethod.Get;
+                         case "POST":
+                              return IServiceMethod.POST;
+                         case "GET":
+                              return IServiceMethod.GET;
+                         case "HEAD":
+                              return IServiceMethod.HEAD;
                          case "Unknown":
                               return IServiceMethod.Unknown;
                          default:
@@ -22523,45 +22690,21 @@ of the device. For device orientation, use the IDevice APIs.
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+             @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']
           */
-          static ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
+          static OctetBinary = new IServiceType("OctetBinary");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+             @property {Adaptive.IServiceType} [RestJson='RestJson']
           */
-          static ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
+          static RestJson = new IServiceType("RestJson");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+             @property {Adaptive.IServiceType} [RestXml='RestXml']
           */
-          static ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
+          static RestXml = new IServiceType("RestXml");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+             @property {Adaptive.IServiceType} [SoapXml='SoapXml']
           */
-          static ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
-          */
-          static ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
-          */
-          static ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
-          */
-          static ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
-          */
-          static ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
-          */
-          static ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
-          */
-          static ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
+          static SoapXml = new IServiceType("SoapXml");
           /**
              @property {Adaptive.IServiceType} [Unknown='Unknown']
           */
@@ -22576,26 +22719,14 @@ of the device. For device orientation, use the IDevice APIs.
           static toObject(object : any) : IServiceType {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "ServiceTypeAmfSerialization":
-                              return IServiceType.ServiceTypeAmfSerialization;
-                         case "ServiceTypeGwtRpc":
-                              return IServiceType.ServiceTypeGwtRpc;
-                         case "ServiceTypeOctetBinary":
-                              return IServiceType.ServiceTypeOctetBinary;
-                         case "ServiceTypeRemotingSerialization":
-                              return IServiceType.ServiceTypeRemotingSerialization;
-                         case "ServiceTypeRestJson":
-                              return IServiceType.ServiceTypeRestJson;
-                         case "ServiceTypeRestXml":
-                              return IServiceType.ServiceTypeRestXml;
-                         case "ServiceTypeSoapJson":
-                              return IServiceType.ServiceTypeSoapJson;
-                         case "ServiceTypeSoapXml":
-                              return IServiceType.ServiceTypeSoapXml;
-                         case "ServiceTypeXmlRpcJson":
-                              return IServiceType.ServiceTypeXmlRpcJson;
-                         case "ServiceTypeXmlRpcXml":
-                              return IServiceType.ServiceTypeXmlRpcXml;
+                         case "OctetBinary":
+                              return IServiceType.OctetBinary;
+                         case "RestJson":
+                              return IServiceType.RestJson;
+                         case "RestXml":
+                              return IServiceType.RestXml;
+                         case "SoapXml":
+                              return IServiceType.SoapXml;
                          case "Unknown":
                               return IServiceType.Unknown;
                          default:
@@ -22636,6 +22767,10 @@ of the device. For device orientation, use the IDevice APIs.
              @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
           */
           static NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
+          */
+          static PaymentRequired = new IServiceResultCallbackError("PaymentRequired");
           /**
              @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
           */
@@ -22684,6 +22819,8 @@ of the device. For device orientation, use the IDevice APIs.
                               return IServiceResultCallbackError.NotAllowed;
                          case "NotAuthenticated":
                               return IServiceResultCallbackError.NotAuthenticated;
+                         case "PaymentRequired":
+                              return IServiceResultCallbackError.PaymentRequired;
                          case "TimeOut":
                               return IServiceResultCallbackError.TimeOut;
                          case "NoResponse":
@@ -22717,13 +22854,13 @@ of the device. For device orientation, use the IDevice APIs.
           toString(){return this.value;}
 
           /**
+             @property {Adaptive.IServiceResultCallbackWarning} [CertificateUntrusted='CertificateUntrusted']
+          */
+          static CertificateUntrusted = new IServiceResultCallbackWarning("CertificateUntrusted");
+          /**
              @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
           */
           static NotSecure = new IServiceResultCallbackWarning("NotSecure");
-          /**
-             @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
-          */
-          static NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
           /**
              @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
           */
@@ -22746,10 +22883,10 @@ of the device. For device orientation, use the IDevice APIs.
           static toObject(object : any) : IServiceResultCallbackWarning {
                if (object != null && object.value != null) {
                     switch(object.value) {
+                         case "CertificateUntrusted":
+                              return IServiceResultCallbackWarning.CertificateUntrusted;
                          case "NotSecure":
                               return IServiceResultCallbackWarning.NotSecure;
-                         case "NotTrusted":
-                              return IServiceResultCallbackWarning.NotTrusted;
                          case "Redirected":
                               return IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":

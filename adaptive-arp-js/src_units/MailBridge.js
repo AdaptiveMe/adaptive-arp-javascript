@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,7 +55,7 @@ var Adaptive;
        Interface for Managing the Mail operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     var MailBridge = (function (_super) {
         __extends(MailBridge, _super);
@@ -72,7 +72,7 @@ var Adaptive;
 
            @param {Adaptive.Email} data data     Payload of the email
            @param {Adaptive.MessagingCallback} callback callback Result callback of the operation
-           @since ARP 2.0
+           @since v2.0
         */
         MailBridge.prototype.sendEmail = function (data, callback) {
             // Create and populate API request.
@@ -84,7 +84,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));

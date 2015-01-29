@@ -1,4 +1,5 @@
 /// <reference path="IServiceMethod.d.ts" />
+/// <reference path="IServiceType.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -28,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,31 +39,54 @@ declare module Adaptive {
        Structure representing a service path for one endpoint
 
        @author fnva
-       @since ARP 2.0
+       @since v2.0.4
        @version 1.0
     */
     class ServicePath {
         /**
-           The methods for calling a path
+           Service endpoint type.
+        */
+        type: IServiceType;
+        /**
+           The methods for calling a path.
         */
         methods: IServiceMethod[];
         /**
-           The path for the endpoint
+           The path for the endpoint.
         */
         path: string;
         /**
            @method constructor
-           Constructor with parameters
+           Constructor with parameters.
 
            @param {string} path    The path for the endpoint
            @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
+           @param {Adaptive.IServiceType} type    Protocol type.
+           @since v2.0.6
         */
-        constructor(path: string, methods: IServiceMethod[]);
+        constructor(path: string, methods: IServiceMethod[], type: IServiceType);
+        /**
+           @method
+           Gets the protocol for the path.
+
+           @return {Adaptive.IServiceType} Type of protocol.
+           @since v2.0.6
+        */
+        getType(): IServiceType;
+        /**
+           @method
+           Sets the protocol for the path.
+
+           @param {Adaptive.IServiceType} type Type of protocol.
+           @since v2.0.6
+        */
+        setType(type: IServiceType): void;
         /**
            @method
            Endpoint's path methods setter
 
            @return {Adaptive.IServiceMethod[]} Endpoint's path methods
+           @since v2.0.4
         */
         getMethods(): IServiceMethod[];
         /**
@@ -70,6 +94,7 @@ declare module Adaptive {
            Endpoint's path methods setter
 
            @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
+           @since v2.0.4
         */
         setMethods(methods: IServiceMethod[]): void;
         /**
@@ -77,6 +102,7 @@ declare module Adaptive {
            Endpoint's Path Getter
 
            @return {string} Endpoint's Path
+           @since v2.0.4
         */
         getPath(): string;
         /**
@@ -84,6 +110,7 @@ declare module Adaptive {
            Endpoint's path setter
 
            @param {string} path Endpoint's path
+           @since v2.0.4
         */
         setPath(path: string): void;
         /**

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the data a single geolocation reading.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Geolocation extends APIBean {
@@ -81,7 +81,7 @@ module Adaptive {
              @param {number} xDoP      Dilution of precision on the X measurement
              @param {number} yDoP      Dilution of precision on the Y measurement
              @param {number} timestamp Timestamp of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(latitude: number, longitude: number, altitude: number, xDoP: number, yDoP: number, timestamp: number) {
                super();
@@ -98,7 +98,7 @@ module Adaptive {
              Returns altitude in meters
 
              @return {number} Altitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getAltitude() : number {
                return this.altitude;
@@ -109,7 +109,7 @@ module Adaptive {
              Set altitude in meters
 
              @param {number} altitude Altitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setAltitude(altitude: number) {
                this.altitude = altitude;
@@ -120,7 +120,7 @@ module Adaptive {
              Returns the latitude in degrees
 
              @return {number} Latitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getLatitude() : number {
                return this.latitude;
@@ -131,7 +131,7 @@ module Adaptive {
              Set the latitude in degrees
 
              @param {number} latitude Latitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setLatitude(latitude: number) {
                this.latitude = latitude;
@@ -142,7 +142,7 @@ module Adaptive {
              Returns the longitude in degrees
 
              @return {number} Longitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           getLongitude() : number {
                return this.longitude;
@@ -153,7 +153,7 @@ module Adaptive {
              Returns the latitude in degrees
 
              @param {number} longitude Longitude of the measurement
-             @since ARP 2.0
+             @since v2.0
           */
           setLongitude(longitude: number) {
                this.longitude = longitude;
@@ -164,7 +164,7 @@ module Adaptive {
              Timestamp Getter
 
              @return {number} Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           getTimestamp() : number {
                return this.timestamp;
@@ -175,7 +175,7 @@ module Adaptive {
              Timestamp Setter
 
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           setTimestamp(timestamp: number) {
                this.timestamp = timestamp;

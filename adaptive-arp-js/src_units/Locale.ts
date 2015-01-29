@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Represents a specific user or system locate.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Locale extends APIBean {
@@ -61,7 +61,7 @@ module Adaptive {
 
              @param {string} country  Country of the Locale
              @param {string} language Language of the Locale
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(language: string, country: string) {
                super();
@@ -74,7 +74,7 @@ module Adaptive {
              Returns the country code
 
              @return {string} country code
-             @since ARP 2.0
+             @since v2.0
           */
           getCountry() : string {
                return this.country;
@@ -85,7 +85,7 @@ module Adaptive {
              Set the country code
 
              @param {string} country code
-             @since ARP 2.0
+             @since v2.0
           */
           setCountry(country: string) {
                this.country = country;
@@ -96,7 +96,7 @@ module Adaptive {
              Returns the language code
 
              @return {string} language code
-             @since ARP 2.0
+             @since v2.0
           */
           getLanguage() : string {
                return this.language;
@@ -107,7 +107,7 @@ module Adaptive {
              Set the language code
 
              @param {string} language code
-             @since ARP 2.0
+             @since v2.0
           */
           setLanguage(language: string) {
                this.language = language;

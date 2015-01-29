@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Object for reporting orientation change events for device and display.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0.5
+       @since v2.0.5
        @version 1.0
     */
     class RotationEvent extends APIBean {
@@ -75,7 +75,7 @@ concluded.
            @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation when the event was fired.
            @param {Adaptive.RotationEventState} state       State of the event (WillBegin, DidFinish).
            @param {number} timestamp   Timestamp in milliseconds when the event was fired.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         constructor(origin: ICapabilitiesOrientation, destination: ICapabilitiesOrientation, state: RotationEventState, timestamp: number);
         /**
@@ -83,7 +83,7 @@ concluded.
            Gets the destination orientation of the event.
 
            @return {Adaptive.ICapabilitiesOrientation} Destination orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getDestination(): ICapabilitiesOrientation;
         /**
@@ -91,7 +91,7 @@ concluded.
            Sets the destination orientation of the event.
 
            @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         setDestination(destination: ICapabilitiesOrientation): void;
         /**
@@ -99,7 +99,7 @@ concluded.
            Get the origin orientation of the event.
 
            @return {Adaptive.ICapabilitiesOrientation} Origin orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getOrigin(): ICapabilitiesOrientation;
         /**
@@ -107,7 +107,7 @@ concluded.
            Set the origin orientation of the event.
 
            @param {Adaptive.ICapabilitiesOrientation} origin Origin orientation
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         setOrigin(origin: ICapabilitiesOrientation): void;
         /**
@@ -115,7 +115,7 @@ concluded.
            Gets the current state of the event.
 
            @return {Adaptive.RotationEventState} State of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getState(): RotationEventState;
         /**
@@ -123,7 +123,7 @@ concluded.
            Sets the current state of the event.
 
            @param {Adaptive.RotationEventState} state The state of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         setState(state: RotationEventState): void;
         /**
@@ -131,7 +131,7 @@ concluded.
            Gets the timestamp in milliseconds of the event.
 
            @return {number} Timestamp of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getTimestamp(): number;
         /**
@@ -139,7 +139,7 @@ concluded.
            Sets the timestamp in milliseconds of the event.
 
            @param {number} timestamp Timestamp of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         setTimestamp(timestamp: number): void;
         /**

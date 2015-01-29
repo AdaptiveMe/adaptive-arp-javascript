@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ var Adaptive;
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Email = (function (_super) {
@@ -64,7 +64,7 @@ var Adaptive;
            @param {string} messageBody         body of the email
            @param {string} messageBodyMimeType mime type of the body
            @param {string} subject             of the email
-           @since ARP 2.0
+           @since v2.0
         */
         function Email(toRecipients, ccRecipients, bccRecipients, emailAttachmentData, messageBody, messageBodyMimeType, subject) {
             _super.call(this);
@@ -81,7 +81,7 @@ var Adaptive;
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getBccRecipients = function () {
             return this.bccRecipients;
@@ -91,7 +91,7 @@ var Adaptive;
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setBccRecipients = function (bccRecipients) {
             this.bccRecipients = bccRecipients;
@@ -101,7 +101,7 @@ var Adaptive;
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getCcRecipients = function () {
             return this.ccRecipients;
@@ -111,7 +111,7 @@ var Adaptive;
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setCcRecipients = function (ccRecipients) {
             this.ccRecipients = ccRecipients;
@@ -121,7 +121,7 @@ var Adaptive;
            Returns an array of attachments
 
            @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getEmailAttachmentData = function () {
             return this.emailAttachmentData;
@@ -131,7 +131,7 @@ var Adaptive;
            Set the email attachment data array
 
            @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setEmailAttachmentData = function (emailAttachmentData) {
             this.emailAttachmentData = emailAttachmentData;
@@ -141,7 +141,7 @@ var Adaptive;
            Returns the message body of the email
 
            @return {string} message Body string of the email
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getMessageBody = function () {
             return this.messageBody;
@@ -151,7 +151,7 @@ var Adaptive;
            Set the message body of the email
 
            @param {string} messageBody message body of the email
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setMessageBody = function (messageBody) {
             this.messageBody = messageBody;
@@ -161,7 +161,7 @@ var Adaptive;
            Returns the myme type of the message body
 
            @return {string} mime type string of the message boddy
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getMessageBodyMimeType = function () {
             return this.messageBodyMimeType;
@@ -171,7 +171,7 @@ var Adaptive;
            Set the mime type for the message body
 
            @param {string} messageBodyMimeType type of the body message
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setMessageBodyMimeType = function (messageBodyMimeType) {
             this.messageBodyMimeType = messageBodyMimeType;
@@ -181,7 +181,7 @@ var Adaptive;
            Returns the subject of the email
 
            @return {string} subject string of the email
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getSubject = function () {
             return this.subject;
@@ -191,7 +191,7 @@ var Adaptive;
            Set the subject of the email
 
            @param {string} subject of the email
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setSubject = function (subject) {
             this.subject = subject;
@@ -201,7 +201,7 @@ var Adaptive;
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.getToRecipients = function () {
             return this.toRecipients;
@@ -211,7 +211,7 @@ var Adaptive;
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP 2.0
+           @since v2.0
         */
         Email.prototype.setToRecipients = function (toRecipients) {
             this.toRecipients = toRecipients;

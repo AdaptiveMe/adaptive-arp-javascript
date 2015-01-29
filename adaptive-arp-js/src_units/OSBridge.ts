@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ module Adaptive {
         Interface for Managing the OS operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class OSBridge extends BaseSystemBridge implements IOS {
 
@@ -65,7 +65,7 @@ module Adaptive {
              Returns the OSInfo for the current operating system.
 
              @return {Adaptive.OSInfo} OSInfo with name, version and vendor of the OS.
-             @since ARP 2.0
+             @since v2.0
           */
           getOSInfo() : OSInfo {
                // Create and populate API request.
@@ -76,7 +76,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : OSInfo = null;

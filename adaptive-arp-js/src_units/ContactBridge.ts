@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ module Adaptive {
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
      */
      export class ContactBridge extends BasePIMBridge implements IContact {
 
@@ -72,7 +72,7 @@ module Adaptive {
 
              @param {Adaptive.ContactUid} contact contact  id to search for
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContact(contact : ContactUid, callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -84,7 +84,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -119,7 +119,7 @@ module Adaptive {
 
              @param {Adaptive.ContactUid} contact contact  id to search for
              @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContactPhoto(contact : ContactUid, callback : IContactPhotoResultCallback) : void {
                // Create and populate API request.
@@ -131,7 +131,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -165,7 +165,7 @@ module Adaptive {
              Get all contacts
 
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContacts(callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -176,7 +176,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -211,7 +211,7 @@ module Adaptive {
 
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsForFields(callback : IContactResultCallback, fields : Array<IContactFieldGroup>) : void {
                // Create and populate API request.
@@ -223,7 +223,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -259,7 +259,7 @@ module Adaptive {
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
              @param {Adaptive.IContactFilter[]} filter filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsWithFilter(callback : IContactResultCallback, fields : Array<IContactFieldGroup>, filter : Array<IContactFilter>) : void {
                // Create and populate API request.
@@ -272,7 +272,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -307,7 +307,7 @@ module Adaptive {
 
              @param {string} term term     string to search
              @param {Adaptive.ContactResultCallback} callback callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           searchContacts(term : string, callback : IContactResultCallback) : void {
                // Create and populate API request.
@@ -319,7 +319,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -355,7 +355,7 @@ module Adaptive {
              @param {string} term term     string to search
              @param {Adaptive.ContactResultCallback} callback callback called for return
              @param {Adaptive.IContactFilter[]} filter filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           searchContactsWithFilter(term : string, callback : IContactResultCallback, filter : Array<IContactFilter>) : void {
                // Create and populate API request.
@@ -368,7 +368,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                // Add callback reference to local dictionary.
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
@@ -404,7 +404,7 @@ module Adaptive {
              @param {Adaptive.ContactUid} contact contact  id to assign the photo
              @param {number[]} pngImage pngImage photo as byte array
              @return {boolean} true if set is successful;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           setContactPhoto(contact : ContactUid, pngImage : Array<number>) : boolean {
                // Create and populate API request.
@@ -417,7 +417,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : boolean = false;

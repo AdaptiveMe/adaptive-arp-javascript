@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,26 +53,14 @@ var Adaptive;
         IServiceType.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "ServiceTypeAmfSerialization":
-                        return IServiceType.ServiceTypeAmfSerialization;
-                    case "ServiceTypeGwtRpc":
-                        return IServiceType.ServiceTypeGwtRpc;
-                    case "ServiceTypeOctetBinary":
-                        return IServiceType.ServiceTypeOctetBinary;
-                    case "ServiceTypeRemotingSerialization":
-                        return IServiceType.ServiceTypeRemotingSerialization;
-                    case "ServiceTypeRestJson":
-                        return IServiceType.ServiceTypeRestJson;
-                    case "ServiceTypeRestXml":
-                        return IServiceType.ServiceTypeRestXml;
-                    case "ServiceTypeSoapJson":
-                        return IServiceType.ServiceTypeSoapJson;
-                    case "ServiceTypeSoapXml":
-                        return IServiceType.ServiceTypeSoapXml;
-                    case "ServiceTypeXmlRpcJson":
-                        return IServiceType.ServiceTypeXmlRpcJson;
-                    case "ServiceTypeXmlRpcXml":
-                        return IServiceType.ServiceTypeXmlRpcXml;
+                    case "OctetBinary":
+                        return IServiceType.OctetBinary;
+                    case "RestJson":
+                        return IServiceType.RestJson;
+                    case "RestXml":
+                        return IServiceType.RestXml;
+                    case "SoapXml":
+                        return IServiceType.SoapXml;
                     case "Unknown":
                         return IServiceType.Unknown;
                     default:
@@ -84,45 +72,21 @@ var Adaptive;
             }
         };
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+           @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']
         */
-        IServiceType.ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
+        IServiceType.OctetBinary = new IServiceType("OctetBinary");
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+           @property {Adaptive.IServiceType} [RestJson='RestJson']
         */
-        IServiceType.ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
+        IServiceType.RestJson = new IServiceType("RestJson");
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+           @property {Adaptive.IServiceType} [RestXml='RestXml']
         */
-        IServiceType.ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
+        IServiceType.RestXml = new IServiceType("RestXml");
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+           @property {Adaptive.IServiceType} [SoapXml='SoapXml']
         */
-        IServiceType.ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
-        */
-        IServiceType.ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
-        */
-        IServiceType.ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
-        */
-        IServiceType.ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
-        */
-        IServiceType.ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
-        */
-        IServiceType.ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
-        */
-        IServiceType.ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
+        IServiceType.SoapXml = new IServiceType("SoapXml");
         /**
            @property {Adaptive.IServiceType} [Unknown='Unknown']
         */

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the data of a single acceleration reading.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Acceleration extends APIBean {
@@ -71,7 +71,7 @@ module Adaptive {
              @param {number} y         Y Coordinate
              @param {number} z         Z Coordinate
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(x: number, y: number, z: number, timestamp: number) {
                super();
@@ -86,7 +86,7 @@ module Adaptive {
              Timestamp Getter
 
              @return {number} Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           getTimestamp() : number {
                return this.timestamp;
@@ -97,7 +97,7 @@ module Adaptive {
              Timestamp Setter
 
              @param {number} timestamp Timestamp
-             @since ARP 2.0
+             @since v2.0
           */
           setTimestamp(timestamp: number) {
                this.timestamp = timestamp;
@@ -108,7 +108,7 @@ module Adaptive {
              X Coordinate Getter
 
              @return {number} X-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getX() : number {
                return this.x;
@@ -119,7 +119,7 @@ module Adaptive {
              X Coordinate Setter
 
              @param {number} x X-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           setX(x: number) {
                this.x = x;
@@ -130,7 +130,7 @@ module Adaptive {
              Y Coordinate Getter
 
              @return {number} Y-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getY() : number {
                return this.y;
@@ -141,7 +141,7 @@ module Adaptive {
              Y Coordinate Setter
 
              @param {number} y Y-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           setY(y: number) {
                this.y = y;
@@ -152,7 +152,7 @@ module Adaptive {
              Z Coordinate Getter
 
              @return {number} Z-axis component of the acceleration.
-             @since ARP 2.0
+             @since v2.0
           */
           getZ() : number {
                return this.z;
@@ -163,7 +163,7 @@ module Adaptive {
              Z Coordinate Setter
 
              @param {number} z Z Coordinate
-             @since ARP 2.0
+             @since v2.0
           */
           setZ(z: number) {
                this.z = z;

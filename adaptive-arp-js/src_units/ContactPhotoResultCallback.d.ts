@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -106,14 +106,14 @@ declare module Adaptive {
            @method
            This method is called on Error
            @param {Adaptive.IContactPhotoResultCallbackError} error error returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IContactPhotoResultCallbackError): void;
         /**
            @method
            This method is called on Result
            @param {number[]} contactPhoto contactPhoto returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(contactPhoto: number[]): void;
         /**
@@ -121,7 +121,7 @@ declare module Adaptive {
            This method is called on Warning
            @param {number[]} contactPhoto contactPhoto returned by the platform
            @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): void;
     }

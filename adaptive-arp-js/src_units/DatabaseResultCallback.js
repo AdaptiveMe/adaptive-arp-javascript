@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            Result callback for error responses
            @param {Adaptive.IDatabaseResultCallbackError} error error Returned error
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -165,7 +165,7 @@ var Adaptive;
            @method
            Result callback for correct responses
            @param {Adaptive.Database} database database Returns the database
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseResultCallback.prototype.onResult = function (database) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -180,7 +180,7 @@ var Adaptive;
            Result callback for warning responses
            @param {Adaptive.Database} database database Returns the database
            @param {Adaptive.IDatabaseResultCallbackWarning} warning warning  Returned Warning
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseResultCallback.prototype.onWarning = function (database, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

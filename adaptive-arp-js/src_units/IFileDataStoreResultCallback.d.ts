@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the File store operations callback
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            Error processing data retrieval/storage operation.
            @param error Error condition encountered.
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IFileDataStoreResultCallbackError): any;
         /**
            @method
            Result of data storage operation.
            @param file File reference to stored data.
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(file: FileDescriptor): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            Result with warning of data retrieval/storage operation.
            @param file    File being loaded/stored.
            @param warning Warning condition encountered.
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning): any;
     }

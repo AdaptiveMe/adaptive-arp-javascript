@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Represents a basic bean to store keyName pair values
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class KeyPair extends APIBean {
@@ -61,7 +61,7 @@ module Adaptive {
 
              @param {string} keyName  Key of the element
              @param {string} keyValue Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(keyName: string, keyValue: string) {
                super();
@@ -74,7 +74,7 @@ module Adaptive {
              Returns the keyName of the element
 
              @return {string} Key of the element
-             @since ARP 2.0
+             @since v2.0
           */
           getKeyName() : string {
                return this.keyName;
@@ -85,7 +85,7 @@ module Adaptive {
              Sets the keyName of the element
 
              @param {string} keyName Key of the element
-             @since ARP 2.0
+             @since v2.0
           */
           setKeyName(keyName: string) {
                this.keyName = keyName;
@@ -96,7 +96,7 @@ module Adaptive {
              Returns the keyValue of the element
 
              @return {string} Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           getKeyValue() : string {
                return this.keyValue;
@@ -107,7 +107,7 @@ module Adaptive {
              Sets the keyValue of the element
 
              @param {string} keyValue Value of the element
-             @since ARP 2.0
+             @since v2.0
           */
           setKeyValue(keyValue: string) {
                this.keyValue = keyValue;

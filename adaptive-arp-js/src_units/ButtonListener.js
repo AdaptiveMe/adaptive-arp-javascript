@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -148,7 +148,7 @@ var Adaptive;
            @method
            No data received
            @param {Adaptive.IButtonListenerError} error error occurred
-           @since ARP 2.0
+           @since v2.0
         */
         ButtonListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -162,7 +162,7 @@ var Adaptive;
            @method
            Called on button pressed
            @param {Adaptive.Button} button button pressed
-           @since ARP 2.0
+           @since v2.0
         */
         ButtonListener.prototype.onResult = function (button) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -177,7 +177,7 @@ var Adaptive;
            Data received with warning
            @param {Adaptive.Button} button button  pressed
            @param {Adaptive.IButtonListenerWarning} warning warning happened
-           @since ARP 2.0
+           @since v2.0
         */
         ButtonListener.prototype.onWarning = function (button, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

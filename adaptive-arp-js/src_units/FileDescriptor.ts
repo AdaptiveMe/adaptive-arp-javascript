@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -66,7 +66,7 @@ module Adaptive {
              Returns the milliseconds passed since 1/1/1970 since the file was created.
 
              @return {number} Timestamp in milliseconds.
-             @since ARP 2.0
+             @since v2.0
           */
           getDateCreated() : number {
                return this.dateCreated;
@@ -87,7 +87,7 @@ module Adaptive {
              Returns the milliseconds passed since 1/1/1970 since the file was modified.
 
              @return {number} Timestamp in milliseconds.
-             @since ARP 2.0
+             @since v2.0
           */
           getDateModified() : number {
                return this.dateModified;
@@ -108,7 +108,7 @@ module Adaptive {
              Returns the name of the file if the reference is a file or the last path element of the folder.
 
              @return {string} The name of the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -129,7 +129,7 @@ module Adaptive {
              Returns the path element of the file or folder (excluding the last path element if it's a directory).
 
              @return {string} The path to the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getPath() : string {
                return this.path;
@@ -150,7 +150,7 @@ module Adaptive {
              Returns the resolved absolute path elements of the file and/or folders (including the last path element).
 
              @return {string} The absolute path to the file.
-             @since ARP 2.0
+             @since v2.0
           */
           getPathAbsolute() : string {
                return this.pathAbsolute;
@@ -171,7 +171,7 @@ module Adaptive {
              Returns the size in bytes of the file or -1 if the reference is a folder.
 
              @return {number} Size in bytes of file.
-             @since ARP 2.0
+             @since v2.0
           */
           getSize() : number {
                return this.size;

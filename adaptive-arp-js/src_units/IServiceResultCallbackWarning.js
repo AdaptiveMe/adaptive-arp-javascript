@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,10 +53,10 @@ var Adaptive;
         IServiceResultCallbackWarning.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
+                    case "CertificateUntrusted":
+                        return IServiceResultCallbackWarning.CertificateUntrusted;
                     case "NotSecure":
                         return IServiceResultCallbackWarning.NotSecure;
-                    case "NotTrusted":
-                        return IServiceResultCallbackWarning.NotTrusted;
                     case "Redirected":
                         return IServiceResultCallbackWarning.Redirected;
                     case "Wrong_Params":
@@ -72,13 +72,13 @@ var Adaptive;
             }
         };
         /**
+           @property {Adaptive.IServiceResultCallbackWarning} [CertificateUntrusted='CertificateUntrusted']
+        */
+        IServiceResultCallbackWarning.CertificateUntrusted = new IServiceResultCallbackWarning("CertificateUntrusted");
+        /**
            @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
         */
         IServiceResultCallbackWarning.NotSecure = new IServiceResultCallbackWarning("NotSecure");
-        /**
-           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
-        */
-        IServiceResultCallbackWarning.NotTrusted = new IServiceResultCallbackWarning("NotTrusted");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
         */

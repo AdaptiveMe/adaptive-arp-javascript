@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,10 +44,11 @@ var __extends = this.__extends || function (d, b) {
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseCommunication.ts"/>
 ///<reference path="IService.ts"/>
+///<reference path="IServiceMethod.ts"/>
 ///<reference path="IServiceResultCallback.ts"/>
-///<reference path="Service.ts"/>
 ///<reference path="ServiceRequest.ts"/>
 ///<reference path="ServiceResultCallback.ts"/>
+///<reference path="ServiceToken.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
@@ -56,7 +57,7 @@ var Adaptive;
        Interface for Managing the Services operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     var ServiceBridge = (function (_super) {
         __extends(ServiceBridge, _super);
@@ -69,23 +70,26 @@ var Adaptive;
         }
         /**
            @method
-           Get a reference to a registered service by name.
+           Create a service request for the given ServiceToken. This method creates the request, populating
+existing headers and cookies for the same service. The request is populated with all the defaults
+for the service being invoked and requires only the request body to be set. Headers and cookies may be
+manipulated as needed by the application before submitting the ServiceRequest via invokeService.
 
-           @param {string} serviceName serviceName Name of service.
-           @return {Adaptive.Service} A service, if registered, or null of the service does not exist.
-           @since ARP 2.0
+           @param {Adaptive.ServiceToken} serviceToken serviceToken ServiceToken to be used for the creation of the request.
+           @return {Adaptive.ServiceRequest} ServiceRequest with pre-populated headers, cookies and defaults for the service.
+           @since v2.0.6
         */
-        ServiceBridge.prototype.getService = function (serviceName) {
+        ServiceBridge.prototype.getServiceRequest = function (serviceToken) {
             // Create and populate API request.
             var arParams = [];
-            arParams.push(JSON.stringify(serviceName));
-            var apiRequest = new Adaptive.APIRequest("IService", "getService", arParams, -1);
+            arParams.push(JSON.stringify(serviceToken));
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceRequest", arParams, -1);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -95,42 +99,134 @@ var Adaptive;
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = Adaptive.Service.toObject(JSON.parse(apiResponse.getResponse()));
+                        response = Adaptive.ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getService' [" + apiResponse.getStatusMessage() + "].");
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getServiceRequest' [" + apiResponse.getStatusMessage() + "].");
                     }
                 }
                 else {
-                    console.error("ERROR: 'ServiceBridge.getService' incorrect response received.");
+                    console.error("ERROR: 'ServiceBridge.getServiceRequest' incorrect response received.");
                 }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getService' request.");
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServiceRequest' request.");
             }
             return response;
         };
         /**
            @method
-           Request async a service for an Url
+           Obtains a ServiceToken for the given parameters to be used for the creation of requests.
 
-           @param {Adaptive.ServiceRequest} serviceRequest serviceRequest Service Request to invoke
-           @param {Adaptive.Service} service serviceRequest Service Request to invoke
-           @param {Adaptive.ServiceResultCallback} callback callback       Callback to execute with the result
-           @since ARP 2.0
+           @param {string} serviceName serviceName  Service name.
+           @param {string} endpointName endpointName Endpoint name.
+           @param {string} functionName functionName Function name.
+           @param {Adaptive.IServiceMethod} method method       Method type.
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter combination is not
+configured in the platform's XML service definition file.
+           @since v2.0.6
         */
-        ServiceBridge.prototype.invokeService = function (serviceRequest, service, callback) {
+        ServiceBridge.prototype.getServiceToken = function (serviceName, endpointName, functionName, method) {
+            // Create and populate API request.
+            var arParams = [];
+            arParams.push(JSON.stringify(serviceName));
+            arParams.push(JSON.stringify(endpointName));
+            arParams.push(JSON.stringify(functionName));
+            arParams.push(JSON.stringify(method));
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceToken", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getServiceToken' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'ServiceBridge.getServiceToken' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServiceToken' request.");
+            }
+            return response;
+        };
+        /**
+           @method
+           Returns all the possible service tokens configured in the platform's XML service definition file.
+
+           @return {Adaptive.ServiceToken[]} Array of service tokens configured.
+           @since v2.0.6
+        */
+        ServiceBridge.prototype.getServicesRegistered = function () {
+            // Create and populate API request.
+            var arParams = [];
+            var apiRequest = new Adaptive.APIRequest("IService", "getServicesRegistered", arParams, -1);
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = new Array();
+                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
+                            response.push(Adaptive.ServiceToken.toObject(__value__));
+                        }
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getServicesRegistered' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'ServiceBridge.getServicesRegistered' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServicesRegistered' request.");
+            }
+            return response;
+        };
+        /**
+           @method
+           Executes the given ServiceRequest and provides responses to the given callback handler.
+
+           @param {Adaptive.ServiceRequest} serviceRequest serviceRequest ServiceRequest with the request body.
+           @param {Adaptive.ServiceResultCallback} callback callback       IServiceResultCallback to handle the ServiceResponse.
+           @since v2.0.6
+        */
+        ServiceBridge.prototype.invokeService = function (serviceRequest, callback) {
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceRequest));
-            arParams.push(JSON.stringify(service));
             var apiRequest = new Adaptive.APIRequest("IService", "invokeService", arParams, callback.getId());
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -163,140 +259,30 @@ var Adaptive;
         };
         /**
            @method
-           Register a new service
+           Checks whether a specific service, endpoint, function and method type is configured in the platform's
+XML service definition file.
 
-           @param {Adaptive.Service} service service to register
-           @since ARP 2.0
+           @param {string} serviceName serviceName  Service name.
+           @param {string} endpointName endpointName Endpoint name.
+           @param {string} functionName functionName Function name.
+           @param {Adaptive.IServiceMethod} method method       Method type.
+           @return {boolean} Returns true if the service is configured, false otherwise.
+           @since v2.0.6
         */
-        ServiceBridge.prototype.registerService = function (service) {
-            // Create and populate API request.
-            var arParams = [];
-            arParams.push(JSON.stringify(service));
-            var apiRequest = new Adaptive.APIRequest("IService", "registerService", arParams, -1);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status == 200) {
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.registerService' request.");
-            }
-        };
-        /**
-           @method
-           Unregister a service
-
-           @param {Adaptive.Service} service service to unregister
-           @since ARP 2.0
-        */
-        ServiceBridge.prototype.unregisterService = function (service) {
-            // Create and populate API request.
-            var arParams = [];
-            arParams.push(JSON.stringify(service));
-            var apiRequest = new Adaptive.APIRequest("IService", "unregisterService", arParams, -1);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status == 200) {
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.unregisterService' request.");
-            }
-        };
-        /**
-           @method
-           Unregister all services.
-
-           @since ARP 2.0
-        */
-        ServiceBridge.prototype.unregisterServices = function () {
-            // Create and populate API request.
-            var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IService", "unregisterServices", arParams, -1);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status == 200) {
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.unregisterServices' request.");
-            }
-        };
-        /**
-           Check whether a service by the given service is already registered.
-
-           @param service Service to check
-           @return True if the service is registered, false otherwise.
-           @since ARP 2.0
-        */
-        ServiceBridge.prototype.isRegistered_service = function (service) {
-            // Create and populate API request.
-            var arParams = [];
-            arParams.push(JSON.stringify(service));
-            var apiRequest = new Adaptive.APIRequest("IService", "isRegistered_service", arParams, -1);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
-            xhr.send(JSON.stringify(apiRequest));
-            // Prepare response.
-            var response = false;
-            // Check response.
-            if (xhr.status == 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isRegistered_service' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'ServiceBridge.isRegistered_service' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.isRegistered_service' request.");
-            }
-            return response;
-        };
-        /**
-           Check whether a service by the given name is registered.
-
-           @param serviceName Name of service.
-           @return True if the service is registered, false otherwise.
-           @since ARP 2.0
-        */
-        ServiceBridge.prototype.isRegistered_serviceName = function (serviceName) {
+        ServiceBridge.prototype.isServiceRegistered = function (serviceName, endpointName, functionName, method) {
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceName));
-            var apiRequest = new Adaptive.APIRequest("IService", "isRegistered_serviceName", arParams, -1);
+            arParams.push(JSON.stringify(endpointName));
+            arParams.push(JSON.stringify(functionName));
+            arParams.push(JSON.stringify(method));
+            var apiRequest = new Adaptive.APIRequest("IService", "isServiceRegistered", arParams, -1);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -309,15 +295,15 @@ var Adaptive;
                         response = !!apiResponse.getResponse();
                     }
                     else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isRegistered_serviceName' [" + apiResponse.getStatusMessage() + "].");
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isServiceRegistered' [" + apiResponse.getStatusMessage() + "].");
                     }
                 }
                 else {
-                    console.error("ERROR: 'ServiceBridge.isRegistered_serviceName' incorrect response received.");
+                    console.error("ERROR: 'ServiceBridge.isServiceRegistered' incorrect response received.");
                 }
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.isRegistered_serviceName' request.");
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.isServiceRegistered' request.");
             }
             return response;
         };

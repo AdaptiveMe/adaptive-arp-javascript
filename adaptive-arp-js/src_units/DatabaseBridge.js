@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,7 +58,7 @@ var Adaptive;
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
     */
     var DatabaseBridge = (function (_super) {
         __extends(DatabaseBridge, _super);
@@ -75,7 +75,7 @@ var Adaptive;
 
            @param {Adaptive.Database} database database Database object to create
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.createDatabase = function (database, callback) {
             // Create and populate API request.
@@ -87,7 +87,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -125,7 +125,7 @@ var Adaptive;
            @param {Adaptive.Database} database database      Database for databaseTable creating.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.createTable = function (database, databaseTable, callback) {
             // Create and populate API request.
@@ -138,7 +138,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -175,7 +175,7 @@ var Adaptive;
 
            @param {Adaptive.Database} database database Database object to delete
            @param {Adaptive.DatabaseResultCallback} callback callback Asynchronous callback
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.deleteDatabase = function (database, callback) {
             // Create and populate API request.
@@ -187,7 +187,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -225,7 +225,7 @@ var Adaptive;
            @param {Adaptive.Database} database database      Database for databaseTable removal.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @param {Adaptive.DatabaseTableResultCallback} callback callback      DatabaseTable callback with the response
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.deleteTable = function (database, databaseTable, callback) {
             // Create and populate API request.
@@ -238,7 +238,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -278,7 +278,7 @@ should be passed as a parameter
            @param {string} statement statement    SQL statement.
            @param {string[]} replacements replacements List of SQL statement replacements.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.executeSqlStatement = function (database, statement, replacements, callback) {
             // Create and populate API request.
@@ -292,7 +292,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -332,7 +332,7 @@ should be passed as a parameter
            @param {boolean} rollbackFlag rollbackFlag Indicates if rollback should be performed when any
                   statement execution fails.
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.executeSqlTransactions = function (database, statements, rollbackFlag, callback) {
             // Create and populate API request.
@@ -346,7 +346,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -383,7 +383,7 @@ should be passed as a parameter
 
            @param {Adaptive.Database} database database Database Object to check if exists
            @return {boolean} True if exists, false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.existsDatabase = function (database) {
             // Create and populate API request.
@@ -395,7 +395,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -427,7 +427,7 @@ should be passed as a parameter
            @param {Adaptive.Database} database database      Database for databaseTable consulting.
            @param {Adaptive.DatabaseTable} databaseTable databaseTable DatabaseTable object with the name of the databaseTable inside.
            @return {boolean} True if exists, false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         DatabaseBridge.prototype.existsTable = function (database, databaseTable) {
             // Create and populate API request.
@@ -440,7 +440,7 @@ should be passed as a parameter
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

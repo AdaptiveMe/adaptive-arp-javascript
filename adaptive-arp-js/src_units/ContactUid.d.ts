@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing the internal unique identifier data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ContactUid extends APIBean {
@@ -52,7 +52,7 @@ declare module Adaptive {
            Constructor used by implementation to set the Contact id.
 
            @param {string} contactId Internal unique contact id.
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(contactId: string);
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Returns the contact id
 
            @return {string} Contactid Internal unique contact id.
-           @since ARP 2.0
+           @since v2.0
         */
         getContactId(): string;
         /**
@@ -68,7 +68,7 @@ declare module Adaptive {
            Set the id of the Contact
 
            @param {string} contactId Internal unique contact id.
-           @since ARP 2.0
+           @since v2.0
         */
         setContactId(contactId: string): void;
         /**

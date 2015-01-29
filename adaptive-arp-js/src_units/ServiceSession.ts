@@ -27,13 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
 ///<reference path="APIBean.ts"/>
-///<reference path="ServiceCookie.ts"/>
+///<reference path="ServiceSessionAttribute.ts"/>
+///<reference path="ServiceSessionCookie.ts"/>
 
 module Adaptive {
 
@@ -43,28 +44,28 @@ module Adaptive {
         Represents a session object for HTTP request and responses
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ServiceSession extends APIBean {
 
           /**
-             The attributes of the response
+             The attributes of the request or response.
           */
-          attributes : Array<string>;
+          attributes : Array<ServiceSessionAttribute>;
           /**
-             The cookies of the response
+             The cookies of the request or response.
           */
-          cookies : Array<ServiceCookie>;
+          cookies : Array<ServiceSessionCookie>;
           /**
              @method constructor
-             Constructor with fields
+             Constructor with fields.
 
-             @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
-             @param {string[]} attributes Attributes of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionCookie[]} cookies    The cookies of the request or response.
+             @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+             @since v2.0
           */
-          constructor(cookies: Array<ServiceCookie>, attributes: Array<string>) {
+          constructor(cookies: Array<ServiceSessionCookie>, attributes: Array<ServiceSessionAttribute>) {
                super();
                this.cookies = cookies;
                this.attributes = attributes;
@@ -72,45 +73,45 @@ module Adaptive {
 
           /**
              @method
-             Gets the attributes of the response
+             Gets the attributes of the request or response.
 
-             @return {string[]} Attributes of the response
-             @since ARP 2.0
+             @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
+             @since v2.0
           */
-          getAttributes() : Array<string> {
+          getAttributes() : Array<ServiceSessionAttribute> {
                return this.attributes;
           }
 
           /**
              @method
-             Sets the attributes for the response
+             Sets the attributes for the request or response.
 
-             @param {string[]} attributes Attributes of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+             @since v2.0
           */
-          setAttributes(attributes: Array<string>) {
+          setAttributes(attributes: Array<ServiceSessionAttribute>) {
                this.attributes = attributes;
           }
 
           /**
              @method
-             Returns the cookies of the response
+             Returns the cookies of the request or response.
 
-             @return {Adaptive.ServiceCookie[]} The cookies of the response
-             @since ARP 2.0
+             @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
+             @since v2.0
           */
-          getCookies() : Array<ServiceCookie> {
+          getCookies() : Array<ServiceSessionCookie> {
                return this.cookies;
           }
 
           /**
              @method
-             Sets the cookies of the response
+             Sets the cookies of the request or response.
 
-             @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-             @since ARP 2.0
+             @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
+             @since v2.0
           */
-          setCookies(cookies: Array<ServiceCookie>) {
+          setCookies(cookies: Array<ServiceSessionCookie>) {
                this.cookies = cookies;
           }
 
@@ -126,21 +127,25 @@ module Adaptive {
 
                // Assign values to bean fields.
                if (object != null && object.cookies != null) {
-                    result.cookies = new Array<ServiceCookie>();
+                    result.cookies = new Array<ServiceSessionCookie>();
                     for(var i = 0; i < object.cookies.length; i++) {
                          var __value__ = object.cookies[i];
                          if (__value__ != null) {
-                              result.cookies.push(ServiceCookie.toObject(__value__));
+                              result.cookies.push(ServiceSessionCookie.toObject(__value__));
                          } else {
-                              result.cookies.push(ServiceCookie.toObject(null));
+                              result.cookies.push(ServiceSessionCookie.toObject(null));
                          }
                     }
                }
                if (object != null && object.attributes != null) {
-                    result.attributes = new Array<string>();
+                    result.attributes = new Array<ServiceSessionAttribute>();
                     for(var i = 0; i < object.attributes.length; i++) {
                          var __value__ = object.attributes[i];
-                         if (__value__ != null) result.attributes.push(__value__);
+                         if (__value__ != null) {
+                              result.attributes.push(ServiceSessionAttribute.toObject(__value__));
+                         } else {
+                              result.attributes.push(ServiceSessionAttribute.toObject(null));
+                         }
                     }
                }
 

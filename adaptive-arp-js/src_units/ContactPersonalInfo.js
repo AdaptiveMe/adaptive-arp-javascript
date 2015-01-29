@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing the personal info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var ContactPersonalInfo = (function (_super) {
@@ -60,7 +60,7 @@ var Adaptive;
            @param {string} middleName of the Contact
            @param {string} lastName   of the Contact
            @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         function ContactPersonalInfo(name, middleName, lastName, title) {
             _super.call(this);
@@ -74,7 +74,7 @@ var Adaptive;
            Returns the title of the Contact
 
            @return {Adaptive.ContactPersonalInfoTitle} Title
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.getTitle = function () {
             return this.title;
@@ -84,7 +84,7 @@ var Adaptive;
            Set the Title of the Contact
 
            @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.setTitle = function (title) {
             this.title = title;
@@ -94,7 +94,7 @@ var Adaptive;
            Returns the last name of the Contact
 
            @return {string} lastName
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.getLastName = function () {
             return this.lastName;
@@ -104,7 +104,7 @@ var Adaptive;
            Set the last name of the Contact
 
            @param {string} lastName of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.setLastName = function (lastName) {
             this.lastName = lastName;
@@ -114,7 +114,7 @@ var Adaptive;
            Returns the middle name of the Contact
 
            @return {string} middelName
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.getMiddleName = function () {
             return this.middleName;
@@ -124,7 +124,7 @@ var Adaptive;
            Set the middle name of the Contact
 
            @param {string} middleName of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.setMiddleName = function (middleName) {
             this.middleName = middleName;
@@ -134,7 +134,7 @@ var Adaptive;
            Returns the name of the Contact
 
            @return {string} name
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.getName = function () {
             return this.name;
@@ -144,7 +144,7 @@ var Adaptive;
            Set the name of the Contact
 
            @param {string} name of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         ContactPersonalInfo.prototype.setName = function (name) {
             this.name = name;

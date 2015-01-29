@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing the email data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ContactEmail extends APIBean {
@@ -63,7 +63,7 @@ declare module Adaptive {
            @param {Adaptive.ContactEmailType} type    Type of the email
            @param {boolean} primary Is email primary
            @param {string} email   Email of the contact
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(type: ContactEmailType, primary: boolean, email: string);
         /**
@@ -71,7 +71,7 @@ declare module Adaptive {
            Returns the type of the email
 
            @return {Adaptive.ContactEmailType} EmailType
-           @since ARP 2.0
+           @since v2.0
         */
         getType(): ContactEmailType;
         /**
@@ -79,7 +79,7 @@ declare module Adaptive {
            Set the type of the email
 
            @param {Adaptive.ContactEmailType} type Type of the email
-           @since ARP 2.0
+           @since v2.0
         */
         setType(type: ContactEmailType): void;
         /**
@@ -87,7 +87,7 @@ declare module Adaptive {
            Returns the email of the Contact
 
            @return {string} email
-           @since ARP 2.0
+           @since v2.0
         */
         getEmail(): string;
         /**
@@ -95,7 +95,7 @@ declare module Adaptive {
            Set the email of the Contact
 
            @param {string} email Email of the contact
-           @since ARP 2.0
+           @since v2.0
         */
         setEmail(email: string): void;
         /**
@@ -103,7 +103,7 @@ declare module Adaptive {
            Returns if the email is primary
 
            @return {boolean} true if the email is primary; false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         getPrimary(): boolean;
         /**
@@ -111,7 +111,7 @@ declare module Adaptive {
            Set if the email
 
            @param {boolean} primary true if the email is primary; false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         setPrimary(primary: boolean): void;
         /**

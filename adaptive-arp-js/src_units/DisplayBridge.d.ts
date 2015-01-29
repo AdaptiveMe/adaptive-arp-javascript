@@ -37,7 +37,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ declare module Adaptive {
        Interface for Managing the Display operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     class DisplayBridge extends BaseSystemBridge implements IDisplay {
         /**
@@ -61,7 +61,7 @@ declare module Adaptive {
            Add a listener to start receiving display orientation change events.
 
            @param {Adaptive.DisplayOrientationListener} listener listener Listener to add to receive orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         addDisplayOrientationListener(listener: IDisplayOrientationListener): void;
         /**
@@ -70,7 +70,7 @@ declare module Adaptive {
 of the device. For device orientation, use the IDevice APIs.
 
            @return {Adaptive.ICapabilitiesOrientation} The current orientation of the display.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getOrientationCurrent(): ICapabilitiesOrientation;
         /**
@@ -78,14 +78,14 @@ of the device. For device orientation, use the IDevice APIs.
            Remove a listener to stop receiving display orientation change events.
 
            @param {Adaptive.DisplayOrientationListener} listener listener Listener to remove from receiving orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         removeDisplayOrientationListener(listener: IDisplayOrientationListener): void;
         /**
            @method
            Remove all listeners receiving display orientation events.
 
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         removeDisplayOrientationListeners(): void;
     }

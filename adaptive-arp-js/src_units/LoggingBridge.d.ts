@@ -35,7 +35,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ declare module Adaptive {
        Interface for Managing the Logging operations
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
     */
     class LoggingBridge extends BaseUtilBridge implements ILogging {
         /**
@@ -59,7 +59,7 @@ declare module Adaptive {
 
            @param level   Log level
            @param message Message to be logged
-           @since ARP 2.0
+           @since v2.0
         */
         log_level_message(level: ILoggingLogLevel, message: string): void;
         /**
@@ -68,7 +68,7 @@ declare module Adaptive {
            @param level    Log level
            @param category Category/tag name to identify/filter the log.
            @param message  Message to be logged
-           @since ARP 2.0
+           @since v2.0
         */
         log_level_category_message(level: ILoggingLogLevel, category: string, message: string): void;
     }

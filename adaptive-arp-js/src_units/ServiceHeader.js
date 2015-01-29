@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -37,73 +37,31 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-///<reference path="APIBean.ts"/>
+///<reference path="KeyValue.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.ServiceHeader
-       @extends Adaptive.APIBean
+       @extends Adaptive.KeyValue
        Structure representing the data of a http request or response header.
 
        @author Aryslan
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var ServiceHeader = (function (_super) {
         __extends(ServiceHeader, _super);
         /**
            @method constructor
-           Constructor with fields
+           Convenience constructor.
 
-           @param {string} name Name of the header
-           @param {string} data Value of the header
-           @since ARP 2.0
+           @param {string} keyName Name of the key.
+           @param {string} keyData Value of the key.
+           @since v2.0.6
         */
-        function ServiceHeader(name, data) {
-            _super.call(this);
-            this.name = name;
-            this.data = data;
+        function ServiceHeader(keyName, keyData) {
+            _super.call(this, keyNamekeyData);
         }
-        /**
-           @method
-           Returns the header value
-
-           @return {string} ServiceHeader value
-           @since ARP 2.0
-        */
-        ServiceHeader.prototype.getData = function () {
-            return this.data;
-        };
-        /**
-           @method
-           Set the header value
-
-           @param {string} data ServiceHeader value
-           @since ARP 2.0
-        */
-        ServiceHeader.prototype.setData = function (data) {
-            this.data = data;
-        };
-        /**
-           @method
-           Returns the header name
-
-           @return {string} ServiceHeader name
-           @since ARP 2.0
-        */
-        ServiceHeader.prototype.getName = function () {
-            return this.name;
-        };
-        /**
-           @method
-           Set the header name
-
-           @param {string} name Name of the header
-           @since ARP 2.0
-        */
-        ServiceHeader.prototype.setName = function (name) {
-            this.name = name;
-        };
         /**
            @method
            @static
@@ -113,15 +71,15 @@ var Adaptive;
         */
         ServiceHeader.toObject = function (object) {
             var result = new ServiceHeader(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.name != null)
-                result.name = object.name;
-            if (object != null && object.data != null)
-                result.data = object.data;
+            // Assign values to parent bean fields.
+            if (object != null && object.keyName != null)
+                result.keyName = object.keyName;
+            if (object != null && object.keyData != null)
+                result.keyData = object.keyData;
             return result;
         };
         return ServiceHeader;
-    })(Adaptive.APIBean);
+    })(Adaptive.KeyValue);
     Adaptive.ServiceHeader = ServiceHeader;
 })(Adaptive || (Adaptive = {}));
 //# sourceMappingURL=ServiceHeader.js.map

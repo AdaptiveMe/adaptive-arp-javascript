@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -161,7 +161,7 @@ module Adaptive {
              @method
              Result callback for error responses
              @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
-             @since ARP 2.0
+             @since v2.0
           */
           public onError(error : IDatabaseTableResultCallbackError) : void {
                if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -175,7 +175,7 @@ module Adaptive {
              @method
              Result callback for correct responses
              @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
-             @since ARP 2.0
+             @since v2.0
           */
           public onResult(databaseTable : DatabaseTable) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -190,7 +190,7 @@ module Adaptive {
              Result callback for warning responses
              @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
              @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
-             @since ARP 2.0
+             @since v2.0
           */
           public onWarning(databaseTable : DatabaseTable, warning : IDatabaseTableResultCallbackWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,7 @@ var Adaptive;
        Structure representing a HTML5 request to the native API.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var APIRequest = (function () {
@@ -50,7 +50,7 @@ var Adaptive;
            @param {string} methodName Name of the method
            @param {string[]} parameters Array of parameters as JSON formatted strings.
            @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
-           @since ARP 2.0
+           @since v2.0
         */
         function APIRequest(bridgeType, methodName, parameters, asyncId) {
             this.bridgeType = bridgeType;
@@ -82,7 +82,7 @@ listener.
            Bridge Type Getter
 
            @return {string} Bridge Type
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.getBridgeType = function () {
             return this.bridgeType;
@@ -92,7 +92,7 @@ listener.
            Bridge Type Setter
 
            @param {string} bridgeType Bridge Type
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.setBridgeType = function (bridgeType) {
             this.bridgeType = bridgeType;
@@ -102,7 +102,7 @@ listener.
            Method name Getter
 
            @return {string} Method name
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.getMethodName = function () {
             return this.methodName;
@@ -112,7 +112,7 @@ listener.
            Method name Setter
 
            @param {string} methodName Method name
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.setMethodName = function (methodName) {
             this.methodName = methodName;
@@ -122,7 +122,7 @@ listener.
            Parameters Getter
 
            @return {string[]} Parameters
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.getParameters = function () {
             return this.parameters;
@@ -132,7 +132,7 @@ listener.
            Parameters Setter
 
            @param {string[]} parameters Parameters, JSON formatted strings of objects.
-           @since ARP 2.0
+           @since v2.0
         */
         APIRequest.prototype.setParameters = function (parameters) {
             this.parameters = parameters;

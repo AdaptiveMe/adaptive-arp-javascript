@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -148,7 +148,7 @@ var Adaptive;
            @method
            No data received - error condition, not authorized or hardware not available.
            @param {Adaptive.INetworkStatusListenerError} error error Type of error encountered during reading.
-           @since ARP 2.0
+           @since v2.0
         */
         NetworkStatusListener.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -162,7 +162,7 @@ var Adaptive;
            @method
            Called when network connection changes somehow.
            @param {Adaptive.ICapabilitiesNet} network network Change to this network.
-           @since ARP 2.0
+           @since v2.0
         */
         NetworkStatusListener.prototype.onResult = function (network) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -177,7 +177,7 @@ var Adaptive;
            Status received with warning
            @param {Adaptive.ICapabilitiesNet} network network Change to this network.
            @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
-           @since ARP 2.0
+           @since v2.0
         */
         NetworkStatusListener.prototype.onWarning = function (network, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

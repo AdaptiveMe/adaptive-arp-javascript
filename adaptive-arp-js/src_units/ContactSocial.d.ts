@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing the social data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ContactSocial extends APIBean {
@@ -58,7 +58,7 @@ declare module Adaptive {
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
            @param {string} profileUrl    of the user
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(socialNetwork: ContactSocialNetwork, profileUrl: string);
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Returns the social network
 
            @return {Adaptive.ContactSocialNetwork} socialNetwork
-           @since ARP 2.0
+           @since v2.0
         */
         getSocialNetwork(): ContactSocialNetwork;
         /**
@@ -74,7 +74,7 @@ declare module Adaptive {
            Set the social network
 
            @param {Adaptive.ContactSocialNetwork} socialNetwork of the profile
-           @since ARP 2.0
+           @since v2.0
         */
         setSocialNetwork(socialNetwork: ContactSocialNetwork): void;
         /**
@@ -82,7 +82,7 @@ declare module Adaptive {
            Returns the profile url of the user
 
            @return {string} profileUrl
-           @since ARP 2.0
+           @since v2.0
         */
         getProfileUrl(): string;
         /**
@@ -90,7 +90,7 @@ declare module Adaptive {
            Set the profile url of the iser
 
            @param {string} profileUrl of the user
-           @since ARP 2.0
+           @since v2.0
         */
         setProfileUrl(profileUrl: string): void;
         /**

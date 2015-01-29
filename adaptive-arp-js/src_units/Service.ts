@@ -27,32 +27,25 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIBean.ts"/>
-///<reference path="IServiceType.ts"/>
 ///<reference path="ServiceEndpoint.ts"/>
 
 module Adaptive {
 
      /**
         @class Adaptive.Service
-        @extends Adaptive.APIBean
         Represents an instance of a service.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
-     export class Service extends APIBean {
+     export class Service {
 
-          /**
-             The type of the service
-          */
-          type : IServiceType;
           /**
              The service name
           */
@@ -67,36 +60,11 @@ module Adaptive {
 
              @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
              @param {string} name             Name of the service
-             @param {Adaptive.IServiceType} type             Type of the service
-             @since ARP 2.0
+             @since v2.0.6
           */
-          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string, type: IServiceType) {
-               super();
+          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string) {
                this.serviceEndpoints = serviceEndpoints;
                this.name = name;
-               this.type = type;
-          }
-
-          /**
-             @method
-             Returns the type
-
-             @return {Adaptive.IServiceType} type
-             @since ARP 2.0
-          */
-          getType() : IServiceType {
-               return this.type;
-          }
-
-          /**
-             @method
-             Set the type
-
-             @param {Adaptive.IServiceType} type Type of the service
-             @since ARP 2.0
-          */
-          setType(type: IServiceType) {
-               this.type = type;
           }
 
           /**
@@ -104,7 +72,7 @@ module Adaptive {
              Returns the name
 
              @return {string} name
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -115,7 +83,7 @@ module Adaptive {
              Set the name
 
              @param {string} name Name of the service
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -126,7 +94,7 @@ module Adaptive {
              Returns the serviceEndpoints
 
              @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceEndpoints() : Array<ServiceEndpoint> {
                return this.serviceEndpoints;
@@ -137,7 +105,7 @@ module Adaptive {
              Set the serviceEndpoints
 
              @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
                this.serviceEndpoints = serviceEndpoints;
@@ -151,7 +119,7 @@ module Adaptive {
              @return {Adaptive.Service} Wrapped object instance.
           */
           static toObject(object : any) : Service {
-               var result : Service = new Service(null, null, null);
+               var result : Service = new Service(null, null);
 
                // Assign values to bean fields.
                if (object != null && object.serviceEndpoints != null) {
@@ -166,11 +134,6 @@ module Adaptive {
                     }
                }
                if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.type!=null) {
-                    result.type = IServiceType.toObject(object.type);
-               } else {
-                    result.type = IServiceType.toObject(null);
-               }
 
                return result;
           }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -37,7 +37,7 @@ declare module Adaptive {
        Structure representing a HTML5 request to the native API.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class APIRequest {
@@ -65,7 +65,7 @@ declare module Adaptive {
            @param {string} methodName Name of the method
            @param {string[]} parameters Array of parameters as JSON formatted strings.
            @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(bridgeType: string, methodName: string, parameters: string[], asyncId: number);
         /**
@@ -88,7 +88,7 @@ listener.
            Bridge Type Getter
 
            @return {string} Bridge Type
-           @since ARP 2.0
+           @since v2.0
         */
         getBridgeType(): string;
         /**
@@ -96,7 +96,7 @@ listener.
            Bridge Type Setter
 
            @param {string} bridgeType Bridge Type
-           @since ARP 2.0
+           @since v2.0
         */
         setBridgeType(bridgeType: string): void;
         /**
@@ -104,7 +104,7 @@ listener.
            Method name Getter
 
            @return {string} Method name
-           @since ARP 2.0
+           @since v2.0
         */
         getMethodName(): string;
         /**
@@ -112,7 +112,7 @@ listener.
            Method name Setter
 
            @param {string} methodName Method name
-           @since ARP 2.0
+           @since v2.0
         */
         setMethodName(methodName: string): void;
         /**
@@ -120,7 +120,7 @@ listener.
            Parameters Getter
 
            @return {string[]} Parameters
-           @since ARP 2.0
+           @since v2.0
         */
         getParameters(): string[];
         /**
@@ -128,7 +128,7 @@ listener.
            Parameters Setter
 
            @param {string[]} parameters Parameters, JSON formatted strings of objects.
-           @since ARP 2.0
+           @since v2.0
         */
         setParameters(parameters: string[]): void;
         /**

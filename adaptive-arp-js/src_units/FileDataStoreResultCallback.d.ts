@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            Error processing data retrieval/storage operation.
            @param {Adaptive.IFileDataStoreResultCallbackError} error error Error condition encountered.
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IFileDataStoreResultCallbackError): void;
         /**
            @method
            Result of data storage operation.
            @param {Adaptive.FileDescriptor} file file File reference to stored data.
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(file: FileDescriptor): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Result with warning of data retrieval/storage operation.
            @param {Adaptive.FileDescriptor} file file    File being loaded/stored.
            @param {Adaptive.IFileDataStoreResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(file: FileDescriptor, warning: IFileDataStoreResultCallbackWarning): void;
     }

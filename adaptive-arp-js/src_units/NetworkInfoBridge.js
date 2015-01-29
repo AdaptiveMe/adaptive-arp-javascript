@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ var Adaptive;
        Interface for Managing the Network information operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var NetworkInfoBridge = (function (_super) {
         __extends(NetworkInfoBridge, _super);

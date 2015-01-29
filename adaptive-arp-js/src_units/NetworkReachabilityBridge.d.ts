@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     class NetworkReachabilityBridge extends BaseCommunicationBridge implements INetworkReachability {
         /**
@@ -61,7 +61,7 @@ declare module Adaptive {
 
            @param {string} host host     domain name or ip address of host.
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
-           @since ARP 2.0
+           @since v2.0
         */
         isNetworkReachable(host: string, callback: INetworkReachabilityCallback): void;
         /**
@@ -70,7 +70,7 @@ declare module Adaptive {
 
            @param {string} url url      to look for
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
-           @since ARP 2.0
+           @since v2.0
         */
         isNetworkServiceReachable(url: string, callback: INetworkReachabilityCallback): void;
     }

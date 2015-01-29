@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,6 +63,10 @@ module Adaptive {
              @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
           */
           static NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
+          /**
+             @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
+          */
+          static PaymentRequired = new IServiceResultCallbackError("PaymentRequired");
           /**
              @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
           */
@@ -111,6 +115,8 @@ module Adaptive {
                               return IServiceResultCallbackError.NotAllowed;
                          case "NotAuthenticated":
                               return IServiceResultCallbackError.NotAuthenticated;
+                         case "PaymentRequired":
+                              return IServiceResultCallbackError.PaymentRequired;
                          case "TimeOut":
                               return IServiceResultCallbackError.TimeOut;
                          case "NoResponse":

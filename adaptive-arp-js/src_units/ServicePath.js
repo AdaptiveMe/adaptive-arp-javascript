@@ -27,11 +27,12 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IServiceMethod.ts"/>
+///<reference path="IServiceType.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
@@ -39,26 +40,50 @@ var Adaptive;
        Structure representing a service path for one endpoint
 
        @author fnva
-       @since ARP 2.0
+       @since v2.0.4
        @version 1.0
     */
     var ServicePath = (function () {
         /**
            @method constructor
-           Constructor with parameters
+           Constructor with parameters.
 
            @param {string} path    The path for the endpoint
            @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
+           @param {Adaptive.IServiceType} type    Protocol type.
+           @since v2.0.6
         */
-        function ServicePath(path, methods) {
+        function ServicePath(path, methods, type) {
             this.path = path;
             this.methods = methods;
+            this.type = type;
         }
+        /**
+           @method
+           Gets the protocol for the path.
+
+           @return {Adaptive.IServiceType} Type of protocol.
+           @since v2.0.6
+        */
+        ServicePath.prototype.getType = function () {
+            return this.type;
+        };
+        /**
+           @method
+           Sets the protocol for the path.
+
+           @param {Adaptive.IServiceType} type Type of protocol.
+           @since v2.0.6
+        */
+        ServicePath.prototype.setType = function (type) {
+            this.type = type;
+        };
         /**
            @method
            Endpoint's path methods setter
 
            @return {Adaptive.IServiceMethod[]} Endpoint's path methods
+           @since v2.0.4
         */
         ServicePath.prototype.getMethods = function () {
             return this.methods;
@@ -68,6 +93,7 @@ var Adaptive;
            Endpoint's path methods setter
 
            @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
+           @since v2.0.4
         */
         ServicePath.prototype.setMethods = function (methods) {
             this.methods = methods;
@@ -77,6 +103,7 @@ var Adaptive;
            Endpoint's Path Getter
 
            @return {string} Endpoint's Path
+           @since v2.0.4
         */
         ServicePath.prototype.getPath = function () {
             return this.path;
@@ -86,6 +113,7 @@ var Adaptive;
            Endpoint's path setter
 
            @param {string} path Endpoint's path
+           @since v2.0.4
         */
         ServicePath.prototype.setPath = function (path) {
             this.path = path;
@@ -98,7 +126,7 @@ var Adaptive;
            @return {Adaptive.ServicePath} Wrapped object instance.
         */
         ServicePath.toObject = function (object) {
-            var result = new ServicePath(null, null);
+            var result = new ServicePath(null, null, null);
             // Assign values to bean fields.
             if (object != null && object.path != null)
                 result.path = object.path;
@@ -113,6 +141,12 @@ var Adaptive;
                         result.methods.push(Adaptive.IServiceMethod.toObject(null));
                     }
                 }
+            }
+            if (object != null && object.type != null) {
+                result.type = Adaptive.IServiceType.toObject(object.type);
+            }
+            else {
+                result.type = Adaptive.IServiceType.toObject(null);
             }
             return result;
         };

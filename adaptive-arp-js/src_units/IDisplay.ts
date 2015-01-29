@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Interface for Managing the Display operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -54,7 +54,7 @@ module Adaptive {
              @method
              Add a listener to start receiving display orientation change events.
              @param listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDisplayOrientationListener(listener:IDisplayOrientationListener);
           /**
@@ -62,20 +62,20 @@ module Adaptive {
              Returns the current orientation of the display. Please note that this may be different from the orientation
 of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the display.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation;
           /**
              @method
              Remove a listener to stop receiving display orientation change events.
              @param listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListener(listener:IDisplayOrientationListener);
           /**
              @method
              Remove all listeners receiving display orientation events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDisplayOrientationListeners();
      }

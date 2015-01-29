@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            Result callback for error responses
            @param {Adaptive.IDatabaseTableResultCallbackError} error error Returned error
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IDatabaseTableResultCallbackError): void;
         /**
            @method
            Result callback for correct responses
            @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(databaseTable: DatabaseTable): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Result callback for warning responses
            @param {Adaptive.DatabaseTable} databaseTable databaseTable Returns the databaseTable
            @param {Adaptive.IDatabaseTableResultCallbackWarning} warning warning       Returned Warning
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(databaseTable: DatabaseTable, warning: IDatabaseTableResultCallbackWarning): void;
     }

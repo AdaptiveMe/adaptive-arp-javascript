@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            This method is called on Error
            @param {Adaptive.IContactResultCallbackError} error error returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IContactResultCallbackError): void;
         /**
            @method
            This method is called on Result
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(contacts: Contact[]): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            This method is called on Warning
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): void;
     }

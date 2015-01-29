@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Lifecycle listeners
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var LifecycleBridge = (function (_super) {
         __extends(LifecycleBridge, _super);
@@ -70,7 +70,7 @@ var Adaptive;
            Add the listener for the lifecycle of the app
 
            @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-           @since ARP 2.0
+           @since v2.0
         */
         LifecycleBridge.prototype.addLifecycleListener = function (listener) {
             // Create and populate API request.
@@ -81,7 +81,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add listener reference to local dictionary.
             Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -114,7 +114,7 @@ var Adaptive;
            Whether the application is in background or not
 
            @return {boolean} true if the application is in background;false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         LifecycleBridge.prototype.isBackground = function () {
             // Create and populate API request.
@@ -125,7 +125,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -155,7 +155,7 @@ var Adaptive;
            Un-registers an existing listener from receiving lifecycle events.
 
            @param {Adaptive.LifecycleListener} listener listener Lifecycle listener
-           @since ARP 2.0
+           @since v2.0
         */
         LifecycleBridge.prototype.removeLifecycleListener = function (listener) {
             // Create and populate API request.
@@ -166,7 +166,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -192,7 +192,7 @@ var Adaptive;
            @method
            Removes all existing listeners from receiving lifecycle events.
 
-           @since ARP 2.0
+           @since v2.0
         */
         LifecycleBridge.prototype.removeLifecycleListeners = function () {
             // Create and populate API request.
@@ -203,7 +203,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

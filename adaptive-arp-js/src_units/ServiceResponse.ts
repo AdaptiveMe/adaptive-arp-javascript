@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,23 +44,16 @@ module Adaptive {
         Represents a local or remote service response.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ServiceResponse extends APIBean {
 
           /**
-             Request/Response data content (plain text).
+             Response data content. The content should be in some well-known web format - in specific, binaries returned
+should be encoded in base64.
           */
           content : string;
-          /**
-             The byte[] representing the binary Content.
-          */
-          contentBinary : Array<number>;
-          /**
-             The length in bytes for the binary Content.
-          */
-          contentBinaryLength : number;
           /**
              Encoding of the binary payload - by default assumed to be UTF8.
           */
@@ -78,31 +71,27 @@ module Adaptive {
           */
           serviceHeaders : Array<ServiceHeader>;
           /**
-             Information about the session
+             Information about the session.
           */
           serviceSession : ServiceSession;
           /**
              @method constructor
              Constructor with fields
 
-             @param {string} content             Request/Response data content (plain text).
-             @param {string} contentType         The request/response content type (MIME TYPE).
-             @param {string} contentEncoding     Encoding of the binary payload - by default assumed to be UTF8.
-             @param {number} contentLength       The length in bytes for the Content field.
-             @param {number[]} contentBinary       The byte[] representing the binary Content.
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @param {Adaptive.ServiceHeader[]} serviceHeaders      The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @param {Adaptive.ServiceSession} serviceSession      Information about the session
-             @since ARP 2.0
+             @param {string} content         Request/Response data content (plain text).
+             @param {string} contentType     The request/response content type (MIME TYPE).
+             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {number} contentLength   The length in bytes for the Content field.
+             @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
+             @param {Adaptive.ServiceSession} serviceSession  Information about the session
+             @since v2.0
           */
-          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, contentBinary: Array<number>, contentBinaryLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
+          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
                super();
                this.content = content;
                this.contentType = contentType;
                this.contentEncoding = contentEncoding;
                this.contentLength = contentLength;
-               this.contentBinary = contentBinary;
-               this.contentBinaryLength = contentBinaryLength;
                this.serviceHeaders = serviceHeaders;
                this.serviceSession = serviceSession;
           }
@@ -112,7 +101,7 @@ module Adaptive {
              Returns the content
 
              @return {string} content
-             @since ARP 2.0
+             @since v2.0
           */
           getContent() : string {
                return this.content;
@@ -123,7 +112,7 @@ module Adaptive {
              Set the content
 
              @param {string} content Request/Response data content (plain text).
-             @since ARP 2.0
+             @since v2.0
           */
           setContent(content: string) {
                this.content = content;
@@ -131,54 +120,10 @@ module Adaptive {
 
           /**
              @method
-             Returns the binary content
-
-             @return {number[]} contentBinary
-             @since ARP 2.0
-          */
-          getContentBinary() : Array<number> {
-               return this.contentBinary;
-          }
-
-          /**
-             @method
-             Set the binary content
-
-             @param {number[]} contentBinary The byte[] representing the binary Content.
-             @since ARP 2.0
-          */
-          setContentBinary(contentBinary: Array<number>) {
-               this.contentBinary = contentBinary;
-          }
-
-          /**
-             @method
-             Returns the binary content length
-
-             @return {number} contentBinaryLength
-             @since ARP 2.0
-          */
-          getContentBinaryLength() : number {
-               return this.contentBinaryLength;
-          }
-
-          /**
-             @method
-             Set the binary content length
-
-             @param {number} contentBinaryLength The length in bytes for the binary Content.
-             @since ARP 2.0
-          */
-          setContentBinaryLength(contentBinaryLength: number) {
-               this.contentBinaryLength = contentBinaryLength;
-          }
-
-          /**
-             @method
              Returns the content encoding
 
              @return {string} contentEncoding
-             @since ARP 2.0
+             @since v2.0
           */
           getContentEncoding() : string {
                return this.contentEncoding;
@@ -189,7 +134,7 @@ module Adaptive {
              Set the content encoding
 
              @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentEncoding(contentEncoding: string) {
                this.contentEncoding = contentEncoding;
@@ -200,7 +145,7 @@ module Adaptive {
              Returns the content length
 
              @return {number} contentLength
-             @since ARP 2.0
+             @since v2.0
           */
           getContentLength() : number {
                return this.contentLength;
@@ -211,7 +156,7 @@ module Adaptive {
              Set the content length
 
              @param {number} contentLength The length in bytes for the Content field.
-             @since ARP 2.0
+             @since v2.0
           */
           setContentLength(contentLength: number) {
                this.contentLength = contentLength;
@@ -222,7 +167,7 @@ module Adaptive {
              Returns the content type
 
              @return {string} contentType
-             @since ARP 2.0
+             @since v2.0
           */
           getContentType() : string {
                return this.contentType;
@@ -233,7 +178,7 @@ module Adaptive {
              Set the content type
 
              @param {string} contentType The request/response content type (MIME TYPE).
-             @since ARP 2.0
+             @since v2.0
           */
           setContentType(contentType: string) {
                this.contentType = contentType;
@@ -244,7 +189,7 @@ module Adaptive {
              Returns the array of ServiceHeader
 
              @return {Adaptive.ServiceHeader[]} serviceHeaders
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceHeaders() : Array<ServiceHeader> {
                return this.serviceHeaders;
@@ -255,7 +200,7 @@ module Adaptive {
              Set the array of ServiceHeader
 
              @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceHeaders(serviceHeaders: Array<ServiceHeader>) {
                this.serviceHeaders = serviceHeaders;
@@ -266,7 +211,7 @@ module Adaptive {
              Getter for service session
 
              @return {Adaptive.ServiceSession} The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           getServiceSession() : ServiceSession {
                return this.serviceSession;
@@ -277,7 +222,7 @@ module Adaptive {
              Setter for service session
 
              @param {Adaptive.ServiceSession} serviceSession The element service session
-             @since ARP 2.0
+             @since v2.0
           */
           setServiceSession(serviceSession: ServiceSession) {
                this.serviceSession = serviceSession;
@@ -291,21 +236,13 @@ module Adaptive {
              @return {Adaptive.ServiceResponse} Wrapped object instance.
           */
           static toObject(object : any) : ServiceResponse {
-               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null, null);
+               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null);
 
                // Assign values to bean fields.
                if (object!=null && object.content!=null) result.content = object.content;
                if (object!=null && object.contentType!=null) result.contentType = object.contentType;
                if (object!=null && object.contentEncoding!=null) result.contentEncoding = object.contentEncoding;
                if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
-               if (object != null && object.contentBinary != null) {
-                    result.contentBinary = new Array<number>();
-                    for(var i = 0; i < object.contentBinary.length; i++) {
-                         var __value__ = object.contentBinary[i];
-                         if (__value__ != null) result.contentBinary.push(__value__);
-                    }
-               }
-               if (object!=null && object.contentBinaryLength!=null) result.contentBinaryLength = object.contentBinaryLength;
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {

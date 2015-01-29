@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -54,7 +54,7 @@ var Adaptive;
        Interface for Managing the Network reachability operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var NetworkReachabilityBridge = (function (_super) {
         __extends(NetworkReachabilityBridge, _super);
@@ -71,7 +71,7 @@ var Adaptive;
 
            @param {string} host host     domain name or ip address of host.
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end.
-           @since ARP 2.0
+           @since v2.0
         */
         NetworkReachabilityBridge.prototype.isNetworkReachable = function (host, callback) {
             // Create and populate API request.
@@ -83,7 +83,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -120,7 +120,7 @@ var Adaptive;
 
            @param {string} url url      to look for
            @param {Adaptive.NetworkReachabilityCallback} callback callback Callback called at the end
-           @since ARP 2.0
+           @since v2.0
         */
         NetworkReachabilityBridge.prototype.isNetworkServiceReachable = function (url, callback) {
             // Create and populate API request.
@@ -132,7 +132,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));

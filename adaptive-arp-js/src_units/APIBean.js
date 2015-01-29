@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,7 @@ var Adaptive;
        Structure representing a native response to the HTML5
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var APIBean = (function () {
@@ -46,7 +46,7 @@ var Adaptive;
            @method constructor
            Default constructor
 
-           @since ARP 2.0
+           @since v2.0
         */
         function APIBean() {
         }

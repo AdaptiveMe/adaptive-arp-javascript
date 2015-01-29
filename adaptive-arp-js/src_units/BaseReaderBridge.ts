@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,7 +45,7 @@ module Adaptive {
         Base application for Reader purposes
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
      */
      export class BaseReaderBridge implements IBaseReader {
 
@@ -79,7 +79,7 @@ module Adaptive {
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.0.5"
+               return "v2.0.6"
           }
      }
 }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,7 +59,7 @@ var Adaptive;
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     var DeviceBridge = (function (_super) {
         __extends(DeviceBridge, _super);
@@ -75,7 +75,7 @@ var Adaptive;
            Register a new listener that will receive button events.
 
            @param {Adaptive.ButtonListener} listener listener to be registered.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceBridge.prototype.addButtonListener = function (listener) {
             // Create and populate API request.
@@ -86,7 +86,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add listener reference to local dictionary.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -119,7 +119,7 @@ var Adaptive;
            Add a listener to start receiving device orientation change events.
 
            @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         DeviceBridge.prototype.addDeviceOrientationListener = function (listener) {
             // Create and populate API request.
@@ -130,7 +130,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add listener reference to local dictionary.
             Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
@@ -163,7 +163,7 @@ var Adaptive;
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
@@ -174,7 +174,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -204,7 +204,7 @@ var Adaptive;
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
@@ -215,7 +215,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -246,7 +246,7 @@ var Adaptive;
 of the display. For display orientation, use the IDisplay APIs.
 
            @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         DeviceBridge.prototype.getOrientationCurrent = function () {
             // Create and populate API request.
@@ -257,7 +257,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -287,7 +287,7 @@ of the display. For display orientation, use the IDisplay APIs.
            De-registers an existing listener from receiving button events.
 
            @param {Adaptive.ButtonListener} listener listener to be removed.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceBridge.prototype.removeButtonListener = function (listener) {
             // Create and populate API request.
@@ -298,7 +298,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -324,7 +324,7 @@ of the display. For display orientation, use the IDisplay APIs.
            @method
            Removed all existing listeners from receiving button events.
 
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceBridge.prototype.removeButtonListeners = function () {
             // Create and populate API request.
@@ -335,7 +335,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -365,7 +365,7 @@ of the display. For display orientation, use the IDisplay APIs.
            Remove a listener to stop receiving device orientation change events.
 
            @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         DeviceBridge.prototype.removeDeviceOrientationListener = function (listener) {
             // Create and populate API request.
@@ -376,7 +376,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {
@@ -402,7 +402,7 @@ of the display. For display orientation, use the IDisplay APIs.
            @method
            Remove all listeners receiving device orientation events.
 
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         DeviceBridge.prototype.removeDeviceOrientationListeners = function () {
             // Create and populate API request.
@@ -413,7 +413,7 @@ of the display. For display orientation, use the IDisplay APIs.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -60,7 +60,7 @@ var Adaptive;
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var CapabilitiesBridge = (function (_super) {
         __extends(CapabilitiesBridge, _super);
@@ -78,7 +78,7 @@ the platform, this method will return the current orientation. To capture device
 changes please use the IDevice and IDisplay functions and listeners API respectively.
 
            @return {Adaptive.ICapabilitiesOrientation} The default orientation for the device/display.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         CapabilitiesBridge.prototype.getOrientationDefault = function () {
             // Create and populate API request.
@@ -89,7 +89,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -120,7 +120,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
 support at least one orientation. This is usually PortaitUp.
 
            @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         CapabilitiesBridge.prototype.getOrientationsSupported = function () {
             // Create and populate API request.
@@ -131,7 +131,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -165,7 +165,7 @@ support at least one orientation. This is usually PortaitUp.
 
            @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
            @return {boolean} true is supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasButtonSupport = function (type) {
             // Create and populate API request.
@@ -177,7 +177,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -209,7 +209,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasCommunicationSupport = function (type) {
             // Create and populate API request.
@@ -221,7 +221,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -252,7 +252,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasDataSupport = function (type) {
             // Create and populate API request.
@@ -264,7 +264,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -296,7 +296,7 @@ device.
 
            @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasMediaSupport = function (type) {
             // Create and populate API request.
@@ -308,7 +308,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -339,7 +339,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasNetSupport = function (type) {
             // Create and populate API request.
@@ -351,7 +351,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -383,7 +383,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasNotificationSupport = function (type) {
             // Create and populate API request.
@@ -395,7 +395,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -426,7 +426,7 @@ device.
 
            @param {Adaptive.ICapabilitiesOrientation} orientation orientation Orientation type.
            @return {boolean} True if the given orientation is supported, false otherwise.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         CapabilitiesBridge.prototype.hasOrientationSupport = function (orientation) {
             // Create and populate API request.
@@ -438,7 +438,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -470,7 +470,7 @@ device.
 
            @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         CapabilitiesBridge.prototype.hasSensorSupport = function (type) {
             // Create and populate API request.
@@ -482,7 +482,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

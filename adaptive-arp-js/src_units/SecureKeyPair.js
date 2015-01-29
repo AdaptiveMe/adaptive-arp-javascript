@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Represents a single secureKey-value pair.
 
        @author Aryslan
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var SecureKeyPair = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} secureKey  name of the keypair
            @param {string} secureData value of the keypair
-           @since ARP 2.0
+           @since v2.0
         */
         function SecureKeyPair(secureKey, secureData) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns the object value
 
            @return {string} Value.
-           @since ARP 2.0
+           @since v2.0
         */
         SecureKeyPair.prototype.getSecureData = function () {
             return this.secureData;
@@ -79,7 +79,7 @@ var Adaptive;
            Sets the value for this object
 
            @param {string} secureData value to set.
-           @since ARP 2.0
+           @since v2.0
         */
         SecureKeyPair.prototype.setSecureData = function (secureData) {
             this.secureData = secureData;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the object secureKey name.
 
            @return {string} Key name.
-           @since ARP 2.0
+           @since v2.0
         */
         SecureKeyPair.prototype.getSecureKey = function () {
             return this.secureKey;
@@ -99,7 +99,7 @@ var Adaptive;
            Sets the secureKey name for this object.
 
            @param {string} secureKey Key name.
-           @since ARP 2.0
+           @since v2.0
         */
         SecureKeyPair.prototype.setSecureKey = function (secureKey) {
             this.secureKey = secureKey;

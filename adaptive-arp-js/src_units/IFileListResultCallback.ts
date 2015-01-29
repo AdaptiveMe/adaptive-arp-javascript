@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the File result operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              On error result of a file operation.
              @param error Error processing the request.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IFileListResultCallbackError);
           /**
              @method
              On correct result of a file operation.
              @param files Array of resulting files/folders.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(files:Array<FileDescriptor>);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              On partial result of a file operation, containing a warning.
              @param files   Array of resulting files/folders.
              @param warning Warning condition encountered.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(files:Array<FileDescriptor>, warning:IFileListResultCallbackWarning);
      }

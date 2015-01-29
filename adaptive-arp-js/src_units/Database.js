@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing a database reference.
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Database = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
 
            @param {string} name     Name of the DatabaseTable.
            @param {boolean} compress Compression enabled.
-           @since ARP 2.0
+           @since v2.0
         */
         function Database(name, compress) {
             _super.call(this);
@@ -69,7 +69,7 @@ var Adaptive;
            Returns if the table is compressed
 
            @return {boolean} Compression enabled
-           @since ARP 2.0
+           @since v2.0
         */
         Database.prototype.getCompress = function () {
             return this.compress;
@@ -79,7 +79,7 @@ var Adaptive;
            Sets if the table is compressed or not.
 
            @param {boolean} compress Compression enabled
-           @since ARP 2.0
+           @since v2.0
         */
         Database.prototype.setCompress = function (compress) {
             this.compress = compress;
@@ -89,7 +89,7 @@ var Adaptive;
            Returns the name.
 
            @return {string} The name of the table.
-           @since ARP 2.0
+           @since v2.0
         */
         Database.prototype.getName = function () {
             return this.name;
@@ -99,7 +99,7 @@ var Adaptive;
            Sets the name of the table.
 
            @param {string} name The name of the table.
-           @since ARP 2.0
+           @since v2.0
         */
         Database.prototype.setName = function (name) {
             this.name = name;

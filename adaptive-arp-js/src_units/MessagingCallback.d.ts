@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -106,14 +106,14 @@ declare module Adaptive {
            @method
            This method is called on Error
            @param {Adaptive.IMessagingCallbackError} error error returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IMessagingCallbackError): void;
         /**
            @method
            This method is called on Result
            @param {boolean} success success true if sent;false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(success: boolean): void;
         /**
@@ -121,7 +121,7 @@ declare module Adaptive {
            This method is called on Warning
            @param {boolean} success success true if sent;false otherwise
            @param {Adaptive.IMessagingCallbackWarning} warning warning returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(success: boolean, warning: IMessagingCallbackWarning): void;
     }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the data elements of an email addressee.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class EmailAddress extends APIBean {
@@ -56,7 +56,7 @@ module Adaptive {
              Constructor used by implementation
 
              @param {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(address: string) {
                super();
@@ -68,7 +68,7 @@ module Adaptive {
              Returns the email address
 
              @return {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           getAddress() : string {
                return this.address;
@@ -79,7 +79,7 @@ module Adaptive {
              Set the Email address
 
              @param {string} address of the Email
-             @since ARP 2.0
+             @since v2.0
           */
           setAddress(address: string) {
                this.address = address;

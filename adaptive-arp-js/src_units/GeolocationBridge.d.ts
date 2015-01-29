@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface for Managing the Geolocation operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class GeolocationBridge extends BaseSensorBridge implements IGeolocation {
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
            Register a new listener that will receive geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP 2.0
+           @since v2.0
         */
         addGeolocationListener(listener: IGeolocationListener): void;
         /**
@@ -68,14 +68,14 @@ declare module Adaptive {
            De-registers an existing listener from receiving geolocation events.
 
            @param {Adaptive.GeolocationListener} listener listener to be registered.
-           @since ARP 2.0
+           @since v2.0
         */
         removeGeolocationListener(listener: IGeolocationListener): void;
         /**
            @method
            Removed all existing listeners from receiving geolocation events.
 
-           @since ARP 2.0
+           @since v2.0
         */
         removeGeolocationListeners(): void;
     }

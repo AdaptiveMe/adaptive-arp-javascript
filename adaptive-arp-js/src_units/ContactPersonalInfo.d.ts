@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing the personal info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class ContactPersonalInfo extends APIBean {
@@ -68,7 +68,7 @@ declare module Adaptive {
            @param {string} middleName of the Contact
            @param {string} lastName   of the Contact
            @param {Adaptive.ContactPersonalInfoTitle} title      of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(name: string, middleName: string, lastName: string, title: ContactPersonalInfoTitle);
         /**
@@ -76,7 +76,7 @@ declare module Adaptive {
            Returns the title of the Contact
 
            @return {Adaptive.ContactPersonalInfoTitle} Title
-           @since ARP 2.0
+           @since v2.0
         */
         getTitle(): ContactPersonalInfoTitle;
         /**
@@ -84,7 +84,7 @@ declare module Adaptive {
            Set the Title of the Contact
 
            @param {Adaptive.ContactPersonalInfoTitle} title of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         setTitle(title: ContactPersonalInfoTitle): void;
         /**
@@ -92,7 +92,7 @@ declare module Adaptive {
            Returns the last name of the Contact
 
            @return {string} lastName
-           @since ARP 2.0
+           @since v2.0
         */
         getLastName(): string;
         /**
@@ -100,7 +100,7 @@ declare module Adaptive {
            Set the last name of the Contact
 
            @param {string} lastName of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         setLastName(lastName: string): void;
         /**
@@ -108,7 +108,7 @@ declare module Adaptive {
            Returns the middle name of the Contact
 
            @return {string} middelName
-           @since ARP 2.0
+           @since v2.0
         */
         getMiddleName(): string;
         /**
@@ -116,7 +116,7 @@ declare module Adaptive {
            Set the middle name of the Contact
 
            @param {string} middleName of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         setMiddleName(middleName: string): void;
         /**
@@ -124,7 +124,7 @@ declare module Adaptive {
            Returns the name of the Contact
 
            @return {string} name
-           @since ARP 2.0
+           @since v2.0
         */
         getName(): string;
         /**
@@ -132,7 +132,7 @@ declare module Adaptive {
            Set the name of the Contact
 
            @param {string} name of the Contact
-           @since ARP 2.0
+           @since v2.0
         */
         setName(name: string): void;
         /**

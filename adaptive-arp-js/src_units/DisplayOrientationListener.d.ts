@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -108,14 +108,14 @@ declare module Adaptive {
            Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the display.
            @param {Adaptive.IDisplayOrientationListenerError} error error The error condition... generally unknown as it is unexpected!
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         onError(error: IDisplayOrientationListenerError): void;
         /**
            @method
            Event fired with the successful start and finish of a rotation.
            @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         onResult(event: RotationEvent): void;
         /**
@@ -124,7 +124,7 @@ platform impedes the rotation of the display.
 event may be fired if the application vetoes display rotation before rotation is completed.
            @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
            @param {Adaptive.IDisplayOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         onWarning(event: RotationEvent, warning: IDisplayOrientationListenerWarning): void;
     }

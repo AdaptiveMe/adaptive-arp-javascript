@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Structure representing the data elements of an email.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class Email extends APIBean {
@@ -84,7 +84,7 @@ declare module Adaptive {
            @param {string} messageBody         body of the email
            @param {string} messageBodyMimeType mime type of the body
            @param {string} subject             of the email
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(toRecipients: EmailAddress[], ccRecipients: EmailAddress[], bccRecipients: EmailAddress[], emailAttachmentData: EmailAttachmentData[], messageBody: string, messageBodyMimeType: string, subject: string);
         /**
@@ -92,7 +92,7 @@ declare module Adaptive {
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         getBccRecipients(): EmailAddress[];
         /**
@@ -100,7 +100,7 @@ declare module Adaptive {
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         setBccRecipients(bccRecipients: EmailAddress[]): void;
         /**
@@ -108,7 +108,7 @@ declare module Adaptive {
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         getCcRecipients(): EmailAddress[];
         /**
@@ -116,7 +116,7 @@ declare module Adaptive {
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
-           @since ARP 2.0
+           @since v2.0
         */
         setCcRecipients(ccRecipients: EmailAddress[]): void;
         /**
@@ -124,7 +124,7 @@ declare module Adaptive {
            Returns an array of attachments
 
            @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
-           @since ARP 2.0
+           @since v2.0
         */
         getEmailAttachmentData(): EmailAttachmentData[];
         /**
@@ -132,7 +132,7 @@ declare module Adaptive {
            Set the email attachment data array
 
            @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
-           @since ARP 2.0
+           @since v2.0
         */
         setEmailAttachmentData(emailAttachmentData: EmailAttachmentData[]): void;
         /**
@@ -140,7 +140,7 @@ declare module Adaptive {
            Returns the message body of the email
 
            @return {string} message Body string of the email
-           @since ARP 2.0
+           @since v2.0
         */
         getMessageBody(): string;
         /**
@@ -148,7 +148,7 @@ declare module Adaptive {
            Set the message body of the email
 
            @param {string} messageBody message body of the email
-           @since ARP 2.0
+           @since v2.0
         */
         setMessageBody(messageBody: string): void;
         /**
@@ -156,7 +156,7 @@ declare module Adaptive {
            Returns the myme type of the message body
 
            @return {string} mime type string of the message boddy
-           @since ARP 2.0
+           @since v2.0
         */
         getMessageBodyMimeType(): string;
         /**
@@ -164,7 +164,7 @@ declare module Adaptive {
            Set the mime type for the message body
 
            @param {string} messageBodyMimeType type of the body message
-           @since ARP 2.0
+           @since v2.0
         */
         setMessageBodyMimeType(messageBodyMimeType: string): void;
         /**
@@ -172,7 +172,7 @@ declare module Adaptive {
            Returns the subject of the email
 
            @return {string} subject string of the email
-           @since ARP 2.0
+           @since v2.0
         */
         getSubject(): string;
         /**
@@ -180,7 +180,7 @@ declare module Adaptive {
            Set the subject of the email
 
            @param {string} subject of the email
-           @since ARP 2.0
+           @since v2.0
         */
         setSubject(subject: string): void;
         /**
@@ -188,7 +188,7 @@ declare module Adaptive {
            Returns the array of recipients
 
            @return {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP 2.0
+           @since v2.0
         */
         getToRecipients(): EmailAddress[];
         /**
@@ -196,7 +196,7 @@ declare module Adaptive {
            Set the array of recipients
 
            @param {Adaptive.EmailAddress[]} toRecipients array of recipients
-           @since ARP 2.0
+           @since v2.0
         */
         setToRecipients(toRecipients: EmailAddress[]): void;
         /**

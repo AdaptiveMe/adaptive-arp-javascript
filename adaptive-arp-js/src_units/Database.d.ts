@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing a database reference.
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class Database extends APIBean {
@@ -57,7 +57,7 @@ declare module Adaptive {
 
            @param {string} name     Name of the DatabaseTable.
            @param {boolean} compress Compression enabled.
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(name: string, compress: boolean);
         /**
@@ -65,7 +65,7 @@ declare module Adaptive {
            Returns if the table is compressed
 
            @return {boolean} Compression enabled
-           @since ARP 2.0
+           @since v2.0
         */
         getCompress(): boolean;
         /**
@@ -73,7 +73,7 @@ declare module Adaptive {
            Sets if the table is compressed or not.
 
            @param {boolean} compress Compression enabled
-           @since ARP 2.0
+           @since v2.0
         */
         setCompress(compress: boolean): void;
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            Returns the name.
 
            @return {string} The name of the table.
-           @since ARP 2.0
+           @since v2.0
         */
         getName(): string;
         /**
@@ -89,7 +89,7 @@ declare module Adaptive {
            Sets the name of the table.
 
            @param {string} name The name of the table.
-           @since ARP 2.0
+           @since v2.0
         */
         setName(name: string): void;
         /**

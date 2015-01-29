@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Geolocation = (function (_super) {
@@ -61,7 +61,7 @@ var Adaptive;
            @param {number} xDoP      Dilution of precision on the X measurement
            @param {number} yDoP      Dilution of precision on the Y measurement
            @param {number} timestamp Timestamp of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         function Geolocation(latitude, longitude, altitude, xDoP, yDoP, timestamp) {
             _super.call(this);
@@ -77,7 +77,7 @@ var Adaptive;
            Returns altitude in meters
 
            @return {number} Altitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.getAltitude = function () {
             return this.altitude;
@@ -87,7 +87,7 @@ var Adaptive;
            Set altitude in meters
 
            @param {number} altitude Altitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.setAltitude = function (altitude) {
             this.altitude = altitude;
@@ -97,7 +97,7 @@ var Adaptive;
            Returns the latitude in degrees
 
            @return {number} Latitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.getLatitude = function () {
             return this.latitude;
@@ -107,7 +107,7 @@ var Adaptive;
            Set the latitude in degrees
 
            @param {number} latitude Latitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.setLatitude = function (latitude) {
             this.latitude = latitude;
@@ -117,7 +117,7 @@ var Adaptive;
            Returns the longitude in degrees
 
            @return {number} Longitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.getLongitude = function () {
             return this.longitude;
@@ -127,7 +127,7 @@ var Adaptive;
            Returns the latitude in degrees
 
            @param {number} longitude Longitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.setLongitude = function (longitude) {
             this.longitude = longitude;
@@ -137,7 +137,7 @@ var Adaptive;
            Timestamp Getter
 
            @return {number} Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.getTimestamp = function () {
             return this.timestamp;
@@ -147,7 +147,7 @@ var Adaptive;
            Timestamp Setter
 
            @param {number} timestamp Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         Geolocation.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;

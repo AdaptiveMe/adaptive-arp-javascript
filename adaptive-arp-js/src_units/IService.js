@@ -27,13 +27,14 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseCommunication.ts"/>
+///<reference path="IServiceMethod.ts"/>
 ///<reference path="IServiceResultCallback.ts"/>
-///<reference path="Service.ts"/>
 ///<reference path="ServiceRequest.ts"/>
+///<reference path="ServiceToken.ts"/>
 //# sourceMappingURL=IService.js.map

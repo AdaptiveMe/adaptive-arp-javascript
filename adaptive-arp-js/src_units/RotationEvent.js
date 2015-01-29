@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,7 +48,7 @@ var Adaptive;
        Object for reporting orientation change events for device and display.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0.5
+       @since v2.0.5
        @version 1.0
     */
     var RotationEvent = (function (_super) {
@@ -61,7 +61,7 @@ var Adaptive;
            @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation when the event was fired.
            @param {Adaptive.RotationEventState} state       State of the event (WillBegin, DidFinish).
            @param {number} timestamp   Timestamp in milliseconds when the event was fired.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         function RotationEvent(origin, destination, state, timestamp) {
             _super.call(this);
@@ -75,7 +75,7 @@ var Adaptive;
            Gets the destination orientation of the event.
 
            @return {Adaptive.ICapabilitiesOrientation} Destination orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.getDestination = function () {
             return this.destination;
@@ -85,7 +85,7 @@ var Adaptive;
            Sets the destination orientation of the event.
 
            @param {Adaptive.ICapabilitiesOrientation} destination Destination orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.setDestination = function (destination) {
             this.destination = destination;
@@ -95,7 +95,7 @@ var Adaptive;
            Get the origin orientation of the event.
 
            @return {Adaptive.ICapabilitiesOrientation} Origin orientation.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.getOrigin = function () {
             return this.origin;
@@ -105,7 +105,7 @@ var Adaptive;
            Set the origin orientation of the event.
 
            @param {Adaptive.ICapabilitiesOrientation} origin Origin orientation
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.setOrigin = function (origin) {
             this.origin = origin;
@@ -115,7 +115,7 @@ var Adaptive;
            Gets the current state of the event.
 
            @return {Adaptive.RotationEventState} State of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.getState = function () {
             return this.state;
@@ -125,7 +125,7 @@ var Adaptive;
            Sets the current state of the event.
 
            @param {Adaptive.RotationEventState} state The state of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.setState = function (state) {
             this.state = state;
@@ -135,7 +135,7 @@ var Adaptive;
            Gets the timestamp in milliseconds of the event.
 
            @return {number} Timestamp of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.getTimestamp = function () {
             return this.timestamp;
@@ -145,7 +145,7 @@ var Adaptive;
            Sets the timestamp in milliseconds of the event.
 
            @param {number} timestamp Timestamp of the event.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         RotationEvent.prototype.setTimestamp = function (timestamp) {
             this.timestamp = timestamp;

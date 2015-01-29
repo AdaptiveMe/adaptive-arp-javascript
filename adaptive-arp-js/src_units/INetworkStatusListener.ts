@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the Network status listener events
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:INetworkStatusListenerError);
           /**
              @method
              Called when network connection changes somehow.
              @param network Change to this network.
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(network:ICapabilitiesNet);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              Status received with warning
              @param network Change to this network.
              @param warning Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(network:ICapabilitiesNet, warning:INetworkStatusListenerWarning);
      }

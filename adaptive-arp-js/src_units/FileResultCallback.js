@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            On error result of a file operation.
            @param {Adaptive.IFileResultCallbackError} error error Error processing the request.
-           @since ARP 2.0
+           @since v2.0
         */
         FileResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -165,7 +165,7 @@ var Adaptive;
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor} storageFile storageFile Reference to the resulting file.
-           @since ARP 2.0
+           @since v2.0
         */
         FileResultCallback.prototype.onResult = function (storageFile) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -180,7 +180,7 @@ var Adaptive;
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor} file file    Reference to the offending file.
            @param {Adaptive.IFileResultCallbackWarning} warning warning Warning processing the request.
-           @since ARP 2.0
+           @since v2.0
         */
         FileResultCallback.prototype.onWarning = function (file, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

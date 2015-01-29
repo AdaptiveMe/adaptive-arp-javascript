@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for Managing the Geolocation results
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -55,14 +55,14 @@ module Adaptive {
              @method
              No data received - error condition, not authorized or hardware not available.
              @param error Type of error encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onError(error:IGeolocationListenerError);
           /**
              @method
              Correct data received.
              @param geolocation Geolocation Bean
-             @since ARP 2.0
+             @since v2.0
           */
           onResult(geolocation:Geolocation);
           /**
@@ -70,7 +70,7 @@ module Adaptive {
              Data received with warning - ie. HighDoP
              @param geolocation Geolocation Bean
              @param warning     Type of warning encountered during reading.
-             @since ARP 2.0
+             @since v2.0
           */
           onWarning(geolocation:Geolocation, warning:IGeolocationListenerWarning);
      }

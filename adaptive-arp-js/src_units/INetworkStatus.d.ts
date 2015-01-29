@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Interface for Managing the Network status
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -50,20 +50,20 @@ declare module Adaptive {
            @method
            Add the listener for network status changes of the app
            @param listener Listener with the result
-           @since ARP 2.0
+           @since v2.0
         */
         addNetworkStatusListener(listener: INetworkStatusListener): any;
         /**
            @method
            Un-registers an existing listener from receiving network status events.
            @param listener Listener with the result
-           @since ARP 2.0
+           @since v2.0
         */
         removeNetworkStatusListener(listener: INetworkStatusListener): any;
         /**
            @method
            Removes all existing listeners from receiving network status events.
-           @since ARP 2.0
+           @since v2.0
         */
         removeNetworkStatusListeners(): any;
     }

@@ -27,87 +27,93 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="APIBean.ts"/>
+///<reference path="IServiceCertificateValidation.ts"/>
 ///<reference path="ServicePath.ts"/>
 
 module Adaptive {
 
      /**
         @class Adaptive.ServiceEndpoint
-        @extends Adaptive.APIBean
         Structure representing a remote or local service access end-point.
 
         @author Aryslan
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
-     export class ServiceEndpoint extends APIBean {
+     export class ServiceEndpoint {
 
           /**
-             The remote service host (alias or IP).
+             Type of validation to be performed for SSL hosts.
           */
-          host : string;
+          validationType : IServiceCertificateValidation;
           /**
-             The remote service paths (to be added to the host and port url).
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
+          */
+          hostURI : string;
+          /**
+             The remote service paths (to be added to the hostURI and port url).
           */
           paths : Array<ServicePath>;
-          /**
-             The remote service accessible port.
-          */
-          port : number;
-          /**
-             The proxy url - if needed - to access the remote service. If IP and port are used, use the following syntax: "http://<IP>:<Port>".
-          */
-          proxy : string;
-          /**
-             The remote service scheme.
-          */
-          scheme : string;
           /**
              @method constructor
              Constructor with parameters
 
-             @param {string} host   Remote service host
-             @param {Adaptive.ServicePath[]} paths  Remote service Paths
-             @param {number} port   Remote service Port
-             @param {string} proxy  Proxy url "http://IP_ADDRESS:PORT_NUMBER"
-             @param {string} scheme Remote service scheme
-             @since ARP 2.0
+             @param {string} hostURI Remote service hostURI
+             @param {Adaptive.ServicePath[]} paths   Remote service Paths
+             @since v2.0.6
           */
-          constructor(host: string, paths: Array<ServicePath>, port: number, proxy: string, scheme: string) {
-               super();
-               this.host = host;
+          constructor(hostURI: string, paths: Array<ServicePath>) {
+               this.hostURI = hostURI;
                this.paths = paths;
-               this.port = port;
-               this.proxy = proxy;
-               this.scheme = scheme;
           }
 
           /**
              @method
-             Returns the Remote service host
+             Gets the validation type for the certificate of a SSL host.
 
-             @return {string} Remote service host
-             @since ARP 2.0
+             @return {Adaptive.IServiceCertificateValidation} Type of validation.
+             @since v2.0.6
           */
-          getHost() : string {
-               return this.host;
+          getValidationType() : IServiceCertificateValidation {
+               return this.validationType;
           }
 
           /**
              @method
-             Set the Remote service host
+             Sets the validation type for the certificate of a SSL host.
 
-             @param {string} host Remote service host
-             @since ARP 2.0
+             @param {Adaptive.IServiceCertificateValidation} validationType Type of validation.
+             @since v2.0.6
           */
-          setHost(host: string) {
-               this.host = host;
+          setValidationType(validationType: IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
+          /**
+             @method
+             Returns the Remote service hostURI
+
+             @return {string} Remote service hostURI
+             @since v2.0
+          */
+          getHostURI() : string {
+               return this.hostURI;
+          }
+
+          /**
+             @method
+             Set the Remote service hostURI
+
+             @param {string} hostURI Remote service hostURI
+             @since v2.0
+          */
+          setHostURI(hostURI: string) {
+               this.hostURI = hostURI;
           }
 
           /**
@@ -115,7 +121,7 @@ module Adaptive {
              Returns the Remote service Paths
 
              @return {Adaptive.ServicePath[]} Remote service Paths
-             @since ARP 2.0
+             @since v2.0
           */
           getPaths() : Array<ServicePath> {
                return this.paths;
@@ -126,76 +132,10 @@ module Adaptive {
              Set the Remote service Paths
 
              @param {Adaptive.ServicePath[]} paths Remote service Paths
-             @since ARP 2.0
+             @since v2.0
           */
           setPaths(paths: Array<ServicePath>) {
                this.paths = paths;
-          }
-
-          /**
-             @method
-             Returns the Remote service Port
-
-             @return {number} Remote service Port
-             @since ARP 2.0
-          */
-          getPort() : number {
-               return this.port;
-          }
-
-          /**
-             @method
-             Set the Remote service Port
-
-             @param {number} port Remote service Port
-             @since ARP 2.0
-          */
-          setPort(port: number) {
-               this.port = port;
-          }
-
-          /**
-             @method
-             Return the Proxy url
-
-             @return {string} Proxy url
-             @since ARP 2.0
-          */
-          getProxy() : string {
-               return this.proxy;
-          }
-
-          /**
-             @method
-             Set the Proxy url
-
-             @param {string} proxy Proxy url
-             @since ARP 2.0
-          */
-          setProxy(proxy: string) {
-               this.proxy = proxy;
-          }
-
-          /**
-             @method
-             Returns the Remote service scheme
-
-             @return {string} Remote service scheme
-             @since ARP 2.0
-          */
-          getScheme() : string {
-               return this.scheme;
-          }
-
-          /**
-             @method
-             Set the Remote service scheme
-
-             @param {string} scheme Remote service scheme
-             @since ARP 2.0
-          */
-          setScheme(scheme: string) {
-               this.scheme = scheme;
           }
 
           /**
@@ -206,10 +146,15 @@ module Adaptive {
              @return {Adaptive.ServiceEndpoint} Wrapped object instance.
           */
           static toObject(object : any) : ServiceEndpoint {
-               var result : ServiceEndpoint = new ServiceEndpoint(null, null, null, null, null);
+               var result : ServiceEndpoint = new ServiceEndpoint(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.host!=null) result.host = object.host;
+               if (object!=null && object.validationType!=null) {
+                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
+               } else {
+                    result.validationType = IServiceCertificateValidation.toObject(null);
+               }
+               if (object!=null && object.hostURI!=null) result.hostURI = object.hostURI;
                if (object != null && object.paths != null) {
                     result.paths = new Array<ServicePath>();
                     for(var i = 0; i < object.paths.length; i++) {
@@ -221,9 +166,6 @@ module Adaptive {
                          }
                     }
                }
-               if (object!=null && object.port!=null) result.port = object.port;
-               if (object!=null && object.proxy!=null) result.proxy = object.proxy;
-               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
 
                return result;
           }

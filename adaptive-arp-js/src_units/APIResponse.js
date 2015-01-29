@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,7 @@ var Adaptive;
        Structure representing a JSON response to the HTML5 layer.
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var APIResponse = (function () {
@@ -60,7 +60,7 @@ var Adaptive;
            Response getter
 
            @return {string} String representing the JavaScript value or JSON object representation of the response.
-           @since ARP 2.0
+           @since v2.0
         */
         APIResponse.prototype.getResponse = function () {
             return this.response;

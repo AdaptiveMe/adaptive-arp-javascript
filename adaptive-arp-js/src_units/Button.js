@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Structure representing the a physical or logical button on a device.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Button = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP 2.0
+           @since v2.0
         */
         function Button(type) {
             _super.call(this);
@@ -68,7 +68,7 @@ var Adaptive;
            Returns the button type
 
            @return {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP 2.0
+           @since v2.0
         */
         Button.prototype.getType = function () {
             return this.type;
@@ -78,7 +78,7 @@ var Adaptive;
            Setter for the button type
 
            @param {Adaptive.ICapabilitiesButton} type Button Type
-           @since ARP 2.0
+           @since v2.0
         */
         Button.prototype.setType = function (type) {
             this.type = type;

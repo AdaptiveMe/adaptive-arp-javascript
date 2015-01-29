@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the basic device information.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var DeviceInfo = (function (_super) {
@@ -59,7 +59,7 @@ var Adaptive;
            @param {string} model  of the device.
            @param {string} vendor of the device.
            @param {string} uuid   unique* identifier (* platform dependent).
-           @since ARP 2.0
+           @since v2.0
         */
         function DeviceInfo(name, model, vendor, uuid) {
             _super.call(this);
@@ -73,7 +73,7 @@ var Adaptive;
            Returns the model of the device.
 
            @return {string} String with the model of the device.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceInfo.prototype.getModel = function () {
             return this.model;
@@ -92,7 +92,7 @@ var Adaptive;
            Returns the name of the device.
 
            @return {string} String with device name.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceInfo.prototype.getName = function () {
             return this.name;
@@ -111,7 +111,7 @@ var Adaptive;
            Returns the platform dependent UUID of the device.
 
            @return {string} String with the 128-bit device identifier.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceInfo.prototype.getUuid = function () {
             return this.uuid;
@@ -132,7 +132,7 @@ be unique for a specific instance of an application on a specific device.
            Returns the vendor of the device.
 
            @return {string} String with the vendor name.
-           @since ARP 2.0
+           @since v2.0
         */
         DeviceInfo.prototype.getVendor = function () {
             return this.vendor;

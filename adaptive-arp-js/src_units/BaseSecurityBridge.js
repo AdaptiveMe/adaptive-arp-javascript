@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ var Adaptive;
        Base application for Security purposes
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var BaseSecurityBridge = (function () {
         /**
@@ -69,7 +69,7 @@ var Adaptive;
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.0.5";
+            return "v2.0.6";
         };
         return BaseSecurityBridge;
     })();

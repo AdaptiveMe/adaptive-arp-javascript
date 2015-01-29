@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,7 +55,7 @@ var Adaptive;
        Interface for Managing the Security operations
 
        @author Aryslan
-       @since ARP 2.0
+       @since v2.0
     */
     var SecurityBridge = (function (_super) {
         __extends(SecurityBridge, _super);
@@ -73,7 +73,7 @@ var Adaptive;
            @param {string[]} keys keys             Array with the key names to delete.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 2.0
+           @since v2.0
         */
         SecurityBridge.prototype.deleteSecureKeyValuePairs = function (keys, publicAccessName, callback) {
             // Create and populate API request.
@@ -86,7 +86,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -124,7 +124,7 @@ var Adaptive;
            @param {string[]} keys keys             Array with the key names to retrieve.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 2.0
+           @since v2.0
         */
         SecurityBridge.prototype.getSecureKeyValuePairs = function (keys, publicAccessName, callback) {
             // Create and populate API request.
@@ -137,7 +137,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -173,7 +173,7 @@ var Adaptive;
            Returns if the device has been modified in anyhow
 
            @return {boolean} true if the device has been modified; false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         SecurityBridge.prototype.isDeviceModified = function () {
             // Create and populate API request.
@@ -184,7 +184,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -216,7 +216,7 @@ var Adaptive;
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues        Array containing the items to store on the device internal memory.
            @param {string} publicAccessName publicAccessName The name of the shared internal storage object (if needed).
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
-           @since ARP 2.0
+           @since v2.0
         */
         SecurityBridge.prototype.setSecureKeyValuePairs = function (keyValues, publicAccessName, callback) {
             // Create and populate API request.
@@ -229,7 +229,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             // Add callback reference to local dictionary.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));

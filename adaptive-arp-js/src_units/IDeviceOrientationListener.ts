@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Interface for handling device orientation change events.
 
         @author Carlos Lozano Diez
-        @since ARP 2.0.5
+        @since v2.0.5
         @version 1.0
      */
      /**
@@ -56,14 +56,14 @@ module Adaptive {
              Although extremely unlikely, this event will be fired if something beyond the control of the
 platform impedes the rotation of the device.
              @param error The error condition... generally unknown as it is unexpected!
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onError(error:IDeviceOrientationListenerError);
           /**
              @method
              Event fired with the successful start and finish of a rotation.
              @param event RotationEvent containing origin, destination and state of the event.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onResult(event:RotationEvent);
           /**
@@ -72,7 +72,7 @@ platform impedes the rotation of the device.
 event may be fired if the devices vetoes the rotation before rotation is completed.
              @param event   RotationEvent containing origin, destination and state of the event.
              @param warning Type of condition that aborted rotation execution.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           onWarning(event:RotationEvent, warning:IDeviceOrientationListenerWarning);
      }

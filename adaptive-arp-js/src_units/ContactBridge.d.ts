@@ -41,7 +41,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ declare module Adaptive {
        Interface for Managing the Contact operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class ContactBridge extends BasePIMBridge implements IContact {
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP 2.0
+           @since v2.0
         */
         getContact(contact: ContactUid, callback: IContactResultCallback): void;
         /**
@@ -75,7 +75,7 @@ declare module Adaptive {
 
            @param {Adaptive.ContactUid} contact contact  id to search for
            @param {Adaptive.ContactPhotoResultCallback} callback callback called for return
-           @since ARP 2.0
+           @since v2.0
         */
         getContactPhoto(contact: ContactUid, callback: IContactPhotoResultCallback): void;
         /**
@@ -83,7 +83,7 @@ declare module Adaptive {
            Get all contacts
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP 2.0
+           @since v2.0
         */
         getContacts(callback: IContactResultCallback): void;
         /**
@@ -92,7 +92,7 @@ declare module Adaptive {
 
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
-           @since ARP 2.0
+           @since v2.0
         */
         getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): void;
         /**
@@ -102,7 +102,7 @@ declare module Adaptive {
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP 2.0
+           @since v2.0
         */
         getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): void;
         /**
@@ -111,7 +111,7 @@ declare module Adaptive {
 
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
-           @since ARP 2.0
+           @since v2.0
         */
         searchContacts(term: string, callback: IContactResultCallback): void;
         /**
@@ -121,7 +121,7 @@ declare module Adaptive {
            @param {string} term term     string to search
            @param {Adaptive.ContactResultCallback} callback callback called for return
            @param {Adaptive.IContactFilter[]} filter filter   to search for
-           @since ARP 2.0
+           @since v2.0
         */
         searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): void;
         /**
@@ -131,7 +131,7 @@ declare module Adaptive {
            @param {Adaptive.ContactUid} contact contact  id to assign the photo
            @param {number[]} pngImage pngImage photo as byte array
            @return {boolean} true if set is successful;false otherwise
-           @since ARP 2.0
+           @since v2.0
         */
         setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
     }

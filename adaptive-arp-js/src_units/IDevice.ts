@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ module Adaptive {
         Interface for Managing the Device operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -57,28 +57,28 @@ module Adaptive {
              @method
              Register a new listener that will receive button events.
              @param listener to be registered.
-             @since ARP 2.0
+             @since v2.0
           */
           addButtonListener(listener:IButtonListener);
           /**
              @method
              Add a listener to start receiving device orientation change events.
              @param listener Listener to add to receive orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           addDeviceOrientationListener(listener:IDeviceOrientationListener);
           /**
              @method
              Returns the device information for the current device executing the runtime.
              @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-             @since ARP 2.0
+             @since v2.0
           */
           getDeviceInfo() : DeviceInfo;
           /**
              @method
              Gets the current Locale for the device.
              @return {Adaptive.Locale} The current Locale information.
-             @since ARP 2.0
+             @since v2.0
           */
           getLocaleCurrent() : Locale;
           /**
@@ -86,33 +86,33 @@ module Adaptive {
              Returns the current orientation of the device. Please note that this may be different from the orientation
 of the display. For display orientation, use the IDisplay APIs.
              @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           getOrientationCurrent() : ICapabilitiesOrientation;
           /**
              @method
              De-registers an existing listener from receiving button events.
              @param listener to be removed.
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListener(listener:IButtonListener);
           /**
              @method
              Removed all existing listeners from receiving button events.
-             @since ARP 2.0
+             @since v2.0
           */
           removeButtonListeners();
           /**
              @method
              Remove a listener to stop receiving device orientation change events.
              @param listener Listener to remove from receiving orientation change events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListener(listener:IDeviceOrientationListener);
           /**
              @method
              Remove all listeners receiving device orientation events.
-             @since ARP 2.0.5
+             @since v2.0.5
           */
           removeDeviceOrientationListeners();
      }

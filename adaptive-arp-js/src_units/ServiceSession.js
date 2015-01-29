@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,7 +38,8 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIBean.ts"/>
-///<reference path="ServiceCookie.ts"/>
+///<reference path="ServiceSessionAttribute.ts"/>
+///<reference path="ServiceSessionCookie.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
@@ -47,18 +48,18 @@ var Adaptive;
        Represents a session object for HTTP request and responses
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var ServiceSession = (function (_super) {
         __extends(ServiceSession, _super);
         /**
            @method constructor
-           Constructor with fields
+           Constructor with fields.
 
-           @param {Adaptive.ServiceCookie[]} cookies    The cookies of the response
-           @param {string[]} attributes Attributes of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionCookie[]} cookies    The cookies of the request or response.
+           @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+           @since v2.0
         */
         function ServiceSession(cookies, attributes) {
             _super.call(this);
@@ -67,40 +68,40 @@ var Adaptive;
         }
         /**
            @method
-           Gets the attributes of the response
+           Gets the attributes of the request or response.
 
-           @return {string[]} Attributes of the response
-           @since ARP 2.0
+           @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
+           @since v2.0
         */
         ServiceSession.prototype.getAttributes = function () {
             return this.attributes;
         };
         /**
            @method
-           Sets the attributes for the response
+           Sets the attributes for the request or response.
 
-           @param {string[]} attributes Attributes of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
+           @since v2.0
         */
         ServiceSession.prototype.setAttributes = function (attributes) {
             this.attributes = attributes;
         };
         /**
            @method
-           Returns the cookies of the response
+           Returns the cookies of the request or response.
 
-           @return {Adaptive.ServiceCookie[]} The cookies of the response
-           @since ARP 2.0
+           @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
+           @since v2.0
         */
         ServiceSession.prototype.getCookies = function () {
             return this.cookies;
         };
         /**
            @method
-           Sets the cookies of the response
+           Sets the cookies of the request or response.
 
-           @param {Adaptive.ServiceCookie[]} cookies The cookies of the response
-           @since ARP 2.0
+           @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
+           @since v2.0
         */
         ServiceSession.prototype.setCookies = function (cookies) {
             this.cookies = cookies;
@@ -120,10 +121,10 @@ var Adaptive;
                 for (var i = 0; i < object.cookies.length; i++) {
                     var __value__ = object.cookies[i];
                     if (__value__ != null) {
-                        result.cookies.push(Adaptive.ServiceCookie.toObject(__value__));
+                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(__value__));
                     }
                     else {
-                        result.cookies.push(Adaptive.ServiceCookie.toObject(null));
+                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(null));
                     }
                 }
             }
@@ -131,8 +132,12 @@ var Adaptive;
                 result.attributes = new Array();
                 for (var i = 0; i < object.attributes.length; i++) {
                     var __value__ = object.attributes[i];
-                    if (__value__ != null)
-                        result.attributes.push(__value__);
+                    if (__value__ != null) {
+                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(__value__));
+                    }
+                    else {
+                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(null));
+                    }
                 }
             }
             return result;

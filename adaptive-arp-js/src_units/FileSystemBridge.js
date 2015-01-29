@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,7 +53,7 @@ var Adaptive;
        Interface for Managing the File System operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var FileSystemBridge = (function (_super) {
         __extends(FileSystemBridge, _super);
@@ -72,7 +72,7 @@ This method does not create the actual file in the specified folder.
            @param {Adaptive.FileDescriptor} parent parent Parent directory.
            @param {string} name name   Name of new file or directory.
            @return {Adaptive.FileDescriptor} A reference to a new or existing location in the filesystem.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.createFileDescriptor = function (parent, name) {
             // Create and populate API request.
@@ -85,7 +85,7 @@ This method does not create the actual file in the specified folder.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -117,7 +117,7 @@ This path must always be writable by the current application.
 This path is volatile and may be cleaned by the OS periodically.
 
            @return {Adaptive.FileDescriptor} Path to the application's cache folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
             // Create and populate API request.
@@ -128,7 +128,7 @@ This path is volatile and may be cleaned by the OS periodically.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -159,7 +159,7 @@ This path is volatile and may be cleaned by the OS periodically.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's cloud storage folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
             // Create and populate API request.
@@ -170,7 +170,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -201,7 +201,7 @@ This path must always be writable by the current application.
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
             // Create and populate API request.
@@ -212,7 +212,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -243,7 +243,7 @@ This path must always be writable by the current application.
 This path may or may not be directly readable or writable - it usually contains the app binary and data.
 
            @return {Adaptive.FileDescriptor} Path to the application folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getApplicationFolder = function () {
             // Create and populate API request.
@@ -254,7 +254,7 @@ This path may or may not be directly readable or writable - it usually contains 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -285,7 +285,7 @@ This path may or may not be directly readable or writable - it usually contains 
 This path must always be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's protected storage folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
             // Create and populate API request.
@@ -296,7 +296,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -326,7 +326,7 @@ This path must always be writable by the current application.
            Returns the file system dependent file separator.
 
            @return {string} char with the directory/file separator.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getSeparator = function () {
             // Create and populate API request.
@@ -337,7 +337,7 @@ This path must always be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -370,7 +370,7 @@ definition, not secure.
 This path may or may not be writable by the current application.
 
            @return {Adaptive.FileDescriptor} Path to the application's documents folder.
-           @since ARP 2.0
+           @since v2.0
         */
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
             // Create and populate API request.
@@ -381,7 +381,7 @@ This path may or may not be writable by the current application.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;

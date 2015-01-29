@@ -41,7 +41,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ declare module Adaptive {
        Interface for Managing the Device operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class DeviceBridge extends BaseSystemBridge implements IDevice {
         /**
@@ -65,7 +65,7 @@ declare module Adaptive {
            Register a new listener that will receive button events.
 
            @param {Adaptive.ButtonListener} listener listener to be registered.
-           @since ARP 2.0
+           @since v2.0
         */
         addButtonListener(listener: IButtonListener): void;
         /**
@@ -73,7 +73,7 @@ declare module Adaptive {
            Add a listener to start receiving device orientation change events.
 
            @param {Adaptive.DeviceOrientationListener} listener listener Listener to add to receive orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         addDeviceOrientationListener(listener: IDeviceOrientationListener): void;
         /**
@@ -81,7 +81,7 @@ declare module Adaptive {
            Returns the device information for the current device executing the runtime.
 
            @return {Adaptive.DeviceInfo} DeviceInfo for the current device.
-           @since ARP 2.0
+           @since v2.0
         */
         getDeviceInfo(): DeviceInfo;
         /**
@@ -89,7 +89,7 @@ declare module Adaptive {
            Gets the current Locale for the device.
 
            @return {Adaptive.Locale} The current Locale information.
-           @since ARP 2.0
+           @since v2.0
         */
         getLocaleCurrent(): Locale;
         /**
@@ -98,7 +98,7 @@ declare module Adaptive {
 of the display. For display orientation, use the IDisplay APIs.
 
            @return {Adaptive.ICapabilitiesOrientation} The current orientation of the device.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getOrientationCurrent(): ICapabilitiesOrientation;
         /**
@@ -106,14 +106,14 @@ of the display. For display orientation, use the IDisplay APIs.
            De-registers an existing listener from receiving button events.
 
            @param {Adaptive.ButtonListener} listener listener to be removed.
-           @since ARP 2.0
+           @since v2.0
         */
         removeButtonListener(listener: IButtonListener): void;
         /**
            @method
            Removed all existing listeners from receiving button events.
 
-           @since ARP 2.0
+           @since v2.0
         */
         removeButtonListeners(): void;
         /**
@@ -121,14 +121,14 @@ of the display. For display orientation, use the IDisplay APIs.
            Remove a listener to stop receiving device orientation change events.
 
            @param {Adaptive.DeviceOrientationListener} listener listener Listener to remove from receiving orientation change events.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         removeDeviceOrientationListener(listener: IDeviceOrientationListener): void;
         /**
            @method
            Remove all listeners receiving device orientation events.
 
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         removeDeviceOrientationListeners(): void;
     }

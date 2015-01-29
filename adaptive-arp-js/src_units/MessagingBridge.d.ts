@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ declare module Adaptive {
        Interface for Managing the Messaging operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class MessagingBridge extends BasePIMBridge implements IMessaging {
         /**
@@ -62,7 +62,7 @@ declare module Adaptive {
            @param {string} number number   to send
            @param {string} text text     to send
            @param {Adaptive.MessagingCallback} callback callback with the result
-           @since ARP 2.0
+           @since v2.0
         */
         sendSMS(number: string, text: string, callback: IMessagingCallback): void;
     }

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Structure representing the a physical or logical button on a device.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class Button extends APIBean {
@@ -53,7 +53,7 @@ declare module Adaptive {
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(type: ICapabilitiesButton);
         /**
@@ -61,7 +61,7 @@ declare module Adaptive {
            Returns the button type
 
            @return {Adaptive.ICapabilitiesButton} type Button type.
-           @since ARP 2.0
+           @since v2.0
         */
         getType(): ICapabilitiesButton;
         /**
@@ -69,7 +69,7 @@ declare module Adaptive {
            Setter for the button type
 
            @param {Adaptive.ICapabilitiesButton} type Button Type
-           @since ARP 2.0
+           @since v2.0
         */
         setType(type: ICapabilitiesButton): void;
         /**

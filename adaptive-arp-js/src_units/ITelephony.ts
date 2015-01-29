@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Interface for Managing the Telephony operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -54,7 +54,7 @@ module Adaptive {
              Invoke a phone call
              @param number to call
              @return {Adaptive.ITelephonyStatus} Status of the call
-             @since ARP 2.0
+             @since v2.0
           */
           call(number:string) : ITelephonyStatus;
      }

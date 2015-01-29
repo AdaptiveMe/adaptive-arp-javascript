@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,10 +53,12 @@ var Adaptive;
         IServiceMethod.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Post":
-                        return IServiceMethod.Post;
-                    case "Get":
-                        return IServiceMethod.Get;
+                    case "POST":
+                        return IServiceMethod.POST;
+                    case "GET":
+                        return IServiceMethod.GET;
+                    case "HEAD":
+                        return IServiceMethod.HEAD;
                     case "Unknown":
                         return IServiceMethod.Unknown;
                     default:
@@ -68,13 +70,17 @@ var Adaptive;
             }
         };
         /**
-           @property {Adaptive.IServiceMethod} [Post='Post']
+           @property {Adaptive.IServiceMethod} [POST='POST']
         */
-        IServiceMethod.Post = new IServiceMethod("Post");
+        IServiceMethod.POST = new IServiceMethod("POST");
         /**
-           @property {Adaptive.IServiceMethod} [Get='Get']
+           @property {Adaptive.IServiceMethod} [GET='GET']
         */
-        IServiceMethod.Get = new IServiceMethod("Get");
+        IServiceMethod.GET = new IServiceMethod("GET");
+        /**
+           @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+        */
+        IServiceMethod.HEAD = new IServiceMethod("HEAD");
         /**
            @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */

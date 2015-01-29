@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -108,14 +108,14 @@ declare module Adaptive {
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
            @param {Adaptive.IAccelerationListenerError} error error Error fired
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IAccelerationListenerError): void;
         /**
            @method
            Correct data received.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(acceleration: Acceleration): void;
         /**
@@ -123,7 +123,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. Needs calibration.
            @param {Adaptive.Acceleration} acceleration acceleration Acceleration received
            @param {Adaptive.IAccelerationListenerWarning} warning warning      Warning fired
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(acceleration: Acceleration, warning: IAccelerationListenerWarning): void;
     }

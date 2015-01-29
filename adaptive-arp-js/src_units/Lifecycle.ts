@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,7 +43,7 @@ module Adaptive {
         Represents a specific application life-cycle stage.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class Lifecycle extends APIBean {
@@ -68,7 +68,7 @@ Possible lifecycle States:
              Constructor used by the implementation
 
              @param {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(state: LifecycleState) {
                super();
@@ -80,7 +80,7 @@ Possible lifecycle States:
              Returns the state of the application
 
              @return {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           getState() : LifecycleState {
                return this.state;
@@ -91,7 +91,7 @@ Possible lifecycle States:
              Set the State of the application
 
              @param {Adaptive.LifecycleState} state of the app
-             @since ARP 2.0
+             @since v2.0
           */
           setState(state: LifecycleState) {
                this.state = state;

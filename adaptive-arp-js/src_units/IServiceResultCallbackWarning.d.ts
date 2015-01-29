@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,13 +41,13 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
+           @property {Adaptive.IServiceResultCallbackWarning} [CertificateUntrusted='CertificateUntrusted']
+        */
+        static CertificateUntrusted: IServiceResultCallbackWarning;
+        /**
            @property {Adaptive.IServiceResultCallbackWarning} [NotSecure='NotSecure']
         */
         static NotSecure: IServiceResultCallbackWarning;
-        /**
-           @property {Adaptive.IServiceResultCallbackWarning} [NotTrusted='NotTrusted']
-        */
-        static NotTrusted: IServiceResultCallbackWarning;
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Redirected='Redirected']
         */

@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing the binary attachment data.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class EmailAttachmentData extends APIBean {
@@ -72,7 +72,7 @@ declare module Adaptive {
            @param {string} fileName     name of the file attachment
            @param {string} mimeType     mime type of the file attachment
            @param {string} referenceUrl relative url of the file attachment
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(data: number[], size: number, fileName: string, mimeType: string, referenceUrl: string);
         /**
@@ -80,7 +80,7 @@ declare module Adaptive {
            Returns the raw data in byte[]
 
            @return {number[]} data Octet-binary content of the attachment payload.
-           @since ARP 2.0
+           @since v2.0
         */
         getData(): number[];
         /**
@@ -88,7 +88,7 @@ declare module Adaptive {
            Set the data of the attachment as a byte[]
 
            @param {number[]} data Sets the octet-binary content of the attachment.
-           @since ARP 2.0
+           @since v2.0
         */
         setData(data: number[]): void;
         /**
@@ -96,7 +96,7 @@ declare module Adaptive {
            Returns the filename of the attachment
 
            @return {string} fileName Name of the attachment.
-           @since ARP 2.0
+           @since v2.0
         */
         getFileName(): string;
         /**
@@ -104,7 +104,7 @@ declare module Adaptive {
            Set the name of the file attachment
 
            @param {string} fileName Name of the attachment.
-           @since ARP 2.0
+           @since v2.0
         */
         setFileName(fileName: string): void;
         /**
@@ -112,7 +112,7 @@ declare module Adaptive {
            Returns the mime type of the attachment
 
            @return {string} mimeType
-           @since ARP 2.0
+           @since v2.0
         */
         getMimeType(): string;
         /**
@@ -120,7 +120,7 @@ declare module Adaptive {
            Set the mime type of the attachment
 
            @param {string} mimeType Mime-type of the attachment.
-           @since ARP 2.0
+           @since v2.0
         */
         setMimeType(mimeType: string): void;
         /**
@@ -128,7 +128,7 @@ declare module Adaptive {
            Returns the absolute url of the file attachment
 
            @return {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-           @since ARP 2.0
+           @since v2.0
         */
         getReferenceUrl(): string;
         /**
@@ -136,7 +136,7 @@ declare module Adaptive {
            Set the absolute url of the attachment
 
            @param {string} referenceUrl Absolute URL of the file attachment for either file:// or http:// access.
-           @since ARP 2.0
+           @since v2.0
         */
         setReferenceUrl(referenceUrl: string): void;
         /**
@@ -144,7 +144,7 @@ declare module Adaptive {
            Returns the size of the attachment as a long
 
            @return {number} size Length in bytes of the octet-binary content.
-           @since ARP 2.0
+           @since v2.0
         */
         getSize(): number;
         /**
@@ -152,7 +152,7 @@ declare module Adaptive {
            Set the size of the attachment as a long
 
            @param {number} size Length in bytes of the octet-binary content ( should be same as data array length.)
-           @since ARP 2.0
+           @since v2.0
         */
         setSize(size: number): void;
         /**

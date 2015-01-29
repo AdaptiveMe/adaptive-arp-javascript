@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -37,7 +37,7 @@ declare module Adaptive {
        Master interface for all the Groups and Types of Interfaces os the Project
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -48,14 +48,14 @@ declare module Adaptive {
            @method
            Method that returns the API group of the implementation
            @return {Adaptive.IAdaptiveRPGroup} API Group name.
-           @since ARP 2.0
+           @since v2.0
         */
         getAPIGroup(): IAdaptiveRPGroup;
         /**
            @method
            Method that returns the API version of the implementation.
            @return {string} API Version string.
-           @since ARP 2.0
+           @since v2.0
         */
         getAPIVersion(): string;
     }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,7 +151,7 @@ var Adaptive;
            @method
            This method is called on Error
            @param {Adaptive.IContactResultCallbackError} error error returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         ContactResultCallback.prototype.onError = function (error) {
             if (typeof this.onErrorFunction === 'undefined' || this.onErrorFunction == null) {
@@ -165,7 +165,7 @@ var Adaptive;
            @method
            This method is called on Result
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         ContactResultCallback.prototype.onResult = function (contacts) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
@@ -180,7 +180,7 @@ var Adaptive;
            This method is called on Warning
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
-           @since ARP 2.0
+           @since v2.0
         */
         ContactResultCallback.prototype.onWarning = function (contacts, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {

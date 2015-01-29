@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ module Adaptive {
         Structure representing a native response to the HTML5
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class APIBean {
@@ -48,7 +48,7 @@ module Adaptive {
              @method constructor
              Default constructor
 
-             @since ARP 2.0
+             @since v2.0
           */
           constructor() {
           }

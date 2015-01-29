@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface for Managing the Cloud operations
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -52,14 +52,14 @@ declare module Adaptive {
            @method
            Result callback for error responses
            @param error Returned error
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IDatabaseResultCallbackError): any;
         /**
            @method
            Result callback for correct responses
            @param database Returns the database
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(database: Database): any;
         /**
@@ -67,7 +67,7 @@ declare module Adaptive {
            Result callback for warning responses
            @param database Returns the database
            @param warning  Returned Warning
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(database: Database, warning: IDatabaseResultCallbackWarning): any;
     }

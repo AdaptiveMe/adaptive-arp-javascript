@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -47,7 +47,7 @@ var Adaptive;
        Represents a specific application life-cycle stage.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var Lifecycle = (function (_super) {
@@ -57,7 +57,7 @@ var Adaptive;
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP 2.0
+           @since v2.0
         */
         function Lifecycle(state) {
             _super.call(this);
@@ -68,7 +68,7 @@ var Adaptive;
            Returns the state of the application
 
            @return {Adaptive.LifecycleState} state of the app
-           @since ARP 2.0
+           @since v2.0
         */
         Lifecycle.prototype.getState = function () {
             return this.state;
@@ -78,7 +78,7 @@ var Adaptive;
            Set the State of the application
 
            @param {Adaptive.LifecycleState} state of the app
-           @since ARP 2.0
+           @since v2.0
         */
         Lifecycle.prototype.setState = function (state) {
             this.state = state;

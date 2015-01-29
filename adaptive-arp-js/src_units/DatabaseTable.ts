@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,7 +44,7 @@ module Adaptive {
         Represents a data table composed of databaseColumns and databaseRows.
 
         @author Ferran Vila Conesa
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class DatabaseTable extends APIBean {
@@ -78,7 +78,7 @@ module Adaptive {
              @param {number} rowCount        The number of databaseRows
              @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
              @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>) {
                super();
@@ -94,7 +94,7 @@ module Adaptive {
              Get the number of databaseColumns
 
              @return {number} The number of databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           getColumnCount() : number {
                return this.columnCount;
@@ -105,7 +105,7 @@ module Adaptive {
              Sets the number of databaseColumns
 
              @param {number} columnCount The number of databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           setColumnCount(columnCount: number) {
                this.columnCount = columnCount;
@@ -116,7 +116,7 @@ module Adaptive {
              Get the databaseColumns
 
              @return {Adaptive.DatabaseColumn[]} The databaseColumns
-             @since ARP 2.0
+             @since v2.0
           */
           getDatabaseColumns() : Array<DatabaseColumn> {
                return this.databaseColumns;
@@ -127,7 +127,7 @@ module Adaptive {
              Sets the databaseColumns of the table
 
              @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setDatabaseColumns(databaseColumns: Array<DatabaseColumn>) {
                this.databaseColumns = databaseColumns;
@@ -138,7 +138,7 @@ module Adaptive {
              Get the databaseRows of the table
 
              @return {Adaptive.DatabaseRow[]} The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           getDatabaseRows() : Array<DatabaseRow> {
                return this.databaseRows;
@@ -149,7 +149,7 @@ module Adaptive {
              Sets the databaseRows of the table
 
              @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setDatabaseRows(databaseRows: Array<DatabaseRow>) {
                this.databaseRows = databaseRows;
@@ -160,7 +160,7 @@ module Adaptive {
              Returns the name of the table
 
              @return {string} The name of the table
-             @since ARP 2.0
+             @since v2.0
           */
           getName() : string {
                return this.name;
@@ -171,7 +171,7 @@ module Adaptive {
              Sets the name of the table
 
              @param {string} name The name of the table
-             @since ARP 2.0
+             @since v2.0
           */
           setName(name: string) {
                this.name = name;
@@ -182,7 +182,7 @@ module Adaptive {
              Get the number of databaseRows
 
              @return {number} The number of databaseRows
-             @since ARP 2.0
+             @since v2.0
           */
           getRowCount() : number {
                return this.rowCount;
@@ -193,7 +193,7 @@ module Adaptive {
              Sets the number of databaseRows
 
              @param {number} rowCount The number of databaseRows
-             @since ARP 2.0
+             @since v2.0
           */
           setRowCount(rowCount: number) {
                this.rowCount = rowCount;

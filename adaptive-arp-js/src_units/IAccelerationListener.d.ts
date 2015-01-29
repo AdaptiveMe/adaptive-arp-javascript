@@ -32,7 +32,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Interface defines the response methods of the acceleration operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -53,14 +53,14 @@ declare module Adaptive {
            No data received - error condition, not authorized or hardware not available. This will be reported once for the
 listener and subsequently, the listener will be deactivated and removed from the internal list of listeners.
            @param error Error fired
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IAccelerationListenerError): any;
         /**
            @method
            Correct data received.
            @param acceleration Acceleration received
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(acceleration: Acceleration): any;
         /**
@@ -68,7 +68,7 @@ listener and subsequently, the listener will be deactivated and removed from the
            Data received with warning - ie. Needs calibration.
            @param acceleration Acceleration received
            @param warning      Warning fired
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(acceleration: Acceleration, warning: IAccelerationListenerWarning): any;
     }

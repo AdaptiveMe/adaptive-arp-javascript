@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -39,7 +39,7 @@ declare module Adaptive {
        Structure representing the data a single geolocation reading.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class Geolocation extends APIBean {
@@ -77,7 +77,7 @@ declare module Adaptive {
            @param {number} xDoP      Dilution of precision on the X measurement
            @param {number} yDoP      Dilution of precision on the Y measurement
            @param {number} timestamp Timestamp of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(latitude: number, longitude: number, altitude: number, xDoP: number, yDoP: number, timestamp: number);
         /**
@@ -85,7 +85,7 @@ declare module Adaptive {
            Returns altitude in meters
 
            @return {number} Altitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         getAltitude(): number;
         /**
@@ -93,7 +93,7 @@ declare module Adaptive {
            Set altitude in meters
 
            @param {number} altitude Altitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         setAltitude(altitude: number): void;
         /**
@@ -101,7 +101,7 @@ declare module Adaptive {
            Returns the latitude in degrees
 
            @return {number} Latitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         getLatitude(): number;
         /**
@@ -109,7 +109,7 @@ declare module Adaptive {
            Set the latitude in degrees
 
            @param {number} latitude Latitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         setLatitude(latitude: number): void;
         /**
@@ -117,7 +117,7 @@ declare module Adaptive {
            Returns the longitude in degrees
 
            @return {number} Longitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         getLongitude(): number;
         /**
@@ -125,7 +125,7 @@ declare module Adaptive {
            Returns the latitude in degrees
 
            @param {number} longitude Longitude of the measurement
-           @since ARP 2.0
+           @since v2.0
         */
         setLongitude(longitude: number): void;
         /**
@@ -133,7 +133,7 @@ declare module Adaptive {
            Timestamp Getter
 
            @return {number} Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         getTimestamp(): number;
         /**
@@ -141,7 +141,7 @@ declare module Adaptive {
            Timestamp Setter
 
            @param {number} timestamp Timestamp
-           @since ARP 2.0
+           @since v2.0
         */
         setTimestamp(timestamp: number): void;
         /**

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ var Adaptive;
        Structure representing the professional info data elements of a contact.
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     var ContactProfessionalInfo = (function (_super) {
@@ -58,7 +58,7 @@ var Adaptive;
            @param {string} jobTitle       The job title
            @param {string} jobDescription The job description
            @param {string} company        The company of the job
-           @since ARP 2.0
+           @since v2.0
         */
         function ContactProfessionalInfo(jobTitle, jobDescription, company) {
             _super.call(this);
@@ -71,7 +71,7 @@ var Adaptive;
            Returns the company of the job
 
            @return {string} company
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.getCompany = function () {
             return this.company;
@@ -81,7 +81,7 @@ var Adaptive;
            Set the company of the job
 
            @param {string} company The company of the job
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.setCompany = function (company) {
             this.company = company;
@@ -91,7 +91,7 @@ var Adaptive;
            Returns the description of the job
 
            @return {string} description
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.getJobDescription = function () {
             return this.jobDescription;
@@ -101,7 +101,7 @@ var Adaptive;
            Set the description of the job
 
            @param {string} jobDescription The job description
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.setJobDescription = function (jobDescription) {
             this.jobDescription = jobDescription;
@@ -111,7 +111,7 @@ var Adaptive;
            Returns the title of the job
 
            @return {string} title
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.getJobTitle = function () {
             return this.jobTitle;
@@ -121,7 +121,7 @@ var Adaptive;
            Set the title of the job
 
            @param {string} jobTitle The job title
-           @since ARP 2.0
+           @since v2.0
         */
         ContactProfessionalInfo.prototype.setJobTitle = function (jobTitle) {
             this.jobTitle = jobTitle;

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ module Adaptive {
         Interface for Managing the Contact operations
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -58,7 +58,7 @@ module Adaptive {
              Get the contact photo
              @param contact  id to search for
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContactPhoto(contact:ContactUid, callback:IContactPhotoResultCallback);
           /**
@@ -66,7 +66,7 @@ module Adaptive {
              Get all the details of a contact according to its id
              @param contact  id to search for
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContact(contact:ContactUid, callback:IContactResultCallback);
           /**
@@ -74,7 +74,7 @@ module Adaptive {
              Get marked fields of all contacts
              @param callback called for return
              @param fields   to get for each Contact
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsForFields(callback:IContactResultCallback, fields:Array<IContactFieldGroup>);
           /**
@@ -83,14 +83,14 @@ module Adaptive {
              @param callback called for return
              @param fields   to get for each Contact
              @param filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           getContactsWithFilter(callback:IContactResultCallback, fields:Array<IContactFieldGroup>, filter:Array<IContactFilter>);
           /**
              @method
              Get all contacts
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           getContacts(callback:IContactResultCallback);
           /**
@@ -99,7 +99,7 @@ module Adaptive {
              @param term     string to search
              @param callback called for return
              @param filter   to search for
-             @since ARP 2.0
+             @since v2.0
           */
           searchContactsWithFilter(term:string, callback:IContactResultCallback, filter:Array<IContactFilter>);
           /**
@@ -107,7 +107,7 @@ module Adaptive {
              Search contacts according to a term and send it to the callback
              @param term     string to search
              @param callback called for return
-             @since ARP 2.0
+             @since v2.0
           */
           searchContacts(term:string, callback:IContactResultCallback);
           /**
@@ -116,7 +116,7 @@ module Adaptive {
              @param contact  id to assign the photo
              @param pngImage photo as byte array
              @return {boolean} true if set is successful;false otherwise
-             @since ARP 2.0
+             @since v2.0
           */
           setContactPhoto(contact:ContactUid, pngImage:Array<number>) : boolean;
      }

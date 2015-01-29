@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ declare module Adaptive {
        Represents a data table composed of databaseColumns and databaseRows.
 
        @author Ferran Vila Conesa
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     class DatabaseTable extends APIBean {
@@ -74,7 +74,7 @@ declare module Adaptive {
            @param {number} rowCount        The number of databaseRows
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
-           @since ARP 2.0
+           @since v2.0
         */
         constructor(name: string, columnCount: number, rowCount: number, databaseColumns: DatabaseColumn[], databaseRows: DatabaseRow[]);
         /**
@@ -82,7 +82,7 @@ declare module Adaptive {
            Get the number of databaseColumns
 
            @return {number} The number of databaseColumns
-           @since ARP 2.0
+           @since v2.0
         */
         getColumnCount(): number;
         /**
@@ -90,7 +90,7 @@ declare module Adaptive {
            Sets the number of databaseColumns
 
            @param {number} columnCount The number of databaseColumns
-           @since ARP 2.0
+           @since v2.0
         */
         setColumnCount(columnCount: number): void;
         /**
@@ -98,7 +98,7 @@ declare module Adaptive {
            Get the databaseColumns
 
            @return {Adaptive.DatabaseColumn[]} The databaseColumns
-           @since ARP 2.0
+           @since v2.0
         */
         getDatabaseColumns(): DatabaseColumn[];
         /**
@@ -106,7 +106,7 @@ declare module Adaptive {
            Sets the databaseColumns of the table
 
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
-           @since ARP 2.0
+           @since v2.0
         */
         setDatabaseColumns(databaseColumns: DatabaseColumn[]): void;
         /**
@@ -114,7 +114,7 @@ declare module Adaptive {
            Get the databaseRows of the table
 
            @return {Adaptive.DatabaseRow[]} The databaseRows of the table
-           @since ARP 2.0
+           @since v2.0
         */
         getDatabaseRows(): DatabaseRow[];
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            Sets the databaseRows of the table
 
            @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
-           @since ARP 2.0
+           @since v2.0
         */
         setDatabaseRows(databaseRows: DatabaseRow[]): void;
         /**
@@ -130,7 +130,7 @@ declare module Adaptive {
            Returns the name of the table
 
            @return {string} The name of the table
-           @since ARP 2.0
+           @since v2.0
         */
         getName(): string;
         /**
@@ -138,7 +138,7 @@ declare module Adaptive {
            Sets the name of the table
 
            @param {string} name The name of the table
-           @since ARP 2.0
+           @since v2.0
         */
         setName(name: string): void;
         /**
@@ -146,7 +146,7 @@ declare module Adaptive {
            Get the number of databaseRows
 
            @return {number} The number of databaseRows
-           @since ARP 2.0
+           @since v2.0
         */
         getRowCount(): number;
         /**
@@ -154,7 +154,7 @@ declare module Adaptive {
            Sets the number of databaseRows
 
            @param {number} rowCount The number of databaseRows
-           @since ARP 2.0
+           @since v2.0
         */
         setRowCount(rowCount: number): void;
         /**

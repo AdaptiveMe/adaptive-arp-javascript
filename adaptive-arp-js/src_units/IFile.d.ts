@@ -37,7 +37,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ declare module Adaptive {
        Interface for Managing the File operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -58,7 +58,7 @@ declare module Adaptive {
            Determine whether the current file/folder can be read from.
            @param descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is readable, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         canRead(descriptor: FileDescriptor): boolean;
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Determine whether the current file/folder can be written to.
            @param descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the folder/file is writable, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         canWrite(descriptor: FileDescriptor): boolean;
         /**
@@ -74,7 +74,7 @@ declare module Adaptive {
            Creates a file with the specified name.
            @param descriptor File descriptor of file or folder used for operation.
            @param callback   Result of the operation.
-           @since ARP 2.0
+           @since v2.0
         */
         create(descriptor: FileDescriptor, callback: IFileResultCallback): any;
         /**
@@ -84,7 +84,7 @@ deleted if the cascade parameter is set to true.
            @param descriptor File descriptor of file or folder used for operation.
            @param cascade    Whether to delete sub-files and sub-folders.
            @return {boolean} True if files (and sub-files and folders) whether deleted.
-           @since ARP 2.0
+           @since v2.0
         */
         delete(descriptor: FileDescriptor, cascade: boolean): boolean;
         /**
@@ -92,7 +92,7 @@ deleted if the cascade parameter is set to true.
            Check whether the file/path exists.
            @param descriptor File descriptor of file or folder used for operation.
            @return {boolean} True if the file exists in the filesystem, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         exists(descriptor: FileDescriptor): boolean;
         /**
@@ -100,7 +100,7 @@ deleted if the cascade parameter is set to true.
            Loads the content of the file.
            @param descriptor File descriptor of file or folder used for operation.
            @param callback   Result of the operation.
-           @since ARP 2.0
+           @since v2.0
         */
         getContent(descriptor: FileDescriptor, callback: IFileDataLoadResultCallback): any;
         /**
@@ -108,7 +108,7 @@ deleted if the cascade parameter is set to true.
            Returns the file storage type of the file
            @param descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemStorageType} Storage Type file
-           @since ARP 2.0
+           @since v2.0
         */
         getFileStorageType(descriptor: FileDescriptor): IFileSystemStorageType;
         /**
@@ -116,7 +116,7 @@ deleted if the cascade parameter is set to true.
            Returns the file type
            @param descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemType} Returns the file type of the file
-           @since ARP 2.0
+           @since v2.0
         */
         getFileType(descriptor: FileDescriptor): IFileSystemType;
         /**
@@ -124,7 +124,7 @@ deleted if the cascade parameter is set to true.
            Returns the security type of the file
            @param descriptor File descriptor of file or folder used for operation.
            @return {Adaptive.IFileSystemSecurity} Security Level of the file
-           @since ARP 2.0
+           @since v2.0
         */
         getSecurityType(descriptor: FileDescriptor): IFileSystemSecurity;
         /**
@@ -132,7 +132,7 @@ deleted if the cascade parameter is set to true.
            Check whether this is a path of a file.
            @param descriptor File descriptor of file or folder used for operation.
            @return {boolean} true if this is a path to a folder/directory, false if this is a path to a file.
-           @since ARP 2.0
+           @since v2.0
         */
         isDirectory(descriptor: FileDescriptor): boolean;
         /**
@@ -142,7 +142,7 @@ is a file, it will not yield any results.
            @param descriptor File descriptor of file or folder used for operation.
            @param regex      Filter (eg. *.jpg, *.png, Fil*) name string.
            @param callback   Result of operation.
-           @since ARP 2.0
+           @since v2.0
         */
         listFilesForRegex(descriptor: FileDescriptor, regex: string, callback: IFileListResultCallback): any;
         /**
@@ -151,7 +151,7 @@ is a file, it will not yield any results.
 any results.
            @param descriptor File descriptor of file or folder used for operation.
            @param callback   Result of operation.
-           @since ARP 2.0
+           @since v2.0
         */
         listFiles(descriptor: FileDescriptor, callback: IFileListResultCallback): any;
         /**
@@ -160,7 +160,7 @@ any results.
            @param descriptor File descriptor of file or folder used for operation.
            @param recursive  Whether to create all parent path elements.
            @return {boolean} True if the path was created, false otherwise (or it exists already).
-           @since ARP 2.0
+           @since v2.0
         */
         mkDir(descriptor: FileDescriptor, recursive: boolean): boolean;
         /**
@@ -172,7 +172,7 @@ new destination file.
            @param createPath  True to create the path if it does not already exist.
            @param callback    Result of the operation.
            @param overwrite   True to create the path if it does not already exist.
-           @since ARP 2.0
+           @since v2.0
         */
         move(source: FileDescriptor, destination: FileDescriptor, createPath: boolean, overwrite: boolean, callback: IFileResultCallback): any;
         /**
@@ -181,7 +181,7 @@ new destination file.
            @param descriptor File descriptor of file or folder used for operation.
            @param content    Binary content to store in the file.
            @param callback   Result of the operation.
-           @since ARP 2.0
+           @since v2.0
         */
         setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): any;
     }

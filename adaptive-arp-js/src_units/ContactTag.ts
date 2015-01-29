@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -42,7 +42,7 @@ module Adaptive {
         Structure representing the assigned tags data elements of a contact.
 
         @author Francisco Javier Martin Bueno
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      export class ContactTag extends APIBean {
@@ -61,7 +61,7 @@ module Adaptive {
 
              @param {string} tagValue Value of the tag
              @param {string} tagName  Name of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           constructor(tagName: string, tagValue: string) {
                super();
@@ -74,7 +74,7 @@ module Adaptive {
              Returns the tagName of the Tag
 
              @return {string} tagName
-             @since ARP 2.0
+             @since v2.0
           */
           getTagName() : string {
                return this.tagName;
@@ -85,7 +85,7 @@ module Adaptive {
              Set the tagName of the Tag
 
              @param {string} tagName Name of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           setTagName(tagName: string) {
                this.tagName = tagName;
@@ -96,7 +96,7 @@ module Adaptive {
              Returns the tagValue of the Tag
 
              @return {string} tagValue
-             @since ARP 2.0
+             @since v2.0
           */
           getTagValue() : string {
                return this.tagValue;
@@ -107,7 +107,7 @@ module Adaptive {
              Set the tagValue of the Tag
 
              @param {string} tagValue Value of the tag
-             @since ARP 2.0
+             @since v2.0
           */
           setTagValue(tagValue: string) {
                this.tagValue = tagValue;

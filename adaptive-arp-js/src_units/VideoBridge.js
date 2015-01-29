@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ var Adaptive;
        Interface for Managing the Video operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     var VideoBridge = (function (_super) {
         __extends(VideoBridge, _super);
@@ -68,7 +68,7 @@ var Adaptive;
            Play url video stream
 
            @param {string} url url of the video
-           @since ARP 2.0
+           @since v2.0
         */
         VideoBridge.prototype.playStream = function (url) {
             // Create and populate API request.
@@ -80,7 +80,7 @@ var Adaptive;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.5");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.0.6");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
             if (xhr.status == 200) {

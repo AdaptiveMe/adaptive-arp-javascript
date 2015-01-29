@@ -31,7 +31,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -40,7 +40,7 @@ declare module Adaptive {
        Interface for Managing the Network reachability callback result
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
        @version 1.0
     */
     /**
@@ -51,14 +51,14 @@ declare module Adaptive {
            @method
            No data received - error condition, not authorized .
            @param error Error value
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: INetworkReachabilityCallbackError): any;
         /**
            @method
            Correct data received.
            @param reachable Indicates if the host is reachable
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(reachable: boolean): any;
         /**
@@ -66,7 +66,7 @@ declare module Adaptive {
            Data received with warning - ie Found entries with existing key and values have been overriden
            @param reachable Indicates if the host is reachable
            @param warning   Warning value
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(reachable: boolean, warning: INetworkReachabilityCallbackWarning): any;
     }

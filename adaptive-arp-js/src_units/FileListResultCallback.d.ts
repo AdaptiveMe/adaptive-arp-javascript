@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -107,14 +107,14 @@ declare module Adaptive {
            @method
            On error result of a file operation.
            @param {Adaptive.IFileListResultCallbackError} error error Error processing the request.
-           @since ARP 2.0
+           @since v2.0
         */
         onError(error: IFileListResultCallbackError): void;
         /**
            @method
            On correct result of a file operation.
            @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
-           @since ARP 2.0
+           @since v2.0
         */
         onResult(files: FileDescriptor[]): void;
         /**
@@ -122,7 +122,7 @@ declare module Adaptive {
            On partial result of a file operation, containing a warning.
            @param {Adaptive.FileDescriptor[]} files files   Array of resulting files/folders.
            @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
-           @since ARP 2.0
+           @since v2.0
         */
         onWarning(files: FileDescriptor[], warning: IFileListResultCallbackWarning): void;
     }

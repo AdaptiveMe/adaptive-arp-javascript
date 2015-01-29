@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,45 +44,21 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+             @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']
           */
-          static ServiceTypeAmfSerialization = new IServiceType("ServiceTypeAmfSerialization");
+          static OctetBinary = new IServiceType("OctetBinary");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+             @property {Adaptive.IServiceType} [RestJson='RestJson']
           */
-          static ServiceTypeGwtRpc = new IServiceType("ServiceTypeGwtRpc");
+          static RestJson = new IServiceType("RestJson");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+             @property {Adaptive.IServiceType} [RestXml='RestXml']
           */
-          static ServiceTypeOctetBinary = new IServiceType("ServiceTypeOctetBinary");
+          static RestXml = new IServiceType("RestXml");
           /**
-             @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+             @property {Adaptive.IServiceType} [SoapXml='SoapXml']
           */
-          static ServiceTypeRemotingSerialization = new IServiceType("ServiceTypeRemotingSerialization");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
-          */
-          static ServiceTypeRestJson = new IServiceType("ServiceTypeRestJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
-          */
-          static ServiceTypeRestXml = new IServiceType("ServiceTypeRestXml");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
-          */
-          static ServiceTypeSoapJson = new IServiceType("ServiceTypeSoapJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
-          */
-          static ServiceTypeSoapXml = new IServiceType("ServiceTypeSoapXml");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
-          */
-          static ServiceTypeXmlRpcJson = new IServiceType("ServiceTypeXmlRpcJson");
-          /**
-             @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
-          */
-          static ServiceTypeXmlRpcXml = new IServiceType("ServiceTypeXmlRpcXml");
+          static SoapXml = new IServiceType("SoapXml");
           /**
              @property {Adaptive.IServiceType} [Unknown='Unknown']
           */
@@ -97,26 +73,14 @@ module Adaptive {
           static toObject(object : any) : IServiceType {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "ServiceTypeAmfSerialization":
-                              return IServiceType.ServiceTypeAmfSerialization;
-                         case "ServiceTypeGwtRpc":
-                              return IServiceType.ServiceTypeGwtRpc;
-                         case "ServiceTypeOctetBinary":
-                              return IServiceType.ServiceTypeOctetBinary;
-                         case "ServiceTypeRemotingSerialization":
-                              return IServiceType.ServiceTypeRemotingSerialization;
-                         case "ServiceTypeRestJson":
-                              return IServiceType.ServiceTypeRestJson;
-                         case "ServiceTypeRestXml":
-                              return IServiceType.ServiceTypeRestXml;
-                         case "ServiceTypeSoapJson":
-                              return IServiceType.ServiceTypeSoapJson;
-                         case "ServiceTypeSoapXml":
-                              return IServiceType.ServiceTypeSoapXml;
-                         case "ServiceTypeXmlRpcJson":
-                              return IServiceType.ServiceTypeXmlRpcJson;
-                         case "ServiceTypeXmlRpcXml":
-                              return IServiceType.ServiceTypeXmlRpcXml;
+                         case "OctetBinary":
+                              return IServiceType.OctetBinary;
+                         case "RestJson":
+                              return IServiceType.RestJson;
+                         case "RestXml":
+                              return IServiceType.RestXml;
+                         case "SoapXml":
+                              return IServiceType.SoapXml;
                          case "Unknown":
                               return IServiceType.Unknown;
                          default:

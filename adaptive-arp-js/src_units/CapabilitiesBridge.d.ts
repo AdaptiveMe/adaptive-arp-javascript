@@ -42,7 +42,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,7 +53,7 @@ declare module Adaptive {
        Interface for testing the Capabilities operations
 
        @author Carlos Lozano Diez
-       @since ARP 2.0
+       @since v2.0
     */
     class CapabilitiesBridge extends BaseSystemBridge implements ICapabilities {
         /**
@@ -68,7 +68,7 @@ the platform, this method will return the current orientation. To capture device
 changes please use the IDevice and IDisplay functions and listeners API respectively.
 
            @return {Adaptive.ICapabilitiesOrientation} The default orientation for the device/display.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getOrientationDefault(): ICapabilitiesOrientation;
         /**
@@ -77,7 +77,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
 support at least one orientation. This is usually PortaitUp.
 
            @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         getOrientationsSupported(): ICapabilitiesOrientation[];
         /**
@@ -86,7 +86,7 @@ support at least one orientation. This is usually PortaitUp.
 
            @param {Adaptive.ICapabilitiesButton} type type Type of feature to check.
            @return {boolean} true is supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasButtonSupport(type: ICapabilitiesButton): boolean;
         /**
@@ -96,7 +96,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesCommunication} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasCommunicationSupport(type: ICapabilitiesCommunication): boolean;
         /**
@@ -105,7 +105,7 @@ the device.
 
            @param {Adaptive.ICapabilitiesData} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasDataSupport(type: ICapabilitiesData): boolean;
         /**
@@ -115,7 +115,7 @@ device.
 
            @param {Adaptive.ICapabilitiesMedia} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasMediaSupport(type: ICapabilitiesMedia): boolean;
         /**
@@ -124,7 +124,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNet} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasNetSupport(type: ICapabilitiesNet): boolean;
         /**
@@ -134,7 +134,7 @@ device.
 
            @param {Adaptive.ICapabilitiesNotification} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasNotificationSupport(type: ICapabilitiesNotification): boolean;
         /**
@@ -143,7 +143,7 @@ device.
 
            @param {Adaptive.ICapabilitiesOrientation} orientation orientation Orientation type.
            @return {boolean} True if the given orientation is supported, false otherwise.
-           @since ARP 2.0.5
+           @since v2.0.5
         */
         hasOrientationSupport(orientation: ICapabilitiesOrientation): boolean;
         /**
@@ -153,7 +153,7 @@ device.
 
            @param {Adaptive.ICapabilitiesSensor} type type Type of feature to check.
            @return {boolean} true if supported, false otherwise.
-           @since ARP 2.0
+           @since v2.0
         */
         hasSensorSupport(type: ICapabilitiesSensor): boolean;
     }

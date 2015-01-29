@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,45 +41,21 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeAmfSerialization='ServiceTypeAmfSerialization']
+           @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']
         */
-        static ServiceTypeAmfSerialization: IServiceType;
+        static OctetBinary: IServiceType;
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeGwtRpc='ServiceTypeGwtRpc']
+           @property {Adaptive.IServiceType} [RestJson='RestJson']
         */
-        static ServiceTypeGwtRpc: IServiceType;
+        static RestJson: IServiceType;
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeOctetBinary='ServiceTypeOctetBinary']
+           @property {Adaptive.IServiceType} [RestXml='RestXml']
         */
-        static ServiceTypeOctetBinary: IServiceType;
+        static RestXml: IServiceType;
         /**
-           @property {Adaptive.IServiceType} [ServiceTypeRemotingSerialization='ServiceTypeRemotingSerialization']
+           @property {Adaptive.IServiceType} [SoapXml='SoapXml']
         */
-        static ServiceTypeRemotingSerialization: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeRestJson='ServiceTypeRestJson']
-        */
-        static ServiceTypeRestJson: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeRestXml='ServiceTypeRestXml']
-        */
-        static ServiceTypeRestXml: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeSoapJson='ServiceTypeSoapJson']
-        */
-        static ServiceTypeSoapJson: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeSoapXml='ServiceTypeSoapXml']
-        */
-        static ServiceTypeSoapXml: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcJson='ServiceTypeXmlRpcJson']
-        */
-        static ServiceTypeXmlRpcJson: IServiceType;
-        /**
-           @property {Adaptive.IServiceType} [ServiceTypeXmlRpcXml='ServiceTypeXmlRpcXml']
-        */
-        static ServiceTypeXmlRpcXml: IServiceType;
+        static SoapXml: IServiceType;
         /**
            @property {Adaptive.IServiceType} [Unknown='Unknown']
         */

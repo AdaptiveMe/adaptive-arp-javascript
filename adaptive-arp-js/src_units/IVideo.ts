@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,7 +41,7 @@ module Adaptive {
         Interface for Managing the Video operations
 
         @author Carlos Lozano Diez
-        @since ARP 2.0
+        @since v2.0
         @version 1.0
      */
      /**
@@ -52,7 +52,7 @@ module Adaptive {
              @method
              Play url video stream
              @param url of the video
-             @since ARP 2.0
+             @since v2.0
           */
           playStream(url:string);
      }

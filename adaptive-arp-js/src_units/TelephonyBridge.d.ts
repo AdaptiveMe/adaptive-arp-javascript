@@ -35,7 +35,7 @@ Contributors:
 
 Release:
 
-    * @version v2.0.5
+    * @version v2.0.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -46,7 +46,7 @@ declare module Adaptive {
        Interface for Managing the Telephony operations
 
        @author Francisco Javier Martin Bueno
-       @since ARP 2.0
+       @since v2.0
     */
     class TelephonyBridge extends BaseCommunicationBridge implements ITelephony {
         /**
@@ -60,7 +60,7 @@ declare module Adaptive {
 
            @param {string} number number to call
            @return {Adaptive.ITelephonyStatus} Status of the call
-           @since ARP 2.0
+           @since v2.0
         */
         call(number: string): ITelephonyStatus;
     }
