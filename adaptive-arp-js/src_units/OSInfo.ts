@@ -55,7 +55,7 @@ module Adaptive {
           name : IOSType;
 
           /**
-             @property {Adaptive.IOSType} nameProperty
+             @property {Adaptive.IOSType} name
              The name of the operating system. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
           */
           get nameProperty() : IOSType {
@@ -73,7 +73,7 @@ module Adaptive {
           vendor : string;
 
           /**
-             @property {string} vendorProperty
+             @property {string} vendor
              The vendor of the operating system. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
           */
           get vendorProperty() : string {
@@ -91,7 +91,7 @@ module Adaptive {
           version : string;
 
           /**
-             @property {string} versionProperty
+             @property {string} version
              The version/identifier of the operating system. The 'versionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'version'.
           */
           get versionProperty() : string {

@@ -54,7 +54,7 @@ module Adaptive {
           model : string;
 
           /**
-             @property {string} modelProperty
+             @property {string} model
              Model of device - equivalent to device release or version. The 'modelProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'model'.
           */
           get modelProperty() : string {
@@ -72,7 +72,7 @@ module Adaptive {
           name : string;
 
           /**
-             @property {string} nameProperty
+             @property {string} name
              Name of device - equivalent to brand. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
           */
           get nameProperty() : string {
@@ -91,7 +91,7 @@ be unique for a specific instance of an application on a specific device.
           uuid : string;
 
           /**
-             @property {string} uuidProperty
+             @property {string} uuid
              Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
 be unique for a specific instance of an application on a specific device. The 'uuidProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'uuid'.
           */
@@ -110,7 +110,7 @@ be unique for a specific instance of an application on a specific device. The 'u
           vendor : string;
 
           /**
-             @property {string} vendorProperty
+             @property {string} vendor
              Vendor of the device hardware. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
           */
           get vendorProperty() : string {

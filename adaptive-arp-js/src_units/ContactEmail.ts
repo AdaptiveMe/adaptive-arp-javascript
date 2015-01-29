@@ -55,7 +55,7 @@ module Adaptive {
           type : ContactEmailType;
 
           /**
-             @property {Adaptive.ContactEmailType} typeProperty
+             @property {Adaptive.ContactEmailType} type
              The type of the email The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
           */
           get typeProperty() : ContactEmailType {
@@ -73,7 +73,7 @@ module Adaptive {
           email : string;
 
           /**
-             @property {string} emailProperty
+             @property {string} email
              Email of the Contact The 'emailProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'email'.
           */
           get emailProperty() : string {
@@ -91,7 +91,7 @@ module Adaptive {
           primary : boolean;
 
           /**
-             @property {boolean} primaryProperty
+             @property {boolean} primary
              Whether the email is the primary one or not The 'primaryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'primary'.
           */
           get primaryProperty() : boolean {

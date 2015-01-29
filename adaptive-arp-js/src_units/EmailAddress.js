@@ -64,7 +64,7 @@ var Adaptive;
         }
         Object.defineProperty(EmailAddress.prototype, "addressProperty", {
             /**
-               @property {string} addressProperty
+               @property {string} address
                The Email address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
             */
             get: function () {

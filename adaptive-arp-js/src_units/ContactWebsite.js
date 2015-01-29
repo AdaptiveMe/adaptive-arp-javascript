@@ -64,7 +64,7 @@ var Adaptive;
         }
         Object.defineProperty(ContactWebsite.prototype, "urlProperty", {
             /**
-               @property {string} urlProperty
+               @property {string} url
                The url of the website The 'urlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'url'.
             */
             get: function () {

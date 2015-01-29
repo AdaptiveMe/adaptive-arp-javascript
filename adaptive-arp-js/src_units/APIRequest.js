@@ -60,7 +60,7 @@ var Adaptive;
         }
         Object.defineProperty(APIRequest.prototype, "asyncIdProperty", {
             /**
-               @property {number} asyncIdProperty
+               @property {number} asyncId
                Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
             */
             get: function () {
@@ -74,7 +74,7 @@ var Adaptive;
         });
         Object.defineProperty(APIRequest.prototype, "bridgeTypeProperty", {
             /**
-               @property {string} bridgeTypeProperty
+               @property {string} bridgeType
                String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
             */
             get: function () {
@@ -88,7 +88,7 @@ var Adaptive;
         });
         Object.defineProperty(APIRequest.prototype, "methodNameProperty", {
             /**
-               @property {string} methodNameProperty
+               @property {string} methodName
                String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
             */
             get: function () {
@@ -102,7 +102,7 @@ var Adaptive;
         });
         Object.defineProperty(APIRequest.prototype, "parametersProperty", {
             /**
-               @property {string[]} parametersProperty
+               @property {string[]} parameters
                Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
             */
             get: function () {

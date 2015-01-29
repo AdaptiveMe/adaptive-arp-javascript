@@ -49,7 +49,7 @@ declare module Adaptive {
         */
         country: string;
         /**
-           @property {string} countryProperty
+           @property {string} country
            A valid ISO Country Code. The 'countryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'country'.
         */
         countryProperty: string;
@@ -59,7 +59,7 @@ declare module Adaptive {
         */
         language: string;
         /**
-           @property {string} languageProperty
+           @property {string} language
            A valid ISO Language Code. The 'languageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'language'.
         */
         languageProperty: string;

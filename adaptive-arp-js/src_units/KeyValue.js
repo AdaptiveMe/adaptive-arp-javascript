@@ -66,7 +66,7 @@ var Adaptive;
         }
         Object.defineProperty(KeyValue.prototype, "keyDataProperty", {
             /**
-               @property {string} keyDataProperty
+               @property {string} keyData
                Value of the key. The 'keyDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyData'.
             */
             get: function () {
@@ -80,7 +80,7 @@ var Adaptive;
         });
         Object.defineProperty(KeyValue.prototype, "keyNameProperty", {
             /**
-               @property {string} keyNameProperty
+               @property {string} keyName
                Name of the key for the value. The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
             */
             get: function () {

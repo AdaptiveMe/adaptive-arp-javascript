@@ -74,7 +74,7 @@ var Adaptive;
         }
         Object.defineProperty(DatabaseTable.prototype, "columnCountProperty", {
             /**
-               @property {number} columnCountProperty
+               @property {number} columnCount
                Number of databaseColumns. The 'columnCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'columnCount'.
             */
             get: function () {
@@ -88,7 +88,7 @@ var Adaptive;
         });
         Object.defineProperty(DatabaseTable.prototype, "databaseColumnsProperty", {
             /**
-               @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+               @property {Adaptive.DatabaseColumn[]} databaseColumns
                Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
             */
             get: function () {
@@ -102,7 +102,7 @@ var Adaptive;
         });
         Object.defineProperty(DatabaseTable.prototype, "databaseRowsProperty", {
             /**
-               @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+               @property {Adaptive.DatabaseRow[]} databaseRows
                Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
             */
             get: function () {
@@ -116,7 +116,7 @@ var Adaptive;
         });
         Object.defineProperty(DatabaseTable.prototype, "nameProperty", {
             /**
-               @property {string} nameProperty
+               @property {string} name
                Name of the table. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
             */
             get: function () {
@@ -130,7 +130,7 @@ var Adaptive;
         });
         Object.defineProperty(DatabaseTable.prototype, "rowCountProperty", {
             /**
-               @property {number} rowCountProperty
+               @property {number} rowCount
                Number of databaseRows. The 'rowCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rowCount'.
             */
             get: function () {

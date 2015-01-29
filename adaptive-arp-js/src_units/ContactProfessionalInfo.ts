@@ -54,7 +54,7 @@ module Adaptive {
           company : string;
 
           /**
-             @property {string} companyProperty
+             @property {string} company
              The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
           */
           get companyProperty() : string {
@@ -72,7 +72,7 @@ module Adaptive {
           jobDescription : string;
 
           /**
-             @property {string} jobDescriptionProperty
+             @property {string} jobDescription
              The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
           */
           get jobDescriptionProperty() : string {
@@ -90,7 +90,7 @@ module Adaptive {
           jobTitle : string;
 
           /**
-             @property {string} jobTitleProperty
+             @property {string} jobTitle
              The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
           */
           get jobTitleProperty() : string {

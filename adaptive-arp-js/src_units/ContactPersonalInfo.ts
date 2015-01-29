@@ -55,7 +55,7 @@ module Adaptive {
           title : ContactPersonalInfoTitle;
 
           /**
-             @property {Adaptive.ContactPersonalInfoTitle} titleProperty
+             @property {Adaptive.ContactPersonalInfoTitle} title
              The title of the Contact The 'titleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'title'.
           */
           get titleProperty() : ContactPersonalInfoTitle {
@@ -73,7 +73,7 @@ module Adaptive {
           lastName : string;
 
           /**
-             @property {string} lastNameProperty
+             @property {string} lastName
              The last name of the Contact The 'lastNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'lastName'.
           */
           get lastNameProperty() : string {
@@ -91,7 +91,7 @@ module Adaptive {
           middleName : string;
 
           /**
-             @property {string} middleNameProperty
+             @property {string} middleName
              The middle name of the Contact if it proceeds The 'middleNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'middleName'.
           */
           get middleNameProperty() : string {
@@ -109,7 +109,7 @@ module Adaptive {
           name : string;
 
           /**
-             @property {string} nameProperty
+             @property {string} name
              The name of the Contact The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
           */
           get nameProperty() : string {

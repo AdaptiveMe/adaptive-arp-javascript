@@ -70,7 +70,7 @@ var Adaptive;
         }
         Object.defineProperty(Acceleration.prototype, "timestampProperty", {
             /**
-               @property {number} timestampProperty
+               @property {number} timestamp
                Timestamp of the acceleration reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
             */
             get: function () {
@@ -84,7 +84,7 @@ var Adaptive;
         });
         Object.defineProperty(Acceleration.prototype, "xProperty", {
             /**
-               @property {number} xProperty
+               @property {number} x
                X-axis component of the acceleration. The 'xProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'x'.
             */
             get: function () {
@@ -98,7 +98,7 @@ var Adaptive;
         });
         Object.defineProperty(Acceleration.prototype, "yProperty", {
             /**
-               @property {number} yProperty
+               @property {number} y
                Y-axis component of the acceleration. The 'yProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'y'.
             */
             get: function () {
@@ -112,7 +112,7 @@ var Adaptive;
         });
         Object.defineProperty(Acceleration.prototype, "zProperty", {
             /**
-               @property {number} zProperty
+               @property {number} z
                Z-axis component of the acceleration. The 'zProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'z'.
             */
             get: function () {

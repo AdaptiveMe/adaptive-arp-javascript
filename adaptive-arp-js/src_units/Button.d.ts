@@ -50,7 +50,7 @@ declare module Adaptive {
         */
         type: ICapabilitiesButton;
         /**
-           @property {Adaptive.ICapabilitiesButton} typeProperty
+           @property {Adaptive.ICapabilitiesButton} type
            Button type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
         */
         typeProperty: ICapabilitiesButton;

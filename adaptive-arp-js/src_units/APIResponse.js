@@ -57,7 +57,7 @@ var Adaptive;
         }
         Object.defineProperty(APIResponse.prototype, "responseProperty", {
             /**
-               @property {string} responseProperty
+               @property {string} response
                String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
             */
             get: function () {
@@ -71,7 +71,7 @@ var Adaptive;
         });
         Object.defineProperty(APIResponse.prototype, "statusCodeProperty", {
             /**
-               @property {number} statusCodeProperty
+               @property {number} statusCode
                Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
             */
             get: function () {
@@ -85,7 +85,7 @@ var Adaptive;
         });
         Object.defineProperty(APIResponse.prototype, "statusMessageProperty", {
             /**
-               @property {string} statusMessageProperty
+               @property {string} statusMessage
                Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
             */
             get: function () {

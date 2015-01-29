@@ -54,7 +54,7 @@ module Adaptive {
           keyData : string;
 
           /**
-             @property {string} keyDataProperty
+             @property {string} keyData
              Value of the key. The 'keyDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyData'.
           */
           get keyDataProperty() : string {
@@ -72,7 +72,7 @@ module Adaptive {
           keyName : string;
 
           /**
-             @property {string} keyNameProperty
+             @property {string} keyName
              Name of the key for the value. The 'keyNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'keyName'.
           */
           get keyNameProperty() : string {

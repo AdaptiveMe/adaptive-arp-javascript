@@ -64,7 +64,7 @@ var Adaptive;
         }
         Object.defineProperty(ContactUid.prototype, "contactIdProperty", {
             /**
-               @property {string} contactIdProperty
+               @property {string} contactId
                The id of the Contact The 'contactIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactId'.
             */
             get: function () {

@@ -54,7 +54,7 @@ module Adaptive {
           compress : boolean;
 
           /**
-             @property {boolean} compressProperty
+             @property {boolean} compress
              Indicates if database was created or needs to be created as Compressed. The 'compressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'compress'.
           */
           get compressProperty() : boolean {
@@ -72,7 +72,7 @@ module Adaptive {
           name : string;
 
           /**
-             @property {string} nameProperty
+             @property {string} name
              Database Name (name of the .db local file). The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
           */
           get nameProperty() : string {

@@ -68,7 +68,7 @@ var Adaptive;
         }
         Object.defineProperty(ServiceSession.prototype, "attributesProperty", {
             /**
-               @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+               @property {Adaptive.ServiceSessionAttribute[]} attributes
                The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
             */
             get: function () {
@@ -82,7 +82,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSession.prototype, "cookiesProperty", {
             /**
-               @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+               @property {Adaptive.ServiceSessionCookie[]} cookies
                The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
             */
             get: function () {

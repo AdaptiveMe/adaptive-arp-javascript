@@ -54,7 +54,7 @@ module Adaptive {
           timestamp : number;
 
           /**
-             @property {number} timestampProperty
+             @property {number} timestamp
              Timestamp of the acceleration reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
           */
           get timestampProperty() : number {
@@ -72,7 +72,7 @@ module Adaptive {
           x : number;
 
           /**
-             @property {number} xProperty
+             @property {number} x
              X-axis component of the acceleration. The 'xProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'x'.
           */
           get xProperty() : number {
@@ -90,7 +90,7 @@ module Adaptive {
           y : number;
 
           /**
-             @property {number} yProperty
+             @property {number} y
              Y-axis component of the acceleration. The 'yProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'y'.
           */
           get yProperty() : number {
@@ -108,7 +108,7 @@ module Adaptive {
           z : number;
 
           /**
-             @property {number} zProperty
+             @property {number} z
              Z-axis component of the acceleration. The 'zProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'z'.
           */
           get zProperty() : number {

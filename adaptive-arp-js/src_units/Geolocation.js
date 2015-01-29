@@ -74,7 +74,7 @@ var Adaptive;
         }
         Object.defineProperty(Geolocation.prototype, "altitudeProperty", {
             /**
-               @property {number} altitudeProperty
+               @property {number} altitude
                The current device altitude (or Z coordinate). Measured in meters. The 'altitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'altitude'.
             */
             get: function () {
@@ -88,7 +88,7 @@ var Adaptive;
         });
         Object.defineProperty(Geolocation.prototype, "latitudeProperty", {
             /**
-               @property {number} latitudeProperty
+               @property {number} latitude
                The Y coordinate (or latitude). Measured in degrees. The 'latitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'latitude'.
             */
             get: function () {
@@ -102,7 +102,7 @@ var Adaptive;
         });
         Object.defineProperty(Geolocation.prototype, "longitudeProperty", {
             /**
-               @property {number} longitudeProperty
+               @property {number} longitude
                The X coordinate (or longitude). Measured in degrees. The 'longitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'longitude'.
             */
             get: function () {
@@ -116,7 +116,7 @@ var Adaptive;
         });
         Object.defineProperty(Geolocation.prototype, "timestampProperty", {
             /**
-               @property {number} timestampProperty
+               @property {number} timestamp
                Timestamp of the geolocation reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
             */
             get: function () {
@@ -130,7 +130,7 @@ var Adaptive;
         });
         Object.defineProperty(Geolocation.prototype, "xDoPProperty", {
             /**
-               @property {number} xDoPProperty
+               @property {number} xDoP
                Dilution of precision on the X measurement. Measured in meters. The 'xDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'xDoP'.
             */
             get: function () {
@@ -144,7 +144,7 @@ var Adaptive;
         });
         Object.defineProperty(Geolocation.prototype, "yDoPProperty", {
             /**
-               @property {number} yDoPProperty
+               @property {number} yDoP
                Dilution of precision on the Y measurement. Measured in meters. The 'yDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'yDoP'.
             */
             get: function () {

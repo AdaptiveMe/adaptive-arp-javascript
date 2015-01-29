@@ -47,7 +47,7 @@ declare module Adaptive {
         */
         response: string;
         /**
-           @property {string} responseProperty
+           @property {string} response
            String representing the JavaScript value or JSON object representation of the response. The 'responseProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'response'.
         */
         responseProperty: string;
@@ -57,7 +57,7 @@ declare module Adaptive {
         */
         statusCode: number;
         /**
-           @property {number} statusCodeProperty
+           @property {number} statusCode
            Status code of the response The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
         */
         statusCodeProperty: number;
@@ -67,7 +67,7 @@ declare module Adaptive {
         */
         statusMessage: string;
         /**
-           @property {string} statusMessageProperty
+           @property {string} statusMessage
            Status message of the response The 'statusMessageProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusMessage'.
         */
         statusMessageProperty: string;

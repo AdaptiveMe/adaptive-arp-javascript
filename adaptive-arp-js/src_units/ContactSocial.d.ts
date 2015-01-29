@@ -50,7 +50,7 @@ declare module Adaptive {
         */
         socialNetwork: ContactSocialNetwork;
         /**
-           @property {Adaptive.ContactSocialNetwork} socialNetworkProperty
+           @property {Adaptive.ContactSocialNetwork} socialNetwork
            The social network The 'socialNetworkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'socialNetwork'.
         */
         socialNetworkProperty: ContactSocialNetwork;
@@ -60,7 +60,7 @@ declare module Adaptive {
         */
         profileUrl: string;
         /**
-           @property {string} profileUrlProperty
+           @property {string} profileUrl
            The profileUrl The 'profileUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'profileUrl'.
         */
         profileUrlProperty: string;

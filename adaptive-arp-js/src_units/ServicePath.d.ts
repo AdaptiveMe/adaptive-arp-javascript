@@ -49,7 +49,7 @@ declare module Adaptive {
         */
         type: IServiceType;
         /**
-           @property {Adaptive.IServiceType} typeProperty
+           @property {Adaptive.IServiceType} type
            Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
         */
         typeProperty: IServiceType;
@@ -59,7 +59,7 @@ declare module Adaptive {
         */
         methods: IServiceMethod[];
         /**
-           @property {Adaptive.IServiceMethod[]} methodsProperty
+           @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
         */
         methodsProperty: IServiceMethod[];
@@ -69,7 +69,7 @@ declare module Adaptive {
         */
         path: string;
         /**
-           @property {string} pathProperty
+           @property {string} path
            The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
         */
         pathProperty: string;

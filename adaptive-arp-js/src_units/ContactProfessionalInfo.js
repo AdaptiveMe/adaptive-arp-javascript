@@ -68,7 +68,7 @@ var Adaptive;
         }
         Object.defineProperty(ContactProfessionalInfo.prototype, "companyProperty", {
             /**
-               @property {string} companyProperty
+               @property {string} company
                The company of the job The 'companyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'company'.
             */
             get: function () {
@@ -82,7 +82,7 @@ var Adaptive;
         });
         Object.defineProperty(ContactProfessionalInfo.prototype, "jobDescriptionProperty", {
             /**
-               @property {string} jobDescriptionProperty
+               @property {string} jobDescription
                The job description The 'jobDescriptionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobDescription'.
             */
             get: function () {
@@ -96,7 +96,7 @@ var Adaptive;
         });
         Object.defineProperty(ContactProfessionalInfo.prototype, "jobTitleProperty", {
             /**
-               @property {string} jobTitleProperty
+               @property {string} jobTitle
                The job title The 'jobTitleProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'jobTitle'.
             */
             get: function () {

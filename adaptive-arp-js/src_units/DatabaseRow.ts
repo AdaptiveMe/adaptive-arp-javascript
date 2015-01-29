@@ -54,7 +54,7 @@ module Adaptive {
           values : Array<string>;
 
           /**
-             @property {string[]} valuesProperty
+             @property {string[]} values
              The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
           */
           get valuesProperty() : Array<string> {

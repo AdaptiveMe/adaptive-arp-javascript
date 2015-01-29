@@ -48,7 +48,7 @@ declare module Adaptive {
         */
         name: string;
         /**
-           @property {string} nameProperty
+           @property {string} name
            The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
         */
         nameProperty: string;
@@ -58,7 +58,7 @@ declare module Adaptive {
         */
         serviceEndpoints: ServiceEndpoint[];
         /**
-           @property {Adaptive.ServiceEndpoint[]} serviceEndpointsProperty
+           @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
         */
         serviceEndpointsProperty: ServiceEndpoint[];

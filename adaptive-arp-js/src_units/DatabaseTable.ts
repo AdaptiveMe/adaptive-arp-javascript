@@ -56,7 +56,7 @@ module Adaptive {
           columnCount : number;
 
           /**
-             @property {number} columnCountProperty
+             @property {number} columnCount
              Number of databaseColumns. The 'columnCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'columnCount'.
           */
           get columnCountProperty() : number {
@@ -74,7 +74,7 @@ module Adaptive {
           databaseColumns : Array<DatabaseColumn>;
 
           /**
-             @property {Adaptive.DatabaseColumn[]} databaseColumnsProperty
+             @property {Adaptive.DatabaseColumn[]} databaseColumns
              Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
           */
           get databaseColumnsProperty() : Array<DatabaseColumn> {
@@ -92,7 +92,7 @@ module Adaptive {
           databaseRows : Array<DatabaseRow>;
 
           /**
-             @property {Adaptive.DatabaseRow[]} databaseRowsProperty
+             @property {Adaptive.DatabaseRow[]} databaseRows
              Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
           */
           get databaseRowsProperty() : Array<DatabaseRow> {
@@ -110,7 +110,7 @@ module Adaptive {
           name : string;
 
           /**
-             @property {string} nameProperty
+             @property {string} name
              Name of the table. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
           */
           get nameProperty() : string {
@@ -128,7 +128,7 @@ module Adaptive {
           rowCount : number;
 
           /**
-             @property {number} rowCountProperty
+             @property {number} rowCount
              Number of databaseRows. The 'rowCountProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rowCount'.
           */
           get rowCountProperty() : number {

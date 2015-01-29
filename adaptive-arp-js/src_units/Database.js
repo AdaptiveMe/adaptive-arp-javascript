@@ -66,7 +66,7 @@ var Adaptive;
         }
         Object.defineProperty(Database.prototype, "compressProperty", {
             /**
-               @property {boolean} compressProperty
+               @property {boolean} compress
                Indicates if database was created or needs to be created as Compressed. The 'compressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'compress'.
             */
             get: function () {
@@ -80,7 +80,7 @@ var Adaptive;
         });
         Object.defineProperty(Database.prototype, "nameProperty", {
             /**
-               @property {string} nameProperty
+               @property {string} name
                Database Name (name of the .db local file). The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
             */
             get: function () {

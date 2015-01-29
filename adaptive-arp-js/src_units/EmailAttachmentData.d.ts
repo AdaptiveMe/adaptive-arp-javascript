@@ -49,7 +49,7 @@ declare module Adaptive {
         */
         data: number[];
         /**
-           @property {number[]} dataProperty
+           @property {number[]} data
            The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
         */
         dataProperty: number[];
@@ -59,7 +59,7 @@ declare module Adaptive {
         */
         fileName: string;
         /**
-           @property {string} fileNameProperty
+           @property {string} fileName
            The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
         */
         fileNameProperty: string;
@@ -69,7 +69,7 @@ declare module Adaptive {
         */
         mimeType: string;
         /**
-           @property {string} mimeTypeProperty
+           @property {string} mimeType
            The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
         */
         mimeTypeProperty: string;
@@ -79,7 +79,7 @@ declare module Adaptive {
         */
         referenceUrl: string;
         /**
-           @property {string} referenceUrlProperty
+           @property {string} referenceUrl
            The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
         */
         referenceUrlProperty: string;
@@ -89,7 +89,7 @@ declare module Adaptive {
         */
         size: number;
         /**
-           @property {number} sizeProperty
+           @property {number} size
            The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
         */
         sizeProperty: number;

@@ -70,7 +70,7 @@ var Adaptive;
         }
         Object.defineProperty(DeviceInfo.prototype, "modelProperty", {
             /**
-               @property {string} modelProperty
+               @property {string} model
                Model of device - equivalent to device release or version. The 'modelProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'model'.
             */
             get: function () {
@@ -84,7 +84,7 @@ var Adaptive;
         });
         Object.defineProperty(DeviceInfo.prototype, "nameProperty", {
             /**
-               @property {string} nameProperty
+               @property {string} name
                Name of device - equivalent to brand. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
             */
             get: function () {
@@ -98,7 +98,7 @@ var Adaptive;
         });
         Object.defineProperty(DeviceInfo.prototype, "uuidProperty", {
             /**
-               @property {string} uuidProperty
+               @property {string} uuid
                Device identifier - this may not be unique for a device. It may depend on the platform implementation and may
   be unique for a specific instance of an application on a specific device. The 'uuidProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'uuid'.
             */
@@ -113,7 +113,7 @@ var Adaptive;
         });
         Object.defineProperty(DeviceInfo.prototype, "vendorProperty", {
             /**
-               @property {string} vendorProperty
+               @property {string} vendor
                Vendor of the device hardware. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
             */
             get: function () {

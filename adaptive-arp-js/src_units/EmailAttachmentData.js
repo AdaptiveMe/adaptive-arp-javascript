@@ -72,7 +72,7 @@ var Adaptive;
         }
         Object.defineProperty(EmailAttachmentData.prototype, "dataProperty", {
             /**
-               @property {number[]} dataProperty
+               @property {number[]} data
                The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
             */
             get: function () {
@@ -86,7 +86,7 @@ var Adaptive;
         });
         Object.defineProperty(EmailAttachmentData.prototype, "fileNameProperty", {
             /**
-               @property {string} fileNameProperty
+               @property {string} fileName
                The name of the current file attachment The 'fileNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'fileName'.
             */
             get: function () {
@@ -100,7 +100,7 @@ var Adaptive;
         });
         Object.defineProperty(EmailAttachmentData.prototype, "mimeTypeProperty", {
             /**
-               @property {string} mimeTypeProperty
+               @property {string} mimeType
                The mime type of the current attachment The 'mimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'mimeType'.
             */
             get: function () {
@@ -114,7 +114,7 @@ var Adaptive;
         });
         Object.defineProperty(EmailAttachmentData.prototype, "referenceUrlProperty", {
             /**
-               @property {string} referenceUrlProperty
+               @property {string} referenceUrl
                The relative path where the contents for the attachment file could be located. The 'referenceUrlProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'referenceUrl'.
             */
             get: function () {
@@ -128,7 +128,7 @@ var Adaptive;
         });
         Object.defineProperty(EmailAttachmentData.prototype, "sizeProperty", {
             /**
-               @property {number} sizeProperty
+               @property {number} size
                The data size (in bytes) of the current file attachment The 'sizeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'size'.
             */
             get: function () {

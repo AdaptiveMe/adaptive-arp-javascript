@@ -51,7 +51,7 @@ other invocation methods. This is also defined per function of each endpoint in 
         */
         invocationMethod: IServiceMethod;
         /**
-           @property {Adaptive.IServiceMethod} invocationMethodProperty
+           @property {Adaptive.IServiceMethod} invocationMethod
            Http method to be used by the invocation - this is typically GET or POST albeit the platform may support
 other invocation methods. This is also defined per function of each endpoint in the platform's XML file. The 'invocationMethodProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'invocationMethod'.
         */
@@ -63,7 +63,7 @@ host and port combination for a given service.
         */
         endpointName: string;
         /**
-           @property {string} endpointNameProperty
+           @property {string} endpointName
            Name of the endpoint configured in the platform's services XML file. This is a reference to a specific schema,
 host and port combination for a given service. The 'endpointNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'endpointName'.
         */
@@ -75,7 +75,7 @@ to a relative path of a function published on a remote service.
         */
         functionName: string;
         /**
-           @property {string} functionNameProperty
+           @property {string} functionName
            Name of the function configured in the platform's services XML file for a specific endpoint. This is a reference
 to a relative path of a function published on a remote service. The 'functionNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'functionName'.
         */
@@ -86,7 +86,7 @@ to a relative path of a function published on a remote service. The 'functionNam
         */
         serviceName: string;
         /**
-           @property {string} serviceNameProperty
+           @property {string} serviceName
            Name of the service configured in the platform's services XML file. The 'serviceNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceName'.
         */
         serviceNameProperty: string;

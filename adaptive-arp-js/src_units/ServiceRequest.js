@@ -70,7 +70,7 @@ var Adaptive;
         }
         Object.defineProperty(ServiceRequest.prototype, "bodyParametersProperty", {
             /**
-               @property {Adaptive.ServiceRequestParameter[]} bodyParametersProperty
+               @property {Adaptive.ServiceRequestParameter[]} bodyParameters
                Body parameters to be included in the body of the request to a service. These may be applied
   during GET/POST operations. No body parameters are included if this array is null or length zero. The 'bodyParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bodyParameters'.
             */
@@ -85,7 +85,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "contentProperty", {
             /**
-               @property {string} contentProperty
+               @property {string} content
                Request data content (plain text). This should be populated by the application. The content should be
   in some well-known web format - in specific, binaries submitted should be encoded to base64 and the content
   type should be set respectively by the application. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
@@ -101,7 +101,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "contentEncodingProperty", {
             /**
-               @property {string} contentEncodingProperty
+               @property {string} contentEncoding
                Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
   populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
             */
@@ -116,7 +116,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "contentLengthProperty", {
             /**
-               @property {number} contentLengthProperty
+               @property {number} contentLength
                The length in bytes of the content. This may be populated by the application, the platform
   calculates this length automatically if a specific contentLength is not specified. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
             */
@@ -131,7 +131,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "contentTypeProperty", {
             /**
-               @property {string} contentTypeProperty
+               @property {string} contentType
                The request content type (MIME TYPE). This may be populated by the application, the platform
   populates this field with defaults for the service. The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
             */
@@ -146,7 +146,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "queryParametersProperty", {
             /**
-               @property {Adaptive.ServiceRequestParameter[]} queryParametersProperty
+               @property {Adaptive.ServiceRequestParameter[]} queryParameters
                Query string parameters to be appended to the service URL when making the request. These may be applied
   during GET/POST operations. No query parameters are appended if this array is null or length zero. The 'queryParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'queryParameters'.
             */
@@ -161,7 +161,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "serviceHeadersProperty", {
             /**
-               @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+               @property {Adaptive.ServiceHeader[]} serviceHeaders
                The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
   application, the platform populates this field with defaults for the service and the previous headers.
   In specific, the platform maintains request and response state automatically. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
@@ -177,7 +177,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "serviceSessionProperty", {
             /**
-               @property {Adaptive.ServiceSession} serviceSessionProperty
+               @property {Adaptive.ServiceSession} serviceSession
                Session attributes and cookies. This may be populated by the application, the platform populates
   this field with defaults for the service and the previous state information. In specific, the platform
   maintains request and response state automatically. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
@@ -193,7 +193,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "serviceTokenProperty", {
             /**
-               @property {Adaptive.ServiceToken} serviceTokenProperty
+               @property {Adaptive.ServiceToken} serviceToken
                Token used for the creation of the request with the destination service, endpoint, function and method
   identifiers. This should not be manipulated by the application directly. The 'serviceTokenProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceToken'.
             */
@@ -208,7 +208,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceRequest.prototype, "userAgentProperty", {
             /**
-               @property {string} userAgentProperty
+               @property {string} userAgent
                This attribute allows for the default user-agent string to be overridden by the application. The 'userAgentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'userAgent'.
             */
             get: function () {

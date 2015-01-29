@@ -61,7 +61,7 @@ Possible lifecycle States:
         */
         state: LifecycleState;
         /**
-           @property {Adaptive.LifecycleState} stateProperty
+           @property {Adaptive.LifecycleState} state
            Represent the state of the app
 <p>
 Possible lifecycle States:

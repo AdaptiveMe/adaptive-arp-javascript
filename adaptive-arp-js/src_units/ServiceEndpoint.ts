@@ -54,7 +54,7 @@ module Adaptive {
           validationType : IServiceCertificateValidation;
 
           /**
-             @property {Adaptive.IServiceCertificateValidation} validationTypeProperty
+             @property {Adaptive.IServiceCertificateValidation} validationType
              Type of validation to be performed for SSL hosts. The 'validationTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'validationType'.
           */
           get validationTypeProperty() : IServiceCertificateValidation {
@@ -72,7 +72,7 @@ module Adaptive {
           hostURI : string;
 
           /**
-             @property {string} hostURIProperty
+             @property {string} hostURI
              The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The 'hostURIProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'hostURI'.
           */
           get hostURIProperty() : string {
@@ -90,7 +90,7 @@ module Adaptive {
           paths : Array<ServicePath>;
 
           /**
-             @property {Adaptive.ServicePath[]} pathsProperty
+             @property {Adaptive.ServicePath[]} paths
              The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
           */
           get pathsProperty() : Array<ServicePath> {

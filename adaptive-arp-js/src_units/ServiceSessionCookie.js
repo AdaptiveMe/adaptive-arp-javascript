@@ -78,7 +78,7 @@ var Adaptive;
         }
         Object.defineProperty(ServiceSessionCookie.prototype, "cookieNameProperty", {
             /**
-               @property {string} cookieNameProperty
+               @property {string} cookieName
                Name ot the cookie. The 'cookieNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieName'.
             */
             get: function () {
@@ -92,7 +92,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "cookieValueProperty", {
             /**
-               @property {string} cookieValueProperty
+               @property {string} cookieValue
                Value of the ServiceCookie. The 'cookieValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookieValue'.
             */
             get: function () {
@@ -106,7 +106,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "creationProperty", {
             /**
-               @property {number} creationProperty
+               @property {number} creation
                ServiceCookie creation timestamp in milliseconds. The 'creationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'creation'.
             */
             get: function () {
@@ -120,7 +120,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "domainProperty", {
             /**
-               @property {string} domainProperty
+               @property {string} domain
                Domain for which the cookie is valid. The 'domainProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'domain'.
             */
             get: function () {
@@ -134,7 +134,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "expiryProperty", {
             /**
-               @property {number} expiryProperty
+               @property {number} expiry
                ServiceCookie expiry in milliseconds or -1 for session only. The 'expiryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'expiry'.
             */
             get: function () {
@@ -148,7 +148,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "pathProperty", {
             /**
-               @property {string} pathProperty
+               @property {string} path
                URI path for which the cookie is valid. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
             */
             get: function () {
@@ -162,7 +162,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "schemeProperty", {
             /**
-               @property {string} schemeProperty
+               @property {string} scheme
                Scheme of the domain - http/https - for which the cookie is valid. The 'schemeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'scheme'.
             */
             get: function () {
@@ -176,7 +176,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceSessionCookie.prototype, "secureProperty", {
             /**
-               @property {boolean} secureProperty
+               @property {boolean} secure
                ServiceCookie is secure (https only). The 'secureProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secure'.
             */
             get: function () {

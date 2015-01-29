@@ -49,7 +49,7 @@ declare module Adaptive {
         */
         name: string;
         /**
-           @property {string} nameProperty
+           @property {string} name
            Name of the column The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
         */
         nameProperty: string;

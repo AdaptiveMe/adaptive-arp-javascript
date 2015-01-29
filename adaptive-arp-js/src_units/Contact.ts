@@ -62,7 +62,7 @@ module Adaptive {
           contactAddresses : Array<ContactAddress>;
 
           /**
-             @property {Adaptive.ContactAddress[]} contactAddressesProperty
+             @property {Adaptive.ContactAddress[]} contactAddresses
              The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
           */
           get contactAddressesProperty() : Array<ContactAddress> {
@@ -80,7 +80,7 @@ module Adaptive {
           contactEmails : Array<ContactEmail>;
 
           /**
-             @property {Adaptive.ContactEmail[]} contactEmailsProperty
+             @property {Adaptive.ContactEmail[]} contactEmails
              The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
           */
           get contactEmailsProperty() : Array<ContactEmail> {
@@ -98,7 +98,7 @@ module Adaptive {
           contactPhones : Array<ContactPhone>;
 
           /**
-             @property {Adaptive.ContactPhone[]} contactPhonesProperty
+             @property {Adaptive.ContactPhone[]} contactPhones
              The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
           */
           get contactPhonesProperty() : Array<ContactPhone> {
@@ -116,7 +116,7 @@ module Adaptive {
           contactSocials : Array<ContactSocial>;
 
           /**
-             @property {Adaptive.ContactSocial[]} contactSocialsProperty
+             @property {Adaptive.ContactSocial[]} contactSocials
              The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
           */
           get contactSocialsProperty() : Array<ContactSocial> {
@@ -134,7 +134,7 @@ module Adaptive {
           contactTags : Array<ContactTag>;
 
           /**
-             @property {Adaptive.ContactTag[]} contactTagsProperty
+             @property {Adaptive.ContactTag[]} contactTags
              The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
           */
           get contactTagsProperty() : Array<ContactTag> {
@@ -152,7 +152,7 @@ module Adaptive {
           contactWebsites : Array<ContactWebsite>;
 
           /**
-             @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+             @property {Adaptive.ContactWebsite[]} contactWebsites
              The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
           */
           get contactWebsitesProperty() : Array<ContactWebsite> {
@@ -170,7 +170,7 @@ module Adaptive {
           personalInfo : ContactPersonalInfo;
 
           /**
-             @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+             @property {Adaptive.ContactPersonalInfo} personalInfo
              The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
           */
           get personalInfoProperty() : ContactPersonalInfo {
@@ -188,7 +188,7 @@ module Adaptive {
           professionalInfo : ContactProfessionalInfo;
 
           /**
-             @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+             @property {Adaptive.ContactProfessionalInfo} professionalInfo
              The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
           */
           get professionalInfoProperty() : ContactProfessionalInfo {

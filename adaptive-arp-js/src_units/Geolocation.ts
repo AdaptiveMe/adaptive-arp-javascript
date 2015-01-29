@@ -54,7 +54,7 @@ module Adaptive {
           altitude : number;
 
           /**
-             @property {number} altitudeProperty
+             @property {number} altitude
              The current device altitude (or Z coordinate). Measured in meters. The 'altitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'altitude'.
           */
           get altitudeProperty() : number {
@@ -72,7 +72,7 @@ module Adaptive {
           latitude : number;
 
           /**
-             @property {number} latitudeProperty
+             @property {number} latitude
              The Y coordinate (or latitude). Measured in degrees. The 'latitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'latitude'.
           */
           get latitudeProperty() : number {
@@ -90,7 +90,7 @@ module Adaptive {
           longitude : number;
 
           /**
-             @property {number} longitudeProperty
+             @property {number} longitude
              The X coordinate (or longitude). Measured in degrees. The 'longitudeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'longitude'.
           */
           get longitudeProperty() : number {
@@ -108,7 +108,7 @@ module Adaptive {
           timestamp : number;
 
           /**
-             @property {number} timestampProperty
+             @property {number} timestamp
              Timestamp of the geolocation reading. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
           */
           get timestampProperty() : number {
@@ -126,7 +126,7 @@ module Adaptive {
           xDoP : number;
 
           /**
-             @property {number} xDoPProperty
+             @property {number} xDoP
              Dilution of precision on the X measurement. Measured in meters. The 'xDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'xDoP'.
           */
           get xDoPProperty() : number {
@@ -144,7 +144,7 @@ module Adaptive {
           yDoP : number;
 
           /**
-             @property {number} yDoPProperty
+             @property {number} yDoP
              Dilution of precision on the Y measurement. Measured in meters. The 'yDoPProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'yDoP'.
           */
           get yDoPProperty() : number {

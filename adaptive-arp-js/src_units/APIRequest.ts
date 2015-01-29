@@ -51,7 +51,7 @@ module Adaptive {
           asyncId : number;
 
           /**
-             @property {number} asyncIdProperty
+             @property {number} asyncId
              Identifier of callback or listener for async operations. The 'asyncIdProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'asyncId'.
           */
           get asyncIdProperty() : number {
@@ -69,7 +69,7 @@ module Adaptive {
           bridgeType : string;
 
           /**
-             @property {string} bridgeTypeProperty
+             @property {string} bridgeType
              String representing the bridge type to obtain. The 'bridgeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bridgeType'.
           */
           get bridgeTypeProperty() : string {
@@ -87,7 +87,7 @@ module Adaptive {
           methodName : string;
 
           /**
-             @property {string} methodNameProperty
+             @property {string} methodName
              String representing the method name to call. The 'methodNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methodName'.
           */
           get methodNameProperty() : string {
@@ -105,7 +105,7 @@ module Adaptive {
           parameters : Array<string>;
 
           /**
-             @property {string[]} parametersProperty
+             @property {string[]} parameters
              Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
           */
           get parametersProperty() : Array<string> {

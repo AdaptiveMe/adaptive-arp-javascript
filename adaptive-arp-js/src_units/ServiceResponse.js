@@ -76,7 +76,7 @@ var Adaptive;
         }
         Object.defineProperty(ServiceResponse.prototype, "contentProperty", {
             /**
-               @property {string} contentProperty
+               @property {string} content
                Response data content. The content should be in some well-known web format - in specific, binaries returned
   should be encoded in base64. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
             */
@@ -91,7 +91,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceResponse.prototype, "contentEncodingProperty", {
             /**
-               @property {string} contentEncodingProperty
+               @property {string} contentEncoding
                Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
             */
             get: function () {
@@ -105,7 +105,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceResponse.prototype, "contentLengthProperty", {
             /**
-               @property {number} contentLengthProperty
+               @property {number} contentLength
                The length in bytes for the Content field. The 'contentLengthProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentLength'.
             */
             get: function () {
@@ -119,7 +119,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceResponse.prototype, "contentTypeProperty", {
             /**
-               @property {string} contentTypeProperty
+               @property {string} contentType
                The request/response content type (MIME TYPE). The 'contentTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentType'.
             */
             get: function () {
@@ -133,7 +133,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceResponse.prototype, "serviceHeadersProperty", {
             /**
-               @property {Adaptive.ServiceHeader[]} serviceHeadersProperty
+               @property {Adaptive.ServiceHeader[]} serviceHeaders
                The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
             */
             get: function () {
@@ -147,7 +147,7 @@ var Adaptive;
         });
         Object.defineProperty(ServiceResponse.prototype, "serviceSessionProperty", {
             /**
-               @property {Adaptive.ServiceSession} serviceSessionProperty
+               @property {Adaptive.ServiceSession} serviceSession
                Information about the session. The 'serviceSessionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceSession'.
             */
             get: function () {

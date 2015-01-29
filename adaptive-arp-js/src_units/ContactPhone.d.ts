@@ -50,7 +50,7 @@ declare module Adaptive {
         */
         phoneType: ContactPhoneType;
         /**
-           @property {Adaptive.ContactPhoneType} phoneTypeProperty
+           @property {Adaptive.ContactPhoneType} phoneType
            The phone number phoneType The 'phoneTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phoneType'.
         */
         phoneTypeProperty: ContactPhoneType;
@@ -60,7 +60,7 @@ declare module Adaptive {
         */
         phone: string;
         /**
-           @property {string} phoneProperty
+           @property {string} phone
            The phone number The 'phoneProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'phone'.
         */
         phoneProperty: string;

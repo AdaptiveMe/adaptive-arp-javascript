@@ -65,7 +65,7 @@ var Adaptive;
         }
         Object.defineProperty(Lifecycle.prototype, "stateProperty", {
             /**
-               @property {Adaptive.LifecycleState} stateProperty
+               @property {Adaptive.LifecycleState} state
                Represent the state of the app
   <p>
   Possible lifecycle States:

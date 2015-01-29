@@ -51,7 +51,7 @@ declare module Adaptive {
         */
         bccRecipients: EmailAddress[];
         /**
-           @property {Adaptive.EmailAddress[]} bccRecipientsProperty
+           @property {Adaptive.EmailAddress[]} bccRecipients
            Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
         */
         bccRecipientsProperty: EmailAddress[];
@@ -61,7 +61,7 @@ declare module Adaptive {
         */
         ccRecipients: EmailAddress[];
         /**
-           @property {Adaptive.EmailAddress[]} ccRecipientsProperty
+           @property {Adaptive.EmailAddress[]} ccRecipients
            Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
         */
         ccRecipientsProperty: EmailAddress[];
@@ -71,7 +71,7 @@ declare module Adaptive {
         */
         emailAttachmentData: EmailAttachmentData[];
         /**
-           @property {Adaptive.EmailAttachmentData[]} emailAttachmentDataProperty
+           @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
            Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
         */
         emailAttachmentDataProperty: EmailAttachmentData[];
@@ -81,7 +81,7 @@ declare module Adaptive {
         */
         messageBody: string;
         /**
-           @property {string} messageBodyProperty
+           @property {string} messageBody
            Message body The 'messageBodyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBody'.
         */
         messageBodyProperty: string;
@@ -91,7 +91,7 @@ declare module Adaptive {
         */
         messageBodyMimeType: string;
         /**
-           @property {string} messageBodyMimeTypeProperty
+           @property {string} messageBodyMimeType
            Message body mime type The 'messageBodyMimeTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'messageBodyMimeType'.
         */
         messageBodyMimeTypeProperty: string;
@@ -101,7 +101,7 @@ declare module Adaptive {
         */
         subject: string;
         /**
-           @property {string} subjectProperty
+           @property {string} subject
            Subject of the email The 'subjectProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'subject'.
         */
         subjectProperty: string;
@@ -111,7 +111,7 @@ declare module Adaptive {
         */
         toRecipients: EmailAddress[];
         /**
-           @property {Adaptive.EmailAddress[]} toRecipientsProperty
+           @property {Adaptive.EmailAddress[]} toRecipients
            Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
         */
         toRecipientsProperty: EmailAddress[];

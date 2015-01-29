@@ -54,7 +54,7 @@ module Adaptive {
           tagName : string;
 
           /**
-             @property {string} tagNameProperty
+             @property {string} tagName
              The tagName of the Tag The 'tagNameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagName'.
           */
           get tagNameProperty() : string {
@@ -72,7 +72,7 @@ module Adaptive {
           tagValue : string;
 
           /**
-             @property {string} tagValueProperty
+             @property {string} tagValue
              The tagValue of the Tag The 'tagValueProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'tagValue'.
           */
           get tagValueProperty() : string {

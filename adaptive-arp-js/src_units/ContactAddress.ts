@@ -55,7 +55,7 @@ module Adaptive {
           type : ContactAddressType;
 
           /**
-             @property {Adaptive.ContactAddressType} typeProperty
+             @property {Adaptive.ContactAddressType} type
              The address type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
           */
           get typeProperty() : ContactAddressType {
@@ -73,7 +73,7 @@ module Adaptive {
           address : string;
 
           /**
-             @property {string} addressProperty
+             @property {string} address
              The Contact address The 'addressProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'address'.
           */
           get addressProperty() : string {

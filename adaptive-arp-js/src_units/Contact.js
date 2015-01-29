@@ -87,7 +87,7 @@ var Adaptive;
         }
         Object.defineProperty(Contact.prototype, "contactAddressesProperty", {
             /**
-               @property {Adaptive.ContactAddress[]} contactAddressesProperty
+               @property {Adaptive.ContactAddress[]} contactAddresses
                The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
             */
             get: function () {
@@ -101,7 +101,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "contactEmailsProperty", {
             /**
-               @property {Adaptive.ContactEmail[]} contactEmailsProperty
+               @property {Adaptive.ContactEmail[]} contactEmails
                The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
             */
             get: function () {
@@ -115,7 +115,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "contactPhonesProperty", {
             /**
-               @property {Adaptive.ContactPhone[]} contactPhonesProperty
+               @property {Adaptive.ContactPhone[]} contactPhones
                The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
             */
             get: function () {
@@ -129,7 +129,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "contactSocialsProperty", {
             /**
-               @property {Adaptive.ContactSocial[]} contactSocialsProperty
+               @property {Adaptive.ContactSocial[]} contactSocials
                The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
             */
             get: function () {
@@ -143,7 +143,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "contactTagsProperty", {
             /**
-               @property {Adaptive.ContactTag[]} contactTagsProperty
+               @property {Adaptive.ContactTag[]} contactTags
                The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
             */
             get: function () {
@@ -157,7 +157,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "contactWebsitesProperty", {
             /**
-               @property {Adaptive.ContactWebsite[]} contactWebsitesProperty
+               @property {Adaptive.ContactWebsite[]} contactWebsites
                The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
             */
             get: function () {
@@ -171,7 +171,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "personalInfoProperty", {
             /**
-               @property {Adaptive.ContactPersonalInfo} personalInfoProperty
+               @property {Adaptive.ContactPersonalInfo} personalInfo
                The personal info from the contact The 'personalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'personalInfo'.
             */
             get: function () {
@@ -185,7 +185,7 @@ var Adaptive;
         });
         Object.defineProperty(Contact.prototype, "professionalInfoProperty", {
             /**
-               @property {Adaptive.ContactProfessionalInfo} professionalInfoProperty
+               @property {Adaptive.ContactProfessionalInfo} professionalInfo
                The professional info from the contact The 'professionalInfoProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'professionalInfo'.
             */
             get: function () {

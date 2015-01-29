@@ -51,7 +51,7 @@ declare module Adaptive {
         */
         attributes: ServiceSessionAttribute[];
         /**
-           @property {Adaptive.ServiceSessionAttribute[]} attributesProperty
+           @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
         */
         attributesProperty: ServiceSessionAttribute[];
@@ -61,7 +61,7 @@ declare module Adaptive {
         */
         cookies: ServiceSessionCookie[];
         /**
-           @property {Adaptive.ServiceSessionCookie[]} cookiesProperty
+           @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
         */
         cookiesProperty: ServiceSessionCookie[];

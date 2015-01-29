@@ -69,7 +69,7 @@ var Adaptive;
         }
         Object.defineProperty(OSInfo.prototype, "nameProperty", {
             /**
-               @property {Adaptive.IOSType} nameProperty
+               @property {Adaptive.IOSType} name
                The name of the operating system. The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
             */
             get: function () {
@@ -83,7 +83,7 @@ var Adaptive;
         });
         Object.defineProperty(OSInfo.prototype, "vendorProperty", {
             /**
-               @property {string} vendorProperty
+               @property {string} vendor
                The vendor of the operating system. The 'vendorProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'vendor'.
             */
             get: function () {
@@ -97,7 +97,7 @@ var Adaptive;
         });
         Object.defineProperty(OSInfo.prototype, "versionProperty", {
             /**
-               @property {string} versionProperty
+               @property {string} version
                The version/identifier of the operating system. The 'versionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'version'.
             */
             get: function () {

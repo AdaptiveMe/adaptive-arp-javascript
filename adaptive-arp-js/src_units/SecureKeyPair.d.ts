@@ -49,7 +49,7 @@ declare module Adaptive {
         */
         secureData: string;
         /**
-           @property {string} secureDataProperty
+           @property {string} secureData
            Value of the secured element The 'secureDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureData'.
         */
         secureDataProperty: string;
@@ -59,7 +59,7 @@ declare module Adaptive {
         */
         secureKey: string;
         /**
-           @property {string} secureKeyProperty
+           @property {string} secureKey
            Key of the secured element The 'secureKeyProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'secureKey'.
         */
         secureKeyProperty: string;

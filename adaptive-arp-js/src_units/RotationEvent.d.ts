@@ -53,7 +53,7 @@ DidFinishRotation.
         */
         destination: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} destinationProperty
+           @property {Adaptive.ICapabilitiesOrientation} destination
            The orientation we're rotating to. This is the future orientation when the state of the event is
 WillStartRotation. This will be the current orientation when the rotation is finished with the state
 DidFinishRotation. The 'destinationProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'destination'.
@@ -67,7 +67,7 @@ DidFinishRotation.
         */
         origin: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} originProperty
+           @property {Adaptive.ICapabilitiesOrientation} origin
            The orientation we're rotating from. This is the current orientation when the state of the event is
 WillStartRotation. This will be the previous orientation when the rotation is finished with the state
 DidFinishRotation. The 'originProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'origin'.
@@ -81,7 +81,7 @@ concluded.
         */
         state: RotationEventState;
         /**
-           @property {Adaptive.RotationEventState} stateProperty
+           @property {Adaptive.RotationEventState} state
            The state of the event to indicate the start of the rotation and the end of the rotation event. This allows
 for functions to be pre-emptively performed (veto change, re-layout, etc.) before rotation is effected and
 concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
@@ -93,7 +93,7 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
         */
         timestamp: number;
         /**
-           @property {number} timestampProperty
+           @property {number} timestamp
            The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
         */
         timestampProperty: number;

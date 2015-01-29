@@ -69,7 +69,7 @@ var Adaptive;
         }
         Object.defineProperty(ContactEmail.prototype, "typeProperty", {
             /**
-               @property {Adaptive.ContactEmailType} typeProperty
+               @property {Adaptive.ContactEmailType} type
                The type of the email The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
             */
             get: function () {
@@ -83,7 +83,7 @@ var Adaptive;
         });
         Object.defineProperty(ContactEmail.prototype, "emailProperty", {
             /**
-               @property {string} emailProperty
+               @property {string} email
                Email of the Contact The 'emailProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'email'.
             */
             get: function () {
@@ -97,7 +97,7 @@ var Adaptive;
         });
         Object.defineProperty(ContactEmail.prototype, "primaryProperty", {
             /**
-               @property {boolean} primaryProperty
+               @property {boolean} primary
                Whether the email is the primary one or not The 'primaryProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'primary'.
             */
             get: function () {
