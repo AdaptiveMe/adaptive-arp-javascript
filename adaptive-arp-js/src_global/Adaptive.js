@@ -10281,8 +10281,9 @@ event may be fired if the application vetoes display rotation before rotation is
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(Locale.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(Locale.toObject(responseArray[__key__]));
                         }
                     }
                     else {
@@ -10372,8 +10373,9 @@ event may be fired if the application vetoes display rotation before rotation is
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(KeyPair.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(KeyPair.toObject(responseArray[__key__]));
                         }
                     }
                     else {
@@ -11175,8 +11177,9 @@ configured in the platform's XML service definition file.
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(ServiceToken.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(ServiceToken.toObject(responseArray[__key__]));
                         }
                     }
                     else {
@@ -14616,8 +14619,9 @@ support at least one orientation. This is usually PortaitUp.
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(ICapabilitiesOrientation.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(ICapabilitiesOrientation.toObject(responseArray[__key__]));
                         }
                     }
                     else {

@@ -135,10 +135,11 @@ support at least one orientation. This is usually PortaitUp.
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                         response = new Array<ICapabilitiesOrientation>();
-                         for(var __value__ in JSON.parse(apiResponse.getResponse())) {
-                              response.push(ICapabilitiesOrientation.toObject(__value__));
-                         }
+                              response = new Array<ICapabilitiesOrientation>();
+                              var responseArray : [any] = JSON.parse(apiResponse.getResponse());
+                              for(var __key__ in responseArray) {
+                                   response.push(ICapabilitiesOrientation.toObject(responseArray[__key__]));
+                              }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.getOrientationsSupported' ["+apiResponse.getStatusMessage()+"].");
                          }

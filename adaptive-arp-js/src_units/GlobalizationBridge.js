@@ -133,8 +133,9 @@ var Adaptive;
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(Adaptive.Locale.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(Adaptive.Locale.toObject(responseArray[__key__]));
                         }
                     }
                     else {
@@ -224,8 +225,9 @@ var Adaptive;
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(Adaptive.KeyPair.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(Adaptive.KeyPair.toObject(responseArray[__key__]));
                         }
                     }
                     else {

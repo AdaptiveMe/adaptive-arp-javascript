@@ -142,8 +142,9 @@ support at least one orientation. This is usually PortaitUp.
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
-                        for (var __value__ in JSON.parse(apiResponse.getResponse())) {
-                            response.push(Adaptive.ICapabilitiesOrientation.toObject(__value__));
+                        var responseArray = JSON.parse(apiResponse.getResponse());
+                        for (var __key__ in responseArray) {
+                            response.push(Adaptive.ICapabilitiesOrientation.toObject(responseArray[__key__]));
                         }
                     }
                     else {

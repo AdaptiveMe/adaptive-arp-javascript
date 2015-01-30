@@ -126,10 +126,11 @@ module Adaptive {
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                         response = new Array<Locale>();
-                         for(var __value__ in JSON.parse(apiResponse.getResponse())) {
-                              response.push(Locale.toObject(__value__));
-                         }
+                              response = new Array<Locale>();
+                              var responseArray : [any] = JSON.parse(apiResponse.getResponse());
+                              for(var __key__ in responseArray) {
+                                   response.push(Locale.toObject(responseArray[__key__]));
+                              }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -213,10 +214,11 @@ module Adaptive {
                     if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                         response = new Array<KeyPair>();
-                         for(var __value__ in JSON.parse(apiResponse.getResponse())) {
-                              response.push(KeyPair.toObject(__value__));
-                         }
+                              response = new Array<KeyPair>();
+                              var responseArray : [any] = JSON.parse(apiResponse.getResponse());
+                              for(var __key__ in responseArray) {
+                                   response.push(KeyPair.toObject(responseArray[__key__]));
+                              }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getResourceLiterals' ["+apiResponse.getStatusMessage()+"].");
                          }
