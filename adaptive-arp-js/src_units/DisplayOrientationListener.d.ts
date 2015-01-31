@@ -62,18 +62,18 @@ declare module Adaptive {
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.RotationEvent} rotationEvent
     */
-    function handleDisplayOrientationListenerResult(id: number, event: RotationEvent): void;
+    function handleDisplayOrientationListenerResult(id: number, rotationEvent: RotationEvent): void;
     /**
        @method
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.RotationEvent} rotationEvent
        @param {Adaptive.IDisplayOrientationListenerWarning} warning
     */
-    function handleDisplayOrientationListenerWarning(id: number, event: RotationEvent, warning: IDisplayOrientationListenerWarning): void;
+    function handleDisplayOrientationListenerWarning(id: number, rotationEvent: RotationEvent, warning: IDisplayOrientationListenerWarning): void;
     /**
        @class Adaptive.DisplayOrientationListener
        @extends Adaptive.BaseListener
@@ -88,12 +88,12 @@ declare module Adaptive {
            @private
            @property
         */
-        onResultFunction: (event: RotationEvent) => void;
+        onResultFunction: (rotationEvent: RotationEvent) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (event: RotationEvent, warning: IDisplayOrientationListenerWarning) => void;
+        onWarningFunction: (rotationEvent: RotationEvent, warning: IDisplayOrientationListenerWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for listener.
@@ -102,7 +102,7 @@ declare module Adaptive {
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.RotationEvent
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.RotationEvent, Adaptive.IDisplayOrientationListenerWarning
         */
-        constructor(onErrorFunction: (error: IDisplayOrientationListenerError) => void, onResultFunction: (event: RotationEvent) => void, onWarningFunction: (event: RotationEvent, warning: IDisplayOrientationListenerWarning) => void);
+        constructor(onErrorFunction: (error: IDisplayOrientationListenerError) => void, onResultFunction: (rotationEvent: RotationEvent) => void, onWarningFunction: (rotationEvent: RotationEvent, warning: IDisplayOrientationListenerWarning) => void);
         /**
            @method
            Although extremely unlikely, this event will be fired if something beyond the control of the
@@ -114,18 +114,18 @@ platform impedes the rotation of the display.
         /**
            @method
            Event fired with the successful start and finish of a rotation.
-           @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.RotationEvent} rotationEvent rotationEvent RotationEvent containing origin, destination and state of the event.
            @since v2.0.5
         */
-        onResult(event: RotationEvent): void;
+        onResult(rotationEvent: RotationEvent): void;
         /**
            @method
            Event fired with a warning when the rotation is aborted. In specific, this
 event may be fired if the application vetoes display rotation before rotation is completed.
-           @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.RotationEvent} rotationEvent rotationEvent   RotationEvent containing origin, destination and state of the event.
            @param {Adaptive.IDisplayOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
            @since v2.0.5
         */
-        onWarning(event: RotationEvent, warning: IDisplayOrientationListenerWarning): void;
+        onWarning(rotationEvent: RotationEvent, warning: IDisplayOrientationListenerWarning): void;
     }
 }

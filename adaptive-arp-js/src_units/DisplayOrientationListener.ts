@@ -76,14 +76,14 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.RotationEvent} event
+        @param {Adaptive.RotationEvent} rotationEvent
      */
-     export function handleDisplayOrientationListenerResult(id : number, event : RotationEvent) : void {
+     export function handleDisplayOrientationListenerResult(id : number, rotationEvent : RotationEvent) : void {
           var listener : IDisplayOrientationListener = registeredDisplayOrientationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredDisplayOrientationListener dictionary.");
           } else {
-               listener.onResult(event);
+               listener.onResult(rotationEvent);
           }
      }
      /**
@@ -91,15 +91,15 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.RotationEvent} event
+        @param {Adaptive.RotationEvent} rotationEvent
         @param {Adaptive.IDisplayOrientationListenerWarning} warning
      */
-     export function handleDisplayOrientationListenerWarning(id : number, event : RotationEvent, warning : IDisplayOrientationListenerWarning) : void {
+     export function handleDisplayOrientationListenerWarning(id : number, rotationEvent : RotationEvent, warning : IDisplayOrientationListenerWarning) : void {
           var listener : IDisplayOrientationListener = registeredDisplayOrientationListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredDisplayOrientationListener dictionary.");
           } else {
-               listener.onWarning(event, warning);
+               listener.onWarning(rotationEvent, warning);
           }
      }
 
@@ -118,12 +118,12 @@ module Adaptive {
              @private
              @property
           */
-          onResultFunction : (event : RotationEvent) => void;
+          onResultFunction : (rotationEvent : RotationEvent) => void;
           /**
              @private
              @property
           */
-          onWarningFunction : (event : RotationEvent, warning : IDisplayOrientationListenerWarning) => void;
+          onWarningFunction : (rotationEvent : RotationEvent, warning : IDisplayOrientationListenerWarning) => void;
 
           /**
              @method constructor
@@ -133,7 +133,7 @@ module Adaptive {
              @param {Function} onResultFunction Function receiving parameters of type: Adaptive.RotationEvent
              @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.RotationEvent, Adaptive.IDisplayOrientationListenerWarning
           */
-          constructor(onErrorFunction : (error : IDisplayOrientationListenerError) => void, onResultFunction : (event : RotationEvent) => void, onWarningFunction : (event : RotationEvent, warning : IDisplayOrientationListenerWarning) => void) {
+          constructor(onErrorFunction : (error : IDisplayOrientationListenerError) => void, onResultFunction : (rotationEvent : RotationEvent) => void, onWarningFunction : (rotationEvent : RotationEvent, warning : IDisplayOrientationListenerWarning) => void) {
                super(++registeredCounter);
                if (onErrorFunction == null) {
                     console.error("ERROR: DisplayOrientationListener onErrorFunction is not defined.");
@@ -170,14 +170,14 @@ platform impedes the rotation of the display.
           /**
              @method
              Event fired with the successful start and finish of a rotation.
-             @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
+             @param {Adaptive.RotationEvent} rotationEvent rotationEvent RotationEvent containing origin, destination and state of the event.
              @since v2.0.5
           */
-          public onResult(event : RotationEvent) : void {
+          public onResult(rotationEvent : RotationEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
                     console.warn("WARNING: DisplayOrientationListener contains a null reference to onResultFunction.");
                } else {
-                    this.onResultFunction(event);
+                    this.onResultFunction(rotationEvent);
                }
           }
 
@@ -185,15 +185,15 @@ platform impedes the rotation of the display.
              @method
              Event fired with a warning when the rotation is aborted. In specific, this
 event may be fired if the application vetoes display rotation before rotation is completed.
-             @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
+             @param {Adaptive.RotationEvent} rotationEvent rotationEvent   RotationEvent containing origin, destination and state of the event.
              @param {Adaptive.IDisplayOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
              @since v2.0.5
           */
-          public onWarning(event : RotationEvent, warning : IDisplayOrientationListenerWarning) : void {
+          public onWarning(rotationEvent : RotationEvent, warning : IDisplayOrientationListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
                     console.warn("WARNING: DisplayOrientationListener contains a null reference to onWarningFunction.");
                } else {
-                    this.onWarningFunction(event, warning);
+                    this.onWarningFunction(rotationEvent, warning);
                }
           }
 

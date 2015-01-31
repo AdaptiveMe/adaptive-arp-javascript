@@ -79,15 +79,15 @@ var Adaptive;
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.RotationEvent} rotationEvent
     */
-    function handleDeviceOrientationListenerResult(id, event) {
+    function handleDeviceOrientationListenerResult(id, rotationEvent) {
         var listener = Adaptive.registeredDeviceOrientationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
             console.error("ERROR: No listener with id " + id + " registered in registeredDeviceOrientationListener dictionary.");
         }
         else {
-            listener.onResult(event);
+            listener.onResult(rotationEvent);
         }
     }
     Adaptive.handleDeviceOrientationListenerResult = handleDeviceOrientationListenerResult;
@@ -96,16 +96,16 @@ var Adaptive;
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.RotationEvent} event
+       @param {Adaptive.RotationEvent} rotationEvent
        @param {Adaptive.IDeviceOrientationListenerWarning} warning
     */
-    function handleDeviceOrientationListenerWarning(id, event, warning) {
+    function handleDeviceOrientationListenerWarning(id, rotationEvent, warning) {
         var listener = Adaptive.registeredDeviceOrientationListener["" + id];
         if (typeof listener === 'undefined' || listener == null) {
             console.error("ERROR: No listener with id " + id + " registered in registeredDeviceOrientationListener dictionary.");
         }
         else {
-            listener.onWarning(event, warning);
+            listener.onWarning(rotationEvent, warning);
         }
     }
     Adaptive.handleDeviceOrientationListenerWarning = handleDeviceOrientationListenerWarning;
@@ -162,31 +162,31 @@ platform impedes the rotation of the device.
         /**
            @method
            Event fired with the successful start and finish of a rotation.
-           @param {Adaptive.RotationEvent} event event RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.RotationEvent} rotationEvent rotationEvent RotationEvent containing origin, destination and state of the event.
            @since v2.0.5
         */
-        DeviceOrientationListener.prototype.onResult = function (event) {
+        DeviceOrientationListener.prototype.onResult = function (rotationEvent) {
             if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
                 console.warn("WARNING: DeviceOrientationListener contains a null reference to onResultFunction.");
             }
             else {
-                this.onResultFunction(event);
+                this.onResultFunction(rotationEvent);
             }
         };
         /**
            @method
            Event fired with a warning when the rotation is aborted. In specific, this
 event may be fired if the devices vetoes the rotation before rotation is completed.
-           @param {Adaptive.RotationEvent} event event   RotationEvent containing origin, destination and state of the event.
+           @param {Adaptive.RotationEvent} rotationEvent rotationEvent   RotationEvent containing origin, destination and state of the event.
            @param {Adaptive.IDeviceOrientationListenerWarning} warning warning Type of condition that aborted rotation execution.
            @since v2.0.5
         */
-        DeviceOrientationListener.prototype.onWarning = function (event, warning) {
+        DeviceOrientationListener.prototype.onWarning = function (rotationEvent, warning) {
             if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
                 console.warn("WARNING: DeviceOrientationListener contains a null reference to onWarningFunction.");
             }
             else {
-                this.onWarningFunction(event, warning);
+                this.onWarningFunction(rotationEvent, warning);
             }
         };
         return DeviceOrientationListener;

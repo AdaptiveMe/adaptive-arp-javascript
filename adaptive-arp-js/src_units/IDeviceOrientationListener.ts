@@ -62,19 +62,19 @@ platform impedes the rotation of the device.
           /**
              @method
              Event fired with the successful start and finish of a rotation.
-             @param event RotationEvent containing origin, destination and state of the event.
+             @param rotationEvent RotationEvent containing origin, destination and state of the event.
              @since v2.0.5
           */
-          onResult(event:RotationEvent);
+          onResult(rotationEvent:RotationEvent);
           /**
              @method
              Event fired with a warning when the rotation is aborted. In specific, this
 event may be fired if the devices vetoes the rotation before rotation is completed.
-             @param event   RotationEvent containing origin, destination and state of the event.
+             @param rotationEvent   RotationEvent containing origin, destination and state of the event.
              @param warning Type of condition that aborted rotation execution.
              @since v2.0.5
           */
-          onWarning(event:RotationEvent, warning:IDeviceOrientationListenerWarning);
+          onWarning(rotationEvent:RotationEvent, warning:IDeviceOrientationListenerWarning);
      }
 }
 
