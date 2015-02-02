@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ var Adaptive;
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_message", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -106,7 +106,7 @@ var Adaptive;
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_category_message", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

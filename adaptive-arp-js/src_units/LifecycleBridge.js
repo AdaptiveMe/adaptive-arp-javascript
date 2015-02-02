@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ILifecycle", "addLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -120,7 +120,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ILifecycle", "isBackground", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -161,7 +161,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ILifecycle", "removeLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -198,7 +198,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ILifecycle", "removeLifecycleListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

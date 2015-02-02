@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -88,7 +88,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "canRead", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -131,7 +131,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -174,7 +174,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "create", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -226,7 +226,7 @@ deleted if the cascade parameter is set to true.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
             var apiRequest = new Adaptive.APIRequest("IFile", "delete", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -269,7 +269,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "exists", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -312,7 +312,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -361,7 +361,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -404,7 +404,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -447,7 +447,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -490,7 +490,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -534,7 +534,7 @@ any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFiles", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -586,7 +586,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -637,7 +637,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
             var apiRequest = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -687,7 +687,7 @@ new destination file.
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
             var apiRequest = new Adaptive.APIRequest("IFile", "move", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -738,7 +738,7 @@ new destination file.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
             var apiRequest = new Adaptive.APIRequest("IFile", "setContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

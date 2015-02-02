@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -69,7 +69,7 @@ var Adaptive;
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.1.2";
+            return "v2.1.3";
         };
         return BaseUIBridge;
     })();

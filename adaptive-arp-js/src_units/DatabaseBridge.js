@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -82,7 +82,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "createDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -133,7 +133,7 @@ var Adaptive;
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "createTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -182,7 +182,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "deleteDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -233,7 +233,7 @@ var Adaptive;
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "deleteTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -287,7 +287,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statement));
             arParams.push(JSON.stringify(replacements));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "executeSqlStatement", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -341,7 +341,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statements));
             arParams.push(JSON.stringify(rollbackFlag));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "executeSqlTransactions", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -390,7 +390,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "existsDatabase", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -435,7 +435,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new Adaptive.APIRequest("IDatabase", "existsTable", arParams, -1);
-            apiRequest.setApiVersion("v2.1.2");
+            apiRequest.setApiVersion("v2.1.3");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

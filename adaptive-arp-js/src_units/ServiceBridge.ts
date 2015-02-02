@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.2
+    * @version v2.1.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -80,7 +80,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceToken));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceRequest",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.2");
+               apiRequest.setApiVersion("v2.1.3");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -128,7 +128,7 @@ configured in the platform's XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceToken",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.2");
+               apiRequest.setApiVersion("v2.1.3");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -167,7 +167,7 @@ configured in the platform's XML service definition file.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IService","getServicesRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.2");
+               apiRequest.setApiVersion("v2.1.3");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -212,7 +212,7 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
                var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.2");
+               apiRequest.setApiVersion("v2.1.3");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -266,7 +266,7 @@ XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","isServiceRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.2");
+               apiRequest.setApiVersion("v2.1.3");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
