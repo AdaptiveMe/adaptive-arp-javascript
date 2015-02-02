@@ -71,15 +71,6 @@ module Adaptive {
 
           /**
              @method
-             @return {number}
-             Get the listener id.
-          */
-          getId() : number {
-               return this.id;
-          }
-
-          /**
-             @method
              @return {Adaptive.IAdaptiveRPGroup}
              Return the API group for the given interface.
           */
@@ -102,14 +93,11 @@ module Adaptive {
              @method
              Return the unique listener identifier. This is used to check if two listeners are the same
 in every platform. This id is populated by the Javascript platform
-             @return Unique Listener identifier
+             @return {number} 
+             Unique Listener identifier
           */
           public getId() : number {
-               if (typeof this.getIdFunction === 'undefined' || this.getIdFunction == null) {
-                    console.warn("WARNING: BaseListener contains a null reference to getIdFunction.");
-               } else {
-                    this.getIdFunction();
-               }
+               return this.id;
           }
 
      }

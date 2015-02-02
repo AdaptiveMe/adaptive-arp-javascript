@@ -76,12 +76,12 @@ This method does not create the actual file in the specified folder.
                arParams.push(JSON.stringify(parent));
                arParams.push(JSON.stringify(name));
                var apiRequest : APIRequest = new APIRequest("IFileSystem","createFileDescriptor",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -117,12 +117,12 @@ This path is volatile and may be cleaned by the OS periodically.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCacheFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -157,12 +157,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCloudFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -197,12 +197,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationDocumentsFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -237,12 +237,12 @@ This path may or may not be directly readable or writable - it usually contains 
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -277,12 +277,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationProtectedFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;
@@ -316,12 +316,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSeparator",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : string = null;
@@ -358,12 +358,12 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSystemExternalFolder",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Prepare response.
                var response : FileDescriptor = null;

@@ -83,12 +83,12 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContact", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -132,12 +132,12 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -179,12 +179,12 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IContact", "getContacts", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -228,12 +228,12 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(fields));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -279,12 +279,12 @@ var Adaptive;
             arParams.push(JSON.stringify(fields));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -328,12 +328,12 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(term));
             var apiRequest = new Adaptive.APIRequest("IContact", "searchContacts", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -379,12 +379,12 @@ var Adaptive;
             arParams.push(JSON.stringify(term));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new Adaptive.APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -430,12 +430,12 @@ var Adaptive;
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
             var apiRequest = new Adaptive.APIRequest("IContact", "setContactPhoto", arParams, -1);
+            apiRequest.setApiVersion("v2.1.2");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

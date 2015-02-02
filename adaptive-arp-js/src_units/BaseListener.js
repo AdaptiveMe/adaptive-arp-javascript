@@ -55,14 +55,6 @@ var Adaptive;
         }
         /**
            @method
-           @return {number}
-           Get the listener id.
-        */
-        BaseListener.prototype.getId = function () {
-            return this.id;
-        };
-        /**
-           @method
            @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
@@ -83,15 +75,11 @@ var Adaptive;
            @method
            Return the unique listener identifier. This is used to check if two listeners are the same
 in every platform. This id is populated by the Javascript platform
-           @return Unique Listener identifier
+           @return {number}
+           Unique Listener identifier
         */
         BaseListener.prototype.getId = function () {
-            if (typeof this.getIdFunction === 'undefined' || this.getIdFunction == null) {
-                console.warn("WARNING: BaseListener contains a null reference to getIdFunction.");
-            }
-            else {
-                this.getIdFunction();
-            }
+            return this.id;
         };
         return BaseListener;
     })();

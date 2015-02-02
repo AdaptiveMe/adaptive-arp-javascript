@@ -76,12 +76,12 @@ module Adaptive {
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
                var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));

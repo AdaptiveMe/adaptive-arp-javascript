@@ -75,12 +75,12 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(data));
                var apiRequest : APIRequest = new APIRequest("IMail","sendEmail",arParams, callback.getId());
+               apiRequest.setApiVersion("v2.1.2");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                // Add callback reference to local dictionary.
                registeredMessagingCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
