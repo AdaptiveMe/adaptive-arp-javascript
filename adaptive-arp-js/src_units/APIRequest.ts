@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -43,6 +43,24 @@ module Adaptive {
         @version 1.0
      */
      export class APIRequest {
+
+          /**
+             @property {string} apiVersion
+             Identifier of API version of this request.
+          */
+          apiVersion : string;
+
+          /**
+             @property {string} apiVersion
+             Identifier of API version of this request. The 'apiVersionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'apiVersion'.
+          */
+          get apiVersionProperty() : string {
+               return this.apiVersion;
+          }
+
+          set apiVersionProperty(apiVersion:string) {
+               this.apiVersion = apiVersion;
+          }
 
           /**
              @property {number} asyncId
@@ -131,6 +149,28 @@ module Adaptive {
                this.methodName = methodName;
                this.parameters = parameters;
                this.asyncId = asyncId;
+          }
+
+          /**
+             @method
+             Returns the request's API version. This should be the same or higher than the platform managing the
+request.
+
+             @return {string} String with the API version of the request.
+          */
+          getApiVersion() : string {
+               return this.apiVersion;
+          }
+
+          /**
+             @method
+             Sets the request's API version. This should be the same or higher than the platform managing the
+request.
+
+             @param {string} apiVersion String with the API version of the request.
+          */
+          setApiVersion(apiVersion: string) {
+               this.apiVersion = apiVersion;
           }
 
           /**
@@ -241,6 +281,7 @@ listener.
                     }
                }
                if (object!=null && object.asyncId!=null) result.asyncId = object.asyncId;
+               if (object!=null && object.apiVersion!=null) result.apiVersion = object.apiVersion;
 
                return result;
           }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ module Adaptive {
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+               xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
                if (xhr.status == 200 ) {

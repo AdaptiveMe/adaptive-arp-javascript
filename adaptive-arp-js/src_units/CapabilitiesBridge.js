@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -89,7 +89,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -131,7 +131,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -178,7 +178,7 @@ support at least one orientation. This is usually PortaitUp.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -222,7 +222,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -265,7 +265,7 @@ the device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -309,7 +309,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -352,7 +352,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -396,7 +396,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -439,7 +439,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
@@ -483,7 +483,7 @@ device.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;

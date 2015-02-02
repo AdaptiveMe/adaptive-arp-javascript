@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,6 +57,13 @@ module Adaptive {
           */
           getId() : number;
 
+          /**
+             @method
+             Return the unique listener identifier. This is used to check if two listeners are the same
+in every platform. This id is populated by the Javascript platform
+             @return {number} Unique Listener identifier
+          */
+          getId() : number;
      }
 }
 

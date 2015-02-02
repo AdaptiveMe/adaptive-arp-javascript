@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -95,7 +95,21 @@ module Adaptive {
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.1"
+               return "v2.1.2"
+          }
+
+          /**
+             @method
+             Return the unique listener identifier. This is used to check if two listeners are the same
+in every platform. This id is populated by the Javascript platform
+             @return Unique Listener identifier
+          */
+          public getId() : number {
+               if (typeof this.getIdFunction === 'undefined' || this.getIdFunction == null) {
+                    console.warn("WARNING: BaseListener contains a null reference to getIdFunction.");
+               } else {
+                    this.getIdFunction();
+               }
           }
 
      }

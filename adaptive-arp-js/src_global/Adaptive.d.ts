@@ -721,6 +721,13 @@ declare module Adaptive {
            @return {number} Callback/listener unique id.
         */
         getId(): number;
+        /**
+           @method
+           Return the unique listener identifier. This is used to check if two listeners are the same
+in every platform. This id is populated by the Javascript platform
+           @return {number} Unique Listener identifier
+        */
+        getId(): number;
     }
     /**
        Base application for Media purposes
@@ -3194,6 +3201,16 @@ of the device. For device orientation, use the IDevice APIs.
     */
     class APIRequest {
         /**
+           @property {string} apiVersion
+           Identifier of API version of this request.
+        */
+        apiVersion: string;
+        /**
+           @property {string} apiVersion
+           Identifier of API version of this request. The 'apiVersionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'apiVersion'.
+        */
+        apiVersionProperty: string;
+        /**
            @property {number} asyncId
            Identifier of callback or listener for async operations.
         */
@@ -3244,6 +3261,22 @@ of the device. For device orientation, use the IDevice APIs.
            @since v2.0
         */
         constructor(bridgeType: string, methodName: string, parameters: string[], asyncId: number);
+        /**
+           @method
+           Returns the request's API version. This should be the same or higher than the platform managing the
+request.
+
+           @return {string} String with the API version of the request.
+        */
+        getApiVersion(): string;
+        /**
+           @method
+           Sets the request's API version. This should be the same or higher than the platform managing the
+request.
+
+           @param {string} apiVersion String with the API version of the request.
+        */
+        setApiVersion(apiVersion: string): void;
         /**
            @method
            Returns the callback or listener id assigned to this request OR zero if there is no associated callback or
@@ -7847,12 +7880,6 @@ to a relative path of a function published on a remote service. The 'functionNam
         constructor(id: number);
         /**
            @method
-           @return {number}
-           Get the listener id.
-        */
-        getId(): number;
-        /**
-           @method
            @return {Adaptive.IAdaptiveRPGroup}
            Return the API group for the given interface.
         */
@@ -7865,6 +7892,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            The version of the API.
         */
         getAPIVersion(): string;
+        /**
+           @method
+           Return the unique listener identifier. This is used to check if two listeners are the same
+in every platform. This id is populated by the Javascript platform
+           @return {number}
+           Unique Listener identifier
+        */
+        getId(): number;
     }
     /**
        @property {Adaptive.Dictionary} registeredAccelerationListener

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,6 +58,20 @@ var Adaptive;
             this.parameters = parameters;
             this.asyncId = asyncId;
         }
+        Object.defineProperty(APIRequest.prototype, "apiVersionProperty", {
+            /**
+               @property {string} apiVersion
+               Identifier of API version of this request. The 'apiVersionProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'apiVersion'.
+            */
+            get: function () {
+                return this.apiVersion;
+            },
+            set: function (apiVersion) {
+                this.apiVersion = apiVersion;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(APIRequest.prototype, "asyncIdProperty", {
             /**
                @property {number} asyncId
@@ -114,6 +128,26 @@ var Adaptive;
             enumerable: true,
             configurable: true
         });
+        /**
+           @method
+           Returns the request's API version. This should be the same or higher than the platform managing the
+request.
+
+           @return {string} String with the API version of the request.
+        */
+        APIRequest.prototype.getApiVersion = function () {
+            return this.apiVersion;
+        };
+        /**
+           @method
+           Sets the request's API version. This should be the same or higher than the platform managing the
+request.
+
+           @param {string} apiVersion String with the API version of the request.
+        */
+        APIRequest.prototype.setApiVersion = function (apiVersion) {
+            this.apiVersion = apiVersion;
+        };
         /**
            @method
            Returns the callback or listener id assigned to this request OR zero if there is no associated callback or
@@ -217,6 +251,8 @@ listener.
             }
             if (object != null && object.asyncId != null)
                 result.asyncId = object.asyncId;
+            if (object != null && object.apiVersion != null)
+                result.apiVersion = object.apiVersion;
             return result;
         };
         return APIRequest;

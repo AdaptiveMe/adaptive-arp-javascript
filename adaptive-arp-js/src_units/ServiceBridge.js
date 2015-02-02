@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.1
+    * @version v2.1.2
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -89,7 +89,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -139,7 +139,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -180,7 +180,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = null;
@@ -227,7 +227,7 @@ configured in the platform's XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             // Add callback reference to local dictionary.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
@@ -283,7 +283,7 @@ XML service definition file.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.1");
+            xhr.setRequestHeader("X-AdaptiveVersion", "v2.1.2");
             xhr.send(JSON.stringify(apiRequest));
             // Prepare response.
             var response = false;
