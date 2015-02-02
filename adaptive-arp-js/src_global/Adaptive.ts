@@ -764,18 +764,18 @@ the ResourceData and formats returned must be coherent between platforms.
              @method
              Retrieve a configuration resource from the secure application data container.
              @param id The id or relative path of the configuration resource to be retrieved.
-             @return {Adaptive.ResourceData} ResourceData with the configuration resource payload.
+             @return {Adaptive.AppResourceData} ResourceData with the configuration resource payload.
              @since v2.1.3
           */
-          retrieveConfigResource(id:string) : ResourceData;
+          retrieveConfigResource(id:string) : AppResourceData;
           /**
              @method
              Retrieve a web resource from the secure application data container.
              @param id The id or relative path of the web resource to be retrieved.
-             @return {Adaptive.ResourceData} ResourceData with the web resource payload.
+             @return {Adaptive.AppResourceData} ResourceData with the web resource payload.
              @since v2.1.3
           */
-          retrieveWebResource(id:string) : ResourceData;
+          retrieveWebResource(id:string) : AppResourceData;
      }
      /**
         Base application for Application purposes
@@ -3747,14 +3747,14 @@ listener.
           }
      }
      /**
-        @class Adaptive.ResourceData
+        @class Adaptive.AppResourceData
         This class represents a resource provided by the platform from the application's secure payload.
 
         @author Carlos Lozano Diez
         @since v2.1.3
         @version 1.0
      */
-     export class ResourceData {
+     export class AppResourceData {
           /**
              @property {boolean} cooked
              Marker to indicate whether the resource is cooked in some way (compressed, encrypted, etc.) If true, the
@@ -4068,11 +4068,11 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
              @method
              @static
              Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ResourceData.
-             @return {Adaptive.ResourceData} Wrapped object instance.
+             @param {Object} object JSON parsed structure of type Adaptive.AppResourceData.
+             @return {Adaptive.AppResourceData} Wrapped object instance.
           */
-          static toObject(object : any) : ResourceData {
-               var result : ResourceData = new ResourceData(null, null, null, null, null, null, null);
+          static toObject(object : any) : AppResourceData {
+               var result : AppResourceData = new AppResourceData(null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
                if (object!=null && object.id!=null) result.id = object.id;

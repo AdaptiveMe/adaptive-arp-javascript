@@ -32,7 +32,7 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
-///<reference path="ResourceData.ts"/>
+///<reference path="AppResourceData.ts"/>
 
 module Adaptive {
 
@@ -55,18 +55,18 @@ the ResourceData and formats returned must be coherent between platforms.
              @method
              Retrieve a configuration resource from the secure application data container.
              @param id The id or relative path of the configuration resource to be retrieved.
-             @return {Adaptive.ResourceData} ResourceData with the configuration resource payload.
+             @return {Adaptive.AppResourceData} ResourceData with the configuration resource payload.
              @since v2.1.3
           */
-          retrieveConfigResource(id:string) : ResourceData;
+          retrieveConfigResource(id:string) : AppResourceData;
           /**
              @method
              Retrieve a web resource from the secure application data container.
              @param id The id or relative path of the web resource to be retrieved.
-             @return {Adaptive.ResourceData} ResourceData with the web resource payload.
+             @return {Adaptive.AppResourceData} ResourceData with the web resource payload.
              @since v2.1.3
           */
-          retrieveWebResource(id:string) : ResourceData;
+          retrieveWebResource(id:string) : AppResourceData;
      }
 }
 
