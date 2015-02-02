@@ -492,14 +492,14 @@ listener.
     })();
     Adaptive.APIResponse = APIResponse;
     /**
-       @class Adaptive.ResourceData
+       @class Adaptive.AppResourceData
        This class represents a resource provided by the platform from the application's secure payload.
 
        @author Carlos Lozano Diez
        @since v2.1.3
        @version 1.0
     */
-    var ResourceData = (function () {
+    var AppResourceData = (function () {
         /**
            @method constructor
            Convenience constructor.
@@ -513,7 +513,7 @@ listener.
            @param {number} cookedLength The cooked length in bytes of the resource.
            @since v2.1.3
         */
-        function ResourceData(id, data, rawType, rawLength, cooked, cookedType, cookedLength) {
+        function AppResourceData(id, data, rawType, rawLength, cooked, cookedType, cookedLength) {
             this.id = id;
             this.data = data;
             this.rawType = rawType;
@@ -522,7 +522,7 @@ listener.
             this.cookedType = cookedType;
             this.cookedLength = cookedLength;
         }
-        Object.defineProperty(ResourceData.prototype, "cookedProperty", {
+        Object.defineProperty(AppResourceData.prototype, "cookedProperty", {
             /**
                @property {boolean} cooked
                Marker to indicate whether the resource is cooked in some way (compressed, encrypted, etc.) If true, the
@@ -537,7 +537,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "cookedLengthProperty", {
+        Object.defineProperty(AppResourceData.prototype, "cookedLengthProperty", {
             /**
                @property {number} cookedLength
                This is the length of the payload after cooking. In general, this length indicates the amount
@@ -552,7 +552,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "cookedTypeProperty", {
+        Object.defineProperty(AppResourceData.prototype, "cookedTypeProperty", {
             /**
                @property {string} cookedType
                If the data is cooked, this field should contain the recipe to return the cooked data to its original
@@ -567,7 +567,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "dataProperty", {
+        Object.defineProperty(AppResourceData.prototype, "dataProperty", {
             /**
                @property {number[]} data
                The payload data of the resource in ready to consume format. The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
@@ -581,7 +581,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "idProperty", {
+        Object.defineProperty(AppResourceData.prototype, "idProperty", {
             /**
                @property {string} id
                The id or path identifier of the resource. The 'idProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'id'.
@@ -595,7 +595,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "rawLengthProperty", {
+        Object.defineProperty(AppResourceData.prototype, "rawLengthProperty", {
             /**
                @property {number} rawLength
                The raw length of the payload before any cooking occurred. This is equivalent to the size of the resource
@@ -610,7 +610,7 @@ listener.
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(ResourceData.prototype, "rawTypeProperty", {
+        Object.defineProperty(AppResourceData.prototype, "rawTypeProperty", {
             /**
                @property {string} rawType
                The raw type of the payload - this is equivalent to the mimetype of the content. The 'rawTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'rawType'.
@@ -631,7 +631,7 @@ listener.
            @return {boolean} True if the resource is cooked, false otherwise.
            @since v2.1.3
         */
-        ResourceData.prototype.getCooked = function () {
+        AppResourceData.prototype.getCooked = function () {
             return this.cooked;
         };
         /**
@@ -641,7 +641,7 @@ listener.
            @param {boolean} cooked True if the resource is cooked, false otherwise.
            @since v2.1.3
         */
-        ResourceData.prototype.setCooked = function (cooked) {
+        AppResourceData.prototype.setCooked = function (cooked) {
             this.cooked = cooked;
         };
         /**
@@ -651,7 +651,7 @@ listener.
            @return {number} Length in bytes of cooked payload.
            @since v2.1.3
         */
-        ResourceData.prototype.getCookedLength = function () {
+        AppResourceData.prototype.getCookedLength = function () {
             return this.cookedLength;
         };
         /**
@@ -661,7 +661,7 @@ listener.
            @param {number} cookedLength Length in bytes of cooked payload.
            @since v2.1.3
         */
-        ResourceData.prototype.setCookedLength = function (cookedLength) {
+        AppResourceData.prototype.setCookedLength = function (cookedLength) {
             this.cookedLength = cookedLength;
         };
         /**
@@ -671,7 +671,7 @@ listener.
            @return {string} The cooking recipe to reverse the cooking process.
            @since v2.1.3
         */
-        ResourceData.prototype.getCookedType = function () {
+        AppResourceData.prototype.getCookedType = function () {
             return this.cookedType;
         };
         /**
@@ -681,7 +681,7 @@ listener.
            @param {string} cookedType The cooking recipe used during cooking.
            @since v2.1.3
         */
-        ResourceData.prototype.setCookedType = function (cookedType) {
+        AppResourceData.prototype.setCookedType = function (cookedType) {
             this.cookedType = cookedType;
         };
         /**
@@ -691,7 +691,7 @@ listener.
            @return {number[]} Binary payload of the resource.
            @since v2.1.3
         */
-        ResourceData.prototype.getData = function () {
+        AppResourceData.prototype.getData = function () {
             return this.data;
         };
         /**
@@ -701,7 +701,7 @@ listener.
            @param {number[]} data Binary payload of the resource.
            @since v2.1.3
         */
-        ResourceData.prototype.setData = function (data) {
+        AppResourceData.prototype.setData = function (data) {
             this.data = data;
         };
         /**
@@ -710,7 +710,7 @@ listener.
 
            @return {string} id The id or path identifier of the resource.
         */
-        ResourceData.prototype.getId = function () {
+        AppResourceData.prototype.getId = function () {
             return this.id;
         };
         /**
@@ -720,7 +720,7 @@ listener.
            @param {string} id The id or path of the resource.
            @since v2.1.3
         */
-        ResourceData.prototype.setId = function (id) {
+        AppResourceData.prototype.setId = function (id) {
             this.id = id;
         };
         /**
@@ -730,7 +730,7 @@ listener.
            @return {number} Original length of the resource in bytes before cooking.
            @since v2.1.3
         */
-        ResourceData.prototype.getRawLength = function () {
+        AppResourceData.prototype.getRawLength = function () {
             return this.rawLength;
         };
         /**
@@ -740,7 +740,7 @@ listener.
            @param {number} rawLength Original length of the resource in bytes before cooking.
            @since v2.1.3
         */
-        ResourceData.prototype.setRawLength = function (rawLength) {
+        AppResourceData.prototype.setRawLength = function (rawLength) {
             this.rawLength = rawLength;
         };
         /**
@@ -750,7 +750,7 @@ listener.
            @return {string} Resource's type or mimetype.
            @since v2.1.3
         */
-        ResourceData.prototype.getRawType = function () {
+        AppResourceData.prototype.getRawType = function () {
             return this.rawType;
         };
         /**
@@ -760,18 +760,18 @@ listener.
            @param {string} rawType Resource's type or mimetype.
            @since v2.1.3
         */
-        ResourceData.prototype.setRawType = function (rawType) {
+        AppResourceData.prototype.setRawType = function (rawType) {
             this.rawType = rawType;
         };
         /**
            @method
            @static
            Convert JSON parsed object to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ResourceData.
-           @return {Adaptive.ResourceData} Wrapped object instance.
+           @param {Object} object JSON parsed structure of type Adaptive.AppResourceData.
+           @return {Adaptive.AppResourceData} Wrapped object instance.
         */
-        ResourceData.toObject = function (object) {
-            var result = new ResourceData(null, null, null, null, null, null, null);
+        AppResourceData.toObject = function (object) {
+            var result = new AppResourceData(null, null, null, null, null, null, null);
             // Assign values to bean fields.
             if (object != null && object.id != null)
                 result.id = object.id;
@@ -795,9 +795,9 @@ listener.
                 result.cookedLength = object.cookedLength;
             return result;
         };
-        return ResourceData;
+        return AppResourceData;
     })();
-    Adaptive.ResourceData = ResourceData;
+    Adaptive.AppResourceData = AppResourceData;
     /**
        @class Adaptive.Service
        Represents an instance of a service.

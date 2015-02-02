@@ -31,5 +31,5 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
-///<reference path="ResourceData.ts"/>
+///<reference path="AppResourceData.ts"/>
 //# sourceMappingURL=IAppResourceManager.js.map
