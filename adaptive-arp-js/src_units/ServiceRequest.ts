@@ -174,6 +174,24 @@ during GET/POST operations. No query parameters are appended if this array is nu
           }
 
           /**
+             @property {string} refererHost
+             This host indicates the origin host of the request. This, could be useful in case of redirected requests.
+          */
+          refererHost : string;
+
+          /**
+             @property {string} refererHost
+             This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+          */
+          get refererHostProperty() : string {
+               return this.refererHost;
+          }
+
+          set refererHostProperty(refererHost:string) {
+               this.refererHost = refererHost;
+          }
+
+          /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
@@ -403,6 +421,28 @@ identifiers. This should not be manipulated by the application directly. The 'se
 
           /**
              @method
+             Returns the referer host (origin) of the request.
+
+             @return {string} Referer host of the request
+             @since v2.1.4
+          */
+          getRefererHost() : string {
+               return this.refererHost;
+          }
+
+          /**
+             @method
+             Sets the value for the referer host of the request.
+
+             @param {string} refererHost Referer host of the request
+             @since v2.1.4
+          */
+          setRefererHost(refererHost: string) {
+               this.refererHost = refererHost;
+          }
+
+          /**
+             @method
              Returns the array of ServiceHeader
 
              @return {Adaptive.ServiceHeader[]} serviceHeaders
@@ -548,6 +588,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
                } else {
                     result.serviceToken = ServiceToken.toObject(null);
                }
+               if (object!=null && object.refererHost!=null) result.refererHost = object.refererHost;
 
                return result;
           }

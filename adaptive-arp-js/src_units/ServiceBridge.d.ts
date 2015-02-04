@@ -85,6 +85,18 @@ configured in the platform's XML service definition file.
         getServiceToken(serviceName: string, endpointName: string, functionName: string, method: IServiceMethod): ServiceToken;
         /**
            @method
+           Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+
+           @param {string} uri uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+           @since v2.1.4
+        */
+        getServiceTokenByUri(uri: string): ServiceToken;
+        /**
+           @method
            Returns all the possible service tokens configured in the platform's XML service definition file.
 
            @return {Adaptive.ServiceToken[]} Array of service tokens configured.

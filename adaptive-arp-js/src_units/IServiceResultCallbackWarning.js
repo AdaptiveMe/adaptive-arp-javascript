@@ -61,6 +61,20 @@ var Adaptive;
                         return IServiceResultCallbackWarning.Redirected;
                     case "Wrong_Params":
                         return IServiceResultCallbackWarning.Wrong_Params;
+                    case "Forbidden":
+                        return IServiceResultCallbackWarning.Forbidden;
+                    case "NotFound":
+                        return IServiceResultCallbackWarning.NotFound;
+                    case "MethodNotAllowed":
+                        return IServiceResultCallbackWarning.MethodNotAllowed;
+                    case "NotAllowed":
+                        return IServiceResultCallbackWarning.NotAllowed;
+                    case "NotAuthenticated":
+                        return IServiceResultCallbackWarning.NotAuthenticated;
+                    case "PaymentRequired":
+                        return IServiceResultCallbackWarning.PaymentRequired;
+                    case "ServerError":
+                        return IServiceResultCallbackWarning.ServerError;
                     case "Unknown":
                         return IServiceResultCallbackWarning.Unknown;
                     default:
@@ -87,6 +101,34 @@ var Adaptive;
            @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
         IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+        */
+        IServiceResultCallbackWarning.Forbidden = new IServiceResultCallbackWarning("Forbidden");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+        */
+        IServiceResultCallbackWarning.NotFound = new IServiceResultCallbackWarning("NotFound");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+        */
+        IServiceResultCallbackWarning.MethodNotAllowed = new IServiceResultCallbackWarning("MethodNotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+        */
+        IServiceResultCallbackWarning.NotAllowed = new IServiceResultCallbackWarning("NotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+        */
+        IServiceResultCallbackWarning.NotAuthenticated = new IServiceResultCallbackWarning("NotAuthenticated");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+        */
+        IServiceResultCallbackWarning.PaymentRequired = new IServiceResultCallbackWarning("PaymentRequired");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+        */
+        IServiceResultCallbackWarning.ServerError = new IServiceResultCallbackWarning("ServerError");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */

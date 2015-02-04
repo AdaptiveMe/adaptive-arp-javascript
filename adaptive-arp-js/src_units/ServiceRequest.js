@@ -159,6 +159,20 @@ var Adaptive;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ServiceRequest.prototype, "refererHostProperty", {
+            /**
+               @property {string} refererHost
+               This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+            */
+            get: function () {
+                return this.refererHost;
+            },
+            set: function (refererHost) {
+                this.refererHost = refererHost;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(ServiceRequest.prototype, "serviceHeadersProperty", {
             /**
                @property {Adaptive.ServiceHeader[]} serviceHeaders
@@ -342,6 +356,26 @@ var Adaptive;
         };
         /**
            @method
+           Returns the referer host (origin) of the request.
+
+           @return {string} Referer host of the request
+           @since v2.1.4
+        */
+        ServiceRequest.prototype.getRefererHost = function () {
+            return this.refererHost;
+        };
+        /**
+           @method
+           Sets the value for the referer host of the request.
+
+           @param {string} refererHost Referer host of the request
+           @since v2.1.4
+        */
+        ServiceRequest.prototype.setRefererHost = function (refererHost) {
+            this.refererHost = refererHost;
+        };
+        /**
+           @method
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
@@ -488,6 +522,8 @@ var Adaptive;
             else {
                 result.serviceToken = Adaptive.ServiceToken.toObject(null);
             }
+            if (object != null && object.refererHost != null)
+                result.refererHost = object.refererHost;
             return result;
         };
         return ServiceRequest;

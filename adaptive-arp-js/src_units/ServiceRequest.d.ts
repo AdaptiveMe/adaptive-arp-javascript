@@ -122,6 +122,16 @@ during GET/POST operations. No query parameters are appended if this array is nu
         */
         queryParametersProperty: ServiceRequestParameter[];
         /**
+           @property {string} refererHost
+           This host indicates the origin host of the request. This, could be useful in case of redirected requests.
+        */
+        refererHost: string;
+        /**
+           @property {string} refererHost
+           This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+        */
+        refererHostProperty: string;
+        /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
@@ -276,6 +286,22 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @since v2.0.6
         */
         setQueryParameters(queryParameters: ServiceRequestParameter[]): void;
+        /**
+           @method
+           Returns the referer host (origin) of the request.
+
+           @return {string} Referer host of the request
+           @since v2.1.4
+        */
+        getRefererHost(): string;
+        /**
+           @method
+           Sets the value for the referer host of the request.
+
+           @param {string} refererHost Referer host of the request
+           @since v2.1.4
+        */
+        setRefererHost(refererHost: string): void;
         /**
            @method
            Returns the array of ServiceHeader

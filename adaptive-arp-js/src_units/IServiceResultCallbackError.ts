@@ -44,30 +44,6 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
-          */
-          static Forbidden = new IServiceResultCallbackError("Forbidden");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
-          */
-          static NotFound = new IServiceResultCallbackError("NotFound");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
-          */
-          static MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
-          */
-          static NotAllowed = new IServiceResultCallbackError("NotAllowed");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
-          */
-          static NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
-          */
-          static PaymentRequired = new IServiceResultCallbackError("PaymentRequired");
-          /**
              @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
           */
           static TimeOut = new IServiceResultCallbackError("TimeOut");
@@ -75,10 +51,6 @@ module Adaptive {
              @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
           */
           static NoResponse = new IServiceResultCallbackError("NoResponse");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
-          */
-          static ServerError = new IServiceResultCallbackError("ServerError");
           /**
              @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
           */
@@ -105,24 +77,10 @@ module Adaptive {
           static toObject(object : any) : IServiceResultCallbackError {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Forbidden":
-                              return IServiceResultCallbackError.Forbidden;
-                         case "NotFound":
-                              return IServiceResultCallbackError.NotFound;
-                         case "MethodNotAllowed":
-                              return IServiceResultCallbackError.MethodNotAllowed;
-                         case "NotAllowed":
-                              return IServiceResultCallbackError.NotAllowed;
-                         case "NotAuthenticated":
-                              return IServiceResultCallbackError.NotAuthenticated;
-                         case "PaymentRequired":
-                              return IServiceResultCallbackError.PaymentRequired;
                          case "TimeOut":
                               return IServiceResultCallbackError.TimeOut;
                          case "NoResponse":
                               return IServiceResultCallbackError.NoResponse;
-                         case "ServerError":
-                              return IServiceResultCallbackError.ServerError;
                          case "Unreachable":
                               return IServiceResultCallbackError.Unreachable;
                          case "MalformedUrl":

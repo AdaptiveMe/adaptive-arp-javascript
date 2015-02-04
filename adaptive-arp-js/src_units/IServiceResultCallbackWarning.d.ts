@@ -57,6 +57,34 @@ declare module Adaptive {
         */
         static Wrong_Params: IServiceResultCallbackWarning;
         /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+        */
+        static Forbidden: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+        */
+        static NotFound: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+        */
+        static MethodNotAllowed: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+        */
+        static NotAllowed: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+        */
+        static NotAuthenticated: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+        */
+        static PaymentRequired: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+        */
+        static ServerError: IServiceResultCallbackWarning;
+        /**
            @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */
         static Unknown: IServiceResultCallbackWarning;

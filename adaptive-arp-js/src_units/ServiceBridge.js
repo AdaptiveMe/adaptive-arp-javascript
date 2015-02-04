@@ -166,6 +166,52 @@ configured in the platform's XML service definition file.
         };
         /**
            @method
+           Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+
+           @param {string} uri uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+           @since v2.1.4
+        */
+        ServiceBridge.prototype.getServiceTokenByUri = function (uri) {
+            // Create and populate API request.
+            var arParams = [];
+            arParams.push(JSON.stringify(uri));
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceTokenByUri", arParams, -1);
+            apiRequest.setApiVersion("v2.1.3");
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = Adaptive.ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getServiceTokenByUri' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'ServiceBridge.getServiceTokenByUri' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServiceTokenByUri' request.");
+            }
+            return response;
+        };
+        /**
+           @method
            Returns all the possible service tokens configured in the platform's XML service definition file.
 
            @return {Adaptive.ServiceToken[]} Array of service tokens configured.

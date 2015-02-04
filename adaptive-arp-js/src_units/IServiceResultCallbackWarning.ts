@@ -60,6 +60,34 @@ module Adaptive {
           */
           static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
           /**
+             @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+          */
+          static Forbidden = new IServiceResultCallbackWarning("Forbidden");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+          */
+          static NotFound = new IServiceResultCallbackWarning("NotFound");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+          */
+          static MethodNotAllowed = new IServiceResultCallbackWarning("MethodNotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+          */
+          static NotAllowed = new IServiceResultCallbackWarning("NotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+          */
+          static NotAuthenticated = new IServiceResultCallbackWarning("NotAuthenticated");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+          */
+          static PaymentRequired = new IServiceResultCallbackWarning("PaymentRequired");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+          */
+          static ServerError = new IServiceResultCallbackWarning("ServerError");
+          /**
              @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
           */
           static Unknown = new IServiceResultCallbackWarning("Unknown");
@@ -81,6 +109,20 @@ module Adaptive {
                               return IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":
                               return IServiceResultCallbackWarning.Wrong_Params;
+                         case "Forbidden":
+                              return IServiceResultCallbackWarning.Forbidden;
+                         case "NotFound":
+                              return IServiceResultCallbackWarning.NotFound;
+                         case "MethodNotAllowed":
+                              return IServiceResultCallbackWarning.MethodNotAllowed;
+                         case "NotAllowed":
+                              return IServiceResultCallbackWarning.NotAllowed;
+                         case "NotAuthenticated":
+                              return IServiceResultCallbackWarning.NotAuthenticated;
+                         case "PaymentRequired":
+                              return IServiceResultCallbackWarning.PaymentRequired;
+                         case "ServerError":
+                              return IServiceResultCallbackWarning.ServerError;
                          case "Unknown":
                               return IServiceResultCallbackWarning.Unknown;
                          default:

@@ -5413,6 +5413,20 @@ doesn't exist, this will be -1. Used internally.
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ServiceRequest.prototype, "refererHostProperty", {
+            /**
+               @property {string} refererHost
+               This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+            */
+            get: function () {
+                return this.refererHost;
+            },
+            set: function (refererHost) {
+                this.refererHost = refererHost;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(ServiceRequest.prototype, "serviceHeadersProperty", {
             /**
                @property {Adaptive.ServiceHeader[]} serviceHeaders
@@ -5596,6 +5610,26 @@ doesn't exist, this will be -1. Used internally.
         };
         /**
            @method
+           Returns the referer host (origin) of the request.
+
+           @return {string} Referer host of the request
+           @since v2.1.4
+        */
+        ServiceRequest.prototype.getRefererHost = function () {
+            return this.refererHost;
+        };
+        /**
+           @method
+           Sets the value for the referer host of the request.
+
+           @param {string} refererHost Referer host of the request
+           @since v2.1.4
+        */
+        ServiceRequest.prototype.setRefererHost = function (refererHost) {
+            this.refererHost = refererHost;
+        };
+        /**
+           @method
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
@@ -5742,6 +5776,8 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.serviceToken = ServiceToken.toObject(null);
             }
+            if (object != null && object.refererHost != null)
+                result.refererHost = object.refererHost;
             return result;
         };
         return ServiceRequest;
@@ -5768,9 +5804,10 @@ doesn't exist, this will be -1. Used internally.
            @param {number} contentLength   The length in bytes for the Content field.
            @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession  Information about the session
+           @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        function ServiceResponse(content, contentType, contentEncoding, contentLength, serviceHeaders, serviceSession) {
+        function ServiceResponse(content, contentType, contentEncoding, contentLength, serviceHeaders, serviceSession, statusCode) {
             _super.call(this);
             this.content = content;
             this.contentType = contentType;
@@ -5778,6 +5815,7 @@ doesn't exist, this will be -1. Used internally.
             this.contentLength = contentLength;
             this.serviceHeaders = serviceHeaders;
             this.serviceSession = serviceSession;
+            this.statusCode = statusCode;
         }
         Object.defineProperty(ServiceResponse.prototype, "contentProperty", {
             /**
@@ -5864,6 +5902,20 @@ doesn't exist, this will be -1. Used internally.
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ServiceResponse.prototype, "statusCodeProperty", {
+            /**
+               @property {number} statusCode
+               HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc. The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+            */
+            get: function () {
+                return this.statusCode;
+            },
+            set: function (statusCode) {
+                this.statusCode = statusCode;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the content
@@ -5916,7 +5968,7 @@ doesn't exist, this will be -1. Used internally.
         };
         /**
            @method
-           Set the content length
+           Set the content length.
 
            @param {number} contentLength The length in bytes for the Content field.
            @since v2.0
@@ -5986,13 +6038,33 @@ doesn't exist, this will be -1. Used internally.
         };
         /**
            @method
+           Returns the status code of the response.
+
+           @return {number} HTTP status code
+           @since v2.1.4
+        */
+        ServiceResponse.prototype.getStatusCode = function () {
+            return this.statusCode;
+        };
+        /**
+           @method
+           Sets the status code of the response
+
+           @param {number} statusCode HTTP status code
+           @since v2.1.4
+        */
+        ServiceResponse.prototype.setStatusCode = function (statusCode) {
+            this.statusCode = statusCode;
+        };
+        /**
+           @method
            @static
            Convert JSON parsed object to typed equivalent.
            @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
            @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         ServiceResponse.toObject = function (object) {
-            var result = new ServiceResponse(null, null, null, null, null, null);
+            var result = new ServiceResponse(null, null, null, null, null, null, null);
             // Assign values to bean fields.
             if (object != null && object.content != null)
                 result.content = object.content;
@@ -6020,6 +6092,8 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.serviceSession = ServiceSession.toObject(null);
             }
+            if (object != null && object.statusCode != null)
+                result.statusCode = object.statusCode;
             return result;
         };
         return ServiceResponse;
@@ -11492,6 +11566,52 @@ configured in the platform's XML service definition file.
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServiceToken' request.");
+            }
+            return response;
+        };
+        /**
+           @method
+           Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+
+           @param {string} uri uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+           @since v2.1.4
+        */
+        ServiceBridge.prototype.getServiceTokenByUri = function (uri) {
+            // Create and populate API request.
+            var arParams = [];
+            arParams.push(JSON.stringify(uri));
+            var apiRequest = new APIRequest("IService", "getServiceTokenByUri", arParams, -1);
+            apiRequest.setApiVersion("v2.1.3");
+            var apiResponse = new APIResponse("", 200, "");
+            // Create and send JSON request.
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", Adaptive.bridgePath, false);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(apiRequest));
+            // Prepare response.
+            var response = null;
+            // Check response.
+            if (xhr.status == 200) {
+                // Process response.
+                if (xhr.responseText != null && xhr.responseText != '') {
+                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                        response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
+                    }
+                    else {
+                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.getServiceTokenByUri' [" + apiResponse.getStatusMessage() + "].");
+                    }
+                }
+                else {
+                    console.error("ERROR: 'ServiceBridge.getServiceTokenByUri' incorrect response received.");
+                }
+            }
+            else {
+                console.error("ERROR: " + xhr.status + " sending 'ServiceBridge.getServiceTokenByUri' request.");
             }
             return response;
         };
@@ -21162,24 +21282,10 @@ of the device. For device orientation, use the IDevice APIs.
         IServiceResultCallbackError.toObject = function (object) {
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Forbidden":
-                        return IServiceResultCallbackError.Forbidden;
-                    case "NotFound":
-                        return IServiceResultCallbackError.NotFound;
-                    case "MethodNotAllowed":
-                        return IServiceResultCallbackError.MethodNotAllowed;
-                    case "NotAllowed":
-                        return IServiceResultCallbackError.NotAllowed;
-                    case "NotAuthenticated":
-                        return IServiceResultCallbackError.NotAuthenticated;
-                    case "PaymentRequired":
-                        return IServiceResultCallbackError.PaymentRequired;
                     case "TimeOut":
                         return IServiceResultCallbackError.TimeOut;
                     case "NoResponse":
                         return IServiceResultCallbackError.NoResponse;
-                    case "ServerError":
-                        return IServiceResultCallbackError.ServerError;
                     case "Unreachable":
                         return IServiceResultCallbackError.Unreachable;
                     case "MalformedUrl":
@@ -21197,30 +21303,6 @@ of the device. For device orientation, use the IDevice APIs.
             }
         };
         /**
-           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
-        */
-        IServiceResultCallbackError.Forbidden = new IServiceResultCallbackError("Forbidden");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
-        */
-        IServiceResultCallbackError.NotFound = new IServiceResultCallbackError("NotFound");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
-        */
-        IServiceResultCallbackError.MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
-        */
-        IServiceResultCallbackError.NotAllowed = new IServiceResultCallbackError("NotAllowed");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
-        */
-        IServiceResultCallbackError.NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
-        */
-        IServiceResultCallbackError.PaymentRequired = new IServiceResultCallbackError("PaymentRequired");
-        /**
            @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
         */
         IServiceResultCallbackError.TimeOut = new IServiceResultCallbackError("TimeOut");
@@ -21228,10 +21310,6 @@ of the device. For device orientation, use the IDevice APIs.
            @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
         */
         IServiceResultCallbackError.NoResponse = new IServiceResultCallbackError("NoResponse");
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
-        */
-        IServiceResultCallbackError.ServerError = new IServiceResultCallbackError("ServerError");
         /**
            @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
         */
@@ -21279,6 +21357,20 @@ of the device. For device orientation, use the IDevice APIs.
                         return IServiceResultCallbackWarning.Redirected;
                     case "Wrong_Params":
                         return IServiceResultCallbackWarning.Wrong_Params;
+                    case "Forbidden":
+                        return IServiceResultCallbackWarning.Forbidden;
+                    case "NotFound":
+                        return IServiceResultCallbackWarning.NotFound;
+                    case "MethodNotAllowed":
+                        return IServiceResultCallbackWarning.MethodNotAllowed;
+                    case "NotAllowed":
+                        return IServiceResultCallbackWarning.NotAllowed;
+                    case "NotAuthenticated":
+                        return IServiceResultCallbackWarning.NotAuthenticated;
+                    case "PaymentRequired":
+                        return IServiceResultCallbackWarning.PaymentRequired;
+                    case "ServerError":
+                        return IServiceResultCallbackWarning.ServerError;
                     case "Unknown":
                         return IServiceResultCallbackWarning.Unknown;
                     default:
@@ -21305,6 +21397,34 @@ of the device. For device orientation, use the IDevice APIs.
            @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
         IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+        */
+        IServiceResultCallbackWarning.Forbidden = new IServiceResultCallbackWarning("Forbidden");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+        */
+        IServiceResultCallbackWarning.NotFound = new IServiceResultCallbackWarning("NotFound");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+        */
+        IServiceResultCallbackWarning.MethodNotAllowed = new IServiceResultCallbackWarning("MethodNotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+        */
+        IServiceResultCallbackWarning.NotAllowed = new IServiceResultCallbackWarning("NotAllowed");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+        */
+        IServiceResultCallbackWarning.NotAuthenticated = new IServiceResultCallbackWarning("NotAuthenticated");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+        */
+        IServiceResultCallbackWarning.PaymentRequired = new IServiceResultCallbackWarning("PaymentRequired");
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+        */
+        IServiceResultCallbackWarning.ServerError = new IServiceResultCallbackWarning("ServerError");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */

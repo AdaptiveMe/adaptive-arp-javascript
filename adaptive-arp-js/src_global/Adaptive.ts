@@ -1700,6 +1700,17 @@ manipulated as needed by the application before submitting the ServiceRequest vi
           getServiceRequest(serviceToken:ServiceToken) : ServiceRequest;
           /**
              @method
+             Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+             @param uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+             @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+             @since v2.1.4
+          */
+          getServiceTokenByUri(uri:string) : ServiceToken;
+          /**
+             @method
              Obtains a ServiceToken for the given parameters to be used for the creation of requests.
              @param serviceName  Service name.
              @param endpointName Endpoint name.
@@ -9126,6 +9137,24 @@ during GET/POST operations. No query parameters are appended if this array is nu
           }
 
           /**
+             @property {string} refererHost
+             This host indicates the origin host of the request. This, could be useful in case of redirected requests.
+          */
+          refererHost : string;
+
+          /**
+             @property {string} refererHost
+             This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+          */
+          get refererHostProperty() : string {
+               return this.refererHost;
+          }
+
+          set refererHostProperty(refererHost:string) {
+               this.refererHost = refererHost;
+          }
+
+          /**
              @property {Adaptive.ServiceHeader[]} serviceHeaders
              The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
@@ -9354,6 +9383,28 @@ identifiers. This should not be manipulated by the application directly. The 'se
 
           /**
              @method
+             Returns the referer host (origin) of the request.
+
+             @return {string} Referer host of the request
+             @since v2.1.4
+          */
+          getRefererHost() : string {
+               return this.refererHost;
+          }
+
+          /**
+             @method
+             Sets the value for the referer host of the request.
+
+             @param {string} refererHost Referer host of the request
+             @since v2.1.4
+          */
+          setRefererHost(refererHost: string) {
+               this.refererHost = refererHost;
+          }
+
+          /**
+             @method
              Returns the array of ServiceHeader
 
              @return {Adaptive.ServiceHeader[]} serviceHeaders
@@ -9499,6 +9550,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
                } else {
                     result.serviceToken = ServiceToken.toObject(null);
                }
+               if (object!=null && object.refererHost!=null) result.refererHost = object.refererHost;
 
                return result;
           }
@@ -9624,6 +9676,24 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
           }
 
           /**
+             @property {number} statusCode
+             HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc.
+          */
+          statusCode : number;
+
+          /**
+             @property {number} statusCode
+             HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc. The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+          */
+          get statusCodeProperty() : number {
+               return this.statusCode;
+          }
+
+          set statusCodeProperty(statusCode:number) {
+               this.statusCode = statusCode;
+          }
+
+          /**
              @method constructor
              Constructor with fields
 
@@ -9633,9 +9703,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
              @param {number} contentLength   The length in bytes for the Content field.
              @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
              @param {Adaptive.ServiceSession} serviceSession  Information about the session
+             @param {number} statusCode      HTTP Status code of the response.
              @since v2.0
           */
-          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession) {
+          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession, statusCode: number) {
                super();
                this.content = content;
                this.contentType = contentType;
@@ -9643,6 +9714,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                this.contentLength = contentLength;
                this.serviceHeaders = serviceHeaders;
                this.serviceSession = serviceSession;
+               this.statusCode = statusCode;
           }
           /**
              @method
@@ -9701,7 +9773,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
           /**
              @method
-             Set the content length
+             Set the content length.
 
              @param {number} contentLength The length in bytes for the Content field.
              @since v2.0
@@ -9778,13 +9850,35 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
           /**
              @method
+             Returns the status code of the response.
+
+             @return {number} HTTP status code
+             @since v2.1.4
+          */
+          getStatusCode() : number {
+               return this.statusCode;
+          }
+
+          /**
+             @method
+             Sets the status code of the response
+
+             @param {number} statusCode HTTP status code
+             @since v2.1.4
+          */
+          setStatusCode(statusCode: number) {
+               this.statusCode = statusCode;
+          }
+
+          /**
+             @method
              @static
              Convert JSON parsed object to typed equivalent.
              @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
              @return {Adaptive.ServiceResponse} Wrapped object instance.
           */
           static toObject(object : any) : ServiceResponse {
-               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null);
+               var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
                if (object!=null && object.content!=null) result.content = object.content;
@@ -9807,6 +9901,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                } else {
                     result.serviceSession = ServiceSession.toObject(null);
                }
+               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
 
                return result;
           }
@@ -15703,6 +15798,50 @@ configured in the platform's XML service definition file.
                     }
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceToken' request.");
+               }
+               return response;
+          }
+
+          /**
+             @method
+             Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+
+             @param {string} uri uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+             @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+             @since v2.1.4
+          */
+          getServiceTokenByUri(uri : string) : ServiceToken {
+               // Create and populate API request.
+               var arParams : string[] = [];
+               arParams.push(JSON.stringify(uri));
+               var apiRequest : APIRequest = new APIRequest("IService","getServiceTokenByUri",arParams, -1 /* = synchronous call */);
+               apiRequest.setApiVersion("v2.1.3");
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
+               // Create and send JSON request.
+               var xhr = new XMLHttpRequest();
+               xhr.open("POST", bridgePath, false);
+               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+               xhr.send(JSON.stringify(apiRequest));
+               // Prepare response.
+               var response : ServiceToken = null;
+               // Check response.
+               if (xhr.status == 200 ) {
+                    // Process response.
+                    if (xhr.responseText != null && xhr.responseText != '') {
+                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
+                         } else {
+                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceTokenByUri' ["+apiResponse.getStatusMessage()+"].");
+                         }
+                    } else {
+                         console.error("ERROR: 'ServiceBridge.getServiceTokenByUri' incorrect response received.");
+                    }
+               } else {
+                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceTokenByUri' request.");
                }
                return response;
           }
@@ -25032,30 +25171,6 @@ of the device. For device orientation, use the IDevice APIs.
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
-          */
-          static Forbidden = new IServiceResultCallbackError("Forbidden");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
-          */
-          static NotFound = new IServiceResultCallbackError("NotFound");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
-          */
-          static MethodNotAllowed = new IServiceResultCallbackError("MethodNotAllowed");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
-          */
-          static NotAllowed = new IServiceResultCallbackError("NotAllowed");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
-          */
-          static NotAuthenticated = new IServiceResultCallbackError("NotAuthenticated");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
-          */
-          static PaymentRequired = new IServiceResultCallbackError("PaymentRequired");
-          /**
              @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
           */
           static TimeOut = new IServiceResultCallbackError("TimeOut");
@@ -25063,10 +25178,6 @@ of the device. For device orientation, use the IDevice APIs.
              @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
           */
           static NoResponse = new IServiceResultCallbackError("NoResponse");
-          /**
-             @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
-          */
-          static ServerError = new IServiceResultCallbackError("ServerError");
           /**
              @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
           */
@@ -25093,24 +25204,10 @@ of the device. For device orientation, use the IDevice APIs.
           static toObject(object : any) : IServiceResultCallbackError {
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Forbidden":
-                              return IServiceResultCallbackError.Forbidden;
-                         case "NotFound":
-                              return IServiceResultCallbackError.NotFound;
-                         case "MethodNotAllowed":
-                              return IServiceResultCallbackError.MethodNotAllowed;
-                         case "NotAllowed":
-                              return IServiceResultCallbackError.NotAllowed;
-                         case "NotAuthenticated":
-                              return IServiceResultCallbackError.NotAuthenticated;
-                         case "PaymentRequired":
-                              return IServiceResultCallbackError.PaymentRequired;
                          case "TimeOut":
                               return IServiceResultCallbackError.TimeOut;
                          case "NoResponse":
                               return IServiceResultCallbackError.NoResponse;
-                         case "ServerError":
-                              return IServiceResultCallbackError.ServerError;
                          case "Unreachable":
                               return IServiceResultCallbackError.Unreachable;
                          case "MalformedUrl":
@@ -25154,6 +25251,34 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
           /**
+             @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+          */
+          static Forbidden = new IServiceResultCallbackWarning("Forbidden");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+          */
+          static NotFound = new IServiceResultCallbackWarning("NotFound");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+          */
+          static MethodNotAllowed = new IServiceResultCallbackWarning("MethodNotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+          */
+          static NotAllowed = new IServiceResultCallbackWarning("NotAllowed");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+          */
+          static NotAuthenticated = new IServiceResultCallbackWarning("NotAuthenticated");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+          */
+          static PaymentRequired = new IServiceResultCallbackWarning("PaymentRequired");
+          /**
+             @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+          */
+          static ServerError = new IServiceResultCallbackWarning("ServerError");
+          /**
              @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
           */
           static Unknown = new IServiceResultCallbackWarning("Unknown");
@@ -25175,6 +25300,20 @@ of the device. For device orientation, use the IDevice APIs.
                               return IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":
                               return IServiceResultCallbackWarning.Wrong_Params;
+                         case "Forbidden":
+                              return IServiceResultCallbackWarning.Forbidden;
+                         case "NotFound":
+                              return IServiceResultCallbackWarning.NotFound;
+                         case "MethodNotAllowed":
+                              return IServiceResultCallbackWarning.MethodNotAllowed;
+                         case "NotAllowed":
+                              return IServiceResultCallbackWarning.NotAllowed;
+                         case "NotAuthenticated":
+                              return IServiceResultCallbackWarning.NotAuthenticated;
+                         case "PaymentRequired":
+                              return IServiceResultCallbackWarning.PaymentRequired;
+                         case "ServerError":
+                              return IServiceResultCallbackWarning.ServerError;
                          case "Unknown":
                               return IServiceResultCallbackWarning.Unknown;
                          default:

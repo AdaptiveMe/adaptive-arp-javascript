@@ -108,6 +108,16 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
         */
         serviceSessionProperty: ServiceSession;
         /**
+           @property {number} statusCode
+           HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc.
+        */
+        statusCode: number;
+        /**
+           @property {number} statusCode
+           HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc. The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+        */
+        statusCodeProperty: number;
+        /**
            @method constructor
            Constructor with fields
 
@@ -117,9 +127,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {number} contentLength   The length in bytes for the Content field.
            @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession  Information about the session
+           @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession);
+        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
         /**
            @method
            Returns the content
@@ -162,7 +173,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
         getContentLength(): number;
         /**
            @method
-           Set the content length
+           Set the content length.
 
            @param {number} contentLength The length in bytes for the Content field.
            @since v2.0
@@ -216,6 +227,22 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @since v2.0
         */
         setServiceSession(serviceSession: ServiceSession): void;
+        /**
+           @method
+           Returns the status code of the response.
+
+           @return {number} HTTP status code
+           @since v2.1.4
+        */
+        getStatusCode(): number;
+        /**
+           @method
+           Sets the status code of the response
+
+           @param {number} statusCode HTTP status code
+           @since v2.1.4
+        */
+        setStatusCode(statusCode: number): void;
         /**
            @method
            @static

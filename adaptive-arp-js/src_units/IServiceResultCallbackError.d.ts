@@ -41,30 +41,6 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
-        */
-        static Forbidden: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
-        */
-        static NotFound: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
-        */
-        static MethodNotAllowed: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
-        */
-        static NotAllowed: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
-        */
-        static NotAuthenticated: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
-        */
-        static PaymentRequired: IServiceResultCallbackError;
-        /**
            @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
         */
         static TimeOut: IServiceResultCallbackError;
@@ -72,10 +48,6 @@ declare module Adaptive {
            @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
         */
         static NoResponse: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
-        */
-        static ServerError: IServiceResultCallbackError;
         /**
            @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
         */

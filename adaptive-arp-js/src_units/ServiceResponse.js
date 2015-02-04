@@ -63,9 +63,10 @@ var Adaptive;
            @param {number} contentLength   The length in bytes for the Content field.
            @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession  Information about the session
+           @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        function ServiceResponse(content, contentType, contentEncoding, contentLength, serviceHeaders, serviceSession) {
+        function ServiceResponse(content, contentType, contentEncoding, contentLength, serviceHeaders, serviceSession, statusCode) {
             _super.call(this);
             this.content = content;
             this.contentType = contentType;
@@ -73,6 +74,7 @@ var Adaptive;
             this.contentLength = contentLength;
             this.serviceHeaders = serviceHeaders;
             this.serviceSession = serviceSession;
+            this.statusCode = statusCode;
         }
         Object.defineProperty(ServiceResponse.prototype, "contentProperty", {
             /**
@@ -159,6 +161,20 @@ var Adaptive;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ServiceResponse.prototype, "statusCodeProperty", {
+            /**
+               @property {number} statusCode
+               HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc. The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+            */
+            get: function () {
+                return this.statusCode;
+            },
+            set: function (statusCode) {
+                this.statusCode = statusCode;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the content
@@ -211,7 +227,7 @@ var Adaptive;
         };
         /**
            @method
-           Set the content length
+           Set the content length.
 
            @param {number} contentLength The length in bytes for the Content field.
            @since v2.0
@@ -281,13 +297,33 @@ var Adaptive;
         };
         /**
            @method
+           Returns the status code of the response.
+
+           @return {number} HTTP status code
+           @since v2.1.4
+        */
+        ServiceResponse.prototype.getStatusCode = function () {
+            return this.statusCode;
+        };
+        /**
+           @method
+           Sets the status code of the response
+
+           @param {number} statusCode HTTP status code
+           @since v2.1.4
+        */
+        ServiceResponse.prototype.setStatusCode = function (statusCode) {
+            this.statusCode = statusCode;
+        };
+        /**
+           @method
            @static
            Convert JSON parsed object to typed equivalent.
            @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse.
            @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         ServiceResponse.toObject = function (object) {
-            var result = new ServiceResponse(null, null, null, null, null, null);
+            var result = new ServiceResponse(null, null, null, null, null, null, null);
             // Assign values to bean fields.
             if (object != null && object.content != null)
                 result.content = object.content;
@@ -315,6 +351,8 @@ var Adaptive;
             else {
                 result.serviceSession = Adaptive.ServiceSession.toObject(null);
             }
+            if (object != null && object.statusCode != null)
+                result.statusCode = object.statusCode;
             return result;
         };
         return ServiceResponse;

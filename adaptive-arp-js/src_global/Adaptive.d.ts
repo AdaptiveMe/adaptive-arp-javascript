@@ -1587,6 +1587,17 @@ manipulated as needed by the application before submitting the ServiceRequest vi
         getServiceRequest(serviceToken: ServiceToken): ServiceRequest;
         /**
            @method
+           Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+           @param uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+           @since v2.1.4
+        */
+        getServiceTokenByUri(uri: string): ServiceToken;
+        /**
+           @method
            Obtains a ServiceToken for the given parameters to be used for the creation of requests.
            @param serviceName  Service name.
            @param endpointName Endpoint name.
@@ -6904,6 +6915,16 @@ during GET/POST operations. No query parameters are appended if this array is nu
         */
         queryParametersProperty: ServiceRequestParameter[];
         /**
+           @property {string} refererHost
+           This host indicates the origin host of the request. This, could be useful in case of redirected requests.
+        */
+        refererHost: string;
+        /**
+           @property {string} refererHost
+           This host indicates the origin host of the request. This, could be useful in case of redirected requests. The 'refererHostProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'refererHost'.
+        */
+        refererHostProperty: string;
+        /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
@@ -7060,6 +7081,22 @@ identifiers. This should not be manipulated by the application directly. The 'se
         setQueryParameters(queryParameters: ServiceRequestParameter[]): void;
         /**
            @method
+           Returns the referer host (origin) of the request.
+
+           @return {string} Referer host of the request
+           @since v2.1.4
+        */
+        getRefererHost(): string;
+        /**
+           @method
+           Sets the value for the referer host of the request.
+
+           @param {string} refererHost Referer host of the request
+           @since v2.1.4
+        */
+        setRefererHost(refererHost: string): void;
+        /**
+           @method
            Returns the array of ServiceHeader
 
            @return {Adaptive.ServiceHeader[]} serviceHeaders
@@ -7204,6 +7241,16 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
         */
         serviceSessionProperty: ServiceSession;
         /**
+           @property {number} statusCode
+           HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc.
+        */
+        statusCode: number;
+        /**
+           @property {number} statusCode
+           HTTP Status code of the response. With this status code it is possible to perform some actions, redirects, authentication, etc. The 'statusCodeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'statusCode'.
+        */
+        statusCodeProperty: number;
+        /**
            @method constructor
            Constructor with fields
 
@@ -7213,9 +7260,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {number} contentLength   The length in bytes for the Content field.
            @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession  Information about the session
+           @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession);
+        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
         /**
            @method
            Returns the content
@@ -7258,7 +7306,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
         getContentLength(): number;
         /**
            @method
-           Set the content length
+           Set the content length.
 
            @param {number} contentLength The length in bytes for the Content field.
            @since v2.0
@@ -7312,6 +7360,22 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @since v2.0
         */
         setServiceSession(serviceSession: ServiceSession): void;
+        /**
+           @method
+           Returns the status code of the response.
+
+           @return {number} HTTP status code
+           @since v2.1.4
+        */
+        getStatusCode(): number;
+        /**
+           @method
+           Sets the status code of the response
+
+           @param {number} statusCode HTTP status code
+           @since v2.1.4
+        */
+        setStatusCode(statusCode: number): void;
         /**
            @method
            @static
@@ -10616,6 +10680,18 @@ configured in the platform's XML service definition file.
            @since v2.0.6
         */
         getServiceToken(serviceName: string, endpointName: string, functionName: string, method: IServiceMethod): ServiceToken;
+        /**
+           @method
+           Obtains a Service token by a concrete uri (http://domain.com/path). This method would be useful when
+a service response is a redirect (3XX) and it is necessary to make a request to another host and we
+don't know by advance the name of the service.
+
+           @param {string} uri uri Unique Resource Identifier for a Service-Endpoint-Path-Method
+           @return {Adaptive.ServiceToken} ServiceToken to create a service request or null if the given parameter is not
+configured in the platform's XML service definition file.
+           @since v2.1.4
+        */
+        getServiceTokenByUri(uri: string): ServiceToken;
         /**
            @method
            Returns all the possible service tokens configured in the platform's XML service definition file.
@@ -15147,30 +15223,6 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IServiceResultCallbackError} [Forbidden='Forbidden']
-        */
-        static Forbidden: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotFound='NotFound']
-        */
-        static NotFound: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [MethodNotAllowed='MethodNotAllowed']
-        */
-        static MethodNotAllowed: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAllowed='NotAllowed']
-        */
-        static NotAllowed: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [NotAuthenticated='NotAuthenticated']
-        */
-        static NotAuthenticated: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [PaymentRequired='PaymentRequired']
-        */
-        static PaymentRequired: IServiceResultCallbackError;
-        /**
            @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']
         */
         static TimeOut: IServiceResultCallbackError;
@@ -15178,10 +15230,6 @@ of the device. For device orientation, use the IDevice APIs.
            @property {Adaptive.IServiceResultCallbackError} [NoResponse='NoResponse']
         */
         static NoResponse: IServiceResultCallbackError;
-        /**
-           @property {Adaptive.IServiceResultCallbackError} [ServerError='ServerError']
-        */
-        static ServerError: IServiceResultCallbackError;
         /**
            @property {Adaptive.IServiceResultCallbackError} [Unreachable='Unreachable']
         */
@@ -15230,6 +15278,34 @@ of the device. For device orientation, use the IDevice APIs.
            @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
         static Wrong_Params: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
+        */
+        static Forbidden: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotFound='NotFound']
+        */
+        static NotFound: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [MethodNotAllowed='MethodNotAllowed']
+        */
+        static MethodNotAllowed: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAllowed='NotAllowed']
+        */
+        static NotAllowed: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [NotAuthenticated='NotAuthenticated']
+        */
+        static NotAuthenticated: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [PaymentRequired='PaymentRequired']
+        */
+        static PaymentRequired: IServiceResultCallbackWarning;
+        /**
+           @property {Adaptive.IServiceResultCallbackWarning} [ServerError='ServerError']
+        */
+        static ServerError: IServiceResultCallbackWarning;
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Unknown='Unknown']
         */
