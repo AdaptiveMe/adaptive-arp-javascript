@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.3
+    * @version v2.1.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,7 +75,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(data));
                var apiRequest : APIRequest = new APIRequest("IMail","sendEmail",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.3
+    * @version v2.1.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -11249,7 +11249,7 @@ to a relative path of a function published on a remote service. The 'functionNam
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
 
           /**
@@ -12381,7 +12381,7 @@ event may be fired if the application vetoes display rotation before rotation is
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
 
      }
@@ -14309,7 +14309,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14352,7 +14352,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14395,7 +14395,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14438,7 +14438,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14481,7 +14481,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14524,7 +14524,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14567,7 +14567,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14610,7 +14610,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14653,7 +14653,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14696,7 +14696,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14739,7 +14739,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14782,7 +14782,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14825,7 +14825,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14868,7 +14868,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
 
@@ -14920,7 +14920,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getDefaultLocale",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -14959,7 +14959,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getLocaleSupportedDescriptors",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15006,7 +15006,7 @@ event may be fired if the application vetoes display rotation before rotation is
                arParams.push(JSON.stringify(key));
                arParams.push(JSON.stringify(locale));
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getResourceLiteral",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15047,7 +15047,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var arParams : string[] = [];
                arParams.push(JSON.stringify(locale));
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getResourceLiterals",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15109,7 +15109,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","addLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15151,7 +15151,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","isBackground",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15190,7 +15190,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15225,7 +15225,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15475,7 +15475,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var arParams : string[] = [];
                arParams.push(JSON.stringify(host));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkReachable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15522,7 +15522,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkServiceReachable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15586,7 +15586,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("INetworkStatus","addNetworkStatusListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15628,7 +15628,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("INetworkStatus","removeNetworkStatusListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15663,7 +15663,7 @@ event may be fired if the application vetoes display rotation before rotation is
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("INetworkStatus","removeNetworkStatusListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15726,7 +15726,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceToken));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceRequest",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15774,7 +15774,7 @@ configured in the platform's XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceToken",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15818,7 +15818,7 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(uri));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceTokenByUri",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15857,7 +15857,7 @@ configured in the platform's XML service definition file.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IService","getServicesRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15902,7 +15902,7 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
                var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -15956,7 +15956,7 @@ XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","isServiceRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16035,7 +16035,7 @@ XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(number));
                var apiRequest : APIRequest = new APIRequest("ITelephony","call",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16133,7 +16133,7 @@ XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                var apiRequest : APIRequest = new APIRequest("IDatabase","createDatabase",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16182,7 +16182,7 @@ XML service definition file.
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
                var apiRequest : APIRequest = new APIRequest("IDatabase","createTable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16229,7 +16229,7 @@ XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                var apiRequest : APIRequest = new APIRequest("IDatabase","deleteDatabase",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16278,7 +16278,7 @@ XML service definition file.
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
                var apiRequest : APIRequest = new APIRequest("IDatabase","deleteTable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16330,7 +16330,7 @@ should be passed as a parameter
                arParams.push(JSON.stringify(statement));
                arParams.push(JSON.stringify(replacements));
                var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlStatement",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16382,7 +16382,7 @@ should be passed as a parameter
                arParams.push(JSON.stringify(statements));
                arParams.push(JSON.stringify(rollbackFlag));
                var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlTransactions",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16429,7 +16429,7 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                var apiRequest : APIRequest = new APIRequest("IDatabase","existsDatabase",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16472,7 +16472,7 @@ should be passed as a parameter
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
                var apiRequest : APIRequest = new APIRequest("IDatabase","existsTable",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16532,7 +16532,7 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","canRead",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16573,7 +16573,7 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","canWrite",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16614,7 +16614,7 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","create",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16664,7 +16664,7 @@ deleted if the cascade parameter is set to true.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(cascade));
                var apiRequest : APIRequest = new APIRequest("IFile","delete",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16705,7 +16705,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","exists",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16746,7 +16746,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getContent",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16793,7 +16793,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getFileStorageType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16834,7 +16834,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getFileType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16875,7 +16875,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getSecurityType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16916,7 +16916,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","isDirectory",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -16958,7 +16958,7 @@ any results.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","listFiles",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17008,7 +17008,7 @@ is a file, it will not yield any results.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(regex));
                var apiRequest : APIRequest = new APIRequest("IFile","listFilesForRegex",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17057,7 +17057,7 @@ is a file, it will not yield any results.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(recursive));
                var apiRequest : APIRequest = new APIRequest("IFile","mkDir",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17105,7 +17105,7 @@ new destination file.
                arParams.push(JSON.stringify(createPath));
                arParams.push(JSON.stringify(overwrite));
                var apiRequest : APIRequest = new APIRequest("IFile","move",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17154,7 +17154,7 @@ new destination file.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(content));
                var apiRequest : APIRequest = new APIRequest("IFile","setContent",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17223,7 +17223,7 @@ This method does not create the actual file in the specified folder.
                arParams.push(JSON.stringify(parent));
                arParams.push(JSON.stringify(name));
                var apiRequest : APIRequest = new APIRequest("IFileSystem","createFileDescriptor",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17264,7 +17264,7 @@ This path is volatile and may be cleaned by the OS periodically.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCacheFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17304,7 +17304,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCloudFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17344,7 +17344,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationDocumentsFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17384,7 +17384,7 @@ This path may or may not be directly readable or writable - it usually contains 
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17424,7 +17424,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationProtectedFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17463,7 +17463,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSeparator",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17505,7 +17505,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSystemExternalFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17659,7 +17659,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IVideo","playStream",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17800,7 +17800,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17847,7 +17847,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17892,7 +17892,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17939,7 +17939,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -17988,7 +17988,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18035,7 +18035,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18084,7 +18084,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18133,7 +18133,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(contact));
                arParams.push(JSON.stringify(pngImage));
                var apiRequest : APIRequest = new APIRequest("IContact","setContactPhoto",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18193,7 +18193,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(data));
                var apiRequest : APIRequest = new APIRequest("IMail","sendEmail",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18261,7 +18261,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
                var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18443,7 +18443,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","deleteSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18492,7 +18492,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","getSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18537,7 +18537,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ISecurity","isDeviceModified",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18580,7 +18580,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keyValues));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","setSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18644,7 +18644,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IAcceleration","addAccelerationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18686,7 +18686,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IAcceleration","removeAccelerationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18721,7 +18721,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IAcceleration","removeAccelerationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18817,7 +18817,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","addGeolocationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18859,7 +18859,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","removeGeolocationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -18894,7 +18894,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","removeGeolocationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19106,7 +19106,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ICapabilities","getOrientationDefault",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19146,7 +19146,7 @@ support at least one orientation. This is usually PortaitUp.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ICapabilities","getOrientationsSupported",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19191,7 +19191,7 @@ support at least one orientation. This is usually PortaitUp.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasButtonSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19233,7 +19233,7 @@ the device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasCommunicationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19274,7 +19274,7 @@ the device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasDataSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19316,7 +19316,7 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasMediaSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19357,7 +19357,7 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasNetSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19399,7 +19399,7 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasNotificationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19440,7 +19440,7 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(orientation));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasOrientationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19482,7 +19482,7 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasSensorSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19540,7 +19540,7 @@ device.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19582,7 +19582,7 @@ device.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19624,7 +19624,7 @@ device.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getDeviceInfo",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19663,7 +19663,7 @@ device.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getLocaleCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19703,7 +19703,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getOrientationCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19742,7 +19742,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19777,7 +19777,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19816,7 +19816,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19851,7 +19851,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19909,7 +19909,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDisplay","addDisplayOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19952,7 +19952,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDisplay","getOrientationCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -19991,7 +19991,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDisplay","removeDisplayOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20026,7 +20026,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDisplay","removeDisplayOrientationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20084,7 +20084,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IOS","getOSInfo",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20141,7 +20141,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissApplication",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20166,7 +20166,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissSplashScreen",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20226,7 +20226,7 @@ of the device. For device orientation, use the IDevice APIs.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openExtenalBrowser",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20271,7 +20271,7 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(title));
                arParams.push(JSON.stringify(backButtonText));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openInternalBrowser",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20316,7 +20316,7 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(title));
                arParams.push(JSON.stringify(backButtonText));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openInternalBrowserModal",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20490,7 +20490,7 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(level));
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_message",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -20519,7 +20519,7 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(category));
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_category_message",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.3");
+               apiRequest.setApiVersion("v2.1.4");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -21852,7 +21852,7 @@ of the device. For device orientation, use the IDevice APIs.
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.1.3"
+               return "v2.1.4"
           }
      }
      /**
