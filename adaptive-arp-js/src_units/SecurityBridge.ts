@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","deleteSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.4");
+               apiRequest.setApiVersion("v2.1.5");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -126,7 +126,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","getSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.4");
+               apiRequest.setApiVersion("v2.1.5");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -171,7 +171,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ISecurity","isDeviceModified",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.4");
+               apiRequest.setApiVersion("v2.1.5");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -214,7 +214,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keyValues));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","setSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.4");
+               apiRequest.setApiVersion("v2.1.5");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

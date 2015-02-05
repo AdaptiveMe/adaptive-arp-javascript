@@ -27,12 +27,13 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
 ///<reference path="APIBean.ts"/>
+///<reference path="IServiceContentEncoding.ts"/>
 ///<reference path="ServiceHeader.ts"/>
 ///<reference path="ServiceSession.ts"/>
 
@@ -48,6 +49,24 @@ module Adaptive {
         @version 1.0
      */
      export class ServiceResponse extends APIBean {
+
+          /**
+             @property {Adaptive.IServiceContentEncoding} contentEncoding
+             Encoding of the binary payload - by default assumed to be UTF8.
+          */
+          contentEncoding : IServiceContentEncoding;
+
+          /**
+             @property {Adaptive.IServiceContentEncoding} contentEncoding
+             Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+          */
+          get contentEncodingProperty() : IServiceContentEncoding {
+               return this.contentEncoding;
+          }
+
+          set contentEncodingProperty(contentEncoding:IServiceContentEncoding) {
+               this.contentEncoding = contentEncoding;
+          }
 
           /**
              @property {string} content
@@ -67,24 +86,6 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
           set contentProperty(content:string) {
                this.content = content;
-          }
-
-          /**
-             @property {string} contentEncoding
-             Encoding of the binary payload - by default assumed to be UTF8.
-          */
-          contentEncoding : string;
-
-          /**
-             @property {string} contentEncoding
-             Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
-          */
-          get contentEncodingProperty() : string {
-               return this.contentEncoding;
-          }
-
-          set contentEncodingProperty(contentEncoding:string) {
-               this.contentEncoding = contentEncoding;
           }
 
           /**
@@ -183,14 +184,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
              @param {string} content         Request/Response data content (plain text).
              @param {string} contentType     The request/response content type (MIME TYPE).
-             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
              @param {number} contentLength   The length in bytes for the Content field.
              @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
              @param {Adaptive.ServiceSession} serviceSession  Information about the session
              @param {number} statusCode      HTTP Status code of the response.
              @since v2.0
           */
-          constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession, statusCode: number) {
+          constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession, statusCode: number) {
                super();
                this.content = content;
                this.contentType = contentType;
@@ -199,6 +200,28 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                this.serviceHeaders = serviceHeaders;
                this.serviceSession = serviceSession;
                this.statusCode = statusCode;
+          }
+
+          /**
+             @method
+             Returns the content encoding
+
+             @return {Adaptive.IServiceContentEncoding} contentEncoding
+             @since v2.0
+          */
+          getContentEncoding() : IServiceContentEncoding {
+               return this.contentEncoding;
+          }
+
+          /**
+             @method
+             Set the content encoding
+
+             @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+             @since v2.0
+          */
+          setContentEncoding(contentEncoding: IServiceContentEncoding) {
+               this.contentEncoding = contentEncoding;
           }
 
           /**
@@ -221,28 +244,6 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
           */
           setContent(content: string) {
                this.content = content;
-          }
-
-          /**
-             @method
-             Returns the content encoding
-
-             @return {string} contentEncoding
-             @since v2.0
-          */
-          getContentEncoding() : string {
-               return this.contentEncoding;
-          }
-
-          /**
-             @method
-             Set the content encoding
-
-             @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-             @since v2.0
-          */
-          setContentEncoding(contentEncoding: string) {
-               this.contentEncoding = contentEncoding;
           }
 
           /**
@@ -368,7 +369,11 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                // Assign values to bean fields.
                if (object!=null && object.content!=null) result.content = object.content;
                if (object!=null && object.contentType!=null) result.contentType = object.contentType;
-               if (object!=null && object.contentEncoding!=null) result.contentEncoding = object.contentEncoding;
+               if (object!=null && object.contentEncoding!=null) {
+                    result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
+               } else {
+                    result.contentEncoding = IServiceContentEncoding.toObject(null);
+               }
                if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ module Adaptive {
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
                var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.4");
+               apiRequest.setApiVersion("v2.1.5");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

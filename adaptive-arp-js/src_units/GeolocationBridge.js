@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.4");
+            apiRequest.setApiVersion("v2.1.5");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -120,7 +120,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.4");
+            apiRequest.setApiVersion("v2.1.5");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -157,7 +157,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.4");
+            apiRequest.setApiVersion("v2.1.5");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

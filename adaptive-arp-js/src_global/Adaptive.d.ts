@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -6841,6 +6841,18 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
     */
     class ServiceRequest extends APIBean {
         /**
+           @property {Adaptive.IServiceContentEncoding} contentEncoding
+           Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service.
+        */
+        contentEncoding: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} contentEncoding
+           Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+        */
+        contentEncodingProperty: IServiceContentEncoding;
+        /**
            @property {Adaptive.ServiceRequestParameter[]} bodyParameters
            Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero.
@@ -6866,18 +6878,6 @@ in some well-known web format - in specific, binaries submitted should be encode
 type should be set respectively by the application. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
         */
         contentProperty: string;
-        /**
-           @property {string} contentEncoding
-           Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
-populates this field with defaults for the service.
-        */
-        contentEncoding: string;
-        /**
-           @property {string} contentEncoding
-           Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
-populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
-        */
-        contentEncodingProperty: string;
         /**
            @property {number} contentLength
            The length in bytes of the content. This may be populated by the application, the platform
@@ -6985,6 +6985,22 @@ identifiers. This should not be manipulated by the application directly. The 'se
         constructor(content: string, serviceToken: ServiceToken);
         /**
            @method
+           Returns the content encoding
+
+           @return {Adaptive.IServiceContentEncoding} contentEncoding
+           @since v2.0
+        */
+        getContentEncoding(): IServiceContentEncoding;
+        /**
+           @method
+           Set the content encoding
+
+           @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @since v2.0
+        */
+        setContentEncoding(contentEncoding: IServiceContentEncoding): void;
+        /**
+           @method
            Gets the body parameters of the request.
 
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
@@ -7015,22 +7031,6 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @since v2.0
         */
         setContent(content: string): void;
-        /**
-           @method
-           Returns the content encoding
-
-           @return {string} contentEncoding
-           @since v2.0
-        */
-        getContentEncoding(): string;
-        /**
-           @method
-           Set the content encoding
-
-           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since v2.0
-        */
-        setContentEncoding(contentEncoding: string): void;
         /**
            @method
            Returns the content length
@@ -7179,6 +7179,16 @@ identifiers. This should not be manipulated by the application directly. The 'se
     */
     class ServiceResponse extends APIBean {
         /**
+           @property {Adaptive.IServiceContentEncoding} contentEncoding
+           Encoding of the binary payload - by default assumed to be UTF8.
+        */
+        contentEncoding: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} contentEncoding
+           Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+        */
+        contentEncodingProperty: IServiceContentEncoding;
+        /**
            @property {string} content
            Response data content. The content should be in some well-known web format - in specific, binaries returned
 should be encoded in base64.
@@ -7190,16 +7200,6 @@ should be encoded in base64.
 should be encoded in base64. The 'contentProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'content'.
         */
         contentProperty: string;
-        /**
-           @property {string} contentEncoding
-           Encoding of the binary payload - by default assumed to be UTF8.
-        */
-        contentEncoding: string;
-        /**
-           @property {string} contentEncoding
-           Encoding of the binary payload - by default assumed to be UTF8. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
-        */
-        contentEncodingProperty: string;
         /**
            @property {number} contentLength
            The length in bytes for the Content field.
@@ -7256,14 +7256,30 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
            @param {string} content         Request/Response data content (plain text).
            @param {string} contentType     The request/response content type (MIME TYPE).
-           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
            @param {number} contentLength   The length in bytes for the Content field.
            @param {Adaptive.ServiceHeader[]} serviceHeaders  The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @param {Adaptive.ServiceSession} serviceSession  Information about the session
            @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        constructor(content: string, contentType: string, contentEncoding: string, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
+        constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
+        /**
+           @method
+           Returns the content encoding
+
+           @return {Adaptive.IServiceContentEncoding} contentEncoding
+           @since v2.0
+        */
+        getContentEncoding(): IServiceContentEncoding;
+        /**
+           @method
+           Set the content encoding
+
+           @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @since v2.0
+        */
+        setContentEncoding(contentEncoding: IServiceContentEncoding): void;
         /**
            @method
            Returns the content
@@ -7280,22 +7296,6 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @since v2.0
         */
         setContent(content: string): void;
-        /**
-           @method
-           Returns the content encoding
-
-           @return {string} contentEncoding
-           @since v2.0
-        */
-        getContentEncoding(): string;
-        /**
-           @method
-           Set the content encoding
-
-           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since v2.0
-        */
-        setContentEncoding(contentEncoding: string): void;
         /**
            @method
            Returns the content length
@@ -15145,6 +15145,42 @@ of the device. For device orientation, use the IDevice APIs.
            @return {Adaptive.IServiceCertificateValidation}
         */
         static toObject(object: any): IServiceCertificateValidation;
+    }
+    /**
+       @enum {Adaptive.IServiceContentEncoding} Adaptive.IServiceContentEncoding
+       Enumeration IServiceContentEncoding
+    */
+    class IServiceContentEncoding {
+        value: string;
+        constructor(value: string);
+        toString(): string;
+        /**
+           @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']
+        */
+        static ASCII: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} [UTF8='UTF8']
+        */
+        static UTF8: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} [ISOLatin1='ISOLatin1']
+        */
+        static ISOLatin1: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} [Unicode='Unicode']
+        */
+        static Unicode: IServiceContentEncoding;
+        /**
+           @property {Adaptive.IServiceContentEncoding} [Unknown='Unknown']
+        */
+        static Unknown: IServiceContentEncoding;
+        /**
+           @method
+           @static
+           Convert JSON parsed object to enumeration.
+           @return {Adaptive.IServiceContentEncoding}
+        */
+        static toObject(object: any): IServiceContentEncoding;
     }
     /**
        @enum {Adaptive.IServiceMethod} Adaptive.IServiceMethod

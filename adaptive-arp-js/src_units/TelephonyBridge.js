@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(number));
             var apiRequest = new Adaptive.APIRequest("ITelephony", "call", arParams, -1);
-            apiRequest.setApiVersion("v2.1.4");
+            apiRequest.setApiVersion("v2.1.5");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

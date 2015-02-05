@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.4
+    * @version v2.1.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -38,6 +38,7 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 ///<reference path="APIBean.ts"/>
+///<reference path="IServiceContentEncoding.ts"/>
 ///<reference path="ServiceHeader.ts"/>
 ///<reference path="ServiceRequestParameter.ts"/>
 ///<reference path="ServiceSession.ts"/>
@@ -68,6 +69,21 @@ var Adaptive;
             this.content = content;
             this.serviceToken = serviceToken;
         }
+        Object.defineProperty(ServiceRequest.prototype, "contentEncodingProperty", {
+            /**
+               @property {Adaptive.IServiceContentEncoding} contentEncoding
+               Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
+  populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
+            */
+            get: function () {
+                return this.contentEncoding;
+            },
+            set: function (contentEncoding) {
+                this.contentEncoding = contentEncoding;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(ServiceRequest.prototype, "bodyParametersProperty", {
             /**
                @property {Adaptive.ServiceRequestParameter[]} bodyParameters
@@ -95,21 +111,6 @@ var Adaptive;
             },
             set: function (content) {
                 this.content = content;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(ServiceRequest.prototype, "contentEncodingProperty", {
-            /**
-               @property {string} contentEncoding
-               Encoding of the content - by default assumed to be UTF8. This may be populated by the application, the platform
-  populates this field with defaults for the service. The 'contentEncodingProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contentEncoding'.
-            */
-            get: function () {
-                return this.contentEncoding;
-            },
-            set: function (contentEncoding) {
-                this.contentEncoding = contentEncoding;
             },
             enumerable: true,
             configurable: true
@@ -236,6 +237,26 @@ var Adaptive;
         });
         /**
            @method
+           Returns the content encoding
+
+           @return {Adaptive.IServiceContentEncoding} contentEncoding
+           @since v2.0
+        */
+        ServiceRequest.prototype.getContentEncoding = function () {
+            return this.contentEncoding;
+        };
+        /**
+           @method
+           Set the content encoding
+
+           @param {Adaptive.IServiceContentEncoding} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
+           @since v2.0
+        */
+        ServiceRequest.prototype.setContentEncoding = function (contentEncoding) {
+            this.contentEncoding = contentEncoding;
+        };
+        /**
+           @method
            Gets the body parameters of the request.
 
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
@@ -273,26 +294,6 @@ var Adaptive;
         */
         ServiceRequest.prototype.setContent = function (content) {
             this.content = content;
-        };
-        /**
-           @method
-           Returns the content encoding
-
-           @return {string} contentEncoding
-           @since v2.0
-        */
-        ServiceRequest.prototype.getContentEncoding = function () {
-            return this.contentEncoding;
-        };
-        /**
-           @method
-           Set the content encoding
-
-           @param {string} contentEncoding Encoding of the binary payload - by default assumed to be UTF8.
-           @since v2.0
-        */
-        ServiceRequest.prototype.setContentEncoding = function (contentEncoding) {
-            this.contentEncoding = contentEncoding;
         };
         /**
            @method
@@ -470,8 +471,12 @@ var Adaptive;
                 result.content = object.content;
             if (object != null && object.contentType != null)
                 result.contentType = object.contentType;
-            if (object != null && object.contentEncoding != null)
-                result.contentEncoding = object.contentEncoding;
+            if (object != null && object.contentEncoding != null) {
+                result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
+            }
+            else {
+                result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(null);
+            }
             if (object != null && object.contentLength != null)
                 result.contentLength = object.contentLength;
             if (object != null && object.serviceHeaders != null) {
