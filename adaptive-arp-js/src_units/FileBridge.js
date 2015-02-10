@@ -103,7 +103,7 @@ var Adaptive;
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canRead' [" + apiResponse.getStatusMessage() + "].");
@@ -146,7 +146,7 @@ var Adaptive;
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canWrite' [" + apiResponse.getStatusMessage() + "].");
@@ -241,7 +241,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.delete' [" + apiResponse.getStatusMessage() + "].");
@@ -284,7 +284,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.exists' [" + apiResponse.getStatusMessage() + "].");
@@ -505,7 +505,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.isDirectory' [" + apiResponse.getStatusMessage() + "].");
@@ -652,7 +652,7 @@ is a file, it will not yield any results.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.mkDir' [" + apiResponse.getStatusMessage() + "].");

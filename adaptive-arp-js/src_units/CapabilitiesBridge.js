@@ -188,7 +188,7 @@ support at least one orientation. This is usually PortaitUp.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasButtonSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -232,7 +232,7 @@ the device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasCommunicationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -275,7 +275,7 @@ the device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasDataSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -319,7 +319,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasMediaSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -362,7 +362,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNetSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -406,7 +406,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNotificationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -449,7 +449,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasOrientationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -493,7 +493,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasSensorSupport' [" + apiResponse.getStatusMessage() + "].");

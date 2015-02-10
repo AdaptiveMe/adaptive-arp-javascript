@@ -10908,7 +10908,7 @@ event may be fired if the application vetoes display rotation before rotation is
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.isBackground' [" + apiResponse.getStatusMessage() + "].");
@@ -11752,7 +11752,7 @@ XML service definition file.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ServiceBridge.isServiceRegistered' [" + apiResponse.getStatusMessage() + "].");
@@ -12246,7 +12246,7 @@ should be passed as a parameter
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.existsDatabase' [" + apiResponse.getStatusMessage() + "].");
@@ -12291,7 +12291,7 @@ should be passed as a parameter
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DatabaseBridge.existsTable' [" + apiResponse.getStatusMessage() + "].");
@@ -12354,7 +12354,7 @@ should be passed as a parameter
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canRead' [" + apiResponse.getStatusMessage() + "].");
@@ -12397,7 +12397,7 @@ should be passed as a parameter
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.canWrite' [" + apiResponse.getStatusMessage() + "].");
@@ -12492,7 +12492,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.delete' [" + apiResponse.getStatusMessage() + "].");
@@ -12535,7 +12535,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.exists' [" + apiResponse.getStatusMessage() + "].");
@@ -12756,7 +12756,7 @@ deleted if the cascade parameter is set to true.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.isDirectory' [" + apiResponse.getStatusMessage() + "].");
@@ -12903,7 +12903,7 @@ is a file, it will not yield any results.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.mkDir' [" + apiResponse.getStatusMessage() + "].");
@@ -14028,7 +14028,7 @@ This path may or may not be writable by the current application.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'ContactBridge.setContactPhoto' [" + apiResponse.getStatusMessage() + "].");
@@ -14451,7 +14451,7 @@ This path may or may not be writable by the current application.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.isDeviceModified' [" + apiResponse.getStatusMessage() + "].");
@@ -15138,7 +15138,7 @@ support at least one orientation. This is usually PortaitUp.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasButtonSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15182,7 +15182,7 @@ the device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasCommunicationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15225,7 +15225,7 @@ the device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasDataSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15269,7 +15269,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasMediaSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15312,7 +15312,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNetSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15356,7 +15356,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasNotificationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15399,7 +15399,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasOrientationSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -15443,7 +15443,7 @@ device.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'CapabilitiesBridge.hasSensorSupport' [" + apiResponse.getStatusMessage() + "].");
@@ -16161,7 +16161,7 @@ of the device. For device orientation, use the IDevice APIs.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'RuntimeBridge.dismissSplashScreen' [" + apiResponse.getStatusMessage() + "].");
@@ -16224,7 +16224,7 @@ of the device. For device orientation, use the IDevice APIs.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openExtenalBrowser' [" + apiResponse.getStatusMessage() + "].");
@@ -16271,7 +16271,7 @@ of the device. For device orientation, use the IDevice APIs.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowser' [" + apiResponse.getStatusMessage() + "].");
@@ -16318,7 +16318,7 @@ of the device. For device orientation, use the IDevice APIs.
                 if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() == 200) {
-                        response = !!apiResponse.getResponse();
+                        response = !!JSON.parse(apiResponse.getResponse());
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowserModal' [" + apiResponse.getStatusMessage() + "].");
