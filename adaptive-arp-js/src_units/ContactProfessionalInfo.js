@@ -190,4 +190,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactProfessionalInfo = ContactProfessionalInfo;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactProfessionalInfo.js.map

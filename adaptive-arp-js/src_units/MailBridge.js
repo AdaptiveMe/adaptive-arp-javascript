@@ -89,10 +89,10 @@ var Adaptive;
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -119,4 +119,7 @@ var Adaptive;
     })(Adaptive.BasePIMBridge);
     Adaptive.MailBridge = MailBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=MailBridge.js.map

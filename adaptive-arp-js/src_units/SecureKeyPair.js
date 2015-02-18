@@ -152,4 +152,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.SecureKeyPair = SecureKeyPair;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=SecureKeyPair.js.map

@@ -10661,11 +10661,11 @@ event may be fired if the application vetoes display rotation before rotation is
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -10702,11 +10702,11 @@ event may be fired if the application vetoes display rotation before rotation is
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
                         for (var __key__ in responseArray) {
@@ -10751,11 +10751,11 @@ event may be fired if the application vetoes display rotation before rotation is
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = apiResponse.getResponse();
                     }
                     else {
@@ -10794,11 +10794,11 @@ event may be fired if the application vetoes display rotation before rotation is
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
                         for (var __key__ in responseArray) {
@@ -10859,10 +10859,10 @@ event may be fired if the application vetoes display rotation before rotation is
             Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -10903,11 +10903,11 @@ event may be fired if the application vetoes display rotation before rotation is
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -10942,10 +10942,10 @@ event may be fired if the application vetoes display rotation before rotation is
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredLifecycleListener.remove("" + listener.getId());
                     }
@@ -10979,10 +10979,10 @@ event may be fired if the application vetoes display rotation before rotation is
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredLifecycleListener.keys();
                         for (var key in keys) {
@@ -11244,10 +11244,10 @@ event may be fired if the application vetoes display rotation before rotation is
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -11293,10 +11293,10 @@ event may be fired if the application vetoes display rotation before rotation is
             Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -11360,10 +11360,10 @@ event may be fired if the application vetoes display rotation before rotation is
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -11402,10 +11402,10 @@ event may be fired if the application vetoes display rotation before rotation is
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
                     }
@@ -11439,10 +11439,10 @@ event may be fired if the application vetoes display rotation before rotation is
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredNetworkStatusListener.keys();
                         for (var key in keys) {
@@ -11507,11 +11507,11 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -11557,11 +11557,11 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -11603,11 +11603,11 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -11644,11 +11644,11 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
                         for (var __key__ in responseArray) {
@@ -11691,10 +11691,10 @@ configured in the platform's XML service definition file.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -11747,11 +11747,11 @@ XML service definition file.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -11830,11 +11830,11 @@ XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ITelephonyStatus.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -11933,10 +11933,10 @@ XML service definition file.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -11984,10 +11984,10 @@ XML service definition file.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12033,10 +12033,10 @@ XML service definition file.
             Adaptive.registeredDatabaseResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12084,10 +12084,10 @@ XML service definition file.
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12138,10 +12138,10 @@ should be passed as a parameter
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12192,10 +12192,10 @@ should be passed as a parameter
             Adaptive.registeredDatabaseTableResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12241,11 +12241,11 @@ should be passed as a parameter
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12286,11 +12286,11 @@ should be passed as a parameter
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12349,11 +12349,11 @@ should be passed as a parameter
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12392,11 +12392,11 @@ should be passed as a parameter
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12435,10 +12435,10 @@ should be passed as a parameter
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12487,11 +12487,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12530,11 +12530,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12573,10 +12573,10 @@ deleted if the cascade parameter is set to true.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12622,11 +12622,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = IFileSystemStorageType.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -12665,11 +12665,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = IFileSystemType.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -12708,11 +12708,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = IFileSystemSecurity.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -12751,11 +12751,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12795,10 +12795,10 @@ any results.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12847,10 +12847,10 @@ is a file, it will not yield any results.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12898,11 +12898,11 @@ is a file, it will not yield any results.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -12948,10 +12948,10 @@ new destination file.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -12999,10 +12999,10 @@ new destination file.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13071,11 +13071,11 @@ This method does not create the actual file in the specified folder.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13114,11 +13114,11 @@ This path is volatile and may be cleaned by the OS periodically.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13156,11 +13156,11 @@ This path must always be writable by the current application.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13198,11 +13198,11 @@ This path must always be writable by the current application.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13240,11 +13240,11 @@ This path may or may not be directly readable or writable - it usually contains 
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13282,11 +13282,11 @@ This path must always be writable by the current application.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13323,11 +13323,11 @@ This path must always be writable by the current application.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = apiResponse.getResponse();
                     }
                     else {
@@ -13367,11 +13367,11 @@ This path may or may not be writable by the current application.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -13527,7 +13527,7 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'VideoBridge.playStream' request.");
@@ -13676,10 +13676,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13725,10 +13725,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactPhotoResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13772,10 +13772,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13821,10 +13821,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13872,10 +13872,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13921,10 +13921,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -13972,10 +13972,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredContactResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14023,11 +14023,11 @@ This path may or may not be writable by the current application.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -14086,10 +14086,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14157,10 +14157,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14348,10 +14348,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14399,10 +14399,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14446,11 +14446,11 @@ This path may or may not be writable by the current application.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -14491,10 +14491,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -14558,10 +14558,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredAccelerationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -14600,10 +14600,10 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredAccelerationListener.remove("" + listener.getId());
                     }
@@ -14637,10 +14637,10 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredAccelerationListener.keys();
                         for (var key in keys) {
@@ -14740,10 +14740,10 @@ This path may or may not be writable by the current application.
             Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -14782,10 +14782,10 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredGeolocationListener.remove("" + listener.getId());
                     }
@@ -14819,10 +14819,10 @@ This path may or may not be writable by the current application.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredGeolocationListener.keys();
                         for (var key in keys) {
@@ -15044,11 +15044,11 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -15086,11 +15086,11 @@ support at least one orientation. This is usually PortaitUp.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
                         for (var __key__ in responseArray) {
@@ -15133,11 +15133,11 @@ support at least one orientation. This is usually PortaitUp.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15177,11 +15177,11 @@ the device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15220,11 +15220,11 @@ the device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15264,11 +15264,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15307,11 +15307,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15351,11 +15351,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15394,11 +15394,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15438,11 +15438,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -15499,10 +15499,10 @@ device.
             Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -15543,10 +15543,10 @@ device.
             Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -15587,11 +15587,11 @@ device.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -15628,11 +15628,11 @@ device.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -15670,11 +15670,11 @@ of the display. For display orientation, use the IDisplay APIs.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -15709,10 +15709,10 @@ of the display. For display orientation, use the IDisplay APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredButtonListener.remove("" + listener.getId());
                     }
@@ -15746,10 +15746,10 @@ of the display. For display orientation, use the IDisplay APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredButtonListener.keys();
                         for (var key in keys) {
@@ -15787,10 +15787,10 @@ of the display. For display orientation, use the IDisplay APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
                     }
@@ -15824,10 +15824,10 @@ of the display. For display orientation, use the IDisplay APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredDeviceOrientationListener.keys();
                         for (var key in keys) {
@@ -15887,10 +15887,10 @@ of the display. For display orientation, use the IDisplay APIs.
             Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -15932,11 +15932,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -15971,10 +15971,10 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
                     }
@@ -16008,10 +16008,10 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
                         var keys = Adaptive.registeredDisplayOrientationListener.keys();
                         for (var key in keys) {
@@ -16071,11 +16071,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = OSInfo.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -16129,7 +16129,7 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'RuntimeBridge.dismissApplication' request.");
@@ -16156,11 +16156,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -16219,11 +16219,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -16266,11 +16266,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -16313,11 +16313,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -16494,7 +16494,7 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_message' request.");
@@ -16523,7 +16523,7 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_category_message' request.");
@@ -21691,4 +21691,7 @@ of the device. For device orientation, use the IDevice APIs.
     })();
     Adaptive.RotationEventState = RotationEventState;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Adaptive.js.map

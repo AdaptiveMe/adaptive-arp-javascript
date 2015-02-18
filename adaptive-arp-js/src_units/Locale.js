@@ -152,4 +152,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Locale = Locale;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Locale.js.map

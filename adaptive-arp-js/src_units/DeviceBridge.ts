@@ -87,10 +87,10 @@ module Adaptive {
                registeredButtonListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove listener reference from local dictionary due to invalid response.
                               registeredButtonListener.remove(""+listener.getId());
@@ -129,10 +129,10 @@ module Adaptive {
                registeredDeviceOrientationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove listener reference from local dictionary due to invalid response.
                               registeredDeviceOrientationListener.remove(""+listener.getId());
@@ -171,11 +171,11 @@ module Adaptive {
                // Prepare response.
                var response : DeviceInfo = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getDeviceInfo' ["+apiResponse.getStatusMessage()+"].");
@@ -210,11 +210,11 @@ module Adaptive {
                // Prepare response.
                var response : Locale = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getLocaleCurrent' ["+apiResponse.getStatusMessage()+"].");
@@ -250,11 +250,11 @@ of the display. For display orientation, use the IDisplay APIs.
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getOrientationCurrent' ["+apiResponse.getStatusMessage()+"].");
@@ -287,10 +287,10 @@ of the display. For display orientation, use the IDisplay APIs.
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove listener reference from local dictionary.
                               registeredButtonListener.remove(""+listener.getId());
                          } else {
@@ -322,10 +322,10 @@ of the display. For display orientation, use the IDisplay APIs.
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
                               var keys = registeredButtonListener.keys();
                               for (var key in keys) {
@@ -361,10 +361,10 @@ of the display. For display orientation, use the IDisplay APIs.
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove listener reference from local dictionary.
                               registeredDeviceOrientationListener.remove(""+listener.getId());
                          } else {
@@ -396,10 +396,10 @@ of the display. For display orientation, use the IDisplay APIs.
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
                               var keys = registeredDeviceOrientationListener.keys();
                               for (var key in keys) {

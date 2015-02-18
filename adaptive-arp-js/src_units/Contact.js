@@ -460,4 +460,7 @@ var Adaptive;
     })(Adaptive.ContactUid);
     Adaptive.Contact = Contact;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Contact.js.map

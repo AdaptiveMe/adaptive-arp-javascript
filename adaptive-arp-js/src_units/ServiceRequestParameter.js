@@ -82,4 +82,7 @@ var Adaptive;
     })(Adaptive.KeyValue);
     Adaptive.ServiceRequestParameter = ServiceRequestParameter;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceRequestParameter.js.map

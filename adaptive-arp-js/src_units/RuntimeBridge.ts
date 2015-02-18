@@ -77,7 +77,7 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'RuntimeBridge.dismissApplication' request.");
                }
@@ -104,11 +104,11 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = JSON.parse(apiResponse.getResponse());
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'RuntimeBridge.dismissSplashScreen' ["+apiResponse.getStatusMessage()+"].");

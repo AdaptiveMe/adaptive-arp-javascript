@@ -288,4 +288,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.DatabaseTable = DatabaseTable;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DatabaseTable.js.map

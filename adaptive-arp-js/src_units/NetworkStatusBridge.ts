@@ -82,10 +82,10 @@ module Adaptive {
                registeredNetworkStatusListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove listener reference from local dictionary due to invalid response.
                               registeredNetworkStatusListener.remove(""+listener.getId());
@@ -122,10 +122,10 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove listener reference from local dictionary.
                               registeredNetworkStatusListener.remove(""+listener.getId());
                          } else {
@@ -157,10 +157,10 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
                               var keys = registeredNetworkStatusListener.keys();
                               for (var key in keys) {

@@ -83,11 +83,11 @@ module Adaptive {
                // Prepare response.
                var response : ITelephonyStatus = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = ITelephonyStatus.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'TelephonyBridge.call' ["+apiResponse.getStatusMessage()+"].");

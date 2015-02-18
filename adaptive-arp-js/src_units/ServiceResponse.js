@@ -364,4 +364,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ServiceResponse = ServiceResponse;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceResponse.js.map

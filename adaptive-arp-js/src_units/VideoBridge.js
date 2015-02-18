@@ -83,7 +83,7 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'VideoBridge.playStream' request.");
@@ -93,4 +93,7 @@ var Adaptive;
     })(Adaptive.BaseMediaBridge);
     Adaptive.VideoBridge = VideoBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=VideoBridge.js.map

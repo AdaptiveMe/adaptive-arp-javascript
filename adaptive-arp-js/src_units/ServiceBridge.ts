@@ -90,11 +90,11 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                // Prepare response.
                var response : ServiceRequest = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceRequest' ["+apiResponse.getStatusMessage()+"].");
@@ -138,11 +138,11 @@ configured in the platform's XML service definition file.
                // Prepare response.
                var response : ServiceToken = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceToken' ["+apiResponse.getStatusMessage()+"].");
@@ -182,11 +182,11 @@ configured in the platform's XML service definition file.
                // Prepare response.
                var response : ServiceToken = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceTokenByUri' ["+apiResponse.getStatusMessage()+"].");
@@ -221,11 +221,11 @@ configured in the platform's XML service definition file.
                // Prepare response.
                var response : Array<ServiceToken> = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<ServiceToken>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
                               for(var __key__ in responseArray) {
@@ -266,10 +266,10 @@ configured in the platform's XML service definition file.
                registeredServiceResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredServiceResultCallback.remove(""+callback.getId());
@@ -320,11 +320,11 @@ XML service definition file.
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = JSON.parse(apiResponse.getResponse());
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isServiceRegistered' ["+apiResponse.getStatusMessage()+"].");

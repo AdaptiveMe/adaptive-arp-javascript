@@ -300,4 +300,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Geolocation = Geolocation;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Geolocation.js.map

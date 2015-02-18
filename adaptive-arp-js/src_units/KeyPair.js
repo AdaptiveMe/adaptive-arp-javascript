@@ -152,4 +152,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.KeyPair = KeyPair;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=KeyPair.js.map

@@ -85,7 +85,7 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_message' request.");
@@ -114,7 +114,7 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_category_message' request.");
@@ -124,4 +124,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.LoggingBridge = LoggingBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=LoggingBridge.js.map

@@ -152,4 +152,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Database = Database;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Database.js.map

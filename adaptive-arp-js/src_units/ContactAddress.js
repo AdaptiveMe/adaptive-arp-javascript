@@ -157,4 +157,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactAddress = ContactAddress;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactAddress.js.map

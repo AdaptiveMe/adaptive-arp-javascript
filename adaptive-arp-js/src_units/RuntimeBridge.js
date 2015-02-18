@@ -81,7 +81,7 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'RuntimeBridge.dismissApplication' request.");
@@ -108,11 +108,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -132,4 +132,7 @@ var Adaptive;
     })(Adaptive.BaseSystemBridge);
     Adaptive.RuntimeBridge = RuntimeBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=RuntimeBridge.js.map

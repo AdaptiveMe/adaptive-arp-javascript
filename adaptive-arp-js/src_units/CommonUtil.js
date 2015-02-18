@@ -90,4 +90,7 @@ var Adaptive;
     })();
     Adaptive.Dictionary = Dictionary;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CommonUtil.js.map

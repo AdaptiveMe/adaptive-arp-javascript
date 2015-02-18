@@ -82,4 +82,7 @@ var Adaptive;
     })(Adaptive.KeyValue);
     Adaptive.ServiceHeader = ServiceHeader;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceHeader.js.map

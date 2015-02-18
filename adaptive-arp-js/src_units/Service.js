@@ -153,4 +153,7 @@ var Adaptive;
     })();
     Adaptive.Service = Service;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Service.js.map

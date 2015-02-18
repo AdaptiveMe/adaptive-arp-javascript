@@ -120,4 +120,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.DatabaseRow = DatabaseRow;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DatabaseRow.js.map

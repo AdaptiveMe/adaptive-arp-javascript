@@ -236,4 +236,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ServiceToken = ServiceToken;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceToken.js.map

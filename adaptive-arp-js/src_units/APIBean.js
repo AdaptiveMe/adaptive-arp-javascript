@@ -65,4 +65,7 @@ var Adaptive;
     })();
     Adaptive.APIBean = APIBean;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=APIBean.js.map

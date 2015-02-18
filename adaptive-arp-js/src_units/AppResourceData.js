@@ -341,4 +341,7 @@ var Adaptive;
     })();
     Adaptive.AppResourceData = AppResourceData;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AppResourceData.js.map

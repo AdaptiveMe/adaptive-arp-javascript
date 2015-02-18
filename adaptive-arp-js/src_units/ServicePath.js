@@ -196,4 +196,7 @@ var Adaptive;
     })();
     Adaptive.ServicePath = ServicePath;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServicePath.js.map

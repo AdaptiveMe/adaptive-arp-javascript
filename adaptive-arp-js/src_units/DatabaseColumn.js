@@ -114,4 +114,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.DatabaseColumn = DatabaseColumn;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DatabaseColumn.js.map
