@@ -45,9 +45,9 @@ declare module Adaptive {
         */
         static NoPermission: IContactResultCallbackError;
         /**
-           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
         */
-        static Wrong_Params: IContactResultCallbackError;
+        static WrongParams: IContactResultCallbackError;
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */

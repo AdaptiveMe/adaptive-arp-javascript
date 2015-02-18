@@ -68,8 +68,6 @@ var Adaptive;
                         retValue = ICapabilitiesSensor.Magnetometer;
                     case "Proximity":
                         retValue = ICapabilitiesSensor.Proximity;
-                    case "Unknown":
-                        retValue = ICapabilitiesSensor.Unknown;
                     default:
                         retValue = ICapabilitiesSensor.Unknown;
                 }

@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = IGeolocationListenerError.DeniedAccess;
                     case "StatusNotDetermined":
                         retValue = IGeolocationListenerError.StatusNotDetermined;
-                    case "Unknown":
-                        retValue = IGeolocationListenerError.Unknown;
                     default:
                         retValue = IGeolocationListenerError.Unknown;
                 }

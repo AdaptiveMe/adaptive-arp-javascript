@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = ISecurityResultCallbackError.NoPermission;
                     case "NoMatchesFound":
                         retValue = ISecurityResultCallbackError.NoMatchesFound;
-                    case "Unknown":
-                        retValue = ISecurityResultCallbackError.Unknown;
                     default:
                         retValue = ISecurityResultCallbackError.Unknown;
                 }

@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IFileSystemType.Directory;
                     case "File":
                         retValue = IFileSystemType.File;
-                    case "Unknown":
-                        retValue = IFileSystemType.Unknown;
                     default:
                         retValue = IFileSystemType.Unknown;
                 }

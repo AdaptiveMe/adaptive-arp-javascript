@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IMessagingCallbackWarning.UnableToSentAll;
                     case "UnableToFetchAttachment":
                         retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
-                    case "Unknown":
-                        retValue = IMessagingCallbackWarning.Unknown;
                     default:
                         retValue = IMessagingCallbackWarning.Unknown;
                 }

@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = ICapabilitiesButton.BackButton;
                          case "OptionButton":
                               retValue = ICapabilitiesButton.OptionButton;
-                         case "Unknown":
-                              retValue = ICapabilitiesButton.Unknown;
                          default:
                               retValue = ICapabilitiesButton.Unknown;
                     }

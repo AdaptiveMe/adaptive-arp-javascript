@@ -48,13 +48,13 @@ module Adaptive {
           */
           static NoPermission = new IContactPhotoResultCallbackError("NoPermission");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+          static WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+             @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
           */
-          static No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+          static NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
           /**
              @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
           */
@@ -73,11 +73,9 @@ module Adaptive {
                          case "NoPermission":
                               retValue = IContactPhotoResultCallbackError.NoPermission;
                          case "Wrong_Params":
-                              retValue = IContactPhotoResultCallbackError.Wrong_Params;
+                              retValue = IContactPhotoResultCallbackError.WrongParams;
                          case "No_Photo":
-                              retValue = IContactPhotoResultCallbackError.No_Photo;
-                         case "Unknown":
-                              retValue = IContactPhotoResultCallbackError.Unknown;
+                              retValue = IContactPhotoResultCallbackError.NoPhoto;
                          default:
                               retValue = IContactPhotoResultCallbackError.Unknown;
                     }

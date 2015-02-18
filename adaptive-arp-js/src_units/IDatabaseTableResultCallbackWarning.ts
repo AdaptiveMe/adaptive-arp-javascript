@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = IDatabaseTableResultCallbackWarning.TableLocked;
                          case "NoResults":
                               retValue = IDatabaseTableResultCallbackWarning.NoResults;
-                         case "Unknown":
-                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
                          default:
                               retValue = IDatabaseTableResultCallbackWarning.Unknown;
                     }

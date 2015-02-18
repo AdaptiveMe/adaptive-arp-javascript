@@ -70,8 +70,6 @@ module Adaptive {
                               retValue = IFileListResultCallbackError.InexistentFile;
                          case "Unauthorized":
                               retValue = IFileListResultCallbackError.Unauthorized;
-                         case "Unknown":
-                              retValue = IFileListResultCallbackError.Unknown;
                          default:
                               retValue = IFileListResultCallbackError.Unknown;
                     }

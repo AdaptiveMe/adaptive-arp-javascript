@@ -70,8 +70,6 @@ module Adaptive {
                               retValue = ILifecycleListenerWarning.MemoryLow;
                          case "BatteryLow":
                               retValue = ILifecycleListenerWarning.BatteryLow;
-                         case "Unknown":
-                              retValue = ILifecycleListenerWarning.Unknown;
                          default:
                               retValue = ILifecycleListenerWarning.Unknown;
                     }

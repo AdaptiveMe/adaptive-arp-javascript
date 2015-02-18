@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = INetworkStatusListenerError.NoPermission;
                     case "Unreachable":
                         retValue = INetworkStatusListenerError.Unreachable;
-                    case "Unknown":
-                        retValue = INetworkStatusListenerError.Unknown;
                     default:
                         retValue = INetworkStatusListenerError.Unknown;
                 }

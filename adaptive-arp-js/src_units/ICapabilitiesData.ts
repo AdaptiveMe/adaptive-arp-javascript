@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = ICapabilitiesData.File;
                          case "Cloud":
                               retValue = ICapabilitiesData.Cloud;
-                         case "Unknown":
-                              retValue = ICapabilitiesData.Unknown;
                          default:
                               retValue = ICapabilitiesData.Unknown;
                     }

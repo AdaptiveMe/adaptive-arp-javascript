@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+             @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
           */
-          static Not_Present = new IButtonListenerError("Not_Present");
+          static NotPresent = new IButtonListenerError("Not_Present");
           /**
              @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
           */
@@ -63,9 +63,7 @@ module Adaptive {
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Not_Present":
-                              retValue = IButtonListenerError.Not_Present;
-                         case "Unknown":
-                              retValue = IButtonListenerError.Unknown;
+                              retValue = IButtonListenerError.NotPresent;
                          default:
                               retValue = IButtonListenerError.Unknown;
                     }

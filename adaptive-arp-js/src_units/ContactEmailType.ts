@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = ContactEmailType.Work;
                          case "Other":
                               retValue = ContactEmailType.Other;
-                         case "Unknown":
-                              retValue = ContactEmailType.Unknown;
                          default:
                               retValue = ContactEmailType.Unknown;
                     }

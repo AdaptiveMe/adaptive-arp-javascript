@@ -58,8 +58,6 @@ module Adaptive {
                var retValue : IDeviceOrientationListenerError = IDeviceOrientationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
-                         case "Unknown":
-                              retValue = IDeviceOrientationListenerError.Unknown;
                          default:
                               retValue = IDeviceOrientationListenerError.Unknown;
                     }

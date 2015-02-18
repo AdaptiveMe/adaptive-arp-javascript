@@ -84,8 +84,6 @@ var Adaptive;
                         retValue = IAdaptiveRPGroup.Util;
                     case "Kernel":
                         retValue = IAdaptiveRPGroup.Kernel;
-                    case "Unknown":
-                        retValue = IAdaptiveRPGroup.Unknown;
                     default:
                         retValue = IAdaptiveRPGroup.Unknown;
                 }

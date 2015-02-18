@@ -64,8 +64,6 @@ var Adaptive;
                         retValue = ContactSocialNetwork.LinkedIn;
                     case "Flickr":
                         retValue = ContactSocialNetwork.Flickr;
-                    case "Unknown":
-                        retValue = ContactSocialNetwork.Unknown;
                     default:
                         retValue = ContactSocialNetwork.Unknown;
                 }

@@ -55,9 +55,9 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "PERSONAL_INFO":
-                        retValue = IContactFieldGroup.PERSONAL_INFO;
+                        retValue = IContactFieldGroup.PERSONALINFO;
                     case "PROFESSIONAL_INFO":
-                        retValue = IContactFieldGroup.PROFESSIONAL_INFO;
+                        retValue = IContactFieldGroup.PROFESSIONALINFO;
                     case "ADDRESSES":
                         retValue = IContactFieldGroup.ADDRESSES;
                     case "PHONES":
@@ -70,8 +70,6 @@ var Adaptive;
                         retValue = IContactFieldGroup.SOCIALS;
                     case "TAGS":
                         retValue = IContactFieldGroup.TAGS;
-                    case "Unknown":
-                        retValue = IContactFieldGroup.Unknown;
                     default:
                         retValue = IContactFieldGroup.Unknown;
                 }
@@ -79,13 +77,13 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
         */
-        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PERSONALINFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
         */
-        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.PROFESSIONALINFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */

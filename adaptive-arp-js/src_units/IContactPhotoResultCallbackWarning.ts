@@ -48,9 +48,9 @@ module Adaptive {
           */
           static LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+             @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
           */
-          static No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+          static NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
           /**
              @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
           */
@@ -69,9 +69,7 @@ module Adaptive {
                          case "LimitExceeded":
                               retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
                          case "No_Matches":
-                              retValue = IContactPhotoResultCallbackWarning.No_Matches;
-                         case "Unknown":
-                              retValue = IContactPhotoResultCallbackWarning.Unknown;
+                              retValue = IContactPhotoResultCallbackWarning.NoMatches;
                          default:
                               retValue = IContactPhotoResultCallbackWarning.Unknown;
                     }

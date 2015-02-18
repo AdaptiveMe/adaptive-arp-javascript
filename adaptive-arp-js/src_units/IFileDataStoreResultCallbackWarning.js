@@ -56,8 +56,6 @@ var Adaptive;
                 switch (object.value) {
                     case "ExceedMaximumSize":
                         retValue = IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                    case "Unknown":
-                        retValue = IFileDataStoreResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileDataStoreResultCallbackWarning.Unknown;
                 }

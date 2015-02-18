@@ -100,8 +100,6 @@ module Adaptive {
                               retValue = ContactPhoneType.WorkFax;
                          case "Other":
                               retValue = ContactPhoneType.Other;
-                         case "Unknown":
-                              retValue = ContactPhoneType.Unknown;
                          default:
                               retValue = ContactPhoneType.Unknown;
                     }

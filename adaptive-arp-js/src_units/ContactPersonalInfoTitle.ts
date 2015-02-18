@@ -82,8 +82,6 @@ module Adaptive {
                               retValue = ContactPersonalInfoTitle.Ms;
                          case "Dr":
                               retValue = ContactPersonalInfoTitle.Dr;
-                         case "Unknown":
-                              retValue = ContactPersonalInfoTitle.Unknown;
                          default:
                               retValue = ContactPersonalInfoTitle.Unknown;
                     }

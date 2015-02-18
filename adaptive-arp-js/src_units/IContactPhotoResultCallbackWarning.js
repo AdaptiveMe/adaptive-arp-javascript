@@ -57,9 +57,7 @@ var Adaptive;
                     case "LimitExceeded":
                         retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
                     case "No_Matches":
-                        retValue = IContactPhotoResultCallbackWarning.No_Matches;
-                    case "Unknown":
-                        retValue = IContactPhotoResultCallbackWarning.Unknown;
+                        retValue = IContactPhotoResultCallbackWarning.NoMatches;
                     default:
                         retValue = IContactPhotoResultCallbackWarning.Unknown;
                 }
@@ -71,9 +69,9 @@ var Adaptive;
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
         */
-        IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+        IContactPhotoResultCallbackWarning.NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */

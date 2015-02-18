@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = ITelephonyStatus.Dialing;
                     case "Failed":
                         retValue = ITelephonyStatus.Failed;
-                    case "Unknown":
-                        retValue = ITelephonyStatus.Unknown;
                     default:
                         retValue = ITelephonyStatus.Unknown;
                 }

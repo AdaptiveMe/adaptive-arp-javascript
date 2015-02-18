@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = IServiceContentEncoding.ISOLatin1;
                     case "Unicode":
                         retValue = IServiceContentEncoding.Unicode;
-                    case "Unknown":
-                        retValue = IServiceContentEncoding.Unknown;
                     default:
                         retValue = IServiceContentEncoding.Unknown;
                 }

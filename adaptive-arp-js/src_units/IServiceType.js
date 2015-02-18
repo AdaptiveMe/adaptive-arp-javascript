@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = IServiceType.RestXml;
                     case "SoapXml":
                         retValue = IServiceType.SoapXml;
-                    case "Unknown":
-                        retValue = IServiceType.Unknown;
                     default:
                         retValue = IServiceType.Unknown;
                 }

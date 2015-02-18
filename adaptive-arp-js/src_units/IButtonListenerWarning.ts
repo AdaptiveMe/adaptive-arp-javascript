@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+             @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
           */
-          static Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+          static NotImplemented = new IButtonListenerWarning("Not_Implemented");
           /**
              @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
           */
@@ -63,9 +63,7 @@ module Adaptive {
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Not_Implemented":
-                              retValue = IButtonListenerWarning.Not_Implemented;
-                         case "Unknown":
-                              retValue = IButtonListenerWarning.Unknown;
+                              retValue = IButtonListenerWarning.NotImplemented;
                          default:
                               retValue = IButtonListenerWarning.Unknown;
                     }

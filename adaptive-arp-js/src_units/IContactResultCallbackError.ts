@@ -48,9 +48,9 @@ module Adaptive {
           */
           static NoPermission = new IContactResultCallbackError("NoPermission");
           /**
-             @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+          static WrongParams = new IContactResultCallbackError("Wrong_Params");
           /**
              @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
           */
@@ -69,9 +69,7 @@ module Adaptive {
                          case "NoPermission":
                               retValue = IContactResultCallbackError.NoPermission;
                          case "Wrong_Params":
-                              retValue = IContactResultCallbackError.Wrong_Params;
-                         case "Unknown":
-                              retValue = IContactResultCallbackError.Unknown;
+                              retValue = IContactResultCallbackError.WrongParams;
                          default:
                               retValue = IContactResultCallbackError.Unknown;
                     }

@@ -88,8 +88,6 @@ module Adaptive {
                               retValue = IServiceResultCallbackError.MalformedUrl;
                          case "NotRegisteredService":
                               retValue = IServiceResultCallbackError.NotRegisteredService;
-                         case "Unknown":
-                              retValue = IServiceResultCallbackError.Unknown;
                          default:
                               retValue = IServiceResultCallbackError.Unknown;
                     }

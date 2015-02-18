@@ -44,21 +44,21 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
           */
-          static Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+          static PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
           */
-          static Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+          static PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
           */
-          static Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+          static LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
           */
-          static Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+          static LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
           /**
              @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
           */
@@ -75,15 +75,13 @@ module Adaptive {
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Portrait_Up":
-                              retValue = ICapabilitiesOrientation.Portrait_Up;
+                              retValue = ICapabilitiesOrientation.PortraitUp;
                          case "Portrait_Down":
-                              retValue = ICapabilitiesOrientation.Portrait_Down;
+                              retValue = ICapabilitiesOrientation.PortraitDown;
                          case "Landscape_Left":
-                              retValue = ICapabilitiesOrientation.Landscape_Left;
+                              retValue = ICapabilitiesOrientation.LandscapeLeft;
                          case "Landscape_Right":
-                              retValue = ICapabilitiesOrientation.Landscape_Right;
-                         case "Unknown":
-                              retValue = ICapabilitiesOrientation.Unknown;
+                              retValue = ICapabilitiesOrientation.LandscapeRight;
                          default:
                               retValue = ICapabilitiesOrientation.Unknown;
                     }

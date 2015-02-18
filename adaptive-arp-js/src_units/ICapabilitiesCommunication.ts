@@ -88,8 +88,6 @@ module Adaptive {
                               retValue = ICapabilitiesCommunication.Messaging;
                          case "Telephony":
                               retValue = ICapabilitiesCommunication.Telephony;
-                         case "Unknown":
-                              retValue = ICapabilitiesCommunication.Unknown;
                          default:
                               retValue = ICapabilitiesCommunication.Unknown;
                     }

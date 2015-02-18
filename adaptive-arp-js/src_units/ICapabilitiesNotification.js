@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = ICapabilitiesNotification.RemoteNotification;
                     case "Vibration":
                         retValue = ICapabilitiesNotification.Vibration;
-                    case "Unknown":
-                        retValue = ICapabilitiesNotification.Unknown;
                     default:
                         retValue = ICapabilitiesNotification.Unknown;
                 }

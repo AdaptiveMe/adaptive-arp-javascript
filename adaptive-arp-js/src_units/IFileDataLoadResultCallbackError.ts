@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = IFileDataLoadResultCallbackError.InsufficientSpace;
                          case "Unauthorized":
                               retValue = IFileDataLoadResultCallbackError.Unauthorized;
-                         case "Unknown":
-                              retValue = IFileDataLoadResultCallbackError.Unknown;
                          default:
                               retValue = IFileDataLoadResultCallbackError.Unknown;
                     }

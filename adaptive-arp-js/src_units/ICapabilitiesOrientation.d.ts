@@ -41,21 +41,21 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
         */
-        static Portrait_Up: ICapabilitiesOrientation;
+        static PortraitUp: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
         */
-        static Portrait_Down: ICapabilitiesOrientation;
+        static PortraitDown: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
         */
-        static Landscape_Left: ICapabilitiesOrientation;
+        static LandscapeLeft: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
         */
-        static Landscape_Right: ICapabilitiesOrientation;
+        static LandscapeRight: ICapabilitiesOrientation;
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */

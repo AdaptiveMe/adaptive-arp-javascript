@@ -56,9 +56,9 @@ module Adaptive {
           */
           static Redirected = new IServiceResultCallbackWarning("Redirected");
           /**
-             @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+          static WrongParams = new IServiceResultCallbackWarning("Wrong_Params");
           /**
              @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
           */
@@ -109,7 +109,7 @@ module Adaptive {
                          case "Redirected":
                               retValue = IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":
-                              retValue = IServiceResultCallbackWarning.Wrong_Params;
+                              retValue = IServiceResultCallbackWarning.WrongParams;
                          case "Forbidden":
                               retValue = IServiceResultCallbackWarning.Forbidden;
                          case "NotFound":
@@ -124,8 +124,6 @@ module Adaptive {
                               retValue = IServiceResultCallbackWarning.PaymentRequired;
                          case "ServerError":
                               retValue = IServiceResultCallbackWarning.ServerError;
-                         case "Unknown":
-                              retValue = IServiceResultCallbackWarning.Unknown;
                          default:
                               retValue = IServiceResultCallbackWarning.Unknown;
                     }

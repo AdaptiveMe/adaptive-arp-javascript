@@ -64,8 +64,6 @@ var Adaptive;
                         retValue = INetworkReachabilityCallbackWarning.Redirected;
                     case "NotRegisteredService":
                         retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
-                    case "Unknown":
-                        retValue = INetworkReachabilityCallbackWarning.Unknown;
                     default:
                         retValue = INetworkReachabilityCallbackWarning.Unknown;
                 }

@@ -55,9 +55,7 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Application_Vetoed":
-                        retValue = IDisplayOrientationListenerWarning.Application_Vetoed;
-                    case "Unknown":
-                        retValue = IDisplayOrientationListenerWarning.Unknown;
+                        retValue = IDisplayOrientationListenerWarning.ApplicationVetoed;
                     default:
                         retValue = IDisplayOrientationListenerWarning.Unknown;
                 }
@@ -65,9 +63,9 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
         */
-        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        IDisplayOrientationListenerWarning.ApplicationVetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */

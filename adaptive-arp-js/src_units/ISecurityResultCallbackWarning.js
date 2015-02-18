@@ -56,8 +56,6 @@ var Adaptive;
                 switch (object.value) {
                     case "EntryOverride":
                         retValue = ISecurityResultCallbackWarning.EntryOverride;
-                    case "Unknown":
-                        retValue = ISecurityResultCallbackWarning.Unknown;
                     default:
                         retValue = ISecurityResultCallbackWarning.Unknown;
                 }

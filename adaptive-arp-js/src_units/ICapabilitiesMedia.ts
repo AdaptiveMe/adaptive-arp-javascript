@@ -44,25 +44,25 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+             @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
           */
-          static Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+          static AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+             @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
           */
-          static Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+          static AudioRecording = new ICapabilitiesMedia("Audio_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
           */
           static Camera = new ICapabilitiesMedia("Camera");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+             @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
           */
-          static Video_Playback = new ICapabilitiesMedia("Video_Playback");
+          static VideoPlayback = new ICapabilitiesMedia("Video_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+             @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
           */
-          static Video_Recording = new ICapabilitiesMedia("Video_Recording");
+          static VideoRecording = new ICapabilitiesMedia("Video_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
           */
@@ -79,17 +79,15 @@ module Adaptive {
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Audio_Playback":
-                              retValue = ICapabilitiesMedia.Audio_Playback;
+                              retValue = ICapabilitiesMedia.AudioPlayback;
                          case "Audio_Recording":
-                              retValue = ICapabilitiesMedia.Audio_Recording;
+                              retValue = ICapabilitiesMedia.AudioRecording;
                          case "Camera":
                               retValue = ICapabilitiesMedia.Camera;
                          case "Video_Playback":
-                              retValue = ICapabilitiesMedia.Video_Playback;
+                              retValue = ICapabilitiesMedia.VideoPlayback;
                          case "Video_Recording":
-                              retValue = ICapabilitiesMedia.Video_Recording;
-                         case "Unknown":
-                              retValue = ICapabilitiesMedia.Unknown;
+                              retValue = ICapabilitiesMedia.VideoRecording;
                          default:
                               retValue = ICapabilitiesMedia.Unknown;
                     }

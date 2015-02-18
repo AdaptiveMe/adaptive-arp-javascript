@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IAccelerationListenerWarning.NeedsCalibration;
                     case "Stale":
                         retValue = IAccelerationListenerWarning.Stale;
-                    case "Unknown":
-                        retValue = IAccelerationListenerWarning.Unknown;
                     default:
                         retValue = IAccelerationListenerWarning.Unknown;
                 }

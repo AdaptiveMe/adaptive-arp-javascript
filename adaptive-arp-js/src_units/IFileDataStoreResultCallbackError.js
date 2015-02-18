@@ -60,8 +60,6 @@ var Adaptive;
                         retValue = IFileDataStoreResultCallbackError.InsufficientSpace;
                     case "Unauthorized":
                         retValue = IFileDataStoreResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        retValue = IFileDataStoreResultCallbackError.Unknown;
                     default:
                         retValue = IFileDataStoreResultCallbackError.Unknown;
                 }

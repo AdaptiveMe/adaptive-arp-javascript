@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IFileResultCallbackWarning.SourceNotDeleted;
                     case "RootDirectory":
                         retValue = IFileResultCallbackWarning.RootDirectory;
-                    case "Unknown":
-                        retValue = IFileResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileResultCallbackWarning.Unknown;
                 }

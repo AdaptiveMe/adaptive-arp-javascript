@@ -17561,8 +17561,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ContactAddressType.Work;
                     case "Other":
                         retValue = ContactAddressType.Other;
-                    case "Unknown":
-                        retValue = ContactAddressType.Unknown;
                     default:
                         retValue = ContactAddressType.Unknown;
                 }
@@ -17615,8 +17613,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ContactEmailType.Work;
                     case "Other":
                         retValue = ContactEmailType.Other;
-                    case "Unknown":
-                        retValue = ContactEmailType.Unknown;
                     default:
                         retValue = ContactEmailType.Unknown;
                 }
@@ -17671,8 +17667,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ContactPersonalInfoTitle.Ms;
                     case "Dr":
                         retValue = ContactPersonalInfoTitle.Dr;
-                    case "Unknown":
-                        retValue = ContactPersonalInfoTitle.Unknown;
                     default:
                         retValue = ContactPersonalInfoTitle.Unknown;
                 }
@@ -17737,8 +17731,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ContactPhoneType.WorkFax;
                     case "Other":
                         retValue = ContactPhoneType.Other;
-                    case "Unknown":
-                        retValue = ContactPhoneType.Unknown;
                     default:
                         retValue = ContactPhoneType.Unknown;
                 }
@@ -17811,8 +17803,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ContactSocialNetwork.LinkedIn;
                     case "Flickr":
                         retValue = ContactSocialNetwork.Flickr;
-                    case "Unknown":
-                        retValue = ContactSocialNetwork.Unknown;
                     default:
                         retValue = ContactSocialNetwork.Unknown;
                 }
@@ -17871,8 +17861,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IAccelerationListenerError.Unauthorized;
                     case "Unavailable":
                         retValue = IAccelerationListenerError.Unavailable;
-                    case "Unknown":
-                        retValue = IAccelerationListenerError.Unknown;
                     default:
                         retValue = IAccelerationListenerError.Unknown;
                 }
@@ -17919,8 +17907,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IAccelerationListenerWarning.NeedsCalibration;
                     case "Stale":
                         retValue = IAccelerationListenerWarning.Stale;
-                    case "Unknown":
-                        retValue = IAccelerationListenerWarning.Unknown;
                     default:
                         retValue = IAccelerationListenerWarning.Unknown;
                 }
@@ -17993,8 +17979,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IAdaptiveRPGroup.Util;
                     case "Kernel":
                         retValue = IAdaptiveRPGroup.Kernel;
-                    case "Unknown":
-                        retValue = IAdaptiveRPGroup.Unknown;
                     default:
                         retValue = IAdaptiveRPGroup.Unknown;
                 }
@@ -18090,9 +18074,7 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Not_Present":
-                        retValue = IButtonListenerError.Not_Present;
-                    case "Unknown":
-                        retValue = IButtonListenerError.Unknown;
+                        retValue = IButtonListenerError.NotPresent;
                     default:
                         retValue = IButtonListenerError.Unknown;
                 }
@@ -18100,9 +18082,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+           @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
         */
-        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        IButtonListenerError.NotPresent = new IButtonListenerError("Not_Present");
         /**
            @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */
@@ -18132,9 +18114,7 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Not_Implemented":
-                        retValue = IButtonListenerWarning.Not_Implemented;
-                    case "Unknown":
-                        retValue = IButtonListenerWarning.Unknown;
+                        retValue = IButtonListenerWarning.NotImplemented;
                     default:
                         retValue = IButtonListenerWarning.Unknown;
                 }
@@ -18142,9 +18122,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
         */
-        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("Not_Implemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */
@@ -18179,8 +18159,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesButton.BackButton;
                     case "OptionButton":
                         retValue = ICapabilitiesButton.OptionButton;
-                    case "Unknown":
-                        retValue = ICapabilitiesButton.Unknown;
                     default:
                         retValue = ICapabilitiesButton.Unknown;
                 }
@@ -18237,8 +18215,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesCommunication.Messaging;
                     case "Telephony":
                         retValue = ICapabilitiesCommunication.Telephony;
-                    case "Unknown":
-                        retValue = ICapabilitiesCommunication.Unknown;
                     default:
                         retValue = ICapabilitiesCommunication.Unknown;
                 }
@@ -18299,8 +18275,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesData.File;
                     case "Cloud":
                         retValue = ICapabilitiesData.Cloud;
-                    case "Unknown":
-                        retValue = ICapabilitiesData.Unknown;
                     default:
                         retValue = ICapabilitiesData.Unknown;
                 }
@@ -18348,17 +18322,15 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Audio_Playback":
-                        retValue = ICapabilitiesMedia.Audio_Playback;
+                        retValue = ICapabilitiesMedia.AudioPlayback;
                     case "Audio_Recording":
-                        retValue = ICapabilitiesMedia.Audio_Recording;
+                        retValue = ICapabilitiesMedia.AudioRecording;
                     case "Camera":
                         retValue = ICapabilitiesMedia.Camera;
                     case "Video_Playback":
-                        retValue = ICapabilitiesMedia.Video_Playback;
+                        retValue = ICapabilitiesMedia.VideoPlayback;
                     case "Video_Recording":
-                        retValue = ICapabilitiesMedia.Video_Recording;
-                    case "Unknown":
-                        retValue = ICapabilitiesMedia.Unknown;
+                        retValue = ICapabilitiesMedia.VideoRecording;
                     default:
                         retValue = ICapabilitiesMedia.Unknown;
                 }
@@ -18366,25 +18338,25 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
         */
-        ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+        ICapabilitiesMedia.AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
         */
-        ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+        ICapabilitiesMedia.AudioRecording = new ICapabilitiesMedia("Audio_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
         */
-        ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
+        ICapabilitiesMedia.VideoPlayback = new ICapabilitiesMedia("Video_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
         */
-        ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
+        ICapabilitiesMedia.VideoRecording = new ICapabilitiesMedia("Video_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */
@@ -18427,8 +18399,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesNet.Ethernet;
                     case "Unavailable":
                         retValue = ICapabilitiesNet.Unavailable;
-                    case "Unknown":
-                        retValue = ICapabilitiesNet.Unknown;
                     default:
                         retValue = ICapabilitiesNet.Unknown;
                 }
@@ -18499,8 +18469,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesNotification.RemoteNotification;
                     case "Vibration":
                         retValue = ICapabilitiesNotification.Vibration;
-                    case "Unknown":
-                        retValue = ICapabilitiesNotification.Unknown;
                     default:
                         retValue = ICapabilitiesNotification.Unknown;
                 }
@@ -18552,15 +18520,13 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Portrait_Up":
-                        retValue = ICapabilitiesOrientation.Portrait_Up;
+                        retValue = ICapabilitiesOrientation.PortraitUp;
                     case "Portrait_Down":
-                        retValue = ICapabilitiesOrientation.Portrait_Down;
+                        retValue = ICapabilitiesOrientation.PortraitDown;
                     case "Landscape_Left":
-                        retValue = ICapabilitiesOrientation.Landscape_Left;
+                        retValue = ICapabilitiesOrientation.LandscapeLeft;
                     case "Landscape_Right":
-                        retValue = ICapabilitiesOrientation.Landscape_Right;
-                    case "Unknown":
-                        retValue = ICapabilitiesOrientation.Unknown;
+                        retValue = ICapabilitiesOrientation.LandscapeRight;
                     default:
                         retValue = ICapabilitiesOrientation.Unknown;
                 }
@@ -18568,21 +18534,21 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
         */
-        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+        ICapabilitiesOrientation.PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
         */
-        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+        ICapabilitiesOrientation.PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
         */
-        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+        ICapabilitiesOrientation.LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
         */
-        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+        ICapabilitiesOrientation.LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */
@@ -18625,8 +18591,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ICapabilitiesSensor.Magnetometer;
                     case "Proximity":
                         retValue = ICapabilitiesSensor.Proximity;
-                    case "Unknown":
-                        retValue = ICapabilitiesSensor.Unknown;
                     default:
                         retValue = ICapabilitiesSensor.Unknown;
                 }
@@ -18690,9 +18654,9 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "PERSONAL_INFO":
-                        retValue = IContactFieldGroup.PERSONAL_INFO;
+                        retValue = IContactFieldGroup.PERSONALINFO;
                     case "PROFESSIONAL_INFO":
-                        retValue = IContactFieldGroup.PROFESSIONAL_INFO;
+                        retValue = IContactFieldGroup.PROFESSIONALINFO;
                     case "ADDRESSES":
                         retValue = IContactFieldGroup.ADDRESSES;
                     case "PHONES":
@@ -18705,8 +18669,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IContactFieldGroup.SOCIALS;
                     case "TAGS":
                         retValue = IContactFieldGroup.TAGS;
-                    case "Unknown":
-                        retValue = IContactFieldGroup.Unknown;
                     default:
                         retValue = IContactFieldGroup.Unknown;
                 }
@@ -18714,13 +18676,13 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
         */
-        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PERSONALINFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
         */
-        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.PROFESSIONALINFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */
@@ -18774,13 +18736,11 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "HAS_PHONE":
-                        retValue = IContactFilter.HAS_PHONE;
+                        retValue = IContactFilter.HASPHONE;
                     case "HAS_EMAIL":
-                        retValue = IContactFilter.HAS_EMAIL;
+                        retValue = IContactFilter.HASEMAIL;
                     case "HAS_ADDRESS":
-                        retValue = IContactFilter.HAS_ADDRESS;
-                    case "Unknown":
-                        retValue = IContactFilter.Unknown;
+                        retValue = IContactFilter.HASADDRESS;
                     default:
                         retValue = IContactFilter.Unknown;
                 }
@@ -18788,17 +18748,17 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
         */
-        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HASPHONE = new IContactFilter("HAS_PHONE");
         /**
-           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
         */
-        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HASEMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
         */
-        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HASADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
@@ -18830,11 +18790,9 @@ of the device. For device orientation, use the IDevice APIs.
                     case "NoPermission":
                         retValue = IContactPhotoResultCallbackError.NoPermission;
                     case "Wrong_Params":
-                        retValue = IContactPhotoResultCallbackError.Wrong_Params;
+                        retValue = IContactPhotoResultCallbackError.WrongParams;
                     case "No_Photo":
-                        retValue = IContactPhotoResultCallbackError.No_Photo;
-                    case "Unknown":
-                        retValue = IContactPhotoResultCallbackError.Unknown;
+                        retValue = IContactPhotoResultCallbackError.NoPhoto;
                     default:
                         retValue = IContactPhotoResultCallbackError.Unknown;
                 }
@@ -18846,13 +18804,13 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
         */
-        IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+        IContactPhotoResultCallbackError.WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
         */
-        IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+        IContactPhotoResultCallbackError.NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
@@ -18884,9 +18842,7 @@ of the device. For device orientation, use the IDevice APIs.
                     case "LimitExceeded":
                         retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
                     case "No_Matches":
-                        retValue = IContactPhotoResultCallbackWarning.No_Matches;
-                    case "Unknown":
-                        retValue = IContactPhotoResultCallbackWarning.Unknown;
+                        retValue = IContactPhotoResultCallbackWarning.NoMatches;
                     default:
                         retValue = IContactPhotoResultCallbackWarning.Unknown;
                 }
@@ -18898,9 +18854,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
         */
-        IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+        IContactPhotoResultCallbackWarning.NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
@@ -18932,9 +18888,7 @@ of the device. For device orientation, use the IDevice APIs.
                     case "NoPermission":
                         retValue = IContactResultCallbackError.NoPermission;
                     case "Wrong_Params":
-                        retValue = IContactResultCallbackError.Wrong_Params;
-                    case "Unknown":
-                        retValue = IContactResultCallbackError.Unknown;
+                        retValue = IContactResultCallbackError.WrongParams;
                     default:
                         retValue = IContactResultCallbackError.Unknown;
                 }
@@ -18946,9 +18900,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
         */
-        IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+        IContactResultCallbackError.WrongParams = new IContactResultCallbackError("Wrong_Params");
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
@@ -18980,9 +18934,7 @@ of the device. For device orientation, use the IDevice APIs.
                     case "LimitExceeded":
                         retValue = IContactResultCallbackWarning.LimitExceeded;
                     case "No_Matches":
-                        retValue = IContactResultCallbackWarning.No_Matches;
-                    case "Unknown":
-                        retValue = IContactResultCallbackWarning.Unknown;
+                        retValue = IContactResultCallbackWarning.NoMatches;
                     default:
                         retValue = IContactResultCallbackWarning.Unknown;
                 }
@@ -18994,9 +18946,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
         */
-        IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
+        IContactResultCallbackWarning.NoMatches = new IContactResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
@@ -19031,8 +18983,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IDatabaseResultCallbackError.SqlException;
                     case "NotDeleted":
                         retValue = IDatabaseResultCallbackError.NotDeleted;
-                    case "Unknown":
-                        retValue = IDatabaseResultCallbackError.Unknown;
                     default:
                         retValue = IDatabaseResultCallbackError.Unknown;
                 }
@@ -19083,8 +19033,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IDatabaseResultCallbackWarning.DatabaseExists;
                     case "IsOpen":
                         retValue = IDatabaseResultCallbackWarning.IsOpen;
-                    case "Unknown":
-                        retValue = IDatabaseResultCallbackWarning.Unknown;
                     default:
                         retValue = IDatabaseResultCallbackWarning.Unknown;
                 }
@@ -19137,8 +19085,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
                     case "NoTableFound":
                         retValue = IDatabaseTableResultCallbackError.NoTableFound;
-                    case "Unknown":
-                        retValue = IDatabaseTableResultCallbackError.Unknown;
                     default:
                         retValue = IDatabaseTableResultCallbackError.Unknown;
                 }
@@ -19199,8 +19145,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IDatabaseTableResultCallbackWarning.TableLocked;
                     case "NoResults":
                         retValue = IDatabaseTableResultCallbackWarning.NoResults;
-                    case "Unknown":
-                        retValue = IDatabaseTableResultCallbackWarning.Unknown;
                     default:
                         retValue = IDatabaseTableResultCallbackWarning.Unknown;
                 }
@@ -19247,8 +19191,6 @@ of the device. For device orientation, use the IDevice APIs.
             var retValue = IDeviceOrientationListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Unknown":
-                        retValue = IDeviceOrientationListenerError.Unknown;
                     default:
                         retValue = IDeviceOrientationListenerError.Unknown;
                 }
@@ -19283,8 +19225,6 @@ of the device. For device orientation, use the IDevice APIs.
             var retValue = IDeviceOrientationListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Unknown":
-                        retValue = IDeviceOrientationListenerWarning.Unknown;
                     default:
                         retValue = IDeviceOrientationListenerWarning.Unknown;
                 }
@@ -19319,8 +19259,6 @@ of the device. For device orientation, use the IDevice APIs.
             var retValue = IDisplayOrientationListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
-                    case "Unknown":
-                        retValue = IDisplayOrientationListenerError.Unknown;
                     default:
                         retValue = IDisplayOrientationListenerError.Unknown;
                 }
@@ -19356,9 +19294,7 @@ of the device. For device orientation, use the IDevice APIs.
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Application_Vetoed":
-                        retValue = IDisplayOrientationListenerWarning.Application_Vetoed;
-                    case "Unknown":
-                        retValue = IDisplayOrientationListenerWarning.Unknown;
+                        retValue = IDisplayOrientationListenerWarning.ApplicationVetoed;
                     default:
                         retValue = IDisplayOrientationListenerWarning.Unknown;
                 }
@@ -19366,9 +19302,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
         */
-        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        IDisplayOrientationListenerWarning.ApplicationVetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */
@@ -19403,8 +19339,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileDataLoadResultCallbackError.InsufficientSpace;
                     case "Unauthorized":
                         retValue = IFileDataLoadResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        retValue = IFileDataLoadResultCallbackError.Unknown;
                     default:
                         retValue = IFileDataLoadResultCallbackError.Unknown;
                 }
@@ -19453,8 +19387,6 @@ of the device. For device orientation, use the IDevice APIs.
                 switch (object.value) {
                     case "ExceedMaximumSize":
                         retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
-                    case "Unknown":
-                        retValue = IFileDataLoadResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileDataLoadResultCallbackWarning.Unknown;
                 }
@@ -19499,8 +19431,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileDataStoreResultCallbackError.InsufficientSpace;
                     case "Unauthorized":
                         retValue = IFileDataStoreResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        retValue = IFileDataStoreResultCallbackError.Unknown;
                     default:
                         retValue = IFileDataStoreResultCallbackError.Unknown;
                 }
@@ -19549,8 +19479,6 @@ of the device. For device orientation, use the IDevice APIs.
                 switch (object.value) {
                     case "ExceedMaximumSize":
                         retValue = IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                    case "Unknown":
-                        retValue = IFileDataStoreResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileDataStoreResultCallbackWarning.Unknown;
                 }
@@ -19593,8 +19521,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileListResultCallbackError.InexistentFile;
                     case "Unauthorized":
                         retValue = IFileListResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        retValue = IFileListResultCallbackError.Unknown;
                     default:
                         retValue = IFileListResultCallbackError.Unknown;
                 }
@@ -19639,8 +19565,6 @@ of the device. For device orientation, use the IDevice APIs.
                 switch (object.value) {
                     case "PartialResult":
                         retValue = IFileListResultCallbackWarning.PartialResult;
-                    case "Unknown":
-                        retValue = IFileListResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileListResultCallbackWarning.Unknown;
                 }
@@ -19689,8 +19613,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileResultCallbackError.InsufficientSpace;
                     case "Unauthorized":
                         retValue = IFileResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        retValue = IFileResultCallbackError.Unknown;
                     default:
                         retValue = IFileResultCallbackError.Unknown;
                 }
@@ -19749,8 +19671,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileResultCallbackWarning.SourceNotDeleted;
                     case "RootDirectory":
                         retValue = IFileResultCallbackWarning.RootDirectory;
-                    case "Unknown":
-                        retValue = IFileResultCallbackWarning.Unknown;
                     default:
                         retValue = IFileResultCallbackWarning.Unknown;
                 }
@@ -19799,8 +19719,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileSystemSecurity.Protected;
                     case "Encrypted":
                         retValue = IFileSystemSecurity.Encrypted;
-                    case "Unknown":
-                        retValue = IFileSystemSecurity.Unknown;
                     default:
                         retValue = IFileSystemSecurity.Unknown;
                 }
@@ -19859,8 +19777,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileSystemStorageType.Cache;
                     case "External":
                         retValue = IFileSystemStorageType.External;
-                    case "Unknown":
-                        retValue = IFileSystemStorageType.Unknown;
                     default:
                         retValue = IFileSystemStorageType.Unknown;
                 }
@@ -19923,8 +19839,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IFileSystemType.Directory;
                     case "File":
                         retValue = IFileSystemType.File;
-                    case "Unknown":
-                        retValue = IFileSystemType.Unknown;
                     default:
                         retValue = IFileSystemType.Unknown;
                 }
@@ -19975,8 +19889,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IGeolocationListenerError.DeniedAccess;
                     case "StatusNotDetermined":
                         retValue = IGeolocationListenerError.StatusNotDetermined;
-                    case "Unknown":
-                        retValue = IGeolocationListenerError.Unknown;
                     default:
                         retValue = IGeolocationListenerError.Unknown;
                 }
@@ -20031,8 +19943,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IGeolocationListenerWarning.HighDoP;
                     case "StaleData":
                         retValue = IGeolocationListenerWarning.StaleData;
-                    case "Unknown":
-                        retValue = IGeolocationListenerWarning.Unknown;
                     default:
                         retValue = IGeolocationListenerWarning.Unknown;
                 }
@@ -20081,8 +19991,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ILifecycleListenerError.Implementation;
                     case "Killed":
                         retValue = ILifecycleListenerError.Killed;
-                    case "Unknown":
-                        retValue = ILifecycleListenerError.Unknown;
                     default:
                         retValue = ILifecycleListenerError.Unknown;
                 }
@@ -20133,8 +20041,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ILifecycleListenerWarning.MemoryLow;
                     case "BatteryLow":
                         retValue = ILifecycleListenerWarning.BatteryLow;
-                    case "Unknown":
-                        retValue = ILifecycleListenerWarning.Unknown;
                     default:
                         retValue = ILifecycleListenerWarning.Unknown;
                 }
@@ -20185,8 +20091,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ILoggingLogLevel.ERROR;
                     case "INFO":
                         retValue = ILoggingLogLevel.INFO;
-                    case "Unknown":
-                        retValue = ILoggingLogLevel.Unknown;
                     default:
                         retValue = ILoggingLogLevel.Unknown;
                 }
@@ -20247,8 +20151,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IMessagingCallbackError.WrongParams;
                     case "NotSupported":
                         retValue = IMessagingCallbackError.NotSupported;
-                    case "Unknown":
-                        retValue = IMessagingCallbackError.Unknown;
                     default:
                         retValue = IMessagingCallbackError.Unknown;
                 }
@@ -20307,8 +20209,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IMessagingCallbackWarning.UnableToSentAll;
                     case "UnableToFetchAttachment":
                         retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
-                    case "Unknown":
-                        retValue = IMessagingCallbackWarning.Unknown;
                     default:
                         retValue = IMessagingCallbackWarning.Unknown;
                 }
@@ -20368,13 +20268,11 @@ of the device. For device orientation, use the IDevice APIs.
                     case "Unreachable":
                         retValue = INetworkReachabilityCallbackError.Unreachable;
                     case "Wrong_Params":
-                        retValue = INetworkReachabilityCallbackError.Wrong_Params;
+                        retValue = INetworkReachabilityCallbackError.WrongParams;
                     case "MalformedUrl":
                         retValue = INetworkReachabilityCallbackError.MalformedUrl;
                     case "DomainUnresolvable":
                         retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
-                    case "Unknown":
-                        retValue = INetworkReachabilityCallbackError.Unknown;
                     default:
                         retValue = INetworkReachabilityCallbackError.Unknown;
                 }
@@ -20414,9 +20312,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
         */
-        INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+        INetworkReachabilityCallbackError.WrongParams = new INetworkReachabilityCallbackError("Wrong_Params");
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */
@@ -20463,8 +20361,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = INetworkReachabilityCallbackWarning.Redirected;
                     case "NotRegisteredService":
                         retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
-                    case "Unknown":
-                        retValue = INetworkReachabilityCallbackWarning.Unknown;
                     default:
                         retValue = INetworkReachabilityCallbackWarning.Unknown;
                 }
@@ -20523,8 +20419,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = INetworkStatusListenerError.NoPermission;
                     case "Unreachable":
                         retValue = INetworkStatusListenerError.Unreachable;
-                    case "Unknown":
-                        retValue = INetworkStatusListenerError.Unknown;
                     default:
                         retValue = INetworkStatusListenerError.Unknown;
                 }
@@ -20571,8 +20465,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
                     case "IpAddressChanged":
                         retValue = INetworkStatusListenerWarning.IpAddressChanged;
-                    case "Unknown":
-                        retValue = INetworkStatusListenerWarning.Unknown;
                     default:
                         retValue = INetworkStatusListenerWarning.Unknown;
                 }
@@ -20637,8 +20529,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IOSType.Chromium;
                     case "Unspecified":
                         retValue = IOSType.Unspecified;
-                    case "Unknown":
-                        retValue = IOSType.Unknown;
                     default:
                         retValue = IOSType.Unknown;
                 }
@@ -20721,8 +20611,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ISecurityResultCallbackError.NoPermission;
                     case "NoMatchesFound":
                         retValue = ISecurityResultCallbackError.NoMatchesFound;
-                    case "Unknown":
-                        retValue = ISecurityResultCallbackError.Unknown;
                     default:
                         retValue = ISecurityResultCallbackError.Unknown;
                 }
@@ -20767,8 +20655,6 @@ of the device. For device orientation, use the IDevice APIs.
                 switch (object.value) {
                     case "EntryOverride":
                         retValue = ISecurityResultCallbackWarning.EntryOverride;
-                    case "Unknown":
-                        retValue = ISecurityResultCallbackWarning.Unknown;
                     default:
                         retValue = ISecurityResultCallbackWarning.Unknown;
                 }
@@ -20815,8 +20701,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceCertificateValidation.Extended;
                     case "Extreme":
                         retValue = IServiceCertificateValidation.Extreme;
-                    case "Unknown":
-                        retValue = IServiceCertificateValidation.Unknown;
                     default:
                         retValue = IServiceCertificateValidation.Unknown;
                 }
@@ -20875,8 +20759,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceContentEncoding.ISOLatin1;
                     case "Unicode":
                         retValue = IServiceContentEncoding.Unicode;
-                    case "Unknown":
-                        retValue = IServiceContentEncoding.Unknown;
                     default:
                         retValue = IServiceContentEncoding.Unknown;
                 }
@@ -20933,8 +20815,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceMethod.GET;
                     case "HEAD":
                         retValue = IServiceMethod.HEAD;
-                    case "Unknown":
-                        retValue = IServiceMethod.Unknown;
                     default:
                         retValue = IServiceMethod.Unknown;
                 }
@@ -20989,8 +20869,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceType.RestXml;
                     case "SoapXml":
                         retValue = IServiceType.SoapXml;
-                    case "Unknown":
-                        retValue = IServiceType.Unknown;
                     default:
                         retValue = IServiceType.Unknown;
                 }
@@ -21051,8 +20929,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceResultCallbackError.MalformedUrl;
                     case "NotRegisteredService":
                         retValue = IServiceResultCallbackError.NotRegisteredService;
-                    case "Unknown":
-                        retValue = IServiceResultCallbackError.Unknown;
                     default:
                         retValue = IServiceResultCallbackError.Unknown;
                 }
@@ -21114,7 +20990,7 @@ of the device. For device orientation, use the IDevice APIs.
                     case "Redirected":
                         retValue = IServiceResultCallbackWarning.Redirected;
                     case "Wrong_Params":
-                        retValue = IServiceResultCallbackWarning.Wrong_Params;
+                        retValue = IServiceResultCallbackWarning.WrongParams;
                     case "Forbidden":
                         retValue = IServiceResultCallbackWarning.Forbidden;
                     case "NotFound":
@@ -21129,8 +21005,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = IServiceResultCallbackWarning.PaymentRequired;
                     case "ServerError":
                         retValue = IServiceResultCallbackWarning.ServerError;
-                    case "Unknown":
-                        retValue = IServiceResultCallbackWarning.Unknown;
                     default:
                         retValue = IServiceResultCallbackWarning.Unknown;
                 }
@@ -21150,9 +21024,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
         /**
-           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
         */
-        IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        IServiceResultCallbackWarning.WrongParams = new IServiceResultCallbackWarning("Wrong_Params");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
         */
@@ -21213,8 +21087,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = ITelephonyStatus.Dialing;
                     case "Failed":
                         retValue = ITelephonyStatus.Failed;
-                    case "Unknown":
-                        retValue = ITelephonyStatus.Unknown;
                     default:
                         retValue = ITelephonyStatus.Unknown;
                 }
@@ -21273,8 +21145,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = LifecycleState.Resuming;
                     case "Stopping":
                         retValue = LifecycleState.Stopping;
-                    case "Unknown":
-                        retValue = LifecycleState.Unknown;
                     default:
                         retValue = LifecycleState.Unknown;
                 }
@@ -21347,8 +21217,6 @@ of the device. For device orientation, use the IDevice APIs.
                         retValue = RotationEventState.IsRotating;
                     case "DidFinishRotation":
                         retValue = RotationEventState.DidFinishRotation;
-                    case "Unknown":
-                        retValue = RotationEventState.Unknown;
                     default:
                         retValue = RotationEventState.Unknown;
                 }

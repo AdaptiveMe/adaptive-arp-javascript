@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = RotationEventState.IsRotating;
                          case "DidFinishRotation":
                               retValue = RotationEventState.DidFinishRotation;
-                         case "Unknown":
-                              retValue = RotationEventState.Unknown;
                          default:
                               retValue = RotationEventState.Unknown;
                     }

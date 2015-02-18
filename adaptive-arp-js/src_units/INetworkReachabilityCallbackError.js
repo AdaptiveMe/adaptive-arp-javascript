@@ -71,13 +71,11 @@ var Adaptive;
                     case "Unreachable":
                         retValue = INetworkReachabilityCallbackError.Unreachable;
                     case "Wrong_Params":
-                        retValue = INetworkReachabilityCallbackError.Wrong_Params;
+                        retValue = INetworkReachabilityCallbackError.WrongParams;
                     case "MalformedUrl":
                         retValue = INetworkReachabilityCallbackError.MalformedUrl;
                     case "DomainUnresolvable":
                         retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
-                    case "Unknown":
-                        retValue = INetworkReachabilityCallbackError.Unknown;
                     default:
                         retValue = INetworkReachabilityCallbackError.Unknown;
                 }
@@ -117,9 +115,9 @@ var Adaptive;
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
         */
-        INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+        INetworkReachabilityCallbackError.WrongParams = new INetworkReachabilityCallbackError("Wrong_Params");
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */

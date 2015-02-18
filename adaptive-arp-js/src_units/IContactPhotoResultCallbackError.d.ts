@@ -45,13 +45,13 @@ declare module Adaptive {
         */
         static NoPermission: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
         */
-        static Wrong_Params: IContactPhotoResultCallbackError;
+        static WrongParams: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
         */
-        static No_Photo: IContactPhotoResultCallbackError;
+        static NoPhoto: IContactPhotoResultCallbackError;
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */

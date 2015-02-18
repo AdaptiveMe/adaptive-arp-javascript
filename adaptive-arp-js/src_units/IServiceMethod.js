@@ -60,8 +60,6 @@ var Adaptive;
                         retValue = IServiceMethod.GET;
                     case "HEAD":
                         retValue = IServiceMethod.HEAD;
-                    case "Unknown":
-                        retValue = IServiceMethod.Unknown;
                     default:
                         retValue = IServiceMethod.Unknown;
                 }

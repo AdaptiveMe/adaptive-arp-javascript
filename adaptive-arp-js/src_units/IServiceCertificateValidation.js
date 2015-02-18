@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = IServiceCertificateValidation.Extended;
                     case "Extreme":
                         retValue = IServiceCertificateValidation.Extreme;
-                    case "Unknown":
-                        retValue = IServiceCertificateValidation.Unknown;
                     default:
                         retValue = IServiceCertificateValidation.Unknown;
                 }

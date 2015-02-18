@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IDatabaseResultCallbackWarning.DatabaseExists;
                     case "IsOpen":
                         retValue = IDatabaseResultCallbackWarning.IsOpen;
-                    case "Unknown":
-                        retValue = IDatabaseResultCallbackWarning.Unknown;
                     default:
                         retValue = IDatabaseResultCallbackWarning.Unknown;
                 }

@@ -106,8 +106,6 @@ module Adaptive {
                               retValue = LifecycleState.Resuming;
                          case "Stopping":
                               retValue = LifecycleState.Stopping;
-                         case "Unknown":
-                              retValue = LifecycleState.Unknown;
                          default:
                               retValue = LifecycleState.Unknown;
                     }

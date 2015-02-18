@@ -100,8 +100,6 @@ module Adaptive {
                               retValue = ICapabilitiesNet.Ethernet;
                          case "Unavailable":
                               retValue = ICapabilitiesNet.Unavailable;
-                         case "Unknown":
-                              retValue = ICapabilitiesNet.Unknown;
                          default:
                               retValue = ICapabilitiesNet.Unknown;
                     }

@@ -70,8 +70,6 @@ module Adaptive {
                               retValue = IGeolocationListenerWarning.HighDoP;
                          case "StaleData":
                               retValue = IGeolocationListenerWarning.StaleData;
-                         case "Unknown":
-                              retValue = IGeolocationListenerWarning.Unknown;
                          default:
                               retValue = IGeolocationListenerWarning.Unknown;
                     }

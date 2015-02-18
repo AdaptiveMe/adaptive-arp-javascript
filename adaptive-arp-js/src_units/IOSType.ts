@@ -124,8 +124,6 @@ module Adaptive {
                               retValue = IOSType.Chromium;
                          case "Unspecified":
                               retValue = IOSType.Unspecified;
-                         case "Unknown":
-                              retValue = IOSType.Unknown;
                          default:
                               retValue = IOSType.Unknown;
                     }

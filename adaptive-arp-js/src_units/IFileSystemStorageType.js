@@ -66,8 +66,6 @@ var Adaptive;
                         retValue = IFileSystemStorageType.Cache;
                     case "External":
                         retValue = IFileSystemStorageType.External;
-                    case "Unknown":
-                        retValue = IFileSystemStorageType.Unknown;
                     default:
                         retValue = IFileSystemStorageType.Unknown;
                 }

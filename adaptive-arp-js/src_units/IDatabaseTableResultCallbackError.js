@@ -64,8 +64,6 @@ var Adaptive;
                         retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
                     case "NoTableFound":
                         retValue = IDatabaseTableResultCallbackError.NoTableFound;
-                    case "Unknown":
-                        retValue = IDatabaseTableResultCallbackError.Unknown;
                     default:
                         retValue = IDatabaseTableResultCallbackError.Unknown;
                 }

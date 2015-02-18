@@ -64,8 +64,6 @@ module Adaptive {
                     switch(object.value) {
                          case "PartialResult":
                               retValue = IFileListResultCallbackWarning.PartialResult;
-                         case "Unknown":
-                              retValue = IFileListResultCallbackWarning.Unknown;
                          default:
                               retValue = IFileListResultCallbackWarning.Unknown;
                     }

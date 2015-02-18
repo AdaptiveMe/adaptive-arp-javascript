@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
                     case "IpAddressChanged":
                         retValue = INetworkStatusListenerWarning.IpAddressChanged;
-                    case "Unknown":
-                        retValue = INetworkStatusListenerWarning.Unknown;
                     default:
                         retValue = INetworkStatusListenerWarning.Unknown;
                 }

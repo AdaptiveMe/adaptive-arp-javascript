@@ -64,8 +64,6 @@ module Adaptive {
                     switch(object.value) {
                          case "ExceedMaximumSize":
                               retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
-                         case "Unknown":
-                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
                          default:
                               retValue = IFileDataLoadResultCallbackWarning.Unknown;
                     }

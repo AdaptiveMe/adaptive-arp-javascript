@@ -55,13 +55,11 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "HAS_PHONE":
-                        retValue = IContactFilter.HAS_PHONE;
+                        retValue = IContactFilter.HASPHONE;
                     case "HAS_EMAIL":
-                        retValue = IContactFilter.HAS_EMAIL;
+                        retValue = IContactFilter.HASEMAIL;
                     case "HAS_ADDRESS":
-                        retValue = IContactFilter.HAS_ADDRESS;
-                    case "Unknown":
-                        retValue = IContactFilter.Unknown;
+                        retValue = IContactFilter.HASADDRESS;
                     default:
                         retValue = IContactFilter.Unknown;
                 }
@@ -69,17 +67,17 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
         */
-        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HASPHONE = new IContactFilter("HAS_PHONE");
         /**
-           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
         */
-        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HASEMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
         */
-        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HASADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */

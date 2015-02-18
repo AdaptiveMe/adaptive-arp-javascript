@@ -64,8 +64,6 @@ var Adaptive;
                         retValue = IMessagingCallbackError.WrongParams;
                     case "NotSupported":
                         retValue = IMessagingCallbackError.NotSupported;
-                    case "Unknown":
-                        retValue = IMessagingCallbackError.Unknown;
                     default:
                         retValue = IMessagingCallbackError.Unknown;
                 }

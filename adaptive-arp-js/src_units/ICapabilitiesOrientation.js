@@ -55,15 +55,13 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Portrait_Up":
-                        retValue = ICapabilitiesOrientation.Portrait_Up;
+                        retValue = ICapabilitiesOrientation.PortraitUp;
                     case "Portrait_Down":
-                        retValue = ICapabilitiesOrientation.Portrait_Down;
+                        retValue = ICapabilitiesOrientation.PortraitDown;
                     case "Landscape_Left":
-                        retValue = ICapabilitiesOrientation.Landscape_Left;
+                        retValue = ICapabilitiesOrientation.LandscapeLeft;
                     case "Landscape_Right":
-                        retValue = ICapabilitiesOrientation.Landscape_Right;
-                    case "Unknown":
-                        retValue = ICapabilitiesOrientation.Unknown;
+                        retValue = ICapabilitiesOrientation.LandscapeRight;
                     default:
                         retValue = ICapabilitiesOrientation.Unknown;
                 }
@@ -71,21 +69,21 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
         */
-        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+        ICapabilitiesOrientation.PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
         */
-        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+        ICapabilitiesOrientation.PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
         */
-        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+        ICapabilitiesOrientation.LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
         */
-        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+        ICapabilitiesOrientation.LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */

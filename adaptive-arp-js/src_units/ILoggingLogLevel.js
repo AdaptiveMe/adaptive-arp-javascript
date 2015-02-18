@@ -62,8 +62,6 @@ var Adaptive;
                         retValue = ILoggingLogLevel.ERROR;
                     case "INFO":
                         retValue = ILoggingLogLevel.INFO;
-                    case "Unknown":
-                        retValue = ILoggingLogLevel.Unknown;
                     default:
                         retValue = ILoggingLogLevel.Unknown;
                 }

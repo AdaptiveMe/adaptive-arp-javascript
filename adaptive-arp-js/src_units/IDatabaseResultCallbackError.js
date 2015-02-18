@@ -60,8 +60,6 @@ var Adaptive;
                         retValue = IDatabaseResultCallbackError.SqlException;
                     case "NotDeleted":
                         retValue = IDatabaseResultCallbackError.NotDeleted;
-                    case "Unknown":
-                        retValue = IDatabaseResultCallbackError.Unknown;
                     default:
                         retValue = IDatabaseResultCallbackError.Unknown;
                 }

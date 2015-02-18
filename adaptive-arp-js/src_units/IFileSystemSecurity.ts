@@ -76,8 +76,6 @@ module Adaptive {
                               retValue = IFileSystemSecurity.Protected;
                          case "Encrypted":
                               retValue = IFileSystemSecurity.Encrypted;
-                         case "Unknown":
-                              retValue = IFileSystemSecurity.Unknown;
                          default:
                               retValue = IFileSystemSecurity.Unknown;
                     }

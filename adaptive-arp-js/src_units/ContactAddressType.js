@@ -60,8 +60,6 @@ var Adaptive;
                         retValue = ContactAddressType.Work;
                     case "Other":
                         retValue = ContactAddressType.Other;
-                    case "Unknown":
-                        retValue = ContactAddressType.Unknown;
                     default:
                         retValue = ContactAddressType.Unknown;
                 }

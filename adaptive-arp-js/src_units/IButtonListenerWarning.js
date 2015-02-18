@@ -55,9 +55,7 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Not_Implemented":
-                        retValue = IButtonListenerWarning.Not_Implemented;
-                    case "Unknown":
-                        retValue = IButtonListenerWarning.Unknown;
+                        retValue = IButtonListenerWarning.NotImplemented;
                     default:
                         retValue = IButtonListenerWarning.Unknown;
                 }
@@ -65,9 +63,9 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
         */
-        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("Not_Implemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */

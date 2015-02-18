@@ -58,8 +58,6 @@ var Adaptive;
                         retValue = IAccelerationListenerError.Unauthorized;
                     case "Unavailable":
                         retValue = IAccelerationListenerError.Unavailable;
-                    case "Unknown":
-                        retValue = IAccelerationListenerError.Unknown;
                     default:
                         retValue = IAccelerationListenerError.Unknown;
                 }

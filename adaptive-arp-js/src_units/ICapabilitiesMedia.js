@@ -55,17 +55,15 @@ var Adaptive;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Audio_Playback":
-                        retValue = ICapabilitiesMedia.Audio_Playback;
+                        retValue = ICapabilitiesMedia.AudioPlayback;
                     case "Audio_Recording":
-                        retValue = ICapabilitiesMedia.Audio_Recording;
+                        retValue = ICapabilitiesMedia.AudioRecording;
                     case "Camera":
                         retValue = ICapabilitiesMedia.Camera;
                     case "Video_Playback":
-                        retValue = ICapabilitiesMedia.Video_Playback;
+                        retValue = ICapabilitiesMedia.VideoPlayback;
                     case "Video_Recording":
-                        retValue = ICapabilitiesMedia.Video_Recording;
-                    case "Unknown":
-                        retValue = ICapabilitiesMedia.Unknown;
+                        retValue = ICapabilitiesMedia.VideoRecording;
                     default:
                         retValue = ICapabilitiesMedia.Unknown;
                 }
@@ -73,25 +71,25 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
         */
-        ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+        ICapabilitiesMedia.AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
         */
-        ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+        ICapabilitiesMedia.AudioRecording = new ICapabilitiesMedia("Audio_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
         */
-        ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
+        ICapabilitiesMedia.VideoPlayback = new ICapabilitiesMedia("Video_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
         */
-        ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
+        ICapabilitiesMedia.VideoRecording = new ICapabilitiesMedia("Video_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */

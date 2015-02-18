@@ -60,8 +60,6 @@ var Adaptive;
                         retValue = ILifecycleListenerError.Implementation;
                     case "Killed":
                         retValue = ILifecycleListenerError.Killed;
-                    case "Unknown":
-                        retValue = ILifecycleListenerError.Unknown;
                     default:
                         retValue = ILifecycleListenerError.Unknown;
                 }

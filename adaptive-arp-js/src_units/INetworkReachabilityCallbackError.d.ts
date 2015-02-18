@@ -73,9 +73,9 @@ declare module Adaptive {
         */
         static Unreachable: INetworkReachabilityCallbackError;
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
         */
-        static Wrong_Params: INetworkReachabilityCallbackError;
+        static WrongParams: INetworkReachabilityCallbackError;
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */

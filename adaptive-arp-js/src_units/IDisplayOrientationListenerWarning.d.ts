@@ -41,9 +41,9 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
         */
-        static Application_Vetoed: IDisplayOrientationListenerWarning;
+        static ApplicationVetoed: IDisplayOrientationListenerWarning;
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */
