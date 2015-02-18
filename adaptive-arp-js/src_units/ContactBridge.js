@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -83,7 +83,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContact", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -132,7 +132,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -179,7 +179,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IContact", "getContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -228,7 +228,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(fields));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -279,7 +279,7 @@ var Adaptive;
             arParams.push(JSON.stringify(fields));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new Adaptive.APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -328,7 +328,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(term));
             var apiRequest = new Adaptive.APIRequest("IContact", "searchContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -379,7 +379,7 @@ var Adaptive;
             arParams.push(JSON.stringify(term));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new Adaptive.APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -430,7 +430,7 @@ var Adaptive;
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
             var apiRequest = new Adaptive.APIRequest("IContact", "setContactPhoto", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

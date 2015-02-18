@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,25 +44,25 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
           */
-          static AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
+          static Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
           */
-          static AudioRecording = new ICapabilitiesMedia("Audio_Recording");
+          static Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
           */
           static Camera = new ICapabilitiesMedia("Camera");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
+             @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
           */
-          static VideoPlayback = new ICapabilitiesMedia("Video_Playback");
+          static Video_Playback = new ICapabilitiesMedia("Video_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
+             @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
           */
-          static VideoRecording = new ICapabilitiesMedia("Video_Recording");
+          static Video_Recording = new ICapabilitiesMedia("Video_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
           */

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,17 +58,17 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
         */
-        IContactFilter.HASPHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
         /**
-           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
         */
-        IContactFilter.HASEMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
         */
-        IContactFilter.HASADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */

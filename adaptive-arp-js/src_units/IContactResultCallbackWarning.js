@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,9 +62,9 @@ var Adaptive;
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
-        IContactResultCallbackWarning.NoMatches = new IContactResultCallbackWarning("No_Matches");
+        IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */

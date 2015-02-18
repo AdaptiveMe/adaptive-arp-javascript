@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,9 +58,9 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
-        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */

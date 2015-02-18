@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,9 +48,9 @@ module Adaptive {
           */
           static LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
+             @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
           */
-          static NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
+          static No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
           /**
              @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
           */

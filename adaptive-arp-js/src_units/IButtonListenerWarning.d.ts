@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,9 +41,9 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
-        static NotImplemented: IButtonListenerWarning;
+        static Not_Implemented: IButtonListenerWarning;
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */

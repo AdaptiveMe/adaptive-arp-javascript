@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -13842,9 +13842,9 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
+           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
         */
-        static NotPresent: IButtonListenerError;
+        static Not_Present: IButtonListenerError;
         /**
            @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */
@@ -13866,9 +13866,9 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
-        static NotImplemented: IButtonListenerWarning;
+        static Not_Implemented: IButtonListenerWarning;
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */
@@ -13994,25 +13994,25 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
         */
-        static AudioPlayback: ICapabilitiesMedia;
+        static Audio_Playback: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
         */
-        static AudioRecording: ICapabilitiesMedia;
+        static Audio_Recording: ICapabilitiesMedia;
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         static Camera: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
         */
-        static VideoPlayback: ICapabilitiesMedia;
+        static Video_Playback: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
         */
-        static VideoRecording: ICapabilitiesMedia;
+        static Video_Recording: ICapabilitiesMedia;
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */
@@ -14118,21 +14118,21 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
         */
-        static PortraitUp: ICapabilitiesOrientation;
+        static Portrait_Up: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
         */
-        static PortraitDown: ICapabilitiesOrientation;
+        static Portrait_Down: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
         */
-        static LandscapeLeft: ICapabilitiesOrientation;
+        static Landscape_Left: ICapabilitiesOrientation;
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
         */
-        static LandscapeRight: ICapabilitiesOrientation;
+        static Landscape_Right: ICapabilitiesOrientation;
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */
@@ -14202,13 +14202,13 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
         */
-        static PERSONALINFO: IContactFieldGroup;
+        static PERSONAL_INFO: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
         */
-        static PROFESSIONALINFO: IContactFieldGroup;
+        static PROFESSIONAL_INFO: IContactFieldGroup;
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */
@@ -14254,17 +14254,17 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
         */
-        static HASPHONE: IContactFilter;
+        static HAS_PHONE: IContactFilter;
         /**
-           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
         */
-        static HASEMAIL: IContactFilter;
+        static HAS_EMAIL: IContactFilter;
         /**
-           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
         */
-        static HASADDRESS: IContactFilter;
+        static HAS_ADDRESS: IContactFilter;
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
@@ -14290,13 +14290,13 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static NoPermission: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: IContactPhotoResultCallbackError;
+        static Wrong_Params: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
-        static NoPhoto: IContactPhotoResultCallbackError;
+        static No_Photo: IContactPhotoResultCallbackError;
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
@@ -14322,9 +14322,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static LimitExceeded: IContactPhotoResultCallbackWarning;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
         */
-        static NoMatches: IContactPhotoResultCallbackWarning;
+        static No_Matches: IContactPhotoResultCallbackWarning;
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
@@ -14350,9 +14350,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static NoPermission: IContactResultCallbackError;
         /**
-           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: IContactResultCallbackError;
+        static Wrong_Params: IContactResultCallbackError;
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
@@ -14378,9 +14378,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static LimitExceeded: IContactResultCallbackWarning;
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
-        static NoMatches: IContactResultCallbackWarning;
+        static No_Matches: IContactResultCallbackWarning;
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
@@ -14594,9 +14594,9 @@ of the device. For device orientation, use the IDevice APIs.
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
         */
-        static ApplicationVetoed: IDisplayOrientationListenerWarning;
+        static Application_Vetoed: IDisplayOrientationListenerWarning;
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */
@@ -15214,9 +15214,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static Unreachable: INetworkReachabilityCallbackError;
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: INetworkReachabilityCallbackError;
+        static Wrong_Params: INetworkReachabilityCallbackError;
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */
@@ -15650,9 +15650,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         static Redirected: IServiceResultCallbackWarning;
         /**
-           @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: IServiceResultCallbackWarning;
+        static Wrong_Params: IServiceResultCallbackWarning;
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
         */

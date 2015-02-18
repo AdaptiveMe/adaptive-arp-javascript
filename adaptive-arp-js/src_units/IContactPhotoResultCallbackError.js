@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -62,13 +62,13 @@ var Adaptive;
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        IContactPhotoResultCallbackError.WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
+        IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
-        IContactPhotoResultCallbackError.NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
+        IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */

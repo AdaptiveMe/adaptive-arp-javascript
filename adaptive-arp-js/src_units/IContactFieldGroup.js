@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,13 +58,13 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
         */
-        IContactFieldGroup.PERSONALINFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
         */
-        IContactFieldGroup.PROFESSIONALINFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */

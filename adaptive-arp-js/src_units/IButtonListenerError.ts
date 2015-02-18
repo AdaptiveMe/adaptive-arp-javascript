@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
+             @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
           */
-          static NotPresent = new IButtonListenerError("Not_Present");
+          static Not_Present = new IButtonListenerError("Not_Present");
           /**
              @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
           */

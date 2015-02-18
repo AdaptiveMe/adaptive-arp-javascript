@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.8
+    * @version v2.1.9
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -7666,7 +7666,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         /**
            @method
@@ -8711,7 +8711,7 @@ event may be fired if the application vetoes display rotation before rotation is
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseCallback;
     })();
@@ -10474,7 +10474,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseApplicationBridge;
     })();
@@ -10509,7 +10509,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseCommerceBridge;
     })();
@@ -10544,7 +10544,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseCommunicationBridge;
     })();
@@ -10579,7 +10579,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseDataBridge;
     })();
@@ -10614,7 +10614,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseMediaBridge;
     })();
@@ -10649,7 +10649,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseNotificationBridge;
     })();
@@ -10684,7 +10684,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BasePIMBridge;
     })();
@@ -10719,7 +10719,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseReaderBridge;
     })();
@@ -10754,7 +10754,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseSecurityBridge;
     })();
@@ -10789,7 +10789,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseSensorBridge;
     })();
@@ -10824,7 +10824,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseSocialBridge;
     })();
@@ -10859,7 +10859,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseSystemBridge;
     })();
@@ -10894,7 +10894,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseUIBridge;
     })();
@@ -10929,7 +10929,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         return BaseUtilBridge;
     })();
@@ -10982,7 +10982,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11023,7 +11023,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11072,7 +11072,7 @@ event may be fired if the application vetoes display rotation before rotation is
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
             var apiRequest = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11115,7 +11115,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(locale));
             var apiRequest = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11180,7 +11180,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "addLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11224,7 +11224,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "isBackground", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11265,7 +11265,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11302,7 +11302,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11562,7 +11562,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(host));
             var apiRequest = new APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11611,7 +11611,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11678,7 +11678,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "addNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11722,7 +11722,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11759,7 +11759,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11822,7 +11822,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             var arParams = [];
             arParams.push(JSON.stringify(serviceToken));
             var apiRequest = new APIRequest("IService", "getServiceRequest", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11872,7 +11872,7 @@ configured in the platform's XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new APIRequest("IService", "getServiceToken", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11918,7 +11918,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(uri));
             var apiRequest = new APIRequest("IService", "getServiceTokenByUri", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11959,7 +11959,7 @@ configured in the platform's XML service definition file.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IService", "getServicesRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12006,7 +12006,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(serviceRequest));
             var apiRequest = new APIRequest("IService", "invokeService", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12062,7 +12062,7 @@ XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new APIRequest("IService", "isServiceRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12145,7 +12145,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(number));
             var apiRequest = new APIRequest("ITelephony", "call", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12248,7 +12248,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "createDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12299,7 +12299,7 @@ XML service definition file.
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "createTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12348,7 +12348,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "deleteDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12399,7 +12399,7 @@ XML service definition file.
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "deleteTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12453,7 +12453,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statement));
             arParams.push(JSON.stringify(replacements));
             var apiRequest = new APIRequest("IDatabase", "executeSqlStatement", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12507,7 +12507,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statements));
             arParams.push(JSON.stringify(rollbackFlag));
             var apiRequest = new APIRequest("IDatabase", "executeSqlTransactions", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12556,7 +12556,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "existsDatabase", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12601,7 +12601,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "existsTable", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12664,7 +12664,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "canRead", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12707,7 +12707,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "canWrite", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12750,7 +12750,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "create", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12802,7 +12802,7 @@ deleted if the cascade parameter is set to true.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
             var apiRequest = new APIRequest("IFile", "delete", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12845,7 +12845,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "exists", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12888,7 +12888,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12937,7 +12937,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getFileStorageType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12980,7 +12980,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getFileType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13023,7 +13023,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getSecurityType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13066,7 +13066,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "isDirectory", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13110,7 +13110,7 @@ any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "listFiles", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13162,7 +13162,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
             var apiRequest = new APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13213,7 +13213,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
             var apiRequest = new APIRequest("IFile", "mkDir", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13263,7 +13263,7 @@ new destination file.
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
             var apiRequest = new APIRequest("IFile", "move", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13314,7 +13314,7 @@ new destination file.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
             var apiRequest = new APIRequest("IFile", "setContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13386,7 +13386,7 @@ This method does not create the actual file in the specified folder.
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
             var apiRequest = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13429,7 +13429,7 @@ This path is volatile and may be cleaned by the OS periodically.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13471,7 +13471,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13513,7 +13513,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13555,7 +13555,7 @@ This path may or may not be directly readable or writable - it usually contains 
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13597,7 +13597,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13638,7 +13638,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getSeparator", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13682,7 +13682,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13844,7 +13844,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -13990,7 +13990,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new APIRequest("IContact", "getContact", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14039,7 +14039,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14086,7 +14086,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IContact", "getContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14135,7 +14135,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(fields));
             var apiRequest = new APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14186,7 +14186,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(fields));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14235,7 +14235,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(term));
             var apiRequest = new APIRequest("IContact", "searchContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14286,7 +14286,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(term));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14337,7 +14337,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
             var apiRequest = new APIRequest("IContact", "setContactPhoto", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14400,7 +14400,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(data));
             var apiRequest = new APIRequest("IMail", "sendEmail", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14471,7 +14471,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(number));
             arParams.push(JSON.stringify(text));
             var apiRequest = new APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14662,7 +14662,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "deleteSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14713,7 +14713,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "getSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14760,7 +14760,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ISecurity", "isDeviceModified", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14805,7 +14805,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keyValues));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "setSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14872,7 +14872,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "addAccelerationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14916,7 +14916,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14953,7 +14953,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15051,7 +15051,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15095,7 +15095,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15132,7 +15132,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15352,7 +15352,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15394,7 +15394,7 @@ support at least one orientation. This is usually PortaitUp.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15441,7 +15441,7 @@ support at least one orientation. This is usually PortaitUp.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15485,7 +15485,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15528,7 +15528,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15572,7 +15572,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15615,7 +15615,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15659,7 +15659,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15702,7 +15702,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(orientation));
             var apiRequest = new APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15746,7 +15746,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15807,7 +15807,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15851,7 +15851,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "addDeviceOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15895,7 +15895,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getDeviceInfo", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15936,7 +15936,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15978,7 +15978,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16019,7 +16019,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16056,7 +16056,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeButtonListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16094,7 +16094,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16131,7 +16131,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16189,7 +16189,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "addDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16234,7 +16234,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16275,7 +16275,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16312,7 +16312,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16370,7 +16370,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IOS", "getOSInfo", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16430,7 +16430,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16454,7 +16454,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16517,7 +16517,7 @@ of the device. For device orientation, use the IDevice APIs.
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16564,7 +16564,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16611,7 +16611,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16794,7 +16794,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "logLevelMessage", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16822,7 +16822,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
-            apiRequest.setApiVersion("v2.1.8");
+            apiRequest.setApiVersion("v2.1.9");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -17728,7 +17728,7 @@ of the device. For device orientation, use the IDevice APIs.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.1.8";
+            return "v2.1.9";
         };
         /**
            @private
@@ -18527,9 +18527,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
+           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
         */
-        IButtonListenerError.NotPresent = new IButtonListenerError("Not_Present");
+        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
         /**
            @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */
@@ -18562,9 +18562,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
-        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */
@@ -18734,25 +18734,25 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
         */
-        ICapabilitiesMedia.AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
+        ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
         */
-        ICapabilitiesMedia.AudioRecording = new ICapabilitiesMedia("Audio_Recording");
+        ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
         */
-        ICapabilitiesMedia.VideoPlayback = new ICapabilitiesMedia("Video_Playback");
+        ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
         */
-        ICapabilitiesMedia.VideoRecording = new ICapabilitiesMedia("Video_Recording");
+        ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */
@@ -18891,21 +18891,21 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
         */
-        ICapabilitiesOrientation.PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
+        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
+           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
         */
-        ICapabilitiesOrientation.PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
+        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
         */
-        ICapabilitiesOrientation.LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
+        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
+           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
         */
-        ICapabilitiesOrientation.LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
+        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */
@@ -18997,13 +18997,13 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
         */
-        IContactFieldGroup.PERSONALINFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
         */
-        IContactFieldGroup.PROFESSIONALINFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */
@@ -19060,17 +19060,17 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
+           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
         */
-        IContactFilter.HASPHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
         /**
-           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
+           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
         */
-        IContactFilter.HASEMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
+           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
         */
-        IContactFilter.HASADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
@@ -19107,13 +19107,13 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        IContactPhotoResultCallbackError.WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
+        IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
-        IContactPhotoResultCallbackError.NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
+        IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
@@ -19150,9 +19150,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
         */
-        IContactPhotoResultCallbackWarning.NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
+        IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
@@ -19189,9 +19189,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        IContactResultCallbackError.WrongParams = new IContactResultCallbackError("Wrong_Params");
+        IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
@@ -19228,9 +19228,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
-        IContactResultCallbackWarning.NoMatches = new IContactResultCallbackWarning("No_Matches");
+        IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
@@ -19532,9 +19532,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
         */
-        IDisplayOrientationListenerWarning.ApplicationVetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */
@@ -20361,9 +20361,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
         */
-        INetworkReachabilityCallbackError.WrongParams = new INetworkReachabilityCallbackError("Wrong_Params");
+        INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */
@@ -20929,9 +20929,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
         /**
-           @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
+           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
         */
-        IServiceResultCallbackWarning.WrongParams = new IServiceResultCallbackWarning("Wrong_Params");
+        IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
         */
