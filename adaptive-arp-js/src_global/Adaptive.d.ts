@@ -3189,14 +3189,14 @@ of the device. For device orientation, use the IDevice APIs.
            @param message  Message to be logged
            @since v2.0
         */
-        log_level_category_message(level: ILoggingLogLevel, category: string, message: string): any;
+        logLevelCategoryMessage(level: ILoggingLogLevel, category: string, message: string): any;
         /**
            Logs the given message, with the given log level if specified, to the standard platform/environment.
            @param level   Log level
            @param message Message to be logged
            @since v2.0
         */
-        log_level_message(level: ILoggingLogLevel, message: string): any;
+        logLevelMessage(level: ILoggingLogLevel, message: string): any;
     }
     /**
        Interface for Managing the Timer operations
@@ -12612,7 +12612,7 @@ of the device. For device orientation, use the IDevice APIs.
            @param message Message to be logged
            @since v2.0
         */
-        log_level_message(level: ILoggingLogLevel, message: string): void;
+        logLevelMessage(level: ILoggingLogLevel, message: string): void;
         /**
            Logs the given message, with the given log level if specified, to the standard platform/environment.
 
@@ -12621,7 +12621,7 @@ of the device. For device orientation, use the IDevice APIs.
            @param message  Message to be logged
            @since v2.0
         */
-        log_level_category_message(level: ILoggingLogLevel, category: string, message: string): void;
+        logLevelCategoryMessage(level: ILoggingLogLevel, category: string, message: string): void;
     }
     /**
        @class Adaptive.TimerBridge

@@ -16788,12 +16788,12 @@ of the device. For device orientation, use the IDevice APIs.
            @param message Message to be logged
            @since v2.0
         */
-        LoggingBridge.prototype.log_level_message = function (level, message) {
+        LoggingBridge.prototype.logLevelMessage = function (level, message) {
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new APIRequest("ILogging", "log_level_message", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "logLevelMessage", arParams, -1);
             apiRequest.setApiVersion("v2.1.7");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16804,7 +16804,7 @@ of the device. For device orientation, use the IDevice APIs.
             if (xhr.status === 200) {
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_message' request.");
+                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.logLevelMessage' request.");
             }
         };
         /**
@@ -16815,13 +16815,13 @@ of the device. For device orientation, use the IDevice APIs.
            @param message  Message to be logged
            @since v2.0
         */
-        LoggingBridge.prototype.log_level_category_message = function (level, category, message) {
+        LoggingBridge.prototype.logLevelCategoryMessage = function (level, category, message) {
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new APIRequest("ILogging", "log_level_category_message", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
             apiRequest.setApiVersion("v2.1.7");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16832,7 +16832,7 @@ of the device. For device orientation, use the IDevice APIs.
             if (xhr.status === 200) {
             }
             else {
-                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_category_message' request.");
+                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.logLevelCategoryMessage' request.");
             }
         };
         return LoggingBridge;

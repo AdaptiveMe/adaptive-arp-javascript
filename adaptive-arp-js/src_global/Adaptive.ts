@@ -3306,14 +3306,14 @@ of the device. For device orientation, use the IDevice APIs.
              @param message  Message to be logged
              @since v2.0
           */
-          log_level_category_message(level:ILoggingLogLevel, category:string, message:string);
+          logLevelCategoryMessage(level:ILoggingLogLevel, category:string, message:string);
           /**
              Logs the given message, with the given log level if specified, to the standard platform/environment.
              @param level   Log level
              @param message Message to be logged
              @since v2.0
           */
-          log_level_message(level:ILoggingLogLevel, message:string);
+          logLevelMessage(level:ILoggingLogLevel, message:string);
      }
      /**
         Interface for Managing the Timer operations
@@ -20994,12 +20994,12 @@ of the device. For device orientation, use the IDevice APIs.
              @param message Message to be logged
              @since v2.0
           */
-          log_level_message(level : ILoggingLogLevel, message : string) : void {
+          logLevelMessage(level : ILoggingLogLevel, message : string) : void {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(level));
                arParams.push(JSON.stringify(message));
-               var apiRequest : APIRequest = new APIRequest("ILogging","log_level_message",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("ILogging","logLevelMessage",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.7");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -21009,7 +21009,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Check response.
                if (xhr.status === 200 ) {
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_message' request.");
+                    console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.logLevelMessage' request.");
                }
           }
 
@@ -21021,13 +21021,13 @@ of the device. For device orientation, use the IDevice APIs.
              @param message  Message to be logged
              @since v2.0
           */
-          log_level_category_message(level : ILoggingLogLevel, category : string, message : string) : void {
+          logLevelCategoryMessage(level : ILoggingLogLevel, category : string, message : string) : void {
                // Create and populate API request.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(level));
                arParams.push(JSON.stringify(category));
                arParams.push(JSON.stringify(message));
-               var apiRequest : APIRequest = new APIRequest("ILogging","log_level_category_message",arParams, -1 /* = synchronous call */);
+               var apiRequest : APIRequest = new APIRequest("ILogging","logLevelCategoryMessage",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.7");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -21037,7 +21037,7 @@ of the device. For device orientation, use the IDevice APIs.
                // Check response.
                if (xhr.status === 200 ) {
                } else {
-                    console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_category_message' request.");
+                    console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.logLevelCategoryMessage' request.");
                }
           }
      }

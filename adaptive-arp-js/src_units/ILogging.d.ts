@@ -53,13 +53,13 @@ declare module Adaptive {
            @param message  Message to be logged
            @since v2.0
         */
-        log_level_category_message(level: ILoggingLogLevel, category: string, message: string): any;
+        logLevelCategoryMessage(level: ILoggingLogLevel, category: string, message: string): any;
         /**
            Logs the given message, with the given log level if specified, to the standard platform/environment.
            @param level   Log level
            @param message Message to be logged
            @since v2.0
         */
-        log_level_message(level: ILoggingLogLevel, message: string): any;
+        logLevelMessage(level: ILoggingLogLevel, message: string): any;
     }
 }
