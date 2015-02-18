@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -217,30 +217,20 @@ var Adaptive;
         */
         ServiceToken.toObject = function (object) {
             var result = new ServiceToken(null, null, null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.serviceName != null)
                 result.serviceName = object.serviceName;
+            if (object != null && object.endpointName != null)
                 result.endpointName = object.endpointName;
+            if (object != null && object.functionName != null)
                 result.functionName = object.functionName;
+            if (object != null && object.invocationMethod != null) {
                 result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
             }
-            return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
-           @return {Adaptive.ServiceToken[]} Wrapped object array instance.
-        */
-        ServiceToken.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(ServiceToken.toObject(object[i]));
-                }
+            else {
+                result.invocationMethod = Adaptive.IServiceMethod.toObject(null);
             }
-            return resultArray;
+            return result;
         };
         return ServiceToken;
     })(Adaptive.APIBean);

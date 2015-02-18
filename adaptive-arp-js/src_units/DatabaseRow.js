@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -105,33 +105,16 @@ var Adaptive;
         */
         DatabaseRow.toObject = function (object) {
             var result = new DatabaseRow(null);
-            if (object != null) {
-                // Assign values to bean fields.
-                if (object.values != null) {
-                    result.values = new Array();
-                    for (var ivalues = 0; ivalues < object.values.length; ivalues++) {
-                        var vvalues = object.values[ivalues];
-                        result.values.push(vvalues);
-                    }
+            // Assign values to bean fields.
+            if (object != null && object.values != null) {
+                result.values = new Array();
+                for (var i = 0; i < object.values.length; i++) {
+                    var __value__ = object.values[i];
+                    if (__value__ != null)
+                        result.values.push(__value__);
                 }
             }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow[].
-           @return {Adaptive.DatabaseRow[]} Wrapped object array instance.
-        */
-        DatabaseRow.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(DatabaseRow.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return DatabaseRow;
     })(Adaptive.APIBean);

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,25 @@ var Adaptive;
            @return {Adaptive.ContactPersonalInfoTitle}
         */
         ContactPersonalInfoTitle.toObject = function (object) {
-            var retValue = ContactPersonalInfoTitle.Unknown;
-            if (object != null && object.value != null && ContactPersonalInfoTitle.hasOwnProperty(object.value)) {
-                retValue = ContactPersonalInfoTitle[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Mr":
+                        return ContactPersonalInfoTitle.Mr;
+                    case "Mrs":
+                        return ContactPersonalInfoTitle.Mrs;
+                    case "Ms":
+                        return ContactPersonalInfoTitle.Ms;
+                    case "Dr":
+                        return ContactPersonalInfoTitle.Dr;
+                    case "Unknown":
+                        return ContactPersonalInfoTitle.Unknown;
+                    default:
+                        return ContactPersonalInfoTitle.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ContactPersonalInfoTitle.Unknown;
+            }
         };
         /**
            @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -117,27 +117,14 @@ var Adaptive;
         */
         Lifecycle.toObject = function (object) {
             var result = new Lifecycle(null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.state != null) {
                 result.state = Adaptive.LifecycleState.toObject(object.state);
             }
-            return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
-           @return {Adaptive.Lifecycle[]} Wrapped object array instance.
-        */
-        Lifecycle.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Lifecycle.toObject(object[i]));
-                }
+            else {
+                result.state = Adaptive.LifecycleState.toObject(null);
             }
-            return resultArray;
+            return result;
         };
         return Lifecycle;
     })(Adaptive.APIBean);

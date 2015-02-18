@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -110,29 +110,14 @@ module Adaptive {
           static toObject(object : any) : Button {
                var result : Button = new Button(null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
+               // Assign values to bean fields.
+               if (object!=null && object.type!=null) {
                     result.type = ICapabilitiesButton.toObject(object.type);
-
+               } else {
+                    result.type = ICapabilitiesButton.toObject(null);
                }
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Button[].
-             @return {Adaptive.Button[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : Button[] {
-               var resultArray : Array<Button> = new Array<Button>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Button.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

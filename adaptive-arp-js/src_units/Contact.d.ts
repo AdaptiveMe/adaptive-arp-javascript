@@ -36,7 +36,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -133,20 +133,12 @@ declare module Adaptive {
         professionalInfoProperty: ContactProfessionalInfo;
         /**
            @method constructor
-           Constructor with all the fields
+           Constructor used by implementation to set the Contact.
 
-           @param {string} contactId        Identifier of the contact
-           @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
-           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-           @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
-           @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
-           @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
-           @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
-           @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
+           @param {string} contactId of the Contact
            @since v2.0
         */
-        constructor(contactId: string, personalInfo: ContactPersonalInfo, professionalInfo: ContactProfessionalInfo, contactAddresses: Array<ContactAddress>, contactPhones: Array<ContactPhone>, contactEmails: Array<ContactEmail>, contactWebsites: Array<ContactWebsite>, contactSocials: Array<ContactSocial>, contactTags: Array<ContactTag>);
+        constructor(contactId: string);
         /**
            @method
            Returns all the addresses of the Contact
@@ -283,13 +275,5 @@ declare module Adaptive {
            @return {Adaptive.Contact} Wrapped object instance.
         */
         static toObject(object: any): Contact;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Contact[].
-           @return {Adaptive.Contact[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): Contact[];
     }
 }

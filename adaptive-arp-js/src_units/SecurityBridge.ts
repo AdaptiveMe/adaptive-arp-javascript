@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","deleteSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -87,10 +87,10 @@ module Adaptive {
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredSecurityResultCallback.remove(""+callback.getId());
@@ -126,7 +126,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","getSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -136,10 +136,10 @@ module Adaptive {
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredSecurityResultCallback.remove(""+callback.getId());
@@ -171,7 +171,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ISecurity","isDeviceModified",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -181,11 +181,11 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                               response = JSON.parse(apiResponse.getResponse());
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.isDeviceModified' ["+apiResponse.getStatusMessage()+"].");
@@ -214,7 +214,7 @@ module Adaptive {
                arParams.push(JSON.stringify(keyValues));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","setSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -224,10 +224,10 @@ module Adaptive {
                registeredSecurityResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredSecurityResultCallback.remove(""+callback.getId());

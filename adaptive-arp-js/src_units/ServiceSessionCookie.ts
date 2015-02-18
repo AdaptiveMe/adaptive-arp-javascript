@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -193,28 +193,16 @@ module Adaptive {
 
           /**
              @method constructor
-             Contructor with fields
+             Constructor used by the implementation
 
              @param {string} cookieName  Name of the cookie
              @param {string} cookieValue Value of the cookie
-             @param {string} domain      Domain of the cookie
-             @param {string} path        Path of the cookie
-             @param {string} scheme      Scheme of the cookie
-             @param {boolean} secure      Privacy of the cookie
-             @param {number} expiry      Expiration date of the cookie
-             @param {number} creation    Creation date of the cookie
              @since v2.0
           */
-          constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number) {
+          constructor(cookieName: string, cookieValue: string) {
                super();
                this.cookieName = cookieName;
                this.cookieValue = cookieValue;
-               this.domain = domain;
-               this.path = path;
-               this.scheme = scheme;
-               this.secure = secure;
-               this.expiry = expiry;
-               this.creation = creation;
           }
 
           /**
@@ -401,38 +389,19 @@ module Adaptive {
              @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
           */
           static toObject(object : any) : ServiceSessionCookie {
-               var result : ServiceSessionCookie = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
+               var result : ServiceSessionCookie = new ServiceSessionCookie(null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.cookieName = object.cookieName;
-                    result.cookieValue = object.cookieValue;
-                    result.domain = object.domain;
-                    result.path = object.path;
-                    result.scheme = object.scheme;
-                    result.secure = object.secure;
-                    result.expiry = object.expiry;
-                    result.creation = object.creation;
+               // Assign values to bean fields.
+               if (object!=null && object.cookieName!=null) result.cookieName = object.cookieName;
+               if (object!=null && object.cookieValue!=null) result.cookieValue = object.cookieValue;
+               if (object!=null && object.domain!=null) result.domain = object.domain;
+               if (object!=null && object.path!=null) result.path = object.path;
+               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
+               if (object!=null && object.secure!=null) result.secure = object.secure;
+               if (object!=null && object.expiry!=null) result.expiry = object.expiry;
+               if (object!=null && object.creation!=null) result.creation = object.creation;
 
-               }
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
-             @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceSessionCookie[] {
-               var resultArray : Array<ServiceSessionCookie> = new Array<ServiceSessionCookie>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceSessionCookie.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

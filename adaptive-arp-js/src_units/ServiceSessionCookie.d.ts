@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -125,19 +125,13 @@ declare module Adaptive {
         secureProperty: boolean;
         /**
            @method constructor
-           Contructor with fields
+           Constructor used by the implementation
 
            @param {string} cookieName  Name of the cookie
            @param {string} cookieValue Value of the cookie
-           @param {string} domain      Domain of the cookie
-           @param {string} path        Path of the cookie
-           @param {string} scheme      Scheme of the cookie
-           @param {boolean} secure      Privacy of the cookie
-           @param {number} expiry      Expiration date of the cookie
-           @param {number} creation    Creation date of the cookie
            @since v2.0
         */
-        constructor(cookieName: string, cookieValue: string, domain: string, path: string, scheme: string, secure: boolean, expiry: number, creation: number);
+        constructor(cookieName: string, cookieValue: string);
         /**
            @method
            Returns the cookie cookieName
@@ -274,13 +268,5 @@ declare module Adaptive {
            @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
         */
         static toObject(object: any): ServiceSessionCookie;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
-           @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): ServiceSessionCookie[];
     }
 }

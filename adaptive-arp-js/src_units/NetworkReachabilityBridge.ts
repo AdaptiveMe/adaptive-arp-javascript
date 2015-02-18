@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -74,7 +74,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(host));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkReachable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -84,10 +84,10 @@ module Adaptive {
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredNetworkReachabilityCallback.remove(""+callback.getId());
@@ -121,7 +121,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkServiceReachable",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -131,10 +131,10 @@ module Adaptive {
                registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+               if (xhr.status == 200 ) {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredNetworkReachabilityCallback.remove(""+callback.getId());

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,11 +75,26 @@ module Adaptive {
              @return {Adaptive.IServiceResultCallbackError}
           */
           static toObject(object : any) : IServiceResultCallbackError {
-               var retValue : IServiceResultCallbackError = IServiceResultCallbackError.Unknown;
-               if (object != null && object.value != null && IServiceResultCallbackError.hasOwnProperty(object.value)) {
-                    retValue = IServiceResultCallbackError[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "TimeOut":
+                              return IServiceResultCallbackError.TimeOut;
+                         case "NoResponse":
+                              return IServiceResultCallbackError.NoResponse;
+                         case "Unreachable":
+                              return IServiceResultCallbackError.Unreachable;
+                         case "MalformedUrl":
+                              return IServiceResultCallbackError.MalformedUrl;
+                         case "NotRegisteredService":
+                              return IServiceResultCallbackError.NotRegisteredService;
+                         case "Unknown":
+                              return IServiceResultCallbackError.Unknown;
+                         default:
+                              return IServiceResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IServiceResultCallbackError.Unknown;
                }
-               return retValue;
           }
 
      }

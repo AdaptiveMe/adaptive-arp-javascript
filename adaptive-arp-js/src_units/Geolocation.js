@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -281,32 +281,20 @@ var Adaptive;
         */
         Geolocation.toObject = function (object) {
             var result = new Geolocation(null, null, null, null, null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.latitude != null)
                 result.latitude = object.latitude;
+            if (object != null && object.longitude != null)
                 result.longitude = object.longitude;
+            if (object != null && object.altitude != null)
                 result.altitude = object.altitude;
+            if (object != null && object.xDoP != null)
                 result.xDoP = object.xDoP;
+            if (object != null && object.yDoP != null)
                 result.yDoP = object.yDoP;
+            if (object != null && object.timestamp != null)
                 result.timestamp = object.timestamp;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Geolocation[].
-           @return {Adaptive.Geolocation[]} Wrapped object array instance.
-        */
-        Geolocation.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Geolocation.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return Geolocation;
     })(Adaptive.APIBean);

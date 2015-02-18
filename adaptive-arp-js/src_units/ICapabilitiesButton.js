@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,23 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesButton}
         */
         ICapabilitiesButton.toObject = function (object) {
-            var retValue = ICapabilitiesButton.Unknown;
-            if (object != null && object.value != null && ICapabilitiesButton.hasOwnProperty(object.value)) {
-                retValue = ICapabilitiesButton[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "HomeButton":
+                        return ICapabilitiesButton.HomeButton;
+                    case "BackButton":
+                        return ICapabilitiesButton.BackButton;
+                    case "OptionButton":
+                        return ICapabilitiesButton.OptionButton;
+                    case "Unknown":
+                        return ICapabilitiesButton.Unknown;
+                    default:
+                        return ICapabilitiesButton.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ICapabilitiesButton.Unknown;
+            }
         };
         /**
            @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']

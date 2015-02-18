@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -540,39 +540,62 @@ identifiers. This should not be manipulated by the application directly. The 'se
           static toObject(object : any) : ServiceRequest {
                var result : ServiceRequest = new ServiceRequest(null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.userAgent = object.userAgent;
-                    result.content = object.content;
-                    result.contentType = object.contentType;
+               // Assign values to bean fields.
+               if (object!=null && object.userAgent!=null) result.userAgent = object.userAgent;
+               if (object!=null && object.content!=null) result.content = object.content;
+               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-                    result.contentLength = object.contentLength;
-                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
-                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    result.queryParameters = ServiceRequestParameter.toObjectArray(object.queryParameters);
-                    result.bodyParameters = ServiceRequestParameter.toObjectArray(object.bodyParameters);
-                    result.serviceToken = ServiceToken.toObject(object.serviceToken);
-                    result.refererHost = object.refererHost;
-
+               } else {
+                    result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
-             @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceRequest[] {
-               var resultArray : Array<ServiceRequest> = new Array<ServiceRequest>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceRequest.toObject(object[i]));
+               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object != null && object.serviceHeaders != null) {
+                    result.serviceHeaders = new Array<ServiceHeader>();
+                    for(var i = 0; i < object.serviceHeaders.length; i++) {
+                         var __value__ = object.serviceHeaders[i];
+                         if (__value__ != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                         } else {
+                              result.serviceHeaders.push(ServiceHeader.toObject(null));
+                         }
                     }
                }
-               return resultArray;
+               if (object!=null && object.serviceSession!=null) {
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
+               } else {
+                    result.serviceSession = ServiceSession.toObject(null);
+               }
+               if (object != null && object.queryParameters != null) {
+                    result.queryParameters = new Array<ServiceRequestParameter>();
+                    for(var i = 0; i < object.queryParameters.length; i++) {
+                         var __value__ = object.queryParameters[i];
+                         if (__value__ != null) {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(__value__));
+                         } else {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(null));
+                         }
+                    }
+               }
+               if (object != null && object.bodyParameters != null) {
+                    result.bodyParameters = new Array<ServiceRequestParameter>();
+                    for(var i = 0; i < object.bodyParameters.length; i++) {
+                         var __value__ = object.bodyParameters[i];
+                         if (__value__ != null) {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(__value__));
+                         } else {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(null));
+                         }
+                    }
+               }
+               if (object!=null && object.serviceToken!=null) {
+                    result.serviceToken = ServiceToken.toObject(object.serviceToken);
+               } else {
+                    result.serviceToken = ServiceToken.toObject(null);
+               }
+               if (object!=null && object.refererHost!=null) result.refererHost = object.refererHost;
+
+               return result;
           }
 
      }

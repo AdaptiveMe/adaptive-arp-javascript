@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -141,28 +141,12 @@ var Adaptive;
         */
         Database.toObject = function (object) {
             var result = new Database(null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.name != null)
                 result.name = object.name;
+            if (object != null && object.compress != null)
                 result.compress = object.compress;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Database[].
-           @return {Adaptive.Database[]} Wrapped object array instance.
-        */
-        Database.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Database.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return Database;
     })(Adaptive.APIBean);

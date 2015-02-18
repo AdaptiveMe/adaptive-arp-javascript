@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -79,11 +79,28 @@ module Adaptive {
              @return {Adaptive.IFileSystemStorageType}
           */
           static toObject(object : any) : IFileSystemStorageType {
-               var retValue : IFileSystemStorageType = IFileSystemStorageType.Unknown;
-               if (object != null && object.value != null && IFileSystemStorageType.hasOwnProperty(object.value)) {
-                    retValue = IFileSystemStorageType[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Application":
+                              return IFileSystemStorageType.Application;
+                         case "Document":
+                              return IFileSystemStorageType.Document;
+                         case "Cloud":
+                              return IFileSystemStorageType.Cloud;
+                         case "Protected":
+                              return IFileSystemStorageType.Protected;
+                         case "Cache":
+                              return IFileSystemStorageType.Cache;
+                         case "External":
+                              return IFileSystemStorageType.External;
+                         case "Unknown":
+                              return IFileSystemStorageType.Unknown;
+                         default:
+                              return IFileSystemStorageType.Unknown;
+                    }
+               } else {
+                    return IFileSystemStorageType.Unknown;
                }
-               return retValue;
           }
 
      }

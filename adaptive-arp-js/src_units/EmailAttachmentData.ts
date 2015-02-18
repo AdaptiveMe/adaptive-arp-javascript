@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -277,39 +277,20 @@ module Adaptive {
           static toObject(object : any) : EmailAttachmentData {
                var result : EmailAttachmentData = new EmailAttachmentData(null, null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    if (object.data != null) {
-                         result.data = new Array<number>();
-                         for(var idata = 0; idata < object.data.length; idata++) {
-                              var vdata = object.data[idata];
-                              result.data.push(vdata);
-                         }
+               // Assign values to bean fields.
+               if (object != null && object.data != null) {
+                    result.data = new Array<number>();
+                    for(var i = 0; i < object.data.length; i++) {
+                         var __value__ = object.data[i];
+                         if (__value__ != null) result.data.push(__value__);
                     }
-                    result.size = object.size;
-                    result.fileName = object.fileName;
-                    result.mimeType = object.mimeType;
-                    result.referenceUrl = object.referenceUrl;
-
                }
+               if (object!=null && object.size!=null) result.size = object.size;
+               if (object!=null && object.fileName!=null) result.fileName = object.fileName;
+               if (object!=null && object.mimeType!=null) result.mimeType = object.mimeType;
+               if (object!=null && object.referenceUrl!=null) result.referenceUrl = object.referenceUrl;
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData[].
-             @return {Adaptive.EmailAttachmentData[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : EmailAttachmentData[] {
-               var resultArray : Array<EmailAttachmentData> = new Array<EmailAttachmentData>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(EmailAttachmentData.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

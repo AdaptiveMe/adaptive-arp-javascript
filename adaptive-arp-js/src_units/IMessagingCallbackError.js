@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,27 @@ var Adaptive;
            @return {Adaptive.IMessagingCallbackError}
         */
         IMessagingCallbackError.toObject = function (object) {
-            var retValue = IMessagingCallbackError.Unknown;
-            if (object != null && object.value != null && IMessagingCallbackError.hasOwnProperty(object.value)) {
-                retValue = IMessagingCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "SIMNotPresent":
+                        return IMessagingCallbackError.SIMNotPresent;
+                    case "EmailAccountNotFound":
+                        return IMessagingCallbackError.EmailAccountNotFound;
+                    case "NotSent":
+                        return IMessagingCallbackError.NotSent;
+                    case "WrongParams":
+                        return IMessagingCallbackError.WrongParams;
+                    case "NotSupported":
+                        return IMessagingCallbackError.NotSupported;
+                    case "Unknown":
+                        return IMessagingCallbackError.Unknown;
+                    default:
+                        return IMessagingCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IMessagingCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IMessagingCallbackError} [SIMNotPresent='SIMNotPresent']

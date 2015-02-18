@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,25 @@ var Adaptive;
            @return {Adaptive.IServiceContentEncoding}
         */
         IServiceContentEncoding.toObject = function (object) {
-            var retValue = IServiceContentEncoding.Unknown;
-            if (object != null && object.value != null && IServiceContentEncoding.hasOwnProperty(object.value)) {
-                retValue = IServiceContentEncoding[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "ASCII":
+                        return IServiceContentEncoding.ASCII;
+                    case "UTF8":
+                        return IServiceContentEncoding.UTF8;
+                    case "ISOLatin1":
+                        return IServiceContentEncoding.ISOLatin1;
+                    case "Unicode":
+                        return IServiceContentEncoding.Unicode;
+                    case "Unknown":
+                        return IServiceContentEncoding.Unknown;
+                    default:
+                        return IServiceContentEncoding.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IServiceContentEncoding.Unknown;
+            }
         };
         /**
            @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']

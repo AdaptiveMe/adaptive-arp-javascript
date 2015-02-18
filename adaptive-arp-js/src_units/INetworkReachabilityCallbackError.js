@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,39 @@ var Adaptive;
            @return {Adaptive.INetworkReachabilityCallbackError}
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
-            var retValue = INetworkReachabilityCallbackError.Unknown;
-            if (object != null && object.value != null && INetworkReachabilityCallbackError.hasOwnProperty(object.value)) {
-                retValue = INetworkReachabilityCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Forbidden":
+                        return INetworkReachabilityCallbackError.Forbidden;
+                    case "NotFound":
+                        return INetworkReachabilityCallbackError.NotFound;
+                    case "MethodNotAllowed":
+                        return INetworkReachabilityCallbackError.MethodNotAllowed;
+                    case "NotAllowed":
+                        return INetworkReachabilityCallbackError.NotAllowed;
+                    case "NotAuthenticated":
+                        return INetworkReachabilityCallbackError.NotAuthenticated;
+                    case "TimeOut":
+                        return INetworkReachabilityCallbackError.TimeOut;
+                    case "NoResponse":
+                        return INetworkReachabilityCallbackError.NoResponse;
+                    case "Unreachable":
+                        return INetworkReachabilityCallbackError.Unreachable;
+                    case "Wrong_Params":
+                        return INetworkReachabilityCallbackError.Wrong_Params;
+                    case "MalformedUrl":
+                        return INetworkReachabilityCallbackError.MalformedUrl;
+                    case "DomainUnresolvable":
+                        return INetworkReachabilityCallbackError.DomainUnresolvable;
+                    case "Unknown":
+                        return INetworkReachabilityCallbackError.Unknown;
+                    default:
+                        return INetworkReachabilityCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return INetworkReachabilityCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [Forbidden='Forbidden']
@@ -90,9 +118,9 @@ var Adaptive;
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
         */
-        INetworkReachabilityCallbackError.WrongParams = new INetworkReachabilityCallbackError("Wrong_Params");
+        INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */

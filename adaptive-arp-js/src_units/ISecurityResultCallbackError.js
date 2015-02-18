@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.ISecurityResultCallbackError}
         */
         ISecurityResultCallbackError.toObject = function (object) {
-            var retValue = ISecurityResultCallbackError.Unknown;
-            if (object != null && object.value != null && ISecurityResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = ISecurityResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return ISecurityResultCallbackError.NoPermission;
+                    case "NoMatchesFound":
+                        return ISecurityResultCallbackError.NoMatchesFound;
+                    case "Unknown":
+                        return ISecurityResultCallbackError.Unknown;
+                    default:
+                        return ISecurityResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ISecurityResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.ISecurityResultCallbackError} [NoPermission='NoPermission']

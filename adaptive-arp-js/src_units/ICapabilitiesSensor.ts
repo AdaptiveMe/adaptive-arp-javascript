@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -83,11 +83,30 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesSensor}
           */
           static toObject(object : any) : ICapabilitiesSensor {
-               var retValue : ICapabilitiesSensor = ICapabilitiesSensor.Unknown;
-               if (object != null && object.value != null && ICapabilitiesSensor.hasOwnProperty(object.value)) {
-                    retValue = ICapabilitiesSensor[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Accelerometer":
+                              return ICapabilitiesSensor.Accelerometer;
+                         case "AmbientLight":
+                              return ICapabilitiesSensor.AmbientLight;
+                         case "Barometer":
+                              return ICapabilitiesSensor.Barometer;
+                         case "Geolocation":
+                              return ICapabilitiesSensor.Geolocation;
+                         case "Gyroscope":
+                              return ICapabilitiesSensor.Gyroscope;
+                         case "Magnetometer":
+                              return ICapabilitiesSensor.Magnetometer;
+                         case "Proximity":
+                              return ICapabilitiesSensor.Proximity;
+                         case "Unknown":
+                              return ICapabilitiesSensor.Unknown;
+                         default:
+                              return ICapabilitiesSensor.Unknown;
+                    }
+               } else {
+                    return ICapabilitiesSensor.Unknown;
                }
-               return retValue;
           }
 
      }

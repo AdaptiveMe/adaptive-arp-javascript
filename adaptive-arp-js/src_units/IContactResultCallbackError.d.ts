@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,9 +45,9 @@ declare module Adaptive {
         */
         static NoPermission: IContactResultCallbackError;
         /**
-           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: IContactResultCallbackError;
+        static Wrong_Params: IContactResultCallbackError;
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */

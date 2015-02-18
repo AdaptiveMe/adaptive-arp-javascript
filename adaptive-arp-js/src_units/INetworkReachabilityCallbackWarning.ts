@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,11 +75,26 @@ module Adaptive {
              @return {Adaptive.INetworkReachabilityCallbackWarning}
           */
           static toObject(object : any) : INetworkReachabilityCallbackWarning {
-               var retValue : INetworkReachabilityCallbackWarning = INetworkReachabilityCallbackWarning.Unknown;
-               if (object != null && object.value != null && INetworkReachabilityCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = INetworkReachabilityCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "IncorrectScheme":
+                              return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                         case "NotSecure":
+                              return INetworkReachabilityCallbackWarning.NotSecure;
+                         case "NotTrusted":
+                              return INetworkReachabilityCallbackWarning.NotTrusted;
+                         case "Redirected":
+                              return INetworkReachabilityCallbackWarning.Redirected;
+                         case "NotRegisteredService":
+                              return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                         case "Unknown":
+                              return INetworkReachabilityCallbackWarning.Unknown;
+                         default:
+                              return INetworkReachabilityCallbackWarning.Unknown;
+                    }
+               } else {
+                    return INetworkReachabilityCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

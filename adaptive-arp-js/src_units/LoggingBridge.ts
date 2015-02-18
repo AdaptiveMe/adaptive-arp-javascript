@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -73,14 +73,15 @@ module Adaptive {
                arParams.push(JSON.stringify(level));
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_message",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_message' request.");
                }
@@ -101,14 +102,15 @@ module Adaptive {
                arParams.push(JSON.stringify(category));
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_category_message",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
+               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                } else {
                     console.error("ERROR: "+xhr.status+" sending 'LoggingBridge.log_level_category_message' request.");
                }

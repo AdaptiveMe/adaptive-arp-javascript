@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,23 @@ var Adaptive;
            @return {Adaptive.IDatabaseResultCallbackError}
         */
         IDatabaseResultCallbackError.toObject = function (object) {
-            var retValue = IDatabaseResultCallbackError.Unknown;
-            if (object != null && object.value != null && IDatabaseResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = IDatabaseResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoSpace":
+                        return IDatabaseResultCallbackError.NoSpace;
+                    case "SqlException":
+                        return IDatabaseResultCallbackError.SqlException;
+                    case "NotDeleted":
+                        return IDatabaseResultCallbackError.NotDeleted;
+                    case "Unknown":
+                        return IDatabaseResultCallbackError.Unknown;
+                    default:
+                        return IDatabaseResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IDatabaseResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IDatabaseResultCallbackError} [NoSpace='NoSpace']

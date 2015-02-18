@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
-            var retValue = IDatabaseResultCallbackWarning.Unknown;
-            if (object != null && object.value != null && IDatabaseResultCallbackWarning.hasOwnProperty(object.value)) {
-                retValue = IDatabaseResultCallbackWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "DatabaseExists":
+                        return IDatabaseResultCallbackWarning.DatabaseExists;
+                    case "IsOpen":
+                        return IDatabaseResultCallbackWarning.IsOpen;
+                    case "Unknown":
+                        return IDatabaseResultCallbackWarning.Unknown;
+                    default:
+                        return IDatabaseResultCallbackWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IDatabaseResultCallbackWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.IGeolocationListenerWarning}
         */
         IGeolocationListenerWarning.toObject = function (object) {
-            var retValue = IGeolocationListenerWarning.Unknown;
-            if (object != null && object.value != null && IGeolocationListenerWarning.hasOwnProperty(object.value)) {
-                retValue = IGeolocationListenerWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "HighDoP":
+                        return IGeolocationListenerWarning.HighDoP;
+                    case "StaleData":
+                        return IGeolocationListenerWarning.StaleData;
+                    case "Unknown":
+                        return IGeolocationListenerWarning.Unknown;
+                    default:
+                        return IGeolocationListenerWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IGeolocationListenerWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']

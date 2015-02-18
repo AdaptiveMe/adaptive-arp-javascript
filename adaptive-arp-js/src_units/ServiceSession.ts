@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -153,30 +153,31 @@ module Adaptive {
           static toObject(object : any) : ServiceSession {
                var result : ServiceSession = new ServiceSession(null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.cookies = ServiceSessionCookie.toObjectArray(object.cookies);
-                    result.attributes = ServiceSessionAttribute.toObjectArray(object.attributes);
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
-             @return {Adaptive.ServiceSession[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceSession[] {
-               var resultArray : Array<ServiceSession> = new Array<ServiceSession>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceSession.toObject(object[i]));
+               // Assign values to bean fields.
+               if (object != null && object.cookies != null) {
+                    result.cookies = new Array<ServiceSessionCookie>();
+                    for(var i = 0; i < object.cookies.length; i++) {
+                         var __value__ = object.cookies[i];
+                         if (__value__ != null) {
+                              result.cookies.push(ServiceSessionCookie.toObject(__value__));
+                         } else {
+                              result.cookies.push(ServiceSessionCookie.toObject(null));
+                         }
                     }
                }
-               return resultArray;
+               if (object != null && object.attributes != null) {
+                    result.attributes = new Array<ServiceSessionAttribute>();
+                    for(var i = 0; i < object.attributes.length; i++) {
+                         var __value__ = object.attributes[i];
+                         if (__value__ != null) {
+                              result.attributes.push(ServiceSessionAttribute.toObject(__value__));
+                         } else {
+                              result.attributes.push(ServiceSessionAttribute.toObject(null));
+                         }
+                    }
+               }
+
+               return result;
           }
 
      }

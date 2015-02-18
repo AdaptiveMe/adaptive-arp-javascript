@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,25 @@ var Adaptive;
            @return {Adaptive.IServiceCertificateValidation}
         */
         IServiceCertificateValidation.toObject = function (object) {
-            var retValue = IServiceCertificateValidation.Unknown;
-            if (object != null && object.value != null && IServiceCertificateValidation.hasOwnProperty(object.value)) {
-                retValue = IServiceCertificateValidation[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "None":
+                        return IServiceCertificateValidation.None;
+                    case "Normal":
+                        return IServiceCertificateValidation.Normal;
+                    case "Extended":
+                        return IServiceCertificateValidation.Extended;
+                    case "Extreme":
+                        return IServiceCertificateValidation.Extreme;
+                    case "Unknown":
+                        return IServiceCertificateValidation.Unknown;
+                    default:
+                        return IServiceCertificateValidation.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IServiceCertificateValidation.Unknown;
+            }
         };
         /**
            @property {Adaptive.IServiceCertificateValidation} [None='None']

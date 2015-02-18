@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,30 +151,11 @@ module Adaptive {
           static toObject(object : any) : KeyPair {
                var result : KeyPair = new KeyPair(null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.keyName = object.keyName;
-                    result.keyValue = object.keyValue;
+               // Assign values to bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyValue!=null) result.keyValue = object.keyValue;
 
-               }
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.KeyPair[].
-             @return {Adaptive.KeyPair[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : KeyPair[] {
-               var resultArray : Array<KeyPair> = new Array<KeyPair>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(KeyPair.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

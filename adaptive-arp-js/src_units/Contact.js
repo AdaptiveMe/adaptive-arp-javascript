@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -61,29 +61,13 @@ var Adaptive;
         __extends(Contact, _super);
         /**
            @method constructor
-           Constructor with all the fields
+           Constructor used by implementation to set the Contact.
 
-           @param {string} contactId        Identifier of the contact
-           @param {Adaptive.ContactPersonalInfo} personalInfo     Personal Information
-           @param {Adaptive.ContactProfessionalInfo} professionalInfo Professional Information
-           @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
-           @param {Adaptive.ContactPhone[]} contactPhones    Phones of the contact
-           @param {Adaptive.ContactEmail[]} contactEmails    Emails of the contact
-           @param {Adaptive.ContactWebsite[]} contactWebsites  Websites of the contact
-           @param {Adaptive.ContactSocial[]} contactSocials   Social Networks of the contact
-           @param {Adaptive.ContactTag[]} contactTags      Tags of the contact
+           @param {string} contactId of the Contact
            @since v2.0
         */
-        function Contact(contactId, personalInfo, professionalInfo, contactAddresses, contactPhones, contactEmails, contactWebsites, contactSocials, contactTags) {
+        function Contact(contactId) {
             _super.call(this, contactId);
-            this.personalInfo = personalInfo;
-            this.professionalInfo = professionalInfo;
-            this.contactAddresses = contactAddresses;
-            this.contactPhones = contactPhones;
-            this.contactEmails = contactEmails;
-            this.contactWebsites = contactWebsites;
-            this.contactSocials = contactSocials;
-            this.contactTags = contactTags;
         }
         Object.defineProperty(Contact.prototype, "contactAddressesProperty", {
             /**
@@ -365,37 +349,96 @@ var Adaptive;
            @return {Adaptive.Contact} Wrapped object instance.
         */
         Contact.toObject = function (object) {
-            var result = new Contact(null, null, null, null, null, null, null, null, null);
-            if (object != null) {
-                // Assign values to parent bean fields.
+            var result = new Contact(null);
+            // Assign values to parent bean fields.
+            if (object != null && object.contactId != null)
                 result.contactId = object.contactId;
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.personalInfo != null) {
                 result.personalInfo = Adaptive.ContactPersonalInfo.toObject(object.personalInfo);
-                result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(object.professionalInfo);
-                result.contactAddresses = Adaptive.ContactAddress.toObjectArray(object.contactAddresses);
-                result.contactPhones = Adaptive.ContactPhone.toObjectArray(object.contactPhones);
-                result.contactEmails = Adaptive.ContactEmail.toObjectArray(object.contactEmails);
-                result.contactWebsites = Adaptive.ContactWebsite.toObjectArray(object.contactWebsites);
-                result.contactSocials = Adaptive.ContactSocial.toObjectArray(object.contactSocials);
-                result.contactTags = Adaptive.ContactTag.toObjectArray(object.contactTags);
             }
-            return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Contact[].
-           @return {Adaptive.Contact[]} Wrapped object array instance.
-        */
-        Contact.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Contact.toObject(object[i]));
+            else {
+                result.personalInfo = Adaptive.ContactPersonalInfo.toObject(null);
+            }
+            if (object != null && object.professionalInfo != null) {
+                result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(object.professionalInfo);
+            }
+            else {
+                result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(null);
+            }
+            if (object != null && object.contactAddresses != null) {
+                result.contactAddresses = new Array();
+                for (var i = 0; i < object.contactAddresses.length; i++) {
+                    var __value__ = object.contactAddresses[i];
+                    if (__value__ != null) {
+                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(__value__));
+                    }
+                    else {
+                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(null));
+                    }
                 }
             }
-            return resultArray;
+            if (object != null && object.contactPhones != null) {
+                result.contactPhones = new Array();
+                for (var i = 0; i < object.contactPhones.length; i++) {
+                    var __value__ = object.contactPhones[i];
+                    if (__value__ != null) {
+                        result.contactPhones.push(Adaptive.ContactPhone.toObject(__value__));
+                    }
+                    else {
+                        result.contactPhones.push(Adaptive.ContactPhone.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.contactEmails != null) {
+                result.contactEmails = new Array();
+                for (var i = 0; i < object.contactEmails.length; i++) {
+                    var __value__ = object.contactEmails[i];
+                    if (__value__ != null) {
+                        result.contactEmails.push(Adaptive.ContactEmail.toObject(__value__));
+                    }
+                    else {
+                        result.contactEmails.push(Adaptive.ContactEmail.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.contactWebsites != null) {
+                result.contactWebsites = new Array();
+                for (var i = 0; i < object.contactWebsites.length; i++) {
+                    var __value__ = object.contactWebsites[i];
+                    if (__value__ != null) {
+                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(__value__));
+                    }
+                    else {
+                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.contactSocials != null) {
+                result.contactSocials = new Array();
+                for (var i = 0; i < object.contactSocials.length; i++) {
+                    var __value__ = object.contactSocials[i];
+                    if (__value__ != null) {
+                        result.contactSocials.push(Adaptive.ContactSocial.toObject(__value__));
+                    }
+                    else {
+                        result.contactSocials.push(Adaptive.ContactSocial.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.contactTags != null) {
+                result.contactTags = new Array();
+                for (var i = 0; i < object.contactTags.length; i++) {
+                    var __value__ = object.contactTags[i];
+                    if (__value__ != null) {
+                        result.contactTags.push(Adaptive.ContactTag.toObject(__value__));
+                    }
+                    else {
+                        result.contactTags.push(Adaptive.ContactTag.toObject(null));
+                    }
+                }
+            }
+            return result;
         };
         return Contact;
     })(Adaptive.ContactUid);

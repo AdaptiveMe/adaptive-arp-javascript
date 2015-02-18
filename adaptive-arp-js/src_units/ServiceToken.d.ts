@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -173,13 +173,5 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ServiceToken} Wrapped object instance.
         */
         static toObject(object: any): ServiceToken;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
-           @return {Adaptive.ServiceToken[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): ServiceToken[];
     }
 }

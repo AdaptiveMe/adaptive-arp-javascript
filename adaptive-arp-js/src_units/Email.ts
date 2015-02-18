@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -363,35 +363,56 @@ module Adaptive {
           static toObject(object : any) : Email {
                var result : Email = new Email(null, null, null, null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.toRecipients = EmailAddress.toObjectArray(object.toRecipients);
-                    result.ccRecipients = EmailAddress.toObjectArray(object.ccRecipients);
-                    result.bccRecipients = EmailAddress.toObjectArray(object.bccRecipients);
-                    result.emailAttachmentData = EmailAttachmentData.toObjectArray(object.emailAttachmentData);
-                    result.messageBody = object.messageBody;
-                    result.messageBodyMimeType = object.messageBodyMimeType;
-                    result.subject = object.subject;
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Email[].
-             @return {Adaptive.Email[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : Email[] {
-               var resultArray : Array<Email> = new Array<Email>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Email.toObject(object[i]));
+               // Assign values to bean fields.
+               if (object != null && object.toRecipients != null) {
+                    result.toRecipients = new Array<EmailAddress>();
+                    for(var i = 0; i < object.toRecipients.length; i++) {
+                         var __value__ = object.toRecipients[i];
+                         if (__value__ != null) {
+                              result.toRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.toRecipients.push(EmailAddress.toObject(null));
+                         }
                     }
                }
-               return resultArray;
+               if (object != null && object.ccRecipients != null) {
+                    result.ccRecipients = new Array<EmailAddress>();
+                    for(var i = 0; i < object.ccRecipients.length; i++) {
+                         var __value__ = object.ccRecipients[i];
+                         if (__value__ != null) {
+                              result.ccRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.ccRecipients.push(EmailAddress.toObject(null));
+                         }
+                    }
+               }
+               if (object != null && object.bccRecipients != null) {
+                    result.bccRecipients = new Array<EmailAddress>();
+                    for(var i = 0; i < object.bccRecipients.length; i++) {
+                         var __value__ = object.bccRecipients[i];
+                         if (__value__ != null) {
+                              result.bccRecipients.push(EmailAddress.toObject(__value__));
+                         } else {
+                              result.bccRecipients.push(EmailAddress.toObject(null));
+                         }
+                    }
+               }
+               if (object != null && object.emailAttachmentData != null) {
+                    result.emailAttachmentData = new Array<EmailAttachmentData>();
+                    for(var i = 0; i < object.emailAttachmentData.length; i++) {
+                         var __value__ = object.emailAttachmentData[i];
+                         if (__value__ != null) {
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                         } else {
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
+                         }
+                    }
+               }
+               if (object!=null && object.messageBody!=null) result.messageBody = object.messageBody;
+               if (object!=null && object.messageBodyMimeType!=null) result.messageBodyMimeType = object.messageBodyMimeType;
+               if (object!=null && object.subject!=null) result.subject = object.subject;
+
+               return result;
           }
 
      }

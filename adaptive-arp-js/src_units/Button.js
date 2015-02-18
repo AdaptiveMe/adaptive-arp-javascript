@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -106,27 +106,14 @@ var Adaptive;
         */
         Button.toObject = function (object) {
             var result = new Button(null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.type != null) {
                 result.type = Adaptive.ICapabilitiesButton.toObject(object.type);
             }
-            return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Button[].
-           @return {Adaptive.Button[]} Wrapped object array instance.
-        */
-        Button.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Button.toObject(object[i]));
-                }
+            else {
+                result.type = Adaptive.ICapabilitiesButton.toObject(null);
             }
-            return resultArray;
+            return result;
         };
         return Button;
     })(Adaptive.APIBean);

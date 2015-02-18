@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,16 +51,24 @@ var Adaptive;
            @return {Adaptive.IDisplayOrientationListenerWarning}
         */
         IDisplayOrientationListenerWarning.toObject = function (object) {
-            var retValue = IDisplayOrientationListenerWarning.Unknown;
-            if (object != null && object.value != null && IDisplayOrientationListenerWarning.hasOwnProperty(object.value)) {
-                retValue = IDisplayOrientationListenerWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Application_Vetoed":
+                        return IDisplayOrientationListenerWarning.Application_Vetoed;
+                    case "Unknown":
+                        return IDisplayOrientationListenerWarning.Unknown;
+                    default:
+                        return IDisplayOrientationListenerWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IDisplayOrientationListenerWarning.Unknown;
+            }
         };
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
         */
-        IDisplayOrientationListenerWarning.ApplicationVetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */

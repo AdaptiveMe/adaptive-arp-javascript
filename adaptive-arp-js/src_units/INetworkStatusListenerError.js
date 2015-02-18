@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.INetworkStatusListenerError}
         */
         INetworkStatusListenerError.toObject = function (object) {
-            var retValue = INetworkStatusListenerError.Unknown;
-            if (object != null && object.value != null && INetworkStatusListenerError.hasOwnProperty(object.value)) {
-                retValue = INetworkStatusListenerError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return INetworkStatusListenerError.NoPermission;
+                    case "Unreachable":
+                        return INetworkStatusListenerError.Unreachable;
+                    case "Unknown":
+                        return INetworkStatusListenerError.Unknown;
+                    default:
+                        return INetworkStatusListenerError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return INetworkStatusListenerError.Unknown;
+            }
         };
         /**
            @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']

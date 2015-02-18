@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -86,11 +86,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -123,7 +123,7 @@ var Adaptive;
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -133,11 +133,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -170,7 +170,7 @@ var Adaptive;
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -180,11 +180,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {

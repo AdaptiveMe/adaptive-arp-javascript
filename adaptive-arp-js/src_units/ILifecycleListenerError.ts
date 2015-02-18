@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,11 +67,22 @@ module Adaptive {
              @return {Adaptive.ILifecycleListenerError}
           */
           static toObject(object : any) : ILifecycleListenerError {
-               var retValue : ILifecycleListenerError = ILifecycleListenerError.Unknown;
-               if (object != null && object.value != null && ILifecycleListenerError.hasOwnProperty(object.value)) {
-                    retValue = ILifecycleListenerError[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Runtime":
+                              return ILifecycleListenerError.Runtime;
+                         case "Implementation":
+                              return ILifecycleListenerError.Implementation;
+                         case "Killed":
+                              return ILifecycleListenerError.Killed;
+                         case "Unknown":
+                              return ILifecycleListenerError.Unknown;
+                         default:
+                              return ILifecycleListenerError.Unknown;
+                    }
+               } else {
+                    return ILifecycleListenerError.Unknown;
                }
-               return retValue;
           }
 
      }

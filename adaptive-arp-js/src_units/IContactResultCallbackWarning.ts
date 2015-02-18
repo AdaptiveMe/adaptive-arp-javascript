@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,9 +48,9 @@ module Adaptive {
           */
           static LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
           /**
-             @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
+             @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
           */
-          static NoMatches = new IContactResultCallbackWarning("No_Matches");
+          static No_Matches = new IContactResultCallbackWarning("No_Matches");
           /**
              @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
           */
@@ -63,11 +63,20 @@ module Adaptive {
              @return {Adaptive.IContactResultCallbackWarning}
           */
           static toObject(object : any) : IContactResultCallbackWarning {
-               var retValue : IContactResultCallbackWarning = IContactResultCallbackWarning.Unknown;
-               if (object != null && object.value != null && IContactResultCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = IContactResultCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "LimitExceeded":
+                              return IContactResultCallbackWarning.LimitExceeded;
+                         case "No_Matches":
+                              return IContactResultCallbackWarning.No_Matches;
+                         case "Unknown":
+                              return IContactResultCallbackWarning.Unknown;
+                         default:
+                              return IContactResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IContactResultCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

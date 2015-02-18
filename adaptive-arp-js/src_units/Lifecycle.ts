@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -132,29 +132,14 @@ Possible lifecycle States:
           static toObject(object : any) : Lifecycle {
                var result : Lifecycle = new Lifecycle(null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
+               // Assign values to bean fields.
+               if (object!=null && object.state!=null) {
                     result.state = LifecycleState.toObject(object.state);
-
+               } else {
+                    result.state = LifecycleState.toObject(null);
                }
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
-             @return {Adaptive.Lifecycle[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : Lifecycle[] {
-               var resultArray : Array<Lifecycle> = new Array<Lifecycle>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Lifecycle.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

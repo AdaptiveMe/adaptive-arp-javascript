@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,11 +71,24 @@ module Adaptive {
              @return {Adaptive.IServiceType}
           */
           static toObject(object : any) : IServiceType {
-               var retValue : IServiceType = IServiceType.Unknown;
-               if (object != null && object.value != null && IServiceType.hasOwnProperty(object.value)) {
-                    retValue = IServiceType[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "OctetBinary":
+                              return IServiceType.OctetBinary;
+                         case "RestJson":
+                              return IServiceType.RestJson;
+                         case "RestXml":
+                              return IServiceType.RestXml;
+                         case "SoapXml":
+                              return IServiceType.SoapXml;
+                         case "Unknown":
+                              return IServiceType.Unknown;
+                         default:
+                              return IServiceType.Unknown;
+                    }
+               } else {
+                    return IServiceType.Unknown;
                }
-               return retValue;
           }
 
      }

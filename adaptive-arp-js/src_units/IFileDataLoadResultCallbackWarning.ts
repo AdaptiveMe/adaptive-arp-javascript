@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,11 +59,18 @@ module Adaptive {
              @return {Adaptive.IFileDataLoadResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
-               var retValue : IFileDataLoadResultCallbackWarning = IFileDataLoadResultCallbackWarning.Unknown;
-               if (object != null && object.value != null && IFileDataLoadResultCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = IFileDataLoadResultCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "ExceedMaximumSize":
+                              return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                         case "Unknown":
+                              return IFileDataLoadResultCallbackWarning.Unknown;
+                         default:
+                              return IFileDataLoadResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IFileDataLoadResultCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

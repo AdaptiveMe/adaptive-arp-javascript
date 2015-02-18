@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,11 +63,20 @@ module Adaptive {
              @return {Adaptive.IMessagingCallbackWarning}
           */
           static toObject(object : any) : IMessagingCallbackWarning {
-               var retValue : IMessagingCallbackWarning = IMessagingCallbackWarning.Unknown;
-               if (object != null && object.value != null && IMessagingCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = IMessagingCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "UnableToSentAll":
+                              return IMessagingCallbackWarning.UnableToSentAll;
+                         case "UnableToFetchAttachment":
+                              return IMessagingCallbackWarning.UnableToFetchAttachment;
+                         case "Unknown":
+                              return IMessagingCallbackWarning.Unknown;
+                         default:
+                              return IMessagingCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IMessagingCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

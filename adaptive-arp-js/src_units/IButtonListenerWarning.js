@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,16 +51,24 @@ var Adaptive;
            @return {Adaptive.IButtonListenerWarning}
         */
         IButtonListenerWarning.toObject = function (object) {
-            var retValue = IButtonListenerWarning.Unknown;
-            if (object != null && object.value != null && IButtonListenerWarning.hasOwnProperty(object.value)) {
-                retValue = IButtonListenerWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Not_Implemented":
+                        return IButtonListenerWarning.Not_Implemented;
+                    case "Unknown":
+                        return IButtonListenerWarning.Unknown;
+                    default:
+                        return IButtonListenerWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IButtonListenerWarning.Unknown;
+            }
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
+           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
         */
-        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */

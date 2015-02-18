@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,27 @@ var Adaptive;
            @return {Adaptive.IServiceResultCallbackError}
         */
         IServiceResultCallbackError.toObject = function (object) {
-            var retValue = IServiceResultCallbackError.Unknown;
-            if (object != null && object.value != null && IServiceResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = IServiceResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "TimeOut":
+                        return IServiceResultCallbackError.TimeOut;
+                    case "NoResponse":
+                        return IServiceResultCallbackError.NoResponse;
+                    case "Unreachable":
+                        return IServiceResultCallbackError.Unreachable;
+                    case "MalformedUrl":
+                        return IServiceResultCallbackError.MalformedUrl;
+                    case "NotRegisteredService":
+                        return IServiceResultCallbackError.NotRegisteredService;
+                    case "Unknown":
+                        return IServiceResultCallbackError.Unknown;
+                    default:
+                        return IServiceResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IServiceResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']

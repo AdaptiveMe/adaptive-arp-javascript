@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -464,37 +464,72 @@ var Adaptive;
         */
         ServiceRequest.toObject = function (object) {
             var result = new ServiceRequest(null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.userAgent != null)
                 result.userAgent = object.userAgent;
+            if (object != null && object.content != null)
                 result.content = object.content;
+            if (object != null && object.contentType != null)
                 result.contentType = object.contentType;
+            if (object != null && object.contentEncoding != null) {
                 result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
-                result.contentLength = object.contentLength;
-                result.serviceHeaders = Adaptive.ServiceHeader.toObjectArray(object.serviceHeaders);
-                result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
-                result.queryParameters = Adaptive.ServiceRequestParameter.toObjectArray(object.queryParameters);
-                result.bodyParameters = Adaptive.ServiceRequestParameter.toObjectArray(object.bodyParameters);
-                result.serviceToken = Adaptive.ServiceToken.toObject(object.serviceToken);
-                result.refererHost = object.refererHost;
             }
-            return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
-           @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
-        */
-        ServiceRequest.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(ServiceRequest.toObject(object[i]));
+            else {
+                result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(null);
+            }
+            if (object != null && object.contentLength != null)
+                result.contentLength = object.contentLength;
+            if (object != null && object.serviceHeaders != null) {
+                result.serviceHeaders = new Array();
+                for (var i = 0; i < object.serviceHeaders.length; i++) {
+                    var __value__ = object.serviceHeaders[i];
+                    if (__value__ != null) {
+                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(__value__));
+                    }
+                    else {
+                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(null));
+                    }
                 }
             }
-            return resultArray;
+            if (object != null && object.serviceSession != null) {
+                result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
+            }
+            else {
+                result.serviceSession = Adaptive.ServiceSession.toObject(null);
+            }
+            if (object != null && object.queryParameters != null) {
+                result.queryParameters = new Array();
+                for (var i = 0; i < object.queryParameters.length; i++) {
+                    var __value__ = object.queryParameters[i];
+                    if (__value__ != null) {
+                        result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(__value__));
+                    }
+                    else {
+                        result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.bodyParameters != null) {
+                result.bodyParameters = new Array();
+                for (var i = 0; i < object.bodyParameters.length; i++) {
+                    var __value__ = object.bodyParameters[i];
+                    if (__value__ != null) {
+                        result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(__value__));
+                    }
+                    else {
+                        result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                    }
+                }
+            }
+            if (object != null && object.serviceToken != null) {
+                result.serviceToken = Adaptive.ServiceToken.toObject(object.serviceToken);
+            }
+            else {
+                result.serviceToken = Adaptive.ServiceToken.toObject(null);
+            }
+            if (object != null && object.refererHost != null)
+                result.refererHost = object.refererHost;
+            return result;
         };
         return ServiceRequest;
     })(Adaptive.APIBean);

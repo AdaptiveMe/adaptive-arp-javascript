@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -112,13 +112,5 @@ declare module Adaptive {
            @return {Adaptive.SecureKeyPair} Wrapped object instance.
         */
         static toObject(object: any): SecureKeyPair;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair[].
-           @return {Adaptive.SecureKeyPair[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): SecureKeyPair[];
     }
 }

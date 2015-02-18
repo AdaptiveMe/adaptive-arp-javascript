@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -375,13 +375,5 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequest} Wrapped object instance.
         */
         static toObject(object: any): ServiceRequest;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
-           @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): ServiceRequest[];
     }
 }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -279,33 +279,34 @@ module Adaptive {
           static toObject(object : any) : DatabaseTable {
                var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.name = object.name;
-                    result.columnCount = object.columnCount;
-                    result.rowCount = object.rowCount;
-                    result.databaseColumns = DatabaseColumn.toObjectArray(object.databaseColumns);
-                    result.databaseRows = DatabaseRow.toObjectArray(object.databaseRows);
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
-             @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : DatabaseTable[] {
-               var resultArray : Array<DatabaseTable> = new Array<DatabaseTable>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(DatabaseTable.toObject(object[i]));
+               // Assign values to bean fields.
+               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.columnCount!=null) result.columnCount = object.columnCount;
+               if (object!=null && object.rowCount!=null) result.rowCount = object.rowCount;
+               if (object != null && object.databaseColumns != null) {
+                    result.databaseColumns = new Array<DatabaseColumn>();
+                    for(var i = 0; i < object.databaseColumns.length; i++) {
+                         var __value__ = object.databaseColumns[i];
+                         if (__value__ != null) {
+                              result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                         } else {
+                              result.databaseColumns.push(DatabaseColumn.toObject(null));
+                         }
                     }
                }
-               return resultArray;
+               if (object != null && object.databaseRows != null) {
+                    result.databaseRows = new Array<DatabaseRow>();
+                    for(var i = 0; i < object.databaseRows.length; i++) {
+                         var __value__ = object.databaseRows[i];
+                         if (__value__ != null) {
+                              result.databaseRows.push(DatabaseRow.toObject(__value__));
+                         } else {
+                              result.databaseRows.push(DatabaseRow.toObject(null));
+                         }
+                    }
+               }
+
+               return result;
           }
 
      }

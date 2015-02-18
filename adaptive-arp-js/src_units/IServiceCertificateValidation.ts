@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,11 +71,24 @@ module Adaptive {
              @return {Adaptive.IServiceCertificateValidation}
           */
           static toObject(object : any) : IServiceCertificateValidation {
-               var retValue : IServiceCertificateValidation = IServiceCertificateValidation.Unknown;
-               if (object != null && object.value != null && IServiceCertificateValidation.hasOwnProperty(object.value)) {
-                    retValue = IServiceCertificateValidation[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "None":
+                              return IServiceCertificateValidation.None;
+                         case "Normal":
+                              return IServiceCertificateValidation.Normal;
+                         case "Extended":
+                              return IServiceCertificateValidation.Extended;
+                         case "Extreme":
+                              return IServiceCertificateValidation.Extreme;
+                         case "Unknown":
+                              return IServiceCertificateValidation.Unknown;
+                         default:
+                              return IServiceCertificateValidation.Unknown;
+                    }
+               } else {
+                    return IServiceCertificateValidation.Unknown;
                }
-               return retValue;
           }
 
      }

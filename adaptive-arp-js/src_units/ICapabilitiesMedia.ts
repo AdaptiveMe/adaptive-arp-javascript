@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,25 +44,25 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
           */
-          static AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
+          static Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
+             @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
           */
-          static AudioRecording = new ICapabilitiesMedia("Audio_Recording");
+          static Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
           */
           static Camera = new ICapabilitiesMedia("Camera");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
+             @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
           */
-          static VideoPlayback = new ICapabilitiesMedia("Video_Playback");
+          static Video_Playback = new ICapabilitiesMedia("Video_Playback");
           /**
-             @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
+             @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
           */
-          static VideoRecording = new ICapabilitiesMedia("Video_Recording");
+          static Video_Recording = new ICapabilitiesMedia("Video_Recording");
           /**
              @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
           */
@@ -75,11 +75,26 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesMedia}
           */
           static toObject(object : any) : ICapabilitiesMedia {
-               var retValue : ICapabilitiesMedia = ICapabilitiesMedia.Unknown;
-               if (object != null && object.value != null && ICapabilitiesMedia.hasOwnProperty(object.value)) {
-                    retValue = ICapabilitiesMedia[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Audio_Playback":
+                              return ICapabilitiesMedia.Audio_Playback;
+                         case "Audio_Recording":
+                              return ICapabilitiesMedia.Audio_Recording;
+                         case "Camera":
+                              return ICapabilitiesMedia.Camera;
+                         case "Video_Playback":
+                              return ICapabilitiesMedia.Video_Playback;
+                         case "Video_Recording":
+                              return ICapabilitiesMedia.Video_Recording;
+                         case "Unknown":
+                              return ICapabilitiesMedia.Unknown;
+                         default:
+                              return ICapabilitiesMedia.Unknown;
+                    }
+               } else {
+                    return ICapabilitiesMedia.Unknown;
                }
-               return retValue;
           }
 
      }

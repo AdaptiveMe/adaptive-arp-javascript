@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,20 +51,30 @@ var Adaptive;
            @return {Adaptive.IContactResultCallbackError}
         */
         IContactResultCallbackError.toObject = function (object) {
-            var retValue = IContactResultCallbackError.Unknown;
-            if (object != null && object.value != null && IContactResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = IContactResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoPermission":
+                        return IContactResultCallbackError.NoPermission;
+                    case "Wrong_Params":
+                        return IContactResultCallbackError.Wrong_Params;
+                    case "Unknown":
+                        return IContactResultCallbackError.Unknown;
+                    default:
+                        return IContactResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IContactResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']
         */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        IContactResultCallbackError.WrongParams = new IContactResultCallbackError("Wrong_Params");
+        IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */

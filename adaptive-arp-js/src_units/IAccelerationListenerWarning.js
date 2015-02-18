@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.IAccelerationListenerWarning}
         */
         IAccelerationListenerWarning.toObject = function (object) {
-            var retValue = IAccelerationListenerWarning.Unknown;
-            if (object != null && object.value != null && IAccelerationListenerWarning.hasOwnProperty(object.value)) {
-                retValue = IAccelerationListenerWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NeedsCalibration":
+                        return IAccelerationListenerWarning.NeedsCalibration;
+                    case "Stale":
+                        return IAccelerationListenerWarning.Stale;
+                    case "Unknown":
+                        return IAccelerationListenerWarning.Unknown;
+                    default:
+                        return IAccelerationListenerWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IAccelerationListenerWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.IAccelerationListenerWarning} [NeedsCalibration='NeedsCalibration']

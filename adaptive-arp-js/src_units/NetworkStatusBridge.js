@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("INetworkStatus", "addNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -86,10 +86,10 @@ var Adaptive;
             Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -120,7 +120,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("INetworkStatus", "removeNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -128,10 +128,10 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
                     }
@@ -157,7 +157,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("INetworkStatus", "removeNetworkStatusListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -165,12 +165,15 @@ var Adaptive;
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         // Remove all listeners references from local dictionary.
-                        Adaptive.registeredNetworkStatusListener.removeAll();
+                        var keys = Adaptive.registeredNetworkStatusListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredNetworkStatusListener.remove(key);
+                        }
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' [" + apiResponse.getStatusMessage() + "].");

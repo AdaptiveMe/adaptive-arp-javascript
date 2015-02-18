@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -84,7 +84,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             var arParams = [];
             arParams.push(JSON.stringify(serviceToken));
             var apiRequest = new Adaptive.APIRequest("IService", "getServiceRequest", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -94,11 +94,11 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = Adaptive.ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -134,7 +134,7 @@ configured in the platform's XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new Adaptive.APIRequest("IService", "getServiceToken", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -144,11 +144,11 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = Adaptive.ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -180,7 +180,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(uri));
             var apiRequest = new Adaptive.APIRequest("IService", "getServiceTokenByUri", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -190,11 +190,11 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = Adaptive.ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -221,7 +221,7 @@ configured in the platform's XML service definition file.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IService", "getServicesRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -231,15 +231,15 @@ configured in the platform's XML service definition file.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var i = 0; i < responseArray.length; i++) {
-                            response.push(Adaptive.ServiceToken.toObject(responseArray[i]));
+                        for (var __key__ in responseArray) {
+                            response.push(Adaptive.ServiceToken.toObject(responseArray[__key__]));
                         }
                     }
                     else {
@@ -268,7 +268,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(serviceRequest));
             var apiRequest = new Adaptive.APIRequest("IService", "invokeService", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -278,10 +278,10 @@ configured in the platform's XML service definition file.
             Adaptive.registeredServiceResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -324,7 +324,7 @@ XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new Adaptive.APIRequest("IService", "isServiceRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -334,11 +334,11 @@ XML service definition file.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {

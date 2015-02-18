@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,9 +56,9 @@ module Adaptive {
           */
           static Redirected = new IServiceResultCallbackWarning("Redirected");
           /**
-             @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
+             @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
           */
-          static WrongParams = new IServiceResultCallbackWarning("Wrong_Params");
+          static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
           /**
              @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
           */
@@ -99,11 +99,38 @@ module Adaptive {
              @return {Adaptive.IServiceResultCallbackWarning}
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
-               var retValue : IServiceResultCallbackWarning = IServiceResultCallbackWarning.Unknown;
-               if (object != null && object.value != null && IServiceResultCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = IServiceResultCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "CertificateUntrusted":
+                              return IServiceResultCallbackWarning.CertificateUntrusted;
+                         case "NotSecure":
+                              return IServiceResultCallbackWarning.NotSecure;
+                         case "Redirected":
+                              return IServiceResultCallbackWarning.Redirected;
+                         case "Wrong_Params":
+                              return IServiceResultCallbackWarning.Wrong_Params;
+                         case "Forbidden":
+                              return IServiceResultCallbackWarning.Forbidden;
+                         case "NotFound":
+                              return IServiceResultCallbackWarning.NotFound;
+                         case "MethodNotAllowed":
+                              return IServiceResultCallbackWarning.MethodNotAllowed;
+                         case "NotAllowed":
+                              return IServiceResultCallbackWarning.NotAllowed;
+                         case "NotAuthenticated":
+                              return IServiceResultCallbackWarning.NotAuthenticated;
+                         case "PaymentRequired":
+                              return IServiceResultCallbackWarning.PaymentRequired;
+                         case "ServerError":
+                              return IServiceResultCallbackWarning.ServerError;
+                         case "Unknown":
+                              return IServiceResultCallbackWarning.Unknown;
+                         default:
+                              return IServiceResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IServiceResultCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

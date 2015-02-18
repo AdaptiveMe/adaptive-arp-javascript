@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,27 @@ var Adaptive;
            @return {Adaptive.ContactSocialNetwork}
         */
         ContactSocialNetwork.toObject = function (object) {
-            var retValue = ContactSocialNetwork.Unknown;
-            if (object != null && object.value != null && ContactSocialNetwork.hasOwnProperty(object.value)) {
-                retValue = ContactSocialNetwork[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Twitter":
+                        return ContactSocialNetwork.Twitter;
+                    case "Facebook":
+                        return ContactSocialNetwork.Facebook;
+                    case "GooglePlus":
+                        return ContactSocialNetwork.GooglePlus;
+                    case "LinkedIn":
+                        return ContactSocialNetwork.LinkedIn;
+                    case "Flickr":
+                        return ContactSocialNetwork.Flickr;
+                    case "Unknown":
+                        return ContactSocialNetwork.Unknown;
+                    default:
+                        return ContactSocialNetwork.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ContactSocialNetwork.Unknown;
+            }
         };
         /**
            @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']

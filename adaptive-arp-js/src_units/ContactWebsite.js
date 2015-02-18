@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -105,27 +105,10 @@ var Adaptive;
         */
         ContactWebsite.toObject = function (object) {
             var result = new ContactWebsite(null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.url != null)
                 result.url = object.url;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite[].
-           @return {Adaptive.ContactWebsite[]} Wrapped object array instance.
-        */
-        ContactWebsite.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(ContactWebsite.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return ContactWebsite;
     })(Adaptive.APIBean);

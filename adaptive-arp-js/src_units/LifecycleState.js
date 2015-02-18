@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,33 @@ var Adaptive;
            @return {Adaptive.LifecycleState}
         */
         LifecycleState.toObject = function (object) {
-            var retValue = LifecycleState.Unknown;
-            if (object != null && object.value != null && LifecycleState.hasOwnProperty(object.value)) {
-                retValue = LifecycleState[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Starting":
+                        return LifecycleState.Starting;
+                    case "Started":
+                        return LifecycleState.Started;
+                    case "Running":
+                        return LifecycleState.Running;
+                    case "Pausing":
+                        return LifecycleState.Pausing;
+                    case "PausedIdle":
+                        return LifecycleState.PausedIdle;
+                    case "PausedRun":
+                        return LifecycleState.PausedRun;
+                    case "Resuming":
+                        return LifecycleState.Resuming;
+                    case "Stopping":
+                        return LifecycleState.Stopping;
+                    case "Unknown":
+                        return LifecycleState.Unknown;
+                    default:
+                        return LifecycleState.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return LifecycleState.Unknown;
+            }
         };
         /**
            @property {Adaptive.LifecycleState} [Starting='Starting']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -236,37 +236,24 @@ listener.
         */
         APIRequest.toObject = function (object) {
             var result = new APIRequest(null, null, null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.bridgeType != null)
                 result.bridgeType = object.bridgeType;
+            if (object != null && object.methodName != null)
                 result.methodName = object.methodName;
-                if (object.parameters != null) {
-                    result.parameters = new Array();
-                    for (var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
-                        var vparameters = object.parameters[iparameters];
-                        result.parameters.push(vparameters);
-                    }
+            if (object != null && object.parameters != null) {
+                result.parameters = new Array();
+                for (var i = 0; i < object.parameters.length; i++) {
+                    var __value__ = object.parameters[i];
+                    if (__value__ != null)
+                        result.parameters.push(__value__);
                 }
+            }
+            if (object != null && object.asyncId != null)
                 result.asyncId = object.asyncId;
+            if (object != null && object.apiVersion != null)
                 result.apiVersion = object.apiVersion;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
-           @return {Adaptive.APIRequest[]} Wrapped object array instance.
-        */
-        APIRequest.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(APIRequest.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return APIRequest;
     })();

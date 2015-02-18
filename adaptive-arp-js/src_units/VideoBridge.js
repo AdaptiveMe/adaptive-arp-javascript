@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,14 +75,15 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
+            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'VideoBridge.playStream' request.");

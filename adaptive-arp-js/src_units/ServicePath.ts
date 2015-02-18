@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -192,37 +192,26 @@ module Adaptive {
           static toObject(object : any) : ServicePath {
                var result : ServicePath = new ServicePath(null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.path = object.path;
-                    if (object.methods != null) {
-                         result.methods = new Array<IServiceMethod>();
-                         for(var imethods = 0; imethods < object.methods.length; imethods++) {
-                              var vmethods = object.methods[imethods];
-                              result.methods.push(IServiceMethod.toObject(vmethods));
+               // Assign values to bean fields.
+               if (object!=null && object.path!=null) result.path = object.path;
+               if (object != null && object.methods != null) {
+                    result.methods = new Array<IServiceMethod>();
+                    for(var i = 0; i < object.methods.length; i++) {
+                         var __value__ = object.methods[i];
+                         if (__value__ != null) {
+                              result.methods.push(IServiceMethod.toObject(__value__));
+                         } else {
+                              result.methods.push(IServiceMethod.toObject(null));
                          }
                     }
+               }
+               if (object!=null && object.type!=null) {
                     result.type = IServiceType.toObject(object.type);
-
+               } else {
+                    result.type = IServiceType.toObject(null);
                }
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
-             @return {Adaptive.ServicePath[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServicePath[] {
-               var resultArray : Array<ServicePath> = new Array<ServicePath>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServicePath.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

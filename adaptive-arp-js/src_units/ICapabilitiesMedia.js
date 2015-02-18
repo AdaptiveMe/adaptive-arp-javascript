@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,32 +51,48 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesMedia}
         */
         ICapabilitiesMedia.toObject = function (object) {
-            var retValue = ICapabilitiesMedia.Unknown;
-            if (object != null && object.value != null && ICapabilitiesMedia.hasOwnProperty(object.value)) {
-                retValue = ICapabilitiesMedia[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Audio_Playback":
+                        return ICapabilitiesMedia.Audio_Playback;
+                    case "Audio_Recording":
+                        return ICapabilitiesMedia.Audio_Recording;
+                    case "Camera":
+                        return ICapabilitiesMedia.Camera;
+                    case "Video_Playback":
+                        return ICapabilitiesMedia.Video_Playback;
+                    case "Video_Recording":
+                        return ICapabilitiesMedia.Video_Recording;
+                    case "Unknown":
+                        return ICapabilitiesMedia.Unknown;
+                    default:
+                        return ICapabilitiesMedia.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ICapabilitiesMedia.Unknown;
+            }
         };
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
         */
-        ICapabilitiesMedia.AudioPlayback = new ICapabilitiesMedia("Audio_Playback");
+        ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
         */
-        ICapabilitiesMedia.AudioRecording = new ICapabilitiesMedia("Audio_Recording");
+        ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
         */
-        ICapabilitiesMedia.VideoPlayback = new ICapabilitiesMedia("Video_Playback");
+        ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
+           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
         */
-        ICapabilitiesMedia.VideoRecording = new ICapabilitiesMedia("Video_Recording");
+        ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */

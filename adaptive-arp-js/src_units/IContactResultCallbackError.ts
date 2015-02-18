@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,9 +48,9 @@ module Adaptive {
           */
           static NoPermission = new IContactResultCallbackError("NoPermission");
           /**
-             @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
+             @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
           */
-          static WrongParams = new IContactResultCallbackError("Wrong_Params");
+          static Wrong_Params = new IContactResultCallbackError("Wrong_Params");
           /**
              @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
           */
@@ -63,11 +63,20 @@ module Adaptive {
              @return {Adaptive.IContactResultCallbackError}
           */
           static toObject(object : any) : IContactResultCallbackError {
-               var retValue : IContactResultCallbackError = IContactResultCallbackError.Unknown;
-               if (object != null && object.value != null && IContactResultCallbackError.hasOwnProperty(object.value)) {
-                    retValue = IContactResultCallbackError[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NoPermission":
+                              return IContactResultCallbackError.NoPermission;
+                         case "Wrong_Params":
+                              return IContactResultCallbackError.Wrong_Params;
+                         case "Unknown":
+                              return IContactResultCallbackError.Unknown;
+                         default:
+                              return IContactResultCallbackError.Unknown;
+                    }
+               } else {
+                    return IContactResultCallbackError.Unknown;
                }
-               return retValue;
           }
 
      }

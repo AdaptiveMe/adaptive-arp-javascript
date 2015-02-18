@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,11 +71,24 @@ module Adaptive {
              @return {Adaptive.IGeolocationListenerError}
           */
           static toObject(object : any) : IGeolocationListenerError {
-               var retValue : IGeolocationListenerError = IGeolocationListenerError.Unknown;
-               if (object != null && object.value != null && IGeolocationListenerError.hasOwnProperty(object.value)) {
-                    retValue = IGeolocationListenerError[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Disabled":
+                              return IGeolocationListenerError.Disabled;
+                         case "RestrictedAccess":
+                              return IGeolocationListenerError.RestrictedAccess;
+                         case "DeniedAccess":
+                              return IGeolocationListenerError.DeniedAccess;
+                         case "StatusNotDetermined":
+                              return IGeolocationListenerError.StatusNotDetermined;
+                         case "Unknown":
+                              return IGeolocationListenerError.Unknown;
+                         default:
+                              return IGeolocationListenerError.Unknown;
+                    }
+               } else {
+                    return IGeolocationListenerError.Unknown;
                }
-               return retValue;
           }
 
      }

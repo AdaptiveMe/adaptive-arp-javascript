@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,7 +72,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getDefaultLocale",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -82,11 +82,11 @@ module Adaptive {
                // Prepare response.
                var response : Locale = null;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getDefaultLocale' ["+apiResponse.getStatusMessage()+"].");
@@ -111,7 +111,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getLocaleSupportedDescriptors",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -121,15 +121,15 @@ module Adaptive {
                // Prepare response.
                var response : Array<Locale> = null;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                               response = new Array<Locale>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var i = 0;i < responseArray.length; i++) {
-                                   response.push(Locale.toObject(responseArray[i]));
+                              for(var __key__ in responseArray) {
+                                   response.push(Locale.toObject(responseArray[__key__]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' ["+apiResponse.getStatusMessage()+"].");
@@ -158,7 +158,7 @@ module Adaptive {
                arParams.push(JSON.stringify(key));
                arParams.push(JSON.stringify(locale));
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getResourceLiteral",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -168,11 +168,11 @@ module Adaptive {
                // Prepare response.
                var response : string = null;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                               response = apiResponse.getResponse();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getResourceLiteral' ["+apiResponse.getStatusMessage()+"].");
@@ -199,7 +199,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(locale));
                var apiRequest : APIRequest = new APIRequest("IGlobalization","getResourceLiterals",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -209,15 +209,15 @@ module Adaptive {
                // Prepare response.
                var response : Array<KeyPair> = null;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                               response = new Array<KeyPair>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var i = 0;i < responseArray.length; i++) {
-                                   response.push(KeyPair.toObject(responseArray[i]));
+                              for(var __key__ in responseArray) {
+                                   response.push(KeyPair.toObject(responseArray[__key__]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getResourceLiterals' ["+apiResponse.getStatusMessage()+"].");

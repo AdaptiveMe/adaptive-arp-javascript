@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "addDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -87,10 +87,10 @@ var Adaptive;
             Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                     }
                     else {
                         // Remove listener reference from local dictionary due to invalid response.
@@ -122,7 +122,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -132,11 +132,11 @@ of the device. For device orientation, use the IDevice APIs.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
+            if (xhr.status == 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         response = Adaptive.ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -163,7 +163,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "removeDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -171,10 +171,10 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         // Remove listener reference from local dictionary.
                         Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
                     }
@@ -200,7 +200,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "removeDisplayOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.5");
+            apiRequest.setApiVersion("v2.1.6");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -208,12 +208,15 @@ of the device. For device orientation, use the IDevice APIs.
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
+            if (xhr.status == 200) {
+                if (xhr.responseText != null && xhr.responseText != '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                         // Remove all listeners references from local dictionary.
-                        Adaptive.registeredDisplayOrientationListener.removeAll();
+                        var keys = Adaptive.registeredDisplayOrientationListener.keys();
+                        for (var key in keys) {
+                            Adaptive.registeredDisplayOrientationListener.remove(key);
+                        }
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListeners' [" + apiResponse.getStatusMessage() + "].");

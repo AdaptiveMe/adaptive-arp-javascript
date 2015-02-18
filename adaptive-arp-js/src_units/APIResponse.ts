@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -183,31 +183,12 @@ module Adaptive {
           static toObject(object : any) : APIResponse {
                var result : APIResponse = new APIResponse(null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.response = object.response;
-                    result.statusCode = object.statusCode;
-                    result.statusMessage = object.statusMessage;
+               // Assign values to bean fields.
+               if (object!=null && object.response!=null) result.response = object.response;
+               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
+               if (object!=null && object.statusMessage!=null) result.statusMessage = object.statusMessage;
 
-               }
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.APIResponse[].
-             @return {Adaptive.APIResponse[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : APIResponse[] {
-               var resultArray : Array<APIResponse> = new Array<APIResponse>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(APIResponse.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

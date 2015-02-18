@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,23 @@ var Adaptive;
            @return {Adaptive.IFileSystemSecurity}
         */
         IFileSystemSecurity.toObject = function (object) {
-            var retValue = IFileSystemSecurity.Unknown;
-            if (object != null && object.value != null && IFileSystemSecurity.hasOwnProperty(object.value)) {
-                retValue = IFileSystemSecurity[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Default":
+                        return IFileSystemSecurity.Default;
+                    case "Protected":
+                        return IFileSystemSecurity.Protected;
+                    case "Encrypted":
+                        return IFileSystemSecurity.Encrypted;
+                    case "Unknown":
+                        return IFileSystemSecurity.Unknown;
+                    default:
+                        return IFileSystemSecurity.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IFileSystemSecurity.Unknown;
+            }
         };
         /**
            @property {Adaptive.IFileSystemSecurity} [Default='Default']

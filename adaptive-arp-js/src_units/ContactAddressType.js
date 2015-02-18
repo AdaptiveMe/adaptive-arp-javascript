@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,23 @@ var Adaptive;
            @return {Adaptive.ContactAddressType}
         */
         ContactAddressType.toObject = function (object) {
-            var retValue = ContactAddressType.Unknown;
-            if (object != null && object.value != null && ContactAddressType.hasOwnProperty(object.value)) {
-                retValue = ContactAddressType[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "Home":
+                        return ContactAddressType.Home;
+                    case "Work":
+                        return ContactAddressType.Work;
+                    case "Other":
+                        return ContactAddressType.Other;
+                    case "Unknown":
+                        return ContactAddressType.Unknown;
+                    default:
+                        return ContactAddressType.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return ContactAddressType.Unknown;
+            }
         };
         /**
            @property {Adaptive.ContactAddressType} [Home='Home']

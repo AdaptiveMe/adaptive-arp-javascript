@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -69,30 +69,11 @@ module Adaptive {
           static toObject(object : any) : ServiceRequestParameter {
                var result : ServiceRequestParameter = new ServiceRequestParameter(null, null);
 
-               if (object != null ) {
-                    // Assign values to parent bean fields.
-                    result.keyName = object.keyName;
-                    result.keyData = object.keyData;
+               // Assign values to parent bean fields.
+               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
+               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
 
-               }
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
-             @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceRequestParameter[] {
-               var resultArray : Array<ServiceRequestParameter> = new Array<ServiceRequestParameter>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceRequestParameter.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

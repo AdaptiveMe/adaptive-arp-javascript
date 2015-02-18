@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,11 +67,22 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesData}
           */
           static toObject(object : any) : ICapabilitiesData {
-               var retValue : ICapabilitiesData = ICapabilitiesData.Unknown;
-               if (object != null && object.value != null && ICapabilitiesData.hasOwnProperty(object.value)) {
-                    retValue = ICapabilitiesData[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Database":
+                              return ICapabilitiesData.Database;
+                         case "File":
+                              return ICapabilitiesData.File;
+                         case "Cloud":
+                              return ICapabilitiesData.Cloud;
+                         case "Unknown":
+                              return ICapabilitiesData.Unknown;
+                         default:
+                              return ICapabilitiesData.Unknown;
+                    }
+               } else {
+                    return ICapabilitiesData.Unknown;
                }
-               return retValue;
           }
 
      }

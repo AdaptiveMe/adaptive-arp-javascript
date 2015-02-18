@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,25 @@ var Adaptive;
            @return {Adaptive.IServiceType}
         */
         IServiceType.toObject = function (object) {
-            var retValue = IServiceType.Unknown;
-            if (object != null && object.value != null && IServiceType.hasOwnProperty(object.value)) {
-                retValue = IServiceType[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "OctetBinary":
+                        return IServiceType.OctetBinary;
+                    case "RestJson":
+                        return IServiceType.RestJson;
+                    case "RestXml":
+                        return IServiceType.RestXml;
+                    case "SoapXml":
+                        return IServiceType.SoapXml;
+                    case "Unknown":
+                        return IServiceType.Unknown;
+                    default:
+                        return IServiceType.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IServiceType.Unknown;
+            }
         };
         /**
            @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']

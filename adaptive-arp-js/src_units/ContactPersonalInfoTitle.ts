@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,11 +71,24 @@ module Adaptive {
              @return {Adaptive.ContactPersonalInfoTitle}
           */
           static toObject(object : any) : ContactPersonalInfoTitle {
-               var retValue : ContactPersonalInfoTitle = ContactPersonalInfoTitle.Unknown;
-               if (object != null && object.value != null && ContactPersonalInfoTitle.hasOwnProperty(object.value)) {
-                    retValue = ContactPersonalInfoTitle[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Mr":
+                              return ContactPersonalInfoTitle.Mr;
+                         case "Mrs":
+                              return ContactPersonalInfoTitle.Mrs;
+                         case "Ms":
+                              return ContactPersonalInfoTitle.Ms;
+                         case "Dr":
+                              return ContactPersonalInfoTitle.Dr;
+                         case "Unknown":
+                              return ContactPersonalInfoTitle.Unknown;
+                         default:
+                              return ContactPersonalInfoTitle.Unknown;
+                    }
+               } else {
+                    return ContactPersonalInfoTitle.Unknown;
                }
-               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,11 +71,24 @@ module Adaptive {
              @return {Adaptive.ILoggingLogLevel}
           */
           static toObject(object : any) : ILoggingLogLevel {
-               var retValue : ILoggingLogLevel = ILoggingLogLevel.Unknown;
-               if (object != null && object.value != null && ILoggingLogLevel.hasOwnProperty(object.value)) {
-                    retValue = ILoggingLogLevel[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "DEBUG":
+                              return ILoggingLogLevel.DEBUG;
+                         case "WARN":
+                              return ILoggingLogLevel.WARN;
+                         case "ERROR":
+                              return ILoggingLogLevel.ERROR;
+                         case "INFO":
+                              return ILoggingLogLevel.INFO;
+                         case "Unknown":
+                              return ILoggingLogLevel.Unknown;
+                         default:
+                              return ILoggingLogLevel.Unknown;
+                    }
+               } else {
+                    return ILoggingLogLevel.Unknown;
                }
-               return retValue;
           }
 
      }

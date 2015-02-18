@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -236,32 +236,17 @@ module Adaptive {
           static toObject(object : any) : ContactPersonalInfo {
                var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.name = object.name;
-                    result.middleName = object.middleName;
-                    result.lastName = object.lastName;
+               // Assign values to bean fields.
+               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.middleName!=null) result.middleName = object.middleName;
+               if (object!=null && object.lastName!=null) result.lastName = object.lastName;
+               if (object!=null && object.title!=null) {
                     result.title = ContactPersonalInfoTitle.toObject(object.title);
-
+               } else {
+                    result.title = ContactPersonalInfoTitle.toObject(null);
                }
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
-             @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ContactPersonalInfo[] {
-               var resultArray : Array<ContactPersonalInfo> = new Array<ContactPersonalInfo>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ContactPersonalInfo.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

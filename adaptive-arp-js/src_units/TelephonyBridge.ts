@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -73,7 +73,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(number));
                var apiRequest : APIRequest = new APIRequest("ITelephony","call",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.5");
+               apiRequest.setApiVersion("v2.1.6");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -83,11 +83,11 @@ module Adaptive {
                // Prepare response.
                var response : ITelephonyStatus = null;
                // Check response.
-               if (xhr.status === 200 ) {
+               if (xhr.status == 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
+                    if (xhr.responseText != null && xhr.responseText != '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
                          response = ITelephonyStatus.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'TelephonyBridge.call' ["+apiResponse.getStatusMessage()+"].");

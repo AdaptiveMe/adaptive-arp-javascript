@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -152,30 +152,15 @@ module Adaptive {
           static toObject(object : any) : ContactPhone {
                var result : ContactPhone = new ContactPhone(null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.phone = object.phone;
+               // Assign values to bean fields.
+               if (object!=null && object.phone!=null) result.phone = object.phone;
+               if (object!=null && object.phoneType!=null) {
                     result.phoneType = ContactPhoneType.toObject(object.phoneType);
-
+               } else {
+                    result.phoneType = ContactPhoneType.toObject(null);
                }
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
-             @return {Adaptive.ContactPhone[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ContactPhone[] {
-               var resultArray : Array<ContactPhone> = new Array<ContactPhone>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ContactPhone.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

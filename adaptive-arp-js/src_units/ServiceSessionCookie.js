@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -53,28 +53,16 @@ var Adaptive;
         __extends(ServiceSessionCookie, _super);
         /**
            @method constructor
-           Contructor with fields
+           Constructor used by the implementation
 
            @param {string} cookieName  Name of the cookie
            @param {string} cookieValue Value of the cookie
-           @param {string} domain      Domain of the cookie
-           @param {string} path        Path of the cookie
-           @param {string} scheme      Scheme of the cookie
-           @param {boolean} secure      Privacy of the cookie
-           @param {number} expiry      Expiration date of the cookie
-           @param {number} creation    Creation date of the cookie
            @since v2.0
         */
-        function ServiceSessionCookie(cookieName, cookieValue, domain, path, scheme, secure, expiry, creation) {
+        function ServiceSessionCookie(cookieName, cookieValue) {
             _super.call(this);
             this.cookieName = cookieName;
             this.cookieValue = cookieValue;
-            this.domain = domain;
-            this.path = path;
-            this.scheme = scheme;
-            this.secure = secure;
-            this.expiry = expiry;
-            this.creation = creation;
         }
         Object.defineProperty(ServiceSessionCookie.prototype, "cookieNameProperty", {
             /**
@@ -356,35 +344,25 @@ var Adaptive;
            @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
         */
         ServiceSessionCookie.toObject = function (object) {
-            var result = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            var result = new ServiceSessionCookie(null, null);
+            // Assign values to bean fields.
+            if (object != null && object.cookieName != null)
                 result.cookieName = object.cookieName;
+            if (object != null && object.cookieValue != null)
                 result.cookieValue = object.cookieValue;
+            if (object != null && object.domain != null)
                 result.domain = object.domain;
+            if (object != null && object.path != null)
                 result.path = object.path;
+            if (object != null && object.scheme != null)
                 result.scheme = object.scheme;
+            if (object != null && object.secure != null)
                 result.secure = object.secure;
+            if (object != null && object.expiry != null)
                 result.expiry = object.expiry;
+            if (object != null && object.creation != null)
                 result.creation = object.creation;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
-           @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
-        */
-        ServiceSessionCookie.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(ServiceSessionCookie.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return ServiceSessionCookie;
     })(Adaptive.APIBean);

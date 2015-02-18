@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,27 @@ var Adaptive;
            @return {Adaptive.IDatabaseTableResultCallbackError}
         */
         IDatabaseTableResultCallbackError.toObject = function (object) {
-            var retValue = IDatabaseTableResultCallbackError.Unknown;
-            if (object != null && object.value != null && IDatabaseTableResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = IDatabaseTableResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "NoSpace":
+                        return IDatabaseTableResultCallbackError.NoSpace;
+                    case "ReadOnlyTable":
+                        return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                    case "SqlException":
+                        return IDatabaseTableResultCallbackError.SqlException;
+                    case "DatabaseNotFound":
+                        return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                    case "NoTableFound":
+                        return IDatabaseTableResultCallbackError.NoTableFound;
+                    case "Unknown":
+                        return IDatabaseTableResultCallbackError.Unknown;
+                    default:
+                        return IDatabaseTableResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IDatabaseTableResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IDatabaseTableResultCallbackError} [NoSpace='NoSpace']

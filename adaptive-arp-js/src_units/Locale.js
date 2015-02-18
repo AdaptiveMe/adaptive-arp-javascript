@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -141,28 +141,12 @@ var Adaptive;
         */
         Locale.toObject = function (object) {
             var result = new Locale(null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.country != null)
                 result.country = object.country;
+            if (object != null && object.language != null)
                 result.language = object.language;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Locale[].
-           @return {Adaptive.Locale[]} Wrapped object array instance.
-        */
-        Locale.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(Locale.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return Locale;
     })(Adaptive.APIBean);

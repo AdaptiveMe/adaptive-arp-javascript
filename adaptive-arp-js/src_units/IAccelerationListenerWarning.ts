@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,11 +63,20 @@ module Adaptive {
              @return {Adaptive.IAccelerationListenerWarning}
           */
           static toObject(object : any) : IAccelerationListenerWarning {
-               var retValue : IAccelerationListenerWarning = IAccelerationListenerWarning.Unknown;
-               if (object != null && object.value != null && IAccelerationListenerWarning.hasOwnProperty(object.value)) {
-                    retValue = IAccelerationListenerWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "NeedsCalibration":
+                              return IAccelerationListenerWarning.NeedsCalibration;
+                         case "Stale":
+                              return IAccelerationListenerWarning.Stale;
+                         case "Unknown":
+                              return IAccelerationListenerWarning.Unknown;
+                         default:
+                              return IAccelerationListenerWarning.Unknown;
+                    }
+               } else {
+                    return IAccelerationListenerWarning.Unknown;
                }
-               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,11 +63,20 @@ module Adaptive {
              @return {Adaptive.INetworkStatusListenerWarning}
           */
           static toObject(object : any) : INetworkStatusListenerWarning {
-               var retValue : INetworkStatusListenerWarning = INetworkStatusListenerWarning.Unknown;
-               if (object != null && object.value != null && INetworkStatusListenerWarning.hasOwnProperty(object.value)) {
-                    retValue = INetworkStatusListenerWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "IpAddressNotAssigned":
+                              return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                         case "IpAddressChanged":
+                              return INetworkStatusListenerWarning.IpAddressChanged;
+                         case "Unknown":
+                              return INetworkStatusListenerWarning.Unknown;
+                         default:
+                              return INetworkStatusListenerWarning.Unknown;
+                    }
+               } else {
+                    return INetworkStatusListenerWarning.Unknown;
                }
-               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -194,31 +194,16 @@ module Adaptive {
           static toObject(object : any) : ContactEmail {
                var result : ContactEmail = new ContactEmail(null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
+               // Assign values to bean fields.
+               if (object!=null && object.type!=null) {
                     result.type = ContactEmailType.toObject(object.type);
-                    result.primary = object.primary;
-                    result.email = object.email;
-
+               } else {
+                    result.type = ContactEmailType.toObject(null);
                }
+               if (object!=null && object.primary!=null) result.primary = object.primary;
+               if (object!=null && object.email!=null) result.email = object.email;
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ContactEmail[].
-             @return {Adaptive.ContactEmail[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ContactEmail[] {
-               var resultArray : Array<ContactEmail> = new Array<ContactEmail>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ContactEmail.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

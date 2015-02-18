@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.INetworkStatusListenerWarning}
         */
         INetworkStatusListenerWarning.toObject = function (object) {
-            var retValue = INetworkStatusListenerWarning.Unknown;
-            if (object != null && object.value != null && INetworkStatusListenerWarning.hasOwnProperty(object.value)) {
-                retValue = INetworkStatusListenerWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "IpAddressNotAssigned":
+                        return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                    case "IpAddressChanged":
+                        return INetworkStatusListenerWarning.IpAddressChanged;
+                    case "Unknown":
+                        return INetworkStatusListenerWarning.Unknown;
+                    default:
+                        return INetworkStatusListenerWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return INetworkStatusListenerWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']

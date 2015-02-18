@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,20 +51,30 @@ var Adaptive;
            @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         IContactPhotoResultCallbackWarning.toObject = function (object) {
-            var retValue = IContactPhotoResultCallbackWarning.Unknown;
-            if (object != null && object.value != null && IContactPhotoResultCallbackWarning.hasOwnProperty(object.value)) {
-                retValue = IContactPhotoResultCallbackWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "LimitExceeded":
+                        return IContactPhotoResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                        return IContactPhotoResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                        return IContactPhotoResultCallbackWarning.Unknown;
+                    default:
+                        return IContactPhotoResultCallbackWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IContactPhotoResultCallbackWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
         */
-        IContactPhotoResultCallbackWarning.NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
+        IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */

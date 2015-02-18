@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,11 +67,22 @@ module Adaptive {
              @return {Adaptive.ContactEmailType}
           */
           static toObject(object : any) : ContactEmailType {
-               var retValue : ContactEmailType = ContactEmailType.Unknown;
-               if (object != null && object.value != null && ContactEmailType.hasOwnProperty(object.value)) {
-                    retValue = ContactEmailType[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "Personal":
+                              return ContactEmailType.Personal;
+                         case "Work":
+                              return ContactEmailType.Work;
+                         case "Other":
+                              return ContactEmailType.Other;
+                         case "Unknown":
+                              return ContactEmailType.Unknown;
+                         default:
+                              return ContactEmailType.Unknown;
+                    }
+               } else {
+                    return ContactEmailType.Unknown;
                }
-               return retValue;
           }
 
      }

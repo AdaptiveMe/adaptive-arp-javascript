@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,39 @@ var Adaptive;
            @return {Adaptive.IOSType}
         */
         IOSType.toObject = function (object) {
-            var retValue = IOSType.Unknown;
-            if (object != null && object.value != null && IOSType.hasOwnProperty(object.value)) {
-                retValue = IOSType[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "iOS":
+                        return IOSType.iOS;
+                    case "OSX":
+                        return IOSType.OSX;
+                    case "Windows":
+                        return IOSType.Windows;
+                    case "WindowsPhone":
+                        return IOSType.WindowsPhone;
+                    case "Android":
+                        return IOSType.Android;
+                    case "Linux":
+                        return IOSType.Linux;
+                    case "Blackberry":
+                        return IOSType.Blackberry;
+                    case "Tizen":
+                        return IOSType.Tizen;
+                    case "FirefoxOS":
+                        return IOSType.FirefoxOS;
+                    case "Chromium":
+                        return IOSType.Chromium;
+                    case "Unspecified":
+                        return IOSType.Unspecified;
+                    case "Unknown":
+                        return IOSType.Unknown;
+                    default:
+                        return IOSType.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IOSType.Unknown;
+            }
         };
         /**
            @property {Adaptive.IOSType} [iOS='iOS']

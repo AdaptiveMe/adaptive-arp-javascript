@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -366,35 +366,34 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
           static toObject(object : any) : ServiceResponse {
                var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.content = object.content;
-                    result.contentType = object.contentType;
+               // Assign values to bean fields.
+               if (object!=null && object.content!=null) result.content = object.content;
+               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-                    result.contentLength = object.contentLength;
-                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
-                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    result.statusCode = object.statusCode;
-
+               } else {
+                    result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
-             @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceResponse[] {
-               var resultArray : Array<ServiceResponse> = new Array<ServiceResponse>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceResponse.toObject(object[i]));
+               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object != null && object.serviceHeaders != null) {
+                    result.serviceHeaders = new Array<ServiceHeader>();
+                    for(var i = 0; i < object.serviceHeaders.length; i++) {
+                         var __value__ = object.serviceHeaders[i];
+                         if (__value__ != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                         } else {
+                              result.serviceHeaders.push(ServiceHeader.toObject(null));
+                         }
                     }
                }
-               return resultArray;
+               if (object!=null && object.serviceSession!=null) {
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
+               } else {
+                    result.serviceSession = ServiceSession.toObject(null);
+               }
+               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
+
+               return result;
           }
 
      }

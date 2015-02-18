@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,11 +51,21 @@ var Adaptive;
            @return {Adaptive.IFileListResultCallbackError}
         */
         IFileListResultCallbackError.toObject = function (object) {
-            var retValue = IFileListResultCallbackError.Unknown;
-            if (object != null && object.value != null && IFileListResultCallbackError.hasOwnProperty(object.value)) {
-                retValue = IFileListResultCallbackError[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "InexistentFile":
+                        return IFileListResultCallbackError.InexistentFile;
+                    case "Unauthorized":
+                        return IFileListResultCallbackError.Unauthorized;
+                    case "Unknown":
+                        return IFileListResultCallbackError.Unknown;
+                    default:
+                        return IFileListResultCallbackError.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IFileListResultCallbackError.Unknown;
+            }
         };
         /**
            @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']

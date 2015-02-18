@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,20 +51,30 @@ var Adaptive;
            @return {Adaptive.IContactResultCallbackWarning}
         */
         IContactResultCallbackWarning.toObject = function (object) {
-            var retValue = IContactResultCallbackWarning.Unknown;
-            if (object != null && object.value != null && IContactResultCallbackWarning.hasOwnProperty(object.value)) {
-                retValue = IContactResultCallbackWarning[object.value];
+            if (object != null && object.value != null) {
+                switch (object.value) {
+                    case "LimitExceeded":
+                        return IContactResultCallbackWarning.LimitExceeded;
+                    case "No_Matches":
+                        return IContactResultCallbackWarning.No_Matches;
+                    case "Unknown":
+                        return IContactResultCallbackWarning.Unknown;
+                    default:
+                        return IContactResultCallbackWarning.Unknown;
+                }
             }
-            return retValue;
+            else {
+                return IContactResultCallbackWarning.Unknown;
+            }
         };
         /**
            @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
+           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
         */
-        IContactResultCallbackWarning.NoMatches = new IContactResultCallbackWarning("No_Matches");
+        IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */

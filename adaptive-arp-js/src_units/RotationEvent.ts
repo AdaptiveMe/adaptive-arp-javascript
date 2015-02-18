@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -249,32 +249,25 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
           static toObject(object : any) : RotationEvent {
                var result : RotationEvent = new RotationEvent(null, null, null, null);
 
-               if (object != null ) {
-                    // Assign values to bean fields.
+               // Assign values to bean fields.
+               if (object!=null && object.origin!=null) {
                     result.origin = ICapabilitiesOrientation.toObject(object.origin);
+               } else {
+                    result.origin = ICapabilitiesOrientation.toObject(null);
+               }
+               if (object!=null && object.destination!=null) {
                     result.destination = ICapabilitiesOrientation.toObject(object.destination);
+               } else {
+                    result.destination = ICapabilitiesOrientation.toObject(null);
+               }
+               if (object!=null && object.state!=null) {
                     result.state = RotationEventState.toObject(object.state);
-                    result.timestamp = object.timestamp;
-
+               } else {
+                    result.state = RotationEventState.toObject(null);
                }
+               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+
                return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
-             @return {Adaptive.RotationEvent[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : RotationEvent[] {
-               var resultArray : Array<RotationEvent> = new Array<RotationEvent>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(RotationEvent.toObject(object[i]));
-                    }
-               }
-               return resultArray;
           }
 
      }

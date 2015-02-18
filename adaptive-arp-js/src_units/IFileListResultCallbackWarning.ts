@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,11 +59,18 @@ module Adaptive {
              @return {Adaptive.IFileListResultCallbackWarning}
           */
           static toObject(object : any) : IFileListResultCallbackWarning {
-               var retValue : IFileListResultCallbackWarning = IFileListResultCallbackWarning.Unknown;
-               if (object != null && object.value != null && IFileListResultCallbackWarning.hasOwnProperty(object.value)) {
-                    retValue = IFileListResultCallbackWarning[object.value];
+               if (object != null && object.value != null) {
+                    switch(object.value) {
+                         case "PartialResult":
+                              return IFileListResultCallbackWarning.PartialResult;
+                         case "Unknown":
+                              return IFileListResultCallbackWarning.Unknown;
+                         default:
+                              return IFileListResultCallbackWarning.Unknown;
+                    }
+               } else {
+                    return IFileListResultCallbackWarning.Unknown;
                }
-               return retValue;
           }
 
      }

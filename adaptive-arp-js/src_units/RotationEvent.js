@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -221,30 +221,28 @@ var Adaptive;
         */
         RotationEvent.toObject = function (object) {
             var result = new RotationEvent(null, null, null, null);
-            if (object != null) {
-                // Assign values to bean fields.
+            // Assign values to bean fields.
+            if (object != null && object.origin != null) {
                 result.origin = Adaptive.ICapabilitiesOrientation.toObject(object.origin);
+            }
+            else {
+                result.origin = Adaptive.ICapabilitiesOrientation.toObject(null);
+            }
+            if (object != null && object.destination != null) {
                 result.destination = Adaptive.ICapabilitiesOrientation.toObject(object.destination);
+            }
+            else {
+                result.destination = Adaptive.ICapabilitiesOrientation.toObject(null);
+            }
+            if (object != null && object.state != null) {
                 result.state = Adaptive.RotationEventState.toObject(object.state);
+            }
+            else {
+                result.state = Adaptive.RotationEventState.toObject(null);
+            }
+            if (object != null && object.timestamp != null)
                 result.timestamp = object.timestamp;
-            }
             return result;
-        };
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
-           @return {Adaptive.RotationEvent[]} Wrapped object array instance.
-        */
-        RotationEvent.toObjectArray = function (object) {
-            var resultArray = new Array();
-            if (object != null) {
-                for (var i = 0; i < object.length; i++) {
-                    resultArray.push(RotationEvent.toObject(object[i]));
-                }
-            }
-            return resultArray;
         };
         return RotationEvent;
     })(Adaptive.APIBean);

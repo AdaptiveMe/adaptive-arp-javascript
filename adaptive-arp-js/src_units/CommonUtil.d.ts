@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -70,7 +70,6 @@ declare module Adaptive {
         }[]);
         add(key: string, value: V): void;
         remove(key: string): void;
-        removeAll(): void;
         keys(): string[];
         values(): V[];
         containsKey(key: string): boolean;

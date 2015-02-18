@@ -30,7 +30,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -249,13 +249,5 @@ declare module Adaptive {
            @return {Adaptive.Email} Wrapped object instance.
         */
         static toObject(object: any): Email;
-        /**
-           @method
-           @static
-           Convert JSON parsed object array to typed equivalent.
-           @param {Object} object JSON parsed structure of type Adaptive.Email[].
-           @return {Adaptive.Email[]} Wrapped object array instance.
-        */
-        static toObjectArray(object: any): Email[];
     }
 }

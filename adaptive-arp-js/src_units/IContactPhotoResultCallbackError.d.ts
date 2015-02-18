@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.5
+    * @version v2.1.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,13 +45,13 @@ declare module Adaptive {
         */
         static NoPermission: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
+           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
         */
-        static WrongParams: IContactPhotoResultCallbackError;
+        static Wrong_Params: IContactPhotoResultCallbackError;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
+           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
         */
-        static NoPhoto: IContactPhotoResultCallbackError;
+        static No_Photo: IContactPhotoResultCallbackError;
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
