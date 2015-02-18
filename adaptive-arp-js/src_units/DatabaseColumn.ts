@@ -109,11 +109,13 @@ module Adaptive {
           static toObject(object : any) : DatabaseColumn {
                var result : DatabaseColumn = new DatabaseColumn(null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) {
-                    result.name = object.name;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.name!=null) {
+                         result.name = object.name;
+                    }
 
+               }
                return result;
           }
 

@@ -364,35 +364,37 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
           static toObject(object : any) : AppResourceData {
                var result : AppResourceData = new AppResourceData(null, null, null, null, null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.id!=null) {
-                    result.id = object.id;
-               }
-               if (object != null && object.data != null) {
-                    result.data = new Array<number>();
-                    for(var idata = 0; idata < object.data.length; idata++) {
-                         var vdata = object.data[idata];
-                         if (vdata != null) {
-                              result.data.push(vdata);
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.id!=null) {
+                         result.id = object.id;
+                    }
+                    if (object.data != null) {
+                         result.data = new Array<number>();
+                         for(var idata = 0; idata < object.data.length; idata++) {
+                              var vdata = object.data[idata];
+                              if (vdata != null) {
+                                   result.data.push(vdata);
+                              }
                          }
                     }
-               }
-               if (object!=null && object.rawType!=null) {
-                    result.rawType = object.rawType;
-               }
-               if (object!=null && object.rawLength!=null) {
-                    result.rawLength = object.rawLength;
-               }
-               if (object!=null && object.cooked!=null) {
-                    result.cooked = object.cooked;
-               }
-               if (object!=null && object.cookedType!=null) {
-                    result.cookedType = object.cookedType;
-               }
-               if (object!=null && object.cookedLength!=null) {
-                    result.cookedLength = object.cookedLength;
-               }
+                    if (object.rawType!=null) {
+                         result.rawType = object.rawType;
+                    }
+                    if (object.rawLength!=null) {
+                         result.rawLength = object.rawLength;
+                    }
+                    if (object.cooked!=null) {
+                         result.cooked = object.cooked;
+                    }
+                    if (object.cookedType!=null) {
+                         result.cookedType = object.cookedType;
+                    }
+                    if (object.cookedLength!=null) {
+                         result.cookedLength = object.cookedLength;
+                    }
 
+               }
                return result;
           }
 

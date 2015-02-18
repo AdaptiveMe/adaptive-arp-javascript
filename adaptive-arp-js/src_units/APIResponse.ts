@@ -183,17 +183,19 @@ module Adaptive {
           static toObject(object : any) : APIResponse {
                var result : APIResponse = new APIResponse(null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.response!=null) {
-                    result.response = object.response;
-               }
-               if (object!=null && object.statusCode!=null) {
-                    result.statusCode = object.statusCode;
-               }
-               if (object!=null && object.statusMessage!=null) {
-                    result.statusMessage = object.statusMessage;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.response!=null) {
+                         result.response = object.response;
+                    }
+                    if (object.statusCode!=null) {
+                         result.statusCode = object.statusCode;
+                    }
+                    if (object.statusMessage!=null) {
+                         result.statusMessage = object.statusMessage;
+                    }
 
+               }
                return result;
           }
 

@@ -142,15 +142,17 @@ var Adaptive;
         */
         ContactPhone.toObject = function (object) {
             var result = new ContactPhone(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.phone != null) {
-                result.phone = object.phone;
-            }
-            if (object != null && object.phoneType != null) {
-                result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
-            }
-            else {
-                result.phoneType = Adaptive.ContactPhoneType.toObject(null);
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.phone != null) {
+                    result.phone = object.phone;
+                }
+                if (object.phoneType != null) {
+                    result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
+                }
+                else {
+                    result.phoneType = Adaptive.ContactPhoneType.toObject(null);
+                }
             }
             return result;
         };

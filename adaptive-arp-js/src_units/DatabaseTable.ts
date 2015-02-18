@@ -279,39 +279,41 @@ module Adaptive {
           static toObject(object : any) : DatabaseTable {
                var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) {
-                    result.name = object.name;
-               }
-               if (object!=null && object.columnCount!=null) {
-                    result.columnCount = object.columnCount;
-               }
-               if (object!=null && object.rowCount!=null) {
-                    result.rowCount = object.rowCount;
-               }
-               if (object != null && object.databaseColumns != null) {
-                    result.databaseColumns = new Array<DatabaseColumn>();
-                    for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
-                         var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                         if (vdatabaseColumns != null) {
-                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
-                         } else {
-                              result.databaseColumns.push(DatabaseColumn.toObject(null));
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.name!=null) {
+                         result.name = object.name;
+                    }
+                    if (object.columnCount!=null) {
+                         result.columnCount = object.columnCount;
+                    }
+                    if (object.rowCount!=null) {
+                         result.rowCount = object.rowCount;
+                    }
+                    if (object.databaseColumns != null) {
+                         result.databaseColumns = new Array<DatabaseColumn>();
+                         for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
+                              var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
+                              if (vdatabaseColumns != null) {
+                                   result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
+                              } else {
+                                   result.databaseColumns.push(DatabaseColumn.toObject(null));
+                              }
                          }
                     }
-               }
-               if (object != null && object.databaseRows != null) {
-                    result.databaseRows = new Array<DatabaseRow>();
-                    for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
-                         var vdatabaseRows = object.databaseRows[idatabaseRows];
-                         if (vdatabaseRows != null) {
-                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
-                         } else {
-                              result.databaseRows.push(DatabaseRow.toObject(null));
+                    if (object.databaseRows != null) {
+                         result.databaseRows = new Array<DatabaseRow>();
+                         for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
+                              var vdatabaseRows = object.databaseRows[idatabaseRows];
+                              if (vdatabaseRows != null) {
+                                   result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
+                              } else {
+                                   result.databaseRows.push(DatabaseRow.toObject(null));
+                              }
                          }
                     }
-               }
 
+               }
                return result;
           }
 

@@ -59,6 +59,8 @@ var Adaptive;
         */
         APIBean.toObject = function (object) {
             var result = new APIBean();
+            if (object != null) {
+            }
             return result;
         };
         return APIBean;

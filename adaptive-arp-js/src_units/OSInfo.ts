@@ -191,19 +191,21 @@ module Adaptive {
           static toObject(object : any) : OSInfo {
                var result : OSInfo = new OSInfo(null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) {
-                    result.name = IOSType.toObject(object.name);
-               } else {
-                    result.name = IOSType.toObject(null);
-               }
-               if (object!=null && object.version!=null) {
-                    result.version = object.version;
-               }
-               if (object!=null && object.vendor!=null) {
-                    result.vendor = object.vendor;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.name!=null) {
+                         result.name = IOSType.toObject(object.name);
+                    } else {
+                         result.name = IOSType.toObject(null);
+                    }
+                    if (object.version!=null) {
+                         result.version = object.version;
+                    }
+                    if (object.vendor!=null) {
+                         result.vendor = object.vendor;
+                    }
 
+               }
                return result;
           }
 

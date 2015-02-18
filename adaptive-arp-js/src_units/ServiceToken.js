@@ -217,21 +217,23 @@ var Adaptive;
         */
         ServiceToken.toObject = function (object) {
             var result = new ServiceToken(null, null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.serviceName != null) {
-                result.serviceName = object.serviceName;
-            }
-            if (object != null && object.endpointName != null) {
-                result.endpointName = object.endpointName;
-            }
-            if (object != null && object.functionName != null) {
-                result.functionName = object.functionName;
-            }
-            if (object != null && object.invocationMethod != null) {
-                result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
-            }
-            else {
-                result.invocationMethod = Adaptive.IServiceMethod.toObject(null);
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.serviceName != null) {
+                    result.serviceName = object.serviceName;
+                }
+                if (object.endpointName != null) {
+                    result.endpointName = object.endpointName;
+                }
+                if (object.functionName != null) {
+                    result.functionName = object.functionName;
+                }
+                if (object.invocationMethod != null) {
+                    result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
+                }
+                else {
+                    result.invocationMethod = Adaptive.IServiceMethod.toObject(null);
+                }
             }
             return result;
         };

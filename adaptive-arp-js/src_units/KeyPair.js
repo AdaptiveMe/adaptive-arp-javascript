@@ -141,12 +141,14 @@ var Adaptive;
         */
         KeyPair.toObject = function (object) {
             var result = new KeyPair(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.keyName != null) {
-                result.keyName = object.keyName;
-            }
-            if (object != null && object.keyValue != null) {
-                result.keyValue = object.keyValue;
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.keyName != null) {
+                    result.keyName = object.keyName;
+                }
+                if (object.keyValue != null) {
+                    result.keyValue = object.keyValue;
+                }
             }
             return result;
         };

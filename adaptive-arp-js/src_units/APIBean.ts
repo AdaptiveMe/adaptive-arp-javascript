@@ -63,6 +63,8 @@ module Adaptive {
           static toObject(object : any) : APIBean {
                var result : APIBean = new APIBean();
 
+               if (object != null ) {
+               }
                return result;
           }
 

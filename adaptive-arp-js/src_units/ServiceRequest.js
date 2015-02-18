@@ -464,75 +464,77 @@ var Adaptive;
         */
         ServiceRequest.toObject = function (object) {
             var result = new ServiceRequest(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.userAgent != null) {
-                result.userAgent = object.userAgent;
-            }
-            if (object != null && object.content != null) {
-                result.content = object.content;
-            }
-            if (object != null && object.contentType != null) {
-                result.contentType = object.contentType;
-            }
-            if (object != null && object.contentEncoding != null) {
-                result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
-            }
-            else {
-                result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(null);
-            }
-            if (object != null && object.contentLength != null) {
-                result.contentLength = object.contentLength;
-            }
-            if (object != null && object.serviceHeaders != null) {
-                result.serviceHeaders = new Array();
-                for (var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                    var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                    if (vserviceHeaders != null) {
-                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(vserviceHeaders));
-                    }
-                    else {
-                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(null));
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.userAgent != null) {
+                    result.userAgent = object.userAgent;
+                }
+                if (object.content != null) {
+                    result.content = object.content;
+                }
+                if (object.contentType != null) {
+                    result.contentType = object.contentType;
+                }
+                if (object.contentEncoding != null) {
+                    result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
+                }
+                else {
+                    result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(null);
+                }
+                if (object.contentLength != null) {
+                    result.contentLength = object.contentLength;
+                }
+                if (object.serviceHeaders != null) {
+                    result.serviceHeaders = new Array();
+                    for (var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                        var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                        if (vserviceHeaders != null) {
+                            result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(vserviceHeaders));
+                        }
+                        else {
+                            result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.serviceSession != null) {
-                result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
-            }
-            else {
-                result.serviceSession = Adaptive.ServiceSession.toObject(null);
-            }
-            if (object != null && object.queryParameters != null) {
-                result.queryParameters = new Array();
-                for (var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                    var vqueryParameters = object.queryParameters[iqueryParameters];
-                    if (vqueryParameters != null) {
-                        result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(vqueryParameters));
-                    }
-                    else {
-                        result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                if (object.serviceSession != null) {
+                    result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
+                }
+                else {
+                    result.serviceSession = Adaptive.ServiceSession.toObject(null);
+                }
+                if (object.queryParameters != null) {
+                    result.queryParameters = new Array();
+                    for (var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
+                        var vqueryParameters = object.queryParameters[iqueryParameters];
+                        if (vqueryParameters != null) {
+                            result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(vqueryParameters));
+                        }
+                        else {
+                            result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.bodyParameters != null) {
-                result.bodyParameters = new Array();
-                for (var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                    var vbodyParameters = object.bodyParameters[ibodyParameters];
-                    if (vbodyParameters != null) {
-                        result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(vbodyParameters));
-                    }
-                    else {
-                        result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                if (object.bodyParameters != null) {
+                    result.bodyParameters = new Array();
+                    for (var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
+                        var vbodyParameters = object.bodyParameters[ibodyParameters];
+                        if (vbodyParameters != null) {
+                            result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(vbodyParameters));
+                        }
+                        else {
+                            result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.serviceToken != null) {
-                result.serviceToken = Adaptive.ServiceToken.toObject(object.serviceToken);
-            }
-            else {
-                result.serviceToken = Adaptive.ServiceToken.toObject(null);
-            }
-            if (object != null && object.refererHost != null) {
-                result.refererHost = object.refererHost;
+                if (object.serviceToken != null) {
+                    result.serviceToken = Adaptive.ServiceToken.toObject(object.serviceToken);
+                }
+                else {
+                    result.serviceToken = Adaptive.ServiceToken.toObject(null);
+                }
+                if (object.refererHost != null) {
+                    result.refererHost = object.refererHost;
+                }
             }
             return result;
         };

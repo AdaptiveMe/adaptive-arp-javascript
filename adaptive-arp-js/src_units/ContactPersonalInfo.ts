@@ -236,22 +236,24 @@ module Adaptive {
           static toObject(object : any) : ContactPersonalInfo {
                var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) {
-                    result.name = object.name;
-               }
-               if (object!=null && object.middleName!=null) {
-                    result.middleName = object.middleName;
-               }
-               if (object!=null && object.lastName!=null) {
-                    result.lastName = object.lastName;
-               }
-               if (object!=null && object.title!=null) {
-                    result.title = ContactPersonalInfoTitle.toObject(object.title);
-               } else {
-                    result.title = ContactPersonalInfoTitle.toObject(null);
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.name!=null) {
+                         result.name = object.name;
+                    }
+                    if (object.middleName!=null) {
+                         result.middleName = object.middleName;
+                    }
+                    if (object.lastName!=null) {
+                         result.lastName = object.lastName;
+                    }
+                    if (object.title!=null) {
+                         result.title = ContactPersonalInfoTitle.toObject(object.title);
+                    } else {
+                         result.title = ContactPersonalInfoTitle.toObject(null);
+                    }
 
+               }
                return result;
           }
 

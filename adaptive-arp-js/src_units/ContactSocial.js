@@ -142,15 +142,17 @@ var Adaptive;
         */
         ContactSocial.toObject = function (object) {
             var result = new ContactSocial(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.socialNetwork != null) {
-                result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(object.socialNetwork);
-            }
-            else {
-                result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(null);
-            }
-            if (object != null && object.profileUrl != null) {
-                result.profileUrl = object.profileUrl;
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.socialNetwork != null) {
+                    result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(object.socialNetwork);
+                }
+                else {
+                    result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(null);
+                }
+                if (object.profileUrl != null) {
+                    result.profileUrl = object.profileUrl;
+                }
             }
             return result;
         };

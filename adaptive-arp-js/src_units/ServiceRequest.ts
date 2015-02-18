@@ -540,71 +540,73 @@ identifiers. This should not be manipulated by the application directly. The 'se
           static toObject(object : any) : ServiceRequest {
                var result : ServiceRequest = new ServiceRequest(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.userAgent!=null) {
-                    result.userAgent = object.userAgent;
-               }
-               if (object!=null && object.content!=null) {
-                    result.content = object.content;
-               }
-               if (object!=null && object.contentType!=null) {
-                    result.contentType = object.contentType;
-               }
-               if (object!=null && object.contentEncoding!=null) {
-                    result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-               } else {
-                    result.contentEncoding = IServiceContentEncoding.toObject(null);
-               }
-               if (object!=null && object.contentLength!=null) {
-                    result.contentLength = object.contentLength;
-               }
-               if (object != null && object.serviceHeaders != null) {
-                    result.serviceHeaders = new Array<ServiceHeader>();
-                    for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                         var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                         if (vserviceHeaders != null) {
-                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                         } else {
-                              result.serviceHeaders.push(ServiceHeader.toObject(null));
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.userAgent!=null) {
+                         result.userAgent = object.userAgent;
+                    }
+                    if (object.content!=null) {
+                         result.content = object.content;
+                    }
+                    if (object.contentType!=null) {
+                         result.contentType = object.contentType;
+                    }
+                    if (object.contentEncoding!=null) {
+                         result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
+                    } else {
+                         result.contentEncoding = IServiceContentEncoding.toObject(null);
+                    }
+                    if (object.contentLength!=null) {
+                         result.contentLength = object.contentLength;
+                    }
+                    if (object.serviceHeaders != null) {
+                         result.serviceHeaders = new Array<ServiceHeader>();
+                         for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                              var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                              if (vserviceHeaders != null) {
+                                   result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
+                              } else {
+                                   result.serviceHeaders.push(ServiceHeader.toObject(null));
+                              }
                          }
                     }
-               }
-               if (object!=null && object.serviceSession!=null) {
-                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
-               } else {
-                    result.serviceSession = ServiceSession.toObject(null);
-               }
-               if (object != null && object.queryParameters != null) {
-                    result.queryParameters = new Array<ServiceRequestParameter>();
-                    for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                         var vqueryParameters = object.queryParameters[iqueryParameters];
-                         if (vqueryParameters != null) {
-                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
-                         } else {
-                              result.queryParameters.push(ServiceRequestParameter.toObject(null));
+                    if (object.serviceSession!=null) {
+                         result.serviceSession = ServiceSession.toObject(object.serviceSession);
+                    } else {
+                         result.serviceSession = ServiceSession.toObject(null);
+                    }
+                    if (object.queryParameters != null) {
+                         result.queryParameters = new Array<ServiceRequestParameter>();
+                         for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
+                              var vqueryParameters = object.queryParameters[iqueryParameters];
+                              if (vqueryParameters != null) {
+                                   result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
+                              } else {
+                                   result.queryParameters.push(ServiceRequestParameter.toObject(null));
+                              }
                          }
                     }
-               }
-               if (object != null && object.bodyParameters != null) {
-                    result.bodyParameters = new Array<ServiceRequestParameter>();
-                    for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                         var vbodyParameters = object.bodyParameters[ibodyParameters];
-                         if (vbodyParameters != null) {
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
-                         } else {
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(null));
+                    if (object.bodyParameters != null) {
+                         result.bodyParameters = new Array<ServiceRequestParameter>();
+                         for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
+                              var vbodyParameters = object.bodyParameters[ibodyParameters];
+                              if (vbodyParameters != null) {
+                                   result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
+                              } else {
+                                   result.bodyParameters.push(ServiceRequestParameter.toObject(null));
+                              }
                          }
                     }
-               }
-               if (object!=null && object.serviceToken!=null) {
-                    result.serviceToken = ServiceToken.toObject(object.serviceToken);
-               } else {
-                    result.serviceToken = ServiceToken.toObject(null);
-               }
-               if (object!=null && object.refererHost!=null) {
-                    result.refererHost = object.refererHost;
-               }
+                    if (object.serviceToken!=null) {
+                         result.serviceToken = ServiceToken.toObject(object.serviceToken);
+                    } else {
+                         result.serviceToken = ServiceToken.toObject(null);
+                    }
+                    if (object.refererHost!=null) {
+                         result.refererHost = object.refererHost;
+                    }
 
+               }
                return result;
           }
 

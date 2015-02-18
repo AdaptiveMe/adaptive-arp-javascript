@@ -109,11 +109,13 @@ module Adaptive {
           static toObject(object : any) : ContactUid {
                var result : ContactUid = new ContactUid(null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.contactId!=null) {
-                    result.contactId = object.contactId;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.contactId!=null) {
+                         result.contactId = object.contactId;
+                    }
 
+               }
                return result;
           }
 

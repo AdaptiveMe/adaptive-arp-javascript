@@ -221,27 +221,29 @@ var Adaptive;
         */
         RotationEvent.toObject = function (object) {
             var result = new RotationEvent(null, null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.origin != null) {
-                result.origin = Adaptive.ICapabilitiesOrientation.toObject(object.origin);
-            }
-            else {
-                result.origin = Adaptive.ICapabilitiesOrientation.toObject(null);
-            }
-            if (object != null && object.destination != null) {
-                result.destination = Adaptive.ICapabilitiesOrientation.toObject(object.destination);
-            }
-            else {
-                result.destination = Adaptive.ICapabilitiesOrientation.toObject(null);
-            }
-            if (object != null && object.state != null) {
-                result.state = Adaptive.RotationEventState.toObject(object.state);
-            }
-            else {
-                result.state = Adaptive.RotationEventState.toObject(null);
-            }
-            if (object != null && object.timestamp != null) {
-                result.timestamp = object.timestamp;
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.origin != null) {
+                    result.origin = Adaptive.ICapabilitiesOrientation.toObject(object.origin);
+                }
+                else {
+                    result.origin = Adaptive.ICapabilitiesOrientation.toObject(null);
+                }
+                if (object.destination != null) {
+                    result.destination = Adaptive.ICapabilitiesOrientation.toObject(object.destination);
+                }
+                else {
+                    result.destination = Adaptive.ICapabilitiesOrientation.toObject(null);
+                }
+                if (object.state != null) {
+                    result.state = Adaptive.RotationEventState.toObject(object.state);
+                }
+                else {
+                    result.state = Adaptive.RotationEventState.toObject(null);
+                }
+                if (object.timestamp != null) {
+                    result.timestamp = object.timestamp;
+                }
             }
             return result;
         };

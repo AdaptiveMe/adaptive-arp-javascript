@@ -252,26 +252,28 @@ doesn't exist, this will be -1. Used internally.
           static toObject(object : any) : FileDescriptor {
                var result : FileDescriptor = new FileDescriptor();
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) {
-                    result.name = object.name;
-               }
-               if (object!=null && object.path!=null) {
-                    result.path = object.path;
-               }
-               if (object!=null && object.pathAbsolute!=null) {
-                    result.pathAbsolute = object.pathAbsolute;
-               }
-               if (object!=null && object.dateCreated!=null) {
-                    result.dateCreated = object.dateCreated;
-               }
-               if (object!=null && object.dateModified!=null) {
-                    result.dateModified = object.dateModified;
-               }
-               if (object!=null && object.size!=null) {
-                    result.size = object.size;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.name!=null) {
+                         result.name = object.name;
+                    }
+                    if (object.path!=null) {
+                         result.path = object.path;
+                    }
+                    if (object.pathAbsolute!=null) {
+                         result.pathAbsolute = object.pathAbsolute;
+                    }
+                    if (object.dateCreated!=null) {
+                         result.dateCreated = object.dateCreated;
+                    }
+                    if (object.dateModified!=null) {
+                         result.dateModified = object.dateModified;
+                    }
+                    if (object.size!=null) {
+                         result.size = object.size;
+                    }
 
+               }
                return result;
           }
 

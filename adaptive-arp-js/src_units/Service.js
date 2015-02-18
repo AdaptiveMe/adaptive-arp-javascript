@@ -132,21 +132,23 @@ var Adaptive;
         */
         Service.toObject = function (object) {
             var result = new Service(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.serviceEndpoints != null) {
-                result.serviceEndpoints = new Array();
-                for (var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
-                    var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                    if (vserviceEndpoints != null) {
-                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(vserviceEndpoints));
-                    }
-                    else {
-                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(null));
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.serviceEndpoints != null) {
+                    result.serviceEndpoints = new Array();
+                    for (var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
+                        var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
+                        if (vserviceEndpoints != null) {
+                            result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(vserviceEndpoints));
+                        }
+                        else {
+                            result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.name != null) {
-                result.name = object.name;
+                if (object.name != null) {
+                    result.name = object.name;
+                }
             }
             return result;
         };

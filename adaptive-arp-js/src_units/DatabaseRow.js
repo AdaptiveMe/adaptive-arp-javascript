@@ -105,13 +105,15 @@ var Adaptive;
         */
         DatabaseRow.toObject = function (object) {
             var result = new DatabaseRow(null);
-            // Assign values to bean fields.
-            if (object != null && object.values != null) {
-                result.values = new Array();
-                for (var ivalues = 0; ivalues < object.values.length; ivalues++) {
-                    var vvalues = object.values[ivalues];
-                    if (vvalues != null) {
-                        result.values.push(vvalues);
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.values != null) {
+                    result.values = new Array();
+                    for (var ivalues = 0; ivalues < object.values.length; ivalues++) {
+                        var vvalues = object.values[ivalues];
+                        if (vvalues != null) {
+                            result.values.push(vvalues);
+                        }
                     }
                 }
             }

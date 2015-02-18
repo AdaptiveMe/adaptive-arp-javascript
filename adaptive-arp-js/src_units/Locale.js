@@ -141,12 +141,14 @@ var Adaptive;
         */
         Locale.toObject = function (object) {
             var result = new Locale(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.country != null) {
-                result.country = object.country;
-            }
-            if (object != null && object.language != null) {
-                result.language = object.language;
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.country != null) {
+                    result.country = object.country;
+                }
+                if (object.language != null) {
+                    result.language = object.language;
+                }
             }
             return result;
         };

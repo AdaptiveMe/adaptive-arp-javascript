@@ -143,28 +143,30 @@ var Adaptive;
         */
         ServiceSession.toObject = function (object) {
             var result = new ServiceSession(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.cookies != null) {
-                result.cookies = new Array();
-                for (var icookies = 0; icookies < object.cookies.length; icookies++) {
-                    var vcookies = object.cookies[icookies];
-                    if (vcookies != null) {
-                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(vcookies));
-                    }
-                    else {
-                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(null));
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.cookies != null) {
+                    result.cookies = new Array();
+                    for (var icookies = 0; icookies < object.cookies.length; icookies++) {
+                        var vcookies = object.cookies[icookies];
+                        if (vcookies != null) {
+                            result.cookies.push(Adaptive.ServiceSessionCookie.toObject(vcookies));
+                        }
+                        else {
+                            result.cookies.push(Adaptive.ServiceSessionCookie.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.attributes != null) {
-                result.attributes = new Array();
-                for (var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
-                    var vattributes = object.attributes[iattributes];
-                    if (vattributes != null) {
-                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(vattributes));
-                    }
-                    else {
-                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(null));
+                if (object.attributes != null) {
+                    result.attributes = new Array();
+                    for (var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
+                        var vattributes = object.attributes[iattributes];
+                        if (vattributes != null) {
+                            result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(vattributes));
+                        }
+                        else {
+                            result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(null));
+                        }
                     }
                 }
             }

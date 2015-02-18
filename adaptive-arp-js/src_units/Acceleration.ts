@@ -235,20 +235,22 @@ module Adaptive {
           static toObject(object : any) : Acceleration {
                var result : Acceleration = new Acceleration(null, null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.x!=null) {
-                    result.x = object.x;
-               }
-               if (object!=null && object.y!=null) {
-                    result.y = object.y;
-               }
-               if (object!=null && object.z!=null) {
-                    result.z = object.z;
-               }
-               if (object!=null && object.timestamp!=null) {
-                    result.timestamp = object.timestamp;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.x!=null) {
+                         result.x = object.x;
+                    }
+                    if (object.y!=null) {
+                         result.y = object.y;
+                    }
+                    if (object.z!=null) {
+                         result.z = object.z;
+                    }
+                    if (object.timestamp!=null) {
+                         result.timestamp = object.timestamp;
+                    }
 
+               }
                return result;
           }
 

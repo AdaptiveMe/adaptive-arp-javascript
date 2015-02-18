@@ -105,9 +105,11 @@ var Adaptive;
         */
         EmailAddress.toObject = function (object) {
             var result = new EmailAddress(null);
-            // Assign values to bean fields.
-            if (object != null && object.address != null) {
-                result.address = object.address;
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.address != null) {
+                    result.address = object.address;
+                }
             }
             return result;
         };

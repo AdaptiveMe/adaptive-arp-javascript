@@ -151,14 +151,16 @@ module Adaptive {
           static toObject(object : any) : ContactTag {
                var result : ContactTag = new ContactTag(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.tagName!=null) {
-                    result.tagName = object.tagName;
-               }
-               if (object!=null && object.tagValue!=null) {
-                    result.tagValue = object.tagValue;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.tagName!=null) {
+                         result.tagName = object.tagName;
+                    }
+                    if (object.tagValue!=null) {
+                         result.tagValue = object.tagValue;
+                    }
 
+               }
                return result;
           }
 

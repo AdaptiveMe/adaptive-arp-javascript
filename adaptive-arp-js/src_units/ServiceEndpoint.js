@@ -167,25 +167,27 @@ var Adaptive;
         */
         ServiceEndpoint.toObject = function (object) {
             var result = new ServiceEndpoint(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.validationType != null) {
-                result.validationType = Adaptive.IServiceCertificateValidation.toObject(object.validationType);
-            }
-            else {
-                result.validationType = Adaptive.IServiceCertificateValidation.toObject(null);
-            }
-            if (object != null && object.hostURI != null) {
-                result.hostURI = object.hostURI;
-            }
-            if (object != null && object.paths != null) {
-                result.paths = new Array();
-                for (var ipaths = 0; ipaths < object.paths.length; ipaths++) {
-                    var vpaths = object.paths[ipaths];
-                    if (vpaths != null) {
-                        result.paths.push(Adaptive.ServicePath.toObject(vpaths));
-                    }
-                    else {
-                        result.paths.push(Adaptive.ServicePath.toObject(null));
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.validationType != null) {
+                    result.validationType = Adaptive.IServiceCertificateValidation.toObject(object.validationType);
+                }
+                else {
+                    result.validationType = Adaptive.IServiceCertificateValidation.toObject(null);
+                }
+                if (object.hostURI != null) {
+                    result.hostURI = object.hostURI;
+                }
+                if (object.paths != null) {
+                    result.paths = new Array();
+                    for (var ipaths = 0; ipaths < object.paths.length; ipaths++) {
+                        var vpaths = object.paths[ipaths];
+                        if (vpaths != null) {
+                            result.paths.push(Adaptive.ServicePath.toObject(vpaths));
+                        }
+                        else {
+                            result.paths.push(Adaptive.ServicePath.toObject(null));
+                        }
                     }
                 }
             }

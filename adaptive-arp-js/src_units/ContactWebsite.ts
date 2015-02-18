@@ -109,11 +109,13 @@ module Adaptive {
           static toObject(object : any) : ContactWebsite {
                var result : ContactWebsite = new ContactWebsite(null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.url!=null) {
-                    result.url = object.url;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.url!=null) {
+                         result.url = object.url;
+                    }
 
+               }
                return result;
           }
 

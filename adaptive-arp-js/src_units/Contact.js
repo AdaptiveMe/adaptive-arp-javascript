@@ -366,92 +366,94 @@ var Adaptive;
         */
         Contact.toObject = function (object) {
             var result = new Contact(null, null, null, null, null, null, null, null, null);
-            // Assign values to parent bean fields.
-            if (object != null && object.contactId != null) {
-                result.contactId = object.contactId;
-            }
-            // Assign values to bean fields.
-            if (object != null && object.personalInfo != null) {
-                result.personalInfo = Adaptive.ContactPersonalInfo.toObject(object.personalInfo);
-            }
-            else {
-                result.personalInfo = Adaptive.ContactPersonalInfo.toObject(null);
-            }
-            if (object != null && object.professionalInfo != null) {
-                result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(object.professionalInfo);
-            }
-            else {
-                result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(null);
-            }
-            if (object != null && object.contactAddresses != null) {
-                result.contactAddresses = new Array();
-                for (var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
-                    var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                    if (vcontactAddresses != null) {
-                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(vcontactAddresses));
-                    }
-                    else {
-                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(null));
+            if (object != null) {
+                // Assign values to parent bean fields.
+                if (object.contactId != null) {
+                    result.contactId = object.contactId;
+                }
+                // Assign values to bean fields.
+                if (object.personalInfo != null) {
+                    result.personalInfo = Adaptive.ContactPersonalInfo.toObject(object.personalInfo);
+                }
+                else {
+                    result.personalInfo = Adaptive.ContactPersonalInfo.toObject(null);
+                }
+                if (object.professionalInfo != null) {
+                    result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(object.professionalInfo);
+                }
+                else {
+                    result.professionalInfo = Adaptive.ContactProfessionalInfo.toObject(null);
+                }
+                if (object.contactAddresses != null) {
+                    result.contactAddresses = new Array();
+                    for (var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
+                        var vcontactAddresses = object.contactAddresses[icontactAddresses];
+                        if (vcontactAddresses != null) {
+                            result.contactAddresses.push(Adaptive.ContactAddress.toObject(vcontactAddresses));
+                        }
+                        else {
+                            result.contactAddresses.push(Adaptive.ContactAddress.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.contactPhones != null) {
-                result.contactPhones = new Array();
-                for (var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
-                    var vcontactPhones = object.contactPhones[icontactPhones];
-                    if (vcontactPhones != null) {
-                        result.contactPhones.push(Adaptive.ContactPhone.toObject(vcontactPhones));
-                    }
-                    else {
-                        result.contactPhones.push(Adaptive.ContactPhone.toObject(null));
-                    }
-                }
-            }
-            if (object != null && object.contactEmails != null) {
-                result.contactEmails = new Array();
-                for (var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
-                    var vcontactEmails = object.contactEmails[icontactEmails];
-                    if (vcontactEmails != null) {
-                        result.contactEmails.push(Adaptive.ContactEmail.toObject(vcontactEmails));
-                    }
-                    else {
-                        result.contactEmails.push(Adaptive.ContactEmail.toObject(null));
+                if (object.contactPhones != null) {
+                    result.contactPhones = new Array();
+                    for (var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
+                        var vcontactPhones = object.contactPhones[icontactPhones];
+                        if (vcontactPhones != null) {
+                            result.contactPhones.push(Adaptive.ContactPhone.toObject(vcontactPhones));
+                        }
+                        else {
+                            result.contactPhones.push(Adaptive.ContactPhone.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.contactWebsites != null) {
-                result.contactWebsites = new Array();
-                for (var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
-                    var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                    if (vcontactWebsites != null) {
-                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(vcontactWebsites));
-                    }
-                    else {
-                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(null));
-                    }
-                }
-            }
-            if (object != null && object.contactSocials != null) {
-                result.contactSocials = new Array();
-                for (var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
-                    var vcontactSocials = object.contactSocials[icontactSocials];
-                    if (vcontactSocials != null) {
-                        result.contactSocials.push(Adaptive.ContactSocial.toObject(vcontactSocials));
-                    }
-                    else {
-                        result.contactSocials.push(Adaptive.ContactSocial.toObject(null));
+                if (object.contactEmails != null) {
+                    result.contactEmails = new Array();
+                    for (var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
+                        var vcontactEmails = object.contactEmails[icontactEmails];
+                        if (vcontactEmails != null) {
+                            result.contactEmails.push(Adaptive.ContactEmail.toObject(vcontactEmails));
+                        }
+                        else {
+                            result.contactEmails.push(Adaptive.ContactEmail.toObject(null));
+                        }
                     }
                 }
-            }
-            if (object != null && object.contactTags != null) {
-                result.contactTags = new Array();
-                for (var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
-                    var vcontactTags = object.contactTags[icontactTags];
-                    if (vcontactTags != null) {
-                        result.contactTags.push(Adaptive.ContactTag.toObject(vcontactTags));
+                if (object.contactWebsites != null) {
+                    result.contactWebsites = new Array();
+                    for (var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
+                        var vcontactWebsites = object.contactWebsites[icontactWebsites];
+                        if (vcontactWebsites != null) {
+                            result.contactWebsites.push(Adaptive.ContactWebsite.toObject(vcontactWebsites));
+                        }
+                        else {
+                            result.contactWebsites.push(Adaptive.ContactWebsite.toObject(null));
+                        }
                     }
-                    else {
-                        result.contactTags.push(Adaptive.ContactTag.toObject(null));
+                }
+                if (object.contactSocials != null) {
+                    result.contactSocials = new Array();
+                    for (var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
+                        var vcontactSocials = object.contactSocials[icontactSocials];
+                        if (vcontactSocials != null) {
+                            result.contactSocials.push(Adaptive.ContactSocial.toObject(vcontactSocials));
+                        }
+                        else {
+                            result.contactSocials.push(Adaptive.ContactSocial.toObject(null));
+                        }
+                    }
+                }
+                if (object.contactTags != null) {
+                    result.contactTags = new Array();
+                    for (var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
+                        var vcontactTags = object.contactTags[icontactTags];
+                        if (vcontactTags != null) {
+                            result.contactTags.push(Adaptive.ContactTag.toObject(vcontactTags));
+                        }
+                        else {
+                            result.contactTags.push(Adaptive.ContactTag.toObject(null));
+                        }
                     }
                 }
             }

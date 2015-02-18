@@ -236,27 +236,29 @@ listener.
         */
         APIRequest.toObject = function (object) {
             var result = new APIRequest(null, null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.bridgeType != null) {
-                result.bridgeType = object.bridgeType;
-            }
-            if (object != null && object.methodName != null) {
-                result.methodName = object.methodName;
-            }
-            if (object != null && object.parameters != null) {
-                result.parameters = new Array();
-                for (var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
-                    var vparameters = object.parameters[iparameters];
-                    if (vparameters != null) {
-                        result.parameters.push(vparameters);
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.bridgeType != null) {
+                    result.bridgeType = object.bridgeType;
+                }
+                if (object.methodName != null) {
+                    result.methodName = object.methodName;
+                }
+                if (object.parameters != null) {
+                    result.parameters = new Array();
+                    for (var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
+                        var vparameters = object.parameters[iparameters];
+                        if (vparameters != null) {
+                            result.parameters.push(vparameters);
+                        }
                     }
                 }
-            }
-            if (object != null && object.asyncId != null) {
-                result.asyncId = object.asyncId;
-            }
-            if (object != null && object.apiVersion != null) {
-                result.apiVersion = object.apiVersion;
+                if (object.asyncId != null) {
+                    result.asyncId = object.asyncId;
+                }
+                if (object.apiVersion != null) {
+                    result.apiVersion = object.apiVersion;
+                }
             }
             return result;
         };

@@ -152,16 +152,18 @@ module Adaptive {
           static toObject(object : any) : ContactAddress {
                var result : ContactAddress = new ContactAddress(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.address!=null) {
-                    result.address = object.address;
-               }
-               if (object!=null && object.type!=null) {
-                    result.type = ContactAddressType.toObject(object.type);
-               } else {
-                    result.type = ContactAddressType.toObject(null);
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.address!=null) {
+                         result.address = object.address;
+                    }
+                    if (object.type!=null) {
+                         result.type = ContactAddressType.toObject(object.type);
+                    } else {
+                         result.type = ContactAddressType.toObject(null);
+                    }
 
+               }
                return result;
           }
 

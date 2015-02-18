@@ -109,17 +109,19 @@ module Adaptive {
           static toObject(object : any) : DatabaseRow {
                var result : DatabaseRow = new DatabaseRow(null);
 
-               // Assign values to bean fields.
-               if (object != null && object.values != null) {
-                    result.values = new Array<string>();
-                    for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
-                         var vvalues = object.values[ivalues];
-                         if (vvalues != null) {
-                              result.values.push(vvalues);
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.values != null) {
+                         result.values = new Array<string>();
+                         for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
+                              var vvalues = object.values[ivalues];
+                              if (vvalues != null) {
+                                   result.values.push(vvalues);
+                              }
                          }
                     }
-               }
 
+               }
                return result;
           }
 

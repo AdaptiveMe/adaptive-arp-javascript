@@ -69,14 +69,16 @@ module Adaptive {
           static toObject(object : any) : ServiceHeader {
                var result : ServiceHeader = new ServiceHeader(null, null);
 
-               // Assign values to parent bean fields.
-               if (object!=null && object.keyName!=null) {
-                    result.keyName = object.keyName;
-               }
-               if (object!=null && object.keyData!=null) {
-                    result.keyData = object.keyData;
-               }
+               if (object != null ) {
+                    // Assign values to parent bean fields.
+                    if (object.keyName!=null) {
+                         result.keyName = object.keyName;
+                    }
+                    if (object.keyData!=null) {
+                         result.keyData = object.keyData;
+                    }
 
+               }
                return result;
           }
 

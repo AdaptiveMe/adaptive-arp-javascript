@@ -194,19 +194,21 @@ module Adaptive {
           static toObject(object : any) : ContactEmail {
                var result : ContactEmail = new ContactEmail(null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.type!=null) {
-                    result.type = ContactEmailType.toObject(object.type);
-               } else {
-                    result.type = ContactEmailType.toObject(null);
-               }
-               if (object!=null && object.primary!=null) {
-                    result.primary = object.primary;
-               }
-               if (object!=null && object.email!=null) {
-                    result.email = object.email;
-               }
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    if (object.type!=null) {
+                         result.type = ContactEmailType.toObject(object.type);
+                    } else {
+                         result.type = ContactEmailType.toObject(null);
+                    }
+                    if (object.primary!=null) {
+                         result.primary = object.primary;
+                    }
+                    if (object.email!=null) {
+                         result.email = object.email;
+                    }
 
+               }
                return result;
           }
 

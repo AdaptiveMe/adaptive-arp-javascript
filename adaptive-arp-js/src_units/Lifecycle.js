@@ -117,12 +117,14 @@ var Adaptive;
         */
         Lifecycle.toObject = function (object) {
             var result = new Lifecycle(null);
-            // Assign values to bean fields.
-            if (object != null && object.state != null) {
-                result.state = Adaptive.LifecycleState.toObject(object.state);
-            }
-            else {
-                result.state = Adaptive.LifecycleState.toObject(null);
+            if (object != null) {
+                // Assign values to bean fields.
+                if (object.state != null) {
+                    result.state = Adaptive.LifecycleState.toObject(object.state);
+                }
+                else {
+                    result.state = Adaptive.LifecycleState.toObject(null);
+                }
             }
             return result;
         };
