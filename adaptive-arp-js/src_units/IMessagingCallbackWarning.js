@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IMessagingCallbackWarning}
         */
         IMessagingCallbackWarning.toObject = function (object) {
+            var retValue = IMessagingCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "UnableToSentAll":
-                        return IMessagingCallbackWarning.UnableToSentAll;
+                        retValue = IMessagingCallbackWarning.UnableToSentAll;
                     case "UnableToFetchAttachment":
-                        return IMessagingCallbackWarning.UnableToFetchAttachment;
+                        retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
                     case "Unknown":
-                        return IMessagingCallbackWarning.Unknown;
+                        retValue = IMessagingCallbackWarning.Unknown;
                     default:
-                        return IMessagingCallbackWarning.Unknown;
+                        retValue = IMessagingCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IMessagingCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']

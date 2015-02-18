@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IContactPhotoResultCallbackError}
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
+            var retValue = IContactPhotoResultCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "NoPermission":
-                        return IContactPhotoResultCallbackError.NoPermission;
+                        retValue = IContactPhotoResultCallbackError.NoPermission;
                     case "Wrong_Params":
-                        return IContactPhotoResultCallbackError.Wrong_Params;
+                        retValue = IContactPhotoResultCallbackError.Wrong_Params;
                     case "No_Photo":
-                        return IContactPhotoResultCallbackError.No_Photo;
+                        retValue = IContactPhotoResultCallbackError.No_Photo;
                     case "Unknown":
-                        return IContactPhotoResultCallbackError.Unknown;
+                        retValue = IContactPhotoResultCallbackError.Unknown;
                     default:
-                        return IContactPhotoResultCallbackError.Unknown;
+                        retValue = IContactPhotoResultCallbackError.Unknown;
                 }
             }
-            else {
-                return IContactPhotoResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']

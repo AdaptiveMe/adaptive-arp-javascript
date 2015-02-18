@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesButton}
         */
         ICapabilitiesButton.toObject = function (object) {
+            var retValue = ICapabilitiesButton.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "HomeButton":
-                        return ICapabilitiesButton.HomeButton;
+                        retValue = ICapabilitiesButton.HomeButton;
                     case "BackButton":
-                        return ICapabilitiesButton.BackButton;
+                        retValue = ICapabilitiesButton.BackButton;
                     case "OptionButton":
-                        return ICapabilitiesButton.OptionButton;
+                        retValue = ICapabilitiesButton.OptionButton;
                     case "Unknown":
-                        return ICapabilitiesButton.Unknown;
+                        retValue = ICapabilitiesButton.Unknown;
                     default:
-                        return ICapabilitiesButton.Unknown;
+                        retValue = ICapabilitiesButton.Unknown;
                 }
             }
-            else {
-                return ICapabilitiesButton.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesButton} [HomeButton='HomeButton']

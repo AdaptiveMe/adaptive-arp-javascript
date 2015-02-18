@@ -99,38 +99,38 @@ module Adaptive {
              @return {Adaptive.IOSType}
           */
           static toObject(object : any) : IOSType {
+               var retValue : IOSType = IOSType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "iOS":
-                              return IOSType.iOS;
+                              retValue = IOSType.iOS;
                          case "OSX":
-                              return IOSType.OSX;
+                              retValue = IOSType.OSX;
                          case "Windows":
-                              return IOSType.Windows;
+                              retValue = IOSType.Windows;
                          case "WindowsPhone":
-                              return IOSType.WindowsPhone;
+                              retValue = IOSType.WindowsPhone;
                          case "Android":
-                              return IOSType.Android;
+                              retValue = IOSType.Android;
                          case "Linux":
-                              return IOSType.Linux;
+                              retValue = IOSType.Linux;
                          case "Blackberry":
-                              return IOSType.Blackberry;
+                              retValue = IOSType.Blackberry;
                          case "Tizen":
-                              return IOSType.Tizen;
+                              retValue = IOSType.Tizen;
                          case "FirefoxOS":
-                              return IOSType.FirefoxOS;
+                              retValue = IOSType.FirefoxOS;
                          case "Chromium":
-                              return IOSType.Chromium;
+                              retValue = IOSType.Chromium;
                          case "Unspecified":
-                              return IOSType.Unspecified;
+                              retValue = IOSType.Unspecified;
                          case "Unknown":
-                              return IOSType.Unknown;
+                              retValue = IOSType.Unknown;
                          default:
-                              return IOSType.Unknown;
+                              retValue = IOSType.Unknown;
                     }
-               } else {
-                    return IOSType.Unknown;
                }
+               return retValue;
           }
 
      }

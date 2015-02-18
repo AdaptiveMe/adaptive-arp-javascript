@@ -59,18 +59,18 @@ module Adaptive {
              @return {Adaptive.ISecurityResultCallbackWarning}
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
+               var retValue : ISecurityResultCallbackWarning = ISecurityResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "EntryOverride":
-                              return ISecurityResultCallbackWarning.EntryOverride;
+                              retValue = ISecurityResultCallbackWarning.EntryOverride;
                          case "Unknown":
-                              return ISecurityResultCallbackWarning.Unknown;
+                              retValue = ISecurityResultCallbackWarning.Unknown;
                          default:
-                              return ISecurityResultCallbackWarning.Unknown;
+                              retValue = ISecurityResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return ISecurityResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

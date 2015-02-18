@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IServiceMethod}
         */
         IServiceMethod.toObject = function (object) {
+            var retValue = IServiceMethod.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "POST":
-                        return IServiceMethod.POST;
+                        retValue = IServiceMethod.POST;
                     case "GET":
-                        return IServiceMethod.GET;
+                        retValue = IServiceMethod.GET;
                     case "HEAD":
-                        return IServiceMethod.HEAD;
+                        retValue = IServiceMethod.HEAD;
                     case "Unknown":
-                        return IServiceMethod.Unknown;
+                        retValue = IServiceMethod.Unknown;
                     default:
-                        return IServiceMethod.Unknown;
+                        retValue = IServiceMethod.Unknown;
                 }
             }
-            else {
-                return IServiceMethod.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IServiceMethod} [POST='POST']

@@ -22090,22 +22090,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ContactAddressType}
           */
           static toObject(object : any) : ContactAddressType {
+               var retValue : ContactAddressType = ContactAddressType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Home":
-                              return ContactAddressType.Home;
+                              retValue = ContactAddressType.Home;
                          case "Work":
-                              return ContactAddressType.Work;
+                              retValue = ContactAddressType.Work;
                          case "Other":
-                              return ContactAddressType.Other;
+                              retValue = ContactAddressType.Other;
                          case "Unknown":
-                              return ContactAddressType.Unknown;
+                              retValue = ContactAddressType.Unknown;
                          default:
-                              return ContactAddressType.Unknown;
+                              retValue = ContactAddressType.Unknown;
                     }
-               } else {
-                    return ContactAddressType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22142,22 +22142,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ContactEmailType}
           */
           static toObject(object : any) : ContactEmailType {
+               var retValue : ContactEmailType = ContactEmailType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Personal":
-                              return ContactEmailType.Personal;
+                              retValue = ContactEmailType.Personal;
                          case "Work":
-                              return ContactEmailType.Work;
+                              retValue = ContactEmailType.Work;
                          case "Other":
-                              return ContactEmailType.Other;
+                              retValue = ContactEmailType.Other;
                          case "Unknown":
-                              return ContactEmailType.Unknown;
+                              retValue = ContactEmailType.Unknown;
                          default:
-                              return ContactEmailType.Unknown;
+                              retValue = ContactEmailType.Unknown;
                     }
-               } else {
-                    return ContactEmailType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22198,24 +22198,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ContactPersonalInfoTitle}
           */
           static toObject(object : any) : ContactPersonalInfoTitle {
+               var retValue : ContactPersonalInfoTitle = ContactPersonalInfoTitle.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Mr":
-                              return ContactPersonalInfoTitle.Mr;
+                              retValue = ContactPersonalInfoTitle.Mr;
                          case "Mrs":
-                              return ContactPersonalInfoTitle.Mrs;
+                              retValue = ContactPersonalInfoTitle.Mrs;
                          case "Ms":
-                              return ContactPersonalInfoTitle.Ms;
+                              retValue = ContactPersonalInfoTitle.Ms;
                          case "Dr":
-                              return ContactPersonalInfoTitle.Dr;
+                              retValue = ContactPersonalInfoTitle.Dr;
                          case "Unknown":
-                              return ContactPersonalInfoTitle.Unknown;
+                              retValue = ContactPersonalInfoTitle.Unknown;
                          default:
-                              return ContactPersonalInfoTitle.Unknown;
+                              retValue = ContactPersonalInfoTitle.Unknown;
                     }
-               } else {
-                    return ContactPersonalInfoTitle.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22268,30 +22268,30 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ContactPhoneType}
           */
           static toObject(object : any) : ContactPhoneType {
+               var retValue : ContactPhoneType = ContactPhoneType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Mobile":
-                              return ContactPhoneType.Mobile;
+                              retValue = ContactPhoneType.Mobile;
                          case "Work":
-                              return ContactPhoneType.Work;
+                              retValue = ContactPhoneType.Work;
                          case "Home":
-                              return ContactPhoneType.Home;
+                              retValue = ContactPhoneType.Home;
                          case "Main":
-                              return ContactPhoneType.Main;
+                              retValue = ContactPhoneType.Main;
                          case "HomeFax":
-                              return ContactPhoneType.HomeFax;
+                              retValue = ContactPhoneType.HomeFax;
                          case "WorkFax":
-                              return ContactPhoneType.WorkFax;
+                              retValue = ContactPhoneType.WorkFax;
                          case "Other":
-                              return ContactPhoneType.Other;
+                              retValue = ContactPhoneType.Other;
                          case "Unknown":
-                              return ContactPhoneType.Unknown;
+                              retValue = ContactPhoneType.Unknown;
                          default:
-                              return ContactPhoneType.Unknown;
+                              retValue = ContactPhoneType.Unknown;
                     }
-               } else {
-                    return ContactPhoneType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22336,26 +22336,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ContactSocialNetwork}
           */
           static toObject(object : any) : ContactSocialNetwork {
+               var retValue : ContactSocialNetwork = ContactSocialNetwork.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Twitter":
-                              return ContactSocialNetwork.Twitter;
+                              retValue = ContactSocialNetwork.Twitter;
                          case "Facebook":
-                              return ContactSocialNetwork.Facebook;
+                              retValue = ContactSocialNetwork.Facebook;
                          case "GooglePlus":
-                              return ContactSocialNetwork.GooglePlus;
+                              retValue = ContactSocialNetwork.GooglePlus;
                          case "LinkedIn":
-                              return ContactSocialNetwork.LinkedIn;
+                              retValue = ContactSocialNetwork.LinkedIn;
                          case "Flickr":
-                              return ContactSocialNetwork.Flickr;
+                              retValue = ContactSocialNetwork.Flickr;
                          case "Unknown":
-                              return ContactSocialNetwork.Unknown;
+                              retValue = ContactSocialNetwork.Unknown;
                          default:
-                              return ContactSocialNetwork.Unknown;
+                              retValue = ContactSocialNetwork.Unknown;
                     }
-               } else {
-                    return ContactSocialNetwork.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22388,20 +22388,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IAccelerationListenerError}
           */
           static toObject(object : any) : IAccelerationListenerError {
+               var retValue : IAccelerationListenerError = IAccelerationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unauthorized":
-                              return IAccelerationListenerError.Unauthorized;
+                              retValue = IAccelerationListenerError.Unauthorized;
                          case "Unavailable":
-                              return IAccelerationListenerError.Unavailable;
+                              retValue = IAccelerationListenerError.Unavailable;
                          case "Unknown":
-                              return IAccelerationListenerError.Unknown;
+                              retValue = IAccelerationListenerError.Unknown;
                          default:
-                              return IAccelerationListenerError.Unknown;
+                              retValue = IAccelerationListenerError.Unknown;
                     }
-               } else {
-                    return IAccelerationListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22434,20 +22434,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IAccelerationListenerWarning}
           */
           static toObject(object : any) : IAccelerationListenerWarning {
+               var retValue : IAccelerationListenerWarning = IAccelerationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NeedsCalibration":
-                              return IAccelerationListenerWarning.NeedsCalibration;
+                              retValue = IAccelerationListenerWarning.NeedsCalibration;
                          case "Stale":
-                              return IAccelerationListenerWarning.Stale;
+                              retValue = IAccelerationListenerWarning.Stale;
                          case "Unknown":
-                              return IAccelerationListenerWarning.Unknown;
+                              retValue = IAccelerationListenerWarning.Unknown;
                          default:
-                              return IAccelerationListenerWarning.Unknown;
+                              retValue = IAccelerationListenerWarning.Unknown;
                     }
-               } else {
-                    return IAccelerationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22532,46 +22532,46 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IAdaptiveRPGroup}
           */
           static toObject(object : any) : IAdaptiveRPGroup {
+               var retValue : IAdaptiveRPGroup = IAdaptiveRPGroup.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Application":
-                              return IAdaptiveRPGroup.Application;
+                              retValue = IAdaptiveRPGroup.Application;
                          case "Commerce":
-                              return IAdaptiveRPGroup.Commerce;
+                              retValue = IAdaptiveRPGroup.Commerce;
                          case "Communication":
-                              return IAdaptiveRPGroup.Communication;
+                              retValue = IAdaptiveRPGroup.Communication;
                          case "Data":
-                              return IAdaptiveRPGroup.Data;
+                              retValue = IAdaptiveRPGroup.Data;
                          case "Media":
-                              return IAdaptiveRPGroup.Media;
+                              retValue = IAdaptiveRPGroup.Media;
                          case "Notification":
-                              return IAdaptiveRPGroup.Notification;
+                              retValue = IAdaptiveRPGroup.Notification;
                          case "PIM":
-                              return IAdaptiveRPGroup.PIM;
+                              retValue = IAdaptiveRPGroup.PIM;
                          case "Reader":
-                              return IAdaptiveRPGroup.Reader;
+                              retValue = IAdaptiveRPGroup.Reader;
                          case "Security":
-                              return IAdaptiveRPGroup.Security;
+                              retValue = IAdaptiveRPGroup.Security;
                          case "Sensor":
-                              return IAdaptiveRPGroup.Sensor;
+                              retValue = IAdaptiveRPGroup.Sensor;
                          case "Social":
-                              return IAdaptiveRPGroup.Social;
+                              retValue = IAdaptiveRPGroup.Social;
                          case "System":
-                              return IAdaptiveRPGroup.System;
+                              retValue = IAdaptiveRPGroup.System;
                          case "UI":
-                              return IAdaptiveRPGroup.UI;
+                              retValue = IAdaptiveRPGroup.UI;
                          case "Util":
-                              return IAdaptiveRPGroup.Util;
+                              retValue = IAdaptiveRPGroup.Util;
                          case "Kernel":
-                              return IAdaptiveRPGroup.Kernel;
+                              retValue = IAdaptiveRPGroup.Kernel;
                          case "Unknown":
-                              return IAdaptiveRPGroup.Unknown;
+                              retValue = IAdaptiveRPGroup.Unknown;
                          default:
-                              return IAdaptiveRPGroup.Unknown;
+                              retValue = IAdaptiveRPGroup.Unknown;
                     }
-               } else {
-                    return IAdaptiveRPGroup.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22600,18 +22600,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IButtonListenerError}
           */
           static toObject(object : any) : IButtonListenerError {
+               var retValue : IButtonListenerError = IButtonListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Not_Present":
-                              return IButtonListenerError.Not_Present;
+                              retValue = IButtonListenerError.Not_Present;
                          case "Unknown":
-                              return IButtonListenerError.Unknown;
+                              retValue = IButtonListenerError.Unknown;
                          default:
-                              return IButtonListenerError.Unknown;
+                              retValue = IButtonListenerError.Unknown;
                     }
-               } else {
-                    return IButtonListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22640,18 +22640,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IButtonListenerWarning}
           */
           static toObject(object : any) : IButtonListenerWarning {
+               var retValue : IButtonListenerWarning = IButtonListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Not_Implemented":
-                              return IButtonListenerWarning.Not_Implemented;
+                              retValue = IButtonListenerWarning.Not_Implemented;
                          case "Unknown":
-                              return IButtonListenerWarning.Unknown;
+                              retValue = IButtonListenerWarning.Unknown;
                          default:
-                              return IButtonListenerWarning.Unknown;
+                              retValue = IButtonListenerWarning.Unknown;
                     }
-               } else {
-                    return IButtonListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22688,22 +22688,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesButton}
           */
           static toObject(object : any) : ICapabilitiesButton {
+               var retValue : ICapabilitiesButton = ICapabilitiesButton.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "HomeButton":
-                              return ICapabilitiesButton.HomeButton;
+                              retValue = ICapabilitiesButton.HomeButton;
                          case "BackButton":
-                              return ICapabilitiesButton.BackButton;
+                              retValue = ICapabilitiesButton.BackButton;
                          case "OptionButton":
-                              return ICapabilitiesButton.OptionButton;
+                              retValue = ICapabilitiesButton.OptionButton;
                          case "Unknown":
-                              return ICapabilitiesButton.Unknown;
+                              retValue = ICapabilitiesButton.Unknown;
                          default:
-                              return ICapabilitiesButton.Unknown;
+                              retValue = ICapabilitiesButton.Unknown;
                     }
-               } else {
-                    return ICapabilitiesButton.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22748,26 +22748,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesCommunication}
           */
           static toObject(object : any) : ICapabilitiesCommunication {
+               var retValue : ICapabilitiesCommunication = ICapabilitiesCommunication.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Calendar":
-                              return ICapabilitiesCommunication.Calendar;
+                              retValue = ICapabilitiesCommunication.Calendar;
                          case "Contact":
-                              return ICapabilitiesCommunication.Contact;
+                              retValue = ICapabilitiesCommunication.Contact;
                          case "Mail":
-                              return ICapabilitiesCommunication.Mail;
+                              retValue = ICapabilitiesCommunication.Mail;
                          case "Messaging":
-                              return ICapabilitiesCommunication.Messaging;
+                              retValue = ICapabilitiesCommunication.Messaging;
                          case "Telephony":
-                              return ICapabilitiesCommunication.Telephony;
+                              retValue = ICapabilitiesCommunication.Telephony;
                          case "Unknown":
-                              return ICapabilitiesCommunication.Unknown;
+                              retValue = ICapabilitiesCommunication.Unknown;
                          default:
-                              return ICapabilitiesCommunication.Unknown;
+                              retValue = ICapabilitiesCommunication.Unknown;
                     }
-               } else {
-                    return ICapabilitiesCommunication.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22804,22 +22804,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesData}
           */
           static toObject(object : any) : ICapabilitiesData {
+               var retValue : ICapabilitiesData = ICapabilitiesData.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Database":
-                              return ICapabilitiesData.Database;
+                              retValue = ICapabilitiesData.Database;
                          case "File":
-                              return ICapabilitiesData.File;
+                              retValue = ICapabilitiesData.File;
                          case "Cloud":
-                              return ICapabilitiesData.Cloud;
+                              retValue = ICapabilitiesData.Cloud;
                          case "Unknown":
-                              return ICapabilitiesData.Unknown;
+                              retValue = ICapabilitiesData.Unknown;
                          default:
-                              return ICapabilitiesData.Unknown;
+                              retValue = ICapabilitiesData.Unknown;
                     }
-               } else {
-                    return ICapabilitiesData.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22864,26 +22864,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesMedia}
           */
           static toObject(object : any) : ICapabilitiesMedia {
+               var retValue : ICapabilitiesMedia = ICapabilitiesMedia.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Audio_Playback":
-                              return ICapabilitiesMedia.Audio_Playback;
+                              retValue = ICapabilitiesMedia.Audio_Playback;
                          case "Audio_Recording":
-                              return ICapabilitiesMedia.Audio_Recording;
+                              retValue = ICapabilitiesMedia.Audio_Recording;
                          case "Camera":
-                              return ICapabilitiesMedia.Camera;
+                              retValue = ICapabilitiesMedia.Camera;
                          case "Video_Playback":
-                              return ICapabilitiesMedia.Video_Playback;
+                              retValue = ICapabilitiesMedia.Video_Playback;
                          case "Video_Recording":
-                              return ICapabilitiesMedia.Video_Recording;
+                              retValue = ICapabilitiesMedia.Video_Recording;
                          case "Unknown":
-                              return ICapabilitiesMedia.Unknown;
+                              retValue = ICapabilitiesMedia.Unknown;
                          default:
-                              return ICapabilitiesMedia.Unknown;
+                              retValue = ICapabilitiesMedia.Unknown;
                     }
-               } else {
-                    return ICapabilitiesMedia.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -22936,30 +22936,30 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesNet}
           */
           static toObject(object : any) : ICapabilitiesNet {
+               var retValue : ICapabilitiesNet = ICapabilitiesNet.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "GSM":
-                              return ICapabilitiesNet.GSM;
+                              retValue = ICapabilitiesNet.GSM;
                          case "GPRS":
-                              return ICapabilitiesNet.GPRS;
+                              retValue = ICapabilitiesNet.GPRS;
                          case "HSDPA":
-                              return ICapabilitiesNet.HSDPA;
+                              retValue = ICapabilitiesNet.HSDPA;
                          case "LTE":
-                              return ICapabilitiesNet.LTE;
+                              retValue = ICapabilitiesNet.LTE;
                          case "WIFI":
-                              return ICapabilitiesNet.WIFI;
+                              retValue = ICapabilitiesNet.WIFI;
                          case "Ethernet":
-                              return ICapabilitiesNet.Ethernet;
+                              retValue = ICapabilitiesNet.Ethernet;
                          case "Unavailable":
-                              return ICapabilitiesNet.Unavailable;
+                              retValue = ICapabilitiesNet.Unavailable;
                          case "Unknown":
-                              return ICapabilitiesNet.Unknown;
+                              retValue = ICapabilitiesNet.Unknown;
                          default:
-                              return ICapabilitiesNet.Unknown;
+                              retValue = ICapabilitiesNet.Unknown;
                     }
-               } else {
-                    return ICapabilitiesNet.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23000,24 +23000,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesNotification}
           */
           static toObject(object : any) : ICapabilitiesNotification {
+               var retValue : ICapabilitiesNotification = ICapabilitiesNotification.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Alarm":
-                              return ICapabilitiesNotification.Alarm;
+                              retValue = ICapabilitiesNotification.Alarm;
                          case "LocalNotification":
-                              return ICapabilitiesNotification.LocalNotification;
+                              retValue = ICapabilitiesNotification.LocalNotification;
                          case "RemoteNotification":
-                              return ICapabilitiesNotification.RemoteNotification;
+                              retValue = ICapabilitiesNotification.RemoteNotification;
                          case "Vibration":
-                              return ICapabilitiesNotification.Vibration;
+                              retValue = ICapabilitiesNotification.Vibration;
                          case "Unknown":
-                              return ICapabilitiesNotification.Unknown;
+                              retValue = ICapabilitiesNotification.Unknown;
                          default:
-                              return ICapabilitiesNotification.Unknown;
+                              retValue = ICapabilitiesNotification.Unknown;
                     }
-               } else {
-                    return ICapabilitiesNotification.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23058,24 +23058,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesOrientation}
           */
           static toObject(object : any) : ICapabilitiesOrientation {
+               var retValue : ICapabilitiesOrientation = ICapabilitiesOrientation.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Portrait_Up":
-                              return ICapabilitiesOrientation.Portrait_Up;
+                              retValue = ICapabilitiesOrientation.Portrait_Up;
                          case "Portrait_Down":
-                              return ICapabilitiesOrientation.Portrait_Down;
+                              retValue = ICapabilitiesOrientation.Portrait_Down;
                          case "Landscape_Left":
-                              return ICapabilitiesOrientation.Landscape_Left;
+                              retValue = ICapabilitiesOrientation.Landscape_Left;
                          case "Landscape_Right":
-                              return ICapabilitiesOrientation.Landscape_Right;
+                              retValue = ICapabilitiesOrientation.Landscape_Right;
                          case "Unknown":
-                              return ICapabilitiesOrientation.Unknown;
+                              retValue = ICapabilitiesOrientation.Unknown;
                          default:
-                              return ICapabilitiesOrientation.Unknown;
+                              retValue = ICapabilitiesOrientation.Unknown;
                     }
-               } else {
-                    return ICapabilitiesOrientation.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23128,30 +23128,30 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ICapabilitiesSensor}
           */
           static toObject(object : any) : ICapabilitiesSensor {
+               var retValue : ICapabilitiesSensor = ICapabilitiesSensor.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Accelerometer":
-                              return ICapabilitiesSensor.Accelerometer;
+                              retValue = ICapabilitiesSensor.Accelerometer;
                          case "AmbientLight":
-                              return ICapabilitiesSensor.AmbientLight;
+                              retValue = ICapabilitiesSensor.AmbientLight;
                          case "Barometer":
-                              return ICapabilitiesSensor.Barometer;
+                              retValue = ICapabilitiesSensor.Barometer;
                          case "Geolocation":
-                              return ICapabilitiesSensor.Geolocation;
+                              retValue = ICapabilitiesSensor.Geolocation;
                          case "Gyroscope":
-                              return ICapabilitiesSensor.Gyroscope;
+                              retValue = ICapabilitiesSensor.Gyroscope;
                          case "Magnetometer":
-                              return ICapabilitiesSensor.Magnetometer;
+                              retValue = ICapabilitiesSensor.Magnetometer;
                          case "Proximity":
-                              return ICapabilitiesSensor.Proximity;
+                              retValue = ICapabilitiesSensor.Proximity;
                          case "Unknown":
-                              return ICapabilitiesSensor.Unknown;
+                              retValue = ICapabilitiesSensor.Unknown;
                          default:
-                              return ICapabilitiesSensor.Unknown;
+                              retValue = ICapabilitiesSensor.Unknown;
                     }
-               } else {
-                    return ICapabilitiesSensor.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23208,32 +23208,32 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactFieldGroup}
           */
           static toObject(object : any) : IContactFieldGroup {
+               var retValue : IContactFieldGroup = IContactFieldGroup.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "PERSONAL_INFO":
-                              return IContactFieldGroup.PERSONAL_INFO;
+                              retValue = IContactFieldGroup.PERSONAL_INFO;
                          case "PROFESSIONAL_INFO":
-                              return IContactFieldGroup.PROFESSIONAL_INFO;
+                              retValue = IContactFieldGroup.PROFESSIONAL_INFO;
                          case "ADDRESSES":
-                              return IContactFieldGroup.ADDRESSES;
+                              retValue = IContactFieldGroup.ADDRESSES;
                          case "PHONES":
-                              return IContactFieldGroup.PHONES;
+                              retValue = IContactFieldGroup.PHONES;
                          case "EMAILS":
-                              return IContactFieldGroup.EMAILS;
+                              retValue = IContactFieldGroup.EMAILS;
                          case "WEBSITES":
-                              return IContactFieldGroup.WEBSITES;
+                              retValue = IContactFieldGroup.WEBSITES;
                          case "SOCIALS":
-                              return IContactFieldGroup.SOCIALS;
+                              retValue = IContactFieldGroup.SOCIALS;
                          case "TAGS":
-                              return IContactFieldGroup.TAGS;
+                              retValue = IContactFieldGroup.TAGS;
                          case "Unknown":
-                              return IContactFieldGroup.Unknown;
+                              retValue = IContactFieldGroup.Unknown;
                          default:
-                              return IContactFieldGroup.Unknown;
+                              retValue = IContactFieldGroup.Unknown;
                     }
-               } else {
-                    return IContactFieldGroup.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23270,22 +23270,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactFilter}
           */
           static toObject(object : any) : IContactFilter {
+               var retValue : IContactFilter = IContactFilter.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "HAS_PHONE":
-                              return IContactFilter.HAS_PHONE;
+                              retValue = IContactFilter.HAS_PHONE;
                          case "HAS_EMAIL":
-                              return IContactFilter.HAS_EMAIL;
+                              retValue = IContactFilter.HAS_EMAIL;
                          case "HAS_ADDRESS":
-                              return IContactFilter.HAS_ADDRESS;
+                              retValue = IContactFilter.HAS_ADDRESS;
                          case "Unknown":
-                              return IContactFilter.Unknown;
+                              retValue = IContactFilter.Unknown;
                          default:
-                              return IContactFilter.Unknown;
+                              retValue = IContactFilter.Unknown;
                     }
-               } else {
-                    return IContactFilter.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23322,22 +23322,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactPhotoResultCallbackError}
           */
           static toObject(object : any) : IContactPhotoResultCallbackError {
+               var retValue : IContactPhotoResultCallbackError = IContactPhotoResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoPermission":
-                              return IContactPhotoResultCallbackError.NoPermission;
+                              retValue = IContactPhotoResultCallbackError.NoPermission;
                          case "Wrong_Params":
-                              return IContactPhotoResultCallbackError.Wrong_Params;
+                              retValue = IContactPhotoResultCallbackError.Wrong_Params;
                          case "No_Photo":
-                              return IContactPhotoResultCallbackError.No_Photo;
+                              retValue = IContactPhotoResultCallbackError.No_Photo;
                          case "Unknown":
-                              return IContactPhotoResultCallbackError.Unknown;
+                              retValue = IContactPhotoResultCallbackError.Unknown;
                          default:
-                              return IContactPhotoResultCallbackError.Unknown;
+                              retValue = IContactPhotoResultCallbackError.Unknown;
                     }
-               } else {
-                    return IContactPhotoResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23370,20 +23370,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactPhotoResultCallbackWarning}
           */
           static toObject(object : any) : IContactPhotoResultCallbackWarning {
+               var retValue : IContactPhotoResultCallbackWarning = IContactPhotoResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "LimitExceeded":
-                              return IContactPhotoResultCallbackWarning.LimitExceeded;
+                              retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
                          case "No_Matches":
-                              return IContactPhotoResultCallbackWarning.No_Matches;
+                              retValue = IContactPhotoResultCallbackWarning.No_Matches;
                          case "Unknown":
-                              return IContactPhotoResultCallbackWarning.Unknown;
+                              retValue = IContactPhotoResultCallbackWarning.Unknown;
                          default:
-                              return IContactPhotoResultCallbackWarning.Unknown;
+                              retValue = IContactPhotoResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IContactPhotoResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23416,20 +23416,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactResultCallbackError}
           */
           static toObject(object : any) : IContactResultCallbackError {
+               var retValue : IContactResultCallbackError = IContactResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoPermission":
-                              return IContactResultCallbackError.NoPermission;
+                              retValue = IContactResultCallbackError.NoPermission;
                          case "Wrong_Params":
-                              return IContactResultCallbackError.Wrong_Params;
+                              retValue = IContactResultCallbackError.Wrong_Params;
                          case "Unknown":
-                              return IContactResultCallbackError.Unknown;
+                              retValue = IContactResultCallbackError.Unknown;
                          default:
-                              return IContactResultCallbackError.Unknown;
+                              retValue = IContactResultCallbackError.Unknown;
                     }
-               } else {
-                    return IContactResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23462,20 +23462,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IContactResultCallbackWarning}
           */
           static toObject(object : any) : IContactResultCallbackWarning {
+               var retValue : IContactResultCallbackWarning = IContactResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "LimitExceeded":
-                              return IContactResultCallbackWarning.LimitExceeded;
+                              retValue = IContactResultCallbackWarning.LimitExceeded;
                          case "No_Matches":
-                              return IContactResultCallbackWarning.No_Matches;
+                              retValue = IContactResultCallbackWarning.No_Matches;
                          case "Unknown":
-                              return IContactResultCallbackWarning.Unknown;
+                              retValue = IContactResultCallbackWarning.Unknown;
                          default:
-                              return IContactResultCallbackWarning.Unknown;
+                              retValue = IContactResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IContactResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23512,22 +23512,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDatabaseResultCallbackError}
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
+               var retValue : IDatabaseResultCallbackError = IDatabaseResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoSpace":
-                              return IDatabaseResultCallbackError.NoSpace;
+                              retValue = IDatabaseResultCallbackError.NoSpace;
                          case "SqlException":
-                              return IDatabaseResultCallbackError.SqlException;
+                              retValue = IDatabaseResultCallbackError.SqlException;
                          case "NotDeleted":
-                              return IDatabaseResultCallbackError.NotDeleted;
+                              retValue = IDatabaseResultCallbackError.NotDeleted;
                          case "Unknown":
-                              return IDatabaseResultCallbackError.Unknown;
+                              retValue = IDatabaseResultCallbackError.Unknown;
                          default:
-                              return IDatabaseResultCallbackError.Unknown;
+                              retValue = IDatabaseResultCallbackError.Unknown;
                     }
-               } else {
-                    return IDatabaseResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23560,20 +23560,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDatabaseResultCallbackWarning}
           */
           static toObject(object : any) : IDatabaseResultCallbackWarning {
+               var retValue : IDatabaseResultCallbackWarning = IDatabaseResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "DatabaseExists":
-                              return IDatabaseResultCallbackWarning.DatabaseExists;
+                              retValue = IDatabaseResultCallbackWarning.DatabaseExists;
                          case "IsOpen":
-                              return IDatabaseResultCallbackWarning.IsOpen;
+                              retValue = IDatabaseResultCallbackWarning.IsOpen;
                          case "Unknown":
-                              return IDatabaseResultCallbackWarning.Unknown;
+                              retValue = IDatabaseResultCallbackWarning.Unknown;
                          default:
-                              return IDatabaseResultCallbackWarning.Unknown;
+                              retValue = IDatabaseResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IDatabaseResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23618,26 +23618,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDatabaseTableResultCallbackError}
           */
           static toObject(object : any) : IDatabaseTableResultCallbackError {
+               var retValue : IDatabaseTableResultCallbackError = IDatabaseTableResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoSpace":
-                              return IDatabaseTableResultCallbackError.NoSpace;
+                              retValue = IDatabaseTableResultCallbackError.NoSpace;
                          case "ReadOnlyTable":
-                              return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                              retValue = IDatabaseTableResultCallbackError.ReadOnlyTable;
                          case "SqlException":
-                              return IDatabaseTableResultCallbackError.SqlException;
+                              retValue = IDatabaseTableResultCallbackError.SqlException;
                          case "DatabaseNotFound":
-                              return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                              retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
                          case "NoTableFound":
-                              return IDatabaseTableResultCallbackError.NoTableFound;
+                              retValue = IDatabaseTableResultCallbackError.NoTableFound;
                          case "Unknown":
-                              return IDatabaseTableResultCallbackError.Unknown;
+                              retValue = IDatabaseTableResultCallbackError.Unknown;
                          default:
-                              return IDatabaseTableResultCallbackError.Unknown;
+                              retValue = IDatabaseTableResultCallbackError.Unknown;
                     }
-               } else {
-                    return IDatabaseTableResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23674,22 +23674,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDatabaseTableResultCallbackWarning}
           */
           static toObject(object : any) : IDatabaseTableResultCallbackWarning {
+               var retValue : IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "TableExists":
-                              return IDatabaseTableResultCallbackWarning.TableExists;
+                              retValue = IDatabaseTableResultCallbackWarning.TableExists;
                          case "TableLocked":
-                              return IDatabaseTableResultCallbackWarning.TableLocked;
+                              retValue = IDatabaseTableResultCallbackWarning.TableLocked;
                          case "NoResults":
-                              return IDatabaseTableResultCallbackWarning.NoResults;
+                              retValue = IDatabaseTableResultCallbackWarning.NoResults;
                          case "Unknown":
-                              return IDatabaseTableResultCallbackWarning.Unknown;
+                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
                          default:
-                              return IDatabaseTableResultCallbackWarning.Unknown;
+                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IDatabaseTableResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23714,16 +23714,16 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDeviceOrientationListenerError}
           */
           static toObject(object : any) : IDeviceOrientationListenerError {
+               var retValue : IDeviceOrientationListenerError = IDeviceOrientationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unknown":
-                              return IDeviceOrientationListenerError.Unknown;
+                              retValue = IDeviceOrientationListenerError.Unknown;
                          default:
-                              return IDeviceOrientationListenerError.Unknown;
+                              retValue = IDeviceOrientationListenerError.Unknown;
                     }
-               } else {
-                    return IDeviceOrientationListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23748,16 +23748,16 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDeviceOrientationListenerWarning}
           */
           static toObject(object : any) : IDeviceOrientationListenerWarning {
+               var retValue : IDeviceOrientationListenerWarning = IDeviceOrientationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unknown":
-                              return IDeviceOrientationListenerWarning.Unknown;
+                              retValue = IDeviceOrientationListenerWarning.Unknown;
                          default:
-                              return IDeviceOrientationListenerWarning.Unknown;
+                              retValue = IDeviceOrientationListenerWarning.Unknown;
                     }
-               } else {
-                    return IDeviceOrientationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23782,16 +23782,16 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDisplayOrientationListenerError}
           */
           static toObject(object : any) : IDisplayOrientationListenerError {
+               var retValue : IDisplayOrientationListenerError = IDisplayOrientationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unknown":
-                              return IDisplayOrientationListenerError.Unknown;
+                              retValue = IDisplayOrientationListenerError.Unknown;
                          default:
-                              return IDisplayOrientationListenerError.Unknown;
+                              retValue = IDisplayOrientationListenerError.Unknown;
                     }
-               } else {
-                    return IDisplayOrientationListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23820,18 +23820,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IDisplayOrientationListenerWarning}
           */
           static toObject(object : any) : IDisplayOrientationListenerWarning {
+               var retValue : IDisplayOrientationListenerWarning = IDisplayOrientationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Application_Vetoed":
-                              return IDisplayOrientationListenerWarning.Application_Vetoed;
+                              retValue = IDisplayOrientationListenerWarning.Application_Vetoed;
                          case "Unknown":
-                              return IDisplayOrientationListenerWarning.Unknown;
+                              retValue = IDisplayOrientationListenerWarning.Unknown;
                          default:
-                              return IDisplayOrientationListenerWarning.Unknown;
+                              retValue = IDisplayOrientationListenerWarning.Unknown;
                     }
-               } else {
-                    return IDisplayOrientationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23868,22 +23868,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileDataLoadResultCallbackError}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackError {
+               var retValue : IFileDataLoadResultCallbackError = IFileDataLoadResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "InexistentFile":
-                              return IFileDataLoadResultCallbackError.InexistentFile;
+                              retValue = IFileDataLoadResultCallbackError.InexistentFile;
                          case "InsufficientSpace":
-                              return IFileDataLoadResultCallbackError.InsufficientSpace;
+                              retValue = IFileDataLoadResultCallbackError.InsufficientSpace;
                          case "Unauthorized":
-                              return IFileDataLoadResultCallbackError.Unauthorized;
+                              retValue = IFileDataLoadResultCallbackError.Unauthorized;
                          case "Unknown":
-                              return IFileDataLoadResultCallbackError.Unknown;
+                              retValue = IFileDataLoadResultCallbackError.Unknown;
                          default:
-                              return IFileDataLoadResultCallbackError.Unknown;
+                              retValue = IFileDataLoadResultCallbackError.Unknown;
                     }
-               } else {
-                    return IFileDataLoadResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23912,18 +23912,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileDataLoadResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
+               var retValue : IFileDataLoadResultCallbackWarning = IFileDataLoadResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "ExceedMaximumSize":
-                              return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                              retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
                          case "Unknown":
-                              return IFileDataLoadResultCallbackWarning.Unknown;
+                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
                          default:
-                              return IFileDataLoadResultCallbackWarning.Unknown;
+                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileDataLoadResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -23960,22 +23960,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileDataStoreResultCallbackError}
           */
           static toObject(object : any) : IFileDataStoreResultCallbackError {
+               var retValue : IFileDataStoreResultCallbackError = IFileDataStoreResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "InexistentFile":
-                              return IFileDataStoreResultCallbackError.InexistentFile;
+                              retValue = IFileDataStoreResultCallbackError.InexistentFile;
                          case "InsufficientSpace":
-                              return IFileDataStoreResultCallbackError.InsufficientSpace;
+                              retValue = IFileDataStoreResultCallbackError.InsufficientSpace;
                          case "Unauthorized":
-                              return IFileDataStoreResultCallbackError.Unauthorized;
+                              retValue = IFileDataStoreResultCallbackError.Unauthorized;
                          case "Unknown":
-                              return IFileDataStoreResultCallbackError.Unknown;
+                              retValue = IFileDataStoreResultCallbackError.Unknown;
                          default:
-                              return IFileDataStoreResultCallbackError.Unknown;
+                              retValue = IFileDataStoreResultCallbackError.Unknown;
                     }
-               } else {
-                    return IFileDataStoreResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24004,18 +24004,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileDataStoreResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataStoreResultCallbackWarning {
+               var retValue : IFileDataStoreResultCallbackWarning = IFileDataStoreResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "ExceedMaximumSize":
-                              return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
+                              retValue = IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
                          case "Unknown":
-                              return IFileDataStoreResultCallbackWarning.Unknown;
+                              retValue = IFileDataStoreResultCallbackWarning.Unknown;
                          default:
-                              return IFileDataStoreResultCallbackWarning.Unknown;
+                              retValue = IFileDataStoreResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileDataStoreResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24048,20 +24048,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileListResultCallbackError}
           */
           static toObject(object : any) : IFileListResultCallbackError {
+               var retValue : IFileListResultCallbackError = IFileListResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "InexistentFile":
-                              return IFileListResultCallbackError.InexistentFile;
+                              retValue = IFileListResultCallbackError.InexistentFile;
                          case "Unauthorized":
-                              return IFileListResultCallbackError.Unauthorized;
+                              retValue = IFileListResultCallbackError.Unauthorized;
                          case "Unknown":
-                              return IFileListResultCallbackError.Unknown;
+                              retValue = IFileListResultCallbackError.Unknown;
                          default:
-                              return IFileListResultCallbackError.Unknown;
+                              retValue = IFileListResultCallbackError.Unknown;
                     }
-               } else {
-                    return IFileListResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24090,18 +24090,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileListResultCallbackWarning}
           */
           static toObject(object : any) : IFileListResultCallbackWarning {
+               var retValue : IFileListResultCallbackWarning = IFileListResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "PartialResult":
-                              return IFileListResultCallbackWarning.PartialResult;
+                              retValue = IFileListResultCallbackWarning.PartialResult;
                          case "Unknown":
-                              return IFileListResultCallbackWarning.Unknown;
+                              retValue = IFileListResultCallbackWarning.Unknown;
                          default:
-                              return IFileListResultCallbackWarning.Unknown;
+                              retValue = IFileListResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileListResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24146,26 +24146,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileResultCallbackError}
           */
           static toObject(object : any) : IFileResultCallbackError {
+               var retValue : IFileResultCallbackError = IFileResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "FileExists":
-                              return IFileResultCallbackError.FileExists;
+                              retValue = IFileResultCallbackError.FileExists;
                          case "SourceInexistent":
-                              return IFileResultCallbackError.SourceInexistent;
+                              retValue = IFileResultCallbackError.SourceInexistent;
                          case "DestionationExists":
-                              return IFileResultCallbackError.DestionationExists;
+                              retValue = IFileResultCallbackError.DestionationExists;
                          case "InsufficientSpace":
-                              return IFileResultCallbackError.InsufficientSpace;
+                              retValue = IFileResultCallbackError.InsufficientSpace;
                          case "Unauthorized":
-                              return IFileResultCallbackError.Unauthorized;
+                              retValue = IFileResultCallbackError.Unauthorized;
                          case "Unknown":
-                              return IFileResultCallbackError.Unknown;
+                              retValue = IFileResultCallbackError.Unknown;
                          default:
-                              return IFileResultCallbackError.Unknown;
+                              retValue = IFileResultCallbackError.Unknown;
                     }
-               } else {
-                    return IFileResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24198,20 +24198,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileResultCallbackWarning}
           */
           static toObject(object : any) : IFileResultCallbackWarning {
+               var retValue : IFileResultCallbackWarning = IFileResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "SourceNotDeleted":
-                              return IFileResultCallbackWarning.SourceNotDeleted;
+                              retValue = IFileResultCallbackWarning.SourceNotDeleted;
                          case "RootDirectory":
-                              return IFileResultCallbackWarning.RootDirectory;
+                              retValue = IFileResultCallbackWarning.RootDirectory;
                          case "Unknown":
-                              return IFileResultCallbackWarning.Unknown;
+                              retValue = IFileResultCallbackWarning.Unknown;
                          default:
-                              return IFileResultCallbackWarning.Unknown;
+                              retValue = IFileResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24248,22 +24248,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileSystemSecurity}
           */
           static toObject(object : any) : IFileSystemSecurity {
+               var retValue : IFileSystemSecurity = IFileSystemSecurity.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Default":
-                              return IFileSystemSecurity.Default;
+                              retValue = IFileSystemSecurity.Default;
                          case "Protected":
-                              return IFileSystemSecurity.Protected;
+                              retValue = IFileSystemSecurity.Protected;
                          case "Encrypted":
-                              return IFileSystemSecurity.Encrypted;
+                              retValue = IFileSystemSecurity.Encrypted;
                          case "Unknown":
-                              return IFileSystemSecurity.Unknown;
+                              retValue = IFileSystemSecurity.Unknown;
                          default:
-                              return IFileSystemSecurity.Unknown;
+                              retValue = IFileSystemSecurity.Unknown;
                     }
-               } else {
-                    return IFileSystemSecurity.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24312,28 +24312,28 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileSystemStorageType}
           */
           static toObject(object : any) : IFileSystemStorageType {
+               var retValue : IFileSystemStorageType = IFileSystemStorageType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Application":
-                              return IFileSystemStorageType.Application;
+                              retValue = IFileSystemStorageType.Application;
                          case "Document":
-                              return IFileSystemStorageType.Document;
+                              retValue = IFileSystemStorageType.Document;
                          case "Cloud":
-                              return IFileSystemStorageType.Cloud;
+                              retValue = IFileSystemStorageType.Cloud;
                          case "Protected":
-                              return IFileSystemStorageType.Protected;
+                              retValue = IFileSystemStorageType.Protected;
                          case "Cache":
-                              return IFileSystemStorageType.Cache;
+                              retValue = IFileSystemStorageType.Cache;
                          case "External":
-                              return IFileSystemStorageType.External;
+                              retValue = IFileSystemStorageType.External;
                          case "Unknown":
-                              return IFileSystemStorageType.Unknown;
+                              retValue = IFileSystemStorageType.Unknown;
                          default:
-                              return IFileSystemStorageType.Unknown;
+                              retValue = IFileSystemStorageType.Unknown;
                     }
-               } else {
-                    return IFileSystemStorageType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24366,20 +24366,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IFileSystemType}
           */
           static toObject(object : any) : IFileSystemType {
+               var retValue : IFileSystemType = IFileSystemType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Directory":
-                              return IFileSystemType.Directory;
+                              retValue = IFileSystemType.Directory;
                          case "File":
-                              return IFileSystemType.File;
+                              retValue = IFileSystemType.File;
                          case "Unknown":
-                              return IFileSystemType.Unknown;
+                              retValue = IFileSystemType.Unknown;
                          default:
-                              return IFileSystemType.Unknown;
+                              retValue = IFileSystemType.Unknown;
                     }
-               } else {
-                    return IFileSystemType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24420,24 +24420,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IGeolocationListenerError}
           */
           static toObject(object : any) : IGeolocationListenerError {
+               var retValue : IGeolocationListenerError = IGeolocationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Disabled":
-                              return IGeolocationListenerError.Disabled;
+                              retValue = IGeolocationListenerError.Disabled;
                          case "RestrictedAccess":
-                              return IGeolocationListenerError.RestrictedAccess;
+                              retValue = IGeolocationListenerError.RestrictedAccess;
                          case "DeniedAccess":
-                              return IGeolocationListenerError.DeniedAccess;
+                              retValue = IGeolocationListenerError.DeniedAccess;
                          case "StatusNotDetermined":
-                              return IGeolocationListenerError.StatusNotDetermined;
+                              retValue = IGeolocationListenerError.StatusNotDetermined;
                          case "Unknown":
-                              return IGeolocationListenerError.Unknown;
+                              retValue = IGeolocationListenerError.Unknown;
                          default:
-                              return IGeolocationListenerError.Unknown;
+                              retValue = IGeolocationListenerError.Unknown;
                     }
-               } else {
-                    return IGeolocationListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24470,20 +24470,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IGeolocationListenerWarning}
           */
           static toObject(object : any) : IGeolocationListenerWarning {
+               var retValue : IGeolocationListenerWarning = IGeolocationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "HighDoP":
-                              return IGeolocationListenerWarning.HighDoP;
+                              retValue = IGeolocationListenerWarning.HighDoP;
                          case "StaleData":
-                              return IGeolocationListenerWarning.StaleData;
+                              retValue = IGeolocationListenerWarning.StaleData;
                          case "Unknown":
-                              return IGeolocationListenerWarning.Unknown;
+                              retValue = IGeolocationListenerWarning.Unknown;
                          default:
-                              return IGeolocationListenerWarning.Unknown;
+                              retValue = IGeolocationListenerWarning.Unknown;
                     }
-               } else {
-                    return IGeolocationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24520,22 +24520,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ILifecycleListenerError}
           */
           static toObject(object : any) : ILifecycleListenerError {
+               var retValue : ILifecycleListenerError = ILifecycleListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Runtime":
-                              return ILifecycleListenerError.Runtime;
+                              retValue = ILifecycleListenerError.Runtime;
                          case "Implementation":
-                              return ILifecycleListenerError.Implementation;
+                              retValue = ILifecycleListenerError.Implementation;
                          case "Killed":
-                              return ILifecycleListenerError.Killed;
+                              retValue = ILifecycleListenerError.Killed;
                          case "Unknown":
-                              return ILifecycleListenerError.Unknown;
+                              retValue = ILifecycleListenerError.Unknown;
                          default:
-                              return ILifecycleListenerError.Unknown;
+                              retValue = ILifecycleListenerError.Unknown;
                     }
-               } else {
-                    return ILifecycleListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24568,20 +24568,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ILifecycleListenerWarning}
           */
           static toObject(object : any) : ILifecycleListenerWarning {
+               var retValue : ILifecycleListenerWarning = ILifecycleListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "MemoryLow":
-                              return ILifecycleListenerWarning.MemoryLow;
+                              retValue = ILifecycleListenerWarning.MemoryLow;
                          case "BatteryLow":
-                              return ILifecycleListenerWarning.BatteryLow;
+                              retValue = ILifecycleListenerWarning.BatteryLow;
                          case "Unknown":
-                              return ILifecycleListenerWarning.Unknown;
+                              retValue = ILifecycleListenerWarning.Unknown;
                          default:
-                              return ILifecycleListenerWarning.Unknown;
+                              retValue = ILifecycleListenerWarning.Unknown;
                     }
-               } else {
-                    return ILifecycleListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24622,24 +24622,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ILoggingLogLevel}
           */
           static toObject(object : any) : ILoggingLogLevel {
+               var retValue : ILoggingLogLevel = ILoggingLogLevel.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "DEBUG":
-                              return ILoggingLogLevel.DEBUG;
+                              retValue = ILoggingLogLevel.DEBUG;
                          case "WARN":
-                              return ILoggingLogLevel.WARN;
+                              retValue = ILoggingLogLevel.WARN;
                          case "ERROR":
-                              return ILoggingLogLevel.ERROR;
+                              retValue = ILoggingLogLevel.ERROR;
                          case "INFO":
-                              return ILoggingLogLevel.INFO;
+                              retValue = ILoggingLogLevel.INFO;
                          case "Unknown":
-                              return ILoggingLogLevel.Unknown;
+                              retValue = ILoggingLogLevel.Unknown;
                          default:
-                              return ILoggingLogLevel.Unknown;
+                              retValue = ILoggingLogLevel.Unknown;
                     }
-               } else {
-                    return ILoggingLogLevel.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24684,26 +24684,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IMessagingCallbackError}
           */
           static toObject(object : any) : IMessagingCallbackError {
+               var retValue : IMessagingCallbackError = IMessagingCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "SIMNotPresent":
-                              return IMessagingCallbackError.SIMNotPresent;
+                              retValue = IMessagingCallbackError.SIMNotPresent;
                          case "EmailAccountNotFound":
-                              return IMessagingCallbackError.EmailAccountNotFound;
+                              retValue = IMessagingCallbackError.EmailAccountNotFound;
                          case "NotSent":
-                              return IMessagingCallbackError.NotSent;
+                              retValue = IMessagingCallbackError.NotSent;
                          case "WrongParams":
-                              return IMessagingCallbackError.WrongParams;
+                              retValue = IMessagingCallbackError.WrongParams;
                          case "NotSupported":
-                              return IMessagingCallbackError.NotSupported;
+                              retValue = IMessagingCallbackError.NotSupported;
                          case "Unknown":
-                              return IMessagingCallbackError.Unknown;
+                              retValue = IMessagingCallbackError.Unknown;
                          default:
-                              return IMessagingCallbackError.Unknown;
+                              retValue = IMessagingCallbackError.Unknown;
                     }
-               } else {
-                    return IMessagingCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24736,20 +24736,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IMessagingCallbackWarning}
           */
           static toObject(object : any) : IMessagingCallbackWarning {
+               var retValue : IMessagingCallbackWarning = IMessagingCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "UnableToSentAll":
-                              return IMessagingCallbackWarning.UnableToSentAll;
+                              retValue = IMessagingCallbackWarning.UnableToSentAll;
                          case "UnableToFetchAttachment":
-                              return IMessagingCallbackWarning.UnableToFetchAttachment;
+                              retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
                          case "Unknown":
-                              return IMessagingCallbackWarning.Unknown;
+                              retValue = IMessagingCallbackWarning.Unknown;
                          default:
-                              return IMessagingCallbackWarning.Unknown;
+                              retValue = IMessagingCallbackWarning.Unknown;
                     }
-               } else {
-                    return IMessagingCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24818,38 +24818,38 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.INetworkReachabilityCallbackError}
           */
           static toObject(object : any) : INetworkReachabilityCallbackError {
+               var retValue : INetworkReachabilityCallbackError = INetworkReachabilityCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Forbidden":
-                              return INetworkReachabilityCallbackError.Forbidden;
+                              retValue = INetworkReachabilityCallbackError.Forbidden;
                          case "NotFound":
-                              return INetworkReachabilityCallbackError.NotFound;
+                              retValue = INetworkReachabilityCallbackError.NotFound;
                          case "MethodNotAllowed":
-                              return INetworkReachabilityCallbackError.MethodNotAllowed;
+                              retValue = INetworkReachabilityCallbackError.MethodNotAllowed;
                          case "NotAllowed":
-                              return INetworkReachabilityCallbackError.NotAllowed;
+                              retValue = INetworkReachabilityCallbackError.NotAllowed;
                          case "NotAuthenticated":
-                              return INetworkReachabilityCallbackError.NotAuthenticated;
+                              retValue = INetworkReachabilityCallbackError.NotAuthenticated;
                          case "TimeOut":
-                              return INetworkReachabilityCallbackError.TimeOut;
+                              retValue = INetworkReachabilityCallbackError.TimeOut;
                          case "NoResponse":
-                              return INetworkReachabilityCallbackError.NoResponse;
+                              retValue = INetworkReachabilityCallbackError.NoResponse;
                          case "Unreachable":
-                              return INetworkReachabilityCallbackError.Unreachable;
+                              retValue = INetworkReachabilityCallbackError.Unreachable;
                          case "Wrong_Params":
-                              return INetworkReachabilityCallbackError.Wrong_Params;
+                              retValue = INetworkReachabilityCallbackError.Wrong_Params;
                          case "MalformedUrl":
-                              return INetworkReachabilityCallbackError.MalformedUrl;
+                              retValue = INetworkReachabilityCallbackError.MalformedUrl;
                          case "DomainUnresolvable":
-                              return INetworkReachabilityCallbackError.DomainUnresolvable;
+                              retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
                          case "Unknown":
-                              return INetworkReachabilityCallbackError.Unknown;
+                              retValue = INetworkReachabilityCallbackError.Unknown;
                          default:
-                              return INetworkReachabilityCallbackError.Unknown;
+                              retValue = INetworkReachabilityCallbackError.Unknown;
                     }
-               } else {
-                    return INetworkReachabilityCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24894,26 +24894,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.INetworkReachabilityCallbackWarning}
           */
           static toObject(object : any) : INetworkReachabilityCallbackWarning {
+               var retValue : INetworkReachabilityCallbackWarning = INetworkReachabilityCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "IncorrectScheme":
-                              return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                              retValue = INetworkReachabilityCallbackWarning.IncorrectScheme;
                          case "NotSecure":
-                              return INetworkReachabilityCallbackWarning.NotSecure;
+                              retValue = INetworkReachabilityCallbackWarning.NotSecure;
                          case "NotTrusted":
-                              return INetworkReachabilityCallbackWarning.NotTrusted;
+                              retValue = INetworkReachabilityCallbackWarning.NotTrusted;
                          case "Redirected":
-                              return INetworkReachabilityCallbackWarning.Redirected;
+                              retValue = INetworkReachabilityCallbackWarning.Redirected;
                          case "NotRegisteredService":
-                              return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                              retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
                          case "Unknown":
-                              return INetworkReachabilityCallbackWarning.Unknown;
+                              retValue = INetworkReachabilityCallbackWarning.Unknown;
                          default:
-                              return INetworkReachabilityCallbackWarning.Unknown;
+                              retValue = INetworkReachabilityCallbackWarning.Unknown;
                     }
-               } else {
-                    return INetworkReachabilityCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24946,20 +24946,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.INetworkStatusListenerError}
           */
           static toObject(object : any) : INetworkStatusListenerError {
+               var retValue : INetworkStatusListenerError = INetworkStatusListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoPermission":
-                              return INetworkStatusListenerError.NoPermission;
+                              retValue = INetworkStatusListenerError.NoPermission;
                          case "Unreachable":
-                              return INetworkStatusListenerError.Unreachable;
+                              retValue = INetworkStatusListenerError.Unreachable;
                          case "Unknown":
-                              return INetworkStatusListenerError.Unknown;
+                              retValue = INetworkStatusListenerError.Unknown;
                          default:
-                              return INetworkStatusListenerError.Unknown;
+                              retValue = INetworkStatusListenerError.Unknown;
                     }
-               } else {
-                    return INetworkStatusListenerError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -24992,20 +24992,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.INetworkStatusListenerWarning}
           */
           static toObject(object : any) : INetworkStatusListenerWarning {
+               var retValue : INetworkStatusListenerWarning = INetworkStatusListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "IpAddressNotAssigned":
-                              return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                              retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
                          case "IpAddressChanged":
-                              return INetworkStatusListenerWarning.IpAddressChanged;
+                              retValue = INetworkStatusListenerWarning.IpAddressChanged;
                          case "Unknown":
-                              return INetworkStatusListenerWarning.Unknown;
+                              retValue = INetworkStatusListenerWarning.Unknown;
                          default:
-                              return INetworkStatusListenerWarning.Unknown;
+                              retValue = INetworkStatusListenerWarning.Unknown;
                     }
-               } else {
-                    return INetworkStatusListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25074,38 +25074,38 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IOSType}
           */
           static toObject(object : any) : IOSType {
+               var retValue : IOSType = IOSType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "iOS":
-                              return IOSType.iOS;
+                              retValue = IOSType.iOS;
                          case "OSX":
-                              return IOSType.OSX;
+                              retValue = IOSType.OSX;
                          case "Windows":
-                              return IOSType.Windows;
+                              retValue = IOSType.Windows;
                          case "WindowsPhone":
-                              return IOSType.WindowsPhone;
+                              retValue = IOSType.WindowsPhone;
                          case "Android":
-                              return IOSType.Android;
+                              retValue = IOSType.Android;
                          case "Linux":
-                              return IOSType.Linux;
+                              retValue = IOSType.Linux;
                          case "Blackberry":
-                              return IOSType.Blackberry;
+                              retValue = IOSType.Blackberry;
                          case "Tizen":
-                              return IOSType.Tizen;
+                              retValue = IOSType.Tizen;
                          case "FirefoxOS":
-                              return IOSType.FirefoxOS;
+                              retValue = IOSType.FirefoxOS;
                          case "Chromium":
-                              return IOSType.Chromium;
+                              retValue = IOSType.Chromium;
                          case "Unspecified":
-                              return IOSType.Unspecified;
+                              retValue = IOSType.Unspecified;
                          case "Unknown":
-                              return IOSType.Unknown;
+                              retValue = IOSType.Unknown;
                          default:
-                              return IOSType.Unknown;
+                              retValue = IOSType.Unknown;
                     }
-               } else {
-                    return IOSType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25138,20 +25138,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ISecurityResultCallbackError}
           */
           static toObject(object : any) : ISecurityResultCallbackError {
+               var retValue : ISecurityResultCallbackError = ISecurityResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoPermission":
-                              return ISecurityResultCallbackError.NoPermission;
+                              retValue = ISecurityResultCallbackError.NoPermission;
                          case "NoMatchesFound":
-                              return ISecurityResultCallbackError.NoMatchesFound;
+                              retValue = ISecurityResultCallbackError.NoMatchesFound;
                          case "Unknown":
-                              return ISecurityResultCallbackError.Unknown;
+                              retValue = ISecurityResultCallbackError.Unknown;
                          default:
-                              return ISecurityResultCallbackError.Unknown;
+                              retValue = ISecurityResultCallbackError.Unknown;
                     }
-               } else {
-                    return ISecurityResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25180,18 +25180,18 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ISecurityResultCallbackWarning}
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
+               var retValue : ISecurityResultCallbackWarning = ISecurityResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "EntryOverride":
-                              return ISecurityResultCallbackWarning.EntryOverride;
+                              retValue = ISecurityResultCallbackWarning.EntryOverride;
                          case "Unknown":
-                              return ISecurityResultCallbackWarning.Unknown;
+                              retValue = ISecurityResultCallbackWarning.Unknown;
                          default:
-                              return ISecurityResultCallbackWarning.Unknown;
+                              retValue = ISecurityResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return ISecurityResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25232,24 +25232,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceCertificateValidation}
           */
           static toObject(object : any) : IServiceCertificateValidation {
+               var retValue : IServiceCertificateValidation = IServiceCertificateValidation.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "None":
-                              return IServiceCertificateValidation.None;
+                              retValue = IServiceCertificateValidation.None;
                          case "Normal":
-                              return IServiceCertificateValidation.Normal;
+                              retValue = IServiceCertificateValidation.Normal;
                          case "Extended":
-                              return IServiceCertificateValidation.Extended;
+                              retValue = IServiceCertificateValidation.Extended;
                          case "Extreme":
-                              return IServiceCertificateValidation.Extreme;
+                              retValue = IServiceCertificateValidation.Extreme;
                          case "Unknown":
-                              return IServiceCertificateValidation.Unknown;
+                              retValue = IServiceCertificateValidation.Unknown;
                          default:
-                              return IServiceCertificateValidation.Unknown;
+                              retValue = IServiceCertificateValidation.Unknown;
                     }
-               } else {
-                    return IServiceCertificateValidation.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25290,24 +25290,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceContentEncoding}
           */
           static toObject(object : any) : IServiceContentEncoding {
+               var retValue : IServiceContentEncoding = IServiceContentEncoding.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "ASCII":
-                              return IServiceContentEncoding.ASCII;
+                              retValue = IServiceContentEncoding.ASCII;
                          case "UTF8":
-                              return IServiceContentEncoding.UTF8;
+                              retValue = IServiceContentEncoding.UTF8;
                          case "ISOLatin1":
-                              return IServiceContentEncoding.ISOLatin1;
+                              retValue = IServiceContentEncoding.ISOLatin1;
                          case "Unicode":
-                              return IServiceContentEncoding.Unicode;
+                              retValue = IServiceContentEncoding.Unicode;
                          case "Unknown":
-                              return IServiceContentEncoding.Unknown;
+                              retValue = IServiceContentEncoding.Unknown;
                          default:
-                              return IServiceContentEncoding.Unknown;
+                              retValue = IServiceContentEncoding.Unknown;
                     }
-               } else {
-                    return IServiceContentEncoding.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25344,22 +25344,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceMethod}
           */
           static toObject(object : any) : IServiceMethod {
+               var retValue : IServiceMethod = IServiceMethod.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "POST":
-                              return IServiceMethod.POST;
+                              retValue = IServiceMethod.POST;
                          case "GET":
-                              return IServiceMethod.GET;
+                              retValue = IServiceMethod.GET;
                          case "HEAD":
-                              return IServiceMethod.HEAD;
+                              retValue = IServiceMethod.HEAD;
                          case "Unknown":
-                              return IServiceMethod.Unknown;
+                              retValue = IServiceMethod.Unknown;
                          default:
-                              return IServiceMethod.Unknown;
+                              retValue = IServiceMethod.Unknown;
                     }
-               } else {
-                    return IServiceMethod.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25400,24 +25400,24 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceType}
           */
           static toObject(object : any) : IServiceType {
+               var retValue : IServiceType = IServiceType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "OctetBinary":
-                              return IServiceType.OctetBinary;
+                              retValue = IServiceType.OctetBinary;
                          case "RestJson":
-                              return IServiceType.RestJson;
+                              retValue = IServiceType.RestJson;
                          case "RestXml":
-                              return IServiceType.RestXml;
+                              retValue = IServiceType.RestXml;
                          case "SoapXml":
-                              return IServiceType.SoapXml;
+                              retValue = IServiceType.SoapXml;
                          case "Unknown":
-                              return IServiceType.Unknown;
+                              retValue = IServiceType.Unknown;
                          default:
-                              return IServiceType.Unknown;
+                              retValue = IServiceType.Unknown;
                     }
-               } else {
-                    return IServiceType.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25462,26 +25462,26 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceResultCallbackError}
           */
           static toObject(object : any) : IServiceResultCallbackError {
+               var retValue : IServiceResultCallbackError = IServiceResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "TimeOut":
-                              return IServiceResultCallbackError.TimeOut;
+                              retValue = IServiceResultCallbackError.TimeOut;
                          case "NoResponse":
-                              return IServiceResultCallbackError.NoResponse;
+                              retValue = IServiceResultCallbackError.NoResponse;
                          case "Unreachable":
-                              return IServiceResultCallbackError.Unreachable;
+                              retValue = IServiceResultCallbackError.Unreachable;
                          case "MalformedUrl":
-                              return IServiceResultCallbackError.MalformedUrl;
+                              retValue = IServiceResultCallbackError.MalformedUrl;
                          case "NotRegisteredService":
-                              return IServiceResultCallbackError.NotRegisteredService;
+                              retValue = IServiceResultCallbackError.NotRegisteredService;
                          case "Unknown":
-                              return IServiceResultCallbackError.Unknown;
+                              retValue = IServiceResultCallbackError.Unknown;
                          default:
-                              return IServiceResultCallbackError.Unknown;
+                              retValue = IServiceResultCallbackError.Unknown;
                     }
-               } else {
-                    return IServiceResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25550,38 +25550,38 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.IServiceResultCallbackWarning}
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
+               var retValue : IServiceResultCallbackWarning = IServiceResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "CertificateUntrusted":
-                              return IServiceResultCallbackWarning.CertificateUntrusted;
+                              retValue = IServiceResultCallbackWarning.CertificateUntrusted;
                          case "NotSecure":
-                              return IServiceResultCallbackWarning.NotSecure;
+                              retValue = IServiceResultCallbackWarning.NotSecure;
                          case "Redirected":
-                              return IServiceResultCallbackWarning.Redirected;
+                              retValue = IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":
-                              return IServiceResultCallbackWarning.Wrong_Params;
+                              retValue = IServiceResultCallbackWarning.Wrong_Params;
                          case "Forbidden":
-                              return IServiceResultCallbackWarning.Forbidden;
+                              retValue = IServiceResultCallbackWarning.Forbidden;
                          case "NotFound":
-                              return IServiceResultCallbackWarning.NotFound;
+                              retValue = IServiceResultCallbackWarning.NotFound;
                          case "MethodNotAllowed":
-                              return IServiceResultCallbackWarning.MethodNotAllowed;
+                              retValue = IServiceResultCallbackWarning.MethodNotAllowed;
                          case "NotAllowed":
-                              return IServiceResultCallbackWarning.NotAllowed;
+                              retValue = IServiceResultCallbackWarning.NotAllowed;
                          case "NotAuthenticated":
-                              return IServiceResultCallbackWarning.NotAuthenticated;
+                              retValue = IServiceResultCallbackWarning.NotAuthenticated;
                          case "PaymentRequired":
-                              return IServiceResultCallbackWarning.PaymentRequired;
+                              retValue = IServiceResultCallbackWarning.PaymentRequired;
                          case "ServerError":
-                              return IServiceResultCallbackWarning.ServerError;
+                              retValue = IServiceResultCallbackWarning.ServerError;
                          case "Unknown":
-                              return IServiceResultCallbackWarning.Unknown;
+                              retValue = IServiceResultCallbackWarning.Unknown;
                          default:
-                              return IServiceResultCallbackWarning.Unknown;
+                              retValue = IServiceResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IServiceResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25614,20 +25614,20 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.ITelephonyStatus}
           */
           static toObject(object : any) : ITelephonyStatus {
+               var retValue : ITelephonyStatus = ITelephonyStatus.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Dialing":
-                              return ITelephonyStatus.Dialing;
+                              retValue = ITelephonyStatus.Dialing;
                          case "Failed":
-                              return ITelephonyStatus.Failed;
+                              retValue = ITelephonyStatus.Failed;
                          case "Unknown":
-                              return ITelephonyStatus.Unknown;
+                              retValue = ITelephonyStatus.Unknown;
                          default:
-                              return ITelephonyStatus.Unknown;
+                              retValue = ITelephonyStatus.Unknown;
                     }
-               } else {
-                    return ITelephonyStatus.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25684,32 +25684,32 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.LifecycleState}
           */
           static toObject(object : any) : LifecycleState {
+               var retValue : LifecycleState = LifecycleState.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Starting":
-                              return LifecycleState.Starting;
+                              retValue = LifecycleState.Starting;
                          case "Started":
-                              return LifecycleState.Started;
+                              retValue = LifecycleState.Started;
                          case "Running":
-                              return LifecycleState.Running;
+                              retValue = LifecycleState.Running;
                          case "Pausing":
-                              return LifecycleState.Pausing;
+                              retValue = LifecycleState.Pausing;
                          case "PausedIdle":
-                              return LifecycleState.PausedIdle;
+                              retValue = LifecycleState.PausedIdle;
                          case "PausedRun":
-                              return LifecycleState.PausedRun;
+                              retValue = LifecycleState.PausedRun;
                          case "Resuming":
-                              return LifecycleState.Resuming;
+                              retValue = LifecycleState.Resuming;
                          case "Stopping":
-                              return LifecycleState.Stopping;
+                              retValue = LifecycleState.Stopping;
                          case "Unknown":
-                              return LifecycleState.Unknown;
+                              retValue = LifecycleState.Unknown;
                          default:
-                              return LifecycleState.Unknown;
+                              retValue = LifecycleState.Unknown;
                     }
-               } else {
-                    return LifecycleState.Unknown;
                }
+               return retValue;
           }
 
      }
@@ -25746,22 +25746,22 @@ of the device. For device orientation, use the IDevice APIs.
              @return {Adaptive.RotationEventState}
           */
           static toObject(object : any) : RotationEventState {
+               var retValue : RotationEventState = RotationEventState.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "WillStartRotation":
-                              return RotationEventState.WillStartRotation;
+                              retValue = RotationEventState.WillStartRotation;
                          case "IsRotating":
-                              return RotationEventState.IsRotating;
+                              retValue = RotationEventState.IsRotating;
                          case "DidFinishRotation":
-                              return RotationEventState.DidFinishRotation;
+                              retValue = RotationEventState.DidFinishRotation;
                          case "Unknown":
-                              return RotationEventState.Unknown;
+                              retValue = RotationEventState.Unknown;
                          default:
-                              return RotationEventState.Unknown;
+                              retValue = RotationEventState.Unknown;
                     }
-               } else {
-                    return RotationEventState.Unknown;
                }
+               return retValue;
           }
 
      }

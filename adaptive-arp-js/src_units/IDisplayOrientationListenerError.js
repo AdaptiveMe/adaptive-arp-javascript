@@ -51,17 +51,16 @@ var Adaptive;
            @return {Adaptive.IDisplayOrientationListenerError}
         */
         IDisplayOrientationListenerError.toObject = function (object) {
+            var retValue = IDisplayOrientationListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Unknown":
-                        return IDisplayOrientationListenerError.Unknown;
+                        retValue = IDisplayOrientationListenerError.Unknown;
                     default:
-                        return IDisplayOrientationListenerError.Unknown;
+                        retValue = IDisplayOrientationListenerError.Unknown;
                 }
             }
-            else {
-                return IDisplayOrientationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDisplayOrientationListenerError} [Unknown='Unknown']

@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IFileResultCallbackWarning}
         */
         IFileResultCallbackWarning.toObject = function (object) {
+            var retValue = IFileResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "SourceNotDeleted":
-                        return IFileResultCallbackWarning.SourceNotDeleted;
+                        retValue = IFileResultCallbackWarning.SourceNotDeleted;
                     case "RootDirectory":
-                        return IFileResultCallbackWarning.RootDirectory;
+                        retValue = IFileResultCallbackWarning.RootDirectory;
                     case "Unknown":
-                        return IFileResultCallbackWarning.Unknown;
+                        retValue = IFileResultCallbackWarning.Unknown;
                     default:
-                        return IFileResultCallbackWarning.Unknown;
+                        retValue = IFileResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IFileResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']

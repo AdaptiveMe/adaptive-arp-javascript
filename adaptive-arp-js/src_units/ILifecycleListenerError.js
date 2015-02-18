@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.ILifecycleListenerError}
         */
         ILifecycleListenerError.toObject = function (object) {
+            var retValue = ILifecycleListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Runtime":
-                        return ILifecycleListenerError.Runtime;
+                        retValue = ILifecycleListenerError.Runtime;
                     case "Implementation":
-                        return ILifecycleListenerError.Implementation;
+                        retValue = ILifecycleListenerError.Implementation;
                     case "Killed":
-                        return ILifecycleListenerError.Killed;
+                        retValue = ILifecycleListenerError.Killed;
                     case "Unknown":
-                        return ILifecycleListenerError.Unknown;
+                        retValue = ILifecycleListenerError.Unknown;
                     default:
-                        return ILifecycleListenerError.Unknown;
+                        retValue = ILifecycleListenerError.Unknown;
                 }
             }
-            else {
-                return ILifecycleListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ILifecycleListenerError} [Runtime='Runtime']

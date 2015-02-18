@@ -51,25 +51,24 @@ var Adaptive;
            @return {Adaptive.IGeolocationListenerError}
         */
         IGeolocationListenerError.toObject = function (object) {
+            var retValue = IGeolocationListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Disabled":
-                        return IGeolocationListenerError.Disabled;
+                        retValue = IGeolocationListenerError.Disabled;
                     case "RestrictedAccess":
-                        return IGeolocationListenerError.RestrictedAccess;
+                        retValue = IGeolocationListenerError.RestrictedAccess;
                     case "DeniedAccess":
-                        return IGeolocationListenerError.DeniedAccess;
+                        retValue = IGeolocationListenerError.DeniedAccess;
                     case "StatusNotDetermined":
-                        return IGeolocationListenerError.StatusNotDetermined;
+                        retValue = IGeolocationListenerError.StatusNotDetermined;
                     case "Unknown":
-                        return IGeolocationListenerError.Unknown;
+                        retValue = IGeolocationListenerError.Unknown;
                     default:
-                        return IGeolocationListenerError.Unknown;
+                        retValue = IGeolocationListenerError.Unknown;
                 }
             }
-            else {
-                return IGeolocationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']

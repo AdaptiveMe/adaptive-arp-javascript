@@ -87,32 +87,32 @@ module Adaptive {
              @return {Adaptive.IContactFieldGroup}
           */
           static toObject(object : any) : IContactFieldGroup {
+               var retValue : IContactFieldGroup = IContactFieldGroup.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "PERSONAL_INFO":
-                              return IContactFieldGroup.PERSONAL_INFO;
+                              retValue = IContactFieldGroup.PERSONAL_INFO;
                          case "PROFESSIONAL_INFO":
-                              return IContactFieldGroup.PROFESSIONAL_INFO;
+                              retValue = IContactFieldGroup.PROFESSIONAL_INFO;
                          case "ADDRESSES":
-                              return IContactFieldGroup.ADDRESSES;
+                              retValue = IContactFieldGroup.ADDRESSES;
                          case "PHONES":
-                              return IContactFieldGroup.PHONES;
+                              retValue = IContactFieldGroup.PHONES;
                          case "EMAILS":
-                              return IContactFieldGroup.EMAILS;
+                              retValue = IContactFieldGroup.EMAILS;
                          case "WEBSITES":
-                              return IContactFieldGroup.WEBSITES;
+                              retValue = IContactFieldGroup.WEBSITES;
                          case "SOCIALS":
-                              return IContactFieldGroup.SOCIALS;
+                              retValue = IContactFieldGroup.SOCIALS;
                          case "TAGS":
-                              return IContactFieldGroup.TAGS;
+                              retValue = IContactFieldGroup.TAGS;
                          case "Unknown":
-                              return IContactFieldGroup.Unknown;
+                              retValue = IContactFieldGroup.Unknown;
                          default:
-                              return IContactFieldGroup.Unknown;
+                              retValue = IContactFieldGroup.Unknown;
                     }
-               } else {
-                    return IContactFieldGroup.Unknown;
                }
+               return retValue;
           }
 
      }

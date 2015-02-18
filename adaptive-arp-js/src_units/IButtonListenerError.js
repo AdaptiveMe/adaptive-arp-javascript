@@ -51,19 +51,18 @@ var Adaptive;
            @return {Adaptive.IButtonListenerError}
         */
         IButtonListenerError.toObject = function (object) {
+            var retValue = IButtonListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Not_Present":
-                        return IButtonListenerError.Not_Present;
+                        retValue = IButtonListenerError.Not_Present;
                     case "Unknown":
-                        return IButtonListenerError.Unknown;
+                        retValue = IButtonListenerError.Unknown;
                     default:
-                        return IButtonListenerError.Unknown;
+                        retValue = IButtonListenerError.Unknown;
                 }
             }
-            else {
-                return IButtonListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']

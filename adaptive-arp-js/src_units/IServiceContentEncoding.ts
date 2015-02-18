@@ -71,24 +71,24 @@ module Adaptive {
              @return {Adaptive.IServiceContentEncoding}
           */
           static toObject(object : any) : IServiceContentEncoding {
+               var retValue : IServiceContentEncoding = IServiceContentEncoding.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "ASCII":
-                              return IServiceContentEncoding.ASCII;
+                              retValue = IServiceContentEncoding.ASCII;
                          case "UTF8":
-                              return IServiceContentEncoding.UTF8;
+                              retValue = IServiceContentEncoding.UTF8;
                          case "ISOLatin1":
-                              return IServiceContentEncoding.ISOLatin1;
+                              retValue = IServiceContentEncoding.ISOLatin1;
                          case "Unicode":
-                              return IServiceContentEncoding.Unicode;
+                              retValue = IServiceContentEncoding.Unicode;
                          case "Unknown":
-                              return IServiceContentEncoding.Unknown;
+                              retValue = IServiceContentEncoding.Unknown;
                          default:
-                              return IServiceContentEncoding.Unknown;
+                              retValue = IServiceContentEncoding.Unknown;
                     }
-               } else {
-                    return IServiceContentEncoding.Unknown;
                }
+               return retValue;
           }
 
      }

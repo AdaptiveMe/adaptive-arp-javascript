@@ -51,25 +51,24 @@ var Adaptive;
            @return {Adaptive.IServiceType}
         */
         IServiceType.toObject = function (object) {
+            var retValue = IServiceType.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "OctetBinary":
-                        return IServiceType.OctetBinary;
+                        retValue = IServiceType.OctetBinary;
                     case "RestJson":
-                        return IServiceType.RestJson;
+                        retValue = IServiceType.RestJson;
                     case "RestXml":
-                        return IServiceType.RestXml;
+                        retValue = IServiceType.RestXml;
                     case "SoapXml":
-                        return IServiceType.SoapXml;
+                        retValue = IServiceType.SoapXml;
                     case "Unknown":
-                        return IServiceType.Unknown;
+                        retValue = IServiceType.Unknown;
                     default:
-                        return IServiceType.Unknown;
+                        retValue = IServiceType.Unknown;
                 }
             }
-            else {
-                return IServiceType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IServiceType} [OctetBinary='OctetBinary']

@@ -51,25 +51,24 @@ var Adaptive;
            @return {Adaptive.IServiceCertificateValidation}
         */
         IServiceCertificateValidation.toObject = function (object) {
+            var retValue = IServiceCertificateValidation.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "None":
-                        return IServiceCertificateValidation.None;
+                        retValue = IServiceCertificateValidation.None;
                     case "Normal":
-                        return IServiceCertificateValidation.Normal;
+                        retValue = IServiceCertificateValidation.Normal;
                     case "Extended":
-                        return IServiceCertificateValidation.Extended;
+                        retValue = IServiceCertificateValidation.Extended;
                     case "Extreme":
-                        return IServiceCertificateValidation.Extreme;
+                        retValue = IServiceCertificateValidation.Extreme;
                     case "Unknown":
-                        return IServiceCertificateValidation.Unknown;
+                        retValue = IServiceCertificateValidation.Unknown;
                     default:
-                        return IServiceCertificateValidation.Unknown;
+                        retValue = IServiceCertificateValidation.Unknown;
                 }
             }
-            else {
-                return IServiceCertificateValidation.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IServiceCertificateValidation} [None='None']

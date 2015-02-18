@@ -51,19 +51,18 @@ var Adaptive;
            @return {Adaptive.IFileListResultCallbackWarning}
         */
         IFileListResultCallbackWarning.toObject = function (object) {
+            var retValue = IFileListResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "PartialResult":
-                        return IFileListResultCallbackWarning.PartialResult;
+                        retValue = IFileListResultCallbackWarning.PartialResult;
                     case "Unknown":
-                        return IFileListResultCallbackWarning.Unknown;
+                        retValue = IFileListResultCallbackWarning.Unknown;
                     default:
-                        return IFileListResultCallbackWarning.Unknown;
+                        retValue = IFileListResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IFileListResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']

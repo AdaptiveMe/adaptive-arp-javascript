@@ -55,16 +55,16 @@ module Adaptive {
              @return {Adaptive.IDeviceOrientationListenerWarning}
           */
           static toObject(object : any) : IDeviceOrientationListenerWarning {
+               var retValue : IDeviceOrientationListenerWarning = IDeviceOrientationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unknown":
-                              return IDeviceOrientationListenerWarning.Unknown;
+                              retValue = IDeviceOrientationListenerWarning.Unknown;
                          default:
-                              return IDeviceOrientationListenerWarning.Unknown;
+                              retValue = IDeviceOrientationListenerWarning.Unknown;
                     }
-               } else {
-                    return IDeviceOrientationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }

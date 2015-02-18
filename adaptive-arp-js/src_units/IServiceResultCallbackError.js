@@ -51,27 +51,26 @@ var Adaptive;
            @return {Adaptive.IServiceResultCallbackError}
         */
         IServiceResultCallbackError.toObject = function (object) {
+            var retValue = IServiceResultCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "TimeOut":
-                        return IServiceResultCallbackError.TimeOut;
+                        retValue = IServiceResultCallbackError.TimeOut;
                     case "NoResponse":
-                        return IServiceResultCallbackError.NoResponse;
+                        retValue = IServiceResultCallbackError.NoResponse;
                     case "Unreachable":
-                        return IServiceResultCallbackError.Unreachable;
+                        retValue = IServiceResultCallbackError.Unreachable;
                     case "MalformedUrl":
-                        return IServiceResultCallbackError.MalformedUrl;
+                        retValue = IServiceResultCallbackError.MalformedUrl;
                     case "NotRegisteredService":
-                        return IServiceResultCallbackError.NotRegisteredService;
+                        retValue = IServiceResultCallbackError.NotRegisteredService;
                     case "Unknown":
-                        return IServiceResultCallbackError.Unknown;
+                        retValue = IServiceResultCallbackError.Unknown;
                     default:
-                        return IServiceResultCallbackError.Unknown;
+                        retValue = IServiceResultCallbackError.Unknown;
                 }
             }
-            else {
-                return IServiceResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IServiceResultCallbackError} [TimeOut='TimeOut']

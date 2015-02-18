@@ -87,32 +87,32 @@ module Adaptive {
              @return {Adaptive.LifecycleState}
           */
           static toObject(object : any) : LifecycleState {
+               var retValue : LifecycleState = LifecycleState.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Starting":
-                              return LifecycleState.Starting;
+                              retValue = LifecycleState.Starting;
                          case "Started":
-                              return LifecycleState.Started;
+                              retValue = LifecycleState.Started;
                          case "Running":
-                              return LifecycleState.Running;
+                              retValue = LifecycleState.Running;
                          case "Pausing":
-                              return LifecycleState.Pausing;
+                              retValue = LifecycleState.Pausing;
                          case "PausedIdle":
-                              return LifecycleState.PausedIdle;
+                              retValue = LifecycleState.PausedIdle;
                          case "PausedRun":
-                              return LifecycleState.PausedRun;
+                              retValue = LifecycleState.PausedRun;
                          case "Resuming":
-                              return LifecycleState.Resuming;
+                              retValue = LifecycleState.Resuming;
                          case "Stopping":
-                              return LifecycleState.Stopping;
+                              retValue = LifecycleState.Stopping;
                          case "Unknown":
-                              return LifecycleState.Unknown;
+                              retValue = LifecycleState.Unknown;
                          default:
-                              return LifecycleState.Unknown;
+                              retValue = LifecycleState.Unknown;
                     }
-               } else {
-                    return LifecycleState.Unknown;
                }
+               return retValue;
           }
 
      }

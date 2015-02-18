@@ -51,17 +51,16 @@ var Adaptive;
            @return {Adaptive.IDeviceOrientationListenerWarning}
         */
         IDeviceOrientationListenerWarning.toObject = function (object) {
+            var retValue = IDeviceOrientationListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Unknown":
-                        return IDeviceOrientationListenerWarning.Unknown;
+                        retValue = IDeviceOrientationListenerWarning.Unknown;
                     default:
-                        return IDeviceOrientationListenerWarning.Unknown;
+                        retValue = IDeviceOrientationListenerWarning.Unknown;
                 }
             }
-            else {
-                return IDeviceOrientationListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDeviceOrientationListenerWarning} [Unknown='Unknown']

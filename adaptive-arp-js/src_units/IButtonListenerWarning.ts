@@ -59,18 +59,18 @@ module Adaptive {
              @return {Adaptive.IButtonListenerWarning}
           */
           static toObject(object : any) : IButtonListenerWarning {
+               var retValue : IButtonListenerWarning = IButtonListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Not_Implemented":
-                              return IButtonListenerWarning.Not_Implemented;
+                              retValue = IButtonListenerWarning.Not_Implemented;
                          case "Unknown":
-                              return IButtonListenerWarning.Unknown;
+                              retValue = IButtonListenerWarning.Unknown;
                          default:
-                              return IButtonListenerWarning.Unknown;
+                              retValue = IButtonListenerWarning.Unknown;
                     }
-               } else {
-                    return IButtonListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -115,46 +115,46 @@ module Adaptive {
              @return {Adaptive.IAdaptiveRPGroup}
           */
           static toObject(object : any) : IAdaptiveRPGroup {
+               var retValue : IAdaptiveRPGroup = IAdaptiveRPGroup.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Application":
-                              return IAdaptiveRPGroup.Application;
+                              retValue = IAdaptiveRPGroup.Application;
                          case "Commerce":
-                              return IAdaptiveRPGroup.Commerce;
+                              retValue = IAdaptiveRPGroup.Commerce;
                          case "Communication":
-                              return IAdaptiveRPGroup.Communication;
+                              retValue = IAdaptiveRPGroup.Communication;
                          case "Data":
-                              return IAdaptiveRPGroup.Data;
+                              retValue = IAdaptiveRPGroup.Data;
                          case "Media":
-                              return IAdaptiveRPGroup.Media;
+                              retValue = IAdaptiveRPGroup.Media;
                          case "Notification":
-                              return IAdaptiveRPGroup.Notification;
+                              retValue = IAdaptiveRPGroup.Notification;
                          case "PIM":
-                              return IAdaptiveRPGroup.PIM;
+                              retValue = IAdaptiveRPGroup.PIM;
                          case "Reader":
-                              return IAdaptiveRPGroup.Reader;
+                              retValue = IAdaptiveRPGroup.Reader;
                          case "Security":
-                              return IAdaptiveRPGroup.Security;
+                              retValue = IAdaptiveRPGroup.Security;
                          case "Sensor":
-                              return IAdaptiveRPGroup.Sensor;
+                              retValue = IAdaptiveRPGroup.Sensor;
                          case "Social":
-                              return IAdaptiveRPGroup.Social;
+                              retValue = IAdaptiveRPGroup.Social;
                          case "System":
-                              return IAdaptiveRPGroup.System;
+                              retValue = IAdaptiveRPGroup.System;
                          case "UI":
-                              return IAdaptiveRPGroup.UI;
+                              retValue = IAdaptiveRPGroup.UI;
                          case "Util":
-                              return IAdaptiveRPGroup.Util;
+                              retValue = IAdaptiveRPGroup.Util;
                          case "Kernel":
-                              return IAdaptiveRPGroup.Kernel;
+                              retValue = IAdaptiveRPGroup.Kernel;
                          case "Unknown":
-                              return IAdaptiveRPGroup.Unknown;
+                              retValue = IAdaptiveRPGroup.Unknown;
                          default:
-                              return IAdaptiveRPGroup.Unknown;
+                              retValue = IAdaptiveRPGroup.Unknown;
                     }
-               } else {
-                    return IAdaptiveRPGroup.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.ITelephonyStatus}
           */
           static toObject(object : any) : ITelephonyStatus {
+               var retValue : ITelephonyStatus = ITelephonyStatus.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Dialing":
-                              return ITelephonyStatus.Dialing;
+                              retValue = ITelephonyStatus.Dialing;
                          case "Failed":
-                              return ITelephonyStatus.Failed;
+                              retValue = ITelephonyStatus.Failed;
                          case "Unknown":
-                              return ITelephonyStatus.Unknown;
+                              retValue = ITelephonyStatus.Unknown;
                          default:
-                              return ITelephonyStatus.Unknown;
+                              retValue = ITelephonyStatus.Unknown;
                     }
-               } else {
-                    return ITelephonyStatus.Unknown;
                }
+               return retValue;
           }
 
      }

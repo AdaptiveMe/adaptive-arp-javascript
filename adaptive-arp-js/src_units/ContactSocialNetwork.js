@@ -51,27 +51,26 @@ var Adaptive;
            @return {Adaptive.ContactSocialNetwork}
         */
         ContactSocialNetwork.toObject = function (object) {
+            var retValue = ContactSocialNetwork.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Twitter":
-                        return ContactSocialNetwork.Twitter;
+                        retValue = ContactSocialNetwork.Twitter;
                     case "Facebook":
-                        return ContactSocialNetwork.Facebook;
+                        retValue = ContactSocialNetwork.Facebook;
                     case "GooglePlus":
-                        return ContactSocialNetwork.GooglePlus;
+                        retValue = ContactSocialNetwork.GooglePlus;
                     case "LinkedIn":
-                        return ContactSocialNetwork.LinkedIn;
+                        retValue = ContactSocialNetwork.LinkedIn;
                     case "Flickr":
-                        return ContactSocialNetwork.Flickr;
+                        retValue = ContactSocialNetwork.Flickr;
                     case "Unknown":
-                        return ContactSocialNetwork.Unknown;
+                        retValue = ContactSocialNetwork.Unknown;
                     default:
-                        return ContactSocialNetwork.Unknown;
+                        retValue = ContactSocialNetwork.Unknown;
                 }
             }
-            else {
-                return ContactSocialNetwork.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactSocialNetwork} [Twitter='Twitter']

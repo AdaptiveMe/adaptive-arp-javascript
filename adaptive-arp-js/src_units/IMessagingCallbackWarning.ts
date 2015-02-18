@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.IMessagingCallbackWarning}
           */
           static toObject(object : any) : IMessagingCallbackWarning {
+               var retValue : IMessagingCallbackWarning = IMessagingCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "UnableToSentAll":
-                              return IMessagingCallbackWarning.UnableToSentAll;
+                              retValue = IMessagingCallbackWarning.UnableToSentAll;
                          case "UnableToFetchAttachment":
-                              return IMessagingCallbackWarning.UnableToFetchAttachment;
+                              retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
                          case "Unknown":
-                              return IMessagingCallbackWarning.Unknown;
+                              retValue = IMessagingCallbackWarning.Unknown;
                          default:
-                              return IMessagingCallbackWarning.Unknown;
+                              retValue = IMessagingCallbackWarning.Unknown;
                     }
-               } else {
-                    return IMessagingCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

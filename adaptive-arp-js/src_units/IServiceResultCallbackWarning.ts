@@ -99,38 +99,38 @@ module Adaptive {
              @return {Adaptive.IServiceResultCallbackWarning}
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
+               var retValue : IServiceResultCallbackWarning = IServiceResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "CertificateUntrusted":
-                              return IServiceResultCallbackWarning.CertificateUntrusted;
+                              retValue = IServiceResultCallbackWarning.CertificateUntrusted;
                          case "NotSecure":
-                              return IServiceResultCallbackWarning.NotSecure;
+                              retValue = IServiceResultCallbackWarning.NotSecure;
                          case "Redirected":
-                              return IServiceResultCallbackWarning.Redirected;
+                              retValue = IServiceResultCallbackWarning.Redirected;
                          case "Wrong_Params":
-                              return IServiceResultCallbackWarning.Wrong_Params;
+                              retValue = IServiceResultCallbackWarning.Wrong_Params;
                          case "Forbidden":
-                              return IServiceResultCallbackWarning.Forbidden;
+                              retValue = IServiceResultCallbackWarning.Forbidden;
                          case "NotFound":
-                              return IServiceResultCallbackWarning.NotFound;
+                              retValue = IServiceResultCallbackWarning.NotFound;
                          case "MethodNotAllowed":
-                              return IServiceResultCallbackWarning.MethodNotAllowed;
+                              retValue = IServiceResultCallbackWarning.MethodNotAllowed;
                          case "NotAllowed":
-                              return IServiceResultCallbackWarning.NotAllowed;
+                              retValue = IServiceResultCallbackWarning.NotAllowed;
                          case "NotAuthenticated":
-                              return IServiceResultCallbackWarning.NotAuthenticated;
+                              retValue = IServiceResultCallbackWarning.NotAuthenticated;
                          case "PaymentRequired":
-                              return IServiceResultCallbackWarning.PaymentRequired;
+                              retValue = IServiceResultCallbackWarning.PaymentRequired;
                          case "ServerError":
-                              return IServiceResultCallbackWarning.ServerError;
+                              retValue = IServiceResultCallbackWarning.ServerError;
                          case "Unknown":
-                              return IServiceResultCallbackWarning.Unknown;
+                              retValue = IServiceResultCallbackWarning.Unknown;
                          default:
-                              return IServiceResultCallbackWarning.Unknown;
+                              retValue = IServiceResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IServiceResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

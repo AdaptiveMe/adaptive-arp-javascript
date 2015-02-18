@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IContactPhotoResultCallbackWarning}
         */
         IContactPhotoResultCallbackWarning.toObject = function (object) {
+            var retValue = IContactPhotoResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "LimitExceeded":
-                        return IContactPhotoResultCallbackWarning.LimitExceeded;
+                        retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
                     case "No_Matches":
-                        return IContactPhotoResultCallbackWarning.No_Matches;
+                        retValue = IContactPhotoResultCallbackWarning.No_Matches;
                     case "Unknown":
-                        return IContactPhotoResultCallbackWarning.Unknown;
+                        retValue = IContactPhotoResultCallbackWarning.Unknown;
                     default:
-                        return IContactPhotoResultCallbackWarning.Unknown;
+                        retValue = IContactPhotoResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IContactPhotoResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [LimitExceeded='LimitExceeded']

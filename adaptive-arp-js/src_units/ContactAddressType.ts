@@ -67,22 +67,22 @@ module Adaptive {
              @return {Adaptive.ContactAddressType}
           */
           static toObject(object : any) : ContactAddressType {
+               var retValue : ContactAddressType = ContactAddressType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Home":
-                              return ContactAddressType.Home;
+                              retValue = ContactAddressType.Home;
                          case "Work":
-                              return ContactAddressType.Work;
+                              retValue = ContactAddressType.Work;
                          case "Other":
-                              return ContactAddressType.Other;
+                              retValue = ContactAddressType.Other;
                          case "Unknown":
-                              return ContactAddressType.Unknown;
+                              retValue = ContactAddressType.Unknown;
                          default:
-                              return ContactAddressType.Unknown;
+                              retValue = ContactAddressType.Unknown;
                     }
-               } else {
-                    return ContactAddressType.Unknown;
                }
+               return retValue;
           }
 
      }

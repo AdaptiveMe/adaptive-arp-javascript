@@ -51,19 +51,18 @@ var Adaptive;
            @return {Adaptive.IButtonListenerWarning}
         */
         IButtonListenerWarning.toObject = function (object) {
+            var retValue = IButtonListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Not_Implemented":
-                        return IButtonListenerWarning.Not_Implemented;
+                        retValue = IButtonListenerWarning.Not_Implemented;
                     case "Unknown":
-                        return IButtonListenerWarning.Unknown;
+                        retValue = IButtonListenerWarning.Unknown;
                     default:
-                        return IButtonListenerWarning.Unknown;
+                        retValue = IButtonListenerWarning.Unknown;
                 }
             }
-            else {
-                return IButtonListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']

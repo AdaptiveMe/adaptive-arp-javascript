@@ -51,27 +51,26 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesCommunication}
         */
         ICapabilitiesCommunication.toObject = function (object) {
+            var retValue = ICapabilitiesCommunication.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Calendar":
-                        return ICapabilitiesCommunication.Calendar;
+                        retValue = ICapabilitiesCommunication.Calendar;
                     case "Contact":
-                        return ICapabilitiesCommunication.Contact;
+                        retValue = ICapabilitiesCommunication.Contact;
                     case "Mail":
-                        return ICapabilitiesCommunication.Mail;
+                        retValue = ICapabilitiesCommunication.Mail;
                     case "Messaging":
-                        return ICapabilitiesCommunication.Messaging;
+                        retValue = ICapabilitiesCommunication.Messaging;
                     case "Telephony":
-                        return ICapabilitiesCommunication.Telephony;
+                        retValue = ICapabilitiesCommunication.Telephony;
                     case "Unknown":
-                        return ICapabilitiesCommunication.Unknown;
+                        retValue = ICapabilitiesCommunication.Unknown;
                     default:
-                        return ICapabilitiesCommunication.Unknown;
+                        retValue = ICapabilitiesCommunication.Unknown;
                 }
             }
-            else {
-                return ICapabilitiesCommunication.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']

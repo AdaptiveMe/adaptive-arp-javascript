@@ -51,25 +51,24 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesNotification}
         */
         ICapabilitiesNotification.toObject = function (object) {
+            var retValue = ICapabilitiesNotification.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Alarm":
-                        return ICapabilitiesNotification.Alarm;
+                        retValue = ICapabilitiesNotification.Alarm;
                     case "LocalNotification":
-                        return ICapabilitiesNotification.LocalNotification;
+                        retValue = ICapabilitiesNotification.LocalNotification;
                     case "RemoteNotification":
-                        return ICapabilitiesNotification.RemoteNotification;
+                        retValue = ICapabilitiesNotification.RemoteNotification;
                     case "Vibration":
-                        return ICapabilitiesNotification.Vibration;
+                        retValue = ICapabilitiesNotification.Vibration;
                     case "Unknown":
-                        return ICapabilitiesNotification.Unknown;
+                        retValue = ICapabilitiesNotification.Unknown;
                     default:
-                        return ICapabilitiesNotification.Unknown;
+                        retValue = ICapabilitiesNotification.Unknown;
                 }
             }
-            else {
-                return ICapabilitiesNotification.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']

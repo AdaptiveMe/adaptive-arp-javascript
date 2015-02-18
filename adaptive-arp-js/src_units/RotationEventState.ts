@@ -67,22 +67,22 @@ module Adaptive {
              @return {Adaptive.RotationEventState}
           */
           static toObject(object : any) : RotationEventState {
+               var retValue : RotationEventState = RotationEventState.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "WillStartRotation":
-                              return RotationEventState.WillStartRotation;
+                              retValue = RotationEventState.WillStartRotation;
                          case "IsRotating":
-                              return RotationEventState.IsRotating;
+                              retValue = RotationEventState.IsRotating;
                          case "DidFinishRotation":
-                              return RotationEventState.DidFinishRotation;
+                              retValue = RotationEventState.DidFinishRotation;
                          case "Unknown":
-                              return RotationEventState.Unknown;
+                              retValue = RotationEventState.Unknown;
                          default:
-                              return RotationEventState.Unknown;
+                              retValue = RotationEventState.Unknown;
                     }
-               } else {
-                    return RotationEventState.Unknown;
                }
+               return retValue;
           }
 
      }

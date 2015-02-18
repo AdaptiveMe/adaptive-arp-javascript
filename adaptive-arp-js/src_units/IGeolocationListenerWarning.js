@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IGeolocationListenerWarning}
         */
         IGeolocationListenerWarning.toObject = function (object) {
+            var retValue = IGeolocationListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "HighDoP":
-                        return IGeolocationListenerWarning.HighDoP;
+                        retValue = IGeolocationListenerWarning.HighDoP;
                     case "StaleData":
-                        return IGeolocationListenerWarning.StaleData;
+                        retValue = IGeolocationListenerWarning.StaleData;
                     case "Unknown":
-                        return IGeolocationListenerWarning.Unknown;
+                        retValue = IGeolocationListenerWarning.Unknown;
                     default:
-                        return IGeolocationListenerWarning.Unknown;
+                        retValue = IGeolocationListenerWarning.Unknown;
                 }
             }
-            else {
-                return IGeolocationListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IGeolocationListenerWarning} [HighDoP='HighDoP']

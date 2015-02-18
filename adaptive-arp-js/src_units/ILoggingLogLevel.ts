@@ -71,24 +71,24 @@ module Adaptive {
              @return {Adaptive.ILoggingLogLevel}
           */
           static toObject(object : any) : ILoggingLogLevel {
+               var retValue : ILoggingLogLevel = ILoggingLogLevel.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "DEBUG":
-                              return ILoggingLogLevel.DEBUG;
+                              retValue = ILoggingLogLevel.DEBUG;
                          case "WARN":
-                              return ILoggingLogLevel.WARN;
+                              retValue = ILoggingLogLevel.WARN;
                          case "ERROR":
-                              return ILoggingLogLevel.ERROR;
+                              retValue = ILoggingLogLevel.ERROR;
                          case "INFO":
-                              return ILoggingLogLevel.INFO;
+                              retValue = ILoggingLogLevel.INFO;
                          case "Unknown":
-                              return ILoggingLogLevel.Unknown;
+                              retValue = ILoggingLogLevel.Unknown;
                          default:
-                              return ILoggingLogLevel.Unknown;
+                              retValue = ILoggingLogLevel.Unknown;
                     }
-               } else {
-                    return ILoggingLogLevel.Unknown;
                }
+               return retValue;
           }
 
      }

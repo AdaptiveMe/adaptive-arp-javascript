@@ -83,30 +83,30 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesNet}
           */
           static toObject(object : any) : ICapabilitiesNet {
+               var retValue : ICapabilitiesNet = ICapabilitiesNet.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "GSM":
-                              return ICapabilitiesNet.GSM;
+                              retValue = ICapabilitiesNet.GSM;
                          case "GPRS":
-                              return ICapabilitiesNet.GPRS;
+                              retValue = ICapabilitiesNet.GPRS;
                          case "HSDPA":
-                              return ICapabilitiesNet.HSDPA;
+                              retValue = ICapabilitiesNet.HSDPA;
                          case "LTE":
-                              return ICapabilitiesNet.LTE;
+                              retValue = ICapabilitiesNet.LTE;
                          case "WIFI":
-                              return ICapabilitiesNet.WIFI;
+                              retValue = ICapabilitiesNet.WIFI;
                          case "Ethernet":
-                              return ICapabilitiesNet.Ethernet;
+                              retValue = ICapabilitiesNet.Ethernet;
                          case "Unavailable":
-                              return ICapabilitiesNet.Unavailable;
+                              retValue = ICapabilitiesNet.Unavailable;
                          case "Unknown":
-                              return ICapabilitiesNet.Unknown;
+                              retValue = ICapabilitiesNet.Unknown;
                          default:
-                              return ICapabilitiesNet.Unknown;
+                              retValue = ICapabilitiesNet.Unknown;
                     }
-               } else {
-                    return ICapabilitiesNet.Unknown;
                }
+               return retValue;
           }
 
      }

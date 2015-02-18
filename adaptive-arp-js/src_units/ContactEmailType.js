@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.ContactEmailType}
         */
         ContactEmailType.toObject = function (object) {
+            var retValue = ContactEmailType.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Personal":
-                        return ContactEmailType.Personal;
+                        retValue = ContactEmailType.Personal;
                     case "Work":
-                        return ContactEmailType.Work;
+                        retValue = ContactEmailType.Work;
                     case "Other":
-                        return ContactEmailType.Other;
+                        retValue = ContactEmailType.Other;
                     case "Unknown":
-                        return ContactEmailType.Unknown;
+                        retValue = ContactEmailType.Unknown;
                     default:
-                        return ContactEmailType.Unknown;
+                        retValue = ContactEmailType.Unknown;
                 }
             }
-            else {
-                return ContactEmailType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactEmailType} [Personal='Personal']

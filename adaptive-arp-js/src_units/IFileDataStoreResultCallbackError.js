@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         IFileDataStoreResultCallbackError.toObject = function (object) {
+            var retValue = IFileDataStoreResultCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "InexistentFile":
-                        return IFileDataStoreResultCallbackError.InexistentFile;
+                        retValue = IFileDataStoreResultCallbackError.InexistentFile;
                     case "InsufficientSpace":
-                        return IFileDataStoreResultCallbackError.InsufficientSpace;
+                        retValue = IFileDataStoreResultCallbackError.InsufficientSpace;
                     case "Unauthorized":
-                        return IFileDataStoreResultCallbackError.Unauthorized;
+                        retValue = IFileDataStoreResultCallbackError.Unauthorized;
                     case "Unknown":
-                        return IFileDataStoreResultCallbackError.Unknown;
+                        retValue = IFileDataStoreResultCallbackError.Unknown;
                     default:
-                        return IFileDataStoreResultCallbackError.Unknown;
+                        retValue = IFileDataStoreResultCallbackError.Unknown;
                 }
             }
-            else {
-                return IFileDataStoreResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']

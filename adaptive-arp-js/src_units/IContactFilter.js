@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IContactFilter}
         */
         IContactFilter.toObject = function (object) {
+            var retValue = IContactFilter.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "HAS_PHONE":
-                        return IContactFilter.HAS_PHONE;
+                        retValue = IContactFilter.HAS_PHONE;
                     case "HAS_EMAIL":
-                        return IContactFilter.HAS_EMAIL;
+                        retValue = IContactFilter.HAS_EMAIL;
                     case "HAS_ADDRESS":
-                        return IContactFilter.HAS_ADDRESS;
+                        retValue = IContactFilter.HAS_ADDRESS;
                     case "Unknown":
-                        return IContactFilter.Unknown;
+                        retValue = IContactFilter.Unknown;
                     default:
-                        return IContactFilter.Unknown;
+                        retValue = IContactFilter.Unknown;
                 }
             }
-            else {
-                return IContactFilter.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']

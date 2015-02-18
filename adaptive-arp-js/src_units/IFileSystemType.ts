@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.IFileSystemType}
           */
           static toObject(object : any) : IFileSystemType {
+               var retValue : IFileSystemType = IFileSystemType.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Directory":
-                              return IFileSystemType.Directory;
+                              retValue = IFileSystemType.Directory;
                          case "File":
-                              return IFileSystemType.File;
+                              retValue = IFileSystemType.File;
                          case "Unknown":
-                              return IFileSystemType.Unknown;
+                              retValue = IFileSystemType.Unknown;
                          default:
-                              return IFileSystemType.Unknown;
+                              retValue = IFileSystemType.Unknown;
                     }
-               } else {
-                    return IFileSystemType.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IContactResultCallbackError}
         */
         IContactResultCallbackError.toObject = function (object) {
+            var retValue = IContactResultCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "NoPermission":
-                        return IContactResultCallbackError.NoPermission;
+                        retValue = IContactResultCallbackError.NoPermission;
                     case "Wrong_Params":
-                        return IContactResultCallbackError.Wrong_Params;
+                        retValue = IContactResultCallbackError.Wrong_Params;
                     case "Unknown":
-                        return IContactResultCallbackError.Unknown;
+                        retValue = IContactResultCallbackError.Unknown;
                     default:
-                        return IContactResultCallbackError.Unknown;
+                        retValue = IContactResultCallbackError.Unknown;
                 }
             }
-            else {
-                return IContactResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactResultCallbackError} [NoPermission='NoPermission']

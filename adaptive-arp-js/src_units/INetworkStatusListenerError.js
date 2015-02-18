@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.INetworkStatusListenerError}
         */
         INetworkStatusListenerError.toObject = function (object) {
+            var retValue = INetworkStatusListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "NoPermission":
-                        return INetworkStatusListenerError.NoPermission;
+                        retValue = INetworkStatusListenerError.NoPermission;
                     case "Unreachable":
-                        return INetworkStatusListenerError.Unreachable;
+                        retValue = INetworkStatusListenerError.Unreachable;
                     case "Unknown":
-                        return INetworkStatusListenerError.Unknown;
+                        retValue = INetworkStatusListenerError.Unknown;
                     default:
-                        return INetworkStatusListenerError.Unknown;
+                        retValue = INetworkStatusListenerError.Unknown;
                 }
             }
-            else {
-                return INetworkStatusListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.INetworkStatusListenerError} [NoPermission='NoPermission']

@@ -51,29 +51,28 @@ var Adaptive;
            @return {Adaptive.IFileSystemStorageType}
         */
         IFileSystemStorageType.toObject = function (object) {
+            var retValue = IFileSystemStorageType.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Application":
-                        return IFileSystemStorageType.Application;
+                        retValue = IFileSystemStorageType.Application;
                     case "Document":
-                        return IFileSystemStorageType.Document;
+                        retValue = IFileSystemStorageType.Document;
                     case "Cloud":
-                        return IFileSystemStorageType.Cloud;
+                        retValue = IFileSystemStorageType.Cloud;
                     case "Protected":
-                        return IFileSystemStorageType.Protected;
+                        retValue = IFileSystemStorageType.Protected;
                     case "Cache":
-                        return IFileSystemStorageType.Cache;
+                        retValue = IFileSystemStorageType.Cache;
                     case "External":
-                        return IFileSystemStorageType.External;
+                        retValue = IFileSystemStorageType.External;
                     case "Unknown":
-                        return IFileSystemStorageType.Unknown;
+                        retValue = IFileSystemStorageType.Unknown;
                     default:
-                        return IFileSystemStorageType.Unknown;
+                        retValue = IFileSystemStorageType.Unknown;
                 }
             }
-            else {
-                return IFileSystemStorageType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileSystemStorageType} [Application='Application']

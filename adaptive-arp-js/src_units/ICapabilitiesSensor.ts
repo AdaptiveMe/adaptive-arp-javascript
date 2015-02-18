@@ -83,30 +83,30 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesSensor}
           */
           static toObject(object : any) : ICapabilitiesSensor {
+               var retValue : ICapabilitiesSensor = ICapabilitiesSensor.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Accelerometer":
-                              return ICapabilitiesSensor.Accelerometer;
+                              retValue = ICapabilitiesSensor.Accelerometer;
                          case "AmbientLight":
-                              return ICapabilitiesSensor.AmbientLight;
+                              retValue = ICapabilitiesSensor.AmbientLight;
                          case "Barometer":
-                              return ICapabilitiesSensor.Barometer;
+                              retValue = ICapabilitiesSensor.Barometer;
                          case "Geolocation":
-                              return ICapabilitiesSensor.Geolocation;
+                              retValue = ICapabilitiesSensor.Geolocation;
                          case "Gyroscope":
-                              return ICapabilitiesSensor.Gyroscope;
+                              retValue = ICapabilitiesSensor.Gyroscope;
                          case "Magnetometer":
-                              return ICapabilitiesSensor.Magnetometer;
+                              retValue = ICapabilitiesSensor.Magnetometer;
                          case "Proximity":
-                              return ICapabilitiesSensor.Proximity;
+                              retValue = ICapabilitiesSensor.Proximity;
                          case "Unknown":
-                              return ICapabilitiesSensor.Unknown;
+                              retValue = ICapabilitiesSensor.Unknown;
                          default:
-                              return ICapabilitiesSensor.Unknown;
+                              retValue = ICapabilitiesSensor.Unknown;
                     }
-               } else {
-                    return ICapabilitiesSensor.Unknown;
                }
+               return retValue;
           }
 
      }

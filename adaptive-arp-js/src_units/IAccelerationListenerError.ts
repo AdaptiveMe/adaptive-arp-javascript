@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.IAccelerationListenerError}
           */
           static toObject(object : any) : IAccelerationListenerError {
+               var retValue : IAccelerationListenerError = IAccelerationListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Unauthorized":
-                              return IAccelerationListenerError.Unauthorized;
+                              retValue = IAccelerationListenerError.Unauthorized;
                          case "Unavailable":
-                              return IAccelerationListenerError.Unavailable;
+                              retValue = IAccelerationListenerError.Unavailable;
                          case "Unknown":
-                              return IAccelerationListenerError.Unknown;
+                              retValue = IAccelerationListenerError.Unknown;
                          default:
-                              return IAccelerationListenerError.Unknown;
+                              retValue = IAccelerationListenerError.Unknown;
                     }
-               } else {
-                    return IAccelerationListenerError.Unknown;
                }
+               return retValue;
           }
 
      }

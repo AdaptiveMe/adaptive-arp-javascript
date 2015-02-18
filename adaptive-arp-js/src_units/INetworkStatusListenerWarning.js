@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.INetworkStatusListenerWarning}
         */
         INetworkStatusListenerWarning.toObject = function (object) {
+            var retValue = INetworkStatusListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "IpAddressNotAssigned":
-                        return INetworkStatusListenerWarning.IpAddressNotAssigned;
+                        retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
                     case "IpAddressChanged":
-                        return INetworkStatusListenerWarning.IpAddressChanged;
+                        retValue = INetworkStatusListenerWarning.IpAddressChanged;
                     case "Unknown":
-                        return INetworkStatusListenerWarning.Unknown;
+                        retValue = INetworkStatusListenerWarning.Unknown;
                     default:
-                        return INetworkStatusListenerWarning.Unknown;
+                        retValue = INetworkStatusListenerWarning.Unknown;
                 }
             }
-            else {
-                return INetworkStatusListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.INetworkStatusListenerWarning} [IpAddressNotAssigned='IpAddressNotAssigned']

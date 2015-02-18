@@ -51,19 +51,18 @@ var Adaptive;
            @return {Adaptive.IDisplayOrientationListenerWarning}
         */
         IDisplayOrientationListenerWarning.toObject = function (object) {
+            var retValue = IDisplayOrientationListenerWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Application_Vetoed":
-                        return IDisplayOrientationListenerWarning.Application_Vetoed;
+                        retValue = IDisplayOrientationListenerWarning.Application_Vetoed;
                     case "Unknown":
-                        return IDisplayOrientationListenerWarning.Unknown;
+                        retValue = IDisplayOrientationListenerWarning.Unknown;
                     default:
-                        return IDisplayOrientationListenerWarning.Unknown;
+                        retValue = IDisplayOrientationListenerWarning.Unknown;
                 }
             }
-            else {
-                return IDisplayOrientationListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']

@@ -75,26 +75,26 @@ module Adaptive {
              @return {Adaptive.IMessagingCallbackError}
           */
           static toObject(object : any) : IMessagingCallbackError {
+               var retValue : IMessagingCallbackError = IMessagingCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "SIMNotPresent":
-                              return IMessagingCallbackError.SIMNotPresent;
+                              retValue = IMessagingCallbackError.SIMNotPresent;
                          case "EmailAccountNotFound":
-                              return IMessagingCallbackError.EmailAccountNotFound;
+                              retValue = IMessagingCallbackError.EmailAccountNotFound;
                          case "NotSent":
-                              return IMessagingCallbackError.NotSent;
+                              retValue = IMessagingCallbackError.NotSent;
                          case "WrongParams":
-                              return IMessagingCallbackError.WrongParams;
+                              retValue = IMessagingCallbackError.WrongParams;
                          case "NotSupported":
-                              return IMessagingCallbackError.NotSupported;
+                              retValue = IMessagingCallbackError.NotSupported;
                          case "Unknown":
-                              return IMessagingCallbackError.Unknown;
+                              retValue = IMessagingCallbackError.Unknown;
                          default:
-                              return IMessagingCallbackError.Unknown;
+                              retValue = IMessagingCallbackError.Unknown;
                     }
-               } else {
-                    return IMessagingCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -67,22 +67,22 @@ module Adaptive {
              @return {Adaptive.IDatabaseResultCallbackError}
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
+               var retValue : IDatabaseResultCallbackError = IDatabaseResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoSpace":
-                              return IDatabaseResultCallbackError.NoSpace;
+                              retValue = IDatabaseResultCallbackError.NoSpace;
                          case "SqlException":
-                              return IDatabaseResultCallbackError.SqlException;
+                              retValue = IDatabaseResultCallbackError.SqlException;
                          case "NotDeleted":
-                              return IDatabaseResultCallbackError.NotDeleted;
+                              retValue = IDatabaseResultCallbackError.NotDeleted;
                          case "Unknown":
-                              return IDatabaseResultCallbackError.Unknown;
+                              retValue = IDatabaseResultCallbackError.Unknown;
                          default:
-                              return IDatabaseResultCallbackError.Unknown;
+                              retValue = IDatabaseResultCallbackError.Unknown;
                     }
-               } else {
-                    return IDatabaseResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }

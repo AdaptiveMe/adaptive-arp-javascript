@@ -75,26 +75,26 @@ module Adaptive {
              @return {Adaptive.IDatabaseTableResultCallbackError}
           */
           static toObject(object : any) : IDatabaseTableResultCallbackError {
+               var retValue : IDatabaseTableResultCallbackError = IDatabaseTableResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NoSpace":
-                              return IDatabaseTableResultCallbackError.NoSpace;
+                              retValue = IDatabaseTableResultCallbackError.NoSpace;
                          case "ReadOnlyTable":
-                              return IDatabaseTableResultCallbackError.ReadOnlyTable;
+                              retValue = IDatabaseTableResultCallbackError.ReadOnlyTable;
                          case "SqlException":
-                              return IDatabaseTableResultCallbackError.SqlException;
+                              retValue = IDatabaseTableResultCallbackError.SqlException;
                          case "DatabaseNotFound":
-                              return IDatabaseTableResultCallbackError.DatabaseNotFound;
+                              retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
                          case "NoTableFound":
-                              return IDatabaseTableResultCallbackError.NoTableFound;
+                              retValue = IDatabaseTableResultCallbackError.NoTableFound;
                          case "Unknown":
-                              return IDatabaseTableResultCallbackError.Unknown;
+                              retValue = IDatabaseTableResultCallbackError.Unknown;
                          default:
-                              return IDatabaseTableResultCallbackError.Unknown;
+                              retValue = IDatabaseTableResultCallbackError.Unknown;
                     }
-               } else {
-                    return IDatabaseTableResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }

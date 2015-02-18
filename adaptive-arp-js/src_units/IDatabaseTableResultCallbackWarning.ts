@@ -67,22 +67,22 @@ module Adaptive {
              @return {Adaptive.IDatabaseTableResultCallbackWarning}
           */
           static toObject(object : any) : IDatabaseTableResultCallbackWarning {
+               var retValue : IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "TableExists":
-                              return IDatabaseTableResultCallbackWarning.TableExists;
+                              retValue = IDatabaseTableResultCallbackWarning.TableExists;
                          case "TableLocked":
-                              return IDatabaseTableResultCallbackWarning.TableLocked;
+                              retValue = IDatabaseTableResultCallbackWarning.TableLocked;
                          case "NoResults":
-                              return IDatabaseTableResultCallbackWarning.NoResults;
+                              retValue = IDatabaseTableResultCallbackWarning.NoResults;
                          case "Unknown":
-                              return IDatabaseTableResultCallbackWarning.Unknown;
+                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
                          default:
-                              return IDatabaseTableResultCallbackWarning.Unknown;
+                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IDatabaseTableResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

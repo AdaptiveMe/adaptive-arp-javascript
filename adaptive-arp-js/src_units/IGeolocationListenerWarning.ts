@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.IGeolocationListenerWarning}
           */
           static toObject(object : any) : IGeolocationListenerWarning {
+               var retValue : IGeolocationListenerWarning = IGeolocationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "HighDoP":
-                              return IGeolocationListenerWarning.HighDoP;
+                              retValue = IGeolocationListenerWarning.HighDoP;
                          case "StaleData":
-                              return IGeolocationListenerWarning.StaleData;
+                              retValue = IGeolocationListenerWarning.StaleData;
                          case "Unknown":
-                              return IGeolocationListenerWarning.Unknown;
+                              retValue = IGeolocationListenerWarning.Unknown;
                          default:
-                              return IGeolocationListenerWarning.Unknown;
+                              retValue = IGeolocationListenerWarning.Unknown;
                     }
-               } else {
-                    return IGeolocationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }

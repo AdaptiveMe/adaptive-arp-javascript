@@ -63,20 +63,20 @@ module Adaptive {
              @return {Adaptive.IAccelerationListenerWarning}
           */
           static toObject(object : any) : IAccelerationListenerWarning {
+               var retValue : IAccelerationListenerWarning = IAccelerationListenerWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "NeedsCalibration":
-                              return IAccelerationListenerWarning.NeedsCalibration;
+                              retValue = IAccelerationListenerWarning.NeedsCalibration;
                          case "Stale":
-                              return IAccelerationListenerWarning.Stale;
+                              retValue = IAccelerationListenerWarning.Stale;
                          case "Unknown":
-                              return IAccelerationListenerWarning.Unknown;
+                              retValue = IAccelerationListenerWarning.Unknown;
                          default:
-                              return IAccelerationListenerWarning.Unknown;
+                              retValue = IAccelerationListenerWarning.Unknown;
                     }
-               } else {
-                    return IAccelerationListenerWarning.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IFileListResultCallbackError}
         */
         IFileListResultCallbackError.toObject = function (object) {
+            var retValue = IFileListResultCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "InexistentFile":
-                        return IFileListResultCallbackError.InexistentFile;
+                        retValue = IFileListResultCallbackError.InexistentFile;
                     case "Unauthorized":
-                        return IFileListResultCallbackError.Unauthorized;
+                        retValue = IFileListResultCallbackError.Unauthorized;
                     case "Unknown":
-                        return IFileListResultCallbackError.Unknown;
+                        retValue = IFileListResultCallbackError.Unknown;
                     default:
-                        return IFileListResultCallbackError.Unknown;
+                        retValue = IFileListResultCallbackError.Unknown;
                 }
             }
-            else {
-                return IFileListResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileListResultCallbackError} [InexistentFile='InexistentFile']

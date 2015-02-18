@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IAccelerationListenerError}
         */
         IAccelerationListenerError.toObject = function (object) {
+            var retValue = IAccelerationListenerError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Unauthorized":
-                        return IAccelerationListenerError.Unauthorized;
+                        retValue = IAccelerationListenerError.Unauthorized;
                     case "Unavailable":
-                        return IAccelerationListenerError.Unavailable;
+                        retValue = IAccelerationListenerError.Unavailable;
                     case "Unknown":
-                        return IAccelerationListenerError.Unknown;
+                        retValue = IAccelerationListenerError.Unknown;
                     default:
-                        return IAccelerationListenerError.Unknown;
+                        retValue = IAccelerationListenerError.Unknown;
                 }
             }
-            else {
-                return IAccelerationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']

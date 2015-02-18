@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IDatabaseResultCallbackWarning}
         */
         IDatabaseResultCallbackWarning.toObject = function (object) {
+            var retValue = IDatabaseResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "DatabaseExists":
-                        return IDatabaseResultCallbackWarning.DatabaseExists;
+                        retValue = IDatabaseResultCallbackWarning.DatabaseExists;
                     case "IsOpen":
-                        return IDatabaseResultCallbackWarning.IsOpen;
+                        retValue = IDatabaseResultCallbackWarning.IsOpen;
                     case "Unknown":
-                        return IDatabaseResultCallbackWarning.Unknown;
+                        retValue = IDatabaseResultCallbackWarning.Unknown;
                     default:
-                        return IDatabaseResultCallbackWarning.Unknown;
+                        retValue = IDatabaseResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IDatabaseResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDatabaseResultCallbackWarning} [DatabaseExists='DatabaseExists']

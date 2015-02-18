@@ -59,18 +59,18 @@ module Adaptive {
              @return {Adaptive.IFileDataLoadResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
+               var retValue : IFileDataLoadResultCallbackWarning = IFileDataLoadResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "ExceedMaximumSize":
-                              return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                              retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
                          case "Unknown":
-                              return IFileDataLoadResultCallbackWarning.Unknown;
+                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
                          default:
-                              return IFileDataLoadResultCallbackWarning.Unknown;
+                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileDataLoadResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

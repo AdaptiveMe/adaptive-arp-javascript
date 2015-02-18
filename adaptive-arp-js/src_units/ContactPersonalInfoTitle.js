@@ -51,25 +51,24 @@ var Adaptive;
            @return {Adaptive.ContactPersonalInfoTitle}
         */
         ContactPersonalInfoTitle.toObject = function (object) {
+            var retValue = ContactPersonalInfoTitle.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Mr":
-                        return ContactPersonalInfoTitle.Mr;
+                        retValue = ContactPersonalInfoTitle.Mr;
                     case "Mrs":
-                        return ContactPersonalInfoTitle.Mrs;
+                        retValue = ContactPersonalInfoTitle.Mrs;
                     case "Ms":
-                        return ContactPersonalInfoTitle.Ms;
+                        retValue = ContactPersonalInfoTitle.Ms;
                     case "Dr":
-                        return ContactPersonalInfoTitle.Dr;
+                        retValue = ContactPersonalInfoTitle.Dr;
                     case "Unknown":
-                        return ContactPersonalInfoTitle.Unknown;
+                        retValue = ContactPersonalInfoTitle.Unknown;
                     default:
-                        return ContactPersonalInfoTitle.Unknown;
+                        retValue = ContactPersonalInfoTitle.Unknown;
                 }
             }
-            else {
-                return ContactPersonalInfoTitle.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactPersonalInfoTitle} [Mr='Mr']

@@ -51,19 +51,18 @@ var Adaptive;
            @return {Adaptive.IFileDataLoadResultCallbackWarning}
         */
         IFileDataLoadResultCallbackWarning.toObject = function (object) {
+            var retValue = IFileDataLoadResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "ExceedMaximumSize":
-                        return IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
+                        retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
                     case "Unknown":
-                        return IFileDataLoadResultCallbackWarning.Unknown;
+                        retValue = IFileDataLoadResultCallbackWarning.Unknown;
                     default:
-                        return IFileDataLoadResultCallbackWarning.Unknown;
+                        retValue = IFileDataLoadResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IFileDataLoadResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileDataLoadResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']

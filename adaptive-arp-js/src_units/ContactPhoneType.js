@@ -51,31 +51,30 @@ var Adaptive;
            @return {Adaptive.ContactPhoneType}
         */
         ContactPhoneType.toObject = function (object) {
+            var retValue = ContactPhoneType.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Mobile":
-                        return ContactPhoneType.Mobile;
+                        retValue = ContactPhoneType.Mobile;
                     case "Work":
-                        return ContactPhoneType.Work;
+                        retValue = ContactPhoneType.Work;
                     case "Home":
-                        return ContactPhoneType.Home;
+                        retValue = ContactPhoneType.Home;
                     case "Main":
-                        return ContactPhoneType.Main;
+                        retValue = ContactPhoneType.Main;
                     case "HomeFax":
-                        return ContactPhoneType.HomeFax;
+                        retValue = ContactPhoneType.HomeFax;
                     case "WorkFax":
-                        return ContactPhoneType.WorkFax;
+                        retValue = ContactPhoneType.WorkFax;
                     case "Other":
-                        return ContactPhoneType.Other;
+                        retValue = ContactPhoneType.Other;
                     case "Unknown":
-                        return ContactPhoneType.Unknown;
+                        retValue = ContactPhoneType.Unknown;
                     default:
-                        return ContactPhoneType.Unknown;
+                        retValue = ContactPhoneType.Unknown;
                 }
             }
-            else {
-                return ContactPhoneType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactPhoneType} [Mobile='Mobile']

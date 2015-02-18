@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
+            var retValue = IDatabaseTableResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "TableExists":
-                        return IDatabaseTableResultCallbackWarning.TableExists;
+                        retValue = IDatabaseTableResultCallbackWarning.TableExists;
                     case "TableLocked":
-                        return IDatabaseTableResultCallbackWarning.TableLocked;
+                        retValue = IDatabaseTableResultCallbackWarning.TableLocked;
                     case "NoResults":
-                        return IDatabaseTableResultCallbackWarning.NoResults;
+                        retValue = IDatabaseTableResultCallbackWarning.NoResults;
                     case "Unknown":
-                        return IDatabaseTableResultCallbackWarning.Unknown;
+                        retValue = IDatabaseTableResultCallbackWarning.Unknown;
                     default:
-                        return IDatabaseTableResultCallbackWarning.Unknown;
+                        retValue = IDatabaseTableResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IDatabaseTableResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']

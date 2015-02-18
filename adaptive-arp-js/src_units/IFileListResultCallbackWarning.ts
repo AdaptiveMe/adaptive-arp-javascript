@@ -59,18 +59,18 @@ module Adaptive {
              @return {Adaptive.IFileListResultCallbackWarning}
           */
           static toObject(object : any) : IFileListResultCallbackWarning {
+               var retValue : IFileListResultCallbackWarning = IFileListResultCallbackWarning.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "PartialResult":
-                              return IFileListResultCallbackWarning.PartialResult;
+                              retValue = IFileListResultCallbackWarning.PartialResult;
                          case "Unknown":
-                              return IFileListResultCallbackWarning.Unknown;
+                              retValue = IFileListResultCallbackWarning.Unknown;
                          default:
-                              return IFileListResultCallbackWarning.Unknown;
+                              retValue = IFileListResultCallbackWarning.Unknown;
                     }
-               } else {
-                    return IFileListResultCallbackWarning.Unknown;
                }
+               return retValue;
           }
 
      }

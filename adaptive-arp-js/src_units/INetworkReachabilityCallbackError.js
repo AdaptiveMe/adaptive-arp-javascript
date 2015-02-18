@@ -51,39 +51,38 @@ var Adaptive;
            @return {Adaptive.INetworkReachabilityCallbackError}
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
+            var retValue = INetworkReachabilityCallbackError.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Forbidden":
-                        return INetworkReachabilityCallbackError.Forbidden;
+                        retValue = INetworkReachabilityCallbackError.Forbidden;
                     case "NotFound":
-                        return INetworkReachabilityCallbackError.NotFound;
+                        retValue = INetworkReachabilityCallbackError.NotFound;
                     case "MethodNotAllowed":
-                        return INetworkReachabilityCallbackError.MethodNotAllowed;
+                        retValue = INetworkReachabilityCallbackError.MethodNotAllowed;
                     case "NotAllowed":
-                        return INetworkReachabilityCallbackError.NotAllowed;
+                        retValue = INetworkReachabilityCallbackError.NotAllowed;
                     case "NotAuthenticated":
-                        return INetworkReachabilityCallbackError.NotAuthenticated;
+                        retValue = INetworkReachabilityCallbackError.NotAuthenticated;
                     case "TimeOut":
-                        return INetworkReachabilityCallbackError.TimeOut;
+                        retValue = INetworkReachabilityCallbackError.TimeOut;
                     case "NoResponse":
-                        return INetworkReachabilityCallbackError.NoResponse;
+                        retValue = INetworkReachabilityCallbackError.NoResponse;
                     case "Unreachable":
-                        return INetworkReachabilityCallbackError.Unreachable;
+                        retValue = INetworkReachabilityCallbackError.Unreachable;
                     case "Wrong_Params":
-                        return INetworkReachabilityCallbackError.Wrong_Params;
+                        retValue = INetworkReachabilityCallbackError.Wrong_Params;
                     case "MalformedUrl":
-                        return INetworkReachabilityCallbackError.MalformedUrl;
+                        retValue = INetworkReachabilityCallbackError.MalformedUrl;
                     case "DomainUnresolvable":
-                        return INetworkReachabilityCallbackError.DomainUnresolvable;
+                        retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
                     case "Unknown":
-                        return INetworkReachabilityCallbackError.Unknown;
+                        retValue = INetworkReachabilityCallbackError.Unknown;
                     default:
-                        return INetworkReachabilityCallbackError.Unknown;
+                        retValue = INetworkReachabilityCallbackError.Unknown;
                 }
             }
-            else {
-                return INetworkReachabilityCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [Forbidden='Forbidden']

@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesData}
         */
         ICapabilitiesData.toObject = function (object) {
+            var retValue = ICapabilitiesData.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Database":
-                        return ICapabilitiesData.Database;
+                        retValue = ICapabilitiesData.Database;
                     case "File":
-                        return ICapabilitiesData.File;
+                        retValue = ICapabilitiesData.File;
                     case "Cloud":
-                        return ICapabilitiesData.Cloud;
+                        retValue = ICapabilitiesData.Cloud;
                     case "Unknown":
-                        return ICapabilitiesData.Unknown;
+                        retValue = ICapabilitiesData.Unknown;
                     default:
-                        return ICapabilitiesData.Unknown;
+                        retValue = ICapabilitiesData.Unknown;
                 }
             }
-            else {
-                return ICapabilitiesData.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesData} [Database='Database']

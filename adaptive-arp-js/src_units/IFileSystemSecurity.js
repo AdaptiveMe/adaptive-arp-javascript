@@ -51,23 +51,22 @@ var Adaptive;
            @return {Adaptive.IFileSystemSecurity}
         */
         IFileSystemSecurity.toObject = function (object) {
+            var retValue = IFileSystemSecurity.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "Default":
-                        return IFileSystemSecurity.Default;
+                        retValue = IFileSystemSecurity.Default;
                     case "Protected":
-                        return IFileSystemSecurity.Protected;
+                        retValue = IFileSystemSecurity.Protected;
                     case "Encrypted":
-                        return IFileSystemSecurity.Encrypted;
+                        retValue = IFileSystemSecurity.Encrypted;
                     case "Unknown":
-                        return IFileSystemSecurity.Unknown;
+                        retValue = IFileSystemSecurity.Unknown;
                     default:
-                        return IFileSystemSecurity.Unknown;
+                        retValue = IFileSystemSecurity.Unknown;
                 }
             }
-            else {
-                return IFileSystemSecurity.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileSystemSecurity} [Default='Default']

@@ -67,22 +67,22 @@ module Adaptive {
              @return {Adaptive.ILifecycleListenerError}
           */
           static toObject(object : any) : ILifecycleListenerError {
+               var retValue : ILifecycleListenerError = ILifecycleListenerError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Runtime":
-                              return ILifecycleListenerError.Runtime;
+                              retValue = ILifecycleListenerError.Runtime;
                          case "Implementation":
-                              return ILifecycleListenerError.Implementation;
+                              retValue = ILifecycleListenerError.Implementation;
                          case "Killed":
-                              return ILifecycleListenerError.Killed;
+                              retValue = ILifecycleListenerError.Killed;
                          case "Unknown":
-                              return ILifecycleListenerError.Unknown;
+                              retValue = ILifecycleListenerError.Unknown;
                          default:
-                              return ILifecycleListenerError.Unknown;
+                              retValue = ILifecycleListenerError.Unknown;
                     }
-               } else {
-                    return ILifecycleListenerError.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -71,24 +71,24 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesOrientation}
           */
           static toObject(object : any) : ICapabilitiesOrientation {
+               var retValue : ICapabilitiesOrientation = ICapabilitiesOrientation.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "Portrait_Up":
-                              return ICapabilitiesOrientation.Portrait_Up;
+                              retValue = ICapabilitiesOrientation.Portrait_Up;
                          case "Portrait_Down":
-                              return ICapabilitiesOrientation.Portrait_Down;
+                              retValue = ICapabilitiesOrientation.Portrait_Down;
                          case "Landscape_Left":
-                              return ICapabilitiesOrientation.Landscape_Left;
+                              retValue = ICapabilitiesOrientation.Landscape_Left;
                          case "Landscape_Right":
-                              return ICapabilitiesOrientation.Landscape_Right;
+                              retValue = ICapabilitiesOrientation.Landscape_Right;
                          case "Unknown":
-                              return ICapabilitiesOrientation.Unknown;
+                              retValue = ICapabilitiesOrientation.Unknown;
                          default:
-                              return ICapabilitiesOrientation.Unknown;
+                              retValue = ICapabilitiesOrientation.Unknown;
                     }
-               } else {
-                    return ICapabilitiesOrientation.Unknown;
                }
+               return retValue;
           }
 
      }

@@ -51,27 +51,26 @@ var Adaptive;
            @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         INetworkReachabilityCallbackWarning.toObject = function (object) {
+            var retValue = INetworkReachabilityCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "IncorrectScheme":
-                        return INetworkReachabilityCallbackWarning.IncorrectScheme;
+                        retValue = INetworkReachabilityCallbackWarning.IncorrectScheme;
                     case "NotSecure":
-                        return INetworkReachabilityCallbackWarning.NotSecure;
+                        retValue = INetworkReachabilityCallbackWarning.NotSecure;
                     case "NotTrusted":
-                        return INetworkReachabilityCallbackWarning.NotTrusted;
+                        retValue = INetworkReachabilityCallbackWarning.NotTrusted;
                     case "Redirected":
-                        return INetworkReachabilityCallbackWarning.Redirected;
+                        retValue = INetworkReachabilityCallbackWarning.Redirected;
                     case "NotRegisteredService":
-                        return INetworkReachabilityCallbackWarning.NotRegisteredService;
+                        retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
                     case "Unknown":
-                        return INetworkReachabilityCallbackWarning.Unknown;
+                        retValue = INetworkReachabilityCallbackWarning.Unknown;
                     default:
-                        return INetworkReachabilityCallbackWarning.Unknown;
+                        retValue = INetworkReachabilityCallbackWarning.Unknown;
                 }
             }
-            else {
-                return INetworkReachabilityCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']

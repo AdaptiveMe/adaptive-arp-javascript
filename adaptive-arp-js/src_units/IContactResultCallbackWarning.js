@@ -51,21 +51,20 @@ var Adaptive;
            @return {Adaptive.IContactResultCallbackWarning}
         */
         IContactResultCallbackWarning.toObject = function (object) {
+            var retValue = IContactResultCallbackWarning.Unknown;
             if (object != null && object.value != null) {
                 switch (object.value) {
                     case "LimitExceeded":
-                        return IContactResultCallbackWarning.LimitExceeded;
+                        retValue = IContactResultCallbackWarning.LimitExceeded;
                     case "No_Matches":
-                        return IContactResultCallbackWarning.No_Matches;
+                        retValue = IContactResultCallbackWarning.No_Matches;
                     case "Unknown":
-                        return IContactResultCallbackWarning.Unknown;
+                        retValue = IContactResultCallbackWarning.Unknown;
                     default:
-                        return IContactResultCallbackWarning.Unknown;
+                        retValue = IContactResultCallbackWarning.Unknown;
                 }
             }
-            else {
-                return IContactResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactResultCallbackWarning} [LimitExceeded='LimitExceeded']

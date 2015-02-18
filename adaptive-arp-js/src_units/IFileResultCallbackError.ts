@@ -75,26 +75,26 @@ module Adaptive {
              @return {Adaptive.IFileResultCallbackError}
           */
           static toObject(object : any) : IFileResultCallbackError {
+               var retValue : IFileResultCallbackError = IFileResultCallbackError.Unknown;
                if (object != null && object.value != null) {
                     switch(object.value) {
                          case "FileExists":
-                              return IFileResultCallbackError.FileExists;
+                              retValue = IFileResultCallbackError.FileExists;
                          case "SourceInexistent":
-                              return IFileResultCallbackError.SourceInexistent;
+                              retValue = IFileResultCallbackError.SourceInexistent;
                          case "DestionationExists":
-                              return IFileResultCallbackError.DestionationExists;
+                              retValue = IFileResultCallbackError.DestionationExists;
                          case "InsufficientSpace":
-                              return IFileResultCallbackError.InsufficientSpace;
+                              retValue = IFileResultCallbackError.InsufficientSpace;
                          case "Unauthorized":
-                              return IFileResultCallbackError.Unauthorized;
+                              retValue = IFileResultCallbackError.Unauthorized;
                          case "Unknown":
-                              return IFileResultCallbackError.Unknown;
+                              retValue = IFileResultCallbackError.Unknown;
                          default:
-                              return IFileResultCallbackError.Unknown;
+                              retValue = IFileResultCallbackError.Unknown;
                     }
-               } else {
-                    return IFileResultCallbackError.Unknown;
                }
+               return retValue;
           }
 
      }
