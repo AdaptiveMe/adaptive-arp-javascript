@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.7
+    * @version v2.1.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -119,7 +119,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -161,7 +161,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getDeviceInfo",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -200,7 +200,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getLocaleCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -240,7 +240,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getOrientationCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -279,7 +279,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -314,7 +314,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -350,7 +350,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -385,7 +385,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

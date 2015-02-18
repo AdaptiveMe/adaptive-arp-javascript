@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.7
+    * @version v2.1.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -84,7 +84,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","canRead",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -125,7 +125,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","canWrite",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -166,7 +166,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","create",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -216,7 +216,7 @@ deleted if the cascade parameter is set to true.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(cascade));
                var apiRequest : APIRequest = new APIRequest("IFile","delete",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -257,7 +257,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","exists",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -298,7 +298,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getContent",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -345,7 +345,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getFileStorageType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -386,7 +386,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getFileType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -427,7 +427,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getSecurityType",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -468,7 +468,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","isDirectory",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -510,7 +510,7 @@ any results.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","listFiles",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -560,7 +560,7 @@ is a file, it will not yield any results.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(regex));
                var apiRequest : APIRequest = new APIRequest("IFile","listFilesForRegex",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -609,7 +609,7 @@ is a file, it will not yield any results.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(recursive));
                var apiRequest : APIRequest = new APIRequest("IFile","mkDir",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -657,7 +657,7 @@ new destination file.
                arParams.push(JSON.stringify(createPath));
                arParams.push(JSON.stringify(overwrite));
                var apiRequest : APIRequest = new APIRequest("IFile","move",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -706,7 +706,7 @@ new destination file.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(content));
                var apiRequest : APIRequest = new APIRequest("IFile","setContent",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

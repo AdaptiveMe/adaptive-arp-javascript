@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.7
+    * @version v2.1.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -80,7 +80,7 @@ This method does not create the actual file in the specified folder.
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -123,7 +123,7 @@ This path is volatile and may be cleaned by the OS periodically.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -165,7 +165,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -207,7 +207,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -249,7 +249,7 @@ This path may or may not be directly readable or writable - it usually contains 
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -291,7 +291,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -332,7 +332,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getSeparator", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -376,7 +376,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.7");
+            apiRequest.setApiVersion("v2.1.8");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

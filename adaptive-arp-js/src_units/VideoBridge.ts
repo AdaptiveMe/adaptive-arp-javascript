@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.7
+    * @version v2.1.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,7 +71,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IVideo","playStream",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.7");
+               apiRequest.setApiVersion("v2.1.8");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
