@@ -3234,6 +3234,14 @@ of the device. For device orientation, use the IDevice APIs.
            @return {Adaptive.APIBean} Wrapped object instance.
         */
         static toObject(object: any): APIBean;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean[].
+           @return {Adaptive.APIBean[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): APIBean[];
     }
     /**
        @class Adaptive.APIRequest
@@ -3392,6 +3400,14 @@ listener.
            @return {Adaptive.APIRequest} Wrapped object instance.
         */
         static toObject(object: any): APIRequest;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
+           @return {Adaptive.APIRequest[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): APIRequest[];
     }
     /**
        @class Adaptive.APIResponse
@@ -3492,6 +3508,14 @@ listener.
            @return {Adaptive.APIResponse} Wrapped object instance.
         */
         static toObject(object: any): APIResponse;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIResponse[].
+           @return {Adaptive.APIResponse[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): APIResponse[];
     }
     /**
        @class Adaptive.AppResourceData
@@ -3713,6 +3737,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.AppResourceData} Wrapped object instance.
         */
         static toObject(object: any): AppResourceData;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.AppResourceData[].
+           @return {Adaptive.AppResourceData[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): AppResourceData[];
     }
     /**
        @class Adaptive.Service
@@ -3792,6 +3824,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.Service} Wrapped object instance.
         */
         static toObject(object: any): Service;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Service[].
+           @return {Adaptive.Service[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Service[];
     }
     /**
        @class Adaptive.ServiceEndpoint
@@ -3897,6 +3937,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ServiceEndpoint} Wrapped object instance.
         */
         static toObject(object: any): ServiceEndpoint;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+           @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceEndpoint[];
     }
     /**
        @class Adaptive.ServicePath
@@ -4003,6 +4051,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ServicePath} Wrapped object instance.
         */
         static toObject(object: any): ServicePath;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
+           @return {Adaptive.ServicePath[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServicePath[];
     }
     /**
        @class Adaptive.Acceleration
@@ -4137,6 +4193,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.Acceleration} Wrapped object instance.
         */
         static toObject(object: any): Acceleration;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Acceleration[].
+           @return {Adaptive.Acceleration[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Acceleration[];
     }
     /**
        @class Adaptive.Button
@@ -4190,6 +4254,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.Button} Wrapped object instance.
         */
         static toObject(object: any): Button;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button[].
+           @return {Adaptive.Button[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Button[];
     }
     /**
        @class Adaptive.ContactAddress
@@ -4270,6 +4342,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactAddress} Wrapped object instance.
         */
         static toObject(object: any): ContactAddress;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactAddress[].
+           @return {Adaptive.ContactAddress[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactAddress[];
     }
     /**
        @class Adaptive.ContactEmail
@@ -4377,6 +4457,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactEmail} Wrapped object instance.
         */
         static toObject(object: any): ContactEmail;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactEmail[].
+           @return {Adaptive.ContactEmail[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactEmail[];
     }
     /**
        @class Adaptive.ContactPersonalInfo
@@ -4511,6 +4599,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactPersonalInfo} Wrapped object instance.
         */
         static toObject(object: any): ContactPersonalInfo;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
+           @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactPersonalInfo[];
     }
     /**
        @class Adaptive.ContactPhone
@@ -4591,6 +4687,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactPhone} Wrapped object instance.
         */
         static toObject(object: any): ContactPhone;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
+           @return {Adaptive.ContactPhone[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactPhone[];
     }
     /**
        @class Adaptive.ContactProfessionalInfo
@@ -4698,6 +4802,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactProfessionalInfo} Wrapped object instance.
         */
         static toObject(object: any): ContactProfessionalInfo;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo[].
+           @return {Adaptive.ContactProfessionalInfo[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactProfessionalInfo[];
     }
     /**
        @class Adaptive.ContactSocial
@@ -4778,6 +4890,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactSocial} Wrapped object instance.
         */
         static toObject(object: any): ContactSocial;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactSocial[].
+           @return {Adaptive.ContactSocial[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactSocial[];
     }
     /**
        @class Adaptive.ContactTag
@@ -4858,6 +4978,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactTag} Wrapped object instance.
         */
         static toObject(object: any): ContactTag;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactTag[].
+           @return {Adaptive.ContactTag[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactTag[];
     }
     /**
        @class Adaptive.ContactUid
@@ -4911,6 +5039,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactUid} Wrapped object instance.
         */
         static toObject(object: any): ContactUid;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactUid[].
+           @return {Adaptive.ContactUid[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactUid[];
     }
     /**
        @class Adaptive.ContactWebsite
@@ -4964,6 +5100,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ContactWebsite} Wrapped object instance.
         */
         static toObject(object: any): ContactWebsite;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite[].
+           @return {Adaptive.ContactWebsite[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactWebsite[];
     }
     /**
        @class Adaptive.Database
@@ -5044,6 +5188,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.Database} Wrapped object instance.
         */
         static toObject(object: any): Database;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Database[].
+           @return {Adaptive.Database[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Database[];
     }
     /**
        @class Adaptive.DatabaseColumn
@@ -5097,6 +5249,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.DatabaseColumn} Wrapped object instance.
         */
         static toObject(object: any): DatabaseColumn;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn[].
+           @return {Adaptive.DatabaseColumn[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): DatabaseColumn[];
     }
     /**
        @class Adaptive.DatabaseRow
@@ -5150,6 +5310,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.DatabaseRow} Wrapped object instance.
         */
         static toObject(object: any): DatabaseRow;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow[].
+           @return {Adaptive.DatabaseRow[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): DatabaseRow[];
     }
     /**
        @class Adaptive.DatabaseTable
@@ -5311,6 +5479,14 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.DatabaseTable} Wrapped object instance.
         */
         static toObject(object: any): DatabaseTable;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
+           @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): DatabaseTable[];
     }
     /**
        @class Adaptive.DeviceInfo
@@ -5445,6 +5621,14 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.DeviceInfo} Wrapped object instance.
         */
         static toObject(object: any): DeviceInfo;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo[].
+           @return {Adaptive.DeviceInfo[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): DeviceInfo[];
     }
     /**
        @class Adaptive.Email
@@ -5660,6 +5844,14 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.Email} Wrapped object instance.
         */
         static toObject(object: any): Email;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Email[].
+           @return {Adaptive.Email[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Email[];
     }
     /**
        @class Adaptive.EmailAddress
@@ -5713,6 +5905,14 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAddress} Wrapped object instance.
         */
         static toObject(object: any): EmailAddress;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress[].
+           @return {Adaptive.EmailAddress[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): EmailAddress[];
     }
     /**
        @class Adaptive.EmailAttachmentData
@@ -5874,6 +6074,14 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAttachmentData} Wrapped object instance.
         */
         static toObject(object: any): EmailAttachmentData;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData[].
+           @return {Adaptive.EmailAttachmentData[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): EmailAttachmentData[];
     }
     /**
        @class Adaptive.FileDescriptor
@@ -6001,6 +6209,14 @@ doesn't exist, this will be -1. Used internally.
            @return {Adaptive.FileDescriptor} Wrapped object instance.
         */
         static toObject(object: any): FileDescriptor;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+           @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): FileDescriptor[];
     }
     /**
        @class Adaptive.Geolocation
@@ -6185,6 +6401,14 @@ doesn't exist, this will be -1. Used internally.
            @return {Adaptive.Geolocation} Wrapped object instance.
         */
         static toObject(object: any): Geolocation;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Geolocation[].
+           @return {Adaptive.Geolocation[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Geolocation[];
     }
     /**
        @class Adaptive.KeyPair
@@ -6265,6 +6489,14 @@ doesn't exist, this will be -1. Used internally.
            @return {Adaptive.KeyPair} Wrapped object instance.
         */
         static toObject(object: any): KeyPair;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyPair[].
+           @return {Adaptive.KeyPair[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): KeyPair[];
     }
     /**
        @class Adaptive.KeyValue
@@ -6345,6 +6577,14 @@ doesn't exist, this will be -1. Used internally.
            @return {Adaptive.KeyValue} Wrapped object instance.
         */
         static toObject(object: any): KeyValue;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyValue[].
+           @return {Adaptive.KeyValue[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): KeyValue[];
     }
     /**
        @class Adaptive.Lifecycle
@@ -6420,6 +6660,14 @@ Possible lifecycle States:
            @return {Adaptive.Lifecycle} Wrapped object instance.
         */
         static toObject(object: any): Lifecycle;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
+           @return {Adaptive.Lifecycle[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Lifecycle[];
     }
     /**
        @class Adaptive.Locale
@@ -6500,6 +6748,14 @@ Possible lifecycle States:
            @return {Adaptive.Locale} Wrapped object instance.
         */
         static toObject(object: any): Locale;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale[].
+           @return {Adaptive.Locale[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Locale[];
     }
     /**
        @class Adaptive.OSInfo
@@ -6604,6 +6860,14 @@ Possible lifecycle States:
            @return {Adaptive.OSInfo} Wrapped object instance.
         */
         static toObject(object: any): OSInfo;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.OSInfo[].
+           @return {Adaptive.OSInfo[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): OSInfo[];
     }
     /**
        @class Adaptive.RotationEvent
@@ -6750,6 +7014,14 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
            @return {Adaptive.RotationEvent} Wrapped object instance.
         */
         static toObject(object: any): RotationEvent;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
+           @return {Adaptive.RotationEvent[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): RotationEvent[];
     }
     /**
        @class Adaptive.SecureKeyPair
@@ -6830,6 +7102,14 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
            @return {Adaptive.SecureKeyPair} Wrapped object instance.
         */
         static toObject(object: any): SecureKeyPair;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair[].
+           @return {Adaptive.SecureKeyPair[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): SecureKeyPair[];
     }
     /**
        @class Adaptive.ServiceRequest
@@ -7168,6 +7448,14 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequest} Wrapped object instance.
         */
         static toObject(object: any): ServiceRequest;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
+           @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceRequest[];
     }
     /**
        @class Adaptive.ServiceResponse
@@ -7385,6 +7673,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         static toObject(object: any): ServiceResponse;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
+           @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceResponse[];
     }
     /**
        @class Adaptive.ServiceSession
@@ -7465,6 +7761,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceSession} Wrapped object instance.
         */
         static toObject(object: any): ServiceSession;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
+           @return {Adaptive.ServiceSession[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceSession[];
     }
     /**
        @class Adaptive.ServiceSessionCookie
@@ -7707,6 +8011,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
         */
         static toObject(object: any): ServiceSessionCookie;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
+           @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceSessionCookie[];
     }
     /**
        @class Adaptive.ServiceToken
@@ -7847,6 +8159,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ServiceToken} Wrapped object instance.
         */
         static toObject(object: any): ServiceToken;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
+           @return {Adaptive.ServiceToken[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceToken[];
     }
     /**
        @class Adaptive.Contact
@@ -8090,6 +8410,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.Contact} Wrapped object instance.
         */
         static toObject(object: any): Contact;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Contact[].
+           @return {Adaptive.Contact[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Contact[];
     }
     /**
        @class Adaptive.ServiceHeader
@@ -8118,6 +8446,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ServiceHeader} Wrapped object instance.
         */
         static toObject(object: any): ServiceHeader;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader[].
+           @return {Adaptive.ServiceHeader[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceHeader[];
     }
     /**
        @class Adaptive.ServiceRequestParameter
@@ -8146,6 +8482,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ServiceRequestParameter} Wrapped object instance.
         */
         static toObject(object: any): ServiceRequestParameter;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+           @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceRequestParameter[];
     }
     /**
        @class Adaptive.ServiceSessionAttribute
@@ -8174,6 +8518,14 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ServiceSessionAttribute} Wrapped object instance.
         */
         static toObject(object: any): ServiceSessionAttribute;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute[].
+           @return {Adaptive.ServiceSessionAttribute[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceSessionAttribute[];
     }
     /**
        @class Adaptive.BaseListener

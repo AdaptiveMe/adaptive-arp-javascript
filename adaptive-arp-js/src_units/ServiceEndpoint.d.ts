@@ -138,5 +138,13 @@ declare module Adaptive {
            @return {Adaptive.ServiceEndpoint} Wrapped object instance.
         */
         static toObject(object: any): ServiceEndpoint;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+           @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceEndpoint[];
     }
 }

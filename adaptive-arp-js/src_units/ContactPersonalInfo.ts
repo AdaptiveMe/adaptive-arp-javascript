@@ -247,6 +247,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
+             @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactPersonalInfo[] {
+               var resultArray : Array<ContactPersonalInfo> = new Array<ContactPersonalInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactPersonalInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

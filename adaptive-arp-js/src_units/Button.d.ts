@@ -86,5 +86,13 @@ declare module Adaptive {
            @return {Adaptive.Button} Wrapped object instance.
         */
         static toObject(object: any): Button;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button[].
+           @return {Adaptive.Button[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Button[];
     }
 }

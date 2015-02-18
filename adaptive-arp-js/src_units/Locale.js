@@ -148,6 +148,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale[].
+           @return {Adaptive.Locale[]} Wrapped object array instance.
+        */
+        Locale.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Locale.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Locale;
     })(Adaptive.APIBean);
     Adaptive.Locale = Locale;

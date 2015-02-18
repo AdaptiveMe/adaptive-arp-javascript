@@ -148,6 +148,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyPair[].
+           @return {Adaptive.KeyPair[]} Wrapped object array instance.
+        */
+        KeyPair.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(KeyPair.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return KeyPair;
     })(Adaptive.APIBean);
     Adaptive.KeyPair = KeyPair;

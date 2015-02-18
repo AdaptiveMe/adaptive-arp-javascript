@@ -160,6 +160,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair[].
+             @return {Adaptive.SecureKeyPair[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : SecureKeyPair[] {
+               var resultArray : Array<SecureKeyPair> = new Array<SecureKeyPair>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(SecureKeyPair.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

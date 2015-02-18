@@ -372,18 +372,29 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                     result.contentType = object.contentType;
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                     result.contentLength = object.contentLength;
-                    if (object.serviceHeaders != null) {
-                         result.serviceHeaders = new Array<ServiceHeader>();
-                         for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                              var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                         }
-                    }
+                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                     result.serviceSession = ServiceSession.toObject(object.serviceSession);
                     result.statusCode = object.statusCode;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
+             @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceResponse[] {
+               var resultArray : Array<ServiceResponse> = new Array<ServiceResponse>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceResponse.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

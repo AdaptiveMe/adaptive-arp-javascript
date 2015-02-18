@@ -253,6 +253,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+           @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+        */
+        FileDescriptor.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(FileDescriptor.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return FileDescriptor;
     })(Adaptive.APIBean);
     Adaptive.FileDescriptor = FileDescriptor;

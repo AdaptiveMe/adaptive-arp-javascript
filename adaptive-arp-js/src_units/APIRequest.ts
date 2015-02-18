@@ -288,6 +288,23 @@ listener.
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
+             @return {Adaptive.APIRequest[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : APIRequest[] {
+               var resultArray : Array<APIRequest> = new Array<APIRequest>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(APIRequest.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

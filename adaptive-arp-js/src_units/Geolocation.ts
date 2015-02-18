@@ -328,6 +328,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Geolocation[].
+             @return {Adaptive.Geolocation[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Geolocation[] {
+               var resultArray : Array<Geolocation> = new Array<Geolocation>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Geolocation.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

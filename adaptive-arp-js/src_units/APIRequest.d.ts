@@ -189,5 +189,13 @@ listener.
            @return {Adaptive.APIRequest} Wrapped object instance.
         */
         static toObject(object: any): APIRequest;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
+           @return {Adaptive.APIRequest[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): APIRequest[];
     }
 }

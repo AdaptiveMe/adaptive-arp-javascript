@@ -3358,6 +3358,23 @@ of the device. For device orientation, use the IDevice APIs.
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIBean[].
+             @return {Adaptive.APIBean[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : APIBean[] {
+               var resultArray : Array<APIBean> = new Array<APIBean>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(APIBean.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.APIRequest
@@ -3610,6 +3627,23 @@ listener.
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
+             @return {Adaptive.APIRequest[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : APIRequest[] {
+               var resultArray : Array<APIRequest> = new Array<APIRequest>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(APIRequest.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.APIResponse
@@ -3766,6 +3800,23 @@ listener.
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIResponse[].
+             @return {Adaptive.APIResponse[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : APIResponse[] {
+               var resultArray : Array<APIResponse> = new Array<APIResponse>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(APIResponse.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -4115,6 +4166,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.AppResourceData[].
+             @return {Adaptive.AppResourceData[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : AppResourceData[] {
+               var resultArray : Array<AppResourceData> = new Array<AppResourceData>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(AppResourceData.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.Service
@@ -4229,17 +4297,28 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.serviceEndpoints != null) {
-                         result.serviceEndpoints = new Array<ServiceEndpoint>();
-                         for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
-                              var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
-                         }
-                    }
+                    result.serviceEndpoints = ServiceEndpoint.toObjectArray(object.serviceEndpoints);
                     result.name = object.name;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service[].
+             @return {Adaptive.Service[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Service[] {
+               var resultArray : Array<Service> = new Array<Service>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Service.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -4397,16 +4476,27 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                     // Assign values to bean fields.
                     result.validationType = IServiceCertificateValidation.toObject(object.validationType);
                     result.hostURI = object.hostURI;
-                    if (object.paths != null) {
-                         result.paths = new Array<ServicePath>();
-                         for(var ipaths = 0; ipaths < object.paths.length; ipaths++) {
-                              var vpaths = object.paths[ipaths];
-                              result.paths.push(ServicePath.toObject(vpaths));
-                         }
-                    }
+                    result.paths = ServicePath.toObjectArray(object.paths);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+             @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceEndpoint[] {
+               var resultArray : Array<ServiceEndpoint> = new Array<ServiceEndpoint>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceEndpoint.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -4576,6 +4666,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
+             @return {Adaptive.ServicePath[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServicePath[] {
+               var resultArray : Array<ServicePath> = new Array<ServicePath>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServicePath.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -4785,6 +4892,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Acceleration[].
+             @return {Adaptive.Acceleration[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Acceleration[] {
+               var resultArray : Array<Acceleration> = new Array<Acceleration>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Acceleration.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.Button
@@ -4863,6 +4987,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Button[].
+             @return {Adaptive.Button[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Button[] {
+               var resultArray : Array<Button> = new Array<Button>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Button.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -4985,6 +5126,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactAddress[].
+             @return {Adaptive.ContactAddress[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactAddress[] {
+               var resultArray : Array<ContactAddress> = new Array<ContactAddress>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactAddress.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -5150,6 +5308,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactEmail[].
+             @return {Adaptive.ContactEmail[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactEmail[] {
+               var resultArray : Array<ContactEmail> = new Array<ContactEmail>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactEmail.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -5359,6 +5534,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
+             @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactPersonalInfo[] {
+               var resultArray : Array<ContactPersonalInfo> = new Array<ContactPersonalInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactPersonalInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ContactPhone
@@ -5480,6 +5672,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
+             @return {Adaptive.ContactPhone[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactPhone[] {
+               var resultArray : Array<ContactPhone> = new Array<ContactPhone>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactPhone.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -5646,6 +5855,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo[].
+             @return {Adaptive.ContactProfessionalInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactProfessionalInfo[] {
+               var resultArray : Array<ContactProfessionalInfo> = new Array<ContactProfessionalInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactProfessionalInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ContactSocial
@@ -5767,6 +5993,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactSocial[].
+             @return {Adaptive.ContactSocial[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactSocial[] {
+               var resultArray : Array<ContactSocial> = new Array<ContactSocial>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactSocial.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -5890,6 +6133,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactTag[].
+             @return {Adaptive.ContactTag[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactTag[] {
+               var resultArray : Array<ContactTag> = new Array<ContactTag>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactTag.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ContactUid
@@ -5969,6 +6229,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactUid[].
+             @return {Adaptive.ContactUid[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactUid[] {
+               var resultArray : Array<ContactUid> = new Array<ContactUid>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactUid.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ContactWebsite
@@ -6047,6 +6324,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite[].
+             @return {Adaptive.ContactWebsite[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactWebsite[] {
+               var resultArray : Array<ContactWebsite> = new Array<ContactWebsite>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactWebsite.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -6170,6 +6464,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Database[].
+             @return {Adaptive.Database[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Database[] {
+               var resultArray : Array<Database> = new Array<Database>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Database.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.DatabaseColumn
@@ -6248,6 +6559,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn[].
+             @return {Adaptive.DatabaseColumn[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseColumn[] {
+               var resultArray : Array<DatabaseColumn> = new Array<DatabaseColumn>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseColumn.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -6333,6 +6661,23 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow[].
+             @return {Adaptive.DatabaseRow[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseRow[] {
+               var resultArray : Array<DatabaseRow> = new Array<DatabaseRow>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseRow.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -6579,23 +6924,28 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                     result.name = object.name;
                     result.columnCount = object.columnCount;
                     result.rowCount = object.rowCount;
-                    if (object.databaseColumns != null) {
-                         result.databaseColumns = new Array<DatabaseColumn>();
-                         for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
-                              var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
-                         }
-                    }
-                    if (object.databaseRows != null) {
-                         result.databaseRows = new Array<DatabaseRow>();
-                         for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
-                              var vdatabaseRows = object.databaseRows[idatabaseRows];
-                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
-                         }
-                    }
+                    result.databaseColumns = DatabaseColumn.toObjectArray(object.databaseColumns);
+                    result.databaseRows = DatabaseRow.toObjectArray(object.databaseRows);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
+             @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseTable[] {
+               var resultArray : Array<DatabaseTable> = new Array<DatabaseTable>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseTable.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -6804,6 +7154,23 @@ be unique for a specific instance of an application on a specific device.
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo[].
+             @return {Adaptive.DeviceInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DeviceInfo[] {
+               var resultArray : Array<DeviceInfo> = new Array<DeviceInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DeviceInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -7131,40 +7498,33 @@ be unique for a specific instance of an application on a specific device.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.toRecipients != null) {
-                         result.toRecipients = new Array<EmailAddress>();
-                         for(var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
-                              var vtoRecipients = object.toRecipients[itoRecipients];
-                              result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
-                         }
-                    }
-                    if (object.ccRecipients != null) {
-                         result.ccRecipients = new Array<EmailAddress>();
-                         for(var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
-                              var vccRecipients = object.ccRecipients[iccRecipients];
-                              result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
-                         }
-                    }
-                    if (object.bccRecipients != null) {
-                         result.bccRecipients = new Array<EmailAddress>();
-                         for(var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
-                              var vbccRecipients = object.bccRecipients[ibccRecipients];
-                              result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
-                         }
-                    }
-                    if (object.emailAttachmentData != null) {
-                         result.emailAttachmentData = new Array<EmailAttachmentData>();
-                         for(var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
-                              var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
-                              result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
-                         }
-                    }
+                    result.toRecipients = EmailAddress.toObjectArray(object.toRecipients);
+                    result.ccRecipients = EmailAddress.toObjectArray(object.ccRecipients);
+                    result.bccRecipients = EmailAddress.toObjectArray(object.bccRecipients);
+                    result.emailAttachmentData = EmailAttachmentData.toObjectArray(object.emailAttachmentData);
                     result.messageBody = object.messageBody;
                     result.messageBodyMimeType = object.messageBodyMimeType;
                     result.subject = object.subject;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Email[].
+             @return {Adaptive.Email[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Email[] {
+               var resultArray : Array<Email> = new Array<Email>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Email.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -7244,6 +7604,23 @@ be unique for a specific instance of an application on a specific device.
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.EmailAddress[].
+             @return {Adaptive.EmailAddress[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : EmailAddress[] {
+               var resultArray : Array<EmailAddress> = new Array<EmailAddress>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(EmailAddress.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -7502,6 +7879,23 @@ be unique for a specific instance of an application on a specific device.
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData[].
+             @return {Adaptive.EmailAttachmentData[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : EmailAttachmentData[] {
+               var resultArray : Array<EmailAttachmentData> = new Array<EmailAttachmentData>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(EmailAttachmentData.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.FileDescriptor
@@ -7728,6 +8122,23 @@ doesn't exist, this will be -1. Used internally.
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+             @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : FileDescriptor[] {
+               var resultArray : Array<FileDescriptor> = new Array<FileDescriptor>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(FileDescriptor.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -8019,6 +8430,23 @@ doesn't exist, this will be -1. Used internally.
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Geolocation[].
+             @return {Adaptive.Geolocation[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Geolocation[] {
+               var resultArray : Array<Geolocation> = new Array<Geolocation>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Geolocation.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.KeyPair
@@ -8140,6 +8568,23 @@ doesn't exist, this will be -1. Used internally.
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.KeyPair[].
+             @return {Adaptive.KeyPair[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : KeyPair[] {
+               var resultArray : Array<KeyPair> = new Array<KeyPair>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(KeyPair.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -8263,6 +8708,23 @@ doesn't exist, this will be -1. Used internally.
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.KeyValue[].
+             @return {Adaptive.KeyValue[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : KeyValue[] {
+               var resultArray : Array<KeyValue> = new Array<KeyValue>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(KeyValue.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.Lifecycle
@@ -8363,6 +8825,23 @@ Possible lifecycle States:
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
+             @return {Adaptive.Lifecycle[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Lifecycle[] {
+               var resultArray : Array<Lifecycle> = new Array<Lifecycle>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Lifecycle.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -8485,6 +8964,23 @@ Possible lifecycle States:
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Locale[].
+             @return {Adaptive.Locale[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Locale[] {
+               var resultArray : Array<Locale> = new Array<Locale>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Locale.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -8647,6 +9143,23 @@ Possible lifecycle States:
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.OSInfo[].
+             @return {Adaptive.OSInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : OSInfo[] {
+               var resultArray : Array<OSInfo> = new Array<OSInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(OSInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -8868,6 +9381,23 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
+             @return {Adaptive.RotationEvent[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : RotationEvent[] {
+               var resultArray : Array<RotationEvent> = new Array<RotationEvent>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(RotationEvent.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.SecureKeyPair
@@ -8989,6 +9519,23 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair[].
+             @return {Adaptive.SecureKeyPair[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : SecureKeyPair[] {
+               var resultArray : Array<SecureKeyPair> = new Array<SecureKeyPair>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(SecureKeyPair.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -9495,33 +10042,32 @@ identifiers. This should not be manipulated by the application directly. The 'se
                     result.contentType = object.contentType;
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                     result.contentLength = object.contentLength;
-                    if (object.serviceHeaders != null) {
-                         result.serviceHeaders = new Array<ServiceHeader>();
-                         for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                              var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                         }
-                    }
+                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                     result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    if (object.queryParameters != null) {
-                         result.queryParameters = new Array<ServiceRequestParameter>();
-                         for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                              var vqueryParameters = object.queryParameters[iqueryParameters];
-                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
-                         }
-                    }
-                    if (object.bodyParameters != null) {
-                         result.bodyParameters = new Array<ServiceRequestParameter>();
-                         for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                              var vbodyParameters = object.bodyParameters[ibodyParameters];
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
-                         }
-                    }
+                    result.queryParameters = ServiceRequestParameter.toObjectArray(object.queryParameters);
+                    result.bodyParameters = ServiceRequestParameter.toObjectArray(object.bodyParameters);
                     result.serviceToken = ServiceToken.toObject(object.serviceToken);
                     result.refererHost = object.refererHost;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
+             @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceRequest[] {
+               var resultArray : Array<ServiceRequest> = new Array<ServiceRequest>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceRequest.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -9855,18 +10401,29 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                     result.contentType = object.contentType;
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                     result.contentLength = object.contentLength;
-                    if (object.serviceHeaders != null) {
-                         result.serviceHeaders = new Array<ServiceHeader>();
-                         for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                              var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                         }
-                    }
+                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                     result.serviceSession = ServiceSession.toObject(object.serviceSession);
                     result.statusCode = object.statusCode;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
+             @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceResponse[] {
+               var resultArray : Array<ServiceResponse> = new Array<ServiceResponse>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceResponse.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -9984,23 +10541,28 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.cookies != null) {
-                         result.cookies = new Array<ServiceSessionCookie>();
-                         for(var icookies = 0; icookies < object.cookies.length; icookies++) {
-                              var vcookies = object.cookies[icookies];
-                              result.cookies.push(ServiceSessionCookie.toObject(vcookies));
-                         }
-                    }
-                    if (object.attributes != null) {
-                         result.attributes = new Array<ServiceSessionAttribute>();
-                         for(var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
-                              var vattributes = object.attributes[iattributes];
-                              result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
-                         }
-                    }
+                    result.cookies = ServiceSessionCookie.toObjectArray(object.cookies);
+                    result.attributes = ServiceSessionAttribute.toObjectArray(object.attributes);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
+             @return {Adaptive.ServiceSession[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSession[] {
+               var resultArray : Array<ServiceSession> = new Array<ServiceSession>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSession.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -10382,6 +10944,23 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
+             @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSessionCookie[] {
+               var resultArray : Array<ServiceSessionCookie> = new Array<ServiceSessionCookie>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSessionCookie.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ServiceToken
@@ -10595,6 +11174,23 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
+             @return {Adaptive.ServiceToken[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceToken[] {
+               var resultArray : Array<ServiceToken> = new Array<ServiceToken>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceToken.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -10970,51 +11566,32 @@ to a relative path of a function published on a remote service. The 'functionNam
                     // Assign values to bean fields.
                     result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
                     result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-                    if (object.contactAddresses != null) {
-                         result.contactAddresses = new Array<ContactAddress>();
-                         for(var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
-                              var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                              result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
-                         }
-                    }
-                    if (object.contactPhones != null) {
-                         result.contactPhones = new Array<ContactPhone>();
-                         for(var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
-                              var vcontactPhones = object.contactPhones[icontactPhones];
-                              result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
-                         }
-                    }
-                    if (object.contactEmails != null) {
-                         result.contactEmails = new Array<ContactEmail>();
-                         for(var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
-                              var vcontactEmails = object.contactEmails[icontactEmails];
-                              result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
-                         }
-                    }
-                    if (object.contactWebsites != null) {
-                         result.contactWebsites = new Array<ContactWebsite>();
-                         for(var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
-                              var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                              result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
-                         }
-                    }
-                    if (object.contactSocials != null) {
-                         result.contactSocials = new Array<ContactSocial>();
-                         for(var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
-                              var vcontactSocials = object.contactSocials[icontactSocials];
-                              result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
-                         }
-                    }
-                    if (object.contactTags != null) {
-                         result.contactTags = new Array<ContactTag>();
-                         for(var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
-                              var vcontactTags = object.contactTags[icontactTags];
-                              result.contactTags.push(ContactTag.toObject(vcontactTags));
-                         }
-                    }
+                    result.contactAddresses = ContactAddress.toObjectArray(object.contactAddresses);
+                    result.contactPhones = ContactPhone.toObjectArray(object.contactPhones);
+                    result.contactEmails = ContactEmail.toObjectArray(object.contactEmails);
+                    result.contactWebsites = ContactWebsite.toObjectArray(object.contactWebsites);
+                    result.contactSocials = ContactSocial.toObjectArray(object.contactSocials);
+                    result.contactTags = ContactTag.toObjectArray(object.contactTags);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Contact[].
+             @return {Adaptive.Contact[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Contact[] {
+               var resultArray : Array<Contact> = new Array<Contact>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Contact.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**
@@ -11056,6 +11633,23 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader[].
+             @return {Adaptive.ServiceHeader[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceHeader[] {
+               var resultArray : Array<ServiceHeader> = new Array<ServiceHeader>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceHeader.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ServiceRequestParameter
@@ -11096,6 +11690,23 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                return result;
           }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+             @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceRequestParameter[] {
+               var resultArray : Array<ServiceRequestParameter> = new Array<ServiceRequestParameter>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceRequestParameter.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
      }
      /**
         @class Adaptive.ServiceSessionAttribute
@@ -11135,6 +11746,23 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute[].
+             @return {Adaptive.ServiceSessionAttribute[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSessionAttribute[] {
+               var resultArray : Array<ServiceSessionAttribute> = new Array<ServiceSessionAttribute>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSessionAttribute.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
      }
      /**

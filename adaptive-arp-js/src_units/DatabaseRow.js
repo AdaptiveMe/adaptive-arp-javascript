@@ -117,6 +117,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow[].
+           @return {Adaptive.DatabaseRow[]} Wrapped object array instance.
+        */
+        DatabaseRow.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DatabaseRow.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return DatabaseRow;
     })(Adaptive.APIBean);
     Adaptive.DatabaseRow = DatabaseRow;

@@ -78,6 +78,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+           @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+        */
+        ServiceRequestParameter.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceRequestParameter.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ServiceRequestParameter;
     })(Adaptive.KeyValue);
     Adaptive.ServiceRequestParameter = ServiceRequestParameter;

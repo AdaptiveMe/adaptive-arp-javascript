@@ -419,51 +419,32 @@ module Adaptive {
                     // Assign values to bean fields.
                     result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
                     result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-                    if (object.contactAddresses != null) {
-                         result.contactAddresses = new Array<ContactAddress>();
-                         for(var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
-                              var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                              result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
-                         }
-                    }
-                    if (object.contactPhones != null) {
-                         result.contactPhones = new Array<ContactPhone>();
-                         for(var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
-                              var vcontactPhones = object.contactPhones[icontactPhones];
-                              result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
-                         }
-                    }
-                    if (object.contactEmails != null) {
-                         result.contactEmails = new Array<ContactEmail>();
-                         for(var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
-                              var vcontactEmails = object.contactEmails[icontactEmails];
-                              result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
-                         }
-                    }
-                    if (object.contactWebsites != null) {
-                         result.contactWebsites = new Array<ContactWebsite>();
-                         for(var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
-                              var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                              result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
-                         }
-                    }
-                    if (object.contactSocials != null) {
-                         result.contactSocials = new Array<ContactSocial>();
-                         for(var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
-                              var vcontactSocials = object.contactSocials[icontactSocials];
-                              result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
-                         }
-                    }
-                    if (object.contactTags != null) {
-                         result.contactTags = new Array<ContactTag>();
-                         for(var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
-                              var vcontactTags = object.contactTags[icontactTags];
-                              result.contactTags.push(ContactTag.toObject(vcontactTags));
-                         }
-                    }
+                    result.contactAddresses = ContactAddress.toObjectArray(object.contactAddresses);
+                    result.contactPhones = ContactPhone.toObjectArray(object.contactPhones);
+                    result.contactEmails = ContactEmail.toObjectArray(object.contactEmails);
+                    result.contactWebsites = ContactWebsite.toObjectArray(object.contactWebsites);
+                    result.contactSocials = ContactSocial.toObjectArray(object.contactSocials);
+                    result.contactTags = ContactTag.toObjectArray(object.contactTags);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Contact[].
+             @return {Adaptive.Contact[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Contact[] {
+               var resultArray : Array<Contact> = new Array<Contact>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Contact.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

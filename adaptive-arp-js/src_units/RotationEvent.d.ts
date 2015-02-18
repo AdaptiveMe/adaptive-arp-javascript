@@ -180,5 +180,13 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
            @return {Adaptive.RotationEvent} Wrapped object instance.
         */
         static toObject(object: any): RotationEvent;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
+           @return {Adaptive.RotationEvent[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): RotationEvent[];
     }
 }

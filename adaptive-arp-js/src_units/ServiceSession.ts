@@ -155,23 +155,28 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.cookies != null) {
-                         result.cookies = new Array<ServiceSessionCookie>();
-                         for(var icookies = 0; icookies < object.cookies.length; icookies++) {
-                              var vcookies = object.cookies[icookies];
-                              result.cookies.push(ServiceSessionCookie.toObject(vcookies));
-                         }
-                    }
-                    if (object.attributes != null) {
-                         result.attributes = new Array<ServiceSessionAttribute>();
-                         for(var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
-                              var vattributes = object.attributes[iattributes];
-                              result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
-                         }
-                    }
+                    result.cookies = ServiceSessionCookie.toObjectArray(object.cookies);
+                    result.attributes = ServiceSessionAttribute.toObjectArray(object.attributes);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
+             @return {Adaptive.ServiceSession[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSession[] {
+               var resultArray : Array<ServiceSession> = new Array<ServiceSession>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSession.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

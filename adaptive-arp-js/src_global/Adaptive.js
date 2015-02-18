@@ -129,6 +129,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean[].
+           @return {Adaptive.APIBean[]} Wrapped object array instance.
+        */
+        APIBean.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(APIBean.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return APIBean;
     })();
     Adaptive.APIBean = APIBean;
@@ -351,6 +367,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIRequest[].
+           @return {Adaptive.APIRequest[]} Wrapped object array instance.
+        */
+        APIRequest.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(APIRequest.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return APIRequest;
     })();
     Adaptive.APIRequest = APIRequest;
@@ -489,6 +521,22 @@ listener.
                 result.statusMessage = object.statusMessage;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIResponse[].
+           @return {Adaptive.APIResponse[]} Wrapped object array instance.
+        */
+        APIResponse.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(APIResponse.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return APIResponse;
     })();
@@ -792,6 +840,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.AppResourceData[].
+           @return {Adaptive.AppResourceData[]} Wrapped object array instance.
+        */
+        AppResourceData.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(AppResourceData.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return AppResourceData;
     })();
     Adaptive.AppResourceData = AppResourceData;
@@ -895,16 +959,26 @@ listener.
             var result = new Service(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.serviceEndpoints != null) {
-                    result.serviceEndpoints = new Array();
-                    for (var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
-                        var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                        result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
-                    }
-                }
+                result.serviceEndpoints = ServiceEndpoint.toObjectArray(object.serviceEndpoints);
                 result.name = object.name;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Service[].
+           @return {Adaptive.Service[]} Wrapped object array instance.
+        */
+        Service.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Service.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Service;
     })();
@@ -1045,15 +1119,25 @@ listener.
                 // Assign values to bean fields.
                 result.validationType = IServiceCertificateValidation.toObject(object.validationType);
                 result.hostURI = object.hostURI;
-                if (object.paths != null) {
-                    result.paths = new Array();
-                    for (var ipaths = 0; ipaths < object.paths.length; ipaths++) {
-                        var vpaths = object.paths[ipaths];
-                        result.paths.push(ServicePath.toObject(vpaths));
-                    }
-                }
+                result.paths = ServicePath.toObjectArray(object.paths);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+           @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+        */
+        ServiceEndpoint.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceEndpoint.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceEndpoint;
     })();
@@ -1205,6 +1289,22 @@ listener.
                 result.type = IServiceType.toObject(object.type);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
+           @return {Adaptive.ServicePath[]} Wrapped object array instance.
+        */
+        ServicePath.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServicePath.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServicePath;
     })();
@@ -1391,6 +1491,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Acceleration[].
+           @return {Adaptive.Acceleration[]} Wrapped object array instance.
+        */
+        Acceleration.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Acceleration.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Acceleration;
     })(APIBean);
     Adaptive.Acceleration = Acceleration;
@@ -1464,6 +1580,22 @@ listener.
                 result.type = ICapabilitiesButton.toObject(object.type);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button[].
+           @return {Adaptive.Button[]} Wrapped object array instance.
+        */
+        Button.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Button.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Button;
     })(APIBean);
@@ -1575,6 +1707,22 @@ listener.
                 result.type = ContactAddressType.toObject(object.type);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactAddress[].
+           @return {Adaptive.ContactAddress[]} Wrapped object array instance.
+        */
+        ContactAddress.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactAddress.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactAddress;
     })(APIBean);
@@ -1723,6 +1871,22 @@ listener.
                 result.email = object.email;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactEmail[].
+           @return {Adaptive.ContactEmail[]} Wrapped object array instance.
+        */
+        ContactEmail.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactEmail.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactEmail;
     })(APIBean);
@@ -1909,6 +2073,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
+           @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
+        */
+        ContactPersonalInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactPersonalInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ContactPersonalInfo;
     })(APIBean);
     Adaptive.ContactPersonalInfo = ContactPersonalInfo;
@@ -2019,6 +2199,22 @@ listener.
                 result.phoneType = ContactPhoneType.toObject(object.phoneType);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
+           @return {Adaptive.ContactPhone[]} Wrapped object array instance.
+        */
+        ContactPhone.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactPhone.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactPhone;
     })(APIBean);
@@ -2168,6 +2364,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo[].
+           @return {Adaptive.ContactProfessionalInfo[]} Wrapped object array instance.
+        */
+        ContactProfessionalInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactProfessionalInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ContactProfessionalInfo;
     })(APIBean);
     Adaptive.ContactProfessionalInfo = ContactProfessionalInfo;
@@ -2278,6 +2490,22 @@ listener.
                 result.profileUrl = object.profileUrl;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactSocial[].
+           @return {Adaptive.ContactSocial[]} Wrapped object array instance.
+        */
+        ContactSocial.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactSocial.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactSocial;
     })(APIBean);
@@ -2390,6 +2618,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactTag[].
+           @return {Adaptive.ContactTag[]} Wrapped object array instance.
+        */
+        ContactTag.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactTag.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ContactTag;
     })(APIBean);
     Adaptive.ContactTag = ContactTag;
@@ -2464,6 +2708,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactUid[].
+           @return {Adaptive.ContactUid[]} Wrapped object array instance.
+        */
+        ContactUid.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactUid.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ContactUid;
     })(APIBean);
     Adaptive.ContactUid = ContactUid;
@@ -2537,6 +2797,22 @@ listener.
                 result.url = object.url;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite[].
+           @return {Adaptive.ContactWebsite[]} Wrapped object array instance.
+        */
+        ContactWebsite.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactWebsite.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactWebsite;
     })(APIBean);
@@ -2649,6 +2925,22 @@ listener.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Database[].
+           @return {Adaptive.Database[]} Wrapped object array instance.
+        */
+        Database.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Database.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Database;
     })(APIBean);
     Adaptive.Database = Database;
@@ -2722,6 +3014,22 @@ listener.
                 result.name = object.name;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn[].
+           @return {Adaptive.DatabaseColumn[]} Wrapped object array instance.
+        */
+        DatabaseColumn.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DatabaseColumn.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return DatabaseColumn;
     })(APIBean);
@@ -2802,6 +3110,22 @@ listener.
                 }
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseRow[].
+           @return {Adaptive.DatabaseRow[]} Wrapped object array instance.
+        */
+        DatabaseRow.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DatabaseRow.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return DatabaseRow;
     })(APIBean);
@@ -3020,22 +3344,26 @@ listener.
                 result.name = object.name;
                 result.columnCount = object.columnCount;
                 result.rowCount = object.rowCount;
-                if (object.databaseColumns != null) {
-                    result.databaseColumns = new Array();
-                    for (var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
-                        var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                        result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
-                    }
-                }
-                if (object.databaseRows != null) {
-                    result.databaseRows = new Array();
-                    for (var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
-                        var vdatabaseRows = object.databaseRows[idatabaseRows];
-                        result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
-                    }
-                }
+                result.databaseColumns = DatabaseColumn.toObjectArray(object.databaseColumns);
+                result.databaseRows = DatabaseRow.toObjectArray(object.databaseRows);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
+           @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
+        */
+        DatabaseTable.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DatabaseTable.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return DatabaseTable;
     })(APIBean);
@@ -3220,6 +3548,22 @@ be unique for a specific instance of an application on a specific device.
                 result.uuid = object.uuid;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo[].
+           @return {Adaptive.DeviceInfo[]} Wrapped object array instance.
+        */
+        DeviceInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DeviceInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return DeviceInfo;
     })(APIBean);
@@ -3507,39 +3851,31 @@ be unique for a specific instance of an application on a specific device.
             var result = new Email(null, null, null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.toRecipients != null) {
-                    result.toRecipients = new Array();
-                    for (var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
-                        var vtoRecipients = object.toRecipients[itoRecipients];
-                        result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
-                    }
-                }
-                if (object.ccRecipients != null) {
-                    result.ccRecipients = new Array();
-                    for (var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
-                        var vccRecipients = object.ccRecipients[iccRecipients];
-                        result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
-                    }
-                }
-                if (object.bccRecipients != null) {
-                    result.bccRecipients = new Array();
-                    for (var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
-                        var vbccRecipients = object.bccRecipients[ibccRecipients];
-                        result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
-                    }
-                }
-                if (object.emailAttachmentData != null) {
-                    result.emailAttachmentData = new Array();
-                    for (var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
-                        var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
-                        result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
-                    }
-                }
+                result.toRecipients = EmailAddress.toObjectArray(object.toRecipients);
+                result.ccRecipients = EmailAddress.toObjectArray(object.ccRecipients);
+                result.bccRecipients = EmailAddress.toObjectArray(object.bccRecipients);
+                result.emailAttachmentData = EmailAttachmentData.toObjectArray(object.emailAttachmentData);
                 result.messageBody = object.messageBody;
                 result.messageBodyMimeType = object.messageBodyMimeType;
                 result.subject = object.subject;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Email[].
+           @return {Adaptive.Email[]} Wrapped object array instance.
+        */
+        Email.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Email.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Email;
     })(APIBean);
@@ -3614,6 +3950,22 @@ be unique for a specific instance of an application on a specific device.
                 result.address = object.address;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress[].
+           @return {Adaptive.EmailAddress[]} Wrapped object array instance.
+        */
+        EmailAddress.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(EmailAddress.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return EmailAddress;
     })(APIBean);
@@ -3843,6 +4195,22 @@ be unique for a specific instance of an application on a specific device.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAttachmentData[].
+           @return {Adaptive.EmailAttachmentData[]} Wrapped object array instance.
+        */
+        EmailAttachmentData.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(EmailAttachmentData.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return EmailAttachmentData;
     })(APIBean);
     Adaptive.EmailAttachmentData = EmailAttachmentData;
@@ -4058,6 +4426,22 @@ doesn't exist, this will be -1. Used internally.
                 result.size = object.size;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+           @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+        */
+        FileDescriptor.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(FileDescriptor.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return FileDescriptor;
     })(APIBean);
@@ -4314,6 +4698,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Geolocation[].
+           @return {Adaptive.Geolocation[]} Wrapped object array instance.
+        */
+        Geolocation.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Geolocation.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Geolocation;
     })(APIBean);
     Adaptive.Geolocation = Geolocation;
@@ -4424,6 +4824,22 @@ doesn't exist, this will be -1. Used internally.
                 result.keyValue = object.keyValue;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyPair[].
+           @return {Adaptive.KeyPair[]} Wrapped object array instance.
+        */
+        KeyPair.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(KeyPair.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return KeyPair;
     })(APIBean);
@@ -4536,6 +4952,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyValue[].
+           @return {Adaptive.KeyValue[]} Wrapped object array instance.
+        */
+        KeyValue.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(KeyValue.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return KeyValue;
     })(APIBean);
     Adaptive.KeyValue = KeyValue;
@@ -4620,6 +5052,22 @@ doesn't exist, this will be -1. Used internally.
                 result.state = LifecycleState.toObject(object.state);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
+           @return {Adaptive.Lifecycle[]} Wrapped object array instance.
+        */
+        Lifecycle.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Lifecycle.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Lifecycle;
     })(APIBean);
@@ -4731,6 +5179,22 @@ doesn't exist, this will be -1. Used internally.
                 result.language = object.language;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale[].
+           @return {Adaptive.Locale[]} Wrapped object array instance.
+        */
+        Locale.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Locale.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Locale;
     })(APIBean);
@@ -4876,6 +5340,22 @@ doesn't exist, this will be -1. Used internally.
                 result.vendor = object.vendor;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.OSInfo[].
+           @return {Adaptive.OSInfo[]} Wrapped object array instance.
+        */
+        OSInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(OSInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return OSInfo;
     })(APIBean);
@@ -5068,6 +5548,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
+           @return {Adaptive.RotationEvent[]} Wrapped object array instance.
+        */
+        RotationEvent.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(RotationEvent.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return RotationEvent;
     })(APIBean);
     Adaptive.RotationEvent = RotationEvent;
@@ -5178,6 +5674,22 @@ doesn't exist, this will be -1. Used internally.
                 result.secureData = object.secureData;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.SecureKeyPair[].
+           @return {Adaptive.SecureKeyPair[]} Wrapped object array instance.
+        */
+        SecureKeyPair.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(SecureKeyPair.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return SecureKeyPair;
     })(APIBean);
@@ -5608,32 +6120,30 @@ doesn't exist, this will be -1. Used internally.
                 result.contentType = object.contentType;
                 result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                 result.contentLength = object.contentLength;
-                if (object.serviceHeaders != null) {
-                    result.serviceHeaders = new Array();
-                    for (var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                        var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                        result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                    }
-                }
+                result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                 result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                if (object.queryParameters != null) {
-                    result.queryParameters = new Array();
-                    for (var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                        var vqueryParameters = object.queryParameters[iqueryParameters];
-                        result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
-                    }
-                }
-                if (object.bodyParameters != null) {
-                    result.bodyParameters = new Array();
-                    for (var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                        var vbodyParameters = object.bodyParameters[ibodyParameters];
-                        result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
-                    }
-                }
+                result.queryParameters = ServiceRequestParameter.toObjectArray(object.queryParameters);
+                result.bodyParameters = ServiceRequestParameter.toObjectArray(object.bodyParameters);
                 result.serviceToken = ServiceToken.toObject(object.serviceToken);
                 result.refererHost = object.refererHost;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
+           @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
+        */
+        ServiceRequest.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceRequest.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceRequest;
     })(APIBean);
@@ -5926,17 +6436,27 @@ doesn't exist, this will be -1. Used internally.
                 result.contentType = object.contentType;
                 result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                 result.contentLength = object.contentLength;
-                if (object.serviceHeaders != null) {
-                    result.serviceHeaders = new Array();
-                    for (var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                        var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                        result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                    }
-                }
+                result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                 result.serviceSession = ServiceSession.toObject(object.serviceSession);
                 result.statusCode = object.statusCode;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
+           @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
+        */
+        ServiceResponse.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceResponse.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceResponse;
     })(APIBean);
@@ -6044,22 +6564,26 @@ doesn't exist, this will be -1. Used internally.
             var result = new ServiceSession(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.cookies != null) {
-                    result.cookies = new Array();
-                    for (var icookies = 0; icookies < object.cookies.length; icookies++) {
-                        var vcookies = object.cookies[icookies];
-                        result.cookies.push(ServiceSessionCookie.toObject(vcookies));
-                    }
-                }
-                if (object.attributes != null) {
-                    result.attributes = new Array();
-                    for (var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
-                        var vattributes = object.attributes[iattributes];
-                        result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
-                    }
-                }
+                result.cookies = ServiceSessionCookie.toObjectArray(object.cookies);
+                result.attributes = ServiceSessionAttribute.toObjectArray(object.attributes);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
+           @return {Adaptive.ServiceSession[]} Wrapped object array instance.
+        */
+        ServiceSession.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceSession.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceSession;
     })(APIBean);
@@ -6394,6 +6918,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
+           @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
+        */
+        ServiceSessionCookie.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceSessionCookie.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ServiceSessionCookie;
     })(APIBean);
     Adaptive.ServiceSessionCookie = ServiceSessionCookie;
@@ -6581,6 +7121,22 @@ doesn't exist, this will be -1. Used internally.
                 result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
+           @return {Adaptive.ServiceToken[]} Wrapped object array instance.
+        */
+        ServiceToken.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceToken.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceToken;
     })(APIBean);
@@ -6909,50 +7465,30 @@ doesn't exist, this will be -1. Used internally.
                 // Assign values to bean fields.
                 result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
                 result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-                if (object.contactAddresses != null) {
-                    result.contactAddresses = new Array();
-                    for (var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
-                        var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                        result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
-                    }
-                }
-                if (object.contactPhones != null) {
-                    result.contactPhones = new Array();
-                    for (var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
-                        var vcontactPhones = object.contactPhones[icontactPhones];
-                        result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
-                    }
-                }
-                if (object.contactEmails != null) {
-                    result.contactEmails = new Array();
-                    for (var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
-                        var vcontactEmails = object.contactEmails[icontactEmails];
-                        result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
-                    }
-                }
-                if (object.contactWebsites != null) {
-                    result.contactWebsites = new Array();
-                    for (var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
-                        var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                        result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
-                    }
-                }
-                if (object.contactSocials != null) {
-                    result.contactSocials = new Array();
-                    for (var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
-                        var vcontactSocials = object.contactSocials[icontactSocials];
-                        result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
-                    }
-                }
-                if (object.contactTags != null) {
-                    result.contactTags = new Array();
-                    for (var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
-                        var vcontactTags = object.contactTags[icontactTags];
-                        result.contactTags.push(ContactTag.toObject(vcontactTags));
-                    }
-                }
+                result.contactAddresses = ContactAddress.toObjectArray(object.contactAddresses);
+                result.contactPhones = ContactPhone.toObjectArray(object.contactPhones);
+                result.contactEmails = ContactEmail.toObjectArray(object.contactEmails);
+                result.contactWebsites = ContactWebsite.toObjectArray(object.contactWebsites);
+                result.contactSocials = ContactSocial.toObjectArray(object.contactSocials);
+                result.contactTags = ContactTag.toObjectArray(object.contactTags);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Contact[].
+           @return {Adaptive.Contact[]} Wrapped object array instance.
+        */
+        Contact.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Contact.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Contact;
     })(ContactUid);
@@ -6995,6 +7531,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceHeader[].
+           @return {Adaptive.ServiceHeader[]} Wrapped object array instance.
+        */
+        ServiceHeader.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceHeader.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ServiceHeader;
     })(KeyValue);
     Adaptive.ServiceHeader = ServiceHeader;
@@ -7036,6 +7588,22 @@ doesn't exist, this will be -1. Used internally.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+           @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+        */
+        ServiceRequestParameter.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceRequestParameter.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ServiceRequestParameter;
     })(KeyValue);
     Adaptive.ServiceRequestParameter = ServiceRequestParameter;
@@ -7076,6 +7644,22 @@ doesn't exist, this will be -1. Used internally.
                 result.keyData = object.keyData;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute[].
+           @return {Adaptive.ServiceSessionAttribute[]} Wrapped object array instance.
+        */
+        ServiceSessionAttribute.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceSessionAttribute.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceSessionAttribute;
     })(KeyValue);

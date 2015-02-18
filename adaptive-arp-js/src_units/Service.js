@@ -134,16 +134,26 @@ var Adaptive;
             var result = new Service(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.serviceEndpoints != null) {
-                    result.serviceEndpoints = new Array();
-                    for (var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
-                        var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(vserviceEndpoints));
-                    }
-                }
+                result.serviceEndpoints = Adaptive.ServiceEndpoint.toObjectArray(object.serviceEndpoints);
                 result.name = object.name;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Service[].
+           @return {Adaptive.Service[]} Wrapped object array instance.
+        */
+        Service.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Service.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Service;
     })();

@@ -325,39 +325,31 @@ var Adaptive;
             var result = new Email(null, null, null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.toRecipients != null) {
-                    result.toRecipients = new Array();
-                    for (var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
-                        var vtoRecipients = object.toRecipients[itoRecipients];
-                        result.toRecipients.push(Adaptive.EmailAddress.toObject(vtoRecipients));
-                    }
-                }
-                if (object.ccRecipients != null) {
-                    result.ccRecipients = new Array();
-                    for (var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
-                        var vccRecipients = object.ccRecipients[iccRecipients];
-                        result.ccRecipients.push(Adaptive.EmailAddress.toObject(vccRecipients));
-                    }
-                }
-                if (object.bccRecipients != null) {
-                    result.bccRecipients = new Array();
-                    for (var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
-                        var vbccRecipients = object.bccRecipients[ibccRecipients];
-                        result.bccRecipients.push(Adaptive.EmailAddress.toObject(vbccRecipients));
-                    }
-                }
-                if (object.emailAttachmentData != null) {
-                    result.emailAttachmentData = new Array();
-                    for (var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
-                        var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
-                        result.emailAttachmentData.push(Adaptive.EmailAttachmentData.toObject(vemailAttachmentData));
-                    }
-                }
+                result.toRecipients = Adaptive.EmailAddress.toObjectArray(object.toRecipients);
+                result.ccRecipients = Adaptive.EmailAddress.toObjectArray(object.ccRecipients);
+                result.bccRecipients = Adaptive.EmailAddress.toObjectArray(object.bccRecipients);
+                result.emailAttachmentData = Adaptive.EmailAttachmentData.toObjectArray(object.emailAttachmentData);
                 result.messageBody = object.messageBody;
                 result.messageBodyMimeType = object.messageBodyMimeType;
                 result.subject = object.subject;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Email[].
+           @return {Adaptive.Email[]} Wrapped object array instance.
+        */
+        Email.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Email.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return Email;
     })(Adaptive.APIBean);

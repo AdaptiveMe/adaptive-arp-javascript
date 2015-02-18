@@ -252,5 +252,13 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.AppResourceData} Wrapped object instance.
         */
         static toObject(object: any): AppResourceData;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.AppResourceData[].
+           @return {Adaptive.AppResourceData[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): AppResourceData[];
     }
 }

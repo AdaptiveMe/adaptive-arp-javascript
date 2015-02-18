@@ -78,6 +78,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute[].
+             @return {Adaptive.ServiceSessionAttribute[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSessionAttribute[] {
+               var resultArray : Array<ServiceSessionAttribute> = new Array<ServiceSessionAttribute>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSessionAttribute.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

@@ -222,6 +222,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Acceleration[].
+           @return {Adaptive.Acceleration[]} Wrapped object array instance.
+        */
+        Acceleration.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Acceleration.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Acceleration;
     })(Adaptive.APIBean);
     Adaptive.Acceleration = Acceleration;

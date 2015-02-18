@@ -171,15 +171,25 @@ var Adaptive;
                 // Assign values to bean fields.
                 result.validationType = Adaptive.IServiceCertificateValidation.toObject(object.validationType);
                 result.hostURI = object.hostURI;
-                if (object.paths != null) {
-                    result.paths = new Array();
-                    for (var ipaths = 0; ipaths < object.paths.length; ipaths++) {
-                        var vpaths = object.paths[ipaths];
-                        result.paths.push(Adaptive.ServicePath.toObject(vpaths));
-                    }
-                }
+                result.paths = Adaptive.ServicePath.toObjectArray(object.paths);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+           @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+        */
+        ServiceEndpoint.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceEndpoint.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceEndpoint;
     })();

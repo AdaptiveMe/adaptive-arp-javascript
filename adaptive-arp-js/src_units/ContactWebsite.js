@@ -111,6 +111,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactWebsite[].
+           @return {Adaptive.ContactWebsite[]} Wrapped object array instance.
+        */
+        ContactWebsite.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactWebsite.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return ContactWebsite;
     })(Adaptive.APIBean);
     Adaptive.ContactWebsite = ContactWebsite;

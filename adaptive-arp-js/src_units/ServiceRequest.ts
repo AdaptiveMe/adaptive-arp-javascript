@@ -547,33 +547,32 @@ identifiers. This should not be manipulated by the application directly. The 'se
                     result.contentType = object.contentType;
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                     result.contentLength = object.contentLength;
-                    if (object.serviceHeaders != null) {
-                         result.serviceHeaders = new Array<ServiceHeader>();
-                         for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                              var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                         }
-                    }
+                    result.serviceHeaders = ServiceHeader.toObjectArray(object.serviceHeaders);
                     result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    if (object.queryParameters != null) {
-                         result.queryParameters = new Array<ServiceRequestParameter>();
-                         for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                              var vqueryParameters = object.queryParameters[iqueryParameters];
-                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
-                         }
-                    }
-                    if (object.bodyParameters != null) {
-                         result.bodyParameters = new Array<ServiceRequestParameter>();
-                         for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                              var vbodyParameters = object.bodyParameters[ibodyParameters];
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
-                         }
-                    }
+                    result.queryParameters = ServiceRequestParameter.toObjectArray(object.queryParameters);
+                    result.bodyParameters = ServiceRequestParameter.toObjectArray(object.bodyParameters);
                     result.serviceToken = ServiceToken.toObject(object.serviceToken);
                     result.refererHost = object.refererHost;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
+             @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceRequest[] {
+               var resultArray : Array<ServiceRequest> = new Array<ServiceRequest>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceRequest.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

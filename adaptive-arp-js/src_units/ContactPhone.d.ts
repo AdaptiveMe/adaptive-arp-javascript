@@ -113,5 +113,13 @@ declare module Adaptive {
            @return {Adaptive.ContactPhone} Wrapped object instance.
         */
         static toObject(object: any): ContactPhone;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
+           @return {Adaptive.ContactPhone[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ContactPhone[];
     }
 }

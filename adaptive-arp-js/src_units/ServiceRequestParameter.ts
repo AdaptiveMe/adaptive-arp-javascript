@@ -78,6 +78,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+             @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceRequestParameter[] {
+               var resultArray : Array<ServiceRequestParameter> = new Array<ServiceRequestParameter>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceRequestParameter.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

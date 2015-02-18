@@ -253,6 +253,23 @@ to a relative path of a function published on a remote service. The 'functionNam
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceToken[].
+             @return {Adaptive.ServiceToken[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceToken[] {
+               var resultArray : Array<ServiceToken> = new Array<ServiceToken>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceToken.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

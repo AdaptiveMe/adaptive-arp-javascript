@@ -85,5 +85,13 @@ declare module Adaptive {
            @return {Adaptive.EmailAddress} Wrapped object instance.
         */
         static toObject(object: any): EmailAddress;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.EmailAddress[].
+           @return {Adaptive.EmailAddress[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): EmailAddress[];
     }
 }

@@ -159,5 +159,13 @@ doesn't exist, this will be -1. Used internally.
            @return {Adaptive.FileDescriptor} Wrapped object instance.
         */
         static toObject(object: any): FileDescriptor;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+           @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): FileDescriptor[];
     }
 }

@@ -145,22 +145,26 @@ var Adaptive;
             var result = new ServiceSession(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.cookies != null) {
-                    result.cookies = new Array();
-                    for (var icookies = 0; icookies < object.cookies.length; icookies++) {
-                        var vcookies = object.cookies[icookies];
-                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(vcookies));
-                    }
-                }
-                if (object.attributes != null) {
-                    result.attributes = new Array();
-                    for (var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
-                        var vattributes = object.attributes[iattributes];
-                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(vattributes));
-                    }
-                }
+                result.cookies = Adaptive.ServiceSessionCookie.toObjectArray(object.cookies);
+                result.attributes = Adaptive.ServiceSessionAttribute.toObjectArray(object.attributes);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSession[].
+           @return {Adaptive.ServiceSession[]} Wrapped object array instance.
+        */
+        ServiceSession.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceSession.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceSession;
     })(Adaptive.APIBean);

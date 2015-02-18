@@ -230,6 +230,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.RotationEvent[].
+           @return {Adaptive.RotationEvent[]} Wrapped object array instance.
+        */
+        RotationEvent.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(RotationEvent.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return RotationEvent;
     })(Adaptive.APIBean);
     Adaptive.RotationEvent = RotationEvent;

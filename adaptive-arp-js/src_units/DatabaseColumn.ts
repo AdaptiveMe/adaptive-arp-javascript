@@ -117,6 +117,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn[].
+             @return {Adaptive.DatabaseColumn[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseColumn[] {
+               var resultArray : Array<DatabaseColumn> = new Array<DatabaseColumn>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseColumn.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

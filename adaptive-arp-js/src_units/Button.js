@@ -112,6 +112,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Button[].
+           @return {Adaptive.Button[]} Wrapped object array instance.
+        */
+        Button.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(Button.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return Button;
     })(Adaptive.APIBean);
     Adaptive.Button = Button;

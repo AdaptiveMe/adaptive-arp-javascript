@@ -68,6 +68,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.APIBean[].
+             @return {Adaptive.APIBean[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : APIBean[] {
+               var resultArray : Array<APIBean> = new Array<APIBean>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(APIBean.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

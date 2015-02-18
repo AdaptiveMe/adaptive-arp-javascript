@@ -274,5 +274,13 @@ declare module Adaptive {
            @return {Adaptive.ServiceSessionCookie} Wrapped object instance.
         */
         static toObject(object: any): ServiceSessionCookie;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionCookie[].
+           @return {Adaptive.ServiceSessionCookie[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceSessionCookie[];
     }
 }

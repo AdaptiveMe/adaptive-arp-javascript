@@ -284,23 +284,28 @@ module Adaptive {
                     result.name = object.name;
                     result.columnCount = object.columnCount;
                     result.rowCount = object.rowCount;
-                    if (object.databaseColumns != null) {
-                         result.databaseColumns = new Array<DatabaseColumn>();
-                         for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
-                              var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
-                         }
-                    }
-                    if (object.databaseRows != null) {
-                         result.databaseRows = new Array<DatabaseRow>();
-                         for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
-                              var vdatabaseRows = object.databaseRows[idatabaseRows];
-                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
-                         }
-                    }
+                    result.databaseColumns = DatabaseColumn.toObjectArray(object.databaseColumns);
+                    result.databaseRows = DatabaseRow.toObjectArray(object.databaseRows);
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
+             @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseTable[] {
+               var resultArray : Array<DatabaseTable> = new Array<DatabaseTable>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseTable.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

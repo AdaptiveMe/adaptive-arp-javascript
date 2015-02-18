@@ -252,5 +252,13 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceResponse} Wrapped object instance.
         */
         static toObject(object: any): ServiceResponse;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceResponse[].
+           @return {Adaptive.ServiceResponse[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): ServiceResponse[];
     }
 }

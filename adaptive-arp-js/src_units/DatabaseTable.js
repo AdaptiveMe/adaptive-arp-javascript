@@ -256,22 +256,26 @@ var Adaptive;
                 result.name = object.name;
                 result.columnCount = object.columnCount;
                 result.rowCount = object.rowCount;
-                if (object.databaseColumns != null) {
-                    result.databaseColumns = new Array();
-                    for (var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
-                        var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(vdatabaseColumns));
-                    }
-                }
-                if (object.databaseRows != null) {
-                    result.databaseRows = new Array();
-                    for (var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
-                        var vdatabaseRows = object.databaseRows[idatabaseRows];
-                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(vdatabaseRows));
-                    }
-                }
+                result.databaseColumns = Adaptive.DatabaseColumn.toObjectArray(object.databaseColumns);
+                result.databaseRows = Adaptive.DatabaseRow.toObjectArray(object.databaseRows);
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DatabaseTable[].
+           @return {Adaptive.DatabaseTable[]} Wrapped object array instance.
+        */
+        DatabaseTable.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DatabaseTable.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return DatabaseTable;
     })(Adaptive.APIBean);

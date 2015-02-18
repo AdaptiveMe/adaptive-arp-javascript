@@ -201,6 +201,23 @@ module Adaptive {
                return result;
           }
 
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.OSInfo[].
+             @return {Adaptive.OSInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : OSInfo[] {
+               var resultArray : Array<OSInfo> = new Array<OSInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(OSInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+
      }
 }
 

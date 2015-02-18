@@ -151,17 +151,28 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.serviceEndpoints != null) {
-                         result.serviceEndpoints = new Array<ServiceEndpoint>();
-                         for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
-                              var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
-                         }
-                    }
+                    result.serviceEndpoints = ServiceEndpoint.toObjectArray(object.serviceEndpoints);
                     result.name = object.name;
 
                }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service[].
+             @return {Adaptive.Service[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Service[] {
+               var resultArray : Array<Service> = new Array<Service>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Service.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

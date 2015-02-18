@@ -183,6 +183,22 @@ var Adaptive;
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.OSInfo[].
+           @return {Adaptive.OSInfo[]} Wrapped object array instance.
+        */
+        OSInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(OSInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return OSInfo;
     })(Adaptive.APIBean);
     Adaptive.OSInfo = OSInfo;

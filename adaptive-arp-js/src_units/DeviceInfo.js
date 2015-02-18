@@ -221,6 +221,22 @@ be unique for a specific instance of an application on a specific device.
             }
             return result;
         };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo[].
+           @return {Adaptive.DeviceInfo[]} Wrapped object array instance.
+        */
+        DeviceInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(DeviceInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
+        };
         return DeviceInfo;
     })(Adaptive.APIBean);
     Adaptive.DeviceInfo = DeviceInfo;

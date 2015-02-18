@@ -471,32 +471,30 @@ var Adaptive;
                 result.contentType = object.contentType;
                 result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
                 result.contentLength = object.contentLength;
-                if (object.serviceHeaders != null) {
-                    result.serviceHeaders = new Array();
-                    for (var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
-                        var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                        result.serviceHeaders.push(Adaptive.ServiceHeader.toObject(vserviceHeaders));
-                    }
-                }
+                result.serviceHeaders = Adaptive.ServiceHeader.toObjectArray(object.serviceHeaders);
                 result.serviceSession = Adaptive.ServiceSession.toObject(object.serviceSession);
-                if (object.queryParameters != null) {
-                    result.queryParameters = new Array();
-                    for (var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
-                        var vqueryParameters = object.queryParameters[iqueryParameters];
-                        result.queryParameters.push(Adaptive.ServiceRequestParameter.toObject(vqueryParameters));
-                    }
-                }
-                if (object.bodyParameters != null) {
-                    result.bodyParameters = new Array();
-                    for (var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
-                        var vbodyParameters = object.bodyParameters[ibodyParameters];
-                        result.bodyParameters.push(Adaptive.ServiceRequestParameter.toObject(vbodyParameters));
-                    }
-                }
+                result.queryParameters = Adaptive.ServiceRequestParameter.toObjectArray(object.queryParameters);
+                result.bodyParameters = Adaptive.ServiceRequestParameter.toObjectArray(object.bodyParameters);
                 result.serviceToken = Adaptive.ServiceToken.toObject(object.serviceToken);
                 result.refererHost = object.refererHost;
             }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequest[].
+           @return {Adaptive.ServiceRequest[]} Wrapped object array instance.
+        */
+        ServiceRequest.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceRequest.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceRequest;
     })(Adaptive.APIBean);
