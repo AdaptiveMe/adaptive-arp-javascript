@@ -78,7 +78,6 @@ var Adaptive;
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_message", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -107,7 +106,6 @@ var Adaptive;
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_category_message", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);

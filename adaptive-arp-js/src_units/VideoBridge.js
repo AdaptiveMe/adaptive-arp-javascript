@@ -76,7 +76,6 @@ var Adaptive;
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);

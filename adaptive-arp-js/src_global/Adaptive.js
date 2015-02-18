@@ -13520,7 +13520,6 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16122,7 +16121,6 @@ of the device. For device orientation, use the IDevice APIs.
             var arParams = [];
             var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16487,7 +16485,6 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "log_level_message", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16516,7 +16513,6 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "log_level_category_message", arParams, -1);
             apiRequest.setApiVersion("v2.1.5");
-            var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);

@@ -17668,7 +17668,6 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IVideo","playStream",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.5");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -20150,7 +20149,6 @@ of the device. For device orientation, use the IDevice APIs.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissApplication",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.5");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -20499,7 +20497,6 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_message",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.5");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -20528,7 +20525,6 @@ of the device. For device orientation, use the IDevice APIs.
                arParams.push(JSON.stringify(message));
                var apiRequest : APIRequest = new APIRequest("ILogging","log_level_category_message",arParams, -1 /* = synchronous call */);
                apiRequest.setApiVersion("v2.1.5");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
