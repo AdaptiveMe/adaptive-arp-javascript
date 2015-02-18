@@ -343,10 +343,7 @@ of the display. For display orientation, use the IDisplay APIs.
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
-                        var keys = Adaptive.registeredButtonListener.keys();
-                        for (var key in keys) {
-                            Adaptive.registeredButtonListener.remove(key);
-                        }
+                        Adaptive.registeredButtonListener.removeAll();
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeButtonListeners' [" + apiResponse.getStatusMessage() + "].");
@@ -421,10 +418,7 @@ of the display. For display orientation, use the IDisplay APIs.
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
-                        var keys = Adaptive.registeredDeviceOrientationListener.keys();
-                        for (var key in keys) {
-                            Adaptive.registeredDeviceOrientationListener.remove(key);
-                        }
+                        Adaptive.registeredDeviceOrientationListener.removeAll();
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListeners' [" + apiResponse.getStatusMessage() + "].");

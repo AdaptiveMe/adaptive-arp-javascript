@@ -70,6 +70,7 @@ declare module Adaptive {
         }[]);
         add(key: string, value: V): void;
         remove(key: string): void;
+        removeAll(): void;
         keys(): string[];
         values(): V[];
         containsKey(key: string): boolean;

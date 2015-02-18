@@ -93,6 +93,11 @@ module Adaptive {
              delete this[key];
          }
      
+         removeAll() {
+             this._keys = new Array<string>();
+             this._values = new Array<V>();
+         }
+     
          keys(): string[] {
              return this._keys;
          }
@@ -14984,8 +14989,8 @@ event may be fired if the application vetoes display rotation before rotation is
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<Locale>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(Locale.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(Locale.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' ["+apiResponse.getStatusMessage()+"].");
@@ -15072,8 +15077,8 @@ event may be fired if the application vetoes display rotation before rotation is
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<KeyPair>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(KeyPair.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(KeyPair.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getResourceLiterals' ["+apiResponse.getStatusMessage()+"].");
@@ -15246,10 +15251,7 @@ event may be fired if the application vetoes display rotation before rotation is
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredLifecycleListener.keys();
-                              for (var key in keys) {
-                                   registeredLifecycleListener.remove(key);
-                              }
+                              registeredLifecycleListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -15684,10 +15686,7 @@ event may be fired if the application vetoes display rotation before rotation is
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredNetworkStatusListener.keys();
-                              for (var key in keys) {
-                                   registeredNetworkStatusListener.remove(key);
-                              }
+                              registeredNetworkStatusListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -15882,8 +15881,8 @@ configured in the platform's XML service definition file.
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<ServiceToken>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(ServiceToken.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(ServiceToken.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServicesRegistered' ["+apiResponse.getStatusMessage()+"].");
@@ -18741,10 +18740,7 @@ This path may or may not be writable by the current application.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredAccelerationListener.keys();
-                              for (var key in keys) {
-                                   registeredAccelerationListener.remove(key);
-                              }
+                              registeredAccelerationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -18914,10 +18910,7 @@ This path may or may not be writable by the current application.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredGeolocationListener.keys();
-                              for (var key in keys) {
-                                   registeredGeolocationListener.remove(key);
-                              }
+                              registeredGeolocationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.removeGeolocationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -19170,8 +19163,8 @@ support at least one orientation. This is usually PortaitUp.
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<ICapabilitiesOrientation>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(ICapabilitiesOrientation.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(ICapabilitiesOrientation.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.getOrientationsSupported' ["+apiResponse.getStatusMessage()+"].");
@@ -19797,10 +19790,7 @@ of the display. For display orientation, use the IDisplay APIs.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredButtonListener.keys();
-                              for (var key in keys) {
-                                   registeredButtonListener.remove(key);
-                              }
+                              registeredButtonListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeButtonListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -19871,10 +19861,7 @@ of the display. For display orientation, use the IDisplay APIs.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredDeviceOrientationListener.keys();
-                              for (var key in keys) {
-                                   registeredDeviceOrientationListener.remove(key);
-                              }
+                              registeredDeviceOrientationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeDeviceOrientationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }
@@ -20046,10 +20033,7 @@ of the device. For device orientation, use the IDevice APIs.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredDisplayOrientationListener.keys();
-                              for (var key in keys) {
-                                   registeredDisplayOrientationListener.remove(key);
-                              }
+                              registeredDisplayOrientationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DisplayBridge.removeDisplayOrientationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

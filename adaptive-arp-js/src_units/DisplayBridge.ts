@@ -203,10 +203,7 @@ of the device. For device orientation, use the IDevice APIs.
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredDisplayOrientationListener.keys();
-                              for (var key in keys) {
-                                   registeredDisplayOrientationListener.remove(key);
-                              }
+                              registeredDisplayOrientationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DisplayBridge.removeDisplayOrientationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

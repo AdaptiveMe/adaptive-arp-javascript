@@ -71,6 +71,10 @@ var Adaptive;
             this._values.splice(index, 1);
             delete this[key];
         };
+        Dictionary.prototype.removeAll = function () {
+            this._keys = new Array();
+            this._values = new Array();
+        };
         Dictionary.prototype.keys = function () {
             return this._keys;
         };

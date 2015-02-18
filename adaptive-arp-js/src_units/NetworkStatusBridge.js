@@ -170,10 +170,7 @@ var Adaptive;
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
-                        var keys = Adaptive.registeredNetworkStatusListener.keys();
-                        for (var key in keys) {
-                            Adaptive.registeredNetworkStatusListener.remove(key);
-                        }
+                        Adaptive.registeredNetworkStatusListener.removeAll();
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' [" + apiResponse.getStatusMessage() + "].");

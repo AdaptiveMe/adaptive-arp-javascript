@@ -170,10 +170,7 @@ var Adaptive;
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
-                        var keys = Adaptive.registeredAccelerationListener.keys();
-                        for (var key in keys) {
-                            Adaptive.registeredAccelerationListener.remove(key);
-                        }
+                        Adaptive.registeredAccelerationListener.removeAll();
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'AccelerationBridge.removeAccelerationListeners' [" + apiResponse.getStatusMessage() + "].");

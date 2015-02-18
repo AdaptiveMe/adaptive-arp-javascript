@@ -94,6 +94,11 @@ module Adaptive {
              delete this[key];
          }
      
+         removeAll() {
+             this._keys = new Array<string>();
+             this._values = new Array<V>();
+         }
+     
          keys(): string[] {
              return this._keys;
          }

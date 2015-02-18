@@ -134,8 +134,8 @@ var Adaptive;
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var __key__ in responseArray) {
-                            response.push(Adaptive.Locale.toObject(responseArray[__key__]));
+                        for (var i = 0; i < responseArray.length; i++) {
+                            response.push(Adaptive.Locale.toObject(responseArray[i]));
                         }
                     }
                     else {
@@ -226,8 +226,8 @@ var Adaptive;
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var __key__ in responseArray) {
-                            response.push(Adaptive.KeyPair.toObject(responseArray[__key__]));
+                        for (var i = 0; i < responseArray.length; i++) {
+                            response.push(Adaptive.KeyPair.toObject(responseArray[i]));
                         }
                     }
                     else {

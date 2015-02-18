@@ -162,10 +162,7 @@ module Adaptive {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredGeolocationListener.keys();
-                              for (var key in keys) {
-                                   registeredGeolocationListener.remove(key);
-                              }
+                              registeredGeolocationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.removeGeolocationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

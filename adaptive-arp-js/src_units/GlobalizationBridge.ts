@@ -128,8 +128,8 @@ module Adaptive {
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<Locale>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(Locale.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(Locale.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' ["+apiResponse.getStatusMessage()+"].");
@@ -216,8 +216,8 @@ module Adaptive {
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<KeyPair>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(KeyPair.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(KeyPair.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GlobalizationBridge.getResourceLiterals' ["+apiResponse.getStatusMessage()+"].");

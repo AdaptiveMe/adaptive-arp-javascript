@@ -162,10 +162,7 @@ module Adaptive {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredAccelerationListener.keys();
-                              for (var key in keys) {
-                                   registeredAccelerationListener.remove(key);
-                              }
+                              registeredAccelerationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'AccelerationBridge.removeAccelerationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

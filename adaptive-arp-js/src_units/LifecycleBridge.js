@@ -211,10 +211,7 @@ var Adaptive;
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                     if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         // Remove all listeners references from local dictionary.
-                        var keys = Adaptive.registeredLifecycleListener.keys();
-                        for (var key in keys) {
-                            Adaptive.registeredLifecycleListener.remove(key);
-                        }
+                        Adaptive.registeredLifecycleListener.removeAll();
                     }
                     else {
                         console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.removeLifecycleListeners' [" + apiResponse.getStatusMessage() + "].");

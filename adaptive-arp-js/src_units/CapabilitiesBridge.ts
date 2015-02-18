@@ -137,8 +137,8 @@ support at least one orientation. This is usually PortaitUp.
                          if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = new Array<ICapabilitiesOrientation>();
                               var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var __key__ in responseArray) {
-                                   response.push(ICapabilitiesOrientation.toObject(responseArray[__key__]));
+                              for(var i = 0;i < responseArray.length; i++) {
+                                   response.push(ICapabilitiesOrientation.toObject(responseArray[i]));
                               }
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.getOrientationsSupported' ["+apiResponse.getStatusMessage()+"].");
