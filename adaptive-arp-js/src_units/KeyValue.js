@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -141,12 +141,28 @@ var Adaptive;
         */
         KeyValue.toObject = function (object) {
             var result = new KeyValue(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
                 result.keyData = object.keyData;
+            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.KeyValue[].
+           @return {Adaptive.KeyValue[]} Wrapped object array instance.
+        */
+        KeyValue.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(KeyValue.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return KeyValue;
     })(Adaptive.APIBean);

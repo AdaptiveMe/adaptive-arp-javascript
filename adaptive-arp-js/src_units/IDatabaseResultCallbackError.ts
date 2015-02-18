@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.IDatabaseResultCallbackError}
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoSpace":
-                              return IDatabaseResultCallbackError.NoSpace;
-                         case "SqlException":
-                              return IDatabaseResultCallbackError.SqlException;
-                         case "NotDeleted":
-                              return IDatabaseResultCallbackError.NotDeleted;
-                         case "Unknown":
-                              return IDatabaseResultCallbackError.Unknown;
-                         default:
-                              return IDatabaseResultCallbackError.Unknown;
-                    }
-               } else {
-                    return IDatabaseResultCallbackError.Unknown;
+               var retValue : IDatabaseResultCallbackError = IDatabaseResultCallbackError.Unknown;
+               if (object != null && object.value != null && IDatabaseResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseResultCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,7 +72,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","addGeolocationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -82,10 +82,10 @@ module Adaptive {
                registeredGeolocationListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove listener reference from local dictionary due to invalid response.
                               registeredGeolocationListener.remove(""+listener.getId());
@@ -114,7 +114,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","removeGeolocationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -122,10 +122,10 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove listener reference from local dictionary.
                               registeredGeolocationListener.remove(""+listener.getId());
                          } else {
@@ -149,7 +149,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IGeolocation","removeGeolocationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -157,15 +157,12 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredGeolocationListener.keys();
-                              for (var key in keys) {
-                                   registeredGeolocationListener.remove(key);
-                              }
+                              registeredGeolocationListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'GeolocationBridge.removeGeolocationListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

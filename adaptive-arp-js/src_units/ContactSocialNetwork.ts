@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,26 +75,11 @@ module Adaptive {
              @return {Adaptive.ContactSocialNetwork}
           */
           static toObject(object : any) : ContactSocialNetwork {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Twitter":
-                              return ContactSocialNetwork.Twitter;
-                         case "Facebook":
-                              return ContactSocialNetwork.Facebook;
-                         case "GooglePlus":
-                              return ContactSocialNetwork.GooglePlus;
-                         case "LinkedIn":
-                              return ContactSocialNetwork.LinkedIn;
-                         case "Flickr":
-                              return ContactSocialNetwork.Flickr;
-                         case "Unknown":
-                              return ContactSocialNetwork.Unknown;
-                         default:
-                              return ContactSocialNetwork.Unknown;
-                    }
-               } else {
-                    return ContactSocialNetwork.Unknown;
+               var retValue : ContactSocialNetwork = ContactSocialNetwork.Unknown;
+               if (object != null && object.value != null && ContactSocialNetwork.hasOwnProperty(object.value)) {
+                    retValue = ContactSocialNetwork[object.value];
                }
+               return retValue;
           }
 
      }

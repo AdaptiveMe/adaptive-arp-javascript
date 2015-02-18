@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,7 +72,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","addLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -82,10 +82,10 @@ module Adaptive {
                registeredLifecycleListener.add(""+listener.getId(), listener);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove listener reference from local dictionary due to invalid response.
                               registeredLifecycleListener.remove(""+listener.getId());
@@ -114,7 +114,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","isBackground",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -124,11 +124,11 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = JSON.parse(apiResponse.getResponse());
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.isBackground' ["+apiResponse.getStatusMessage()+"].");
@@ -153,7 +153,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -161,10 +161,10 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove listener reference from local dictionary.
                               registeredLifecycleListener.remove(""+listener.getId());
                          } else {
@@ -188,7 +188,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -196,15 +196,12 @@ module Adaptive {
                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               // Remove all listeners references from local dictionary.
-                              var keys = registeredLifecycleListener.keys();
-                              for (var key in keys) {
-                                   registeredLifecycleListener.remove(key);
-                              }
+                              registeredLifecycleListener.removeAll();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListeners' ["+apiResponse.getStatusMessage()+"].");
                          }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,24 +71,11 @@ module Adaptive {
              @return {Adaptive.IServiceContentEncoding}
           */
           static toObject(object : any) : IServiceContentEncoding {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "ASCII":
-                              return IServiceContentEncoding.ASCII;
-                         case "UTF8":
-                              return IServiceContentEncoding.UTF8;
-                         case "ISOLatin1":
-                              return IServiceContentEncoding.ISOLatin1;
-                         case "Unicode":
-                              return IServiceContentEncoding.Unicode;
-                         case "Unknown":
-                              return IServiceContentEncoding.Unknown;
-                         default:
-                              return IServiceContentEncoding.Unknown;
-                    }
-               } else {
-                    return IServiceContentEncoding.Unknown;
+               var retValue : IServiceContentEncoding = IServiceContentEncoding.Unknown;
+               if (object != null && object.value != null && IServiceContentEncoding.hasOwnProperty(object.value)) {
+                    retValue = IServiceContentEncoding[object.value];
                }
+               return retValue;
           }
 
      }

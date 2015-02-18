@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -71,12 +71,28 @@ var Adaptive;
         */
         ServiceRequestParameter.toObject = function (object) {
             var result = new ServiceRequestParameter(null, null);
-            // Assign values to parent bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null) {
+                // Assign values to parent bean fields.
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
                 result.keyData = object.keyData;
+            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ServiceRequestParameter[].
+           @return {Adaptive.ServiceRequestParameter[]} Wrapped object array instance.
+        */
+        ServiceRequestParameter.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ServiceRequestParameter.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ServiceRequestParameter;
     })(Adaptive.KeyValue);

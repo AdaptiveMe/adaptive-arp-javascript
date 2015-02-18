@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,36 +51,24 @@ var Adaptive;
            @return {Adaptive.IContactPhotoResultCallbackError}
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "NoPermission":
-                        return IContactPhotoResultCallbackError.NoPermission;
-                    case "Wrong_Params":
-                        return IContactPhotoResultCallbackError.Wrong_Params;
-                    case "No_Photo":
-                        return IContactPhotoResultCallbackError.No_Photo;
-                    case "Unknown":
-                        return IContactPhotoResultCallbackError.Unknown;
-                    default:
-                        return IContactPhotoResultCallbackError.Unknown;
-                }
+            var retValue = IContactPhotoResultCallbackError.Unknown;
+            if (object != null && object.value != null && IContactPhotoResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IContactPhotoResultCallbackError[object.value];
             }
-            else {
-                return IContactPhotoResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [NoPermission='NoPermission']
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
         */
-        IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+        IContactPhotoResultCallbackError.WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
         */
-        IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+        IContactPhotoResultCallbackError.NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */

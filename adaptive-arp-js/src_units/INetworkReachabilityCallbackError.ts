@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,9 +76,9 @@ module Adaptive {
           */
           static Unreachable = new INetworkReachabilityCallbackError("Unreachable");
           /**
-             @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+          static WrongParams = new INetworkReachabilityCallbackError("Wrong_Params");
           /**
              @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
           */
@@ -99,38 +99,11 @@ module Adaptive {
              @return {Adaptive.INetworkReachabilityCallbackError}
           */
           static toObject(object : any) : INetworkReachabilityCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Forbidden":
-                              return INetworkReachabilityCallbackError.Forbidden;
-                         case "NotFound":
-                              return INetworkReachabilityCallbackError.NotFound;
-                         case "MethodNotAllowed":
-                              return INetworkReachabilityCallbackError.MethodNotAllowed;
-                         case "NotAllowed":
-                              return INetworkReachabilityCallbackError.NotAllowed;
-                         case "NotAuthenticated":
-                              return INetworkReachabilityCallbackError.NotAuthenticated;
-                         case "TimeOut":
-                              return INetworkReachabilityCallbackError.TimeOut;
-                         case "NoResponse":
-                              return INetworkReachabilityCallbackError.NoResponse;
-                         case "Unreachable":
-                              return INetworkReachabilityCallbackError.Unreachable;
-                         case "Wrong_Params":
-                              return INetworkReachabilityCallbackError.Wrong_Params;
-                         case "MalformedUrl":
-                              return INetworkReachabilityCallbackError.MalformedUrl;
-                         case "DomainUnresolvable":
-                              return INetworkReachabilityCallbackError.DomainUnresolvable;
-                         case "Unknown":
-                              return INetworkReachabilityCallbackError.Unknown;
-                         default:
-                              return INetworkReachabilityCallbackError.Unknown;
-                    }
-               } else {
-                    return INetworkReachabilityCallbackError.Unknown;
+               var retValue : INetworkReachabilityCallbackError = INetworkReachabilityCallbackError.Unknown;
+               if (object != null && object.value != null && INetworkReachabilityCallbackError.hasOwnProperty(object.value)) {
+                    retValue = INetworkReachabilityCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

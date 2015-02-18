@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+             @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
           */
-          static Not_Present = new IButtonListenerError("Not_Present");
+          static NotPresent = new IButtonListenerError("Not_Present");
           /**
              @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
           */
@@ -59,18 +59,11 @@ module Adaptive {
              @return {Adaptive.IButtonListenerError}
           */
           static toObject(object : any) : IButtonListenerError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Not_Present":
-                              return IButtonListenerError.Not_Present;
-                         case "Unknown":
-                              return IButtonListenerError.Unknown;
-                         default:
-                              return IButtonListenerError.Unknown;
-                    }
-               } else {
-                    return IButtonListenerError.Unknown;
+               var retValue : IButtonListenerError = IButtonListenerError.Unknown;
+               if (object != null && object.value != null && IButtonListenerError.hasOwnProperty(object.value)) {
+                    retValue = IButtonListenerError[object.value];
                }
+               return retValue;
           }
 
      }

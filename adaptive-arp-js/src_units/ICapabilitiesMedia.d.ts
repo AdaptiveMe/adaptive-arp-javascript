@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,25 +41,25 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
         */
-        static Audio_Playback: ICapabilitiesMedia;
+        static AudioPlayback: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
         */
-        static Audio_Recording: ICapabilitiesMedia;
+        static AudioRecording: ICapabilitiesMedia;
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         static Camera: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
         */
-        static Video_Playback: ICapabilitiesMedia;
+        static VideoPlayback: ICapabilitiesMedia;
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
         */
-        static Video_Recording: ICapabilitiesMedia;
+        static VideoRecording: ICapabilitiesMedia;
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */

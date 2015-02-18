@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.IDatabaseTableResultCallbackWarning}
           */
           static toObject(object : any) : IDatabaseTableResultCallbackWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "TableExists":
-                              return IDatabaseTableResultCallbackWarning.TableExists;
-                         case "TableLocked":
-                              return IDatabaseTableResultCallbackWarning.TableLocked;
-                         case "NoResults":
-                              return IDatabaseTableResultCallbackWarning.NoResults;
-                         case "Unknown":
-                              return IDatabaseTableResultCallbackWarning.Unknown;
-                         default:
-                              return IDatabaseTableResultCallbackWarning.Unknown;
-                    }
-               } else {
-                    return IDatabaseTableResultCallbackWarning.Unknown;
+               var retValue : IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning.Unknown;
+               if (object != null && object.value != null && IDatabaseTableResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseTableResultCallbackWarning[object.value];
                }
+               return retValue;
           }
 
      }

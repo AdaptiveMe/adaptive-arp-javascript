@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,42 +51,28 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesOrientation}
         */
         ICapabilitiesOrientation.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Portrait_Up":
-                        return ICapabilitiesOrientation.Portrait_Up;
-                    case "Portrait_Down":
-                        return ICapabilitiesOrientation.Portrait_Down;
-                    case "Landscape_Left":
-                        return ICapabilitiesOrientation.Landscape_Left;
-                    case "Landscape_Right":
-                        return ICapabilitiesOrientation.Landscape_Right;
-                    case "Unknown":
-                        return ICapabilitiesOrientation.Unknown;
-                    default:
-                        return ICapabilitiesOrientation.Unknown;
-                }
+            var retValue = ICapabilitiesOrientation.Unknown;
+            if (object != null && object.value != null && ICapabilitiesOrientation.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesOrientation[object.value];
             }
-            else {
-                return ICapabilitiesOrientation.Unknown;
-            }
+            return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
         */
-        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+        ICapabilitiesOrientation.PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
         */
-        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+        ICapabilitiesOrientation.PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
         */
-        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+        ICapabilitiesOrientation.LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
         */
-        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+        ICapabilitiesOrientation.LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */

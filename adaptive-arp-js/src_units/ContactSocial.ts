@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -152,15 +152,30 @@ module Adaptive {
           static toObject(object : any) : ContactSocial {
                var result : ContactSocial = new ContactSocial(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.socialNetwork!=null) {
+               if (object != null ) {
+                    // Assign values to bean fields.
                     result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
-               } else {
-                    result.socialNetwork = ContactSocialNetwork.toObject(null);
-               }
-               if (object!=null && object.profileUrl!=null) result.profileUrl = object.profileUrl;
+                    result.profileUrl = object.profileUrl;
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactSocial[].
+             @return {Adaptive.ContactSocial[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactSocial[] {
+               var resultArray : Array<ContactSocial> = new Array<ContactSocial>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactSocial.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,27 +51,11 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesCommunication}
         */
         ICapabilitiesCommunication.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Calendar":
-                        return ICapabilitiesCommunication.Calendar;
-                    case "Contact":
-                        return ICapabilitiesCommunication.Contact;
-                    case "Mail":
-                        return ICapabilitiesCommunication.Mail;
-                    case "Messaging":
-                        return ICapabilitiesCommunication.Messaging;
-                    case "Telephony":
-                        return ICapabilitiesCommunication.Telephony;
-                    case "Unknown":
-                        return ICapabilitiesCommunication.Unknown;
-                    default:
-                        return ICapabilitiesCommunication.Unknown;
-                }
+            var retValue = ICapabilitiesCommunication.Unknown;
+            if (object != null && object.value != null && ICapabilitiesCommunication.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesCommunication[object.value];
             }
-            else {
-                return ICapabilitiesCommunication.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesCommunication} [Calendar='Calendar']

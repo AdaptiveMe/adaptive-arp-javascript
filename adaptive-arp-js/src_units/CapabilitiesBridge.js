@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -84,7 +84,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -94,11 +94,11 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -126,7 +126,7 @@ support at least one orientation. This is usually PortaitUp.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -136,15 +136,15 @@ support at least one orientation. This is usually PortaitUp.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var __key__ in responseArray) {
-                            response.push(Adaptive.ICapabilitiesOrientation.toObject(responseArray[__key__]));
+                        for (var i = 0; i < responseArray.length; i++) {
+                            response.push(Adaptive.ICapabilitiesOrientation.toObject(responseArray[i]));
                         }
                     }
                     else {
@@ -173,7 +173,7 @@ support at least one orientation. This is usually PortaitUp.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -183,11 +183,11 @@ support at least one orientation. This is usually PortaitUp.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -217,7 +217,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -227,11 +227,11 @@ the device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -260,7 +260,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -270,11 +270,11 @@ the device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -304,7 +304,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -314,11 +314,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -347,7 +347,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -357,11 +357,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -391,7 +391,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -401,11 +401,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -434,7 +434,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(orientation));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -444,11 +444,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -478,7 +478,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -488,11 +488,11 @@ device.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {

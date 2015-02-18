@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -83,30 +83,11 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesNet}
           */
           static toObject(object : any) : ICapabilitiesNet {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "GSM":
-                              return ICapabilitiesNet.GSM;
-                         case "GPRS":
-                              return ICapabilitiesNet.GPRS;
-                         case "HSDPA":
-                              return ICapabilitiesNet.HSDPA;
-                         case "LTE":
-                              return ICapabilitiesNet.LTE;
-                         case "WIFI":
-                              return ICapabilitiesNet.WIFI;
-                         case "Ethernet":
-                              return ICapabilitiesNet.Ethernet;
-                         case "Unavailable":
-                              return ICapabilitiesNet.Unavailable;
-                         case "Unknown":
-                              return ICapabilitiesNet.Unknown;
-                         default:
-                              return ICapabilitiesNet.Unknown;
-                    }
-               } else {
-                    return ICapabilitiesNet.Unknown;
+               var retValue : ICapabilitiesNet = ICapabilitiesNet.Unknown;
+               if (object != null && object.value != null && ICapabilitiesNet.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesNet[object.value];
                }
+               return retValue;
           }
 
      }

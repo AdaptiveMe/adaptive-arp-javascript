@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.IDatabaseTableResultCallbackWarning}
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "TableExists":
-                        return IDatabaseTableResultCallbackWarning.TableExists;
-                    case "TableLocked":
-                        return IDatabaseTableResultCallbackWarning.TableLocked;
-                    case "NoResults":
-                        return IDatabaseTableResultCallbackWarning.NoResults;
-                    case "Unknown":
-                        return IDatabaseTableResultCallbackWarning.Unknown;
-                    default:
-                        return IDatabaseTableResultCallbackWarning.Unknown;
-                }
+            var retValue = IDatabaseTableResultCallbackWarning.Unknown;
+            if (object != null && object.value != null && IDatabaseTableResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IDatabaseTableResultCallbackWarning[object.value];
             }
-            else {
-                return IDatabaseTableResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDatabaseTableResultCallbackWarning} [TableExists='TableExists']

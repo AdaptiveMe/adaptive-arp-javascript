@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,26 +75,11 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesCommunication}
           */
           static toObject(object : any) : ICapabilitiesCommunication {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Calendar":
-                              return ICapabilitiesCommunication.Calendar;
-                         case "Contact":
-                              return ICapabilitiesCommunication.Contact;
-                         case "Mail":
-                              return ICapabilitiesCommunication.Mail;
-                         case "Messaging":
-                              return ICapabilitiesCommunication.Messaging;
-                         case "Telephony":
-                              return ICapabilitiesCommunication.Telephony;
-                         case "Unknown":
-                              return ICapabilitiesCommunication.Unknown;
-                         default:
-                              return ICapabilitiesCommunication.Unknown;
-                    }
-               } else {
-                    return ICapabilitiesCommunication.Unknown;
+               var retValue : ICapabilitiesCommunication = ICapabilitiesCommunication.Unknown;
+               if (object != null && object.value != null && ICapabilitiesCommunication.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesCommunication[object.value];
                }
+               return retValue;
           }
 
      }

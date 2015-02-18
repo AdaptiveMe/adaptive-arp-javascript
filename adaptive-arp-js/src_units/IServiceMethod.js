@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.IServiceMethod}
         */
         IServiceMethod.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "POST":
-                        return IServiceMethod.POST;
-                    case "GET":
-                        return IServiceMethod.GET;
-                    case "HEAD":
-                        return IServiceMethod.HEAD;
-                    case "Unknown":
-                        return IServiceMethod.Unknown;
-                    default:
-                        return IServiceMethod.Unknown;
-                }
+            var retValue = IServiceMethod.Unknown;
+            if (object != null && object.value != null && IServiceMethod.hasOwnProperty(object.value)) {
+                retValue = IServiceMethod[object.value];
             }
-            else {
-                return IServiceMethod.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IServiceMethod} [POST='POST']

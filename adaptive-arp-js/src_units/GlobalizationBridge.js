@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -86,11 +86,11 @@ var Adaptive;
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.Locale.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -117,7 +117,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -127,15 +127,15 @@ var Adaptive;
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var __key__ in responseArray) {
-                            response.push(Adaptive.Locale.toObject(responseArray[__key__]));
+                        for (var i = 0; i < responseArray.length; i++) {
+                            response.push(Adaptive.Locale.toObject(responseArray[i]));
                         }
                     }
                     else {
@@ -166,7 +166,7 @@ var Adaptive;
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -176,11 +176,11 @@ var Adaptive;
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = apiResponse.getResponse();
                     }
                     else {
@@ -209,7 +209,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(locale));
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -219,15 +219,15 @@ var Adaptive;
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = new Array();
                         var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var __key__ in responseArray) {
-                            response.push(Adaptive.KeyPair.toObject(responseArray[__key__]));
+                        for (var i = 0; i < responseArray.length; i++) {
+                            response.push(Adaptive.KeyPair.toObject(responseArray[i]));
                         }
                     }
                     else {

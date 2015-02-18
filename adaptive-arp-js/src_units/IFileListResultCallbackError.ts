@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.IFileListResultCallbackError}
           */
           static toObject(object : any) : IFileListResultCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              return IFileListResultCallbackError.InexistentFile;
-                         case "Unauthorized":
-                              return IFileListResultCallbackError.Unauthorized;
-                         case "Unknown":
-                              return IFileListResultCallbackError.Unknown;
-                         default:
-                              return IFileListResultCallbackError.Unknown;
-                    }
-               } else {
-                    return IFileListResultCallbackError.Unknown;
+               var retValue : IFileListResultCallbackError = IFileListResultCallbackError.Unknown;
+               if (object != null && object.value != null && IFileListResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileListResultCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

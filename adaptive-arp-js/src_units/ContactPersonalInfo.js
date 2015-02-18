@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -214,20 +214,30 @@ var Adaptive;
         */
         ContactPersonalInfo.toObject = function (object) {
             var result = new ContactPersonalInfo(null, null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.name = object.name;
-            if (object != null && object.middleName != null)
                 result.middleName = object.middleName;
-            if (object != null && object.lastName != null)
                 result.lastName = object.lastName;
-            if (object != null && object.title != null) {
                 result.title = Adaptive.ContactPersonalInfoTitle.toObject(object.title);
             }
-            else {
-                result.title = Adaptive.ContactPersonalInfoTitle.toObject(null);
-            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPersonalInfo[].
+           @return {Adaptive.ContactPersonalInfo[]} Wrapped object array instance.
+        */
+        ContactPersonalInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactPersonalInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactPersonalInfo;
     })(Adaptive.APIBean);

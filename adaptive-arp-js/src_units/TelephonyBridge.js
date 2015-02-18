@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,7 +77,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(number));
             var apiRequest = new Adaptive.APIRequest("ITelephony", "call", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -87,11 +87,11 @@ var Adaptive;
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.ITelephonyStatus.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {

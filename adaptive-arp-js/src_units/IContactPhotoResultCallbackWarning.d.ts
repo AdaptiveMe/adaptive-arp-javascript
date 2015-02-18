@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -45,9 +45,9 @@ declare module Adaptive {
         */
         static LimitExceeded: IContactPhotoResultCallbackWarning;
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
         */
-        static No_Matches: IContactPhotoResultCallbackWarning;
+        static NoMatches: IContactPhotoResultCallbackWarning;
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */

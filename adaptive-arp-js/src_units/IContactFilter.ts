@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,17 +44,17 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+             @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
           */
-          static HAS_PHONE = new IContactFilter("HAS_PHONE");
+          static HASPHONE = new IContactFilter("HAS_PHONE");
           /**
-             @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+             @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
           */
-          static HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+          static HASEMAIL = new IContactFilter("HAS_EMAIL");
           /**
-             @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+             @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
           */
-          static HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+          static HASADDRESS = new IContactFilter("HAS_ADDRESS");
           /**
              @property {Adaptive.IContactFilter} [Unknown='Unknown']
           */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.IContactFilter}
           */
           static toObject(object : any) : IContactFilter {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HAS_PHONE":
-                              return IContactFilter.HAS_PHONE;
-                         case "HAS_EMAIL":
-                              return IContactFilter.HAS_EMAIL;
-                         case "HAS_ADDRESS":
-                              return IContactFilter.HAS_ADDRESS;
-                         case "Unknown":
-                              return IContactFilter.Unknown;
-                         default:
-                              return IContactFilter.Unknown;
-                    }
-               } else {
-                    return IContactFilter.Unknown;
+               var retValue : IContactFilter = IContactFilter.Unknown;
+               if (object != null && object.value != null && IContactFilter.hasOwnProperty(object.value)) {
+                    retValue = IContactFilter[object.value];
                }
+               return retValue;
           }
 
      }

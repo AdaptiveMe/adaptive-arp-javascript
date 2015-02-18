@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,13 +41,13 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
         */
-        static PERSONAL_INFO: IContactFieldGroup;
+        static PERSONALINFO: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
         */
-        static PROFESSIONAL_INFO: IContactFieldGroup;
+        static PROFESSIONALINFO: IContactFieldGroup;
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */

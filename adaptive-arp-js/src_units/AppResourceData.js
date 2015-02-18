@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -314,28 +314,39 @@ var Adaptive;
         */
         AppResourceData.toObject = function (object) {
             var result = new AppResourceData(null, null, null, null, null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.id != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.id = object.id;
-            if (object != null && object.data != null) {
-                result.data = new Array();
-                for (var i = 0; i < object.data.length; i++) {
-                    var __value__ = object.data[i];
-                    if (__value__ != null)
-                        result.data.push(__value__);
+                if (object.data != null) {
+                    result.data = new Array();
+                    for (var idata = 0; idata < object.data.length; idata++) {
+                        var vdata = object.data[idata];
+                        result.data.push(vdata);
+                    }
+                }
+                result.rawType = object.rawType;
+                result.rawLength = object.rawLength;
+                result.cooked = object.cooked;
+                result.cookedType = object.cookedType;
+                result.cookedLength = object.cookedLength;
+            }
+            return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.AppResourceData[].
+           @return {Adaptive.AppResourceData[]} Wrapped object array instance.
+        */
+        AppResourceData.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(AppResourceData.toObject(object[i]));
                 }
             }
-            if (object != null && object.rawType != null)
-                result.rawType = object.rawType;
-            if (object != null && object.rawLength != null)
-                result.rawLength = object.rawLength;
-            if (object != null && object.cooked != null)
-                result.cooked = object.cooked;
-            if (object != null && object.cookedType != null)
-                result.cookedType = object.cookedType;
-            if (object != null && object.cookedLength != null)
-                result.cookedLength = object.cookedLength;
-            return result;
+            return resultArray;
         };
         return AppResourceData;
     })();

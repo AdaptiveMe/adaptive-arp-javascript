@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.IGeolocationListenerWarning}
           */
           static toObject(object : any) : IGeolocationListenerWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HighDoP":
-                              return IGeolocationListenerWarning.HighDoP;
-                         case "StaleData":
-                              return IGeolocationListenerWarning.StaleData;
-                         case "Unknown":
-                              return IGeolocationListenerWarning.Unknown;
-                         default:
-                              return IGeolocationListenerWarning.Unknown;
-                    }
-               } else {
-                    return IGeolocationListenerWarning.Unknown;
+               var retValue : IGeolocationListenerWarning = IGeolocationListenerWarning.Unknown;
+               if (object != null && object.value != null && IGeolocationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IGeolocationListenerWarning[object.value];
                }
+               return retValue;
           }
 
      }

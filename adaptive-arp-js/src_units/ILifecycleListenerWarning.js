@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.ILifecycleListenerWarning}
         */
         ILifecycleListenerWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "MemoryLow":
-                        return ILifecycleListenerWarning.MemoryLow;
-                    case "BatteryLow":
-                        return ILifecycleListenerWarning.BatteryLow;
-                    case "Unknown":
-                        return ILifecycleListenerWarning.Unknown;
-                    default:
-                        return ILifecycleListenerWarning.Unknown;
-                }
+            var retValue = ILifecycleListenerWarning.Unknown;
+            if (object != null && object.value != null && ILifecycleListenerWarning.hasOwnProperty(object.value)) {
+                retValue = ILifecycleListenerWarning[object.value];
             }
-            else {
-                return ILifecycleListenerWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ILifecycleListenerWarning} [MemoryLow='MemoryLow']

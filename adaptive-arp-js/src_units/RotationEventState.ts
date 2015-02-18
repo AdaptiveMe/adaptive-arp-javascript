@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.RotationEventState}
           */
           static toObject(object : any) : RotationEventState {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "WillStartRotation":
-                              return RotationEventState.WillStartRotation;
-                         case "IsRotating":
-                              return RotationEventState.IsRotating;
-                         case "DidFinishRotation":
-                              return RotationEventState.DidFinishRotation;
-                         case "Unknown":
-                              return RotationEventState.Unknown;
-                         default:
-                              return RotationEventState.Unknown;
-                    }
-               } else {
-                    return RotationEventState.Unknown;
+               var retValue : RotationEventState = RotationEventState.Unknown;
+               if (object != null && object.value != null && RotationEventState.hasOwnProperty(object.value)) {
+                    retValue = RotationEventState[object.value];
                }
+               return retValue;
           }
 
      }

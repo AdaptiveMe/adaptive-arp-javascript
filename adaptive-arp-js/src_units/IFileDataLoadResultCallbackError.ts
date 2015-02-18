@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.IFileDataLoadResultCallbackError}
           */
           static toObject(object : any) : IFileDataLoadResultCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              return IFileDataLoadResultCallbackError.InexistentFile;
-                         case "InsufficientSpace":
-                              return IFileDataLoadResultCallbackError.InsufficientSpace;
-                         case "Unauthorized":
-                              return IFileDataLoadResultCallbackError.Unauthorized;
-                         case "Unknown":
-                              return IFileDataLoadResultCallbackError.Unknown;
-                         default:
-                              return IFileDataLoadResultCallbackError.Unknown;
-                    }
-               } else {
-                    return IFileDataLoadResultCallbackError.Unknown;
+               var retValue : IFileDataLoadResultCallbackError = IFileDataLoadResultCallbackError.Unknown;
+               if (object != null && object.value != null && IFileDataLoadResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileDataLoadResultCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

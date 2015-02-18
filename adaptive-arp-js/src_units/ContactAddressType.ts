@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.ContactAddressType}
           */
           static toObject(object : any) : ContactAddressType {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Home":
-                              return ContactAddressType.Home;
-                         case "Work":
-                              return ContactAddressType.Work;
-                         case "Other":
-                              return ContactAddressType.Other;
-                         case "Unknown":
-                              return ContactAddressType.Unknown;
-                         default:
-                              return ContactAddressType.Unknown;
-                    }
-               } else {
-                    return ContactAddressType.Unknown;
+               var retValue : ContactAddressType = ContactAddressType.Unknown;
+               if (object != null && object.value != null && ContactAddressType.hasOwnProperty(object.value)) {
+                    retValue = ContactAddressType[object.value];
                }
+               return retValue;
           }
 
      }

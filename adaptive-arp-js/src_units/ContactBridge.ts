@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -79,7 +79,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -89,10 +89,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -126,7 +126,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -136,10 +136,10 @@ module Adaptive {
                registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactPhotoResultCallback.remove(""+callback.getId());
@@ -171,7 +171,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -181,10 +181,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -218,7 +218,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -228,10 +228,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -267,7 +267,7 @@ module Adaptive {
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -277,10 +277,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -314,7 +314,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -324,10 +324,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -363,7 +363,7 @@ module Adaptive {
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -373,10 +373,10 @@ module Adaptive {
                registeredContactResultCallback.add(""+callback.getId(), callback);
                xhr.send(JSON.stringify(apiRequest));
                // Check response.
-               if (xhr.status == 200 ) {
-                    if (xhr.responseText != null && xhr.responseText != '') {
+               if (xhr.status === 200 ) {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          } else {
                               // Remove callback reference from local dictionary due to invalid response.
                               registeredContactResultCallback.remove(""+callback.getId());
@@ -412,7 +412,7 @@ module Adaptive {
                arParams.push(JSON.stringify(contact));
                arParams.push(JSON.stringify(pngImage));
                var apiRequest : APIRequest = new APIRequest("IContact","setContactPhoto",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -422,11 +422,11 @@ module Adaptive {
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = JSON.parse(apiResponse.getResponse());
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.setContactPhoto' ["+apiResponse.getStatusMessage()+"].");

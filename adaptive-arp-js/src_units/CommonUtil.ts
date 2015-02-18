@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -92,6 +92,11 @@ module Adaptive {
              this._values.splice(index, 1);
      
              delete this[key];
+         }
+     
+         removeAll() {
+             this._keys = new Array<string>();
+             this._values = new Array<V>();
          }
      
          keys(): string[] {

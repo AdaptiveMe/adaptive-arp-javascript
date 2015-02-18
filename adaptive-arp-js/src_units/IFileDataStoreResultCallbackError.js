@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileDataStoreResultCallbackError}
         */
         IFileDataStoreResultCallbackError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "InexistentFile":
-                        return IFileDataStoreResultCallbackError.InexistentFile;
-                    case "InsufficientSpace":
-                        return IFileDataStoreResultCallbackError.InsufficientSpace;
-                    case "Unauthorized":
-                        return IFileDataStoreResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        return IFileDataStoreResultCallbackError.Unknown;
-                    default:
-                        return IFileDataStoreResultCallbackError.Unknown;
-                }
+            var retValue = IFileDataStoreResultCallbackError.Unknown;
+            if (object != null && object.value != null && IFileDataStoreResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IFileDataStoreResultCallbackError[object.value];
             }
-            else {
-                return IFileDataStoreResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileDataStoreResultCallbackError} [InexistentFile='InexistentFile']

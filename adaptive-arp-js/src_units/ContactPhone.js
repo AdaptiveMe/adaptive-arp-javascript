@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -142,16 +142,28 @@ var Adaptive;
         */
         ContactPhone.toObject = function (object) {
             var result = new ContactPhone(null, null);
-            // Assign values to bean fields.
-            if (object != null && object.phone != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.phone = object.phone;
-            if (object != null && object.phoneType != null) {
                 result.phoneType = Adaptive.ContactPhoneType.toObject(object.phoneType);
             }
-            else {
-                result.phoneType = Adaptive.ContactPhoneType.toObject(null);
-            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactPhone[].
+           @return {Adaptive.ContactPhone[]} Wrapped object array instance.
+        */
+        ContactPhone.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactPhone.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactPhone;
     })(Adaptive.APIBean);

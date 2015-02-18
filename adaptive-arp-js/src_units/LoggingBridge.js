@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,15 +77,14 @@ var Adaptive;
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_message", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            apiRequest.setApiVersion("v2.1.7");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_message' request.");
@@ -106,15 +105,14 @@ var Adaptive;
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "log_level_category_message", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
+            apiRequest.setApiVersion("v2.1.7");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
             }
             else {
                 console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.log_level_category_message' request.");

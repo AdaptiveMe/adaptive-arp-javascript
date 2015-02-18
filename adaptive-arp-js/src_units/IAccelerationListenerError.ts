@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.IAccelerationListenerError}
           */
           static toObject(object : any) : IAccelerationListenerError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Unauthorized":
-                              return IAccelerationListenerError.Unauthorized;
-                         case "Unavailable":
-                              return IAccelerationListenerError.Unavailable;
-                         case "Unknown":
-                              return IAccelerationListenerError.Unknown;
-                         default:
-                              return IAccelerationListenerError.Unknown;
-                    }
-               } else {
-                    return IAccelerationListenerError.Unknown;
+               var retValue : IAccelerationListenerError = IAccelerationListenerError.Unknown;
+               if (object != null && object.value != null && IAccelerationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IAccelerationListenerError[object.value];
                }
+               return retValue;
           }
 
      }

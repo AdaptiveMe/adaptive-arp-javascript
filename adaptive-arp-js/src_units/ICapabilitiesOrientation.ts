@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,21 +44,21 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
           */
-          static Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+          static PortraitUp = new ICapabilitiesOrientation("Portrait_Up");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
           */
-          static Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+          static PortraitDown = new ICapabilitiesOrientation("Portrait_Down");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
           */
-          static Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+          static LandscapeLeft = new ICapabilitiesOrientation("Landscape_Left");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
           */
-          static Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+          static LandscapeRight = new ICapabilitiesOrientation("Landscape_Right");
           /**
              @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
           */
@@ -71,24 +71,11 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesOrientation}
           */
           static toObject(object : any) : ICapabilitiesOrientation {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Portrait_Up":
-                              return ICapabilitiesOrientation.Portrait_Up;
-                         case "Portrait_Down":
-                              return ICapabilitiesOrientation.Portrait_Down;
-                         case "Landscape_Left":
-                              return ICapabilitiesOrientation.Landscape_Left;
-                         case "Landscape_Right":
-                              return ICapabilitiesOrientation.Landscape_Right;
-                         case "Unknown":
-                              return ICapabilitiesOrientation.Unknown;
-                         default:
-                              return ICapabilitiesOrientation.Unknown;
-                    }
-               } else {
-                    return ICapabilitiesOrientation.Unknown;
+               var retValue : ICapabilitiesOrientation = ICapabilitiesOrientation.Unknown;
+               if (object != null && object.value != null && ICapabilitiesOrientation.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesOrientation[object.value];
                }
+               return retValue;
           }
 
      }

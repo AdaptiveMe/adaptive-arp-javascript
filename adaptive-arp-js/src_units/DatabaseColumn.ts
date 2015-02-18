@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -109,10 +109,29 @@ module Adaptive {
           static toObject(object : any) : DatabaseColumn {
                var result : DatabaseColumn = new DatabaseColumn(null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.name = object.name;
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DatabaseColumn[].
+             @return {Adaptive.DatabaseColumn[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DatabaseColumn[] {
+               var resultArray : Array<DatabaseColumn> = new Array<DatabaseColumn>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DatabaseColumn.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

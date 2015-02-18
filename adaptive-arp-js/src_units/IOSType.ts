@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -99,38 +99,11 @@ module Adaptive {
              @return {Adaptive.IOSType}
           */
           static toObject(object : any) : IOSType {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "iOS":
-                              return IOSType.iOS;
-                         case "OSX":
-                              return IOSType.OSX;
-                         case "Windows":
-                              return IOSType.Windows;
-                         case "WindowsPhone":
-                              return IOSType.WindowsPhone;
-                         case "Android":
-                              return IOSType.Android;
-                         case "Linux":
-                              return IOSType.Linux;
-                         case "Blackberry":
-                              return IOSType.Blackberry;
-                         case "Tizen":
-                              return IOSType.Tizen;
-                         case "FirefoxOS":
-                              return IOSType.FirefoxOS;
-                         case "Chromium":
-                              return IOSType.Chromium;
-                         case "Unspecified":
-                              return IOSType.Unspecified;
-                         case "Unknown":
-                              return IOSType.Unknown;
-                         default:
-                              return IOSType.Unknown;
-                    }
-               } else {
-                    return IOSType.Unknown;
+               var retValue : IOSType = IOSType.Unknown;
+               if (object != null && object.value != null && IOSType.hasOwnProperty(object.value)) {
+                    retValue = IOSType[object.value];
                }
+               return retValue;
           }
 
      }

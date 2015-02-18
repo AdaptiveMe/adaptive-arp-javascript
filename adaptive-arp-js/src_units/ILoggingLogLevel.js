@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,25 +51,11 @@ var Adaptive;
            @return {Adaptive.ILoggingLogLevel}
         */
         ILoggingLogLevel.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "DEBUG":
-                        return ILoggingLogLevel.DEBUG;
-                    case "WARN":
-                        return ILoggingLogLevel.WARN;
-                    case "ERROR":
-                        return ILoggingLogLevel.ERROR;
-                    case "INFO":
-                        return ILoggingLogLevel.INFO;
-                    case "Unknown":
-                        return ILoggingLogLevel.Unknown;
-                    default:
-                        return ILoggingLogLevel.Unknown;
-                }
+            var retValue = ILoggingLogLevel.Unknown;
+            if (object != null && object.value != null && ILoggingLogLevel.hasOwnProperty(object.value)) {
+                retValue = ILoggingLogLevel[object.value];
             }
-            else {
-                return ILoggingLogLevel.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']

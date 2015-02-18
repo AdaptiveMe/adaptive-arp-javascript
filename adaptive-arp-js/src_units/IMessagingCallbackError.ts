@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,26 +75,11 @@ module Adaptive {
              @return {Adaptive.IMessagingCallbackError}
           */
           static toObject(object : any) : IMessagingCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "SIMNotPresent":
-                              return IMessagingCallbackError.SIMNotPresent;
-                         case "EmailAccountNotFound":
-                              return IMessagingCallbackError.EmailAccountNotFound;
-                         case "NotSent":
-                              return IMessagingCallbackError.NotSent;
-                         case "WrongParams":
-                              return IMessagingCallbackError.WrongParams;
-                         case "NotSupported":
-                              return IMessagingCallbackError.NotSupported;
-                         case "Unknown":
-                              return IMessagingCallbackError.Unknown;
-                         default:
-                              return IMessagingCallbackError.Unknown;
-                    }
-               } else {
-                    return IMessagingCallbackError.Unknown;
+               var retValue : IMessagingCallbackError = IMessagingCallbackError.Unknown;
+               if (object != null && object.value != null && IMessagingCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IMessagingCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

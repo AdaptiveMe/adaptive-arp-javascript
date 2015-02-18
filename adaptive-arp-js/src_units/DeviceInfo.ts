@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -235,13 +235,32 @@ be unique for a specific instance of an application on a specific device.
           static toObject(object : any) : DeviceInfo {
                var result : DeviceInfo = new DeviceInfo(null, null, null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.model!=null) result.model = object.model;
-               if (object!=null && object.vendor!=null) result.vendor = object.vendor;
-               if (object!=null && object.uuid!=null) result.uuid = object.uuid;
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.name = object.name;
+                    result.model = object.model;
+                    result.vendor = object.vendor;
+                    result.uuid = object.uuid;
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.DeviceInfo[].
+             @return {Adaptive.DeviceInfo[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : DeviceInfo[] {
+               var resultArray : Array<DeviceInfo> = new Array<DeviceInfo>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(DeviceInfo.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

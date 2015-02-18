@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,17 +51,11 @@ var Adaptive;
            @return {Adaptive.IDeviceOrientationListenerError}
         */
         IDeviceOrientationListenerError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Unknown":
-                        return IDeviceOrientationListenerError.Unknown;
-                    default:
-                        return IDeviceOrientationListenerError.Unknown;
-                }
+            var retValue = IDeviceOrientationListenerError.Unknown;
+            if (object != null && object.value != null && IDeviceOrientationListenerError.hasOwnProperty(object.value)) {
+                retValue = IDeviceOrientationListenerError[object.value];
             }
-            else {
-                return IDeviceOrientationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IDeviceOrientationListenerError} [Unknown='Unknown']

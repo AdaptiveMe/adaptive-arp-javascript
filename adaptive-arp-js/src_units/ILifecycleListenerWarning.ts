@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.ILifecycleListenerWarning}
           */
           static toObject(object : any) : ILifecycleListenerWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "MemoryLow":
-                              return ILifecycleListenerWarning.MemoryLow;
-                         case "BatteryLow":
-                              return ILifecycleListenerWarning.BatteryLow;
-                         case "Unknown":
-                              return ILifecycleListenerWarning.Unknown;
-                         default:
-                              return ILifecycleListenerWarning.Unknown;
-                    }
-               } else {
-                    return ILifecycleListenerWarning.Unknown;
+               var retValue : ILifecycleListenerWarning = ILifecycleListenerWarning.Unknown;
+               if (object != null && object.value != null && ILifecycleListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = ILifecycleListenerWarning[object.value];
                }
+               return retValue;
           }
 
      }

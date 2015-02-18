@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileResultCallbackWarning}
         */
         IFileResultCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "SourceNotDeleted":
-                        return IFileResultCallbackWarning.SourceNotDeleted;
-                    case "RootDirectory":
-                        return IFileResultCallbackWarning.RootDirectory;
-                    case "Unknown":
-                        return IFileResultCallbackWarning.Unknown;
-                    default:
-                        return IFileResultCallbackWarning.Unknown;
-                }
+            var retValue = IFileResultCallbackWarning.Unknown;
+            if (object != null && object.value != null && IFileResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileResultCallbackWarning[object.value];
             }
-            else {
-                return IFileResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileResultCallbackWarning} [SourceNotDeleted='SourceNotDeleted']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.ISecurityResultCallbackError}
           */
           static toObject(object : any) : ISecurityResultCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              return ISecurityResultCallbackError.NoPermission;
-                         case "NoMatchesFound":
-                              return ISecurityResultCallbackError.NoMatchesFound;
-                         case "Unknown":
-                              return ISecurityResultCallbackError.Unknown;
-                         default:
-                              return ISecurityResultCallbackError.Unknown;
-                    }
-               } else {
-                    return ISecurityResultCallbackError.Unknown;
+               var retValue : ISecurityResultCallbackError = ISecurityResultCallbackError.Unknown;
+               if (object != null && object.value != null && ISecurityResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = ISecurityResultCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

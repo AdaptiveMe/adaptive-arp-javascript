@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.ITelephonyStatus}
         */
         ITelephonyStatus.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Dialing":
-                        return ITelephonyStatus.Dialing;
-                    case "Failed":
-                        return ITelephonyStatus.Failed;
-                    case "Unknown":
-                        return ITelephonyStatus.Unknown;
-                    default:
-                        return ITelephonyStatus.Unknown;
-                }
+            var retValue = ITelephonyStatus.Unknown;
+            if (object != null && object.value != null && ITelephonyStatus.hasOwnProperty(object.value)) {
+                retValue = ITelephonyStatus[object.value];
             }
-            else {
-                return ITelephonyStatus.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ITelephonyStatus} [Dialing='Dialing']

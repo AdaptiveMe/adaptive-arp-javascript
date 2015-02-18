@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.RotationEventState}
         */
         RotationEventState.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "WillStartRotation":
-                        return RotationEventState.WillStartRotation;
-                    case "IsRotating":
-                        return RotationEventState.IsRotating;
-                    case "DidFinishRotation":
-                        return RotationEventState.DidFinishRotation;
-                    case "Unknown":
-                        return RotationEventState.Unknown;
-                    default:
-                        return RotationEventState.Unknown;
-                }
+            var retValue = RotationEventState.Unknown;
+            if (object != null && object.value != null && RotationEventState.hasOwnProperty(object.value)) {
+                retValue = RotationEventState[object.value];
             }
-            else {
-                return RotationEventState.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.RotationEventState} [WillStartRotation='WillStartRotation']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,42 +51,20 @@ var Adaptive;
            @return {Adaptive.IContactFieldGroup}
         */
         IContactFieldGroup.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "PERSONAL_INFO":
-                        return IContactFieldGroup.PERSONAL_INFO;
-                    case "PROFESSIONAL_INFO":
-                        return IContactFieldGroup.PROFESSIONAL_INFO;
-                    case "ADDRESSES":
-                        return IContactFieldGroup.ADDRESSES;
-                    case "PHONES":
-                        return IContactFieldGroup.PHONES;
-                    case "EMAILS":
-                        return IContactFieldGroup.EMAILS;
-                    case "WEBSITES":
-                        return IContactFieldGroup.WEBSITES;
-                    case "SOCIALS":
-                        return IContactFieldGroup.SOCIALS;
-                    case "TAGS":
-                        return IContactFieldGroup.TAGS;
-                    case "Unknown":
-                        return IContactFieldGroup.Unknown;
-                    default:
-                        return IContactFieldGroup.Unknown;
-                }
+            var retValue = IContactFieldGroup.Unknown;
+            if (object != null && object.value != null && IContactFieldGroup.hasOwnProperty(object.value)) {
+                retValue = IContactFieldGroup[object.value];
             }
-            else {
-                return IContactFieldGroup.Unknown;
-            }
+            return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PERSONALINFO='PERSONALINFO']
         */
-        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PERSONALINFO = new IContactFieldGroup("PERSONAL_INFO");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PROFESSIONALINFO='PROFESSIONALINFO']
         */
-        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.PROFESSIONALINFO = new IContactFieldGroup("PROFESSIONAL_INFO");
         /**
            @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
         */

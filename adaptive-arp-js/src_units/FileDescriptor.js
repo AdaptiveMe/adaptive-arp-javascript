@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -242,20 +242,32 @@ doesn't exist, this will be -1. Used internally.
         */
         FileDescriptor.toObject = function (object) {
             var result = new FileDescriptor();
-            // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.name = object.name;
-            if (object != null && object.path != null)
                 result.path = object.path;
-            if (object != null && object.pathAbsolute != null)
                 result.pathAbsolute = object.pathAbsolute;
-            if (object != null && object.dateCreated != null)
                 result.dateCreated = object.dateCreated;
-            if (object != null && object.dateModified != null)
                 result.dateModified = object.dateModified;
-            if (object != null && object.size != null)
                 result.size = object.size;
+            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.FileDescriptor[].
+           @return {Adaptive.FileDescriptor[]} Wrapped object array instance.
+        */
+        FileDescriptor.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(FileDescriptor.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return FileDescriptor;
     })(Adaptive.APIBean);

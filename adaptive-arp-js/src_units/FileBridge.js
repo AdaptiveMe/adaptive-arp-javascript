@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -88,7 +88,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "canRead", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -98,11 +98,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -131,7 +131,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -141,11 +141,11 @@ var Adaptive;
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -174,7 +174,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "create", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -184,10 +184,10 @@ var Adaptive;
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -226,7 +226,7 @@ deleted if the cascade parameter is set to true.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
             var apiRequest = new Adaptive.APIRequest("IFile", "delete", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -236,11 +236,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -269,7 +269,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "exists", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -279,11 +279,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -312,7 +312,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -322,10 +322,10 @@ deleted if the cascade parameter is set to true.
             Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -361,7 +361,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -371,11 +371,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.IFileSystemStorageType.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -404,7 +404,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -414,11 +414,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.IFileSystemType.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -447,7 +447,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -457,11 +457,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = Adaptive.IFileSystemSecurity.toObject(JSON.parse(apiResponse.getResponse()));
                     }
                     else {
@@ -490,7 +490,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -500,11 +500,11 @@ deleted if the cascade parameter is set to true.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -534,7 +534,7 @@ any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFiles", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -544,10 +544,10 @@ any results.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -586,7 +586,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -596,10 +596,10 @@ is a file, it will not yield any results.
             Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -637,7 +637,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
             var apiRequest = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1);
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -647,11 +647,11 @@ is a file, it will not yield any results.
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 // Process response.
-                if (xhr.responseText != null && xhr.responseText != '') {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                         response = JSON.parse(apiResponse.getResponse());
                     }
                     else {
@@ -687,7 +687,7 @@ new destination file.
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
             var apiRequest = new Adaptive.APIRequest("IFile", "move", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -697,10 +697,10 @@ new destination file.
             Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.
@@ -738,7 +738,7 @@ new destination file.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
             var apiRequest = new Adaptive.APIRequest("IFile", "setContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -748,10 +748,10 @@ new destination file.
             Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.

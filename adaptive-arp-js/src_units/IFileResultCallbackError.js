@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,27 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileResultCallbackError}
         */
         IFileResultCallbackError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "FileExists":
-                        return IFileResultCallbackError.FileExists;
-                    case "SourceInexistent":
-                        return IFileResultCallbackError.SourceInexistent;
-                    case "DestionationExists":
-                        return IFileResultCallbackError.DestionationExists;
-                    case "InsufficientSpace":
-                        return IFileResultCallbackError.InsufficientSpace;
-                    case "Unauthorized":
-                        return IFileResultCallbackError.Unauthorized;
-                    case "Unknown":
-                        return IFileResultCallbackError.Unknown;
-                    default:
-                        return IFileResultCallbackError.Unknown;
-                }
+            var retValue = IFileResultCallbackError.Unknown;
+            if (object != null && object.value != null && IFileResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IFileResultCallbackError[object.value];
             }
-            else {
-                return IFileResultCallbackError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileResultCallbackError} [FileExists='FileExists']

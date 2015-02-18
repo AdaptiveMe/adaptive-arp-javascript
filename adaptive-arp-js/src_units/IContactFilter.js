@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,36 +51,24 @@ var Adaptive;
            @return {Adaptive.IContactFilter}
         */
         IContactFilter.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "HAS_PHONE":
-                        return IContactFilter.HAS_PHONE;
-                    case "HAS_EMAIL":
-                        return IContactFilter.HAS_EMAIL;
-                    case "HAS_ADDRESS":
-                        return IContactFilter.HAS_ADDRESS;
-                    case "Unknown":
-                        return IContactFilter.Unknown;
-                    default:
-                        return IContactFilter.Unknown;
-                }
+            var retValue = IContactFilter.Unknown;
+            if (object != null && object.value != null && IContactFilter.hasOwnProperty(object.value)) {
+                retValue = IContactFilter[object.value];
             }
-            else {
-                return IContactFilter.Unknown;
-            }
+            return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+           @property {Adaptive.IContactFilter} [HASPHONE='HASPHONE']
         */
-        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HASPHONE = new IContactFilter("HAS_PHONE");
         /**
-           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+           @property {Adaptive.IContactFilter} [HASEMAIL='HASEMAIL']
         */
-        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HASEMAIL = new IContactFilter("HAS_EMAIL");
         /**
-           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+           @property {Adaptive.IContactFilter} [HASADDRESS='HASADDRESS']
         */
-        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HASADDRESS = new IContactFilter("HAS_ADDRESS");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */

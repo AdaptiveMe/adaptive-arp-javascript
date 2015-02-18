@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesData}
         */
         ICapabilitiesData.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Database":
-                        return ICapabilitiesData.Database;
-                    case "File":
-                        return ICapabilitiesData.File;
-                    case "Cloud":
-                        return ICapabilitiesData.Cloud;
-                    case "Unknown":
-                        return ICapabilitiesData.Unknown;
-                    default:
-                        return ICapabilitiesData.Unknown;
-                }
+            var retValue = ICapabilitiesData.Unknown;
+            if (object != null && object.value != null && ICapabilitiesData.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesData[object.value];
             }
-            else {
-                return ICapabilitiesData.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesData} [Database='Database']

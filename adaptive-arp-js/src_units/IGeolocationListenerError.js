@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,25 +51,11 @@ var Adaptive;
            @return {Adaptive.IGeolocationListenerError}
         */
         IGeolocationListenerError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Disabled":
-                        return IGeolocationListenerError.Disabled;
-                    case "RestrictedAccess":
-                        return IGeolocationListenerError.RestrictedAccess;
-                    case "DeniedAccess":
-                        return IGeolocationListenerError.DeniedAccess;
-                    case "StatusNotDetermined":
-                        return IGeolocationListenerError.StatusNotDetermined;
-                    case "Unknown":
-                        return IGeolocationListenerError.Unknown;
-                    default:
-                        return IGeolocationListenerError.Unknown;
-                }
+            var retValue = IGeolocationListenerError.Unknown;
+            if (object != null && object.value != null && IGeolocationListenerError.hasOwnProperty(object.value)) {
+                retValue = IGeolocationListenerError[object.value];
             }
-            else {
-                return IGeolocationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IGeolocationListenerError} [Disabled='Disabled']

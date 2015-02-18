@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -177,14 +177,29 @@ var Adaptive;
         */
         ContactProfessionalInfo.toObject = function (object) {
             var result = new ContactProfessionalInfo(null, null, null);
-            // Assign values to bean fields.
-            if (object != null && object.company != null)
+            if (object != null) {
+                // Assign values to bean fields.
                 result.company = object.company;
-            if (object != null && object.jobTitle != null)
                 result.jobTitle = object.jobTitle;
-            if (object != null && object.jobDescription != null)
                 result.jobDescription = object.jobDescription;
+            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.ContactProfessionalInfo[].
+           @return {Adaptive.ContactProfessionalInfo[]} Wrapped object array instance.
+        */
+        ContactProfessionalInfo.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(ContactProfessionalInfo.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return ContactProfessionalInfo;
     })(Adaptive.APIBean);

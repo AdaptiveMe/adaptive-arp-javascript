@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,23 +51,11 @@ var Adaptive;
            @return {Adaptive.ContactEmailType}
         */
         ContactEmailType.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Personal":
-                        return ContactEmailType.Personal;
-                    case "Work":
-                        return ContactEmailType.Work;
-                    case "Other":
-                        return ContactEmailType.Other;
-                    case "Unknown":
-                        return ContactEmailType.Unknown;
-                    default:
-                        return ContactEmailType.Unknown;
-                }
+            var retValue = ContactEmailType.Unknown;
+            if (object != null && object.value != null && ContactEmailType.hasOwnProperty(object.value)) {
+                retValue = ContactEmailType[object.value];
             }
-            else {
-                return ContactEmailType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactEmailType} [Personal='Personal']

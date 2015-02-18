@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ This method does not create the actual file in the specified folder.
                arParams.push(JSON.stringify(parent));
                arParams.push(JSON.stringify(name));
                var apiRequest : APIRequest = new APIRequest("IFileSystem","createFileDescriptor",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -86,11 +86,11 @@ This method does not create the actual file in the specified folder.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.createFileDescriptor' ["+apiResponse.getStatusMessage()+"].");
@@ -117,7 +117,7 @@ This path is volatile and may be cleaned by the OS periodically.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCacheFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -127,11 +127,11 @@ This path is volatile and may be cleaned by the OS periodically.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationCacheFolder' ["+apiResponse.getStatusMessage()+"].");
@@ -157,7 +157,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCloudFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -167,11 +167,11 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationCloudFolder' ["+apiResponse.getStatusMessage()+"].");
@@ -197,7 +197,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationDocumentsFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -207,11 +207,11 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationDocumentsFolder' ["+apiResponse.getStatusMessage()+"].");
@@ -237,7 +237,7 @@ This path may or may not be directly readable or writable - it usually contains 
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -247,11 +247,11 @@ This path may or may not be directly readable or writable - it usually contains 
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationFolder' ["+apiResponse.getStatusMessage()+"].");
@@ -277,7 +277,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationProtectedFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -287,11 +287,11 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationProtectedFolder' ["+apiResponse.getStatusMessage()+"].");
@@ -316,7 +316,7 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSeparator",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -326,11 +326,11 @@ This path must always be writable by the current application.
                // Prepare response.
                var response : string = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                               response = apiResponse.getResponse();
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getSeparator' ["+apiResponse.getStatusMessage()+"].");
@@ -358,7 +358,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSystemExternalFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.6");
+               apiRequest.setApiVersion("v2.1.7");
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -368,11 +368,11 @@ This path may or may not be writable by the current application.
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status == 200 ) {
+               if (xhr.status === 200 ) {
                     // Process response.
-                    if (xhr.responseText != null && xhr.responseText != '') {
+                    if (xhr.responseText != null && xhr.responseText !== '') {
                          apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                          response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                          } else {
                               console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getSystemExternalFolder' ["+apiResponse.getStatusMessage()+"].");

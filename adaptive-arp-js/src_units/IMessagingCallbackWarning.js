@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.IMessagingCallbackWarning}
         */
         IMessagingCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "UnableToSentAll":
-                        return IMessagingCallbackWarning.UnableToSentAll;
-                    case "UnableToFetchAttachment":
-                        return IMessagingCallbackWarning.UnableToFetchAttachment;
-                    case "Unknown":
-                        return IMessagingCallbackWarning.Unknown;
-                    default:
-                        return IMessagingCallbackWarning.Unknown;
-                }
+            var retValue = IMessagingCallbackWarning.Unknown;
+            if (object != null && object.value != null && IMessagingCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IMessagingCallbackWarning[object.value];
             }
-            else {
-                return IMessagingCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IMessagingCallbackWarning} [UnableToSentAll='UnableToSentAll']

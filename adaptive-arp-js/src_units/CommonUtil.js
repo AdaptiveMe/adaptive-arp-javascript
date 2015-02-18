@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -70,6 +70,10 @@ var Adaptive;
             this._keys.splice(index, 1);
             this._values.splice(index, 1);
             delete this[key];
+        };
+        Dictionary.prototype.removeAll = function () {
+            this._keys = new Array();
+            this._values = new Array();
         };
         Dictionary.prototype.keys = function () {
             return this._keys;

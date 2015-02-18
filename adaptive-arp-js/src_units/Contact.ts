@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -396,88 +396,39 @@ module Adaptive {
           static toObject(object : any) : Contact {
                var result : Contact = new Contact(null);
 
-               // Assign values to parent bean fields.
-               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+               if (object != null ) {
+                    // Assign values to parent bean fields.
+                    result.contactId = object.contactId;
 
-               // Assign values to bean fields.
-               if (object!=null && object.personalInfo!=null) {
+                    // Assign values to bean fields.
                     result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
-               } else {
-                    result.personalInfo = ContactPersonalInfo.toObject(null);
-               }
-               if (object!=null && object.professionalInfo!=null) {
                     result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-               } else {
-                    result.professionalInfo = ContactProfessionalInfo.toObject(null);
-               }
-               if (object != null && object.contactAddresses != null) {
-                    result.contactAddresses = new Array<ContactAddress>();
-                    for(var i = 0; i < object.contactAddresses.length; i++) {
-                         var __value__ = object.contactAddresses[i];
-                         if (__value__ != null) {
-                              result.contactAddresses.push(ContactAddress.toObject(__value__));
-                         } else {
-                              result.contactAddresses.push(ContactAddress.toObject(null));
-                         }
-                    }
-               }
-               if (object != null && object.contactPhones != null) {
-                    result.contactPhones = new Array<ContactPhone>();
-                    for(var i = 0; i < object.contactPhones.length; i++) {
-                         var __value__ = object.contactPhones[i];
-                         if (__value__ != null) {
-                              result.contactPhones.push(ContactPhone.toObject(__value__));
-                         } else {
-                              result.contactPhones.push(ContactPhone.toObject(null));
-                         }
-                    }
-               }
-               if (object != null && object.contactEmails != null) {
-                    result.contactEmails = new Array<ContactEmail>();
-                    for(var i = 0; i < object.contactEmails.length; i++) {
-                         var __value__ = object.contactEmails[i];
-                         if (__value__ != null) {
-                              result.contactEmails.push(ContactEmail.toObject(__value__));
-                         } else {
-                              result.contactEmails.push(ContactEmail.toObject(null));
-                         }
-                    }
-               }
-               if (object != null && object.contactWebsites != null) {
-                    result.contactWebsites = new Array<ContactWebsite>();
-                    for(var i = 0; i < object.contactWebsites.length; i++) {
-                         var __value__ = object.contactWebsites[i];
-                         if (__value__ != null) {
-                              result.contactWebsites.push(ContactWebsite.toObject(__value__));
-                         } else {
-                              result.contactWebsites.push(ContactWebsite.toObject(null));
-                         }
-                    }
-               }
-               if (object != null && object.contactSocials != null) {
-                    result.contactSocials = new Array<ContactSocial>();
-                    for(var i = 0; i < object.contactSocials.length; i++) {
-                         var __value__ = object.contactSocials[i];
-                         if (__value__ != null) {
-                              result.contactSocials.push(ContactSocial.toObject(__value__));
-                         } else {
-                              result.contactSocials.push(ContactSocial.toObject(null));
-                         }
-                    }
-               }
-               if (object != null && object.contactTags != null) {
-                    result.contactTags = new Array<ContactTag>();
-                    for(var i = 0; i < object.contactTags.length; i++) {
-                         var __value__ = object.contactTags[i];
-                         if (__value__ != null) {
-                              result.contactTags.push(ContactTag.toObject(__value__));
-                         } else {
-                              result.contactTags.push(ContactTag.toObject(null));
-                         }
-                    }
-               }
+                    result.contactAddresses = ContactAddress.toObjectArray(object.contactAddresses);
+                    result.contactPhones = ContactPhone.toObjectArray(object.contactPhones);
+                    result.contactEmails = ContactEmail.toObjectArray(object.contactEmails);
+                    result.contactWebsites = ContactWebsite.toObjectArray(object.contactWebsites);
+                    result.contactSocials = ContactSocial.toObjectArray(object.contactSocials);
+                    result.contactTags = ContactTag.toObjectArray(object.contactTags);
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Contact[].
+             @return {Adaptive.Contact[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Contact[] {
+               var resultArray : Array<Contact> = new Array<Contact>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Contact.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

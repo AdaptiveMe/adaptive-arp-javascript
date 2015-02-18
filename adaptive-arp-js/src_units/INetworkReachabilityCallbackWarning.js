@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,27 +51,11 @@ var Adaptive;
            @return {Adaptive.INetworkReachabilityCallbackWarning}
         */
         INetworkReachabilityCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "IncorrectScheme":
-                        return INetworkReachabilityCallbackWarning.IncorrectScheme;
-                    case "NotSecure":
-                        return INetworkReachabilityCallbackWarning.NotSecure;
-                    case "NotTrusted":
-                        return INetworkReachabilityCallbackWarning.NotTrusted;
-                    case "Redirected":
-                        return INetworkReachabilityCallbackWarning.Redirected;
-                    case "NotRegisteredService":
-                        return INetworkReachabilityCallbackWarning.NotRegisteredService;
-                    case "Unknown":
-                        return INetworkReachabilityCallbackWarning.Unknown;
-                    default:
-                        return INetworkReachabilityCallbackWarning.Unknown;
-                }
+            var retValue = INetworkReachabilityCallbackWarning.Unknown;
+            if (object != null && object.value != null && INetworkReachabilityCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = INetworkReachabilityCallbackWarning[object.value];
             }
-            else {
-                return INetworkReachabilityCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.INetworkReachabilityCallbackWarning} [IncorrectScheme='IncorrectScheme']

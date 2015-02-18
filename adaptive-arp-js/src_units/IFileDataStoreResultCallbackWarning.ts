@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,18 +59,11 @@ module Adaptive {
              @return {Adaptive.IFileDataStoreResultCallbackWarning}
           */
           static toObject(object : any) : IFileDataStoreResultCallbackWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "ExceedMaximumSize":
-                              return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                         case "Unknown":
-                              return IFileDataStoreResultCallbackWarning.Unknown;
-                         default:
-                              return IFileDataStoreResultCallbackWarning.Unknown;
-                    }
-               } else {
-                    return IFileDataStoreResultCallbackWarning.Unknown;
+               var retValue : IFileDataStoreResultCallbackWarning = IFileDataStoreResultCallbackWarning.Unknown;
+               if (object != null && object.value != null && IFileDataStoreResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IFileDataStoreResultCallbackWarning[object.value];
                }
+               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,18 +59,11 @@ module Adaptive {
              @return {Adaptive.ISecurityResultCallbackWarning}
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "EntryOverride":
-                              return ISecurityResultCallbackWarning.EntryOverride;
-                         case "Unknown":
-                              return ISecurityResultCallbackWarning.Unknown;
-                         default:
-                              return ISecurityResultCallbackWarning.Unknown;
-                    }
-               } else {
-                    return ISecurityResultCallbackWarning.Unknown;
+               var retValue : ISecurityResultCallbackWarning = ISecurityResultCallbackWarning.Unknown;
+               if (object != null && object.value != null && ISecurityResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = ISecurityResultCallbackWarning[object.value];
                }
+               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,31 +51,11 @@ var Adaptive;
            @return {Adaptive.ContactPhoneType}
         */
         ContactPhoneType.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Mobile":
-                        return ContactPhoneType.Mobile;
-                    case "Work":
-                        return ContactPhoneType.Work;
-                    case "Home":
-                        return ContactPhoneType.Home;
-                    case "Main":
-                        return ContactPhoneType.Main;
-                    case "HomeFax":
-                        return ContactPhoneType.HomeFax;
-                    case "WorkFax":
-                        return ContactPhoneType.WorkFax;
-                    case "Other":
-                        return ContactPhoneType.Other;
-                    case "Unknown":
-                        return ContactPhoneType.Unknown;
-                    default:
-                        return ContactPhoneType.Unknown;
-                }
+            var retValue = ContactPhoneType.Unknown;
+            if (object != null && object.value != null && ContactPhoneType.hasOwnProperty(object.value)) {
+                retValue = ContactPhoneType[object.value];
             }
-            else {
-                return ContactPhoneType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ContactPhoneType} [Mobile='Mobile']

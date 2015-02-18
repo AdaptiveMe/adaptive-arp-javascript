@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -69,11 +69,30 @@ module Adaptive {
           static toObject(object : any) : ServiceSessionAttribute {
                var result : ServiceSessionAttribute = new ServiceSessionAttribute(null, null);
 
-               // Assign values to parent bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object != null ) {
+                    // Assign values to parent bean fields.
+                    result.keyName = object.keyName;
+                    result.keyData = object.keyData;
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceSessionAttribute[].
+             @return {Adaptive.ServiceSessionAttribute[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceSessionAttribute[] {
+               var resultArray : Array<ServiceSessionAttribute> = new Array<ServiceSessionAttribute>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceSessionAttribute.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

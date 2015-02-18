@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+             @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
           */
-          static Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+          static ApplicationVetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
           /**
              @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
           */
@@ -59,18 +59,11 @@ module Adaptive {
              @return {Adaptive.IDisplayOrientationListenerWarning}
           */
           static toObject(object : any) : IDisplayOrientationListenerWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application_Vetoed":
-                              return IDisplayOrientationListenerWarning.Application_Vetoed;
-                         case "Unknown":
-                              return IDisplayOrientationListenerWarning.Unknown;
-                         default:
-                              return IDisplayOrientationListenerWarning.Unknown;
-                    }
-               } else {
-                    return IDisplayOrientationListenerWarning.Unknown;
+               var retValue : IDisplayOrientationListenerWarning = IDisplayOrientationListenerWarning.Unknown;
+               if (object != null && object.value != null && IDisplayOrientationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IDisplayOrientationListenerWarning[object.value];
                }
+               return retValue;
           }
 
      }

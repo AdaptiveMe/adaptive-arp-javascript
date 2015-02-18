@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,19 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileListResultCallbackWarning}
         */
         IFileListResultCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "PartialResult":
-                        return IFileListResultCallbackWarning.PartialResult;
-                    case "Unknown":
-                        return IFileListResultCallbackWarning.Unknown;
-                    default:
-                        return IFileListResultCallbackWarning.Unknown;
-                }
+            var retValue = IFileListResultCallbackWarning.Unknown;
+            if (object != null && object.value != null && IFileListResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileListResultCallbackWarning[object.value];
             }
-            else {
-                return IFileListResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileListResultCallbackWarning} [PartialResult='PartialResult']

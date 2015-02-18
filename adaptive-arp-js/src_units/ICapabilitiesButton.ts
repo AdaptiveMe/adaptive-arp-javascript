@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.ICapabilitiesButton}
           */
           static toObject(object : any) : ICapabilitiesButton {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HomeButton":
-                              return ICapabilitiesButton.HomeButton;
-                         case "BackButton":
-                              return ICapabilitiesButton.BackButton;
-                         case "OptionButton":
-                              return ICapabilitiesButton.OptionButton;
-                         case "Unknown":
-                              return ICapabilitiesButton.Unknown;
-                         default:
-                              return ICapabilitiesButton.Unknown;
-                    }
-               } else {
-                    return ICapabilitiesButton.Unknown;
+               var retValue : ICapabilitiesButton = ICapabilitiesButton.Unknown;
+               if (object != null && object.value != null && ICapabilitiesButton.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesButton[object.value];
                }
+               return retValue;
           }
 
      }

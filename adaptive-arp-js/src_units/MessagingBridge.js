@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -80,7 +80,7 @@ var Adaptive;
             arParams.push(JSON.stringify(number));
             arParams.push(JSON.stringify(text));
             var apiRequest = new Adaptive.APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.6");
+            apiRequest.setApiVersion("v2.1.7");
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -90,10 +90,10 @@ var Adaptive;
             Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
             xhr.send(JSON.stringify(apiRequest));
             // Check response.
-            if (xhr.status == 200) {
-                if (xhr.responseText != null && xhr.responseText != '') {
+            if (xhr.status === 200) {
+                if (xhr.responseText != null && xhr.responseText !== '') {
                     apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() == 200) {
+                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
                     }
                     else {
                         // Remove callback reference from local dictionary due to invalid response.

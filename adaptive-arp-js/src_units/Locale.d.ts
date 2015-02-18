@@ -28,7 +28,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -112,5 +112,13 @@ declare module Adaptive {
            @return {Adaptive.Locale} Wrapped object instance.
         */
         static toObject(object: any): Locale;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.Locale[].
+           @return {Adaptive.Locale[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): Locale[];
     }
 }

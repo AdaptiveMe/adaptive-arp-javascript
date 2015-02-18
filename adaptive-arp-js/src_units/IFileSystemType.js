@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileSystemType}
         */
         IFileSystemType.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Directory":
-                        return IFileSystemType.Directory;
-                    case "File":
-                        return IFileSystemType.File;
-                    case "Unknown":
-                        return IFileSystemType.Unknown;
-                    default:
-                        return IFileSystemType.Unknown;
-                }
+            var retValue = IFileSystemType.Unknown;
+            if (object != null && object.value != null && IFileSystemType.hasOwnProperty(object.value)) {
+                retValue = IFileSystemType[object.value];
             }
-            else {
-                return IFileSystemType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileSystemType} [Directory='Directory']

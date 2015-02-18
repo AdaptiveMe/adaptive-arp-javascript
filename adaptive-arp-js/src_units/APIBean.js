@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -59,7 +59,25 @@ var Adaptive;
         */
         APIBean.toObject = function (object) {
             var result = new APIBean();
+            if (object != null) {
+            }
             return result;
+        };
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.APIBean[].
+           @return {Adaptive.APIBean[]} Wrapped object array instance.
+        */
+        APIBean.toObjectArray = function (object) {
+            var resultArray = new Array();
+            if (object != null) {
+                for (var i = 0; i < object.length; i++) {
+                    resultArray.push(APIBean.toObject(object[i]));
+                }
+            }
+            return resultArray;
         };
         return APIBean;
     })();

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -190,26 +190,31 @@ module Adaptive {
           static toObject(object : any) : ServiceEndpoint {
                var result : ServiceEndpoint = new ServiceEndpoint(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.validationType!=null) {
+               if (object != null ) {
+                    // Assign values to bean fields.
                     result.validationType = IServiceCertificateValidation.toObject(object.validationType);
-               } else {
-                    result.validationType = IServiceCertificateValidation.toObject(null);
+                    result.hostURI = object.hostURI;
+                    result.paths = ServicePath.toObjectArray(object.paths);
+
                }
-               if (object!=null && object.hostURI!=null) result.hostURI = object.hostURI;
-               if (object != null && object.paths != null) {
-                    result.paths = new Array<ServicePath>();
-                    for(var i = 0; i < object.paths.length; i++) {
-                         var __value__ = object.paths[i];
-                         if (__value__ != null) {
-                              result.paths.push(ServicePath.toObject(__value__));
-                         } else {
-                              result.paths.push(ServicePath.toObject(null));
-                         }
+               return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+             @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceEndpoint[] {
+               var resultArray : Array<ServiceEndpoint> = new Array<ServiceEndpoint>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceEndpoint.toObject(object[i]));
                     }
                }
-
-               return result;
+               return resultArray;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,21 +51,11 @@ var Adaptive;
            @return {Adaptive.IAccelerationListenerError}
         */
         IAccelerationListenerError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Unauthorized":
-                        return IAccelerationListenerError.Unauthorized;
-                    case "Unavailable":
-                        return IAccelerationListenerError.Unavailable;
-                    case "Unknown":
-                        return IAccelerationListenerError.Unknown;
-                    default:
-                        return IAccelerationListenerError.Unknown;
-                }
+            var retValue = IAccelerationListenerError.Unknown;
+            if (object != null && object.value != null && IAccelerationListenerError.hasOwnProperty(object.value)) {
+                retValue = IAccelerationListenerError[object.value];
             }
-            else {
-                return IAccelerationListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IAccelerationListenerError} [Unauthorized='Unauthorized']

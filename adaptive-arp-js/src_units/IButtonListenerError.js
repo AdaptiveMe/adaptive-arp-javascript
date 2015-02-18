@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,24 +51,16 @@ var Adaptive;
            @return {Adaptive.IButtonListenerError}
         */
         IButtonListenerError.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Not_Present":
-                        return IButtonListenerError.Not_Present;
-                    case "Unknown":
-                        return IButtonListenerError.Unknown;
-                    default:
-                        return IButtonListenerError.Unknown;
-                }
+            var retValue = IButtonListenerError.Unknown;
+            if (object != null && object.value != null && IButtonListenerError.hasOwnProperty(object.value)) {
+                retValue = IButtonListenerError[object.value];
             }
-            else {
-                return IButtonListenerError.Unknown;
-            }
+            return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+           @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
         */
-        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        IButtonListenerError.NotPresent = new IButtonListenerError("Not_Present");
         /**
            @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.INetworkStatusListenerError}
           */
           static toObject(object : any) : INetworkStatusListenerError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              return INetworkStatusListenerError.NoPermission;
-                         case "Unreachable":
-                              return INetworkStatusListenerError.Unreachable;
-                         case "Unknown":
-                              return INetworkStatusListenerError.Unknown;
-                         default:
-                              return INetworkStatusListenerError.Unknown;
-                    }
-               } else {
-                    return INetworkStatusListenerError.Unknown;
+               var retValue : INetworkStatusListenerError = INetworkStatusListenerError.Unknown;
+               if (object != null && object.value != null && INetworkStatusListenerError.hasOwnProperty(object.value)) {
+                    retValue = INetworkStatusListenerError[object.value];
                }
+               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,29 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileSystemStorageType}
         */
         IFileSystemStorageType.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Application":
-                        return IFileSystemStorageType.Application;
-                    case "Document":
-                        return IFileSystemStorageType.Document;
-                    case "Cloud":
-                        return IFileSystemStorageType.Cloud;
-                    case "Protected":
-                        return IFileSystemStorageType.Protected;
-                    case "Cache":
-                        return IFileSystemStorageType.Cache;
-                    case "External":
-                        return IFileSystemStorageType.External;
-                    case "Unknown":
-                        return IFileSystemStorageType.Unknown;
-                    default:
-                        return IFileSystemStorageType.Unknown;
-                }
+            var retValue = IFileSystemStorageType.Unknown;
+            if (object != null && object.value != null && IFileSystemStorageType.hasOwnProperty(object.value)) {
+                retValue = IFileSystemStorageType[object.value];
             }
-            else {
-                return IFileSystemStorageType.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileSystemStorageType} [Application='Application']

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,25 +51,11 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesNotification}
         */
         ICapabilitiesNotification.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Alarm":
-                        return ICapabilitiesNotification.Alarm;
-                    case "LocalNotification":
-                        return ICapabilitiesNotification.LocalNotification;
-                    case "RemoteNotification":
-                        return ICapabilitiesNotification.RemoteNotification;
-                    case "Vibration":
-                        return ICapabilitiesNotification.Vibration;
-                    case "Unknown":
-                        return ICapabilitiesNotification.Unknown;
-                    default:
-                        return ICapabilitiesNotification.Unknown;
-                }
+            var retValue = ICapabilitiesNotification.Unknown;
+            if (object != null && object.value != null && ICapabilitiesNotification.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesNotification[object.value];
             }
-            else {
-                return ICapabilitiesNotification.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesNotification} [Alarm='Alarm']

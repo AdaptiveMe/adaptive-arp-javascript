@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,9 +48,9 @@ module Adaptive {
           */
           static LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+             @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
           */
-          static No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+          static NoMatches = new IContactPhotoResultCallbackWarning("No_Matches");
           /**
              @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
           */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.IContactPhotoResultCallbackWarning}
           */
           static toObject(object : any) : IContactPhotoResultCallbackWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "LimitExceeded":
-                              return IContactPhotoResultCallbackWarning.LimitExceeded;
-                         case "No_Matches":
-                              return IContactPhotoResultCallbackWarning.No_Matches;
-                         case "Unknown":
-                              return IContactPhotoResultCallbackWarning.Unknown;
-                         default:
-                              return IContactPhotoResultCallbackWarning.Unknown;
-                    }
-               } else {
-                    return IContactPhotoResultCallbackWarning.Unknown;
+               var retValue : IContactPhotoResultCallbackWarning = IContactPhotoResultCallbackWarning.Unknown;
+               if (object != null && object.value != null && IContactPhotoResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IContactPhotoResultCallbackWarning[object.value];
                }
+               return retValue;
           }
 
      }

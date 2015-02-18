@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -151,11 +151,30 @@ module Adaptive {
           static toObject(object : any) : ContactTag {
                var result : ContactTag = new ContactTag(null, null);
 
-               // Assign values to bean fields.
-               if (object!=null && object.tagName!=null) result.tagName = object.tagName;
-               if (object!=null && object.tagValue!=null) result.tagValue = object.tagValue;
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.tagName = object.tagName;
+                    result.tagValue = object.tagValue;
 
+               }
                return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ContactTag[].
+             @return {Adaptive.ContactTag[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ContactTag[] {
+               var resultArray : Array<ContactTag> = new Array<ContactTag>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ContactTag.toObject(object[i]));
+                    }
+               }
+               return resultArray;
           }
 
      }

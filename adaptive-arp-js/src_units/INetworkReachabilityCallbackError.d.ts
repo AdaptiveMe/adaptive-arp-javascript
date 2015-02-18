@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -73,9 +73,9 @@ declare module Adaptive {
         */
         static Unreachable: INetworkReachabilityCallbackError;
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
         */
-        static Wrong_Params: INetworkReachabilityCallbackError;
+        static WrongParams: INetworkReachabilityCallbackError;
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */

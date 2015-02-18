@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,31 +51,11 @@ var Adaptive;
            @return {Adaptive.ICapabilitiesNet}
         */
         ICapabilitiesNet.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "GSM":
-                        return ICapabilitiesNet.GSM;
-                    case "GPRS":
-                        return ICapabilitiesNet.GPRS;
-                    case "HSDPA":
-                        return ICapabilitiesNet.HSDPA;
-                    case "LTE":
-                        return ICapabilitiesNet.LTE;
-                    case "WIFI":
-                        return ICapabilitiesNet.WIFI;
-                    case "Ethernet":
-                        return ICapabilitiesNet.Ethernet;
-                    case "Unavailable":
-                        return ICapabilitiesNet.Unavailable;
-                    case "Unknown":
-                        return ICapabilitiesNet.Unknown;
-                    default:
-                        return ICapabilitiesNet.Unknown;
-                }
+            var retValue = ICapabilitiesNet.Unknown;
+            if (object != null && object.value != null && ICapabilitiesNet.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesNet[object.value];
             }
-            else {
-                return ICapabilitiesNet.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ICapabilitiesNet} [GSM='GSM']

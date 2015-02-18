@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -63,20 +63,11 @@ module Adaptive {
              @return {Adaptive.IFileSystemType}
           */
           static toObject(object : any) : IFileSystemType {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Directory":
-                              return IFileSystemType.Directory;
-                         case "File":
-                              return IFileSystemType.File;
-                         case "Unknown":
-                              return IFileSystemType.Unknown;
-                         default:
-                              return IFileSystemType.Unknown;
-                    }
-               } else {
-                    return IFileSystemType.Unknown;
+               var retValue : IFileSystemType = IFileSystemType.Unknown;
+               if (object != null && object.value != null && IFileSystemType.hasOwnProperty(object.value)) {
+                    retValue = IFileSystemType[object.value];
                }
+               return retValue;
           }
 
      }

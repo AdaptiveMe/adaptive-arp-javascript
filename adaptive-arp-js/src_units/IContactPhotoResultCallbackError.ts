@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -48,13 +48,13 @@ module Adaptive {
           */
           static NoPermission = new IContactPhotoResultCallbackError("NoPermission");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+          static WrongParams = new IContactPhotoResultCallbackError("Wrong_Params");
           /**
-             @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+             @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
           */
-          static No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+          static NoPhoto = new IContactPhotoResultCallbackError("No_Photo");
           /**
              @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
           */
@@ -67,22 +67,11 @@ module Adaptive {
              @return {Adaptive.IContactPhotoResultCallbackError}
           */
           static toObject(object : any) : IContactPhotoResultCallbackError {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              return IContactPhotoResultCallbackError.NoPermission;
-                         case "Wrong_Params":
-                              return IContactPhotoResultCallbackError.Wrong_Params;
-                         case "No_Photo":
-                              return IContactPhotoResultCallbackError.No_Photo;
-                         case "Unknown":
-                              return IContactPhotoResultCallbackError.Unknown;
-                         default:
-                              return IContactPhotoResultCallbackError.Unknown;
-                    }
-               } else {
-                    return IContactPhotoResultCallbackError.Unknown;
+               var retValue : IContactPhotoResultCallbackError = IContactPhotoResultCallbackError.Unknown;
+               if (object != null && object.value != null && IContactPhotoResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IContactPhotoResultCallbackError[object.value];
                }
+               return retValue;
           }
 
      }

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,16 +55,11 @@ module Adaptive {
              @return {Adaptive.IDeviceOrientationListenerWarning}
           */
           static toObject(object : any) : IDeviceOrientationListenerWarning {
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Unknown":
-                              return IDeviceOrientationListenerWarning.Unknown;
-                         default:
-                              return IDeviceOrientationListenerWarning.Unknown;
-                    }
-               } else {
-                    return IDeviceOrientationListenerWarning.Unknown;
+               var retValue : IDeviceOrientationListenerWarning = IDeviceOrientationListenerWarning.Unknown;
+               if (object != null && object.value != null && IDeviceOrientationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IDeviceOrientationListenerWarning[object.value];
                }
+               return retValue;
           }
 
      }

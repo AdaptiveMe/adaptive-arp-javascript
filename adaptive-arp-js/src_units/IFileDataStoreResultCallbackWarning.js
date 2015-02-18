@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,19 +51,11 @@ var Adaptive;
            @return {Adaptive.IFileDataStoreResultCallbackWarning}
         */
         IFileDataStoreResultCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "ExceedMaximumSize":
-                        return IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                    case "Unknown":
-                        return IFileDataStoreResultCallbackWarning.Unknown;
-                    default:
-                        return IFileDataStoreResultCallbackWarning.Unknown;
-                }
+            var retValue = IFileDataStoreResultCallbackWarning.Unknown;
+            if (object != null && object.value != null && IFileDataStoreResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileDataStoreResultCallbackWarning[object.value];
             }
-            else {
-                return IFileDataStoreResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.IFileDataStoreResultCallbackWarning} [ExceedMaximumSize='ExceedMaximumSize']

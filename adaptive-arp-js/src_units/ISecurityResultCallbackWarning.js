@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.6
+    * @version v2.1.7
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -51,19 +51,11 @@ var Adaptive;
            @return {Adaptive.ISecurityResultCallbackWarning}
         */
         ISecurityResultCallbackWarning.toObject = function (object) {
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "EntryOverride":
-                        return ISecurityResultCallbackWarning.EntryOverride;
-                    case "Unknown":
-                        return ISecurityResultCallbackWarning.Unknown;
-                    default:
-                        return ISecurityResultCallbackWarning.Unknown;
-                }
+            var retValue = ISecurityResultCallbackWarning.Unknown;
+            if (object != null && object.value != null && ISecurityResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = ISecurityResultCallbackWarning[object.value];
             }
-            else {
-                return ISecurityResultCallbackWarning.Unknown;
-            }
+            return retValue;
         };
         /**
            @property {Adaptive.ISecurityResultCallbackWarning} [EntryOverride='EntryOverride']
