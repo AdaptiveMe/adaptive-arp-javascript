@@ -72,10 +72,12 @@ var Adaptive;
         ServiceHeader.toObject = function (object) {
             var result = new ServiceHeader(null, null);
             // Assign values to parent bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return ServiceHeader;

@@ -265,7 +265,9 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
                } else {
                     result.state = RotationEventState.toObject(null);
                }
-               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+               if (object!=null && object.timestamp!=null) {
+                    result.timestamp = object.timestamp;
+               }
 
                return result;
           }

@@ -541,15 +541,23 @@ identifiers. This should not be manipulated by the application directly. The 'se
                var result : ServiceRequest = new ServiceRequest(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.userAgent!=null) result.userAgent = object.userAgent;
-               if (object!=null && object.content!=null) result.content = object.content;
-               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.userAgent!=null) {
+                    result.userAgent = object.userAgent;
+               }
+               if (object!=null && object.content!=null) {
+                    result.content = object.content;
+               }
+               if (object!=null && object.contentType!=null) {
+                    result.contentType = object.contentType;
+               }
                if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                } else {
                     result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object!=null && object.contentLength!=null) {
+                    result.contentLength = object.contentLength;
+               }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -593,7 +601,9 @@ identifiers. This should not be manipulated by the application directly. The 'se
                } else {
                     result.serviceToken = ServiceToken.toObject(null);
                }
-               if (object!=null && object.refererHost!=null) result.refererHost = object.refererHost;
+               if (object!=null && object.refererHost!=null) {
+                    result.refererHost = object.refererHost;
+               }
 
                return result;
           }

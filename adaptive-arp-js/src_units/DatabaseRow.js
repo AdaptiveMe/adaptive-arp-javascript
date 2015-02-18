@@ -110,8 +110,9 @@ var Adaptive;
                 result.values = new Array();
                 for (var i = 0; i < object.values.length; i++) {
                     var __value__ = object.values[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.values.push(__value__);
+                    }
                 }
             }
             return result;

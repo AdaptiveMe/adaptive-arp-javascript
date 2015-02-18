@@ -152,8 +152,12 @@ module Adaptive {
                var result : Database = new Database(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.compress!=null) result.compress = object.compress;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.compress!=null) {
+                    result.compress = object.compress;
+               }
 
                return result;
           }

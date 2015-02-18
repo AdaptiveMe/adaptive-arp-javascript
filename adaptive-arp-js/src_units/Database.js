@@ -142,10 +142,12 @@ var Adaptive;
         Database.toObject = function (object) {
             var result = new Database(null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.compress != null)
+            }
+            if (object != null && object.compress != null) {
                 result.compress = object.compress;
+            }
             return result;
         };
         return Database;

@@ -271,17 +271,27 @@ listener.
                var result : APIRequest = new APIRequest(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.bridgeType!=null) result.bridgeType = object.bridgeType;
-               if (object!=null && object.methodName!=null) result.methodName = object.methodName;
+               if (object!=null && object.bridgeType!=null) {
+                    result.bridgeType = object.bridgeType;
+               }
+               if (object!=null && object.methodName!=null) {
+                    result.methodName = object.methodName;
+               }
                if (object != null && object.parameters != null) {
                     result.parameters = new Array<string>();
                     for(var i = 0; i < object.parameters.length; i++) {
                          var __value__ = object.parameters[i];
-                         if (__value__ != null) result.parameters.push(__value__);
+                         if (__value__ != null) {
+                              result.parameters.push(__value__);
+                         }
                     }
                }
-               if (object!=null && object.asyncId!=null) result.asyncId = object.asyncId;
-               if (object!=null && object.apiVersion!=null) result.apiVersion = object.apiVersion;
+               if (object!=null && object.asyncId!=null) {
+                    result.asyncId = object.asyncId;
+               }
+               if (object!=null && object.apiVersion!=null) {
+                    result.apiVersion = object.apiVersion;
+               }
 
                return result;
           }

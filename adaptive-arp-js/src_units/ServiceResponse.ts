@@ -367,14 +367,20 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.content!=null) result.content = object.content;
-               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.content!=null) {
+                    result.content = object.content;
+               }
+               if (object!=null && object.contentType!=null) {
+                    result.contentType = object.contentType;
+               }
                if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                } else {
                     result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object!=null && object.contentLength!=null) {
+                    result.contentLength = object.contentLength;
+               }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -391,7 +397,9 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                } else {
                     result.serviceSession = ServiceSession.toObject(null);
                }
-               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
+               if (object!=null && object.statusCode!=null) {
+                    result.statusCode = object.statusCode;
+               }
 
                return result;
           }

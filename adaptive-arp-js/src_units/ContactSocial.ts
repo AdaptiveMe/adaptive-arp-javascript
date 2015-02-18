@@ -158,7 +158,9 @@ module Adaptive {
                } else {
                     result.socialNetwork = ContactSocialNetwork.toObject(null);
                }
-               if (object!=null && object.profileUrl!=null) result.profileUrl = object.profileUrl;
+               if (object!=null && object.profileUrl!=null) {
+                    result.profileUrl = object.profileUrl;
+               }
 
                return result;
           }

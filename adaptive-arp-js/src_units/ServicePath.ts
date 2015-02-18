@@ -193,7 +193,9 @@ module Adaptive {
                var result : ServicePath = new ServicePath(null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.path!=null) result.path = object.path;
+               if (object!=null && object.path!=null) {
+                    result.path = object.path;
+               }
                if (object != null && object.methods != null) {
                     result.methods = new Array<IServiceMethod>();
                     for(var i = 0; i < object.methods.length; i++) {

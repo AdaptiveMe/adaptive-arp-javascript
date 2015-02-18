@@ -334,22 +334,27 @@ listener.
         APIRequest.toObject = function (object) {
             var result = new APIRequest(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.bridgeType != null)
+            if (object != null && object.bridgeType != null) {
                 result.bridgeType = object.bridgeType;
-            if (object != null && object.methodName != null)
+            }
+            if (object != null && object.methodName != null) {
                 result.methodName = object.methodName;
+            }
             if (object != null && object.parameters != null) {
                 result.parameters = new Array();
                 for (var i = 0; i < object.parameters.length; i++) {
                     var __value__ = object.parameters[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.parameters.push(__value__);
+                    }
                 }
             }
-            if (object != null && object.asyncId != null)
+            if (object != null && object.asyncId != null) {
                 result.asyncId = object.asyncId;
-            if (object != null && object.apiVersion != null)
+            }
+            if (object != null && object.apiVersion != null) {
                 result.apiVersion = object.apiVersion;
+            }
             return result;
         };
         return APIRequest;
@@ -484,12 +489,15 @@ listener.
         APIResponse.toObject = function (object) {
             var result = new APIResponse(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.response != null)
+            if (object != null && object.response != null) {
                 result.response = object.response;
-            if (object != null && object.statusCode != null)
+            }
+            if (object != null && object.statusCode != null) {
                 result.statusCode = object.statusCode;
-            if (object != null && object.statusMessage != null)
+            }
+            if (object != null && object.statusMessage != null) {
                 result.statusMessage = object.statusMessage;
+            }
             return result;
         };
         return APIResponse;
@@ -777,26 +785,33 @@ listener.
         AppResourceData.toObject = function (object) {
             var result = new AppResourceData(null, null, null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.id != null)
+            if (object != null && object.id != null) {
                 result.id = object.id;
+            }
             if (object != null && object.data != null) {
                 result.data = new Array();
                 for (var i = 0; i < object.data.length; i++) {
                     var __value__ = object.data[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.data.push(__value__);
+                    }
                 }
             }
-            if (object != null && object.rawType != null)
+            if (object != null && object.rawType != null) {
                 result.rawType = object.rawType;
-            if (object != null && object.rawLength != null)
+            }
+            if (object != null && object.rawLength != null) {
                 result.rawLength = object.rawLength;
-            if (object != null && object.cooked != null)
+            }
+            if (object != null && object.cooked != null) {
                 result.cooked = object.cooked;
-            if (object != null && object.cookedType != null)
+            }
+            if (object != null && object.cookedType != null) {
                 result.cookedType = object.cookedType;
-            if (object != null && object.cookedLength != null)
+            }
+            if (object != null && object.cookedLength != null) {
                 result.cookedLength = object.cookedLength;
+            }
             return result;
         };
         return AppResourceData;
@@ -913,8 +928,9 @@ listener.
                     }
                 }
             }
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
+            }
             return result;
         };
         return Service;
@@ -1059,8 +1075,9 @@ listener.
             else {
                 result.validationType = IServiceCertificateValidation.toObject(null);
             }
-            if (object != null && object.hostURI != null)
+            if (object != null && object.hostURI != null) {
                 result.hostURI = object.hostURI;
+            }
             if (object != null && object.paths != null) {
                 result.paths = new Array();
                 for (var i = 0; i < object.paths.length; i++) {
@@ -1213,8 +1230,9 @@ listener.
         ServicePath.toObject = function (object) {
             var result = new ServicePath(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.path != null)
+            if (object != null && object.path != null) {
                 result.path = object.path;
+            }
             if (object != null && object.methods != null) {
                 result.methods = new Array();
                 for (var i = 0; i < object.methods.length; i++) {
@@ -1412,14 +1430,18 @@ listener.
         Acceleration.toObject = function (object) {
             var result = new Acceleration(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.x != null)
+            if (object != null && object.x != null) {
                 result.x = object.x;
-            if (object != null && object.y != null)
+            }
+            if (object != null && object.y != null) {
                 result.y = object.y;
-            if (object != null && object.z != null)
+            }
+            if (object != null && object.z != null) {
                 result.z = object.z;
-            if (object != null && object.timestamp != null)
+            }
+            if (object != null && object.timestamp != null) {
                 result.timestamp = object.timestamp;
+            }
             return result;
         };
         return Acceleration;
@@ -1604,8 +1626,9 @@ listener.
         ContactAddress.toObject = function (object) {
             var result = new ContactAddress(null, null);
             // Assign values to bean fields.
-            if (object != null && object.address != null)
+            if (object != null && object.address != null) {
                 result.address = object.address;
+            }
             if (object != null && object.type != null) {
                 result.type = ContactAddressType.toObject(object.type);
             }
@@ -1761,10 +1784,12 @@ listener.
             else {
                 result.type = ContactEmailType.toObject(null);
             }
-            if (object != null && object.primary != null)
+            if (object != null && object.primary != null) {
                 result.primary = object.primary;
-            if (object != null && object.email != null)
+            }
+            if (object != null && object.email != null) {
                 result.email = object.email;
+            }
             return result;
         };
         return ContactEmail;
@@ -1944,12 +1969,15 @@ listener.
         ContactPersonalInfo.toObject = function (object) {
             var result = new ContactPersonalInfo(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.middleName != null)
+            }
+            if (object != null && object.middleName != null) {
                 result.middleName = object.middleName;
-            if (object != null && object.lastName != null)
+            }
+            if (object != null && object.lastName != null) {
                 result.lastName = object.lastName;
+            }
             if (object != null && object.title != null) {
                 result.title = ContactPersonalInfoTitle.toObject(object.title);
             }
@@ -2063,8 +2091,9 @@ listener.
         ContactPhone.toObject = function (object) {
             var result = new ContactPhone(null, null);
             // Assign values to bean fields.
-            if (object != null && object.phone != null)
+            if (object != null && object.phone != null) {
                 result.phone = object.phone;
+            }
             if (object != null && object.phoneType != null) {
                 result.phoneType = ContactPhoneType.toObject(object.phoneType);
             }
@@ -2214,12 +2243,15 @@ listener.
         ContactProfessionalInfo.toObject = function (object) {
             var result = new ContactProfessionalInfo(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.company != null)
+            if (object != null && object.company != null) {
                 result.company = object.company;
-            if (object != null && object.jobTitle != null)
+            }
+            if (object != null && object.jobTitle != null) {
                 result.jobTitle = object.jobTitle;
-            if (object != null && object.jobDescription != null)
+            }
+            if (object != null && object.jobDescription != null) {
                 result.jobDescription = object.jobDescription;
+            }
             return result;
         };
         return ContactProfessionalInfo;
@@ -2333,8 +2365,9 @@ listener.
             else {
                 result.socialNetwork = ContactSocialNetwork.toObject(null);
             }
-            if (object != null && object.profileUrl != null)
+            if (object != null && object.profileUrl != null) {
                 result.profileUrl = object.profileUrl;
+            }
             return result;
         };
         return ContactSocial;
@@ -2442,10 +2475,12 @@ listener.
         ContactTag.toObject = function (object) {
             var result = new ContactTag(null, null);
             // Assign values to bean fields.
-            if (object != null && object.tagName != null)
+            if (object != null && object.tagName != null) {
                 result.tagName = object.tagName;
-            if (object != null && object.tagValue != null)
+            }
+            if (object != null && object.tagValue != null) {
                 result.tagValue = object.tagValue;
+            }
             return result;
         };
         return ContactTag;
@@ -2517,8 +2552,9 @@ listener.
         ContactUid.toObject = function (object) {
             var result = new ContactUid(null);
             // Assign values to bean fields.
-            if (object != null && object.contactId != null)
+            if (object != null && object.contactId != null) {
                 result.contactId = object.contactId;
+            }
             return result;
         };
         return ContactUid;
@@ -2590,8 +2626,9 @@ listener.
         ContactWebsite.toObject = function (object) {
             var result = new ContactWebsite(null);
             // Assign values to bean fields.
-            if (object != null && object.url != null)
+            if (object != null && object.url != null) {
                 result.url = object.url;
+            }
             return result;
         };
         return ContactWebsite;
@@ -2699,10 +2736,12 @@ listener.
         Database.toObject = function (object) {
             var result = new Database(null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.compress != null)
+            }
+            if (object != null && object.compress != null) {
                 result.compress = object.compress;
+            }
             return result;
         };
         return Database;
@@ -2774,8 +2813,9 @@ listener.
         DatabaseColumn.toObject = function (object) {
             var result = new DatabaseColumn(null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
+            }
             return result;
         };
         return DatabaseColumn;
@@ -2851,8 +2891,9 @@ listener.
                 result.values = new Array();
                 for (var i = 0; i < object.values.length; i++) {
                     var __value__ = object.values[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.values.push(__value__);
+                    }
                 }
             }
             return result;
@@ -3070,12 +3111,15 @@ listener.
         DatabaseTable.toObject = function (object) {
             var result = new DatabaseTable(null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.columnCount != null)
+            }
+            if (object != null && object.columnCount != null) {
                 result.columnCount = object.columnCount;
-            if (object != null && object.rowCount != null)
+            }
+            if (object != null && object.rowCount != null) {
                 result.rowCount = object.rowCount;
+            }
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
                 for (var i = 0; i < object.databaseColumns.length; i++) {
@@ -3278,14 +3322,18 @@ be unique for a specific instance of an application on a specific device.
         DeviceInfo.toObject = function (object) {
             var result = new DeviceInfo(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.model != null)
+            }
+            if (object != null && object.model != null) {
                 result.model = object.model;
-            if (object != null && object.vendor != null)
+            }
+            if (object != null && object.vendor != null) {
                 result.vendor = object.vendor;
-            if (object != null && object.uuid != null)
+            }
+            if (object != null && object.uuid != null) {
                 result.uuid = object.uuid;
+            }
             return result;
         };
         return DeviceInfo;
@@ -3621,12 +3669,15 @@ be unique for a specific instance of an application on a specific device.
                     }
                 }
             }
-            if (object != null && object.messageBody != null)
+            if (object != null && object.messageBody != null) {
                 result.messageBody = object.messageBody;
-            if (object != null && object.messageBodyMimeType != null)
+            }
+            if (object != null && object.messageBodyMimeType != null) {
                 result.messageBodyMimeType = object.messageBodyMimeType;
-            if (object != null && object.subject != null)
+            }
+            if (object != null && object.subject != null) {
                 result.subject = object.subject;
+            }
             return result;
         };
         return Email;
@@ -3698,8 +3749,9 @@ be unique for a specific instance of an application on a specific device.
         EmailAddress.toObject = function (object) {
             var result = new EmailAddress(null);
             // Assign values to bean fields.
-            if (object != null && object.address != null)
+            if (object != null && object.address != null) {
                 result.address = object.address;
+            }
             return result;
         };
         return EmailAddress;
@@ -3919,18 +3971,23 @@ be unique for a specific instance of an application on a specific device.
                 result.data = new Array();
                 for (var i = 0; i < object.data.length; i++) {
                     var __value__ = object.data[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.data.push(__value__);
+                    }
                 }
             }
-            if (object != null && object.size != null)
+            if (object != null && object.size != null) {
                 result.size = object.size;
-            if (object != null && object.fileName != null)
+            }
+            if (object != null && object.fileName != null) {
                 result.fileName = object.fileName;
-            if (object != null && object.mimeType != null)
+            }
+            if (object != null && object.mimeType != null) {
                 result.mimeType = object.mimeType;
-            if (object != null && object.referenceUrl != null)
+            }
+            if (object != null && object.referenceUrl != null) {
                 result.referenceUrl = object.referenceUrl;
+            }
             return result;
         };
         return EmailAttachmentData;
@@ -4139,18 +4196,24 @@ doesn't exist, this will be -1. Used internally.
         FileDescriptor.toObject = function (object) {
             var result = new FileDescriptor();
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.path != null)
+            }
+            if (object != null && object.path != null) {
                 result.path = object.path;
-            if (object != null && object.pathAbsolute != null)
+            }
+            if (object != null && object.pathAbsolute != null) {
                 result.pathAbsolute = object.pathAbsolute;
-            if (object != null && object.dateCreated != null)
+            }
+            if (object != null && object.dateCreated != null) {
                 result.dateCreated = object.dateCreated;
-            if (object != null && object.dateModified != null)
+            }
+            if (object != null && object.dateModified != null) {
                 result.dateModified = object.dateModified;
-            if (object != null && object.size != null)
+            }
+            if (object != null && object.size != null) {
                 result.size = object.size;
+            }
             return result;
         };
         return FileDescriptor;
@@ -4398,18 +4461,24 @@ doesn't exist, this will be -1. Used internally.
         Geolocation.toObject = function (object) {
             var result = new Geolocation(null, null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.latitude != null)
+            if (object != null && object.latitude != null) {
                 result.latitude = object.latitude;
-            if (object != null && object.longitude != null)
+            }
+            if (object != null && object.longitude != null) {
                 result.longitude = object.longitude;
-            if (object != null && object.altitude != null)
+            }
+            if (object != null && object.altitude != null) {
                 result.altitude = object.altitude;
-            if (object != null && object.xDoP != null)
+            }
+            if (object != null && object.xDoP != null) {
                 result.xDoP = object.xDoP;
-            if (object != null && object.yDoP != null)
+            }
+            if (object != null && object.yDoP != null) {
                 result.yDoP = object.yDoP;
-            if (object != null && object.timestamp != null)
+            }
+            if (object != null && object.timestamp != null) {
                 result.timestamp = object.timestamp;
+            }
             return result;
         };
         return Geolocation;
@@ -4517,10 +4586,12 @@ doesn't exist, this will be -1. Used internally.
         KeyPair.toObject = function (object) {
             var result = new KeyPair(null, null);
             // Assign values to bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyValue != null)
+            }
+            if (object != null && object.keyValue != null) {
                 result.keyValue = object.keyValue;
+            }
             return result;
         };
         return KeyPair;
@@ -4628,10 +4699,12 @@ doesn't exist, this will be -1. Used internally.
         KeyValue.toObject = function (object) {
             var result = new KeyValue(null, null);
             // Assign values to bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return KeyValue;
@@ -4827,10 +4900,12 @@ doesn't exist, this will be -1. Used internally.
         Locale.toObject = function (object) {
             var result = new Locale(null, null);
             // Assign values to bean fields.
-            if (object != null && object.country != null)
+            if (object != null && object.country != null) {
                 result.country = object.country;
-            if (object != null && object.language != null)
+            }
+            if (object != null && object.language != null) {
                 result.language = object.language;
+            }
             return result;
         };
         return Locale;
@@ -4977,10 +5052,12 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.name = IOSType.toObject(null);
             }
-            if (object != null && object.version != null)
+            if (object != null && object.version != null) {
                 result.version = object.version;
-            if (object != null && object.vendor != null)
+            }
+            if (object != null && object.vendor != null) {
                 result.vendor = object.vendor;
+            }
             return result;
         };
         return OSInfo;
@@ -5184,8 +5261,9 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.state = RotationEventState.toObject(null);
             }
-            if (object != null && object.timestamp != null)
+            if (object != null && object.timestamp != null) {
                 result.timestamp = object.timestamp;
+            }
             return result;
         };
         return RotationEvent;
@@ -5293,10 +5371,12 @@ doesn't exist, this will be -1. Used internally.
         SecureKeyPair.toObject = function (object) {
             var result = new SecureKeyPair(null, null);
             // Assign values to bean fields.
-            if (object != null && object.secureKey != null)
+            if (object != null && object.secureKey != null) {
                 result.secureKey = object.secureKey;
-            if (object != null && object.secureData != null)
+            }
+            if (object != null && object.secureData != null) {
                 result.secureData = object.secureData;
+            }
             return result;
         };
         return SecureKeyPair;
@@ -5722,20 +5802,24 @@ doesn't exist, this will be -1. Used internally.
         ServiceRequest.toObject = function (object) {
             var result = new ServiceRequest(null, null);
             // Assign values to bean fields.
-            if (object != null && object.userAgent != null)
+            if (object != null && object.userAgent != null) {
                 result.userAgent = object.userAgent;
-            if (object != null && object.content != null)
+            }
+            if (object != null && object.content != null) {
                 result.content = object.content;
-            if (object != null && object.contentType != null)
+            }
+            if (object != null && object.contentType != null) {
                 result.contentType = object.contentType;
+            }
             if (object != null && object.contentEncoding != null) {
                 result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
             }
             else {
                 result.contentEncoding = IServiceContentEncoding.toObject(null);
             }
-            if (object != null && object.contentLength != null)
+            if (object != null && object.contentLength != null) {
                 result.contentLength = object.contentLength;
+            }
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var i = 0; i < object.serviceHeaders.length; i++) {
@@ -5784,8 +5868,9 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.serviceToken = ServiceToken.toObject(null);
             }
-            if (object != null && object.refererHost != null)
+            if (object != null && object.refererHost != null) {
                 result.refererHost = object.refererHost;
+            }
             return result;
         };
         return ServiceRequest;
@@ -6074,18 +6159,21 @@ doesn't exist, this will be -1. Used internally.
         ServiceResponse.toObject = function (object) {
             var result = new ServiceResponse(null, null, null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.content != null)
+            if (object != null && object.content != null) {
                 result.content = object.content;
-            if (object != null && object.contentType != null)
+            }
+            if (object != null && object.contentType != null) {
                 result.contentType = object.contentType;
+            }
             if (object != null && object.contentEncoding != null) {
                 result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
             }
             else {
                 result.contentEncoding = IServiceContentEncoding.toObject(null);
             }
-            if (object != null && object.contentLength != null)
+            if (object != null && object.contentLength != null) {
                 result.contentLength = object.contentLength;
+            }
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var i = 0; i < object.serviceHeaders.length; i++) {
@@ -6104,8 +6192,9 @@ doesn't exist, this will be -1. Used internally.
             else {
                 result.serviceSession = ServiceSession.toObject(null);
             }
-            if (object != null && object.statusCode != null)
+            if (object != null && object.statusCode != null) {
                 result.statusCode = object.statusCode;
+            }
             return result;
         };
         return ServiceResponse;
@@ -6560,22 +6649,30 @@ doesn't exist, this will be -1. Used internally.
         ServiceSessionCookie.toObject = function (object) {
             var result = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.cookieName != null)
+            if (object != null && object.cookieName != null) {
                 result.cookieName = object.cookieName;
-            if (object != null && object.cookieValue != null)
+            }
+            if (object != null && object.cookieValue != null) {
                 result.cookieValue = object.cookieValue;
-            if (object != null && object.domain != null)
+            }
+            if (object != null && object.domain != null) {
                 result.domain = object.domain;
-            if (object != null && object.path != null)
+            }
+            if (object != null && object.path != null) {
                 result.path = object.path;
-            if (object != null && object.scheme != null)
+            }
+            if (object != null && object.scheme != null) {
                 result.scheme = object.scheme;
-            if (object != null && object.secure != null)
+            }
+            if (object != null && object.secure != null) {
                 result.secure = object.secure;
-            if (object != null && object.expiry != null)
+            }
+            if (object != null && object.expiry != null) {
                 result.expiry = object.expiry;
-            if (object != null && object.creation != null)
+            }
+            if (object != null && object.creation != null) {
                 result.creation = object.creation;
+            }
             return result;
         };
         return ServiceSessionCookie;
@@ -6758,12 +6855,15 @@ doesn't exist, this will be -1. Used internally.
         ServiceToken.toObject = function (object) {
             var result = new ServiceToken(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.serviceName != null)
+            if (object != null && object.serviceName != null) {
                 result.serviceName = object.serviceName;
-            if (object != null && object.endpointName != null)
+            }
+            if (object != null && object.endpointName != null) {
                 result.endpointName = object.endpointName;
-            if (object != null && object.functionName != null)
+            }
+            if (object != null && object.functionName != null) {
                 result.functionName = object.functionName;
+            }
             if (object != null && object.invocationMethod != null) {
                 result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
             }
@@ -7094,8 +7194,9 @@ doesn't exist, this will be -1. Used internally.
         Contact.toObject = function (object) {
             var result = new Contact(null, null, null, null, null, null, null, null, null);
             // Assign values to parent bean fields.
-            if (object != null && object.contactId != null)
+            if (object != null && object.contactId != null) {
                 result.contactId = object.contactId;
+            }
             // Assign values to bean fields.
             if (object != null && object.personalInfo != null) {
                 result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
@@ -7218,10 +7319,12 @@ doesn't exist, this will be -1. Used internally.
         ServiceHeader.toObject = function (object) {
             var result = new ServiceHeader(null, null);
             // Assign values to parent bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return ServiceHeader;
@@ -7259,10 +7362,12 @@ doesn't exist, this will be -1. Used internally.
         ServiceRequestParameter.toObject = function (object) {
             var result = new ServiceRequestParameter(null, null);
             // Assign values to parent bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return ServiceRequestParameter;
@@ -7300,10 +7405,12 @@ doesn't exist, this will be -1. Used internally.
         ServiceSessionAttribute.toObject = function (object) {
             var result = new ServiceSessionAttribute(null, null);
             // Assign values to parent bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return ServiceSessionAttribute;

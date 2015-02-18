@@ -170,8 +170,9 @@ var Adaptive;
         ServicePath.toObject = function (object) {
             var result = new ServicePath(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.path != null)
+            if (object != null && object.path != null) {
                 result.path = object.path;
+            }
             if (object != null && object.methods != null) {
                 result.methods = new Array();
                 for (var i = 0; i < object.methods.length; i++) {

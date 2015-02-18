@@ -185,10 +185,12 @@ var Adaptive;
             else {
                 result.type = Adaptive.ContactEmailType.toObject(null);
             }
-            if (object != null && object.primary != null)
+            if (object != null && object.primary != null) {
                 result.primary = object.primary;
-            if (object != null && object.email != null)
+            }
+            if (object != null && object.email != null) {
                 result.email = object.email;
+            }
             return result;
         };
         return ContactEmail;

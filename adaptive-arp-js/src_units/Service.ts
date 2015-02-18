@@ -161,7 +161,9 @@ module Adaptive {
                          }
                     }
                }
-               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
 
                return result;
           }

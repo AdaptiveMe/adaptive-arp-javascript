@@ -110,7 +110,9 @@ module Adaptive {
                var result : ContactUid = new ContactUid(null);
 
                // Assign values to bean fields.
-               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+               if (object!=null && object.contactId!=null) {
+                    result.contactId = object.contactId;
+               }
 
                return result;
           }

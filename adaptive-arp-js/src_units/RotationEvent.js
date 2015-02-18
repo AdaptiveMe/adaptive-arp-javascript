@@ -240,8 +240,9 @@ var Adaptive;
             else {
                 result.state = Adaptive.RotationEventState.toObject(null);
             }
-            if (object != null && object.timestamp != null)
+            if (object != null && object.timestamp != null) {
                 result.timestamp = object.timestamp;
+            }
             return result;
         };
         return RotationEvent;

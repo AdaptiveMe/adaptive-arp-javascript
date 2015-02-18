@@ -143,8 +143,9 @@ var Adaptive;
         ContactAddress.toObject = function (object) {
             var result = new ContactAddress(null, null);
             // Assign values to bean fields.
-            if (object != null && object.address != null)
+            if (object != null && object.address != null) {
                 result.address = object.address;
+            }
             if (object != null && object.type != null) {
                 result.type = Adaptive.ContactAddressType.toObject(object.type);
             }

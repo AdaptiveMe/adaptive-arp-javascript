@@ -280,9 +280,15 @@ module Adaptive {
                var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.columnCount!=null) result.columnCount = object.columnCount;
-               if (object!=null && object.rowCount!=null) result.rowCount = object.rowCount;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.columnCount!=null) {
+                    result.columnCount = object.columnCount;
+               }
+               if (object!=null && object.rowCount!=null) {
+                    result.rowCount = object.rowCount;
+               }
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
                     for(var i = 0; i < object.databaseColumns.length; i++) {

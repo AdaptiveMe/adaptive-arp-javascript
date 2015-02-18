@@ -213,14 +213,18 @@ be unique for a specific instance of an application on a specific device.
         DeviceInfo.toObject = function (object) {
             var result = new DeviceInfo(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.model != null)
+            }
+            if (object != null && object.model != null) {
                 result.model = object.model;
-            if (object != null && object.vendor != null)
+            }
+            if (object != null && object.vendor != null) {
                 result.vendor = object.vendor;
-            if (object != null && object.uuid != null)
+            }
+            if (object != null && object.uuid != null) {
                 result.uuid = object.uuid;
+            }
             return result;
         };
         return DeviceInfo;

@@ -142,10 +142,12 @@ var Adaptive;
         KeyValue.toObject = function (object) {
             var result = new KeyValue(null, null);
             // Assign values to bean fields.
-            if (object != null && object.keyName != null)
+            if (object != null && object.keyName != null) {
                 result.keyName = object.keyName;
-            if (object != null && object.keyData != null)
+            }
+            if (object != null && object.keyData != null) {
                 result.keyData = object.keyData;
+            }
             return result;
         };
         return KeyValue;

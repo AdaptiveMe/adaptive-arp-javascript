@@ -218,12 +218,15 @@ var Adaptive;
         ServiceToken.toObject = function (object) {
             var result = new ServiceToken(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.serviceName != null)
+            if (object != null && object.serviceName != null) {
                 result.serviceName = object.serviceName;
-            if (object != null && object.endpointName != null)
+            }
+            if (object != null && object.endpointName != null) {
                 result.endpointName = object.endpointName;
-            if (object != null && object.functionName != null)
+            }
+            if (object != null && object.functionName != null) {
                 result.functionName = object.functionName;
+            }
             if (object != null && object.invocationMethod != null) {
                 result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
             }

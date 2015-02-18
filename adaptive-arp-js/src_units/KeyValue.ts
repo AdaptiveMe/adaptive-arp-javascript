@@ -152,8 +152,12 @@ module Adaptive {
                var result : KeyValue = new KeyValue(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyData!=null) {
+                    result.keyData = object.keyData;
+               }
 
                return result;
           }

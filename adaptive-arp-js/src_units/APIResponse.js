@@ -162,12 +162,15 @@ var Adaptive;
         APIResponse.toObject = function (object) {
             var result = new APIResponse(null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.response != null)
+            if (object != null && object.response != null) {
                 result.response = object.response;
-            if (object != null && object.statusCode != null)
+            }
+            if (object != null && object.statusCode != null) {
                 result.statusCode = object.statusCode;
-            if (object != null && object.statusMessage != null)
+            }
+            if (object != null && object.statusMessage != null) {
                 result.statusMessage = object.statusMessage;
+            }
             return result;
         };
         return APIResponse;

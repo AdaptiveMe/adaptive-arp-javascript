@@ -215,12 +215,15 @@ var Adaptive;
         ContactPersonalInfo.toObject = function (object) {
             var result = new ContactPersonalInfo(null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
-            if (object != null && object.middleName != null)
+            }
+            if (object != null && object.middleName != null) {
                 result.middleName = object.middleName;
-            if (object != null && object.lastName != null)
+            }
+            if (object != null && object.lastName != null) {
                 result.lastName = object.lastName;
+            }
             if (object != null && object.title != null) {
                 result.title = Adaptive.ContactPersonalInfoTitle.toObject(object.title);
             }

@@ -182,10 +182,12 @@ var Adaptive;
             else {
                 result.name = Adaptive.IOSType.toObject(null);
             }
-            if (object != null && object.version != null)
+            if (object != null && object.version != null) {
                 result.version = object.version;
-            if (object != null && object.vendor != null)
+            }
+            if (object != null && object.vendor != null) {
                 result.vendor = object.vendor;
+            }
             return result;
         };
         return OSInfo;

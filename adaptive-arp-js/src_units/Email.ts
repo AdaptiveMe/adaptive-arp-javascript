@@ -408,9 +408,15 @@ module Adaptive {
                          }
                     }
                }
-               if (object!=null && object.messageBody!=null) result.messageBody = object.messageBody;
-               if (object!=null && object.messageBodyMimeType!=null) result.messageBodyMimeType = object.messageBodyMimeType;
-               if (object!=null && object.subject!=null) result.subject = object.subject;
+               if (object!=null && object.messageBody!=null) {
+                    result.messageBody = object.messageBody;
+               }
+               if (object!=null && object.messageBodyMimeType!=null) {
+                    result.messageBodyMimeType = object.messageBodyMimeType;
+               }
+               if (object!=null && object.subject!=null) {
+                    result.subject = object.subject;
+               }
 
                return result;
           }

@@ -149,8 +149,9 @@ var Adaptive;
             else {
                 result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(null);
             }
-            if (object != null && object.profileUrl != null)
+            if (object != null && object.profileUrl != null) {
                 result.profileUrl = object.profileUrl;
+            }
             return result;
         };
         return ContactSocial;

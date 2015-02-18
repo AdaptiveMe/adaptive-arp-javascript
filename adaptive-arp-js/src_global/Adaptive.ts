@@ -3592,17 +3592,27 @@ listener.
                var result : APIRequest = new APIRequest(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.bridgeType!=null) result.bridgeType = object.bridgeType;
-               if (object!=null && object.methodName!=null) result.methodName = object.methodName;
+               if (object!=null && object.bridgeType!=null) {
+                    result.bridgeType = object.bridgeType;
+               }
+               if (object!=null && object.methodName!=null) {
+                    result.methodName = object.methodName;
+               }
                if (object != null && object.parameters != null) {
                     result.parameters = new Array<string>();
                     for(var i = 0; i < object.parameters.length; i++) {
                          var __value__ = object.parameters[i];
-                         if (__value__ != null) result.parameters.push(__value__);
+                         if (__value__ != null) {
+                              result.parameters.push(__value__);
+                         }
                     }
                }
-               if (object!=null && object.asyncId!=null) result.asyncId = object.asyncId;
-               if (object!=null && object.apiVersion!=null) result.apiVersion = object.apiVersion;
+               if (object!=null && object.asyncId!=null) {
+                    result.asyncId = object.asyncId;
+               }
+               if (object!=null && object.apiVersion!=null) {
+                    result.apiVersion = object.apiVersion;
+               }
 
                return result;
           }
@@ -3755,9 +3765,15 @@ listener.
                var result : APIResponse = new APIResponse(null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.response!=null) result.response = object.response;
-               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
-               if (object!=null && object.statusMessage!=null) result.statusMessage = object.statusMessage;
+               if (object!=null && object.response!=null) {
+                    result.response = object.response;
+               }
+               if (object!=null && object.statusCode!=null) {
+                    result.statusCode = object.statusCode;
+               }
+               if (object!=null && object.statusMessage!=null) {
+                    result.statusMessage = object.statusMessage;
+               }
 
                return result;
           }
@@ -4091,19 +4107,33 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : AppResourceData = new AppResourceData(null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.id!=null) result.id = object.id;
+               if (object!=null && object.id!=null) {
+                    result.id = object.id;
+               }
                if (object != null && object.data != null) {
                     result.data = new Array<number>();
                     for(var i = 0; i < object.data.length; i++) {
                          var __value__ = object.data[i];
-                         if (__value__ != null) result.data.push(__value__);
+                         if (__value__ != null) {
+                              result.data.push(__value__);
+                         }
                     }
                }
-               if (object!=null && object.rawType!=null) result.rawType = object.rawType;
-               if (object!=null && object.rawLength!=null) result.rawLength = object.rawLength;
-               if (object!=null && object.cooked!=null) result.cooked = object.cooked;
-               if (object!=null && object.cookedType!=null) result.cookedType = object.cookedType;
-               if (object!=null && object.cookedLength!=null) result.cookedLength = object.cookedLength;
+               if (object!=null && object.rawType!=null) {
+                    result.rawType = object.rawType;
+               }
+               if (object!=null && object.rawLength!=null) {
+                    result.rawLength = object.rawLength;
+               }
+               if (object!=null && object.cooked!=null) {
+                    result.cooked = object.cooked;
+               }
+               if (object!=null && object.cookedType!=null) {
+                    result.cookedType = object.cookedType;
+               }
+               if (object!=null && object.cookedLength!=null) {
+                    result.cookedLength = object.cookedLength;
+               }
 
                return result;
           }
@@ -4231,7 +4261,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                          }
                     }
                }
-               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
 
                return result;
           }
@@ -4393,7 +4425,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                } else {
                     result.validationType = IServiceCertificateValidation.toObject(null);
                }
-               if (object!=null && object.hostURI!=null) result.hostURI = object.hostURI;
+               if (object!=null && object.hostURI!=null) {
+                    result.hostURI = object.hostURI;
+               }
                if (object != null && object.paths != null) {
                     result.paths = new Array<ServicePath>();
                     for(var i = 0; i < object.paths.length; i++) {
@@ -4563,7 +4597,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ServicePath = new ServicePath(null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.path!=null) result.path = object.path;
+               if (object!=null && object.path!=null) {
+                    result.path = object.path;
+               }
                if (object != null && object.methods != null) {
                     result.methods = new Array<IServiceMethod>();
                     for(var i = 0; i < object.methods.length; i++) {
@@ -4782,10 +4818,18 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : Acceleration = new Acceleration(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.x!=null) result.x = object.x;
-               if (object!=null && object.y!=null) result.y = object.y;
-               if (object!=null && object.z!=null) result.z = object.z;
-               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+               if (object!=null && object.x!=null) {
+                    result.x = object.x;
+               }
+               if (object!=null && object.y!=null) {
+                    result.y = object.y;
+               }
+               if (object!=null && object.z!=null) {
+                    result.z = object.z;
+               }
+               if (object!=null && object.timestamp!=null) {
+                    result.timestamp = object.timestamp;
+               }
 
                return result;
           }
@@ -4985,7 +5029,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactAddress = new ContactAddress(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.address!=null) result.address = object.address;
+               if (object!=null && object.address!=null) {
+                    result.address = object.address;
+               }
                if (object!=null && object.type!=null) {
                     result.type = ContactAddressType.toObject(object.type);
                } else {
@@ -5156,8 +5202,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                } else {
                     result.type = ContactEmailType.toObject(null);
                }
-               if (object!=null && object.primary!=null) result.primary = object.primary;
-               if (object!=null && object.email!=null) result.email = object.email;
+               if (object!=null && object.primary!=null) {
+                    result.primary = object.primary;
+               }
+               if (object!=null && object.email!=null) {
+                    result.email = object.email;
+               }
 
                return result;
           }
@@ -5360,9 +5410,15 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactPersonalInfo = new ContactPersonalInfo(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.middleName!=null) result.middleName = object.middleName;
-               if (object!=null && object.lastName!=null) result.lastName = object.lastName;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.middleName!=null) {
+                    result.middleName = object.middleName;
+               }
+               if (object!=null && object.lastName!=null) {
+                    result.lastName = object.lastName;
+               }
                if (object!=null && object.title!=null) {
                     result.title = ContactPersonalInfoTitle.toObject(object.title);
                } else {
@@ -5486,7 +5542,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactPhone = new ContactPhone(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.phone!=null) result.phone = object.phone;
+               if (object!=null && object.phone!=null) {
+                    result.phone = object.phone;
+               }
                if (object!=null && object.phoneType!=null) {
                     result.phoneType = ContactPhoneType.toObject(object.phoneType);
                } else {
@@ -5652,9 +5710,15 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactProfessionalInfo = new ContactProfessionalInfo(null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.company!=null) result.company = object.company;
-               if (object!=null && object.jobTitle!=null) result.jobTitle = object.jobTitle;
-               if (object!=null && object.jobDescription!=null) result.jobDescription = object.jobDescription;
+               if (object!=null && object.company!=null) {
+                    result.company = object.company;
+               }
+               if (object!=null && object.jobTitle!=null) {
+                    result.jobTitle = object.jobTitle;
+               }
+               if (object!=null && object.jobDescription!=null) {
+                    result.jobDescription = object.jobDescription;
+               }
 
                return result;
           }
@@ -5778,7 +5842,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                } else {
                     result.socialNetwork = ContactSocialNetwork.toObject(null);
                }
-               if (object!=null && object.profileUrl!=null) result.profileUrl = object.profileUrl;
+               if (object!=null && object.profileUrl!=null) {
+                    result.profileUrl = object.profileUrl;
+               }
 
                return result;
           }
@@ -5897,8 +5963,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactTag = new ContactTag(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.tagName!=null) result.tagName = object.tagName;
-               if (object!=null && object.tagValue!=null) result.tagValue = object.tagValue;
+               if (object!=null && object.tagName!=null) {
+                    result.tagName = object.tagName;
+               }
+               if (object!=null && object.tagValue!=null) {
+                    result.tagValue = object.tagValue;
+               }
 
                return result;
           }
@@ -5975,7 +6045,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactUid = new ContactUid(null);
 
                // Assign values to bean fields.
-               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+               if (object!=null && object.contactId!=null) {
+                    result.contactId = object.contactId;
+               }
 
                return result;
           }
@@ -6052,7 +6124,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : ContactWebsite = new ContactWebsite(null);
 
                // Assign values to bean fields.
-               if (object!=null && object.url!=null) result.url = object.url;
+               if (object!=null && object.url!=null) {
+                    result.url = object.url;
+               }
 
                return result;
           }
@@ -6171,8 +6245,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : Database = new Database(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.compress!=null) result.compress = object.compress;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.compress!=null) {
+                    result.compress = object.compress;
+               }
 
                return result;
           }
@@ -6249,7 +6327,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : DatabaseColumn = new DatabaseColumn(null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
 
                return result;
           }
@@ -6330,7 +6410,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                     result.values = new Array<string>();
                     for(var i = 0; i < object.values.length; i++) {
                          var __value__ = object.values[i];
-                         if (__value__ != null) result.values.push(__value__);
+                         if (__value__ != null) {
+                              result.values.push(__value__);
+                         }
                     }
                }
 
@@ -6577,9 +6659,15 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                var result : DatabaseTable = new DatabaseTable(null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.columnCount!=null) result.columnCount = object.columnCount;
-               if (object!=null && object.rowCount!=null) result.rowCount = object.rowCount;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.columnCount!=null) {
+                    result.columnCount = object.columnCount;
+               }
+               if (object!=null && object.rowCount!=null) {
+                    result.rowCount = object.rowCount;
+               }
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
                     for(var i = 0; i < object.databaseColumns.length; i++) {
@@ -6804,10 +6892,18 @@ be unique for a specific instance of an application on a specific device.
                var result : DeviceInfo = new DeviceInfo(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.model!=null) result.model = object.model;
-               if (object!=null && object.vendor!=null) result.vendor = object.vendor;
-               if (object!=null && object.uuid!=null) result.uuid = object.uuid;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.model!=null) {
+                    result.model = object.model;
+               }
+               if (object!=null && object.vendor!=null) {
+                    result.vendor = object.vendor;
+               }
+               if (object!=null && object.uuid!=null) {
+                    result.uuid = object.uuid;
+               }
 
                return result;
           }
@@ -7180,9 +7276,15 @@ be unique for a specific instance of an application on a specific device.
                          }
                     }
                }
-               if (object!=null && object.messageBody!=null) result.messageBody = object.messageBody;
-               if (object!=null && object.messageBodyMimeType!=null) result.messageBodyMimeType = object.messageBodyMimeType;
-               if (object!=null && object.subject!=null) result.subject = object.subject;
+               if (object!=null && object.messageBody!=null) {
+                    result.messageBody = object.messageBody;
+               }
+               if (object!=null && object.messageBodyMimeType!=null) {
+                    result.messageBodyMimeType = object.messageBodyMimeType;
+               }
+               if (object!=null && object.subject!=null) {
+                    result.subject = object.subject;
+               }
 
                return result;
           }
@@ -7259,7 +7361,9 @@ be unique for a specific instance of an application on a specific device.
                var result : EmailAddress = new EmailAddress(null);
 
                // Assign values to bean fields.
-               if (object!=null && object.address!=null) result.address = object.address;
+               if (object!=null && object.address!=null) {
+                    result.address = object.address;
+               }
 
                return result;
           }
@@ -7508,13 +7612,23 @@ be unique for a specific instance of an application on a specific device.
                     result.data = new Array<number>();
                     for(var i = 0; i < object.data.length; i++) {
                          var __value__ = object.data[i];
-                         if (__value__ != null) result.data.push(__value__);
+                         if (__value__ != null) {
+                              result.data.push(__value__);
+                         }
                     }
                }
-               if (object!=null && object.size!=null) result.size = object.size;
-               if (object!=null && object.fileName!=null) result.fileName = object.fileName;
-               if (object!=null && object.mimeType!=null) result.mimeType = object.mimeType;
-               if (object!=null && object.referenceUrl!=null) result.referenceUrl = object.referenceUrl;
+               if (object!=null && object.size!=null) {
+                    result.size = object.size;
+               }
+               if (object!=null && object.fileName!=null) {
+                    result.fileName = object.fileName;
+               }
+               if (object!=null && object.mimeType!=null) {
+                    result.mimeType = object.mimeType;
+               }
+               if (object!=null && object.referenceUrl!=null) {
+                    result.referenceUrl = object.referenceUrl;
+               }
 
                return result;
           }
@@ -7734,12 +7848,24 @@ doesn't exist, this will be -1. Used internally.
                var result : FileDescriptor = new FileDescriptor();
 
                // Assign values to bean fields.
-               if (object!=null && object.name!=null) result.name = object.name;
-               if (object!=null && object.path!=null) result.path = object.path;
-               if (object!=null && object.pathAbsolute!=null) result.pathAbsolute = object.pathAbsolute;
-               if (object!=null && object.dateCreated!=null) result.dateCreated = object.dateCreated;
-               if (object!=null && object.dateModified!=null) result.dateModified = object.dateModified;
-               if (object!=null && object.size!=null) result.size = object.size;
+               if (object!=null && object.name!=null) {
+                    result.name = object.name;
+               }
+               if (object!=null && object.path!=null) {
+                    result.path = object.path;
+               }
+               if (object!=null && object.pathAbsolute!=null) {
+                    result.pathAbsolute = object.pathAbsolute;
+               }
+               if (object!=null && object.dateCreated!=null) {
+                    result.dateCreated = object.dateCreated;
+               }
+               if (object!=null && object.dateModified!=null) {
+                    result.dateModified = object.dateModified;
+               }
+               if (object!=null && object.size!=null) {
+                    result.size = object.size;
+               }
 
                return result;
           }
@@ -8022,12 +8148,24 @@ doesn't exist, this will be -1. Used internally.
                var result : Geolocation = new Geolocation(null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.latitude!=null) result.latitude = object.latitude;
-               if (object!=null && object.longitude!=null) result.longitude = object.longitude;
-               if (object!=null && object.altitude!=null) result.altitude = object.altitude;
-               if (object!=null && object.xDoP!=null) result.xDoP = object.xDoP;
-               if (object!=null && object.yDoP!=null) result.yDoP = object.yDoP;
-               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+               if (object!=null && object.latitude!=null) {
+                    result.latitude = object.latitude;
+               }
+               if (object!=null && object.longitude!=null) {
+                    result.longitude = object.longitude;
+               }
+               if (object!=null && object.altitude!=null) {
+                    result.altitude = object.altitude;
+               }
+               if (object!=null && object.xDoP!=null) {
+                    result.xDoP = object.xDoP;
+               }
+               if (object!=null && object.yDoP!=null) {
+                    result.yDoP = object.yDoP;
+               }
+               if (object!=null && object.timestamp!=null) {
+                    result.timestamp = object.timestamp;
+               }
 
                return result;
           }
@@ -8146,8 +8284,12 @@ doesn't exist, this will be -1. Used internally.
                var result : KeyPair = new KeyPair(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyValue!=null) result.keyValue = object.keyValue;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyValue!=null) {
+                    result.keyValue = object.keyValue;
+               }
 
                return result;
           }
@@ -8266,8 +8408,12 @@ doesn't exist, this will be -1. Used internally.
                var result : KeyValue = new KeyValue(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyData!=null) {
+                    result.keyData = object.keyData;
+               }
 
                return result;
           }
@@ -8489,8 +8635,12 @@ Possible lifecycle States:
                var result : Locale = new Locale(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.country!=null) result.country = object.country;
-               if (object!=null && object.language!=null) result.language = object.language;
+               if (object!=null && object.country!=null) {
+                    result.country = object.country;
+               }
+               if (object!=null && object.language!=null) {
+                    result.language = object.language;
+               }
 
                return result;
           }
@@ -8653,8 +8803,12 @@ Possible lifecycle States:
                } else {
                     result.name = IOSType.toObject(null);
                }
-               if (object!=null && object.version!=null) result.version = object.version;
-               if (object!=null && object.vendor!=null) result.vendor = object.vendor;
+               if (object!=null && object.version!=null) {
+                    result.version = object.version;
+               }
+               if (object!=null && object.vendor!=null) {
+                    result.vendor = object.vendor;
+               }
 
                return result;
           }
@@ -8884,7 +9038,9 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
                } else {
                     result.state = RotationEventState.toObject(null);
                }
-               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+               if (object!=null && object.timestamp!=null) {
+                    result.timestamp = object.timestamp;
+               }
 
                return result;
           }
@@ -9003,8 +9159,12 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
                var result : SecureKeyPair = new SecureKeyPair(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.secureKey!=null) result.secureKey = object.secureKey;
-               if (object!=null && object.secureData!=null) result.secureData = object.secureData;
+               if (object!=null && object.secureKey!=null) {
+                    result.secureKey = object.secureKey;
+               }
+               if (object!=null && object.secureData!=null) {
+                    result.secureData = object.secureData;
+               }
 
                return result;
           }
@@ -9507,15 +9667,23 @@ identifiers. This should not be manipulated by the application directly. The 'se
                var result : ServiceRequest = new ServiceRequest(null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.userAgent!=null) result.userAgent = object.userAgent;
-               if (object!=null && object.content!=null) result.content = object.content;
-               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.userAgent!=null) {
+                    result.userAgent = object.userAgent;
+               }
+               if (object!=null && object.content!=null) {
+                    result.content = object.content;
+               }
+               if (object!=null && object.contentType!=null) {
+                    result.contentType = object.contentType;
+               }
                if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                } else {
                     result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object!=null && object.contentLength!=null) {
+                    result.contentLength = object.contentLength;
+               }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -9559,7 +9727,9 @@ identifiers. This should not be manipulated by the application directly. The 'se
                } else {
                     result.serviceToken = ServiceToken.toObject(null);
                }
-               if (object!=null && object.refererHost!=null) result.refererHost = object.refererHost;
+               if (object!=null && object.refererHost!=null) {
+                    result.refererHost = object.refererHost;
+               }
 
                return result;
           }
@@ -9890,14 +10060,20 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                var result : ServiceResponse = new ServiceResponse(null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.content!=null) result.content = object.content;
-               if (object!=null && object.contentType!=null) result.contentType = object.contentType;
+               if (object!=null && object.content!=null) {
+                    result.content = object.content;
+               }
+               if (object!=null && object.contentType!=null) {
+                    result.contentType = object.contentType;
+               }
                if (object!=null && object.contentEncoding!=null) {
                     result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
                } else {
                     result.contentEncoding = IServiceContentEncoding.toObject(null);
                }
-               if (object!=null && object.contentLength!=null) result.contentLength = object.contentLength;
+               if (object!=null && object.contentLength!=null) {
+                    result.contentLength = object.contentLength;
+               }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
                     for(var i = 0; i < object.serviceHeaders.length; i++) {
@@ -9914,7 +10090,9 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                } else {
                     result.serviceSession = ServiceSession.toObject(null);
                }
-               if (object!=null && object.statusCode!=null) result.statusCode = object.statusCode;
+               if (object!=null && object.statusCode!=null) {
+                    result.statusCode = object.statusCode;
+               }
 
                return result;
           }
@@ -10425,14 +10603,30 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                var result : ServiceSessionCookie = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.cookieName!=null) result.cookieName = object.cookieName;
-               if (object!=null && object.cookieValue!=null) result.cookieValue = object.cookieValue;
-               if (object!=null && object.domain!=null) result.domain = object.domain;
-               if (object!=null && object.path!=null) result.path = object.path;
-               if (object!=null && object.scheme!=null) result.scheme = object.scheme;
-               if (object!=null && object.secure!=null) result.secure = object.secure;
-               if (object!=null && object.expiry!=null) result.expiry = object.expiry;
-               if (object!=null && object.creation!=null) result.creation = object.creation;
+               if (object!=null && object.cookieName!=null) {
+                    result.cookieName = object.cookieName;
+               }
+               if (object!=null && object.cookieValue!=null) {
+                    result.cookieValue = object.cookieValue;
+               }
+               if (object!=null && object.domain!=null) {
+                    result.domain = object.domain;
+               }
+               if (object!=null && object.path!=null) {
+                    result.path = object.path;
+               }
+               if (object!=null && object.scheme!=null) {
+                    result.scheme = object.scheme;
+               }
+               if (object!=null && object.secure!=null) {
+                    result.secure = object.secure;
+               }
+               if (object!=null && object.expiry!=null) {
+                    result.expiry = object.expiry;
+               }
+               if (object!=null && object.creation!=null) {
+                    result.creation = object.creation;
+               }
 
                return result;
           }
@@ -10641,9 +10835,15 @@ to a relative path of a function published on a remote service. The 'functionNam
                var result : ServiceToken = new ServiceToken(null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.serviceName!=null) result.serviceName = object.serviceName;
-               if (object!=null && object.endpointName!=null) result.endpointName = object.endpointName;
-               if (object!=null && object.functionName!=null) result.functionName = object.functionName;
+               if (object!=null && object.serviceName!=null) {
+                    result.serviceName = object.serviceName;
+               }
+               if (object!=null && object.endpointName!=null) {
+                    result.endpointName = object.endpointName;
+               }
+               if (object!=null && object.functionName!=null) {
+                    result.functionName = object.functionName;
+               }
                if (object!=null && object.invocationMethod!=null) {
                     result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
                } else {
@@ -11020,7 +11220,9 @@ to a relative path of a function published on a remote service. The 'functionNam
                var result : Contact = new Contact(null, null, null, null, null, null, null, null, null);
 
                // Assign values to parent bean fields.
-               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+               if (object!=null && object.contactId!=null) {
+                    result.contactId = object.contactId;
+               }
 
                // Assign values to bean fields.
                if (object!=null && object.personalInfo!=null) {
@@ -11135,8 +11337,12 @@ to a relative path of a function published on a remote service. The 'functionNam
                var result : ServiceHeader = new ServiceHeader(null, null);
 
                // Assign values to parent bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyData!=null) {
+                    result.keyData = object.keyData;
+               }
 
                return result;
           }
@@ -11173,8 +11379,12 @@ to a relative path of a function published on a remote service. The 'functionNam
                var result : ServiceRequestParameter = new ServiceRequestParameter(null, null);
 
                // Assign values to parent bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyData!=null) {
+                    result.keyData = object.keyData;
+               }
 
                return result;
           }
@@ -11211,8 +11421,12 @@ to a relative path of a function published on a remote service. The 'functionNam
                var result : ServiceSessionAttribute = new ServiceSessionAttribute(null, null);
 
                // Assign values to parent bean fields.
-               if (object!=null && object.keyName!=null) result.keyName = object.keyName;
-               if (object!=null && object.keyData!=null) result.keyData = object.keyData;
+               if (object!=null && object.keyName!=null) {
+                    result.keyName = object.keyName;
+               }
+               if (object!=null && object.keyData!=null) {
+                    result.keyData = object.keyData;
+               }
 
                return result;
           }

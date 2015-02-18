@@ -316,12 +316,24 @@ module Adaptive {
                var result : Geolocation = new Geolocation(null, null, null, null, null, null);
 
                // Assign values to bean fields.
-               if (object!=null && object.latitude!=null) result.latitude = object.latitude;
-               if (object!=null && object.longitude!=null) result.longitude = object.longitude;
-               if (object!=null && object.altitude!=null) result.altitude = object.altitude;
-               if (object!=null && object.xDoP!=null) result.xDoP = object.xDoP;
-               if (object!=null && object.yDoP!=null) result.yDoP = object.yDoP;
-               if (object!=null && object.timestamp!=null) result.timestamp = object.timestamp;
+               if (object!=null && object.latitude!=null) {
+                    result.latitude = object.latitude;
+               }
+               if (object!=null && object.longitude!=null) {
+                    result.longitude = object.longitude;
+               }
+               if (object!=null && object.altitude!=null) {
+                    result.altitude = object.altitude;
+               }
+               if (object!=null && object.xDoP!=null) {
+                    result.xDoP = object.xDoP;
+               }
+               if (object!=null && object.yDoP!=null) {
+                    result.yDoP = object.yDoP;
+               }
+               if (object!=null && object.timestamp!=null) {
+                    result.timestamp = object.timestamp;
+               }
 
                return result;
           }

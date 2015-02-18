@@ -254,18 +254,23 @@ var Adaptive;
                 result.data = new Array();
                 for (var i = 0; i < object.data.length; i++) {
                     var __value__ = object.data[i];
-                    if (__value__ != null)
+                    if (__value__ != null) {
                         result.data.push(__value__);
+                    }
                 }
             }
-            if (object != null && object.size != null)
+            if (object != null && object.size != null) {
                 result.size = object.size;
-            if (object != null && object.fileName != null)
+            }
+            if (object != null && object.fileName != null) {
                 result.fileName = object.fileName;
-            if (object != null && object.mimeType != null)
+            }
+            if (object != null && object.mimeType != null) {
                 result.mimeType = object.mimeType;
-            if (object != null && object.referenceUrl != null)
+            }
+            if (object != null && object.referenceUrl != null) {
                 result.referenceUrl = object.referenceUrl;
+            }
             return result;
         };
         return EmailAttachmentData;

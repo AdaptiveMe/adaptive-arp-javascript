@@ -197,8 +197,12 @@ module Adaptive {
                } else {
                     result.name = IOSType.toObject(null);
                }
-               if (object!=null && object.version!=null) result.version = object.version;
-               if (object!=null && object.vendor!=null) result.vendor = object.vendor;
+               if (object!=null && object.version!=null) {
+                    result.version = object.version;
+               }
+               if (object!=null && object.vendor!=null) {
+                    result.vendor = object.vendor;
+               }
 
                return result;
           }

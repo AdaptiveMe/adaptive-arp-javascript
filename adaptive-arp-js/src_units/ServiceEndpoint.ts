@@ -196,7 +196,9 @@ module Adaptive {
                } else {
                     result.validationType = IServiceCertificateValidation.toObject(null);
                }
-               if (object!=null && object.hostURI!=null) result.hostURI = object.hostURI;
+               if (object!=null && object.hostURI!=null) {
+                    result.hostURI = object.hostURI;
+               }
                if (object != null && object.paths != null) {
                     result.paths = new Array<ServicePath>();
                     for(var i = 0; i < object.paths.length; i++) {

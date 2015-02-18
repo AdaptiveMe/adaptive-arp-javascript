@@ -145,8 +145,9 @@ var Adaptive;
                     }
                 }
             }
-            if (object != null && object.name != null)
+            if (object != null && object.name != null) {
                 result.name = object.name;
+            }
             return result;
         };
         return Service;

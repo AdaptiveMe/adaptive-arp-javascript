@@ -326,18 +326,21 @@ var Adaptive;
         ServiceResponse.toObject = function (object) {
             var result = new ServiceResponse(null, null, null, null, null, null, null);
             // Assign values to bean fields.
-            if (object != null && object.content != null)
+            if (object != null && object.content != null) {
                 result.content = object.content;
-            if (object != null && object.contentType != null)
+            }
+            if (object != null && object.contentType != null) {
                 result.contentType = object.contentType;
+            }
             if (object != null && object.contentEncoding != null) {
                 result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(object.contentEncoding);
             }
             else {
                 result.contentEncoding = Adaptive.IServiceContentEncoding.toObject(null);
             }
-            if (object != null && object.contentLength != null)
+            if (object != null && object.contentLength != null) {
                 result.contentLength = object.contentLength;
+            }
             if (object != null && object.serviceHeaders != null) {
                 result.serviceHeaders = new Array();
                 for (var i = 0; i < object.serviceHeaders.length; i++) {
@@ -356,8 +359,9 @@ var Adaptive;
             else {
                 result.serviceSession = Adaptive.ServiceSession.toObject(null);
             }
-            if (object != null && object.statusCode != null)
+            if (object != null && object.statusCode != null) {
                 result.statusCode = object.statusCode;
+            }
             return result;
         };
         return ServiceResponse;

@@ -413,7 +413,9 @@ module Adaptive {
                var result : Contact = new Contact(null, null, null, null, null, null, null, null, null);
 
                // Assign values to parent bean fields.
-               if (object!=null && object.contactId!=null) result.contactId = object.contactId;
+               if (object!=null && object.contactId!=null) {
+                    result.contactId = object.contactId;
+               }
 
                // Assign values to bean fields.
                if (object!=null && object.personalInfo!=null) {
