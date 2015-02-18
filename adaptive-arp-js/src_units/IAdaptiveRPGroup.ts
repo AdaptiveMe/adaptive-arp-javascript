@@ -116,41 +116,8 @@ module Adaptive {
           */
           static toObject(object : any) : IAdaptiveRPGroup {
                var retValue : IAdaptiveRPGroup = IAdaptiveRPGroup.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application":
-                              retValue = IAdaptiveRPGroup.Application;
-                         case "Commerce":
-                              retValue = IAdaptiveRPGroup.Commerce;
-                         case "Communication":
-                              retValue = IAdaptiveRPGroup.Communication;
-                         case "Data":
-                              retValue = IAdaptiveRPGroup.Data;
-                         case "Media":
-                              retValue = IAdaptiveRPGroup.Media;
-                         case "Notification":
-                              retValue = IAdaptiveRPGroup.Notification;
-                         case "PIM":
-                              retValue = IAdaptiveRPGroup.PIM;
-                         case "Reader":
-                              retValue = IAdaptiveRPGroup.Reader;
-                         case "Security":
-                              retValue = IAdaptiveRPGroup.Security;
-                         case "Sensor":
-                              retValue = IAdaptiveRPGroup.Sensor;
-                         case "Social":
-                              retValue = IAdaptiveRPGroup.Social;
-                         case "System":
-                              retValue = IAdaptiveRPGroup.System;
-                         case "UI":
-                              retValue = IAdaptiveRPGroup.UI;
-                         case "Util":
-                              retValue = IAdaptiveRPGroup.Util;
-                         case "Kernel":
-                              retValue = IAdaptiveRPGroup.Kernel;
-                         default:
-                              retValue = IAdaptiveRPGroup.Unknown;
-                    }
+               if (object != null && object.value != null && IAdaptiveRPGroup.hasOwnProperty(object.value)) {
+                    retValue = IAdaptiveRPGroup[object.value];
                }
                return retValue;
           }

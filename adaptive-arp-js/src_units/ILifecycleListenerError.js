@@ -52,17 +52,8 @@ var Adaptive;
         */
         ILifecycleListenerError.toObject = function (object) {
             var retValue = ILifecycleListenerError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Runtime":
-                        retValue = ILifecycleListenerError.Runtime;
-                    case "Implementation":
-                        retValue = ILifecycleListenerError.Implementation;
-                    case "Killed":
-                        retValue = ILifecycleListenerError.Killed;
-                    default:
-                        retValue = ILifecycleListenerError.Unknown;
-                }
+            if (object != null && object.value != null && ILifecycleListenerError.hasOwnProperty(object.value)) {
+                retValue = ILifecycleListenerError[object.value];
             }
             return retValue;
         };

@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : ITelephonyStatus {
                var retValue : ITelephonyStatus = ITelephonyStatus.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Dialing":
-                              retValue = ITelephonyStatus.Dialing;
-                         case "Failed":
-                              retValue = ITelephonyStatus.Failed;
-                         default:
-                              retValue = ITelephonyStatus.Unknown;
-                    }
+               if (object != null && object.value != null && ITelephonyStatus.hasOwnProperty(object.value)) {
+                    retValue = ITelephonyStatus[object.value];
                }
                return retValue;
           }

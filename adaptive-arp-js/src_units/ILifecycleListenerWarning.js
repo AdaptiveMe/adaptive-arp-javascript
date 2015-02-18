@@ -52,15 +52,8 @@ var Adaptive;
         */
         ILifecycleListenerWarning.toObject = function (object) {
             var retValue = ILifecycleListenerWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "MemoryLow":
-                        retValue = ILifecycleListenerWarning.MemoryLow;
-                    case "BatteryLow":
-                        retValue = ILifecycleListenerWarning.BatteryLow;
-                    default:
-                        retValue = ILifecycleListenerWarning.Unknown;
-                }
+            if (object != null && object.value != null && ILifecycleListenerWarning.hasOwnProperty(object.value)) {
+                retValue = ILifecycleListenerWarning[object.value];
             }
             return retValue;
         };

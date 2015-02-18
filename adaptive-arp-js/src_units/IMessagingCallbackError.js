@@ -52,21 +52,8 @@ var Adaptive;
         */
         IMessagingCallbackError.toObject = function (object) {
             var retValue = IMessagingCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "SIMNotPresent":
-                        retValue = IMessagingCallbackError.SIMNotPresent;
-                    case "EmailAccountNotFound":
-                        retValue = IMessagingCallbackError.EmailAccountNotFound;
-                    case "NotSent":
-                        retValue = IMessagingCallbackError.NotSent;
-                    case "WrongParams":
-                        retValue = IMessagingCallbackError.WrongParams;
-                    case "NotSupported":
-                        retValue = IMessagingCallbackError.NotSupported;
-                    default:
-                        retValue = IMessagingCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && IMessagingCallbackError.hasOwnProperty(object.value)) {
+                retValue = IMessagingCallbackError[object.value];
             }
             return retValue;
         };

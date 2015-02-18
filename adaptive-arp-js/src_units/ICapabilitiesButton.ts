@@ -68,17 +68,8 @@ module Adaptive {
           */
           static toObject(object : any) : ICapabilitiesButton {
                var retValue : ICapabilitiesButton = ICapabilitiesButton.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HomeButton":
-                              retValue = ICapabilitiesButton.HomeButton;
-                         case "BackButton":
-                              retValue = ICapabilitiesButton.BackButton;
-                         case "OptionButton":
-                              retValue = ICapabilitiesButton.OptionButton;
-                         default:
-                              retValue = ICapabilitiesButton.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesButton.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesButton[object.value];
                }
                return retValue;
           }

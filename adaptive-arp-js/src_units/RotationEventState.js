@@ -52,17 +52,8 @@ var Adaptive;
         */
         RotationEventState.toObject = function (object) {
             var retValue = RotationEventState.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "WillStartRotation":
-                        retValue = RotationEventState.WillStartRotation;
-                    case "IsRotating":
-                        retValue = RotationEventState.IsRotating;
-                    case "DidFinishRotation":
-                        retValue = RotationEventState.DidFinishRotation;
-                    default:
-                        retValue = RotationEventState.Unknown;
-                }
+            if (object != null && object.value != null && RotationEventState.hasOwnProperty(object.value)) {
+                retValue = RotationEventState[object.value];
             }
             return retValue;
         };

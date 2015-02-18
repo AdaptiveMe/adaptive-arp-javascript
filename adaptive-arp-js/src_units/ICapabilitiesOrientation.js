@@ -52,19 +52,8 @@ var Adaptive;
         */
         ICapabilitiesOrientation.toObject = function (object) {
             var retValue = ICapabilitiesOrientation.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Portrait_Up":
-                        retValue = ICapabilitiesOrientation.PortraitUp;
-                    case "Portrait_Down":
-                        retValue = ICapabilitiesOrientation.PortraitDown;
-                    case "Landscape_Left":
-                        retValue = ICapabilitiesOrientation.LandscapeLeft;
-                    case "Landscape_Right":
-                        retValue = ICapabilitiesOrientation.LandscapeRight;
-                    default:
-                        retValue = ICapabilitiesOrientation.Unknown;
-                }
+            if (object != null && object.value != null && ICapabilitiesOrientation.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesOrientation[object.value];
             }
             return retValue;
         };

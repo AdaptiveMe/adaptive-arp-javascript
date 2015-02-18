@@ -52,15 +52,8 @@ var Adaptive;
         */
         IFileSystemType.toObject = function (object) {
             var retValue = IFileSystemType.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Directory":
-                        retValue = IFileSystemType.Directory;
-                    case "File":
-                        retValue = IFileSystemType.File;
-                    default:
-                        retValue = IFileSystemType.Unknown;
-                }
+            if (object != null && object.value != null && IFileSystemType.hasOwnProperty(object.value)) {
+                retValue = IFileSystemType[object.value];
             }
             return retValue;
         };

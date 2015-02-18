@@ -52,11 +52,8 @@ var Adaptive;
         */
         IDeviceOrientationListenerError.toObject = function (object) {
             var retValue = IDeviceOrientationListenerError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    default:
-                        retValue = IDeviceOrientationListenerError.Unknown;
-                }
+            if (object != null && object.value != null && IDeviceOrientationListenerError.hasOwnProperty(object.value)) {
+                retValue = IDeviceOrientationListenerError[object.value];
             }
             return retValue;
         };

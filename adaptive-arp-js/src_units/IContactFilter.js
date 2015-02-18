@@ -52,17 +52,8 @@ var Adaptive;
         */
         IContactFilter.toObject = function (object) {
             var retValue = IContactFilter.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "HAS_PHONE":
-                        retValue = IContactFilter.HASPHONE;
-                    case "HAS_EMAIL":
-                        retValue = IContactFilter.HASEMAIL;
-                    case "HAS_ADDRESS":
-                        retValue = IContactFilter.HASADDRESS;
-                    default:
-                        retValue = IContactFilter.Unknown;
-                }
+            if (object != null && object.value != null && IContactFilter.hasOwnProperty(object.value)) {
+                retValue = IContactFilter[object.value];
             }
             return retValue;
         };

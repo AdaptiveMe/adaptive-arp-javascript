@@ -52,21 +52,8 @@ var Adaptive;
         */
         ContactSocialNetwork.toObject = function (object) {
             var retValue = ContactSocialNetwork.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Twitter":
-                        retValue = ContactSocialNetwork.Twitter;
-                    case "Facebook":
-                        retValue = ContactSocialNetwork.Facebook;
-                    case "GooglePlus":
-                        retValue = ContactSocialNetwork.GooglePlus;
-                    case "LinkedIn":
-                        retValue = ContactSocialNetwork.LinkedIn;
-                    case "Flickr":
-                        retValue = ContactSocialNetwork.Flickr;
-                    default:
-                        retValue = ContactSocialNetwork.Unknown;
-                }
+            if (object != null && object.value != null && ContactSocialNetwork.hasOwnProperty(object.value)) {
+                retValue = ContactSocialNetwork[object.value];
             }
             return retValue;
         };

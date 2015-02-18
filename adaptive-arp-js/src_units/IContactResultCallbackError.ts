@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : IContactResultCallbackError {
                var retValue : IContactResultCallbackError = IContactResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              retValue = IContactResultCallbackError.NoPermission;
-                         case "Wrong_Params":
-                              retValue = IContactResultCallbackError.WrongParams;
-                         default:
-                              retValue = IContactResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IContactResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IContactResultCallbackError[object.value];
                }
                return retValue;
           }

@@ -52,33 +52,8 @@ var Adaptive;
         */
         INetworkReachabilityCallbackError.toObject = function (object) {
             var retValue = INetworkReachabilityCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Forbidden":
-                        retValue = INetworkReachabilityCallbackError.Forbidden;
-                    case "NotFound":
-                        retValue = INetworkReachabilityCallbackError.NotFound;
-                    case "MethodNotAllowed":
-                        retValue = INetworkReachabilityCallbackError.MethodNotAllowed;
-                    case "NotAllowed":
-                        retValue = INetworkReachabilityCallbackError.NotAllowed;
-                    case "NotAuthenticated":
-                        retValue = INetworkReachabilityCallbackError.NotAuthenticated;
-                    case "TimeOut":
-                        retValue = INetworkReachabilityCallbackError.TimeOut;
-                    case "NoResponse":
-                        retValue = INetworkReachabilityCallbackError.NoResponse;
-                    case "Unreachable":
-                        retValue = INetworkReachabilityCallbackError.Unreachable;
-                    case "Wrong_Params":
-                        retValue = INetworkReachabilityCallbackError.WrongParams;
-                    case "MalformedUrl":
-                        retValue = INetworkReachabilityCallbackError.MalformedUrl;
-                    case "DomainUnresolvable":
-                        retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
-                    default:
-                        retValue = INetworkReachabilityCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && INetworkReachabilityCallbackError.hasOwnProperty(object.value)) {
+                retValue = INetworkReachabilityCallbackError[object.value];
             }
             return retValue;
         };

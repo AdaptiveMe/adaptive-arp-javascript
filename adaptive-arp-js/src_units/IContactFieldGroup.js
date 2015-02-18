@@ -52,27 +52,8 @@ var Adaptive;
         */
         IContactFieldGroup.toObject = function (object) {
             var retValue = IContactFieldGroup.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "PERSONAL_INFO":
-                        retValue = IContactFieldGroup.PERSONALINFO;
-                    case "PROFESSIONAL_INFO":
-                        retValue = IContactFieldGroup.PROFESSIONALINFO;
-                    case "ADDRESSES":
-                        retValue = IContactFieldGroup.ADDRESSES;
-                    case "PHONES":
-                        retValue = IContactFieldGroup.PHONES;
-                    case "EMAILS":
-                        retValue = IContactFieldGroup.EMAILS;
-                    case "WEBSITES":
-                        retValue = IContactFieldGroup.WEBSITES;
-                    case "SOCIALS":
-                        retValue = IContactFieldGroup.SOCIALS;
-                    case "TAGS":
-                        retValue = IContactFieldGroup.TAGS;
-                    default:
-                        retValue = IContactFieldGroup.Unknown;
-                }
+            if (object != null && object.value != null && IContactFieldGroup.hasOwnProperty(object.value)) {
+                retValue = IContactFieldGroup[object.value];
             }
             return retValue;
         };

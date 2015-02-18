@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : ILifecycleListenerWarning {
                var retValue : ILifecycleListenerWarning = ILifecycleListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "MemoryLow":
-                              retValue = ILifecycleListenerWarning.MemoryLow;
-                         case "BatteryLow":
-                              retValue = ILifecycleListenerWarning.BatteryLow;
-                         default:
-                              retValue = ILifecycleListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && ILifecycleListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = ILifecycleListenerWarning[object.value];
                }
                return retValue;
           }

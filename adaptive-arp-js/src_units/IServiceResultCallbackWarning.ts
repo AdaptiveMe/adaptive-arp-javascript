@@ -100,33 +100,8 @@ module Adaptive {
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
                var retValue : IServiceResultCallbackWarning = IServiceResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "CertificateUntrusted":
-                              retValue = IServiceResultCallbackWarning.CertificateUntrusted;
-                         case "NotSecure":
-                              retValue = IServiceResultCallbackWarning.NotSecure;
-                         case "Redirected":
-                              retValue = IServiceResultCallbackWarning.Redirected;
-                         case "Wrong_Params":
-                              retValue = IServiceResultCallbackWarning.WrongParams;
-                         case "Forbidden":
-                              retValue = IServiceResultCallbackWarning.Forbidden;
-                         case "NotFound":
-                              retValue = IServiceResultCallbackWarning.NotFound;
-                         case "MethodNotAllowed":
-                              retValue = IServiceResultCallbackWarning.MethodNotAllowed;
-                         case "NotAllowed":
-                              retValue = IServiceResultCallbackWarning.NotAllowed;
-                         case "NotAuthenticated":
-                              retValue = IServiceResultCallbackWarning.NotAuthenticated;
-                         case "PaymentRequired":
-                              retValue = IServiceResultCallbackWarning.PaymentRequired;
-                         case "ServerError":
-                              retValue = IServiceResultCallbackWarning.ServerError;
-                         default:
-                              retValue = IServiceResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IServiceResultCallbackWarning[object.value];
                }
                return retValue;
           }

@@ -60,13 +60,8 @@ module Adaptive {
           */
           static toObject(object : any) : IButtonListenerError {
                var retValue : IButtonListenerError = IButtonListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Not_Present":
-                              retValue = IButtonListenerError.NotPresent;
-                         default:
-                              retValue = IButtonListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IButtonListenerError.hasOwnProperty(object.value)) {
+                    retValue = IButtonListenerError[object.value];
                }
                return retValue;
           }

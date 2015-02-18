@@ -52,25 +52,8 @@ var Adaptive;
         */
         ICapabilitiesNet.toObject = function (object) {
             var retValue = ICapabilitiesNet.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "GSM":
-                        retValue = ICapabilitiesNet.GSM;
-                    case "GPRS":
-                        retValue = ICapabilitiesNet.GPRS;
-                    case "HSDPA":
-                        retValue = ICapabilitiesNet.HSDPA;
-                    case "LTE":
-                        retValue = ICapabilitiesNet.LTE;
-                    case "WIFI":
-                        retValue = ICapabilitiesNet.WIFI;
-                    case "Ethernet":
-                        retValue = ICapabilitiesNet.Ethernet;
-                    case "Unavailable":
-                        retValue = ICapabilitiesNet.Unavailable;
-                    default:
-                        retValue = ICapabilitiesNet.Unknown;
-                }
+            if (object != null && object.value != null && ICapabilitiesNet.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesNet[object.value];
             }
             return retValue;
         };

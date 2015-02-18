@@ -88,27 +88,8 @@ module Adaptive {
           */
           static toObject(object : any) : LifecycleState {
                var retValue : LifecycleState = LifecycleState.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Starting":
-                              retValue = LifecycleState.Starting;
-                         case "Started":
-                              retValue = LifecycleState.Started;
-                         case "Running":
-                              retValue = LifecycleState.Running;
-                         case "Pausing":
-                              retValue = LifecycleState.Pausing;
-                         case "PausedIdle":
-                              retValue = LifecycleState.PausedIdle;
-                         case "PausedRun":
-                              retValue = LifecycleState.PausedRun;
-                         case "Resuming":
-                              retValue = LifecycleState.Resuming;
-                         case "Stopping":
-                              retValue = LifecycleState.Stopping;
-                         default:
-                              retValue = LifecycleState.Unknown;
-                    }
+               if (object != null && object.value != null && LifecycleState.hasOwnProperty(object.value)) {
+                    retValue = LifecycleState[object.value];
                }
                return retValue;
           }

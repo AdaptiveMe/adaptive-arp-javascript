@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : IMessagingCallbackWarning {
                var retValue : IMessagingCallbackWarning = IMessagingCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "UnableToSentAll":
-                              retValue = IMessagingCallbackWarning.UnableToSentAll;
-                         case "UnableToFetchAttachment":
-                              retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
-                         default:
-                              retValue = IMessagingCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IMessagingCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IMessagingCallbackWarning[object.value];
                }
                return retValue;
           }

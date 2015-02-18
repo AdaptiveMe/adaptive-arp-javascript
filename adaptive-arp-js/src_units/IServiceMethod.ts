@@ -68,17 +68,8 @@ module Adaptive {
           */
           static toObject(object : any) : IServiceMethod {
                var retValue : IServiceMethod = IServiceMethod.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "POST":
-                              retValue = IServiceMethod.POST;
-                         case "GET":
-                              retValue = IServiceMethod.GET;
-                         case "HEAD":
-                              retValue = IServiceMethod.HEAD;
-                         default:
-                              retValue = IServiceMethod.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceMethod.hasOwnProperty(object.value)) {
+                    retValue = IServiceMethod[object.value];
                }
                return retValue;
           }

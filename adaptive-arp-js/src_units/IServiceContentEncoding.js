@@ -52,19 +52,8 @@ var Adaptive;
         */
         IServiceContentEncoding.toObject = function (object) {
             var retValue = IServiceContentEncoding.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "ASCII":
-                        retValue = IServiceContentEncoding.ASCII;
-                    case "UTF8":
-                        retValue = IServiceContentEncoding.UTF8;
-                    case "ISOLatin1":
-                        retValue = IServiceContentEncoding.ISOLatin1;
-                    case "Unicode":
-                        retValue = IServiceContentEncoding.Unicode;
-                    default:
-                        retValue = IServiceContentEncoding.Unknown;
-                }
+            if (object != null && object.value != null && IServiceContentEncoding.hasOwnProperty(object.value)) {
+                retValue = IServiceContentEncoding[object.value];
             }
             return retValue;
         };

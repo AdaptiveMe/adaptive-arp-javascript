@@ -52,17 +52,8 @@ var Adaptive;
         */
         IDatabaseTableResultCallbackWarning.toObject = function (object) {
             var retValue = IDatabaseTableResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "TableExists":
-                        retValue = IDatabaseTableResultCallbackWarning.TableExists;
-                    case "TableLocked":
-                        retValue = IDatabaseTableResultCallbackWarning.TableLocked;
-                    case "NoResults":
-                        retValue = IDatabaseTableResultCallbackWarning.NoResults;
-                    default:
-                        retValue = IDatabaseTableResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && IDatabaseTableResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IDatabaseTableResultCallbackWarning[object.value];
             }
             return retValue;
         };

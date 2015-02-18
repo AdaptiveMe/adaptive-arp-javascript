@@ -76,21 +76,8 @@ module Adaptive {
           */
           static toObject(object : any) : ICapabilitiesCommunication {
                var retValue : ICapabilitiesCommunication = ICapabilitiesCommunication.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Calendar":
-                              retValue = ICapabilitiesCommunication.Calendar;
-                         case "Contact":
-                              retValue = ICapabilitiesCommunication.Contact;
-                         case "Mail":
-                              retValue = ICapabilitiesCommunication.Mail;
-                         case "Messaging":
-                              retValue = ICapabilitiesCommunication.Messaging;
-                         case "Telephony":
-                              retValue = ICapabilitiesCommunication.Telephony;
-                         default:
-                              retValue = ICapabilitiesCommunication.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesCommunication.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesCommunication[object.value];
                }
                return retValue;
           }

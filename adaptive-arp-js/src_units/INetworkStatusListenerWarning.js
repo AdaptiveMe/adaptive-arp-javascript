@@ -52,15 +52,8 @@ var Adaptive;
         */
         INetworkStatusListenerWarning.toObject = function (object) {
             var retValue = INetworkStatusListenerWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "IpAddressNotAssigned":
-                        retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
-                    case "IpAddressChanged":
-                        retValue = INetworkStatusListenerWarning.IpAddressChanged;
-                    default:
-                        retValue = INetworkStatusListenerWarning.Unknown;
-                }
+            if (object != null && object.value != null && INetworkStatusListenerWarning.hasOwnProperty(object.value)) {
+                retValue = INetworkStatusListenerWarning[object.value];
             }
             return retValue;
         };

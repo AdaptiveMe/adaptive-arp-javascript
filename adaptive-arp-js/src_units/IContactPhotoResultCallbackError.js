@@ -52,17 +52,8 @@ var Adaptive;
         */
         IContactPhotoResultCallbackError.toObject = function (object) {
             var retValue = IContactPhotoResultCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "NoPermission":
-                        retValue = IContactPhotoResultCallbackError.NoPermission;
-                    case "Wrong_Params":
-                        retValue = IContactPhotoResultCallbackError.WrongParams;
-                    case "No_Photo":
-                        retValue = IContactPhotoResultCallbackError.NoPhoto;
-                    default:
-                        retValue = IContactPhotoResultCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && IContactPhotoResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IContactPhotoResultCallbackError[object.value];
             }
             return retValue;
         };

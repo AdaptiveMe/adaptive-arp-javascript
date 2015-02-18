@@ -80,23 +80,8 @@ module Adaptive {
           */
           static toObject(object : any) : IFileSystemStorageType {
                var retValue : IFileSystemStorageType = IFileSystemStorageType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application":
-                              retValue = IFileSystemStorageType.Application;
-                         case "Document":
-                              retValue = IFileSystemStorageType.Document;
-                         case "Cloud":
-                              retValue = IFileSystemStorageType.Cloud;
-                         case "Protected":
-                              retValue = IFileSystemStorageType.Protected;
-                         case "Cache":
-                              retValue = IFileSystemStorageType.Cache;
-                         case "External":
-                              retValue = IFileSystemStorageType.External;
-                         default:
-                              retValue = IFileSystemStorageType.Unknown;
-                    }
+               if (object != null && object.value != null && IFileSystemStorageType.hasOwnProperty(object.value)) {
+                    retValue = IFileSystemStorageType[object.value];
                }
                return retValue;
           }

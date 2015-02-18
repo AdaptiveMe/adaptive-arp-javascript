@@ -52,17 +52,8 @@ var Adaptive;
         */
         IDatabaseResultCallbackError.toObject = function (object) {
             var retValue = IDatabaseResultCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "NoSpace":
-                        retValue = IDatabaseResultCallbackError.NoSpace;
-                    case "SqlException":
-                        retValue = IDatabaseResultCallbackError.SqlException;
-                    case "NotDeleted":
-                        retValue = IDatabaseResultCallbackError.NotDeleted;
-                    default:
-                        retValue = IDatabaseResultCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && IDatabaseResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IDatabaseResultCallbackError[object.value];
             }
             return retValue;
         };

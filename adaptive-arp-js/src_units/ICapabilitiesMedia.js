@@ -52,21 +52,8 @@ var Adaptive;
         */
         ICapabilitiesMedia.toObject = function (object) {
             var retValue = ICapabilitiesMedia.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Audio_Playback":
-                        retValue = ICapabilitiesMedia.AudioPlayback;
-                    case "Audio_Recording":
-                        retValue = ICapabilitiesMedia.AudioRecording;
-                    case "Camera":
-                        retValue = ICapabilitiesMedia.Camera;
-                    case "Video_Playback":
-                        retValue = ICapabilitiesMedia.VideoPlayback;
-                    case "Video_Recording":
-                        retValue = ICapabilitiesMedia.VideoRecording;
-                    default:
-                        retValue = ICapabilitiesMedia.Unknown;
-                }
+            if (object != null && object.value != null && ICapabilitiesMedia.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesMedia[object.value];
             }
             return retValue;
         };

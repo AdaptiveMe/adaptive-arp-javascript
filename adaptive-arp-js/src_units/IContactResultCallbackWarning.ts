@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : IContactResultCallbackWarning {
                var retValue : IContactResultCallbackWarning = IContactResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "LimitExceeded":
-                              retValue = IContactResultCallbackWarning.LimitExceeded;
-                         case "No_Matches":
-                              retValue = IContactResultCallbackWarning.NoMatches;
-                         default:
-                              retValue = IContactResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IContactResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IContactResultCallbackWarning[object.value];
                }
                return retValue;
           }

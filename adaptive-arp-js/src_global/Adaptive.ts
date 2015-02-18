@@ -22425,17 +22425,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ContactAddressType {
                var retValue : ContactAddressType = ContactAddressType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Home":
-                              retValue = ContactAddressType.Home;
-                         case "Work":
-                              retValue = ContactAddressType.Work;
-                         case "Other":
-                              retValue = ContactAddressType.Other;
-                         default:
-                              retValue = ContactAddressType.Unknown;
-                    }
+               if (object != null && object.value != null && ContactAddressType.hasOwnProperty(object.value)) {
+                    retValue = ContactAddressType[object.value];
                }
                return retValue;
           }
@@ -22475,17 +22466,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ContactEmailType {
                var retValue : ContactEmailType = ContactEmailType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Personal":
-                              retValue = ContactEmailType.Personal;
-                         case "Work":
-                              retValue = ContactEmailType.Work;
-                         case "Other":
-                              retValue = ContactEmailType.Other;
-                         default:
-                              retValue = ContactEmailType.Unknown;
-                    }
+               if (object != null && object.value != null && ContactEmailType.hasOwnProperty(object.value)) {
+                    retValue = ContactEmailType[object.value];
                }
                return retValue;
           }
@@ -22529,19 +22511,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ContactPersonalInfoTitle {
                var retValue : ContactPersonalInfoTitle = ContactPersonalInfoTitle.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Mr":
-                              retValue = ContactPersonalInfoTitle.Mr;
-                         case "Mrs":
-                              retValue = ContactPersonalInfoTitle.Mrs;
-                         case "Ms":
-                              retValue = ContactPersonalInfoTitle.Ms;
-                         case "Dr":
-                              retValue = ContactPersonalInfoTitle.Dr;
-                         default:
-                              retValue = ContactPersonalInfoTitle.Unknown;
-                    }
+               if (object != null && object.value != null && ContactPersonalInfoTitle.hasOwnProperty(object.value)) {
+                    retValue = ContactPersonalInfoTitle[object.value];
                }
                return retValue;
           }
@@ -22597,25 +22568,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ContactPhoneType {
                var retValue : ContactPhoneType = ContactPhoneType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Mobile":
-                              retValue = ContactPhoneType.Mobile;
-                         case "Work":
-                              retValue = ContactPhoneType.Work;
-                         case "Home":
-                              retValue = ContactPhoneType.Home;
-                         case "Main":
-                              retValue = ContactPhoneType.Main;
-                         case "HomeFax":
-                              retValue = ContactPhoneType.HomeFax;
-                         case "WorkFax":
-                              retValue = ContactPhoneType.WorkFax;
-                         case "Other":
-                              retValue = ContactPhoneType.Other;
-                         default:
-                              retValue = ContactPhoneType.Unknown;
-                    }
+               if (object != null && object.value != null && ContactPhoneType.hasOwnProperty(object.value)) {
+                    retValue = ContactPhoneType[object.value];
                }
                return retValue;
           }
@@ -22663,21 +22617,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ContactSocialNetwork {
                var retValue : ContactSocialNetwork = ContactSocialNetwork.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Twitter":
-                              retValue = ContactSocialNetwork.Twitter;
-                         case "Facebook":
-                              retValue = ContactSocialNetwork.Facebook;
-                         case "GooglePlus":
-                              retValue = ContactSocialNetwork.GooglePlus;
-                         case "LinkedIn":
-                              retValue = ContactSocialNetwork.LinkedIn;
-                         case "Flickr":
-                              retValue = ContactSocialNetwork.Flickr;
-                         default:
-                              retValue = ContactSocialNetwork.Unknown;
-                    }
+               if (object != null && object.value != null && ContactSocialNetwork.hasOwnProperty(object.value)) {
+                    retValue = ContactSocialNetwork[object.value];
                }
                return retValue;
           }
@@ -22713,15 +22654,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IAccelerationListenerError {
                var retValue : IAccelerationListenerError = IAccelerationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Unauthorized":
-                              retValue = IAccelerationListenerError.Unauthorized;
-                         case "Unavailable":
-                              retValue = IAccelerationListenerError.Unavailable;
-                         default:
-                              retValue = IAccelerationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IAccelerationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IAccelerationListenerError[object.value];
                }
                return retValue;
           }
@@ -22757,15 +22691,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IAccelerationListenerWarning {
                var retValue : IAccelerationListenerWarning = IAccelerationListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NeedsCalibration":
-                              retValue = IAccelerationListenerWarning.NeedsCalibration;
-                         case "Stale":
-                              retValue = IAccelerationListenerWarning.Stale;
-                         default:
-                              retValue = IAccelerationListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IAccelerationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IAccelerationListenerWarning[object.value];
                }
                return retValue;
           }
@@ -22853,41 +22780,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IAdaptiveRPGroup {
                var retValue : IAdaptiveRPGroup = IAdaptiveRPGroup.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application":
-                              retValue = IAdaptiveRPGroup.Application;
-                         case "Commerce":
-                              retValue = IAdaptiveRPGroup.Commerce;
-                         case "Communication":
-                              retValue = IAdaptiveRPGroup.Communication;
-                         case "Data":
-                              retValue = IAdaptiveRPGroup.Data;
-                         case "Media":
-                              retValue = IAdaptiveRPGroup.Media;
-                         case "Notification":
-                              retValue = IAdaptiveRPGroup.Notification;
-                         case "PIM":
-                              retValue = IAdaptiveRPGroup.PIM;
-                         case "Reader":
-                              retValue = IAdaptiveRPGroup.Reader;
-                         case "Security":
-                              retValue = IAdaptiveRPGroup.Security;
-                         case "Sensor":
-                              retValue = IAdaptiveRPGroup.Sensor;
-                         case "Social":
-                              retValue = IAdaptiveRPGroup.Social;
-                         case "System":
-                              retValue = IAdaptiveRPGroup.System;
-                         case "UI":
-                              retValue = IAdaptiveRPGroup.UI;
-                         case "Util":
-                              retValue = IAdaptiveRPGroup.Util;
-                         case "Kernel":
-                              retValue = IAdaptiveRPGroup.Kernel;
-                         default:
-                              retValue = IAdaptiveRPGroup.Unknown;
-                    }
+               if (object != null && object.value != null && IAdaptiveRPGroup.hasOwnProperty(object.value)) {
+                    retValue = IAdaptiveRPGroup[object.value];
                }
                return retValue;
           }
@@ -22919,13 +22813,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IButtonListenerError {
                var retValue : IButtonListenerError = IButtonListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Not_Present":
-                              retValue = IButtonListenerError.NotPresent;
-                         default:
-                              retValue = IButtonListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IButtonListenerError.hasOwnProperty(object.value)) {
+                    retValue = IButtonListenerError[object.value];
                }
                return retValue;
           }
@@ -22957,13 +22846,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IButtonListenerWarning {
                var retValue : IButtonListenerWarning = IButtonListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Not_Implemented":
-                              retValue = IButtonListenerWarning.NotImplemented;
-                         default:
-                              retValue = IButtonListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IButtonListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IButtonListenerWarning[object.value];
                }
                return retValue;
           }
@@ -23003,17 +22887,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesButton {
                var retValue : ICapabilitiesButton = ICapabilitiesButton.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HomeButton":
-                              retValue = ICapabilitiesButton.HomeButton;
-                         case "BackButton":
-                              retValue = ICapabilitiesButton.BackButton;
-                         case "OptionButton":
-                              retValue = ICapabilitiesButton.OptionButton;
-                         default:
-                              retValue = ICapabilitiesButton.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesButton.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesButton[object.value];
                }
                return retValue;
           }
@@ -23061,21 +22936,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesCommunication {
                var retValue : ICapabilitiesCommunication = ICapabilitiesCommunication.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Calendar":
-                              retValue = ICapabilitiesCommunication.Calendar;
-                         case "Contact":
-                              retValue = ICapabilitiesCommunication.Contact;
-                         case "Mail":
-                              retValue = ICapabilitiesCommunication.Mail;
-                         case "Messaging":
-                              retValue = ICapabilitiesCommunication.Messaging;
-                         case "Telephony":
-                              retValue = ICapabilitiesCommunication.Telephony;
-                         default:
-                              retValue = ICapabilitiesCommunication.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesCommunication.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesCommunication[object.value];
                }
                return retValue;
           }
@@ -23115,17 +22977,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesData {
                var retValue : ICapabilitiesData = ICapabilitiesData.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Database":
-                              retValue = ICapabilitiesData.Database;
-                         case "File":
-                              retValue = ICapabilitiesData.File;
-                         case "Cloud":
-                              retValue = ICapabilitiesData.Cloud;
-                         default:
-                              retValue = ICapabilitiesData.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesData.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesData[object.value];
                }
                return retValue;
           }
@@ -23173,21 +23026,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesMedia {
                var retValue : ICapabilitiesMedia = ICapabilitiesMedia.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Audio_Playback":
-                              retValue = ICapabilitiesMedia.AudioPlayback;
-                         case "Audio_Recording":
-                              retValue = ICapabilitiesMedia.AudioRecording;
-                         case "Camera":
-                              retValue = ICapabilitiesMedia.Camera;
-                         case "Video_Playback":
-                              retValue = ICapabilitiesMedia.VideoPlayback;
-                         case "Video_Recording":
-                              retValue = ICapabilitiesMedia.VideoRecording;
-                         default:
-                              retValue = ICapabilitiesMedia.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesMedia.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesMedia[object.value];
                }
                return retValue;
           }
@@ -23243,25 +23083,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesNet {
                var retValue : ICapabilitiesNet = ICapabilitiesNet.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "GSM":
-                              retValue = ICapabilitiesNet.GSM;
-                         case "GPRS":
-                              retValue = ICapabilitiesNet.GPRS;
-                         case "HSDPA":
-                              retValue = ICapabilitiesNet.HSDPA;
-                         case "LTE":
-                              retValue = ICapabilitiesNet.LTE;
-                         case "WIFI":
-                              retValue = ICapabilitiesNet.WIFI;
-                         case "Ethernet":
-                              retValue = ICapabilitiesNet.Ethernet;
-                         case "Unavailable":
-                              retValue = ICapabilitiesNet.Unavailable;
-                         default:
-                              retValue = ICapabilitiesNet.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesNet.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesNet[object.value];
                }
                return retValue;
           }
@@ -23305,19 +23128,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesNotification {
                var retValue : ICapabilitiesNotification = ICapabilitiesNotification.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Alarm":
-                              retValue = ICapabilitiesNotification.Alarm;
-                         case "LocalNotification":
-                              retValue = ICapabilitiesNotification.LocalNotification;
-                         case "RemoteNotification":
-                              retValue = ICapabilitiesNotification.RemoteNotification;
-                         case "Vibration":
-                              retValue = ICapabilitiesNotification.Vibration;
-                         default:
-                              retValue = ICapabilitiesNotification.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesNotification.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesNotification[object.value];
                }
                return retValue;
           }
@@ -23361,19 +23173,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesOrientation {
                var retValue : ICapabilitiesOrientation = ICapabilitiesOrientation.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Portrait_Up":
-                              retValue = ICapabilitiesOrientation.PortraitUp;
-                         case "Portrait_Down":
-                              retValue = ICapabilitiesOrientation.PortraitDown;
-                         case "Landscape_Left":
-                              retValue = ICapabilitiesOrientation.LandscapeLeft;
-                         case "Landscape_Right":
-                              retValue = ICapabilitiesOrientation.LandscapeRight;
-                         default:
-                              retValue = ICapabilitiesOrientation.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesOrientation.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesOrientation[object.value];
                }
                return retValue;
           }
@@ -23429,25 +23230,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ICapabilitiesSensor {
                var retValue : ICapabilitiesSensor = ICapabilitiesSensor.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Accelerometer":
-                              retValue = ICapabilitiesSensor.Accelerometer;
-                         case "AmbientLight":
-                              retValue = ICapabilitiesSensor.AmbientLight;
-                         case "Barometer":
-                              retValue = ICapabilitiesSensor.Barometer;
-                         case "Geolocation":
-                              retValue = ICapabilitiesSensor.Geolocation;
-                         case "Gyroscope":
-                              retValue = ICapabilitiesSensor.Gyroscope;
-                         case "Magnetometer":
-                              retValue = ICapabilitiesSensor.Magnetometer;
-                         case "Proximity":
-                              retValue = ICapabilitiesSensor.Proximity;
-                         default:
-                              retValue = ICapabilitiesSensor.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesSensor.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesSensor[object.value];
                }
                return retValue;
           }
@@ -23507,27 +23291,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactFieldGroup {
                var retValue : IContactFieldGroup = IContactFieldGroup.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "PERSONAL_INFO":
-                              retValue = IContactFieldGroup.PERSONALINFO;
-                         case "PROFESSIONAL_INFO":
-                              retValue = IContactFieldGroup.PROFESSIONALINFO;
-                         case "ADDRESSES":
-                              retValue = IContactFieldGroup.ADDRESSES;
-                         case "PHONES":
-                              retValue = IContactFieldGroup.PHONES;
-                         case "EMAILS":
-                              retValue = IContactFieldGroup.EMAILS;
-                         case "WEBSITES":
-                              retValue = IContactFieldGroup.WEBSITES;
-                         case "SOCIALS":
-                              retValue = IContactFieldGroup.SOCIALS;
-                         case "TAGS":
-                              retValue = IContactFieldGroup.TAGS;
-                         default:
-                              retValue = IContactFieldGroup.Unknown;
-                    }
+               if (object != null && object.value != null && IContactFieldGroup.hasOwnProperty(object.value)) {
+                    retValue = IContactFieldGroup[object.value];
                }
                return retValue;
           }
@@ -23567,17 +23332,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactFilter {
                var retValue : IContactFilter = IContactFilter.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HAS_PHONE":
-                              retValue = IContactFilter.HASPHONE;
-                         case "HAS_EMAIL":
-                              retValue = IContactFilter.HASEMAIL;
-                         case "HAS_ADDRESS":
-                              retValue = IContactFilter.HASADDRESS;
-                         default:
-                              retValue = IContactFilter.Unknown;
-                    }
+               if (object != null && object.value != null && IContactFilter.hasOwnProperty(object.value)) {
+                    retValue = IContactFilter[object.value];
                }
                return retValue;
           }
@@ -23617,17 +23373,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactPhotoResultCallbackError {
                var retValue : IContactPhotoResultCallbackError = IContactPhotoResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              retValue = IContactPhotoResultCallbackError.NoPermission;
-                         case "Wrong_Params":
-                              retValue = IContactPhotoResultCallbackError.WrongParams;
-                         case "No_Photo":
-                              retValue = IContactPhotoResultCallbackError.NoPhoto;
-                         default:
-                              retValue = IContactPhotoResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IContactPhotoResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IContactPhotoResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -23663,15 +23410,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactPhotoResultCallbackWarning {
                var retValue : IContactPhotoResultCallbackWarning = IContactPhotoResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "LimitExceeded":
-                              retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
-                         case "No_Matches":
-                              retValue = IContactPhotoResultCallbackWarning.NoMatches;
-                         default:
-                              retValue = IContactPhotoResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IContactPhotoResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IContactPhotoResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -23707,15 +23447,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactResultCallbackError {
                var retValue : IContactResultCallbackError = IContactResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              retValue = IContactResultCallbackError.NoPermission;
-                         case "Wrong_Params":
-                              retValue = IContactResultCallbackError.WrongParams;
-                         default:
-                              retValue = IContactResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IContactResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IContactResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -23751,15 +23484,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IContactResultCallbackWarning {
                var retValue : IContactResultCallbackWarning = IContactResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "LimitExceeded":
-                              retValue = IContactResultCallbackWarning.LimitExceeded;
-                         case "No_Matches":
-                              retValue = IContactResultCallbackWarning.NoMatches;
-                         default:
-                              retValue = IContactResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IContactResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IContactResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -23799,17 +23525,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDatabaseResultCallbackError {
                var retValue : IDatabaseResultCallbackError = IDatabaseResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoSpace":
-                              retValue = IDatabaseResultCallbackError.NoSpace;
-                         case "SqlException":
-                              retValue = IDatabaseResultCallbackError.SqlException;
-                         case "NotDeleted":
-                              retValue = IDatabaseResultCallbackError.NotDeleted;
-                         default:
-                              retValue = IDatabaseResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -23845,15 +23562,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDatabaseResultCallbackWarning {
                var retValue : IDatabaseResultCallbackWarning = IDatabaseResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "DatabaseExists":
-                              retValue = IDatabaseResultCallbackWarning.DatabaseExists;
-                         case "IsOpen":
-                              retValue = IDatabaseResultCallbackWarning.IsOpen;
-                         default:
-                              retValue = IDatabaseResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -23901,21 +23611,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDatabaseTableResultCallbackError {
                var retValue : IDatabaseTableResultCallbackError = IDatabaseTableResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoSpace":
-                              retValue = IDatabaseTableResultCallbackError.NoSpace;
-                         case "ReadOnlyTable":
-                              retValue = IDatabaseTableResultCallbackError.ReadOnlyTable;
-                         case "SqlException":
-                              retValue = IDatabaseTableResultCallbackError.SqlException;
-                         case "DatabaseNotFound":
-                              retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
-                         case "NoTableFound":
-                              retValue = IDatabaseTableResultCallbackError.NoTableFound;
-                         default:
-                              retValue = IDatabaseTableResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseTableResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseTableResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -23955,17 +23652,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDatabaseTableResultCallbackWarning {
                var retValue : IDatabaseTableResultCallbackWarning = IDatabaseTableResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "TableExists":
-                              retValue = IDatabaseTableResultCallbackWarning.TableExists;
-                         case "TableLocked":
-                              retValue = IDatabaseTableResultCallbackWarning.TableLocked;
-                         case "NoResults":
-                              retValue = IDatabaseTableResultCallbackWarning.NoResults;
-                         default:
-                              retValue = IDatabaseTableResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseTableResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseTableResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -23993,11 +23681,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDeviceOrientationListenerError {
                var retValue : IDeviceOrientationListenerError = IDeviceOrientationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         default:
-                              retValue = IDeviceOrientationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IDeviceOrientationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IDeviceOrientationListenerError[object.value];
                }
                return retValue;
           }
@@ -24025,11 +23710,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDeviceOrientationListenerWarning {
                var retValue : IDeviceOrientationListenerWarning = IDeviceOrientationListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         default:
-                              retValue = IDeviceOrientationListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDeviceOrientationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IDeviceOrientationListenerWarning[object.value];
                }
                return retValue;
           }
@@ -24057,11 +23739,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDisplayOrientationListenerError {
                var retValue : IDisplayOrientationListenerError = IDisplayOrientationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         default:
-                              retValue = IDisplayOrientationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IDisplayOrientationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IDisplayOrientationListenerError[object.value];
                }
                return retValue;
           }
@@ -24093,13 +23772,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IDisplayOrientationListenerWarning {
                var retValue : IDisplayOrientationListenerWarning = IDisplayOrientationListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application_Vetoed":
-                              retValue = IDisplayOrientationListenerWarning.ApplicationVetoed;
-                         default:
-                              retValue = IDisplayOrientationListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDisplayOrientationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IDisplayOrientationListenerWarning[object.value];
                }
                return retValue;
           }
@@ -24139,17 +23813,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileDataLoadResultCallbackError {
                var retValue : IFileDataLoadResultCallbackError = IFileDataLoadResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              retValue = IFileDataLoadResultCallbackError.InexistentFile;
-                         case "InsufficientSpace":
-                              retValue = IFileDataLoadResultCallbackError.InsufficientSpace;
-                         case "Unauthorized":
-                              retValue = IFileDataLoadResultCallbackError.Unauthorized;
-                         default:
-                              retValue = IFileDataLoadResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IFileDataLoadResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileDataLoadResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -24181,13 +23846,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileDataLoadResultCallbackWarning {
                var retValue : IFileDataLoadResultCallbackWarning = IFileDataLoadResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "ExceedMaximumSize":
-                              retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
-                         default:
-                              retValue = IFileDataLoadResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IFileDataLoadResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IFileDataLoadResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -24227,17 +23887,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileDataStoreResultCallbackError {
                var retValue : IFileDataStoreResultCallbackError = IFileDataStoreResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              retValue = IFileDataStoreResultCallbackError.InexistentFile;
-                         case "InsufficientSpace":
-                              retValue = IFileDataStoreResultCallbackError.InsufficientSpace;
-                         case "Unauthorized":
-                              retValue = IFileDataStoreResultCallbackError.Unauthorized;
-                         default:
-                              retValue = IFileDataStoreResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IFileDataStoreResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileDataStoreResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -24269,13 +23920,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileDataStoreResultCallbackWarning {
                var retValue : IFileDataStoreResultCallbackWarning = IFileDataStoreResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "ExceedMaximumSize":
-                              retValue = IFileDataStoreResultCallbackWarning.ExceedMaximumSize;
-                         default:
-                              retValue = IFileDataStoreResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IFileDataStoreResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IFileDataStoreResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -24311,15 +23957,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileListResultCallbackError {
                var retValue : IFileListResultCallbackError = IFileListResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              retValue = IFileListResultCallbackError.InexistentFile;
-                         case "Unauthorized":
-                              retValue = IFileListResultCallbackError.Unauthorized;
-                         default:
-                              retValue = IFileListResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IFileListResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileListResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -24351,13 +23990,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileListResultCallbackWarning {
                var retValue : IFileListResultCallbackWarning = IFileListResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "PartialResult":
-                              retValue = IFileListResultCallbackWarning.PartialResult;
-                         default:
-                              retValue = IFileListResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IFileListResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IFileListResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -24405,21 +24039,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileResultCallbackError {
                var retValue : IFileResultCallbackError = IFileResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "FileExists":
-                              retValue = IFileResultCallbackError.FileExists;
-                         case "SourceInexistent":
-                              retValue = IFileResultCallbackError.SourceInexistent;
-                         case "DestionationExists":
-                              retValue = IFileResultCallbackError.DestionationExists;
-                         case "InsufficientSpace":
-                              retValue = IFileResultCallbackError.InsufficientSpace;
-                         case "Unauthorized":
-                              retValue = IFileResultCallbackError.Unauthorized;
-                         default:
-                              retValue = IFileResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IFileResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -24455,15 +24076,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileResultCallbackWarning {
                var retValue : IFileResultCallbackWarning = IFileResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "SourceNotDeleted":
-                              retValue = IFileResultCallbackWarning.SourceNotDeleted;
-                         case "RootDirectory":
-                              retValue = IFileResultCallbackWarning.RootDirectory;
-                         default:
-                              retValue = IFileResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IFileResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IFileResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -24503,17 +24117,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileSystemSecurity {
                var retValue : IFileSystemSecurity = IFileSystemSecurity.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Default":
-                              retValue = IFileSystemSecurity.Default;
-                         case "Protected":
-                              retValue = IFileSystemSecurity.Protected;
-                         case "Encrypted":
-                              retValue = IFileSystemSecurity.Encrypted;
-                         default:
-                              retValue = IFileSystemSecurity.Unknown;
-                    }
+               if (object != null && object.value != null && IFileSystemSecurity.hasOwnProperty(object.value)) {
+                    retValue = IFileSystemSecurity[object.value];
                }
                return retValue;
           }
@@ -24565,23 +24170,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileSystemStorageType {
                var retValue : IFileSystemStorageType = IFileSystemStorageType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application":
-                              retValue = IFileSystemStorageType.Application;
-                         case "Document":
-                              retValue = IFileSystemStorageType.Document;
-                         case "Cloud":
-                              retValue = IFileSystemStorageType.Cloud;
-                         case "Protected":
-                              retValue = IFileSystemStorageType.Protected;
-                         case "Cache":
-                              retValue = IFileSystemStorageType.Cache;
-                         case "External":
-                              retValue = IFileSystemStorageType.External;
-                         default:
-                              retValue = IFileSystemStorageType.Unknown;
-                    }
+               if (object != null && object.value != null && IFileSystemStorageType.hasOwnProperty(object.value)) {
+                    retValue = IFileSystemStorageType[object.value];
                }
                return retValue;
           }
@@ -24617,15 +24207,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IFileSystemType {
                var retValue : IFileSystemType = IFileSystemType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Directory":
-                              retValue = IFileSystemType.Directory;
-                         case "File":
-                              retValue = IFileSystemType.File;
-                         default:
-                              retValue = IFileSystemType.Unknown;
-                    }
+               if (object != null && object.value != null && IFileSystemType.hasOwnProperty(object.value)) {
+                    retValue = IFileSystemType[object.value];
                }
                return retValue;
           }
@@ -24669,19 +24252,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IGeolocationListenerError {
                var retValue : IGeolocationListenerError = IGeolocationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Disabled":
-                              retValue = IGeolocationListenerError.Disabled;
-                         case "RestrictedAccess":
-                              retValue = IGeolocationListenerError.RestrictedAccess;
-                         case "DeniedAccess":
-                              retValue = IGeolocationListenerError.DeniedAccess;
-                         case "StatusNotDetermined":
-                              retValue = IGeolocationListenerError.StatusNotDetermined;
-                         default:
-                              retValue = IGeolocationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IGeolocationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IGeolocationListenerError[object.value];
                }
                return retValue;
           }
@@ -24717,15 +24289,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IGeolocationListenerWarning {
                var retValue : IGeolocationListenerWarning = IGeolocationListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "HighDoP":
-                              retValue = IGeolocationListenerWarning.HighDoP;
-                         case "StaleData":
-                              retValue = IGeolocationListenerWarning.StaleData;
-                         default:
-                              retValue = IGeolocationListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IGeolocationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IGeolocationListenerWarning[object.value];
                }
                return retValue;
           }
@@ -24765,17 +24330,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ILifecycleListenerError {
                var retValue : ILifecycleListenerError = ILifecycleListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Runtime":
-                              retValue = ILifecycleListenerError.Runtime;
-                         case "Implementation":
-                              retValue = ILifecycleListenerError.Implementation;
-                         case "Killed":
-                              retValue = ILifecycleListenerError.Killed;
-                         default:
-                              retValue = ILifecycleListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && ILifecycleListenerError.hasOwnProperty(object.value)) {
+                    retValue = ILifecycleListenerError[object.value];
                }
                return retValue;
           }
@@ -24811,15 +24367,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ILifecycleListenerWarning {
                var retValue : ILifecycleListenerWarning = ILifecycleListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "MemoryLow":
-                              retValue = ILifecycleListenerWarning.MemoryLow;
-                         case "BatteryLow":
-                              retValue = ILifecycleListenerWarning.BatteryLow;
-                         default:
-                              retValue = ILifecycleListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && ILifecycleListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = ILifecycleListenerWarning[object.value];
                }
                return retValue;
           }
@@ -24863,19 +24412,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ILoggingLogLevel {
                var retValue : ILoggingLogLevel = ILoggingLogLevel.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "DEBUG":
-                              retValue = ILoggingLogLevel.DEBUG;
-                         case "WARN":
-                              retValue = ILoggingLogLevel.WARN;
-                         case "ERROR":
-                              retValue = ILoggingLogLevel.ERROR;
-                         case "INFO":
-                              retValue = ILoggingLogLevel.INFO;
-                         default:
-                              retValue = ILoggingLogLevel.Unknown;
-                    }
+               if (object != null && object.value != null && ILoggingLogLevel.hasOwnProperty(object.value)) {
+                    retValue = ILoggingLogLevel[object.value];
                }
                return retValue;
           }
@@ -24923,21 +24461,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IMessagingCallbackError {
                var retValue : IMessagingCallbackError = IMessagingCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "SIMNotPresent":
-                              retValue = IMessagingCallbackError.SIMNotPresent;
-                         case "EmailAccountNotFound":
-                              retValue = IMessagingCallbackError.EmailAccountNotFound;
-                         case "NotSent":
-                              retValue = IMessagingCallbackError.NotSent;
-                         case "WrongParams":
-                              retValue = IMessagingCallbackError.WrongParams;
-                         case "NotSupported":
-                              retValue = IMessagingCallbackError.NotSupported;
-                         default:
-                              retValue = IMessagingCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IMessagingCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IMessagingCallbackError[object.value];
                }
                return retValue;
           }
@@ -24973,15 +24498,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IMessagingCallbackWarning {
                var retValue : IMessagingCallbackWarning = IMessagingCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "UnableToSentAll":
-                              retValue = IMessagingCallbackWarning.UnableToSentAll;
-                         case "UnableToFetchAttachment":
-                              retValue = IMessagingCallbackWarning.UnableToFetchAttachment;
-                         default:
-                              retValue = IMessagingCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IMessagingCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IMessagingCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -25053,33 +24571,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : INetworkReachabilityCallbackError {
                var retValue : INetworkReachabilityCallbackError = INetworkReachabilityCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Forbidden":
-                              retValue = INetworkReachabilityCallbackError.Forbidden;
-                         case "NotFound":
-                              retValue = INetworkReachabilityCallbackError.NotFound;
-                         case "MethodNotAllowed":
-                              retValue = INetworkReachabilityCallbackError.MethodNotAllowed;
-                         case "NotAllowed":
-                              retValue = INetworkReachabilityCallbackError.NotAllowed;
-                         case "NotAuthenticated":
-                              retValue = INetworkReachabilityCallbackError.NotAuthenticated;
-                         case "TimeOut":
-                              retValue = INetworkReachabilityCallbackError.TimeOut;
-                         case "NoResponse":
-                              retValue = INetworkReachabilityCallbackError.NoResponse;
-                         case "Unreachable":
-                              retValue = INetworkReachabilityCallbackError.Unreachable;
-                         case "Wrong_Params":
-                              retValue = INetworkReachabilityCallbackError.WrongParams;
-                         case "MalformedUrl":
-                              retValue = INetworkReachabilityCallbackError.MalformedUrl;
-                         case "DomainUnresolvable":
-                              retValue = INetworkReachabilityCallbackError.DomainUnresolvable;
-                         default:
-                              retValue = INetworkReachabilityCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && INetworkReachabilityCallbackError.hasOwnProperty(object.value)) {
+                    retValue = INetworkReachabilityCallbackError[object.value];
                }
                return retValue;
           }
@@ -25127,21 +24620,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : INetworkReachabilityCallbackWarning {
                var retValue : INetworkReachabilityCallbackWarning = INetworkReachabilityCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "IncorrectScheme":
-                              retValue = INetworkReachabilityCallbackWarning.IncorrectScheme;
-                         case "NotSecure":
-                              retValue = INetworkReachabilityCallbackWarning.NotSecure;
-                         case "NotTrusted":
-                              retValue = INetworkReachabilityCallbackWarning.NotTrusted;
-                         case "Redirected":
-                              retValue = INetworkReachabilityCallbackWarning.Redirected;
-                         case "NotRegisteredService":
-                              retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
-                         default:
-                              retValue = INetworkReachabilityCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && INetworkReachabilityCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = INetworkReachabilityCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -25177,15 +24657,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : INetworkStatusListenerError {
                var retValue : INetworkStatusListenerError = INetworkStatusListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              retValue = INetworkStatusListenerError.NoPermission;
-                         case "Unreachable":
-                              retValue = INetworkStatusListenerError.Unreachable;
-                         default:
-                              retValue = INetworkStatusListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && INetworkStatusListenerError.hasOwnProperty(object.value)) {
+                    retValue = INetworkStatusListenerError[object.value];
                }
                return retValue;
           }
@@ -25221,15 +24694,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : INetworkStatusListenerWarning {
                var retValue : INetworkStatusListenerWarning = INetworkStatusListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "IpAddressNotAssigned":
-                              retValue = INetworkStatusListenerWarning.IpAddressNotAssigned;
-                         case "IpAddressChanged":
-                              retValue = INetworkStatusListenerWarning.IpAddressChanged;
-                         default:
-                              retValue = INetworkStatusListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && INetworkStatusListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = INetworkStatusListenerWarning[object.value];
                }
                return retValue;
           }
@@ -25301,33 +24767,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IOSType {
                var retValue : IOSType = IOSType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "iOS":
-                              retValue = IOSType.iOS;
-                         case "OSX":
-                              retValue = IOSType.OSX;
-                         case "Windows":
-                              retValue = IOSType.Windows;
-                         case "WindowsPhone":
-                              retValue = IOSType.WindowsPhone;
-                         case "Android":
-                              retValue = IOSType.Android;
-                         case "Linux":
-                              retValue = IOSType.Linux;
-                         case "Blackberry":
-                              retValue = IOSType.Blackberry;
-                         case "Tizen":
-                              retValue = IOSType.Tizen;
-                         case "FirefoxOS":
-                              retValue = IOSType.FirefoxOS;
-                         case "Chromium":
-                              retValue = IOSType.Chromium;
-                         case "Unspecified":
-                              retValue = IOSType.Unspecified;
-                         default:
-                              retValue = IOSType.Unknown;
-                    }
+               if (object != null && object.value != null && IOSType.hasOwnProperty(object.value)) {
+                    retValue = IOSType[object.value];
                }
                return retValue;
           }
@@ -25363,15 +24804,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ISecurityResultCallbackError {
                var retValue : ISecurityResultCallbackError = ISecurityResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoPermission":
-                              retValue = ISecurityResultCallbackError.NoPermission;
-                         case "NoMatchesFound":
-                              retValue = ISecurityResultCallbackError.NoMatchesFound;
-                         default:
-                              retValue = ISecurityResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && ISecurityResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = ISecurityResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -25403,13 +24837,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ISecurityResultCallbackWarning {
                var retValue : ISecurityResultCallbackWarning = ISecurityResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "EntryOverride":
-                              retValue = ISecurityResultCallbackWarning.EntryOverride;
-                         default:
-                              retValue = ISecurityResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && ISecurityResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = ISecurityResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -25453,19 +24882,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceCertificateValidation {
                var retValue : IServiceCertificateValidation = IServiceCertificateValidation.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "None":
-                              retValue = IServiceCertificateValidation.None;
-                         case "Normal":
-                              retValue = IServiceCertificateValidation.Normal;
-                         case "Extended":
-                              retValue = IServiceCertificateValidation.Extended;
-                         case "Extreme":
-                              retValue = IServiceCertificateValidation.Extreme;
-                         default:
-                              retValue = IServiceCertificateValidation.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceCertificateValidation.hasOwnProperty(object.value)) {
+                    retValue = IServiceCertificateValidation[object.value];
                }
                return retValue;
           }
@@ -25509,19 +24927,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceContentEncoding {
                var retValue : IServiceContentEncoding = IServiceContentEncoding.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "ASCII":
-                              retValue = IServiceContentEncoding.ASCII;
-                         case "UTF8":
-                              retValue = IServiceContentEncoding.UTF8;
-                         case "ISOLatin1":
-                              retValue = IServiceContentEncoding.ISOLatin1;
-                         case "Unicode":
-                              retValue = IServiceContentEncoding.Unicode;
-                         default:
-                              retValue = IServiceContentEncoding.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceContentEncoding.hasOwnProperty(object.value)) {
+                    retValue = IServiceContentEncoding[object.value];
                }
                return retValue;
           }
@@ -25561,17 +24968,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceMethod {
                var retValue : IServiceMethod = IServiceMethod.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "POST":
-                              retValue = IServiceMethod.POST;
-                         case "GET":
-                              retValue = IServiceMethod.GET;
-                         case "HEAD":
-                              retValue = IServiceMethod.HEAD;
-                         default:
-                              retValue = IServiceMethod.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceMethod.hasOwnProperty(object.value)) {
+                    retValue = IServiceMethod[object.value];
                }
                return retValue;
           }
@@ -25615,19 +25013,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceType {
                var retValue : IServiceType = IServiceType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "OctetBinary":
-                              retValue = IServiceType.OctetBinary;
-                         case "RestJson":
-                              retValue = IServiceType.RestJson;
-                         case "RestXml":
-                              retValue = IServiceType.RestXml;
-                         case "SoapXml":
-                              retValue = IServiceType.SoapXml;
-                         default:
-                              retValue = IServiceType.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceType.hasOwnProperty(object.value)) {
+                    retValue = IServiceType[object.value];
                }
                return retValue;
           }
@@ -25675,21 +25062,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceResultCallbackError {
                var retValue : IServiceResultCallbackError = IServiceResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "TimeOut":
-                              retValue = IServiceResultCallbackError.TimeOut;
-                         case "NoResponse":
-                              retValue = IServiceResultCallbackError.NoResponse;
-                         case "Unreachable":
-                              retValue = IServiceResultCallbackError.Unreachable;
-                         case "MalformedUrl":
-                              retValue = IServiceResultCallbackError.MalformedUrl;
-                         case "NotRegisteredService":
-                              retValue = IServiceResultCallbackError.NotRegisteredService;
-                         default:
-                              retValue = IServiceResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IServiceResultCallbackError[object.value];
                }
                return retValue;
           }
@@ -25761,33 +25135,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : IServiceResultCallbackWarning {
                var retValue : IServiceResultCallbackWarning = IServiceResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "CertificateUntrusted":
-                              retValue = IServiceResultCallbackWarning.CertificateUntrusted;
-                         case "NotSecure":
-                              retValue = IServiceResultCallbackWarning.NotSecure;
-                         case "Redirected":
-                              retValue = IServiceResultCallbackWarning.Redirected;
-                         case "Wrong_Params":
-                              retValue = IServiceResultCallbackWarning.WrongParams;
-                         case "Forbidden":
-                              retValue = IServiceResultCallbackWarning.Forbidden;
-                         case "NotFound":
-                              retValue = IServiceResultCallbackWarning.NotFound;
-                         case "MethodNotAllowed":
-                              retValue = IServiceResultCallbackWarning.MethodNotAllowed;
-                         case "NotAllowed":
-                              retValue = IServiceResultCallbackWarning.NotAllowed;
-                         case "NotAuthenticated":
-                              retValue = IServiceResultCallbackWarning.NotAuthenticated;
-                         case "PaymentRequired":
-                              retValue = IServiceResultCallbackWarning.PaymentRequired;
-                         case "ServerError":
-                              retValue = IServiceResultCallbackWarning.ServerError;
-                         default:
-                              retValue = IServiceResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IServiceResultCallbackWarning[object.value];
                }
                return retValue;
           }
@@ -25823,15 +25172,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : ITelephonyStatus {
                var retValue : ITelephonyStatus = ITelephonyStatus.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Dialing":
-                              retValue = ITelephonyStatus.Dialing;
-                         case "Failed":
-                              retValue = ITelephonyStatus.Failed;
-                         default:
-                              retValue = ITelephonyStatus.Unknown;
-                    }
+               if (object != null && object.value != null && ITelephonyStatus.hasOwnProperty(object.value)) {
+                    retValue = ITelephonyStatus[object.value];
                }
                return retValue;
           }
@@ -25891,27 +25233,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : LifecycleState {
                var retValue : LifecycleState = LifecycleState.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Starting":
-                              retValue = LifecycleState.Starting;
-                         case "Started":
-                              retValue = LifecycleState.Started;
-                         case "Running":
-                              retValue = LifecycleState.Running;
-                         case "Pausing":
-                              retValue = LifecycleState.Pausing;
-                         case "PausedIdle":
-                              retValue = LifecycleState.PausedIdle;
-                         case "PausedRun":
-                              retValue = LifecycleState.PausedRun;
-                         case "Resuming":
-                              retValue = LifecycleState.Resuming;
-                         case "Stopping":
-                              retValue = LifecycleState.Stopping;
-                         default:
-                              retValue = LifecycleState.Unknown;
-                    }
+               if (object != null && object.value != null && LifecycleState.hasOwnProperty(object.value)) {
+                    retValue = LifecycleState[object.value];
                }
                return retValue;
           }
@@ -25951,17 +25274,8 @@ of the device. For device orientation, use the IDevice APIs.
           */
           static toObject(object : any) : RotationEventState {
                var retValue : RotationEventState = RotationEventState.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "WillStartRotation":
-                              retValue = RotationEventState.WillStartRotation;
-                         case "IsRotating":
-                              retValue = RotationEventState.IsRotating;
-                         case "DidFinishRotation":
-                              retValue = RotationEventState.DidFinishRotation;
-                         default:
-                              retValue = RotationEventState.Unknown;
-                    }
+               if (object != null && object.value != null && RotationEventState.hasOwnProperty(object.value)) {
+                    retValue = RotationEventState[object.value];
                }
                return retValue;
           }

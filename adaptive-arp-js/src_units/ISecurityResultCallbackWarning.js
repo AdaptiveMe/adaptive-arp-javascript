@@ -52,13 +52,8 @@ var Adaptive;
         */
         ISecurityResultCallbackWarning.toObject = function (object) {
             var retValue = ISecurityResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "EntryOverride":
-                        retValue = ISecurityResultCallbackWarning.EntryOverride;
-                    default:
-                        retValue = ISecurityResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && ISecurityResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = ISecurityResultCallbackWarning[object.value];
             }
             return retValue;
         };

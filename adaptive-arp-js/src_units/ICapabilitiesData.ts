@@ -68,17 +68,8 @@ module Adaptive {
           */
           static toObject(object : any) : ICapabilitiesData {
                var retValue : ICapabilitiesData = ICapabilitiesData.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Database":
-                              retValue = ICapabilitiesData.Database;
-                         case "File":
-                              retValue = ICapabilitiesData.File;
-                         case "Cloud":
-                              retValue = ICapabilitiesData.Cloud;
-                         default:
-                              retValue = ICapabilitiesData.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesData.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesData[object.value];
                }
                return retValue;
           }

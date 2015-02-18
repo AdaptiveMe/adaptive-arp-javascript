@@ -52,15 +52,8 @@ var Adaptive;
         */
         IAccelerationListenerWarning.toObject = function (object) {
             var retValue = IAccelerationListenerWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "NeedsCalibration":
-                        retValue = IAccelerationListenerWarning.NeedsCalibration;
-                    case "Stale":
-                        retValue = IAccelerationListenerWarning.Stale;
-                    default:
-                        retValue = IAccelerationListenerWarning.Unknown;
-                }
+            if (object != null && object.value != null && IAccelerationListenerWarning.hasOwnProperty(object.value)) {
+                retValue = IAccelerationListenerWarning[object.value];
             }
             return retValue;
         };

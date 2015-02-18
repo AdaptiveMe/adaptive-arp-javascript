@@ -52,13 +52,8 @@ var Adaptive;
         */
         IDisplayOrientationListenerWarning.toObject = function (object) {
             var retValue = IDisplayOrientationListenerWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Application_Vetoed":
-                        retValue = IDisplayOrientationListenerWarning.ApplicationVetoed;
-                    default:
-                        retValue = IDisplayOrientationListenerWarning.Unknown;
-                }
+            if (object != null && object.value != null && IDisplayOrientationListenerWarning.hasOwnProperty(object.value)) {
+                retValue = IDisplayOrientationListenerWarning[object.value];
             }
             return retValue;
         };

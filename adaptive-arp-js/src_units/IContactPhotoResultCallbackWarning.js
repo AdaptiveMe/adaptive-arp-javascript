@@ -52,15 +52,8 @@ var Adaptive;
         */
         IContactPhotoResultCallbackWarning.toObject = function (object) {
             var retValue = IContactPhotoResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "LimitExceeded":
-                        retValue = IContactPhotoResultCallbackWarning.LimitExceeded;
-                    case "No_Matches":
-                        retValue = IContactPhotoResultCallbackWarning.NoMatches;
-                    default:
-                        retValue = IContactPhotoResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && IContactPhotoResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IContactPhotoResultCallbackWarning[object.value];
             }
             return retValue;
         };

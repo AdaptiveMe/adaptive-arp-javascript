@@ -52,15 +52,8 @@ var Adaptive;
         */
         IFileResultCallbackWarning.toObject = function (object) {
             var retValue = IFileResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "SourceNotDeleted":
-                        retValue = IFileResultCallbackWarning.SourceNotDeleted;
-                    case "RootDirectory":
-                        retValue = IFileResultCallbackWarning.RootDirectory;
-                    default:
-                        retValue = IFileResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && IFileResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileResultCallbackWarning[object.value];
             }
             return retValue;
         };

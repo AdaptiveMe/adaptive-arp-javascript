@@ -72,19 +72,8 @@ module Adaptive {
           */
           static toObject(object : any) : IServiceType {
                var retValue : IServiceType = IServiceType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "OctetBinary":
-                              retValue = IServiceType.OctetBinary;
-                         case "RestJson":
-                              retValue = IServiceType.RestJson;
-                         case "RestXml":
-                              retValue = IServiceType.RestXml;
-                         case "SoapXml":
-                              retValue = IServiceType.SoapXml;
-                         default:
-                              retValue = IServiceType.Unknown;
-                    }
+               if (object != null && object.value != null && IServiceType.hasOwnProperty(object.value)) {
+                    retValue = IServiceType[object.value];
                }
                return retValue;
           }

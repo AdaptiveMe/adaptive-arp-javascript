@@ -52,19 +52,8 @@ var Adaptive;
         */
         ContactPersonalInfoTitle.toObject = function (object) {
             var retValue = ContactPersonalInfoTitle.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Mr":
-                        retValue = ContactPersonalInfoTitle.Mr;
-                    case "Mrs":
-                        retValue = ContactPersonalInfoTitle.Mrs;
-                    case "Ms":
-                        retValue = ContactPersonalInfoTitle.Ms;
-                    case "Dr":
-                        retValue = ContactPersonalInfoTitle.Dr;
-                    default:
-                        retValue = ContactPersonalInfoTitle.Unknown;
-                }
+            if (object != null && object.value != null && ContactPersonalInfoTitle.hasOwnProperty(object.value)) {
+                retValue = ContactPersonalInfoTitle[object.value];
             }
             return retValue;
         };

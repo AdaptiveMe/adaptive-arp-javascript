@@ -52,17 +52,8 @@ var Adaptive;
         */
         IFileSystemSecurity.toObject = function (object) {
             var retValue = IFileSystemSecurity.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Default":
-                        retValue = IFileSystemSecurity.Default;
-                    case "Protected":
-                        retValue = IFileSystemSecurity.Protected;
-                    case "Encrypted":
-                        retValue = IFileSystemSecurity.Encrypted;
-                    default:
-                        retValue = IFileSystemSecurity.Unknown;
-                }
+            if (object != null && object.value != null && IFileSystemSecurity.hasOwnProperty(object.value)) {
+                retValue = IFileSystemSecurity[object.value];
             }
             return retValue;
         };

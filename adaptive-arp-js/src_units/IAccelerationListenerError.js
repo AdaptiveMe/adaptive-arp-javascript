@@ -52,15 +52,8 @@ var Adaptive;
         */
         IAccelerationListenerError.toObject = function (object) {
             var retValue = IAccelerationListenerError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Unauthorized":
-                        retValue = IAccelerationListenerError.Unauthorized;
-                    case "Unavailable":
-                        retValue = IAccelerationListenerError.Unavailable;
-                    default:
-                        retValue = IAccelerationListenerError.Unknown;
-                }
+            if (object != null && object.value != null && IAccelerationListenerError.hasOwnProperty(object.value)) {
+                retValue = IAccelerationListenerError[object.value];
             }
             return retValue;
         };

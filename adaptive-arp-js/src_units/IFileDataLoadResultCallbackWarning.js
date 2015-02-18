@@ -52,13 +52,8 @@ var Adaptive;
         */
         IFileDataLoadResultCallbackWarning.toObject = function (object) {
             var retValue = IFileDataLoadResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "ExceedMaximumSize":
-                        retValue = IFileDataLoadResultCallbackWarning.ExceedMaximumSize;
-                    default:
-                        retValue = IFileDataLoadResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && IFileDataLoadResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileDataLoadResultCallbackWarning[object.value];
             }
             return retValue;
         };

@@ -52,33 +52,8 @@ var Adaptive;
         */
         IOSType.toObject = function (object) {
             var retValue = IOSType.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "iOS":
-                        retValue = IOSType.iOS;
-                    case "OSX":
-                        retValue = IOSType.OSX;
-                    case "Windows":
-                        retValue = IOSType.Windows;
-                    case "WindowsPhone":
-                        retValue = IOSType.WindowsPhone;
-                    case "Android":
-                        retValue = IOSType.Android;
-                    case "Linux":
-                        retValue = IOSType.Linux;
-                    case "Blackberry":
-                        retValue = IOSType.Blackberry;
-                    case "Tizen":
-                        retValue = IOSType.Tizen;
-                    case "FirefoxOS":
-                        retValue = IOSType.FirefoxOS;
-                    case "Chromium":
-                        retValue = IOSType.Chromium;
-                    case "Unspecified":
-                        retValue = IOSType.Unspecified;
-                    default:
-                        retValue = IOSType.Unknown;
-                }
+            if (object != null && object.value != null && IOSType.hasOwnProperty(object.value)) {
+                retValue = IOSType[object.value];
             }
             return retValue;
         };

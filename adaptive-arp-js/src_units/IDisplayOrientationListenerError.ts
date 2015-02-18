@@ -56,11 +56,8 @@ module Adaptive {
           */
           static toObject(object : any) : IDisplayOrientationListenerError {
                var retValue : IDisplayOrientationListenerError = IDisplayOrientationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         default:
-                              retValue = IDisplayOrientationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IDisplayOrientationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IDisplayOrientationListenerError[object.value];
                }
                return retValue;
           }

@@ -72,19 +72,8 @@ module Adaptive {
           */
           static toObject(object : any) : IGeolocationListenerError {
                var retValue : IGeolocationListenerError = IGeolocationListenerError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Disabled":
-                              retValue = IGeolocationListenerError.Disabled;
-                         case "RestrictedAccess":
-                              retValue = IGeolocationListenerError.RestrictedAccess;
-                         case "DeniedAccess":
-                              retValue = IGeolocationListenerError.DeniedAccess;
-                         case "StatusNotDetermined":
-                              retValue = IGeolocationListenerError.StatusNotDetermined;
-                         default:
-                              retValue = IGeolocationListenerError.Unknown;
-                    }
+               if (object != null && object.value != null && IGeolocationListenerError.hasOwnProperty(object.value)) {
+                    retValue = IGeolocationListenerError[object.value];
                }
                return retValue;
           }

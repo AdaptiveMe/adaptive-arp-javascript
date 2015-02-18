@@ -68,17 +68,8 @@ module Adaptive {
           */
           static toObject(object : any) : IFileDataLoadResultCallbackError {
                var retValue : IFileDataLoadResultCallbackError = IFileDataLoadResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "InexistentFile":
-                              retValue = IFileDataLoadResultCallbackError.InexistentFile;
-                         case "InsufficientSpace":
-                              retValue = IFileDataLoadResultCallbackError.InsufficientSpace;
-                         case "Unauthorized":
-                              retValue = IFileDataLoadResultCallbackError.Unauthorized;
-                         default:
-                              retValue = IFileDataLoadResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IFileDataLoadResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IFileDataLoadResultCallbackError[object.value];
                }
                return retValue;
           }

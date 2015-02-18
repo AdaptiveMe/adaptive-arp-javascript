@@ -52,25 +52,8 @@ var Adaptive;
         */
         ICapabilitiesSensor.toObject = function (object) {
             var retValue = ICapabilitiesSensor.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "Accelerometer":
-                        retValue = ICapabilitiesSensor.Accelerometer;
-                    case "AmbientLight":
-                        retValue = ICapabilitiesSensor.AmbientLight;
-                    case "Barometer":
-                        retValue = ICapabilitiesSensor.Barometer;
-                    case "Geolocation":
-                        retValue = ICapabilitiesSensor.Geolocation;
-                    case "Gyroscope":
-                        retValue = ICapabilitiesSensor.Gyroscope;
-                    case "Magnetometer":
-                        retValue = ICapabilitiesSensor.Magnetometer;
-                    case "Proximity":
-                        retValue = ICapabilitiesSensor.Proximity;
-                    default:
-                        retValue = ICapabilitiesSensor.Unknown;
-                }
+            if (object != null && object.value != null && ICapabilitiesSensor.hasOwnProperty(object.value)) {
+                retValue = ICapabilitiesSensor[object.value];
             }
             return retValue;
         };

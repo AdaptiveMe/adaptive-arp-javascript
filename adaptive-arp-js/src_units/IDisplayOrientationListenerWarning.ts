@@ -60,13 +60,8 @@ module Adaptive {
           */
           static toObject(object : any) : IDisplayOrientationListenerWarning {
                var retValue : IDisplayOrientationListenerWarning = IDisplayOrientationListenerWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Application_Vetoed":
-                              retValue = IDisplayOrientationListenerWarning.ApplicationVetoed;
-                         default:
-                              retValue = IDisplayOrientationListenerWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDisplayOrientationListenerWarning.hasOwnProperty(object.value)) {
+                    retValue = IDisplayOrientationListenerWarning[object.value];
                }
                return retValue;
           }

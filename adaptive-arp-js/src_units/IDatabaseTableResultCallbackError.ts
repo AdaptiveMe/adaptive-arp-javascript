@@ -76,21 +76,8 @@ module Adaptive {
           */
           static toObject(object : any) : IDatabaseTableResultCallbackError {
                var retValue : IDatabaseTableResultCallbackError = IDatabaseTableResultCallbackError.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "NoSpace":
-                              retValue = IDatabaseTableResultCallbackError.NoSpace;
-                         case "ReadOnlyTable":
-                              retValue = IDatabaseTableResultCallbackError.ReadOnlyTable;
-                         case "SqlException":
-                              retValue = IDatabaseTableResultCallbackError.SqlException;
-                         case "DatabaseNotFound":
-                              retValue = IDatabaseTableResultCallbackError.DatabaseNotFound;
-                         case "NoTableFound":
-                              retValue = IDatabaseTableResultCallbackError.NoTableFound;
-                         default:
-                              retValue = IDatabaseTableResultCallbackError.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseTableResultCallbackError.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseTableResultCallbackError[object.value];
                }
                return retValue;
           }

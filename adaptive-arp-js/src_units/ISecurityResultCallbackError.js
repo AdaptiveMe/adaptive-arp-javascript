@@ -52,15 +52,8 @@ var Adaptive;
         */
         ISecurityResultCallbackError.toObject = function (object) {
             var retValue = ISecurityResultCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "NoPermission":
-                        retValue = ISecurityResultCallbackError.NoPermission;
-                    case "NoMatchesFound":
-                        retValue = ISecurityResultCallbackError.NoMatchesFound;
-                    default:
-                        retValue = ISecurityResultCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && ISecurityResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = ISecurityResultCallbackError[object.value];
             }
             return retValue;
         };

@@ -52,11 +52,8 @@ var Adaptive;
         */
         IDeviceOrientationListenerWarning.toObject = function (object) {
             var retValue = IDeviceOrientationListenerWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    default:
-                        retValue = IDeviceOrientationListenerWarning.Unknown;
-                }
+            if (object != null && object.value != null && IDeviceOrientationListenerWarning.hasOwnProperty(object.value)) {
+                retValue = IDeviceOrientationListenerWarning[object.value];
             }
             return retValue;
         };

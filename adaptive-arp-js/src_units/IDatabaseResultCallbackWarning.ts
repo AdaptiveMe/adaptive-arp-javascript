@@ -64,15 +64,8 @@ module Adaptive {
           */
           static toObject(object : any) : IDatabaseResultCallbackWarning {
                var retValue : IDatabaseResultCallbackWarning = IDatabaseResultCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "DatabaseExists":
-                              retValue = IDatabaseResultCallbackWarning.DatabaseExists;
-                         case "IsOpen":
-                              retValue = IDatabaseResultCallbackWarning.IsOpen;
-                         default:
-                              retValue = IDatabaseResultCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && IDatabaseResultCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = IDatabaseResultCallbackWarning[object.value];
                }
                return retValue;
           }

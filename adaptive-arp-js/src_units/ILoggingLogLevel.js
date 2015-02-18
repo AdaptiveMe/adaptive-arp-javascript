@@ -52,19 +52,8 @@ var Adaptive;
         */
         ILoggingLogLevel.toObject = function (object) {
             var retValue = ILoggingLogLevel.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "DEBUG":
-                        retValue = ILoggingLogLevel.DEBUG;
-                    case "WARN":
-                        retValue = ILoggingLogLevel.WARN;
-                    case "ERROR":
-                        retValue = ILoggingLogLevel.ERROR;
-                    case "INFO":
-                        retValue = ILoggingLogLevel.INFO;
-                    default:
-                        retValue = ILoggingLogLevel.Unknown;
-                }
+            if (object != null && object.value != null && ILoggingLogLevel.hasOwnProperty(object.value)) {
+                retValue = ILoggingLogLevel[object.value];
             }
             return retValue;
         };

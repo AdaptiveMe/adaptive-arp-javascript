@@ -72,19 +72,8 @@ module Adaptive {
           */
           static toObject(object : any) : ICapabilitiesNotification {
                var retValue : ICapabilitiesNotification = ICapabilitiesNotification.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Alarm":
-                              retValue = ICapabilitiesNotification.Alarm;
-                         case "LocalNotification":
-                              retValue = ICapabilitiesNotification.LocalNotification;
-                         case "RemoteNotification":
-                              retValue = ICapabilitiesNotification.RemoteNotification;
-                         case "Vibration":
-                              retValue = ICapabilitiesNotification.Vibration;
-                         default:
-                              retValue = ICapabilitiesNotification.Unknown;
-                    }
+               if (object != null && object.value != null && ICapabilitiesNotification.hasOwnProperty(object.value)) {
+                    retValue = ICapabilitiesNotification[object.value];
                }
                return retValue;
           }

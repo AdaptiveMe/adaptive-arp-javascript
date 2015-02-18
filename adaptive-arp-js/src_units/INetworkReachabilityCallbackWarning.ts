@@ -76,21 +76,8 @@ module Adaptive {
           */
           static toObject(object : any) : INetworkReachabilityCallbackWarning {
                var retValue : INetworkReachabilityCallbackWarning = INetworkReachabilityCallbackWarning.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "IncorrectScheme":
-                              retValue = INetworkReachabilityCallbackWarning.IncorrectScheme;
-                         case "NotSecure":
-                              retValue = INetworkReachabilityCallbackWarning.NotSecure;
-                         case "NotTrusted":
-                              retValue = INetworkReachabilityCallbackWarning.NotTrusted;
-                         case "Redirected":
-                              retValue = INetworkReachabilityCallbackWarning.Redirected;
-                         case "NotRegisteredService":
-                              retValue = INetworkReachabilityCallbackWarning.NotRegisteredService;
-                         default:
-                              retValue = INetworkReachabilityCallbackWarning.Unknown;
-                    }
+               if (object != null && object.value != null && INetworkReachabilityCallbackWarning.hasOwnProperty(object.value)) {
+                    retValue = INetworkReachabilityCallbackWarning[object.value];
                }
                return retValue;
           }

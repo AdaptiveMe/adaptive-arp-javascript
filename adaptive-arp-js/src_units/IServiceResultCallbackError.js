@@ -52,21 +52,8 @@ var Adaptive;
         */
         IServiceResultCallbackError.toObject = function (object) {
             var retValue = IServiceResultCallbackError.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "TimeOut":
-                        retValue = IServiceResultCallbackError.TimeOut;
-                    case "NoResponse":
-                        retValue = IServiceResultCallbackError.NoResponse;
-                    case "Unreachable":
-                        retValue = IServiceResultCallbackError.Unreachable;
-                    case "MalformedUrl":
-                        retValue = IServiceResultCallbackError.MalformedUrl;
-                    case "NotRegisteredService":
-                        retValue = IServiceResultCallbackError.NotRegisteredService;
-                    default:
-                        retValue = IServiceResultCallbackError.Unknown;
-                }
+            if (object != null && object.value != null && IServiceResultCallbackError.hasOwnProperty(object.value)) {
+                retValue = IServiceResultCallbackError[object.value];
             }
             return retValue;
         };

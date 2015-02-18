@@ -68,17 +68,8 @@ module Adaptive {
           */
           static toObject(object : any) : ContactEmailType {
                var retValue : ContactEmailType = ContactEmailType.Unknown;
-               if (object != null && object.value != null) {
-                    switch(object.value) {
-                         case "Personal":
-                              retValue = ContactEmailType.Personal;
-                         case "Work":
-                              retValue = ContactEmailType.Work;
-                         case "Other":
-                              retValue = ContactEmailType.Other;
-                         default:
-                              retValue = ContactEmailType.Unknown;
-                    }
+               if (object != null && object.value != null && ContactEmailType.hasOwnProperty(object.value)) {
+                    retValue = ContactEmailType[object.value];
                }
                return retValue;
           }

@@ -52,13 +52,8 @@ var Adaptive;
         */
         IFileListResultCallbackWarning.toObject = function (object) {
             var retValue = IFileListResultCallbackWarning.Unknown;
-            if (object != null && object.value != null) {
-                switch (object.value) {
-                    case "PartialResult":
-                        retValue = IFileListResultCallbackWarning.PartialResult;
-                    default:
-                        retValue = IFileListResultCallbackWarning.Unknown;
-                }
+            if (object != null && object.value != null && IFileListResultCallbackWarning.hasOwnProperty(object.value)) {
+                retValue = IFileListResultCallbackWarning[object.value];
             }
             return retValue;
         };
