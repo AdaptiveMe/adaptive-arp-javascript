@@ -359,30 +359,14 @@ var Adaptive;
             var result = new ServiceSessionCookie(null, null, null, null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.cookieName != null) {
-                    result.cookieName = object.cookieName;
-                }
-                if (object.cookieValue != null) {
-                    result.cookieValue = object.cookieValue;
-                }
-                if (object.domain != null) {
-                    result.domain = object.domain;
-                }
-                if (object.path != null) {
-                    result.path = object.path;
-                }
-                if (object.scheme != null) {
-                    result.scheme = object.scheme;
-                }
-                if (object.secure != null) {
-                    result.secure = object.secure;
-                }
-                if (object.expiry != null) {
-                    result.expiry = object.expiry;
-                }
-                if (object.creation != null) {
-                    result.creation = object.creation;
-                }
+                result.cookieName = object.cookieName;
+                result.cookieValue = object.cookieValue;
+                result.domain = object.domain;
+                result.path = object.path;
+                result.scheme = object.scheme;
+                result.secure = object.secure;
+                result.expiry = object.expiry;
+                result.creation = object.creation;
             }
             return result;
         };

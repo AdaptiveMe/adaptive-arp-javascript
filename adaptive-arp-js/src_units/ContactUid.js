@@ -107,9 +107,7 @@ var Adaptive;
             var result = new ContactUid(null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.contactId != null) {
-                    result.contactId = object.contactId;
-                }
+                result.contactId = object.contactId;
             }
             return result;
         };

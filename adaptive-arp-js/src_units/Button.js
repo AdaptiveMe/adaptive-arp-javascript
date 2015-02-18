@@ -108,12 +108,7 @@ var Adaptive;
             var result = new Button(null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.type != null) {
-                    result.type = Adaptive.ICapabilitiesButton.toObject(object.type);
-                }
-                else {
-                    result.type = Adaptive.ICapabilitiesButton.toObject(null);
-                }
+                result.type = Adaptive.ICapabilitiesButton.toObject(object.type);
             }
             return result;
         };

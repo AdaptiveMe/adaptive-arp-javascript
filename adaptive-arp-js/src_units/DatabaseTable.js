@@ -253,37 +253,21 @@ var Adaptive;
             var result = new DatabaseTable(null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.name != null) {
-                    result.name = object.name;
-                }
-                if (object.columnCount != null) {
-                    result.columnCount = object.columnCount;
-                }
-                if (object.rowCount != null) {
-                    result.rowCount = object.rowCount;
-                }
+                result.name = object.name;
+                result.columnCount = object.columnCount;
+                result.rowCount = object.rowCount;
                 if (object.databaseColumns != null) {
                     result.databaseColumns = new Array();
                     for (var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
                         var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                        if (vdatabaseColumns != null) {
-                            result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(vdatabaseColumns));
-                        }
-                        else {
-                            result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(null));
-                        }
+                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(vdatabaseColumns));
                     }
                 }
                 if (object.databaseRows != null) {
                     result.databaseRows = new Array();
                     for (var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
                         var vdatabaseRows = object.databaseRows[idatabaseRows];
-                        if (vdatabaseRows != null) {
-                            result.databaseRows.push(Adaptive.DatabaseRow.toObject(vdatabaseRows));
-                        }
-                        else {
-                            result.databaseRows.push(Adaptive.DatabaseRow.toObject(null));
-                        }
+                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(vdatabaseRows));
                     }
                 }
             }

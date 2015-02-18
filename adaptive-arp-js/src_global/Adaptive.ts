@@ -3595,27 +3595,17 @@ listener.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.bridgeType!=null) {
-                         result.bridgeType = object.bridgeType;
-                    }
-                    if (object.methodName!=null) {
-                         result.methodName = object.methodName;
-                    }
+                    result.bridgeType = object.bridgeType;
+                    result.methodName = object.methodName;
                     if (object.parameters != null) {
                          result.parameters = new Array<string>();
                          for(var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
                               var vparameters = object.parameters[iparameters];
-                              if (vparameters != null) {
-                                   result.parameters.push(vparameters);
-                              }
+                              result.parameters.push(vparameters);
                          }
                     }
-                    if (object.asyncId!=null) {
-                         result.asyncId = object.asyncId;
-                    }
-                    if (object.apiVersion!=null) {
-                         result.apiVersion = object.apiVersion;
-                    }
+                    result.asyncId = object.asyncId;
+                    result.apiVersion = object.apiVersion;
 
                }
                return result;
@@ -3770,15 +3760,9 @@ listener.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.response!=null) {
-                         result.response = object.response;
-                    }
-                    if (object.statusCode!=null) {
-                         result.statusCode = object.statusCode;
-                    }
-                    if (object.statusMessage!=null) {
-                         result.statusMessage = object.statusMessage;
-                    }
+                    result.response = object.response;
+                    result.statusCode = object.statusCode;
+                    result.statusMessage = object.statusMessage;
 
                }
                return result;
@@ -4114,33 +4098,19 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.id!=null) {
-                         result.id = object.id;
-                    }
+                    result.id = object.id;
                     if (object.data != null) {
                          result.data = new Array<number>();
                          for(var idata = 0; idata < object.data.length; idata++) {
                               var vdata = object.data[idata];
-                              if (vdata != null) {
-                                   result.data.push(vdata);
-                              }
+                              result.data.push(vdata);
                          }
                     }
-                    if (object.rawType!=null) {
-                         result.rawType = object.rawType;
-                    }
-                    if (object.rawLength!=null) {
-                         result.rawLength = object.rawLength;
-                    }
-                    if (object.cooked!=null) {
-                         result.cooked = object.cooked;
-                    }
-                    if (object.cookedType!=null) {
-                         result.cookedType = object.cookedType;
-                    }
-                    if (object.cookedLength!=null) {
-                         result.cookedLength = object.cookedLength;
-                    }
+                    result.rawType = object.rawType;
+                    result.rawLength = object.rawLength;
+                    result.cooked = object.cooked;
+                    result.cookedType = object.cookedType;
+                    result.cookedLength = object.cookedLength;
 
                }
                return result;
@@ -4263,16 +4233,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                          result.serviceEndpoints = new Array<ServiceEndpoint>();
                          for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
                               var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                              if (vserviceEndpoints != null) {
-                                   result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
-                              } else {
-                                   result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
-                              }
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
                          }
                     }
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
+                    result.name = object.name;
 
                }
                return result;
@@ -4431,23 +4395,13 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.validationType!=null) {
-                         result.validationType = IServiceCertificateValidation.toObject(object.validationType);
-                    } else {
-                         result.validationType = IServiceCertificateValidation.toObject(null);
-                    }
-                    if (object.hostURI!=null) {
-                         result.hostURI = object.hostURI;
-                    }
+                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
+                    result.hostURI = object.hostURI;
                     if (object.paths != null) {
                          result.paths = new Array<ServicePath>();
                          for(var ipaths = 0; ipaths < object.paths.length; ipaths++) {
                               var vpaths = object.paths[ipaths];
-                              if (vpaths != null) {
-                                   result.paths.push(ServicePath.toObject(vpaths));
-                              } else {
-                                   result.paths.push(ServicePath.toObject(null));
-                              }
+                              result.paths.push(ServicePath.toObject(vpaths));
                          }
                     }
 
@@ -4610,25 +4564,15 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.path!=null) {
-                         result.path = object.path;
-                    }
+                    result.path = object.path;
                     if (object.methods != null) {
                          result.methods = new Array<IServiceMethod>();
                          for(var imethods = 0; imethods < object.methods.length; imethods++) {
                               var vmethods = object.methods[imethods];
-                              if (vmethods != null) {
-                                   result.methods.push(IServiceMethod.toObject(vmethods));
-                              } else {
-                                   result.methods.push(IServiceMethod.toObject(null));
-                              }
+                              result.methods.push(IServiceMethod.toObject(vmethods));
                          }
                     }
-                    if (object.type!=null) {
-                         result.type = IServiceType.toObject(object.type);
-                    } else {
-                         result.type = IServiceType.toObject(null);
-                    }
+                    result.type = IServiceType.toObject(object.type);
 
                }
                return result;
@@ -4833,18 +4777,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.x!=null) {
-                         result.x = object.x;
-                    }
-                    if (object.y!=null) {
-                         result.y = object.y;
-                    }
-                    if (object.z!=null) {
-                         result.z = object.z;
-                    }
-                    if (object.timestamp!=null) {
-                         result.timestamp = object.timestamp;
-                    }
+                    result.x = object.x;
+                    result.y = object.y;
+                    result.z = object.z;
+                    result.timestamp = object.timestamp;
 
                }
                return result;
@@ -4923,11 +4859,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.type!=null) {
-                         result.type = ICapabilitiesButton.toObject(object.type);
-                    } else {
-                         result.type = ICapabilitiesButton.toObject(null);
-                    }
+                    result.type = ICapabilitiesButton.toObject(object.type);
 
                }
                return result;
@@ -5048,14 +4980,8 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.address!=null) {
-                         result.address = object.address;
-                    }
-                    if (object.type!=null) {
-                         result.type = ContactAddressType.toObject(object.type);
-                    } else {
-                         result.type = ContactAddressType.toObject(null);
-                    }
+                    result.address = object.address;
+                    result.type = ContactAddressType.toObject(object.type);
 
                }
                return result;
@@ -5218,17 +5144,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.type!=null) {
-                         result.type = ContactEmailType.toObject(object.type);
-                    } else {
-                         result.type = ContactEmailType.toObject(null);
-                    }
-                    if (object.primary!=null) {
-                         result.primary = object.primary;
-                    }
-                    if (object.email!=null) {
-                         result.email = object.email;
-                    }
+                    result.type = ContactEmailType.toObject(object.type);
+                    result.primary = object.primary;
+                    result.email = object.email;
 
                }
                return result;
@@ -5433,20 +5351,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.middleName!=null) {
-                         result.middleName = object.middleName;
-                    }
-                    if (object.lastName!=null) {
-                         result.lastName = object.lastName;
-                    }
-                    if (object.title!=null) {
-                         result.title = ContactPersonalInfoTitle.toObject(object.title);
-                    } else {
-                         result.title = ContactPersonalInfoTitle.toObject(null);
-                    }
+                    result.name = object.name;
+                    result.middleName = object.middleName;
+                    result.lastName = object.lastName;
+                    result.title = ContactPersonalInfoTitle.toObject(object.title);
 
                }
                return result;
@@ -5567,14 +5475,8 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.phone!=null) {
-                         result.phone = object.phone;
-                    }
-                    if (object.phoneType!=null) {
-                         result.phoneType = ContactPhoneType.toObject(object.phoneType);
-                    } else {
-                         result.phoneType = ContactPhoneType.toObject(null);
-                    }
+                    result.phone = object.phone;
+                    result.phoneType = ContactPhoneType.toObject(object.phoneType);
 
                }
                return result;
@@ -5737,15 +5639,9 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.company!=null) {
-                         result.company = object.company;
-                    }
-                    if (object.jobTitle!=null) {
-                         result.jobTitle = object.jobTitle;
-                    }
-                    if (object.jobDescription!=null) {
-                         result.jobDescription = object.jobDescription;
-                    }
+                    result.company = object.company;
+                    result.jobTitle = object.jobTitle;
+                    result.jobDescription = object.jobDescription;
 
                }
                return result;
@@ -5866,14 +5762,8 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.socialNetwork!=null) {
-                         result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
-                    } else {
-                         result.socialNetwork = ContactSocialNetwork.toObject(null);
-                    }
-                    if (object.profileUrl!=null) {
-                         result.profileUrl = object.profileUrl;
-                    }
+                    result.socialNetwork = ContactSocialNetwork.toObject(object.socialNetwork);
+                    result.profileUrl = object.profileUrl;
 
                }
                return result;
@@ -5994,12 +5884,8 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.tagName!=null) {
-                         result.tagName = object.tagName;
-                    }
-                    if (object.tagValue!=null) {
-                         result.tagValue = object.tagValue;
-                    }
+                    result.tagName = object.tagName;
+                    result.tagValue = object.tagValue;
 
                }
                return result;
@@ -6078,9 +5964,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.contactId!=null) {
-                         result.contactId = object.contactId;
-                    }
+                    result.contactId = object.contactId;
 
                }
                return result;
@@ -6159,9 +6043,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.url!=null) {
-                         result.url = object.url;
-                    }
+                    result.url = object.url;
 
                }
                return result;
@@ -6282,12 +6164,8 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.compress!=null) {
-                         result.compress = object.compress;
-                    }
+                    result.name = object.name;
+                    result.compress = object.compress;
 
                }
                return result;
@@ -6366,9 +6244,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
+                    result.name = object.name;
 
                }
                return result;
@@ -6451,9 +6327,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                          result.values = new Array<string>();
                          for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
                               var vvalues = object.values[ivalues];
-                              if (vvalues != null) {
-                                   result.values.push(vvalues);
-                              }
+                              result.values.push(vvalues);
                          }
                     }
 
@@ -6702,35 +6576,21 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.columnCount!=null) {
-                         result.columnCount = object.columnCount;
-                    }
-                    if (object.rowCount!=null) {
-                         result.rowCount = object.rowCount;
-                    }
+                    result.name = object.name;
+                    result.columnCount = object.columnCount;
+                    result.rowCount = object.rowCount;
                     if (object.databaseColumns != null) {
                          result.databaseColumns = new Array<DatabaseColumn>();
                          for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
                               var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
-                              if (vdatabaseColumns != null) {
-                                   result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
-                              } else {
-                                   result.databaseColumns.push(DatabaseColumn.toObject(null));
-                              }
+                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
                          }
                     }
                     if (object.databaseRows != null) {
                          result.databaseRows = new Array<DatabaseRow>();
                          for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
                               var vdatabaseRows = object.databaseRows[idatabaseRows];
-                              if (vdatabaseRows != null) {
-                                   result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
-                              } else {
-                                   result.databaseRows.push(DatabaseRow.toObject(null));
-                              }
+                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
                          }
                     }
 
@@ -6937,18 +6797,10 @@ be unique for a specific instance of an application on a specific device.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.model!=null) {
-                         result.model = object.model;
-                    }
-                    if (object.vendor!=null) {
-                         result.vendor = object.vendor;
-                    }
-                    if (object.uuid!=null) {
-                         result.uuid = object.uuid;
-                    }
+                    result.name = object.name;
+                    result.model = object.model;
+                    result.vendor = object.vendor;
+                    result.uuid = object.uuid;
 
                }
                return result;
@@ -7283,55 +7135,33 @@ be unique for a specific instance of an application on a specific device.
                          result.toRecipients = new Array<EmailAddress>();
                          for(var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
                               var vtoRecipients = object.toRecipients[itoRecipients];
-                              if (vtoRecipients != null) {
-                                   result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
-                              } else {
-                                   result.toRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
                          }
                     }
                     if (object.ccRecipients != null) {
                          result.ccRecipients = new Array<EmailAddress>();
                          for(var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
                               var vccRecipients = object.ccRecipients[iccRecipients];
-                              if (vccRecipients != null) {
-                                   result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
-                              } else {
-                                   result.ccRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
                          }
                     }
                     if (object.bccRecipients != null) {
                          result.bccRecipients = new Array<EmailAddress>();
                          for(var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
                               var vbccRecipients = object.bccRecipients[ibccRecipients];
-                              if (vbccRecipients != null) {
-                                   result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
-                              } else {
-                                   result.bccRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
                          }
                     }
                     if (object.emailAttachmentData != null) {
                          result.emailAttachmentData = new Array<EmailAttachmentData>();
                          for(var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
                               var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
-                              if (vemailAttachmentData != null) {
-                                   result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
-                              } else {
-                                   result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
-                              }
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
                          }
                     }
-                    if (object.messageBody!=null) {
-                         result.messageBody = object.messageBody;
-                    }
-                    if (object.messageBodyMimeType!=null) {
-                         result.messageBodyMimeType = object.messageBodyMimeType;
-                    }
-                    if (object.subject!=null) {
-                         result.subject = object.subject;
-                    }
+                    result.messageBody = object.messageBody;
+                    result.messageBodyMimeType = object.messageBodyMimeType;
+                    result.subject = object.subject;
 
                }
                return result;
@@ -7410,9 +7240,7 @@ be unique for a specific instance of an application on a specific device.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.address!=null) {
-                         result.address = object.address;
-                    }
+                    result.address = object.address;
 
                }
                return result;
@@ -7663,23 +7491,13 @@ be unique for a specific instance of an application on a specific device.
                          result.data = new Array<number>();
                          for(var idata = 0; idata < object.data.length; idata++) {
                               var vdata = object.data[idata];
-                              if (vdata != null) {
-                                   result.data.push(vdata);
-                              }
+                              result.data.push(vdata);
                          }
                     }
-                    if (object.size!=null) {
-                         result.size = object.size;
-                    }
-                    if (object.fileName!=null) {
-                         result.fileName = object.fileName;
-                    }
-                    if (object.mimeType!=null) {
-                         result.mimeType = object.mimeType;
-                    }
-                    if (object.referenceUrl!=null) {
-                         result.referenceUrl = object.referenceUrl;
-                    }
+                    result.size = object.size;
+                    result.fileName = object.fileName;
+                    result.mimeType = object.mimeType;
+                    result.referenceUrl = object.referenceUrl;
 
                }
                return result;
@@ -7901,24 +7719,12 @@ doesn't exist, this will be -1. Used internally.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.path!=null) {
-                         result.path = object.path;
-                    }
-                    if (object.pathAbsolute!=null) {
-                         result.pathAbsolute = object.pathAbsolute;
-                    }
-                    if (object.dateCreated!=null) {
-                         result.dateCreated = object.dateCreated;
-                    }
-                    if (object.dateModified!=null) {
-                         result.dateModified = object.dateModified;
-                    }
-                    if (object.size!=null) {
-                         result.size = object.size;
-                    }
+                    result.name = object.name;
+                    result.path = object.path;
+                    result.pathAbsolute = object.pathAbsolute;
+                    result.dateCreated = object.dateCreated;
+                    result.dateModified = object.dateModified;
+                    result.size = object.size;
 
                }
                return result;
@@ -8203,24 +8009,12 @@ doesn't exist, this will be -1. Used internally.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.latitude!=null) {
-                         result.latitude = object.latitude;
-                    }
-                    if (object.longitude!=null) {
-                         result.longitude = object.longitude;
-                    }
-                    if (object.altitude!=null) {
-                         result.altitude = object.altitude;
-                    }
-                    if (object.xDoP!=null) {
-                         result.xDoP = object.xDoP;
-                    }
-                    if (object.yDoP!=null) {
-                         result.yDoP = object.yDoP;
-                    }
-                    if (object.timestamp!=null) {
-                         result.timestamp = object.timestamp;
-                    }
+                    result.latitude = object.latitude;
+                    result.longitude = object.longitude;
+                    result.altitude = object.altitude;
+                    result.xDoP = object.xDoP;
+                    result.yDoP = object.yDoP;
+                    result.timestamp = object.timestamp;
 
                }
                return result;
@@ -8341,12 +8135,8 @@ doesn't exist, this will be -1. Used internally.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.keyName!=null) {
-                         result.keyName = object.keyName;
-                    }
-                    if (object.keyValue!=null) {
-                         result.keyValue = object.keyValue;
-                    }
+                    result.keyName = object.keyName;
+                    result.keyValue = object.keyValue;
 
                }
                return result;
@@ -8467,12 +8257,8 @@ doesn't exist, this will be -1. Used internally.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.keyName!=null) {
-                         result.keyName = object.keyName;
-                    }
-                    if (object.keyData!=null) {
-                         result.keyData = object.keyData;
-                    }
+                    result.keyName = object.keyName;
+                    result.keyData = object.keyData;
 
                }
                return result;
@@ -8573,11 +8359,7 @@ Possible lifecycle States:
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.state!=null) {
-                         result.state = LifecycleState.toObject(object.state);
-                    } else {
-                         result.state = LifecycleState.toObject(null);
-                    }
+                    result.state = LifecycleState.toObject(object.state);
 
                }
                return result;
@@ -8698,12 +8480,8 @@ Possible lifecycle States:
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.country!=null) {
-                         result.country = object.country;
-                    }
-                    if (object.language!=null) {
-                         result.language = object.language;
-                    }
+                    result.country = object.country;
+                    result.language = object.language;
 
                }
                return result;
@@ -8863,17 +8641,9 @@ Possible lifecycle States:
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = IOSType.toObject(object.name);
-                    } else {
-                         result.name = IOSType.toObject(null);
-                    }
-                    if (object.version!=null) {
-                         result.version = object.version;
-                    }
-                    if (object.vendor!=null) {
-                         result.vendor = object.vendor;
-                    }
+                    result.name = IOSType.toObject(object.name);
+                    result.version = object.version;
+                    result.vendor = object.vendor;
 
                }
                return result;
@@ -9090,24 +8860,10 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.origin!=null) {
-                         result.origin = ICapabilitiesOrientation.toObject(object.origin);
-                    } else {
-                         result.origin = ICapabilitiesOrientation.toObject(null);
-                    }
-                    if (object.destination!=null) {
-                         result.destination = ICapabilitiesOrientation.toObject(object.destination);
-                    } else {
-                         result.destination = ICapabilitiesOrientation.toObject(null);
-                    }
-                    if (object.state!=null) {
-                         result.state = RotationEventState.toObject(object.state);
-                    } else {
-                         result.state = RotationEventState.toObject(null);
-                    }
-                    if (object.timestamp!=null) {
-                         result.timestamp = object.timestamp;
-                    }
+                    result.origin = ICapabilitiesOrientation.toObject(object.origin);
+                    result.destination = ICapabilitiesOrientation.toObject(object.destination);
+                    result.state = RotationEventState.toObject(object.state);
+                    result.timestamp = object.timestamp;
 
                }
                return result;
@@ -9228,12 +8984,8 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.secureKey!=null) {
-                         result.secureKey = object.secureKey;
-                    }
-                    if (object.secureData!=null) {
-                         result.secureData = object.secureData;
-                    }
+                    result.secureKey = object.secureKey;
+                    result.secureData = object.secureData;
 
                }
                return result;
@@ -9738,69 +9490,35 @@ identifiers. This should not be manipulated by the application directly. The 'se
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.userAgent!=null) {
-                         result.userAgent = object.userAgent;
-                    }
-                    if (object.content!=null) {
-                         result.content = object.content;
-                    }
-                    if (object.contentType!=null) {
-                         result.contentType = object.contentType;
-                    }
-                    if (object.contentEncoding!=null) {
-                         result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-                    } else {
-                         result.contentEncoding = IServiceContentEncoding.toObject(null);
-                    }
-                    if (object.contentLength!=null) {
-                         result.contentLength = object.contentLength;
-                    }
+                    result.userAgent = object.userAgent;
+                    result.content = object.content;
+                    result.contentType = object.contentType;
+                    result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
+                    result.contentLength = object.contentLength;
                     if (object.serviceHeaders != null) {
                          result.serviceHeaders = new Array<ServiceHeader>();
                          for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
                               var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              if (vserviceHeaders != null) {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                              } else {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(null));
-                              }
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          }
                     }
-                    if (object.serviceSession!=null) {
-                         result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    } else {
-                         result.serviceSession = ServiceSession.toObject(null);
-                    }
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
                     if (object.queryParameters != null) {
                          result.queryParameters = new Array<ServiceRequestParameter>();
                          for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
                               var vqueryParameters = object.queryParameters[iqueryParameters];
-                              if (vqueryParameters != null) {
-                                   result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
-                              } else {
-                                   result.queryParameters.push(ServiceRequestParameter.toObject(null));
-                              }
+                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
                          }
                     }
                     if (object.bodyParameters != null) {
                          result.bodyParameters = new Array<ServiceRequestParameter>();
                          for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
                               var vbodyParameters = object.bodyParameters[ibodyParameters];
-                              if (vbodyParameters != null) {
-                                   result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
-                              } else {
-                                   result.bodyParameters.push(ServiceRequestParameter.toObject(null));
-                              }
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
                          }
                     }
-                    if (object.serviceToken!=null) {
-                         result.serviceToken = ServiceToken.toObject(object.serviceToken);
-                    } else {
-                         result.serviceToken = ServiceToken.toObject(null);
-                    }
-                    if (object.refererHost!=null) {
-                         result.refererHost = object.refererHost;
-                    }
+                    result.serviceToken = ServiceToken.toObject(object.serviceToken);
+                    result.refererHost = object.refererHost;
 
                }
                return result;
@@ -10133,39 +9851,19 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.content!=null) {
-                         result.content = object.content;
-                    }
-                    if (object.contentType!=null) {
-                         result.contentType = object.contentType;
-                    }
-                    if (object.contentEncoding!=null) {
-                         result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-                    } else {
-                         result.contentEncoding = IServiceContentEncoding.toObject(null);
-                    }
-                    if (object.contentLength!=null) {
-                         result.contentLength = object.contentLength;
-                    }
+                    result.content = object.content;
+                    result.contentType = object.contentType;
+                    result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
+                    result.contentLength = object.contentLength;
                     if (object.serviceHeaders != null) {
                          result.serviceHeaders = new Array<ServiceHeader>();
                          for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
                               var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              if (vserviceHeaders != null) {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                              } else {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(null));
-                              }
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          }
                     }
-                    if (object.serviceSession!=null) {
-                         result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    } else {
-                         result.serviceSession = ServiceSession.toObject(null);
-                    }
-                    if (object.statusCode!=null) {
-                         result.statusCode = object.statusCode;
-                    }
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
+                    result.statusCode = object.statusCode;
 
                }
                return result;
@@ -10290,22 +9988,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                          result.cookies = new Array<ServiceSessionCookie>();
                          for(var icookies = 0; icookies < object.cookies.length; icookies++) {
                               var vcookies = object.cookies[icookies];
-                              if (vcookies != null) {
-                                   result.cookies.push(ServiceSessionCookie.toObject(vcookies));
-                              } else {
-                                   result.cookies.push(ServiceSessionCookie.toObject(null));
-                              }
+                              result.cookies.push(ServiceSessionCookie.toObject(vcookies));
                          }
                     }
                     if (object.attributes != null) {
                          result.attributes = new Array<ServiceSessionAttribute>();
                          for(var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
                               var vattributes = object.attributes[iattributes];
-                              if (vattributes != null) {
-                                   result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
-                              } else {
-                                   result.attributes.push(ServiceSessionAttribute.toObject(null));
-                              }
+                              result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
                          }
                     }
 
@@ -10680,30 +10370,14 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.cookieName!=null) {
-                         result.cookieName = object.cookieName;
-                    }
-                    if (object.cookieValue!=null) {
-                         result.cookieValue = object.cookieValue;
-                    }
-                    if (object.domain!=null) {
-                         result.domain = object.domain;
-                    }
-                    if (object.path!=null) {
-                         result.path = object.path;
-                    }
-                    if (object.scheme!=null) {
-                         result.scheme = object.scheme;
-                    }
-                    if (object.secure!=null) {
-                         result.secure = object.secure;
-                    }
-                    if (object.expiry!=null) {
-                         result.expiry = object.expiry;
-                    }
-                    if (object.creation!=null) {
-                         result.creation = object.creation;
-                    }
+                    result.cookieName = object.cookieName;
+                    result.cookieValue = object.cookieValue;
+                    result.domain = object.domain;
+                    result.path = object.path;
+                    result.scheme = object.scheme;
+                    result.secure = object.secure;
+                    result.expiry = object.expiry;
+                    result.creation = object.creation;
 
                }
                return result;
@@ -10914,20 +10588,10 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.serviceName!=null) {
-                         result.serviceName = object.serviceName;
-                    }
-                    if (object.endpointName!=null) {
-                         result.endpointName = object.endpointName;
-                    }
-                    if (object.functionName!=null) {
-                         result.functionName = object.functionName;
-                    }
-                    if (object.invocationMethod!=null) {
-                         result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
-                    } else {
-                         result.invocationMethod = IServiceMethod.toObject(null);
-                    }
+                    result.serviceName = object.serviceName;
+                    result.endpointName = object.endpointName;
+                    result.functionName = object.functionName;
+                    result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
 
                }
                return result;
@@ -11301,85 +10965,51 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to parent bean fields.
-                    if (object.contactId!=null) {
-                         result.contactId = object.contactId;
-                    }
+                    result.contactId = object.contactId;
 
                     // Assign values to bean fields.
-                    if (object.personalInfo!=null) {
-                         result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
-                    } else {
-                         result.personalInfo = ContactPersonalInfo.toObject(null);
-                    }
-                    if (object.professionalInfo!=null) {
-                         result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-                    } else {
-                         result.professionalInfo = ContactProfessionalInfo.toObject(null);
-                    }
+                    result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+                    result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
                     if (object.contactAddresses != null) {
                          result.contactAddresses = new Array<ContactAddress>();
                          for(var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
                               var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                              if (vcontactAddresses != null) {
-                                   result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
-                              } else {
-                                   result.contactAddresses.push(ContactAddress.toObject(null));
-                              }
+                              result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
                          }
                     }
                     if (object.contactPhones != null) {
                          result.contactPhones = new Array<ContactPhone>();
                          for(var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
                               var vcontactPhones = object.contactPhones[icontactPhones];
-                              if (vcontactPhones != null) {
-                                   result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
-                              } else {
-                                   result.contactPhones.push(ContactPhone.toObject(null));
-                              }
+                              result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
                          }
                     }
                     if (object.contactEmails != null) {
                          result.contactEmails = new Array<ContactEmail>();
                          for(var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
                               var vcontactEmails = object.contactEmails[icontactEmails];
-                              if (vcontactEmails != null) {
-                                   result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
-                              } else {
-                                   result.contactEmails.push(ContactEmail.toObject(null));
-                              }
+                              result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
                          }
                     }
                     if (object.contactWebsites != null) {
                          result.contactWebsites = new Array<ContactWebsite>();
                          for(var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
                               var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                              if (vcontactWebsites != null) {
-                                   result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
-                              } else {
-                                   result.contactWebsites.push(ContactWebsite.toObject(null));
-                              }
+                              result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
                          }
                     }
                     if (object.contactSocials != null) {
                          result.contactSocials = new Array<ContactSocial>();
                          for(var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
                               var vcontactSocials = object.contactSocials[icontactSocials];
-                              if (vcontactSocials != null) {
-                                   result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
-                              } else {
-                                   result.contactSocials.push(ContactSocial.toObject(null));
-                              }
+                              result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
                          }
                     }
                     if (object.contactTags != null) {
                          result.contactTags = new Array<ContactTag>();
                          for(var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
                               var vcontactTags = object.contactTags[icontactTags];
-                              if (vcontactTags != null) {
-                                   result.contactTags.push(ContactTag.toObject(vcontactTags));
-                              } else {
-                                   result.contactTags.push(ContactTag.toObject(null));
-                              }
+                              result.contactTags.push(ContactTag.toObject(vcontactTags));
                          }
                     }
 
@@ -11420,12 +11050,8 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to parent bean fields.
-                    if (object.keyName!=null) {
-                         result.keyName = object.keyName;
-                    }
-                    if (object.keyData!=null) {
-                         result.keyData = object.keyData;
-                    }
+                    result.keyName = object.keyName;
+                    result.keyData = object.keyData;
 
                }
                return result;
@@ -11464,12 +11090,8 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to parent bean fields.
-                    if (object.keyName!=null) {
-                         result.keyName = object.keyName;
-                    }
-                    if (object.keyData!=null) {
-                         result.keyData = object.keyData;
-                    }
+                    result.keyName = object.keyName;
+                    result.keyData = object.keyData;
 
                }
                return result;
@@ -11508,12 +11130,8 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to parent bean fields.
-                    if (object.keyName!=null) {
-                         result.keyName = object.keyName;
-                    }
-                    if (object.keyData!=null) {
-                         result.keyData = object.keyData;
-                    }
+                    result.keyName = object.keyName;
+                    result.keyData = object.keyData;
 
                }
                return result;

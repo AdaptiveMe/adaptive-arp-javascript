@@ -368,39 +368,19 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.content!=null) {
-                         result.content = object.content;
-                    }
-                    if (object.contentType!=null) {
-                         result.contentType = object.contentType;
-                    }
-                    if (object.contentEncoding!=null) {
-                         result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
-                    } else {
-                         result.contentEncoding = IServiceContentEncoding.toObject(null);
-                    }
-                    if (object.contentLength!=null) {
-                         result.contentLength = object.contentLength;
-                    }
+                    result.content = object.content;
+                    result.contentType = object.contentType;
+                    result.contentEncoding = IServiceContentEncoding.toObject(object.contentEncoding);
+                    result.contentLength = object.contentLength;
                     if (object.serviceHeaders != null) {
                          result.serviceHeaders = new Array<ServiceHeader>();
                          for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
                               var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
-                              if (vserviceHeaders != null) {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
-                              } else {
-                                   result.serviceHeaders.push(ServiceHeader.toObject(null));
-                              }
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          }
                     }
-                    if (object.serviceSession!=null) {
-                         result.serviceSession = ServiceSession.toObject(object.serviceSession);
-                    } else {
-                         result.serviceSession = ServiceSession.toObject(null);
-                    }
-                    if (object.statusCode!=null) {
-                         result.statusCode = object.statusCode;
-                    }
+                    result.serviceSession = ServiceSession.toObject(object.serviceSession);
+                    result.statusCode = object.statusCode;
 
                }
                return result;

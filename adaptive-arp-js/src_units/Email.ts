@@ -369,55 +369,33 @@ module Adaptive {
                          result.toRecipients = new Array<EmailAddress>();
                          for(var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
                               var vtoRecipients = object.toRecipients[itoRecipients];
-                              if (vtoRecipients != null) {
-                                   result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
-                              } else {
-                                   result.toRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
                          }
                     }
                     if (object.ccRecipients != null) {
                          result.ccRecipients = new Array<EmailAddress>();
                          for(var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
                               var vccRecipients = object.ccRecipients[iccRecipients];
-                              if (vccRecipients != null) {
-                                   result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
-                              } else {
-                                   result.ccRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
                          }
                     }
                     if (object.bccRecipients != null) {
                          result.bccRecipients = new Array<EmailAddress>();
                          for(var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
                               var vbccRecipients = object.bccRecipients[ibccRecipients];
-                              if (vbccRecipients != null) {
-                                   result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
-                              } else {
-                                   result.bccRecipients.push(EmailAddress.toObject(null));
-                              }
+                              result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
                          }
                     }
                     if (object.emailAttachmentData != null) {
                          result.emailAttachmentData = new Array<EmailAttachmentData>();
                          for(var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
                               var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
-                              if (vemailAttachmentData != null) {
-                                   result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
-                              } else {
-                                   result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
-                              }
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
                          }
                     }
-                    if (object.messageBody!=null) {
-                         result.messageBody = object.messageBody;
-                    }
-                    if (object.messageBodyMimeType!=null) {
-                         result.messageBodyMimeType = object.messageBodyMimeType;
-                    }
-                    if (object.subject!=null) {
-                         result.subject = object.subject;
-                    }
+                    result.messageBody = object.messageBody;
+                    result.messageBodyMimeType = object.messageBodyMimeType;
+                    result.subject = object.subject;
 
                }
                return result;

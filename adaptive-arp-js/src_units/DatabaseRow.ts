@@ -115,9 +115,7 @@ module Adaptive {
                          result.values = new Array<string>();
                          for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
                               var vvalues = object.values[ivalues];
-                              if (vvalues != null) {
-                                   result.values.push(vvalues);
-                              }
+                              result.values.push(vvalues);
                          }
                     }
 

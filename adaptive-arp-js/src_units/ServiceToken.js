@@ -219,21 +219,10 @@ var Adaptive;
             var result = new ServiceToken(null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.serviceName != null) {
-                    result.serviceName = object.serviceName;
-                }
-                if (object.endpointName != null) {
-                    result.endpointName = object.endpointName;
-                }
-                if (object.functionName != null) {
-                    result.functionName = object.functionName;
-                }
-                if (object.invocationMethod != null) {
-                    result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
-                }
-                else {
-                    result.invocationMethod = Adaptive.IServiceMethod.toObject(null);
-                }
+                result.serviceName = object.serviceName;
+                result.endpointName = object.endpointName;
+                result.functionName = object.functionName;
+                result.invocationMethod = Adaptive.IServiceMethod.toObject(object.invocationMethod);
             }
             return result;
         };

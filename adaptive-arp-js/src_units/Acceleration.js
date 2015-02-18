@@ -215,18 +215,10 @@ var Adaptive;
             var result = new Acceleration(null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.x != null) {
-                    result.x = object.x;
-                }
-                if (object.y != null) {
-                    result.y = object.y;
-                }
-                if (object.z != null) {
-                    result.z = object.z;
-                }
-                if (object.timestamp != null) {
-                    result.timestamp = object.timestamp;
-                }
+                result.x = object.x;
+                result.y = object.y;
+                result.z = object.z;
+                result.timestamp = object.timestamp;
             }
             return result;
         };

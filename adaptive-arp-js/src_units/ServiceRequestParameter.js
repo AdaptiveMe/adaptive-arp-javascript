@@ -73,12 +73,8 @@ var Adaptive;
             var result = new ServiceRequestParameter(null, null);
             if (object != null) {
                 // Assign values to parent bean fields.
-                if (object.keyName != null) {
-                    result.keyName = object.keyName;
-                }
-                if (object.keyData != null) {
-                    result.keyData = object.keyData;
-                }
+                result.keyName = object.keyName;
+                result.keyData = object.keyData;
             }
             return result;
         };

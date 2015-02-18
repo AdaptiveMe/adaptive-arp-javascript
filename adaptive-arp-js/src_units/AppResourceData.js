@@ -316,33 +316,19 @@ var Adaptive;
             var result = new AppResourceData(null, null, null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.id != null) {
-                    result.id = object.id;
-                }
+                result.id = object.id;
                 if (object.data != null) {
                     result.data = new Array();
                     for (var idata = 0; idata < object.data.length; idata++) {
                         var vdata = object.data[idata];
-                        if (vdata != null) {
-                            result.data.push(vdata);
-                        }
+                        result.data.push(vdata);
                     }
                 }
-                if (object.rawType != null) {
-                    result.rawType = object.rawType;
-                }
-                if (object.rawLength != null) {
-                    result.rawLength = object.rawLength;
-                }
-                if (object.cooked != null) {
-                    result.cooked = object.cooked;
-                }
-                if (object.cookedType != null) {
-                    result.cookedType = object.cookedType;
-                }
-                if (object.cookedLength != null) {
-                    result.cookedLength = object.cookedLength;
-                }
+                result.rawType = object.rawType;
+                result.rawLength = object.rawLength;
+                result.cooked = object.cooked;
+                result.cookedType = object.cookedType;
+                result.cookedLength = object.cookedLength;
             }
             return result;
         };

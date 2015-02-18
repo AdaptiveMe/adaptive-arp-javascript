@@ -159,22 +159,14 @@ module Adaptive {
                          result.cookies = new Array<ServiceSessionCookie>();
                          for(var icookies = 0; icookies < object.cookies.length; icookies++) {
                               var vcookies = object.cookies[icookies];
-                              if (vcookies != null) {
-                                   result.cookies.push(ServiceSessionCookie.toObject(vcookies));
-                              } else {
-                                   result.cookies.push(ServiceSessionCookie.toObject(null));
-                              }
+                              result.cookies.push(ServiceSessionCookie.toObject(vcookies));
                          }
                     }
                     if (object.attributes != null) {
                          result.attributes = new Array<ServiceSessionAttribute>();
                          for(var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
                               var vattributes = object.attributes[iattributes];
-                              if (vattributes != null) {
-                                   result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
-                              } else {
-                                   result.attributes.push(ServiceSessionAttribute.toObject(null));
-                              }
+                              result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
                          }
                     }
 

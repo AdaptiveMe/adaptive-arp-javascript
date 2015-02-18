@@ -111,9 +111,7 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
+                    result.name = object.name;
 
                }
                return result;

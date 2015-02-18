@@ -143,12 +143,8 @@ var Adaptive;
             var result = new ContactTag(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.tagName != null) {
-                    result.tagName = object.tagName;
-                }
-                if (object.tagValue != null) {
-                    result.tagValue = object.tagValue;
-                }
+                result.tagName = object.tagName;
+                result.tagValue = object.tagValue;
             }
             return result;
         };

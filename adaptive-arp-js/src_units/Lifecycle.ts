@@ -134,11 +134,7 @@ Possible lifecycle States:
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.state!=null) {
-                         result.state = LifecycleState.toObject(object.state);
-                    } else {
-                         result.state = LifecycleState.toObject(null);
-                    }
+                    result.state = LifecycleState.toObject(object.state);
 
                }
                return result;

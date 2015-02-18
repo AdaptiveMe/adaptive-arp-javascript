@@ -107,9 +107,7 @@ var Adaptive;
             var result = new ContactWebsite(null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.url != null) {
-                    result.url = object.url;
-                }
+                result.url = object.url;
             }
             return result;
         };

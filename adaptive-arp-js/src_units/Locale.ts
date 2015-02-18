@@ -153,12 +153,8 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.country!=null) {
-                         result.country = object.country;
-                    }
-                    if (object.language!=null) {
-                         result.language = object.language;
-                    }
+                    result.country = object.country;
+                    result.language = object.language;
 
                }
                return result;

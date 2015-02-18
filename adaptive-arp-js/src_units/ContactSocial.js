@@ -144,15 +144,8 @@ var Adaptive;
             var result = new ContactSocial(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.socialNetwork != null) {
-                    result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(object.socialNetwork);
-                }
-                else {
-                    result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(null);
-                }
-                if (object.profileUrl != null) {
-                    result.profileUrl = object.profileUrl;
-                }
+                result.socialNetwork = Adaptive.ContactSocialNetwork.toObject(object.socialNetwork);
+                result.profileUrl = object.profileUrl;
             }
             return result;
         };

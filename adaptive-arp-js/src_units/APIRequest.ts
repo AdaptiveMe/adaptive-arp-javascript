@@ -272,27 +272,17 @@ listener.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.bridgeType!=null) {
-                         result.bridgeType = object.bridgeType;
-                    }
-                    if (object.methodName!=null) {
-                         result.methodName = object.methodName;
-                    }
+                    result.bridgeType = object.bridgeType;
+                    result.methodName = object.methodName;
                     if (object.parameters != null) {
                          result.parameters = new Array<string>();
                          for(var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
                               var vparameters = object.parameters[iparameters];
-                              if (vparameters != null) {
-                                   result.parameters.push(vparameters);
-                              }
+                              result.parameters.push(vparameters);
                          }
                     }
-                    if (object.asyncId!=null) {
-                         result.asyncId = object.asyncId;
-                    }
-                    if (object.apiVersion!=null) {
-                         result.apiVersion = object.apiVersion;
-                    }
+                    result.asyncId = object.asyncId;
+                    result.apiVersion = object.apiVersion;
 
                }
                return result;

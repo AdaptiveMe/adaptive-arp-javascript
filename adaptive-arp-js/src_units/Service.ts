@@ -155,16 +155,10 @@ module Adaptive {
                          result.serviceEndpoints = new Array<ServiceEndpoint>();
                          for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
                               var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                              if (vserviceEndpoints != null) {
-                                   result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
-                              } else {
-                                   result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
-                              }
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
                          }
                     }
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
+                    result.name = object.name;
 
                }
                return result;

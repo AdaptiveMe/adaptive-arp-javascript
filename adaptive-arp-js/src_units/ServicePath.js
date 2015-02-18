@@ -171,27 +171,15 @@ var Adaptive;
             var result = new ServicePath(null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.path != null) {
-                    result.path = object.path;
-                }
+                result.path = object.path;
                 if (object.methods != null) {
                     result.methods = new Array();
                     for (var imethods = 0; imethods < object.methods.length; imethods++) {
                         var vmethods = object.methods[imethods];
-                        if (vmethods != null) {
-                            result.methods.push(Adaptive.IServiceMethod.toObject(vmethods));
-                        }
-                        else {
-                            result.methods.push(Adaptive.IServiceMethod.toObject(null));
-                        }
+                        result.methods.push(Adaptive.IServiceMethod.toObject(vmethods));
                     }
                 }
-                if (object.type != null) {
-                    result.type = Adaptive.IServiceType.toObject(object.type);
-                }
-                else {
-                    result.type = Adaptive.IServiceType.toObject(null);
-                }
+                result.type = Adaptive.IServiceType.toObject(object.type);
             }
             return result;
         };

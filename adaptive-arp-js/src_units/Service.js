@@ -138,17 +138,10 @@ var Adaptive;
                     result.serviceEndpoints = new Array();
                     for (var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
                         var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
-                        if (vserviceEndpoints != null) {
-                            result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(vserviceEndpoints));
-                        }
-                        else {
-                            result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(null));
-                        }
+                        result.serviceEndpoints.push(Adaptive.ServiceEndpoint.toObject(vserviceEndpoints));
                     }
                 }
-                if (object.name != null) {
-                    result.name = object.name;
-                }
+                result.name = object.name;
             }
             return result;
         };

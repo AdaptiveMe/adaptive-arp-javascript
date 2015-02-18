@@ -244,24 +244,12 @@ doesn't exist, this will be -1. Used internally.
             var result = new FileDescriptor();
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.name != null) {
-                    result.name = object.name;
-                }
-                if (object.path != null) {
-                    result.path = object.path;
-                }
-                if (object.pathAbsolute != null) {
-                    result.pathAbsolute = object.pathAbsolute;
-                }
-                if (object.dateCreated != null) {
-                    result.dateCreated = object.dateCreated;
-                }
-                if (object.dateModified != null) {
-                    result.dateModified = object.dateModified;
-                }
-                if (object.size != null) {
-                    result.size = object.size;
-                }
+                result.name = object.name;
+                result.path = object.path;
+                result.pathAbsolute = object.pathAbsolute;
+                result.dateCreated = object.dateCreated;
+                result.dateModified = object.dateModified;
+                result.size = object.size;
             }
             return result;
         };

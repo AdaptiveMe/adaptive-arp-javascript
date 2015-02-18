@@ -153,12 +153,8 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.compress!=null) {
-                         result.compress = object.compress;
-                    }
+                    result.name = object.name;
+                    result.compress = object.compress;
 
                }
                return result;

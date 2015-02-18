@@ -238,20 +238,10 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.middleName!=null) {
-                         result.middleName = object.middleName;
-                    }
-                    if (object.lastName!=null) {
-                         result.lastName = object.lastName;
-                    }
-                    if (object.title!=null) {
-                         result.title = ContactPersonalInfoTitle.toObject(object.title);
-                    } else {
-                         result.title = ContactPersonalInfoTitle.toObject(null);
-                    }
+                    result.name = object.name;
+                    result.middleName = object.middleName;
+                    result.lastName = object.lastName;
+                    result.title = ContactPersonalInfoTitle.toObject(object.title);
 
                }
                return result;

@@ -143,12 +143,8 @@ var Adaptive;
             var result = new SecureKeyPair(null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.secureKey != null) {
-                    result.secureKey = object.secureKey;
-                }
-                if (object.secureData != null) {
-                    result.secureData = object.secureData;
-                }
+                result.secureKey = object.secureKey;
+                result.secureData = object.secureData;
             }
             return result;
         };

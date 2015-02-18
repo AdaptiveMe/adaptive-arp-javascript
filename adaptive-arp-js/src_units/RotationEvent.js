@@ -223,27 +223,10 @@ var Adaptive;
             var result = new RotationEvent(null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.origin != null) {
-                    result.origin = Adaptive.ICapabilitiesOrientation.toObject(object.origin);
-                }
-                else {
-                    result.origin = Adaptive.ICapabilitiesOrientation.toObject(null);
-                }
-                if (object.destination != null) {
-                    result.destination = Adaptive.ICapabilitiesOrientation.toObject(object.destination);
-                }
-                else {
-                    result.destination = Adaptive.ICapabilitiesOrientation.toObject(null);
-                }
-                if (object.state != null) {
-                    result.state = Adaptive.RotationEventState.toObject(object.state);
-                }
-                else {
-                    result.state = Adaptive.RotationEventState.toObject(null);
-                }
-                if (object.timestamp != null) {
-                    result.timestamp = object.timestamp;
-                }
+                result.origin = Adaptive.ICapabilitiesOrientation.toObject(object.origin);
+                result.destination = Adaptive.ICapabilitiesOrientation.toObject(object.destination);
+                result.state = Adaptive.RotationEventState.toObject(object.state);
+                result.timestamp = object.timestamp;
             }
             return result;
         };

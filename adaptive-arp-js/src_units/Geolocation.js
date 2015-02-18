@@ -283,24 +283,12 @@ var Adaptive;
             var result = new Geolocation(null, null, null, null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.latitude != null) {
-                    result.latitude = object.latitude;
-                }
-                if (object.longitude != null) {
-                    result.longitude = object.longitude;
-                }
-                if (object.altitude != null) {
-                    result.altitude = object.altitude;
-                }
-                if (object.xDoP != null) {
-                    result.xDoP = object.xDoP;
-                }
-                if (object.yDoP != null) {
-                    result.yDoP = object.yDoP;
-                }
-                if (object.timestamp != null) {
-                    result.timestamp = object.timestamp;
-                }
+                result.latitude = object.latitude;
+                result.longitude = object.longitude;
+                result.altitude = object.altitude;
+                result.xDoP = object.xDoP;
+                result.yDoP = object.yDoP;
+                result.timestamp = object.timestamp;
             }
             return result;
         };

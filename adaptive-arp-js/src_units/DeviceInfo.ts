@@ -237,18 +237,10 @@ be unique for a specific instance of an application on a specific device.
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.name!=null) {
-                         result.name = object.name;
-                    }
-                    if (object.model!=null) {
-                         result.model = object.model;
-                    }
-                    if (object.vendor!=null) {
-                         result.vendor = object.vendor;
-                    }
-                    if (object.uuid!=null) {
-                         result.uuid = object.uuid;
-                    }
+                    result.name = object.name;
+                    result.model = object.model;
+                    result.vendor = object.vendor;
+                    result.uuid = object.uuid;
 
                }
                return result;

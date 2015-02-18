@@ -179,15 +179,9 @@ var Adaptive;
             var result = new ContactProfessionalInfo(null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.company != null) {
-                    result.company = object.company;
-                }
-                if (object.jobTitle != null) {
-                    result.jobTitle = object.jobTitle;
-                }
-                if (object.jobDescription != null) {
-                    result.jobDescription = object.jobDescription;
-                }
+                result.company = object.company;
+                result.jobTitle = object.jobTitle;
+                result.jobDescription = object.jobDescription;
             }
             return result;
         };

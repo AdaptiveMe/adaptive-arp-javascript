@@ -244,20 +244,10 @@ to a relative path of a function published on a remote service. The 'functionNam
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.serviceName!=null) {
-                         result.serviceName = object.serviceName;
-                    }
-                    if (object.endpointName!=null) {
-                         result.endpointName = object.endpointName;
-                    }
-                    if (object.functionName!=null) {
-                         result.functionName = object.functionName;
-                    }
-                    if (object.invocationMethod!=null) {
-                         result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
-                    } else {
-                         result.invocationMethod = IServiceMethod.toObject(null);
-                    }
+                    result.serviceName = object.serviceName;
+                    result.endpointName = object.endpointName;
+                    result.functionName = object.functionName;
+                    result.invocationMethod = IServiceMethod.toObject(object.invocationMethod);
 
                }
                return result;

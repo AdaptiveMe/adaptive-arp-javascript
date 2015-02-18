@@ -192,23 +192,13 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.validationType!=null) {
-                         result.validationType = IServiceCertificateValidation.toObject(object.validationType);
-                    } else {
-                         result.validationType = IServiceCertificateValidation.toObject(null);
-                    }
-                    if (object.hostURI!=null) {
-                         result.hostURI = object.hostURI;
-                    }
+                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
+                    result.hostURI = object.hostURI;
                     if (object.paths != null) {
                          result.paths = new Array<ServicePath>();
                          for(var ipaths = 0; ipaths < object.paths.length; ipaths++) {
                               var vpaths = object.paths[ipaths];
-                              if (vpaths != null) {
-                                   result.paths.push(ServicePath.toObject(vpaths));
-                              } else {
-                                   result.paths.push(ServicePath.toObject(null));
-                              }
+                              result.paths.push(ServicePath.toObject(vpaths));
                          }
                     }
 

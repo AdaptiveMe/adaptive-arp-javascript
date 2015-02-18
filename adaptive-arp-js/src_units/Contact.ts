@@ -414,85 +414,51 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to parent bean fields.
-                    if (object.contactId!=null) {
-                         result.contactId = object.contactId;
-                    }
+                    result.contactId = object.contactId;
 
                     // Assign values to bean fields.
-                    if (object.personalInfo!=null) {
-                         result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
-                    } else {
-                         result.personalInfo = ContactPersonalInfo.toObject(null);
-                    }
-                    if (object.professionalInfo!=null) {
-                         result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
-                    } else {
-                         result.professionalInfo = ContactProfessionalInfo.toObject(null);
-                    }
+                    result.personalInfo = ContactPersonalInfo.toObject(object.personalInfo);
+                    result.professionalInfo = ContactProfessionalInfo.toObject(object.professionalInfo);
                     if (object.contactAddresses != null) {
                          result.contactAddresses = new Array<ContactAddress>();
                          for(var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
                               var vcontactAddresses = object.contactAddresses[icontactAddresses];
-                              if (vcontactAddresses != null) {
-                                   result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
-                              } else {
-                                   result.contactAddresses.push(ContactAddress.toObject(null));
-                              }
+                              result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
                          }
                     }
                     if (object.contactPhones != null) {
                          result.contactPhones = new Array<ContactPhone>();
                          for(var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
                               var vcontactPhones = object.contactPhones[icontactPhones];
-                              if (vcontactPhones != null) {
-                                   result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
-                              } else {
-                                   result.contactPhones.push(ContactPhone.toObject(null));
-                              }
+                              result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
                          }
                     }
                     if (object.contactEmails != null) {
                          result.contactEmails = new Array<ContactEmail>();
                          for(var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
                               var vcontactEmails = object.contactEmails[icontactEmails];
-                              if (vcontactEmails != null) {
-                                   result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
-                              } else {
-                                   result.contactEmails.push(ContactEmail.toObject(null));
-                              }
+                              result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
                          }
                     }
                     if (object.contactWebsites != null) {
                          result.contactWebsites = new Array<ContactWebsite>();
                          for(var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
                               var vcontactWebsites = object.contactWebsites[icontactWebsites];
-                              if (vcontactWebsites != null) {
-                                   result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
-                              } else {
-                                   result.contactWebsites.push(ContactWebsite.toObject(null));
-                              }
+                              result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
                          }
                     }
                     if (object.contactSocials != null) {
                          result.contactSocials = new Array<ContactSocial>();
                          for(var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
                               var vcontactSocials = object.contactSocials[icontactSocials];
-                              if (vcontactSocials != null) {
-                                   result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
-                              } else {
-                                   result.contactSocials.push(ContactSocial.toObject(null));
-                              }
+                              result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
                          }
                     }
                     if (object.contactTags != null) {
                          result.contactTags = new Array<ContactTag>();
                          for(var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
                               var vcontactTags = object.contactTags[icontactTags];
-                              if (vcontactTags != null) {
-                                   result.contactTags.push(ContactTag.toObject(vcontactTags));
-                              } else {
-                                   result.contactTags.push(ContactTag.toObject(null));
-                              }
+                              result.contactTags.push(ContactTag.toObject(vcontactTags));
                          }
                     }
 

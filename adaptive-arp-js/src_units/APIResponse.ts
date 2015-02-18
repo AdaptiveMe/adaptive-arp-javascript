@@ -185,15 +185,9 @@ module Adaptive {
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.response!=null) {
-                         result.response = object.response;
-                    }
-                    if (object.statusCode!=null) {
-                         result.statusCode = object.statusCode;
-                    }
-                    if (object.statusMessage!=null) {
-                         result.statusMessage = object.statusMessage;
-                    }
+                    result.response = object.response;
+                    result.statusCode = object.statusCode;
+                    result.statusMessage = object.statusMessage;
 
                }
                return result;

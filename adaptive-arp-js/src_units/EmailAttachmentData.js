@@ -255,23 +255,13 @@ var Adaptive;
                     result.data = new Array();
                     for (var idata = 0; idata < object.data.length; idata++) {
                         var vdata = object.data[idata];
-                        if (vdata != null) {
-                            result.data.push(vdata);
-                        }
+                        result.data.push(vdata);
                     }
                 }
-                if (object.size != null) {
-                    result.size = object.size;
-                }
-                if (object.fileName != null) {
-                    result.fileName = object.fileName;
-                }
-                if (object.mimeType != null) {
-                    result.mimeType = object.mimeType;
-                }
-                if (object.referenceUrl != null) {
-                    result.referenceUrl = object.referenceUrl;
-                }
+                result.size = object.size;
+                result.fileName = object.fileName;
+                result.mimeType = object.mimeType;
+                result.referenceUrl = object.referenceUrl;
             }
             return result;
         };

@@ -251,24 +251,10 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    if (object.origin!=null) {
-                         result.origin = ICapabilitiesOrientation.toObject(object.origin);
-                    } else {
-                         result.origin = ICapabilitiesOrientation.toObject(null);
-                    }
-                    if (object.destination!=null) {
-                         result.destination = ICapabilitiesOrientation.toObject(object.destination);
-                    } else {
-                         result.destination = ICapabilitiesOrientation.toObject(null);
-                    }
-                    if (object.state!=null) {
-                         result.state = RotationEventState.toObject(object.state);
-                    } else {
-                         result.state = RotationEventState.toObject(null);
-                    }
-                    if (object.timestamp!=null) {
-                         result.timestamp = object.timestamp;
-                    }
+                    result.origin = ICapabilitiesOrientation.toObject(object.origin);
+                    result.destination = ICapabilitiesOrientation.toObject(object.destination);
+                    result.state = RotationEventState.toObject(object.state);
+                    result.timestamp = object.timestamp;
 
                }
                return result;

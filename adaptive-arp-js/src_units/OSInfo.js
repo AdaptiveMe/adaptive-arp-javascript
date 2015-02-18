@@ -177,18 +177,9 @@ var Adaptive;
             var result = new OSInfo(null, null, null);
             if (object != null) {
                 // Assign values to bean fields.
-                if (object.name != null) {
-                    result.name = Adaptive.IOSType.toObject(object.name);
-                }
-                else {
-                    result.name = Adaptive.IOSType.toObject(null);
-                }
-                if (object.version != null) {
-                    result.version = object.version;
-                }
-                if (object.vendor != null) {
-                    result.vendor = object.vendor;
-                }
+                result.name = Adaptive.IOSType.toObject(object.name);
+                result.version = object.version;
+                result.vendor = object.vendor;
             }
             return result;
         };
