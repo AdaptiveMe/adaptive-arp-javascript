@@ -291,10 +291,10 @@ module Adaptive {
                }
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
-                    for(var i = 0; i < object.databaseColumns.length; i++) {
-                         var __value__ = object.databaseColumns[i];
-                         if (__value__ != null) {
-                              result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                    for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
+                         var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
+                         if (vdatabaseColumns != null) {
+                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
                          } else {
                               result.databaseColumns.push(DatabaseColumn.toObject(null));
                          }
@@ -302,10 +302,10 @@ module Adaptive {
                }
                if (object != null && object.databaseRows != null) {
                     result.databaseRows = new Array<DatabaseRow>();
-                    for(var i = 0; i < object.databaseRows.length; i++) {
-                         var __value__ = object.databaseRows[i];
-                         if (__value__ != null) {
-                              result.databaseRows.push(DatabaseRow.toObject(__value__));
+                    for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
+                         var vdatabaseRows = object.databaseRows[idatabaseRows];
+                         if (vdatabaseRows != null) {
+                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
                          } else {
                               result.databaseRows.push(DatabaseRow.toObject(null));
                          }

@@ -383,10 +383,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
-                    for(var i = 0; i < object.serviceHeaders.length; i++) {
-                         var __value__ = object.serviceHeaders[i];
-                         if (__value__ != null) {
-                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                         var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                         if (vserviceHeaders != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          } else {
                               result.serviceHeaders.push(ServiceHeader.toObject(null));
                          }

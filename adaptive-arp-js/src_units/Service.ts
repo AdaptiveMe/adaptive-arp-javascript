@@ -152,10 +152,10 @@ module Adaptive {
                // Assign values to bean fields.
                if (object != null && object.serviceEndpoints != null) {
                     result.serviceEndpoints = new Array<ServiceEndpoint>();
-                    for(var i = 0; i < object.serviceEndpoints.length; i++) {
-                         var __value__ = object.serviceEndpoints[i];
-                         if (__value__ != null) {
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(__value__));
+                    for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
+                         var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
+                         if (vserviceEndpoints != null) {
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
                          } else {
                               result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
                          }

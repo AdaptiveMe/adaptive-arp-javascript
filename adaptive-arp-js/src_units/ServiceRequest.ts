@@ -560,10 +560,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
-                    for(var i = 0; i < object.serviceHeaders.length; i++) {
-                         var __value__ = object.serviceHeaders[i];
-                         if (__value__ != null) {
-                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                         var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                         if (vserviceHeaders != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          } else {
                               result.serviceHeaders.push(ServiceHeader.toObject(null));
                          }
@@ -576,10 +576,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.queryParameters != null) {
                     result.queryParameters = new Array<ServiceRequestParameter>();
-                    for(var i = 0; i < object.queryParameters.length; i++) {
-                         var __value__ = object.queryParameters[i];
-                         if (__value__ != null) {
-                              result.queryParameters.push(ServiceRequestParameter.toObject(__value__));
+                    for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
+                         var vqueryParameters = object.queryParameters[iqueryParameters];
+                         if (vqueryParameters != null) {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
                          } else {
                               result.queryParameters.push(ServiceRequestParameter.toObject(null));
                          }
@@ -587,10 +587,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.bodyParameters != null) {
                     result.bodyParameters = new Array<ServiceRequestParameter>();
-                    for(var i = 0; i < object.bodyParameters.length; i++) {
-                         var __value__ = object.bodyParameters[i];
-                         if (__value__ != null) {
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(__value__));
+                    for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
+                         var vbodyParameters = object.bodyParameters[ibodyParameters];
+                         if (vbodyParameters != null) {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
                          } else {
                               result.bodyParameters.push(ServiceRequestParameter.toObject(null));
                          }

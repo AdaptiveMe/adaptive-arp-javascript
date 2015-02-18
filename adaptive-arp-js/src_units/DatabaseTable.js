@@ -263,10 +263,10 @@ var Adaptive;
             }
             if (object != null && object.databaseColumns != null) {
                 result.databaseColumns = new Array();
-                for (var i = 0; i < object.databaseColumns.length; i++) {
-                    var __value__ = object.databaseColumns[i];
-                    if (__value__ != null) {
-                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(__value__));
+                for (var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
+                    var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
+                    if (vdatabaseColumns != null) {
+                        result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(vdatabaseColumns));
                     }
                     else {
                         result.databaseColumns.push(Adaptive.DatabaseColumn.toObject(null));
@@ -275,10 +275,10 @@ var Adaptive;
             }
             if (object != null && object.databaseRows != null) {
                 result.databaseRows = new Array();
-                for (var i = 0; i < object.databaseRows.length; i++) {
-                    var __value__ = object.databaseRows[i];
-                    if (__value__ != null) {
-                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(__value__));
+                for (var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
+                    var vdatabaseRows = object.databaseRows[idatabaseRows];
+                    if (vdatabaseRows != null) {
+                        result.databaseRows.push(Adaptive.DatabaseRow.toObject(vdatabaseRows));
                     }
                     else {
                         result.databaseRows.push(Adaptive.DatabaseRow.toObject(null));

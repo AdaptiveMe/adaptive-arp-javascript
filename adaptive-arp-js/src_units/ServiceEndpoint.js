@@ -179,10 +179,10 @@ var Adaptive;
             }
             if (object != null && object.paths != null) {
                 result.paths = new Array();
-                for (var i = 0; i < object.paths.length; i++) {
-                    var __value__ = object.paths[i];
-                    if (__value__ != null) {
-                        result.paths.push(Adaptive.ServicePath.toObject(__value__));
+                for (var ipaths = 0; ipaths < object.paths.length; ipaths++) {
+                    var vpaths = object.paths[ipaths];
+                    if (vpaths != null) {
+                        result.paths.push(Adaptive.ServicePath.toObject(vpaths));
                     }
                     else {
                         result.paths.push(Adaptive.ServicePath.toObject(null));

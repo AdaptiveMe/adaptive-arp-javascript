@@ -112,10 +112,10 @@ module Adaptive {
                // Assign values to bean fields.
                if (object != null && object.values != null) {
                     result.values = new Array<string>();
-                    for(var i = 0; i < object.values.length; i++) {
-                         var __value__ = object.values[i];
-                         if (__value__ != null) {
-                              result.values.push(__value__);
+                    for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
+                         var vvalues = object.values[ivalues];
+                         if (vvalues != null) {
+                              result.values.push(vvalues);
                          }
                     }
                }

@@ -385,10 +385,10 @@ var Adaptive;
             }
             if (object != null && object.contactAddresses != null) {
                 result.contactAddresses = new Array();
-                for (var i = 0; i < object.contactAddresses.length; i++) {
-                    var __value__ = object.contactAddresses[i];
-                    if (__value__ != null) {
-                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(__value__));
+                for (var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
+                    var vcontactAddresses = object.contactAddresses[icontactAddresses];
+                    if (vcontactAddresses != null) {
+                        result.contactAddresses.push(Adaptive.ContactAddress.toObject(vcontactAddresses));
                     }
                     else {
                         result.contactAddresses.push(Adaptive.ContactAddress.toObject(null));
@@ -397,10 +397,10 @@ var Adaptive;
             }
             if (object != null && object.contactPhones != null) {
                 result.contactPhones = new Array();
-                for (var i = 0; i < object.contactPhones.length; i++) {
-                    var __value__ = object.contactPhones[i];
-                    if (__value__ != null) {
-                        result.contactPhones.push(Adaptive.ContactPhone.toObject(__value__));
+                for (var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
+                    var vcontactPhones = object.contactPhones[icontactPhones];
+                    if (vcontactPhones != null) {
+                        result.contactPhones.push(Adaptive.ContactPhone.toObject(vcontactPhones));
                     }
                     else {
                         result.contactPhones.push(Adaptive.ContactPhone.toObject(null));
@@ -409,10 +409,10 @@ var Adaptive;
             }
             if (object != null && object.contactEmails != null) {
                 result.contactEmails = new Array();
-                for (var i = 0; i < object.contactEmails.length; i++) {
-                    var __value__ = object.contactEmails[i];
-                    if (__value__ != null) {
-                        result.contactEmails.push(Adaptive.ContactEmail.toObject(__value__));
+                for (var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
+                    var vcontactEmails = object.contactEmails[icontactEmails];
+                    if (vcontactEmails != null) {
+                        result.contactEmails.push(Adaptive.ContactEmail.toObject(vcontactEmails));
                     }
                     else {
                         result.contactEmails.push(Adaptive.ContactEmail.toObject(null));
@@ -421,10 +421,10 @@ var Adaptive;
             }
             if (object != null && object.contactWebsites != null) {
                 result.contactWebsites = new Array();
-                for (var i = 0; i < object.contactWebsites.length; i++) {
-                    var __value__ = object.contactWebsites[i];
-                    if (__value__ != null) {
-                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(__value__));
+                for (var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
+                    var vcontactWebsites = object.contactWebsites[icontactWebsites];
+                    if (vcontactWebsites != null) {
+                        result.contactWebsites.push(Adaptive.ContactWebsite.toObject(vcontactWebsites));
                     }
                     else {
                         result.contactWebsites.push(Adaptive.ContactWebsite.toObject(null));
@@ -433,10 +433,10 @@ var Adaptive;
             }
             if (object != null && object.contactSocials != null) {
                 result.contactSocials = new Array();
-                for (var i = 0; i < object.contactSocials.length; i++) {
-                    var __value__ = object.contactSocials[i];
-                    if (__value__ != null) {
-                        result.contactSocials.push(Adaptive.ContactSocial.toObject(__value__));
+                for (var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
+                    var vcontactSocials = object.contactSocials[icontactSocials];
+                    if (vcontactSocials != null) {
+                        result.contactSocials.push(Adaptive.ContactSocial.toObject(vcontactSocials));
                     }
                     else {
                         result.contactSocials.push(Adaptive.ContactSocial.toObject(null));
@@ -445,10 +445,10 @@ var Adaptive;
             }
             if (object != null && object.contactTags != null) {
                 result.contactTags = new Array();
-                for (var i = 0; i < object.contactTags.length; i++) {
-                    var __value__ = object.contactTags[i];
-                    if (__value__ != null) {
-                        result.contactTags.push(Adaptive.ContactTag.toObject(__value__));
+                for (var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
+                    var vcontactTags = object.contactTags[icontactTags];
+                    if (vcontactTags != null) {
+                        result.contactTags.push(Adaptive.ContactTag.toObject(vcontactTags));
                     }
                     else {
                         result.contactTags.push(Adaptive.ContactTag.toObject(null));

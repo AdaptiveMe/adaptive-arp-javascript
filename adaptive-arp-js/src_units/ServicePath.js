@@ -175,10 +175,10 @@ var Adaptive;
             }
             if (object != null && object.methods != null) {
                 result.methods = new Array();
-                for (var i = 0; i < object.methods.length; i++) {
-                    var __value__ = object.methods[i];
-                    if (__value__ != null) {
-                        result.methods.push(Adaptive.IServiceMethod.toObject(__value__));
+                for (var imethods = 0; imethods < object.methods.length; imethods++) {
+                    var vmethods = object.methods[imethods];
+                    if (vmethods != null) {
+                        result.methods.push(Adaptive.IServiceMethod.toObject(vmethods));
                     }
                     else {
                         result.methods.push(Adaptive.IServiceMethod.toObject(null));

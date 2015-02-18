@@ -3600,10 +3600,10 @@ listener.
                }
                if (object != null && object.parameters != null) {
                     result.parameters = new Array<string>();
-                    for(var i = 0; i < object.parameters.length; i++) {
-                         var __value__ = object.parameters[i];
-                         if (__value__ != null) {
-                              result.parameters.push(__value__);
+                    for(var iparameters = 0; iparameters < object.parameters.length; iparameters++) {
+                         var vparameters = object.parameters[iparameters];
+                         if (vparameters != null) {
+                              result.parameters.push(vparameters);
                          }
                     }
                }
@@ -4112,10 +4112,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                if (object != null && object.data != null) {
                     result.data = new Array<number>();
-                    for(var i = 0; i < object.data.length; i++) {
-                         var __value__ = object.data[i];
-                         if (__value__ != null) {
-                              result.data.push(__value__);
+                    for(var idata = 0; idata < object.data.length; idata++) {
+                         var vdata = object.data[idata];
+                         if (vdata != null) {
+                              result.data.push(vdata);
                          }
                     }
                }
@@ -4252,10 +4252,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                // Assign values to bean fields.
                if (object != null && object.serviceEndpoints != null) {
                     result.serviceEndpoints = new Array<ServiceEndpoint>();
-                    for(var i = 0; i < object.serviceEndpoints.length; i++) {
-                         var __value__ = object.serviceEndpoints[i];
-                         if (__value__ != null) {
-                              result.serviceEndpoints.push(ServiceEndpoint.toObject(__value__));
+                    for(var iserviceEndpoints = 0; iserviceEndpoints < object.serviceEndpoints.length; iserviceEndpoints++) {
+                         var vserviceEndpoints = object.serviceEndpoints[iserviceEndpoints];
+                         if (vserviceEndpoints != null) {
+                              result.serviceEndpoints.push(ServiceEndpoint.toObject(vserviceEndpoints));
                          } else {
                               result.serviceEndpoints.push(ServiceEndpoint.toObject(null));
                          }
@@ -4430,10 +4430,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                if (object != null && object.paths != null) {
                     result.paths = new Array<ServicePath>();
-                    for(var i = 0; i < object.paths.length; i++) {
-                         var __value__ = object.paths[i];
-                         if (__value__ != null) {
-                              result.paths.push(ServicePath.toObject(__value__));
+                    for(var ipaths = 0; ipaths < object.paths.length; ipaths++) {
+                         var vpaths = object.paths[ipaths];
+                         if (vpaths != null) {
+                              result.paths.push(ServicePath.toObject(vpaths));
                          } else {
                               result.paths.push(ServicePath.toObject(null));
                          }
@@ -4602,10 +4602,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                if (object != null && object.methods != null) {
                     result.methods = new Array<IServiceMethod>();
-                    for(var i = 0; i < object.methods.length; i++) {
-                         var __value__ = object.methods[i];
-                         if (__value__ != null) {
-                              result.methods.push(IServiceMethod.toObject(__value__));
+                    for(var imethods = 0; imethods < object.methods.length; imethods++) {
+                         var vmethods = object.methods[imethods];
+                         if (vmethods != null) {
+                              result.methods.push(IServiceMethod.toObject(vmethods));
                          } else {
                               result.methods.push(IServiceMethod.toObject(null));
                          }
@@ -6408,10 +6408,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                // Assign values to bean fields.
                if (object != null && object.values != null) {
                     result.values = new Array<string>();
-                    for(var i = 0; i < object.values.length; i++) {
-                         var __value__ = object.values[i];
-                         if (__value__ != null) {
-                              result.values.push(__value__);
+                    for(var ivalues = 0; ivalues < object.values.length; ivalues++) {
+                         var vvalues = object.values[ivalues];
+                         if (vvalues != null) {
+                              result.values.push(vvalues);
                          }
                     }
                }
@@ -6670,10 +6670,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                if (object != null && object.databaseColumns != null) {
                     result.databaseColumns = new Array<DatabaseColumn>();
-                    for(var i = 0; i < object.databaseColumns.length; i++) {
-                         var __value__ = object.databaseColumns[i];
-                         if (__value__ != null) {
-                              result.databaseColumns.push(DatabaseColumn.toObject(__value__));
+                    for(var idatabaseColumns = 0; idatabaseColumns < object.databaseColumns.length; idatabaseColumns++) {
+                         var vdatabaseColumns = object.databaseColumns[idatabaseColumns];
+                         if (vdatabaseColumns != null) {
+                              result.databaseColumns.push(DatabaseColumn.toObject(vdatabaseColumns));
                          } else {
                               result.databaseColumns.push(DatabaseColumn.toObject(null));
                          }
@@ -6681,10 +6681,10 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
                }
                if (object != null && object.databaseRows != null) {
                     result.databaseRows = new Array<DatabaseRow>();
-                    for(var i = 0; i < object.databaseRows.length; i++) {
-                         var __value__ = object.databaseRows[i];
-                         if (__value__ != null) {
-                              result.databaseRows.push(DatabaseRow.toObject(__value__));
+                    for(var idatabaseRows = 0; idatabaseRows < object.databaseRows.length; idatabaseRows++) {
+                         var vdatabaseRows = object.databaseRows[idatabaseRows];
+                         if (vdatabaseRows != null) {
+                              result.databaseRows.push(DatabaseRow.toObject(vdatabaseRows));
                          } else {
                               result.databaseRows.push(DatabaseRow.toObject(null));
                          }
@@ -7234,10 +7234,10 @@ be unique for a specific instance of an application on a specific device.
                // Assign values to bean fields.
                if (object != null && object.toRecipients != null) {
                     result.toRecipients = new Array<EmailAddress>();
-                    for(var i = 0; i < object.toRecipients.length; i++) {
-                         var __value__ = object.toRecipients[i];
-                         if (__value__ != null) {
-                              result.toRecipients.push(EmailAddress.toObject(__value__));
+                    for(var itoRecipients = 0; itoRecipients < object.toRecipients.length; itoRecipients++) {
+                         var vtoRecipients = object.toRecipients[itoRecipients];
+                         if (vtoRecipients != null) {
+                              result.toRecipients.push(EmailAddress.toObject(vtoRecipients));
                          } else {
                               result.toRecipients.push(EmailAddress.toObject(null));
                          }
@@ -7245,10 +7245,10 @@ be unique for a specific instance of an application on a specific device.
                }
                if (object != null && object.ccRecipients != null) {
                     result.ccRecipients = new Array<EmailAddress>();
-                    for(var i = 0; i < object.ccRecipients.length; i++) {
-                         var __value__ = object.ccRecipients[i];
-                         if (__value__ != null) {
-                              result.ccRecipients.push(EmailAddress.toObject(__value__));
+                    for(var iccRecipients = 0; iccRecipients < object.ccRecipients.length; iccRecipients++) {
+                         var vccRecipients = object.ccRecipients[iccRecipients];
+                         if (vccRecipients != null) {
+                              result.ccRecipients.push(EmailAddress.toObject(vccRecipients));
                          } else {
                               result.ccRecipients.push(EmailAddress.toObject(null));
                          }
@@ -7256,10 +7256,10 @@ be unique for a specific instance of an application on a specific device.
                }
                if (object != null && object.bccRecipients != null) {
                     result.bccRecipients = new Array<EmailAddress>();
-                    for(var i = 0; i < object.bccRecipients.length; i++) {
-                         var __value__ = object.bccRecipients[i];
-                         if (__value__ != null) {
-                              result.bccRecipients.push(EmailAddress.toObject(__value__));
+                    for(var ibccRecipients = 0; ibccRecipients < object.bccRecipients.length; ibccRecipients++) {
+                         var vbccRecipients = object.bccRecipients[ibccRecipients];
+                         if (vbccRecipients != null) {
+                              result.bccRecipients.push(EmailAddress.toObject(vbccRecipients));
                          } else {
                               result.bccRecipients.push(EmailAddress.toObject(null));
                          }
@@ -7267,10 +7267,10 @@ be unique for a specific instance of an application on a specific device.
                }
                if (object != null && object.emailAttachmentData != null) {
                     result.emailAttachmentData = new Array<EmailAttachmentData>();
-                    for(var i = 0; i < object.emailAttachmentData.length; i++) {
-                         var __value__ = object.emailAttachmentData[i];
-                         if (__value__ != null) {
-                              result.emailAttachmentData.push(EmailAttachmentData.toObject(__value__));
+                    for(var iemailAttachmentData = 0; iemailAttachmentData < object.emailAttachmentData.length; iemailAttachmentData++) {
+                         var vemailAttachmentData = object.emailAttachmentData[iemailAttachmentData];
+                         if (vemailAttachmentData != null) {
+                              result.emailAttachmentData.push(EmailAttachmentData.toObject(vemailAttachmentData));
                          } else {
                               result.emailAttachmentData.push(EmailAttachmentData.toObject(null));
                          }
@@ -7610,10 +7610,10 @@ be unique for a specific instance of an application on a specific device.
                // Assign values to bean fields.
                if (object != null && object.data != null) {
                     result.data = new Array<number>();
-                    for(var i = 0; i < object.data.length; i++) {
-                         var __value__ = object.data[i];
-                         if (__value__ != null) {
-                              result.data.push(__value__);
+                    for(var idata = 0; idata < object.data.length; idata++) {
+                         var vdata = object.data[idata];
+                         if (vdata != null) {
+                              result.data.push(vdata);
                          }
                     }
                }
@@ -9686,10 +9686,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
-                    for(var i = 0; i < object.serviceHeaders.length; i++) {
-                         var __value__ = object.serviceHeaders[i];
-                         if (__value__ != null) {
-                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                         var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                         if (vserviceHeaders != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          } else {
                               result.serviceHeaders.push(ServiceHeader.toObject(null));
                          }
@@ -9702,10 +9702,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.queryParameters != null) {
                     result.queryParameters = new Array<ServiceRequestParameter>();
-                    for(var i = 0; i < object.queryParameters.length; i++) {
-                         var __value__ = object.queryParameters[i];
-                         if (__value__ != null) {
-                              result.queryParameters.push(ServiceRequestParameter.toObject(__value__));
+                    for(var iqueryParameters = 0; iqueryParameters < object.queryParameters.length; iqueryParameters++) {
+                         var vqueryParameters = object.queryParameters[iqueryParameters];
+                         if (vqueryParameters != null) {
+                              result.queryParameters.push(ServiceRequestParameter.toObject(vqueryParameters));
                          } else {
                               result.queryParameters.push(ServiceRequestParameter.toObject(null));
                          }
@@ -9713,10 +9713,10 @@ identifiers. This should not be manipulated by the application directly. The 'se
                }
                if (object != null && object.bodyParameters != null) {
                     result.bodyParameters = new Array<ServiceRequestParameter>();
-                    for(var i = 0; i < object.bodyParameters.length; i++) {
-                         var __value__ = object.bodyParameters[i];
-                         if (__value__ != null) {
-                              result.bodyParameters.push(ServiceRequestParameter.toObject(__value__));
+                    for(var ibodyParameters = 0; ibodyParameters < object.bodyParameters.length; ibodyParameters++) {
+                         var vbodyParameters = object.bodyParameters[ibodyParameters];
+                         if (vbodyParameters != null) {
+                              result.bodyParameters.push(ServiceRequestParameter.toObject(vbodyParameters));
                          } else {
                               result.bodyParameters.push(ServiceRequestParameter.toObject(null));
                          }
@@ -10076,10 +10076,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                }
                if (object != null && object.serviceHeaders != null) {
                     result.serviceHeaders = new Array<ServiceHeader>();
-                    for(var i = 0; i < object.serviceHeaders.length; i++) {
-                         var __value__ = object.serviceHeaders[i];
-                         if (__value__ != null) {
-                              result.serviceHeaders.push(ServiceHeader.toObject(__value__));
+                    for(var iserviceHeaders = 0; iserviceHeaders < object.serviceHeaders.length; iserviceHeaders++) {
+                         var vserviceHeaders = object.serviceHeaders[iserviceHeaders];
+                         if (vserviceHeaders != null) {
+                              result.serviceHeaders.push(ServiceHeader.toObject(vserviceHeaders));
                          } else {
                               result.serviceHeaders.push(ServiceHeader.toObject(null));
                          }
@@ -10213,10 +10213,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                // Assign values to bean fields.
                if (object != null && object.cookies != null) {
                     result.cookies = new Array<ServiceSessionCookie>();
-                    for(var i = 0; i < object.cookies.length; i++) {
-                         var __value__ = object.cookies[i];
-                         if (__value__ != null) {
-                              result.cookies.push(ServiceSessionCookie.toObject(__value__));
+                    for(var icookies = 0; icookies < object.cookies.length; icookies++) {
+                         var vcookies = object.cookies[icookies];
+                         if (vcookies != null) {
+                              result.cookies.push(ServiceSessionCookie.toObject(vcookies));
                          } else {
                               result.cookies.push(ServiceSessionCookie.toObject(null));
                          }
@@ -10224,10 +10224,10 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
                }
                if (object != null && object.attributes != null) {
                     result.attributes = new Array<ServiceSessionAttribute>();
-                    for(var i = 0; i < object.attributes.length; i++) {
-                         var __value__ = object.attributes[i];
-                         if (__value__ != null) {
-                              result.attributes.push(ServiceSessionAttribute.toObject(__value__));
+                    for(var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
+                         var vattributes = object.attributes[iattributes];
+                         if (vattributes != null) {
+                              result.attributes.push(ServiceSessionAttribute.toObject(vattributes));
                          } else {
                               result.attributes.push(ServiceSessionAttribute.toObject(null));
                          }
@@ -11237,10 +11237,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactAddresses != null) {
                     result.contactAddresses = new Array<ContactAddress>();
-                    for(var i = 0; i < object.contactAddresses.length; i++) {
-                         var __value__ = object.contactAddresses[i];
-                         if (__value__ != null) {
-                              result.contactAddresses.push(ContactAddress.toObject(__value__));
+                    for(var icontactAddresses = 0; icontactAddresses < object.contactAddresses.length; icontactAddresses++) {
+                         var vcontactAddresses = object.contactAddresses[icontactAddresses];
+                         if (vcontactAddresses != null) {
+                              result.contactAddresses.push(ContactAddress.toObject(vcontactAddresses));
                          } else {
                               result.contactAddresses.push(ContactAddress.toObject(null));
                          }
@@ -11248,10 +11248,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactPhones != null) {
                     result.contactPhones = new Array<ContactPhone>();
-                    for(var i = 0; i < object.contactPhones.length; i++) {
-                         var __value__ = object.contactPhones[i];
-                         if (__value__ != null) {
-                              result.contactPhones.push(ContactPhone.toObject(__value__));
+                    for(var icontactPhones = 0; icontactPhones < object.contactPhones.length; icontactPhones++) {
+                         var vcontactPhones = object.contactPhones[icontactPhones];
+                         if (vcontactPhones != null) {
+                              result.contactPhones.push(ContactPhone.toObject(vcontactPhones));
                          } else {
                               result.contactPhones.push(ContactPhone.toObject(null));
                          }
@@ -11259,10 +11259,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactEmails != null) {
                     result.contactEmails = new Array<ContactEmail>();
-                    for(var i = 0; i < object.contactEmails.length; i++) {
-                         var __value__ = object.contactEmails[i];
-                         if (__value__ != null) {
-                              result.contactEmails.push(ContactEmail.toObject(__value__));
+                    for(var icontactEmails = 0; icontactEmails < object.contactEmails.length; icontactEmails++) {
+                         var vcontactEmails = object.contactEmails[icontactEmails];
+                         if (vcontactEmails != null) {
+                              result.contactEmails.push(ContactEmail.toObject(vcontactEmails));
                          } else {
                               result.contactEmails.push(ContactEmail.toObject(null));
                          }
@@ -11270,10 +11270,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactWebsites != null) {
                     result.contactWebsites = new Array<ContactWebsite>();
-                    for(var i = 0; i < object.contactWebsites.length; i++) {
-                         var __value__ = object.contactWebsites[i];
-                         if (__value__ != null) {
-                              result.contactWebsites.push(ContactWebsite.toObject(__value__));
+                    for(var icontactWebsites = 0; icontactWebsites < object.contactWebsites.length; icontactWebsites++) {
+                         var vcontactWebsites = object.contactWebsites[icontactWebsites];
+                         if (vcontactWebsites != null) {
+                              result.contactWebsites.push(ContactWebsite.toObject(vcontactWebsites));
                          } else {
                               result.contactWebsites.push(ContactWebsite.toObject(null));
                          }
@@ -11281,10 +11281,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactSocials != null) {
                     result.contactSocials = new Array<ContactSocial>();
-                    for(var i = 0; i < object.contactSocials.length; i++) {
-                         var __value__ = object.contactSocials[i];
-                         if (__value__ != null) {
-                              result.contactSocials.push(ContactSocial.toObject(__value__));
+                    for(var icontactSocials = 0; icontactSocials < object.contactSocials.length; icontactSocials++) {
+                         var vcontactSocials = object.contactSocials[icontactSocials];
+                         if (vcontactSocials != null) {
+                              result.contactSocials.push(ContactSocial.toObject(vcontactSocials));
                          } else {
                               result.contactSocials.push(ContactSocial.toObject(null));
                          }
@@ -11292,10 +11292,10 @@ to a relative path of a function published on a remote service. The 'functionNam
                }
                if (object != null && object.contactTags != null) {
                     result.contactTags = new Array<ContactTag>();
-                    for(var i = 0; i < object.contactTags.length; i++) {
-                         var __value__ = object.contactTags[i];
-                         if (__value__ != null) {
-                              result.contactTags.push(ContactTag.toObject(__value__));
+                    for(var icontactTags = 0; icontactTags < object.contactTags.length; icontactTags++) {
+                         var vcontactTags = object.contactTags[icontactTags];
+                         if (vcontactTags != null) {
+                              result.contactTags.push(ContactTag.toObject(vcontactTags));
                          } else {
                               result.contactTags.push(ContactTag.toObject(null));
                          }

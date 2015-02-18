@@ -146,10 +146,10 @@ var Adaptive;
             // Assign values to bean fields.
             if (object != null && object.cookies != null) {
                 result.cookies = new Array();
-                for (var i = 0; i < object.cookies.length; i++) {
-                    var __value__ = object.cookies[i];
-                    if (__value__ != null) {
-                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(__value__));
+                for (var icookies = 0; icookies < object.cookies.length; icookies++) {
+                    var vcookies = object.cookies[icookies];
+                    if (vcookies != null) {
+                        result.cookies.push(Adaptive.ServiceSessionCookie.toObject(vcookies));
                     }
                     else {
                         result.cookies.push(Adaptive.ServiceSessionCookie.toObject(null));
@@ -158,10 +158,10 @@ var Adaptive;
             }
             if (object != null && object.attributes != null) {
                 result.attributes = new Array();
-                for (var i = 0; i < object.attributes.length; i++) {
-                    var __value__ = object.attributes[i];
-                    if (__value__ != null) {
-                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(__value__));
+                for (var iattributes = 0; iattributes < object.attributes.length; iattributes++) {
+                    var vattributes = object.attributes[iattributes];
+                    if (vattributes != null) {
+                        result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(vattributes));
                     }
                     else {
                         result.attributes.push(Adaptive.ServiceSessionAttribute.toObject(null));
