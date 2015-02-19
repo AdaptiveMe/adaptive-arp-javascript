@@ -48,9 +48,9 @@ Please refer to the [project site](http://adaptiveme.github.io) for more informa
 
 ## Work Backlog
 
-#### Board: [![Stories in Ready](https://badge.waffle.io/AdaptiveMe/adaptive-arp-api.svg?label=ready&title=Ready)](https://waffle.io/AdaptiveMe/adaptive-arp-api)
+#### Board: [![Stories in Ready](https://badge.waffle.io/AdaptiveMe/adaptive-arp-javascript.svg?label=ready&title=Ready)](https://waffle.io/AdaptiveMe/adaptive-arp-javascript)
 
-[![Throughput Graph](https://graphs.waffle.io/adaptiveme/adaptive-arp-api/throughput.svg)](https://waffle.io/adaptiveme/adaptive-arp-api/metrics)
+[![Throughput Graph](https://graphs.waffle.io/AdaptiveMe/adaptive-arp-javascript/throughput.svg)](https://waffle.io/AdaptiveMe/adaptive-arp-javascript/metrics)
 
 ## Contributing
 
