@@ -80,30 +80,12 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ICapabilities","getOrientationDefault",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.getOrientationDefault' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.getOrientationDefault' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.getOrientationDefault' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -120,34 +102,16 @@ support at least one orientation. This is usually PortaitUp.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ICapabilities","getOrientationsSupported",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : Array<ICapabilitiesOrientation> = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = new Array<ICapabilitiesOrientation>();
-                              var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var i = 0;i < responseArray.length; i++) {
-                                   response.push(ICapabilitiesOrientation.toObject(responseArray[i]));
-                              }
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.getOrientationsSupported' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.getOrientationsSupported' incorrect response received.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = new Array<ICapabilitiesOrientation>();
+                    var responseArray : [any] = JSON.parse(apiResponse.getResponse());
+                    for(var i = 0;i < responseArray.length; i++) {
+                         response.push(ICapabilitiesOrientation.toObject(responseArray[i]));
                     }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.getOrientationsSupported' request.");
                }
                return response;
           }
@@ -165,30 +129,12 @@ support at least one orientation. This is usually PortaitUp.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasButtonSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasButtonSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasButtonSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasButtonSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -207,30 +153,12 @@ the device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasCommunicationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasCommunicationSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasCommunicationSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasCommunicationSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -248,30 +176,12 @@ the device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasDataSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasDataSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasDataSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasDataSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -290,30 +200,12 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasMediaSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasMediaSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasMediaSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasMediaSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -331,30 +223,12 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasNetSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasNetSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasNetSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasNetSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -373,30 +247,12 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasNotificationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasNotificationSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasNotificationSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasNotificationSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -414,30 +270,12 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(orientation));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasOrientationSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasOrientationSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasOrientationSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasOrientationSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }
@@ -456,30 +294,12 @@ device.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(type));
                var apiRequest : APIRequest = new APIRequest("ICapabilities","hasSensorSupport",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'CapabilitiesBridge.hasSensorSupport' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'CapabilitiesBridge.hasSensorSupport' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'CapabilitiesBridge.hasSensorSupport' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }

@@ -71,17 +71,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IVideo","playStream",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'VideoBridge.playStream' request.");
-               }
+               postRequest(apiRequest);
           }
      }
 }

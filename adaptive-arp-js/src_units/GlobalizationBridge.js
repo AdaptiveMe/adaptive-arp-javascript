@@ -76,33 +76,12 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = Adaptive.Locale.toObject(JSON.parse(apiResponse.getResponse()));
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getDefaultLocale' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'GlobalizationBridge.getDefaultLocale' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getDefaultLocale' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = Adaptive.Locale.toObject(JSON.parse(apiResponse.getResponse()));
             }
             return response;
         };
@@ -117,37 +96,16 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = new Array();
-                        var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var i = 0; i < responseArray.length; i++) {
-                            response.push(Adaptive.Locale.toObject(responseArray[i]));
-                        }
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getLocaleSupportedDescriptors' [" + apiResponse.getStatusMessage() + "].");
-                    }
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = new Array();
+                var responseArray = JSON.parse(apiResponse.getResponse());
+                for (var i = 0; i < responseArray.length; i++) {
+                    response.push(Adaptive.Locale.toObject(responseArray[i]));
                 }
-                else {
-                    console.error("ERROR: 'GlobalizationBridge.getLocaleSupportedDescriptors' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getLocaleSupportedDescriptors' request.");
             }
             return response;
         };
@@ -166,33 +124,12 @@ var Adaptive;
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = apiResponse.getResponse();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getResourceLiteral' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'GlobalizationBridge.getResourceLiteral' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getResourceLiteral' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = apiResponse.getResponse();
             }
             return response;
         };
@@ -209,37 +146,16 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(locale));
             var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = new Array();
-                        var responseArray = JSON.parse(apiResponse.getResponse());
-                        for (var i = 0; i < responseArray.length; i++) {
-                            response.push(Adaptive.KeyPair.toObject(responseArray[i]));
-                        }
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GlobalizationBridge.getResourceLiterals' [" + apiResponse.getStatusMessage() + "].");
-                    }
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = new Array();
+                var responseArray = JSON.parse(apiResponse.getResponse());
+                for (var i = 0; i < responseArray.length; i++) {
+                    response.push(Adaptive.KeyPair.toObject(responseArray[i]));
                 }
-                else {
-                    console.error("ERROR: 'GlobalizationBridge.getResourceLiterals' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GlobalizationBridge.getResourceLiterals' request.");
             }
             return response;
         };

@@ -69,17 +69,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissApplication",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'RuntimeBridge.dismissApplication' request.");
-               }
+               postRequest(apiRequest);
           }
 
           /**
@@ -93,30 +83,12 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissSplashScreen",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'RuntimeBridge.dismissSplashScreen' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'RuntimeBridge.dismissSplashScreen' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'RuntimeBridge.dismissSplashScreen' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }

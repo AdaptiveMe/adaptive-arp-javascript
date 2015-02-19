@@ -86,30 +86,12 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","isBackground",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.isBackground' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'LifecycleBridge.isBackground' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.isBackground' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }

@@ -76,30 +76,12 @@ This method does not create the actual file in the specified folder.
                arParams.push(JSON.stringify(parent));
                arParams.push(JSON.stringify(name));
                var apiRequest : APIRequest = new APIRequest("IFileSystem","createFileDescriptor",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.createFileDescriptor' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.createFileDescriptor' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.createFileDescriptor' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -117,30 +99,12 @@ This path is volatile and may be cleaned by the OS periodically.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCacheFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationCacheFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getApplicationCacheFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getApplicationCacheFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -157,30 +121,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationCloudFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationCloudFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getApplicationCloudFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getApplicationCloudFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -197,30 +143,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationDocumentsFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationDocumentsFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getApplicationDocumentsFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getApplicationDocumentsFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -237,30 +165,12 @@ This path may or may not be directly readable or writable - it usually contains 
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getApplicationFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getApplicationFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -277,30 +187,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getApplicationProtectedFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getApplicationProtectedFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getApplicationProtectedFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getApplicationProtectedFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -316,30 +208,12 @@ This path must always be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSeparator",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : string = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = apiResponse.getResponse();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getSeparator' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getSeparator' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getSeparator' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = apiResponse.getResponse();
                }
                return response;
           }
@@ -358,30 +232,12 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IFileSystem","getSystemExternalFolder",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : FileDescriptor = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileSystemBridge.getSystemExternalFolder' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'FileSystemBridge.getSystemExternalFolder' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'FileSystemBridge.getSystemExternalFolder' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = FileDescriptor.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }

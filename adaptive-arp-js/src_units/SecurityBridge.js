@@ -111,33 +111,12 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("ISecurity", "isDeviceModified", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = JSON.parse(apiResponse.getResponse());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.isDeviceModified' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'SecurityBridge.isDeviceModified' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.isDeviceModified' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = JSON.parse(apiResponse.getResponse());
             }
             return response;
         };

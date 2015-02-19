@@ -76,33 +76,12 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = JSON.parse(apiResponse.getResponse());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openExtenalBrowser' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'BrowserBridge.openExtenalBrowser' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'BrowserBridge.openExtenalBrowser' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = JSON.parse(apiResponse.getResponse());
             }
             return response;
         };
@@ -123,33 +102,12 @@ var Adaptive;
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = JSON.parse(apiResponse.getResponse());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowser' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'BrowserBridge.openInternalBrowser' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'BrowserBridge.openInternalBrowser' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = JSON.parse(apiResponse.getResponse());
             }
             return response;
         };
@@ -170,33 +128,12 @@ var Adaptive;
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
+            var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
             // Check response.
-            if (xhr.status === 200) {
-                // Process response.
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        response = JSON.parse(apiResponse.getResponse());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'BrowserBridge.openInternalBrowserModal' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'BrowserBridge.openInternalBrowserModal' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'BrowserBridge.openInternalBrowserModal' request.");
+            if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                response = JSON.parse(apiResponse.getResponse());
             }
             return response;
         };

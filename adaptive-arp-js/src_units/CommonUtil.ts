@@ -225,6 +225,39 @@ module Adaptive {
         }
     }
 
+     /**
+        @private
+        @param {Adaptive.APIRequest} apiRequest the request to be processed.
+        @return {Adaptive.APIResponse} Response to the request.
+        @since v2.1.10
+        Send request and receives responses synchronously.
+     */
+     export function postRequest(apiRequest : APIRequest) : APIResponse {
+        apiRequest.setApiVersion(bridgeApiVersion);
+        var apiResponse : APIResponse = new APIResponse("", 200, "");
+        // Create and send JSON request.
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", bridgePath, false);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify(apiRequest));
+        // Check response.
+        if (xhr.status === 200 ) {
+            if (xhr.responseText != null && xhr.responseText !== '') {
+                apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                if (apiResponse != null && apiResponse.getStatusCode() != 200) {
+                    console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
+                }
+            } else {
+                apiResponse = new APIResponse("", 400, "");
+                console.error("ERROR: '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' incorrect response received.");
+            }
+        } else {
+            apiResponse = new APIResponse("", xhr.status, "");
+            console.error("ERROR: "+xhr.status+" sending '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' request.");
+        }
+        return apiResponse;
+    }
+
 }
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------

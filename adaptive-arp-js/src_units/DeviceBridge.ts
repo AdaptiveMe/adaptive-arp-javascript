@@ -105,30 +105,12 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getDeviceInfo",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : DeviceInfo = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getDeviceInfo' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.getDeviceInfo' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.getDeviceInfo' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = DeviceInfo.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -144,30 +126,12 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getLocaleCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : Locale = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getLocaleCurrent' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.getLocaleCurrent' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.getLocaleCurrent' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = Locale.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -184,30 +148,12 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getOrientationCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : ICapabilitiesOrientation = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.getOrientationCurrent' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.getOrientationCurrent' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.getOrientationCurrent' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = ICapabilitiesOrientation.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }

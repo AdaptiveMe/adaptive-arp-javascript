@@ -105,4 +105,12 @@ declare module Adaptive {
        Send request for methods that use callbacks.
     */
     function postRequestCallback(apiRequest: APIRequest, callback: IBaseCallback, callbackDictionary: Dictionary<IBaseCallback>): void;
+    /**
+       @private
+       @param {Adaptive.APIRequest} apiRequest the request to be processed.
+       @return {Adaptive.APIResponse} Response to the request.
+       @since v2.1.10
+       Send request and receives responses synchronously.
+    */
+    function postRequest(apiRequest: APIRequest): APIResponse;
 }

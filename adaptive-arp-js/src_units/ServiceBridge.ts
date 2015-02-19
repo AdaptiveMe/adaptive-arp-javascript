@@ -80,30 +80,12 @@ manipulated as needed by the application before submitting the ServiceRequest vi
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceToken));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceRequest",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : ServiceRequest = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceRequest' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.getServiceRequest' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceRequest' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = ServiceRequest.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -128,30 +110,12 @@ configured in the platform's XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceToken",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : ServiceToken = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceToken' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.getServiceToken' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceToken' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -172,30 +136,12 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(uri));
                var apiRequest : APIRequest = new APIRequest("IService","getServiceTokenByUri",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : ServiceToken = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServiceTokenByUri' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.getServiceTokenByUri' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServiceTokenByUri' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = ServiceToken.toObject(JSON.parse(apiResponse.getResponse()));
                }
                return response;
           }
@@ -211,34 +157,16 @@ configured in the platform's XML service definition file.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IService","getServicesRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : Array<ServiceToken> = null;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = new Array<ServiceToken>();
-                              var responseArray : [any] = JSON.parse(apiResponse.getResponse());
-                              for(var i = 0;i < responseArray.length; i++) {
-                                   response.push(ServiceToken.toObject(responseArray[i]));
-                              }
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.getServicesRegistered' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.getServicesRegistered' incorrect response received.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = new Array<ServiceToken>();
+                    var responseArray : [any] = JSON.parse(apiResponse.getResponse());
+                    for(var i = 0;i < responseArray.length; i++) {
+                         response.push(ServiceToken.toObject(responseArray[i]));
                     }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.getServicesRegistered' request.");
                }
                return response;
           }
@@ -279,30 +207,12 @@ XML service definition file.
                arParams.push(JSON.stringify(functionName));
                arParams.push(JSON.stringify(method));
                var apiRequest : APIRequest = new APIRequest("IService","isServiceRegistered",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
+               var apiResponse = postRequest(apiRequest);
                // Prepare response.
                var response : boolean = false;
                // Check response.
-               if (xhr.status === 200 ) {
-                    // Process response.
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              response = JSON.parse(apiResponse.getResponse());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.isServiceRegistered' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'ServiceBridge.isServiceRegistered' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.isServiceRegistered' request.");
+               if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    response = JSON.parse(apiResponse.getResponse());
                }
                return response;
           }

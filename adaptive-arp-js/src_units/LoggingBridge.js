@@ -77,18 +77,7 @@ var Adaptive;
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelMessage", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.logLevelMessage' request.");
-            }
+            Adaptive.postRequest(apiRequest);
         };
         /**
            Logs the given message, with the given log level if specified, to the standard platform/environment.
@@ -105,18 +94,7 @@ var Adaptive;
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
             var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'LoggingBridge.logLevelCategoryMessage' request.");
-            }
+            Adaptive.postRequest(apiRequest);
         };
         return LoggingBridge;
     })(Adaptive.BaseUtilBridge);
