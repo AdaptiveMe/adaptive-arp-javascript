@@ -35,6 +35,7 @@ Release:
 ///<reference path="APIRequest.ts"/>
 ///<reference path="APIResponse.ts"/>
 ///<reference path="IBaseListener.ts"/>
+///<reference path="IBaseCallback.ts"/>
 module Adaptive {
 
      /**
@@ -183,6 +184,47 @@ module Adaptive {
             listenerDictionary.remove("" + listener.getId());
         }
     }
+
+     /**
+        @private
+        @param {Adaptive.APIRequest} apiRequest the request to be processed.
+        @param {Adaptive.IBaseCallback} callback to receive responses.
+        @param {Adaptive.Dictionary} callbackDictionary dictionary of callbacks for the operation.
+        @since v2.1.10
+        Send request for methods that use callbacks.
+     */
+     export function postRequestCallback(apiRequest : APIRequest, callback: IBaseCallback, callbackDictionary: Dictionary<IBaseCallback>) : void {
+        apiRequest.setApiVersion(bridgeApiVersion);
+        var apiResponse : APIResponse = new APIResponse("", 200, "");
+        // Create and send JSON request.
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", bridgePath, false);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        // Add callback reference to local dictionary.
+        callbackDictionary.add(""+callback.getId(), callback);
+        xhr.send(JSON.stringify(apiRequest));
+        // Check response.
+        if (xhr.status === 200 ) {
+            if (xhr.responseText != null && xhr.responseText !== '') {
+                apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                } else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    callbackDictionary.remove(""+callback.getId());
+                    console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
+                }
+            } else {
+                // Remove callback reference from local dictionary due to invalid response.
+                callbackDictionary.remove(""+callback.getId());
+                console.error("ERROR: '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' incorrect response received.");
+            }
+        } else {
+            // Unknown error - remove from dictionary.
+            callbackDictionary.remove(""+callback.getId());
+            console.error("ERROR: "+xhr.status+" sending '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' request.");
+        }
+    }
+
 }
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------

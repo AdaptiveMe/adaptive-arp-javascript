@@ -79,38 +79,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContact' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContact' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -126,38 +95,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactPhotoResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactPhotoResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactPhoto' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactPhotoResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactPhotoResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactPhoto' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactPhotoResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactPhotoResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactPhotoResultCallback);
           }
 
           /**
@@ -171,38 +109,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContacts' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContacts' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -218,38 +125,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsForFields' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactsForFields' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -267,38 +143,7 @@ module Adaptive {
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactsWithFilter' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -314,38 +159,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContacts' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.searchContacts' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -363,38 +177,7 @@ module Adaptive {
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.searchContactsWithFilter' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**

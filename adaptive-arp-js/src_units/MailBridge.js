@@ -79,41 +79,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(data));
             var apiRequest = new Adaptive.APIRequest("IMail", "sendEmail", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredMessagingCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredMessagingCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IMessagingCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'MailBridge.sendEmail' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredMessagingCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IMessagingCallbackError.Unknown);
-                    console.error("ERROR: 'MailBridge.sendEmail' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredMessagingCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IMessagingCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'MailBridge.sendEmail' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredMessagingCallback);
         };
         return MailBridge;
     })(Adaptive.BasePIMBridge);

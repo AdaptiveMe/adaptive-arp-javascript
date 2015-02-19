@@ -174,41 +174,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "create", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.create' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.create' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.create' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileResultCallback);
         };
         /**
            @method
@@ -312,41 +278,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "getContent", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileDataLoadResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileDataLoadResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileDataLoadResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.getContent' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileDataLoadResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileDataLoadResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.getContent' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileDataLoadResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileDataLoadResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.getContent' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileDataLoadResultCallback);
         };
         /**
            @method
@@ -534,41 +466,7 @@ any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFiles", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.listFiles' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.listFiles' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.listFiles' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileListResultCallback);
         };
         /**
            @method
@@ -586,41 +484,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
             var apiRequest = new Adaptive.APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileListResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.listFilesForRegex' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.listFilesForRegex' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileListResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileListResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.listFilesForRegex' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileListResultCallback);
         };
         /**
            @method
@@ -687,41 +551,7 @@ new destination file.
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
             var apiRequest = new Adaptive.APIRequest("IFile", "move", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.move' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.move' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.move' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileResultCallback);
         };
         /**
            @method
@@ -738,41 +568,7 @@ new destination file.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
             var apiRequest = new Adaptive.APIRequest("IFile", "setContent", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredFileDataStoreResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredFileDataStoreResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.IFileDataStoreResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'FileBridge.setContent' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredFileDataStoreResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.IFileDataStoreResultCallbackError.Unknown);
-                    console.error("ERROR: 'FileBridge.setContent' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredFileDataStoreResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.IFileDataStoreResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'FileBridge.setContent' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredFileDataStoreResultCallback);
         };
         return FileBridge;
     })(Adaptive.BaseDataBridge);

@@ -1,6 +1,7 @@
 /// <reference path="APIRequest.d.ts" />
 /// <reference path="APIResponse.d.ts" />
 /// <reference path="IBaseListener.d.ts" />
+/// <reference path="IBaseCallback.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -95,4 +96,13 @@ declare module Adaptive {
     */
     function postRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>): void;
     function manageRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>, isError: boolean): void;
+    /**
+       @private
+       @param {Adaptive.APIRequest} apiRequest the request to be processed.
+       @param {Adaptive.IBaseCallback} callback to receive responses.
+       @param {Adaptive.Dictionary} callbackDictionary dictionary of callbacks for the operation.
+       @since v2.1.10
+       Send request for methods that use callbacks.
+    */
+    function postRequestCallback(apiRequest: APIRequest, callback: IBaseCallback, callbackDictionary: Dictionary<IBaseCallback>): void;
 }

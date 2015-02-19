@@ -81,41 +81,7 @@ var Adaptive;
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new Adaptive.APIRequest("ISecurity", "deleteSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.deleteSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                    console.error("ERROR: 'SecurityBridge.deleteSecureKeyValuePairs' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredSecurityResultCallback);
         };
         /**
            @method
@@ -132,41 +98,7 @@ var Adaptive;
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new Adaptive.APIRequest("ISecurity", "getSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.getSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                    console.error("ERROR: 'SecurityBridge.getSecureKeyValuePairs' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.getSecureKeyValuePairs' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredSecurityResultCallback);
         };
         /**
            @method
@@ -224,41 +156,7 @@ var Adaptive;
             arParams.push(JSON.stringify(keyValues));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new Adaptive.APIRequest("ISecurity", "setSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredSecurityResultCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'SecurityBridge.setSecureKeyValuePairs' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                    console.error("ERROR: 'SecurityBridge.setSecureKeyValuePairs' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredSecurityResultCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.ISecurityResultCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'SecurityBridge.setSecureKeyValuePairs' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredSecurityResultCallback);
         };
         return SecurityBridge;
     })(Adaptive.BaseSecurityBridge);

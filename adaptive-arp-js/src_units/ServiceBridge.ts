@@ -256,38 +256,7 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
                var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredServiceResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredServiceResultCallback.remove(""+callback.getId());
-                              callback.onError(IServiceResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.invokeService' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredServiceResultCallback.remove(""+callback.getId());
-                         callback.onError(IServiceResultCallbackError.Unknown)
-                         console.error("ERROR: 'ServiceBridge.invokeService' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredServiceResultCallback.remove(""+callback.getId());
-                    callback.onError(IServiceResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredServiceResultCallback);
           }
 
           /**

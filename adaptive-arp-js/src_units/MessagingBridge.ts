@@ -76,38 +76,7 @@ module Adaptive {
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
                var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredMessagingCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredMessagingCallback.remove(""+callback.getId());
-                              callback.onError(IMessagingCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MessagingBridge.sendSMS' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredMessagingCallback.remove(""+callback.getId());
-                         callback.onError(IMessagingCallbackError.Unknown)
-                         console.error("ERROR: 'MessagingBridge.sendSMS' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredMessagingCallback.remove(""+callback.getId());
-                    callback.onError(IMessagingCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredMessagingCallback);
           }
      }
 }

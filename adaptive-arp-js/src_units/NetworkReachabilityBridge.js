@@ -78,41 +78,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(host));
             var apiRequest = new Adaptive.APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkReachabilityBridge.isNetworkReachable' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                    console.error("ERROR: 'NetworkReachabilityBridge.isNetworkReachable' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredNetworkReachabilityCallback);
         };
         /**
            @method
@@ -127,41 +93,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
-            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add callback reference to local dictionary.
-            Adaptive.registeredNetworkReachabilityCallback.add("" + callback.getId(), callback);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove callback reference from local dictionary due to invalid response.
-                        Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                        callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkReachabilityBridge.isNetworkServiceReachable' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove callback reference from local dictionary due to invalid response.
-                    Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                    callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                    console.error("ERROR: 'NetworkReachabilityBridge.isNetworkServiceReachable' incorrect response received.");
-                }
-            }
-            else {
-                // Unknown error - remove from dictionary and notify callback.
-                Adaptive.registeredNetworkReachabilityCallback.remove("" + callback.getId());
-                callback.onError(Adaptive.INetworkReachabilityCallbackError.Unknown);
-                console.error("ERROR: " + xhr.status + " sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
-            }
+            Adaptive.postRequestCallback(apiRequest, callback, Adaptive.registeredNetworkReachabilityCallback);
         };
         return NetworkReachabilityBridge;
     })(Adaptive.BaseCommunicationBridge);

@@ -179,6 +179,47 @@ module Adaptive {
             listenerDictionary.remove("" + listener.getId());
         }
     }
+
+     /**
+        @private
+        @param {Adaptive.APIRequest} apiRequest the request to be processed.
+        @param {Adaptive.IBaseCallback} callback to receive responses.
+        @param {Adaptive.Dictionary} callbackDictionary dictionary of callbacks for the operation.
+        @since v2.1.10
+        Send request for methods that use callbacks.
+     */
+     export function postRequestCallback(apiRequest : APIRequest, callback: IBaseCallback, callbackDictionary: Dictionary<IBaseCallback>) : void {
+        apiRequest.setApiVersion(bridgeApiVersion);
+        var apiResponse : APIResponse = new APIResponse("", 200, "");
+        // Create and send JSON request.
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", bridgePath, false);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        // Add callback reference to local dictionary.
+        callbackDictionary.add(""+callback.getId(), callback);
+        xhr.send(JSON.stringify(apiRequest));
+        // Check response.
+        if (xhr.status === 200 ) {
+            if (xhr.responseText != null && xhr.responseText !== '') {
+                apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                } else {
+                    // Remove callback reference from local dictionary due to invalid response.
+                    callbackDictionary.remove(""+callback.getId());
+                    console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
+                }
+            } else {
+                // Remove callback reference from local dictionary due to invalid response.
+                callbackDictionary.remove(""+callback.getId());
+                console.error("ERROR: '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' incorrect response received.");
+            }
+        } else {
+            // Unknown error - remove from dictionary.
+            callbackDictionary.remove(""+callback.getId());
+            console.error("ERROR: "+xhr.status+" sending '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' request.");
+        }
+    }
+
      /**
         This is a marker interface for bridge classes that invoke delegates.
 
@@ -15993,38 +16034,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var arParams : string[] = [];
                arParams.push(JSON.stringify(host));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkReachable",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                              callback.onError(INetworkReachabilityCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkReachabilityBridge.isNetworkReachable' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                         callback.onError(INetworkReachabilityCallbackError.Unknown)
-                         console.error("ERROR: 'NetworkReachabilityBridge.isNetworkReachable' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                    callback.onError(INetworkReachabilityCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkReachable' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredNetworkReachabilityCallback);
           }
 
           /**
@@ -16040,38 +16050,7 @@ event may be fired if the application vetoes display rotation before rotation is
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("INetworkReachability","isNetworkServiceReachable",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredNetworkReachabilityCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                              callback.onError(INetworkReachabilityCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkReachabilityBridge.isNetworkServiceReachable' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                         callback.onError(INetworkReachabilityCallbackError.Unknown)
-                         console.error("ERROR: 'NetworkReachabilityBridge.isNetworkServiceReachable' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredNetworkReachabilityCallback.remove(""+callback.getId());
-                    callback.onError(INetworkReachabilityCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkReachabilityBridge.isNetworkServiceReachable' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredNetworkReachabilityCallback);
           }
      }
 
@@ -16345,38 +16324,7 @@ configured in the platform's XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(serviceRequest));
                var apiRequest : APIRequest = new APIRequest("IService","invokeService",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredServiceResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredServiceResultCallback.remove(""+callback.getId());
-                              callback.onError(IServiceResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ServiceBridge.invokeService' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredServiceResultCallback.remove(""+callback.getId());
-                         callback.onError(IServiceResultCallbackError.Unknown)
-                         console.error("ERROR: 'ServiceBridge.invokeService' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredServiceResultCallback.remove(""+callback.getId());
-                    callback.onError(IServiceResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ServiceBridge.invokeService' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredServiceResultCallback);
           }
 
           /**
@@ -16576,38 +16524,7 @@ XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                var apiRequest : APIRequest = new APIRequest("IDatabase","createDatabase",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.createDatabase' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.createDatabase' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createDatabase' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseResultCallback);
           }
 
           /**
@@ -16625,38 +16542,7 @@ XML service definition file.
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
                var apiRequest : APIRequest = new APIRequest("IDatabase","createTable",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.createTable' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.createTable' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.createTable' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseTableResultCallback);
           }
 
           /**
@@ -16672,38 +16558,7 @@ XML service definition file.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(database));
                var apiRequest : APIRequest = new APIRequest("IDatabase","deleteDatabase",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.deleteDatabase' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.deleteDatabase' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteDatabase' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseResultCallback);
           }
 
           /**
@@ -16721,38 +16576,7 @@ XML service definition file.
                arParams.push(JSON.stringify(database));
                arParams.push(JSON.stringify(databaseTable));
                var apiRequest : APIRequest = new APIRequest("IDatabase","deleteTable",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.deleteTable' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.deleteTable' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.deleteTable' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseTableResultCallback);
           }
 
           /**
@@ -16773,38 +16597,7 @@ should be passed as a parameter
                arParams.push(JSON.stringify(statement));
                arParams.push(JSON.stringify(replacements));
                var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlStatement",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.executeSqlStatement' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.executeSqlStatement' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlStatement' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseTableResultCallback);
           }
 
           /**
@@ -16825,38 +16618,7 @@ should be passed as a parameter
                arParams.push(JSON.stringify(statements));
                arParams.push(JSON.stringify(rollbackFlag));
                var apiRequest : APIRequest = new APIRequest("IDatabase","executeSqlTransactions",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredDatabaseTableResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                              callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DatabaseBridge.executeSqlTransactions' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                         callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                         console.error("ERROR: 'DatabaseBridge.executeSqlTransactions' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredDatabaseTableResultCallback.remove(""+callback.getId());
-                    callback.onError(IDatabaseTableResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'DatabaseBridge.executeSqlTransactions' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredDatabaseTableResultCallback);
           }
 
           /**
@@ -17057,38 +16819,7 @@ should be passed as a parameter
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","create",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.create' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.create' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.create' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileResultCallback);
           }
 
           /**
@@ -17189,38 +16920,7 @@ deleted if the cascade parameter is set to true.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","getContent",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileDataLoadResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileDataLoadResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileDataLoadResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.getContent' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileDataLoadResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileDataLoadResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.getContent' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileDataLoadResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileDataLoadResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.getContent' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileDataLoadResultCallback);
           }
 
           /**
@@ -17401,38 +17101,7 @@ any results.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(descriptor));
                var apiRequest : APIRequest = new APIRequest("IFile","listFiles",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileListResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileListResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileListResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFiles' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileListResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileListResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.listFiles' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileListResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileListResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFiles' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileListResultCallback);
           }
 
           /**
@@ -17451,38 +17120,7 @@ is a file, it will not yield any results.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(regex));
                var apiRequest : APIRequest = new APIRequest("IFile","listFilesForRegex",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileListResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileListResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileListResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.listFilesForRegex' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileListResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileListResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.listFilesForRegex' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileListResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileListResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.listFilesForRegex' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileListResultCallback);
           }
 
           /**
@@ -17548,38 +17186,7 @@ new destination file.
                arParams.push(JSON.stringify(createPath));
                arParams.push(JSON.stringify(overwrite));
                var apiRequest : APIRequest = new APIRequest("IFile","move",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.move' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.move' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.move' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileResultCallback);
           }
 
           /**
@@ -17597,38 +17204,7 @@ new destination file.
                arParams.push(JSON.stringify(descriptor));
                arParams.push(JSON.stringify(content));
                var apiRequest : APIRequest = new APIRequest("IFile","setContent",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredFileDataStoreResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredFileDataStoreResultCallback.remove(""+callback.getId());
-                              callback.onError(IFileDataStoreResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'FileBridge.setContent' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredFileDataStoreResultCallback.remove(""+callback.getId());
-                         callback.onError(IFileDataStoreResultCallbackError.Unknown)
-                         console.error("ERROR: 'FileBridge.setContent' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredFileDataStoreResultCallback.remove(""+callback.getId());
-                    callback.onError(IFileDataStoreResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'FileBridge.setContent' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredFileDataStoreResultCallback);
           }
      }
 
@@ -18242,38 +17818,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContact' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContact' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContact' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18289,38 +17834,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactPhotoResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactPhotoResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactPhotoResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactPhoto' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactPhotoResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactPhotoResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactPhoto' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactPhotoResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactPhotoResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactPhoto' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactPhotoResultCallback);
           }
 
           /**
@@ -18334,38 +17848,7 @@ This path may or may not be writable by the current application.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContacts' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContacts' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContacts' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18381,38 +17864,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsForFields' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactsForFields' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsForFields' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18430,38 +17882,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.getContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.getContactsWithFilter' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.getContactsWithFilter' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18477,38 +17898,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContacts' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.searchContacts' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContacts' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18526,38 +17916,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredContactResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredContactResultCallback.remove(""+callback.getId());
-                              callback.onError(IContactResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'ContactBridge.searchContactsWithFilter' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredContactResultCallback.remove(""+callback.getId());
-                         callback.onError(IContactResultCallbackError.Unknown)
-                         console.error("ERROR: 'ContactBridge.searchContactsWithFilter' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredContactResultCallback.remove(""+callback.getId());
-                    callback.onError(IContactResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'ContactBridge.searchContactsWithFilter' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredContactResultCallback);
           }
 
           /**
@@ -18635,38 +17994,7 @@ This path may or may not be writable by the current application.
                var arParams : string[] = [];
                arParams.push(JSON.stringify(data));
                var apiRequest : APIRequest = new APIRequest("IMail","sendEmail",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredMessagingCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredMessagingCallback.remove(""+callback.getId());
-                              callback.onError(IMessagingCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MailBridge.sendEmail' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredMessagingCallback.remove(""+callback.getId());
-                         callback.onError(IMessagingCallbackError.Unknown)
-                         console.error("ERROR: 'MailBridge.sendEmail' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredMessagingCallback.remove(""+callback.getId());
-                    callback.onError(IMessagingCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'MailBridge.sendEmail' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredMessagingCallback);
           }
      }
 
@@ -18703,38 +18031,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(number));
                arParams.push(JSON.stringify(text));
                var apiRequest : APIRequest = new APIRequest("IMessaging","sendSMS",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredMessagingCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredMessagingCallback.remove(""+callback.getId());
-                              callback.onError(IMessagingCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'MessagingBridge.sendSMS' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredMessagingCallback.remove(""+callback.getId());
-                         callback.onError(IMessagingCallbackError.Unknown)
-                         console.error("ERROR: 'MessagingBridge.sendSMS' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredMessagingCallback.remove(""+callback.getId());
-                    callback.onError(IMessagingCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'MessagingBridge.sendSMS' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredMessagingCallback);
           }
      }
 
@@ -18885,38 +18182,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","deleteSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredSecurityResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredSecurityResultCallback.remove(""+callback.getId());
-                              callback.onError(ISecurityResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.deleteSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredSecurityResultCallback.remove(""+callback.getId());
-                         callback.onError(ISecurityResultCallbackError.Unknown)
-                         console.error("ERROR: 'SecurityBridge.deleteSecureKeyValuePairs' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredSecurityResultCallback.remove(""+callback.getId());
-                    callback.onError(ISecurityResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.deleteSecureKeyValuePairs' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredSecurityResultCallback);
           }
 
           /**
@@ -18934,38 +18200,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keys));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","getSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredSecurityResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredSecurityResultCallback.remove(""+callback.getId());
-                              callback.onError(ISecurityResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.getSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredSecurityResultCallback.remove(""+callback.getId());
-                         callback.onError(ISecurityResultCallbackError.Unknown)
-                         console.error("ERROR: 'SecurityBridge.getSecureKeyValuePairs' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredSecurityResultCallback.remove(""+callback.getId());
-                    callback.onError(ISecurityResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.getSecureKeyValuePairs' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredSecurityResultCallback);
           }
 
           /**
@@ -19022,38 +18257,7 @@ This path may or may not be writable by the current application.
                arParams.push(JSON.stringify(keyValues));
                arParams.push(JSON.stringify(publicAccessName));
                var apiRequest : APIRequest = new APIRequest("ISecurity","setSecureKeyValuePairs",arParams, callback.getId());
-               apiRequest.setApiVersion(bridgeApiVersion);
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add callback reference to local dictionary.
-               registeredSecurityResultCallback.add(""+callback.getId(), callback);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove callback reference from local dictionary due to invalid response.
-                              registeredSecurityResultCallback.remove(""+callback.getId());
-                              callback.onError(ISecurityResultCallbackError.Unknown)
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'SecurityBridge.setSecureKeyValuePairs' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove callback reference from local dictionary due to invalid response.
-                         registeredSecurityResultCallback.remove(""+callback.getId());
-                         callback.onError(ISecurityResultCallbackError.Unknown)
-                         console.error("ERROR: 'SecurityBridge.setSecureKeyValuePairs' incorrect response received.");
-                    }
-               } else {
-                    // Unknown error - remove from dictionary and notify callback.
-                    registeredSecurityResultCallback.remove(""+callback.getId());
-                    callback.onError(ISecurityResultCallbackError.Unknown)
-                    console.error("ERROR: "+xhr.status+" sending 'SecurityBridge.setSecureKeyValuePairs' request.");
-               }
+               postRequestCallback(apiRequest, callback, registeredSecurityResultCallback);
           }
      }
 
