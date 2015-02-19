@@ -91,7 +91,7 @@ declare module Adaptive {
        Send request for methods that manage listeners.
     */
     function postRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>): void;
-    function manageRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>): void;
+    function manageRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>, isError: boolean): void;
     /**
        This is a marker interface for bridge classes that invoke delegates.
 
