@@ -136,7 +136,9 @@ module Adaptive {
      */
      export function postRequestListener(apiRequest : APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>) : void {
         apiRequest.setApiVersion(bridgeApiVersion);
-        var apiResponse : APIResponse = new APIResponse("", 200, "");
+        var apiResponse : APIResponse = new APIResponse("", 200, "")
+        var apiError : boolean = false;
+
         // Create and send JSON request.
         var xhr = new XMLHttpRequest();
         xhr.open("POST", bridgePath, false);
@@ -153,31 +155,26 @@ module Adaptive {
             if (xhr.responseText != null && xhr.responseText !== '') {
                 apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                 if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") == -1) {
+                    if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") === -1) {
                         listenerDictionary.remove(""+listener.getId());
                     } else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
                         listenerDictionary.removeAll();
                     }
                 } else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    if (apiRequest.getMethodName().indexOf("add") > -1) {
-                        listenerDictionary.remove(""+listener.getId());
-                    }
+                    apiError = true;
                     console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
                 }
             } else {
-                // Remove listener reference from local dictionary due to invalid response.
-                if (apiRequest.getMethodName().indexOf("add") > -1) {
-                    listenerDictionary.remove("" + listener.getId());
-                }
+                apiError = true;
                 console.error("ERROR: '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' incorrect response received.");
             }
         } else {
-            // Remove listener reference from local dictionary due to invalid response.
-            if (apiRequest.getMethodName().indexOf("add") > -1) {
-                listenerDictionary.remove("" + listener.getId());
-            }
+            apiError = true;
             console.error("ERROR: "+xhr.status+" sending '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' request.");
+        }
+
+        if (apiError && apiRequest.getMethodName().indexOf("add") > -1) {
+            listenerDictionary.remove("" + listener.getId());
         }
     }
      /**
