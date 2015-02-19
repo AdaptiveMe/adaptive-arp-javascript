@@ -5,33 +5,8 @@
 ## Introduction
 
 ### About This Project
-Five of the biggest challenges you will encounter in multi-platform development are:
 
-1. to keep APIs coherent across all language domains and platforms, 
-2. to propagate changes in APIs to all language domains and platforms coherently,
-3. to reduce the latency between specification and implementation a minimum,
-4. that APIs are well documented for and specific to all language domains, and, 
-5. that APIs enforce the desired behaviour from the implementation as much as possible. 
-
-There are obviously more challenges but one that clearly deserves specific mention is the rate of change of platform specific APIs – not to mention language syntax changes! We :heart: Swift.
-
-To work mitigate these challenges to the maximum extent possible, we chose a nice, stable and tool-rich language – Java – to define and document the APIs that our platforms must support (**that's this project**) and, instead of embarking on the task of implementing those APIs in different languages and platforms by hand, we created a code generator to implement > 90% of the code for us. Our generator converts the Java API code defined in this project to the different languages our platforms must support along with the conversion of documentation tags for those languages. The general workflow is as follows:
-
-[![Overview](https://raw.githubusercontent.com/AdaptiveMe/adaptive-arp-api/gh-pages/assets/arp-summary.png?1)](#)
-
-1. API specifications are agreed, implemented and documented in the Java language.
- - [x] The new API specification is tagged with a new version.
-2. API specifications are pushed to this repository.
- - [x] The API specifications go through CI and on passing, the generator is notified.
-3. The Generator is executed on the API specifications.
- - [x] **TypeScript** code and documentation is generated for hybrid-app **HTML5** applications.
- - [x] **TypeScript** code is compiled to **JavaScript**/**ECMAScript 5**.
- - [x] **Swift** code and documentation is generated for **iOS** and **OS X** platforms.
- - [x] **Java** code and documentation is generated for **Android** mobile, wear and tv platforms.
- - [x] **C#** code and documentation is generated for **Windows 10** platforms.
- - [x] Etc...
-4. After generation, each platform repo contains skeleton classes with stub-methods to be implemented.
- - [x] On completing, the platform repo is tagged with the same version as the API specification.
+**TODO**
 
 ### About Adaptive Runtime Platform
 
