@@ -116,7 +116,6 @@ var Adaptive;
     function postRequestListener(apiRequest, listener, listenerDictionary) {
         apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
         var apiResponse = new APIResponse("", 200, "");
-        var apiError = false;
         // Create and send JSON request.
         var xhr = new XMLHttpRequest();
         xhr.open("POST", Adaptive.bridgePath, false);
@@ -131,32 +130,36 @@ var Adaptive;
             if (xhr.responseText != null && xhr.responseText !== '') {
                 apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
                 if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") === -1) {
-                        listenerDictionary.remove("" + listener.getId());
-                    }
-                    else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
-                        listenerDictionary.removeAll();
-                    }
+                    manageRequestListener(apiRequest, listener, listenerDictionary);
                 }
                 else {
-                    apiError = true;
+                    manageRequestListener(apiRequest, listener, listenerDictionary);
                     console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' [" + apiResponse.getStatusMessage() + "].");
                 }
             }
             else {
-                apiError = true;
+                manageRequestListener(apiRequest, listener, listenerDictionary);
                 console.error("ERROR: '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' incorrect response received.");
             }
         }
         else {
-            apiError = true;
+            manageRequestListener(apiRequest, listener, listenerDictionary);
             console.error("ERROR: " + xhr.status + " sending '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' request.");
-        }
-        if (apiError && apiRequest.getMethodName().indexOf("add") > -1) {
-            listenerDictionary.remove("" + listener.getId());
         }
     }
     Adaptive.postRequestListener = postRequestListener;
+    function manageRequestListener(apiRequest, listener, listenerDictionary) {
+        if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") === -1) {
+            listenerDictionary.remove("" + listener.getId());
+        }
+        else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
+            listenerDictionary.removeAll();
+        }
+        else if (apiRequest.getMethodName().indexOf("add") > -1) {
+            listenerDictionary.remove("" + listener.getId());
+        }
+    }
+    Adaptive.manageRequestListener = manageRequestListener;
     /**
        @class Adaptive.APIBean
        Structure representing a native response to the HTML5
