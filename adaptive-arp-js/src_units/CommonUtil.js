@@ -127,32 +127,32 @@ var Adaptive;
             if (xhr.responseText != null && xhr.responseText !== '') {
                 apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
                 if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    manageRequestListener(apiRequest, listener, listenerDictionary);
+                    manageRequestListener(apiRequest, listener, listenerDictionary, false);
                 }
                 else {
-                    manageRequestListener(apiRequest, listener, listenerDictionary);
+                    manageRequestListener(apiRequest, listener, listenerDictionary, true);
                     console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' [" + apiResponse.getStatusMessage() + "].");
                 }
             }
             else {
-                manageRequestListener(apiRequest, listener, listenerDictionary);
+                manageRequestListener(apiRequest, listener, listenerDictionary, true);
                 console.error("ERROR: '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' incorrect response received.");
             }
         }
         else {
-            manageRequestListener(apiRequest, listener, listenerDictionary);
+            manageRequestListener(apiRequest, listener, listenerDictionary, true);
             console.error("ERROR: " + xhr.status + " sending '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' request.");
         }
     }
     Adaptive.postRequestListener = postRequestListener;
-    function manageRequestListener(apiRequest, listener, listenerDictionary) {
+    function manageRequestListener(apiRequest, listener, listenerDictionary, isError) {
         if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") === -1) {
             listenerDictionary.remove("" + listener.getId());
         }
         else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
             listenerDictionary.removeAll();
         }
-        else if (apiRequest.getMethodName().indexOf("add") > -1) {
+        else if (isError && apiRequest.getMethodName().indexOf("add") > -1) {
             listenerDictionary.remove("" + listener.getId());
         }
     }
