@@ -69,7 +69,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissApplication",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
                xhr.open("POST", bridgePath, false);
@@ -93,7 +93,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IRuntime","dismissSplashScreen",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

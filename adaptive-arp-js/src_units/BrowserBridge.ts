@@ -72,7 +72,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(url));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openExtenalBrowser",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -117,7 +117,7 @@ module Adaptive {
                arParams.push(JSON.stringify(title));
                arParams.push(JSON.stringify(backButtonText));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openInternalBrowser",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -162,7 +162,7 @@ module Adaptive {
                arParams.push(JSON.stringify(title));
                arParams.push(JSON.stringify(backButtonText));
                var apiRequest : APIRequest = new APIRequest("IBrowser","openInternalBrowserModal",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

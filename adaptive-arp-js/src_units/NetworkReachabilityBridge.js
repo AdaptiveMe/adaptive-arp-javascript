@@ -78,7 +78,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(host));
             var apiRequest = new Adaptive.APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -127,7 +127,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new Adaptive.APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

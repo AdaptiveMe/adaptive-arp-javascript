@@ -75,7 +75,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(data));
                var apiRequest : APIRequest = new APIRequest("IMail","sendEmail",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

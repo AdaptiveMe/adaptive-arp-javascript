@@ -79,7 +79,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContact",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -126,7 +126,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(contact));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactPhoto",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -171,7 +171,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IContact","getContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -218,7 +218,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(fields));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsForFields",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -267,7 +267,7 @@ module Adaptive {
                arParams.push(JSON.stringify(fields));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","getContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -314,7 +314,7 @@ module Adaptive {
                var arParams : string[] = [];
                arParams.push(JSON.stringify(term));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContacts",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -363,7 +363,7 @@ module Adaptive {
                arParams.push(JSON.stringify(term));
                arParams.push(JSON.stringify(filter));
                var apiRequest : APIRequest = new APIRequest("IContact","searchContactsWithFilter",arParams, callback.getId());
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -412,7 +412,7 @@ module Adaptive {
                arParams.push(JSON.stringify(contact));
                arParams.push(JSON.stringify(pngImage));
                var apiRequest : APIRequest = new APIRequest("IContact","setContactPhoto",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();

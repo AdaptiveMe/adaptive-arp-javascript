@@ -80,7 +80,7 @@ var Adaptive;
             arParams.push(JSON.stringify(number));
             arParams.push(JSON.stringify(text));
             var apiRequest = new Adaptive.APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

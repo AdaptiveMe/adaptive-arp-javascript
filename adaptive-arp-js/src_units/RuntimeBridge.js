@@ -73,7 +73,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissApplication", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -97,7 +97,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

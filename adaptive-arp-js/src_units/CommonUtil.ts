@@ -32,6 +32,9 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="APIRequest.ts"/>
+///<reference path="APIResponse.ts"/>
+///<reference path="IBaseListener.ts"/>
 module Adaptive {
 
      /**
@@ -44,9 +47,16 @@ module Adaptive {
      /**
         @private
         @property {string} bridgePath
-        Base url for for http/https JSON requests.
+        Base url used internally to POST and intercept JSON requests by the platform.
      */
      export var bridgePath : string = "https://adaptiveapp";
+
+     /**
+        @private
+        @property {string} bridgeApiVersion
+        The Adaptive Runtime Platform API specification version.
+     */
+     export var bridgeApiVersion : string = "v2.1.9";
 
      /**
         @class Adaptive.IDictionary
@@ -120,6 +130,60 @@ module Adaptive {
          }
      }
 
+     /**
+        @private
+        @param {Adaptive.APIRequest} apiRequest the request to be processed.
+        @param {Adaptive.IBaseListener} listener to add or remove from the dictionary or null if removing all listeners.
+        @param {Adaptive.Dictionary} listenerDictionary dictionary of listeners for the operation.
+        @since v2.1.10
+        Send request for methods that manage listeners.
+     */
+     export function postRequestListener(apiRequest : APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>) : void {
+        apiRequest.setApiVersion(bridgeApiVersion);
+        var apiResponse : APIResponse = new APIResponse("", 200, "");
+        // Create and send JSON request.
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", bridgePath, false);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        if (apiRequest.getMethodName().indexOf("add") > -1) {
+            // Add listener reference to local dictionary.
+            listenerDictionary.add("" + listener.getId(), listener);
+        }
+
+        xhr.send(JSON.stringify(apiRequest));
+        // Check response.
+        if (xhr.status === 200 ) {
+            if (xhr.responseText != null && xhr.responseText !== '') {
+                apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") == -1) {
+                        listenerDictionary.remove(""+listener.getId());
+                    } else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
+                        listenerDictionary.removeAll();
+                    }
+                } else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    if (apiRequest.getMethodName().indexOf("add") > -1) {
+                        listenerDictionary.remove(""+listener.getId());
+                    }
+                    console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
+                }
+            } else {
+                // Remove listener reference from local dictionary due to invalid response.
+                if (apiRequest.getMethodName().indexOf("add") > -1) {
+                    listenerDictionary.remove("" + listener.getId());
+                }
+                console.error("ERROR: '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' incorrect response received.");
+            }
+        } else {
+            // Remove listener reference from local dictionary due to invalid response.
+            if (apiRequest.getMethodName().indexOf("add") > -1) {
+                listenerDictionary.remove("" + listener.getId());
+            }
+            console.error("ERROR: "+xhr.status+" sending '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' request.");
+        }
+    }
 }
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------

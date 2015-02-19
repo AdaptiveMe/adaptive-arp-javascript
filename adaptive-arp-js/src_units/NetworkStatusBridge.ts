@@ -72,35 +72,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("INetworkStatus","addNetworkStatusListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add listener reference to local dictionary.
-               registeredNetworkStatusListener.add(""+listener.getId(), listener);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove listener reference from local dictionary due to invalid response.
-                              registeredNetworkStatusListener.remove(""+listener.getId());
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.addNetworkStatusListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove listener reference from local dictionary due to invalid response.
-                         registeredNetworkStatusListener.remove(""+listener.getId());
-                         console.error("ERROR: 'NetworkStatusBridge.addNetworkStatusListener' incorrect response received.");
-                    }
-               } else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    registeredNetworkStatusListener.remove(""+listener.getId());
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.addNetworkStatusListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredNetworkStatusListener);
           }
 
           /**
@@ -114,29 +86,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("INetworkStatus","removeNetworkStatusListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove listener reference from local dictionary.
-                              registeredNetworkStatusListener.remove(""+listener.getId());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.removeNetworkStatusListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListener' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredNetworkStatusListener);
           }
 
           /**
@@ -148,30 +98,8 @@ module Adaptive {
           removeNetworkStatusListeners() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var apiRequest : APIRequest = new APIRequest("INetworkStatus","removeNetworkStatusListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove all listeners references from local dictionary.
-                              registeredNetworkStatusListener.removeAll();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListeners' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'NetworkStatusBridge.removeNetworkStatusListeners' request.");
-               }
+               var apiRequest : APIRequest = new APIRequest("INetworkStatus","removeNetworkStatusListeners",arParams, -1);
+               postRequestListener(apiRequest, null, registeredNetworkStatusListener);
           }
      }
 }

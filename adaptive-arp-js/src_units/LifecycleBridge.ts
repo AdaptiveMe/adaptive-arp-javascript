@@ -72,35 +72,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","addLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add listener reference to local dictionary.
-               registeredLifecycleListener.add(""+listener.getId(), listener);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove listener reference from local dictionary due to invalid response.
-                              registeredLifecycleListener.remove(""+listener.getId());
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.addLifecycleListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove listener reference from local dictionary due to invalid response.
-                         registeredLifecycleListener.remove(""+listener.getId());
-                         console.error("ERROR: 'LifecycleBridge.addLifecycleListener' incorrect response received.");
-                    }
-               } else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    registeredLifecycleListener.remove(""+listener.getId());
-                    console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.addLifecycleListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredLifecycleListener);
           }
 
           /**
@@ -114,7 +86,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","isBackground",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -153,29 +125,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove listener reference from local dictionary.
-                              registeredLifecycleListener.remove(""+listener.getId());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'LifecycleBridge.removeLifecycleListener' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredLifecycleListener);
           }
 
           /**
@@ -187,30 +137,8 @@ module Adaptive {
           removeLifecycleListeners() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove all listeners references from local dictionary.
-                              registeredLifecycleListener.removeAll();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'LifecycleBridge.removeLifecycleListeners' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'LifecycleBridge.removeLifecycleListeners' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'LifecycleBridge.removeLifecycleListeners' request.");
-               }
+               var apiRequest : APIRequest = new APIRequest("ILifecycle","removeLifecycleListeners",arParams, -1);
+               postRequestListener(apiRequest, null, registeredLifecycleListener);
           }
      }
 }

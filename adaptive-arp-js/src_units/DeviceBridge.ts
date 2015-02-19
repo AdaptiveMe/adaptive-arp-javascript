@@ -77,35 +77,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add listener reference to local dictionary.
-               registeredButtonListener.add(""+listener.getId(), listener);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove listener reference from local dictionary due to invalid response.
-                              registeredButtonListener.remove(""+listener.getId());
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.addButtonListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove listener reference from local dictionary due to invalid response.
-                         registeredButtonListener.remove(""+listener.getId());
-                         console.error("ERROR: 'DeviceBridge.addButtonListener' incorrect response received.");
-                    }
-               } else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    registeredButtonListener.remove(""+listener.getId());
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.addButtonListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredButtonListener);
           }
 
           /**
@@ -119,35 +91,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","addDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               // Add listener reference to local dictionary.
-               registeredDeviceOrientationListener.add(""+listener.getId(), listener);
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                         } else {
-                              // Remove listener reference from local dictionary due to invalid response.
-                              registeredDeviceOrientationListener.remove(""+listener.getId());
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.addDeviceOrientationListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         // Remove listener reference from local dictionary due to invalid response.
-                         registeredDeviceOrientationListener.remove(""+listener.getId());
-                         console.error("ERROR: 'DeviceBridge.addDeviceOrientationListener' incorrect response received.");
-                    }
-               } else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    registeredDeviceOrientationListener.remove(""+listener.getId());
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.addDeviceOrientationListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredDeviceOrientationListener);
           }
 
           /**
@@ -161,7 +105,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getDeviceInfo",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -200,7 +144,7 @@ module Adaptive {
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getLocaleCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -240,7 +184,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","getOrientationCurrent",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
+               apiRequest.setApiVersion(bridgeApiVersion);
                var apiResponse : APIResponse = new APIResponse("", 200, "");
                // Create and send JSON request.
                var xhr = new XMLHttpRequest();
@@ -279,29 +223,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove listener reference from local dictionary.
-                              registeredButtonListener.remove(""+listener.getId());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeButtonListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.removeButtonListener' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredButtonListener);
           }
 
           /**
@@ -313,30 +235,8 @@ of the display. For display orientation, use the IDisplay APIs.
           removeButtonListeners() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove all listeners references from local dictionary.
-                              registeredButtonListener.removeAll();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeButtonListeners' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.removeButtonListeners' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeButtonListeners' request.");
-               }
+               var apiRequest : APIRequest = new APIRequest("IDevice","removeButtonListeners",arParams, -1);
+               postRequestListener(apiRequest, null, registeredButtonListener);
           }
 
           /**
@@ -350,29 +250,7 @@ of the display. For display orientation, use the IDisplay APIs.
                // Create and populate API request.
                var arParams : string[] = [];
                var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListener",arParams, listener.getId());
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove listener reference from local dictionary.
-                              registeredDeviceOrientationListener.remove(""+listener.getId());
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeDeviceOrientationListener' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListener' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeDeviceOrientationListener' request.");
-               }
+               postRequestListener(apiRequest, listener, registeredDeviceOrientationListener);
           }
 
           /**
@@ -384,30 +262,8 @@ of the display. For display orientation, use the IDisplay APIs.
           removeDeviceOrientationListeners() : void {
                // Create and populate API request.
                var arParams : string[] = [];
-               var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListeners",arParams, -1 /* = synchronous call */);
-               apiRequest.setApiVersion("v2.1.9");
-               var apiResponse : APIResponse = new APIResponse("", 200, "");
-               // Create and send JSON request.
-               var xhr = new XMLHttpRequest();
-               xhr.open("POST", bridgePath, false);
-               xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-               xhr.send(JSON.stringify(apiRequest));
-               // Check response.
-               if (xhr.status === 200 ) {
-                    if (xhr.responseText != null && xhr.responseText !== '') {
-                         apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                         if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                              // Remove all listeners references from local dictionary.
-                              registeredDeviceOrientationListener.removeAll();
-                         } else {
-                              console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in 'DeviceBridge.removeDeviceOrientationListeners' ["+apiResponse.getStatusMessage()+"].");
-                         }
-                    } else {
-                         console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListeners' incorrect response received.");
-                    }
-               } else {
-                    console.error("ERROR: "+xhr.status+" sending 'DeviceBridge.removeDeviceOrientationListeners' request.");
-               }
+               var apiRequest : APIRequest = new APIRequest("IDevice","removeDeviceOrientationListeners",arParams, -1);
+               postRequestListener(apiRequest, null, registeredDeviceOrientationListener);
           }
      }
 }

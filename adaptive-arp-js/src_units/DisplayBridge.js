@@ -77,38 +77,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "addDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.addDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                    console.error("ERROR: 'DisplayBridge.addDisplayOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.addDisplayOrientationListener' request.");
-            }
+            Adaptive.postRequestListener(apiRequest, listener, Adaptive.registeredDisplayOrientationListener);
         };
         /**
            @method
@@ -122,7 +91,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -163,32 +132,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "removeDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListener' request.");
-            }
+            Adaptive.postRequestListener(apiRequest, listener, Adaptive.registeredDisplayOrientationListener);
         };
         /**
            @method
@@ -200,32 +144,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new Adaptive.APIRequest("IDisplay", "removeDisplayOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new Adaptive.APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = Adaptive.APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredDisplayOrientationListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListeners' request.");
-            }
+            Adaptive.postRequestListener(apiRequest, null, Adaptive.registeredDisplayOrientationListener);
         };
         return DisplayBridge;
     })(Adaptive.BaseSystemBridge);

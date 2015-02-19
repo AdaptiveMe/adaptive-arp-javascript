@@ -48,9 +48,15 @@ var Adaptive;
     /**
        @private
        @property {string} bridgePath
-       Base url for for http/https JSON requests.
+       Base url used internally to POST and intercept JSON requests by the platform.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
+    /**
+       @private
+       @property {string} bridgeApiVersion
+       The Adaptive Runtime Platform API specification version.
+    */
+    Adaptive.bridgeApiVersion = "v2.1.9";
     /**
        @private
        @class Adaptive.Dictionary
@@ -99,6 +105,63 @@ var Adaptive;
         return Dictionary;
     })();
     Adaptive.Dictionary = Dictionary;
+    /**
+       @private
+       @param {Adaptive.APIRequest} apiRequest the request to be processed.
+       @param {Adaptive.IBaseListener} listener to add or remove from the dictionary or null if removing all listeners.
+       @param {Adaptive.Dictionary} listenerDictionary dictionary of listeners for the operation.
+       @since v2.1.10
+       Send request for methods that manage listeners.
+    */
+    function postRequestListener(apiRequest, listener, listenerDictionary) {
+        apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
+        var apiResponse = new APIResponse("", 200, "");
+        // Create and send JSON request.
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", Adaptive.bridgePath, false);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        if (apiRequest.getMethodName().indexOf("add") > -1) {
+            // Add listener reference to local dictionary.
+            listenerDictionary.add("" + listener.getId(), listener);
+        }
+        xhr.send(JSON.stringify(apiRequest));
+        // Check response.
+        if (xhr.status === 200) {
+            if (xhr.responseText != null && xhr.responseText !== '') {
+                apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
+                if (apiResponse != null && apiResponse.getStatusCode() === 200) {
+                    if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") == -1) {
+                        listenerDictionary.remove("" + listener.getId());
+                    }
+                    else if (apiRequest.getMethodName().indexOf("remove") > -1 && apiRequest.getMethodName().indexOf("Listeners") > -1) {
+                        listenerDictionary.removeAll();
+                    }
+                }
+                else {
+                    // Remove listener reference from local dictionary due to invalid response.
+                    if (apiRequest.getMethodName().indexOf("add") > -1) {
+                        listenerDictionary.remove("" + listener.getId());
+                    }
+                    console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' [" + apiResponse.getStatusMessage() + "].");
+                }
+            }
+            else {
+                // Remove listener reference from local dictionary due to invalid response.
+                if (apiRequest.getMethodName().indexOf("add") > -1) {
+                    listenerDictionary.remove("" + listener.getId());
+                }
+                console.error("ERROR: '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' incorrect response received.");
+            }
+        }
+        else {
+            // Remove listener reference from local dictionary due to invalid response.
+            if (apiRequest.getMethodName().indexOf("add") > -1) {
+                listenerDictionary.remove("" + listener.getId());
+            }
+            console.error("ERROR: " + xhr.status + " sending '" + apiRequest.getBridgeType() + "." + apiRequest.getMethodName() + "' request.");
+        }
+    }
+    Adaptive.postRequestListener = postRequestListener;
     /**
        @class Adaptive.APIBean
        Structure representing a native response to the HTML5
@@ -10982,7 +11045,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11023,7 +11086,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11072,7 +11135,7 @@ event may be fired if the application vetoes display rotation before rotation is
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
             var apiRequest = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11115,7 +11178,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(locale));
             var apiRequest = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11180,38 +11243,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "addLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredLifecycleListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredLifecycleListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.addLifecycleListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredLifecycleListener.remove("" + listener.getId());
-                    console.error("ERROR: 'LifecycleBridge.addLifecycleListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredLifecycleListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'LifecycleBridge.addLifecycleListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredLifecycleListener);
         };
         /**
            @method
@@ -11224,7 +11256,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "isBackground", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11265,32 +11297,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredLifecycleListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.removeLifecycleListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'LifecycleBridge.removeLifecycleListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'LifecycleBridge.removeLifecycleListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredLifecycleListener);
         };
         /**
            @method
@@ -11302,32 +11309,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ILifecycle", "removeLifecycleListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredLifecycleListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'LifecycleBridge.removeLifecycleListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'LifecycleBridge.removeLifecycleListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'LifecycleBridge.removeLifecycleListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredLifecycleListener);
         };
         return LifecycleBridge;
     })(BaseApplicationBridge);
@@ -11562,7 +11544,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(host));
             var apiRequest = new APIRequest("INetworkReachability", "isNetworkReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11611,7 +11593,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("INetworkReachability", "isNetworkServiceReachable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11678,38 +11660,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "addNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredNetworkStatusListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkStatusBridge.addNetworkStatusListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
-                    console.error("ERROR: 'NetworkStatusBridge.addNetworkStatusListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'NetworkStatusBridge.addNetworkStatusListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredNetworkStatusListener);
         };
         /**
            @method
@@ -11722,32 +11673,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredNetworkStatusListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkStatusBridge.removeNetworkStatusListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'NetworkStatusBridge.removeNetworkStatusListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredNetworkStatusListener);
         };
         /**
            @method
@@ -11759,32 +11685,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("INetworkStatus", "removeNetworkStatusListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredNetworkStatusListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'NetworkStatusBridge.removeNetworkStatusListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'NetworkStatusBridge.removeNetworkStatusListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'NetworkStatusBridge.removeNetworkStatusListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredNetworkStatusListener);
         };
         return NetworkStatusBridge;
     })(BaseCommunicationBridge);
@@ -11822,7 +11723,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             var arParams = [];
             arParams.push(JSON.stringify(serviceToken));
             var apiRequest = new APIRequest("IService", "getServiceRequest", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11872,7 +11773,7 @@ configured in the platform's XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new APIRequest("IService", "getServiceToken", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11918,7 +11819,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(uri));
             var apiRequest = new APIRequest("IService", "getServiceTokenByUri", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -11959,7 +11860,7 @@ configured in the platform's XML service definition file.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IService", "getServicesRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12006,7 +11907,7 @@ configured in the platform's XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(serviceRequest));
             var apiRequest = new APIRequest("IService", "invokeService", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12062,7 +11963,7 @@ XML service definition file.
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
             var apiRequest = new APIRequest("IService", "isServiceRegistered", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12145,7 +12046,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(number));
             var apiRequest = new APIRequest("ITelephony", "call", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12248,7 +12149,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "createDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12299,7 +12200,7 @@ XML service definition file.
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "createTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12348,7 +12249,7 @@ XML service definition file.
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "deleteDatabase", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12399,7 +12300,7 @@ XML service definition file.
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "deleteTable", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12453,7 +12354,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statement));
             arParams.push(JSON.stringify(replacements));
             var apiRequest = new APIRequest("IDatabase", "executeSqlStatement", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12507,7 +12408,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(statements));
             arParams.push(JSON.stringify(rollbackFlag));
             var apiRequest = new APIRequest("IDatabase", "executeSqlTransactions", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12556,7 +12457,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             var apiRequest = new APIRequest("IDatabase", "existsDatabase", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12601,7 +12502,7 @@ should be passed as a parameter
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
             var apiRequest = new APIRequest("IDatabase", "existsTable", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12664,7 +12565,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "canRead", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12707,7 +12608,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "canWrite", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12750,7 +12651,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "create", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12802,7 +12703,7 @@ deleted if the cascade parameter is set to true.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
             var apiRequest = new APIRequest("IFile", "delete", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12845,7 +12746,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "exists", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12888,7 +12789,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12937,7 +12838,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getFileStorageType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -12980,7 +12881,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getFileType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13023,7 +12924,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "getSecurityType", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13066,7 +12967,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "isDirectory", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13110,7 +13011,7 @@ any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             var apiRequest = new APIRequest("IFile", "listFiles", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13162,7 +13063,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(regex));
             var apiRequest = new APIRequest("IFile", "listFilesForRegex", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13213,7 +13114,7 @@ is a file, it will not yield any results.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
             var apiRequest = new APIRequest("IFile", "mkDir", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13263,7 +13164,7 @@ new destination file.
             arParams.push(JSON.stringify(createPath));
             arParams.push(JSON.stringify(overwrite));
             var apiRequest = new APIRequest("IFile", "move", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13314,7 +13215,7 @@ new destination file.
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(content));
             var apiRequest = new APIRequest("IFile", "setContent", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13386,7 +13287,7 @@ This method does not create the actual file in the specified folder.
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
             var apiRequest = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13429,7 +13330,7 @@ This path is volatile and may be cleaned by the OS periodically.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13471,7 +13372,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13513,7 +13414,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13555,7 +13456,7 @@ This path may or may not be directly readable or writable - it usually contains 
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13597,7 +13498,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13638,7 +13539,7 @@ This path must always be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getSeparator", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13682,7 +13583,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -13844,7 +13745,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -13990,7 +13891,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new APIRequest("IContact", "getContact", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14039,7 +13940,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             var apiRequest = new APIRequest("IContact", "getContactPhoto", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14086,7 +13987,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IContact", "getContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14135,7 +14036,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(fields));
             var apiRequest = new APIRequest("IContact", "getContactsForFields", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14186,7 +14087,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(fields));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new APIRequest("IContact", "getContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14235,7 +14136,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(term));
             var apiRequest = new APIRequest("IContact", "searchContacts", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14286,7 +14187,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(term));
             arParams.push(JSON.stringify(filter));
             var apiRequest = new APIRequest("IContact", "searchContactsWithFilter", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14337,7 +14238,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
             var apiRequest = new APIRequest("IContact", "setContactPhoto", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14400,7 +14301,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(data));
             var apiRequest = new APIRequest("IMail", "sendEmail", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14471,7 +14372,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(number));
             arParams.push(JSON.stringify(text));
             var apiRequest = new APIRequest("IMessaging", "sendSMS", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14662,7 +14563,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "deleteSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14713,7 +14614,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keys));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "getSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14760,7 +14661,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ISecurity", "isDeviceModified", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14805,7 +14706,7 @@ This path may or may not be writable by the current application.
             arParams.push(JSON.stringify(keyValues));
             arParams.push(JSON.stringify(publicAccessName));
             var apiRequest = new APIRequest("ISecurity", "setSecureKeyValuePairs", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -14872,38 +14773,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "addAccelerationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredAccelerationListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredAccelerationListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'AccelerationBridge.addAccelerationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredAccelerationListener.remove("" + listener.getId());
-                    console.error("ERROR: 'AccelerationBridge.addAccelerationListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredAccelerationListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'AccelerationBridge.addAccelerationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredAccelerationListener);
         };
         /**
            @method
@@ -14916,32 +14786,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredAccelerationListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'AccelerationBridge.removeAccelerationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'AccelerationBridge.removeAccelerationListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'AccelerationBridge.removeAccelerationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredAccelerationListener);
         };
         /**
            @method
@@ -14953,32 +14798,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IAcceleration", "removeAccelerationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredAccelerationListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'AccelerationBridge.removeAccelerationListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'AccelerationBridge.removeAccelerationListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'AccelerationBridge.removeAccelerationListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredAccelerationListener);
         };
         return AccelerationBridge;
     })(BaseSensorBridge);
@@ -15051,38 +14871,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "addGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredGeolocationListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredGeolocationListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.addGeolocationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredGeolocationListener.remove("" + listener.getId());
-                    console.error("ERROR: 'GeolocationBridge.addGeolocationListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredGeolocationListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'GeolocationBridge.addGeolocationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredGeolocationListener);
         };
         /**
            @method
@@ -15095,32 +14884,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredGeolocationListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.removeGeolocationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'GeolocationBridge.removeGeolocationListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GeolocationBridge.removeGeolocationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredGeolocationListener);
         };
         /**
            @method
@@ -15132,32 +14896,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IGeolocation", "removeGeolocationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredGeolocationListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'GeolocationBridge.removeGeolocationListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'GeolocationBridge.removeGeolocationListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'GeolocationBridge.removeGeolocationListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredGeolocationListener);
         };
         return GeolocationBridge;
     })(BaseSensorBridge);
@@ -15352,7 +15091,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15394,7 +15133,7 @@ support at least one orientation. This is usually PortaitUp.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15441,7 +15180,7 @@ support at least one orientation. This is usually PortaitUp.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15485,7 +15224,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15528,7 +15267,7 @@ the device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15572,7 +15311,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15615,7 +15354,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15659,7 +15398,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15702,7 +15441,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(orientation));
             var apiRequest = new APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15746,7 +15485,7 @@ device.
             var arParams = [];
             arParams.push(JSON.stringify(type));
             var apiRequest = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15807,38 +15546,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "addButtonListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredButtonListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredButtonListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.addButtonListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredButtonListener.remove("" + listener.getId());
-                    console.error("ERROR: 'DeviceBridge.addButtonListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredButtonListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.addButtonListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredButtonListener);
         };
         /**
            @method
@@ -15851,38 +15559,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "addDeviceOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredDeviceOrientationListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.addDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
-                    console.error("ERROR: 'DeviceBridge.addDeviceOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.addDeviceOrientationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredDeviceOrientationListener);
         };
         /**
            @method
@@ -15895,7 +15572,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getDeviceInfo", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15936,7 +15613,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -15978,7 +15655,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16019,32 +15696,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeButtonListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredButtonListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeButtonListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DeviceBridge.removeButtonListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeButtonListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredButtonListener);
         };
         /**
            @method
@@ -16056,32 +15708,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeButtonListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredButtonListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeButtonListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DeviceBridge.removeButtonListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeButtonListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredButtonListener);
         };
         /**
            @method
@@ -16094,32 +15721,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredDeviceOrientationListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredDeviceOrientationListener);
         };
         /**
            @method
@@ -16131,32 +15733,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDevice", "removeDeviceOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredDeviceOrientationListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DeviceBridge.removeDeviceOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DeviceBridge.removeDeviceOrientationListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DeviceBridge.removeDeviceOrientationListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredDeviceOrientationListener);
         };
         return DeviceBridge;
     })(BaseSystemBridge);
@@ -16189,38 +15766,7 @@ of the display. For display orientation, use the IDisplay APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "addDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            // Add listener reference to local dictionary.
-            Adaptive.registeredDisplayOrientationListener.add("" + listener.getId(), listener);
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                    }
-                    else {
-                        // Remove listener reference from local dictionary due to invalid response.
-                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.addDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    // Remove listener reference from local dictionary due to invalid response.
-                    Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                    console.error("ERROR: 'DisplayBridge.addDisplayOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                // Remove listener reference from local dictionary due to invalid response.
-                Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.addDisplayOrientationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredDisplayOrientationListener);
         };
         /**
            @method
@@ -16234,7 +15780,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16275,32 +15821,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListener", arParams, listener.getId());
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove listener reference from local dictionary.
-                        Adaptive.registeredDisplayOrientationListener.remove("" + listener.getId());
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListener' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListener' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListener' request.");
-            }
+            postRequestListener(apiRequest, listener, Adaptive.registeredDisplayOrientationListener);
         };
         /**
            @method
@@ -16312,32 +15833,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IDisplay", "removeDisplayOrientationListeners", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
-            var apiResponse = new APIResponse("", 200, "");
-            // Create and send JSON request.
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", Adaptive.bridgePath, false);
-            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify(apiRequest));
-            // Check response.
-            if (xhr.status === 200) {
-                if (xhr.responseText != null && xhr.responseText !== '') {
-                    apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                    if (apiResponse != null && apiResponse.getStatusCode() === 200) {
-                        // Remove all listeners references from local dictionary.
-                        Adaptive.registeredDisplayOrientationListener.removeAll();
-                    }
-                    else {
-                        console.error("ERROR: " + apiResponse.getStatusCode() + " receiving response in 'DisplayBridge.removeDisplayOrientationListeners' [" + apiResponse.getStatusMessage() + "].");
-                    }
-                }
-                else {
-                    console.error("ERROR: 'DisplayBridge.removeDisplayOrientationListeners' incorrect response received.");
-                }
-            }
-            else {
-                console.error("ERROR: " + xhr.status + " sending 'DisplayBridge.removeDisplayOrientationListeners' request.");
-            }
+            postRequestListener(apiRequest, null, Adaptive.registeredDisplayOrientationListener);
         };
         return DisplayBridge;
     })(BaseSystemBridge);
@@ -16370,7 +15866,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IOS", "getOSInfo", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16430,7 +15926,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16454,7 +15950,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             var apiRequest = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16517,7 +16013,7 @@ of the device. For device orientation, use the IDevice APIs.
             var arParams = [];
             arParams.push(JSON.stringify(url));
             var apiRequest = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16564,7 +16060,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16611,7 +16107,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
             var apiRequest = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
@@ -16794,7 +16290,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "logLevelMessage", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);
@@ -16822,7 +16318,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
             var apiRequest = new APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();
             xhr.open("POST", Adaptive.bridgePath, false);

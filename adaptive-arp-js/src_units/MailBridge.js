@@ -79,7 +79,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(data));
             var apiRequest = new Adaptive.APIRequest("IMail", "sendEmail", arParams, callback.getId());
-            apiRequest.setApiVersion("v2.1.9");
+            apiRequest.setApiVersion(Adaptive.bridgeApiVersion);
             var apiResponse = new Adaptive.APIResponse("", 200, "");
             // Create and send JSON request.
             var xhr = new XMLHttpRequest();

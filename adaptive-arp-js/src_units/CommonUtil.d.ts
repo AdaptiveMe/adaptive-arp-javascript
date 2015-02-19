@@ -1,3 +1,6 @@
+/// <reference path="APIRequest.d.ts" />
+/// <reference path="APIResponse.d.ts" />
+/// <reference path="IBaseListener.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -41,9 +44,15 @@ declare module Adaptive {
     /**
        @private
        @property {string} bridgePath
-       Base url for for http/https JSON requests.
+       Base url used internally to POST and intercept JSON requests by the platform.
     */
     var bridgePath: string;
+    /**
+       @private
+       @property {string} bridgeApiVersion
+       The Adaptive Runtime Platform API specification version.
+    */
+    var bridgeApiVersion: string;
     /**
        @class Adaptive.IDictionary
        @private
@@ -76,4 +85,13 @@ declare module Adaptive {
         containsKey(key: string): boolean;
         toLookup(): IDictionary<V>;
     }
+    /**
+       @private
+       @param {Adaptive.APIRequest} apiRequest the request to be processed.
+       @param {Adaptive.IBaseListener} listener to add or remove from the dictionary or null if removing all listeners.
+       @param {Adaptive.Dictionary} listenerDictionary dictionary of listeners for the operation.
+       @since v2.1.10
+       Send request for methods that manage listeners.
+    */
+    function postRequestListener(apiRequest: APIRequest, listener: IBaseListener, listenerDictionary: Dictionary<IBaseListener>): void;
 }
