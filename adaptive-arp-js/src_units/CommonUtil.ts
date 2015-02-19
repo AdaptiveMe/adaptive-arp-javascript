@@ -244,7 +244,7 @@ module Adaptive {
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
                 apiResponse = APIResponse.toObject(JSON.parse(xhr.responseText));
-                if (apiResponse != null && apiResponse.getStatusCode() != 200) {
+                if (apiResponse != null && apiResponse.getStatusCode() !== 200) {
                     console.error("ERROR: "+apiResponse.getStatusCode()+" receiving response in '"+apiRequest.getBridgeType()+"."+apiRequest.getMethodName()+"' ["+apiResponse.getStatusMessage()+"].");
                 }
             } else {
