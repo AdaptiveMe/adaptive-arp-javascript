@@ -6,7 +6,7 @@
 
 ### About This Project
 
-**TODO**
+Todo :smile:
 
 ### About Adaptive Runtime Platform
 
