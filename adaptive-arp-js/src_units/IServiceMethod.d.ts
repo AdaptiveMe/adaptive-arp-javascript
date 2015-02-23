@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,17 +41,17 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IServiceMethod} [POST='POST']
+           @property {Adaptive.IServiceMethod} [Post='Post']
         */
-        static POST: IServiceMethod;
+        static Post: IServiceMethod;
         /**
-           @property {Adaptive.IServiceMethod} [GET='GET']
+           @property {Adaptive.IServiceMethod} [Get='Get']
         */
-        static GET: IServiceMethod;
+        static Get: IServiceMethod;
         /**
-           @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+           @property {Adaptive.IServiceMethod} [Head='Head']
         */
-        static HEAD: IServiceMethod;
+        static Head: IServiceMethod;
         /**
            @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */

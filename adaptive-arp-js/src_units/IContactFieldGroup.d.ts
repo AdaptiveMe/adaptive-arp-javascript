@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,37 +41,37 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PersonalInfo='PersonalInfo']
         */
-        static PERSONAL_INFO: IContactFieldGroup;
+        static PersonalInfo: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [ProfessionalInfo='ProfessionalInfo']
         */
-        static PROFESSIONAL_INFO: IContactFieldGroup;
+        static ProfessionalInfo: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+           @property {Adaptive.IContactFieldGroup} [Addresses='Addresses']
         */
-        static ADDRESSES: IContactFieldGroup;
+        static Addresses: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+           @property {Adaptive.IContactFieldGroup} [Phones='Phones']
         */
-        static PHONES: IContactFieldGroup;
+        static Phones: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+           @property {Adaptive.IContactFieldGroup} [Emails='Emails']
         */
-        static EMAILS: IContactFieldGroup;
+        static Emails: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+           @property {Adaptive.IContactFieldGroup} [Websites='Websites']
         */
-        static WEBSITES: IContactFieldGroup;
+        static Websites: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+           @property {Adaptive.IContactFieldGroup} [Socials='Socials']
         */
-        static SOCIALS: IContactFieldGroup;
+        static Socials: IContactFieldGroup;
         /**
-           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+           @property {Adaptive.IContactFieldGroup} [Tags='Tags']
         */
-        static TAGS: IContactFieldGroup;
+        static Tags: IContactFieldGroup;
         /**
            @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
         */

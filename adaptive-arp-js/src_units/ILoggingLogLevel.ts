@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,21 +44,21 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+             @property {Adaptive.ILoggingLogLevel} [Debug='Debug']
           */
-          static DEBUG = new ILoggingLogLevel("DEBUG");
+          static Debug = new ILoggingLogLevel("Debug");
           /**
-             @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+             @property {Adaptive.ILoggingLogLevel} [Warn='Warn']
           */
-          static WARN = new ILoggingLogLevel("WARN");
+          static Warn = new ILoggingLogLevel("Warn");
           /**
-             @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+             @property {Adaptive.ILoggingLogLevel} [Error='Error']
           */
-          static ERROR = new ILoggingLogLevel("ERROR");
+          static Error = new ILoggingLogLevel("Error");
           /**
-             @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+             @property {Adaptive.ILoggingLogLevel} [Info='Info']
           */
-          static INFO = new ILoggingLogLevel("INFO");
+          static Info = new ILoggingLogLevel("Info");
           /**
              @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
           */

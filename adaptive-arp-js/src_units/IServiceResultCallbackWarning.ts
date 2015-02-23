@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,9 +56,9 @@ module Adaptive {
           */
           static Redirected = new IServiceResultCallbackWarning("Redirected");
           /**
-             @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+             @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
           */
-          static Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+          static WrongParams = new IServiceResultCallbackWarning("WrongParams");
           /**
              @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
           */

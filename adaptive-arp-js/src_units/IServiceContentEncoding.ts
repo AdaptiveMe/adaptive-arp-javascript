@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,17 +44,17 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']
+             @property {Adaptive.IServiceContentEncoding} [Ascii='Ascii']
           */
-          static ASCII = new IServiceContentEncoding("ASCII");
+          static Ascii = new IServiceContentEncoding("Ascii");
           /**
-             @property {Adaptive.IServiceContentEncoding} [UTF8='UTF8']
+             @property {Adaptive.IServiceContentEncoding} [Utf8='Utf8']
           */
-          static UTF8 = new IServiceContentEncoding("UTF8");
+          static Utf8 = new IServiceContentEncoding("Utf8");
           /**
-             @property {Adaptive.IServiceContentEncoding} [ISOLatin1='ISOLatin1']
+             @property {Adaptive.IServiceContentEncoding} [IsoLatin1='IsoLatin1']
           */
-          static ISOLatin1 = new IServiceContentEncoding("ISOLatin1");
+          static IsoLatin1 = new IServiceContentEncoding("IsoLatin1");
           /**
              @property {Adaptive.IServiceContentEncoding} [Unicode='Unicode']
           */

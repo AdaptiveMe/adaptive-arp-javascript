@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,21 +41,21 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+           @property {Adaptive.ILoggingLogLevel} [Debug='Debug']
         */
-        static DEBUG: ILoggingLogLevel;
+        static Debug: ILoggingLogLevel;
         /**
-           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+           @property {Adaptive.ILoggingLogLevel} [Warn='Warn']
         */
-        static WARN: ILoggingLogLevel;
+        static Warn: ILoggingLogLevel;
         /**
-           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+           @property {Adaptive.ILoggingLogLevel} [Error='Error']
         */
-        static ERROR: ILoggingLogLevel;
+        static Error: ILoggingLogLevel;
         /**
-           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+           @property {Adaptive.ILoggingLogLevel} [Info='Info']
         */
-        static INFO: ILoggingLogLevel;
+        static Info: ILoggingLogLevel;
         /**
            @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
         */

@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,17 +41,17 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']
+           @property {Adaptive.IServiceContentEncoding} [Ascii='Ascii']
         */
-        static ASCII: IServiceContentEncoding;
+        static Ascii: IServiceContentEncoding;
         /**
-           @property {Adaptive.IServiceContentEncoding} [UTF8='UTF8']
+           @property {Adaptive.IServiceContentEncoding} [Utf8='Utf8']
         */
-        static UTF8: IServiceContentEncoding;
+        static Utf8: IServiceContentEncoding;
         /**
-           @property {Adaptive.IServiceContentEncoding} [ISOLatin1='ISOLatin1']
+           @property {Adaptive.IServiceContentEncoding} [IsoLatin1='IsoLatin1']
         */
-        static ISOLatin1: IServiceContentEncoding;
+        static IsoLatin1: IServiceContentEncoding;
         /**
            @property {Adaptive.IServiceContentEncoding} [Unicode='Unicode']
         */

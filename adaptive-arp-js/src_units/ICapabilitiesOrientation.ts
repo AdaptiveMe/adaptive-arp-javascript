@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,21 +44,21 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
           */
-          static Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+          static PortraitUp = new ICapabilitiesOrientation("PortraitUp");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+             @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
           */
-          static Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+          static PortraitDown = new ICapabilitiesOrientation("PortraitDown");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
           */
-          static Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+          static LandscapeLeft = new ICapabilitiesOrientation("LandscapeLeft");
           /**
-             @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+             @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
           */
-          static Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+          static LandscapeRight = new ICapabilitiesOrientation("LandscapeRight");
           /**
              @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
           */

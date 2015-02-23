@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,17 +58,17 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']
+           @property {Adaptive.IServiceContentEncoding} [Ascii='Ascii']
         */
-        IServiceContentEncoding.ASCII = new IServiceContentEncoding("ASCII");
+        IServiceContentEncoding.Ascii = new IServiceContentEncoding("Ascii");
         /**
-           @property {Adaptive.IServiceContentEncoding} [UTF8='UTF8']
+           @property {Adaptive.IServiceContentEncoding} [Utf8='Utf8']
         */
-        IServiceContentEncoding.UTF8 = new IServiceContentEncoding("UTF8");
+        IServiceContentEncoding.Utf8 = new IServiceContentEncoding("Utf8");
         /**
-           @property {Adaptive.IServiceContentEncoding} [ISOLatin1='ISOLatin1']
+           @property {Adaptive.IServiceContentEncoding} [IsoLatin1='IsoLatin1']
         */
-        IServiceContentEncoding.ISOLatin1 = new IServiceContentEncoding("ISOLatin1");
+        IServiceContentEncoding.IsoLatin1 = new IServiceContentEncoding("IsoLatin1");
         /**
            @property {Adaptive.IServiceContentEncoding} [Unicode='Unicode']
         */

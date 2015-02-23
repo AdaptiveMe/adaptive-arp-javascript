@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -70,9 +70,9 @@ var Adaptive;
         */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
         /**
-           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
         */
-        IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        IServiceResultCallbackWarning.WrongParams = new IServiceResultCallbackWarning("WrongParams");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
         */

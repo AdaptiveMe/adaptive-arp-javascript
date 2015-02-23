@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,17 +58,17 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.IServiceMethod} [POST='POST']
+           @property {Adaptive.IServiceMethod} [Post='Post']
         */
-        IServiceMethod.POST = new IServiceMethod("POST");
+        IServiceMethod.Post = new IServiceMethod("Post");
         /**
-           @property {Adaptive.IServiceMethod} [GET='GET']
+           @property {Adaptive.IServiceMethod} [Get='Get']
         */
-        IServiceMethod.GET = new IServiceMethod("GET");
+        IServiceMethod.Get = new IServiceMethod("Get");
         /**
-           @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+           @property {Adaptive.IServiceMethod} [Head='Head']
         */
-        IServiceMethod.HEAD = new IServiceMethod("HEAD");
+        IServiceMethod.Head = new IServiceMethod("Head");
         /**
            @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */

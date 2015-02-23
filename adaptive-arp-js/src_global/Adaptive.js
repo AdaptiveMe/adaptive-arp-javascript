@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,7 +56,7 @@ var Adaptive;
        @property {string} bridgeApiVersion
        The Adaptive Runtime Platform API specification version.
     */
-    Adaptive.bridgeApiVersion = "v2.1.9";
+    Adaptive.bridgeApiVersion = "v2.2.0";
     /**
        @private
        @class Adaptive.Dictionary
@@ -7805,7 +7805,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         /**
            @method
@@ -8850,7 +8850,7 @@ event may be fired if the application vetoes display rotation before rotation is
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseCallback;
     })();
@@ -10613,7 +10613,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseApplicationBridge;
     })();
@@ -10648,7 +10648,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseCommerceBridge;
     })();
@@ -10683,7 +10683,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseCommunicationBridge;
     })();
@@ -10718,7 +10718,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseDataBridge;
     })();
@@ -10753,7 +10753,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseMediaBridge;
     })();
@@ -10788,7 +10788,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseNotificationBridge;
     })();
@@ -10823,7 +10823,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BasePIMBridge;
     })();
@@ -10858,7 +10858,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseReaderBridge;
     })();
@@ -10893,7 +10893,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseSecurityBridge;
     })();
@@ -10928,7 +10928,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseSensorBridge;
     })();
@@ -10963,7 +10963,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseSocialBridge;
     })();
@@ -10998,7 +10998,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseSystemBridge;
     })();
@@ -11033,7 +11033,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseUIBridge;
     })();
@@ -11068,7 +11068,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         return BaseUtilBridge;
     })();
@@ -15267,7 +15267,7 @@ of the device. For device orientation, use the IDevice APIs.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.1.9";
+            return "v2.2.0";
         };
         /**
            @private
@@ -16066,9 +16066,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerError} [Not_Present='Not_Present']
+           @property {Adaptive.IButtonListenerError} [NotPresent='NotPresent']
         */
-        IButtonListenerError.Not_Present = new IButtonListenerError("Not_Present");
+        IButtonListenerError.NotPresent = new IButtonListenerError("NotPresent");
         /**
            @property {Adaptive.IButtonListenerError} [Unknown='Unknown']
         */
@@ -16101,9 +16101,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IButtonListenerWarning} [Not_Implemented='Not_Implemented']
+           @property {Adaptive.IButtonListenerWarning} [NotImplemented='NotImplemented']
         */
-        IButtonListenerWarning.Not_Implemented = new IButtonListenerWarning("Not_Implemented");
+        IButtonListenerWarning.NotImplemented = new IButtonListenerWarning("NotImplemented");
         /**
            @property {Adaptive.IButtonListenerWarning} [Unknown='Unknown']
         */
@@ -16273,25 +16273,25 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Playback='Audio_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [AudioPlayback='AudioPlayback']
         */
-        ICapabilitiesMedia.Audio_Playback = new ICapabilitiesMedia("Audio_Playback");
+        ICapabilitiesMedia.AudioPlayback = new ICapabilitiesMedia("AudioPlayback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Audio_Recording='Audio_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [AudioRecording='AudioRecording']
         */
-        ICapabilitiesMedia.Audio_Recording = new ICapabilitiesMedia("Audio_Recording");
+        ICapabilitiesMedia.AudioRecording = new ICapabilitiesMedia("AudioRecording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Camera='Camera']
         */
         ICapabilitiesMedia.Camera = new ICapabilitiesMedia("Camera");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Playback='Video_Playback']
+           @property {Adaptive.ICapabilitiesMedia} [VideoPlayback='VideoPlayback']
         */
-        ICapabilitiesMedia.Video_Playback = new ICapabilitiesMedia("Video_Playback");
+        ICapabilitiesMedia.VideoPlayback = new ICapabilitiesMedia("VideoPlayback");
         /**
-           @property {Adaptive.ICapabilitiesMedia} [Video_Recording='Video_Recording']
+           @property {Adaptive.ICapabilitiesMedia} [VideoRecording='VideoRecording']
         */
-        ICapabilitiesMedia.Video_Recording = new ICapabilitiesMedia("Video_Recording");
+        ICapabilitiesMedia.VideoRecording = new ICapabilitiesMedia("VideoRecording");
         /**
            @property {Adaptive.ICapabilitiesMedia} [Unknown='Unknown']
         */
@@ -16430,21 +16430,21 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Up='Portrait_Up']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitUp='PortraitUp']
         */
-        ICapabilitiesOrientation.Portrait_Up = new ICapabilitiesOrientation("Portrait_Up");
+        ICapabilitiesOrientation.PortraitUp = new ICapabilitiesOrientation("PortraitUp");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Portrait_Down='Portrait_Down']
+           @property {Adaptive.ICapabilitiesOrientation} [PortraitDown='PortraitDown']
         */
-        ICapabilitiesOrientation.Portrait_Down = new ICapabilitiesOrientation("Portrait_Down");
+        ICapabilitiesOrientation.PortraitDown = new ICapabilitiesOrientation("PortraitDown");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Left='Landscape_Left']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeLeft='LandscapeLeft']
         */
-        ICapabilitiesOrientation.Landscape_Left = new ICapabilitiesOrientation("Landscape_Left");
+        ICapabilitiesOrientation.LandscapeLeft = new ICapabilitiesOrientation("LandscapeLeft");
         /**
-           @property {Adaptive.ICapabilitiesOrientation} [Landscape_Right='Landscape_Right']
+           @property {Adaptive.ICapabilitiesOrientation} [LandscapeRight='LandscapeRight']
         */
-        ICapabilitiesOrientation.Landscape_Right = new ICapabilitiesOrientation("Landscape_Right");
+        ICapabilitiesOrientation.LandscapeRight = new ICapabilitiesOrientation("LandscapeRight");
         /**
            @property {Adaptive.ICapabilitiesOrientation} [Unknown='Unknown']
         */
@@ -16536,37 +16536,37 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [PersonalInfo='PersonalInfo']
         */
-        IContactFieldGroup.PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+        IContactFieldGroup.PersonalInfo = new IContactFieldGroup("PersonalInfo");
         /**
-           @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+           @property {Adaptive.IContactFieldGroup} [ProfessionalInfo='ProfessionalInfo']
         */
-        IContactFieldGroup.PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+        IContactFieldGroup.ProfessionalInfo = new IContactFieldGroup("ProfessionalInfo");
         /**
-           @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+           @property {Adaptive.IContactFieldGroup} [Addresses='Addresses']
         */
-        IContactFieldGroup.ADDRESSES = new IContactFieldGroup("ADDRESSES");
+        IContactFieldGroup.Addresses = new IContactFieldGroup("Addresses");
         /**
-           @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+           @property {Adaptive.IContactFieldGroup} [Phones='Phones']
         */
-        IContactFieldGroup.PHONES = new IContactFieldGroup("PHONES");
+        IContactFieldGroup.Phones = new IContactFieldGroup("Phones");
         /**
-           @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+           @property {Adaptive.IContactFieldGroup} [Emails='Emails']
         */
-        IContactFieldGroup.EMAILS = new IContactFieldGroup("EMAILS");
+        IContactFieldGroup.Emails = new IContactFieldGroup("Emails");
         /**
-           @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+           @property {Adaptive.IContactFieldGroup} [Websites='Websites']
         */
-        IContactFieldGroup.WEBSITES = new IContactFieldGroup("WEBSITES");
+        IContactFieldGroup.Websites = new IContactFieldGroup("Websites");
         /**
-           @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+           @property {Adaptive.IContactFieldGroup} [Socials='Socials']
         */
-        IContactFieldGroup.SOCIALS = new IContactFieldGroup("SOCIALS");
+        IContactFieldGroup.Socials = new IContactFieldGroup("Socials");
         /**
-           @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+           @property {Adaptive.IContactFieldGroup} [Tags='Tags']
         */
-        IContactFieldGroup.TAGS = new IContactFieldGroup("TAGS");
+        IContactFieldGroup.Tags = new IContactFieldGroup("Tags");
         /**
            @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
         */
@@ -16599,17 +16599,17 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+           @property {Adaptive.IContactFilter} [HasPhone='HasPhone']
         */
-        IContactFilter.HAS_PHONE = new IContactFilter("HAS_PHONE");
+        IContactFilter.HasPhone = new IContactFilter("HasPhone");
         /**
-           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+           @property {Adaptive.IContactFilter} [HasEmail='HasEmail']
         */
-        IContactFilter.HAS_EMAIL = new IContactFilter("HAS_EMAIL");
+        IContactFilter.HasEmail = new IContactFilter("HasEmail");
         /**
-           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+           @property {Adaptive.IContactFilter} [HasAddress='HasAddress']
         */
-        IContactFilter.HAS_ADDRESS = new IContactFilter("HAS_ADDRESS");
+        IContactFilter.HasAddress = new IContactFilter("HasAddress");
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */
@@ -16646,13 +16646,13 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackError.NoPermission = new IContactPhotoResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactPhotoResultCallbackError} [WrongParams='WrongParams']
         */
-        IContactPhotoResultCallbackError.Wrong_Params = new IContactPhotoResultCallbackError("Wrong_Params");
+        IContactPhotoResultCallbackError.WrongParams = new IContactPhotoResultCallbackError("WrongParams");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackError} [No_Photo='No_Photo']
+           @property {Adaptive.IContactPhotoResultCallbackError} [NoPhoto='NoPhoto']
         */
-        IContactPhotoResultCallbackError.No_Photo = new IContactPhotoResultCallbackError("No_Photo");
+        IContactPhotoResultCallbackError.NoPhoto = new IContactPhotoResultCallbackError("NoPhoto");
         /**
            @property {Adaptive.IContactPhotoResultCallbackError} [Unknown='Unknown']
         */
@@ -16689,9 +16689,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactPhotoResultCallbackWarning.LimitExceeded = new IContactPhotoResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactPhotoResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactPhotoResultCallbackWarning} [NoMatches='NoMatches']
         */
-        IContactPhotoResultCallbackWarning.No_Matches = new IContactPhotoResultCallbackWarning("No_Matches");
+        IContactPhotoResultCallbackWarning.NoMatches = new IContactPhotoResultCallbackWarning("NoMatches");
         /**
            @property {Adaptive.IContactPhotoResultCallbackWarning} [Unknown='Unknown']
         */
@@ -16728,9 +16728,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackError.NoPermission = new IContactResultCallbackError("NoPermission");
         /**
-           @property {Adaptive.IContactResultCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IContactResultCallbackError} [WrongParams='WrongParams']
         */
-        IContactResultCallbackError.Wrong_Params = new IContactResultCallbackError("Wrong_Params");
+        IContactResultCallbackError.WrongParams = new IContactResultCallbackError("WrongParams");
         /**
            @property {Adaptive.IContactResultCallbackError} [Unknown='Unknown']
         */
@@ -16767,9 +16767,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IContactResultCallbackWarning.LimitExceeded = new IContactResultCallbackWarning("LimitExceeded");
         /**
-           @property {Adaptive.IContactResultCallbackWarning} [No_Matches='No_Matches']
+           @property {Adaptive.IContactResultCallbackWarning} [NoMatches='NoMatches']
         */
-        IContactResultCallbackWarning.No_Matches = new IContactResultCallbackWarning("No_Matches");
+        IContactResultCallbackWarning.NoMatches = new IContactResultCallbackWarning("NoMatches");
         /**
            @property {Adaptive.IContactResultCallbackWarning} [Unknown='Unknown']
         */
@@ -17071,9 +17071,9 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+           @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
         */
-        IDisplayOrientationListenerWarning.Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+        IDisplayOrientationListenerWarning.ApplicationVetoed = new IDisplayOrientationListenerWarning("ApplicationVetoed");
         /**
            @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
         */
@@ -17731,21 +17731,21 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+           @property {Adaptive.ILoggingLogLevel} [Debug='Debug']
         */
-        ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
+        ILoggingLogLevel.Debug = new ILoggingLogLevel("Debug");
         /**
-           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+           @property {Adaptive.ILoggingLogLevel} [Warn='Warn']
         */
-        ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
+        ILoggingLogLevel.Warn = new ILoggingLogLevel("Warn");
         /**
-           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+           @property {Adaptive.ILoggingLogLevel} [Error='Error']
         */
-        ILoggingLogLevel.ERROR = new ILoggingLogLevel("ERROR");
+        ILoggingLogLevel.Error = new ILoggingLogLevel("Error");
         /**
-           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+           @property {Adaptive.ILoggingLogLevel} [Info='Info']
         */
-        ILoggingLogLevel.INFO = new ILoggingLogLevel("INFO");
+        ILoggingLogLevel.Info = new ILoggingLogLevel("Info");
         /**
            @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
         */
@@ -17900,9 +17900,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         INetworkReachabilityCallbackError.Unreachable = new INetworkReachabilityCallbackError("Unreachable");
         /**
-           @property {Adaptive.INetworkReachabilityCallbackError} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.INetworkReachabilityCallbackError} [WrongParams='WrongParams']
         */
-        INetworkReachabilityCallbackError.Wrong_Params = new INetworkReachabilityCallbackError("Wrong_Params");
+        INetworkReachabilityCallbackError.WrongParams = new INetworkReachabilityCallbackError("WrongParams");
         /**
            @property {Adaptive.INetworkReachabilityCallbackError} [MalformedUrl='MalformedUrl']
         */
@@ -18268,17 +18268,17 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IServiceContentEncoding} [ASCII='ASCII']
+           @property {Adaptive.IServiceContentEncoding} [Ascii='Ascii']
         */
-        IServiceContentEncoding.ASCII = new IServiceContentEncoding("ASCII");
+        IServiceContentEncoding.Ascii = new IServiceContentEncoding("Ascii");
         /**
-           @property {Adaptive.IServiceContentEncoding} [UTF8='UTF8']
+           @property {Adaptive.IServiceContentEncoding} [Utf8='Utf8']
         */
-        IServiceContentEncoding.UTF8 = new IServiceContentEncoding("UTF8");
+        IServiceContentEncoding.Utf8 = new IServiceContentEncoding("Utf8");
         /**
-           @property {Adaptive.IServiceContentEncoding} [ISOLatin1='ISOLatin1']
+           @property {Adaptive.IServiceContentEncoding} [IsoLatin1='IsoLatin1']
         */
-        IServiceContentEncoding.ISOLatin1 = new IServiceContentEncoding("ISOLatin1");
+        IServiceContentEncoding.IsoLatin1 = new IServiceContentEncoding("IsoLatin1");
         /**
            @property {Adaptive.IServiceContentEncoding} [Unicode='Unicode']
         */
@@ -18315,17 +18315,17 @@ of the device. For device orientation, use the IDevice APIs.
             return retValue;
         };
         /**
-           @property {Adaptive.IServiceMethod} [POST='POST']
+           @property {Adaptive.IServiceMethod} [Post='Post']
         */
-        IServiceMethod.POST = new IServiceMethod("POST");
+        IServiceMethod.Post = new IServiceMethod("Post");
         /**
-           @property {Adaptive.IServiceMethod} [GET='GET']
+           @property {Adaptive.IServiceMethod} [Get='Get']
         */
-        IServiceMethod.GET = new IServiceMethod("GET");
+        IServiceMethod.Get = new IServiceMethod("Get");
         /**
-           @property {Adaptive.IServiceMethod} [HEAD='HEAD']
+           @property {Adaptive.IServiceMethod} [Head='Head']
         */
-        IServiceMethod.HEAD = new IServiceMethod("HEAD");
+        IServiceMethod.Head = new IServiceMethod("Head");
         /**
            @property {Adaptive.IServiceMethod} [Unknown='Unknown']
         */
@@ -18468,9 +18468,9 @@ of the device. For device orientation, use the IDevice APIs.
         */
         IServiceResultCallbackWarning.Redirected = new IServiceResultCallbackWarning("Redirected");
         /**
-           @property {Adaptive.IServiceResultCallbackWarning} [Wrong_Params='Wrong_Params']
+           @property {Adaptive.IServiceResultCallbackWarning} [WrongParams='WrongParams']
         */
-        IServiceResultCallbackWarning.Wrong_Params = new IServiceResultCallbackWarning("Wrong_Params");
+        IServiceResultCallbackWarning.WrongParams = new IServiceResultCallbackWarning("WrongParams");
         /**
            @property {Adaptive.IServiceResultCallbackWarning} [Forbidden='Forbidden']
         */

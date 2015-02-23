@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,37 +44,37 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IContactFieldGroup} [PERSONAL_INFO='PERSONAL_INFO']
+             @property {Adaptive.IContactFieldGroup} [PersonalInfo='PersonalInfo']
           */
-          static PERSONAL_INFO = new IContactFieldGroup("PERSONAL_INFO");
+          static PersonalInfo = new IContactFieldGroup("PersonalInfo");
           /**
-             @property {Adaptive.IContactFieldGroup} [PROFESSIONAL_INFO='PROFESSIONAL_INFO']
+             @property {Adaptive.IContactFieldGroup} [ProfessionalInfo='ProfessionalInfo']
           */
-          static PROFESSIONAL_INFO = new IContactFieldGroup("PROFESSIONAL_INFO");
+          static ProfessionalInfo = new IContactFieldGroup("ProfessionalInfo");
           /**
-             @property {Adaptive.IContactFieldGroup} [ADDRESSES='ADDRESSES']
+             @property {Adaptive.IContactFieldGroup} [Addresses='Addresses']
           */
-          static ADDRESSES = new IContactFieldGroup("ADDRESSES");
+          static Addresses = new IContactFieldGroup("Addresses");
           /**
-             @property {Adaptive.IContactFieldGroup} [PHONES='PHONES']
+             @property {Adaptive.IContactFieldGroup} [Phones='Phones']
           */
-          static PHONES = new IContactFieldGroup("PHONES");
+          static Phones = new IContactFieldGroup("Phones");
           /**
-             @property {Adaptive.IContactFieldGroup} [EMAILS='EMAILS']
+             @property {Adaptive.IContactFieldGroup} [Emails='Emails']
           */
-          static EMAILS = new IContactFieldGroup("EMAILS");
+          static Emails = new IContactFieldGroup("Emails");
           /**
-             @property {Adaptive.IContactFieldGroup} [WEBSITES='WEBSITES']
+             @property {Adaptive.IContactFieldGroup} [Websites='Websites']
           */
-          static WEBSITES = new IContactFieldGroup("WEBSITES");
+          static Websites = new IContactFieldGroup("Websites");
           /**
-             @property {Adaptive.IContactFieldGroup} [SOCIALS='SOCIALS']
+             @property {Adaptive.IContactFieldGroup} [Socials='Socials']
           */
-          static SOCIALS = new IContactFieldGroup("SOCIALS");
+          static Socials = new IContactFieldGroup("Socials");
           /**
-             @property {Adaptive.IContactFieldGroup} [TAGS='TAGS']
+             @property {Adaptive.IContactFieldGroup} [Tags='Tags']
           */
-          static TAGS = new IContactFieldGroup("TAGS");
+          static Tags = new IContactFieldGroup("Tags");
           /**
              @property {Adaptive.IContactFieldGroup} [Unknown='Unknown']
           */

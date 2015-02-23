@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -58,21 +58,21 @@ var Adaptive;
             return retValue;
         };
         /**
-           @property {Adaptive.ILoggingLogLevel} [DEBUG='DEBUG']
+           @property {Adaptive.ILoggingLogLevel} [Debug='Debug']
         */
-        ILoggingLogLevel.DEBUG = new ILoggingLogLevel("DEBUG");
+        ILoggingLogLevel.Debug = new ILoggingLogLevel("Debug");
         /**
-           @property {Adaptive.ILoggingLogLevel} [WARN='WARN']
+           @property {Adaptive.ILoggingLogLevel} [Warn='Warn']
         */
-        ILoggingLogLevel.WARN = new ILoggingLogLevel("WARN");
+        ILoggingLogLevel.Warn = new ILoggingLogLevel("Warn");
         /**
-           @property {Adaptive.ILoggingLogLevel} [ERROR='ERROR']
+           @property {Adaptive.ILoggingLogLevel} [Error='Error']
         */
-        ILoggingLogLevel.ERROR = new ILoggingLogLevel("ERROR");
+        ILoggingLogLevel.Error = new ILoggingLogLevel("Error");
         /**
-           @property {Adaptive.ILoggingLogLevel} [INFO='INFO']
+           @property {Adaptive.ILoggingLogLevel} [Info='Info']
         */
-        ILoggingLogLevel.INFO = new ILoggingLogLevel("INFO");
+        ILoggingLogLevel.Info = new ILoggingLogLevel("Info");
         /**
            @property {Adaptive.ILoggingLogLevel} [Unknown='Unknown']
         */

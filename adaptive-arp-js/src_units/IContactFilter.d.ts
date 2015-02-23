@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,17 +41,17 @@ declare module Adaptive {
         constructor(value: string);
         toString(): string;
         /**
-           @property {Adaptive.IContactFilter} [HAS_PHONE='HAS_PHONE']
+           @property {Adaptive.IContactFilter} [HasPhone='HasPhone']
         */
-        static HAS_PHONE: IContactFilter;
+        static HasPhone: IContactFilter;
         /**
-           @property {Adaptive.IContactFilter} [HAS_EMAIL='HAS_EMAIL']
+           @property {Adaptive.IContactFilter} [HasEmail='HasEmail']
         */
-        static HAS_EMAIL: IContactFilter;
+        static HasEmail: IContactFilter;
         /**
-           @property {Adaptive.IContactFilter} [HAS_ADDRESS='HAS_ADDRESS']
+           @property {Adaptive.IContactFilter} [HasAddress='HasAddress']
         */
-        static HAS_ADDRESS: IContactFilter;
+        static HasAddress: IContactFilter;
         /**
            @property {Adaptive.IContactFilter} [Unknown='Unknown']
         */

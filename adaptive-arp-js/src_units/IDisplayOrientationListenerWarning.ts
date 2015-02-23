@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.1.9
+    * @version v2.2.0
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -44,9 +44,9 @@ module Adaptive {
           toString(){return this.value;}
 
           /**
-             @property {Adaptive.IDisplayOrientationListenerWarning} [Application_Vetoed='Application_Vetoed']
+             @property {Adaptive.IDisplayOrientationListenerWarning} [ApplicationVetoed='ApplicationVetoed']
           */
-          static Application_Vetoed = new IDisplayOrientationListenerWarning("Application_Vetoed");
+          static ApplicationVetoed = new IDisplayOrientationListenerWarning("ApplicationVetoed");
           /**
              @property {Adaptive.IDisplayOrientationListenerWarning} [Unknown='Unknown']
           */
