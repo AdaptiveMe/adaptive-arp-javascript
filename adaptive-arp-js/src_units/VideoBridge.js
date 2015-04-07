@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -74,7 +74,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var apiRequest = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IVideo", "playStream", arParams, -1 /* = synchronous call */);
             Adaptive.postRequest(apiRequest);
         };
         return VideoBridge;

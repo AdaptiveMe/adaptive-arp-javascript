@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -110,7 +110,7 @@ var Adaptive;
         SecurityBridge.prototype.isDeviceModified = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("ISecurity", "isDeviceModified", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ISecurity", "isDeviceModified", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

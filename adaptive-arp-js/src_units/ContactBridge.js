@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -191,7 +191,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
-            var apiRequest = new Adaptive.APIRequest("IContact", "setContactPhoto", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IContact", "setContactPhoto", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

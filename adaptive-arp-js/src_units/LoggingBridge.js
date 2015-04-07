@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelMessage", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelMessage", arParams, -1 /* = synchronous call */);
             Adaptive.postRequest(apiRequest);
         };
         /**
@@ -93,7 +93,7 @@ var Adaptive;
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1 /* = synchronous call */);
             Adaptive.postRequest(apiRequest);
         };
         return LoggingBridge;

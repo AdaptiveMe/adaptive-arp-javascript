@@ -1,9 +1,9 @@
 /// <reference path="BaseListener.d.ts" />
 /// <reference path="CommonUtil.d.ts" />
-/// <reference path="ICapabilitiesNet.d.ts" />
 /// <reference path="INetworkStatusListener.d.ts" />
 /// <reference path="INetworkStatusListenerError.d.ts" />
 /// <reference path="INetworkStatusListenerWarning.d.ts" />
+/// <reference path="NetworkEvent.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -33,13 +33,13 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Network status listener events
+       Interface for Managing the Network status listener networkEvents
        Auto-generated implementation of INetworkStatusListener specification.
     */
     /**
@@ -62,18 +62,18 @@ declare module Adaptive {
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.NetworkEvent} networkEvent
     */
-    function handleNetworkStatusListenerResult(id: number, network: ICapabilitiesNet): void;
+    function handleNetworkStatusListenerResult(id: number, networkEvent: NetworkEvent): void;
     /**
        @method
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.NetworkEvent} networkEvent
        @param {Adaptive.INetworkStatusListenerWarning} warning
     */
-    function handleNetworkStatusListenerWarning(id: number, network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+    function handleNetworkStatusListenerWarning(id: number, networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): void;
     /**
        @class Adaptive.NetworkStatusListener
        @extends Adaptive.BaseListener
@@ -88,21 +88,21 @@ declare module Adaptive {
            @private
            @property
         */
-        onResultFunction: (network: ICapabilitiesNet) => void;
+        onResultFunction: (networkEvent: NetworkEvent) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void;
+        onWarningFunction: (networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for listener.
 
            @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.NetworkEvent
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.NetworkEvent, Adaptive.INetworkStatusListenerWarning
         */
-        constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (network: ICapabilitiesNet) => void, onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void);
+        constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (networkEvent: NetworkEvent) => void, onWarningFunction: (networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning) => void);
         /**
            @method
            No data received - error condition, not authorized or hardware not available.
@@ -113,17 +113,17 @@ declare module Adaptive {
         /**
            @method
            Called when network connection changes somehow.
-           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
            @since v2.0
         */
-        onResult(network: ICapabilitiesNet): void;
+        onResult(networkEvent: NetworkEvent): void;
         /**
            @method
            Status received with warning
-           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
            @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
            @since v2.0
         */
-        onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+        onWarning(networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): void;
     }
 }

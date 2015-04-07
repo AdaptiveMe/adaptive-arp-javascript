@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -83,7 +83,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
         CapabilitiesBridge.prototype.getOrientationDefault = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationDefault", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -104,7 +104,7 @@ support at least one orientation. This is usually PortaitUp.
         CapabilitiesBridge.prototype.getOrientationsSupported = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -130,7 +130,7 @@ support at least one orientation. This is usually PortaitUp.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasButtonSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -153,7 +153,7 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -175,7 +175,7 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasDataSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -198,7 +198,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasMediaSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -220,7 +220,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNetSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -243,7 +243,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -265,7 +265,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(orientation));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -288,7 +288,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ICapabilities", "hasSensorSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

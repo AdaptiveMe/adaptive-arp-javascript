@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,7 +75,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var apiRequest = new Adaptive.APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IBrowser", "openExtenalBrowser", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -101,7 +101,7 @@ var Adaptive;
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowser", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -127,7 +127,7 @@ var Adaptive;
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

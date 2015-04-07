@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -185,7 +185,7 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(database));
-            var apiRequest = new Adaptive.APIRequest("IDatabase", "existsDatabase", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDatabase", "existsDatabase", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -209,7 +209,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
-            var apiRequest = new Adaptive.APIRequest("IDatabase", "existsTable", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDatabase", "existsTable", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

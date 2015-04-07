@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -106,7 +106,7 @@ var Adaptive;
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getDeviceInfo", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -126,7 +126,7 @@ var Adaptive;
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getLocaleCurrent", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -147,7 +147,7 @@ of the display. For display orientation, use the IDisplay APIs.
         DeviceBridge.prototype.getOrientationCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IDevice", "getOrientationCurrent", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;

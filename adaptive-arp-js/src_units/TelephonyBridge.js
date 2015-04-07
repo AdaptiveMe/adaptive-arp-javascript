@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -76,7 +76,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(number));
-            var apiRequest = new Adaptive.APIRequest("ITelephony", "call", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("ITelephony", "call", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;

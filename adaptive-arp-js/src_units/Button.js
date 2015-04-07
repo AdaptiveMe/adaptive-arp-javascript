@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,11 +57,13 @@ var Adaptive;
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        function Button(type) {
+        function Button(type, timestamp) {
             _super.call(this);
             this.type = type;
+            this.timestamp = timestamp;
         }
         Object.defineProperty(Button.prototype, "typeProperty", {
             /**
@@ -73,6 +75,20 @@ var Adaptive;
             },
             set: function (type) {
                 this.type = type;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Button.prototype, "timestampProperty", {
+            /**
+               @property {number} timestamp
+               Timestamp of the button event. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+            */
+            get: function () {
+                return this.timestamp;
+            },
+            set: function (timestamp) {
+                this.timestamp = timestamp;
             },
             enumerable: true,
             configurable: true
@@ -99,16 +115,37 @@ var Adaptive;
         };
         /**
            @method
+           Timestamp Getter
+
+           @return {number} Timestamp
+           @since v2.2.1
+        */
+        Button.prototype.getTimestamp = function () {
+            return this.timestamp;
+        };
+        /**
+           @method
+           Timestamp Setter
+
+           @param {number} timestamp Timestamp
+           @since v2.2.1
+        */
+        Button.prototype.setTimestamp = function (timestamp) {
+            this.timestamp = timestamp;
+        };
+        /**
+           @method
            @static
            Convert JSON parsed object to typed equivalent.
            @param {Object} object JSON parsed structure of type Adaptive.Button.
            @return {Adaptive.Button} Wrapped object instance.
         */
         Button.toObject = function (object) {
-            var result = new Button(null);
+            var result = new Button(null, null);
             if (object != null) {
                 // Assign values to bean fields.
                 result.type = Adaptive.ICapabilitiesButton.toObject(object.type);
+                result.timestamp = object.timestamp;
             }
             return result;
         };

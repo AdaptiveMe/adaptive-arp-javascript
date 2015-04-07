@@ -1,8 +1,8 @@
 /// <reference path="IAdaptiveRPGroup.d.ts" />
 /// <reference path="IBaseListener.d.ts" />
-/// <reference path="ICapabilitiesNet.d.ts" />
 /// <reference path="INetworkStatusListenerError.d.ts" />
 /// <reference path="INetworkStatusListenerWarning.d.ts" />
+/// <reference path="NetworkEvent.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
 
@@ -32,13 +32,13 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 declare module Adaptive {
     /**
-       Interface for Managing the Network status listener events
+       Interface for Managing the Network status listener networkEvents
 
        @author Carlos Lozano Diez
        @since v2.0
@@ -58,17 +58,17 @@ declare module Adaptive {
         /**
            @method
            Called when network connection changes somehow.
-           @param network Change to this network.
+           @param networkEvent Change to this network.
            @since v2.0
         */
-        onResult(network: ICapabilitiesNet): any;
+        onResult(networkEvent: NetworkEvent): any;
         /**
            @method
            Status received with warning
-           @param network Change to this network.
+           @param networkEvent Change to this network.
            @param warning Type of warning encountered during reading.
            @since v2.0
         */
-        onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): any;
+        onWarning(networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): any;
     }
 }

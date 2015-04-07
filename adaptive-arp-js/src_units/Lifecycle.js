@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,11 +57,13 @@ var Adaptive;
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        function Lifecycle(state) {
+        function Lifecycle(state, timestamp) {
             _super.call(this);
             this.state = state;
+            this.timestamp = timestamp;
         }
         Object.defineProperty(Lifecycle.prototype, "stateProperty", {
             /**
@@ -88,6 +90,20 @@ var Adaptive;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(Lifecycle.prototype, "timestampProperty", {
+            /**
+               @property {number} timestamp
+               The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+            */
+            get: function () {
+                return this.timestamp;
+            },
+            set: function (timestamp) {
+                this.timestamp = timestamp;
+            },
+            enumerable: true,
+            configurable: true
+        });
         /**
            @method
            Returns the state of the application
@@ -110,16 +126,37 @@ var Adaptive;
         };
         /**
            @method
+           Gets the timestamp in milliseconds of the event.
+
+           @return {number} Timestamp of the event.
+           @since v2.2.1
+        */
+        Lifecycle.prototype.getTimestamp = function () {
+            return this.timestamp;
+        };
+        /**
+           @method
+           Sets the timestamp in milliseconds of the event.
+
+           @param {number} timestamp Timestamp of the event.
+           @since v2.2.1
+        */
+        Lifecycle.prototype.setTimestamp = function (timestamp) {
+            this.timestamp = timestamp;
+        };
+        /**
+           @method
            @static
            Convert JSON parsed object to typed equivalent.
            @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
            @return {Adaptive.Lifecycle} Wrapped object instance.
         */
         Lifecycle.toObject = function (object) {
-            var result = new Lifecycle(null);
+            var result = new Lifecycle(null, null);
             if (object != null) {
                 // Assign values to bean fields.
                 result.state = Adaptive.LifecycleState.toObject(object.state);
+                result.timestamp = object.timestamp;
             }
             return result;
         };

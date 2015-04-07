@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -72,7 +72,7 @@ var Adaptive;
         RuntimeBridge.prototype.dismissApplication = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissApplication", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissApplication", arParams, -1 /* = synchronous call */);
             Adaptive.postRequest(apiRequest);
         };
         /**
@@ -85,7 +85,7 @@ var Adaptive;
         RuntimeBridge.prototype.dismissSplashScreen = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IRuntime", "dismissSplashScreen", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -77,13 +77,24 @@ Possible lifecycle States:
         */
         stateProperty: LifecycleState;
         /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired.
+        */
+        timestamp: number;
+        /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
            @method constructor
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        constructor(state: LifecycleState);
+        constructor(state: LifecycleState, timestamp: number);
         /**
            @method
            Returns the state of the application
@@ -100,6 +111,22 @@ Possible lifecycle States:
            @since v2.0
         */
         setState(state: LifecycleState): void;
+        /**
+           @method
+           Gets the timestamp in milliseconds of the event.
+
+           @return {number} Timestamp of the event.
+           @since v2.2.1
+        */
+        getTimestamp(): number;
+        /**
+           @method
+           Sets the timestamp in milliseconds of the event.
+
+           @param {number} timestamp Timestamp of the event.
+           @since v2.2.1
+        */
+        setTimestamp(timestamp: number): void;
         /**
            @method
            @static

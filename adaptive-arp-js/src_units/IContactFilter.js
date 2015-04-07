@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -41,9 +41,7 @@ var Adaptive;
         function IContactFilter(value) {
             this.value = value;
         }
-        IContactFilter.prototype.toString = function () {
-            return this.value;
-        };
+        IContactFilter.prototype.toString = function () { return this.value; };
         /**
            @method
            @static

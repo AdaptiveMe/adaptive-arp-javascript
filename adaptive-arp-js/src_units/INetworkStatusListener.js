@@ -27,15 +27,15 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseListener.ts"/>
-///<reference path="ICapabilitiesNet.ts"/>
 ///<reference path="INetworkStatusListenerError.ts"/>
 ///<reference path="INetworkStatusListenerWarning.ts"/>
+///<reference path="NetworkEvent.ts"/>
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */

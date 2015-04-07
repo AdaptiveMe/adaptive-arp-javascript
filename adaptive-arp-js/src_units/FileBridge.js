@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -87,7 +87,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "canRead", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "canRead", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -109,7 +109,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "canWrite", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -149,7 +149,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
-            var apiRequest = new Adaptive.APIRequest("IFile", "delete", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "delete", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -171,7 +171,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "exists", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "exists", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -208,7 +208,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getFileStorageType", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -230,7 +230,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getFileType", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -252,7 +252,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "getSecurityType", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -274,7 +274,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "isDirectory", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -332,7 +332,7 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
-            var apiRequest = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IFile", "mkDir", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

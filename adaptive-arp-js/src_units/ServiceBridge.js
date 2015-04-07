@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -83,7 +83,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceToken));
-            var apiRequest = new Adaptive.APIRequest("IService", "getServiceRequest", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceRequest", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -112,7 +112,7 @@ configured in the platform's XML service definition file.
             arParams.push(JSON.stringify(endpointName));
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
-            var apiRequest = new Adaptive.APIRequest("IService", "getServiceToken", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceToken", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -137,7 +137,7 @@ configured in the platform's XML service definition file.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(uri));
-            var apiRequest = new Adaptive.APIRequest("IService", "getServiceTokenByUri", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IService", "getServiceTokenByUri", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -157,7 +157,7 @@ configured in the platform's XML service definition file.
         ServiceBridge.prototype.getServicesRegistered = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IService", "getServicesRegistered", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IService", "getServicesRegistered", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -205,7 +205,7 @@ XML service definition file.
             arParams.push(JSON.stringify(endpointName));
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
-            var apiRequest = new Adaptive.APIRequest("IService", "isServiceRegistered", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IService", "isServiceRegistered", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = false;

@@ -29,7 +29,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -55,13 +55,24 @@ declare module Adaptive {
         */
         typeProperty: ICapabilitiesButton;
         /**
+           @property {number} timestamp
+           Timestamp of the button event.
+        */
+        timestamp: number;
+        /**
+           @property {number} timestamp
+           Timestamp of the button event. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
            @method constructor
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        constructor(type: ICapabilitiesButton);
+        constructor(type: ICapabilitiesButton, timestamp: number);
         /**
            @method
            Returns the button type
@@ -78,6 +89,22 @@ declare module Adaptive {
            @since v2.0
         */
         setType(type: ICapabilitiesButton): void;
+        /**
+           @method
+           Timestamp Getter
+
+           @return {number} Timestamp
+           @since v2.2.1
+        */
+        getTimestamp(): number;
+        /**
+           @method
+           Timestamp Setter
+
+           @param {number} timestamp Timestamp
+           @since v2.2.1
+        */
+        setTimestamp(timestamp: number): void;
         /**
            @method
            @static

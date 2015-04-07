@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.6
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -75,7 +75,7 @@ var Adaptive;
         GlobalizationBridge.prototype.getDefaultLocale = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getDefaultLocale", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -95,7 +95,7 @@ var Adaptive;
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -123,7 +123,7 @@ var Adaptive;
             var arParams = [];
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
-            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiteral", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -145,7 +145,7 @@ var Adaptive;
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(locale));
-            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
+            var apiRequest = new Adaptive.APIRequest("IGlobalization", "getResourceLiterals", arParams, -1 /* = synchronous call */);
             var apiResponse = Adaptive.postRequest(apiRequest);
             // Prepare response.
             var response = null;
