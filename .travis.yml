@@ -39,8 +39,8 @@ after_success: |-
   git push origin HEAD:master --tags
   fi
   fi
-
-
+after_failure:
+- echo "Having a bad moment..."
 env:
   global:
     secure: F+Ioe6SM1U38qP00h3leSXp5LDwDh6Hc6hAt1AO6JXLif4HUqLbLceEO8EFJEwPwSpPMx0elW0i036ewhWt+3yZwUiYGtlmTUSjD/d3+he9FVf4X0I6cXvBjX3sZWVZV5wd39XlqLw3ab3XQrj4kbBfUuLnk9C8XJUg9WbpsVYI=
