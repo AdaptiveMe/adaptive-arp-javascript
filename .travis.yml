@@ -1,6 +1,46 @@
+sudo: false
 language: node_js
+before_install: cd adaptive-arp-js
 node_js:
-  - "0.12"
-script: 
-  - cd adaptive-arp-js/src_global
-  - node Adaptive.js
+- '0.12'
+install:
+- npm install -g typescript
+- npm install -g replace
+before_script:
+- export HOME=`pwd`
+- export TIMESTAMP=`date`
+- export CURRENT_TAG=`git describe --abbrev=0`
+- mkdir -p .git
+- git config --global credential.helper "store --file=$HOME/.git/credentials"
+- git config --global user.email "carlos@adaptive.me"
+- git config --global user.name "carloslozano"
+- git config --global push.default simple
+- echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
+script:
+- node src_global/Adaptive.js
+after_success: |-
+  if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  echo Tagged version.
+  elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  export SOURCE_HOME=`pwd`
+  mkdir -p temp
+  cd temp
+  git clone https://github.com/AdaptiveMe/adaptive-arp-api.git
+  cd adaptive-arp-api
+  export API_TAG=`git describe --abbrev=0`
+  export API_TAG=`echo ${API_TAG//[v]/ }`
+  rm -Rf temp
+  cd $SOURCE_HOME
+  git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-javascript.git
+  git add -u
+  git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+  if [ "$GIT_TAG" != "$API_TAG" ]; then
+  git tag -a "${API_TAG}" -m "API Specification ${API_TAG}"
+  git push origin HEAD:master --tags
+  fi
+  fi
+
+
+env:
+  global:
+    secure: F+Ioe6SM1U38qP00h3leSXp5LDwDh6Hc6hAt1AO6JXLif4HUqLbLceEO8EFJEwPwSpPMx0elW0i036ewhWt+3yZwUiYGtlmTUSjD/d3+he9FVf4X0I6cXvBjX3sZWVZV5wd39XlqLw3ab3XQrj4kbBfUuLnk9C8XJUg9WbpsVYI=
