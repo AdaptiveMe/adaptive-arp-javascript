@@ -46,7 +46,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.7
+    * @version v2.2.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
