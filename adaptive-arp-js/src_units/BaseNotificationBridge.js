@@ -69,7 +69,7 @@ var Adaptive;
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseNotificationBridge;
     })();
