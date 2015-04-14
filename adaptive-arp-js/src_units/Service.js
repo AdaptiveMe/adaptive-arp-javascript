@@ -31,18 +31,27 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) { if (b.hasOwnProperty(p)) { d[p] = b[p]; } }
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIBean.ts"/>
 ///<reference path="ServiceEndpoint.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan
        @since v2.0
        @version 1.0
     */
-    var Service = (function () {
+    var Service = (function (_super) {
+        __extends(Service, _super);
         /**
            @method constructor
            Constructor used by the implementation
@@ -52,6 +61,7 @@ var Adaptive;
            @since v2.0.6
         */
         function Service(serviceEndpoints, name) {
+            _super.call(this);
             this.serviceEndpoints = serviceEndpoints;
             this.name = name;
         }
@@ -156,7 +166,7 @@ var Adaptive;
             return resultArray;
         };
         return Service;
-    })();
+    })(Adaptive.APIBean);
     Adaptive.Service = Service;
 })(Adaptive || (Adaptive = {}));
 /**

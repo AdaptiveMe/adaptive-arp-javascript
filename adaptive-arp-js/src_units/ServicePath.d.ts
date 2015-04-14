@@ -1,3 +1,4 @@
+/// <reference path="APIBean.d.ts" />
 /// <reference path="IServiceMethod.d.ts" />
 /// <reference path="IServiceType.d.ts" />
 /**
@@ -36,13 +37,14 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.ServicePath
+       @extends Adaptive.APIBean
        Structure representing a service path for one endpoint
 
        @author fnva
        @since v2.0.4
        @version 1.0
     */
-    class ServicePath {
+    class ServicePath extends APIBean {
         /**
            @property {Adaptive.IServiceType} type
            Service endpoint type.

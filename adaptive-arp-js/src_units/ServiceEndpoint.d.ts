@@ -1,3 +1,4 @@
+/// <reference path="APIBean.d.ts" />
 /// <reference path="IServiceCertificateValidation.d.ts" />
 /// <reference path="ServicePath.d.ts" />
 /**
@@ -36,13 +37,14 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.ServiceEndpoint
+       @extends Adaptive.APIBean
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
        @since v2.0
        @version 1.0
     */
-    class ServiceEndpoint {
+    class ServiceEndpoint extends APIBean {
         /**
            @property {Adaptive.IServiceCertificateValidation} validationType
            Type of validation to be performed for SSL hosts.

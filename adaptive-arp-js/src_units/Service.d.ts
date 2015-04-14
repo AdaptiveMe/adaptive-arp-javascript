@@ -1,3 +1,4 @@
+/// <reference path="APIBean.d.ts" />
 /// <reference path="ServiceEndpoint.d.ts" />
 /**
 --| ADAPTIVE RUNTIME PLATFORM |----------------------------------------------------------------------------------------
@@ -35,13 +36,14 @@ Release:
 declare module Adaptive {
     /**
        @class Adaptive.Service
+       @extends Adaptive.APIBean
        Represents an instance of a service.
 
        @author Aryslan
        @since v2.0
        @version 1.0
     */
-    class Service {
+    class Service extends APIBean {
         /**
            @property {string} name
            The service name

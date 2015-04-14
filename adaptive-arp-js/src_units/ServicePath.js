@@ -31,19 +31,28 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) { if (b.hasOwnProperty(p)) { d[p] = b[p]; } }
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIBean.ts"/>
 ///<reference path="IServiceMethod.ts"/>
 ///<reference path="IServiceType.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.ServicePath
+       @extends Adaptive.APIBean
        Structure representing a service path for one endpoint
 
        @author fnva
        @since v2.0.4
        @version 1.0
     */
-    var ServicePath = (function () {
+    var ServicePath = (function (_super) {
+        __extends(ServicePath, _super);
         /**
            @method constructor
            Constructor with parameters.
@@ -54,6 +63,7 @@ var Adaptive;
            @since v2.0.6
         */
         function ServicePath(path, methods, type) {
+            _super.call(this);
             this.path = path;
             this.methods = methods;
             this.type = type;
@@ -200,7 +210,7 @@ var Adaptive;
             return resultArray;
         };
         return ServicePath;
-    })();
+    })(Adaptive.APIBean);
     Adaptive.ServicePath = ServicePath;
 })(Adaptive || (Adaptive = {}));
 /**

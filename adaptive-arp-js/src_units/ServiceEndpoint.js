@@ -31,19 +31,28 @@ Release:
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) { if (b.hasOwnProperty(p)) { d[p] = b[p]; } }
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+///<reference path="APIBean.ts"/>
 ///<reference path="IServiceCertificateValidation.ts"/>
 ///<reference path="ServicePath.ts"/>
 var Adaptive;
 (function (Adaptive) {
     /**
        @class Adaptive.ServiceEndpoint
+       @extends Adaptive.APIBean
        Structure representing a remote or local service access end-point.
 
        @author Aryslan
        @since v2.0
        @version 1.0
     */
-    var ServiceEndpoint = (function () {
+    var ServiceEndpoint = (function (_super) {
+        __extends(ServiceEndpoint, _super);
         /**
            @method constructor
            Constructor with parameters
@@ -53,6 +62,7 @@ var Adaptive;
            @since v2.0.6
         */
         function ServiceEndpoint(hostURI, paths) {
+            _super.call(this);
             this.hostURI = hostURI;
             this.paths = paths;
         }
@@ -192,7 +202,7 @@ var Adaptive;
             return resultArray;
         };
         return ServiceEndpoint;
-    })();
+    })(Adaptive.APIBean);
     Adaptive.ServiceEndpoint = ServiceEndpoint;
 })(Adaptive || (Adaptive = {}));
 /**
