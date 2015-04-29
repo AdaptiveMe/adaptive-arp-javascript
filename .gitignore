@@ -1,4 +1,2 @@
-
 .idea/
-update_repo.sh
-.gitconfig
+node_modules
