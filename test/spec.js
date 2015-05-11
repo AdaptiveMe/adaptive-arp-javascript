@@ -5,6 +5,8 @@ var fs = require("fs"),
 	GitHubApi = require("github"),
 	expect = require('expect.js');
 
+vm.runInThisContext('var window = JSON.parse(\'{}\')'); // To avoid Mocha Explote: ReferenceError: window is not defined
+
 // Load adaptive library into the node context
 vm.runInThisContext(fs.readFileSync('adaptive-arp-js/adaptive.js'));
 
@@ -18,7 +20,7 @@ describe('adaptive-arp-javascript', function () {
 	if (JSON.parse(process.env.TRAVIS_PULL_REQUEST)) {
 		done();
 	} else {
-		var api_version = Adaptive.AppRegistryBridge.getInstance().getAPIVersion();
+		var apiVersion = Adaptive.AppRegistryBridge.getInstance().getAPIVersion();
 		
 		var github = new GitHubApi({
 			version: "3.0.0"
@@ -38,7 +40,7 @@ describe('adaptive-arp-javascript', function () {
 			if (error) {
 				console.log("ERROR: " + error);
 			} else {
-				expect(result[0].name).to.equal(api_version);
+				expect(result[0].name).to.equal(apiVersion);
 				done();
 			}
 		});
